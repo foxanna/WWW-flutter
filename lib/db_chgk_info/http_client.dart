@@ -1,7 +1,10 @@
 library http_client;
 
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:what_when_where/utils/logger.dart';
+import 'package:xml2json/xml2json.dart';
 
 part 'http_client_logger.dart';
 part 'http_settings.dart';
@@ -29,5 +32,15 @@ class HttpClient {
   Future<String> getRaw(String path, {CancelToken cancelToken}) async {
     var response = await _dio.get<String>(path, cancelToken: cancelToken);
     return response?.data;
+  }
+
+  Future<Map<String, dynamic>> get(String path,
+      {CancelToken cancelToken}) async {
+    final xml = await getRaw(path, cancelToken: cancelToken);
+    final transformer = Xml2Json();
+    transformer.parse(xml);
+    final json = transformer.toParker();
+    final decoded = jsonDecode(json);
+    return decoded;
   }
 }
