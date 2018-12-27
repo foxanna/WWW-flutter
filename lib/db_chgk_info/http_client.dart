@@ -30,17 +30,28 @@ class HttpClient {
   }
 
   Future<String> getRaw(String path, {CancelToken cancelToken}) async {
-    var response = await _dio.get<String>(path, cancelToken: cancelToken);
-    return response?.data;
+    try {
+      final response = await _dio.get<String>(path, cancelToken: cancelToken);
+      return response?.data;
+    } catch (e, s) {
+      log('$e: $s');
+      rethrow;
+    }
   }
 
   Future<Map<String, dynamic>> get(String path,
       {CancelToken cancelToken}) async {
     final xml = await getRaw(path, cancelToken: cancelToken);
-    final transformer = Xml2Json();
-    transformer.parse(xml);
-    final json = transformer.toParker();
-    final decoded = jsonDecode(json);
-    return decoded;
+
+    try {
+      final transformer = Xml2Json();
+      transformer.parse(xml);
+      final json = transformer.toParker();
+      final decoded = jsonDecode(json);
+      return decoded;
+    } catch (e, s) {
+      log('$e: $s');
+      rethrow;
+    }
   }
 }
