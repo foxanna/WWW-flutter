@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/resources/themes.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,6 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: Strings.appName,
+      theme: Themes.appTheme,
       home: Scaffold(
         appBar: AppBar(
           title: Text(Strings.appName),
