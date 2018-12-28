@@ -29,9 +29,10 @@ class HttpClient {
         receiveTimeout: _receiveTimeout));
   }
 
-  Future<String> getRaw(String path, {CancelToken cancelToken}) async {
+  Future<String> getRaw(Uri uri, {CancelToken cancelToken}) async {
     try {
-      final response = await _dio.get<String>(path, cancelToken: cancelToken);
+      final response =
+          await _dio.get<String>(uri.toString(), cancelToken: cancelToken);
       return response?.data;
     } catch (e, s) {
       log('$e: $s');
@@ -39,9 +40,8 @@ class HttpClient {
     }
   }
 
-  Future<Map<String, dynamic>> get(String path,
-      {CancelToken cancelToken}) async {
-    final xml = await getRaw(path, cancelToken: cancelToken);
+  Future<Map<String, dynamic>> get(Uri uri, {CancelToken cancelToken}) async {
+    final xml = await getRaw(uri, cancelToken: cancelToken);
 
     try {
       final transformer = Xml2Json();

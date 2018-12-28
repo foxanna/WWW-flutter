@@ -10,7 +10,7 @@ class RandomQuestionsLoader {
   factory RandomQuestionsLoader() => _instance;
 
   Future<Iterable<Question>> get() async {
-    var map = await HttpClient().get("/xml/random");
+    var map = await HttpClient().get(Uri(path: '/xml/random'));
     var randomQuestions = RandomQuestions.fromJson(map);
     return randomQuestions?.search ?? Iterable<Question>.empty();
   }
