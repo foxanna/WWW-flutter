@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   dio: any
   xml2json: any
+  html: any
 
 dev_dependencies:
   flutter_test:
