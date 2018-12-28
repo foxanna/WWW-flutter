@@ -1,5 +1,6 @@
 import 'package:html/dom.dart';
 import 'package:meta/meta.dart';
+import 'package:what_when_where/db_chgk_info/models/tour.dart';
 
 @immutable
 class Tournament {
@@ -17,7 +18,7 @@ class Tournament {
   final String editors;
   final String createdAt;
   final String playedAt;
-  final Tournament children;
+  final List<Tour> tours;
 
   factory Tournament.fromHtml(Element element) {
     return Tournament(
@@ -28,6 +29,23 @@ class Tournament {
       createdAt: element.children[1].firstChild.text.trim(),
     );
   }
+
+  factory Tournament.fromJson(Map<String, dynamic> map) => Tournament(
+      id: map['Id'],
+      parentId: map['ParentId'],
+      title: map['Title'],
+      number: map['Number'],
+      textId: map['TextId'],
+      questionsCount: map['QuestionsNum'],
+      complexity: map['Complexity'],
+      type: map['Type'],
+      description: map['Info'],
+      url: map['URL'],
+      fileName: map['FileName'],
+      editors: map['Editors'],
+      createdAt: map['CreatedAt'],
+      playedAt: map['PlayedAt'],
+      tours: new List.from(map['tour']).map((q) => Tour.fromJson(q)).toList());
 
   Tournament({
     this.id,
@@ -44,6 +62,6 @@ class Tournament {
     this.editors,
     this.createdAt,
     this.playedAt,
-    this.children,
+    this.tours,
   });
 }
