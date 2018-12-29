@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/resources/dimentions.dart';
 
 class WWWProgressIndicator extends StatelessWidget {
   final EdgeInsetsGeometry padding;
@@ -6,7 +7,7 @@ class WWWProgressIndicator extends StatelessWidget {
 
   const WWWProgressIndicator(
       {Key key,
-      this.padding = const EdgeInsets.all(8),
+      this.padding = Dimensions.defaultPadding,
       this.alignment = Alignment.center})
       : super(key: key);
 
