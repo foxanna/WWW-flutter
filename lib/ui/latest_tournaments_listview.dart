@@ -5,7 +5,7 @@ import 'package:what_when_where/ui/common/extended_listview/extended_listview.da
 import 'package:what_when_where/ui/tournament_list_tile.dart';
 
 class LatestTournamentsListView extends StatelessWidget {
-  final _getter = LatestTournamentsLoader().get;
+  final Function _getter = LatestTournamentsLoader().get;
 
   @override
   Widget build(BuildContext context) => WWWExtendedListView(
