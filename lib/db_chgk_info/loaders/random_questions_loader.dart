@@ -12,6 +12,6 @@ class RandomQuestionsLoader {
   Future<Iterable<Question>> get() async {
     var map = await HttpClient().get(Uri(path: '/xml/random'));
     var randomQuestions = RandomQuestions.fromJson(map);
-    return randomQuestions?.search ?? Iterable<Question>.empty();
+    return randomQuestions.search;
   }
 }
