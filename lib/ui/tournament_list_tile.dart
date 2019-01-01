@@ -6,10 +6,12 @@ import 'package:what_when_where/resources/strings.dart';
 class TournamentListTile extends StatelessWidget {
   final Tournament tournament;
 
-  const TournamentListTile({
+  TournamentListTile({
     Key key,
     @required this.tournament,
-  }) : super(key: key);
+  }) : super(key: key) {
+    assert(tournament != null);
+  }
 
   @override
   Widget build(BuildContext context) {
