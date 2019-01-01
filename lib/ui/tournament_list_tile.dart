@@ -37,7 +37,7 @@ class TournamentListTile extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     Expanded(
-                      child: Text('${Strings.addedAt} ${tournament.createdAt}',
+                      child: Text('${Strings.playedAt} ${tournament.playedAt}',
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           style: textTheme.body2),
@@ -46,11 +46,11 @@ class TournamentListTile extends StatelessWidget {
                       size: Size(Dimensions.defaultSidePadding, 0),
                     ),
                     Expanded(
-                      child: Text('${Strings.playedAt} ${tournament.playedAt}',
+                      child: Text('${Strings.addedAt} ${tournament.createdAt}',
                           textAlign: TextAlign.right,
                           overflow: TextOverflow.ellipsis,
                           style: textTheme.body2),
-                    )
+                    ),
                   ],
                 ),
               ])),
