@@ -22,7 +22,7 @@ class HttpClientLogger {
 
   static void _logResponse(Response response) {
     log("${response.request.method} ${response.statusCode} ${response.request.baseUrl}${response.request.path}");
-    log(response.data);
+    if (_logHttpResponseContent) log(response.data);
   }
 
   static void _logError(DioError error) {
