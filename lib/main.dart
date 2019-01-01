@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/themes.dart';
+import 'package:what_when_where/ui/home_page.dart';
 
-void main() => runApp(MyApp());
+void main() {
+//  debugPaintSizeEnabled = true;
+  runApp(WWWApp());
+}
 
-class MyApp extends StatelessWidget {
+class WWWApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: Strings.appName,
-      theme: Themes.appTheme,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(Strings.appName),
-        ),
-        body: Container(),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+      title: Strings.appName, theme: Themes.appTheme, home: HomePage());
 }
