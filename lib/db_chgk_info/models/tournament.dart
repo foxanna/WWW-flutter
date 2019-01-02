@@ -1,6 +1,7 @@
 import 'package:html/dom.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/utils/texts.dart';
 
 @immutable
 class Tournament {
@@ -39,10 +40,10 @@ class Tournament {
       questionsCount: map['QuestionsNum'],
       complexity: map['Complexity'],
       type: map['Type'],
-      description: map['Info'],
+      description: TextUtils.normalize(map['Info']),
       url: map['URL'],
       fileName: map['FileName'],
-      editors: map['Editors'],
+      editors: TextUtils.normalize(map['Editors']),
       createdAt: map['CreatedAt'],
       playedAt: map['PlayedAt'],
       tours: map.containsKey('tour')
