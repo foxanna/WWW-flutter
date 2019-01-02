@@ -14,10 +14,12 @@ class WWWExtendedListView extends StatefulWidget {
   final WWWExtendedListViewIndexedWidgetBuilder _itemBuilder;
 
   WWWExtendedListView({
+    Key key,
     @required Function function,
     @required WWWExtendedListViewIndexedWidgetBuilder itemBuilder,
   })  : this._function = function,
-        this._itemBuilder = itemBuilder {
+        this._itemBuilder = itemBuilder,
+        super(key: key) {
     assert(_function != null);
     assert(_itemBuilder != null);
   }
