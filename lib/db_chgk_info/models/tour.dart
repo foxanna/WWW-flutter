@@ -34,9 +34,9 @@ class Tour {
       editors: map['Editors'],
       createdAt: map['CreatedAt'],
       playedAt: map['PlayedAt'],
-      questions: new List.from(map['question'])
-          .map((q) => Question.fromJson(q))
-          .toList());
+      questions: map.containsKey('question')
+          ? List.from(map['question']).map((q) => Question.fromJson(q)).toList()
+          : List<Question>());
 
   Tour({
     this.id,
