@@ -45,7 +45,9 @@ class Tournament {
       editors: map['Editors'],
       createdAt: map['CreatedAt'],
       playedAt: map['PlayedAt'],
-      tours: new List.from(map['tour']).map((q) => Tour.fromJson(q)).toList());
+      tours: map.containsKey('tour')
+          ? List.from(map['tour']).map((q) => Tour.fromJson(q)).toList()
+          : List<Tour>());
 
   Tournament({
     this.id,
