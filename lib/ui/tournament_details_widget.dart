@@ -6,7 +6,8 @@ import 'package:what_when_where/ui/tournament_details_header.dart';
 class TournamentDetails extends StatelessWidget {
   final Tournament _tournament;
 
-  TournamentDetails(Tournament tournament) : this._tournament = tournament {
+  TournamentDetails({Key key, @required Tournament tournament})
+      : this._tournament = tournament {
     assert(_tournament != null);
     assert(_tournament.tours != null);
   }

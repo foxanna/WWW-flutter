@@ -40,7 +40,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
           : RefreshIndicator(
               key: _refreshIndicatorKey,
               onRefresh: _reload,
-              child: TournamentDetails(_tournament)));
+              child: TournamentDetails(tournament: _tournament)));
 
   @override
   void initState() {
