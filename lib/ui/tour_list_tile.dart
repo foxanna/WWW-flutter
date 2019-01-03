@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:what_when_where/resources/dimentions.dart';
+import 'package:what_when_where/resources/dimensions.dart';
 
 class TourListTile extends StatelessWidget {
   final Tour _tour;

@@ -1,7 +1,7 @@
 library extended_listview;
 
 import 'package:flutter/material.dart';
-import 'package:what_when_where/resources/dimentions.dart';
+import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 
 part 'extended_listview_model.dart';
