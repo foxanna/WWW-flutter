@@ -1,7 +1,7 @@
 import 'package:html/parser.dart';
 import 'package:what_when_where/db_chgk_info/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/utils/extentions.dart';
+import 'package:what_when_where/utils/extensions.dart';
 
 class LatestTournamentsLoader {
   static final _instance = LatestTournamentsLoader._internal();
