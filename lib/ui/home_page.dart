@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(Strings.appName),
+          title: const Text(Strings.appName),
         ),
         body: LatestTournamentsListView(),
       );
