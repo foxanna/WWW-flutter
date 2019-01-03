@@ -20,9 +20,7 @@ class TournamentListTile extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return InkWell(
       child: Padding(
-          padding: EdgeInsets.symmetric(
-              vertical: Dimensions.defaultSidePadding,
-              horizontal: Dimensions.defaultSidePadding * 2),
+          padding: Dimensions.defaultListTilePadding,
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[

@@ -18,9 +18,7 @@ class TourListTile extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: Dimensions.defaultSidePadding),
       child: InkWell(
         child: Padding(
-          padding: EdgeInsets.symmetric(
-              vertical: Dimensions.defaultSidePadding / 2,
-              horizontal: Dimensions.defaultSidePadding),
+          padding: Dimensions.defaultListTilePadding / 2,
           child: Text(
             _tour.title,
             style: textTheme.subhead,
