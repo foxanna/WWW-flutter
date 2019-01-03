@@ -42,7 +42,10 @@ class HttpClient {
 
   Future<Map<String, dynamic>> get(Uri uri, {CancelToken cancelToken}) async {
     final xml = await getRaw(uri, cancelToken: cancelToken);
+    return _parse(xml);
+  }
 
+  _parse(String xml) {
     try {
       final transformer = Xml2Json();
       transformer.parse(xml);
