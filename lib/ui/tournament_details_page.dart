@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/tournament_details_widget.dart';
 
@@ -20,10 +21,7 @@ class TournamentDetailsPage extends StatefulWidget {
 }
 
 class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
-  final _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
-
   Tournament _tournament;
-  bool _isLoading = false;
 
   String get _id => _tournament.textId;
 
@@ -35,41 +33,21 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
       appBar: AppBar(
         title: Text(_tournament.title),
       ),
-      body: _isLoading
-          ? WWWProgressIndicator()
-          : RefreshIndicator(
-              key: _refreshIndicatorKey,
-              onRefresh: _reload,
-              child: TournamentDetails(tournament: _tournament)));
-
-  @override
-  void initState() {
-    super.initState();
-    _load();
-  }
-
-  Future _load() async {
-    if (_isLoading) return;
-
-    try {
-      setState(() {
-        _isLoading = true;
-      });
-      _tournament = await _fetch();
-    } finally {
-      setState(() {
-        _isLoading = false;
-      });
-    }
-  }
-
-  Future _reload() async {
-    var tournament = await _fetch();
-
-    setState(() {
-      _tournament = tournament;
-    });
-  }
+      body: FutureBuilder<Tournament>(
+          future: _fetch(),
+          builder: (BuildContext context, AsyncSnapshot<Tournament> snapshot) {
+            switch (snapshot.connectionState) {
+              case ConnectionState.waiting:
+              case ConnectionState.active:
+                return WWWProgressIndicator();
+              case ConnectionState.done:
+                return snapshot.hasData
+                    ? TournamentDetails(tournament: snapshot.data)
+                    : ErrorMessage();
+              default:
+                return Container();
+            }
+          }));
 
   Future<Tournament> _fetch() => TournamentDetailsLoader().get(_id);
 }
