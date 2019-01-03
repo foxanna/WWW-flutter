@@ -28,7 +28,7 @@ class TournamentDetailsHeader extends StatelessWidget {
             VerticalSpace(height: Dimensions.defaultSpacing / 2),
             (_tournament.editors != null)
                 ? Text(_tournament.editors, style: textTheme.body2)
-                : null,
+                : Container(),
             Text('${Strings.playedAt} ${_tournament.playedAt}',
                 textAlign: TextAlign.left,
                 overflow: TextOverflow.ellipsis,
@@ -38,12 +38,12 @@ class TournamentDetailsHeader extends StatelessWidget {
                     VerticalSpace(height: Dimensions.defaultSpacing),
                     Text(_tournament.description, style: textTheme.body2)
                   ])
-                : null,
+                : Container(),
             VerticalSpace(height: Dimensions.defaultSpacing),
             Text(
                 '${Strings.tours}: ${_tournament.tours.length}, ${Strings.questions}: ${_tournament.questionsCount}',
                 style: textTheme.body2),
-          ].where((x) => x != null).toList()),
+          ]),
     );
   }
 }
