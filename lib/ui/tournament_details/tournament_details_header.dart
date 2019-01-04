@@ -7,11 +7,9 @@ import 'package:what_when_where/ui/common/spacing.dart';
 class TournamentDetailsHeader extends StatelessWidget {
   final Tournament _tournament;
 
-  TournamentDetailsHeader({Key key, @required Tournament tournament})
+  const TournamentDetailsHeader({Key key, @required Tournament tournament})
       : this._tournament = tournament,
-        super(key: key) {
-    assert(_tournament != null);
-  }
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.d
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/tournament_details_widget.dart';
+import 'package:what_when_where/ui/tournament_details/tournament_details_widget.dart';
 
 class TournamentDetailsPage extends StatefulWidget {
   final Tournament tournament;
