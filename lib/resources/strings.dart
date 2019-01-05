@@ -4,4 +4,6 @@ class Strings {
   static const String playedAt = "сыграно";
   static const String tours = "туров";
   static const String questions = "вопросов";
+  static const String genericError = "Что-то пошло не так :(";
+  static const String retry = "повторить";
 }
