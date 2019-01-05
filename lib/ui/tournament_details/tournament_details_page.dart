@@ -1,53 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
+import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
+import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_widget.dart';
 
 class TournamentDetailsPage extends StatefulWidget {
-  final Tournament tournament;
+  final Tournament _tournament;
 
-  TournamentDetailsPage({
+  const TournamentDetailsPage({
     Key key,
-    @required this.tournament,
-  }) : super(key: key) {
-    assert(tournament != null);
-  }
+    @required tournament,
+  })  : this._tournament = tournament,
+        super(key: key);
 
   @override
   _TournamentDetailsPageState createState() =>
-      _TournamentDetailsPageState(tournament: tournament);
+      _TournamentDetailsPageState(tournament: _tournament);
 }
 
 class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
-  Tournament _tournament;
-
-  String get _id => _tournament.textId;
+  final String _title;
+  final TournamentDetailsBloc _bloc;
 
   _TournamentDetailsPageState({@required Tournament tournament})
-      : this._tournament = tournament;
+      : this._title = tournament.title,
+        this._bloc = TournamentDetailsBloc(tournament.textId) {
+    _bloc.load();
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
-        title: Text(_tournament.title),
+        title: Text(_title),
       ),
-      body: FutureBuilder<Tournament>(
-          future: _fetch(),
-          builder: (BuildContext context, AsyncSnapshot<Tournament> snapshot) {
-            switch (snapshot.connectionState) {
-              case ConnectionState.waiting:
-              case ConnectionState.active:
-                return WWWProgressIndicator();
-              case ConnectionState.done:
-                return snapshot.hasData
-                    ? TournamentDetails(tournament: snapshot.data)
-                    : ErrorMessage();
-              default:
-                return Container();
-            }
-          }));
+      body: StreamBuilder<TournamentDetailsBlocState>(
+          stream: _bloc.stateStream,
+          builder: (BuildContext context,
+                  AsyncSnapshot<TournamentDetailsBlocState> snapshot) =>
+              _createBody(snapshot)));
 
-  Future<Tournament> _fetch() => TournamentDetailsLoader().get(_id);
+  StatelessWidget _createBody(
+      AsyncSnapshot<TournamentDetailsBlocState> snapshot) {
+    if (snapshot.hasData) {
+      var state = snapshot.data;
+      if (state.isLoading) return WWWProgressIndicator();
+      if (state.hasError) return ErrorMessage(retryFunction: _bloc.load);
+      if (state.hasData) return TournamentDetails(tournament: state.data);
+    }
+
+    return Container();
+  }
 }
