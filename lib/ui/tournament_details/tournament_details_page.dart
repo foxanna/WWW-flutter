@@ -5,6 +5,7 @@ import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_header.dart';
+import 'package:what_when_where/ui/tournament_details/tournament_details_menu.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_tours_list.dart';
 
 class TournamentDetailsPage extends StatefulWidget {
@@ -34,6 +35,13 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () => _showMenu(context),
+          ),
+        ],
       ),
       body: _buildStreamBuilder());
 
@@ -70,4 +78,19 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
 
     return Container();
   }
+
+  void _showMenu(BuildContext context) => showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return new Column(
+            mainAxisSize: MainAxisSize.min,
+            children: TournamentDetailsMenu()
+                .items
+                .map((item) => ListTile(
+                      leading: Icon(item.iconData),
+                      title: Text(item.text),
+                      onTap: () {},
+                    ))
+                .toList());
+      });
 }
