@@ -6,7 +6,7 @@ import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_bloc_st
 
 class LatestTournamentsBloc {
   int _page = 0;
-  LatestTournamentsBlocState _state = new LatestTournamentsBlocState();
+  LatestTournamentsBlocState state = new LatestTournamentsBlocState();
 
   final _items = List<Tournament>();
   final _streamController = StreamController<LatestTournamentsBlocState>();
@@ -15,7 +15,7 @@ class LatestTournamentsBloc {
       _streamController.stream;
 
   Future loadMore() async {
-    if (_state.isLoading) return;
+    if (state.isLoading) return;
 
     try {
       _populateState(
@@ -46,9 +46,9 @@ class LatestTournamentsBloc {
     }
   }
 
-  void _populateState(LatestTournamentsBlocState state) {
-    _state = state;
-    _streamController.add(state);
+  void _populateState(LatestTournamentsBlocState newState) {
+    state = newState;
+    _streamController.add(newState);
   }
 
   void _moreItemsLoaded(Iterable<Tournament> data) {
