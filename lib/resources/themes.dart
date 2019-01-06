@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 
 class Themes {
   static ThemeData get appTheme {
-    final ThemeData base = ThemeData.light();
+    final ThemeData base = ThemeData(
+      primarySwatch: Colors.green,
+      primaryColor: Colors.green[800],
+//      highlightColor: Colors.green[100],
+//      splashColor: Colors.green[200],
+    );
 
     return base.copyWith(
-      primaryColor: Colors.lightBlue[800],
-      accentColor: Colors.cyan[600],
       textTheme: base.textTheme.copyWith(
-          body2: base.textTheme.body1.copyWith(
-              color: base.textTheme.caption.color,
-              fontWeight: FontWeight.w400)),
+        body2: base.textTheme.body1.copyWith(
+            color: base.textTheme.caption.color, fontWeight: FontWeight.w400),
+      ),
     );
   }
 }
