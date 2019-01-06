@@ -15,30 +15,33 @@ class TournamentDetailsHeader extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(
-            left: kToolbarHeight - Dimensions.defaultSidePadding,
-            right: kToolbarHeight,
-            bottom: Dimensions.defaultSidePadding * 2),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding:
-                    const EdgeInsets.only(left: Dimensions.defaultSidePadding),
-                child: Text(
-                  _title,
-                  style: Theme.of(context).accentTextTheme.title,
-                ),
-              ),
-              IconButton(
-                  padding: Dimensions.defaultPadding,
-                  icon: Icon(
-                    Icons.more_horiz,
-                    color: Theme.of(context).accentIconTheme.color,
+  Widget build(BuildContext context) => Material(
+        color: Theme.of(context).primaryColor,
+        child: Padding(
+          padding: const EdgeInsets.only(
+              left: kToolbarHeight - Dimensions.defaultSidePadding,
+              right: kToolbarHeight,
+              bottom: Dimensions.defaultSidePadding * 2),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: Dimensions.defaultSidePadding),
+                  child: Text(
+                    _title,
+                    style: Theme.of(context).accentTextTheme.title,
                   ),
-                  onPressed: () => _showDialog(context)),
-            ]),
+                ),
+                IconButton(
+                    padding: Dimensions.defaultPadding,
+                    icon: Icon(
+                      Icons.more_horiz,
+                      color: Theme.of(context).accentIconTheme.color,
+                    ),
+                    onPressed: () => _showDialog(context)),
+              ]),
+        ),
       );
 
   void _showDialog(BuildContext context) => showDialog(
