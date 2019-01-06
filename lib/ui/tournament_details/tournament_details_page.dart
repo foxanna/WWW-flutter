@@ -4,7 +4,7 @@ import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_widget.dart';
+import 'package:what_when_where/ui/tournament_details/tournament_details_tours_list.dart';
 
 class TournamentDetailsPage extends StatefulWidget {
   final Tournament _tournament;
@@ -47,7 +47,8 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
       var state = snapshot.data;
       if (state.isLoading) return WWWProgressIndicator();
       if (state.hasError) return ErrorMessage(retryFunction: _bloc.load);
-      if (state.hasData) return TournamentDetails(tournament: state.data);
+      if (state.hasData)
+        return TournamentDetailsToursList(tournament: state.data);
     }
 
     return Container();
