@@ -48,9 +48,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
   StreamBuilder<TournamentDetailsBlocState> _buildStreamBuilder() =>
       StreamBuilder<TournamentDetailsBlocState>(
           stream: _bloc.stateStream,
-          builder: (BuildContext context,
-                  AsyncSnapshot<TournamentDetailsBlocState> snapshot) =>
-              Column(
+          builder: (context, snapshot) => Column(
                 children: <Widget>[
                   _buildHeader(context, snapshot.data?.data),
                   Expanded(child: _buildBody(snapshot)),

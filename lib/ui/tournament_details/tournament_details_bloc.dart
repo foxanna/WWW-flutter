@@ -8,7 +8,7 @@ class TournamentDetailsBloc {
   final String _id;
 
   final StreamController<TournamentDetailsBlocState> _tournamentController =
-      new StreamController<TournamentDetailsBlocState>();
+      StreamController<TournamentDetailsBlocState>();
 
   TournamentDetailsBloc(String id) : this._id = id;
 
