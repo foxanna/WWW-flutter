@@ -10,9 +10,7 @@ class TournamentDetailsHeader extends StatelessWidget {
   TournamentDetailsHeader({Key key, @required Tournament tournament})
       : this._title = tournament.title,
         this._detailsText = _buildDetailsText(tournament),
-        super(key: key) {
-    assert(tournament != null);
-  }
+        super(key: key);
 
   @override
   Widget build(BuildContext context) => Material(
@@ -30,14 +28,14 @@ class TournamentDetailsHeader extends StatelessWidget {
                       left: Dimensions.defaultSidePadding),
                   child: Text(
                     _title,
-                    style: Theme.of(context).accentTextTheme.title,
+                    style: Theme.of(context).primaryTextTheme.title,
                   ),
                 ),
                 IconButton(
                     padding: Dimensions.defaultPadding,
                     icon: Icon(
                       Icons.more_horiz,
-                      color: Theme.of(context).accentIconTheme.color,
+                      color: Theme.of(context).primaryIconTheme.color,
                     ),
                     onPressed: () => _showDialog(context)),
               ]),
@@ -46,7 +44,7 @@ class TournamentDetailsHeader extends StatelessWidget {
 
   void _showDialog(BuildContext context) => showDialog(
         context: context,
-        builder: (BuildContext context) => _createDialog(context),
+        builder: (context) => _createDialog(context),
       );
 
   AlertDialog _createDialog(BuildContext context) => AlertDialog(
