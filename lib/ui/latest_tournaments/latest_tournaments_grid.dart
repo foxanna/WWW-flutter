@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/ui/tournament_list_tile.dart';
+import 'package:what_when_where/ui/latest_tournaments/latest_tournament_tile.dart';
 
 class LatestTournamentsGrid extends StatelessWidget {
   final List<Tournament> tournaments;
@@ -14,7 +14,7 @@ class LatestTournamentsGrid extends StatelessWidget {
       crossAxisCount: 2,
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,
-      itemBuilder: (c, i) => TournamentListTile(tournament: tournaments[i]),
+      itemBuilder: (c, i) => LatestTournamentTile(tournament: tournaments[i]),
       itemCount: tournaments.length,
       staggeredTileBuilder: (int index) => StaggeredTile.fit(1));
 }
