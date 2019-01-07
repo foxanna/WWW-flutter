@@ -1,79 +1,20 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_bloc.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/ui/tournament_list_tile.dart';
 
-class LatestTournamentsListView extends StatefulWidget {
-  final LatestTournamentsBloc _bloc;
+class LatestTournamentsListView extends StatelessWidget {
+  final List<Tournament> tournaments;
 
-  LatestTournamentsListView({Key key, @required LatestTournamentsBloc bloc})
-      : this._bloc = bloc,
-        super(key: key);
-
-  @override
-  _LatestTournamentsListViewState createState() =>
-      _LatestTournamentsListViewState(_bloc);
-}
-
-class _LatestTournamentsListViewState extends State<LatestTournamentsListView> {
-  final _scrollController = ScrollController();
-  final _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
-
-  final LatestTournamentsBloc _bloc;
-
-  _LatestTournamentsListViewState(this._bloc);
+  LatestTournamentsListView({Key key, @required this.tournaments})
+      : super(key: key);
 
   @override
-  void initState() {
-    super.initState();
-    _scrollController.addListener(_scrollListener);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var state = _bloc.state;
-
-    return RefreshIndicator(
-        key: _refreshIndicatorKey,
-        onRefresh: _refresh,
-        child: ListView.separated(
-            padding: Dimensions.defaultPadding,
-            controller: _scrollController,
-            itemBuilder: (BuildContext context, int index) =>
-                state.isLoadingMore && index == state.data.length
-                    ? WWWProgressIndicator()
-                    : TournamentListTile(tournament: state.data[index]),
-            separatorBuilder: (BuildContext context, int index) => Divider(),
-            itemCount: state.isLoadingMore
-                ? state.data.length + 1
-                : state.data.length));
-  }
-
-  @override
-  void dispose() {
-    _scrollController.removeListener(_scrollListener);
-    _scrollController.dispose();
-    super.dispose();
-  }
-
-  void _scrollListener() => _loadMoreIfRequested();
-
-  void _loadMoreIfRequested() {
-    if (_scrollController.position.extentAfter < 500) {
-      _loadMore();
-    }
-  }
-
-  void _loadMore() async {
-    await _bloc.loadMore();
-  }
-
-  Future _refresh() async {
-    await _bloc.refresh();
-
-    _loadMoreIfRequested();
-  }
+  Widget build(BuildContext context) => SliverStaggeredGrid.countBuilder(
+      crossAxisCount: 2,
+      mainAxisSpacing: 4.0,
+      crossAxisSpacing: 4.0,
+      itemBuilder: (c, i) => TournamentListTile(tournament: tournaments[i]),
+      itemCount: tournaments.length,
+      staggeredTileBuilder: (int index) => StaggeredTile.fit(1));
 }
