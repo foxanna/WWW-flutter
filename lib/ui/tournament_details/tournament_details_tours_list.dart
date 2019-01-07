@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/ui/tour_list_tile.dart';
+import 'package:what_when_where/ui/tournament_details/tour_tile.dart';
 
 class TournamentDetailsToursList extends StatelessWidget {
   final Tournament _tournament;
@@ -15,9 +15,8 @@ class TournamentDetailsToursList extends StatelessWidget {
           left: Dimensions.defaultSidePadding,
           right: Dimensions.defaultSidePadding,
           top: Dimensions.defaultSidePadding * 2),
-      itemBuilder: (BuildContext context, int index) =>
-          TourListTile(tour: _tournament.tours[index]),
-      separatorBuilder: (BuildContext context, int index) => Padding(
+      itemBuilder: (context, index) => TourTile(tour: _tournament.tours[index]),
+      separatorBuilder: (context, index) => Padding(
             padding:
                 EdgeInsets.symmetric(horizontal: Dimensions.defaultSidePadding),
             child: Divider(),

@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 
-class TourListTile extends StatelessWidget {
-  final Tour _tour;
+class TourTile extends StatelessWidget {
+  final Tour tour;
 
-  TourListTile({Key key, @required Tour tour})
-      : this._tour = tour,
-        super(key: key) {
-    assert(_tour != null);
-  }
+  const TourTile({Key key, @required this.tour}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +16,7 @@ class TourListTile extends StatelessWidget {
         child: Padding(
           padding: Dimensions.defaultListTilePadding / 2,
           child: Text(
-            _tour.title,
+            tour.title,
             style: textTheme.subhead,
           ),
         ),
