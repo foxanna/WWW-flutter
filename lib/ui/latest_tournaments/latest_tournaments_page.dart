@@ -3,7 +3,7 @@ import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_bloc.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_bloc_state.dart';
-import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_listview.dart';
+import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_grid.dart';
 
 class LatestTournamentsPage extends StatefulWidget {
   @override
@@ -90,7 +90,7 @@ class LatestTournamentsPageState extends State<LatestTournamentsPage> {
 
             return state.isLoading && state.data.isEmpty
                 ? SliverFillRemaining(child: WWWProgressIndicator())
-                : LatestTournamentsListView(tournaments: state.data);
+                : LatestTournamentsGrid(tournaments: state.data);
           }
 
           return SliverToBoxAdapter(child: Container());

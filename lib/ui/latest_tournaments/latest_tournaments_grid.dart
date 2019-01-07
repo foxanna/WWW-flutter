@@ -3,10 +3,10 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/ui/tournament_list_tile.dart';
 
-class LatestTournamentsListView extends StatelessWidget {
+class LatestTournamentsGrid extends StatelessWidget {
   final List<Tournament> tournaments;
 
-  LatestTournamentsListView({Key key, @required this.tournaments})
+  LatestTournamentsGrid({Key key, @required this.tournaments})
       : super(key: key);
 
   @override
