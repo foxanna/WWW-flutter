@@ -49,6 +49,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
       StreamBuilder<TournamentDetailsBlocState>(
           stream: _bloc.stateStream,
           builder: (context, snapshot) => Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   _buildHeader(context, snapshot.data?.data),
                   Expanded(child: _buildBody(snapshot)),
