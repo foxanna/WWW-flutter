@@ -4,9 +4,9 @@ import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
+import 'package:what_when_where/ui/tournament_details/tournament_details_body.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_header.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_menu.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_tours_list.dart';
 
 class TournamentDetailsPage extends StatefulWidget {
   final Tournament _tournament;
@@ -77,8 +77,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
       if (state.hasError)
         return ErrorMessage(
             retryFunction: _bloc.load, color: Theme.of(context).primaryColor);
-      if (state.hasData)
-        return TournamentDetailsToursList(tournament: state.data);
+      if (state.hasData) return TournamentDetailsBody(tournament: state.data);
     }
 
     return Container();
