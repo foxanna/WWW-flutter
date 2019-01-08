@@ -18,8 +18,7 @@ class TournamentDetailsPage extends StatefulWidget {
         super(key: key);
 
   @override
-  _TournamentDetailsPageState createState() =>
-      _TournamentDetailsPageState(tournament: _tournament);
+  createState() => _TournamentDetailsPageState(tournament: _tournament);
 }
 
 class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
@@ -28,7 +27,11 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
 
   _TournamentDetailsPageState({@required Tournament tournament})
       : this._tournament = tournament,
-        this._bloc = TournamentDetailsBloc(tournament.textId) {
+        this._bloc = TournamentDetailsBloc(tournament.textId);
+
+  @override
+  void initState() {
+    super.initState();
     _bloc.load();
   }
 
@@ -66,7 +69,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
         ),
       );
 
-  StatelessWidget _buildBody(BuildContext context,
+  Widget _buildBody(BuildContext context,
       AsyncSnapshot<TournamentDetailsBlocState> snapshot) {
     if (snapshot.hasData) {
       var state = snapshot.data;

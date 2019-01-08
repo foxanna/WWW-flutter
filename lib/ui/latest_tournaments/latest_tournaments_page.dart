@@ -8,7 +8,7 @@ import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_grid.da
 
 class LatestTournamentsPage extends StatefulWidget {
   @override
-  LatestTournamentsPageState createState() => LatestTournamentsPageState();
+  createState() => LatestTournamentsPageState();
 }
 
 class LatestTournamentsPageState extends State<LatestTournamentsPage> {
