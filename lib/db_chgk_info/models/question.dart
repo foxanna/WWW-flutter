@@ -1,4 +1,5 @@
 import 'package:meta/meta.dart';
+import 'package:what_when_where/utils/texts.dart';
 
 @immutable
 class Question {
@@ -28,7 +29,7 @@ class Question {
 
   factory Question.fromJson(Map<String, dynamic> map) => Question(
         textId: map['TextId'],
-        question: map['Question'],
+        question: TextUtils.normalize(map['Question']),
         number: map['Number'],
         answer: map['Answer'],
         authors: map['Authors'],
