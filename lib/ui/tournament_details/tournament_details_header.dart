@@ -63,34 +63,32 @@ class TournamentDetailsHeader extends StatelessWidget {
   static String _buildDetailsText(Tournament tournament) {
     var result = StringBuffer();
 
+    var addToResult = (String s) {
+      if (result.isNotEmpty) {
+        result.writeln();
+      }
+      result.writeln(s);
+    };
+
     if (tournament.editors != null) {
-      result.writeln(tournament.editors);
+      addToResult(tournament.editors);
     }
 
     if (tournament.description != null) {
-      if (result.isNotEmpty) {
-        result.writeln();
-      }
-
-      result.writeln(tournament.description);
+      addToResult(tournament.description);
     }
 
     var toursAndQuestions = _buildToursAndQuestionsText(tournament);
-
     if (toursAndQuestions.isNotEmpty) {
-      if (result.isNotEmpty) {
-        result.writeln();
-      }
-
-      result.writeln(toursAndQuestions);
+      addToResult(toursAndQuestions);
     }
 
     if (tournament.playedAt != null) {
-      if (result.isNotEmpty) {
-        result.writeln();
-      }
+      addToResult('${Strings.playedAt} ${tournament.playedAt}');
+    }
 
-      result.writeln('${Strings.playedAt} ${tournament.playedAt}');
+    if (tournament.createdAt != null) {
+      addToResult('${Strings.addedAt} ${tournament.createdAt}');
     }
 
     return result.toString();
