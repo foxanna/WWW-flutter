@@ -59,7 +59,10 @@ class LatestTournamentsPageState extends State<LatestTournamentsPage> {
                 children.add(SliverToBoxAdapter(
                     child: Padding(
                   padding: const EdgeInsets.only(top: _appBarHeight),
-                  child: ErrorMessage(retryFunction: _loadMore),
+                  child: ErrorMessage(
+                    retryFunction: _loadMore,
+                    color: Theme.of(context).primaryIconTheme.color,
+                  ),
                 )));
               }
             }

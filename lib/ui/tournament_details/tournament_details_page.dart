@@ -43,16 +43,17 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
           ),
         ],
       ),
-      body: _buildStreamBuilder());
+      body: _buildStreamBuilder(context));
 
-  StreamBuilder<TournamentDetailsBlocState> _buildStreamBuilder() =>
+  StreamBuilder<TournamentDetailsBlocState> _buildStreamBuilder(
+          BuildContext context) =>
       StreamBuilder<TournamentDetailsBlocState>(
           stream: _bloc.stateStream,
           builder: (context, snapshot) => Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   _buildHeader(context, snapshot.data?.data),
-                  Expanded(child: _buildBody(snapshot)),
+                  Expanded(child: _buildBody(context, snapshot)),
                 ],
               ));
 
@@ -65,12 +66,14 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
         ),
       );
 
-  StatelessWidget _buildBody(
+  StatelessWidget _buildBody(BuildContext context,
       AsyncSnapshot<TournamentDetailsBlocState> snapshot) {
     if (snapshot.hasData) {
       var state = snapshot.data;
       if (state.isLoading) return WWWProgressIndicator();
-      if (state.hasError) return ErrorMessage(retryFunction: _bloc.load);
+      if (state.hasError)
+        return ErrorMessage(
+            retryFunction: _bloc.load, color: Theme.of(context).primaryColor);
       if (state.hasData)
         return TournamentDetailsToursList(tournament: state.data);
     }
