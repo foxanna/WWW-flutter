@@ -36,8 +36,12 @@ class Tour {
       createdAt: map['CreatedAt'],
       playedAt: map['PlayedAt'],
       questions: map.containsKey('question')
-          ? List.from(map['question']).map((q) => Question.fromJson(q)).toList()
-          : List<Question>());
+          ? map['question'] is List
+              ? List.from(map['question'])
+                  .map((q) => Question.fromJson(q))
+                  .toList()
+              : [Question.fromJson(map['question'])]
+          : []);
 
   Tour({
     this.id,
