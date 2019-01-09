@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/tour_details/tour_details_container.dart';
 
 class TournamentDetailsBody extends StatefulWidget {
@@ -43,25 +44,42 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
           PhysicalModel(
             color: Theme.of(context).primaryColor,
             elevation: 4.0,
-            child: TabBar(
-              labelStyle: Theme.of(context).primaryTextTheme.body2,
-              indicatorColor: Theme.of(context).primaryTextTheme.body2.color,
-              isScrollable: true,
-              controller: _tabController,
-              tabs: _tournament.tours
-                  .map((tour) => Tab(text: tour.title))
-                  .toList(),
-            ),
+            child: _buildHeader(context),
           ),
           Expanded(
-            child: PageView.builder(
-              controller: _pageController,
-              itemBuilder: (context, index) =>
-                  TourDetailsContainer(tour: _tournament.tours[index]),
-              itemCount: _tournament.tours.length,
-            ),
+            child: _buildPageView(),
           ),
         ],
+      );
+
+  Widget _buildHeader(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Padding(
+              padding: const EdgeInsets.only(
+                  left: kToolbarHeight,
+                  right: kToolbarHeight,
+                  bottom: Dimensions.defaultSidePadding * 2),
+              child: Text(
+                _tournament.title,
+                style: Theme.of(context).primaryTextTheme.title,
+              )),
+          Center(child: _buildTabBar(context)),
+        ],
+      );
+
+  Widget _buildTabBar(BuildContext context) => TabBar(
+        indicatorColor: Theme.of(context).primaryTextTheme.body2.color,
+        isScrollable: true,
+        controller: _tabController,
+        tabs: _tournament.tours.map((tour) => Tab(text: tour.title)).toList(),
+      );
+
+  Widget _buildPageView() => PageView.builder(
+        controller: _pageController,
+        itemBuilder: (context, index) =>
+            TourDetailsContainer(tour: _tournament.tours[index]),
+        itemCount: _tournament.tours.length,
       );
 
   @override
