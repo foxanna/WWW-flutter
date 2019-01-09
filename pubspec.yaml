@@ -15,6 +15,7 @@ dependencies:
   xml2json: any
   html: any
   flutter_staggered_grid_view: any
+  rxdart: any
 
 dev_dependencies:
   flutter_test:
