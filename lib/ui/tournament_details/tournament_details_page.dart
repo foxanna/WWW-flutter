@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_body.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_header.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_menu.dart';
 
 class TournamentDetailsPage extends StatefulWidget {
@@ -37,46 +37,67 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      body: _buildStreamBuilder(context));
         appBar: AppBar(
           elevation: 0,
           actions: _createMenuActions(context),
         ),
+        body: _buildBody(context),
+      );
 
-  StreamBuilder<TournamentDetailsBlocState> _buildStreamBuilder(
-          BuildContext context) =>
+  Widget _buildBody(BuildContext context) =>
       StreamBuilder<TournamentDetailsBlocState>(
-          stream: _bloc.stateStream,
-          builder: (context, snapshot) => Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  _buildHeader(context, snapshot.data?.data),
-                  Expanded(child: _buildBody(context, snapshot)),
-                ],
-              ));
+        stream: _bloc.stateStream,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            var state = snapshot.data;
+            if (state.isLoading) return _buildLoadingStateWidget(context);
+            if (state.hasError) return _buildErrorStateWidget(context);
+            if (state.hasData) {
+              return _buildNormalStateWidget(context, state.data);
+            }
+          }
 
-  Widget _buildHeader(BuildContext context, Tournament tournament) =>
-      PhysicalModel(
-        color: Theme.of(context).primaryColor,
+          return Container();
+        },
+      );
+
+  Widget _buildLoadingStateWidget(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _buildElevatedHeader(context),
+          Expanded(child: WWWProgressIndicator())
+        ],
+      );
+
+  Widget _buildErrorStateWidget(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _buildElevatedHeader(context),
+          Expanded(
+              child: ErrorMessage(
+                  retryFunction: _bloc.load,
+                  color: Theme.of(context).primaryColor))
+        ],
+      );
+
+  Widget _buildNormalStateWidget(BuildContext context, Tournament tournament) =>
+      TournamentDetailsBody(tournament: tournament);
+
+  Widget _buildElevatedHeader(BuildContext context) => PhysicalModel(
         elevation: 4.0,
-        child: TournamentDetailsHeader(
-          tournament: tournament ?? _tournament,
+        color: Theme.of(context).primaryColor,
+        child: Padding(
+          padding: const EdgeInsets.only(
+              left: kToolbarHeight,
+              right: kToolbarHeight,
+              bottom: Dimensions.defaultSidePadding * 3),
+          child: Text(
+            _tournament.title,
+            style: Theme.of(context).primaryTextTheme.title,
+          ),
         ),
       );
 
-  Widget _buildBody(BuildContext context,
-      AsyncSnapshot<TournamentDetailsBlocState> snapshot) {
-    if (snapshot.hasData) {
-      var state = snapshot.data;
-      if (state.isLoading) return WWWProgressIndicator();
-      if (state.hasError)
-        return ErrorMessage(
-            retryFunction: _bloc.load, color: Theme.of(context).primaryColor);
-      if (state.hasData) return TournamentDetailsBody(tournament: state.data);
-    }
-
-    return Container();
-  }
   List<Widget> _createMenuActions(BuildContext context) => <Widget>[
         IconButton(
           icon: Icon(Icons.more_vert),
