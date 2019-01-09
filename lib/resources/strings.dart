@@ -7,4 +7,5 @@ class Strings {
   static const String genericError = "Что-то пошло не так :(";
   static const String retry = "повторить";
   static const String close = "закрыть";
+  static const String aboutTournament = "о турнире";
 }
