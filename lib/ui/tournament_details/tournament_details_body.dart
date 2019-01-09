@@ -53,7 +53,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
       );
 
   Widget _buildHeader(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
               padding: const EdgeInsets.only(
@@ -64,7 +64,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
                 _tournament.title,
                 style: Theme.of(context).primaryTextTheme.title,
               )),
-          Center(child: _buildTabBar(context)),
+          _buildTabBar(context),
         ],
       );
 

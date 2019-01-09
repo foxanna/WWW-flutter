@@ -99,9 +99,11 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
               left: kToolbarHeight,
               right: kToolbarHeight,
               bottom: Dimensions.defaultSidePadding * 3),
-          child: Text(
-            _tournament.title,
-            style: Theme.of(context).primaryTextTheme.title,
+          child: Center(
+            child: Text(
+              _tournament.title,
+              style: Theme.of(context).primaryTextTheme.title,
+            ),
           ),
         ),
       );
