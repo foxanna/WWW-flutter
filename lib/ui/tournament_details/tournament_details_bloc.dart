@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:rxdart/subjects.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
@@ -7,8 +8,7 @@ import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_st
 class TournamentDetailsBloc {
   final String _id;
 
-  final StreamController<TournamentDetailsBlocState> _tournamentController =
-      StreamController<TournamentDetailsBlocState>();
+  final _tournamentController = BehaviorSubject<TournamentDetailsBlocState>();
 
   TournamentDetailsBloc(String id) : this._id = id;
 
