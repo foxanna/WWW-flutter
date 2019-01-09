@@ -1,54 +1,51 @@
 import 'dart:async';
 
+import 'package:rxdart/subjects.dart';
 import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_bloc_state.dart';
 
 class LatestTournamentsBloc {
-  int _page = 0;
-  LatestTournamentsBlocState _state = new LatestTournamentsBlocState();
-
   final _items = List<Tournament>();
-  final _streamController = StreamController<LatestTournamentsBlocState>();
+  final _streamController = BehaviorSubject<LatestTournamentsBlocState>();
+
+  int _page = 0;
 
   Stream<LatestTournamentsBlocState> get stateStream =>
       _streamController.stream;
 
+  LatestTournamentsBlocState get _state => _streamController.value;
+
   Future loadMore() async {
-    if (_state.isLoading) return;
+    if (_state?.isLoading ?? false) return;
 
     try {
-      _populateState(
-          LatestTournamentsBlocState(isLoadingMore: true, data: _items));
+      _streamController
+          .add(LatestTournamentsBlocState(isLoadingMore: true, data: _items));
 
       var data = await LatestTournamentsLoader().get(page: _page);
       _moreItemsLoaded(data);
 
-      _populateState(LatestTournamentsBlocState(data: _items));
+      _streamController.add(LatestTournamentsBlocState(data: _items));
     } on Exception catch (e) {
-      _populateState(LatestTournamentsBlocState(data: _items, error: e));
+      _streamController.add(LatestTournamentsBlocState(data: _items, error: e));
     }
   }
 
   Future refresh() async {
     try {
-      _populateState(
-          LatestTournamentsBlocState(isRefreshing: true, data: _items));
+      _streamController
+          .add(LatestTournamentsBlocState(isRefreshing: true, data: _items));
 
       _reset();
 
       var data = await LatestTournamentsLoader().get(page: _page);
       _moreItemsLoaded(data);
 
-      _populateState(LatestTournamentsBlocState(data: _items));
+      _streamController.add(LatestTournamentsBlocState(data: _items));
     } on Exception catch (e) {
-      _populateState(LatestTournamentsBlocState(data: _items, error: e));
+      _streamController.add(LatestTournamentsBlocState(data: _items, error: e));
     }
-  }
-
-  void _populateState(LatestTournamentsBlocState newState) {
-    _state = newState;
-    _streamController.add(newState);
   }
 
   void _moreItemsLoaded(Iterable<Tournament> data) {
