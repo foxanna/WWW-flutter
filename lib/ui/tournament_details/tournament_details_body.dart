@@ -94,13 +94,19 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
 
   void _pageControllerListener() {
     var index = _pageController.page.round();
-    _tabController.animateTo(index);
+
+    if (index != _tabController.index) {
+      _tabController.animateTo(index);
+    }
   }
 
   void _tabControllerListener() {
     if (_tabController.indexIsChanging) {
       var index = _tabController.index;
-      _pageController.jumpToPage(index);
+      if (index != _pageController.page.round()) {
+        _pageController.animateToPage(index,
+            duration: Duration(milliseconds: 300), curve: Curves.easeOut);
+      }
     }
   }
 }
