@@ -6,7 +6,7 @@ import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_body.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_menu.dart';
+import 'package:what_when_where/ui/tournament_details/tournament_details_page_menu.dart';
 
 class TournamentDetailsPage extends StatefulWidget {
   final Tournament _tournament;
@@ -22,12 +22,21 @@ class TournamentDetailsPage extends StatefulWidget {
 }
 
 class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
-  final Tournament _tournament;
   final TournamentDetailsBloc _bloc;
+  final Tournament _tournament;
+  final TournamentDetailsPageMenu _menu;
 
-  _TournamentDetailsPageState({@required Tournament tournament})
+  factory _TournamentDetailsPageState({@required Tournament tournament}) {
+    var bloc = TournamentDetailsBloc(tournament.textId);
+    var menu = TournamentDetailsPageMenu(bloc);
+    return _TournamentDetailsPageState._(tournament, bloc, menu);
+  }
+
+  _TournamentDetailsPageState._(Tournament tournament,
+      TournamentDetailsBloc bloc, TournamentDetailsPageMenu menu)
       : this._tournament = tournament,
-        this._bloc = TournamentDetailsBloc(tournament.textId);
+        this._bloc = bloc,
+        this._menu = menu;
 
   @override
   void initState() {
@@ -39,7 +48,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           elevation: 0,
-          actions: _createMenuActions(context),
+          actions: _menu.createAppBarMenuActions(context),
         ),
         body: _buildBody(context),
       );
@@ -52,9 +61,8 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
             var state = snapshot.data;
             if (state.isLoading) return _buildLoadingStateWidget(context);
             if (state.hasError) return _buildErrorStateWidget(context);
-            if (state.hasData) {
+            if (state.hasData)
               return _buildNormalStateWidget(context, state.data);
-            }
           }
 
           return Container();
@@ -97,26 +105,4 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
           ),
         ),
       );
-
-  List<Widget> _createMenuActions(BuildContext context) => <Widget>[
-        IconButton(
-          icon: Icon(Icons.more_vert),
-          onPressed: () => _showMenu(context),
-        ),
-      ];
-
-  void _showMenu(BuildContext context) => showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return new Column(
-            mainAxisSize: MainAxisSize.min,
-            children: TournamentDetailsMenu()
-                .items
-                .map((item) => ListTile(
-                      leading: Icon(item.iconData),
-                      title: Text(item.text),
-                      onTap: () {},
-                    ))
-                .toList());
-      });
 }
