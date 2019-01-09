@@ -41,13 +41,12 @@ class _TourDetailsContainerState extends State<TourDetailsContainer>
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           var state = snapshot.data;
-
           if (state.isLoading) return WWWProgressIndicator();
-          if (state.hasData) return TourDetailsQuestionsList(tour: state.data);
           if (state.hasError)
             return ErrorMessage(
                 retryFunction: _bloc.load,
                 color: Theme.of(context).primaryColor);
+          if (state.hasData) return TourDetailsQuestionsList(tour: state.data);
         }
 
         return Container();
