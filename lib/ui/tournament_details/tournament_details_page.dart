@@ -37,16 +37,11 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.more_vert),
-            onPressed: () => _showMenu(context),
-          ),
-        ],
-      ),
       body: _buildStreamBuilder(context));
+        appBar: AppBar(
+          elevation: 0,
+          actions: _createMenuActions(context),
+        ),
 
   StreamBuilder<TournamentDetailsBlocState> _buildStreamBuilder(
           BuildContext context) =>
@@ -82,6 +77,12 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
 
     return Container();
   }
+  List<Widget> _createMenuActions(BuildContext context) => <Widget>[
+        IconButton(
+          icon: Icon(Icons.more_vert),
+          onPressed: () => _showMenu(context),
+        ),
+      ];
 
   void _showMenu(BuildContext context) => showModalBottomSheet(
       context: context,
