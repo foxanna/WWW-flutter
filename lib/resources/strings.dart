@@ -8,4 +8,9 @@ class Strings {
   static const String retry = "повторить";
   static const String close = "закрыть";
   static const String aboutTournament = "о турнире";
+  static const String question = "Вопрос";
+  static const String answer = "Ответ";
+  static const String acceptableAnswer = "Зачет";
+  static const String author = "Автор";
+  static const String sources = "Источники";
 }
