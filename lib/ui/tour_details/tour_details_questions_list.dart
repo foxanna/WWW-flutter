@@ -14,8 +14,10 @@ class TourDetailsQuestionsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ListView.separated(
         padding: Dimensions.defaultPadding,
-        itemBuilder: (context, index) =>
-            TourDetailsQuestionTile(question: tour.questions[index]),
+        itemBuilder: (context, index) => TourDetailsQuestionTile(
+              tour: tour,
+              index: index,
+            ),
         itemCount: tour.questions.length,
         separatorBuilder: (context, index) => Divider(),
       );
