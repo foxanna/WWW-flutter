@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/tour_questions/question_card.dart';
 
 class TourQuestionsPage extends StatefulWidget {
@@ -41,8 +42,16 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
             child: IconTheme(
               data: Theme.of(context).primaryIconTheme,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: Dimensions.defaultSidePadding * 2),
+                    child: Text(
+                      '0:00',
+                      style: Theme.of(context).primaryTextTheme.title,
+                    ),
+                  ),
                   IconButton(
                     icon: Icon(Icons.more_vert),
                     onPressed: () {},
