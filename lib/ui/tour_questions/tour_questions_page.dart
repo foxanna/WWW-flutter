@@ -37,8 +37,6 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
           elevation: 0.0,
         ),
         bottomNavigationBar: BottomAppBar(
-            shape: CircularNotchedRectangle(),
-            notchMargin: 6,
             color: Theme.of(context).primaryColor,
             child: IconTheme(
               data: Theme.of(context).primaryIconTheme,
