@@ -5,6 +5,7 @@ import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_bloc.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_bloc_state.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_grid.dart';
+import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page_menu.dart';
 
 class LatestTournamentsPage extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class LatestTournamentsPageState extends State<LatestTournamentsPage> {
   final _bloc = LatestTournamentsBloc();
   final _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
   final _scrollController = ScrollController();
+  final _menu = LatestTournamentsPageMenu();
 
   static const _appBarHeight = 140.0;
 
@@ -76,15 +78,17 @@ class LatestTournamentsPageState extends State<LatestTournamentsPage> {
       );
 
   Widget _buildSliverAppBar(BuildContext context) => SliverAppBar(
-      elevation: 0.0,
-      expandedHeight: _appBarHeight,
-      flexibleSpace: FlexibleSpaceBar(
-        title: Icon(
-          Icons.all_inclusive,
-          size: 60,
-          color: Theme.of(context).primaryIconTheme.color,
+        elevation: 0.0,
+        expandedHeight: _appBarHeight,
+        flexibleSpace: FlexibleSpaceBar(
+          title: Icon(
+            Icons.all_inclusive,
+            size: 60,
+            color: Theme.of(context).primaryIconTheme.color,
+          ),
         ),
-      ));
+        actions: _menu.createAppBarMenuActions(context),
+      );
 
   @override
   void initState() {
