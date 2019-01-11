@@ -50,16 +50,15 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
                 ],
               ),
             )),
-        body: Padding(
-          padding: EdgeInsets.only(bottom: kToolbarHeight),
-          child: PageView.builder(
-            controller: PageController(
-                initialPage: _startIndex, viewportFraction: 0.85),
-            itemBuilder: (context, index) => QuestionCard(
-                  question: tour.questions[index],
-                ),
-            itemCount: tour.questions.length,
-          ),
+        body: PageView.builder(
+          controller:
+              PageController(initialPage: _startIndex, viewportFraction: 0.85),
+          itemBuilder: (context, index) => Padding(
+              padding: EdgeInsets.only(bottom: kToolbarHeight),
+              child: QuestionCard(
+                question: tour.questions[index],
+              )),
+          itemCount: tour.questions.length,
         ),
       );
 }
