@@ -1,5 +1,5 @@
 class Strings {
-  static const String appName = "What? When? Where?";
+  static const String appName = "OWL";
   static const String addedAt = "добавлено";
   static const String playedAt = "сыграно";
   static const String tours = "туров";
@@ -13,4 +13,9 @@ class Strings {
   static const String acceptableAnswer = "Зачет";
   static const String author = "Автор";
   static const String sources = "Источники";
+  static const String aboutApplication = "О приложении";
+  static const String emailDevelopers = "написать разработчикам";
+  static const String questionsDatabasePrefix = "База Вопросов Интернет-клуба";
+  static const String questionsDatabaseName = "Что? Где? Когда?";
+  static const String app = "Приложение";
 }
