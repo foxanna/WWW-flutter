@@ -70,7 +70,7 @@ class _QuestionCardState extends State<QuestionCard> {
       );
 
   Widget _buildSeparator(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 30),
         child: Container(
             color: Theme.of(context).accentColor,
             child: SizedBox(
@@ -119,28 +119,28 @@ class _QuestionCardState extends State<QuestionCard> {
     );
 
     if (question.answer != null) {
-      yield Text('${Strings.answer}: ${question.answer}');
       yield space;
+      yield Text('${Strings.answer}: ${question.answer}');
     }
 
     if (question.passCriteria != null) {
+      yield space;
       yield Text('${Strings.acceptableAnswer}: ${question.passCriteria}');
-      yield space;
-    }
-
-    if (question.authors != null) {
-      yield Text('${Strings.author}: ${question.authors}');
-      yield space;
     }
 
     if (question.comments != null) {
-      yield Text('* ${question.comments}');
       yield space;
+      yield Text('* ${question.comments}');
+    }
+
+    if (question.authors != null) {
+      yield space;
+      yield Text('${Strings.author}: ${question.authors}');
     }
 
     if (question.sources != null) {
-      yield Text('${Strings.sources}:\n${question.sources}');
       yield space;
+      yield Text('${Strings.sources}:\n${question.sources}');
     }
   }
 }
