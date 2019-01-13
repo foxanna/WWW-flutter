@@ -17,6 +17,10 @@ class QuestionCard extends StatefulWidget {
 }
 
 class _QuestionCardState extends State<QuestionCard> {
+  final _scrollController = ScrollController();
+  final _buttonStackKey = GlobalKey();
+  final _listViewKey = GlobalKey();
+
   bool _showAnswer = false;
 
   Question get question => widget.question;
@@ -32,6 +36,8 @@ class _QuestionCardState extends State<QuestionCard> {
         child: Container(
           foregroundDecoration: _buildGradientDecoration(context),
           child: ListView(
+            key: _listViewKey,
+            controller: _scrollController,
             padding: EdgeInsets.symmetric(
                 vertical: Dimensions.defaultSidePadding * 6,
                 horizontal: Dimensions.defaultSidePadding * 3),
@@ -50,6 +56,7 @@ class _QuestionCardState extends State<QuestionCard> {
                       .headline
                       .copyWith(fontSize: 18)),
               Stack(
+                  key: _buttonStackKey,
                   alignment: Alignment.center,
                   fit: StackFit.passthrough,
                   children: [
@@ -105,7 +112,20 @@ class _QuestionCardState extends State<QuestionCard> {
   void _toggleShowAnswer() {
     setState(() {
       _showAnswer = !_showAnswer;
+
+      _scrollAnswerUp();
     });
+  }
+
+  void _scrollAnswerUp() {
+    final parent = _listViewKey.currentContext.findRenderObject();
+    final RenderBox box = _buttonStackKey.currentContext.findRenderObject();
+    final position = box.localToGlobal(Offset.zero, ancestor: parent);
+
+    _scrollController.animateTo(
+        (_showAnswer) ? (position.dy - Dimensions.defaultSpacing) : 0,
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeOut);
   }
 
   Widget _buildAnswer(BuildContext context) => Column(
@@ -142,5 +162,12 @@ class _QuestionCardState extends State<QuestionCard> {
       yield space;
       yield Text('${Strings.sources}:\n${question.sources}');
     }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+
+    super.dispose();
   }
 }
