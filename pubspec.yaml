@@ -18,6 +18,7 @@ dependencies:
   rxdart: any
   url_launcher: any
   flutter_svg: any
+  auto_size_text: any
 
 dev_dependencies:
   flutter_test:
