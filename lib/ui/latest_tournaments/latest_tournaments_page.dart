@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
@@ -81,10 +82,13 @@ class LatestTournamentsPageState extends State<LatestTournamentsPage> {
         elevation: 0.0,
         expandedHeight: _appBarHeight,
         flexibleSpace: FlexibleSpaceBar(
-          title: Icon(
-            Icons.all_inclusive,
-            size: 60,
-            color: Theme.of(context).primaryIconTheme.color,
+          title: Hero(
+            tag: 'icon',
+            child: SvgPicture.asset(
+              'assets/owl.svg',
+              height: 60,
+              color: Theme.of(context).primaryIconTheme.color,
+            ),
           ),
         ),
         actions: _menu.createAppBarMenuActions(context),
