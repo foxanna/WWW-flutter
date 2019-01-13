@@ -17,6 +17,7 @@ dependencies:
   flutter_staggered_grid_view: any
   rxdart: any
   url_launcher: any
+  flutter_svg: any
 
 dev_dependencies:
   flutter_test:
