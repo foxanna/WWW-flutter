@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/dimensions.dart';
@@ -40,15 +41,13 @@ class LatestTournamentTile extends StatelessWidget {
           style: textTheme.subhead,
         ),
         SizedBox(height: Dimensions.defaultSpacing * 2),
-        Text(
-          '${Strings.playedAt} ${tournament.playedAt}',
+        AutoSizeText(
+          '${Strings.playedAt} ${tournament.playedAt}\n${Strings.addedAt} ${tournament.createdAt}',
           overflow: TextOverflow.ellipsis,
           style: textTheme.body2,
-        ),
-        Text(
-          '${Strings.addedAt} ${tournament.createdAt}',
-          overflow: TextOverflow.ellipsis,
-          style: textTheme.body2,
+          maxLines: 2,
+          maxFontSize: textTheme.body2.fontSize,
+          minFontSize: 10,
         ),
       ],
     );
