@@ -16,7 +16,8 @@ class QuestionCard extends StatefulWidget {
   createState() => _QuestionCardState();
 }
 
-class _QuestionCardState extends State<QuestionCard> {
+class _QuestionCardState extends State<QuestionCard>
+    with AutomaticKeepAliveClientMixin<QuestionCard> {
   final _scrollController = ScrollController();
   final _buttonStackKey = GlobalKey();
   final _listViewKey = GlobalKey();
@@ -170,4 +171,7 @@ class _QuestionCardState extends State<QuestionCard> {
 
     super.dispose();
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
