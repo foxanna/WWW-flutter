@@ -5,7 +5,41 @@ import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
-class AboutPage extends StatelessWidget {
+class AboutPage extends StatefulWidget {
+  @override
+  createState() => _AboutPageState();
+}
+
+class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
+  AnimationController _controller;
+  Animation _fadeAnimation;
+  Animation _slideAnimation;
+
+  _AboutPageState() {
+    _controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 600));
+
+    _fadeAnimation =
+        CurvedAnimation(parent: _controller, curve: Curves.easeOut);
+
+    _slideAnimation = Tween(begin: Offset(0, 0.1), end: Offset.zero)
+        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: _buildAppBar(context),
@@ -18,7 +52,17 @@ class AboutPage extends StatelessWidget {
         elevation: 0.0,
       );
 
-  Widget _buildBody(BuildContext context) => ListView(
+  Widget _buildBody(BuildContext context) => _buildTransitions(context);
+
+  Widget _buildTransitions(BuildContext context) => FadeTransition(
+        opacity: _fadeAnimation,
+        child: SlideTransition(
+          position: _slideAnimation,
+          child: _buildContent(context),
+        ),
+      );
+
+  ListView _buildContent(BuildContext context) => ListView(
         padding: const EdgeInsets.symmetric(
             vertical: Dimensions.defaultSidePadding * 5,
             horizontal: Dimensions.defaultSidePadding * 3),
