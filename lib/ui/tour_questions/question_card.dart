@@ -10,6 +10,7 @@ class QuestionCard extends StatefulWidget {
   QuestionCard({Key key, @required this.question})
       : assert(question != null),
         assert(question.question != null),
+        assert(question.answer != null),
         super(key: key);
 
   @override
@@ -135,32 +136,35 @@ class _QuestionCardState extends State<QuestionCard>
       );
 
   Iterable<Widget> _buildAnswerContent() sync* {
-    const space = SizedBox(
-      height: Dimensions.defaultSpacing,
+    yield Text(
+      '${Strings.answer}: ${question.answer}${(question.comments != null) ? '*' : ''}',
+      style: Theme.of(context)
+          .textTheme
+          .headline
+          .copyWith(fontSize: 18, color: Theme.of(context).accentColor),
     );
 
-    if (question.answer != null) {
-      yield space;
-      yield Text('${Strings.answer}: ${question.answer}');
-    }
-
     if (question.passCriteria != null) {
-      yield space;
-      yield Text('${Strings.acceptableAnswer}: ${question.passCriteria}');
+      yield SizedBox(height: Dimensions.defaultSpacing * 2);
+      yield Text('${Strings.acceptableAnswer}: ${question.passCriteria}',
+          style: Theme.of(context)
+              .textTheme
+              .headline
+              .copyWith(fontSize: 18, color: Theme.of(context).accentColor));
     }
 
     if (question.comments != null) {
-      yield space;
+      yield SizedBox(height: Dimensions.defaultSpacing * 2);
       yield Text('* ${question.comments}');
     }
 
     if (question.authors != null) {
-      yield space;
+      yield SizedBox(height: Dimensions.defaultSpacing);
       yield Text('${Strings.author}: ${question.authors}');
     }
 
     if (question.sources != null) {
-      yield space;
+      yield SizedBox(height: Dimensions.defaultSpacing);
       yield Text('${Strings.sources}:\n${question.sources}');
     }
   }
