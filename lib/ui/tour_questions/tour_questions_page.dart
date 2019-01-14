@@ -96,4 +96,11 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
   }
 
   String _twoDigits(int n) => n >= 10 ? "$n" : "0$n";
+
+  @override
+  void dispose() {
+    _timerBloc.dispose();
+
+    super.dispose();
+  }
 }
