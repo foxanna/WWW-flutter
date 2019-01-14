@@ -58,6 +58,6 @@ class TimerBloc {
   @mustCallSuper
   void dispose() {
     _stopwatch.stop();
-    _timer.cancel();
+    _timer?.cancel();
   }
 }
