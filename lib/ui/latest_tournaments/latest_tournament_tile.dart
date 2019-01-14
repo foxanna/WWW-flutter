@@ -20,15 +20,19 @@ class LatestTournamentTile extends StatelessWidget {
           child: Padding(
               padding: Dimensions.defaultListTilePadding,
               child: _buildContent(context)),
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        TournamentDetailsPage(tournament: tournament)));
-          },
+          onTap: () => _openTournamentDetails(context),
         ),
       );
+
+  void _openTournamentDetails(BuildContext context) async {
+    await Navigator.push(
+        context,
+        MaterialPageRoute(
+            settings:
+                const RouteSettings(name: TournamentDetailsPage.routeName),
+            builder: (context) =>
+                TournamentDetailsPage(tournament: tournament)));
+  }
 
   Widget _buildContent(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
