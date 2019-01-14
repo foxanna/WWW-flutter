@@ -67,7 +67,7 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
       stream: _timerBloc.isRunning,
       builder: (context, snapshot) => FloatingActionButton(
             child: Icon(
-              snapshot.data ? Icons.timer_off : Icons.timer,
+              (snapshot.data ?? false) ? Icons.timer_off : Icons.timer,
             ),
             tooltip: (snapshot.data ?? false)
                 ? Strings.pauseTimer
@@ -81,7 +81,7 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
             padding: const EdgeInsets.symmetric(
                 horizontal: Dimensions.defaultSidePadding * 2),
             child: Text(
-              _formatDuration(snapshot.data),
+              _formatDuration(snapshot.data ?? Duration.zero),
               style: Theme.of(context).primaryTextTheme.title,
             ),
           ));
