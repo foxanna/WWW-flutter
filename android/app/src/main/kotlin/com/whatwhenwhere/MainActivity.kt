@@ -1,4 +1,4 @@
-package com.whatwhenwhere
+package chgk.droid
 
 import android.os.Bundle
 
