@@ -18,4 +18,6 @@ class Strings {
   static const String questionsDatabasePrefix = "База Вопросов Интернет-клуба";
   static const String questionsDatabaseName = "Что? Где? Когда?";
   static const String app = "Приложение";
+  static const String startTimer = "запустить таймер";
+  static const String pauseTimer = "остановить таймер";
 }
