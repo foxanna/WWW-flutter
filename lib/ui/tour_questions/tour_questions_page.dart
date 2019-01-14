@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/resources/dimensions.dart';
+import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/tour_questions/question_card.dart';
 import 'package:what_when_where/ui/tour_questions/timer_bloc.dart';
 
@@ -68,6 +69,9 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
             child: Icon(
               snapshot.data ? Icons.timer_off : Icons.timer,
             ),
+            tooltip: (snapshot.data ?? false)
+                ? Strings.pauseTimer
+                : Strings.startTimer,
             onPressed: () => _timerBloc.toggle(),
           ));
 
