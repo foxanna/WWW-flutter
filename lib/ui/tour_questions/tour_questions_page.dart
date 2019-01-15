@@ -59,43 +59,33 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
                 question: tour.questions[index],
               )),
           itemCount: tour.questions.length,
-          onPageChanged: (index) => _timerBloc.reset(),
+          onPageChanged: (index) => _timerBloc.actions.add(TimerActions.reset),
         ),
       );
 
   Widget _buildTimerButton() => StreamBuilder<bool>(
       stream: _timerBloc.isRunning,
+      initialData: false,
       builder: (context, snapshot) => FloatingActionButton(
             child: Icon(
-              (snapshot.data ?? false) ? Icons.timer_off : Icons.timer,
+              snapshot.data ? Icons.timer_off : Icons.timer,
             ),
-            tooltip: (snapshot.data ?? false)
-                ? Strings.pauseTimer
-                : Strings.startTimer,
-            onPressed: () => _timerBloc.toggle(),
+            tooltip: snapshot.data ? Strings.pauseTimer : Strings.startTimer,
+            onPressed: () => _timerBloc.actions
+                .add((snapshot.data) ? TimerActions.pause : TimerActions.run),
           ));
 
-  Widget _buildTimerWidget(BuildContext context) => StreamBuilder<Duration>(
+  Widget _buildTimerWidget(BuildContext context) => StreamBuilder<String>(
       stream: _timerBloc.time,
+      initialData: '',
       builder: (context, snapshot) => Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal: Dimensions.defaultSidePadding * 2),
             child: Text(
-              _formatDuration(snapshot.data ?? Duration.zero),
+              snapshot.data,
               style: Theme.of(context).primaryTextTheme.title,
             ),
           ));
-
-  String _formatDuration(Duration duration) {
-    final twoDigitMinutes =
-        _twoDigits(duration.inMinutes.remainder(Duration.minutesPerHour));
-    final twoDigitSeconds =
-        _twoDigits(duration.inSeconds.remainder(Duration.secondsPerMinute));
-
-    return '$twoDigitMinutes:$twoDigitSeconds';
-  }
-
-  String _twoDigits(int n) => n >= 10 ? "$n" : "0$n";
 
   @override
   void dispose() {

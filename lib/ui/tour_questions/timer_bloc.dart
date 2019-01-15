@@ -3,29 +3,37 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 
+enum TimerActions { run, pause, reset }
+
 class TimerBloc {
   final _timeStreamController =
       BehaviorSubject<Duration>(seedValue: Duration.zero);
   final _isRunningStreamController = BehaviorSubject<bool>(seedValue: false);
+  final _actionStreamController = BehaviorSubject<TimerActions>();
 
   final _stopwatch = Stopwatch();
   Timer _timer;
 
-  Stream<Duration> get time => _timeStreamController.stream;
+  Stream<String> get time => _timeStreamController.stream.transform(
+          StreamTransformer<Duration, String>.fromHandlers(
+              handleData: (Duration value, EventSink<String> sink) {
+        sink.add(_formatDuration(value));
+      }));
   Stream<bool> get isRunning => _isRunningStreamController.stream;
+  Sink<TimerActions> get actions => _actionStreamController.sink;
 
-  void toggle() {
-    if (_stopwatch.isRunning)
-      _pause();
-    else
-      _start();
-  }
+  TimerBloc() {
+    _actionStreamController.stream
+        .where((event) => event == TimerActions.run)
+        .listen((event) => _start());
 
-  void reset() {
-    _pause();
+    _actionStreamController.stream
+        .where((event) => event == TimerActions.pause)
+        .listen((event) => _pause());
 
-    _stopwatch.reset();
-    _updateTimeStream();
+    _actionStreamController.stream
+        .where((event) => event == TimerActions.reset)
+        .listen((event) => _reset());
   }
 
   void _start() {
@@ -44,6 +52,13 @@ class TimerBloc {
     _updateIsRunningStream();
   }
 
+  void _reset() {
+    _pause();
+
+    _stopwatch.reset();
+    _updateTimeStream();
+  }
+
   void _onTimerTimeout(Timer timer) {
     if (_stopwatch.isRunning) {
       _updateTimeStream();
@@ -54,6 +69,17 @@ class TimerBloc {
       _isRunningStreamController.add(_stopwatch.isRunning);
 
   void _updateTimeStream() => _timeStreamController.add(_stopwatch.elapsed);
+
+  String _formatDuration(Duration duration) {
+    final twoDigitMinutes =
+        _twoDigits(duration.inMinutes.remainder(Duration.minutesPerHour));
+    final twoDigitSeconds =
+        _twoDigits(duration.inSeconds.remainder(Duration.secondsPerMinute));
+
+    return '$twoDigitMinutes:$twoDigitSeconds';
+  }
+
+  String _twoDigits(int n) => n >= 10 ? "$n" : "0$n";
 
   @mustCallSuper
   void dispose() {
