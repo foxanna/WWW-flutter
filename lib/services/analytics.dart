@@ -18,6 +18,7 @@ class Analytics {
           nameExtractor: (RouteSettings settings) =>
               settings.name == '/' && home != null ? home : settings.name);
 
-  Future logEvent({@required String name, Map<String, dynamic> parameters}) =>
-      _analytics.logEvent(name: name, parameters: parameters);
+  void logEvent({@required String name, Map<String, dynamic> parameters}) =>
+      _analytics.logEvent(name: name, parameters: parameters).catchError(
+          (Object error) => debugPrint('$Analytics log event error: $error'));
 }
