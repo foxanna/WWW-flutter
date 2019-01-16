@@ -9,6 +9,8 @@ import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_grid.da
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page_menu.dart';
 
 class LatestTournamentsPage extends StatefulWidget {
+  static const String routeName = 'latest_tournaments';
+
   @override
   createState() => LatestTournamentsPageState();
 }

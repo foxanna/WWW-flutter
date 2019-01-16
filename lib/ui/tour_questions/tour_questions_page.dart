@@ -6,6 +6,8 @@ import 'package:what_when_where/ui/tour_questions/question_card.dart';
 import 'package:what_when_where/ui/tour_questions/timer_bloc.dart';
 
 class TourQuestionsPage extends StatefulWidget {
+  static const String routeName = 'questions';
+
   final Tour tour;
   final int startIndex;
 

@@ -8,6 +8,8 @@ import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
+  static const String routeName = 'about';
+
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: _buildAppBar(context),

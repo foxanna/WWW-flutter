@@ -9,6 +9,8 @@ import 'package:what_when_where/ui/tournament_details/tournament_details_body.da
 import 'package:what_when_where/ui/tournament_details/tournament_details_page_menu.dart';
 
 class TournamentDetailsPage extends StatefulWidget {
+  static const String routeName = 'tournament';
+
   final Tournament _tournament;
 
   const TournamentDetailsPage({
