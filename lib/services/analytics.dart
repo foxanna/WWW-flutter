@@ -19,6 +19,9 @@ class Analytics {
               settings.name == '/' && home != null ? home : settings.name);
 
   void logEvent({@required String name, Map<String, dynamic> parameters}) =>
-      _analytics.logEvent(name: name, parameters: parameters).catchError(
-          (Object error) => debugPrint('$Analytics log event error: $error'));
+      _analytics
+          .logEvent(name: name, parameters: parameters)
+          .then((v) => debugPrint('$Analytics log event: $name'))
+          .catchError((Object error) =>
+              debugPrint('$Analytics log event error: $error'));
 }
