@@ -18,17 +18,17 @@ class LatestTournamentsPageMenu {
               ListTile(
                 leading: const Icon(Icons.info_outline),
                 title: const Text(Strings.aboutApplication),
-                onTap: () {
-                  Navigator.pop(context);
-                  _openAboutPage(context);
-                },
+                onTap: () => _openAboutPage(context),
               )
             ],
           ));
 
-  static void _openAboutPage(BuildContext context) => Navigator.push(
-      context,
-      MaterialPageRoute(
-          settings: const RouteSettings(name: AboutPage.routeName),
-          builder: (context) => AboutPage()));
+  static void _openAboutPage(BuildContext context) {
+    Navigator.pop(context);
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            settings: const RouteSettings(name: AboutPage.routeName),
+            builder: (context) => AboutPage()));
+  }
 }
