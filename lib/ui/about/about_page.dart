@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
@@ -47,8 +48,7 @@ class AboutPage extends StatelessWidget {
             icon: Icon(Icons.email),
             tooltip: Strings.emailDevelopers,
             color: Theme.of(context).accentColor,
-            onPressed: () => UrlLauncher.sendEmail(
-                Constants.developersEmail, '${Strings.app} ${Strings.appName}'),
+            onPressed: () => sendEmail(),
           ),
           SizedBox(
             height: Dimensions.defaultSpacing * 5,
@@ -67,12 +67,24 @@ class AboutPage extends StatelessWidget {
                       color: Theme.of(context).accentColor,
                       decoration: TextDecoration.underline),
                   recognizer: TapGestureRecognizer()
-                    ..onTap =
-                        () => UrlLauncher.launchURL(Constants.databaseUrl),
+                    ..onTap = () => openDatabaseInBrowser(),
                 ),
               ],
             ),
           ),
         ],
       );
+
+  void openDatabaseInBrowser() async {
+    Analytics().logEvent(name: 'open_database_in_browser');
+
+    await UrlLauncher.launchURL(Constants.databaseUrl);
+  }
+
+  void sendEmail() async {
+    Analytics().logEvent(name: 'send_email_to_developers');
+
+    await UrlLauncher.sendEmail(
+        Constants.developersEmail, '${Strings.app} ${Strings.appName}');
+  }
 }
