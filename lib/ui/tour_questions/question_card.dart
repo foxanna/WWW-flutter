@@ -3,6 +3,7 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/solid_icon_button.dart';
+import 'package:what_when_where/ui/tour_questions/question_answer.dart';
 import 'package:what_when_where/ui/tour_questions/question_card_bloc.dart';
 
 class QuestionCard extends StatefulWidget {
@@ -119,10 +120,7 @@ class _QuestionCardState extends State<QuestionCard>
         initialData: false,
         builder: (context, snapshot) {
           var widget = (snapshot.data)
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: _buildAnswerContent().toList(),
-                )
+              ? QuestionAnswer(question: question)
               : Container();
           WidgetsBinding.instance
               .addPostFrameCallback((d) => _scrollContainer(snapshot.data));
@@ -139,40 +137,6 @@ class _QuestionCardState extends State<QuestionCard>
         (showAnswer) ? (position.dy - Dimensions.defaultSpacing) : 0,
         duration: Duration(milliseconds: 300),
         curve: Curves.easeOut);
-  }
-
-  Iterable<Widget> _buildAnswerContent() sync* {
-    yield Text(
-      '${Strings.answer}: ${question.answer}${(question.comments != null) ? '*' : ''}',
-      style: Theme.of(context)
-          .textTheme
-          .headline
-          .copyWith(fontSize: 18, color: Theme.of(context).accentColor),
-    );
-
-    if (question.passCriteria != null) {
-      yield SizedBox(height: Dimensions.defaultSpacing * 2);
-      yield Text('${Strings.acceptableAnswer}: ${question.passCriteria}',
-          style: Theme.of(context)
-              .textTheme
-              .headline
-              .copyWith(fontSize: 18, color: Theme.of(context).accentColor));
-    }
-
-    if (question.comments != null) {
-      yield SizedBox(height: Dimensions.defaultSpacing * 2);
-      yield Text('* ${question.comments}');
-    }
-
-    if (question.authors != null) {
-      yield SizedBox(height: Dimensions.defaultSpacing);
-      yield Text('${Strings.author}: ${question.authors}');
-    }
-
-    if (question.sources != null) {
-      yield SizedBox(height: Dimensions.defaultSpacing);
-      yield Text('${Strings.sources}:\n${question.sources}');
-    }
   }
 
   @override
