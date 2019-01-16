@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_about_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
@@ -29,12 +30,8 @@ class TournamentDetailsPageMenu {
               var aboutTournamentTile = ListTile(
                 leading: const Icon(Icons.info_outline),
                 title: const Text(Strings.aboutTournament),
-                onTap: () {
-                  Navigator.pop(context);
-                  TournamentDetailsAboutDialog(tournament: state.data)
-                      .show(context);
-                },
                 enabled: hasTournament,
+                onTap: () => _showTournamentInfo(context, state.data),
               );
 
               return Column(
@@ -43,4 +40,9 @@ class TournamentDetailsPageMenu {
               );
             },
           ));
+
+  void _showTournamentInfo(BuildContext context, Tournament tournament) {
+    Navigator.pop(context);
+    TournamentDetailsAboutDialog(tournament: tournament).show(context);
+  }
 }
