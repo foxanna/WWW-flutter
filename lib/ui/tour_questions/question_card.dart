@@ -3,6 +3,7 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/solid_icon_button.dart';
+import 'package:what_when_where/ui/tour_questions/question_card_bloc.dart';
 
 class QuestionCard extends StatefulWidget {
   final Question question;
@@ -22,8 +23,7 @@ class _QuestionCardState extends State<QuestionCard>
   final _scrollController = ScrollController();
   final _buttonStackKey = GlobalKey();
   final _listViewKey = GlobalKey();
-
-  bool _showAnswer = false;
+  final _bloc = QuestionCardBloc();
 
   Question get question => widget.question;
 
@@ -72,7 +72,7 @@ class _QuestionCardState extends State<QuestionCard>
                       ),
                     ),
                   ]),
-              (_showAnswer) ? _buildAnswer(context) : Container()
+              _buildAnswer(context)
             ],
           ),
         ),
@@ -99,41 +99,47 @@ class _QuestionCardState extends State<QuestionCard>
     return BoxDecoration(gradient: gradient);
   }
 
-  Widget _buildShowAnswerButton(BuildContext context) => SolidIconButton(
-        child: Icon(
-          _showAnswer ? Icons.visibility_off : Icons.visibility,
-          color: Theme.of(context).accentColor,
-        ),
-        onPressed: () => _toggleShowAnswer(),
-        elevation: 4.0,
-        fillColor: Theme.of(context).cardColor,
-        borderColor: Theme.of(context).accentColor,
-        borderWidth: 1,
+  Widget _buildShowAnswerButton(BuildContext context) => StreamBuilder<bool>(
+      stream: _bloc.showAnswer,
+      initialData: false,
+      builder: (context, snapshot) => SolidIconButton(
+            child: Icon(
+              snapshot.data ? Icons.visibility_off : Icons.visibility,
+              color: Theme.of(context).accentColor,
+            ),
+            onPressed: () => _bloc.events.add(QuestionCardEvents.toggle),
+            elevation: 4.0,
+            fillColor: Theme.of(context).cardColor,
+            borderColor: Theme.of(context).accentColor,
+            borderWidth: 1,
+          ));
+
+  Widget _buildAnswer(BuildContext context) => StreamBuilder<bool>(
+        stream: _bloc.showAnswer,
+        initialData: false,
+        builder: (context, snapshot) {
+          var widget = (snapshot.data)
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: _buildAnswerContent().toList(),
+                )
+              : Container();
+          WidgetsBinding.instance
+              .addPostFrameCallback((d) => _scrollContainer(snapshot.data));
+          return widget;
+        },
       );
 
-  void _toggleShowAnswer() {
-    setState(() {
-      _showAnswer = !_showAnswer;
-
-      _scrollAnswerUp();
-    });
-  }
-
-  void _scrollAnswerUp() {
+  void _scrollContainer(bool showAnswer) {
     final parent = _listViewKey.currentContext.findRenderObject();
     final RenderBox box = _buttonStackKey.currentContext.findRenderObject();
     final position = box.localToGlobal(Offset.zero, ancestor: parent);
 
     _scrollController.animateTo(
-        (_showAnswer) ? (position.dy - Dimensions.defaultSpacing) : 0,
+        (showAnswer) ? (position.dy - Dimensions.defaultSpacing) : 0,
         duration: Duration(milliseconds: 300),
         curve: Curves.easeOut);
   }
-
-  Widget _buildAnswer(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: _buildAnswerContent().toList(),
-      );
 
   Iterable<Widget> _buildAnswerContent() sync* {
     yield Text(
