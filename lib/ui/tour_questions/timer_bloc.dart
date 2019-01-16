@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:what_when_where/services/analytics.dart';
 
 enum TimerActions { run, pause, reset }
 
@@ -34,6 +35,11 @@ class TimerBloc {
     _actionStreamController.stream
         .where((event) => event == TimerActions.reset)
         .listen((event) => _reset());
+
+    _actionStreamController.stream
+        .where(
+            (event) => event == TimerActions.run || event == TimerActions.pause)
+        .listen(_logEvent);
   }
 
   void _start() {
@@ -86,4 +92,7 @@ class TimerBloc {
     _stopwatch.stop();
     _timer?.cancel();
   }
+
+  void _logEvent(TimerActions event) => Analytics().logEvent(
+      name: '${(event == TimerActions.run ? 'start' : 'pause')}_timer');
 }
