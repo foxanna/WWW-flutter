@@ -5,6 +5,7 @@ import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/solid_icon_button.dart';
 import 'package:what_when_where/ui/tour_questions/question_answer.dart';
 import 'package:what_when_where/ui/tour_questions/question_card_bloc.dart';
+import 'package:what_when_where/ui/tour_questions/question_text.dart';
 
 class QuestionCard extends StatefulWidget {
   final Question question;
@@ -53,11 +54,7 @@ class _QuestionCardState extends State<QuestionCard>
                     .copyWith(color: Theme.of(context).accentColor),
               ),
               _buildSeparator(context),
-              Text(question.question,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline
-                      .copyWith(fontSize: 18)),
+              QuestionText(questionText: question.question),
               Stack(
                   key: _buttonStackKey,
                   alignment: Alignment.center,
