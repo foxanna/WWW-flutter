@@ -1,4 +1,5 @@
 import 'package:rxdart/subjects.dart';
+import 'package:what_when_where/services/analytics.dart';
 
 enum QuestionCardEvents { toggle }
 
@@ -17,6 +18,7 @@ class QuestionCardBloc {
 
   void _onToggle() {
     var newValue = !_showAnswerController.value;
+    Analytics().logEvent(name: newValue ? 'show_answer' : 'hide_answer');
     _showAnswerController.add(newValue);
   }
 }
