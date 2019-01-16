@@ -31,6 +31,8 @@ class TourDetailsQuestionTile extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
+                  settings:
+                      const RouteSettings(name: TourQuestionsPage.routeName),
                   builder: (context) => TourQuestionsPage(
                         tour: tour,
                         startIndex: index,

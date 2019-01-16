@@ -24,16 +24,6 @@ class LatestTournamentTile extends StatelessWidget {
         ),
       );
 
-  void _openTournamentDetails(BuildContext context) async {
-    await Navigator.push(
-        context,
-        MaterialPageRoute(
-            settings:
-                const RouteSettings(name: TournamentDetailsPage.routeName),
-            builder: (context) =>
-                TournamentDetailsPage(tournament: tournament)));
-  }
-
   Widget _buildContent(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
@@ -56,4 +46,10 @@ class LatestTournamentTile extends StatelessWidget {
       ],
     );
   }
+
+  Future _openTournamentDetails(BuildContext context) => Navigator.push(
+      context,
+      MaterialPageRoute(
+          settings: const RouteSettings(name: TournamentDetailsPage.routeName),
+          builder: (context) => TournamentDetailsPage(tournament: tournament)));
 }

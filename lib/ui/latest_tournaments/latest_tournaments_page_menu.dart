@@ -12,22 +12,23 @@ class LatestTournamentsPageMenu {
 
   void _showMenu(BuildContext context) => showModalBottomSheet(
       context: context,
-      builder: (context) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              leading: const Icon(Icons.info_outline),
-              title: const Text(Strings.aboutApplication),
-              onTap: () {
-                Navigator.pop(context);
-                _openAboutPage(context);
-              },
-            )
-          ],
-        );
-      });
+      builder: (context) => Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                leading: const Icon(Icons.info_outline),
+                title: const Text(Strings.aboutApplication),
+                onTap: () {
+                  Navigator.pop(context);
+                  _openAboutPage(context);
+                },
+              )
+            ],
+          ));
 
   static void _openAboutPage(BuildContext context) => Navigator.push(
-      context, MaterialPageRoute(builder: (context) => AboutPage()));
+      context,
+      MaterialPageRoute(
+          settings: const RouteSettings(name: AboutPage.routeName),
+          builder: (context) => AboutPage()));
 }
