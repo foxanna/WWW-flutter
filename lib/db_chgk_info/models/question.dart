@@ -29,7 +29,7 @@ class Question {
 
   factory Question.fromJson(Map<String, dynamic> map) => Question(
         textId: map['TextId'],
-        question: TextUtils.normalize(map['Question']),
+        question: map['Question'],
         number: map['Number'],
         answer: TextUtils.normalize(map['Answer']),
         authors: TextUtils.normalize(map['Authors']),
