@@ -24,7 +24,7 @@ class QuestionText extends StatelessWidget {
         children: IterableExtensions.mix(
             _sections.map((section) => _getChild(context, section)),
             SizedBox(
-              height: Dimensions.defaultSpacing,
+              height: Dimensions.defaultSpacing * 2,
             )).toList(),
       );
 
@@ -46,13 +46,10 @@ class QuestionText extends StatelessWidget {
 
     if (section is GiveAwaySection) {
       return Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: Dimensions.defaultSpacing),
-          child: Text(
-            section.value,
-            style: textTheme.headline
-                .copyWith(fontSize: fontSize, fontWeight: FontWeight.bold),
-          ),
+        child: Text(
+          section.value,
+          style: textTheme.headline
+              .copyWith(fontSize: fontSize, fontWeight: FontWeight.bold),
         ),
       );
     }
