@@ -2,14 +2,17 @@ class TextUtils {
   static String normalize(String text) {
     if (text == null) return null;
 
-    text = _removeParagraphs(text);
-    text = _removeMultipleSpaces(text);
+    text = removeParagraphs(text);
+    text = removeMultipleSpaces(text);
 
     return text;
   }
 
-  static String _removeParagraphs(String text) => text.replaceAll('\\n', ' ');
+  static String removeParagraphs(String text) => text.replaceAll('\\n', ' ');
 
-  static String _removeMultipleSpaces(String text) =>
+  static String removeMultipleSpaces(String text) =>
       text.replaceAll(new RegExp(r'\s{2,}'), ' ');
+
+  static String replaceMultipleSpacesWithNewLine(String text) =>
+      text.replaceAll(new RegExp(r'\s{2,}'), '\n');
 }
