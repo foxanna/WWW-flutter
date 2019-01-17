@@ -4,6 +4,7 @@ import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/tour_questions/question_card.dart';
 import 'package:what_when_where/ui/tour_questions/timer_bloc.dart';
+import 'package:what_when_where/ui/tour_questions/tour_questions_page_menu.dart';
 
 class TourQuestionsPage extends StatefulWidget {
   static const String routeName = 'questions';
@@ -21,12 +22,14 @@ class TourQuestionsPage extends StatefulWidget {
 }
 
 class _TourQuestionsPageState extends State<TourQuestionsPage> {
+  final TourQuestionsPageMenu _menu;
   final Tour tour;
   final int _startIndex;
   final _timerBloc = TimerBloc();
 
   _TourQuestionsPageState({@required this.tour, int startIndex})
-      : this._startIndex = startIndex;
+      : this._startIndex = startIndex,
+        _menu = TourQuestionsPageMenu(tour: tour);
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -45,10 +48,7 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   _buildTimerWidget(context),
-                  IconButton(
-                    icon: Icon(Icons.more_vert),
-                    onPressed: () {},
-                  ),
+                  _menu.createAppBarMenuAction(context),
                 ],
               ),
             )),
