@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/services/browsing.dart';
 import 'package:what_when_where/services/sharing.dart';
-import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_about_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
@@ -72,7 +72,7 @@ class TournamentDetailsPageMenu {
 
   void _openInBrowser(BuildContext context, Tournament tournament) {
     Navigator.pop(context);
-    UrlLauncher.launchURL(tournament.url);
+    Browsing().browseTournament(tournament);
   }
 
   void _share(BuildContext context, Tournament tournament) {
