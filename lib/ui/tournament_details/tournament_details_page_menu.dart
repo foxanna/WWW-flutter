@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/sharing.dart';
+import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_about_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
@@ -31,6 +32,8 @@ class TournamentDetailsPageMenu {
               return Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  _createBrowseMenuItem(
+                      context, hasTournament, () => state.data),
                   _createShareMenuItem(
                       context, hasTournament, () => state.data),
                   _createAboutMenuItem(
@@ -40,13 +43,22 @@ class TournamentDetailsPageMenu {
             },
           ));
 
+  ListTile _createBrowseMenuItem(BuildContext context, bool enabled,
+          Tournament Function() tournamentProvider) =>
+      ListTile(
+        leading: const Icon(Icons.open_in_browser),
+        title: const Text(Strings.browse),
+        enabled: enabled,
+        onTap: () => _openInBrowser(context, tournamentProvider()),
+      );
+
   ListTile _createShareMenuItem(BuildContext context, bool enabled,
           Tournament Function() tournamentProvider) =>
       ListTile(
         leading: const Icon(Icons.share),
         title: const Text(Strings.share),
         enabled: enabled,
-        onTap: () => _shareTournament(context, tournamentProvider()),
+        onTap: () => _share(context, tournamentProvider()),
       );
 
   ListTile _createAboutMenuItem(BuildContext context, bool enabled,
@@ -55,15 +67,20 @@ class TournamentDetailsPageMenu {
         leading: const Icon(Icons.info_outline),
         title: const Text(Strings.aboutTournament),
         enabled: enabled,
-        onTap: () => _showTournamentInfo(context, tournamentProvider()),
+        onTap: () => _showInfo(context, tournamentProvider()),
       );
 
-  void _shareTournament(BuildContext context, Tournament tournament) {
+  void _openInBrowser(BuildContext context, Tournament tournament) {
+    Navigator.pop(context);
+    UrlLauncher.launchURL(tournament.url);
+  }
+
+  void _share(BuildContext context, Tournament tournament) {
     Navigator.pop(context);
     Sharing().shareTournament(tournament);
   }
 
-  void _showTournamentInfo(BuildContext context, Tournament tournament) {
+  void _showInfo(BuildContext context, Tournament tournament) {
     Navigator.pop(context);
     TournamentDetailsAboutDialog(tournament: tournament).show(context);
   }

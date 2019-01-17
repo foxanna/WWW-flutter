@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/sharing.dart';
+import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/ui/tour_questions/tour_details_about_dialog.dart';
 
 class TourQuestionsPageMenu {
@@ -19,10 +20,17 @@ class TourQuestionsPageMenu {
       builder: (context) => Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              _createBrowseTourMenuItem(context),
               _createShareTourMenuItem(context),
               _createAboutTourMenuItem(context),
             ],
           ));
+
+  Widget _createBrowseTourMenuItem(BuildContext context) => ListTile(
+        leading: const Icon(Icons.open_in_browser),
+        title: const Text(Strings.browse),
+        onTap: () => _openInBrowser(context),
+      );
 
   Widget _createShareTourMenuItem(BuildContext context) => ListTile(
         leading: const Icon(Icons.share),
@@ -35,6 +43,11 @@ class TourQuestionsPageMenu {
         title: const Text(Strings.aboutTour),
         onTap: () => _openAboutTourDialog(context),
       );
+
+  void _openInBrowser(BuildContext context) {
+    Navigator.pop(context);
+    UrlLauncher.launchURL(tour.url);
+  }
 
   void _shareTour(BuildContext context) {
     Navigator.pop(context);
