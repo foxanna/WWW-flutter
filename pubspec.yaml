@@ -20,6 +20,7 @@ dependencies:
   auto_size_text: any
   firebase_analytics: any
   photo_view: any
+  share: any
 
 dev_dependencies:
   flutter_test:
