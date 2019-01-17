@@ -19,6 +19,7 @@ dependencies:
   flutter_svg: any
   auto_size_text: any
   firebase_analytics: any
+  photo_view: any
 
 dev_dependencies:
   flutter_test:
