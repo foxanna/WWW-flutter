@@ -6,6 +6,12 @@ import 'package:what_when_where/utils/extensions.dart';
 import 'package:what_when_where/utils/texts.dart';
 
 class QuestionParser {
+  static final _instance = QuestionParser._();
+
+  factory QuestionParser() => _instance;
+
+  QuestionParser._();
+
   static Iterable<dynamic> split(String text) sync* {
     text = TextUtils.removeParagraphs(text);
     text = TextUtils.replaceMultipleSpacesWithNewLine(text);
