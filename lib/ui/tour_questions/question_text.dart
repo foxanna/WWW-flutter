@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 import 'package:what_when_where/services/question_parser/section_giveaway.dart';
 import 'package:what_when_where/services/question_parser/section_image.dart';
 import 'package:what_when_where/services/question_parser/section_speaker_note.dart';
 import 'package:what_when_where/services/question_parser/section_text.dart';
+import 'package:what_when_where/ui/common/progress_indicator.dart';
+import 'package:what_when_where/ui/image/image_page.dart';
 import 'package:what_when_where/utils/extensions.dart';
 
 class QuestionText extends StatelessWidget {
@@ -62,11 +65,26 @@ class QuestionText extends StatelessWidget {
     }
 
     if (section is ImageSection) {
-      return Image.network(
-        section.url,
+      return Container(
+        height: 200,
+        child: GestureDetector(
+          child: PhotoView(
+            backgroundDecoration: BoxDecoration(color: themeData.cardColor),
+            heroTag: 'image',
+            imageProvider: NetworkImage(section.url),
+            loadingChild: WWWProgressIndicator(),
+          ),
+          onTap: () => _openImagePage(context, section.url),
+        ),
       );
     }
 
     return Container();
   }
+
+  void _openImagePage(BuildContext context, String url) => Navigator.push(
+      context,
+      MaterialPageRoute(
+          settings: const RouteSettings(name: ImagePage.routeName),
+          builder: (context) => ImagePage(url: url)));
 }
