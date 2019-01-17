@@ -5,9 +5,11 @@ import 'package:what_when_where/services/analytics.dart';
 
 class TournamentDetailsAboutDialog {
   final String _detailsText;
+  final String _tournamentTitle;
 
   TournamentDetailsAboutDialog({@required Tournament tournament})
-      : this._detailsText = _buildDetailsText(tournament);
+      : this._tournamentTitle = tournament.title,
+        this._detailsText = _buildDetailsText(tournament);
 
   void show(BuildContext context) {
     Analytics().logEvent(name: 'tournament_info');
@@ -16,6 +18,13 @@ class TournamentDetailsAboutDialog {
   }
 
   Widget _createDialog(BuildContext context) => AlertDialog(
+        title: Text(
+          _tournamentTitle,
+          style: Theme.of(context)
+              .textTheme
+              .title
+              .copyWith(color: Theme.of(context).accentColor),
+        ),
         content: Text(
           _detailsText,
           style: Theme.of(context).textTheme.body2,
