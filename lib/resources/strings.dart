@@ -22,5 +22,6 @@ class Strings {
   static const String startTimer = "запустить таймер";
   static const String pauseTimer = "остановить таймер";
   static const String share = "поделиться";
+  static const String browse = "открыть в браузере";
   static const String sharedVia = "Отправлено через приложение";
 }
