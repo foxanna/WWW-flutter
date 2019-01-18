@@ -51,7 +51,7 @@ class TourQuestionsPageMenu {
 
   void _shareTour(BuildContext context) {
     Navigator.pop(context);
-    Sharing().shareTour(tour);
+    SharingService().shareTour(tour);
   }
 
   void _openAboutTourDialog(BuildContext context) {

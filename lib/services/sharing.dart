@@ -7,12 +7,12 @@ import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 
-class Sharing {
-  static final _instance = Sharing._();
+class SharingService {
+  static final _instance = SharingService._();
 
-  factory Sharing() => _instance;
+  factory SharingService() => _instance;
 
-  Sharing._();
+  SharingService._();
 
   void shareTournament(Tournament tournament) {
     AnalyticsService().logEvent(name: 'share_tournament');

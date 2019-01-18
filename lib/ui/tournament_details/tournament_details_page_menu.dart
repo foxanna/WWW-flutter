@@ -77,7 +77,7 @@ class TournamentDetailsPageMenu {
 
   void _share(BuildContext context, Tournament tournament) {
     Navigator.pop(context);
-    Sharing().shareTournament(tournament);
+    SharingService().shareTournament(tournament);
   }
 
   void _showInfo(BuildContext context, Tournament tournament) {
