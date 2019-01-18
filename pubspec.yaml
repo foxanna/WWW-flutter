@@ -21,6 +21,7 @@ dependencies:
   firebase_analytics: any
   photo_view: any
   share: any
+  path_provider: any
 
 dev_dependencies:
   flutter_test:
