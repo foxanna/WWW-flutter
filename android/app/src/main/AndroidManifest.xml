@@ -8,7 +8,7 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="what_when_where"
+        android:label="OWL"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
