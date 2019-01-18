@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:photo_view/photo_view.dart';
+import 'package:transparent_image/transparent_image.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 import 'package:what_when_where/services/question_parser/section_giveaway.dart';
@@ -62,17 +62,23 @@ class QuestionText extends StatelessWidget {
     }
 
     if (section is ImageSection) {
-      return Container(
-        height: 200,
-        child: GestureDetector(
-          child: PhotoView(
-            backgroundDecoration: BoxDecoration(color: themeData.cardColor),
-            heroTag: 'image',
-            imageProvider: NetworkImage(section.url),
-            loadingChild: WWWProgressIndicator(),
+      return Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          WWWProgressIndicator(),
+          GestureDetector(
+            child: Hero(
+              tag: 'image',
+              child: FadeInImage.memoryNetwork(
+                height: 200,
+                fit: BoxFit.scaleDown,
+                placeholder: kTransparentImage,
+                image: section.url,
+              ),
+            ),
+            onTap: () => _openImagePage(context, section.url),
           ),
-          onTap: () => _openImagePage(context, section.url),
-        ),
+        ],
       );
     }
 
