@@ -6,13 +6,16 @@ import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 
 class SoundService {
-  static final _instance = SoundService._();
-  factory SoundService() => _instance;
-  SoundService._();
-
   static const _timerAssetName = 'timer.mp3';
 
-  AudioPlayer _audioPlugin = new AudioPlayer();
+  static final _instance = SoundService._();
+
+  factory SoundService() => _instance;
+
+  SoundService._();
+
+  final _audioPlugin = AudioPlayer();
+
   String _mp3Uri;
 
   Future init() async {
