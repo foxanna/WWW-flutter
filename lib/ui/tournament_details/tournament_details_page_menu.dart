@@ -72,7 +72,7 @@ class TournamentDetailsPageMenu {
 
   void _openInBrowser(BuildContext context, Tournament tournament) {
     Navigator.pop(context);
-    Browsing().browseTournament(tournament);
+    BrowsingService().browseTournament(tournament);
   }
 
   void _share(BuildContext context, Tournament tournament) {

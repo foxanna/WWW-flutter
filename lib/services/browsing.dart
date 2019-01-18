@@ -4,12 +4,12 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
-class Browsing {
-  static final _instance = Browsing._();
+class BrowsingService {
+  static final _instance = BrowsingService._();
 
-  factory Browsing() => _instance;
+  factory BrowsingService() => _instance;
 
-  Browsing._();
+  BrowsingService._();
 
   void browseTournament(Tournament tournament) {
     Analytics().logEvent(name: 'browse_tournament');

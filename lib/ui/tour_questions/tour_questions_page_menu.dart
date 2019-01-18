@@ -46,7 +46,7 @@ class TourQuestionsPageMenu {
 
   void _openInBrowser(BuildContext context) {
     Navigator.pop(context);
-    Browsing().browseTour(tour);
+    BrowsingService().browseTour(tour);
   }
 
   void _shareTour(BuildContext context) {
