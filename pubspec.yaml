@@ -23,6 +23,7 @@ dependencies:
   share: any
   path_provider: any
   audioplayer: any
+  transparent_image: any
 
 dev_dependencies:
   flutter_test:
