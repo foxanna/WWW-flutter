@@ -22,6 +22,7 @@ dependencies:
   photo_view: any
   share: any
   path_provider: any
+  audioplayer: any
 
 dev_dependencies:
   flutter_test:
