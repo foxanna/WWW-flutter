@@ -93,6 +93,6 @@ class TimerBloc {
     _timer?.cancel();
   }
 
-  void _logEvent(TimerActions event) => Analytics().logEvent(
+  void _logEvent(TimerActions event) => AnalyticsService().logEvent(
       name: '${(event == TimerActions.run ? 'start' : 'pause')}_timer');
 }

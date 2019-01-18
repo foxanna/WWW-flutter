@@ -18,7 +18,7 @@ class QuestionCardBloc {
 
   void _onToggle() {
     var newValue = !_showAnswerController.value;
-    Analytics().logEvent(name: newValue ? 'show_answer' : 'hide_answer');
+    AnalyticsService().logEvent(name: newValue ? 'show_answer' : 'hide_answer');
     _showAnswerController.add(newValue);
   }
 }

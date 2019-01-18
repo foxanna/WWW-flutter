@@ -78,13 +78,13 @@ class AboutPage extends StatelessWidget {
       );
 
   void openDatabaseInBrowser() async {
-    Analytics().logEvent(name: 'open_database_in_browser');
+    AnalyticsService().logEvent(name: 'open_database_in_browser');
 
     await UrlLauncher.launchURL(Constants.databaseUrl);
   }
 
   void sendEmail() async {
-    Analytics().logEvent(name: 'send_email_to_developers');
+    AnalyticsService().logEvent(name: 'send_email_to_developers');
 
     await UrlLauncher.sendEmail(
         Constants.developersEmail, '${Strings.app} ${Strings.appName}');

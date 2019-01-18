@@ -12,17 +12,17 @@ class BrowsingService {
   BrowsingService._();
 
   void browseTournament(Tournament tournament) {
-    Analytics().logEvent(name: 'browse_tournament');
+    AnalyticsService().logEvent(name: 'browse_tournament');
     UrlLauncher.launchURL(tournament.url);
   }
 
   void browseTour(Tour tour) {
-    Analytics().logEvent(name: 'browse_tour');
+    AnalyticsService().logEvent(name: 'browse_tour');
     UrlLauncher.launchURL(tour.url);
   }
 
   void browseQuestion(Question question) {
-    Analytics().logEvent(name: 'browse_question');
+    AnalyticsService().logEvent(name: 'browse_question');
     UrlLauncher.launchURL(question.url);
   }
 }

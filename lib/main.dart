@@ -17,7 +17,7 @@ class WWWApp extends StatelessWidget {
         title: Strings.appName,
         theme: Themes.appTheme,
         navigatorObservers: <NavigatorObserver>[
-          Analytics().observer(home: LatestTournamentsPage.routeName)
+          AnalyticsService().observer(home: LatestTournamentsPage.routeName)
         ],
         home: LatestTournamentsPage(),
       );

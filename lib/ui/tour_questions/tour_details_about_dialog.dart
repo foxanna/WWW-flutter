@@ -12,7 +12,7 @@ class TourDetailsAboutDialog {
         this._detailsText = _buildDetailsText(tour);
 
   void show(BuildContext context) {
-    Analytics().logEvent(name: 'tour_info');
+    AnalyticsService().logEvent(name: 'tour_info');
 
     showDialog(context: context, builder: (context) => _createDialog(context));
   }

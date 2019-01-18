@@ -15,17 +15,17 @@ class Sharing {
   Sharing._();
 
   void shareTournament(Tournament tournament) {
-    Analytics().logEvent(name: 'share_tournament');
+    AnalyticsService().logEvent(name: 'share_tournament');
     Share.share('${tournament.title}\n${tournament.url}${_createAppendix()}');
   }
 
   void shareTour(Tour tour) {
-    Analytics().logEvent(name: 'share_tour');
+    AnalyticsService().logEvent(name: 'share_tour');
     Share.share('${tour.title}\n${tour.url}${_createAppendix()}');
   }
 
   void shareQuestion(Question question) {
-    Analytics().logEvent(name: 'share_question');
+    AnalyticsService().logEvent(name: 'share_question');
     Share.share(
         '${QuestionParser.trim(question.question)}\n${question.url}${_createAppendix()}');
   }

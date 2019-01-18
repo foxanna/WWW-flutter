@@ -3,14 +3,14 @@ import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-class Analytics {
-  static Analytics _instance = Analytics._();
+class AnalyticsService {
+  static AnalyticsService _instance = AnalyticsService._();
 
-  factory Analytics() => _instance;
+  factory AnalyticsService() => _instance;
 
   final FirebaseAnalytics _analytics = FirebaseAnalytics();
 
-  Analytics._();
+  AnalyticsService._();
 
   RouteObserver<PageRoute<dynamic>> observer({String home}) =>
       FirebaseAnalyticsObserver(
@@ -21,7 +21,7 @@ class Analytics {
   void logEvent({@required String name, Map<String, dynamic> parameters}) =>
       _analytics
           .logEvent(name: name, parameters: parameters)
-          .then((v) => debugPrint('$Analytics log event: $name'))
+          .then((v) => debugPrint('$AnalyticsService log event: $name'))
           .catchError((Object error) =>
-              debugPrint('$Analytics log event error: $error'));
+              debugPrint('$AnalyticsService log event error: $error'));
 }

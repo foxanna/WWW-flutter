@@ -12,7 +12,7 @@ class TournamentDetailsAboutDialog {
         this._detailsText = _buildDetailsText(tournament);
 
   void show(BuildContext context) {
-    Analytics().logEvent(name: 'tournament_info');
+    AnalyticsService().logEvent(name: 'tournament_info');
 
     showDialog(context: context, builder: (context) => _createDialog(context));
   }
