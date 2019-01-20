@@ -26,6 +26,7 @@ dependencies:
   transparent_image: any
   vibrate: any
   flutter_redux: any
+  tuple: any
 
 dev_dependencies:
   flutter_test:
