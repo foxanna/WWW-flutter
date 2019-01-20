@@ -25,6 +25,7 @@ dependencies:
   audioplayer: any
   transparent_image: any
   vibrate: any
+  flutter_redux: any
 
 dev_dependencies:
   flutter_test:
