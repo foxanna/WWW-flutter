@@ -36,14 +36,6 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
         _menu = TourQuestionsPageMenu(tour: tour);
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-
-    final store = StoreProvider.of<AppState>(context);
-    store.dispatch(ResetTimer());
-  }
-
-  @override
   Widget build(BuildContext context) => Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: TimerButton(),
@@ -72,16 +64,19 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
       );
 
   Widget _buildPages() => StoreConnector<AppState, FunctionHolder>(
-      distinct: true,
-      converter: (store) => FunctionHolder(() => store.dispatch(ResetTimer())),
-      builder: (context, reset) => PageView.builder(
-            controller: _pageController,
-            itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.only(bottom: kToolbarHeight),
-                child: QuestionCard(
-                  question: tour.questions[index],
-                )),
-            itemCount: tour.questions.length,
-            onPageChanged: (index) => reset.function(),
-          ));
+        distinct: true,
+        converter: (store) =>
+            FunctionHolder(() => store.dispatch(ResetTimer())),
+        builder: (context, reset) => PageView.builder(
+              controller: _pageController,
+              itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.only(bottom: kToolbarHeight),
+                  child: QuestionCard(
+                    question: tour.questions[index],
+                  )),
+              itemCount: tour.questions.length,
+              onPageChanged: (index) => reset.function(),
+            ),
+        onDispose: (store) => store.dispatch(ResetTimer()),
+      );
 }
