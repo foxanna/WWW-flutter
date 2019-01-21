@@ -35,23 +35,6 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
   Widget build(BuildContext context) => Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: TimerButton(),
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).canvasColor,
-          iconTheme: Theme.of(context).iconTheme,
-          elevation: 0.0,
-        ),
-        bottomNavigationBar: BottomAppBar(
-            color: Theme.of(context).primaryColor,
-            child: IconTheme(
-              data: Theme.of(context).primaryIconTheme,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  TimerText(),
-                  _menu.createAppBarMenuAction(context),
-                ],
-              ),
-            )),
         body: PageView.builder(
           controller:
               PageController(initialPage: _startIndex, viewportFraction: 0.85),
@@ -63,12 +46,32 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
           itemCount: tour.questions.length,
           onPageChanged: (index) => _timerBloc.actions.add(TimerActions.reset),
         ),
+        appBar: _buildAppBar(context),
+        bottomNavigationBar: _buildBottomAppBar(context),
       );
 
   @override
   void dispose() {
     _timerBloc.dispose();
+  Widget _buildBottomAppBar(BuildContext context) => BottomAppBar(
+      color: Theme.of(context).primaryColor,
+      child: IconTheme(
+        data: Theme.of(context).primaryIconTheme,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            TimerText(),
+            _menu.createAppBarMenuAction(context),
+          ],
+        ),
+      ));
 
     super.dispose();
   }
+  Widget _buildAppBar(BuildContext context) => AppBar(
+        backgroundColor: Theme.of(context).canvasColor,
+        iconTheme: Theme.of(context).iconTheme,
+        elevation: 0.0,
+      );
+
 }
