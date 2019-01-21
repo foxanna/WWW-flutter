@@ -45,11 +45,19 @@ class QuestionText extends StatelessWidget {
     }
 
     if (section is GiveAwaySection) {
-      return Center(
-        child: Text(
-          section.value,
-          style: textTheme.headline
-              .copyWith(fontSize: fontSize, fontWeight: FontWeight.bold),
+      return Container(
+        decoration: BoxDecoration(
+            color: themeData.accentColor.withAlpha(60),
+            border: Border.all(color: themeData.accentColor, width: 1.0)),
+        child: Center(
+          child: Padding(
+            padding: Dimensions.defaultPadding * 2,
+            child: Text(
+              section.value,
+              style: textTheme.headline
+                  .copyWith(fontSize: fontSize, fontWeight: FontWeight.w500),
+            ),
+          ),
         ),
       );
     }
