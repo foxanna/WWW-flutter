@@ -38,6 +38,14 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
         _menu = TourQuestionsPageMenu(tour: tour);
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    final store = StoreProvider.of<AppState>(context);
+    store.dispatch(ResetTimer());
+  }
+
+  @override
   Widget build(BuildContext context) => Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: TimerButton(),
