@@ -28,14 +28,13 @@ class WWWTimer {
 
     _stopwatch.stop();
     _timer.cancel();
+    _callback = null;
   }
 
   void reset() {
     pause();
 
     _stopwatch.reset();
-    _updateTime();
-    _callback = null;
   }
 
   void _onTimerTimeout(Timer timer) {
