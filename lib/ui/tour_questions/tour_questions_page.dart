@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/ui/tour_questions/question_card.dart';
 import 'package:what_when_where/ui/tour_questions/timer_bloc.dart';
 import 'package:what_when_where/ui/tour_questions/timer_button.dart';
 import 'package:what_when_where/ui/tour_questions/timer_text.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_page_menu.dart';
+import 'package:what_when_where/utils/function_holder.dart';
 
 class TourQuestionsPage extends StatefulWidget {
   static const String routeName = 'questions';
@@ -23,31 +27,23 @@ class TourQuestionsPage extends StatefulWidget {
 
 class _TourQuestionsPageState extends State<TourQuestionsPage> {
   final TourQuestionsPageMenu _menu;
+  final PageController _pageController;
+
   final Tour tour;
-  final int _startIndex;
   final _timerBloc = TimerBloc();
 
   _TourQuestionsPageState({@required this.tour, int startIndex})
-      : this._startIndex = startIndex,
+      : this._pageController =
+            PageController(initialPage: startIndex, viewportFraction: 0.85),
         _menu = TourQuestionsPageMenu(tour: tour);
 
   @override
   Widget build(BuildContext context) => Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: TimerButton(),
-        body: PageView.builder(
-          controller:
-              PageController(initialPage: _startIndex, viewportFraction: 0.85),
-          itemBuilder: (context, index) => Padding(
-              padding: EdgeInsets.only(bottom: kToolbarHeight),
-              child: QuestionCard(
-                question: tour.questions[index],
-              )),
-          itemCount: tour.questions.length,
-          onPageChanged: (index) => _timerBloc.actions.add(TimerActions.reset),
-        ),
         appBar: _buildAppBar(context),
         bottomNavigationBar: _buildBottomAppBar(context),
+        body: _buildPages(),
       );
 
   @override
@@ -74,4 +70,17 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
         elevation: 0.0,
       );
 
+  Widget _buildPages() => StoreConnector<AppState, FunctionHolder>(
+      distinct: true,
+      converter: (store) => FunctionHolder(() => store.dispatch(ResetTimer())),
+      builder: (context, reset) => PageView.builder(
+            controller: _pageController,
+            itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.only(bottom: kToolbarHeight),
+                child: QuestionCard(
+                  question: tour.questions[index],
+                )),
+            itemCount: tour.questions.length,
+            onPageChanged: (index) => reset.function(),
+          ));
 }
