@@ -24,3 +24,6 @@ class UpdateIsRunningValue extends TimerAction {
 
   UpdateIsRunningValue(this.newValue);
 }
+
+@immutable
+class NotifyExpiration extends TimerAction {}
