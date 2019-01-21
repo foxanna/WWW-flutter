@@ -9,6 +9,9 @@ class StartTimer extends TimerAction {}
 class StopTimer extends TimerAction {}
 
 @immutable
+class ResetTimer extends TimerAction {}
+
+@immutable
 class UpdateTimeValue extends TimerAction {
   final Duration newValue;
 
