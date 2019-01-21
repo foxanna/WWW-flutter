@@ -6,6 +6,7 @@ class TimerReducer {
   static final Reducer<TimerState> _reducer = combineReducers<TimerState>([
     TypedReducer<TimerState, UpdateTimeValue>(_updateTimeValue),
     TypedReducer<TimerState, UpdateIsRunningValue>(_updateIsRunningValue),
+    TypedReducer<TimerState, ResetTimer>(_resetValues),
   ]);
 
   static TimerState reduce(state, action) => _reducer(state, action);
@@ -15,4 +16,6 @@ class TimerReducer {
 
   static TimerState _updateIsRunningValue(state, action) =>
       TimerState(time: state.time, isRunning: action.newValue);
+
+  static TimerState _resetValues(state, action) => TimerState.initial();
 }

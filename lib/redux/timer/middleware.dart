@@ -7,6 +7,7 @@ class TimerMiddleware {
   static final List<Middleware<AppState>> middleware = [
     TypedMiddleware<AppState, StartTimer>(_startTimer),
     TypedMiddleware<AppState, StopTimer>(_stopTimer),
+    TypedMiddleware<AppState, ResetTimer>(_resetTimer),
   ];
 
   static const int _timerFrequency = 200;
@@ -30,5 +31,12 @@ class TimerMiddleware {
 
   static void _updateTime(Store<AppState> store, duration) {
     store.dispatch(UpdateTimeValue(duration));
+  }
+
+  static void _resetTimer(
+      Store<AppState> store, TimerAction action, NextDispatcher next) {
+    next(action);
+
+    _timer.reset();
   }
 }
