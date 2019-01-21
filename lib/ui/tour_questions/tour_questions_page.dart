@@ -79,4 +79,11 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
             ),
         onDispose: (store) => store.dispatch(ResetTimer()),
       );
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+
+    super.dispose();
+  }
 }
