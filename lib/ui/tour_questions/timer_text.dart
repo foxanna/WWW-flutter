@@ -12,8 +12,19 @@ class TimerText extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
                 horizontal: Dimensions.defaultSidePadding * 2),
             child: Text(
-              data.time.toString(),
+              _formatDuration(data.time),
               style: Theme.of(context).primaryTextTheme.title,
             ),
           ));
+
+  String _formatDuration(Duration duration) {
+    final twoDigitMinutes =
+        _twoDigits(duration.inMinutes.remainder(Duration.minutesPerHour));
+    final twoDigitSeconds =
+        _twoDigits(duration.inSeconds.remainder(Duration.secondsPerMinute));
+
+    return '$twoDigitMinutes:$twoDigitSeconds';
+  }
+
+  String _twoDigits(int n) => n >= 10 ? "$n" : "0$n";
 }
