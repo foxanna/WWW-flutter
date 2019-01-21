@@ -4,7 +4,6 @@ import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/ui/tour_questions/question_card.dart';
-import 'package:what_when_where/ui/tour_questions/timer_bloc.dart';
 import 'package:what_when_where/ui/tour_questions/timer_button.dart';
 import 'package:what_when_where/ui/tour_questions/timer_text.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_page_menu.dart';
@@ -30,7 +29,6 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
   final PageController _pageController;
 
   final Tour tour;
-  final _timerBloc = TimerBloc();
 
   _TourQuestionsPageState({@required this.tour, int startIndex})
       : this._pageController =
@@ -54,9 +52,6 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
         body: _buildPages(),
       );
 
-  @override
-  void dispose() {
-    _timerBloc.dispose();
   Widget _buildBottomAppBar(BuildContext context) => BottomAppBar(
       color: Theme.of(context).primaryColor,
       child: IconTheme(
@@ -70,8 +65,6 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
         ),
       ));
 
-    super.dispose();
-  }
   Widget _buildAppBar(BuildContext context) => AppBar(
         backgroundColor: Theme.of(context).canvasColor,
         iconTheme: Theme.of(context).iconTheme,
