@@ -41,10 +41,10 @@ class Tournament {
       questionsCount: map['QuestionsNum'],
       complexity: map['Complexity'],
       type: map['Type'],
-      description: TextUtils.normalize(map['Info']),
+      description: TextUtils.normalizeToSingleLine(map['Info']),
       url: '${Constants.databaseUrl}/tour/${map['Id']}',
       fileName: map['FileName'],
-      editors: TextUtils.normalize(map['Editors']),
+      editors: TextUtils.normalizeToSingleLine(map['Editors']),
       createdAt: map['CreatedAt'],
       playedAt: map['PlayedAt'],
       tours: map.containsKey('tour')
