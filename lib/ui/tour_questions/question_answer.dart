@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/ui/common/text_with_links.dart';
 
 class QuestionAnswer extends StatelessWidget {
   final Question question;
@@ -44,7 +45,13 @@ class QuestionAnswer extends StatelessWidget {
 
     if (question.sources != null) {
       yield SizedBox(height: Dimensions.defaultSpacing);
-      yield Text('${Strings.sources}:\n${question.sources}');
+      yield TextWithLinks(
+        '${Strings.sources}:\n${question.sources}',
+        textStyle: Theme.of(context).textTheme.body1,
+        linkStyle: Theme.of(context).textTheme.body1.copyWith(
+            color: Theme.of(context).accentColor,
+            decoration: TextDecoration.underline),
+      );
     }
   }
 }
