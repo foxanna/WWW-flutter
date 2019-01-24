@@ -1,3 +1,5 @@
+// https://android.googlesource.com/platform/frameworks/base/+/2ea21a84ef81849153f30bbea213acd5be110c08/core/java/android/util/Patterns.java
+
 class UriDetector {
   static const _good_iri_char =
       "a-zA-Z0-9\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF";
