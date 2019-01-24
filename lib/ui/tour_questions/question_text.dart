@@ -76,7 +76,7 @@ class QuestionText extends StatelessWidget {
           WWWProgressIndicator(),
           GestureDetector(
             child: Hero(
-              tag: 'image',
+              tag: section.url,
               child: FadeInImage.memoryNetwork(
                 height: 200,
                 fit: BoxFit.scaleDown,

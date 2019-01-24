@@ -14,7 +14,7 @@ class ImagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
         child: PhotoView(
-          heroTag: 'image',
+          heroTag: _url,
           imageProvider: NetworkImage(_url),
           loadingChild: WWWProgressIndicator(),
           minScale: PhotoViewComputedScale.contained,
