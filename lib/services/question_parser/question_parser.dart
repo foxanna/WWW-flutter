@@ -13,8 +13,7 @@ class QuestionParser {
   QuestionParser._();
 
   static Iterable<dynamic> split(String text) sync* {
-    text = TextUtils.removeParagraphs(text);
-    text = TextUtils.replaceMultipleSpacesWithNewLine(text);
+    text = TextUtils.normalizeToMultiLine(text);
 
     while (text.isNotEmpty) {
       text = text.trim();
@@ -57,12 +56,11 @@ class QuestionParser {
   }
 
   static String trim(String text) {
-    text = TextUtils.removeParagraphs(text);
-    text = TextUtils.removeMultipleSpaces(text);
+    text = TextUtils.normalizeToSingleLine(text);
     text = text.replaceAll(SpeakerNoteSection.regExp, '');
     text = text.replaceAll(ImageSection.regExp, '');
     text = text.replaceAll(GiveAwaySection.regExp, '');
-    text = TextUtils.removeMultipleSpaces(text);
+    text = TextUtils.normalizeToSingleLine(text);
     text = text.trim();
     return text;
   }
