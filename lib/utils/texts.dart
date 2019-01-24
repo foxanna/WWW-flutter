@@ -2,6 +2,7 @@ class TextUtils {
   static String normalizeToSingleLine(String text) {
     if (text == null) return null;
 
+    text = _replaceApostrophes(text);
     text = removeParagraphs(text);
     text = removeMultipleSpaces(text);
 
@@ -11,6 +12,7 @@ class TextUtils {
   static String normalizeToMultiLine(String text) {
     if (text == null) return null;
 
+    text = _replaceApostrophes(text);
     text = removeParagraphs(text);
     text = replaceMultipleSpacesWithNewLine(text);
 
@@ -24,4 +26,7 @@ class TextUtils {
 
   static String replaceMultipleSpacesWithNewLine(String text) =>
       text.trim().replaceAll(new RegExp(r'\s{2,}'), '\n');
+
+  static String _replaceApostrophes(String text) =>
+      text.replaceAll('\\\'', '\'');
 }
