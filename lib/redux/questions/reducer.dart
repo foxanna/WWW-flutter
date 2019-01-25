@@ -7,6 +7,7 @@ class QuestionsReducer {
   static final Reducer<QuestionsState> _reducer =
       combineReducers<QuestionsState>([
     TypedReducer<QuestionsState, SetQuestions>(_setQuestions),
+    TypedReducer<QuestionsState, VoidQuestions>(_voidQuestions),
     TypedReducer<QuestionsState, SelectQuestion>(_selectQuestion),
     TypedReducer<QuestionsState, ShowAnswer>(_showAnswer),
     TypedReducer<QuestionsState, HideAnswer>(_hideAnswer),
@@ -41,4 +42,8 @@ class QuestionsReducer {
           QuestionsState state, SetQuestions action) =>
       QuestionsState.from(
           questions: action.questions, index: action.selectedQuestionIndex);
+
+  static QuestionsState _voidQuestions(
+          QuestionsState state, VoidQuestions action) =>
+      QuestionsState.initial();
 }
