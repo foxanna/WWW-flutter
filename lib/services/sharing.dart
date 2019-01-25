@@ -4,7 +4,6 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 
 class SharingService {
@@ -15,19 +14,30 @@ class SharingService {
   SharingService._();
 
   void shareTournament(Tournament tournament) {
-    AnalyticsService().logEvent(name: 'share_tournament');
-    Share.share('${tournament.title}\n${tournament.url}${_createAppendix()}');
+    Share.share('${tournament.title}\n'
+        '${tournament.url}'
+        '${_createAppendix()}');
   }
 
   void shareTour(Tour tour) {
-    AnalyticsService().logEvent(name: 'share_tour');
-    Share.share('${tour.title}\n${tour.url}${_createAppendix()}');
+    Share.share(
+        '${(tour.tournamentTitle != null) ? ('${tour.tournamentTitle}, ') : ''}'
+        '${tour.title}\n'
+        '${tour.url}'
+        '${_createAppendix()}');
   }
 
   void shareQuestion(Question question) {
-    AnalyticsService().logEvent(name: 'share_question');
-    Share.share(
-        '${QuestionParser.trim(question.question)}\n${question.url}${_createAppendix()}');
+    final parents =
+        '${(question.tournamentTitle != null) ? question.tournamentTitle : ''}'
+        '${(question.tournamentTitle != null && question.tourTitle != null) ? ', ' : ''}'
+        '${(question.tourTitle != null) ? question.tourTitle : ''}';
+
+    var text = '${QuestionParser.trim(question.question)}\n'
+        '${parents.isNotEmpty ? '\n' : ''}$parents'
+        '${question.url}'
+        '${_createAppendix()}';
+    Share.share(text);
   }
 
   String _createAppendix() =>
