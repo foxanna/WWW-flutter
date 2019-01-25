@@ -12,6 +12,9 @@ class SetQuestions extends QuestionAction {
 }
 
 @immutable
+class VoidQuestions extends QuestionAction {}
+
+@immutable
 class SelectQuestion extends QuestionAction {
   final int questionIndex;
 
