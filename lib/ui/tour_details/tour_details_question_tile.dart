@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_page.dart';
@@ -31,6 +34,10 @@ class TourDetailsQuestionTile extends StatelessWidget {
           ),
         ),
         onTap: () {
+          var store = StoreProvider.of<AppState>(context);
+          store.dispatch(SetQuestions(
+              questions: tour.questions, selectedQuestionIndex: index));
+
           Navigator.push(
               context,
               MaterialPageRoute(
