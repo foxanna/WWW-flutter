@@ -36,4 +36,7 @@ class IterableExtensions {
 
   static T min<T>(Iterable<T> iterable) =>
       iterable.reduce((v, c) => Math.min(v, c));
+
+  static List<T> replaceAt<T>(List<T> items, int index, T data) =>
+      List<T>.of(items)..setRange(index, index + 1, [data]);
 }
