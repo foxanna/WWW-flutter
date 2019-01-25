@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:tuple/tuple.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/questions/actions.dart';
+import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/solid_icon_button.dart';
 import 'package:what_when_where/ui/tour_questions/question_answer.dart';
-import 'package:what_when_where/ui/tour_questions/question_card_bloc.dart';
 import 'package:what_when_where/ui/tour_questions/question_text.dart';
+import 'package:what_when_where/utils/function_holder.dart';
 
 class QuestionCard extends StatefulWidget {
-  final Question question;
+  final int index;
 
-  QuestionCard({Key key, @required this.question})
-      : assert(question != null),
-        assert(question.question != null),
-        assert(question.answer != null),
+  QuestionCard({Key key, @required this.index})
+      : assert(index != null),
         super(key: key);
 
   @override
@@ -25,9 +27,7 @@ class _QuestionCardState extends State<QuestionCard>
   final _scrollController = ScrollController();
   final _buttonStackKey = GlobalKey();
   final _listViewKey = GlobalKey();
-  final _bloc = QuestionCardBloc();
 
-  Question get question => widget.question;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -35,7 +35,7 @@ class _QuestionCardState extends State<QuestionCard>
         child: _buildQuestionCard(context),
       );
 
-  Card _buildQuestionCard(BuildContext context) => Card(
+  Widget _buildQuestionCard(BuildContext context) => Card(
         elevation: 4.0,
         child: Container(
           foregroundDecoration: _buildGradientDecoration(context),
@@ -46,15 +46,23 @@ class _QuestionCardState extends State<QuestionCard>
                 vertical: Dimensions.defaultSidePadding * 6,
                 horizontal: Dimensions.defaultSidePadding * 3),
             children: <Widget>[
-              Text(
-                '${Strings.question} ${question.number}',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline
-                    .copyWith(color: Theme.of(context).accentColor),
-              ),
+              StoreConnector<AppState, String>(
+                  distinct: true,
+                  converter: (store) => store.state.questionsState
+                      .questions[widget.index].question.number,
+                  builder: (context, data) => Text(
+                        '${Strings.question} $data',
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline
+                            .copyWith(color: Theme.of(context).accentColor),
+                      )),
               _buildSeparator(context),
-              QuestionText(questionText: question.question),
+              StoreConnector<AppState, String>(
+                  distinct: true,
+                  converter: (store) => store.state.questionsState
+                      .questions[widget.index].question.question,
+                  builder: (context, data) => QuestionText(questionText: data)),
               Stack(
                   key: _buttonStackKey,
                   alignment: Alignment.center,
@@ -66,7 +74,7 @@ class _QuestionCardState extends State<QuestionCard>
                       child: Padding(
                         padding: EdgeInsets.only(
                             right: Dimensions.defaultSidePadding * 2),
-                        child: _buildShowAnswerButton(context),
+                        child: _buildShowAnswerButtonWrapper(context),
                       ),
                     ),
                   ]),
@@ -97,34 +105,58 @@ class _QuestionCardState extends State<QuestionCard>
     return BoxDecoration(gradient: gradient);
   }
 
-  Widget _buildShowAnswerButton(BuildContext context) => StreamBuilder<bool>(
-      stream: _bloc.showAnswer,
-      initialData: false,
-      builder: (context, snapshot) => SolidIconButton(
-            child: Icon(
-              snapshot.data ? Icons.visibility_off : Icons.visibility,
-              color: Theme.of(context).accentColor,
-            ),
-            onPressed: () => _bloc.events.add(QuestionCardEvents.toggle),
-            elevation: 4.0,
-            fillColor: Theme.of(context).cardColor,
-            borderColor: Theme.of(context).accentColor,
-            borderWidth: 1,
-          ));
-
-  Widget _buildAnswer(BuildContext context) => StreamBuilder<bool>(
-        stream: _bloc.showAnswer,
-        initialData: false,
-        builder: (context, snapshot) {
-          var widget = (snapshot.data)
-              ? QuestionAnswer(question: question)
-              : Container();
-          WidgetsBinding.instance
-              .addPostFrameCallback((d) => _scrollContainer(snapshot.data));
-          return widget;
+  Widget _buildShowAnswerButtonWrapper(BuildContext context) =>
+      StoreConnector<AppState, Tuple2<FunctionHolder, bool>>(
+        distinct: true,
+        converter: (store) {
+          var showAnswer =
+              store.state.questionsState.questions[widget.index].showAnswer;
+          return Tuple2<FunctionHolder, bool>(
+              FunctionHolder(() => store.dispatch(
+                    showAnswer
+                        ? HideAnswer(widget.index)
+                        : ShowAnswer(widget.index),
+                  )),
+              showAnswer);
+        },
+        builder: (context, data) {
+          var functionHolder = data.item1;
+          var showAnswer = data.item2;
+          return _buildShowAnswerButton(
+              context,
+              showAnswer ? Icons.visibility_off : Icons.visibility,
+              functionHolder.function);
         },
       );
 
+  SolidIconButton _buildShowAnswerButton(
+          BuildContext context, IconData icon, Function onPressed) =>
+      SolidIconButton(
+        child: Icon(
+          icon,
+          color: Theme.of(context).accentColor,
+        ),
+        onPressed: onPressed,
+        elevation: 4.0,
+        fillColor: Theme.of(context).cardColor,
+        borderColor: Theme.of(context).accentColor,
+        borderWidth: 1,
+      );
+
+  Widget _buildAnswer(BuildContext context) =>
+      StoreConnector<AppState, QuestionState>(
+          distinct: true,
+          converter: (store) =>
+              store.state.questionsState.questions[widget.index],
+          builder: (context, state) {
+            var widget = state.showAnswer
+                ? QuestionAnswer(question: state.question)
+                : Container();
+            WidgetsBinding.instance
+                .addPostFrameCallback((d) => _scrollToAnswer(state.showAnswer));
+            return widget;
+          });
+  
   void _scrollContainer(bool showAnswer) {
     final parent = _listViewKey.currentContext.findRenderObject();
     final RenderBox box = _buttonStackKey.currentContext.findRenderObject();
