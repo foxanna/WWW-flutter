@@ -1,5 +1,6 @@
 class SpeakerNoteSection {
-  static RegExp regExp = RegExp(r'\[ведущему: .*\]', caseSensitive: false);
+  static RegExp regExp =
+      RegExp(r'\[ведущему: [\s\S]*?\]', caseSensitive: false);
 
   final String value;
 
