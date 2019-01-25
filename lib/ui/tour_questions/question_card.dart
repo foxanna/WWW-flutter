@@ -24,10 +24,16 @@ class QuestionCard extends StatefulWidget {
 
 class _QuestionCardState extends State<QuestionCard>
     with AutomaticKeepAliveClientMixin<QuestionCard> {
-  final _scrollController = ScrollController();
   final _buttonStackKey = GlobalKey();
   final _listViewKey = GlobalKey();
 
+  ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -152,18 +158,22 @@ class _QuestionCardState extends State<QuestionCard>
             var widget = state.showAnswer
                 ? QuestionAnswer(question: state.question)
                 : Container();
-            WidgetsBinding.instance
-                .addPostFrameCallback((d) => _scrollToAnswer(state.showAnswer));
+            if (state.showAnswer)
+              WidgetsBinding.instance
+                  .addPostFrameCallback((d) => _scrollToAnswer());
             return widget;
           });
-  
-  void _scrollContainer(bool showAnswer) {
-    final parent = _listViewKey.currentContext.findRenderObject();
-    final RenderBox box = _buttonStackKey.currentContext.findRenderObject();
+
+  void _scrollToAnswer() {
+    final parent = _listViewKey?.currentContext?.findRenderObject();
+    final RenderBox box = _buttonStackKey?.currentContext?.findRenderObject();
+
+    if (parent == null || box == null) return;
+
     final position = box.localToGlobal(Offset.zero, ancestor: parent);
 
     _scrollController.animateTo(
-        (showAnswer) ? (position.dy - Dimensions.defaultSpacing) : 0,
+        _scrollController.offset + position.dy - Dimensions.defaultSpacing,
         duration: Duration(milliseconds: 300),
         curve: Curves.easeOut);
   }
