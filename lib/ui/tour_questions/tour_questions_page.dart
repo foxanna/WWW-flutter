@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:tuple/tuple.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/ui/tour_questions/question_card.dart';
 import 'package:what_when_where/ui/tour_questions/timer_button.dart';
@@ -63,21 +65,31 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
         elevation: 0.0,
       );
 
-  Widget _buildPages() => StoreConnector<AppState, FunctionHolder>(
+  Widget _buildPages() => StoreConnector<AppState, Tuple2<int, FunctionHolder>>(
         distinct: true,
         converter: (store) =>
-            FunctionHolder(() => store.dispatch(ResetTimer())),
-        builder: (context, reset) => PageView.builder(
-              controller: _pageController,
-              itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.only(bottom: kToolbarHeight),
-                  child: QuestionCard(
-                    question: tour.questions[index],
-                  )),
-              itemCount: tour.questions.length,
-              onPageChanged: (index) => reset.function(),
-            ),
-        onDispose: (store) => store.dispatch(ResetTimer()),
+            Tuple2(store.state.questionsState.questions.length,
+                FunctionHolder((index) {
+              store.dispatch(ResetTimer());
+              store.dispatch(SelectQuestion(index));
+            })),
+        builder: (context, data) {
+          var count = data.item1;
+          var onPageChanged = data.item2;
+
+          return PageView.builder(
+            controller: _pageController,
+            itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.only(bottom: kToolbarHeight),
+                child: QuestionCard(index: index)),
+            itemCount: count,
+            onPageChanged: (index) => onPageChanged.function(index),
+          );
+        },
+        onDispose: (store) {
+          store.dispatch(ResetTimer());
+          store.dispatch(VoidQuestions());
+        },
       );
 
   @override
