@@ -13,6 +13,7 @@ class Tour {
   final String questionsCount;
   final String complexity;
   final String type;
+  final String tournamentTitle;
   final String description;
   final String url;
   final String fileName;
@@ -30,6 +31,7 @@ class Tour {
       questionsCount: map['QuestionsNum'],
       complexity: map['Complexity'],
       type: map['Type'],
+      tournamentTitle: map['tournamentTitle'],
       description: TextUtils.normalizeToSingleLine(map['Info']),
       url: '${Constants.databaseUrl}/tour/${map['Id']}',
       fileName: map['FileName'],
@@ -53,6 +55,7 @@ class Tour {
     this.questionsCount,
     this.complexity,
     this.type,
+    this.tournamentTitle,
     this.description,
     this.url,
     this.fileName,
