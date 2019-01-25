@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/browsing.dart';
-import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_about_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
@@ -77,7 +79,9 @@ class TournamentDetailsPageMenu {
 
   void _share(BuildContext context, Tournament tournament) {
     Navigator.pop(context);
-    SharingService().shareTournament(tournament);
+
+    var store = StoreProvider.of<AppState>(context);
+    store.dispatch(ShareTournament(tournament));
   }
 
   void _showInfo(BuildContext context, Tournament tournament) {
