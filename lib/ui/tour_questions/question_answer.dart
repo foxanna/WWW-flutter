@@ -3,6 +3,7 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/text_with_links.dart';
+import 'package:what_when_where/ui/tour_questions/question_comment.dart';
 
 class QuestionAnswer extends StatelessWidget {
   final Question question;
@@ -35,7 +36,7 @@ class QuestionAnswer extends StatelessWidget {
 
     if (question.comments != null) {
       yield SizedBox(height: Dimensions.defaultSpacing * 2);
-      yield Text('* ${question.comments}');
+      yield QuestionComment(text: '* ${question.comments}');
     }
 
     if (question.authors != null) {
