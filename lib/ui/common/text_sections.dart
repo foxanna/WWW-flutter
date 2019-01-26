@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/services/question_parser/section_giveaway.dart';
 import 'package:what_when_where/services/question_parser/section_image.dart';
 import 'package:what_when_where/services/question_parser/section_speaker_note.dart';
 import 'package:what_when_where/services/question_parser/section_text.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/image/image_page.dart';
 import 'package:what_when_where/utils/extensions.dart';
 
 class TextSections extends StatelessWidget {
@@ -85,9 +87,7 @@ class TextSections extends StatelessWidget {
     return Container();
   }
 
-  void _openImagePage(BuildContext context, String url) => Navigator.push(
-      context,
-      MaterialPageRoute(
-          settings: const RouteSettings(name: ImagePage.routeName),
-          builder: (context) => ImagePage(url: url)));
+  void _openImagePage(BuildContext context, String url) =>
+      StoreProvider.of<AppState>(context)
+          .dispatch(OpenImage(context: context, imageUrl: url));
 }
