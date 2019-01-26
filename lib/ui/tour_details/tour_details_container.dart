@@ -27,7 +27,7 @@ class _TourDetailsContainerState extends State<TourDetailsContainer>
 
   _TourDetailsContainerState({@required Tour tour})
       : this._tour = tour,
-        this._bloc = TourDetailsBloc(tour.textId);
+        this._bloc = TourDetailsBloc(tour.id);
 
   @override
   void initState() {
