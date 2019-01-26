@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/services/analytics.dart';
 
 class TourDetailsAboutDialog {
   final String _detailsText;
@@ -11,11 +10,8 @@ class TourDetailsAboutDialog {
       : this._tourTitle = tour.title,
         this._detailsText = _buildDetailsText(tour);
 
-  void show(BuildContext context) {
-    AnalyticsService().logEvent(name: 'tour_info');
-
-    showDialog(context: context, builder: (context) => _createDialog(context));
-  }
+  void show(BuildContext context) => showDialog(
+      context: context, builder: (context) => _createDialog(context));
 
   Widget _createDialog(BuildContext context) => AlertDialog(
         title: Text(
