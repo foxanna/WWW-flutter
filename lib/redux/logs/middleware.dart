@@ -1,6 +1,7 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/analytics.dart';
@@ -15,6 +16,7 @@ class LogsMiddleware {
     BrowseQuestion: 'browse_question',
     BrowseTour: 'browse_tour',
     BrowseTournament: 'browse_tournament',
+    OpenImage: 'open_image',
   };
 
   static final List<Middleware<AppState>> middleware = [
@@ -26,6 +28,7 @@ class LogsMiddleware {
     TypedMiddleware<AppState, BrowseTournament>(_logAction),
     TypedMiddleware<AppState, BrowseTour>(_logAction),
     TypedMiddleware<AppState, BrowseQuestion>(_logAction),
+    TypedMiddleware<AppState, OpenImage>(_logAction),
   ];
 
   static final _analyticsService = AnalyticsService();
