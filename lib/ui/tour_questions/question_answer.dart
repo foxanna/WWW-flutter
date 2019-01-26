@@ -16,21 +16,21 @@ class QuestionAnswer extends StatelessWidget {
       );
 
   Iterable<Widget> _buildAnswerContent(BuildContext context) sync* {
+    var textTheme = Theme.of(context).textTheme;
+    var fontSize = textTheme.title.fontSize - 2;
+
     yield Text(
-      '${Strings.answer}: ${question.answer}${(question.comments != null) ? '*' : ''}',
-      style: Theme.of(context)
-          .textTheme
-          .headline
-          .copyWith(fontSize: 18, color: Theme.of(context).accentColor),
+      '${Strings.answer}: ${question.answer}'
+          '${(question.comments != null) ? '*' : ''}',
+      style: textTheme.headline
+          .copyWith(fontSize: fontSize, color: Theme.of(context).accentColor),
     );
 
     if (question.passCriteria != null) {
       yield SizedBox(height: Dimensions.defaultSpacing * 2);
       yield Text('${Strings.acceptableAnswer}: ${question.passCriteria}',
-          style: Theme.of(context)
-              .textTheme
-              .headline
-              .copyWith(fontSize: 18, color: Theme.of(context).accentColor));
+          style: textTheme.headline.copyWith(
+              fontSize: fontSize, color: Theme.of(context).accentColor));
     }
 
     if (question.comments != null) {
@@ -47,8 +47,8 @@ class QuestionAnswer extends StatelessWidget {
       yield SizedBox(height: Dimensions.defaultSpacing);
       yield TextWithLinks(
         '${Strings.sources}:\n${question.sources}',
-        textStyle: Theme.of(context).textTheme.body1,
-        linkStyle: Theme.of(context).textTheme.body1.copyWith(
+        textStyle: textTheme.body1,
+        linkStyle: textTheme.body1.copyWith(
             color: Theme.of(context).accentColor,
             decoration: TextDecoration.underline),
       );
