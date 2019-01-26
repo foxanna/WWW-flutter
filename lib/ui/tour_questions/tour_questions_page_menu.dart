@@ -3,9 +3,9 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/ui/tour_questions/tour_details_about_dialog.dart';
 
 class TourQuestionsPageMenu {
   final Tour tour;
@@ -50,20 +50,22 @@ class TourQuestionsPageMenu {
     Navigator.pop(context);
 
     var store = StoreProvider.of<AppState>(context);
-    store.dispatch(
-        BrowseQuestion(store.state.questionsState.currentQuestion.question));
+    var question = store.state.questionsState.currentQuestion.question;
+    store.dispatch(BrowseQuestion(question));
   }
 
   void _shareQuestion(BuildContext context) {
     Navigator.pop(context);
 
     var store = StoreProvider.of<AppState>(context);
-    store.dispatch(
-        ShareQuestion(store.state.questionsState.currentQuestion.question));
+    var question = store.state.questionsState.currentQuestion.question;
+    store.dispatch(ShareQuestion(question));
   }
 
   void _openAboutTourDialog(BuildContext context) {
     Navigator.pop(context);
-    TourDetailsAboutDialog(tour: tour).show(context);
+
+    var store = StoreProvider.of<AppState>(context);
+    store.dispatch(OpenTourInfo(context: context, tour: tour));
   }
 }
