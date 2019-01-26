@@ -8,14 +8,18 @@ import 'package:what_when_where/services/analytics.dart';
 
 class LogsMiddleware {
   static final _eventNames = {
+    // timer
     StartTimer: 'start_timer',
     StopTimer: 'pause_timer',
+    // sharing
     ShareQuestion: 'share_question',
     ShareTour: 'share_tour',
     ShareTournament: 'share_tournament',
+    // browsing
     BrowseQuestion: 'browse_question',
     BrowseTour: 'browse_tour',
     BrowseTournament: 'browse_tournament',
+    // navigation
     OpenImage: 'open_image',
   };
 
