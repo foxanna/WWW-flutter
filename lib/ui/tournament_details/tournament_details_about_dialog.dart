@@ -18,6 +18,7 @@ class TournamentDetailsAboutDialog {
   }
 
   Widget _createDialog(BuildContext context) => AlertDialog(
+        contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 0),
         title: Text(
           _tournamentTitle,
           style: Theme.of(context)
@@ -25,9 +26,12 @@ class TournamentDetailsAboutDialog {
               .title
               .copyWith(color: Theme.of(context).accentColor),
         ),
-        content: Text(
-          _detailsText,
-          style: Theme.of(context).textTheme.body2,
+        content: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+          child: Text(
+            _detailsText,
+            style: Theme.of(context).textTheme.body2,
+          ),
         ),
         actions: [
           FlatButton(
