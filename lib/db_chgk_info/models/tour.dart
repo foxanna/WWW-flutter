@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:meta/meta.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
@@ -20,7 +22,7 @@ class Tour {
   final String editors;
   final String createdAt;
   final String playedAt;
-  final List<Question> questions;
+  final UnmodifiableListView<Question> questions;
 
   factory Tour.fromJson(Map<String, dynamic> map) => Tour(
       id: map['Id'],
@@ -40,11 +42,11 @@ class Tour {
       playedAt: map['PlayedAt'],
       questions: map.containsKey('question')
           ? map['question'] is List
-              ? List.from(map['question'])
+              ? UnmodifiableListView(List.from(map['question'])
                   .map((q) => Question.fromJson(q))
-                  .toList()
-              : [Question.fromJson(map['question'])]
-          : []);
+                  .toList())
+              : UnmodifiableListView([Question.fromJson(map['question'])])
+          : UnmodifiableListView([]));
 
   Tour({
     this.id,

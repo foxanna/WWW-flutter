@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:html/dom.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/constants.dart';
@@ -20,17 +22,15 @@ class Tournament {
   final String editors;
   final String createdAt;
   final String playedAt;
-  final List<Tour> tours;
+  final UnmodifiableListView<Tour> tours;
 
-  factory Tournament.fromHtml(Element element) {
-    return Tournament(
-      title: element.children[0].nodes.first.firstChild.text.trim(),
-      textId:
-          element.children[0].nodes.first.attributes['href'].split('/').last,
-      playedAt: element.children[0].nodes.last.text.trim(),
-      createdAt: element.children[1].firstChild.text.trim(),
-    );
-  }
+  factory Tournament.fromHtml(Element element) => Tournament(
+        title: element.children[0].nodes.first.firstChild.text.trim(),
+        textId:
+            element.children[0].nodes.first.attributes['href'].split('/').last,
+        playedAt: element.children[0].nodes.last.text.trim(),
+        createdAt: element.children[1].firstChild.text.trim(),
+      );
 
   factory Tournament.fromJson(Map<String, dynamic> map) => Tournament(
       id: map['Id'],
@@ -48,8 +48,9 @@ class Tournament {
       createdAt: map['CreatedAt'],
       playedAt: map['PlayedAt'],
       tours: map.containsKey('tour')
-          ? List.from(map['tour']).map((q) => Tour.fromJson(q)).toList()
-          : List<Tour>());
+          ? UnmodifiableListView(
+              List.from(map['tour']).map((q) => Tour.fromJson(q)).toList())
+          : UnmodifiableListView([]));
 
   Tournament({
     this.id,
