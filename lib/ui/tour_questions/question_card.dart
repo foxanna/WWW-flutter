@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tuple/tuple.dart';
@@ -171,9 +173,9 @@ class _QuestionCardState extends State<QuestionCard>
     if (parent == null || box == null) return;
 
     final position = box.localToGlobal(Offset.zero, ancestor: parent);
-
     _scrollController.animateTo(
-        _scrollController.offset + position.dy - Dimensions.defaultSpacing,
+        min(_scrollController.offset + position.dy - Dimensions.defaultSpacing,
+            _scrollController.position.maxScrollExtent),
         duration: Duration(milliseconds: 300),
         curve: Curves.easeOut);
   }
