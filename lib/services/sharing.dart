@@ -28,13 +28,14 @@ class SharingService {
   }
 
   void shareQuestion(Question question) {
-    final parents =
-        '${(question.tournamentTitle != null) ? question.tournamentTitle : ''}'
-        '${(question.tournamentTitle != null && question.tourTitle != null) ? ', ' : ''}'
-        '${(question.tourTitle != null) ? question.tourTitle : ''}';
+    var questionInfo = [
+      question.tournamentTitle,
+      question.tourTitle,
+      '${Strings.question.toLowerCase()} ${question.number}'
+    ].where((x) => x != null).join(', ');
 
-    var text = '${QuestionParser.trim(question.question)}\n'
-        '${parents.isNotEmpty ? '\n' : ''}$parents'
+    var text = '${QuestionParser.trim(question.question)}\n\n'
+        '$questionInfo\n'
         '${question.url}'
         '${_createAppendix()}';
     Share.share(text);
