@@ -19,3 +19,32 @@ class SelectTour extends ToursAction {
 
 @immutable
 class VoidTours extends ToursAction {}
+
+@immutable
+class TourIsLoading extends ToursAction {
+  final String tourId;
+
+  TourIsLoading(this.tourId);
+}
+
+@immutable
+class TourLoaded extends ToursAction {
+  final Tour tour;
+
+  TourLoaded(this.tour);
+}
+
+@immutable
+class TourFailedLoading extends ToursAction {
+  final String tourId;
+  final Exception exception;
+
+  TourFailedLoading(this.tourId, this.exception);
+}
+
+@immutable
+class LoadTour extends ToursAction {
+  final String tourId;
+
+  LoadTour(this.tourId);
+}
