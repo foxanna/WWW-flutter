@@ -1,56 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:tuple/tuple.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/tours/state.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/tour_details/tour_details_bloc.dart';
-import 'package:what_when_where/ui/tour_details/tour_details_bloc_state.dart';
 import 'package:what_when_where/ui/tour_details/tour_details_questions_list.dart';
+import 'package:what_when_where/utils/function_holder.dart';
 
 class TourDetailsContainer extends StatefulWidget {
-  final Tour _tour;
+  final int index;
 
   const TourDetailsContainer({
     Key key,
-    @required tour,
-  })  : assert(tour != null),
-        this._tour = tour,
-        super(key: key);
+    @required this.index,
+  }) : super(key: key);
 
   @override
-  createState() => _TourDetailsContainerState(tour: _tour);
+  createState() => _TourDetailsContainerState();
 }
 
 class _TourDetailsContainerState extends State<TourDetailsContainer>
     with AutomaticKeepAliveClientMixin<TourDetailsContainer> {
-  final Tour _tour;
-  final TourDetailsBloc _bloc;
-
-  _TourDetailsContainerState({@required Tour tour})
-      : this._tour = tour,
-        this._bloc = TourDetailsBloc(tour.id);
-
   @override
-  void initState() {
-    super.initState();
-    _bloc.load();
-  }
+  Widget build(BuildContext context) =>
+      StoreConnector<AppState, Tuple2<TourState, FunctionHolder>>(
+        distinct: true,
+        converter: (store) => Tuple2(
+            store.state.toursState.tours[widget.index], FunctionHolder(null)),
+        builder: (context, data) {
+          var state = data.item1;
+          var retry = data.item2;
 
-  @override
-  Widget build(BuildContext context) => StreamBuilder<TourDetailsBlocState>(
-      stream: _bloc.stateStream,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          var state = snapshot.data;
-          if (state.isLoading) return WWWProgressIndicator();
-          if (state.hasError)
+          if (state.isLoading) {
+            return WWWProgressIndicator();
+          }
+          if (state.hasError) {
             return ErrorMessage(
-                retryFunction: _bloc.load,
+                retryFunction: () => retry.function(state.tour.id),
                 color: Theme.of(context).primaryColor);
-          if (state.hasData) return TourDetailsQuestionsList(tour: state.data);
-        }
-
-        return Container();
-      });
+          }
+          if (state.hasData) {
+            return TourDetailsQuestionsList(tour: state.tour);
+          }
+          return Container();
+        },
+      );
 
   @override
   bool get wantKeepAlive => true;
