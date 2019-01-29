@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tuple/tuple.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
@@ -14,24 +13,12 @@ import 'package:what_when_where/utils/function_holder.dart';
 class TourQuestionsPage extends StatefulWidget {
   static const String routeName = 'questions';
 
-  final Tour tour;
-
-  TourQuestionsPage({Key key, @required this.tour})
-      : assert(tour != null),
-        assert(tour.questions != null),
-        super(key: key);
-
   @override
-  createState() => _TourQuestionsPageState(tour: tour);
+  createState() => _TourQuestionsPageState();
 }
 
 class _TourQuestionsPageState extends State<TourQuestionsPage> {
-  final TourQuestionsPageMenu _menu;
-
-  final Tour tour;
-
-  _TourQuestionsPageState({@required this.tour, int startIndex})
-      : _menu = TourQuestionsPageMenu(tour: tour);
+  final _menu = TourQuestionsPageMenu();
 
   @override
   Widget build(BuildContext context) => Scaffold(
