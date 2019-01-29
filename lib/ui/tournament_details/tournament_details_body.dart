@@ -12,7 +12,7 @@ class TournamentDetailsBody extends StatefulWidget {
         this._tournament = tournament;
 
   @override
-  createState() => _TournamentDetailsBodyState(tournament: _tournament);
+  createState() => _TournamentDetailsBodyState();
 }
 
 class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
@@ -20,13 +20,10 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
   PageController _pageController;
   TabController _tabController;
 
-  final Tournament _tournament;
-
-  _TournamentDetailsBodyState({@required Tournament tournament})
-      : _tournament = tournament {
+  _TournamentDetailsBodyState() {
     _pageController = PageController();
     _tabController =
-        TabController(length: _tournament.tours.length, vsync: this);
+        TabController(length: widget._tournament.tours.length, vsync: this);
   }
 
   @override
@@ -61,7 +58,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
                   right: kToolbarHeight,
                   bottom: Dimensions.defaultSidePadding * 2),
               child: Text(
-                _tournament.title,
+                widget._tournament.title,
                 style: Theme.of(context).primaryTextTheme.title,
               )),
           _buildTabBar(context),
@@ -72,7 +69,9 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
         indicatorColor: Theme.of(context).primaryTextTheme.body2.color,
         isScrollable: true,
         controller: _tabController,
-        tabs: _tournament.tours.map((tour) => Tab(text: tour.title)).toList(),
+        tabs: widget._tournament.tours
+            .map((tour) => Tab(text: tour.title))
+            .toList(),
       );
 
   Widget _buildPageView() => PageView.builder(
