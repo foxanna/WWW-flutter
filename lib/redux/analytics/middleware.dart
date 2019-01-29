@@ -6,7 +6,7 @@ import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/analytics.dart';
 
-class LogsMiddleware {
+class AnalyticsMiddleware {
   static final _eventNames = {
     // timer
     StartTimer: 'start_timer',
