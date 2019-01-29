@@ -6,7 +6,7 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 
 @immutable
 class QuestionsState {
-  final List<QuestionState> questions;
+  final UnmodifiableListView<QuestionState> questions;
   final int currentQuestionIndex;
 
   QuestionState get currentQuestion =>
@@ -14,21 +14,28 @@ class QuestionsState {
           ? questions[currentQuestionIndex]
           : null;
 
-  QuestionsState({Iterable<QuestionState> questions, this.currentQuestionIndex})
-      : this.questions = questions != null
-            ? UnmodifiableListView<QuestionState>(questions)
-            : UnmodifiableListView<QuestionState>(List<QuestionState>());
+  QuestionsState({
+    Iterable<QuestionState> questions,
+    this.currentQuestionIndex,
+  }) : this.questions = UnmodifiableListView<QuestionState>(
+            questions != null ? questions : []);
 
-  QuestionsState.initial() : this(questions: null, currentQuestionIndex: null);
+  QuestionsState.initial()
+      : this(
+          questions: null,
+          currentQuestionIndex: null,
+        );
 
   QuestionsState.from({@required Iterable<Question> questions, int index})
       : this(
-            questions: questions.map((q) => QuestionState(question: q)),
-            currentQuestionIndex:
-                index != null ? index : questions.isNotEmpty ? 0 : null);
+          questions: questions?.map((q) => QuestionState(question: q)),
+          currentQuestionIndex: index,
+        );
 
-  QuestionsState copyWith(
-          {Iterable<QuestionState> questions, int currentQuestionIndex}) =>
+  QuestionsState copyWith({
+    Iterable<QuestionState> questions,
+    int currentQuestionIndex,
+  }) =>
       QuestionsState(
         questions: questions ?? this.questions,
         currentQuestionIndex: currentQuestionIndex ?? this.currentQuestionIndex,
