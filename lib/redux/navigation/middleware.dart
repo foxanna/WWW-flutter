@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/ui/image/image_page.dart';
 import 'package:what_when_where/ui/tour_questions/tour_details_about_dialog.dart';
+import 'package:what_when_where/ui/tour_questions/tour_questions_page.dart';
 
 class NavigationMiddleware {
   static final List<Middleware<AppState>> middleware = [
     TypedMiddleware<AppState, OpenImage>(_openImage),
+    TypedMiddleware<AppState, OpenQuestions>(_openQuestions),
     TypedMiddleware<AppState, OpenTourInfo>(_openTourInfo),
   ];
 
@@ -34,4 +37,18 @@ class NavigationMiddleware {
           context,
           MaterialPageRoute(
               settings: RouteSettings(name: routeName), builder: builder));
+
+  static void _openQuestions(
+      Store<AppState> store, OpenQuestions action, NextDispatcher next) {
+    next(action);
+
+    store.dispatch(SetQuestions(
+        questions: action.questions,
+        selectedQuestionIndex: action.selectedQuestionIndex));
+
+    _navigateTo(
+        context: action.context,
+        routeName: TourQuestionsPage.routeName,
+        builder: (context) => TourQuestionsPage());
+  }
 }
