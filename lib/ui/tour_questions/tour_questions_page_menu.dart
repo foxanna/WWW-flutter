@@ -8,10 +8,6 @@ import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 
 class TourQuestionsPageMenu {
-  final Tour tour;
-
-  TourQuestionsPageMenu({@required this.tour});
-
   Widget createAppBarMenuAction(BuildContext context) => IconButton(
         icon: Icon(Icons.more_vert),
         onPressed: () => _showMenu(context),
@@ -40,11 +36,17 @@ class TourQuestionsPageMenu {
         onTap: () => _shareQuestion(context),
       );
 
-  Widget _createAboutTourMenuItem(BuildContext context) => ListTile(
-        leading: const Icon(Icons.info_outline),
-        title: const Text(Strings.aboutTour),
-        onTap: () => _openAboutTourDialog(context),
-      );
+  Widget _createAboutTourMenuItem(BuildContext context) =>
+      StoreConnector<AppState, Tour>(
+          distinct: true,
+          converter: (store) => store.state.toursState.currentTour?.tour,
+          builder: (context, data) => data != null
+              ? ListTile(
+                  leading: const Icon(Icons.info_outline),
+                  title: const Text(Strings.aboutTour),
+                  onTap: () => _openAboutTourDialog(context, data),
+                )
+              : Container());
 
   void _openInBrowser(BuildContext context) {
     Navigator.pop(context);
@@ -62,7 +64,7 @@ class TourQuestionsPageMenu {
     store.dispatch(ShareQuestion(question));
   }
 
-  void _openAboutTourDialog(BuildContext context) {
+  void _openAboutTourDialog(BuildContext context, Tour tour) {
     Navigator.pop(context);
 
     var store = StoreProvider.of<AppState>(context);
