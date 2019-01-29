@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:tuple/tuple.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/tour_details/tour_details_container.dart';
+import 'package:what_when_where/utils/function_holder.dart';
 
 class TournamentDetailsBody extends StatefulWidget {
   final Tournament _tournament;
@@ -74,12 +79,26 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
             .toList(),
       );
 
-  Widget _buildPageView() => PageView.builder(
-        controller: _pageController,
-        itemBuilder: (context, index) =>
-            TourDetailsContainer(tour: _tournament.tours[index]),
-        itemCount: _tournament.tours.length,
-      );
+  Widget _buildPageView() =>
+      StoreConnector<AppState, Tuple2<int, FunctionHolder>>(
+          distinct: true,
+          converter: (store) => Tuple2(store.state.toursState.tours.length,
+              FunctionHolder((index) => store.dispatch(SelectTour(index)))),
+          builder: (context, data) {
+            var count = data.item1;
+            var onPageChanged = data.item2;
+
+            return PageView.builder(
+              controller: _pageController,
+              itemCount: count,
+              itemBuilder: (context, index) =>
+                  TourDetailsContainer(index: index),
+              onPageChanged: (index) => onPageChanged.function(index),
+            );
+          },
+          onDispose: (store) {
+            store.dispatch(VoidTours());
+          });
 
   @override
   void dispose() {
