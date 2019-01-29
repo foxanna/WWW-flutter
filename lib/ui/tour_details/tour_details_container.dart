@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tuple/tuple.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/redux/tours/state.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
@@ -26,8 +27,8 @@ class _TourDetailsContainerState extends State<TourDetailsContainer>
   Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<TourState, FunctionHolder>>(
         distinct: true,
-        converter: (store) => Tuple2(
-            store.state.toursState.tours[widget.index], FunctionHolder(null)),
+        converter: (store) => Tuple2(store.state.toursState.tours[widget.index],
+            FunctionHolder((String id) => store.dispatch(LoadTour(id)))),
         builder: (context, data) {
           var state = data.item1;
           var retry = data.item2;
