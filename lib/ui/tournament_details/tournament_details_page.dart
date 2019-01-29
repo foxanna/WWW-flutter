@@ -43,7 +43,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
   @override
   void initState() {
     super.initState();
-    _bloc.load();
+    _bloc.load(context);
   }
 
   @override
