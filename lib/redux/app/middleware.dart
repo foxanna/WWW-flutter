@@ -5,6 +5,7 @@ import 'package:what_when_where/redux/logs/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/sharing/middleware.dart';
 import 'package:what_when_where/redux/timer/middleware.dart';
+import 'package:what_when_where/redux/tours/middleware.dart';
 
 class AppMiddleware {
   static final middleware = List<Middleware<AppState>>()
@@ -12,5 +13,6 @@ class AppMiddleware {
     ..addAll(TimerMiddleware.middleware)
     ..addAll(ShareMiddleware.middleware)
     ..addAll(BrowseMiddleware.middleware)
-    ..addAll(NavigationMiddleware.middleware);
+    ..addAll(NavigationMiddleware.middleware)
+    ..addAll(ToursMiddleware.middleware);
 }
