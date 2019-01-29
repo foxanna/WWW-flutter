@@ -25,15 +25,13 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
   PageController _pageController;
   TabController _tabController;
 
-  _TournamentDetailsBodyState() {
-    _pageController = PageController();
-    _tabController =
-        TabController(length: widget._tournament.tours.length, vsync: this);
-  }
-
   @override
   void initState() {
     super.initState();
+
+    _pageController = PageController();
+    _tabController =
+        TabController(length: widget._tournament.tours.length, vsync: this);
 
     _pageController.addListener(_pageControllerListener);
     _tabController.addListener(_tabControllerListener);
