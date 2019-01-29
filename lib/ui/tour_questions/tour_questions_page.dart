@@ -15,27 +15,23 @@ class TourQuestionsPage extends StatefulWidget {
   static const String routeName = 'questions';
 
   final Tour tour;
-  final int startIndex;
 
-  TourQuestionsPage({Key key, @required this.tour, this.startIndex})
+  TourQuestionsPage({Key key, @required this.tour})
       : assert(tour != null),
         assert(tour.questions != null),
         super(key: key);
 
   @override
-  createState() => _TourQuestionsPageState(tour: tour, startIndex: startIndex);
+  createState() => _TourQuestionsPageState(tour: tour);
 }
 
 class _TourQuestionsPageState extends State<TourQuestionsPage> {
   final TourQuestionsPageMenu _menu;
-  final PageController _pageController;
 
   final Tour tour;
 
   _TourQuestionsPageState({@required this.tour, int startIndex})
-      : this._pageController =
-            PageController(initialPage: startIndex, viewportFraction: 0.85),
-        _menu = TourQuestionsPageMenu(tour: tour);
+      : _menu = TourQuestionsPageMenu(tour: tour);
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -65,20 +61,24 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
         elevation: 0.0,
       );
 
-  Widget _buildPages() => StoreConnector<AppState, Tuple2<int, FunctionHolder>>(
+  Widget _buildPages() =>
+      StoreConnector<AppState, Tuple3<int, int, FunctionHolder>>(
         distinct: true,
-        converter: (store) =>
-            Tuple2(store.state.questionsState.questions.length,
+        converter: (store) => Tuple3(
+                store.state.questionsState.questions.length,
+                store.state.questionsState.currentQuestionIndex,
                 FunctionHolder((index) {
               store.dispatch(ResetTimer());
               store.dispatch(SelectQuestion(index));
             })),
         builder: (context, data) {
           var count = data.item1;
-          var onPageChanged = data.item2;
+          var startIndex = data.item2;
+          var onPageChanged = data.item3;
 
           return PageView.builder(
-            controller: _pageController,
+            controller:
+                PageController(initialPage: startIndex, viewportFraction: 0.85),
             itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.only(bottom: kToolbarHeight),
                 child: QuestionCard(index: index)),
@@ -91,11 +91,4 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
           store.dispatch(VoidQuestions());
         },
       );
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-
-    super.dispose();
-  }
 }
