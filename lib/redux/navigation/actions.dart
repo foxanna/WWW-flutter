@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
 abstract class NavigationAction {}
 
@@ -39,4 +40,16 @@ class OpenQuestions extends NavigationAction {
   @override
   String toString() =>
       '$OpenQuestions questions.length = "${questions.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
+}
+
+@immutable
+class OpenTournament extends NavigationAction {
+  final BuildContext context;
+  final Tournament tournament;
+
+  OpenTournament(this.context, this.tournament);
+
+  @override
+  String toString() =>
+      '$OpenTournament tournament.textId = "${tournament.textId}", tournament.title = "${tournament.title}"';
 }
