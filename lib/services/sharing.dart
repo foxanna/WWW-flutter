@@ -42,5 +42,5 @@ class SharingService {
   }
 
   String _createAppendix() =>
-      '\n\n${Strings.sharedVia} ${Strings.appName}\n${Constants.marketLink}';
+      '\n\n${Strings.sharedVia} "${Constants.appNameLong}"\n${Constants.marketLink}';
 }

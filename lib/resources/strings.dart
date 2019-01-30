@@ -1,5 +1,4 @@
 class Strings {
-  static const String appName = "OWL";
   static const String addedAt = "добавлено";
   static const String playedAt = "сыграно";
   static const String tours = "туров";

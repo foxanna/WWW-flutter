@@ -39,7 +39,7 @@ class AboutPage extends StatelessWidget {
             height: Dimensions.defaultSpacing * 5,
           ),
           Text(
-            Strings.appName,
+            Constants.appNameLong,
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
@@ -87,6 +87,6 @@ class AboutPage extends StatelessWidget {
     AnalyticsService().logEvent(name: 'send_email_to_developers');
 
     await UrlLauncher.sendEmail(
-        Constants.developersEmail, '${Strings.app} ${Strings.appName}');
+        Constants.developersEmail, '${Strings.app} ${Constants.appNameLong}');
   }
 }
