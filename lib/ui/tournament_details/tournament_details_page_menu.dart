@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:tuple/tuple.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_about_dialog.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
+import 'package:what_when_where/utils/function_holder.dart';
 
 class TournamentDetailsPageMenu {
-  final TournamentDetailsBloc _bloc;
-
-  const TournamentDetailsPageMenu(TournamentDetailsBloc bloc)
-      : assert(bloc != null),
-        this._bloc = bloc;
-
   List<Widget> createAppBarMenuActions(BuildContext context) => <Widget>[
         IconButton(
           icon: Icon(Icons.more_vert),
@@ -25,69 +18,82 @@ class TournamentDetailsPageMenu {
 
   void _showMenu(BuildContext context) => showModalBottomSheet(
       context: context,
-      builder: (context) => StreamBuilder<TournamentDetailsBlocState>(
-            stream: _bloc.stateStream,
-            builder: (context, snapshot) {
-              var state = snapshot.data;
-              var hasTournament = state?.hasData ?? false;
-
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  _createBrowseMenuItem(
-                      context, hasTournament, () => state.data),
-                  _createShareMenuItem(
-                      context, hasTournament, () => state.data),
-                  _createAboutMenuItem(
-                      context, hasTournament, () => state.data),
-                ],
-              );
-            },
+      builder: (context) => Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _createBrowseMenuItem(context),
+              _createShareMenuItem(context),
+              _createAboutMenuItem(context),
+            ],
           ));
 
-  ListTile _createBrowseMenuItem(BuildContext context, bool enabled,
-          Tournament Function() tournamentProvider) =>
-      ListTile(
-        leading: const Icon(Icons.open_in_browser),
-        title: const Text(Strings.browse),
-        enabled: enabled,
-        onTap: () => _openInBrowser(context, tournamentProvider()),
+  Widget _createBrowseMenuItem(BuildContext context) =>
+      StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
+        distinct: true,
+        converter: (store) => Tuple2(
+            store.state.tournamentState.hasData,
+            FunctionHolder(() => store.dispatch(
+                BrowseTournament(store.state.tournamentState.tournament)))),
+        builder: (context, data) {
+          var isEnabled = data.item1;
+          var execute = data.item2.function;
+
+          return ListTile(
+            leading: const Icon(Icons.open_in_browser),
+            title: const Text(Strings.browse),
+            enabled: isEnabled,
+            onTap: () {
+              Navigator.pop(context);
+              execute();
+            },
+          );
+        },
       );
 
-  ListTile _createShareMenuItem(BuildContext context, bool enabled,
-          Tournament Function() tournamentProvider) =>
-      ListTile(
-        leading: const Icon(Icons.share),
-        title: const Text(Strings.share),
-        enabled: enabled,
-        onTap: () => _share(context, tournamentProvider()),
+  Widget _createShareMenuItem(BuildContext context) =>
+      StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
+        distinct: true,
+        converter: (store) => Tuple2(
+            store.state.tournamentState.hasData,
+            FunctionHolder(() => store.dispatch(
+                ShareTournament(store.state.tournamentState.tournament)))),
+        builder: (context, data) {
+          var isEnabled = data.item1;
+          var execute = data.item2.function;
+
+          return ListTile(
+            leading: const Icon(Icons.share),
+            title: const Text(Strings.share),
+            enabled: isEnabled,
+            onTap: () {
+              Navigator.pop(context);
+              execute();
+            },
+          );
+        },
       );
 
-  ListTile _createAboutMenuItem(BuildContext context, bool enabled,
-          Tournament Function() tournamentProvider) =>
-      ListTile(
-        leading: const Icon(Icons.info_outline),
-        title: const Text(Strings.aboutTournament),
-        enabled: enabled,
-        onTap: () => _showInfo(context, tournamentProvider()),
+  Widget _createAboutMenuItem(BuildContext context) =>
+      StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
+        distinct: true,
+        converter: (store) => Tuple2(
+            store.state.tournamentState.hasData,
+            FunctionHolder(() => store.dispatch(OpenTournamentInfo(
+                context: context,
+                tournament: store.state.tournamentState.tournament)))),
+        builder: (context, data) {
+          var isEnabled = data.item1;
+          var execute = data.item2.function;
+
+          return ListTile(
+            leading: const Icon(Icons.info_outline),
+            title: const Text(Strings.aboutTournament),
+            enabled: isEnabled,
+            onTap: () {
+              Navigator.pop(context);
+              execute();
+            },
+          );
+        },
       );
-
-  void _openInBrowser(BuildContext context, Tournament tournament) {
-    Navigator.pop(context);
-
-    var store = StoreProvider.of<AppState>(context);
-    store.dispatch(BrowseTournament(tournament));
-  }
-
-  void _share(BuildContext context, Tournament tournament) {
-    Navigator.pop(context);
-
-    var store = StoreProvider.of<AppState>(context);
-    store.dispatch(ShareTournament(tournament));
-  }
-
-  void _showInfo(BuildContext context, Tournament tournament) {
-    Navigator.pop(context);
-    TournamentDetailsAboutDialog(tournament: tournament).show(context);
-  }
 }
