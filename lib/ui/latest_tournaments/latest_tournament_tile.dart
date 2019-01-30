@@ -1,9 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_page.dart';
 
 class LatestTournamentTile extends StatelessWidget {
   final Tournament tournament;
@@ -47,9 +49,7 @@ class LatestTournamentTile extends StatelessWidget {
     );
   }
 
-  Future _openTournamentDetails(BuildContext context) => Navigator.push(
-      context,
-      MaterialPageRoute(
-          settings: const RouteSettings(name: TournamentDetailsPage.routeName),
-          builder: (context) => TournamentDetailsPage(tournament: tournament)));
+  void _openTournamentDetails(BuildContext context) =>
+      StoreProvider.of<AppState>(context)
+          .dispatch(OpenTournament(context, tournament));
 }
