@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tuple/tuple.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/tour_details/tour_details_container.dart';
 import 'package:what_when_where/utils/function_holder.dart';
+import 'package:what_when_where/utils/iterable_holder.dart';
 
 class TournamentDetailsBody extends StatefulWidget {
-  final Tournament _tournament;
+  final int count;
 
-  TournamentDetailsBody({Key key, @required Tournament tournament})
-      : assert(tournament != null),
-        assert(tournament.tours != null),
-        this._tournament = tournament;
+  TournamentDetailsBody({Key key, @required this.count});
 
   @override
   createState() => _TournamentDetailsBodyState();
@@ -30,8 +27,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
     super.initState();
 
     _pageController = PageController();
-    _tabController =
-        TabController(length: widget._tournament.tours.length, vsync: this);
+    _tabController = TabController(length: widget.count, vsync: this);
 
     _pageController.addListener(_pageControllerListener);
     _tabController.addListener(_tabControllerListener);
@@ -60,22 +56,30 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
                   left: kToolbarHeight,
                   right: kToolbarHeight,
                   bottom: Dimensions.defaultSidePadding * 2),
-              child: Text(
-                widget._tournament.title,
-                style: Theme.of(context).primaryTextTheme.title,
+              child: StoreConnector<AppState, String>(
+                distinct: true,
+                converter: (store) =>
+                    store.state.tournamentState?.tournament?.title,
+                builder: (context, data) => Text(
+                      data,
+                      style: Theme.of(context).primaryTextTheme.title,
+                    ),
               )),
           _buildTabBar(context),
         ],
       );
 
-  Widget _buildTabBar(BuildContext context) => TabBar(
-        indicatorColor: Theme.of(context).primaryTextTheme.body2.color,
-        isScrollable: true,
-        controller: _tabController,
-        tabs: widget._tournament.tours
-            .map((tour) => Tab(text: tour.title))
-            .toList(),
-      );
+  Widget _buildTabBar(BuildContext context) =>
+      StoreConnector<AppState, IterableHolder<String>>(
+          distinct: true,
+          converter: (store) => IterableHolder(List<String>.unmodifiable(
+              store.state.toursState.tours.map((state) => state.tour.title))),
+          builder: (context, data) => TabBar(
+                indicatorColor: Theme.of(context).primaryTextTheme.body2.color,
+                isScrollable: true,
+                controller: _tabController,
+                tabs: data.data.map((title) => Tab(text: title)).toList(),
+              ));
 
   Widget _buildPageView() =>
       StoreConnector<AppState, Tuple2<int, FunctionHolder>>(

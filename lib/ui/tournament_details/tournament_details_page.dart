@@ -1,50 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:tuple/tuple.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/tornament/actions.dart';
+import 'package:what_when_where/redux/tornament/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_bloc.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_bloc_state.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_body.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_page_menu.dart';
+import 'package:what_when_where/utils/function_holder.dart';
 
 class TournamentDetailsPage extends StatefulWidget {
   static const String routeName = 'tournament';
 
-  final Tournament _tournament;
-
-  const TournamentDetailsPage({
-    Key key,
-    @required tournament,
-  })  : this._tournament = tournament,
-        super(key: key);
-
   @override
-  createState() => _TournamentDetailsPageState(tournament: _tournament);
+  createState() => _TournamentDetailsPageState();
 }
 
 class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
-  final TournamentDetailsBloc _bloc;
-  final Tournament _tournament;
   final TournamentDetailsPageMenu _menu;
 
   factory _TournamentDetailsPageState({@required Tournament tournament}) {
-    var bloc = TournamentDetailsBloc(tournament.textId);
-    var menu = TournamentDetailsPageMenu(bloc);
-    return _TournamentDetailsPageState._(tournament, bloc, menu);
+    var menu = TournamentDetailsPageMenu();
+    return _TournamentDetailsPageState._(tournament, menu);
   }
 
-  _TournamentDetailsPageState._(Tournament tournament,
-      TournamentDetailsBloc bloc, TournamentDetailsPageMenu menu)
-      : this._tournament = tournament,
-        this._bloc = bloc,
-        this._menu = menu;
-
-  @override
-  void initState() {
-    super.initState();
-    _bloc.load(context);
-  }
+  _TournamentDetailsPageState._(
+      Tournament tournament, TournamentDetailsPageMenu menu)
+      : this._menu = menu;
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -56,19 +41,26 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
       );
 
   Widget _buildBody(BuildContext context) =>
-      StreamBuilder<TournamentDetailsBlocState>(
-        stream: _bloc.stateStream,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            var state = snapshot.data;
-            if (state.isLoading) return _buildLoadingStateWidget(context);
-            if (state.hasError) return _buildErrorStateWidget(context);
-            if (state.hasData)
-              return _buildNormalStateWidget(context, state.data);
-          }
+      StoreConnector<AppState, Tuple2<TournamentState, FunctionHolder>>(
+        distinct: true,
+        converter: (store) =>
+            Tuple2(store.state.tournamentState, FunctionHolder(null)),
+        builder: (context, data) {
+          var state = data.item1;
+          var retryFunction = data.item2.function;
 
+          if (state.isLoading) {
+            return _buildLoadingStateWidget(context);
+          }
+          if (state.hasError) {
+            return _buildErrorStateWidget(context, retryFunction);
+          }
+          if (state.hasData) {
+            return TournamentDetailsBody(count: state.tournament.tours.length);
+          }
           return Container();
         },
+        onDispose: (store) => store.dispatch(VoidTournament()),
       );
 
   Widget _buildLoadingStateWidget(BuildContext context) => Column(
@@ -79,19 +71,17 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
         ],
       );
 
-  Widget _buildErrorStateWidget(BuildContext context) => Column(
+  Widget _buildErrorStateWidget(BuildContext context, Function retryFunction) =>
+      Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildElevatedHeader(context),
           Expanded(
               child: ErrorMessage(
-                  retryFunction: _bloc.load,
+                  retryFunction: retryFunction,
                   color: Theme.of(context).primaryColor))
         ],
       );
-
-  Widget _buildNormalStateWidget(BuildContext context, Tournament tournament) =>
-      TournamentDetailsBody(tournament: tournament);
 
   Widget _buildElevatedHeader(BuildContext context) => PhysicalModel(
         elevation: 4.0,
@@ -102,10 +92,14 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
               right: kToolbarHeight,
               bottom: Dimensions.defaultSidePadding * 3),
           child: Center(
-            child: Text(
-              _tournament.title,
-              style: Theme.of(context).primaryTextTheme.title,
-            ),
+            child: StoreConnector<AppState, String>(
+                distinct: true,
+                converter: (store) =>
+                    store.state.tournamentState?.tournament?.title,
+                builder: (context, data) => Text(
+                      data,
+                      style: Theme.of(context).primaryTextTheme.title,
+                    )),
           ),
         ),
       );
