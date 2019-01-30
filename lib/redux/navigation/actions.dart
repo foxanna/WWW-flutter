@@ -11,6 +11,9 @@ class OpenImage extends NavigationAction {
   final String imageUrl;
 
   OpenImage({@required this.context, @required this.imageUrl});
+
+  @override
+  String toString() => '$OpenImage imageUrl ="$imageUrl"';
 }
 
 @immutable
@@ -19,6 +22,10 @@ class OpenTourInfo extends NavigationAction {
   final Tour tour;
 
   OpenTourInfo({this.context, this.tour});
+
+  @override
+  String toString() =>
+      '$OpenTourInfo tour.id = "${tour.id}", tour.title = "${tour.title}"';
 }
 
 @immutable
@@ -28,4 +35,8 @@ class OpenQuestions extends NavigationAction {
   final int selectedQuestionIndex;
 
   OpenQuestions(this.context, this.questions, this.selectedQuestionIndex);
+
+  @override
+  String toString() =>
+      '$OpenQuestions questions.length = "${questions.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
 }

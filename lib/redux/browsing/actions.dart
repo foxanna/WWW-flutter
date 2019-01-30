@@ -10,6 +10,10 @@ class BrowseQuestion extends BrowseAction {
   final Question question;
 
   BrowseQuestion(this.question);
+
+  @override
+  String toString() =>
+      '$BrowseQuestion question.questionId = "${question.questionId}", question.question = "${question.question}"';
 }
 
 @immutable
@@ -17,6 +21,10 @@ class BrowseTour extends BrowseAction {
   final Tour tour;
 
   BrowseTour(this.tour);
+
+  @override
+  String toString() =>
+      '$BrowseTour tour.id = "${tour.id}", tour.title = "${tour.title}"';
 }
 
 @immutable
@@ -24,4 +32,8 @@ class BrowseTournament extends BrowseAction {
   final Tournament tournament;
 
   BrowseTournament(this.tournament);
+
+  @override
+  String toString() =>
+      '$BrowseTournament tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
 }
