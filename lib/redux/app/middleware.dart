@@ -6,6 +6,7 @@ import 'package:what_when_where/redux/logs/logs.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/sharing/middleware.dart';
 import 'package:what_when_where/redux/timer/middleware.dart';
+import 'package:what_when_where/redux/tornament/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 
 class AppMiddleware {
@@ -16,5 +17,6 @@ class AppMiddleware {
     ..addAll(ShareMiddleware.middleware)
     ..addAll(BrowseMiddleware.middleware)
     ..addAll(NavigationMiddleware.middleware)
-    ..addAll(ToursMiddleware.middleware);
+    ..addAll(ToursMiddleware.middleware)
+    ..addAll(TournamentMiddleware.middleware);
 }
