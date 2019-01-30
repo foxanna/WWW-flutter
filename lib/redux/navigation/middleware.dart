@@ -7,6 +7,7 @@ import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/ui/image/image_page.dart';
 import 'package:what_when_where/ui/tour_questions/tour_details_about_dialog.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_page.dart';
+import 'package:what_when_where/ui/tournament_details/tournament_details_about_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_page.dart';
 
 class NavigationMiddleware {
@@ -15,6 +16,7 @@ class NavigationMiddleware {
     TypedMiddleware<AppState, OpenTournament>(_openTournament),
     TypedMiddleware<AppState, OpenTourInfo>(_openTourInfo),
     TypedMiddleware<AppState, OpenQuestions>(_openQuestions),
+    TypedMiddleware<AppState, OpenTournamentInfo>(_openTournamentInfo),
   ];
 
   static void _openImage(
@@ -66,4 +68,12 @@ class NavigationMiddleware {
           context,
           MaterialPageRoute(
               settings: RouteSettings(name: routeName), builder: builder));
+
+  static void _openTournamentInfo(
+      Store<AppState> store, OpenTournamentInfo action, NextDispatcher next) {
+    next(action);
+
+    TournamentDetailsAboutDialog(tournament: action.tournament)
+        .show(action.context);
+  }
 }
