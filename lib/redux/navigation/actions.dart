@@ -30,6 +30,18 @@ class OpenTourInfo extends NavigationAction {
 }
 
 @immutable
+class OpenTournamentInfo extends NavigationAction {
+  final BuildContext context;
+  final Tournament tournament;
+
+  OpenTournamentInfo({this.context, this.tournament});
+
+  @override
+  String toString() =>
+      '$OpenTournamentInfo tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
+}
+
+@immutable
 class OpenQuestions extends NavigationAction {
   final BuildContext context;
   final Iterable<Question> questions;
