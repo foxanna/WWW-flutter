@@ -85,7 +85,7 @@ class LatestTournamentsPageState extends State<LatestTournamentsPage> {
         expandedHeight: _appBarHeight,
         flexibleSpace: FlexibleSpaceBar(
           title: Hero(
-            tag: 'icon',
+            tag: 'owl',
             child: SvgPicture.asset(
               'assets/owl.svg',
               height: 60,

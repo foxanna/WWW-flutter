@@ -28,7 +28,7 @@ class AboutPage extends StatelessWidget {
             horizontal: Dimensions.defaultSidePadding * 3),
         children: [
           Hero(
-            tag: 'icon',
+            tag: 'owl',
             child: SvgPicture.asset(
               'assets/owl.svg',
               height: 300,
