@@ -6,19 +6,35 @@ class TournamentDetailsAboutDialog {
   final String _detailsText;
   final String _tournamentTitle;
 
-  TournamentDetailsAboutDialog({@required Tournament tournament})
-      : this._tournamentTitle = tournament.title,
-        this._detailsText = _buildDetailsText(tournament);
+  final Tournament tournament;
+  final BuildContext context;
 
-  void show(BuildContext context) => showDialog(
+  TournamentDetailsAboutDialog({
+    @required this.context,
+    @required this.tournament,
+  })  : this._tournamentTitle = tournament.title,
+        this._detailsText = _DialogContentBuilder(tournament).build();
+
+  void show() => showDialog(
         context: context,
-        builder: (context) => _createDialog(context),
+        builder: (context) => _Dialog(
+              title: _tournamentTitle,
+              content: _detailsText,
+            ),
       );
+}
 
-  Widget _createDialog(BuildContext context) => AlertDialog(
+class _Dialog extends StatelessWidget {
+  final String title;
+  final String content;
+
+  const _Dialog({Key key, this.title, this.content}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => AlertDialog(
         contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 0),
         title: Text(
-          _tournamentTitle,
+          title,
           style: Theme.of(context)
               .textTheme
               .title
@@ -27,7 +43,7 @@ class TournamentDetailsAboutDialog {
         content: SingleChildScrollView(
           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
           child: Text(
-            _detailsText,
+            content,
             style: Theme.of(context).textTheme.body2,
           ),
         ),
@@ -38,8 +54,14 @@ class TournamentDetailsAboutDialog {
           ),
         ],
       );
+}
 
-  static String _buildDetailsText(Tournament tournament) {
+class _DialogContentBuilder {
+  final Tournament tournament;
+
+  _DialogContentBuilder(this.tournament);
+
+  String build() {
     var result = StringBuffer();
 
     var addToResult = (String s) {
@@ -57,7 +79,7 @@ class TournamentDetailsAboutDialog {
       addToResult(tournament.description);
     }
 
-    var toursAndQuestions = _buildToursAndQuestionsText(tournament);
+    var toursAndQuestions = _buildToursAndQuestionsText();
     if (toursAndQuestions.isNotEmpty) {
       addToResult(toursAndQuestions);
     }
@@ -73,7 +95,7 @@ class TournamentDetailsAboutDialog {
     return result.toString();
   }
 
-  static String _buildToursAndQuestionsText(Tournament tournament) {
+  String _buildToursAndQuestionsText() {
     var toursAndQuestions = StringBuffer();
 
     if (tournament.tours != null && tournament.tours.isNotEmpty) {

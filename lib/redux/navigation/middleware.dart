@@ -73,7 +73,9 @@ class NavigationMiddleware {
       Store<AppState> store, OpenTournamentInfo action, NextDispatcher next) {
     next(action);
 
-    TournamentDetailsAboutDialog(tournament: action.tournament)
-        .show(action.context);
+    TournamentDetailsAboutDialog(
+      context: action.context,
+      tournament: action.tournament,
+    ).show();
   }
 }
