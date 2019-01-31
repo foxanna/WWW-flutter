@@ -22,6 +22,7 @@ class AnalyticsMiddleware {
     // navigation
     OpenImage: 'open_image',
     OpenTourInfo: 'open_tour_info',
+    OpenTournamentInfo: 'open_tournament_info',
   };
 
   static final List<Middleware<AppState>> middleware = [
@@ -35,6 +36,7 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, BrowseQuestion>(_logAction),
     TypedMiddleware<AppState, OpenImage>(_logAction),
     TypedMiddleware<AppState, OpenTourInfo>(_logAction),
+    TypedMiddleware<AppState, OpenTournamentInfo>(_logAction),
   ];
 
   static final _analyticsService = AnalyticsService();

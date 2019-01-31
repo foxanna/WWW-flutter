@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/services/analytics.dart';
 
 class TournamentDetailsAboutDialog {
   final String _detailsText;
@@ -11,11 +10,10 @@ class TournamentDetailsAboutDialog {
       : this._tournamentTitle = tournament.title,
         this._detailsText = _buildDetailsText(tournament);
 
-  void show(BuildContext context) {
-    AnalyticsService().logEvent(name: 'tournament_info');
-
-    showDialog(context: context, builder: (context) => _createDialog(context));
-  }
+  void show(BuildContext context) => showDialog(
+        context: context,
+        builder: (context) => _createDialog(context),
+      );
 
   Widget _createDialog(BuildContext context) => AlertDialog(
         contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 0),
