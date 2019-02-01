@@ -48,8 +48,10 @@ class Tournament {
       createdAt: map['CreatedAt'],
       playedAt: map['PlayedAt'],
       tours: map.containsKey('tour')
-          ? UnmodifiableListView(
-              List.from(map['tour']).map((q) => Tour.fromJson(q)).toList())
+          ? map['tour'] is List
+              ? UnmodifiableListView(
+                  List.from(map['tour']).map((q) => Tour.fromJson(q)).toList())
+              : UnmodifiableListView([Tour.fromJson(map['tour'])])
           : UnmodifiableListView([]));
 
   Tournament({
