@@ -43,8 +43,10 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
   Widget _buildBody(BuildContext context) =>
       StoreConnector<AppState, Tuple2<TournamentState, FunctionHolder>>(
         distinct: true,
-        converter: (store) =>
-            Tuple2(store.state.tournamentState, FunctionHolder(null)),
+        converter: (store) => Tuple2(
+            store.state.tournamentState,
+            FunctionHolder(() => store.dispatch(LoadTournament(
+                store.state.tournamentState.tournament.textId)))),
         builder: (context, data) {
           var state = data.item1;
           var retryFunction = data.item2.function;
