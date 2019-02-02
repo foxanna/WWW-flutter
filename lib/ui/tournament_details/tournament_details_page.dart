@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tuple/tuple.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/redux/tornament/state.dart';
@@ -20,16 +19,7 @@ class TournamentDetailsPage extends StatefulWidget {
 }
 
 class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
-  final TournamentDetailsPageMenu _menu;
-
-  factory _TournamentDetailsPageState({@required Tournament tournament}) {
-    var menu = TournamentDetailsPageMenu();
-    return _TournamentDetailsPageState._(tournament, menu);
-  }
-
-  _TournamentDetailsPageState._(
-      Tournament tournament, TournamentDetailsPageMenu menu)
-      : this._menu = menu;
+  final _menu = TournamentDetailsPageMenu();
 
   @override
   Widget build(BuildContext context) => Scaffold(
