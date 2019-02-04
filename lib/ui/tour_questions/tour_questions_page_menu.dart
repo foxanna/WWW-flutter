@@ -13,7 +13,7 @@ class TourQuestionsPageMenu {
         onPressed: () => _showMenu(context),
       );
 
-  void _showMenu(BuildContext context) => showModalBottomSheet(
+  void _showMenu(BuildContext context) => showModalBottomSheet<Object>(
       context: context,
       builder: (context) => Column(
             mainAxisSize: MainAxisSize.min,

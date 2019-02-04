@@ -10,7 +10,7 @@ class TourDetailsAboutDialog {
       : this._tourTitle = tour.title,
         this._detailsText = _buildDetailsText(tour);
 
-  void show(BuildContext context) => showDialog(
+  void show(BuildContext context) => showDialog<Object>(
       context: context, builder: (context) => _createDialog(context));
 
   Widget _createDialog(BuildContext context) => AlertDialog(

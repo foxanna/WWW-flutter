@@ -64,7 +64,7 @@ class NavigationMiddleware {
 
   static void _navigateTo(
           {BuildContext context, String routeName, WidgetBuilder builder}) =>
-      Navigator.push(
+      Navigator.push<Object>(
           context,
           MaterialPageRoute(
               settings: RouteSettings(name: routeName), builder: builder));

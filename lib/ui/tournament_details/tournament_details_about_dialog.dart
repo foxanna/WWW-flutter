@@ -15,7 +15,7 @@ class TournamentDetailsAboutDialog {
   })  : this._tournamentTitle = tournament.title,
         this._detailsText = _DialogContentBuilder(tournament).build();
 
-  void show() => showDialog(
+  void show() => showDialog<Object>(
         context: context,
         builder: (context) => _Dialog(
               title: _tournamentTitle,

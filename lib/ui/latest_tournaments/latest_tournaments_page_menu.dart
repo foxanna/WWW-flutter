@@ -10,7 +10,7 @@ class LatestTournamentsPageMenu {
         ),
       ];
 
-  void _showMenu(BuildContext context) => showModalBottomSheet(
+  void _showMenu(BuildContext context) => showModalBottomSheet<Object>(
       context: context,
       builder: (context) => Column(
             mainAxisSize: MainAxisSize.min,
@@ -25,7 +25,7 @@ class LatestTournamentsPageMenu {
 
   static void _openAboutPage(BuildContext context) {
     Navigator.pop(context);
-    Navigator.push(
+    Navigator.push<Object>(
         context,
         MaterialPageRoute(
             settings: const RouteSettings(name: AboutPage.routeName),
