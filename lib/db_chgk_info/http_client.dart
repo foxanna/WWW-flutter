@@ -24,7 +24,7 @@ class HttpClient {
   }
 
   static Dio _createDioInstance() {
-    return new Dio(new Options(
+    return Dio(Options(
         baseUrl: _baseUrl,
         connectTimeout: _connectTimeout,
         receiveTimeout: _receiveTimeout));
