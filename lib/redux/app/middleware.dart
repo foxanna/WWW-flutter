@@ -10,7 +10,7 @@ import 'package:what_when_where/redux/tornament/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 
 class AppMiddleware {
-  static final middleware = List<Middleware<AppState>>()
+  static final middleware = <Middleware<AppState>>[]
     ..addAll(LogsMiddleware.middleware)
     ..addAll(AnalyticsMiddleware.middleware)
     ..addAll(TimerMiddleware.middleware)
