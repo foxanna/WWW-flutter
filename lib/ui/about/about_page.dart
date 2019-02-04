@@ -1,11 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/services/analytics.dart';
-import 'package:what_when_where/services/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
   static const String routeName = 'about';
@@ -64,7 +65,7 @@ class AboutPage extends StatelessWidget {
                     icon: const Icon(Icons.email),
                     tooltip: Strings.emailDevelopers,
                     color: Theme.of(context).accentColor,
-                    onPressed: () => _sendEmail(),
+                    onPressed: () => _sendEmail(context),
                   ),
                   Expanded(child: Container()),
                   RichText(
@@ -81,7 +82,7 @@ class AboutPage extends StatelessWidget {
                               color: Theme.of(context).accentColor,
                               decoration: TextDecoration.underline),
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () => _openDatabaseInBrowser(),
+                            ..onTap = () => _openDatabaseInBrowser(context),
                         ),
                       ],
                     ),
@@ -93,16 +94,9 @@ class AboutPage extends StatelessWidget {
         ],
       ));
 
-  void _openDatabaseInBrowser() async {
-    AnalyticsService().logEvent(name: 'open_database_in_browser');
+  void _openDatabaseInBrowser(BuildContext context) =>
+      StoreProvider.of<AppState>(context).dispatch(BrowseDatabase());
 
-    await UrlLauncher.launchURL(Constants.databaseUrl);
-  }
-
-  void _sendEmail() async {
-    AnalyticsService().logEvent(name: 'send_email_to_developers');
-
-    await UrlLauncher.sendEmail(
-        Constants.developersEmail, '${Strings.app} ${Constants.appNameLong}');
-  }
+  void _sendEmail(BuildContext context) =>
+      StoreProvider.of<AppState>(context).dispatch(EmailDevelopers());
 }
