@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SolidIconButton extends MaterialButton {
+  final Icon icon;
   final Color fillColor;
-  final Icon child;
   final Size buttonSize;
   final Color borderColor;
   final double borderWidth;
@@ -13,13 +13,13 @@ class SolidIconButton extends MaterialButton {
     this.buttonSize = const Size.square(56.0),
     Color highlightColor,
     Color splashColor,
-    Color this.fillColor,
-    Color this.borderColor,
-    double this.borderWidth,
+    this.fillColor,
+    this.borderColor,
+    this.borderWidth,
     double elevation,
     MaterialTapTargetSize materialTapTargetSize,
-    @required Icon this.child,
-  })  : assert(child != null),
+    @required this.icon,
+  })  : assert(icon != null),
         assert(buttonSize != null),
         super(
           key: key,
@@ -40,14 +40,14 @@ class SolidIconButton extends MaterialButton {
           width: buttonSize.width,
           height: buttonSize.height,
         ),
-        splashColor: splashColor ?? child.color.withOpacity(0.12),
-        highlightColor: highlightColor ?? child.color.withOpacity(0.16),
+        splashColor: splashColor ?? icon.color.withOpacity(0.12),
+        highlightColor: highlightColor ?? icon.color.withOpacity(0.16),
         clipBehavior: clipBehavior,
         fillColor: fillColor,
         shape: CircleBorder(
             side: (borderColor != null && borderWidth != 0)
                 ? BorderSide(color: borderColor, width: 1)
                 : BorderSide.none),
-        child: child,
+        child: icon,
       );
 }
