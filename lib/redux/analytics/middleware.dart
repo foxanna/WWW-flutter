@@ -2,6 +2,7 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/analytics.dart';
@@ -11,6 +12,9 @@ class AnalyticsMiddleware {
     // timer
     StartTimer: 'start_timer',
     StopTimer: 'pause_timer',
+    // answer
+    ShowAnswer: 'show_answer',
+    HideAnswer: 'hide_answer',
     // sharing
     ShareQuestion: 'share_question',
     ShareTour: 'share_tour',
@@ -28,6 +32,8 @@ class AnalyticsMiddleware {
   static final List<Middleware<AppState>> middleware = [
     TypedMiddleware<AppState, StartTimer>(_logAction),
     TypedMiddleware<AppState, StopTimer>(_logAction),
+    TypedMiddleware<AppState, ShowAnswer>(_logAction),
+    TypedMiddleware<AppState, HideAnswer>(_logAction),
     TypedMiddleware<AppState, ShareQuestion>(_logAction),
     TypedMiddleware<AppState, ShareTour>(_logAction),
     TypedMiddleware<AppState, ShareTournament>(_logAction),
