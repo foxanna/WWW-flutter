@@ -8,26 +8,28 @@ import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 
-class TournamentDetailsPageMenu {
-  List<Widget> createAppBarMenuActions(BuildContext context) => <Widget>[
-        IconButton(
-          icon: const Icon(Icons.more_vert),
-          onPressed: () => _showMenu(context),
-        ),
-      ];
+class TournamentDetailsPageMoreIconButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(Icons.more_vert),
+        onPressed: () => _showMenu(context),
+      );
 
   void _showMenu(BuildContext context) => showModalBottomSheet<Object>(
       context: context,
       builder: (context) => Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _createBrowseMenuItem(context),
-              _createShareMenuItem(context),
-              _createAboutMenuItem(context),
+              _BrowseTournamentBottomSheetItem(),
+              _ShareTournamentBottomSheetItem(),
+              _AboutTournamentBottomSheetItem(),
             ],
           ));
+}
 
-  Widget _createBrowseMenuItem(BuildContext context) =>
+class _BrowseTournamentBottomSheetItem extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
         distinct: true,
         converter: (store) => Tuple2(
@@ -49,8 +51,11 @@ class TournamentDetailsPageMenu {
           );
         },
       );
+}
 
-  Widget _createShareMenuItem(BuildContext context) =>
+class _ShareTournamentBottomSheetItem extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
         distinct: true,
         converter: (store) => Tuple2(
@@ -72,8 +77,11 @@ class TournamentDetailsPageMenu {
           );
         },
       );
+}
 
-  Widget _createAboutMenuItem(BuildContext context) =>
+class _AboutTournamentBottomSheetItem extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
         distinct: true,
         converter: (store) => Tuple2(
