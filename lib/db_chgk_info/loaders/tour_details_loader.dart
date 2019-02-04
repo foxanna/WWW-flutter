@@ -12,7 +12,9 @@ class TourDetailsLoader {
   final _cache = TourCache();
 
   Future<Tour> get(String id) async {
-    if (_cache.contains(id)) return _cache.get(id);
+    if (_cache.contains(id)) {
+      return _cache.get(id);
+    }
 
     var map = await HttpClient().get(Uri(path: '/tour/$id/xml'));
     var tour = Tour.fromJson(map['tournament']);

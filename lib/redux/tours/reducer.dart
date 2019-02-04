@@ -58,7 +58,9 @@ class ToursReducer {
       ToursState state, String tourId, TourState Function(TourState) function) {
     var tourIndex =
         state.tours.indexWhere((tourState) => tourState.tour.id == tourId);
-    if (tourIndex == -1) return state;
+    if (tourIndex == -1) {
+      return state;
+    }
 
     var newTourState = function(state.tours[tourIndex]);
     return state.copyWith(

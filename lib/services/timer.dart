@@ -16,7 +16,9 @@ class WWWTimer {
   void start({void Function(Duration duration) callback}) {
     _callback = callback;
 
-    if (isRunning) return;
+    if (isRunning) {
+      return;
+    }
 
     _timer = Timer.periodic(
         Duration(milliseconds: updateFrequency), _onTimerTimeout);
@@ -24,7 +26,9 @@ class WWWTimer {
   }
 
   void pause() {
-    if (!isRunning) return;
+    if (!isRunning) {
+      return;
+    }
 
     _stopwatch.stop();
     _timer.cancel();
@@ -44,6 +48,8 @@ class WWWTimer {
   }
 
   void _updateTime() {
-    if (_callback != null) _callback(_stopwatch.elapsed);
+    if (_callback != null) {
+      _callback(_stopwatch.elapsed);
+    }
   }
 }

@@ -8,6 +8,8 @@ class VibratingService {
   VibratingService._();
 
   Future vibrate() async {
-    if (await Vibrate.canVibrate) Vibrate.vibrate();
+    if (await Vibrate.canVibrate) {
+      Vibrate.vibrate();
+    }
   }
 }

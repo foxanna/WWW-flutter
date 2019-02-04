@@ -1,6 +1,8 @@
 class TextUtils {
   static String normalizeToSingleLine(String text) {
-    if (text == null) return null;
+    if (text == null) {
+      return null;
+    }
 
     text = _normalize(text);
     text = removeMultipleSpaces(text);
@@ -9,7 +11,9 @@ class TextUtils {
   }
 
   static String normalizeToMultiLine(String text) {
-    if (text == null) return null;
+    if (text == null) {
+      return null;
+    }
 
     text = _normalize(text);
     text = replaceMultipleSpacesWithNewLine(text);
@@ -18,7 +22,9 @@ class TextUtils {
   }
 
   static String _normalize(String text) {
-    if (text == null) return null;
+    if (text == null) {
+      return null;
+    }
 
     text = _replaceEscapedSymbols(text);
     text = removeParagraphs(text);

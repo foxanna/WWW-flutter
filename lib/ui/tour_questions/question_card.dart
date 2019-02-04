@@ -170,7 +170,9 @@ class _QuestionCardState extends State<QuestionCard>
     final parent = _listViewKey?.currentContext?.findRenderObject();
     final RenderBox box = _buttonStackKey?.currentContext?.findRenderObject();
 
-    if (parent == null || box == null) return;
+    if (parent == null || box == null) {
+      return;
+    }
 
     final position = box.localToGlobal(Offset.zero, ancestor: parent);
     _scrollController.animateTo(

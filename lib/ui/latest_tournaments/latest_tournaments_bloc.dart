@@ -17,7 +17,9 @@ class LatestTournamentsBloc {
   LatestTournamentsBlocState get _state => _streamController.value;
 
   Future loadMore() async {
-    if (_state?.isLoading ?? false) return;
+    if (_state?.isLoading ?? false) {
+      return;
+    }
 
     try {
       _streamController
@@ -49,8 +51,12 @@ class LatestTournamentsBloc {
   }
 
   void _moreItemsLoaded(Iterable<Tournament> data) {
-    if (_page == 0) _items.clear();
-    if (data != null) _items.addAll(data);
+    if (_page == 0) {
+      _items.clear();
+    }
+    if (data != null) {
+      _items.addAll(data);
+    }
 
     _page++;
   }

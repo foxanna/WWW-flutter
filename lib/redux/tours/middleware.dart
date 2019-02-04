@@ -16,7 +16,9 @@ class ToursMiddleware {
     next(action);
 
     var tourId = store.state.toursState.currentTour?.tour?.id;
-    if (tourId != null) store.dispatch(LoadTour(tourId));
+    if (tourId != null) {
+      store.dispatch(LoadTour(tourId));
+    }
   }
 
   static void _loadTour(
@@ -28,7 +30,9 @@ class ToursMiddleware {
     var tourState = store.state.toursState.tours
         .firstWhere((state) => state.tour.id == tourId, orElse: () => null);
 
-    if (tourState == null || tourState.hasData || tourState.isLoading) return;
+    if (tourState == null || tourState.hasData || tourState.isLoading) {
+      return;
+    }
 
     try {
       store.dispatch(TourIsLoading(tourId));

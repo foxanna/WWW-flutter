@@ -17,7 +17,9 @@ class TournamentDetailsLoader {
   final _toursCache = TourCache();
 
   Future<Tournament> get(String id) async {
-    if (_cache.contains(id)) return _cache.get(id);
+    if (_cache.contains(id)) {
+      return _cache.get(id);
+    }
 
     var map = await HttpClient().get(Uri(path: '/tour/$id/xml'));
     map = map['tournament'];
