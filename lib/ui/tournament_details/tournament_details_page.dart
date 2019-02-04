@@ -20,13 +20,11 @@ class TournamentDetailsPage extends StatefulWidget {
 }
 
 class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
-  final _menu = TournamentDetailsPageMenu();
-
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           elevation: 0,
-          actions: _menu.createAppBarMenuActions(context),
+          actions: [TournamentDetailsPageMoreIconButton()],
         ),
         body: _buildBody(context),
       );
