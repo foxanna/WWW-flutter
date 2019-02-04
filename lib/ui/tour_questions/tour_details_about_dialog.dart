@@ -1,43 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/ui/common/info_dialog.dart';
 
 class TourDetailsAboutDialog {
   final String _detailsText;
   final String _tourTitle;
 
-  TourDetailsAboutDialog({@required Tour tour})
+  final BuildContext context;
+  final Tour tour;
+
+  TourDetailsAboutDialog({this.context, this.tour})
       : this._tourTitle = tour.title,
-        this._detailsText = _buildDetailsText(tour);
+        this._detailsText = _DialogContentBuilder(tour).build();
 
-  void show(BuildContext context) => showDialog<Object>(
-      context: context, builder: (context) => _createDialog(context));
-
-  Widget _createDialog(BuildContext context) => AlertDialog(
-        contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 0),
-        title: Text(
-          _tourTitle,
-          style: Theme.of(context)
-              .textTheme
-              .title
-              .copyWith(color: Theme.of(context).accentColor),
-        ),
-        content: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-          child: Text(
-            _detailsText,
-            style: Theme.of(context).textTheme.body2,
-          ),
-        ),
-        actions: [
-          FlatButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text(Strings.close),
-          ),
-        ],
+  void show() => showDialog<Object>(
+        context: context,
+        builder: (context) => InfoDialog(
+              title: _tourTitle,
+              content: _detailsText,
+            ),
       );
+}
 
-  static String _buildDetailsText(Tour tour) {
+class _DialogContentBuilder {
+  final Tour tour;
+
+  _DialogContentBuilder(this.tour);
+
+  String build() {
     final result = StringBuffer();
 
     final addToResult = (String s) {
