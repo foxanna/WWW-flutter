@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/ui/common/info_dialog.dart';
 
 class TournamentDetailsAboutDialog {
   final String _detailsText;
@@ -17,42 +18,10 @@ class TournamentDetailsAboutDialog {
 
   void show() => showDialog<Object>(
         context: context,
-        builder: (context) => _Dialog(
+        builder: (context) => InfoDialog(
               title: _tournamentTitle,
               content: _detailsText,
             ),
-      );
-}
-
-class _Dialog extends StatelessWidget {
-  final String title;
-  final String content;
-
-  const _Dialog({Key key, this.title, this.content}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => AlertDialog(
-        contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 0),
-        title: Text(
-          title,
-          style: Theme.of(context)
-              .textTheme
-              .title
-              .copyWith(color: Theme.of(context).accentColor),
-        ),
-        content: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-          child: Text(
-            content,
-            style: Theme.of(context).textTheme.body2,
-          ),
-        ),
-        actions: [
-          FlatButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text(Strings.close),
-          ),
-        ],
       );
 }
 
