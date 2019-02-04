@@ -32,7 +32,7 @@ class _Dialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AlertDialog(
-        contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 0),
+        contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 0),
         title: Text(
           title,
           style: Theme.of(context)
@@ -41,7 +41,7 @@ class _Dialog extends StatelessWidget {
               .copyWith(color: Theme.of(context).accentColor),
         ),
         content: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
           child: Text(
             content,
             style: Theme.of(context).textTheme.body2,

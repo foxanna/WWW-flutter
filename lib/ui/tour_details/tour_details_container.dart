@@ -34,7 +34,7 @@ class _TourDetailsContainerState extends State<TourDetailsContainer>
           final retry = data.item2;
 
           if (state.isLoading) {
-            return WWWProgressIndicator();
+            return const WWWProgressIndicator();
           }
           if (state.hasError) {
             return ErrorMessage(

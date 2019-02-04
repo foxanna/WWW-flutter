@@ -67,7 +67,7 @@ class TextSections extends StatelessWidget {
       return Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          WWWProgressIndicator(),
+          const WWWProgressIndicator(),
           GestureDetector(
             child: Hero(
               tag: section.url,

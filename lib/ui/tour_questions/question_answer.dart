@@ -28,24 +28,24 @@ class QuestionAnswer extends StatelessWidget {
     );
 
     if (question.passCriteria != null) {
-      yield SizedBox(height: Dimensions.defaultSpacing * 2);
+      yield const SizedBox(height: Dimensions.defaultSpacing * 2);
       yield Text('${Strings.acceptableAnswer}: ${question.passCriteria}',
           style: textTheme.headline.copyWith(
               fontSize: fontSize, color: Theme.of(context).accentColor));
     }
 
     if (question.comments != null) {
-      yield SizedBox(height: Dimensions.defaultSpacing * 2);
+      yield const SizedBox(height: Dimensions.defaultSpacing * 2);
       yield QuestionComment(text: '* ${question.comments}');
     }
 
     if (question.authors != null) {
-      yield SizedBox(height: Dimensions.defaultSpacing);
+      yield const SizedBox(height: Dimensions.defaultSpacing);
       yield Text('${Strings.author}: ${question.authors}');
     }
 
     if (question.sources != null) {
-      yield SizedBox(height: Dimensions.defaultSpacing);
+      yield const SizedBox(height: Dimensions.defaultSpacing);
       yield TextWithLinks(
         '${Strings.sources}:\n${question.sources}',
         textStyle: textTheme.body1,

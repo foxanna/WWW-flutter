@@ -11,7 +11,7 @@ import 'package:what_when_where/utils/function_holder.dart';
 class TournamentDetailsPageMenu {
   List<Widget> createAppBarMenuActions(BuildContext context) => <Widget>[
         IconButton(
-          icon: Icon(Icons.more_vert),
+          icon: const Icon(Icons.more_vert),
           onPressed: () => _showMenu(context),
         ),
       ];

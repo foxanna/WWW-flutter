@@ -60,7 +60,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildElevatedHeader(context),
-          Expanded(child: WWWProgressIndicator())
+          const Expanded(child: WWWProgressIndicator())
         ],
       );
 

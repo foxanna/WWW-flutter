@@ -9,7 +9,7 @@ import 'package:what_when_where/resources/strings.dart';
 
 class TourQuestionsPageMenu {
   Widget createAppBarMenuAction(BuildContext context) => IconButton(
-        icon: Icon(Icons.more_vert),
+        icon: const Icon(Icons.more_vert),
         onPressed: () => _showMenu(context),
       );
 

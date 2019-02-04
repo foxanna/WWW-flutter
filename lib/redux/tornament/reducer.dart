@@ -23,7 +23,7 @@ class TournamentReducer {
 
   static TournamentState _voidTournament(
           TournamentState state, VoidTournament action) =>
-      TournamentState.initial();
+      const TournamentState.initial();
 
   static TournamentState _updateTournamentIsLoading(
           TournamentState state, TournamentIsLoading action) =>

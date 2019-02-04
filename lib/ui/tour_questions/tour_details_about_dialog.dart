@@ -14,7 +14,7 @@ class TourDetailsAboutDialog {
       context: context, builder: (context) => _createDialog(context));
 
   Widget _createDialog(BuildContext context) => AlertDialog(
-        contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 0),
+        contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 0),
         title: Text(
           _tourTitle,
           style: Theme.of(context)
@@ -23,7 +23,7 @@ class TourDetailsAboutDialog {
               .copyWith(color: Theme.of(context).accentColor),
         ),
         content: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
           child: Text(
             _detailsText,
             style: Theme.of(context).textTheme.body2,

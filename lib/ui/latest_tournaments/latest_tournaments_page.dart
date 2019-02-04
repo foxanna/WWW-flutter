@@ -50,13 +50,14 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
                 padding: Dimensions.defaultPadding,
               ));
               if (state.isLoadingMore) {
-                children.add(SliverToBoxAdapter(child: WWWProgressIndicator()));
+                children.add(
+                    const SliverToBoxAdapter(child: WWWProgressIndicator()));
               }
             } else {
               if (state.isLoading) {
-                children.add(SliverToBoxAdapter(
+                children.add(const SliverToBoxAdapter(
                     child: Padding(
-                  padding: const EdgeInsets.only(top: _appBarHeight),
+                  padding: EdgeInsets.only(top: _appBarHeight),
                   child: WWWProgressIndicator(),
                 )));
               }

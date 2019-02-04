@@ -16,7 +16,7 @@ class ImagePage extends StatelessWidget {
         child: PhotoView(
           heroTag: _url,
           imageProvider: NetworkImage(_url),
-          loadingChild: WWWProgressIndicator(),
+          loadingChild: const WWWProgressIndicator(),
           minScale: PhotoViewComputedScale.contained,
         ),
       );

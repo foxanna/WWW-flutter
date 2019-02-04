@@ -36,7 +36,7 @@ class LatestTournamentTile extends StatelessWidget {
           tournament.title,
           style: textTheme.subhead,
         ),
-        SizedBox(height: Dimensions.defaultSpacing * 2),
+        const SizedBox(height: Dimensions.defaultSpacing * 2),
         AutoSizeText(
           '${Strings.playedAt} ${tournament.playedAt}\n${Strings.addedAt} ${tournament.createdAt}',
           overflow: TextOverflow.ellipsis,

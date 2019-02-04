@@ -16,5 +16,5 @@ class LatestTournamentsGrid extends StatelessWidget {
       crossAxisSpacing: 4.0,
       itemBuilder: (c, i) => LatestTournamentTile(tournament: tournaments[i]),
       itemCount: tournaments.length,
-      staggeredTileBuilder: (index) => StaggeredTile.fit(1));
+      staggeredTileBuilder: (index) => const StaggeredTile.fit(1));
 }

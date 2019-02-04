@@ -61,7 +61,7 @@ class AboutPage extends StatelessWidget {
                         .copyWith(color: Theme.of(context).accentColor),
                   ),
                   IconButton(
-                    icon: Icon(Icons.email),
+                    icon: const Icon(Icons.email),
                     tooltip: Strings.emailDevelopers,
                     color: Theme.of(context).accentColor,
                     onPressed: () => sendEmail(),

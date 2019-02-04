@@ -13,7 +13,7 @@ class WWWProgressIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        child: CircularProgressIndicator(),
+        child: const CircularProgressIndicator(),
         alignment: alignment,
         padding: padding,
       );

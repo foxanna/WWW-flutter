@@ -20,8 +20,8 @@ class AppState {
 
   AppState.initial()
       : this(
-          timerState: TimerState.initial(),
-          tournamentState: TournamentState.initial(),
+          timerState: const TimerState.initial(),
+          tournamentState: const TournamentState.initial(),
           toursState: ToursState.initial(),
           questionsState: QuestionsState.initial(),
         );

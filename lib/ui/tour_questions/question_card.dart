@@ -51,7 +51,7 @@ class _QuestionCardState extends State<QuestionCard>
           child: ListView(
             key: _listViewKey,
             controller: _scrollController,
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
                 vertical: Dimensions.defaultSidePadding * 6,
                 horizontal: Dimensions.defaultSidePadding * 3),
             children: <Widget>[
@@ -81,8 +81,9 @@ class _QuestionCardState extends State<QuestionCard>
                     Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
-                        padding: EdgeInsets.only(
-                            right: Dimensions.defaultSidePadding * 2),
+                        padding: const EdgeInsets.only(
+                          right: Dimensions.defaultSidePadding * 2,
+                        ),
                         child: _buildShowAnswerButtonWrapper(context),
                       ),
                     ),
@@ -97,7 +98,7 @@ class _QuestionCardState extends State<QuestionCard>
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: Container(
             color: Theme.of(context).accentColor,
-            child: SizedBox(
+            child: const SizedBox(
               height: 1,
             )),
       );
@@ -110,7 +111,7 @@ class _QuestionCardState extends State<QuestionCard>
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [gradientEnd, gradientStart, gradientStart, gradientEnd],
-        stops: [0, gradientSize, 1 - gradientSize, 1]);
+        stops: const [0, gradientSize, 1 - gradientSize, 1]);
     return BoxDecoration(gradient: gradient);
   }
 
@@ -141,7 +142,7 @@ class _QuestionCardState extends State<QuestionCard>
   SolidIconButton _buildShowAnswerButton(
           BuildContext context, IconData icon, Function onPressed) =>
       SolidIconButton(
-        child: Icon(
+        icon: Icon(
           icon,
           color: Theme.of(context).accentColor,
         ),
