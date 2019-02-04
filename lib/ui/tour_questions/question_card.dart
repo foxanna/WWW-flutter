@@ -104,8 +104,8 @@ class _QuestionCardState extends State<QuestionCard>
   BoxDecoration _buildGradientDecoration(BuildContext context) {
     final gradientEnd = Theme.of(context).canvasColor;
     final gradientStart = Theme.of(context).canvasColor.withAlpha(0);
-    final gradientSize = 0.05;
-    var gradient = LinearGradient(
+    const gradientSize = 0.05;
+    final gradient = LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [gradientEnd, gradientStart, gradientStart, gradientEnd],
@@ -117,7 +117,7 @@ class _QuestionCardState extends State<QuestionCard>
       StoreConnector<AppState, Tuple2<FunctionHolder, bool>>(
         distinct: true,
         converter: (store) {
-          var showAnswer =
+          final showAnswer =
               store.state.questionsState.questions[widget.index].showAnswer;
           return Tuple2<FunctionHolder, bool>(
               FunctionHolder(() => store.dispatch(
@@ -128,8 +128,8 @@ class _QuestionCardState extends State<QuestionCard>
               showAnswer);
         },
         builder: (context, data) {
-          var functionHolder = data.item1;
-          var showAnswer = data.item2;
+          final functionHolder = data.item1;
+          final showAnswer = data.item2;
           return _buildShowAnswerButton(
               context,
               showAnswer ? Icons.visibility_off : Icons.visibility,
@@ -157,7 +157,7 @@ class _QuestionCardState extends State<QuestionCard>
           converter: (store) =>
               store.state.questionsState.questions[widget.index],
           builder: (context, state) {
-            var widget = state.showAnswer
+            final widget = state.showAnswer
                 ? QuestionAnswer(question: state.question)
                 : Container();
             if (state.showAnswer)

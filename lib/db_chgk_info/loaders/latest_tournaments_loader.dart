@@ -18,9 +18,9 @@ class LatestTournamentsLoader {
   }
 
   Iterable<Tournament> parseHtml(String html) {
-    var table = parse(html).getElementsByClassName('last_packages');
+    final table = parse(html).getElementsByClassName('last_packages');
 
-    var rows = IterableExtensions.merge(
+    final rows = IterableExtensions.merge(
             table.first.getElementsByClassName('odd'),
             table.first.getElementsByClassName('even'))
         .toList();

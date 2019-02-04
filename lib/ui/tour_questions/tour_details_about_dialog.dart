@@ -38,9 +38,9 @@ class TourDetailsAboutDialog {
       );
 
   static String _buildDetailsText(Tour tour) {
-    var result = StringBuffer();
+    final result = StringBuffer();
 
-    var addToResult = (String s) {
+    final addToResult = (String s) {
       if (result.isNotEmpty) {
         result.writeln();
       }

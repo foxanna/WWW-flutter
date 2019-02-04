@@ -59,9 +59,9 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
               store.dispatch(SelectQuestion(index));
             })),
         builder: (context, data) {
-          var count = data.item1;
-          var startIndex = data.item2;
-          var onPageChanged = data.item3;
+          final count = data.item1;
+          final startIndex = data.item2;
+          final onPageChanged = data.item3;
 
           return PageView.builder(
             controller:

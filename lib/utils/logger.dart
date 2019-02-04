@@ -3,7 +3,7 @@ import 'dart:math';
 const _maxLogSize = 512;
 
 void log(Object object) {
-  var data = _split(object.toString(), _maxLogSize);
+  final data = _split(object.toString(), _maxLogSize);
   data.forEach(print);
 }
 

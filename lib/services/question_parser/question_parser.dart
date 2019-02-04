@@ -19,27 +19,27 @@ class QuestionParser {
       text = text.trim();
 
       if (text.startsWith(SpeakerNoteSection.regExp)) {
-        var notes = SpeakerNoteSection.regExp.stringMatch(text);
+        final notes = SpeakerNoteSection.regExp.stringMatch(text);
         yield SpeakerNoteSection(notes);
         text = text.replaceFirst(notes, '');
         continue;
       }
 
       if (text.startsWith(ImageSection.regExp)) {
-        var picture = ImageSection.regExp.stringMatch(text);
+        final picture = ImageSection.regExp.stringMatch(text);
         yield ImageSection(picture);
         text = text.replaceFirst(picture, '');
         continue;
       }
 
       if (text.startsWith(GiveAwaySection.regExp)) {
-        var giveaway = GiveAwaySection.regExp.stringMatch(text);
+        final giveaway = GiveAwaySection.regExp.stringMatch(text);
         yield GiveAwaySection(giveaway);
         text = text.replaceFirst(giveaway, '');
         continue;
       }
 
-      var nextRegExpIndexes = [
+      final nextRegExpIndexes = [
         (text.indexOf(SpeakerNoteSection.regExp)),
         (text.indexOf(ImageSection.regExp)),
         (text.indexOf(GiveAwaySection.regExp))
@@ -47,7 +47,8 @@ class QuestionParser {
 
       var plainText = text;
       if (nextRegExpIndexes.isNotEmpty) {
-        var firstOfRegExpMatchIndex = IterableExtensions.min(nextRegExpIndexes);
+        final firstOfRegExpMatchIndex =
+            IterableExtensions.min(nextRegExpIndexes);
         plainText = text.substring(0, firstOfRegExpMatchIndex);
       }
       yield TextSection(plainText);

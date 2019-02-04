@@ -28,13 +28,13 @@ class SharingService {
   }
 
   void shareQuestion(Question question) {
-    var questionInfo = [
+    final questionInfo = [
       question.tournamentTitle,
       question.tourTitle,
       '${Strings.question.toLowerCase()} ${question.number}'
     ].where((x) => x != null).join(', ');
 
-    var text = '${QuestionParser.trim(question.question)}\n\n'
+    final text = '${QuestionParser.trim(question.question)}\n\n'
         '$questionInfo\n'
         '${question.url}'
         '${_createAppendix()}';

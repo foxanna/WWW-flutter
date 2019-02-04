@@ -25,7 +25,7 @@ class LatestTournamentsBloc {
       _streamController
           .add(LatestTournamentsBlocState(isLoadingMore: true, data: _items));
 
-      var data = await LatestTournamentsLoader().get(page: _page);
+      final data = await LatestTournamentsLoader().get(page: _page);
       _moreItemsLoaded(data);
 
       _streamController.add(LatestTournamentsBlocState(data: _items));
@@ -41,7 +41,7 @@ class LatestTournamentsBloc {
 
       _reset();
 
-      var data = await LatestTournamentsLoader().get(page: _page);
+      final data = await LatestTournamentsLoader().get(page: _page);
       _moreItemsLoaded(data);
 
       _streamController.add(LatestTournamentsBlocState(data: _items));

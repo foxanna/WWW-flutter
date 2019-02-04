@@ -26,18 +26,18 @@ class TournamentDetailsLoader {
 
     _handleTourlessTournament(map);
 
-    var tournament = Tournament.fromJson(map);
+    final tournament = Tournament.fromJson(map);
     _cache.save(tournament);
     return tournament;
   }
 
   void _handleTourlessTournament(Map<String, dynamic> map) {
     if (!map.containsKey('tour')) {
-      var tourMap = Map<String, dynamic>.from(map);
+      final tourMap = Map<String, dynamic>.from(map);
       tourMap['Title'] = Strings.firstTour;
       tourMap['ParentId'] = map['Id'];
 
-      var tour = Tour.fromJson(tourMap);
+      final tour = Tour.fromJson(tourMap);
       _toursCache.save(tour);
 
       map['tour'] = tourMap;

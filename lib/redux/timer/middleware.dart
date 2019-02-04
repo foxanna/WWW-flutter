@@ -62,10 +62,10 @@ class _TimerConnectingMiddleware {
       Store<AppState> store, UpdateTimeValue action, NextDispatcher next) {
     next(action);
 
-    var currentMilliseconds = action.newValue.inMilliseconds;
+    final currentMilliseconds = action.newValue.inMilliseconds;
 
-    var shouldNotify = _secondsToNotifyAt.any((second) {
-      var milliseconds = Duration.millisecondsPerSecond * second;
+    final shouldNotify = _secondsToNotifyAt.any((second) {
+      final milliseconds = Duration.millisecondsPerSecond * second;
       return currentMilliseconds >= milliseconds &&
           currentMilliseconds <
               milliseconds + _TimerTickingMiddleware._timerFrequency;

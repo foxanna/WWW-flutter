@@ -13,9 +13,9 @@ class QuestionText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var themeData = Theme.of(context);
-    var textTheme = themeData.textTheme;
-    var fontSize = textTheme.title.fontSize - 2;
+    final themeData = Theme.of(context);
+    final textTheme = themeData.textTheme;
+    final fontSize = textTheme.title.fontSize - 2;
 
     return TextSections(
         sections: _sections,

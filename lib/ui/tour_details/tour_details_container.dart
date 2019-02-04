@@ -30,8 +30,8 @@ class _TourDetailsContainerState extends State<TourDetailsContainer>
         converter: (store) => Tuple2(store.state.toursState.tours[widget.index],
             FunctionHolder((String id) => store.dispatch(LoadTour(id)))),
         builder: (context, data) {
-          var state = data.item1;
-          var retry = data.item2;
+          final state = data.item1;
+          final retry = data.item2;
 
           if (state.isLoading) {
             return WWWProgressIndicator();

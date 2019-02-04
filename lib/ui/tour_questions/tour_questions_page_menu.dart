@@ -51,23 +51,23 @@ class TourQuestionsPageMenu {
   void _openInBrowser(BuildContext context) {
     Navigator.pop(context);
 
-    var store = StoreProvider.of<AppState>(context);
-    var question = store.state.questionsState.currentQuestion.question;
+    final store = StoreProvider.of<AppState>(context);
+    final question = store.state.questionsState.currentQuestion.question;
     store.dispatch(BrowseQuestion(question));
   }
 
   void _shareQuestion(BuildContext context) {
     Navigator.pop(context);
 
-    var store = StoreProvider.of<AppState>(context);
-    var question = store.state.questionsState.currentQuestion.question;
+    final store = StoreProvider.of<AppState>(context);
+    final question = store.state.questionsState.currentQuestion.question;
     store.dispatch(ShareQuestion(question));
   }
 
   void _openAboutTourDialog(BuildContext context, Tour tour) {
     Navigator.pop(context);
 
-    var store = StoreProvider.of<AppState>(context);
+    final store = StoreProvider.of<AppState>(context);
     store.dispatch(OpenTourInfo(context: context, tour: tour));
   }
 }

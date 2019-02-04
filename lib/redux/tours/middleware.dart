@@ -15,7 +15,7 @@ class ToursMiddleware {
       Store<AppState> store, SelectTour action, NextDispatcher next) {
     next(action);
 
-    var tourId = store.state.toursState.currentTour?.tour?.id;
+    final tourId = store.state.toursState.currentTour?.tour?.id;
     if (tourId != null) {
       store.dispatch(LoadTour(tourId));
     }
@@ -25,9 +25,9 @@ class ToursMiddleware {
       Store<AppState> store, LoadTour action, NextDispatcher next) async {
     next(action);
 
-    var tourId = action.tourId;
+    final tourId = action.tourId;
 
-    var tourState = store.state.toursState.tours
+    final tourState = store.state.toursState.tours
         .firstWhere((state) => state.tour.id == tourId, orElse: () => null);
 
     if (tourState == null || tourState.hasData || tourState.isLoading) {
@@ -37,7 +37,7 @@ class ToursMiddleware {
     try {
       store.dispatch(TourIsLoading(tourId));
 
-      var data = await _loader.get(tourState.tour.id);
+      final data = await _loader.get(tourState.tour.id);
 
       store.dispatch(TourLoaded(data));
     } catch (e) {

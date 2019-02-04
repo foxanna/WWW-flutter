@@ -62,9 +62,9 @@ class _DialogContentBuilder {
   _DialogContentBuilder(this.tournament);
 
   String build() {
-    var result = StringBuffer();
+    final result = StringBuffer();
 
-    var addToResult = (String s) {
+    final addToResult = (String s) {
       if (result.isNotEmpty) {
         result.writeln();
       }
@@ -79,7 +79,7 @@ class _DialogContentBuilder {
       addToResult(tournament.description);
     }
 
-    var toursAndQuestions = _buildToursAndQuestionsText();
+    final toursAndQuestions = _buildToursAndQuestionsText();
     if (toursAndQuestions.isNotEmpty) {
       addToResult(toursAndQuestions);
     }
@@ -96,7 +96,7 @@ class _DialogContentBuilder {
   }
 
   String _buildToursAndQuestionsText() {
-    var toursAndQuestions = StringBuffer();
+    final toursAndQuestions = StringBuffer();
 
     if (tournament.tours != null && tournament.tours.isNotEmpty) {
       toursAndQuestions.write('${Strings.tours}: ${tournament.tours.length}');

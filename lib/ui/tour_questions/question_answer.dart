@@ -17,8 +17,8 @@ class QuestionAnswer extends StatelessWidget {
       );
 
   Iterable<Widget> _buildAnswerContent(BuildContext context) sync* {
-    var textTheme = Theme.of(context).textTheme;
-    var fontSize = textTheme.title.fontSize - 2;
+    final textTheme = Theme.of(context).textTheme;
+    final fontSize = textTheme.title.fontSize - 2;
 
     yield Text(
       '${Strings.answer}: ${question.answer}'

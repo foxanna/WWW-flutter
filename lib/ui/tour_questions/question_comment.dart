@@ -11,7 +11,7 @@ class QuestionComment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var textTheme = Theme.of(context).textTheme;
+    final textTheme = Theme.of(context).textTheme;
 
     return TextSections(
         sections: _sections,

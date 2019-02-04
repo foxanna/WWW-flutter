@@ -39,10 +39,10 @@ class LatestTournamentsPageState extends State<LatestTournamentsPage> {
       StreamBuilder<LatestTournamentsBlocState>(
         stream: _bloc.stateStream,
         builder: (context, snapshot) {
-          var children = [_buildSliverAppBar(context)];
+          final children = [_buildSliverAppBar(context)];
 
           if (snapshot.hasData) {
-            var state = snapshot.data;
+            final state = snapshot.data;
 
             if (state.data.isNotEmpty) {
               children.add(SliverPadding(

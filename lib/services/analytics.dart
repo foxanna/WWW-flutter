@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 class AnalyticsService {
-  static AnalyticsService _instance = AnalyticsService._();
+  static final _instance = AnalyticsService._();
 
   factory AnalyticsService() => _instance;
 

@@ -10,7 +10,7 @@ class UrlLauncher {
   }
 
   static Future sendEmail(String to, String subject) async {
-    var url = 'mailto:$to?subject=$subject';
+    final url = 'mailto:$to?subject=$subject';
     await launchURL(url);
   }
 }

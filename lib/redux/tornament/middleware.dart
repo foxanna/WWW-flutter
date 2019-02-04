@@ -24,7 +24,7 @@ class TournamentMiddleware {
       Store<AppState> store, LoadTournament action, NextDispatcher next) async {
     next(action);
 
-    var tournamentState = store.state.tournamentState;
+    final tournamentState = store.state.tournamentState;
 
     if (tournamentState.hasData || tournamentState.isLoading) {
       return;
@@ -33,7 +33,7 @@ class TournamentMiddleware {
     try {
       store.dispatch(TournamentIsLoading(action.tournamentId));
 
-      var data = await _loader.get(action.tournamentId);
+      final data = await _loader.get(action.tournamentId);
 
       store.dispatch(TournamentLoaded(data));
     } catch (e) {

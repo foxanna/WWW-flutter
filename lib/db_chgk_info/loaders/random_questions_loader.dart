@@ -10,8 +10,8 @@ class RandomQuestionsLoader {
   RandomQuestionsLoader._internal();
 
   Future<Iterable<Question>> get() async {
-    var map = await HttpClient().get(Uri(path: '/xml/random'));
-    var randomQuestions = RandomQuestions.fromJson(map);
+    final map = await HttpClient().get(Uri(path: '/xml/random'));
+    final randomQuestions = RandomQuestions.fromJson(map);
     return randomQuestions.search;
   }
 }

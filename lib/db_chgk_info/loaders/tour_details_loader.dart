@@ -16,8 +16,8 @@ class TourDetailsLoader {
       return _cache.get(id);
     }
 
-    var map = await HttpClient().get(Uri(path: '/tour/$id/xml'));
-    var tour = Tour.fromJson(map['tournament']);
+    final map = await HttpClient().get(Uri(path: '/tour/$id/xml'));
+    final tour = Tour.fromJson(map['tournament']);
     _cache.save(tour);
     return tour;
   }

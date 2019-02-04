@@ -56,13 +56,13 @@ class ToursReducer {
 
   static ToursState _replaceTour(
       ToursState state, String tourId, TourState Function(TourState) function) {
-    var tourIndex =
+    final tourIndex =
         state.tours.indexWhere((tourState) => tourState.tour.id == tourId);
     if (tourIndex == -1) {
       return state;
     }
 
-    var newTourState = function(state.tours[tourIndex]);
+    final newTourState = function(state.tours[tourIndex]);
     return state.copyWith(
         tours:
             IterableExtensions.replaceAt(state.tours, tourIndex, newTourState));

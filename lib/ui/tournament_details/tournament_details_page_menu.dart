@@ -35,8 +35,8 @@ class TournamentDetailsPageMenu {
             FunctionHolder(() => store.dispatch(
                 BrowseTournament(store.state.tournamentState.tournament)))),
         builder: (context, data) {
-          var isEnabled = data.item1;
-          var execute = data.item2.function;
+          final isEnabled = data.item1;
+          final execute = data.item2.function;
 
           return ListTile(
             leading: const Icon(Icons.open_in_browser),
@@ -58,8 +58,8 @@ class TournamentDetailsPageMenu {
             FunctionHolder(() => store.dispatch(
                 ShareTournament(store.state.tournamentState.tournament)))),
         builder: (context, data) {
-          var isEnabled = data.item1;
-          var execute = data.item2.function;
+          final isEnabled = data.item1;
+          final execute = data.item2.function;
 
           return ListTile(
             leading: const Icon(Icons.share),
@@ -82,8 +82,8 @@ class TournamentDetailsPageMenu {
                 context: context,
                 tournament: store.state.tournamentState.tournament)))),
         builder: (context, data) {
-          var isEnabled = data.item1;
-          var execute = data.item2.function;
+          final isEnabled = data.item1;
+          final execute = data.item2.function;
 
           return ListTile(
             leading: const Icon(Icons.info_outline),

@@ -87,8 +87,8 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
           converter: (store) => Tuple2(store.state.toursState.tours.length,
               FunctionHolder((index) => store.dispatch(SelectTour(index)))),
           builder: (context, data) {
-            var count = data.item1;
-            var onPageChanged = data.item2;
+            final count = data.item1;
+            final onPageChanged = data.item2;
 
             return PageView.builder(
               controller: _pageController,
@@ -113,7 +113,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
   }
 
   void _pageControllerListener() {
-    var index = _pageController.page.round();
+    final index = _pageController.page.round();
 
     if (index != _tabController.index) {
       _tabController.animateTo(index);
@@ -122,7 +122,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
 
   void _tabControllerListener() {
     if (_tabController.indexIsChanging) {
-      var index = _tabController.index;
+      final index = _tabController.index;
       if (index != _pageController.page.round()) {
         _pageController.animateToPage(index,
             duration: Duration(milliseconds: 300), curve: Curves.easeOut);

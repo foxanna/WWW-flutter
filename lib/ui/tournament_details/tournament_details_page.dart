@@ -38,8 +38,8 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
             FunctionHolder(() => store.dispatch(LoadTournament(
                 store.state.tournamentState.tournament.textId)))),
         builder: (context, data) {
-          var state = data.item1;
-          var retryFunction = data.item2.function;
+          final state = data.item1;
+          final retryFunction = data.item2.function;
 
           if (state.isLoading) {
             return _buildLoadingStateWidget(context);

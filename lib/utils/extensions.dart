@@ -19,7 +19,7 @@ class IterableExtensions {
   }
 
   static Iterable<T> mix<T>(Iterable<T> iterable, T separator) sync* {
-    Iterator<T> iterator = iterable.iterator;
+    final iterator = iterable.iterator;
 
     if (!iterator.moveNext()) {
       return;

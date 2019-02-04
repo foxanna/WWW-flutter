@@ -12,7 +12,7 @@ class TimerButton extends StatelessWidget {
       StoreConnector<AppState, Tuple2<FunctionHolder, bool>>(
         distinct: true,
         converter: (store) {
-          var isRunning = store.state.timerState.isRunning;
+          final isRunning = store.state.timerState.isRunning;
           return Tuple2<FunctionHolder, bool>(
               FunctionHolder(() => store.dispatch(
                     isRunning ? StopTimer() : StartTimer(),
