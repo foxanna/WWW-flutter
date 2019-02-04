@@ -47,7 +47,7 @@ class QuestionState {
   final Question question;
   final bool showAnswer;
 
-  QuestionState({this.question, this.showAnswer = false})
+  QuestionState({@required this.question, this.showAnswer = false})
       : assert(question != null),
         assert(question.question != null),
         assert(question.answer != null);

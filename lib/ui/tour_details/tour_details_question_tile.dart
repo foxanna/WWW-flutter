@@ -12,7 +12,7 @@ class TourDetailsQuestionTile extends StatelessWidget {
   final String _questionNumber;
   final String _shortQuestionText;
 
-  TourDetailsQuestionTile({Key key, this.tour, this.index})
+  TourDetailsQuestionTile({Key key, @required this.tour, this.index})
       : assert(tour != null),
         assert(tour.questions != null),
         assert(tour.questions[index] != null),
