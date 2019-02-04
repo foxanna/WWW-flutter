@@ -24,7 +24,7 @@ class SoundService {
 
     _mp3Uri = tempFile.uri.toString();
 
-    if (await tempFile.exists()) {
+    if (tempFile.existsSync()) {
       return;
     }
 
