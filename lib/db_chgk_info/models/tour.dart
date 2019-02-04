@@ -61,9 +61,10 @@ class Tour {
       playedAt: map['PlayedAt'],
       questions: map.containsKey('question')
           ? map['question'] is List
-              ? UnmodifiableListView(List.from(map['question'])
-                  .map((q) => Question.fromJson(q))
-                  .toList())
+              ? UnmodifiableListView(
+                  List<Map<String, dynamic>>.from(map['question'])
+                      .map((q) => Question.fromJson(q))
+                      .toList())
               : UnmodifiableListView([Question.fromJson(map['question'])])
           : UnmodifiableListView([]));
 }

@@ -8,7 +8,7 @@ class RandomQuestions {
   const RandomQuestions({this.search});
 
   factory RandomQuestions.fromJson(Map<String, dynamic> map) => RandomQuestions(
-      search: new List.from(map['search']['question'])
+      search: List<Map<String, dynamic>>.from(map['search']['question'])
           .map((q) => Question.fromJson(q))
           .toList());
 }

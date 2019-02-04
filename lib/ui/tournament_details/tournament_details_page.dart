@@ -15,7 +15,7 @@ class TournamentDetailsPage extends StatefulWidget {
   static const String routeName = 'tournament';
 
   @override
-  createState() => _TournamentDetailsPageState();
+  _TournamentDetailsPageState createState() => _TournamentDetailsPageState();
 }
 
 class _TournamentDetailsPageState extends State<TournamentDetailsPage> {

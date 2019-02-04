@@ -41,7 +41,8 @@ class AnalyticsMiddleware {
 
   static final _analyticsService = AnalyticsService();
 
-  static void _logAction(Store<AppState> store, action, NextDispatcher next) {
+  static void _logAction(
+      Store<AppState> store, dynamic action, NextDispatcher next) {
     next(action);
 
     _analyticsService.logEvent(name: _eventNames[action.runtimeType]);

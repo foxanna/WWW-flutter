@@ -14,7 +14,7 @@ class TournamentReducer {
         _updateTournamentFailedLoading),
   ]);
 
-  static TournamentState reduce(TournamentState state, action) =>
+  static TournamentState reduce(TournamentState state, dynamic action) =>
       _reducer(state, action);
 
   static TournamentState _setTournament(

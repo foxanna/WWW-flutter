@@ -13,7 +13,8 @@ class ToursReducer {
     TypedReducer<ToursState, TourFailedLoading>(_updateTourFailed),
   ]);
 
-  static ToursState reduce(ToursState state, action) => _reducer(state, action);
+  static ToursState reduce(ToursState state, dynamic action) =>
+      _reducer(state, action);
 
   static ToursState _setTours(ToursState state, SetTours action) =>
       ToursState.from(tours: action.tours);

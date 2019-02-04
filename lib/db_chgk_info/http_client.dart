@@ -46,12 +46,12 @@ class HttpClient {
     return _parse(xml);
   }
 
-  _parse(String xml) {
+  Map<String, dynamic> _parse(String xml) {
     try {
       final transformer = Xml2Json();
       transformer.parse(xml);
       final json = transformer.toParker();
-      final decoded = jsonDecode(json);
+      final Map<String, dynamic> decoded = jsonDecode(json);
       return decoded;
     } catch (e, s) {
       log('$e: $s');

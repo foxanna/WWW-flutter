@@ -14,7 +14,7 @@ class TournamentDetailsBody extends StatefulWidget {
   TournamentDetailsBody({Key key, @required this.count});
 
   @override
-  createState() => _TournamentDetailsBodyState();
+  _TournamentDetailsBodyState createState() => _TournamentDetailsBodyState();
 }
 
 class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
@@ -72,8 +72,9 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
   Widget _buildTabBar(BuildContext context) =>
       StoreConnector<AppState, IterableHolder<String>>(
           distinct: true,
-          converter: (store) => IterableHolder(List<String>.unmodifiable(
-              store.state.toursState.tours.map((state) => state.tour.title))),
+          converter: (store) => IterableHolder(List<String>.unmodifiable(store
+              .state.toursState.tours
+              .map<String>((state) => state.tour.title))),
           builder: (context, data) => TabBar(
                 indicatorColor: Theme.of(context).primaryTextTheme.body2.color,
                 isScrollable: true,
@@ -85,7 +86,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
       StoreConnector<AppState, Tuple2<int, FunctionHolder>>(
           distinct: true,
           converter: (store) => Tuple2(store.state.toursState.tours.length,
-              FunctionHolder((index) => store.dispatch(SelectTour(index)))),
+              FunctionHolder((int index) => store.dispatch(SelectTour(index)))),
           builder: (context, data) {
             final count = data.item1;
             final onPageChanged = data.item2;

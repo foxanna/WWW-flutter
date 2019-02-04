@@ -68,7 +68,9 @@ class Tournament {
       tours: map.containsKey('tour')
           ? map['tour'] is List
               ? UnmodifiableListView(
-                  List.from(map['tour']).map((q) => Tour.fromJson(q)).toList())
+                  List<Map<String, dynamic>>.from(map['tour'])
+                      .map((q) => Tour.fromJson(q))
+                      .toList())
               : UnmodifiableListView([Tour.fromJson(map['tour'])])
           : UnmodifiableListView([]));
 }

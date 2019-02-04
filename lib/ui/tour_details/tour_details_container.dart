@@ -18,7 +18,7 @@ class TourDetailsContainer extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  createState() => _TourDetailsContainerState();
+  _TourDetailsContainerState createState() => _TourDetailsContainerState();
 }
 
 class _TourDetailsContainerState extends State<TourDetailsContainer>

@@ -9,13 +9,17 @@ class TimerReducer {
     TypedReducer<TimerState, ResetTimer>(_resetValues),
   ]);
 
-  static TimerState reduce(state, action) => _reducer(state, action);
+  static TimerState reduce(TimerState state, dynamic action) =>
+      _reducer(state, action);
 
-  static TimerState _updateTimeValue(state, action) =>
+  static TimerState _updateTimeValue(
+          TimerState state, UpdateTimeValue action) =>
       TimerState(isRunning: state.isRunning, time: action.newValue);
 
-  static TimerState _updateIsRunningValue(state, action) =>
+  static TimerState _updateIsRunningValue(
+          TimerState state, UpdateIsRunningValue action) =>
       TimerState(time: state.time, isRunning: action.newValue);
 
-  static TimerState _resetValues(state, action) => TimerState.initial();
+  static TimerState _resetValues(TimerState state, ResetTimer action) =>
+      const TimerState.initial();
 }

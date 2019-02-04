@@ -39,7 +39,7 @@ class _TimerTickingMiddleware {
     store.dispatch(UpdateIsRunningValue(_timer.isRunning));
   }
 
-  static void _updateTime(Store<AppState> store, duration) {
+  static void _updateTime(Store<AppState> store, Duration duration) {
     store.dispatch(UpdateTimeValue(duration));
   }
 

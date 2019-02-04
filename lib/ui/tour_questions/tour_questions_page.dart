@@ -14,7 +14,7 @@ class TourQuestionsPage extends StatefulWidget {
   static const String routeName = 'questions';
 
   @override
-  createState() => _TourQuestionsPageState();
+  _TourQuestionsPageState createState() => _TourQuestionsPageState();
 }
 
 class _TourQuestionsPageState extends State<TourQuestionsPage> {
@@ -54,7 +54,7 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
         converter: (store) => Tuple3(
                 store.state.questionsState.questions.length,
                 store.state.questionsState.currentQuestionIndex,
-                FunctionHolder((index) {
+                FunctionHolder((int index) {
               store.dispatch(ResetTimer());
               store.dispatch(SelectQuestion(index));
             })),

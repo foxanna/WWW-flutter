@@ -6,7 +6,7 @@ class LogsMiddleware extends MiddlewareClass<AppState> {
   static final List<Middleware<AppState>> middleware = [LogsMiddleware()];
 
   @override
-  void call(Store store, action, NextDispatcher next) {
+  void call(Store store, dynamic action, NextDispatcher next) {
     log(action);
 
     next(action);

@@ -13,10 +13,10 @@ class QuestionsReducer {
     TypedReducer<QuestionsState, HideAnswer>(_hideAnswer),
   ]);
 
-  static QuestionsState reduce(QuestionsState state, action) =>
+  static QuestionsState reduce(QuestionsState state, dynamic action) =>
       _reducer(state, action);
 
-  static QuestionsState _showAnswer(QuestionsState state, action) =>
+  static QuestionsState _showAnswer(QuestionsState state, ShowAnswer action) =>
       state.currentQuestion != null
           ? state.copyWith(
               questions: IterableExtensions.replaceAt(
@@ -25,7 +25,7 @@ class QuestionsReducer {
                   state.currentQuestion.copyWith(showAnswer: true)))
           : state;
 
-  static QuestionsState _hideAnswer(QuestionsState state, action) =>
+  static QuestionsState _hideAnswer(QuestionsState state, HideAnswer action) =>
       state.currentQuestion != null
           ? state.copyWith(
               questions: IterableExtensions.replaceAt(

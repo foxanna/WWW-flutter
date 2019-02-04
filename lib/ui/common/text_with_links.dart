@@ -46,7 +46,7 @@ class TextWithLinks extends StatelessWidget {
           text: TextSpan(
             children: UriDetector.split(text)
                 .map(
-                  (s) => (s is Uri)
+                  (dynamic s) => (s is Uri)
                       ? TextSpan(
                           text: s.toString(),
                           style: linkStyle,

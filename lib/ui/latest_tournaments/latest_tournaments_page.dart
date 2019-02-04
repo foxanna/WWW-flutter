@@ -12,10 +12,10 @@ class LatestTournamentsPage extends StatefulWidget {
   static const String routeName = 'latest_tournaments';
 
   @override
-  createState() => LatestTournamentsPageState();
+  _LatestTournamentsPageState createState() => _LatestTournamentsPageState();
 }
 
-class LatestTournamentsPageState extends State<LatestTournamentsPage> {
+class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
   final _bloc = LatestTournamentsBloc();
   final _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
   final _scrollController = ScrollController();

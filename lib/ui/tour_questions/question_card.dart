@@ -21,7 +21,7 @@ class QuestionCard extends StatefulWidget {
         super(key: key);
 
   @override
-  createState() => _QuestionCardState();
+  _QuestionCardState createState() => _QuestionCardState();
 }
 
 class _QuestionCardState extends State<QuestionCard>

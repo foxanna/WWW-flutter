@@ -10,10 +10,11 @@ class LatestTournamentsLoader {
 
   LatestTournamentsLoader._internal();
 
-  Future<Iterable<Tournament>> get({page = 0}) async {
-    var html = await HttpClient()
-        .getRaw(Uri(path: '/last', queryParameters: {'page': page.toString()}));
-    var tournaments = parseHtml(html);
+  Future<Iterable<Tournament>> get({int page = 0}) async {
+    final queryParameters = {'page': page.toString()};
+    final html = await HttpClient()
+        .getRaw(Uri(path: '/last', queryParameters: queryParameters));
+    final tournaments = parseHtml(html);
     return tournaments;
   }
 

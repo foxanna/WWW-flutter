@@ -34,7 +34,7 @@ class TextSections extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: IterableExtensions.mix(
-                _sections.map((section) => _getChild(context, section)),
+                _sections.map((dynamic section) => _getChild(context, section)),
                 SizedBox(height: spacing))
             .toList(),
       );

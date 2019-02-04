@@ -9,7 +9,7 @@ class AppReducer {
   static final Reducer<AppState> reducer =
       TypedReducer<AppState, dynamic>(_reduce);
 
-  static AppState _reduce(AppState state, action) => AppState(
+  static AppState _reduce(AppState state, dynamic action) => AppState(
         timerState: TimerReducer.reduce(state.timerState, action),
         tournamentState:
             TournamentReducer.reduce(state.tournamentState, action),
