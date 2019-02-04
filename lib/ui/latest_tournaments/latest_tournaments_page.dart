@@ -82,7 +82,8 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
       );
 
   Widget _buildSliverAppBar(BuildContext context) => SliverAppBar(
-        elevation: 0.0,
+        floating: true,
+        snap: true,
         expandedHeight: _appBarHeight,
         flexibleSpace: FlexibleSpaceBar(
           title: Hero(
@@ -94,7 +95,15 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
             ),
           ),
         ),
-        actions: _menu.createAppBarMenuActions(context),
+        bottom: PreferredSize(
+            child: IconTheme.merge(
+              data: Theme.of(context).primaryIconTheme,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: _menu.createMenuActions(context),
+              ),
+            ),
+            preferredSize: const Size.fromHeight(kToolbarHeight)),
       );
 
   @override
