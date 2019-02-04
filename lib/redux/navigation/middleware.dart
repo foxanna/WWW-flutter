@@ -47,7 +47,7 @@ class NavigationMiddleware {
       Store<AppState> store, OpenTourInfo action, NextDispatcher next) {
     next(action);
 
-    TourDetailsAboutDialog(tour: action.tour).show(action.context);
+    TourDetailsAboutDialog(context: action.context, tour: action.tour).show();
   }
 
   static void _openQuestions(
