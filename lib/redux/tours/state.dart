@@ -17,7 +17,7 @@ class ToursState {
   ToursState._({
     Iterable<TourState> tours,
     this.currentTourIndex,
-  }) : this.tours = UnmodifiableListView<TourState>(tours != null ? tours : []);
+  }) : this.tours = UnmodifiableListView<TourState>(tours ?? <TourState>[]);
 
   ToursState.initial() : this.from(tours: []);
 

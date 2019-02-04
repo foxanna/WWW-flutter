@@ -7,7 +7,7 @@ class TourCache {
 
   TourCache._();
 
-  final _cache = Map<String, Tour>();
+  final _cache = <String, Tour>{};
 
   bool contains(String id) => _cache.containsKey(id);
 

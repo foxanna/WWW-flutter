@@ -7,8 +7,8 @@ class TournamentCache {
 
   TournamentCache._();
 
-  final _cacheById = Map<String, Tournament>();
-  final _cacheByTextId = Map<String, Tournament>();
+  final _cacheById = <String, Tournament>{};
+  final _cacheByTextId = <String, Tournament>{};
 
   bool contains(String id) =>
       _cacheById.containsKey(id) || _cacheByTextId.containsKey(id);

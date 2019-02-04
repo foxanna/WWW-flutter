@@ -6,7 +6,7 @@ import 'package:what_when_where/services/timer.dart';
 import 'package:what_when_where/services/vibrating.dart';
 
 class TimerMiddleware {
-  static final middleware = List<Middleware<AppState>>()
+  static final middleware = <Middleware<AppState>>[]
     ..addAll(_TimerConnectingMiddleware.middleware)
     ..addAll(_TimerTickingMiddleware.middleware)
     ..addAll(_TimerSoundMiddleware.middleware)

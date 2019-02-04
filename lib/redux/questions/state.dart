@@ -17,8 +17,8 @@ class QuestionsState {
   QuestionsState({
     Iterable<QuestionState> questions,
     this.currentQuestionIndex,
-  }) : this.questions = UnmodifiableListView<QuestionState>(
-            questions != null ? questions : []);
+  }) : this.questions =
+            UnmodifiableListView<QuestionState>(questions ?? <QuestionState>[]);
 
   QuestionsState.initial()
       : this(

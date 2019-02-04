@@ -6,7 +6,7 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_bloc_state.dart';
 
 class LatestTournamentsBloc {
-  final _items = List<Tournament>();
+  final _items = <Tournament>[];
   final _streamController = BehaviorSubject<LatestTournamentsBlocState>();
 
   int _page = 0;

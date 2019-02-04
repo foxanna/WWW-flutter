@@ -11,7 +11,7 @@ class LatestTournamentsBlocState {
       this.isRefreshing = false,
       this.error,
       List<Tournament> data})
-      : this.data = List<Tournament>.unmodifiable(data ?? List<Tournament>());
+      : this.data = List<Tournament>.unmodifiable(data ?? <Tournament>[]);
 
   bool get isLoading => isLoadingMore || isRefreshing;
 
