@@ -18,18 +18,25 @@ class TourQuestionsPage extends StatefulWidget {
 }
 
 class _TourQuestionsPageState extends State<TourQuestionsPage> {
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).canvasColor,
+          iconTheme: Theme.of(context).iconTheme,
+          elevation: 0.0,
+        ),
+        floatingActionButton: TimerButton(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: _TourQuestionsPageBottomAppBar(),
+        body: _TourQuestionsPageView(),
+      );
+}
+
+class _TourQuestionsPageBottomAppBar extends StatelessWidget {
   final _menu = TourQuestionsPageMenu();
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: TimerButton(),
-        appBar: _buildAppBar(context),
-        bottomNavigationBar: _buildBottomAppBar(context),
-        body: _buildPages(),
-      );
-
-  Widget _buildBottomAppBar(BuildContext context) => BottomAppBar(
+  Widget build(BuildContext context) => BottomAppBar(
       color: Theme.of(context).primaryColor,
       child: IconTheme(
         data: Theme.of(context).primaryIconTheme,
@@ -41,14 +48,13 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
           ],
         ),
       ));
+}
 
-  Widget _buildAppBar(BuildContext context) => AppBar(
-        backgroundColor: Theme.of(context).canvasColor,
-        iconTheme: Theme.of(context).iconTheme,
-        elevation: 0.0,
-      );
+class _TourQuestionsPageView extends StatelessWidget {
+  static const _viewportFraction = 0.85;
 
-  Widget _buildPages() =>
+  @override
+  Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple3<int, int, FunctionHolder>>(
         distinct: true,
         converter: (store) => Tuple3(
@@ -64,8 +70,8 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
           final onPageChanged = data.item3;
 
           return PageView.builder(
-            controller:
-                PageController(initialPage: startIndex, viewportFraction: 0.85),
+            controller: PageController(
+                initialPage: startIndex, viewportFraction: _viewportFraction),
             itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.only(bottom: kToolbarHeight),
                 child: QuestionCard(index: index)),
