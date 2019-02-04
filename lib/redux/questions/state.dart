@@ -61,7 +61,7 @@ class QuestionState {
   int get hashCode => hash2(question, showAnswer);
 
   @override
-  bool operator ==(other) =>
+  bool operator ==(dynamic other) =>
       other is QuestionState &&
       this.question == other.question &&
       this.showAnswer == other.showAnswer;

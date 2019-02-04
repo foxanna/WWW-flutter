@@ -7,5 +7,5 @@ class FunctionHolder {
   int get hashCode => 1;
 
   @override
-  bool operator ==(other) => true;
+  bool operator ==(dynamic other) => true;
 }

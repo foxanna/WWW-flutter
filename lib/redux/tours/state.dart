@@ -64,7 +64,7 @@ class TourState {
   int get hashCode => hash3(tour, isLoading, error.runtimeType);
 
   @override
-  bool operator ==(other) =>
+  bool operator ==(dynamic other) =>
       other is TourState &&
       other.tour == this.tour &&
       other.isLoading == this.isLoading &&

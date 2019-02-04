@@ -9,7 +9,7 @@ class IterableHolder<T> {
   int get hashCode => data.map((x) => x.hashCode).reduce((v, e) => v + e);
 
   @override
-  bool operator ==(other) =>
+  bool operator ==(dynamic other) =>
       other is IterableHolder &&
-      DeepCollectionEquality().equals(other.data, this.data);
+      const DeepCollectionEquality().equals(other.data, data);
 }
