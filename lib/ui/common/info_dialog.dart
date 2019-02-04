@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/ui/common/gradient_decoration.dart';
 
 class InfoDialog extends StatelessWidget {
   final String title;
@@ -17,11 +18,15 @@ class InfoDialog extends StatelessWidget {
               .title
               .copyWith(color: Theme.of(context).accentColor),
         ),
-        content: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-          child: Text(
-            content,
-            style: Theme.of(context).textTheme.body2,
+        content: Container(
+          foregroundDecoration: GradientDecoration(
+              color: Theme.of(context).dialogBackgroundColor),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
+            child: Text(
+              content,
+              style: Theme.of(context).textTheme.body2,
+            ),
           ),
         ),
         actions: [
