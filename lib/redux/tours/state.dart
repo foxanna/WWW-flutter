@@ -43,7 +43,7 @@ class TourState {
   final bool isLoading;
   final Exception error;
 
-  TourState({this.tour, this.isLoading = false, this.error});
+  const TourState({this.tour, this.isLoading = false, this.error});
 
   TourState copyWith({
     Tour tour,

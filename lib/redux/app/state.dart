@@ -11,7 +11,7 @@ class AppState {
   final ToursState toursState;
   final TournamentState tournamentState;
 
-  AppState({
+  const AppState({
     this.timerState,
     this.tournamentState,
     this.toursState,

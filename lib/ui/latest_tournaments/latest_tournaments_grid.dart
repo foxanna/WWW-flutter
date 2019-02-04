@@ -6,7 +6,7 @@ import 'package:what_when_where/ui/latest_tournaments/latest_tournament_tile.dar
 class LatestTournamentsGrid extends StatelessWidget {
   final List<Tournament> tournaments;
 
-  LatestTournamentsGrid({Key key, @required this.tournaments})
+  const LatestTournamentsGrid({Key key, @required this.tournaments})
       : super(key: key);
 
   @override

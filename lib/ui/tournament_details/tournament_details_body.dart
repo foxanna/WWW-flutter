@@ -11,7 +11,8 @@ import 'package:what_when_where/utils/iterable_holder.dart';
 class TournamentDetailsBody extends StatefulWidget {
   final int count;
 
-  TournamentDetailsBody({Key key, @required this.count});
+  const TournamentDetailsBody({Key key, @required this.count})
+      : super(key: key);
 
   @override
   _TournamentDetailsBodyState createState() => _TournamentDetailsBodyState();

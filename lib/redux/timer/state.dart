@@ -5,7 +5,7 @@ class TimerState {
   final Duration time;
   final bool isRunning;
 
-  TimerState({this.time, this.isRunning});
+  const TimerState({this.time, this.isRunning});
 
-  TimerState.initial() : this(time: Duration.zero, isRunning: false);
+  const TimerState.initial() : this(time: Duration.zero, isRunning: false);
 }

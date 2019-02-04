@@ -16,7 +16,7 @@ import 'package:what_when_where/utils/function_holder.dart';
 class QuestionCard extends StatefulWidget {
   final int index;
 
-  QuestionCard({Key key, @required this.index})
+  const QuestionCard({Key key, @required this.index})
       : assert(index != null),
         super(key: key);
 

@@ -11,11 +11,16 @@ class TournamentState {
 
   bool get hasError => error != null;
 
-  TournamentState._({this.tournament, this.isLoading = false, this.error});
+  const TournamentState._({
+    this.tournament,
+    this.isLoading = false,
+    this.error,
+  });
 
-  TournamentState.initial() : this._();
+  const TournamentState.initial() : this._();
 
-  TournamentState.from(Tournament tournament) : this._(tournament: tournament);
+  const TournamentState.from(Tournament tournament)
+      : this._(tournament: tournament);
 
   TournamentState copyWith({
     Tournament tournament,
