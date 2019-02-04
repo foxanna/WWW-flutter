@@ -31,68 +31,71 @@ class AboutPage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             flex: 2,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                  vertical: Dimensions.defaultSidePadding * 5),
-              child: Hero(
-                tag: 'owl',
-                child: SvgPicture.asset(
-                  'assets/owl.svg',
-                  fit: BoxFit.fitHeight,
-                  color: Theme.of(context).accentColor,
-                ),
-              ),
-            ),
+            child: _buildImageSection(context),
           ),
           Expanded(
             flex: 1,
-            child: Padding(
-              padding:
-                  const EdgeInsets.only(bottom: Dimensions.defaultSpacing * 5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
-                  Text(
-                    Constants.appNameLong,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline
-                        .copyWith(color: Theme.of(context).accentColor),
+            child: _buildBottomSection(context),
+          )
+        ],
+      ));
+
+  Widget _buildImageSection(BuildContext context) => Padding(
+        padding: const EdgeInsets.symmetric(
+            vertical: Dimensions.defaultSidePadding * 5),
+        child: Hero(
+          tag: 'owl',
+          child: SvgPicture.asset(
+            'assets/owl.svg',
+            fit: BoxFit.fitHeight,
+            color: Theme.of(context).accentColor,
+          ),
+        ),
+      );
+
+  Widget _buildBottomSection(BuildContext context) => Padding(
+        padding: const EdgeInsets.only(bottom: Dimensions.defaultSpacing * 5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Text(
+              Constants.appNameLong,
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline
+                  .copyWith(color: Theme.of(context).accentColor),
+            ),
+            IconButton(
+              icon: const Icon(Icons.email),
+              tooltip: Strings.emailDevelopers,
+              color: Theme.of(context).accentColor,
+              onPressed: () => _sendEmail(context),
+            ),
+            Expanded(child: Container()),
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: '${Strings.questionsDatabasePrefix}\n',
+                    style: Theme.of(context).textTheme.body2,
                   ),
-                  IconButton(
-                    icon: const Icon(Icons.email),
-                    tooltip: Strings.emailDevelopers,
-                    color: Theme.of(context).accentColor,
-                    onPressed: () => _sendEmail(context),
-                  ),
-                  Expanded(child: Container()),
-                  RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: '${Strings.questionsDatabasePrefix}\n',
-                          style: Theme.of(context).textTheme.body2,
-                        ),
-                        TextSpan(
-                          text: Strings.questionsDatabaseName,
-                          style: Theme.of(context).textTheme.body2.copyWith(
-                              color: Theme.of(context).accentColor,
-                              decoration: TextDecoration.underline),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () => _openDatabaseInBrowser(context),
-                        ),
-                      ],
-                    ),
+                  TextSpan(
+                    text: Strings.questionsDatabaseName,
+                    style: Theme.of(context).textTheme.body2.copyWith(
+                        color: Theme.of(context).accentColor,
+                        decoration: TextDecoration.underline),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => _openDatabaseInBrowser(context),
                   ),
                 ],
               ),
             ),
-          )
-        ],
-      ));
+          ],
+        ),
+      );
 
   void _openDatabaseInBrowser(BuildContext context) =>
       StoreProvider.of<AppState>(context).dispatch(BrowseDatabase());
