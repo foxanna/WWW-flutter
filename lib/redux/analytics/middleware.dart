@@ -48,7 +48,7 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, OpenTourInfo>(_logAction),
     TypedMiddleware<AppState, OpenTournamentInfo>(_logAction),
     TypedMiddleware<AppState, EmailDevelopers>(_logAction),
-    TypedMiddleware<AppState, OpenTournamentInfo>(_logAction),
+    TypedMiddleware<AppState, BrowseDatabase>(_logAction),
   ];
 
   static final _analyticsService = AnalyticsService();
