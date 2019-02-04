@@ -8,6 +8,7 @@ import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/ui/common/gradient_decoration.dart';
 import 'package:what_when_where/ui/common/solid_icon_button.dart';
 import 'package:what_when_where/ui/tour_questions/question_answer.dart';
 import 'package:what_when_where/ui/tour_questions/question_text.dart';
@@ -47,7 +48,8 @@ class _QuestionCardState extends State<QuestionCard>
   Widget _buildQuestionCard(BuildContext context) => Card(
         elevation: 4.0,
         child: Container(
-          foregroundDecoration: _buildGradientDecoration(context),
+          foregroundDecoration:
+              GradientDecoration(color: Theme.of(context).canvasColor),
           child: ListView(
             key: _listViewKey,
             controller: _scrollController,
@@ -102,18 +104,6 @@ class _QuestionCardState extends State<QuestionCard>
               height: 1,
             )),
       );
-
-  BoxDecoration _buildGradientDecoration(BuildContext context) {
-    final gradientEnd = Theme.of(context).canvasColor;
-    final gradientStart = Theme.of(context).canvasColor.withAlpha(0);
-    const gradientSize = 0.05;
-    final gradient = LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [gradientEnd, gradientStart, gradientStart, gradientEnd],
-        stops: const [0, gradientSize, 1 - gradientSize, 1]);
-    return BoxDecoration(gradient: gradient);
-  }
 
   Widget _buildShowAnswerButtonWrapper(BuildContext context) =>
       StoreConnector<AppState, Tuple2<FunctionHolder, bool>>(
