@@ -64,7 +64,7 @@ class AboutPage extends StatelessWidget {
                     icon: const Icon(Icons.email),
                     tooltip: Strings.emailDevelopers,
                     color: Theme.of(context).accentColor,
-                    onPressed: () => sendEmail(),
+                    onPressed: () => _sendEmail(),
                   ),
                   Expanded(child: Container()),
                   RichText(
@@ -81,7 +81,7 @@ class AboutPage extends StatelessWidget {
                               color: Theme.of(context).accentColor,
                               decoration: TextDecoration.underline),
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () => openDatabaseInBrowser(),
+                            ..onTap = () => _openDatabaseInBrowser(),
                         ),
                       ],
                     ),
@@ -93,13 +93,13 @@ class AboutPage extends StatelessWidget {
         ],
       ));
 
-  void openDatabaseInBrowser() async {
+  void _openDatabaseInBrowser() async {
     AnalyticsService().logEvent(name: 'open_database_in_browser');
 
     await UrlLauncher.launchURL(Constants.databaseUrl);
   }
 
-  void sendEmail() async {
+  void _sendEmail() async {
     AnalyticsService().logEvent(name: 'send_email_to_developers');
 
     await UrlLauncher.sendEmail(
