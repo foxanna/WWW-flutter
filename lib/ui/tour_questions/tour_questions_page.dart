@@ -33,8 +33,6 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
 }
 
 class _TourQuestionsPageBottomAppBar extends StatelessWidget {
-  final _menu = TourQuestionsPageMenu();
-
   @override
   Widget build(BuildContext context) => BottomAppBar(
       color: Theme.of(context).primaryColor,
@@ -44,7 +42,7 @@ class _TourQuestionsPageBottomAppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             TimerText(),
-            _menu.createAppBarMenuAction(context),
+            TourQuestionsPageMoreIconButton(),
           ],
         ),
       ));
