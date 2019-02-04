@@ -8,6 +8,7 @@ import 'package:what_when_where/ui/tour_details/tour_details_container.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 import 'package:what_when_where/utils/iterable_holder.dart';
 
+@immutable
 class TournamentDetailsBody extends StatefulWidget {
   final int count;
 

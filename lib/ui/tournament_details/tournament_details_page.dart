@@ -11,6 +11,7 @@ import 'package:what_when_where/ui/tournament_details/tournament_details_body.da
 import 'package:what_when_where/ui/tournament_details/tournament_details_page_menu.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 
+@immutable
 class TournamentDetailsPage extends StatefulWidget {
   static const String routeName = 'tournament';
 

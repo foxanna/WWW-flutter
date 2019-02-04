@@ -13,6 +13,7 @@ import 'package:what_when_where/ui/tour_questions/question_answer.dart';
 import 'package:what_when_where/ui/tour_questions/question_text.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 
+@immutable
 class QuestionCard extends StatefulWidget {
   final int index;
 
