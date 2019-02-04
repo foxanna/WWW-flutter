@@ -1,8 +1,8 @@
-import 'dart:math' as Math;
+import 'dart:math' as math;
 
 class IterableExtensions {
   static Iterable<T> merge<T>(List<T> list1, List<T> list2) sync* {
-    var minLength = Math.min(list1.length, list2.length);
+    final minLength = math.min(list1.length, list2.length);
 
     for (var i = 0; i < minLength; i++) {
       yield list1[i];
@@ -37,7 +37,7 @@ class IterableExtensions {
   }
 
   static T min<T>(Iterable<T> iterable) =>
-      iterable.reduce((v, c) => Math.min(v, c));
+      iterable.reduce((v, c) => math.min(v, c));
 
   static List<T> replaceAt<T>(List<T> items, int index, T data) =>
       List<T>.of(items)..setRange(index, index + 1, [data]);
