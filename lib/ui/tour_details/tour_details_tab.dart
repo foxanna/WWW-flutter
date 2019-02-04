@@ -9,20 +9,20 @@ import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/tour_details/tour_details_questions_list.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 
-class TourDetailsContainer extends StatefulWidget {
+class TourDetailsTab extends StatefulWidget {
   final int index;
 
-  const TourDetailsContainer({
+  const TourDetailsTab({
     Key key,
     @required this.index,
   }) : super(key: key);
 
   @override
-  _TourDetailsContainerState createState() => _TourDetailsContainerState();
+  _TourDetailsTabState createState() => _TourDetailsTabState();
 }
 
-class _TourDetailsContainerState extends State<TourDetailsContainer>
-    with AutomaticKeepAliveClientMixin<TourDetailsContainer> {
+class _TourDetailsTabState extends State<TourDetailsTab>
+    with AutomaticKeepAliveClientMixin<TourDetailsTab> {
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<TourState, FunctionHolder>>(

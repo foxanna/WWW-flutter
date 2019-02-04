@@ -4,7 +4,7 @@ import 'package:tuple/tuple.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/ui/tour_details/tour_details_container.dart';
+import 'package:what_when_where/ui/tour_details/tour_details_tab.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 import 'package:what_when_where/utils/iterable_holder.dart';
 
@@ -96,8 +96,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
             return PageView.builder(
               controller: _pageController,
               itemCount: count,
-              itemBuilder: (context, index) =>
-                  TourDetailsContainer(index: index),
+              itemBuilder: (context, index) => TourDetailsTab(index: index),
               onPageChanged: (index) => onPageChanged.function(index),
             );
           },
