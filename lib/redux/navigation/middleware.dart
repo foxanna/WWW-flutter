@@ -4,6 +4,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
+import 'package:what_when_where/ui/about/about_page.dart';
 import 'package:what_when_where/ui/image/image_page.dart';
 import 'package:what_when_where/ui/tour_questions/tour_details_about_dialog.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_page.dart';
@@ -17,6 +18,7 @@ class NavigationMiddleware {
     TypedMiddleware<AppState, OpenTourInfo>(_openTourInfo),
     TypedMiddleware<AppState, OpenQuestions>(_openQuestions),
     TypedMiddleware<AppState, OpenTournamentInfo>(_openTournamentInfo),
+    TypedMiddleware<AppState, OpenAboutPage>(_openAboutPage),
   ];
 
   static void _openImage(
@@ -60,6 +62,16 @@ class NavigationMiddleware {
         context: action.context,
         routeName: TourQuestionsPage.routeName,
         builder: (context) => TourQuestionsPage());
+  }
+
+  static void _openAboutPage(
+      Store<AppState> store, OpenAboutPage action, NextDispatcher next) {
+    next(action);
+
+    _navigateTo(
+        context: action.context,
+        routeName: AboutPage.routeName,
+        builder: (context) => AboutPage());
   }
 
   static void _navigateTo(

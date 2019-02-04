@@ -65,3 +65,13 @@ class OpenTournament extends NavigationAction {
   String toString() =>
       '$OpenTournament tournament.textId = "${tournament.textId}", tournament.title = "${tournament.title}"';
 }
+
+@immutable
+class OpenAboutPage extends NavigationAction {
+  final BuildContext context;
+
+  OpenAboutPage(this.context);
+
+  @override
+  String toString() => '$OpenAboutPage';
+}
