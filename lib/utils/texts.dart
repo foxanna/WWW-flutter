@@ -35,10 +35,10 @@ class TextUtils {
   static String removeParagraphs(String text) => text.replaceAll('\\n', ' ');
 
   static String removeMultipleSpaces(String text) =>
-      text.trim().replaceAll(new RegExp(r'\s{2,}'), ' ');
+      text.trim().replaceAll(RegExp(r'\s{2,}'), ' ');
 
   static String replaceMultipleSpacesWithNewLine(String text) =>
-      text.trim().replaceAll(new RegExp(r'\s{2,}'), '\n');
+      text.trim().replaceAll(RegExp(r'\s{2,}'), '\n');
 
   static String _replaceEscapedSymbols(String text) =>
       text.replaceAll('\\\'', '\'').replaceAll('\\&', '&');
