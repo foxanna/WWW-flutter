@@ -29,6 +29,33 @@ class Question {
   final String tournamentPlayedAt;
   final String url;
 
+  const Question({
+    this.textId,
+    this.question,
+    this.number,
+    this.answer,
+    this.authors,
+    this.passCriteria,
+    this.comments,
+    this.sources,
+    this.tourFileName,
+    this.tournamentFileName,
+    this.questionId,
+    this.parentId,
+    this.type,
+    this.typeNum,
+    this.parentTextId,
+    this.tourId,
+    this.tournamentId,
+    this.tourTitle,
+    this.tournamentTitle,
+    this.tourType,
+    this.tournamentType,
+    this.tourPlayedAt,
+    this.tournamentPlayedAt,
+    this.url,
+  });
+
   factory Question.fromJson(Map<String, dynamic> map) => Question(
       textId: map['TextId'],
       question: map['Question'],
@@ -55,30 +82,4 @@ class Question {
       tournamentPlayedAt: map['tournamentPlayedAt'],
       url:
           '${Constants.databaseUrl}/question/${map['ParentId']}/${map['Number']}');
-
-  Question(
-      {this.textId,
-      this.question,
-      this.number,
-      this.answer,
-      this.authors,
-      this.passCriteria,
-      this.comments,
-      this.sources,
-      this.tourFileName,
-      this.tournamentFileName,
-      this.questionId,
-      this.parentId,
-      this.type,
-      this.typeNum,
-      this.parentTextId,
-      this.tourId,
-      this.tournamentId,
-      this.tourTitle,
-      this.tournamentTitle,
-      this.tourType,
-      this.tournamentType,
-      this.tourPlayedAt,
-      this.tournamentPlayedAt,
-      this.url});
 }

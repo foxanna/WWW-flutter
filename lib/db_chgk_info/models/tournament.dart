@@ -24,6 +24,24 @@ class Tournament {
   final String playedAt;
   final UnmodifiableListView<Tour> tours;
 
+  const Tournament({
+    this.id,
+    this.parentId,
+    this.title,
+    this.number,
+    this.textId,
+    this.questionsCount,
+    this.complexity,
+    this.type,
+    this.description,
+    this.url,
+    this.fileName,
+    this.editors,
+    this.createdAt,
+    this.playedAt,
+    this.tours,
+  });
+
   factory Tournament.fromHtml(Element element) => Tournament(
         title: element.children[0].nodes.first.firstChild.text.trim(),
         textId:
@@ -53,22 +71,4 @@ class Tournament {
                   List.from(map['tour']).map((q) => Tour.fromJson(q)).toList())
               : UnmodifiableListView([Tour.fromJson(map['tour'])])
           : UnmodifiableListView([]));
-
-  Tournament({
-    this.id,
-    this.parentId,
-    this.title,
-    this.number,
-    this.textId,
-    this.questionsCount,
-    this.complexity,
-    this.type,
-    this.description,
-    this.url,
-    this.fileName,
-    this.editors,
-    this.createdAt,
-    this.playedAt,
-    this.tours,
-  });
 }

@@ -5,9 +5,9 @@ import 'package:what_when_where/db_chgk_info/models/random_questions.dart';
 class RandomQuestionsLoader {
   static final _instance = RandomQuestionsLoader._internal();
 
-  RandomQuestionsLoader._internal();
-
   factory RandomQuestionsLoader() => _instance;
+
+  RandomQuestionsLoader._internal();
 
   Future<Iterable<Question>> get() async {
     var map = await HttpClient().get(Uri(path: '/xml/random'));

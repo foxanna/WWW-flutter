@@ -5,10 +5,10 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 class RandomQuestions {
   final List<Question> search;
 
+  const RandomQuestions({this.search});
+
   factory RandomQuestions.fromJson(Map<String, dynamic> map) => RandomQuestions(
       search: new List.from(map['search']['question'])
           .map((q) => Question.fromJson(q))
           .toList());
-
-  RandomQuestions({this.search});
 }

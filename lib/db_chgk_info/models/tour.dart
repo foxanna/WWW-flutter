@@ -24,6 +24,25 @@ class Tour {
   final String playedAt;
   final UnmodifiableListView<Question> questions;
 
+  const Tour({
+    this.id,
+    this.parentId,
+    this.title,
+    this.number,
+    this.textId,
+    this.questionsCount,
+    this.complexity,
+    this.type,
+    this.tournamentTitle,
+    this.description,
+    this.url,
+    this.fileName,
+    this.editors,
+    this.createdAt,
+    this.playedAt,
+    this.questions,
+  });
+
   factory Tour.fromJson(Map<String, dynamic> map) => Tour(
       id: map['Id'],
       parentId: map['ParentId'],
@@ -47,23 +66,4 @@ class Tour {
                   .toList())
               : UnmodifiableListView([Question.fromJson(map['question'])])
           : UnmodifiableListView([]));
-
-  Tour({
-    this.id,
-    this.parentId,
-    this.title,
-    this.number,
-    this.textId,
-    this.questionsCount,
-    this.complexity,
-    this.type,
-    this.tournamentTitle,
-    this.description,
-    this.url,
-    this.fileName,
-    this.editors,
-    this.createdAt,
-    this.playedAt,
-    this.questions,
-  });
 }
