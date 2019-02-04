@@ -26,5 +26,5 @@ class TimerText extends StatelessWidget {
     return '$twoDigitMinutes:$twoDigitSeconds';
   }
 
-  String _twoDigits(int n) => n >= 10 ? "$n" : "0$n";
+  String _twoDigits(int n) => n >= 10 ? '$n' : '0$n';
 }

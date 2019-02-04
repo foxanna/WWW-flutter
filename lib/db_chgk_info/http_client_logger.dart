@@ -17,12 +17,14 @@ class HttpClientLogger {
   }
 
   static void _logOptions(Options options) {
-    log("${options.method} ${options.baseUrl}${options.path}");
+    log('${options.method} ${options.baseUrl}${options.path}');
   }
 
   static void _logResponse(Response response) {
-    log("${response.request.method} ${response.statusCode} ${response.request.baseUrl}${response.request.path}");
-    if (_logHttpResponseContent) log(response.data);
+    log('${response.request.method} ${response.statusCode} ${response.request.baseUrl}${response.request.path}');
+    if (_logHttpResponseContent) {
+      log(response.data);
+    }
   }
 
   static void _logError(DioError error) {
