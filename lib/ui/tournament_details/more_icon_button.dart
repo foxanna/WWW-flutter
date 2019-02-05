@@ -8,7 +8,7 @@ import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 
-class TournamentDetailsPageMoreIconButton extends StatelessWidget {
+class MoreIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => IconButton(
         icon: const Icon(Icons.more_vert),

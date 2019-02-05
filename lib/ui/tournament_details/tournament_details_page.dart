@@ -7,8 +7,8 @@ import 'package:what_when_where/redux/tornament/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
+import 'package:what_when_where/ui/tournament_details/more_icon_button.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_body.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_page_menu.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 
 @immutable
@@ -24,7 +24,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           elevation: 0,
-          actions: [TournamentDetailsPageMoreIconButton()],
+          actions: [MoreIconButton()],
         ),
         body: _buildBody(context),
       );
