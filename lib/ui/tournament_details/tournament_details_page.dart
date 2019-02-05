@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:tuple/tuple.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/redux/tornament/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/tournament_details/more_icon_button.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_body.dart';
-import 'package:what_when_where/utils/function_holder.dart';
+import 'package:what_when_where/ui/tournament_details/tournament_details_header.dart';
 
 @immutable
 class TournamentDetailsPage extends StatefulWidget {
@@ -22,29 +20,24 @@ class TournamentDetailsPage extends StatefulWidget {
 class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          actions: [MoreIconButton()],
+      backgroundColor: Theme.of(context).primaryColor,
+      body: SafeArea(
+        child: Container(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          child: _buildBody(context),
         ),
-        body: _buildBody(context),
-      );
+      ));
 
   Widget _buildBody(BuildContext context) =>
-      StoreConnector<AppState, Tuple2<TournamentState, FunctionHolder>>(
+      StoreConnector<AppState, TournamentState>(
         distinct: true,
-        converter: (store) => Tuple2(
-            store.state.tournamentState,
-            FunctionHolder(() => store.dispatch(LoadTournament(
-                store.state.tournamentState.tournament.textId)))),
-        builder: (context, data) {
-          final state = data.item1;
-          final retryFunction = data.item2.function;
-
+        converter: (store) => store.state.tournamentState,
+        builder: (context, state) {
           if (state.isLoading) {
-            return _buildLoadingStateWidget(context);
+            return const _LoadingTournamentDetailsPage();
           }
           if (state.hasError) {
-            return _buildErrorStateWidget(context, retryFunction);
+            return const _ErrorTournamentDetailsPage();
           }
           if (state.hasData) {
             return TournamentDetailsBody(count: state.tournament.tours.length);
@@ -53,44 +46,53 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
         },
         onDispose: (store) => store.dispatch(VoidTournament()),
       );
+}
 
-  Widget _buildLoadingStateWidget(BuildContext context) => Column(
+class _LoadingTournamentDetailsPage extends StatelessWidget {
+  const _LoadingTournamentDetailsPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _buildElevatedHeader(context),
-          const Expanded(child: WWWProgressIndicator())
+        children: const [
+          _ElevatedHeader(),
+          Expanded(child: WWWProgressIndicator())
         ],
       );
+}
 
-  Widget _buildErrorStateWidget(BuildContext context, Function retryFunction) =>
-      Column(
+class _ErrorTournamentDetailsPage extends StatelessWidget {
+  const _ErrorTournamentDetailsPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _buildElevatedHeader(context),
+          const _ElevatedHeader(),
           Expanded(
               child: ErrorMessage(
-                  retryFunction: retryFunction,
+                  retryFunction: () => _loadTournament(context),
                   color: Theme.of(context).primaryColor))
         ],
       );
 
-  Widget _buildElevatedHeader(BuildContext context) => PhysicalModel(
+  void _loadTournament(BuildContext context) {
+    final store = StoreProvider.of<AppState>(context);
+    final state = store.state.tournamentState;
+    store.dispatch(LoadTournament(state.tournament.textId));
+  }
+}
+
+class _ElevatedHeader extends StatelessWidget {
+  const _ElevatedHeader({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => PhysicalModel(
         elevation: 4.0,
         color: Theme.of(context).primaryColor,
-        child: Padding(
-          padding: const EdgeInsets.only(
-              left: kToolbarHeight,
-              right: kToolbarHeight,
-              bottom: Dimensions.defaultSidePadding * 3),
-          child: Center(
-            child: StoreConnector<AppState, String>(
-                distinct: true,
-                converter: (store) =>
-                    store.state.tournamentState?.tournament?.title,
-                builder: (context, data) => Text(
-                      data,
-                      style: Theme.of(context).primaryTextTheme.title,
-                    )),
+        child: const TournamentDetailsPageHeader(
+          padding: EdgeInsets.only(
+            bottom: Dimensions.defaultSidePadding * 3,
           ),
         ),
       );
