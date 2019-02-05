@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tuple/tuple.dart';
@@ -9,6 +7,7 @@ import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
+import 'package:what_when_where/ui/latest_tournaments/latest_tournament_page_refresh_indicator.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_grid.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page_appbar.dart';
 import 'package:what_when_where/utils/function_holder.dart';
@@ -21,54 +20,27 @@ class LatestTournamentsPage extends StatefulWidget {
 }
 
 class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
-  final _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
   final _scrollController = ScrollController();
-
-  Completer _completer = Completer<dynamic>();
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
-        body: SafeArea(
-          child: _buildRefreshIndicator(),
-        ),
-      );
-
-  Widget _buildRefreshIndicator() =>
-      StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
-        distinct: true,
-        converter: (store) => Tuple2(
-            store.state.latestTournamentsState.isRefreshing,
-            FunctionHolder(() => store.dispatch(RefreshLatestTournaments()))),
-        builder: (context, data) {
-          final isRefreshing = data.item1;
-          final refreshFunctionHolder = data.item2;
-
-          if (!isRefreshing) {
-            _completer.complete();
-            _completer = Completer<dynamic>();
-          }
-
-          return RefreshIndicator(
-            key: _refreshIndicatorKey,
-            onRefresh: () async {
-              refreshFunctionHolder.function();
-              await _completer.future;
-              _loadMoreIfRequested();
-            },
-            child: _LatestTournamentsPageBody(
-              scrollController: _scrollController,
-            ),
-          );
-        },
-        onInit: (store) => _loadMore(),
-      );
 
   @override
   void initState() {
     super.initState();
     _scrollController.addListener(_scrollListener);
   }
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        backgroundColor: Theme.of(context).primaryColor,
+        body: SafeArea(
+          child: LatestTournamentsPageRefreshIndicator(
+            child: _LatestTournamentsPageBody(
+              scrollController: _scrollController,
+            ),
+            onInit: _loadMore,
+            onRefresh: _loadMoreIfRequested,
+          ),
+        ),
+      );
 
   @override
   void dispose() {
