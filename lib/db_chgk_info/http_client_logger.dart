@@ -1,22 +1,19 @@
 part of http_client;
 
-class HttpClientLogger {
-  static void attachLogs(Dio dio) {
-    dio.interceptor.request.onSend = (options) {
-      _logOptions(options);
-      return options;
-    };
-    dio.interceptor.response.onSuccess = (response) {
-      _logResponse(response);
-      return response;
-    };
-    dio.interceptor.response.onError = (error) {
-      _logError(error);
-      return error;
-    };
-  }
+class LoggerInterceptor extends InterceptorsWrapper {
+  LoggerInterceptor()
+      : super(onRequest: (RequestOptions options) {
+          _logOptions(options);
+          return options;
+        }, onResponse: (Response response) {
+          _logResponse(response);
+          return response;
+        }, onError: (DioError error) {
+          _logError(error);
+          return error;
+        });
 
-  static void _logOptions(Options options) {
+  static void _logOptions(RequestOptions options) {
     log('${options.method} ${options.baseUrl}${options.path}');
   }
 

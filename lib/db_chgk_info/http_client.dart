@@ -19,12 +19,12 @@ class HttpClient {
 
   HttpClient._internal(this._dio) {
     if (_logHttpCommunication) {
-      HttpClientLogger.attachLogs(_dio);
+      _dio.interceptors.add(LoggerInterceptor());
     }
   }
 
   static Dio _createDioInstance() {
-    return Dio(Options(
+    return Dio(BaseOptions(
         baseUrl: _baseUrl,
         connectTimeout: _connectTimeout,
         receiveTimeout: _receiveTimeout));
