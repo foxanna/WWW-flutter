@@ -30,16 +30,25 @@ class ShowAnswerButton extends StatelessWidget {
         builder: (context, data) {
           final functionHolder = data.item1;
           final showAnswer = data.item2;
-          return _buildButton(
-              context,
-              showAnswer ? Icons.visibility_off : Icons.visibility,
-              functionHolder.function);
+          return _ShowAnswerButton(
+              icon: showAnswer ? Icons.visibility_off : Icons.visibility,
+              onPressed: functionHolder.function);
         },
       );
+}
 
-  SolidIconButton _buildButton(
-          BuildContext context, IconData icon, Function onPressed) =>
-      SolidIconButton(
+class _ShowAnswerButton extends StatelessWidget {
+  final IconData icon;
+  final Function onPressed;
+
+  const _ShowAnswerButton({
+    Key key,
+    this.icon,
+    this.onPressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => SolidIconButton(
         icon: Icon(
           icon,
           color: Theme.of(context).accentColor,
