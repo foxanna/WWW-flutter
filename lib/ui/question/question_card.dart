@@ -9,6 +9,7 @@ import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
 import 'package:what_when_where/ui/question/question_answer.dart';
 import 'package:what_when_where/ui/question/question_text.dart';
+import 'package:what_when_where/ui/question/separator.dart';
 import 'package:what_when_where/ui/question/show_answer_button.dart';
 
 @immutable
@@ -65,7 +66,7 @@ class _QuestionCardState extends State<QuestionCard>
                             .headline
                             .copyWith(color: Theme.of(context).accentColor),
                       )),
-              const _QuestionsCardSeparator(),
+              const QuestionsCardSeparator(),
               StoreConnector<AppState, String>(
                   distinct: true,
                   converter: (store) => store.state.questionsState
@@ -76,7 +77,7 @@ class _QuestionCardState extends State<QuestionCard>
                   alignment: Alignment.center,
                   fit: StackFit.passthrough,
                   children: [
-                    const _QuestionsCardSeparator(),
+                    const QuestionsCardSeparator(),
                     Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
@@ -135,18 +136,4 @@ class _QuestionCardState extends State<QuestionCard>
 
   @override
   bool get wantKeepAlive => true;
-}
-
-class _QuestionsCardSeparator extends StatelessWidget {
-  const _QuestionsCardSeparator({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30),
-        child: Container(
-            color: Theme.of(context).accentColor,
-            child: const SizedBox(
-              height: 1,
-            )),
-      );
 }
