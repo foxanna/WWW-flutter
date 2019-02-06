@@ -6,6 +6,8 @@ class LatestTournamentsAppBar extends StatelessWidget {
   static const appBarHeight = 200.0;
   static const _logoHeight = 80.0;
 
+  const LatestTournamentsAppBar({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => SliverAppBar(
         floating: true,
