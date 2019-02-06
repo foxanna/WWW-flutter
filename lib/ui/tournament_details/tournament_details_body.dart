@@ -3,7 +3,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tuple/tuple.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
-import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/tour_details/tour_details_tab.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_header.dart';
 import 'package:what_when_where/utils/function_holder.dart';
@@ -54,9 +53,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
   Widget _buildHeader(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          const TournamentDetailsPageHeader(
-              padding:
-                  EdgeInsets.only(bottom: Dimensions.defaultSidePadding * 2)),
+          const TournamentDetailsPageHeader(),
           _buildTabBar(context),
         ],
       );
