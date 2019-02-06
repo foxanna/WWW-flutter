@@ -57,11 +57,7 @@ class _QuestionCardState extends State<QuestionCard>
             children: [
               QuestionNumber(index: widget.index),
               const QuestionsCardSeparator(),
-              StoreConnector<AppState, String>(
-                  distinct: true,
-                  converter: (store) => store.state.questionsState
-                      .questions[widget.index].question.question,
-                  builder: (context, data) => QuestionText(questionText: data)),
+              QuestionText(index: widget.index),
               Stack(
                   key: _buttonStackKey,
                   alignment: Alignment.center,
@@ -74,9 +70,7 @@ class _QuestionCardState extends State<QuestionCard>
                         padding: const EdgeInsets.only(
                           right: Dimensions.defaultSidePadding * 2,
                         ),
-                        child: ShowAnswerButton(
-                          index: widget.index,
-                        ),
+                        child: ShowAnswerButton(index: widget.index),
                       ),
                     ),
                   ]),

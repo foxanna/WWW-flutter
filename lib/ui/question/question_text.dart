@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 import 'package:what_when_where/ui/common/text_sections.dart';
 
 class QuestionText extends StatelessWidget {
+  final int index;
+
+  const QuestionText({Key key, this.index}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => StoreConnector<AppState, String>(
+      distinct: true,
+      converter: (store) =>
+          store.state.questionsState.questions[index].question.question,
+      builder: (context, data) => _QuestionText(questionText: data));
+}
+
+class _QuestionText extends StatelessWidget {
   final String questionText;
   final List<dynamic> _sections;
 
-  QuestionText({Key key, this.questionText})
+  _QuestionText({Key key, this.questionText})
       : _sections = QuestionParser.split(questionText).toList(),
         super(key: key);
 
