@@ -5,9 +5,9 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
 import 'package:what_when_where/ui/question/question_answer.dart';
+import 'package:what_when_where/ui/question/question_number.dart';
 import 'package:what_when_where/ui/question/question_text.dart';
 import 'package:what_when_where/ui/question/separator.dart';
 import 'package:what_when_where/ui/question/show_answer_button.dart';
@@ -54,18 +54,8 @@ class _QuestionCardState extends State<QuestionCard>
             padding: const EdgeInsets.symmetric(
                 vertical: Dimensions.defaultSidePadding * 6,
                 horizontal: Dimensions.defaultSidePadding * 3),
-            children: <Widget>[
-              StoreConnector<AppState, String>(
-                  distinct: true,
-                  converter: (store) => store.state.questionsState
-                      .questions[widget.index].question.number,
-                  builder: (context, data) => Text(
-                        '${Strings.question} $data',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline
-                            .copyWith(color: Theme.of(context).accentColor),
-                      )),
+            children: [
+              QuestionNumber(index: widget.index),
               const QuestionsCardSeparator(),
               StoreConnector<AppState, String>(
                   distinct: true,
