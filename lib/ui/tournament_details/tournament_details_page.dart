@@ -3,7 +3,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/redux/tornament/state.dart';
-import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_body.dart';
@@ -95,6 +94,8 @@ class _ErrorTournamentDetailsPage extends StatelessWidget {
 }
 
 class _ElevatedHeader extends StatelessWidget {
+  static const _tabsHeight = 48.0;
+
   const _ElevatedHeader({Key key}) : super(key: key);
 
   @override
@@ -102,9 +103,7 @@ class _ElevatedHeader extends StatelessWidget {
         elevation: 4.0,
         color: Theme.of(context).primaryColor,
         child: const TournamentDetailsPageHeader(
-          padding: EdgeInsets.only(
-            bottom: Dimensions.defaultSidePadding * 3,
-          ),
+          padding: EdgeInsets.only(bottom: _tabsHeight),
         ),
       );
 }
