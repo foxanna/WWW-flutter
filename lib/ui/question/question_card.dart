@@ -67,14 +67,14 @@ class _QuestionCardState extends State<QuestionCard>
                         padding: const EdgeInsets.only(
                           right: Dimensions.defaultSidePadding * 2,
                         ),
-                        child: ShowAnswerButton(index: widget.index),
+                        child: ShowAnswerButton(
+                          index: widget.index,
+                          onAnswerShown: _onAnswerShown,
+                        ),
                       ),
                     ),
                   ]),
-              QuestionAnswer(
-                index: widget.index,
-                onAnswerShown: _onAnswerShown,
-              )
+              QuestionAnswer(index: widget.index)
             ],
           ),
         ),
