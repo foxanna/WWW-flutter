@@ -1,9 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
 import 'package:what_when_where/ui/question/question_answer.dart';
@@ -74,26 +71,17 @@ class _QuestionCardState extends State<QuestionCard>
                       ),
                     ),
                   ]),
-              _buildAnswer(context)
+              QuestionAnswer(
+                index: widget.index,
+                onAnswerShown: _onAnswerShown,
+              )
             ],
           ),
         ),
       );
 
-  Widget _buildAnswer(BuildContext context) =>
-      StoreConnector<AppState, QuestionState>(
-          distinct: true,
-          converter: (store) =>
-              store.state.questionsState.questions[widget.index],
-          builder: (context, state) {
-            final widget = state.showAnswer
-                ? QuestionAnswer(question: state.question)
-                : Container();
-            if (state.showAnswer)
-              WidgetsBinding.instance
-                  .addPostFrameCallback((d) => _scrollToAnswer());
-            return widget;
-          });
+  void _onAnswerShown() =>
+      WidgetsBinding.instance.addPostFrameCallback((d) => _scrollToAnswer());
 
   void _scrollToAnswer() {
     final parent = _listViewKey?.currentContext?.findRenderObject();
