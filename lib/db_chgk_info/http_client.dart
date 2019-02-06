@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/utils/logger.dart';
+import 'package:what_when_where/utils/network_exception.dart';
 import 'package:xml2json/xml2json.dart';
 
 part 'http_client_logger.dart';
@@ -35,9 +36,15 @@ class HttpClient {
       final response =
           await _dio.get<String>(uri.toString(), cancelToken: cancelToken);
       return response?.data;
-    } catch (e, s) {
+    } on Exception catch (e, s) {
       log('$e: $s');
       rethrow;
+    } on DioError catch (e, s) {
+      log('$e: $s');
+      throw NetworkException(message: e.toString());
+    } on Error catch (e, s) {
+      log('$e: $s');
+      throw Exception(e.toString());
     }
   }
 
@@ -53,9 +60,12 @@ class HttpClient {
       final json = transformer.toParker();
       final Map<String, dynamic> decoded = jsonDecode(json);
       return decoded;
-    } catch (e, s) {
+    } on Exception catch (e, s) {
       log('$e: $s');
       rethrow;
+    } on Error catch (e, s) {
+      log('$e: $s');
+      throw Exception(e.toString());
     }
   }
 }
