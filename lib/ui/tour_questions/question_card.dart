@@ -2,17 +2,14 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:tuple/tuple.dart';
 import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
-import 'package:what_when_where/ui/common/solid_icon_button.dart';
 import 'package:what_when_where/ui/tour_questions/question_answer.dart';
 import 'package:what_when_where/ui/tour_questions/question_text.dart';
-import 'package:what_when_where/utils/function_holder.dart';
+import 'package:what_when_where/ui/tour_questions/show_answer_button.dart';
 
 @immutable
 class QuestionCard extends StatefulWidget {
@@ -78,15 +75,17 @@ class _QuestionCardState extends State<QuestionCard>
                   key: _buttonStackKey,
                   alignment: Alignment.center,
                   fit: StackFit.passthrough,
-                  children: const [
-                    _QuestionsCardSeparator(),
+                  children: [
+                    const _QuestionsCardSeparator(),
                     Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
                         padding: const EdgeInsets.only(
                           right: Dimensions.defaultSidePadding * 2,
                         ),
-                        child: _buildShowAnswerButtonWrapper(context),
+                        child: ShowAnswerButton(
+                          index: widget.index,
+                        ),
                       ),
                     ),
                   ]),
@@ -94,44 +93,6 @@ class _QuestionCardState extends State<QuestionCard>
             ],
           ),
         ),
-      );
-
-  Widget _buildShowAnswerButtonWrapper(BuildContext context) =>
-      StoreConnector<AppState, Tuple2<FunctionHolder, bool>>(
-        distinct: true,
-        converter: (store) {
-          final showAnswer =
-              store.state.questionsState.questions[widget.index].showAnswer;
-          return Tuple2<FunctionHolder, bool>(
-              FunctionHolder(() => store.dispatch(
-                    showAnswer
-                        ? HideAnswer(widget.index)
-                        : ShowAnswer(widget.index),
-                  )),
-              showAnswer);
-        },
-        builder: (context, data) {
-          final functionHolder = data.item1;
-          final showAnswer = data.item2;
-          return _buildShowAnswerButton(
-              context,
-              showAnswer ? Icons.visibility_off : Icons.visibility,
-              functionHolder.function);
-        },
-      );
-
-  SolidIconButton _buildShowAnswerButton(
-          BuildContext context, IconData icon, Function onPressed) =>
-      SolidIconButton(
-        icon: Icon(
-          icon,
-          color: Theme.of(context).accentColor,
-        ),
-        onPressed: onPressed,
-        elevation: 4.0,
-        fillColor: Theme.of(context).cardColor,
-        borderColor: Theme.of(context).accentColor,
-        borderWidth: 1,
       );
 
   Widget _buildAnswer(BuildContext context) =>
