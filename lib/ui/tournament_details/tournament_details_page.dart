@@ -37,7 +37,9 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
             return const _LoadingTournamentDetailsPage();
           }
           if (state.hasError) {
-            return const _ErrorTournamentDetailsPage();
+            return _ErrorTournamentDetailsPage(
+              exception: state.exception,
+            );
           }
           if (state.hasData) {
             return TournamentDetailsBody(count: state.tournament.tours.length);
@@ -62,7 +64,12 @@ class _LoadingTournamentDetailsPage extends StatelessWidget {
 }
 
 class _ErrorTournamentDetailsPage extends StatelessWidget {
-  const _ErrorTournamentDetailsPage({Key key}) : super(key: key);
+  final Exception exception;
+
+  const _ErrorTournamentDetailsPage({
+    Key key,
+    this.exception,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Column(
@@ -71,6 +78,7 @@ class _ErrorTournamentDetailsPage extends StatelessWidget {
           const _ElevatedHeader(),
           Expanded(
               child: ErrorMessage(
+                  exception: exception,
                   retryFunction: () => _loadTournament(context),
                   color: Theme.of(context).primaryColor))
         ],

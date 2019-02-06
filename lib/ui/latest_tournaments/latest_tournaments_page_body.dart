@@ -38,6 +38,7 @@ class LatestTournamentsPageBody extends StatelessWidget {
             if (state.hasError) {
               return _LatestTournamentsPageError(
                 scrollController: _scrollController,
+                exception: state.exception,
               );
             }
           }
@@ -75,10 +76,12 @@ class _LatestTournamentsPageLoading extends StatelessWidget {
 
 class _LatestTournamentsPageError extends StatelessWidget {
   final ScrollController _scrollController;
+  final Exception exception;
 
   const _LatestTournamentsPageError({
     Key key,
     ScrollController scrollController,
+    this.exception,
   })  : this._scrollController = scrollController,
         super(key: key);
 
@@ -92,6 +95,7 @@ class _LatestTournamentsPageError extends StatelessWidget {
               padding: const EdgeInsets.only(
                   top: LatestTournamentsAppBar.appBarHeight / 2),
               child: ErrorMessage(
+                exception: exception,
                 retryFunction: () => _retry(context),
                 color: Theme.of(context).primaryIconTheme.color,
               ),

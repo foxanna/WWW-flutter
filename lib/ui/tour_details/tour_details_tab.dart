@@ -38,6 +38,7 @@ class _TourDetailsTabState extends State<TourDetailsTab>
           }
           if (state.hasError) {
             return ErrorMessage(
+                exception: state.exception,
                 retryFunction: () => retry.function(state.tour.id),
                 color: Theme.of(context).primaryColor);
           }
