@@ -41,9 +41,9 @@ class ToursState {
 class TourState {
   final Tour tour;
   final bool isLoading;
-  final Exception error;
+  final Exception exception;
 
-  const TourState({this.tour, this.isLoading = false, this.error});
+  const TourState({this.tour, this.isLoading = false, this.exception});
 
   TourState copyWith({
     Tour tour,
@@ -53,20 +53,20 @@ class TourState {
       TourState(
         tour: tour ?? this.tour,
         isLoading: isLoading ?? this.isLoading,
-        error: error ?? this.error,
+        exception: error ?? this.exception,
       );
 
-  bool get hasError => error != null;
+  bool get hasError => exception != null;
 
   bool get hasData => tour.questions.length.toString() == tour.questionsCount;
 
   @override
-  int get hashCode => hash3(tour, isLoading, error.runtimeType);
+  int get hashCode => hash3(tour, isLoading, exception.runtimeType);
 
   @override
   bool operator ==(dynamic other) =>
       other is TourState &&
       other.tour == this.tour &&
       other.isLoading == this.isLoading &&
-      other.error?.runtimeType == this.error?.runtimeType;
+      other.exception?.runtimeType == this.exception?.runtimeType;
 }

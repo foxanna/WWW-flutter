@@ -5,16 +5,16 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 class TournamentState {
   final Tournament tournament;
   final bool isLoading;
-  final Exception error;
+  final Exception exception;
 
   bool get hasData => tournament.questionsCount != null;
 
-  bool get hasError => error != null;
+  bool get hasError => exception != null;
 
   const TournamentState._({
     this.tournament,
     this.isLoading = false,
-    this.error,
+    this.exception,
   });
 
   const TournamentState.initial() : this._();
@@ -30,6 +30,6 @@ class TournamentState {
       TournamentState._(
         tournament: tournament ?? this.tournament,
         isLoading: isLoading ?? this.isLoading,
-        error: error ?? this.error,
+        exception: error ?? this.exception,
       );
 }
