@@ -19,7 +19,7 @@ class ErrorMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Center(
         child: Padding(
-          padding: Dimensions.defaultPadding,
+          padding: Dimensions.defaultPadding * 3,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -27,6 +27,7 @@ class ErrorMessage extends StatelessWidget {
                 (exception is NetworkException)
                     ? Strings.noInternetError
                     : Strings.genericError,
+                textAlign: TextAlign.center,
                 style: color != null
                     ? Theme.of(context).textTheme.subhead.copyWith(color: color)
                     : Theme.of(context).textTheme.subhead,
@@ -38,9 +39,7 @@ class ErrorMessage extends StatelessWidget {
                         Icons.refresh,
                         color: color,
                       ),
-                      onPressed: () {
-                        _retryFunction();
-                      },
+                      onPressed: () => _retryFunction(),
                     )
                   : Container()
             ],
