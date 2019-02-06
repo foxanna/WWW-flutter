@@ -77,10 +77,13 @@ class _ErrorTournamentDetailsPage extends StatelessWidget {
         children: [
           const _ElevatedHeader(),
           Expanded(
-              child: ErrorMessage(
-                  exception: exception,
-                  retryFunction: () => _loadTournament(context),
-                  color: Theme.of(context).primaryColor))
+              child: Material(
+            color: Colors.transparent,
+            child: ErrorMessage(
+                exception: exception,
+                retryFunction: () => _loadTournament(context),
+                color: Theme.of(context).primaryColor),
+          ))
         ],
       );
 
