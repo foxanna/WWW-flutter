@@ -4,7 +4,7 @@ import 'package:tuple/tuple.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
-import 'package:what_when_where/ui/tour_questions/question_card.dart';
+import 'package:what_when_where/ui/question/question_card.dart';
 import 'package:what_when_where/ui/tour_questions/timer_button.dart';
 import 'package:what_when_where/ui/tour_questions/timer_text.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_page_menu.dart';

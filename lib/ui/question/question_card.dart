@@ -7,9 +7,9 @@ import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
-import 'package:what_when_where/ui/tour_questions/question_answer.dart';
-import 'package:what_when_where/ui/tour_questions/question_text.dart';
-import 'package:what_when_where/ui/tour_questions/show_answer_button.dart';
+import 'package:what_when_where/ui/question/question_answer.dart';
+import 'package:what_when_where/ui/question/question_text.dart';
+import 'package:what_when_where/ui/question/show_answer_button.dart';
 
 @immutable
 class QuestionCard extends StatefulWidget {
