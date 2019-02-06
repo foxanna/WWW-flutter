@@ -68,7 +68,7 @@ class _QuestionCardState extends State<QuestionCard>
                             .headline
                             .copyWith(color: Theme.of(context).accentColor),
                       )),
-              _buildSeparator(context),
+              const _QuestionsCardSeparator(),
               StoreConnector<AppState, String>(
                   distinct: true,
                   converter: (store) => store.state.questionsState
@@ -78,8 +78,8 @@ class _QuestionCardState extends State<QuestionCard>
                   key: _buttonStackKey,
                   alignment: Alignment.center,
                   fit: StackFit.passthrough,
-                  children: [
-                    _buildSeparator(context),
+                  children: const [
+                    _QuestionsCardSeparator(),
                     Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
@@ -94,15 +94,6 @@ class _QuestionCardState extends State<QuestionCard>
             ],
           ),
         ),
-      );
-
-  Widget _buildSeparator(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30),
-        child: Container(
-            color: Theme.of(context).accentColor,
-            child: const SizedBox(
-              height: 1,
-            )),
       );
 
   Widget _buildShowAnswerButtonWrapper(BuildContext context) =>
@@ -183,4 +174,18 @@ class _QuestionCardState extends State<QuestionCard>
 
   @override
   bool get wantKeepAlive => true;
+}
+
+class _QuestionsCardSeparator extends StatelessWidget {
+  const _QuestionsCardSeparator({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 30),
+        child: Container(
+            color: Theme.of(context).accentColor,
+            child: const SizedBox(
+              height: 1,
+            )),
+      );
 }
