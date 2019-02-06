@@ -24,7 +24,10 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
       body: SafeArea(
         child: Container(
           color: Theme.of(context).scaffoldBackgroundColor,
-          child: _buildBody(context),
+          child: Material(
+            color: Colors.transparent,
+            child: _buildBody(context),
+          ),
         ),
       ));
 
@@ -77,13 +80,10 @@ class _ErrorTournamentDetailsPage extends StatelessWidget {
         children: [
           const _ElevatedHeader(),
           Expanded(
-              child: Material(
-            color: Colors.transparent,
-            child: ErrorMessage(
-                exception: exception,
-                retryFunction: () => _loadTournament(context),
-                color: Theme.of(context).primaryColor),
-          ))
+              child: ErrorMessage(
+                  exception: exception,
+                  retryFunction: () => _loadTournament(context),
+                  color: Theme.of(context).primaryColor))
         ],
       );
 
