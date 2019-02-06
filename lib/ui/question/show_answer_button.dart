@@ -8,10 +8,12 @@ import 'package:what_when_where/utils/function_holder.dart';
 
 class ShowAnswerButton extends StatelessWidget {
   final int index;
+  final Function onAnswerShown;
 
   const ShowAnswerButton({
     Key key,
     @required this.index,
+    this.onAnswerShown,
   }) : super(key: key);
 
   @override
@@ -32,7 +34,13 @@ class ShowAnswerButton extends StatelessWidget {
           final showAnswer = data.item2;
           return _ShowAnswerButton(
               icon: showAnswer ? Icons.visibility_off : Icons.visibility,
-              onPressed: functionHolder.function);
+              onPressed: () {
+                functionHolder.function();
+
+                if (!showAnswer && onAnswerShown != null) {
+                  onAnswerShown();
+                }
+              });
         },
       );
 }
