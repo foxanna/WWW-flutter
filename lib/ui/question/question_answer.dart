@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:tuple/tuple.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/text_with_links.dart';
@@ -10,31 +10,25 @@ import 'package:what_when_where/ui/question/question_comment.dart';
 
 class QuestionAnswer extends StatelessWidget {
   final int index;
-  final Function onAnswerShown;
 
-  const QuestionAnswer({
-    Key key,
-    @required this.index,
-    this.onAnswerShown,
-  }) : super(key: key);
+  const QuestionAnswer({Key key, @required this.index}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => StoreConnector<AppState, QuestionState>(
-      distinct: true,
-      converter: (store) => store.state.questionsState.questions[index],
-      builder: (context, state) {
-        final widget = state.showAnswer
-            ? _QuestionAnswer(question: state.question)
-            : Container();
+  Widget build(BuildContext context) =>
+      StoreConnector<AppState, Tuple2<bool, Question>>(
+          distinct: true,
+          converter: (store) {
+            final state = store.state.questionsState.questions[index];
+            return Tuple2(state.showAnswer, state.question);
+          },
+          builder: (context, data) {
+            final showAnswer = data.item1;
+            final question = data.item2;
 
-        if (state.showAnswer) {
-          if (onAnswerShown != null) {
-            onAnswerShown();
-          }
-        }
-
-        return widget;
-      });
+            return showAnswer
+                ? _QuestionAnswer(question: question)
+                : Container();
+          });
 }
 
 class _QuestionAnswer extends StatelessWidget {
