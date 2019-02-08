@@ -54,7 +54,7 @@ class Tournament {
       Tournament(
         textId: tournamentNode.attributes['href'].split('/').last,
         title: tournamentNode.firstChild.text.trim(),
-        createdAt: dateNode.text.trim(),
+        playedAt: dateNode.text.trim(),
       );
 
   factory Tournament.fromJson(Map<String, dynamic> map) => Tournament(
