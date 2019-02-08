@@ -38,7 +38,7 @@ class TournamentsGridTile extends StatelessWidget {
         ),
         const SizedBox(height: Dimensions.defaultSpacing * 2),
         AutoSizeText(
-          '${Strings.playedAt} ${tournament.playedAt}\n${Strings.addedAt} ${tournament.createdAt}',
+          _subheadText(),
           overflow: TextOverflow.ellipsis,
           style: textTheme.body2,
           maxLines: 2,
@@ -48,6 +48,15 @@ class TournamentsGridTile extends StatelessWidget {
       ],
     );
   }
+
+  String _subheadText() => <String>[
+        (tournament.playedAt != null
+            ? '${Strings.playedAt} ${tournament.playedAt}'
+            : null),
+        (tournament.createdAt != null
+            ? '${Strings.addedAt} ${tournament.createdAt}'
+            : null)
+      ].where((x) => x != null).join('\n');
 
   void _openTournamentDetails(BuildContext context) =>
       StoreProvider.of<AppState>(context)
