@@ -75,3 +75,13 @@ class OpenAboutPage extends NavigationAction {
   @override
   String toString() => '$OpenAboutPage';
 }
+
+@immutable
+class OpenSearchPage extends NavigationAction {
+  final BuildContext context;
+
+  OpenSearchPage(this.context);
+
+  @override
+  String toString() => '$OpenSearchPage';
+}
