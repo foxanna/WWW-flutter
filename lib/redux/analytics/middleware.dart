@@ -31,6 +31,8 @@ class AnalyticsMiddleware {
     // misc
     EmailDevelopers: 'email_developers',
     BrowseDatabase: 'browse_database',
+    // search
+    OpenSearchPage: 'search',
   };
 
   static final List<Middleware<AppState>> middleware = [
@@ -49,6 +51,7 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, OpenTournamentInfo>(_logAction),
     TypedMiddleware<AppState, EmailDevelopers>(_logAction),
     TypedMiddleware<AppState, BrowseDatabase>(_logAction),
+    TypedMiddleware<AppState, OpenSearchPage>(_logAction),
   ];
 
   static final _analyticsService = AnalyticsService();
