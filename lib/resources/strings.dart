@@ -27,4 +27,7 @@ class Strings {
   static const String sharedVia = 'Отправлено через приложение';
   static const String firstTour = '1 тур';
   static const String search = 'Поиск';
+  static const String sorting = 'Сортировка';
+  static const String byRelevance = 'по релевантности';
+  static const String byDate = 'по дате';
 }
