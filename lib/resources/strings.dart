@@ -26,4 +26,5 @@ class Strings {
   static const String browse = 'открыть в браузере';
   static const String sharedVia = 'Отправлено через приложение';
   static const String firstTour = '1 тур';
+  static const String search = 'Поиск';
 }
