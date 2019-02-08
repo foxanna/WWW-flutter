@@ -6,8 +6,8 @@ import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
+import 'package:what_when_where/ui/common/latest_tournaments_grid.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_grid.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page_appbar.dart';
 
 class LatestTournamentsPageBody extends StatelessWidget {
