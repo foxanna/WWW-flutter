@@ -50,6 +50,13 @@ class Tournament {
         createdAt: element.children[1].firstChild.text.trim(),
       );
 
+  factory Tournament.fromSearchHtml(Node tournamentNode, Node dateNode) =>
+      Tournament(
+        textId: tournamentNode.attributes['href'].split('/').last,
+        title: tournamentNode.firstChild.text.trim(),
+        createdAt: dateNode.text.trim(),
+      );
+
   factory Tournament.fromJson(Map<String, dynamic> map) => Tournament(
       id: map['Id'],
       parentId: map['ParentId'],
