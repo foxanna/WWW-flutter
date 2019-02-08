@@ -7,10 +7,10 @@ import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 
-class LatestTournamentTile extends StatelessWidget {
+class TournamentsGridTile extends StatelessWidget {
   final Tournament tournament;
 
-  const LatestTournamentTile({
+  const TournamentsGridTile({
     Key key,
     @required this.tournament,
   }) : super(key: key);
