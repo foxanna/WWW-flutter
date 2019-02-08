@@ -5,6 +5,8 @@ import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 
 class LatestTournamentsMoreIconButton extends StatelessWidget {
+  const LatestTournamentsMoreIconButton({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => IconButton(
         icon: const Icon(Icons.more_vert),
@@ -20,6 +22,8 @@ class LatestTournamentsMoreIconButton extends StatelessWidget {
 }
 
 class _AboutBottomSheetItem extends StatelessWidget {
+  const _AboutBottomSheetItem({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => ListTile(
         leading: const Icon(Icons.info_outline),
