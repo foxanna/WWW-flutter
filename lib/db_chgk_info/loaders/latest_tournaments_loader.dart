@@ -25,6 +25,6 @@ class LatestTournamentsLoader {
             table.first.getElementsByClassName('odd'),
             table.first.getElementsByClassName('even'))
         .toList();
-    return rows.map((r) => Tournament.fromHtml(r)).toList();
+    return rows.map((r) => Tournament.fromLatestHtml(r)).toList();
   }
 }

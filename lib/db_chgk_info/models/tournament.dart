@@ -42,7 +42,7 @@ class Tournament {
     this.tours,
   });
 
-  factory Tournament.fromHtml(Element element) => Tournament(
+  factory Tournament.fromLatestHtml(Element element) => Tournament(
         title: element.children[0].nodes.first.firstChild.text.trim(),
         textId:
             element.children[0].nodes.first.attributes['href'].split('/').last,
