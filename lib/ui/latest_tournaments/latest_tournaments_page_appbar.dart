@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:what_when_where/ui/latest_tournaments/more_icon_button.dart';
+import 'package:what_when_where/ui/latest_tournaments/search_icon_button.dart';
 
 class LatestTournamentsAppBar extends StatelessWidget {
   static const appBarHeight = 200.0;
@@ -28,7 +29,10 @@ class LatestTournamentsAppBar extends StatelessWidget {
               data: Theme.of(context).primaryIconTheme,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [LatestTournamentsMoreIconButton()],
+                children: const [
+                  LatestTournamentsSearchIconButton(),
+                  LatestTournamentsMoreIconButton()
+                ],
               ),
             ),
             preferredSize: const Size.fromHeight(kToolbarHeight)),
