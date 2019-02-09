@@ -3,7 +3,7 @@ import 'package:what_when_where/db_chgk_info/search/search_parameters.dart';
 import 'package:what_when_where/resources/strings.dart';
 
 class SortingController extends ValueNotifier<Sorting> {
-  SortingController({Sorting value = Sorting.relevance}) : super(value);
+  SortingController({Sorting value}) : super(value);
 }
 
 class SortingButton extends StatelessWidget {
