@@ -25,7 +25,8 @@ class SearchMiddleware {
       SearchTournaments action, NextDispatcher next) async {
     next(action);
 
-    if (!store.state.searchState.searchResults.isLoading) {
+    if (!store.state.searchState.searchResults.isLoading &&
+        store.state.searchState.searchResults.canLoadMore) {
       await _search(store, action);
     }
   }
@@ -39,7 +40,7 @@ class SearchMiddleware {
       final data = await _fetch(parameters);
 
       if (parameters == store.state.searchState.searchParameters) {
-        store.dispatch(TournamentsSearchLoaded(data));
+        store.dispatch(TournamentsSearchLoaded(data, data.length == 50));
         store.dispatch(TournamentsSearchPageChanged(parameters.nextPage + 1));
       }
     } catch (e) {
