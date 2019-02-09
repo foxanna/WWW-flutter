@@ -82,6 +82,7 @@ class SearchTournamentsResultsState {
   final UnmodifiableListView<Tournament> data;
   final bool isLoading;
   final Exception exception;
+  final bool canLoadMore;
 
   bool get hasError => exception != null;
   bool get hasData => data.isNotEmpty;
@@ -90,6 +91,7 @@ class SearchTournamentsResultsState {
     Iterable<Tournament> data,
     this.isLoading = false,
     this.exception,
+    this.canLoadMore = true,
   }) : this.data = UnmodifiableListView<Tournament>(data ?? <Tournament>[]);
 
   SearchTournamentsResultsState.initial() : this._();
@@ -98,20 +100,24 @@ class SearchTournamentsResultsState {
     Iterable<Tournament> data,
     bool isLoading,
     Exception exception,
+    bool canLoadMore,
   }) =>
       SearchTournamentsResultsState._(
         data: data ?? this.data,
         isLoading: isLoading ?? this.isLoading,
         exception: exception ?? this.exception,
+        canLoadMore: canLoadMore ?? this.canLoadMore,
       );
 
   @override
-  int get hashCode => hash3(isLoading, exception.runtimeType, data);
+  int get hashCode =>
+      hash4(isLoading, exception.runtimeType, data, canLoadMore);
 
   @override
   bool operator ==(dynamic other) =>
       other is SearchTournamentsResultsState &&
       other.isLoading == isLoading &&
       other.exception?.runtimeType == exception?.runtimeType &&
+      other.canLoadMore == canLoadMore &&
       const DeepCollectionEquality().equals(other.data, data);
 }
