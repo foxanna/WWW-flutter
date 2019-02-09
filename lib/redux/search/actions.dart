@@ -1,5 +1,4 @@
 import 'package:meta/meta.dart';
-import 'package:quiver/core.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/search/search_parameters.dart';
 
@@ -7,35 +6,60 @@ abstract class SearchAction {
   const SearchAction();
 }
 
+abstract class UserSearchAction {
+  const UserSearchAction();
+}
+
 @immutable
-class SearchTournaments extends SearchAction {
+class SearchTournaments extends UserSearchAction {
+  const SearchTournaments();
+
+  @override
+  String toString() => '$SearchTournaments';
+}
+
+@immutable
+class VoidTournamentsSearchResults extends UserSearchAction {
+  const VoidTournamentsSearchResults();
+
+  @override
+  String toString() => '$VoidTournamentsSearchResults';
+}
+
+@immutable
+class VoidTournamentsSearchParameters extends UserSearchAction {
+  const VoidTournamentsSearchParameters();
+
+  @override
+  String toString() => '$VoidTournamentsSearchParameters';
+}
+
+@immutable
+class TournamentsSearchQueryChanged extends UserSearchAction {
   final String query;
+
+  const TournamentsSearchQueryChanged(this.query);
+
+  @override
+  String toString() => '$TournamentsSearchQueryChanged query = "$query"';
+}
+
+@immutable
+class TournamentsSearchSortingChanged extends UserSearchAction {
   final Sorting sorting;
 
-  const SearchTournaments({this.query, this.sorting});
+  const TournamentsSearchSortingChanged(this.sorting);
 
   @override
-  String toString() =>
-      '$SearchTournaments query = "$query", sorting = "$sorting"';
+  String toString() => '$TournamentsSearchSortingChanged sorting = "$sorting"';
+}
 
-  @override
-  int get hashCode => hash2(query, sorting);
-
-  @override
-  bool operator ==(dynamic other) =>
-      other is SearchTournaments &&
-      other.query == this.query &&
-      other.sorting == this.sorting;
+abstract class SystemSearchAction {
+  const SystemSearchAction();
 }
 
 @immutable
-class SearchMoreTournaments extends SearchAction {
-  @override
-  String toString() => '$SearchMoreTournaments';
-}
-
-@immutable
-class TournamentsSearchIsLoading extends SearchAction {
+class TournamentsSearchIsLoading extends SystemSearchAction {
   const TournamentsSearchIsLoading();
 
   @override
@@ -43,15 +67,17 @@ class TournamentsSearchIsLoading extends SearchAction {
 }
 
 @immutable
-class ClearTournamentsSearch extends SearchAction {
-  const ClearTournamentsSearch();
+class TournamentsSearchPageChanged extends SystemSearchAction {
+  final int nextPage;
+
+  const TournamentsSearchPageChanged(this.nextPage);
 
   @override
-  String toString() => '$ClearTournamentsSearch';
+  String toString() => '$TournamentsSearchPageChanged nextPage = "$nextPage"';
 }
 
 @immutable
-class TournamentsSearchLoaded extends SearchAction {
+class TournamentsSearchLoaded extends SystemSearchAction {
   final Iterable<Tournament> data;
 
   const TournamentsSearchLoaded(this.data);
@@ -62,7 +88,7 @@ class TournamentsSearchLoaded extends SearchAction {
 }
 
 @immutable
-class TournamentsSearchFailedToLoad extends SearchAction {
+class TournamentsSearchFailedToLoad extends SystemSearchAction {
   final Exception exception;
 
   const TournamentsSearchFailedToLoad(this.exception);
@@ -70,12 +96,4 @@ class TournamentsSearchFailedToLoad extends SearchAction {
   @override
   String toString() =>
       '$TournamentsSearchFailedToLoad exception.runtimeType = "${exception.runtimeType}"';
-}
-
-@immutable
-class VoidTournamentsSearch extends SearchAction {
-  const VoidTournamentsSearch();
-
-  @override
-  String toString() => '$VoidTournamentsSearch';
 }
