@@ -44,6 +44,7 @@ class SearchReducer {
         data: <Tournament>[]
           ..addAll(state.searchResults.data)
           ..addAll(action.data),
+        canLoadMore: action.canLoadMore,
         isLoading: false,
         exception: null,
       ));
