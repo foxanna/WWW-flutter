@@ -30,4 +30,5 @@ class Strings {
   static const String sorting = 'Сортировка';
   static const String byRelevance = 'по релевантности';
   static const String byDate = 'по дате';
+  static const String nothingFound = 'Ничего не найдено';
 }
