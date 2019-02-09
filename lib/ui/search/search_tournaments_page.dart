@@ -46,7 +46,7 @@ class _SearchTournamentsPageState extends State<SearchTournamentsPage> {
               return ErrorMessage(
                 exception: state.exception,
                 retryFunction: () => _loadMore(),
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).iconTheme.color,
               );
             }
           }
