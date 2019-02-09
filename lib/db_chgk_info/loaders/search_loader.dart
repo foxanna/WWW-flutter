@@ -19,10 +19,6 @@ class SearchLoader {
 
   Future<Iterable<Tournament>> searchTournaments(SearchParameters parameters,
       {int page = 0}) async {
-    await Future<dynamic>.delayed(Duration(seconds: 5));
-
-//    throw new Exception();
-
     final queryParameters = {'page': page.toString()};
     final query = parameters.toQuery();
     final html = await HttpClient().getRaw(
