@@ -4,92 +4,114 @@ import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/search/search_parameters.dart';
 
 @immutable
 class SearchState {
-  final TournamentsSearchState tournamentsSearchState;
-  final QuestionsSearchState questionsSearchState;
+  final SearchTournamentsParametersState searchParameters;
+  final SearchTournamentsResultsState searchResults;
 
-  const SearchState({
-    this.tournamentsSearchState,
-    this.questionsSearchState,
-  });
+  const SearchState._({this.searchParameters, this.searchResults});
 
   SearchState.initial()
-      : this(
-          tournamentsSearchState: TournamentsSearchState.initial(),
-          questionsSearchState: const QuestionsSearchState.initial(),
+      : this._(
+          searchParameters: const SearchTournamentsParametersState.initial(),
+          searchResults: SearchTournamentsResultsState.initial(),
         );
 
   SearchState copyWith({
-    TournamentsSearchState tournamentsSearchState,
-    QuestionsSearchState questionsSearchState,
+    SearchTournamentsParametersState searchParameters,
+    SearchTournamentsResultsState searchResults,
   }) =>
-      SearchState(
-        tournamentsSearchState:
-            tournamentsSearchState ?? this.tournamentsSearchState,
-        questionsSearchState: questionsSearchState ?? this.questionsSearchState,
+      SearchState._(
+        searchParameters: searchParameters ?? this.searchParameters,
+        searchResults: searchResults ?? this.searchResults,
       );
 
   @override
-  int get hashCode => hash2(tournamentsSearchState, questionsSearchState);
+  int get hashCode => hash2(searchParameters, searchResults);
 
   @override
   bool operator ==(dynamic other) =>
       other is SearchState &&
-      other.tournamentsSearchState == this.tournamentsSearchState &&
-      other.questionsSearchState == this.questionsSearchState;
+      other.searchParameters == searchParameters &&
+      other.searchResults == searchResults;
 }
 
 @immutable
-class TournamentsSearchState {
-  final UnmodifiableListView<Tournament> tournaments;
+class SearchTournamentsParametersState {
+  final String query;
+  final Sorting sorting;
+
+  final int nextPage;
+
+  bool get hasQuery => query?.isNotEmpty ?? false;
+
+  const SearchTournamentsParametersState._({
+    this.query = '',
+    this.sorting = Sorting.relevance,
+    this.nextPage = 0,
+  });
+
+  const SearchTournamentsParametersState.initial() : this._();
+
+  SearchTournamentsParametersState copyWith({
+    String query,
+    Sorting sorting,
+    int nextPage,
+  }) =>
+      SearchTournamentsParametersState._(
+        query: query ?? this.query,
+        sorting: sorting ?? this.sorting,
+        nextPage: nextPage ?? this.nextPage,
+      );
+
+  @override
+  int get hashCode => hash3(query, sorting, nextPage);
+
+  @override
+  bool operator ==(dynamic other) =>
+      other is SearchTournamentsParametersState &&
+      other.query == query &&
+      other.sorting == sorting &&
+      other.nextPage == nextPage;
+}
+
+@immutable
+class SearchTournamentsResultsState {
+  final UnmodifiableListView<Tournament> data;
   final bool isLoading;
   final Exception exception;
 
   bool get hasError => exception != null;
+  bool get hasData => data.isNotEmpty;
 
-  TournamentsSearchState._({
-    Iterable<Tournament> tournaments,
+  SearchTournamentsResultsState._({
+    Iterable<Tournament> data,
     this.isLoading = false,
     this.exception,
-  }) : this.tournaments =
-            UnmodifiableListView<Tournament>(tournaments ?? <Tournament>[]);
+  }) : this.data = UnmodifiableListView<Tournament>(data ?? <Tournament>[]);
 
-  TournamentsSearchState.initial() : this._();
+  SearchTournamentsResultsState.initial() : this._();
 
-  TournamentsSearchState copyWith({
-    Iterable<Tournament> tournaments,
+  SearchTournamentsResultsState copyWith({
+    Iterable<Tournament> data,
     bool isLoading,
     Exception exception,
   }) =>
-      TournamentsSearchState._(
-        tournaments: tournaments ?? this.tournaments,
+      SearchTournamentsResultsState._(
+        data: data ?? this.data,
         isLoading: isLoading ?? this.isLoading,
         exception: exception ?? this.exception,
       );
 
   @override
-  int get hashCode => hash3(isLoading, exception.runtimeType, tournaments);
+  int get hashCode => hash3(isLoading, exception.runtimeType, data);
 
   @override
   bool operator ==(dynamic other) =>
-      other is TournamentsSearchState &&
-      other.isLoading == this.isLoading &&
-      other.exception?.runtimeType == this.exception?.runtimeType &&
-      const DeepCollectionEquality()
-          .equals(other.tournaments, this.tournaments);
-}
-
-@immutable
-class QuestionsSearchState {
-  const QuestionsSearchState._();
-
-  const QuestionsSearchState.initial() : this._();
-
-  @override
-  int get hashCode => 1;
-
-  @override
-  bool operator ==(dynamic other) => other is QuestionsSearchState;
+      other is SearchTournamentsResultsState &&
+      other.isLoading == isLoading &&
+      other.exception?.runtimeType == exception?.runtimeType &&
+      const DeepCollectionEquality().equals(other.data, data);
 }
