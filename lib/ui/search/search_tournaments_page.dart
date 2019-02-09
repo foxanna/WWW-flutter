@@ -5,6 +5,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
+import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/common/tournaments_grid.dart';
@@ -29,26 +30,35 @@ class _SearchTournamentsPageState extends State<SearchTournamentsPage> {
       StoreConnector<AppState, SearchTournamentsResultsState>(
         distinct: true,
         converter: (store) => store.state.searchState.searchResults,
-        builder: (context, data) {
-          final state = data;
-
+        builder: (context, state) {
           if (state.hasData) {
             return _SearchTournamentsPageResults(
               scrollController: _scrollController,
               data: state.data,
               isLoading: state.isLoading,
             );
-          } else {
-            if (state.isLoading) {
-              return const WWWProgressIndicator();
-            }
-            if (state.hasError) {
-              return ErrorMessage(
-                exception: state.exception,
-                retryFunction: () => _loadMore(),
-                color: Theme.of(context).iconTheme.color,
-              );
-            }
+          }
+
+          if (state.emptyResults) {
+            return Center(
+              child: Text(
+                Strings.nothingFound,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.subhead,
+              ),
+            );
+          }
+
+          if (state.isLoading) {
+            return const WWWProgressIndicator();
+          }
+
+          if (state.hasError) {
+            return ErrorMessage(
+              exception: state.exception,
+              retryFunction: () => _loadMore(),
+              color: Theme.of(context).iconTheme.color,
+            );
           }
 
           return Container();
