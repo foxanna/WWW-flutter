@@ -1,4 +1,8 @@
+import 'package:html_unescape/html_unescape.dart';
+
 class TextUtils {
+  static final _unescape = HtmlUnescape();
+
   static String normalizeToSingleLine(String text) {
     if (text == null) {
       return null;
@@ -26,7 +30,7 @@ class TextUtils {
       return null;
     }
 
-    text = _replaceEscapedSymbols(text);
+    text = _unescapeHtmlSymbols(text);
     text = removeParagraphs(text);
 
     return text;
@@ -40,6 +44,6 @@ class TextUtils {
   static String replaceMultipleSpacesWithNewLine(String text) =>
       text.trim().replaceAll(RegExp(r'\s{2,}'), '\n');
 
-  static String _replaceEscapedSymbols(String text) =>
-      text.replaceAll('\\\'', '\'').replaceAll('\\&', '&');
+  static String _unescapeHtmlSymbols(String text) =>
+      _unescape.convert(text.replaceAll('\\\'', '\'').replaceAll('\\&', '&'));
 }
