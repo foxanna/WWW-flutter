@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
+import 'package:rxdart/subjects.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
@@ -21,6 +22,16 @@ class _SearchTournamentsPageAppBarState
   FocusNode _focusNode;
   TextEditingController _queryController;
   SortingController _sortingController;
+
+  PublishSubject<String> _queryDebouncer;
+
+  _SearchTournamentsPageAppBarState() {
+    _queryDebouncer = PublishSubject<String>()
+      ..stream
+          .debounce(Duration(seconds: 2))
+          .distinct()
+          .listen((query) => _search());
+  }
 
   @override
   Widget build(BuildContext context) =>
@@ -60,7 +71,6 @@ class _SearchTournamentsPageAppBarState
         focusNode: _focusNode,
         style: Theme.of(context).textTheme.title,
         textInputAction: TextInputAction.search,
-        onSubmitted: (query) => _onSubmitted(),
         decoration: const InputDecoration(
           border: InputBorder.none,
           hintText: Strings.search,
@@ -102,12 +112,6 @@ class _SearchTournamentsPageAppBarState
     super.dispose();
   }
 
-  void _onSubmitted() {
-    _unFocus();
-
-    _search();
-  }
-
   void _focus() => FocusScope.of(context).requestFocus(_focusNode);
 
   void _unFocus() => _focusNode.unfocus();
@@ -115,9 +119,13 @@ class _SearchTournamentsPageAppBarState
   void _onSortingChanged() => StoreProvider.of<AppState>(context)
       .dispatch(TournamentsSearchSortingChanged(_sortingController.value));
 
-  void _onQueryChanged() => StoreProvider.of<AppState>(context)
-      .dispatch(TournamentsSearchQueryChanged(_queryController.text));
+  void _onQueryChanged() {
+    StoreProvider.of<AppState>(context)
+        .dispatch(TournamentsSearchQueryChanged(_queryController.text));
+
+    _queryDebouncer.sink.add(_queryController.text);
+  }
 
   void _search() =>
-      StoreProvider.of<AppState>(context).dispatch(SearchTournaments());
+      StoreProvider.of<AppState>(context).dispatch(const SearchTournaments());
 }
