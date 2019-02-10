@@ -47,7 +47,10 @@ class _SearchTournamentsPageAppBarState
                 state.query.isNotEmpty
                     ? IconButton(
                         icon: const Icon(Icons.clear),
-                        onPressed: () => _queryController.clear(),
+                        onPressed: () {
+                          _queryController.clear();
+                          _focus();
+                        },
                       )
                     : Container(),
                 SortingButton(controller: _sortingController),
