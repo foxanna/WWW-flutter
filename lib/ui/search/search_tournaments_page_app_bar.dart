@@ -72,6 +72,7 @@ class _SearchTournamentsPageAppBarState
   Widget _buildSearchField(BuildContext context) => TextField(
         controller: _queryController,
         focusNode: _focusNode,
+        autofocus: true,
         style: Theme.of(context).textTheme.title,
         textInputAction: TextInputAction.search,
         decoration: const InputDecoration(
@@ -105,7 +106,6 @@ class _SearchTournamentsPageAppBarState
     super.initState();
 
     _focusNode = FocusNode();
-    WidgetsBinding.instance.addPostFrameCallback((d) => _focus());
   }
 
   @override
