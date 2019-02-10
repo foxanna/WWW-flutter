@@ -24,57 +24,56 @@ class AboutPage extends StatelessWidget {
       );
 
   Widget _buildBody(BuildContext context) => Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: Dimensions.defaultSidePadding * 5),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: _buildImageSection(context),
-          ),
-          Expanded(
-            flex: 1,
-            child: _buildBottomSection(context),
-          )
-        ],
-      ));
+        padding: const EdgeInsets.symmetric(
+            horizontal: Dimensions.defaultSidePadding * 5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Expanded(
+              child: _buildImageSection(context),
+            ),
+            _buildBottomSection(context),
+          ],
+        ),
+      );
 
   Widget _buildImageSection(BuildContext context) => Padding(
         padding: const EdgeInsets.symmetric(
             vertical: Dimensions.defaultSidePadding * 5),
-        child: Hero(
-          tag: 'owl',
-          child: SvgPicture.asset(
-            'assets/owl.svg',
-            fit: BoxFit.fitHeight,
-            color: Theme.of(context).accentColor,
+        child: Center(
+          child: Hero(
+            tag: 'owl',
+            child: SvgPicture.asset(
+              'assets/owl.svg',
+              fit: BoxFit.fitHeight,
+              color: Theme.of(context).accentColor,
+            ),
           ),
         ),
       );
 
-  Widget _buildBottomSection(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(bottom: Dimensions.defaultSpacing * 5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            Text(
-              Constants.appNameLong,
-              textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline
-                  .copyWith(color: Theme.of(context).accentColor),
-            ),
-            IconButton(
-              icon: const Icon(Icons.email),
-              tooltip: Strings.emailDevelopers,
-              color: Theme.of(context).accentColor,
-              onPressed: () => _sendEmail(context),
-            ),
-            Expanded(child: Container()),
-            RichText(
+  Widget _buildBottomSection(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(
+            Constants.appNameLong,
+            textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .textTheme
+                .headline
+                .copyWith(color: Theme.of(context).accentColor),
+          ),
+          IconButton(
+            icon: const Icon(Icons.email),
+            tooltip: Strings.emailDevelopers,
+            color: Theme.of(context).accentColor,
+            onPressed: () => _sendEmail(context),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                vertical: Dimensions.defaultSpacing * 5),
+            child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
                 children: [
@@ -93,8 +92,8 @@ class AboutPage extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       );
 
   void _openDatabaseInBrowser(BuildContext context) =>
