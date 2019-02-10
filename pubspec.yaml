@@ -28,6 +28,7 @@ dependencies:
   flutter_redux: ^0.5.3
   tuple: ^1.0.2
   quiver: ^2.0.1
+  html_unescape: ^1.0.1+2
 
 dev_dependencies:
   flutter_test:
