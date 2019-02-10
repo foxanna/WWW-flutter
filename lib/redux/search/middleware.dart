@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
@@ -33,6 +35,10 @@ class SearchMiddleware {
 
   static Future _search(Store<AppState> store, SearchTournaments action) async {
     final parameters = store.state.searchState.searchParameters;
+
+    if (parameters.query.isEmpty) {
+      return;
+    }
 
     try {
       store.dispatch(const TournamentsSearchIsLoading());
