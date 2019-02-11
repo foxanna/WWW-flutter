@@ -10,6 +10,13 @@ import 'package:what_when_where/ui/search/sorting_button.dart';
 
 class SearchTournamentsPageAppBar extends StatefulWidget
     implements PreferredSizeWidget {
+  final ScrollController scrollController;
+
+  const SearchTournamentsPageAppBar({
+    Key key,
+    this.scrollController,
+  }) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _SearchTournamentsPageAppBarState();
 
@@ -103,13 +110,33 @@ class _SearchTournamentsPageAppBarState
     super.initState();
 
     _focusNode = FocusNode();
+
+    if (widget.scrollController != null) {
+      widget.scrollController.addListener(_onResultsScrolled);
+    }
   }
 
   @override
   void dispose() {
     _focusNode.dispose();
 
+    if (widget.scrollController != null) {
+      widget.scrollController.removeListener(_onResultsScrolled);
+    }
+
     super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(SearchTournamentsPageAppBar oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.scrollController != null) {
+      oldWidget.scrollController.removeListener(_onResultsScrolled);
+    }
+    if (widget.scrollController != null) {
+      widget.scrollController.addListener(_onResultsScrolled);
+    }
   }
 
   void _focus() => FocusScope.of(context).requestFocus(_focusNode);
@@ -139,4 +166,8 @@ class _SearchTournamentsPageAppBarState
 
   void _search() =>
       StoreProvider.of<AppState>(context).dispatch(const SearchTournaments());
+
+  void _onResultsScrolled() {
+    _unFocus();
+  }
 }
