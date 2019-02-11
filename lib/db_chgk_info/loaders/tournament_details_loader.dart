@@ -3,7 +3,6 @@ import 'package:what_when_where/db_chgk_info/cache/tournament_cache.dart';
 import 'package:what_when_where/db_chgk_info/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/resources/strings.dart';
 
 class TournamentDetailsLoader {
   static final TournamentDetailsLoader _instance =
@@ -34,7 +33,6 @@ class TournamentDetailsLoader {
   void _handleTourlessTournament(Map<String, dynamic> map) {
     if (!map.containsKey('tour')) {
       final tourMap = Map<String, dynamic>.from(map);
-      tourMap['Title'] = Strings.firstTour;
       tourMap['ParentId'] = map['Id'];
 
       final tour = Tour.fromJson(tourMap);
