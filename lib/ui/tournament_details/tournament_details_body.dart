@@ -29,7 +29,8 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
     super.initState();
 
     _pageController = PageController();
-    _tabController = TabController(length: widget.count, vsync: this);
+    _tabController =
+        TabController(length: widget.count > 1 ? widget.count : 0, vsync: this);
 
     _pageController.addListener(_pageControllerListener);
     _tabController.addListener(_tabControllerListener);
