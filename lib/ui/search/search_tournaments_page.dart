@@ -11,18 +11,25 @@ import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/common/tournaments_grid.dart';
 
 class SearchTournamentsPage extends StatefulWidget {
+  final ScrollController scrollController;
+
+  const SearchTournamentsPage({
+    Key key,
+    this.scrollController,
+  }) : super(key: key);
+
   @override
   _SearchTournamentsPageState createState() => _SearchTournamentsPageState();
 }
 
 class _SearchTournamentsPageState extends State<SearchTournamentsPage> {
-  final _scrollController = ScrollController();
-
   @override
   void initState() {
     super.initState();
 
-    _scrollController.addListener(_loadMoreIfRequested);
+    if (widget.scrollController != null) {
+      widget.scrollController.addListener(_loadMoreIfRequested);
+    }
   }
 
   @override
@@ -33,7 +40,7 @@ class _SearchTournamentsPageState extends State<SearchTournamentsPage> {
         builder: (context, state) {
           if (state.hasData) {
             return _SearchTournamentsPageResults(
-              scrollController: _scrollController,
+              scrollController: widget.scrollController,
               data: state.data,
               isLoading: state.isLoading,
             );
@@ -68,15 +75,28 @@ class _SearchTournamentsPageState extends State<SearchTournamentsPage> {
       );
 
   @override
+  void didUpdateWidget(SearchTournamentsPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.scrollController != null) {
+      oldWidget.scrollController.removeListener(_loadMoreIfRequested);
+    }
+    if (widget.scrollController != null) {
+      widget.scrollController.addListener(_loadMoreIfRequested);
+    }
+  }
+
+  @override
   void dispose() {
-    _scrollController.removeListener(_loadMoreIfRequested);
-    _scrollController.dispose();
+    if (widget.scrollController != null) {
+      widget.scrollController.removeListener(_loadMoreIfRequested);
+    }
 
     super.dispose();
   }
 
   void _loadMoreIfRequested() {
-    if (_scrollController.position.extentAfter < 500) {
+    if (widget.scrollController.position.extentAfter < 500) {
       _loadMore();
     }
   }
