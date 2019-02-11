@@ -58,26 +58,27 @@ class Tournament {
       );
 
   factory Tournament.fromJson(Map<String, dynamic> map) => Tournament(
-      id: map['Id'],
-      parentId: map['ParentId'],
-      title: map['Title'],
-      number: map['Number'],
-      textId: map['TextId'],
-      questionsCount: map['QuestionsNum'],
-      complexity: map['Complexity'],
-      type: map['Type'],
-      description: TextUtils.normalizeToSingleLine(map['Info']),
-      url: '${Constants.databaseUrl}/tour/${map['Id']}',
-      fileName: map['FileName'],
-      editors: TextUtils.normalizeToSingleLine(map['Editors']),
-      createdAt: map['CreatedAt'],
-      playedAt: map['PlayedAt'],
-      tours: map.containsKey('tour')
-          ? map['tour'] is List
-              ? UnmodifiableListView(
-                  List<Map<String, dynamic>>.from(map['tour'])
-                      .map((q) => Tour.fromJson(q))
-                      .toList())
-              : UnmodifiableListView([Tour.fromJson(map['tour'])])
-          : UnmodifiableListView([]));
+        id: map['Id'],
+        parentId: map['ParentId'],
+        title: map['Title'],
+        number: map['Number'],
+        textId: map['TextId'],
+        questionsCount: map['QuestionsNum'],
+        complexity: map['Complexity'],
+        type: map['Type'],
+        description: TextUtils.normalizeToSingleLine(map['Info']),
+        url: '${Constants.databaseUrl}/tour/${map['Id']}',
+        fileName: map['FileName'],
+        editors: TextUtils.normalizeToSingleLine(map['Editors']),
+        createdAt: map['CreatedAt'],
+        playedAt: map['PlayedAt'],
+        tours: map.containsKey('tour')
+            ? map['tour'] is List
+                ? UnmodifiableListView(
+                    List<Map<String, dynamic>>.from(map['tour'])
+                        .map((q) => Tour.fromJson(q))
+                        .toList())
+                : UnmodifiableListView([Tour.fromJson(map['tour'])])
+            : UnmodifiableListView([]),
+      );
 }

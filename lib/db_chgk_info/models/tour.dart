@@ -44,27 +44,28 @@ class Tour {
   });
 
   factory Tour.fromJson(Map<String, dynamic> map) => Tour(
-      id: map['Id'],
-      parentId: map['ParentId'],
-      title: map['Title'],
-      number: map['Number'],
-      textId: map['TextId'],
-      questionsCount: map['QuestionsNum'],
-      complexity: map['Complexity'],
-      type: map['Type'],
-      tournamentTitle: map['tournamentTitle'],
-      description: TextUtils.normalizeToSingleLine(map['Info']),
-      url: '${Constants.databaseUrl}/tour/${map['Id']}',
-      fileName: map['FileName'],
-      editors: TextUtils.normalizeToSingleLine(map['Editors']),
-      createdAt: map['CreatedAt'],
-      playedAt: map['PlayedAt'],
-      questions: map.containsKey('question')
-          ? map['question'] is List
-              ? UnmodifiableListView(
-                  List<Map<String, dynamic>>.from(map['question'])
-                      .map((q) => Question.fromJson(q))
-                      .toList())
-              : UnmodifiableListView([Question.fromJson(map['question'])])
-          : UnmodifiableListView([]));
+        id: map['Id'],
+        parentId: map['ParentId'],
+        title: map['Title'],
+        number: map['Number'],
+        textId: map['TextId'],
+        questionsCount: map['QuestionsNum'],
+        complexity: map['Complexity'],
+        type: map['Type'],
+        tournamentTitle: map['tournamentTitle'],
+        description: TextUtils.normalizeToSingleLine(map['Info']),
+        url: '${Constants.databaseUrl}/tour/${map['Id']}',
+        fileName: map['FileName'],
+        editors: TextUtils.normalizeToSingleLine(map['Editors']),
+        createdAt: map['CreatedAt'],
+        playedAt: map['PlayedAt'],
+        questions: map.containsKey('question')
+            ? map['question'] is List
+                ? UnmodifiableListView(
+                    List<Map<String, dynamic>>.from(map['question'])
+                        .map((q) => Question.fromJson(q))
+                        .toList())
+                : UnmodifiableListView([Question.fromJson(map['question'])])
+            : UnmodifiableListView([]),
+      );
 }
