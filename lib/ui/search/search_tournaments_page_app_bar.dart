@@ -47,10 +47,7 @@ class _SearchTournamentsPageAppBarState
                 state.query.isNotEmpty
                     ? IconButton(
                         icon: const Icon(Icons.clear),
-                        onPressed: () {
-                          _queryController.clear();
-                          _focus();
-                        },
+                        onPressed: () => _clear(),
                       )
                     : Container(),
                 SortingButton(controller: _sortingController),
@@ -118,6 +115,17 @@ class _SearchTournamentsPageAppBarState
   void _focus() => FocusScope.of(context).requestFocus(_focusNode);
 
   void _unFocus() => _focusNode.unfocus();
+
+  void _forceFocus() => WidgetsBinding.instance.addPostFrameCallback((d) {
+        _unFocus();
+        WidgetsBinding.instance.addPostFrameCallback((d) => _focus());
+      });
+
+  void _clear() {
+    _queryController.clear();
+
+    _forceFocus();
+  }
 
   void _onSortingChanged() => StoreProvider.of<AppState>(context)
       .dispatch(TournamentsSearchSortingChanged(_sortingController.value));
