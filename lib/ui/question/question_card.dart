@@ -44,7 +44,7 @@ class _QuestionCardState extends State<QuestionCard>
         elevation: 4.0,
         child: Container(
           foregroundDecoration:
-              GradientDecoration(color: Theme.of(context).canvasColor),
+              GradientDecoration(color: Theme.of(context).cardColor),
           child: ListView(
             key: _listViewKey,
             controller: _scrollController,
