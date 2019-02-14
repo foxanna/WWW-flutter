@@ -4,6 +4,7 @@ import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
+import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/analytics.dart';
@@ -28,11 +29,11 @@ class AnalyticsMiddleware {
     OpenImage: 'open_image',
     OpenTourInfo: 'open_tour_info',
     OpenTournamentInfo: 'open_tournament_info',
+    OpenSettingsPage: 'settings',
+    OpenSearchPage: 'search',
     // misc
     EmailDevelopers: 'email_developers',
     BrowseDatabase: 'browse_database',
-    // search
-    OpenSearchPage: 'search',
   };
 
   static final List<Middleware<AppState>> middleware = [
@@ -52,6 +53,7 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, EmailDevelopers>(_logAction),
     TypedMiddleware<AppState, BrowseDatabase>(_logAction),
     TypedMiddleware<AppState, OpenSearchPage>(_logAction),
+    TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
     TypedMiddleware<AppState, ChangeTheme>(_logTheme),
   ];
 
