@@ -2,6 +2,7 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/middleware.dart';
+import 'package:what_when_where/redux/init/middleware.dart';
 import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:what_when_where/redux/logs/logs.dart';
 import 'package:what_when_where/redux/misc/middleware.dart';
@@ -16,6 +17,7 @@ import 'package:what_when_where/redux/tours/middleware.dart';
 class AppMiddleware {
   static final middleware = <Middleware<AppState>>[]
     ..addAll(LogsMiddleware.middleware)
+    ..addAll(InitMiddleware.middleware)
     ..addAll(AnalyticsMiddleware.middleware)
     ..addAll(TimerMiddleware.middleware)
     ..addAll(ShareMiddleware.middleware)
