@@ -8,13 +8,11 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/init/actions.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
-import 'package:what_when_where/services/initialization.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page.dart';
 
 void main() {
 //  debugPaintSizeEnabled = true;
   runApp(WWWApp());
-  init();
 }
 
 class WWWApp extends StatelessWidget {
