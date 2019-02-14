@@ -48,7 +48,7 @@ class TextWithLinks extends StatelessWidget {
                 .map(
                   (dynamic s) => (s is Uri)
                       ? TextSpan(
-                          text: s.toString(),
+                          text: Uri.decodeFull(s.toString()),
                           style: linkStyle,
                           recognizer: TapGestureRecognizer()
                             ..onTap = () => UrlLauncher.launchURL(s.toString()),
