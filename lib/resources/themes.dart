@@ -30,4 +30,11 @@ class Themes {
           ),
         ),
       );
+
+  static final _themes = <AppTheme, ThemeData>{
+    AppTheme.light: Themes.appThemeLight,
+    AppTheme.dark: Themes.appThemeDark,
+  };
+
+  static ThemeData get(AppTheme appTheme) => _themes[appTheme];
 }
