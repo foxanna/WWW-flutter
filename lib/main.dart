@@ -5,6 +5,7 @@ import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/redux/app/middleware.dart';
 import 'package:what_when_where/redux/app/reducer.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/init/actions.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/initialization.dart';
@@ -28,6 +29,7 @@ class WWWApp extends StatelessWidget {
         store: store,
         child: StoreConnector<AppState, AppTheme>(
           distinct: true,
+          onInit: (store) => store.dispatch(const Init()),
           converter: (store) => store.state.settingsState.appTheme,
           builder: (context, theme) => MaterialApp(
                 title: Constants.appName,
