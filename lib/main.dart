@@ -25,13 +25,19 @@ class WWWApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => StoreProvider<AppState>(
-      store: store,
-      child: MaterialApp(
-        title: Constants.appName,
-        theme: Themes.appThemeLight,
-        navigatorObservers: <NavigatorObserver>[
-          AnalyticsService().observer(home: LatestTournamentsPage.routeName)
-        ],
-        home: LatestTournamentsPage(),
-      ));
+        store: store,
+        child: StoreConnector<AppState, AppTheme>(
+          distinct: true,
+          converter: (store) => store.state.settingsState.appTheme,
+          builder: (context, theme) => MaterialApp(
+                title: Constants.appName,
+                theme: Themes.get(theme),
+                navigatorObservers: <NavigatorObserver>[
+                  AnalyticsService()
+                      .observer(home: LatestTournamentsPage.routeName),
+                ],
+                home: LatestTournamentsPage(),
+              ),
+        ),
+      );
 }
