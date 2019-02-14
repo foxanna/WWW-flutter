@@ -30,4 +30,7 @@ class Strings {
   static const String byRelevance = 'по релевантности';
   static const String byDate = 'по дате';
   static const String nothingFound = 'Ничего не найдено';
+  static const String appTheme = 'Тема интерфейса';
+  static const String dark = 'темная';
+  static const String light = 'светлая';
 }
