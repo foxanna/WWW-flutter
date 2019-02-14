@@ -52,6 +52,7 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, EmailDevelopers>(_logAction),
     TypedMiddleware<AppState, BrowseDatabase>(_logAction),
     TypedMiddleware<AppState, OpenSearchPage>(_logAction),
+    TypedMiddleware<AppState, ChangeTheme>(_logTheme),
   ];
 
   static final _analyticsService = AnalyticsService();
@@ -61,5 +62,17 @@ class AnalyticsMiddleware {
     next(action);
 
     _analyticsService.logEvent(name: _eventNames[action.runtimeType]);
+  }
+
+  static void _logTheme(
+      Store<AppState> store, ChangeTheme action, NextDispatcher next) {
+    next(action);
+
+    _analyticsService.logEvent(
+      name: 'theme',
+      parameters: <String, String>{
+        'value': action.appTheme.toString().split('.').last
+      },
+    );
   }
 }
