@@ -1,17 +1,31 @@
 import 'package:flutter/material.dart';
 
 class Themes {
-  static ThemeData get appTheme {
+  static ThemeData appThemeLight = () {
     final ThemeData base = ThemeData(
+      brightness: Brightness.light,
       primaryColor: Colors.teal[900],
       accentColor: Colors.teal[400],
     );
 
-    return base.copyWith(
-      textTheme: base.textTheme.copyWith(
-        body2: base.textTheme.body1.copyWith(
-            color: base.textTheme.caption.color, fontWeight: FontWeight.w400),
-      ),
+    return _customize(base);
+  }();
+
+  static ThemeData appThemeDark = () {
+    final ThemeData base = ThemeData(
+      brightness: Brightness.dark,
+      accentColor: Colors.teal[400],
     );
-  }
+
+    return _customize(base);
+  }();
+
+  static ThemeData _customize(ThemeData base) => base.copyWith(
+        textTheme: base.textTheme.copyWith(
+          body2: base.textTheme.body1.copyWith(
+            color: base.textTheme.caption.color,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+      );
 }
