@@ -17,8 +17,27 @@ class LatestTournamentsMoreIconButton extends StatelessWidget {
       context: context,
       builder: (context) => Column(
             mainAxisSize: MainAxisSize.min,
-            children: [_AboutBottomSheetItem()],
+            children: const [
+              _SettingsBottomSheetItem(),
+              _AboutBottomSheetItem(),
+            ],
           ));
+}
+
+class _SettingsBottomSheetItem extends StatelessWidget {
+  const _SettingsBottomSheetItem({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => ListTile(
+        leading: const Icon(Icons.settings),
+        title: const Text(Strings.settings),
+        onTap: () {
+          Navigator.pop(context);
+
+          StoreProvider.of<AppState>(context)
+              .dispatch(OpenSettingsPage(context));
+        },
+      );
 }
 
 class _AboutBottomSheetItem extends StatelessWidget {
