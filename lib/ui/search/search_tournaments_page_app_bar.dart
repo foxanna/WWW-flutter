@@ -79,6 +79,7 @@ class _SearchTournamentsPageAppBarState
         autofocus: true,
         style: Theme.of(context).textTheme.title,
         textInputAction: TextInputAction.done,
+        keyboardAppearance: Theme.of(context).brightness,
         decoration: const InputDecoration(
           border: InputBorder.none,
           hintText: Strings.search,
