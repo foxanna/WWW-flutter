@@ -28,7 +28,7 @@ class WWWApp extends StatelessWidget {
       store: store,
       child: MaterialApp(
         title: Constants.appName,
-        theme: Themes.appTheme,
+        theme: Themes.appThemeLight,
         navigatorObservers: <NavigatorObserver>[
           AnalyticsService().observer(home: LatestTournamentsPage.routeName)
         ],
