@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:audioplayer/audioplayer.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:what_when_where/utils/logger.dart';
 
 class SoundService {
   static const _timerAssetName = 'timer.mp3';
@@ -18,7 +19,12 @@ class SoundService {
 
   String _mp3Uri;
 
-  Future init() async {
+  void init() {
+    _init()
+        .catchError((Object error) => log('$SoundService init error: $error'));
+  }
+
+  Future _init() async {
     final tempDir = await getTemporaryDirectory();
     final tempFile = File('${tempDir.path}/$_timerAssetName');
 
