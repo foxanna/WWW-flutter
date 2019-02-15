@@ -7,8 +7,9 @@ import 'package:what_when_where/services/preferences.dart';
 
 class SettingsMiddleware {
   static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, ChangeTheme>(_onThemeChanged),
     TypedMiddleware<AppState, ReadSettings>(_onReadSettings),
+    TypedMiddleware<AppState, ChangeTheme>(_onThemeChanged),
+    TypedMiddleware<AppState, ChangeTextScale>(_onTextScaleChanged),
   ];
 
   static const _themeKey = 'theme';
@@ -39,6 +40,15 @@ class SettingsMiddleware {
     }
   }
 
+  static Future _onTextScaleChanged(Store<AppState> store,
+      ChangeTextScale action, NextDispatcher next) async {
+    final textScaleHasChanged =
+        action.textScale != store.state.settingsState.textScale;
 
+    next(action);
 
+    if (textScaleHasChanged) {
+      await Preferences().setInt(_textScaleKey, action.textScale.index);
+    }
+  }
 }
