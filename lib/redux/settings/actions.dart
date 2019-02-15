@@ -33,3 +33,15 @@ class ReadSettings extends SettingsAction {
   @override
   String toString() => '$ReadSettings';
 }
+
+@immutable
+class SettingsRead extends SettingsAction {
+  final AppTheme appTheme;
+  final TextScale textScale;
+
+  const SettingsRead({this.appTheme, this.textScale});
+
+  @override
+  String toString() =>
+      '$SettingsRead textScale = "$textScale", appTheme = "$appTheme"';
+}
