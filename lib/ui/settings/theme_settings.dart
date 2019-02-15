@@ -13,16 +13,28 @@ class ThemeSetting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Row(
-        crossAxisAlignment: CrossAxisAlignment.baseline,
-        textBaseline: TextBaseline.alphabetic,
-        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Text(
-            Strings.appTheme,
-            style: Theme.of(context).textTheme.subhead,
+          Expanded(
+            child: Padding(
+              padding:
+                  const EdgeInsets.only(right: Dimensions.defaultSpacing * 2),
+              child: Text(
+                Strings.appTheme,
+                textAlign: TextAlign.right,
+                style: Theme.of(context).textTheme.subhead,
+              ),
+            ),
           ),
-          const SizedBox(width: Dimensions.defaultSpacing * 3),
-          const _ThemeDropdownButton(),
+          const Expanded(
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: Dimensions.defaultSpacing * 2),
+                child: _ThemeDropdownButton(),
+              ),
+            ),
+          ),
         ],
       );
 }
