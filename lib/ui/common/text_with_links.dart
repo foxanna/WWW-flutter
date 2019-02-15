@@ -25,7 +25,7 @@ class TextWithLinks extends StatelessWidget {
     this.textDirection,
     this.softWrap = true,
     this.overflow = TextOverflow.clip,
-    this.textScaleFactor = 1.0,
+    this.textScaleFactor,
     this.maxLines,
     this.locale,
     this.semanticsLabel,
@@ -40,7 +40,8 @@ class TextWithLinks extends StatelessWidget {
           textDirection: textDirection,
           locale: locale,
           softWrap: softWrap,
-          textScaleFactor: textScaleFactor,
+          textScaleFactor:
+              textScaleFactor ?? MediaQuery.of(context).textScaleFactor,
           overflow: overflow,
           maxLines: maxLines,
           text: TextSpan(
