@@ -6,6 +6,8 @@ import 'package:what_when_where/redux/app/middleware.dart';
 import 'package:what_when_where/redux/app/reducer.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/init/actions.dart';
+import 'package:what_when_where/redux/settings/state.dart';
+import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page.dart';
@@ -25,18 +27,29 @@ class WWWApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => StoreProvider<AppState>(
         store: store,
-        child: StoreConnector<AppState, AppTheme>(
+        child: StoreConnector<AppState, SettingsState>(
           distinct: true,
           onInit: (store) => store.dispatch(const Init()),
-          converter: (store) => store.state.settingsState.appTheme,
-          builder: (context, theme) => MaterialApp(
+          converter: (store) => store.state.settingsState,
+          builder: (context, state) => MaterialApp(
                 title: Constants.appName,
-                theme: Themes.get(theme),
+                theme: Themes.get(state.appTheme),
                 navigatorObservers: <NavigatorObserver>[
                   AnalyticsService()
                       .observer(home: LatestTournamentsPage.routeName),
                 ],
                 home: LatestTournamentsPage(),
+                builder: (context, child) {
+                  final mediaQueryData = MediaQuery.of(context);
+                  final defaultTextScaleFactor = mediaQueryData.textScaleFactor;
+
+                  return MediaQuery(
+                    child: child,
+                    data: mediaQueryData.copyWith(
+                        textScaleFactor: defaultTextScaleFactor *
+                            Fonts.getTextScale(state.textScale)),
+                  );
+                },
               ),
         ),
       );
