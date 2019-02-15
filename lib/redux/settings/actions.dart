@@ -1,4 +1,5 @@
 import 'package:meta/meta.dart';
+import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/resources/themes.dart';
 
 abstract class SettingsAction {
@@ -13,6 +14,16 @@ class ChangeTheme extends SettingsAction {
 
   @override
   String toString() => '$ChangeTheme appTheme = "$appTheme"';
+}
+
+@immutable
+class ChangeTextScale extends SettingsAction {
+  final TextScale textScale;
+
+  const ChangeTextScale(this.textScale);
+
+  @override
+  String toString() => '$ChangeTextScale textScale = "$textScale"';
 }
 
 @immutable
