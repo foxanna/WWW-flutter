@@ -34,4 +34,5 @@ class Strings {
   static const String appTheme = 'Тема интерфейса';
   static const String dark = 'темная';
   static const String light = 'светлая';
+  static const String textScale = 'Размер шрифта';
 }
