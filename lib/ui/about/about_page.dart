@@ -75,6 +75,7 @@ class AboutPage extends StatelessWidget {
                 vertical: Dimensions.defaultSpacing * 5),
             child: RichText(
               textAlign: TextAlign.center,
+              textScaleFactor: MediaQuery.of(context).textScaleFactor,
               text: TextSpan(
                 children: [
                   TextSpan(
