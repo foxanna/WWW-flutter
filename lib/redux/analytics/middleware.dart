@@ -55,6 +55,7 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, OpenSearchPage>(_logAction),
     TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
     TypedMiddleware<AppState, ChangeTheme>(_logTheme),
+    TypedMiddleware<AppState, ChangeTextScale>(_logTextScale),
   ];
 
   static final _analyticsService = AnalyticsService();
@@ -74,6 +75,18 @@ class AnalyticsMiddleware {
       name: 'theme',
       parameters: <String, String>{
         'value': action.appTheme.toString().split('.').last
+      },
+    );
+  }
+
+  static void _logTextScale(
+      Store<AppState> store, ChangeTextScale action, NextDispatcher next) {
+    next(action);
+
+    _analyticsService.logEvent(
+      name: 'textScale',
+      parameters: <String, String>{
+        'value': action.textScale.toString().split('.').last
       },
     );
   }
