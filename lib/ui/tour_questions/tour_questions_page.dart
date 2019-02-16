@@ -4,14 +4,9 @@ import 'package:what_when_where/ui/tour_questions/timer_button.dart';
 import 'package:what_when_where/ui/tour_questions/timer_text.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_cards.dart';
 
-class TourQuestionsPage extends StatefulWidget {
+class TourQuestionsPage extends StatelessWidget {
   static const String routeName = 'questions';
 
-  @override
-  _TourQuestionsPageState createState() => _TourQuestionsPageState();
-}
-
-class _TourQuestionsPageState extends State<TourQuestionsPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
@@ -29,15 +24,16 @@ class _TourQuestionsPageState extends State<TourQuestionsPage> {
 class _TourQuestionsPageBottomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BottomAppBar(
-      color: Theme.of(context).primaryColor,
-      child: IconTheme(
-        data: Theme.of(context).primaryIconTheme,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            TimerText(),
-            TourQuestionsPageMoreIconButton(),
-          ],
+        color: Theme.of(context).primaryColor,
+        child: IconTheme(
+          data: Theme.of(context).primaryIconTheme,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              TimerText(),
+              TourQuestionsPageMoreIconButton(),
+            ],
+          ),
         ),
-      ));
+      );
 }
