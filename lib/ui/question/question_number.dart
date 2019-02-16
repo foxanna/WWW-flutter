@@ -13,14 +13,15 @@ class QuestionNumber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => StoreConnector<AppState, String>(
-      distinct: true,
-      converter: (store) =>
-          store.state.questionsState.questions[index].question.number,
-      builder: (context, data) => Text(
-            '${Strings.question} $data',
-            style: Theme.of(context)
-                .textTheme
-                .headline
-                .copyWith(color: Theme.of(context).accentColor),
-          ));
+        distinct: true,
+        converter: (store) =>
+            store.state.questionsState.questions[index].question.number,
+        builder: (context, data) => Text(
+              '${Strings.question} $data',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline
+                  .copyWith(color: Theme.of(context).accentColor),
+            ),
+      );
 }
