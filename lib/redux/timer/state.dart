@@ -2,10 +2,26 @@ import 'package:meta/meta.dart';
 
 @immutable
 class TimerState {
-  final Duration time;
+  final int secondsLeft;
   final bool isRunning;
 
-  const TimerState({this.time, this.isRunning});
+  const TimerState._({
+    this.secondsLeft,
+    this.isRunning,
+  });
 
-  const TimerState.initial() : this(time: Duration.zero, isRunning: false);
+  TimerState.initial()
+      : this._(
+          secondsLeft: Timers.getSeconds(_initialTimerType),
+          isRunning: false,
+        );
+
+  TimerState copyWith({
+    int secondsLeft,
+    bool isRunning,
+  }) =>
+      TimerState._(
+        secondsLeft: secondsLeft ?? this.secondsLeft,
+        isRunning: isRunning ?? this.isRunning,
+      );
 }
