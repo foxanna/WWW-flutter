@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/sound.dart';
@@ -27,7 +28,24 @@ class _TimerTickingMiddleware {
       Store<AppState> store, TimerAction action, NextDispatcher next) {
     next(action);
 
-    _timer.start(callback: (duration) => _updateTime(store, duration));
+    final timerState = store.state.timerState;
+    final initialTime = Duration(
+        seconds: (timerState.secondsLeft <= 0)
+            ? Timers.getSeconds(timerState.timerType)
+            : timerState.secondsLeft);
+
+    _timer.reset();
+    _timer.start(callback: (duration) {
+      final remainingTime = initialTime - duration;
+
+      final secondsRemaining = remainingTime.inMilliseconds >
+              remainingTime.inSeconds * Duration.millisecondsPerSecond
+          ? remainingTime.inSeconds + 1
+          : remainingTime.inSeconds;
+
+      _updateTime(store, secondsRemaining);
+    });
+
     store.dispatch(UpdateIsRunningValue(_timer.isRunning));
   }
 
@@ -39,8 +57,10 @@ class _TimerTickingMiddleware {
     store.dispatch(UpdateIsRunningValue(_timer.isRunning));
   }
 
-  static void _updateTime(Store<AppState> store, Duration duration) {
-    store.dispatch(UpdateTimeValue(duration));
+  static void _updateTime(Store<AppState> store, int seconds) {
+    if (store.state.timerState.secondsLeft != seconds) {
+      store.dispatch(UpdateTimeValue(seconds));
+    }
   }
 
   static void _resetTimer(
