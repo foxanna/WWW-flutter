@@ -96,23 +96,17 @@ class _TimerConnectingMiddleware {
     TypedMiddleware<AppState, UpdateTimeValue>(_notifyTimerEnds),
   ];
 
-  static const _secondsToNotifyAt = [50, 60, 120, 180, 240, 300];
+  static const _secondsToNotifyAt = [10, 0];
 
   static void _notifyTimerEnds(
       Store<AppState> store, UpdateTimeValue action, NextDispatcher next) {
     next(action);
 
-    final currentMilliseconds = action.newValue.inMilliseconds;
-
-    final shouldNotify = _secondsToNotifyAt.any((second) {
-      final milliseconds = Duration.millisecondsPerSecond * second;
-      return currentMilliseconds >= milliseconds &&
-          currentMilliseconds <
-              milliseconds + _TimerTickingMiddleware._timerFrequency;
-    });
+    final shouldNotify =
+        _secondsToNotifyAt.any((second) => second == action.newValue);
 
     if (shouldNotify) {
-      store.dispatch(NotifyExpiration());
+      store.dispatch(const NotifyExpiration());
     }
   }
 }
