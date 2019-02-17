@@ -4,18 +4,24 @@ abstract class TimerAction {}
 
 @immutable
 class StartTimer extends TimerAction {
+  const StartTimer();
+
   @override
   String toString() => '$StartTimer';
 }
 
 @immutable
 class StopTimer extends TimerAction {
+  const StopTimer();
+
   @override
   String toString() => '$StopTimer';
 }
 
 @immutable
 class ResetTimer extends TimerAction {
+  const ResetTimer();
+
   @override
   String toString() => '$ResetTimer';
 }
@@ -24,7 +30,7 @@ class ResetTimer extends TimerAction {
 class UpdateTimeValue extends TimerAction {
   final Duration newValue;
 
-  UpdateTimeValue(this.newValue);
+  const UpdateTimeValue(this.newValue);
 
   @override
   String toString() => '$UpdateTimeValue newValue = "$newValue"';
@@ -42,6 +48,8 @@ class UpdateIsRunningValue extends TimerAction {
 
 @immutable
 class NotifyExpiration extends TimerAction {
+  const NotifyExpiration();
+
   @override
   String toString() => '$NotifyExpiration';
 }
