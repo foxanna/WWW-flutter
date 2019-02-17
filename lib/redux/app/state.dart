@@ -29,12 +29,12 @@ class AppState {
 
   AppState.initial()
       : this(
-          timerState: const TimerState.initial(),
+          timerState: TimerState.initial(),
           latestTournamentsState: LatestTournamentsState.initial(),
           tournamentState: const TournamentState.initial(),
           toursState: ToursState.initial(),
           questionsState: QuestionsState.initial(),
           searchState: SearchState.initial(),
-          settingsState: SettingsState.initial(),
+          settingsState: const SettingsState.initial(),
         );
 }
