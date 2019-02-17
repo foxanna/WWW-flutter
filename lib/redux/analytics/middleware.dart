@@ -7,6 +7,8 @@ import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
+import 'package:what_when_where/resources/fonts.dart';
+import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 
 class AnalyticsMiddleware {
@@ -54,6 +56,7 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, BrowseDatabase>(_logAction),
     TypedMiddleware<AppState, OpenSearchPage>(_logAction),
     TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
+    TypedMiddleware<AppState, SettingsRead>(_logSettings),
     TypedMiddleware<AppState, ChangeTheme>(_logTheme),
     TypedMiddleware<AppState, ChangeTextScale>(_logTextScale),
   ];
@@ -65,6 +68,14 @@ class AnalyticsMiddleware {
     next(action);
 
     _analyticsService.logEvent(name: _eventNames[action.runtimeType]);
+  }
+
+  static void _logSettings(
+      Store<AppState> store, SettingsRead action, NextDispatcher next) {
+    next(action);
+
+    _logThemeValue(action.appTheme);
+    _logTextScaleValue(action.textScale);
   }
 
   static void _logTheme(
