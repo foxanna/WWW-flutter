@@ -1,6 +1,8 @@
 enum TextScale { normal, medium, large }
 
 class Fonts {
+  Fonts._();
+
   static final _scales = <TextScale, double>{
     TextScale.normal: 1.0,
     TextScale.medium: 1.2,
