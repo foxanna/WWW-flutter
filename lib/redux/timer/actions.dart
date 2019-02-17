@@ -28,7 +28,7 @@ class ResetTimer extends TimerAction {
 
 @immutable
 class UpdateTimeValue extends TimerAction {
-  final Duration newValue;
+  final int newValue;
 
   const UpdateTimeValue(this.newValue);
 
