@@ -20,6 +20,7 @@ class _TimerTickingMiddleware {
     TypedMiddleware<AppState, StopTimer>(_stopTimer),
     TypedMiddleware<AppState, ResetTimer>(_resetTimer),
     TypedMiddleware<AppState, UpdateTimeValue>(_stopTimerAtZero),
+    TypedMiddleware<AppState, ChangeTimerType>(_changeTimerType),
   ];
 
   static const int _timerFrequency = 200;
@@ -80,6 +81,13 @@ class _TimerTickingMiddleware {
     if (action.newValue == 0) {
       store.dispatch(const StopTimer());
     }
+  }
+
+  static void _changeTimerType(
+      Store<AppState> store, ChangeTimerType action, NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const ResetTimer());
   }
 }
 
