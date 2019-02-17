@@ -68,6 +68,8 @@ class _TimerTickingMiddleware {
       Store<AppState> store, TimerAction action, NextDispatcher next) {
     next(action);
 
+    store.dispatch(const StopTimer());
+
     _timer.reset();
   }
 
