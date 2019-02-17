@@ -1,9 +1,15 @@
 import 'package:meta/meta.dart';
 
-abstract class TimerAction {}
+abstract class TimerAction {
+  const TimerAction();
+}
+
+abstract class UserTimerAction extends TimerAction {
+  const UserTimerAction();
+}
 
 @immutable
-class StartTimer extends TimerAction {
+class StartTimer extends UserTimerAction {
   const StartTimer();
 
   @override
@@ -11,7 +17,7 @@ class StartTimer extends TimerAction {
 }
 
 @immutable
-class StopTimer extends TimerAction {
+class StopTimer extends UserTimerAction {
   const StopTimer();
 
   @override
@@ -19,7 +25,7 @@ class StopTimer extends TimerAction {
 }
 
 @immutable
-class ResetTimer extends TimerAction {
+class ResetTimer extends UserTimerAction {
   const ResetTimer();
 
   @override
@@ -27,7 +33,7 @@ class ResetTimer extends TimerAction {
 }
 
 @immutable
-class UpdateTimeValue extends TimerAction {
+class UpdateTimeValue extends SystemTimerAction {
   final int newValue;
 
   const UpdateTimeValue(this.newValue);
@@ -37,17 +43,17 @@ class UpdateTimeValue extends TimerAction {
 }
 
 @immutable
-class UpdateIsRunningValue extends TimerAction {
+class UpdateIsRunningValue extends SystemTimerAction {
   final bool newValue;
 
-  UpdateIsRunningValue(this.newValue);
+  const UpdateIsRunningValue(this.newValue);
 
   @override
   String toString() => '$UpdateIsRunningValue newValue = "$newValue"';
 }
 
 @immutable
-class NotifyExpiration extends TimerAction {
+class NotifyExpiration extends SystemTimerAction {
   const NotifyExpiration();
 
   @override
