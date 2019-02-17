@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/redux/timer/state.dart';
 
@@ -14,12 +15,19 @@ class TimerReducer {
 
   static TimerState _updateTimeValue(
           TimerState state, UpdateTimeValue action) =>
-      TimerState(isRunning: state.isRunning, time: action.newValue);
+      state.copyWith(
+        secondsLeft: action.newValue,
+      );
 
   static TimerState _updateIsRunningValue(
           TimerState state, UpdateIsRunningValue action) =>
-      TimerState(time: state.time, isRunning: action.newValue);
+      state.copyWith(
+        isRunning: action.newValue,
+      );
 
   static TimerState _resetValues(TimerState state, ResetTimer action) =>
-      const TimerState.initial();
+      state.copyWith(
+        secondsLeft: Timers.getSeconds(state.timerType),
+        isRunning: false,
+      );
 }
