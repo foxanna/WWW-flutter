@@ -1,4 +1,5 @@
 import 'package:meta/meta.dart';
+import 'package:what_when_where/common/timer_type.dart';
 
 abstract class TimerAction {
   const TimerAction();
@@ -30,6 +31,20 @@ class ResetTimer extends UserTimerAction {
 
   @override
   String toString() => '$ResetTimer';
+}
+
+@immutable
+class ChangeTimerType extends UserTimerAction {
+  final TimerType newValue;
+
+  const ChangeTimerType(this.newValue);
+
+  @override
+  String toString() => '$ChangeTimerType newValue = "$newValue"';
+}
+
+abstract class SystemTimerAction extends TimerAction {
+  const SystemTimerAction();
 }
 
 @immutable
