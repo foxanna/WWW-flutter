@@ -6,6 +6,33 @@ import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/utils/duration_formatter.dart';
 
+class TimerText extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Stack(
+        children: [
+          Positioned.fill(child: _TimerOptionsDropdownButton()),
+          IgnorePointer(
+            child: Container(
+              color: Theme.of(context).primaryColor,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: Dimensions.defaultSidePadding * 2),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    _TimerValue(),
+                    Icon(
+                      Icons.arrow_drop_up,
+                      color: Theme.of(context).primaryIconTheme.color,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
+}
 
 class _TimerOptionsDropdownButton extends StatelessWidget {
   @override
