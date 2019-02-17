@@ -16,6 +16,7 @@ class AnalyticsMiddleware {
     // timer
     StartTimer: 'start_timer',
     StopTimer: 'pause_timer',
+    ChangeTimerType: 'timer_type_set',
     // answer
     ShowAnswer: 'show_answer',
     HideAnswer: 'hide_answer',
@@ -41,6 +42,7 @@ class AnalyticsMiddleware {
   static final List<Middleware<AppState>> middleware = [
     TypedMiddleware<AppState, StartTimer>(_logAction),
     TypedMiddleware<AppState, StopTimer>(_logAction),
+    TypedMiddleware<AppState, ChangeTimerType>(_logAction),
     TypedMiddleware<AppState, ShowAnswer>(_logAction),
     TypedMiddleware<AppState, HideAnswer>(_logAction),
     TypedMiddleware<AppState, ShareQuestion>(_logAction),
