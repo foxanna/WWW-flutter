@@ -71,10 +71,14 @@ class AnalyticsMiddleware {
       Store<AppState> store, ChangeTheme action, NextDispatcher next) {
     next(action);
 
+    _logThemeValue(action.appTheme);
+  }
+
+  static void _logThemeValue(AppTheme appTheme) {
     _analyticsService.logEvent(
       name: 'theme',
       parameters: <String, String>{
-        'value': action.appTheme.toString().split('.').last
+        'value': appTheme.toString().split('.').last
       },
     );
   }
@@ -83,10 +87,14 @@ class AnalyticsMiddleware {
       Store<AppState> store, ChangeTextScale action, NextDispatcher next) {
     next(action);
 
+    _logTextScaleValue(action.textScale);
+  }
+
+  static void _logTextScaleValue(TextScale textScale) {
     _analyticsService.logEvent(
       name: 'textScale',
       parameters: <String, String>{
-        'value': action.textScale.toString().split('.').last
+        'value': textScale.toString().split('.').last
       },
     );
   }
