@@ -8,6 +8,7 @@ class TimerReducer {
     TypedReducer<TimerState, UpdateTimeValue>(_updateTimeValue),
     TypedReducer<TimerState, UpdateIsRunningValue>(_updateIsRunningValue),
     TypedReducer<TimerState, ResetTimer>(_resetValues),
+    TypedReducer<TimerState, ChangeTimerType>(_changeTimerTypeValues),
   ]);
 
   static TimerState reduce(TimerState state, dynamic action) =>
@@ -29,5 +30,11 @@ class TimerReducer {
       state.copyWith(
         secondsLeft: Timers.getSeconds(state.timerType),
         isRunning: false,
+      );
+
+  static TimerState _changeTimerTypeValues(
+          TimerState state, ChangeTimerType action) =>
+      state.copyWith(
+        timerType: action.newValue,
       );
 }
