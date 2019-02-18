@@ -17,4 +17,15 @@ class Preferences {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt(key, value);
   }
+
+  Future<bool> getBool(String key, {bool defaultValue = false}) async {
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.getBool(key) ?? defaultValue;
+    return value;
+  }
+
+  Future setBool(String key, bool value) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(key, value);
+  }
 }
