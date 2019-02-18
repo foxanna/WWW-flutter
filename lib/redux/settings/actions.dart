@@ -31,6 +31,26 @@ class ChangeTextScale extends UserSettingsAction {
 }
 
 @immutable
+class ChangeNotifyShortTimerExpiration extends UserSettingsAction {
+  final bool newValue;
+
+  const ChangeNotifyShortTimerExpiration(this.newValue);
+
+  @override
+  String toString() =>
+      '$ChangeNotifyShortTimerExpiration newValue = "$newValue"';
+}
+
+class ChangeNotifyLongTimerExpiration extends UserSettingsAction {
+  final bool newValue;
+
+  const ChangeNotifyLongTimerExpiration(this.newValue);
+
+  @override
+  String toString() =>
+      '$ChangeNotifyLongTimerExpiration newValue = "$newValue"';
+}
+
 abstract class SystemSettingsAction extends SettingsAction {
   const SystemSettingsAction();
 }
@@ -47,10 +67,19 @@ class ReadSettings extends SystemSettingsAction {
 class SettingsRead extends SystemSettingsAction {
   final AppTheme appTheme;
   final TextScale textScale;
+  final bool notifyShortTimerExpiration;
+  final bool notifyLongTimerExpiration;
 
-  const SettingsRead({this.appTheme, this.textScale});
+  const SettingsRead({
+    this.appTheme,
+    this.textScale,
+    this.notifyShortTimerExpiration,
+    this.notifyLongTimerExpiration,
+  });
 
   @override
   String toString() =>
-      '$SettingsRead textScale = "$textScale", appTheme = "$appTheme"';
+      '$SettingsRead textScale = "$textScale", appTheme = "$appTheme", '
+      'notifyShortTimerExpiration = "$notifyShortTimerExpiration", '
+      'notifyLongTimerExpiration = "$notifyLongTimerExpiration"';
 }
