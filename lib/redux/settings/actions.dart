@@ -6,8 +6,12 @@ abstract class SettingsAction {
   const SettingsAction();
 }
 
+abstract class UserSettingsAction extends SettingsAction {
+  const UserSettingsAction();
+}
+
 @immutable
-class ChangeTheme extends SettingsAction {
+class ChangeTheme extends UserSettingsAction {
   final AppTheme appTheme;
 
   const ChangeTheme(this.appTheme);
@@ -17,7 +21,7 @@ class ChangeTheme extends SettingsAction {
 }
 
 @immutable
-class ChangeTextScale extends SettingsAction {
+class ChangeTextScale extends UserSettingsAction {
   final TextScale textScale;
 
   const ChangeTextScale(this.textScale);
@@ -27,7 +31,12 @@ class ChangeTextScale extends SettingsAction {
 }
 
 @immutable
-class ReadSettings extends SettingsAction {
+abstract class SystemSettingsAction extends SettingsAction {
+  const SystemSettingsAction();
+}
+
+@immutable
+class ReadSettings extends SystemSettingsAction {
   const ReadSettings();
 
   @override
@@ -35,7 +44,7 @@ class ReadSettings extends SettingsAction {
 }
 
 @immutable
-class SettingsRead extends SettingsAction {
+class SettingsRead extends SystemSettingsAction {
   final AppTheme appTheme;
   final TextScale textScale;
 
