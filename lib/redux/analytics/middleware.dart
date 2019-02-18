@@ -58,9 +58,14 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, BrowseDatabase>(_logAction),
     TypedMiddleware<AppState, OpenSearchPage>(_logAction),
     TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
+    // settings
     TypedMiddleware<AppState, SettingsRead>(_logSettings),
     TypedMiddleware<AppState, ChangeTheme>(_logTheme),
     TypedMiddleware<AppState, ChangeTextScale>(_logTextScale),
+    TypedMiddleware<AppState, ChangeNotifyShortTimerExpiration>(
+        _logNotifyShortTimerExpiration),
+    TypedMiddleware<AppState, ChangeNotifyLongTimerExpiration>(
+        _logNotifyLongTimerExpiration),
   ];
 
   static final _analyticsService = AnalyticsService();
@@ -78,6 +83,8 @@ class AnalyticsMiddleware {
 
     _logThemeValue(action.appTheme);
     _logTextScaleValue(action.textScale);
+    _logNotifyShortTimerExpirationValue(action.notifyShortTimerExpiration);
+    _logNotifyLongTimerExpirationValue(action.notifyLongTimerExpiration);
   }
 
   static void _logTheme(
@@ -87,14 +94,12 @@ class AnalyticsMiddleware {
     _logThemeValue(action.appTheme);
   }
 
-  static void _logThemeValue(AppTheme appTheme) {
-    _analyticsService.logEvent(
-      name: 'theme',
-      parameters: <String, String>{
-        'value': appTheme.toString().split('.').last
-      },
-    );
-  }
+  static void _logThemeValue(AppTheme appTheme) => _analyticsService.logEvent(
+        name: 'theme',
+        parameters: <String, String>{
+          'value': appTheme.toString().split('.').last
+        },
+      );
 
   static void _logTextScale(
       Store<AppState> store, ChangeTextScale action, NextDispatcher next) {
@@ -103,12 +108,41 @@ class AnalyticsMiddleware {
     _logTextScaleValue(action.textScale);
   }
 
-  static void _logTextScaleValue(TextScale textScale) {
-    _analyticsService.logEvent(
-      name: 'textScale',
-      parameters: <String, String>{
-        'value': textScale.toString().split('.').last
-      },
-    );
+  static void _logTextScaleValue(TextScale textScale) =>
+      _analyticsService.logEvent(
+        name: 'textScale',
+        parameters: <String, String>{
+          'value': textScale.toString().split('.').last
+        },
+      );
+
+  static void _logNotifyShortTimerExpiration(Store<AppState> store,
+      ChangeNotifyShortTimerExpiration action, NextDispatcher next) {
+    next(action);
+
+    _logNotifyShortTimerExpirationValue(action.newValue);
   }
+
+  static void _logNotifyShortTimerExpirationValue(bool value) =>
+      _analyticsService.logEvent(
+        name: 'timer_notifications',
+        parameters: <String, String>{
+          'short_timer': value.toString(),
+        },
+      );
+
+  static void _logNotifyLongTimerExpiration(Store<AppState> store,
+      ChangeNotifyLongTimerExpiration action, NextDispatcher next) {
+    next(action);
+
+    _logNotifyLongTimerExpirationValue(action.newValue);
+  }
+
+  static void _logNotifyLongTimerExpirationValue(bool value) =>
+      _analyticsService.logEvent(
+        name: 'timer_notifications',
+        parameters: <String, String>{
+          'long_timer': value.toString(),
+        },
+      );
 }
