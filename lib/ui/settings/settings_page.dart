@@ -16,20 +16,16 @@ class SettingsPage extends StatelessWidget {
         body: _buildBody(),
       );
 
-  Widget _buildBody() => Padding(
-      padding: Dimensions.defaultPadding * 2,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+  Widget _buildBody() => ListView(
         children: <Widget>[
-          Container(
-            height: 100,
+          Padding(
+            padding: Dimensions.defaultPadding * 2,
             child: const TextScaleSettings(),
           ),
-          Container(
-            height: 100,
+          Padding(
+            padding: Dimensions.defaultPadding * 2,
             child: const ThemeSetting(),
           ),
         ],
-      ));
+      );
 }
