@@ -93,17 +93,21 @@ class _TimerTickingMiddleware {
 
 class _TimerConnectingMiddleware {
   static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, UpdateTimeValue>(_notifyTimerEnds),
+    TypedMiddleware<AppState, UpdateTimeValue>(_notifyTimerExpiration),
   ];
 
-  static const _secondsToNotifyAt = [10, 0];
-
-  static void _notifyTimerEnds(
+  static void _notifyTimerExpiration(
       Store<AppState> store, UpdateTimeValue action, NextDispatcher next) {
     next(action);
 
-    final shouldNotify =
-        _secondsToNotifyAt.any((second) => second == action.newValue);
+    final isTimerLong = store.state.timerState.timerType == TimerType.normal;
+    final settings = store.state.settingsState;
+    final timerExpired = action.newValue == 0;
+    final timerIsExpiring = action.newValue == 10;
+    final shouldNotify = timerExpired ||
+        (timerIsExpiring &&
+            ((isTimerLong && settings.notifyLongTimerExpiration) ||
+                (!isTimerLong && settings.notifyShortTimerExpiration)));
 
     if (shouldNotify) {
       store.dispatch(const NotifyExpiration());
