@@ -37,20 +37,22 @@ class TimerText extends StatelessWidget {
 class _TimerOptionsDropdownButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => DropdownButtonHideUnderline(
-        child: DropdownButton<TimerType>(
-          value: TimerType.normal,
-          items: TimerType.values
-              .map(
-                (type) => DropdownMenuItem(
-                      value: type,
-                      child: Text(
-                        DurationFormatter.formatSeconds(
-                            Timers.getSeconds(type)),
+        child: ButtonTheme(
+          alignedDropdown: true,
+          child: DropdownButton<TimerType>(
+            items: TimerType.values
+                .map(
+                  (type) => DropdownMenuItem(
+                        value: type,
+                        child: Text(
+                          DurationFormatter.formatSeconds(
+                              Timers.getSeconds(type)),
+                        ),
                       ),
-                    ),
-              )
-              .toList(),
-          onChanged: (newType) => _onTypeChanged(context, newType),
+                )
+                .toList(),
+            onChanged: (newType) => _onTypeChanged(context, newType),
+          ),
         ),
       );
 
