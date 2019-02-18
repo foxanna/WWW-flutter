@@ -19,10 +19,10 @@ class SettingsMiddleware {
       Store<AppState> store, ReadSettings action, NextDispatcher next) async {
     next(action);
 
-    final appThemeIndex = await Preferences().getInt(_themeKey, 0);
+    final appThemeIndex = await Preferences().getInt(_themeKey);
     final appTheme = AppTheme.values[appThemeIndex];
 
-    final textScaleIndex = await Preferences().getInt(_textScaleKey, 0);
+    final textScaleIndex = await Preferences().getInt(_textScaleKey);
     final textScale = TextScale.values[textScaleIndex];
 
     store.dispatch(SettingsRead(appTheme: appTheme, textScale: textScale));

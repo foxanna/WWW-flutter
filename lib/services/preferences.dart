@@ -7,7 +7,7 @@ class Preferences {
 
   Preferences._();
 
-  Future<int> getInt(String key, int defaultValue) async {
+  Future<int> getInt(String key, {int defaultValue = 0}) async {
     final prefs = await SharedPreferences.getInstance();
     final value = prefs.getInt(key) ?? defaultValue;
     return value;
