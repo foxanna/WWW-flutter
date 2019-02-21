@@ -26,7 +26,7 @@ class TourQuestionsPageBody extends StatelessWidget {
                 return ErrorMessage(
                   exception: state.exception,
                   retryFunction: () => _reload(context),
-                  color: Theme.of(context).iconTheme.color,
+                  color: Theme.of(context).primaryColor,
                 );
               }
             }
