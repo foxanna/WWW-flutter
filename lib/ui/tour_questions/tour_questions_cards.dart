@@ -20,7 +20,7 @@ class TourQuestionsCards extends StatelessWidget {
                 store.state.questionsState.questions.length,
                 store.state.questionsState.currentQuestionIndex,
                 FunctionHolder((int index) {
-              store.dispatch(ResetTimer());
+              store.dispatch(const ResetTimer());
               store.dispatch(SelectQuestion(index));
             })),
         builder: (context, data) {
