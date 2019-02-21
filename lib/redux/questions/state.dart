@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
@@ -8,6 +9,10 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 class QuestionsState {
   final UnmodifiableListView<QuestionState> questions;
   final int currentQuestionIndex;
+  final bool isLoading;
+  final Exception exception;
+
+  bool get hasError => exception != null;
 
   QuestionState get currentQuestion =>
       (currentQuestionIndex != null && questions.length > currentQuestionIndex)
@@ -17,6 +22,8 @@ class QuestionsState {
   QuestionsState({
     Iterable<QuestionState> questions,
     this.currentQuestionIndex,
+    this.isLoading = false,
+    this.exception,
   }) : this.questions =
             UnmodifiableListView<QuestionState>(questions ?? <QuestionState>[]);
 
@@ -26,8 +33,10 @@ class QuestionsState {
           currentQuestionIndex: null,
         );
 
-  QuestionsState.from({@required Iterable<Question> questions, int index})
-      : this(
+  QuestionsState.from({
+    @required Iterable<Question> questions,
+    int index,
+  }) : this(
           questions: questions?.map((q) => QuestionState(question: q)),
           currentQuestionIndex: index,
         );
@@ -35,11 +44,27 @@ class QuestionsState {
   QuestionsState copyWith({
     Iterable<QuestionState> questions,
     int currentQuestionIndex,
+    bool isLoading,
+    Exception exception,
   }) =>
       QuestionsState(
         questions: questions ?? this.questions,
         currentQuestionIndex: currentQuestionIndex ?? this.currentQuestionIndex,
+        isLoading: isLoading ?? this.isLoading,
+        exception: exception ?? this.exception,
       );
+
+  @override
+  int get hashCode =>
+      hash4(questions, currentQuestionIndex, isLoading, exception);
+
+  @override
+  bool operator ==(dynamic other) =>
+      other is QuestionsState &&
+      const DeepCollectionEquality().equals(questions, other.questions) &&
+      currentQuestionIndex == other.currentQuestionIndex &&
+      exception == other.exception &&
+      isLoading == other.isLoading;
 }
 
 @immutable
@@ -63,6 +88,6 @@ class QuestionState {
   @override
   bool operator ==(dynamic other) =>
       other is QuestionState &&
-      this.question == other.question &&
-      this.showAnswer == other.showAnswer;
+      question == other.question &&
+      showAnswer == other.showAnswer;
 }
