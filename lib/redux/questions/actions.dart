@@ -30,6 +30,14 @@ class VoidQuestions extends UserQuestionAction {
 }
 
 @immutable
+class ReloadQuestions extends UserQuestionAction {
+  const ReloadQuestions();
+
+  @override
+  String toString() => '$ReloadQuestions';
+}
+
+@immutable
 class SelectQuestion extends UserQuestionAction {
   final int questionIndex;
 
@@ -57,4 +65,38 @@ class HideAnswer extends UserQuestionAction {
 
   @override
   String toString() => '$HideAnswer questionIndex = "$questionIndex"';
+}
+
+abstract class SystemQuestionAction extends QuestionAction {
+  const SystemQuestionAction();
+}
+
+@immutable
+class QuestionsAreLoading extends SystemQuestionAction {
+  const QuestionsAreLoading();
+
+  @override
+  String toString() => '$QuestionsAreLoading';
+}
+
+@immutable
+class MoreQuestionsLoaded extends SystemQuestionAction {
+  final List<Question> questions;
+
+  const MoreQuestionsLoaded(this.questions);
+
+  @override
+  String toString() =>
+      '$MoreQuestionsLoaded questions.length = "${questions.length}"';
+}
+
+@immutable
+class QuestionsFailedToLoad extends SystemQuestionAction {
+  final Exception exception;
+
+  const QuestionsFailedToLoad(this.exception);
+
+  @override
+  String toString() =>
+      '$QuestionsFailedToLoad exception.runtimeType = "${exception.runtimeType}"';
 }
