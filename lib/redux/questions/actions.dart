@@ -1,51 +1,59 @@
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 
-abstract class QuestionAction {}
+abstract class QuestionAction {
+  const QuestionAction();
+}
 
-@immutable
-class SetQuestions extends QuestionAction {
-  final Iterable<Question> questions;
-  final int selectedQuestionIndex;
-
-  SetQuestions({this.questions, this.selectedQuestionIndex});
-
-  @override
-  String toString() =>
-      '$SetQuestions questions.length = "${questions.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
+abstract class UserQuestionAction extends QuestionAction {
+  const UserQuestionAction();
 }
 
 @immutable
-class VoidQuestions extends QuestionAction {
+class SetQuestions extends UserQuestionAction {
+  final Iterable<Question> questions;
+  final int selectedQuestionIndex;
+
+  const SetQuestions({this.questions, this.selectedQuestionIndex});
+
+  @override
+  String toString() =>
+      '$SetQuestions questions?.length = "${questions?.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
+}
+
+@immutable
+class VoidQuestions extends UserQuestionAction {
+  const VoidQuestions();
+
   @override
   String toString() => '$VoidQuestions';
 }
 
 @immutable
-class SelectQuestion extends QuestionAction {
+class SelectQuestion extends UserQuestionAction {
   final int questionIndex;
 
-  SelectQuestion(this.questionIndex);
+  const SelectQuestion(this.questionIndex);
 
   @override
   String toString() => '$SelectQuestion questionIndex = "$questionIndex"';
 }
 
 @immutable
-class ShowAnswer extends QuestionAction {
+class ShowAnswer extends UserQuestionAction {
   final int questionIndex;
 
-  ShowAnswer(this.questionIndex);
+  const ShowAnswer(this.questionIndex);
 
   @override
   String toString() => '$ShowAnswer questionIndex = "$questionIndex"';
 }
 
 @immutable
-class HideAnswer extends QuestionAction {
+class HideAnswer extends UserQuestionAction {
   final int questionIndex;
 
-  HideAnswer(this.questionIndex);
+  const HideAnswer(this.questionIndex);
 
   @override
   String toString() => '$HideAnswer questionIndex = "$questionIndex"';
