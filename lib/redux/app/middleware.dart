@@ -7,6 +7,7 @@ import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:what_when_where/redux/logs/logs.dart';
 import 'package:what_when_where/redux/misc/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
+import 'package:what_when_where/redux/random/middleware.dart';
 import 'package:what_when_where/redux/search/middleware.dart';
 import 'package:what_when_where/redux/settings/middleware.dart';
 import 'package:what_when_where/redux/sharing/middleware.dart';
@@ -28,5 +29,6 @@ class AppMiddleware {
     ..addAll(LatestTournamentsMiddleware.middleware)
     ..addAll(MiscMiddleware.middleware)
     ..addAll(SearchMiddleware.middleware)
-    ..addAll(SettingsMiddleware.middleware);
+    ..addAll(SettingsMiddleware.middleware)
+    ..addAll(RandomQuestionsMiddleware.middleware);
 }
