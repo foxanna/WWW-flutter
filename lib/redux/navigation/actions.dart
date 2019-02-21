@@ -95,3 +95,13 @@ class OpenSettingsPage extends NavigationAction {
   @override
   String toString() => '$OpenSettingsPage';
 }
+
+@immutable
+class OpenRandomQuestionsPage extends NavigationAction {
+  final BuildContext context;
+
+  OpenRandomQuestionsPage(this.context);
+
+  @override
+  String toString() => '$OpenRandomQuestionsPage';
+}
