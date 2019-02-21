@@ -34,6 +34,7 @@ class AnalyticsMiddleware {
     OpenTournamentInfo: 'open_tournament_info',
     OpenSettingsPage: 'settings',
     OpenSearchPage: 'search',
+    OpenRandomQuestionsPage: 'random',
     // misc
     EmailDevelopers: 'email_developers',
     BrowseDatabase: 'browse_database',
@@ -58,6 +59,7 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, BrowseDatabase>(_logAction),
     TypedMiddleware<AppState, OpenSearchPage>(_logAction),
     TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
+    TypedMiddleware<AppState, OpenRandomQuestionsPage>(_logAction),
     // settings
     TypedMiddleware<AppState, SettingsRead>(_logSettings),
     TypedMiddleware<AppState, ChangeTheme>(_logTheme),
