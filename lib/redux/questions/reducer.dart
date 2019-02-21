@@ -11,6 +11,10 @@ class QuestionsReducer {
     TypedReducer<QuestionsState, SelectQuestion>(_selectQuestion),
     TypedReducer<QuestionsState, ShowAnswer>(_showAnswer),
     TypedReducer<QuestionsState, HideAnswer>(_hideAnswer),
+    TypedReducer<QuestionsState, QuestionsAreLoading>(_loadingQuestions),
+    TypedReducer<QuestionsState, MoreQuestionsLoaded>(_questionsLoaded),
+    TypedReducer<QuestionsState, QuestionsFailedToLoad>(
+        _loadingQuestionsFailed),
   ]);
 
   static QuestionsState reduce(QuestionsState state, dynamic action) =>
@@ -46,4 +50,22 @@ class QuestionsReducer {
   static QuestionsState _voidQuestions(
           QuestionsState state, VoidQuestions action) =>
       QuestionsState.initial();
+
+  static QuestionsState _loadingQuestions(
+          QuestionsState state, QuestionsAreLoading action) =>
+      state.copyWith(isLoading: true);
+
+  static QuestionsState _loadingQuestionsFailed(
+          QuestionsState state, QuestionsFailedToLoad action) =>
+      state.copyWith(exception: action.exception, isLoading: false);
+
+  static QuestionsState _questionsLoaded(
+          QuestionsState state, MoreQuestionsLoaded action) =>
+      state.copyWith(
+        isLoading: false,
+        exception: null,
+        questions: List.from(state.questions)
+          ..addAll(action.questions.map((q) => QuestionState(question: q))),
+        currentQuestionIndex: state.currentQuestionIndex ?? 0,
+      );
 }
