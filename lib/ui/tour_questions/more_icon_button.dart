@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
@@ -19,43 +20,53 @@ class TourQuestionsPageMoreIconButton extends StatelessWidget {
       builder: (context) => Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _BrowseTourBottomSheetItem(),
-              _ShareTourBottomSheetItem(),
+              _BrowseQuestionBottomSheetItem(),
+              _ShareQuestionBottomSheetItem(),
               _AboutTourBottomSheetItem(),
             ],
           ));
 }
 
-class _BrowseTourBottomSheetItem extends StatelessWidget {
+class _BrowseQuestionBottomSheetItem extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => ListTile(
-        leading: const Icon(Icons.open_in_browser),
-        title: const Text(Strings.browse),
-        onTap: () => _openInBrowser(context),
-      );
+  Widget build(BuildContext context) => StoreConnector<AppState, Question>(
+      distinct: true,
+      converter: (store) =>
+          store.state.questionsState.currentQuestion?.question,
+      builder: (context, question) => question != null
+          ? ListTile(
+              leading: const Icon(Icons.open_in_browser),
+              title: const Text(Strings.browse),
+              onTap: () => _openInBrowser(context, question),
+            )
+          : Container());
 
-  void _openInBrowser(BuildContext context) {
+  void _openInBrowser(BuildContext context, Question question) {
     Navigator.pop(context);
 
     final store = StoreProvider.of<AppState>(context);
-    final question = store.state.questionsState.currentQuestion.question;
     store.dispatch(BrowseQuestion(question));
   }
 }
 
-class _ShareTourBottomSheetItem extends StatelessWidget {
+class _ShareQuestionBottomSheetItem extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => ListTile(
-        leading: const Icon(Icons.share),
-        title: const Text(Strings.share),
-        onTap: () => _shareQuestion(context),
-      );
+  Widget build(BuildContext context) => StoreConnector<AppState, Question>(
+      distinct: true,
+      converter: (store) =>
+          store.state.questionsState.currentQuestion?.question,
+      builder: (context, question) => question != null
+          ? ListTile(
+              leading: const Icon(Icons.share),
+              title: const Text(Strings.share),
+              onTap: () => _shareQuestion(context, question),
+            )
+          : Container());
 
-  void _shareQuestion(BuildContext context) {
+  void _shareQuestion(BuildContext context, Question question) {
     Navigator.pop(context);
 
     final store = StoreProvider.of<AppState>(context);
-    final question = store.state.questionsState.currentQuestion.question;
     store.dispatch(ShareQuestion(question));
   }
 }
