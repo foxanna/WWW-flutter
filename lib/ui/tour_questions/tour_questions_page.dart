@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/ui/tour_questions/more_icon_button.dart';
 import 'package:what_when_where/ui/tour_questions/timer_button.dart';
 import 'package:what_when_where/ui/tour_questions/timer_text.dart';
-import 'package:what_when_where/ui/tour_questions/tour_questions_cards.dart';
+import 'package:what_when_where/ui/tour_questions/tour_questions_page_body.dart';
 
 class TourQuestionsPage extends StatelessWidget {
   static const String routeName = 'questions';
@@ -17,7 +17,7 @@ class TourQuestionsPage extends StatelessWidget {
         floatingActionButton: TimerButton(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: _TourQuestionsPageBottomAppBar(),
-        body: const TourQuestionsCards(),
+        body: const TourQuestionsPageBody(),
       );
 }
 
