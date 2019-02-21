@@ -40,4 +40,5 @@ class Strings {
   static const String expiringTimerSignal = 'Предупредительный сигнал таймера';
   static const String forLongTimer = 'для обычных вопросов';
   static const String forShortTimer = 'для вопросов дуплет и блиц';
+  static const String randomQuestions = 'Случайный вопросы';
 }
