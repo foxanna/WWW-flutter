@@ -14,6 +14,8 @@ class QuestionsState {
 
   bool get hasError => exception != null;
 
+  bool get hasData => questions.isNotEmpty;
+
   QuestionState get currentQuestion =>
       (currentQuestionIndex != null && questions.length > currentQuestionIndex)
           ? questions[currentQuestionIndex]
