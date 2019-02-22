@@ -5,7 +5,6 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/ui/question/question_card.dart';
-import 'package:what_when_where/utils/function_holder.dart';
 
 class TourQuestionsCards extends StatelessWidget {
   static const _viewportFraction = 0.85;
@@ -14,19 +13,14 @@ class TourQuestionsCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      StoreConnector<AppState, Tuple3<int, int, FunctionHolder>>(
+      StoreConnector<AppState, Tuple2<int, int>>(
         distinct: true,
-        converter: (store) => Tuple3(
-                store.state.questionsState.questions.length,
-                store.state.questionsState.currentQuestionIndex,
-                FunctionHolder((int index) {
-              store.dispatch(const ResetTimer());
-              store.dispatch(SelectQuestion(index));
-            })),
+        converter: (store) => Tuple2(
+            store.state.questionsState.questions.length,
+            store.state.questionsState.currentQuestionIndex),
         builder: (context, data) {
           final count = data.item1;
           final startIndex = data.item2;
-          final onPageChanged = data.item3;
 
           return PageView.builder(
             controller: PageController(
@@ -35,8 +29,15 @@ class TourQuestionsCards extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: kToolbarHeight),
                 child: QuestionCard(index: index)),
             itemCount: count,
-            onPageChanged: (index) => onPageChanged.function(index),
+            onPageChanged: (index) => _onPageChanged(context, index),
           );
         },
       );
+
+  void _onPageChanged(BuildContext context, int index) {
+    final store = StoreProvider.of<AppState>(context);
+
+    store.dispatch(const ResetTimer());
+    store.dispatch(SelectQuestion(index));
+  }
 }
