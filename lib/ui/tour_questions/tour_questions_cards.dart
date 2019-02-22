@@ -38,9 +38,5 @@ class TourQuestionsCards extends StatelessWidget {
             onPageChanged: (index) => onPageChanged.function(index),
           );
         },
-        onDispose: (store) {
-          store.dispatch(const ResetTimer());
-          store.dispatch(VoidQuestions());
-        },
       );
 }
