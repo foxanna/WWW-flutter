@@ -6,6 +6,7 @@ import 'package:what_when_where/ui/tour_questions/tour_questions_page_body.dart'
 
 class TourQuestionsPage extends StatelessWidget {
   static const String routeName = 'questions';
+  static const String randomQuestionsRouteName = 'random_questions';
 
   @override
   Widget build(BuildContext context) => Scaffold(
