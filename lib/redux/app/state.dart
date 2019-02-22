@@ -1,6 +1,7 @@
 import 'package:meta/meta.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/redux/questions/state.dart';
+import 'package:what_when_where/redux/random/state.dart';
 import 'package:what_when_where/redux/search/state.dart';
 import 'package:what_when_where/redux/settings/state.dart';
 import 'package:what_when_where/redux/timer/state.dart';
@@ -16,6 +17,7 @@ class AppState {
   final LatestTournamentsState latestTournamentsState;
   final SearchState searchState;
   final SettingsState settingsState;
+  final RandomQuestionsState randomQuestionsState;
 
   const AppState({
     this.timerState,
@@ -25,6 +27,7 @@ class AppState {
     this.questionsState,
     this.searchState,
     this.settingsState,
+    this.randomQuestionsState,
   });
 
   AppState.initial()
@@ -36,5 +39,6 @@ class AppState {
           questionsState: QuestionsState.initial(),
           searchState: SearchState.initial(),
           settingsState: const SettingsState.initial(),
+          randomQuestionsState: const RandomQuestionsState.initial(),
         );
 }
