@@ -11,3 +11,14 @@ class LoadRandomQuestions extends RandomQuestionsAction {
   @override
   String toString() => '$LoadRandomQuestions';
 }
+
+@immutable
+class RandomQuestionsAreDisplayedChanged extends RandomQuestionsAction {
+  final bool areRandomQuestionsDisplayed;
+
+  const RandomQuestionsAreDisplayedChanged(this.areRandomQuestionsDisplayed);
+
+  @override
+  String toString() =>
+      '$RandomQuestionsAreDisplayedChanged areRandomQuestionsDisplayed = "$areRandomQuestionsDisplayed"';
+}
