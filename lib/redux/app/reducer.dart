@@ -2,6 +2,7 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/reducer.dart';
 import 'package:what_when_where/redux/questions/reducer.dart';
+import 'package:what_when_where/redux/random/reducer.dart';
 import 'package:what_when_where/redux/search/reducer.dart';
 import 'package:what_when_where/redux/settings/reducer.dart';
 import 'package:what_when_where/redux/timer/reducer.dart';
@@ -22,5 +23,7 @@ class AppReducer {
         questionsState: QuestionsReducer.reduce(state.questionsState, action),
         searchState: SearchReducer.reduce(state.searchState, action),
         settingsState: SettingsReducer.reduce(state.settingsState, action),
+        randomQuestionsState:
+            RandomQuestionsReducer.reduce(state.randomQuestionsState, action),
       );
 }
