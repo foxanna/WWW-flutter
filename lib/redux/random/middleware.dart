@@ -11,6 +11,7 @@ class RandomQuestionsMiddleware {
     TypedMiddleware<AppState, OpenRandomQuestionsPage>(_randomQuestionsOpened),
     TypedMiddleware<AppState, ReloadQuestions>(_reloadQuestions),
     TypedMiddleware<AppState, VoidQuestions>(_resetState),
+    TypedMiddleware<AppState, SelectQuestion>(_onQuestionsSelected),
   ];
 
   static Future _loadRandomQuestions(Store<AppState> store,
@@ -46,5 +47,26 @@ class RandomQuestionsMiddleware {
     next(action);
 
     store.dispatch(const RandomQuestionsAreDisplayedChanged(false));
+  }
+
+  static Future _onQuestionsSelected(
+      Store<AppState> store, SelectQuestion action, NextDispatcher next) async {
+    next(action);
+
+    if (!store.state.randomQuestionsState.randomQuestionsAreDisplayed) {
+      return;
+    }
+
+    _loadMoreQuestionsIfRequired(store);
+  }
+
+  static void _loadMoreQuestionsIfRequired(Store<AppState> store) {
+    final questionsState = store.state.questionsState;
+
+    if (!questionsState.isLoading &&
+        questionsState.questions.length - questionsState.currentQuestionIndex <
+            5) {
+      store.dispatch(const LoadRandomQuestions());
+    }
   }
 }
