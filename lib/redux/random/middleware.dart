@@ -64,6 +64,7 @@ class RandomQuestionsMiddleware {
     final questionsState = store.state.questionsState;
 
     if (!questionsState.isLoading &&
+        !questionsState.hasError &&
         questionsState.questions.length - questionsState.currentQuestionIndex <
             5) {
       store.dispatch(const LoadRandomQuestions());
