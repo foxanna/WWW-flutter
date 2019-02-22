@@ -44,16 +44,18 @@ class QuestionsState {
         );
 
   QuestionsState copyWith({
-    Iterable<QuestionState> questions,
-    int currentQuestionIndex,
-    bool isLoading,
-    Exception exception,
+    Optional<Iterable<QuestionState>> questions,
+    Optional<int> currentQuestionIndex,
+    Optional<bool> isLoading,
+    Optional<Exception> exception,
   }) =>
       QuestionsState(
-        questions: questions ?? this.questions,
-        currentQuestionIndex: currentQuestionIndex ?? this.currentQuestionIndex,
-        isLoading: isLoading ?? this.isLoading,
-        exception: exception ?? this.exception,
+        questions: questions != null ? questions.orNull : this.questions,
+        currentQuestionIndex: currentQuestionIndex != null
+            ? currentQuestionIndex.orNull
+            : this.currentQuestionIndex,
+        isLoading: isLoading != null ? isLoading.orNull : this.isLoading,
+        exception: exception != null ? exception.orNull : this.exception,
       );
 
   @override

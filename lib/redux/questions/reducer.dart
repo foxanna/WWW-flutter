@@ -1,3 +1,4 @@
+import 'package:quiver/core.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
@@ -23,24 +24,24 @@ class QuestionsReducer {
   static QuestionsState _showAnswer(QuestionsState state, ShowAnswer action) =>
       state.currentQuestion != null
           ? state.copyWith(
-              questions: IterableExtensions.replaceAt(
+              questions: Optional.of(IterableExtensions.replaceAt(
                   state.questions,
                   state.currentQuestionIndex,
-                  state.currentQuestion.copyWith(showAnswer: true)))
+                  state.currentQuestion.copyWith(showAnswer: true))))
           : state;
 
   static QuestionsState _hideAnswer(QuestionsState state, HideAnswer action) =>
       state.currentQuestion != null
           ? state.copyWith(
-              questions: IterableExtensions.replaceAt(
+              questions: Optional.of(IterableExtensions.replaceAt(
                   state.questions,
                   state.currentQuestionIndex,
-                  state.currentQuestion.copyWith(showAnswer: false)))
+                  state.currentQuestion.copyWith(showAnswer: false))))
           : state;
 
   static QuestionsState _selectQuestion(
           QuestionsState state, SelectQuestion action) =>
-      state.copyWith(currentQuestionIndex: action.questionIndex);
+      state.copyWith(currentQuestionIndex: Optional.of(action.questionIndex));
 
   static QuestionsState _setQuestions(
           QuestionsState state, SetQuestions action) =>
@@ -53,19 +54,23 @@ class QuestionsReducer {
 
   static QuestionsState _loadingQuestions(
           QuestionsState state, QuestionsAreLoading action) =>
-      state.copyWith(isLoading: true);
+      state.copyWith(
+        isLoading: Optional.of(true),
+        exception: const Optional<Exception>.absent(),
+      );
 
   static QuestionsState _loadingQuestionsFailed(
           QuestionsState state, QuestionsFailedToLoad action) =>
-      state.copyWith(exception: action.exception, isLoading: false);
+      state.copyWith(
+        exception: Optional.of(action.exception),
+        isLoading: Optional.of(false),
+      );
 
   static QuestionsState _questionsLoaded(
           QuestionsState state, MoreQuestionsLoaded action) =>
-      state.copyWith(
-        isLoading: false,
-        exception: null,
-        questions: List.from(state.questions)
-          ..addAll(action.questions.map((q) => QuestionState(question: q))),
-        currentQuestionIndex: state.currentQuestionIndex ?? 0,
+      QuestionsState.from(
+        questions: state.questions.map((q) => q.question).toList()
+          ..addAll(action.questions),
+        index: state.currentQuestionIndex ?? 0,
       );
 }
