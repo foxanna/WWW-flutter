@@ -10,6 +10,7 @@ class RandomQuestionsMiddleware {
     TypedMiddleware<AppState, LoadRandomQuestions>(_loadRandomQuestions),
     TypedMiddleware<AppState, OpenRandomQuestionsPage>(_randomQuestionsOpened),
     TypedMiddleware<AppState, ReloadQuestions>(_reloadQuestions),
+    TypedMiddleware<AppState, VoidQuestions>(_resetState),
   ];
 
   static Future _loadRandomQuestions(Store<AppState> store,
@@ -29,6 +30,7 @@ class RandomQuestionsMiddleware {
       OpenRandomQuestionsPage action, NextDispatcher next) {
     next(action);
 
+    store.dispatch(const RandomQuestionsAreDisplayedChanged(true));
     store.dispatch(const LoadRandomQuestions());
   }
 
@@ -37,5 +39,12 @@ class RandomQuestionsMiddleware {
     next(action);
 
     store.dispatch(const LoadRandomQuestions());
+  }
+
+  static void _resetState(
+      Store<AppState> store, VoidQuestions action, NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const RandomQuestionsAreDisplayedChanged(false));
   }
 }
