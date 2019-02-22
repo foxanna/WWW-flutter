@@ -23,6 +23,8 @@ class NavigationMiddleware {
     TypedMiddleware<AppState, OpenAboutPage>(_openAboutPage),
     TypedMiddleware<AppState, OpenSearchPage>(_openSearchPage),
     TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
+    TypedMiddleware<AppState, OpenRandomQuestionsPage>(
+        _openRandomQuestionsPage),
   ];
 
   static void _openImage(
@@ -113,5 +115,15 @@ class NavigationMiddleware {
       context: action.context,
       tournament: action.tournament,
     ).show();
+  }
+
+  static void _openRandomQuestionsPage(Store<AppState> store,
+      OpenRandomQuestionsPage action, NextDispatcher next) {
+    next(action);
+
+    _navigateTo(
+        context: action.context,
+        routeName: TourQuestionsPage.randomQuestionsRouteName,
+        builder: (context) => TourQuestionsPage());
   }
 }
