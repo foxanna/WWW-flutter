@@ -1,13 +1,15 @@
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
-abstract class TournamentAction {}
+abstract class TournamentAction {
+  const TournamentAction();
+}
 
 @immutable
 class SetTournament extends TournamentAction {
   final Tournament tournament;
 
-  SetTournament(this.tournament);
+  const SetTournament(this.tournament);
 
   @override
   String toString() =>
@@ -16,6 +18,8 @@ class SetTournament extends TournamentAction {
 
 @immutable
 class VoidTournament extends TournamentAction {
+  const VoidTournament();
+
   @override
   String toString() => '$VoidTournament';
 }
@@ -24,7 +28,7 @@ class VoidTournament extends TournamentAction {
 class LoadTournament extends TournamentAction {
   final String tournamentId;
 
-  LoadTournament(this.tournamentId);
+  const LoadTournament(this.tournamentId);
 
   @override
   String toString() => '$LoadTournament tournamentId = "$tournamentId"';
@@ -32,7 +36,7 @@ class LoadTournament extends TournamentAction {
 
 @immutable
 class ReloadTournament extends TournamentAction {
-  ReloadTournament();
+  const ReloadTournament();
 
   @override
   String toString() => '$ReloadTournament';
@@ -42,7 +46,7 @@ class ReloadTournament extends TournamentAction {
 class TournamentIsLoading extends TournamentAction {
   final String tournamentId;
 
-  TournamentIsLoading(this.tournamentId);
+  const TournamentIsLoading(this.tournamentId);
 
   @override
   String toString() => '$TournamentIsLoading tournamentId = "$tournamentId"';
@@ -52,7 +56,7 @@ class TournamentIsLoading extends TournamentAction {
 class TournamentLoaded extends TournamentAction {
   final Tournament tournament;
 
-  TournamentLoaded(this.tournament);
+  const TournamentLoaded(this.tournament);
 
   @override
   String toString() =>
@@ -64,7 +68,7 @@ class TournamentFailedLoading extends TournamentAction {
   final String tournamentId;
   final Exception exception;
 
-  TournamentFailedLoading(this.tournamentId, this.exception);
+  const TournamentFailedLoading(this.tournamentId, this.exception);
 
   @override
   String toString() =>
