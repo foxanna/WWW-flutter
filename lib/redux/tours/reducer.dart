@@ -32,8 +32,8 @@ class ToursReducer {
           state,
           action.tourId,
           (tourState) => tourState.copyWith(
-                isLoading: true,
-                error: null,
+                isLoading: Optional.of(true),
+                exception: const Optional.absent(),
               ));
 
   static ToursState _updateTourLoaded(ToursState state, TourLoaded action) =>
@@ -41,9 +41,9 @@ class ToursReducer {
           state,
           action.tour.id,
           (tourState) => tourState.copyWith(
-                tour: action.tour,
-                isLoading: false,
-                error: null,
+                tour: Optional.of(action.tour),
+                isLoading: Optional.of(false),
+                exception: const Optional.absent(),
               ));
 
   static ToursState _updateTourFailed(
@@ -52,8 +52,8 @@ class ToursReducer {
           state,
           action.tourId,
           (tourState) => tourState.copyWith(
-                isLoading: false,
-                error: action.exception,
+                isLoading: Optional.of(false),
+                exception: Optional.of(action.exception),
               ));
 
   static ToursState _replaceTour(

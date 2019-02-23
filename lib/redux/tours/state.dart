@@ -48,14 +48,14 @@ class TourState {
   const TourState({this.tour, this.isLoading = false, this.exception});
 
   TourState copyWith({
-    Tour tour,
-    bool isLoading,
-    Exception error,
+    Optional<Tour> tour,
+    Optional<bool> isLoading,
+    Optional<Exception> exception,
   }) =>
       TourState(
-        tour: tour ?? this.tour,
-        isLoading: isLoading ?? this.isLoading,
-        exception: error ?? this.exception,
+        tour: tour != null ? tour.orNull : this.tour,
+        isLoading: isLoading != null ? isLoading.orNull : this.isLoading,
+        exception: exception != null ? exception.orNull : this.exception,
       );
 
   bool get hasError => exception != null;
