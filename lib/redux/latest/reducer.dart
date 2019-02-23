@@ -16,6 +16,8 @@ class LatestTournamentsReducer {
         _onLoaded),
     TypedReducer<LatestTournamentsState, LatestTournamentsLoadFailed>(
         _onLoadFailed),
+    TypedReducer<LatestTournamentsState, LatestTournamentsRefreshFailed>(
+        _onRefreshFailed),
   ]);
 
   static LatestTournamentsState reduce(
@@ -58,5 +60,13 @@ class LatestTournamentsReducer {
         isRefreshing: Optional.of(false),
         isLoadingMore: Optional.of(false),
         exception: Optional.of(action.exception),
+      );
+
+  static LatestTournamentsState _onRefreshFailed(LatestTournamentsState state,
+          LatestTournamentsRefreshFailed action) =>
+      state.copyWith(
+        isRefreshing: Optional.of(false),
+        isLoadingMore: Optional.of(false),
+        exception: const Optional.absent(),
       );
 }
