@@ -1,3 +1,4 @@
+import 'package:quiver/core.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/redux/tours/state.dart';
@@ -23,7 +24,7 @@ class ToursReducer {
       ToursState.initial();
 
   static ToursState _selectTour(ToursState state, SelectTour action) =>
-      state.copyWith(currentTourIndex: action.tourIndex);
+      state.copyWith(currentTourIndex: Optional.of(action.tourIndex));
 
   static ToursState _updateTourIsLoading(
           ToursState state, TourIsLoading action) =>
@@ -65,7 +66,8 @@ class ToursReducer {
 
     final newTourState = function(state.tours[tourIndex]);
     return state.copyWith(
-        tours:
-            IterableExtensions.replaceAt(state.tours, tourIndex, newTourState));
+      tours: Optional.of(
+          IterableExtensions.replaceAt(state.tours, tourIndex, newTourState)),
+    );
   }
 }

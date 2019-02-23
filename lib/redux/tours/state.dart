@@ -28,12 +28,14 @@ class ToursState {
         );
 
   ToursState copyWith({
-    Iterable<TourState> tours,
-    int currentTourIndex,
+    Optional<Iterable<TourState>> tours,
+    Optional<int> currentTourIndex,
   }) =>
       ToursState._(
-        tours: tours ?? this.tours,
-        currentTourIndex: currentTourIndex ?? this.currentTourIndex,
+        tours: tours != null ? tours.orNull : this.tours,
+        currentTourIndex: currentTourIndex != null
+            ? currentTourIndex.orNull
+            : this.currentTourIndex,
       );
 }
 
