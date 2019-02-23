@@ -1,31 +1,39 @@
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
-abstract class LatestTournamentsAction {}
+abstract class LatestTournamentsAction {
+  const LatestTournamentsAction();
+}
 
 @immutable
 class RefreshLatestTournaments extends LatestTournamentsAction {
+  const RefreshLatestTournaments();
+
   @override
-  String toString() => '$RefreshLatestTournaments ';
+  String toString() => '$RefreshLatestTournaments';
 }
 
 @immutable
 class LoadMoreLatestTournaments extends LatestTournamentsAction {
+  const LoadMoreLatestTournaments();
+
   @override
-  String toString() => '$LoadMoreLatestTournaments ';
+  String toString() => '$LoadMoreLatestTournaments';
 }
 
 @immutable
 class LatestTournamentsIsLoadingMore extends LatestTournamentsAction {
+  const LatestTournamentsIsLoadingMore();
+
   @override
-  String toString() => '$LatestTournamentsIsLoadingMore ';
+  String toString() => '$LatestTournamentsIsLoadingMore';
 }
 
 @immutable
 class MoreLatestTournamentsLoaded extends LatestTournamentsAction {
   final Iterable<Tournament> data;
 
-  MoreLatestTournamentsLoaded(this.data);
+  const MoreLatestTournamentsLoaded(this.data);
 
   @override
   String toString() =>
@@ -34,21 +42,25 @@ class MoreLatestTournamentsLoaded extends LatestTournamentsAction {
 
 @immutable
 class ClearLatestTournaments extends LatestTournamentsAction {
+  const ClearLatestTournaments();
+
   @override
-  String toString() => '$ClearLatestTournaments ';
+  String toString() => '$ClearLatestTournaments';
 }
 
 @immutable
 class LatestTournamentsIsRefreshing extends LatestTournamentsAction {
+  const LatestTournamentsIsRefreshing();
+
   @override
-  String toString() => '$LatestTournamentsIsRefreshing ';
+  String toString() => '$LatestTournamentsIsRefreshing';
 }
 
 @immutable
 class LatestTournamentsLoadFailed extends LatestTournamentsAction {
   final Exception exception;
 
-  LatestTournamentsLoadFailed(this.exception);
+  const LatestTournamentsLoadFailed(this.exception);
 
   @override
   String toString() =>
