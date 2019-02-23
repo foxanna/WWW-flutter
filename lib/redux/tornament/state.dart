@@ -1,4 +1,5 @@
 import 'package:meta/meta.dart';
+import 'package:quiver/core.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
 @immutable
@@ -23,13 +24,13 @@ class TournamentState {
       : this._(tournament: tournament);
 
   TournamentState copyWith({
-    Tournament tournament,
-    bool isLoading,
-    Exception error,
+    Optional<Tournament> tournament,
+    Optional<bool> isLoading,
+    Optional<Exception> exception,
   }) =>
       TournamentState._(
-        tournament: tournament ?? this.tournament,
-        isLoading: isLoading ?? this.isLoading,
-        exception: error ?? this.exception,
+        tournament: tournament != null ? tournament.orNull : this.tournament,
+        isLoading: isLoading != null ? isLoading.orNull : this.isLoading,
+        exception: exception != null ? exception.orNull : this.exception,
       );
 }

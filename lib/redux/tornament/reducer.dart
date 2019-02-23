@@ -1,3 +1,4 @@
+import 'package:quiver/core.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/redux/tornament/state.dart';
@@ -28,21 +29,22 @@ class TournamentReducer {
   static TournamentState _updateTournamentIsLoading(
           TournamentState state, TournamentIsLoading action) =>
       state.copyWith(
-        isLoading: true,
+        isLoading: Optional.of(true),
+        exception: const Optional.absent(),
       );
 
   static TournamentState _updateTournamentLoaded(
           TournamentState state, TournamentLoaded action) =>
       state.copyWith(
-        tournament: action.tournament,
-        isLoading: false,
-        error: null,
+        tournament: Optional.of(action.tournament),
+        isLoading: Optional.of(false),
+        exception: const Optional.absent(),
       );
 
   static TournamentState _updateTournamentFailedLoading(
           TournamentState state, TournamentFailedLoading action) =>
       state.copyWith(
-        isLoading: false,
-        error: action.exception,
+        isLoading: Optional.of(false),
+        exception: Optional.of(action.exception),
       );
 }
