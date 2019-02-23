@@ -24,7 +24,7 @@ class LatestTournamentsMiddleware {
       final data = await LatestTournamentsLoader().get(page: _page);
       _moreItemsLoaded(store, data);
     } on Exception catch (e) {
-      store.dispatch(LatestTournamentsLoadFailed(e));
+      store.dispatch(LatestTournamentsRefreshFailed(e));
     }
   }
 
