@@ -30,7 +30,7 @@ class LatestTournamentsReducer {
       state.copyWith(
         isRefreshing: true,
         isLoadingMore: false,
-        error: null,
+        exception: null,
       );
 
   static LatestTournamentsState _onLoadingMore(LatestTournamentsState state,
@@ -38,7 +38,7 @@ class LatestTournamentsReducer {
       state.copyWith(
         isRefreshing: false,
         isLoadingMore: true,
-        error: null,
+        exception: null,
       );
 
   static LatestTournamentsState _onLoaded(
@@ -47,7 +47,7 @@ class LatestTournamentsReducer {
         data: <Tournament>[]..addAll(state.data)..addAll(action.data),
         isRefreshing: false,
         isLoadingMore: false,
-        error: null,
+        exception: null,
       );
 
   static LatestTournamentsState _onLoadFailed(
@@ -55,6 +55,6 @@ class LatestTournamentsReducer {
       state.copyWith(
         isRefreshing: false,
         isLoadingMore: false,
-        error: action.exception,
+        exception: action.exception,
       );
 }

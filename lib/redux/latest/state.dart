@@ -28,13 +28,13 @@ class LatestTournamentsState {
   LatestTournamentsState copyWith({
     bool isLoadingMore,
     bool isRefreshing,
-    Exception error,
+    Exception exception,
     List<Tournament> data,
   }) =>
       LatestTournamentsState._(
         isLoadingMore: isLoadingMore ?? this.isLoadingMore,
         isRefreshing: isRefreshing ?? this.isRefreshing,
-        exception: error ?? this.exception,
+        exception: exception ?? this.exception,
         data: data ?? this.data,
       );
 
@@ -45,8 +45,8 @@ class LatestTournamentsState {
   @override
   bool operator ==(dynamic other) =>
       other is LatestTournamentsState &&
-      other.isLoadingMore == this.isLoadingMore &&
-      other.isRefreshing == this.isRefreshing &&
-      other.exception?.runtimeType == this.exception?.runtimeType &&
-      const DeepCollectionEquality().equals(other.data, this.data);
+      other.isLoadingMore == isLoadingMore &&
+      other.isRefreshing == isRefreshing &&
+      other.exception?.runtimeType == exception?.runtimeType &&
+      const DeepCollectionEquality().equals(other.data, data);
 }
