@@ -86,11 +86,8 @@ class _ErrorTournamentDetailsPage extends StatelessWidget {
         ],
       );
 
-  void _loadTournament(BuildContext context) {
-    final store = StoreProvider.of<AppState>(context);
-    final state = store.state.tournamentState;
-    store.dispatch(LoadTournament(state.tournament.textId));
-  }
+  void _loadTournament(BuildContext context) =>
+      StoreProvider.of<AppState>(context).dispatch(const ReloadTournament());
 }
 
 class _ElevatedHeader extends StatelessWidget {
