@@ -48,7 +48,7 @@ class _TournamentDetailsPageState extends State<TournamentDetailsPage> {
           }
           return Container();
         },
-        onDispose: (store) => store.dispatch(VoidTournament()),
+        onDispose: (store) => store.dispatch(const VoidTournament()),
       );
 }
 
