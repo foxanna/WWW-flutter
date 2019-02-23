@@ -13,29 +13,31 @@ class LatestTournamentsState {
   final Exception exception;
 
   bool get isLoading => isLoadingMore || isRefreshing;
-
   bool get hasError => exception != null;
+  bool get hasData => data.isNotEmpty;
 
   LatestTournamentsState._({
     this.isLoadingMore = false,
     this.isRefreshing = false,
     this.exception,
-    List<Tournament> data,
+    Iterable<Tournament> data,
   }) : this.data = UnmodifiableListView<Tournament>(data ?? <Tournament>[]);
 
   LatestTournamentsState.initial() : this._();
 
   LatestTournamentsState copyWith({
-    bool isLoadingMore,
-    bool isRefreshing,
-    Exception exception,
-    List<Tournament> data,
+    Optional<bool> isLoadingMore,
+    Optional<bool> isRefreshing,
+    Optional<Exception> exception,
+    Optional<Iterable<Tournament>> data,
   }) =>
       LatestTournamentsState._(
-        isLoadingMore: isLoadingMore ?? this.isLoadingMore,
-        isRefreshing: isRefreshing ?? this.isRefreshing,
-        exception: exception ?? this.exception,
-        data: data ?? this.data,
+        isLoadingMore:
+            isLoadingMore != null ? isLoadingMore.orNull : this.isLoadingMore,
+        isRefreshing:
+            isRefreshing != null ? isRefreshing.orNull : this.isRefreshing,
+        exception: exception != null ? exception.orNull : this.exception,
+        data: data != null ? data.orNull : this.data,
       );
 
   @override

@@ -1,3 +1,4 @@
+import 'package:quiver/core.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
@@ -23,38 +24,39 @@ class LatestTournamentsReducer {
 
   static LatestTournamentsState _onClear(
           LatestTournamentsState state, ClearLatestTournaments action) =>
-      state.copyWith(data: <Tournament>[]);
+      LatestTournamentsState.initial();
 
   static LatestTournamentsState _onRefreshing(
           LatestTournamentsState state, LatestTournamentsIsRefreshing action) =>
       state.copyWith(
-        isRefreshing: true,
-        isLoadingMore: false,
-        exception: null,
+        isRefreshing: Optional.of(true),
+        isLoadingMore: Optional.of(false),
+        exception: const Optional.absent(),
       );
 
   static LatestTournamentsState _onLoadingMore(LatestTournamentsState state,
           LatestTournamentsIsLoadingMore action) =>
       state.copyWith(
-        isRefreshing: false,
-        isLoadingMore: true,
-        exception: null,
+        isRefreshing: Optional.of(false),
+        isLoadingMore: Optional.of(true),
+        exception: const Optional.absent(),
       );
 
   static LatestTournamentsState _onLoaded(
           LatestTournamentsState state, MoreLatestTournamentsLoaded action) =>
       state.copyWith(
-        data: <Tournament>[]..addAll(state.data)..addAll(action.data),
-        isRefreshing: false,
-        isLoadingMore: false,
-        exception: null,
+        data: Optional.of(
+            <Tournament>[]..addAll(state.data)..addAll(action.data)),
+        isRefreshing: Optional.of(false),
+        isLoadingMore: Optional.of(false),
+        exception: const Optional.absent(),
       );
 
   static LatestTournamentsState _onLoadFailed(
           LatestTournamentsState state, LatestTournamentsLoadFailed action) =>
       state.copyWith(
-        isRefreshing: false,
-        isLoadingMore: false,
-        exception: action.exception,
+        isRefreshing: Optional.of(false),
+        isLoadingMore: Optional.of(false),
+        exception: Optional.of(action.exception),
       );
 }
