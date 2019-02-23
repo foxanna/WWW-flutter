@@ -45,7 +45,11 @@ class TourState {
   final bool isLoading;
   final Exception exception;
 
-  const TourState({this.tour, this.isLoading = false, this.exception});
+  const TourState({
+    this.tour,
+    this.isLoading = false,
+    this.exception,
+  });
 
   TourState copyWith({
     Optional<Tour> tour,
@@ -68,7 +72,7 @@ class TourState {
   @override
   bool operator ==(dynamic other) =>
       other is TourState &&
-      other.tour == this.tour &&
-      other.isLoading == this.isLoading &&
-      other.exception?.runtimeType == this.exception?.runtimeType;
+      other.tour == tour &&
+      other.isLoading == isLoading &&
+      other.exception?.runtimeType == exception?.runtimeType;
 }
