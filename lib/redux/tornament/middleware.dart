@@ -8,6 +8,7 @@ class TournamentMiddleware {
   static final List<Middleware<AppState>> middleware = [
     TypedMiddleware<AppState, SetTournament>(_setTournament),
     TypedMiddleware<AppState, LoadTournament>(_loadTournament),
+    TypedMiddleware<AppState, ReloadTournament>(_reloadTournament),
     TypedMiddleware<AppState, TournamentLoaded>(_tournamentLoaded),
   ];
 
@@ -20,7 +21,7 @@ class TournamentMiddleware {
     store.dispatch(LoadTournament(action.tournament.textId));
   }
 
-  static void _loadTournament(
+  static Future _loadTournament(
       Store<AppState> store, LoadTournament action, NextDispatcher next) async {
     next(action);
 
@@ -47,5 +48,13 @@ class TournamentMiddleware {
 
     store.dispatch(SetTours(action.tournament.tours));
     store.dispatch(SelectTour(0));
+  }
+
+  static void _reloadTournament(
+      Store<AppState> store, ReloadTournament action, NextDispatcher next) {
+    next(action);
+
+    final tournamentId = store.state.tournamentState.tournament.textId;
+    store.dispatch(LoadTournament(tournamentId));
   }
 }
