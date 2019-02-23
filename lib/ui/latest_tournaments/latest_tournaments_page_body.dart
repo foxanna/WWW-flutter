@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/common/tournaments_grid.dart';
+import 'package:what_when_where/ui/latest_tournaments/error_message.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page_appbar.dart';
 
 class LatestTournamentsPageBody extends StatelessWidget {
@@ -88,26 +87,17 @@ class _LatestTournamentsPageError extends StatelessWidget {
   @override
   Widget build(BuildContext context) => CustomScrollView(
         controller: _scrollController,
-        slivers: [
-          const LatestTournamentsAppBar(),
+        slivers: const [
+          LatestTournamentsAppBar(),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.only(
+              padding: EdgeInsets.only(
                   top: LatestTournamentsAppBar.appBarHeight / 2),
-              child: ErrorMessage(
-                exception: exception,
-                retryFunction: () => _retry(context),
-                color: Theme.of(context).primaryIconTheme.color,
-              ),
+              child: LatestTournamentsErrorMessage(),
             ),
           )
         ],
       );
-
-  void _retry(BuildContext context) {
-    final store = StoreProvider.of<AppState>(context);
-    store.dispatch(LoadMoreLatestTournaments());
-  }
 }
 
 class _LatestTournamentsPageContent extends StatelessWidget {
