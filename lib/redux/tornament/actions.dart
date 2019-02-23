@@ -31,6 +31,14 @@ class LoadTournament extends TournamentAction {
 }
 
 @immutable
+class ReloadTournament extends TournamentAction {
+  ReloadTournament();
+
+  @override
+  String toString() => '$ReloadTournament';
+}
+
+@immutable
 class TournamentIsLoading extends TournamentAction {
   final String tournamentId;
 
