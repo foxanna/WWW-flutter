@@ -21,9 +21,8 @@ class LatestTournamentsMiddleware {
     try {
       store.dispatch(const LatestTournamentsIsRefreshing());
 
-      _reset();
-
-      final data = await LatestTournamentsLoader().get(page: _page);
+      final data = await LatestTournamentsLoader().get(page: 0);
+      _page = 0;
       _moreItemsLoaded(store, data);
     } on Exception catch (e) {
       store.dispatch(LatestTournamentsRefreshFailed(e));
@@ -59,10 +58,6 @@ class LatestTournamentsMiddleware {
     }
 
     _page++;
-  }
-
-  static void _reset() {
-    _page = 0;
   }
 
   static void _reloadMore(Store<AppState> store,
