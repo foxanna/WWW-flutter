@@ -7,6 +7,8 @@ import 'package:what_when_where/redux/latest/state.dart';
 class LatestTournamentsReducer {
   static final Reducer<LatestTournamentsState> _reducer =
       combineReducers<LatestTournamentsState>([
+    TypedReducer<LatestTournamentsState, ClearLatestTournamentsException>(
+        _onClearException),
     TypedReducer<LatestTournamentsState, ClearLatestTournaments>(_onClear),
     TypedReducer<LatestTournamentsState, LatestTournamentsIsRefreshing>(
         _onRefreshing),
@@ -61,6 +63,10 @@ class LatestTournamentsReducer {
         isLoadingMore: Optional.of(false),
         exception: Optional.of(action.exception),
       );
+
+  static LatestTournamentsState _onClearException(LatestTournamentsState state,
+          ClearLatestTournamentsException action) =>
+      state.copyWith(exception: const Optional.absent());
 
   static LatestTournamentsState _onRefreshFailed(LatestTournamentsState state,
           LatestTournamentsRefreshFailed action) =>
