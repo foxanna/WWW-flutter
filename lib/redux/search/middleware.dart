@@ -10,18 +10,10 @@ import 'package:what_when_where/redux/search/state.dart';
 
 class SearchMiddleware {
   static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, VoidTournamentsSearchResults>(_resetResults),
     TypedMiddleware<AppState, SearchTournaments>(_searchTournaments),
     TypedMiddleware<AppState, TournamentsSearchQueryChanged>(_queryChanged),
     TypedMiddleware<AppState, TournamentsSearchSortingChanged>(_sortingChanged),
   ];
-
-  static void _resetResults(Store<AppState> store,
-      VoidTournamentsSearchResults action, NextDispatcher next) {
-    next(action);
-
-    store.dispatch(const TournamentsSearchPageChanged(0));
-  }
 
   static Future _searchTournaments(Store<AppState> store,
       SearchTournaments action, NextDispatcher next) async {

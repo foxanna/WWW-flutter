@@ -21,8 +21,6 @@ class SearchReducer {
         _tournamentsSearchIsLoading),
     TypedReducer<SearchState, TournamentsSearchFailedToLoad>(
         _tournamentsSearchFailedToLoad),
-    TypedReducer<SearchState, TournamentsSearchPageChanged>(
-        _tournamentsSearchPageChanged),
   ]);
 
   static SearchState reduce(SearchState state, dynamic action) =>
@@ -88,14 +86,6 @@ class SearchReducer {
   static SearchState _voidTournamentsSearchResults(
           SearchState state, VoidTournamentsSearchResults action) =>
       state.copyWith(
-        searchResults: SearchTournamentsResultsState.initial(),
-      );
-
-  static SearchState _tournamentsSearchPageChanged(
-          SearchState state, TournamentsSearchPageChanged action) =>
-      state.copyWith(
-        searchParameters: state.searchParameters.copyWith(
-          nextPage: action.nextPage,
-        ),
-      );
+          searchResults: SearchTournamentsResultsState.initial(),
+          searchParameters: state.searchParameters.copyWith(nextPage: 0));
 }
