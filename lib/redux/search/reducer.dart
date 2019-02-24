@@ -1,3 +1,4 @@
+import 'package:quiver/core.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/search/actions.dart';
@@ -29,63 +30,84 @@ class SearchReducer {
   static SearchState _tournamentsSearchIsLoading(
           SearchState state, TournamentsSearchIsLoading action) =>
       state.copyWith(
-        searchResults: state.searchResults.copyWith(
-          isLoading: true,
-          exception: null,
+        searchResults: Optional.of(
+          state.searchResults.copyWith(
+            isLoading: Optional.of(true),
+            exception: const Optional.absent(),
+          ),
         ),
       );
 
   static SearchState _tournamentsSearchLoaded(
           SearchState state, TournamentsSearchLoaded action) =>
       state.copyWith(
-        searchResults: state.searchResults.copyWith(
-          data: <Tournament>[]
-            ..addAll(state.searchResults.data)
-            ..addAll(action.data),
-          emptyResults: action.data.isEmpty,
-          canLoadMore: action.data.length == 50,
-          isLoading: false,
-          exception: null,
+        searchResults: Optional.of(
+          state.searchResults.copyWith(
+            data: Optional.of(<Tournament>[]
+              ..addAll(state.searchResults.data)
+              ..addAll(action.data)),
+            emptyResults: Optional.of(action.data.isEmpty),
+            canLoadMore: Optional.of(action.data.length == 50),
+            isLoading: Optional.of(false),
+            exception: const Optional.absent(),
+          ),
         ),
-        searchParameters: state.searchParameters.copyWith(
-          nextPage: action.nextPage,
+        searchParameters: Optional.of(
+          state.searchParameters.copyWith(
+            nextPage: Optional.of(action.nextPage),
+          ),
         ),
       );
 
   static SearchState _tournamentsSearchFailedToLoad(
           SearchState state, TournamentsSearchFailedToLoad action) =>
       state.copyWith(
-        searchResults: state.searchResults.copyWith(
-          isLoading: false,
-          exception: action.exception,
+        searchResults: Optional.of(
+          state.searchResults.copyWith(
+            isLoading: Optional.of(false),
+            exception: Optional.of(action.exception),
+          ),
         ),
       );
 
   static SearchState _tournamentsSearchQueryChanged(
           SearchState state, TournamentsSearchQueryChanged action) =>
       state.copyWith(
-        searchParameters: state.searchParameters.copyWith(
-          query: action.query,
+        searchParameters: Optional.of(
+          state.searchParameters.copyWith(
+            query: Optional.of(action.query),
+          ),
         ),
       );
 
   static SearchState _tournamentsSearchSortingChanged(
           SearchState state, TournamentsSearchSortingChanged action) =>
       state.copyWith(
-        searchParameters: state.searchParameters.copyWith(
-          sorting: action.sorting,
+        searchParameters: Optional.of(
+          state.searchParameters.copyWith(
+            sorting: Optional.of(action.sorting),
+          ),
         ),
       );
 
   static SearchState _voidTournamentsSearchParameters(
           SearchState state, VoidTournamentsSearchParameters action) =>
       state.copyWith(
-        searchParameters: const SearchTournamentsParametersState.initial(),
+        searchParameters: Optional.of(
+          const SearchTournamentsParametersState.initial(),
+        ),
       );
 
   static SearchState _voidTournamentsSearchResults(
           SearchState state, VoidTournamentsSearchResults action) =>
       state.copyWith(
-          searchResults: SearchTournamentsResultsState.initial(),
-          searchParameters: state.searchParameters.copyWith(nextPage: 0));
+        searchResults: Optional.of(
+          SearchTournamentsResultsState.initial(),
+        ),
+        searchParameters: Optional.of(
+          state.searchParameters.copyWith(
+            nextPage: Optional.of(0),
+          ),
+        ),
+      );
 }

@@ -20,12 +20,15 @@ class SearchState {
         );
 
   SearchState copyWith({
-    SearchTournamentsParametersState searchParameters,
-    SearchTournamentsResultsState searchResults,
+    Optional<SearchTournamentsParametersState> searchParameters,
+    Optional<SearchTournamentsResultsState> searchResults,
   }) =>
       SearchState._(
-        searchParameters: searchParameters ?? this.searchParameters,
-        searchResults: searchResults ?? this.searchResults,
+        searchParameters: searchParameters != null
+            ? searchParameters.orNull
+            : this.searchParameters,
+        searchResults:
+            searchResults != null ? searchResults.orNull : this.searchResults,
       );
 
   @override
@@ -56,14 +59,14 @@ class SearchTournamentsParametersState {
   const SearchTournamentsParametersState.initial() : this._();
 
   SearchTournamentsParametersState copyWith({
-    String query,
-    Sorting sorting,
-    int nextPage,
+    Optional<String> query,
+    Optional<Sorting> sorting,
+    Optional<int> nextPage,
   }) =>
       SearchTournamentsParametersState._(
-        query: query ?? this.query,
-        sorting: sorting ?? this.sorting,
-        nextPage: nextPage ?? this.nextPage,
+        query: query != null ? query.orNull : this.query,
+        sorting: sorting != null ? sorting.orNull : this.sorting,
+        nextPage: nextPage != null ? nextPage.orNull : this.nextPage,
       );
 
   @override
@@ -99,18 +102,20 @@ class SearchTournamentsResultsState {
   SearchTournamentsResultsState.initial() : this._();
 
   SearchTournamentsResultsState copyWith({
-    Iterable<Tournament> data,
-    bool isLoading,
-    Exception exception,
-    bool emptyResults,
-    bool canLoadMore,
+    Optional<Iterable<Tournament>> data,
+    Optional<bool> isLoading,
+    Optional<Exception> exception,
+    Optional<bool> emptyResults,
+    Optional<bool> canLoadMore,
   }) =>
       SearchTournamentsResultsState._(
-        data: data ?? this.data,
-        isLoading: isLoading ?? this.isLoading,
-        exception: exception ?? this.exception,
-        emptyResults: emptyResults ?? this.emptyResults,
-        canLoadMore: canLoadMore ?? this.canLoadMore,
+        data: data != null ? data.orNull : this.data,
+        isLoading: isLoading != null ? isLoading.orNull : this.isLoading,
+        exception: exception != null ? exception.orNull : this.exception,
+        emptyResults:
+            emptyResults != null ? emptyResults.orNull : this.emptyResults,
+        canLoadMore:
+            canLoadMore != null ? canLoadMore.orNull : this.canLoadMore,
       );
 
   @override
