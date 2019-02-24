@@ -7,31 +7,39 @@ class ErrorMessage extends StatelessWidget {
   final Function _retryFunction;
   final Color color;
   final Exception exception;
+  final bool dense;
 
   const ErrorMessage({
     Key key,
     Function retryFunction,
     this.color,
     this.exception,
+    this.dense = false,
   })  : this._retryFunction = retryFunction,
+        assert(dense != null),
         super(key: key);
 
   @override
   Widget build(BuildContext context) => Center(
         child: Padding(
-          padding: Dimensions.defaultPadding * 3,
+          padding: Dimensions.defaultPadding * (dense ? 1 : 3),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                (exception is NetworkException)
-                    ? Strings.noInternetError
-                    : Strings.genericError,
-                textAlign: TextAlign.center,
-                style: color != null
-                    ? Theme.of(context).textTheme.subhead.copyWith(color: color)
-                    : Theme.of(context).textTheme.subhead,
-              ),
+              dense
+                  ? Container()
+                  : Text(
+                      (exception is NetworkException)
+                          ? Strings.noInternetError
+                          : Strings.genericError,
+                      textAlign: TextAlign.center,
+                      style: color != null
+                          ? Theme.of(context)
+                              .textTheme
+                              .subhead
+                              .copyWith(color: color)
+                          : Theme.of(context).textTheme.subhead,
+                    ),
               _retryFunction != null
                   ? IconButton(
                       iconSize: 56,
