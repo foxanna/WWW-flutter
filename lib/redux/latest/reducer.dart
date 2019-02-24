@@ -53,6 +53,7 @@ class LatestTournamentsReducer {
             <Tournament>[]..addAll(state.data)..addAll(action.data)),
         isRefreshing: Optional.of(false),
         isLoadingMore: Optional.of(false),
+        nextPage: Optional.of(state.nextPage + 1),
         exception: const Optional.absent(),
       );
 
