@@ -34,7 +34,8 @@ class LatestTournamentsMiddleware {
       LoadMoreLatestTournaments action, NextDispatcher next) async {
     next(action);
 
-    if (store.state.latestTournamentsState.isLoading) {
+    final state = store.state.latestTournamentsState;
+    if (state.isLoading || state.hasError) {
       return;
     }
 
