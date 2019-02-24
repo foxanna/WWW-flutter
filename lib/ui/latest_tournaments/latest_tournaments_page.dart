@@ -52,6 +52,6 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
 
   void _loadMore() {
     final store = StoreProvider.of<AppState>(context);
-    store.dispatch(LoadMoreLatestTournaments());
+    store.dispatch(const LoadMoreLatestTournaments());
   }
 }

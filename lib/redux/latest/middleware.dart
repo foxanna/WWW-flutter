@@ -17,7 +17,7 @@ class LatestTournamentsMiddleware {
     next(action);
 
     try {
-      store.dispatch(LatestTournamentsIsRefreshing());
+      store.dispatch(const LatestTournamentsIsRefreshing());
 
       _reset();
 
@@ -37,7 +37,7 @@ class LatestTournamentsMiddleware {
     }
 
     try {
-      store.dispatch(LatestTournamentsIsLoadingMore());
+      store.dispatch(const LatestTournamentsIsLoadingMore());
 
       final data = await LatestTournamentsLoader().get(page: _page);
       _moreItemsLoaded(store, data);
@@ -49,7 +49,7 @@ class LatestTournamentsMiddleware {
   static void _moreItemsLoaded(
       Store<AppState> store, Iterable<Tournament> data) {
     if (_page == 0) {
-      store.dispatch(ClearLatestTournaments());
+      store.dispatch(const ClearLatestTournaments());
     }
     if (data != null) {
       store.dispatch(MoreLatestTournamentsLoaded(data));
