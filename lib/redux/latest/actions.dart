@@ -85,3 +85,11 @@ class LatestTournamentsRefreshFailed extends LatestTournamentsAction {
   String toString() =>
       '$LatestTournamentsRefreshFailed exception.runtimeType = "${exception.runtimeType}"';
 }
+
+@immutable
+class ClearLatestTournamentsException extends LatestTournamentsAction {
+  const ClearLatestTournamentsException();
+
+  @override
+  String toString() => '$ClearLatestTournamentsException';
+}
