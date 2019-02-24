@@ -8,6 +8,8 @@ class LatestTournamentsMiddleware {
   static final List<Middleware<AppState>> middleware = [
     TypedMiddleware<AppState, RefreshLatestTournaments>(_refresh),
     TypedMiddleware<AppState, LoadMoreLatestTournaments>(_loadMore),
+    TypedMiddleware<AppState, RepeatFailedLoadingLatestTournaments>(
+        _reloadMore),
   ];
 
   static int _page = 0;
@@ -60,5 +62,13 @@ class LatestTournamentsMiddleware {
 
   static void _reset() {
     _page = 0;
+  }
+
+  static void _reloadMore(Store<AppState> store,
+      RepeatFailedLoadingLatestTournaments action, NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const ClearLatestTournamentsException());
+    store.dispatch(const LoadMoreLatestTournaments());
   }
 }
