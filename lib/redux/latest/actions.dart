@@ -22,6 +22,14 @@ class LoadMoreLatestTournaments extends LatestTournamentsAction {
 }
 
 @immutable
+class RepeatFailedLoadingLatestTournaments extends LatestTournamentsAction {
+  const RepeatFailedLoadingLatestTournaments();
+
+  @override
+  String toString() => '$RepeatFailedLoadingLatestTournaments';
+}
+
+@immutable
 class LatestTournamentsIsLoadingMore extends LatestTournamentsAction {
   const LatestTournamentsIsLoadingMore();
 
