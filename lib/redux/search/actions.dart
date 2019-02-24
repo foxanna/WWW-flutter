@@ -67,16 +67,6 @@ class TournamentsSearchIsLoading extends SystemSearchAction {
 }
 
 @immutable
-class TournamentsSearchPageChanged extends SystemSearchAction {
-  final int nextPage;
-
-  const TournamentsSearchPageChanged(this.nextPage);
-
-  @override
-  String toString() => '$TournamentsSearchPageChanged nextPage = "$nextPage"';
-}
-
-@immutable
 class TournamentsSearchLoaded extends SystemSearchAction {
   final Iterable<Tournament> data;
   final int nextPage;
