@@ -40,15 +40,19 @@ class SearchReducer {
   static SearchState _tournamentsSearchLoaded(
           SearchState state, TournamentsSearchLoaded action) =>
       state.copyWith(
-          searchResults: state.searchResults.copyWith(
-        data: <Tournament>[]
-          ..addAll(state.searchResults.data)
-          ..addAll(action.data),
-        emptyResults: action.data.isEmpty,
-        canLoadMore: action.data.length == 50,
-        isLoading: false,
-        exception: null,
-      ));
+        searchResults: state.searchResults.copyWith(
+          data: <Tournament>[]
+            ..addAll(state.searchResults.data)
+            ..addAll(action.data),
+          emptyResults: action.data.isEmpty,
+          canLoadMore: action.data.length == 50,
+          isLoading: false,
+          exception: null,
+        ),
+        searchParameters: state.searchParameters.copyWith(
+          nextPage: action.nextPage,
+        ),
+      );
 
   static SearchState _tournamentsSearchFailedToLoad(
           SearchState state, TournamentsSearchFailedToLoad action) =>

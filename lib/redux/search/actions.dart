@@ -79,12 +79,13 @@ class TournamentsSearchPageChanged extends SystemSearchAction {
 @immutable
 class TournamentsSearchLoaded extends SystemSearchAction {
   final Iterable<Tournament> data;
+  final int nextPage;
 
-  const TournamentsSearchLoaded(this.data);
+  const TournamentsSearchLoaded(this.data, this.nextPage);
 
   @override
   String toString() =>
-      '$TournamentsSearchLoaded data.length = "${data.length}"';
+      '$TournamentsSearchLoaded data.length = "${data.length}", nextPage = "$nextPage"';
 }
 
 @immutable
