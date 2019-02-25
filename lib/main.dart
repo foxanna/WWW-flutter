@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/redux/app/middleware.dart';
-import 'package:what_when_where/redux/app/reducer.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/init/actions.dart';
 import 'package:what_when_where/redux/settings/state.dart';
 import 'package:what_when_where/resources/fonts.dart';
@@ -18,11 +16,7 @@ void main() {
 }
 
 class WWWApp extends StatelessWidget {
-  final store = Store<AppState>(
-    AppReducer.reducer,
-    initialState: AppState.initial(),
-    middleware: AppMiddleware.middleware,
-  );
+  final store = createStore();
 
   @override
   Widget build(BuildContext context) => StoreProvider<AppState>(
