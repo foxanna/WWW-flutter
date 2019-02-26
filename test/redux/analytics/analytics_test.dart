@@ -16,12 +16,12 @@ void main() {
   IAnalyticsService analyticsServiceMock;
   Store<AppState> store;
 
+  WWWIoC.container.register<IAnalyticsService>((c) => analyticsServiceMock,
+      defaultMode: InjectMode.create);
+
   setUp(() {
     store = createStore();
     analyticsServiceMock = AnalyticsServiceMock();
-
-    WWWIoC.container.register<IAnalyticsService>((c) => analyticsServiceMock,
-        defaultMode: InjectMode.create);
   });
 
   group('actions to analytics', () {
