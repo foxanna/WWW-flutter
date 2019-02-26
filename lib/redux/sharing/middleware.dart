@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/services/sharing.dart';
@@ -10,7 +11,8 @@ class ShareMiddleware {
     TypedMiddleware<AppState, ShareTournament>(_shareTournament),
   ];
 
-  static final _sharingService = SharingService();
+  static ISharingService get _sharingService =>
+      WWWIoC.container<ISharingService>();
 
   static void _shareTournament(
       Store<AppState> store, ShareTournament action, NextDispatcher next) {
