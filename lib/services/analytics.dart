@@ -4,21 +4,27 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/utils/logger.dart';
 
-class AnalyticsService {
-  static final _instance = AnalyticsService._();
+abstract class IAnalyticsService {
+  RouteObserver<PageRoute<dynamic>> observer({String home});
 
-  factory AnalyticsService() => _instance;
+  void logEvent({@required String name, Map<String, dynamic> parameters});
+}
 
+class AnalyticsService extends IAnalyticsService {
   final FirebaseAnalytics _analytics = FirebaseAnalytics();
+
+  factory AnalyticsService.ioc() => AnalyticsService._();
 
   AnalyticsService._();
 
+  @override
   RouteObserver<PageRoute<dynamic>> observer({String home}) =>
       FirebaseAnalyticsObserver(
           analytics: _analytics,
           nameExtractor: (RouteSettings settings) =>
               settings.name == '/' && home != null ? home : settings.name);
 
+  @override
   void logEvent({@required String name, Map<String, dynamic> parameters}) =>
       _analytics.logEvent(name: name, parameters: parameters).then((_) {
         log('$AnalyticsService logging event "$name", '
