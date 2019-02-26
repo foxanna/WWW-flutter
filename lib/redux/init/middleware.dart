@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/ioc/bootstraper.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/init/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
@@ -14,6 +15,7 @@ class InitMiddleware {
 
     store.dispatch(const ReadSettings());
 
+    Bootstrapper().init();
     SoundService().init();
   }
 }
