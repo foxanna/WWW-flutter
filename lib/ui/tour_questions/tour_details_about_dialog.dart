@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 
-class TourDetailsAboutDialog {
+class TourDetailsAboutDialog extends IDialog {
   final String _detailsText;
   final String _tourTitle;
 
@@ -14,6 +15,7 @@ class TourDetailsAboutDialog {
       : this._tourTitle = tour.title,
         this._detailsText = _DialogContentBuilder(tour).build();
 
+  @override
   void show() => showDialog<Object>(
         context: context,
         builder: (context) => InfoDialog(

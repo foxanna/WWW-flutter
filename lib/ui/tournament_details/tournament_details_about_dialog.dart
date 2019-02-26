@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 
-class TournamentDetailsAboutDialog {
+class TournamentDetailsAboutDialog extends IDialog {
   final String _detailsText;
   final String _tournamentTitle;
 
@@ -16,6 +17,7 @@ class TournamentDetailsAboutDialog {
   })  : this._tournamentTitle = tournament.title,
         this._detailsText = _DialogContentBuilder(tournament).build();
 
+  @override
   void show() => showDialog<Object>(
         context: context,
         builder: (context) => InfoDialog(
