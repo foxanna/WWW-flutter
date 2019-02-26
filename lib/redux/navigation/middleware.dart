@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
+import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
+import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/about/about_page.dart';
 import 'package:what_when_where/ui/image/image_page.dart';
 import 'package:what_when_where/ui/search/search_page.dart';
@@ -27,11 +28,14 @@ class NavigationMiddleware {
         _openRandomQuestionsPage),
   ];
 
+  static INavigationService get _navigationService =>
+      WWWIoC.container<INavigationService>();
+
   static void _openImage(
       Store<AppState> store, OpenImage action, NextDispatcher next) {
     next(action);
 
-    _navigateTo(
+    _navigationService.navigateToPage(
         context: action.context,
         routeName: ImagePage.routeName,
         builder: (context) => ImagePage(url: action.imageUrl));
@@ -43,7 +47,7 @@ class NavigationMiddleware {
 
     store.dispatch(SetTournament(action.tournament));
 
-    _navigateTo(
+    _navigationService.navigateToPage(
         context: action.context,
         routeName: TournamentDetailsPage.routeName,
         builder: (context) => TournamentDetailsPage());
@@ -53,7 +57,12 @@ class NavigationMiddleware {
       Store<AppState> store, OpenTourInfo action, NextDispatcher next) {
     next(action);
 
-    TourDetailsAboutDialog(context: action.context, tour: action.tour).show();
+    _navigationService.showDialog(
+      TourDetailsAboutDialog(
+        context: action.context,
+        tour: action.tour,
+      ),
+    );
   }
 
   static void _openQuestions(
@@ -64,7 +73,7 @@ class NavigationMiddleware {
         questions: action.questions,
         selectedQuestionIndex: action.selectedQuestionIndex));
 
-    _navigateTo(
+    _navigationService.navigateToPage(
         context: action.context,
         routeName: TourQuestionsPage.routeName,
         builder: (context) => TourQuestionsPage());
@@ -74,7 +83,7 @@ class NavigationMiddleware {
       Store<AppState> store, OpenAboutPage action, NextDispatcher next) {
     next(action);
 
-    _navigateTo(
+    _navigationService.navigateToPage(
         context: action.context,
         routeName: AboutPage.routeName,
         builder: (context) => AboutPage());
@@ -84,7 +93,7 @@ class NavigationMiddleware {
       Store<AppState> store, OpenSearchPage action, NextDispatcher next) {
     next(action);
 
-    _navigateTo(
+    _navigationService.navigateToPage(
         context: action.context,
         routeName: SearchPage.routeName,
         builder: (context) => SearchPage());
@@ -94,34 +103,29 @@ class NavigationMiddleware {
       Store<AppState> store, OpenSettingsPage action, NextDispatcher next) {
     next(action);
 
-    _navigateTo(
+    _navigationService.navigateToPage(
         context: action.context,
         routeName: SettingsPage.routeName,
         builder: (context) => SettingsPage());
   }
 
-  static void _navigateTo(
-          {BuildContext context, String routeName, WidgetBuilder builder}) =>
-      Navigator.push<Object>(
-          context,
-          MaterialPageRoute(
-              settings: RouteSettings(name: routeName), builder: builder));
-
   static void _openTournamentInfo(
       Store<AppState> store, OpenTournamentInfo action, NextDispatcher next) {
     next(action);
 
-    TournamentDetailsAboutDialog(
-      context: action.context,
-      tournament: action.tournament,
-    ).show();
+    _navigationService.showDialog(
+      TournamentDetailsAboutDialog(
+        context: action.context,
+        tournament: action.tournament,
+      ),
+    );
   }
 
   static void _openRandomQuestionsPage(Store<AppState> store,
       OpenRandomQuestionsPage action, NextDispatcher next) {
     next(action);
 
-    _navigateTo(
+    _navigationService.navigateToPage(
         context: action.context,
         routeName: TourQuestionsPage.randomQuestionsRouteName,
         builder: (context) => TourQuestionsPage());
