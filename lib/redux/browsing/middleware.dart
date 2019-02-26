@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/services/browsing.dart';
@@ -10,7 +11,8 @@ class BrowseMiddleware {
     TypedMiddleware<AppState, BrowseTournament>(_browseTournament),
   ];
 
-  static final _browsingService = BrowsingService();
+  static IBrowsingService get _browsingService =>
+      WWWIoC.container<IBrowsingService>();
 
   static void _browseTournament(
       Store<AppState> store, BrowseTournament action, NextDispatcher next) {
