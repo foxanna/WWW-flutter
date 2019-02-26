@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/init/actions.dart';
@@ -29,7 +30,7 @@ class WWWApp extends StatelessWidget {
                 title: Constants.appName,
                 theme: Themes.get(state.appTheme),
                 navigatorObservers: <NavigatorObserver>[
-                  AnalyticsService()
+                  WWWIoC.container<IAnalyticsService>()
                       .observer(home: LatestTournamentsPage.routeName),
                 ],
                 home: LatestTournamentsPage(),

@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
@@ -70,7 +71,8 @@ class AnalyticsMiddleware {
         _logNotifyLongTimerExpiration),
   ];
 
-  static final _analyticsService = AnalyticsService();
+  static IAnalyticsService get _analyticsService =>
+      WWWIoC.container<IAnalyticsService>();
 
   static void _logAction(
       Store<AppState> store, dynamic action, NextDispatcher next) {
