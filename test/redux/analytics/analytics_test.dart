@@ -10,11 +10,13 @@ import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/browsing.dart';
+import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/sharing.dart';
 
 import '../../mocks.dart';
@@ -27,6 +29,9 @@ void main() {
       defaultMode: InjectMode.singleton);
   WWWIoC.container.register<IBrowsingService>((c) => BrowsingServiceMock(),
       defaultMode: InjectMode.singleton);
+  WWWIoC.container.register<INavigationService>((c) => NavigationServiceMock(),
+      defaultMode: InjectMode.singleton);
+
   WWWIoC.container.register<IAnalyticsService>((c) => analyticsServiceMock,
       defaultMode: InjectMode.create);
 
@@ -97,6 +102,37 @@ void main() {
       '$BrowseTournament',
       () => analyticsTest(
           BrowseTournament(const Tournament()), 'browse_tournament'),
+    );
+
+    test(
+      '$OpenImage',
+      () => analyticsTest(OpenImage(), 'open_image'),
+    );
+
+    test(
+      '$OpenTourInfo',
+      () => analyticsTest(OpenTourInfo(tour: const Tour()), 'open_tour_info'),
+    );
+
+    test(
+      '$OpenTournamentInfo',
+      () => analyticsTest(OpenTournamentInfo(tournament: const Tournament()),
+          'open_tournament_info'),
+    );
+
+    test(
+      '$OpenSettingsPage',
+      () => analyticsTest(OpenSettingsPage(null), 'settings'),
+    );
+
+    test(
+      '$OpenSearchPage',
+      () => analyticsTest(OpenSearchPage(null), 'search'),
+    );
+
+    test(
+      '$OpenRandomQuestionsPage',
+      () => analyticsTest(OpenRandomQuestionsPage(null), 'random'),
     );
   });
 
