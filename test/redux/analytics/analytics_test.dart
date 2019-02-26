@@ -9,10 +9,12 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
+import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/analytics.dart';
+import 'package:what_when_where/services/browsing.dart';
 import 'package:what_when_where/services/sharing.dart';
 
 import '../../mocks.dart';
@@ -22,6 +24,8 @@ void main() {
   Store<AppState> store;
 
   WWWIoC.container.register<ISharingService>((c) => SharingServiceMock(),
+      defaultMode: InjectMode.singleton);
+  WWWIoC.container.register<IBrowsingService>((c) => BrowsingServiceMock(),
       defaultMode: InjectMode.singleton);
   WWWIoC.container.register<IAnalyticsService>((c) => analyticsServiceMock,
       defaultMode: InjectMode.create);
@@ -77,6 +81,22 @@ void main() {
       '$ShareTournament',
       () => analyticsTest(
           ShareTournament(const Tournament()), 'share_tournament'),
+    );
+
+    test(
+      '$BrowseQuestion',
+      () => analyticsTest(BrowseQuestion(const Question()), 'browse_question'),
+    );
+
+    test(
+      '$BrowseTour',
+      () => analyticsTest(BrowseTour(const Tour()), 'browse_tour'),
+    );
+
+    test(
+      '$BrowseTournament',
+      () => analyticsTest(
+          BrowseTournament(const Tournament()), 'browse_tournament'),
     );
   });
 
