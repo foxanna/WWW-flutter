@@ -30,6 +30,7 @@ dependencies:
   quiver: ^2.0.1
   html_unescape: ^1.0.1+2
   shared_preferences: ^0.5.1+1
+  dioc: ^0.1.4
 
 dev_dependencies:
   flutter_test:
