@@ -6,19 +6,27 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 
-class SharingService {
-  static final _instance = SharingService._();
+abstract class ISharingService {
+  void shareTournament(Tournament tournament);
 
-  factory SharingService() => _instance;
+  void shareTour(Tour tour);
+
+  void shareQuestion(Question question);
+}
+
+class SharingService extends ISharingService {
+  factory SharingService.ioc() => SharingService._();
 
   SharingService._();
 
+  @override
   void shareTournament(Tournament tournament) {
     Share.share('${tournament.title}\n'
         '${tournament.url}'
         '${_createAppendix()}');
   }
 
+  @override
   void shareTour(Tour tour) {
     Share.share(
         '${(tour.tournamentTitle != null) ? ('${tour.tournamentTitle}, ') : ''}'
@@ -27,6 +35,7 @@ class SharingService {
         '${_createAppendix()}');
   }
 
+  @override
   void shareQuestion(Question question) {
     final questionInfo = [
       question.tournamentTitle,
