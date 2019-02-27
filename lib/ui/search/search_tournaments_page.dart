@@ -40,8 +40,6 @@ class _SearchTournamentsPageState extends State<SearchTournamentsPage> {
           if (state.hasData) {
             return _SearchTournamentsPageResults(
               scrollController: widget.scrollController,
-              data: state.data,
-              isLoading: state.isLoading,
             );
           }
 
@@ -102,28 +100,33 @@ class _SearchTournamentsPageState extends State<SearchTournamentsPage> {
 
 class _SearchTournamentsPageResults extends StatelessWidget {
   final ScrollController _scrollController;
-  final List<Tournament> data;
-  final bool isLoading;
 
   const _SearchTournamentsPageResults({
     Key key,
     ScrollController scrollController,
-    this.data,
-    this.isLoading,
   })  : _scrollController = scrollController,
         super(key: key);
 
   @override
-  Widget build(BuildContext context) => CustomScrollView(
-        controller: _scrollController,
-        slivers: [
-          SliverPadding(
-            sliver: TournamentsGrid(tournaments: data),
-            padding: Dimensions.defaultPadding,
-          ),
-          SliverToBoxAdapter(
-            child: isLoading ? const WWWProgressIndicator() : Container(),
-          )
-        ],
+  Widget build(BuildContext context) =>
+      StoreConnector<AppState, SearchTournamentsResultsState>(
+        distinct: true,
+        converter: (store) => store.state.searchState.searchResults,
+        builder: (context, state) => CustomScrollView(
+              controller: _scrollController,
+              slivers: [
+                SliverPadding(
+                  sliver: TournamentsGrid(tournaments: state.data),
+                  padding: Dimensions.defaultPadding,
+                ),
+                SliverToBoxAdapter(
+                  child: state.isLoading
+                      ? WWWProgressIndicator(
+                          padding: Dimensions.defaultPadding * 3,
+                        )
+                      : Container(),
+                ),
+              ],
+            ),
       );
 }
