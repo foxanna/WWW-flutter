@@ -38,10 +38,12 @@ void main() {
 
   WWWIoC.container.register<IAnalyticsService>((c) => analyticsServiceMock,
       defaultMode: InjectMode.create);
+  bool furtherInteractionAllowed;
 
   setUp(() {
     store = createStore();
     analyticsServiceMock = AnalyticsServiceMock();
+    furtherInteractionAllowed = false;
   });
 
   group('actions to analytics', () {
@@ -63,6 +65,7 @@ void main() {
     test(
       '$ChangeTimerType',
       () {
+        furtherInteractionAllowed = true;
         TimerType.values.forEach(
             (type) => analyticsTest(ChangeTimerType(type), 'timer_type_set'));
       },
@@ -153,6 +156,8 @@ void main() {
   });
 
   tearDown(() {
-    verifyNoMoreInteractions(analyticsServiceMock);
+    if (!furtherInteractionAllowed) {
+      verifyNoMoreInteractions(analyticsServiceMock);
+    }
   });
 }
