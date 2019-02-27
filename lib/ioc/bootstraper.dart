@@ -6,6 +6,7 @@ import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/url_launcher.dart';
+import 'package:what_when_where/services/vibrating.dart';
 
 class Bootstrapper {
   static final Bootstrapper _instance = Bootstrapper._();
@@ -28,6 +29,8 @@ class Bootstrapper {
     _container.register<IUrlLauncher>((c) => UrlLauncher.ioc(),
         defaultMode: InjectMode.singleton);
     _container.register<IPreferences>((c) => Preferences.ioc(),
+        defaultMode: InjectMode.singleton);
+    _container.register<IVibratingService>((c) => VibratingService.ioc(),
         defaultMode: InjectMode.singleton);
   }
 }
