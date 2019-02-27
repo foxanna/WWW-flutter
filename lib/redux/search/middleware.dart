@@ -13,6 +13,7 @@ class SearchMiddleware {
     TypedMiddleware<AppState, SearchTournaments>(_searchTournaments),
     TypedMiddleware<AppState, TournamentsSearchQueryChanged>(_queryChanged),
     TypedMiddleware<AppState, TournamentsSearchSortingChanged>(_sortingChanged),
+    TypedMiddleware<AppState, RepeatFailedSearchTournaments>(_reloadMore),
   ];
 
   static Future _searchTournaments(Store<AppState> store,
@@ -75,6 +76,14 @@ class SearchMiddleware {
     if (queryHasChanged) {
       store.dispatch(const VoidTournamentsSearchResults());
     }
+  }
+
+  static void _reloadMore(Store<AppState> store,
+      RepeatFailedSearchTournaments action, NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const ClearSearchTournamentsException());
+    store.dispatch(const SearchTournaments());
   }
 
   static Future<Iterable<Tournament>> _fetch(
