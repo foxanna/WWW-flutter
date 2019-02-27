@@ -22,6 +22,8 @@ class SearchReducer {
         _tournamentsSearchIsLoading),
     TypedReducer<SearchState, TournamentsSearchFailedToLoad>(
         _tournamentsSearchFailedToLoad),
+    TypedReducer<SearchState, ClearSearchTournamentsException>(
+        _clearTournamentsSearchException),
   ]);
 
   static SearchState reduce(SearchState state, dynamic action) =>
@@ -107,6 +109,16 @@ class SearchReducer {
         searchParameters: Optional.of(
           state.searchParameters.copyWith(
             nextPage: Optional.of(0),
+          ),
+        ),
+      );
+
+  static SearchState _clearTournamentsSearchException(
+          SearchState state, ClearSearchTournamentsException action) =>
+      state.copyWith(
+        searchResults: Optional.of(
+          state.searchResults.copyWith(
+            exception: const Optional.absent(),
           ),
         ),
       );
