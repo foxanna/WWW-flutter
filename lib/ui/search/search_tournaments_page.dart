@@ -126,6 +126,11 @@ class _SearchTournamentsPageResults extends StatelessWidget {
                         )
                       : Container(),
                 ),
+                SliverToBoxAdapter(
+                  child: state.hasError
+                      ? const SearchErrorMessage(dense: true)
+                      : Container(),
+                )
               ],
             ),
       );
