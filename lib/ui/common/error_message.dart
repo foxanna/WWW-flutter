@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/common/network_exception.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/utils/network_exception.dart';
 
 class ErrorMessage extends StatelessWidget {
   final Function _retryFunction;
