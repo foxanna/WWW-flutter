@@ -137,7 +137,7 @@ class _TimerSoundMiddleware {
     TypedMiddleware<AppState, NotifyExpiration>(_sound),
   ];
 
-  static final _soundService = SoundService();
+  static ISoundService get _soundService => WWWIoC.container<ISoundService>();
 
   static void _sound(
       Store<AppState> store, TimerAction action, NextDispatcher next) {
