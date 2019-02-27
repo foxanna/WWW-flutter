@@ -1,10 +1,11 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/common/timer_type.dart';
+import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/sound.dart';
-import 'package:what_when_where/utils/timer.dart';
 import 'package:what_when_where/services/vibrating.dart';
+import 'package:what_when_where/utils/timer.dart';
 
 class TimerMiddleware {
   static final middleware = <Middleware<AppState>>[]
@@ -120,7 +121,8 @@ class _TimerVibratingMiddleware {
     TypedMiddleware<AppState, NotifyExpiration>(_vibrate),
   ];
 
-  static final _vibratingService = VibratingService();
+  static IVibratingService get _vibratingService =>
+      WWWIoC.container<IVibratingService>();
 
   static void _vibrate(
       Store<AppState> store, TimerAction action, NextDispatcher next) {
