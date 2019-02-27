@@ -10,6 +10,7 @@ import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
+import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
@@ -18,6 +19,7 @@ import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/browsing.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/sharing.dart';
+import 'package:what_when_where/services/url_launcher.dart';
 
 import '../../mocks.dart';
 
@@ -25,6 +27,8 @@ void main() {
   IAnalyticsService analyticsServiceMock;
   Store<AppState> store;
 
+  WWWIoC.container.register<IUrlLauncher>((c) => UrlLauncherMock(),
+      defaultMode: InjectMode.singleton);
   WWWIoC.container.register<ISharingService>((c) => SharingServiceMock(),
       defaultMode: InjectMode.singleton);
   WWWIoC.container.register<IBrowsingService>((c) => BrowsingServiceMock(),
@@ -133,6 +137,11 @@ void main() {
     test(
       '$OpenRandomQuestionsPage',
       () => analyticsTest(OpenRandomQuestionsPage(null), 'random'),
+    );
+
+    test(
+      '$EmailDevelopers',
+      () => analyticsTest(EmailDevelopers(), 'email_developers'),
     );
   });
 
