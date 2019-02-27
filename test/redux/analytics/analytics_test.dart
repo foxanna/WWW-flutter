@@ -62,8 +62,10 @@ void main() {
 
     test(
       '$ChangeTimerType',
-      () => TimerType.values.map(
-          (type) => analyticsTest(ChangeTimerType(type), 'timer_type_set')),
+      () {
+        TimerType.values.forEach(
+            (type) => analyticsTest(ChangeTimerType(type), 'timer_type_set'));
+      },
     );
 
     test(
