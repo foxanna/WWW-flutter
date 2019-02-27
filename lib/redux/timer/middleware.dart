@@ -3,7 +3,7 @@ import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/sound.dart';
-import 'package:what_when_where/services/timer.dart';
+import 'package:what_when_where/utils/timer.dart';
 import 'package:what_when_where/services/vibrating.dart';
 
 class TimerMiddleware {
