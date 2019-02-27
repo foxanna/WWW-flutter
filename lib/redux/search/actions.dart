@@ -19,6 +19,14 @@ class SearchTournaments extends UserSearchAction {
 }
 
 @immutable
+class RepeatFailedSearchTournaments extends UserSearchAction {
+  const RepeatFailedSearchTournaments();
+
+  @override
+  String toString() => '$RepeatFailedSearchTournaments';
+}
+
+@immutable
 class VoidTournamentsSearchResults extends UserSearchAction {
   const VoidTournamentsSearchResults();
 
