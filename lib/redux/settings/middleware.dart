@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/resources/fonts.dart';
@@ -21,19 +22,21 @@ class SettingsMiddleware {
   static const _notifyShortTimerExpirationKey = 'notify_short_timer';
   static const _notifyLongTimerExpirationKey = 'notify_long_timer';
 
+  static IPreferences get _preferences => WWWIoC.container<IPreferences>();
+
   static Future _onReadSettings(
       Store<AppState> store, ReadSettings action, NextDispatcher next) async {
     next(action);
 
-    final appThemeIndex = await Preferences().getInt(_themeKey);
+    final appThemeIndex = await _preferences.getInt(_themeKey);
     final appTheme = AppTheme.values[appThemeIndex];
 
-    final textScaleIndex = await Preferences().getInt(_textScaleKey);
+    final textScaleIndex = await _preferences.getInt(_textScaleKey);
     final textScale = TextScale.values[textScaleIndex];
 
-    final notifyShortTimerExpiration = await Preferences()
+    final notifyShortTimerExpiration = await _preferences
         .getBool(_notifyShortTimerExpirationKey, defaultValue: true);
-    final notifyLongTimerExpiration = await Preferences()
+    final notifyLongTimerExpiration = await _preferences
         .getBool(_notifyLongTimerExpirationKey, defaultValue: true);
 
     store.dispatch(SettingsRead(
@@ -51,7 +54,7 @@ class SettingsMiddleware {
     next(action);
 
     if (themeHasChanged) {
-      await Preferences().setInt(_themeKey, action.appTheme.index);
+      await _preferences.setInt(_themeKey, action.appTheme.index);
     }
   }
 
@@ -63,7 +66,7 @@ class SettingsMiddleware {
     next(action);
 
     if (textScaleHasChanged) {
-      await Preferences().setInt(_textScaleKey, action.textScale.index);
+      await _preferences.setInt(_textScaleKey, action.textScale.index);
     }
   }
 
@@ -75,8 +78,8 @@ class SettingsMiddleware {
     next(action);
 
     if (settingChanged) {
-      await Preferences()
-          .setBool(_notifyShortTimerExpirationKey, action.newValue);
+      await _preferences.setBool(
+          _notifyShortTimerExpirationKey, action.newValue);
     }
   }
 
@@ -88,8 +91,8 @@ class SettingsMiddleware {
     next(action);
 
     if (settingChanged) {
-      await Preferences()
-          .setBool(_notifyLongTimerExpirationKey, action.newValue);
+      await _preferences.setBool(
+          _notifyLongTimerExpirationKey, action.newValue);
     }
   }
 }
