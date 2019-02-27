@@ -143,6 +143,11 @@ void main() {
       '$EmailDevelopers',
       () => analyticsTest(EmailDevelopers(), 'email_developers'),
     );
+
+    test(
+      '$BrowseDatabase',
+      () => analyticsTest(BrowseDatabase(), 'browse_database'),
+    );
   });
 
   tearDown(() {
