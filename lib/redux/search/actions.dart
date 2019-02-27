@@ -96,3 +96,11 @@ class TournamentsSearchFailedToLoad extends SystemSearchAction {
   String toString() =>
       '$TournamentsSearchFailedToLoad exception.runtimeType = "${exception.runtimeType}"';
 }
+
+@immutable
+class ClearSearchTournamentsException extends SystemSearchAction {
+  const ClearSearchTournamentsException();
+
+  @override
+  String toString() => '$ClearSearchTournamentsException';
+}
