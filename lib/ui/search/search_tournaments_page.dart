@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/common/tournaments_grid.dart';
+import 'package:what_when_where/ui/search/error_message.dart';
 
 class SearchTournamentsPage extends StatefulWidget {
   final ScrollController scrollController;
@@ -61,11 +60,7 @@ class _SearchTournamentsPageState extends State<SearchTournamentsPage> {
           }
 
           if (state.hasError) {
-            return ErrorMessage(
-              exception: state.exception,
-              retryFunction: () => _loadMore(),
-              color: Theme.of(context).iconTheme.color,
-            );
+            return const SearchErrorMessage();
           }
 
           return Container();
