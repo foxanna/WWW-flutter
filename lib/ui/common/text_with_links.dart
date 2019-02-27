@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/utils/uri_detector.dart';
 
@@ -52,7 +53,8 @@ class TextWithLinks extends StatelessWidget {
                           text: Uri.decodeFull(s.toString()),
                           style: linkStyle,
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () => UrlLauncher.launchURL(s.toString()),
+                            ..onTap = () => WWWIoC.container<IUrlLauncher>()
+                                .launchURL(s.toString()),
                         )
                       : TextSpan(
                           text: s,

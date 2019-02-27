@@ -1,5 +1,6 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
@@ -11,11 +12,13 @@ class MiscMiddleware {
     TypedMiddleware<AppState, BrowseDatabase>(_openDatabase),
   ];
 
+  static IUrlLauncher get _urlLauncher => WWWIoC.container<IUrlLauncher>();
+
   static void _emailDevelopers(
       Store<AppState> store, EmailDevelopers action, NextDispatcher next) {
     next(action);
 
-    UrlLauncher.sendEmail(
+    _urlLauncher.sendEmail(
         Constants.developersEmail, '${Strings.app} ${Constants.appNameLong}');
   }
 
@@ -23,6 +26,6 @@ class MiscMiddleware {
       Store<AppState> store, BrowseDatabase action, NextDispatcher next) {
     next(action);
 
-    UrlLauncher.launchURL(Constants.databaseUrl);
+    _urlLauncher.launchURL(Constants.databaseUrl);
   }
 }
