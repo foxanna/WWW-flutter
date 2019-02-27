@@ -3,6 +3,7 @@ import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/browsing.dart';
 import 'package:what_when_where/services/navigation.dart';
+import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
@@ -25,6 +26,8 @@ class Bootstrapper {
     _container.register<INavigationService>((c) => NavigationService.ioc(),
         defaultMode: InjectMode.singleton);
     _container.register<IUrlLauncher>((c) => UrlLauncher.ioc(),
+        defaultMode: InjectMode.singleton);
+    _container.register<IPreferences>((c) => Preferences.ioc(),
         defaultMode: InjectMode.singleton);
   }
 }
