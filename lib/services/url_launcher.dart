@@ -1,15 +1,25 @@
 import 'package:url_launcher/url_launcher.dart';
 
-class UrlLauncher {
+abstract class IUrlLauncher {
+  Future launchURL(String url);
+
+  Future sendEmail(String to, String subject);
+}
+
+class UrlLauncher extends IUrlLauncher {
+  factory UrlLauncher.ioc() => UrlLauncher._();
+
   UrlLauncher._();
 
-  static Future launchURL(String url) async {
+  @override
+  Future launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     }
   }
 
-  static Future sendEmail(String to, String subject) async {
+  @override
+  Future sendEmail(String to, String subject) async {
     final url = 'mailto:$to?subject=$subject';
     await launchURL(url);
   }
