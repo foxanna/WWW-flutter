@@ -19,8 +19,8 @@ class SearchMiddleware {
       SearchTournaments action, NextDispatcher next) async {
     next(action);
 
-    if (!store.state.searchState.searchResults.isLoading &&
-        store.state.searchState.searchResults.canLoadMore) {
+    final state = store.state.searchState.searchResults;
+    if (!state.isLoading && state.canLoadMore && !state.hasError) {
       await _search(store, action);
     }
   }
