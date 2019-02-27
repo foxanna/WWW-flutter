@@ -6,12 +6,16 @@ import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:what_when_where/utils/logger.dart';
 
-class SoundService {
+abstract class ISoundService {
+  void init();
+
+  void playSound();
+}
+
+class SoundService extends ISoundService {
   static const _timerAssetName = 'timer.mp3';
 
-  static final _instance = SoundService._();
-
-  factory SoundService() => _instance;
+  factory SoundService.ioc() => SoundService._();
 
   SoundService._();
 
@@ -19,6 +23,7 @@ class SoundService {
 
   String _mp3Uri;
 
+  @override
   void init() {
     _init()
         .catchError((Object error) => log('$SoundService init error: $error'));
@@ -38,6 +43,7 @@ class SoundService {
     await tempFile.writeAsBytes(data.buffer.asUint8List(), flush: true);
   }
 
+  @override
   void playSound() {
     _audioPlugin.play(_mp3Uri, isLocal: true);
   }
