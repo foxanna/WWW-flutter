@@ -13,11 +13,15 @@ import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
+import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
+import 'package:what_when_where/resources/fonts.dart';
+import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/browsing.dart';
 import 'package:what_when_where/services/navigation.dart';
+import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
@@ -34,6 +38,8 @@ void main() {
   WWWIoC.container.register<IBrowsingService>((c) => BrowsingServiceMock(),
       defaultMode: InjectMode.singleton);
   WWWIoC.container.register<INavigationService>((c) => NavigationServiceMock(),
+      defaultMode: InjectMode.singleton);
+  WWWIoC.container.register<IPreferences>((c) => PreferencesMock(),
       defaultMode: InjectMode.singleton);
 
   WWWIoC.container.register<IAnalyticsService>((c) => analyticsServiceMock,
@@ -153,6 +159,68 @@ void main() {
       '$BrowseDatabase',
       () => analyticsTest(BrowseDatabase(), 'browse_database'),
     );
+  });
+
+  group('settings to analytics', () {
+    final analyticsVerify =
+        (String name, String parameterName, String parameterValue) {
+      verify(analyticsServiceMock.logEvent(
+              name: name,
+              parameters: <String, String>{parameterName: parameterValue}))
+          .called(1);
+    };
+
+    final analyticsTest = (dynamic action, String name, String parameterName,
+        String parameterValue) {
+      store.dispatch(action);
+      analyticsVerify(name, parameterName, parameterValue);
+    };
+
+    test('$SettingsRead', () {
+      store.dispatch(const SettingsRead(
+        appTheme: AppTheme.dark,
+        textScale: TextScale.medium,
+        notifyLongTimerExpiration: false,
+        notifyShortTimerExpiration: true,
+      ));
+
+      analyticsVerify('theme', 'value', 'dark');
+      analyticsVerify('textScale', 'value', 'medium');
+      analyticsVerify('timer_notifications', 'short_timer', 'true');
+      analyticsVerify('timer_notifications', 'long_timer', 'false');
+    });
+
+    test(
+        '$ChangeTheme',
+        () => AppTheme.values.forEach((theme) => analyticsTest(
+            ChangeTheme(theme),
+            'theme',
+            'value',
+            theme.toString().split('.').last)));
+
+    test(
+        '$ChangeTextScale',
+        () => TextScale.values.forEach((textScale) => analyticsTest(
+            ChangeTextScale(textScale),
+            'textScale',
+            'value',
+            textScale.toString().split('.').last)));
+
+    test(
+        '$ChangeNotifyShortTimerExpiration',
+        () => [false, true].forEach((setting) => analyticsTest(
+            ChangeNotifyShortTimerExpiration(setting),
+            'timer_notifications',
+            'short_timer',
+            setting.toString())));
+
+    test(
+        '$ChangeNotifyLongTimerExpiration',
+        () => [false, true].forEach((setting) => analyticsTest(
+            ChangeNotifyLongTimerExpiration(setting),
+            'timer_notifications',
+            'long_timer',
+            setting.toString())));
   });
 
   tearDown(() {
