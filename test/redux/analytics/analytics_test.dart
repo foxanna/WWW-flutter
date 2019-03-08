@@ -151,6 +151,11 @@ void main() {
     );
 
     test(
+      '$OpenTournamentsTreePage',
+      () => analyticsTest(OpenTournamentsTreePage(null), 'tree'),
+    );
+
+    test(
       '$EmailDevelopers',
       () => analyticsTest(EmailDevelopers(), 'email_developers'),
     );
