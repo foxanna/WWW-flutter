@@ -13,6 +13,7 @@ import 'package:what_when_where/ui/tour_questions/tour_details_about_dialog.dart
 import 'package:what_when_where/ui/tour_questions/tour_questions_page.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_about_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_page.dart';
+import 'package:what_when_where/ui/tree/tournaments_tree_page.dart';
 
 class NavigationMiddleware {
   static final List<Middleware<AppState>> middleware = [
@@ -26,6 +27,8 @@ class NavigationMiddleware {
     TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
     TypedMiddleware<AppState, OpenRandomQuestionsPage>(
         _openRandomQuestionsPage),
+    TypedMiddleware<AppState, OpenTournamentsTreePage>(
+        _openTournamentsTreePage),
   ];
 
   static INavigationService get _navigationService =>
@@ -129,5 +132,15 @@ class NavigationMiddleware {
         context: action.context,
         routeName: TourQuestionsPage.randomQuestionsRouteName,
         builder: (context) => TourQuestionsPage());
+  }
+
+  static void _openTournamentsTreePage(Store<AppState> store,
+      OpenTournamentsTreePage action, NextDispatcher next) {
+    next(action);
+
+    _navigationService.navigateToPage(
+        context: action.context,
+        routeName: TournamentsTreePage.routeName,
+        builder: (context) => TournamentsTreePage());
   }
 }
