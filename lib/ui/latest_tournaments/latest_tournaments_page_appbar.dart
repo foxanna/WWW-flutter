@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:what_when_where/ui/latest_tournaments/more_icon_button.dart';
 import 'package:what_when_where/ui/latest_tournaments/random_icon_button.dart';
 import 'package:what_when_where/ui/latest_tournaments/search_icon_button.dart';
+import 'package:what_when_where/ui/latest_tournaments/tree_icon_button.dart';
 
 class LatestTournamentsAppBar extends StatelessWidget {
   static const appBarHeight = 200.0;
@@ -31,6 +32,7 @@ class LatestTournamentsAppBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
+                  LatestTournamentsTreeIconButton(),
                   LatestTournamentsRandomIconButton(),
                   LatestTournamentsSearchIconButton(),
                   LatestTournamentsMoreIconButton()
