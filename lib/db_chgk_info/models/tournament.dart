@@ -69,4 +69,16 @@ class Tournament {
                 : UnmodifiableListView([Tour.fromJson(map['tour'])])
             : UnmodifiableListView([]),
       );
+
+  Map<String, dynamic> toMap() => <String, dynamic>{
+        'Id': id,
+        'TextId': textId,
+        'ParentId': parentId,
+        'Title': title,
+        'QuestionsNum': questionsCount,
+        'Info': description,
+        'Editors': editors,
+        'CreatedAt': createdAt,
+        'PlayedAt': playedAt,
+      };
 }

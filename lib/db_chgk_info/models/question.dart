@@ -53,4 +53,20 @@ class Question {
         url:
             '${Constants.databaseUrl}/question/${map['ParentId']}/${map['Number']}',
       );
+
+  Map<String, dynamic> toMap() => <String, dynamic>{
+        'QuestionId': questionId,
+        'Question': question,
+        'Number': number,
+        'Answer': answer,
+        'Authors': authors,
+        'PassCriteria': passCriteria,
+        'Comments': comments,
+        'Sources': sources,
+        'ParentId': parentId,
+        'tourId': tourId,
+        'tournamentId': tournamentId,
+        'tourTitle': tourTitle,
+        'tournamentTitle': tournamentTitle,
+      };
 }
