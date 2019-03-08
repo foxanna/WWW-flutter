@@ -41,4 +41,5 @@ class Strings {
   static const String forLongTimer = 'для обычных вопросов';
   static const String forShortTimer = 'для вопросов дуплет и блиц';
   static const String randomQuestions = 'Случайный вопросы';
+  static const String tournamentsTree = 'Дерево турниров';
 }
