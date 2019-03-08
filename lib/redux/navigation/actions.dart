@@ -105,3 +105,13 @@ class OpenRandomQuestionsPage extends NavigationAction {
   @override
   String toString() => '$OpenRandomQuestionsPage';
 }
+
+@immutable
+class OpenTournamentsTreePage extends NavigationAction {
+  final BuildContext context;
+
+  OpenTournamentsTreePage(this.context);
+
+  @override
+  String toString() => '$OpenTournamentsTreePage';
+}
