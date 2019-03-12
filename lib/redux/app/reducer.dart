@@ -8,6 +8,7 @@ import 'package:what_when_where/redux/settings/reducer.dart';
 import 'package:what_when_where/redux/timer/reducer.dart';
 import 'package:what_when_where/redux/tornament/reducer.dart';
 import 'package:what_when_where/redux/tours/reducer.dart';
+import 'package:what_when_where/redux/tree/reducer.dart';
 
 class AppReducer {
   static final Reducer<AppState> reducer =
@@ -25,5 +26,7 @@ class AppReducer {
         settingsState: SettingsReducer.reduce(state.settingsState, action),
         randomQuestionsState:
             RandomQuestionsReducer.reduce(state.randomQuestionsState, action),
+        tournamentsTreeState:
+            TournamentsTreeReducer.reduce(state.tournamentsTreeState, action),
       );
 }
