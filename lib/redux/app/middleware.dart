@@ -14,6 +14,7 @@ import 'package:what_when_where/redux/sharing/middleware.dart';
 import 'package:what_when_where/redux/timer/middleware.dart';
 import 'package:what_when_where/redux/tornament/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
+import 'package:what_when_where/redux/tree/middleware.dart';
 
 class AppMiddleware {
   static final middleware = <Middleware<AppState>>[]
@@ -30,5 +31,6 @@ class AppMiddleware {
     ..addAll(MiscMiddleware.middleware)
     ..addAll(SearchMiddleware.middleware)
     ..addAll(SettingsMiddleware.middleware)
-    ..addAll(RandomQuestionsMiddleware.middleware);
+    ..addAll(RandomQuestionsMiddleware.middleware)
+    ..addAll(TournamentsTreeMiddleware.middleware);
 }
