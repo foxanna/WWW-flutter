@@ -29,6 +29,8 @@ class NavigationMiddleware {
         _openRandomQuestionsPage),
     TypedMiddleware<AppState, OpenTournamentsTreePage>(
         _openTournamentsTreePage),
+    TypedMiddleware<AppState, OpenTournamentsSubTreePage>(
+        _openTournamentsSubTreePage),
   ];
 
   static INavigationService get _navigationService =>
@@ -141,6 +143,19 @@ class NavigationMiddleware {
     _navigationService.navigateToPage(
         context: action.context,
         routeName: TournamentsTreePage.routeName,
-        builder: (context) => TournamentsTreePage());
+        builder: (context) => const TournamentsTreePage(rootId: '0'));
+  }
+
+  static void _openTournamentsSubTreePage(Store<AppState> store,
+      OpenTournamentsSubTreePage action, NextDispatcher next) {
+    next(action);
+
+    _navigationService.navigateToPage(
+        context: action.context,
+        routeName: TournamentsTreePage.routeName,
+        builder: (context) => TournamentsTreePage(
+              rootId: action.rootId,
+              title: action.title,
+            ));
   }
 }
