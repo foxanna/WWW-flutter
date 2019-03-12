@@ -27,7 +27,7 @@ class TournamentMiddleware {
 
     final tournamentState = store.state.tournamentState;
 
-    if (tournamentState.hasData || tournamentState.isLoading) {
+    if (tournamentState.isLoading) {
       return;
     }
 

@@ -21,7 +21,7 @@ class ToursMiddleware {
     }
   }
 
-  static void _loadTour(
+  static Future _loadTour(
       Store<AppState> store, LoadTour action, NextDispatcher next) async {
     next(action);
 
@@ -30,7 +30,7 @@ class ToursMiddleware {
     final tourState = store.state.toursState.tours
         .firstWhere((state) => state.tour.id == tourId, orElse: () => null);
 
-    if (tourState == null || tourState.hasData || tourState.isLoading) {
+    if (tourState == null || tourState.isLoading) {
       return;
     }
 
