@@ -65,7 +65,7 @@ class _LatestTournamentsPageLoading extends StatelessWidget {
               ),
               child: WWWProgressIndicator(),
             ),
-          )
+          ),
         ],
       );
 }

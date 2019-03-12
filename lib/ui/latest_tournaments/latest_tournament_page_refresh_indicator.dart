@@ -36,7 +36,8 @@ class LatestTournamentsPageRefreshIndicatorState
         distinct: true,
         converter: (store) => Tuple2(
             store.state.latestTournamentsState.isRefreshing,
-            FunctionHolder(() => store.dispatch(RefreshLatestTournaments()))),
+            FunctionHolder(
+                () => store.dispatch(const RefreshLatestTournaments()))),
         builder: (context, data) {
           final isRefreshing = data.item1;
           final refreshFunctionHolder = data.item2;
