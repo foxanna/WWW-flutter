@@ -110,8 +110,25 @@ class OpenRandomQuestionsPage extends NavigationAction {
 class OpenTournamentsTreePage extends NavigationAction {
   final BuildContext context;
 
-  OpenTournamentsTreePage(this.context);
+  OpenTournamentsTreePage({@required this.context});
 
   @override
   String toString() => '$OpenTournamentsTreePage';
+}
+
+@immutable
+class OpenTournamentsSubTreePage extends NavigationAction {
+  final BuildContext context;
+  final String rootId;
+  final String title;
+
+  OpenTournamentsSubTreePage({
+    @required this.context,
+    @required this.rootId,
+    this.title,
+  });
+
+  @override
+  String toString() =>
+      '$OpenTournamentsSubTreePage rootId = "$rootId", title = "$title"';
 }
