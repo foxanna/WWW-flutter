@@ -121,7 +121,8 @@ void main() {
 
     test(
       '$OpenImage',
-      () => analyticsTest(OpenImage(), 'open_image'),
+      () =>
+          analyticsTest(OpenImage(context: null, imageUrl: null), 'open_image'),
     );
 
     test(
@@ -152,7 +153,7 @@ void main() {
 
     test(
       '$OpenTournamentsTreePage',
-      () => analyticsTest(OpenTournamentsTreePage(null), 'tree'),
+      () => analyticsTest(OpenTournamentsTreePage(context: null), 'tree'),
     );
 
     test(
