@@ -91,16 +91,12 @@ class _ErrorTournamentDetailsPage extends StatelessWidget {
 }
 
 class _ElevatedHeader extends StatelessWidget {
-  static const _tabsHeight = 48.0;
-
   const _ElevatedHeader({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => PhysicalModel(
         elevation: 4.0,
         color: Theme.of(context).primaryColor,
-        child: const TournamentDetailsPageHeader(
-          padding: EdgeInsets.only(bottom: _tabsHeight),
-        ),
+        child: const TournamentDetailsPageHeader(),
       );
 }
