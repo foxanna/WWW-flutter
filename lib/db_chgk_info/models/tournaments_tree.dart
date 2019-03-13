@@ -21,16 +21,23 @@ class TournamentsTree {
         id: map['Id'],
         title: map['Title']?.trim(),
         childrenCount: map['ChildrenNum'],
-        children: map.containsKey('tour') && map['tour'] is List
-            ? UnmodifiableListView<dynamic>(
-                List<Map<String, dynamic>>.from(map['tour'])
-                    .map<dynamic>((q) => q.containsKey('Type')
-                        ? q['Type'] == 'Г'
-                            ? TournamentsTree.fromJson(q)
-                            : Tournament.fromJson(q)
-                        : null)
-                    .toList(),
-              )
+        children: map.containsKey('tour')
+            ? map['tour'] is List
+                ? UnmodifiableListView<dynamic>(
+                    List<Map<String, dynamic>>.from(map['tour'])
+                        .map<dynamic>(_getTreeItem)
+                        .toList(),
+                  )
+                : UnmodifiableListView<dynamic>(<dynamic>[
+                    _getTreeItem(map['tour']),
+                  ])
             : UnmodifiableListView<dynamic>(<dynamic>[]),
       );
+
+  static dynamic _getTreeItem(Map<String, dynamic> map) =>
+      map.containsKey('Type')
+          ? map['Type'] == 'Г'
+              ? TournamentsTree.fromJson(map)
+              : Tournament.fromJson(map)
+          : null;
 }
