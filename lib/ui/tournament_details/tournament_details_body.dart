@@ -29,8 +29,10 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
     super.initState();
 
     _pageController = PageController();
-    _tabController =
-        TabController(length: widget.count > 1 ? widget.count : 0, vsync: this);
+    _tabController = TabController(
+      length: widget.count,
+      vsync: this,
+    );
 
     _pageController.addListener(_pageControllerListener);
     _tabController.addListener(_tabControllerListener);
@@ -59,8 +61,8 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
         ],
       );
 
-  Widget _buildTabBar(BuildContext context) =>
-      StoreConnector<AppState, IterableHolder<String>>(
+  Widget _buildTabBar(BuildContext context) => _tabController.length > 1
+      ? StoreConnector<AppState, IterableHolder<String>>(
           distinct: true,
           converter: (store) => IterableHolder(List<String>.unmodifiable(store
               .state.toursState.tours
@@ -70,7 +72,9 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
                 isScrollable: true,
                 controller: _tabController,
                 tabs: data.data.map((title) => Tab(text: title)).toList(),
-              ));
+              ),
+        )
+      : Container();
 
   Widget _buildPageView() =>
       StoreConnector<AppState, Tuple2<int, FunctionHolder>>(
