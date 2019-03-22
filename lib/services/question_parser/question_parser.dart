@@ -25,6 +25,13 @@ class QuestionParser {
         continue;
       }
 
+      if (text.startsWith(AlternativeSpeakerNoteSection.regExp)) {
+        final notes = AlternativeSpeakerNoteSection.regExp.stringMatch(text);
+        yield AlternativeSpeakerNoteSection(notes);
+        text = text.replaceFirst(notes, '');
+        continue;
+      }
+
       if (text.startsWith(ImageSection.regExp)) {
         final picture = ImageSection.regExp.stringMatch(text);
         yield ImageSection(picture);
@@ -59,6 +66,7 @@ class QuestionParser {
   static String trim(String text) {
     text = TextUtils.normalizeToSingleLine(text);
     text = text.replaceAll(SpeakerNoteSection.regExp, '');
+    text = text.replaceAll(AlternativeSpeakerNoteSection.regExp, '');
     text = text.replaceAll(ImageSection.regExp, '');
     text = text.replaceAll(GiveAwaySection.regExp, '');
     text = TextUtils.normalizeToSingleLine(text);

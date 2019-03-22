@@ -5,5 +5,14 @@ class SpeakerNoteSection {
   final String value;
 
   SpeakerNoteSection(String value)
-      : this.value = value.trim().replaceAll(RegExp(r'(^\[|\]$)'), '').trim();
+      : this._(value.trim().replaceAll(RegExp(r'(^\[|\]$)'), '').trim());
+
+  SpeakerNoteSection._(this.value);
+}
+
+class AlternativeSpeakerNoteSection extends SpeakerNoteSection {
+  static RegExp regExp = RegExp(r'\[чтецу: [\s\S]*?\]', caseSensitive: false);
+
+  AlternativeSpeakerNoteSection(String value)
+      : super._(value.trim().replaceAll(RegExp(r'(^\[|\]$)'), '').trim());
 }
