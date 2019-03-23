@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
@@ -34,33 +35,51 @@ class TextSections extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: IterableExtensions.mix(
-                _sections.map((dynamic section) => _getChild(context, section)),
-                SizedBox(height: spacing))
-            .toList(),
+          _sections.map((dynamic section) => _getChild(context, section)),
+          SizedBox(height: spacing),
+        ).toList(),
       );
 
   Widget _getChild(BuildContext context, dynamic section) {
     if (section is SpeakerNoteSection) {
-      return Text(section.value, style: speakersNoteStyle);
+      return DefaultTextStyle(
+        style: speakersNoteStyle,
+        child: HtmlWidget(
+          section.value,
+        ),
+      );
     }
 
     if (section is GiveAwaySection) {
       return Container(
         decoration: BoxDecoration(
-            color: Theme.of(context).accentColor.withAlpha(60),
-            border:
-                Border.all(color: Theme.of(context).accentColor, width: 1.0)),
+          color: Theme.of(context).accentColor.withAlpha(60),
+          border: Border.all(
+            color: Theme.of(context).accentColor,
+            width: 1.0,
+          ),
+        ),
         child: Center(
           child: Padding(
             padding: EdgeInsets.all(spacing),
-            child: Text(section.value, style: giveAwayStyle),
+            child: DefaultTextStyle(
+              style: giveAwayStyle,
+              child: HtmlWidget(
+                section.value,
+              ),
+            ),
           ),
         ),
       );
     }
 
     if (section is TextSection) {
-      return Text(section.value, style: textStyle);
+      return DefaultTextStyle(
+        style: textStyle,
+        child: HtmlWidget(
+          section.value,
+        ),
+      );
     }
 
     if (section is ImageSection) {
