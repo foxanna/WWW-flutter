@@ -21,14 +21,14 @@ class TextSections extends StatelessWidget {
 
   final double spacing;
 
-  const TextSections(
-      {Key key,
-      List<dynamic> sections,
-      this.speakersNoteStyle,
-      this.giveAwayStyle,
-      this.textStyle,
-      this.spacing = Dimensions.defaultSpacing})
-      : _sections = sections,
+  const TextSections({
+    Key key,
+    List<dynamic> sections,
+    this.speakersNoteStyle,
+    this.giveAwayStyle,
+    this.textStyle,
+    this.spacing = Dimensions.defaultSpacing,
+  })  : _sections = sections,
         super(key: key);
 
   @override
@@ -40,71 +40,78 @@ class TextSections extends StatelessWidget {
         ).toList(),
       );
 
-  Widget _getChild(BuildContext context, dynamic section) {
-    if (section is SpeakerNoteSection) {
-      return DefaultTextStyle(
-        style: speakersNoteStyle,
-        child: HtmlWidget(
-          section.value,
-        ),
-      );
-    }
+  Widget _getChild(BuildContext context, dynamic section) =>
+      _buildSpeakersNoteSection(context, section) ??
+      _buildGiveAwaySection(context, section) ??
+      _buildImageSection(context, section) ??
+      _buildTextSection(context, section) ??
+      Container();
 
-    if (section is GiveAwaySection) {
-      return Container(
-        decoration: BoxDecoration(
-          color: Theme.of(context).accentColor.withAlpha(60),
-          border: Border.all(
-            color: Theme.of(context).accentColor,
-            width: 1.0,
-          ),
-        ),
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.all(spacing),
-            child: DefaultTextStyle(
-              style: giveAwayStyle,
+  Widget _buildSpeakersNoteSection(BuildContext context, dynamic section) =>
+      (section is SpeakerNoteSection)
+          ? DefaultTextStyle(
+              style: speakersNoteStyle,
               child: HtmlWidget(
                 section.value,
               ),
-            ),
-          ),
-        ),
-      );
-    }
+            )
+          : null;
 
-    if (section is TextSection) {
-      return DefaultTextStyle(
-        style: textStyle,
-        child: HtmlWidget(
-          section.value,
-        ),
-      );
-    }
-
-    if (section is ImageSection) {
-      return Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          const WWWProgressIndicator(),
-          GestureDetector(
-            child: Hero(
-              tag: section.url,
-              child: FadeInImage.memoryNetwork(
-                height: 200,
-                fit: BoxFit.scaleDown,
-                placeholder: kTransparentImage,
-                image: section.url,
+  Widget _buildGiveAwaySection(BuildContext context, dynamic section) =>
+      (section is GiveAwaySection)
+          ? Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).accentColor.withAlpha(60),
+                border: Border.all(
+                  color: Theme.of(context).accentColor,
+                  width: 1.0,
+                ),
               ),
-            ),
-            onTap: () => _openImagePage(context, section.url),
-          ),
-        ],
-      );
-    }
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.all(spacing),
+                  child: DefaultTextStyle(
+                    style: giveAwayStyle,
+                    child: HtmlWidget(
+                      section.value,
+                    ),
+                  ),
+                ),
+              ),
+            )
+          : null;
 
-    return Container();
-  }
+  Widget _buildTextSection(BuildContext context, dynamic section) =>
+      (section is TextSection)
+          ? DefaultTextStyle(
+              style: textStyle,
+              child: HtmlWidget(
+                section.value,
+              ),
+            )
+          : null;
+
+  Widget _buildImageSection(BuildContext context, dynamic section) =>
+      (section is ImageSection)
+          ? Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                const WWWProgressIndicator(),
+                GestureDetector(
+                  child: Hero(
+                    tag: section.url,
+                    child: FadeInImage.memoryNetwork(
+                      height: 200,
+                      fit: BoxFit.scaleDown,
+                      placeholder: kTransparentImage,
+                      image: section.url,
+                    ),
+                  ),
+                  onTap: () => _openImagePage(context, section.url),
+                ),
+              ],
+            )
+          : null;
 
   void _openImagePage(BuildContext context, String url) =>
       StoreProvider.of<AppState>(context)
