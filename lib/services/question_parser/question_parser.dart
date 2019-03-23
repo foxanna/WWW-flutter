@@ -1,3 +1,4 @@
+import 'package:what_when_where/services/question_parser/section_audio.dart';
 import 'package:what_when_where/services/question_parser/section_giveaway.dart';
 import 'package:what_when_where/services/question_parser/section_image.dart';
 import 'package:what_when_where/services/question_parser/section_speaker_note.dart';
@@ -39,6 +40,13 @@ class QuestionParser {
         continue;
       }
 
+      if (text.startsWith(AudioSection.regExp)) {
+        final audio = AudioSection.regExp.stringMatch(text);
+        yield AudioSection(audio);
+        text = text.replaceFirst(audio, '');
+        continue;
+      }
+
       if (text.startsWith(GiveAwaySection.regExp)) {
         final giveaway = GiveAwaySection.regExp.stringMatch(text);
         yield GiveAwaySection(giveaway);
@@ -48,8 +56,10 @@ class QuestionParser {
 
       final nextRegExpIndexes = [
         (text.indexOf(SpeakerNoteSection.regExp)),
+        (text.indexOf(AlternativeSpeakerNoteSection.regExp)),
         (text.indexOf(ImageSection.regExp)),
-        (text.indexOf(GiveAwaySection.regExp))
+        (text.indexOf(AudioSection.regExp)),
+        (text.indexOf(GiveAwaySection.regExp)),
       ].where((i) => i != -1);
 
       var plainText = text;
@@ -69,6 +79,7 @@ class QuestionParser {
     text = text.replaceAll(AlternativeSpeakerNoteSection.regExp, '');
     text = text.replaceAll(ImageSection.regExp, '');
     text = text.replaceAll(GiveAwaySection.regExp, '');
+    text = text.replaceAll(AudioSection.regExp, '');
     text = TextUtils.normalizeToSingleLine(text);
     text = text.trim();
     return text;
