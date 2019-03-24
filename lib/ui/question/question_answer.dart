@@ -5,6 +5,8 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/services/question_parser/question_parser.dart';
+import 'package:what_when_where/ui/common/text_sections.dart';
 import 'package:what_when_where/ui/common/text_with_links.dart';
 import 'package:what_when_where/ui/question/question_comment.dart';
 
@@ -43,20 +45,17 @@ class _QuestionAnswer extends StatelessWidget {
 
   Iterable<Widget> _buildAnswerContent(BuildContext context) sync* {
     final textTheme = Theme.of(context).textTheme;
-    final fontSize = textTheme.title.fontSize - 2;
 
-    yield Text(
-      '${Strings.answer}: ${question.answer}'
+    yield _QuestionAnswerText(
+      text: '${Strings.answer}: ${question.answer}'
           '${(question.comments != null) ? '*' : ''}',
-      style: textTheme.headline
-          .copyWith(fontSize: fontSize, color: Theme.of(context).accentColor),
     );
 
     if (question.passCriteria != null) {
       yield const SizedBox(height: Dimensions.defaultSpacing * 2);
-      yield Text('${Strings.acceptableAnswer}: ${question.passCriteria}',
-          style: textTheme.headline.copyWith(
-              fontSize: fontSize, color: Theme.of(context).accentColor));
+      yield _QuestionAnswerText(
+        text: '${Strings.acceptableAnswer}: ${question.passCriteria}',
+      );
     }
 
     if (question.comments != null) {
@@ -80,4 +79,22 @@ class _QuestionAnswer extends StatelessWidget {
       );
     }
   }
+}
+
+class _QuestionAnswerText extends StatelessWidget {
+  final String text;
+  final List<dynamic> _sections;
+
+  _QuestionAnswerText({Key key, this.text})
+      : _sections = QuestionParser.split(text).toList(),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) => TextSections(
+        sections: _sections,
+        textStyle: Theme.of(context).textTheme.headline.copyWith(
+              fontSize: Theme.of(context).textTheme.title.fontSize - 2,
+              color: Theme.of(context).accentColor,
+            ),
+      );
 }
