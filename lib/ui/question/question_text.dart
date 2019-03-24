@@ -12,10 +12,11 @@ class QuestionText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => StoreConnector<AppState, String>(
-      distinct: true,
-      converter: (store) =>
-          store.state.questionsState.questions[index].question.question,
-      builder: (context, data) => _QuestionText(questionText: data));
+        distinct: true,
+        converter: (store) =>
+            store.state.questionsState.questions[index].question.question,
+        builder: (context, data) => _QuestionText(questionText: data),
+      );
 }
 
 class _QuestionText extends StatelessWidget {
@@ -33,15 +34,16 @@ class _QuestionText extends StatelessWidget {
     final fontSize = textTheme.title.fontSize - 2;
 
     return TextSections(
-        sections: _sections,
-        speakersNoteStyle: textTheme.headline.copyWith(
-          fontSize: fontSize,
-          fontStyle: FontStyle.italic,
-          color: textTheme.body2.color,
-        ),
-        giveAwayStyle: textTheme.headline
-            .copyWith(fontSize: fontSize, fontWeight: FontWeight.w500),
-        textStyle: textTheme.headline.copyWith(fontSize: fontSize),
-        spacing: Dimensions.defaultSpacing * 2);
+      sections: _sections,
+      speakersNoteStyle: textTheme.headline.copyWith(
+        fontSize: fontSize,
+        fontStyle: FontStyle.italic,
+        color: textTheme.body2.color,
+      ),
+      giveAwayStyle: textTheme.headline
+          .copyWith(fontSize: fontSize, fontWeight: FontWeight.w500),
+      textStyle: textTheme.headline.copyWith(fontSize: fontSize),
+      spacing: Dimensions.defaultSpacing * 2,
+    );
   }
 }

@@ -16,19 +16,18 @@ class QuestionAnswer extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<bool, Question>>(
-          distinct: true,
-          converter: (store) {
-            final state = store.state.questionsState.questions[index];
-            return Tuple2(state.showAnswer, state.question);
-          },
-          builder: (context, data) {
-            final showAnswer = data.item1;
-            final question = data.item2;
+        distinct: true,
+        converter: (store) {
+          final state = store.state.questionsState.questions[index];
+          return Tuple2(state.showAnswer, state.question);
+        },
+        builder: (context, data) {
+          final showAnswer = data.item1;
+          final question = data.item2;
 
-            return showAnswer
-                ? _QuestionAnswer(question: question)
-                : Container();
-          });
+          return showAnswer ? _QuestionAnswer(question: question) : Container();
+        },
+      );
 }
 
 class _QuestionAnswer extends StatelessWidget {
