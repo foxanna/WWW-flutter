@@ -38,7 +38,7 @@ class Tournament {
         title: element.children[0].nodes.first.firstChild.text.trim(),
         textId:
             element.children[0].nodes.first.attributes['href'].split('/').last,
-        playedAt: element.children[0].nodes.last.text.trim(),
+        playedAt: element.children[0].nodes.last.text.trim().split(',').first,
         createdAt: element.children[1].firstChild.text.trim(),
       );
 
