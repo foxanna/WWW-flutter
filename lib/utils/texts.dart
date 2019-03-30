@@ -3,6 +3,9 @@ import 'package:html_unescape/html_unescape.dart';
 class TextUtils {
   static final _unescape = HtmlUnescape();
 
+  static final RegExp _unescapedBackSlashDetector =
+      RegExp('\\\\(?![e|f|n|t|x|u|U|\\\\|\\\'|\\\"|\\?|\\&])');
+
   static String normalizeToSingleLine(String text) {
     if (text == null) {
       return null;
@@ -43,6 +46,9 @@ class TextUtils {
 
   static String replaceMultipleSpacesWithNewLine(String text) =>
       text.trim().replaceAll(RegExp(r'\s{2,}'), '\n');
+
+  static String escapeBackSlashes(String text) =>
+      text.replaceAll(_unescapedBackSlashDetector, '\\\\');
 
   static String _unescapeHtmlSymbols(String text) =>
       _unescape.convert(text.replaceAll('\\\'', '\'').replaceAll('\\&', '&'));

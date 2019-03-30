@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:what_when_where/common/network_exception.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/utils/logger.dart';
+import 'package:what_when_where/utils/texts.dart';
 import 'package:xml2json/xml2json.dart';
 
 part 'http_client_logger.dart';
@@ -56,7 +57,7 @@ class HttpClient {
   Map<String, dynamic> _parse(String xml) {
     try {
       final transformer = Xml2Json();
-      transformer.parse(xml);
+      transformer.parse(TextUtils.escapeBackSlashes(xml));
       final json = transformer.toParker();
       final Map<String, dynamic> decoded = jsonDecode(json);
       return decoded;
