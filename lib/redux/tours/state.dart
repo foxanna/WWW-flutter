@@ -64,7 +64,7 @@ class TourState {
 
   bool get hasError => exception != null;
 
-  bool get hasData => tour.questions.length.toString() == tour.questionsCount;
+  bool get hasData => tour.questions.isNotEmpty;
 
   @override
   int get hashCode => hash3(tour, isLoading, exception.runtimeType);
