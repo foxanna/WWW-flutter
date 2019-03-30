@@ -18,7 +18,7 @@ class TourDetailsQuestionsList extends StatelessWidget {
               tour: tour,
               index: index,
             ),
-        itemCount: tour.questions.length,
+        itemCount: tour?.questions?.length ?? 0,
         separatorBuilder: (context, index) => const Divider(),
       );
 }
