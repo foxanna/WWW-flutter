@@ -5,9 +5,11 @@ class AudioSection {
 
   final String _value;
 
-  String get url => '${Constants.databaseUrl}/sounds/db/$_value';
+  String get url => (Uri.tryParse(_value).isAbsolute)
+      ? _value
+      : '${Constants.databaseUrl}/sounds/db/$_value';
 
   AudioSection(String value)
       : this._value =
-            value.trim().replaceAll(RegExp(r'([\(\)\:\s]|aud)'), '').trim();
+            value.trim().replaceAll(RegExp(r'([\(\)\s]|aud:)'), '').trim();
 }
