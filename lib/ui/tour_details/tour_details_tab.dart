@@ -42,10 +42,8 @@ class _TourDetailsTabState extends State<TourDetailsTab>
                 retryFunction: () => retry.function(state.tour.id),
                 color: Theme.of(context).primaryColor);
           }
-          if (state.hasData) {
-            return TourDetailsQuestionsList(tour: state.tour);
-          }
-          return Container();
+
+          return TourDetailsQuestionsList(tour: state.tour);
         },
       );
 
