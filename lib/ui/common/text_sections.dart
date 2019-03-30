@@ -5,6 +5,7 @@ import 'package:transparent_image/transparent_image.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
+import 'package:what_when_where/services/question_parser/section_audio.dart';
 import 'package:what_when_where/services/question_parser/section_giveaway.dart';
 import 'package:what_when_where/services/question_parser/section_image.dart';
 import 'package:what_when_where/services/question_parser/section_speaker_note.dart';
@@ -44,6 +45,7 @@ class TextSections extends StatelessWidget {
       _buildSpeakersNoteSection(context, section) ??
       _buildGiveAwaySection(context, section) ??
       _buildImageSection(context, section) ??
+      _buildAudioSection(context, section) ??
       _buildTextSection(context, section) ??
       Container();
 
@@ -110,6 +112,17 @@ class TextSections extends StatelessWidget {
                   onTap: () => _openImagePage(context, section.url),
                 ),
               ],
+            )
+          : null;
+
+  Widget _buildAudioSection(BuildContext context, dynamic section) =>
+      (section is AudioSection)
+          ? Text(
+              'Аудио файлы пока не поддерживаются',
+              style: Theme.of(context).textTheme.body1.copyWith(
+                    fontStyle: FontStyle.italic,
+                    color: Theme.of(context).textTheme.body2.color,
+                  ),
             )
           : null;
 
