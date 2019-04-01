@@ -34,6 +34,7 @@ class TextUtils {
     }
 
     text = _unescapeHtmlSymbols(text);
+    text = _replaceUnsupportedSymbols(text);
     text = removeParagraphs(text);
 
     return text;
@@ -52,4 +53,7 @@ class TextUtils {
 
   static String _unescapeHtmlSymbols(String text) =>
       _unescape.convert(text.replaceAll('\\\'', '\'').replaceAll('\\&', '&'));
+
+  static String _replaceUnsupportedSymbols(String text) =>
+      text.replaceAll('\\t', ' ');
 }
