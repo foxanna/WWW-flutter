@@ -54,12 +54,20 @@ class QuestionParser {
         continue;
       }
 
+      if (text.startsWith(AlternativeGiveAwaySection.regExp)) {
+        final giveaway = AlternativeGiveAwaySection.regExp.stringMatch(text);
+        yield AlternativeGiveAwaySection(giveaway);
+        text = text.replaceFirst(giveaway, '');
+        continue;
+      }
+
       final nextRegExpIndexes = [
         (text.indexOf(SpeakerNoteSection.regExp)),
         (text.indexOf(AlternativeSpeakerNoteSection.regExp)),
         (text.indexOf(ImageSection.regExp)),
         (text.indexOf(AudioSection.regExp)),
         (text.indexOf(GiveAwaySection.regExp)),
+        (text.indexOf(AlternativeGiveAwaySection.regExp)),
       ].where((i) => i != -1);
 
       var plainText = text;
@@ -79,6 +87,7 @@ class QuestionParser {
     text = text.replaceAll(AlternativeSpeakerNoteSection.regExp, '');
     text = text.replaceAll(ImageSection.regExp, '');
     text = text.replaceAll(GiveAwaySection.regExp, '');
+    text = text.replaceAll(AlternativeGiveAwaySection.regExp, '');
     text = text.replaceAll(AudioSection.regExp, '');
     text = TextUtils.normalizeToSingleLine(text);
     text = text.trim();

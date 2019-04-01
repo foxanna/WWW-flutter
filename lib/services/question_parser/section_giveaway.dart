@@ -5,8 +5,24 @@ class GiveAwaySection {
   final String value;
 
   GiveAwaySection(String value)
-      : this.value = value
+      : this._(value
             .trim()
             .replaceAll(RegExp(r'(<раздатка>|<\/раздатка>)'), '')
-            .trim();
+            .trim());
+
+  GiveAwaySection._(this.value);
+}
+
+class AlternativeGiveAwaySection extends GiveAwaySection {
+  static RegExp regExp =
+      RegExp(r'\[раздаточный материал: [\s\S]*?\]', caseSensitive: false);
+
+  AlternativeGiveAwaySection(String value)
+      : super._(value
+            .trim()
+            .replaceAll(
+                RegExp(r'(^\[|\]$|раздаточный материал: )',
+                    caseSensitive: false),
+                '')
+            .trim());
 }
