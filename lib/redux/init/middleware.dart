@@ -4,6 +4,7 @@ import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/init/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
+import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/sound.dart';
 
 class InitMiddleware {
@@ -16,8 +17,9 @@ class InitMiddleware {
 
     Bootstrapper().init();
 
-    store.dispatch(const ReadSettings());
-
+    WWWIoC.container<ICrashService>().init();
     WWWIoC.container<ISoundService>().init();
+
+    store.dispatch(const ReadSettings());
   }
 }
