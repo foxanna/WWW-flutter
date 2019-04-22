@@ -2,6 +2,7 @@ import 'package:dioc/dioc.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/browsing.dart';
+import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/sharing.dart';
@@ -34,6 +35,8 @@ class Bootstrapper {
     _container.register<IVibratingService>((c) => VibratingService.ioc(),
         defaultMode: InjectMode.singleton);
     _container.register<ISoundService>((c) => SoundService.ioc(),
+        defaultMode: InjectMode.singleton);
+    _container.register<ICrashService>((c) => CrashService.ioc(),
         defaultMode: InjectMode.singleton);
   }
 }
