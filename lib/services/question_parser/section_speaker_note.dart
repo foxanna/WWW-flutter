@@ -1,6 +1,6 @@
 class SpeakerNoteSection {
   static RegExp regExp =
-      RegExp(r'\[ведущему: [\s\S]*?\]', caseSensitive: false);
+      RegExp(r'\[ведущему:[\s]*[\s\S]*?\]', caseSensitive: false);
 
   final String value;
 
@@ -18,7 +18,8 @@ class SpeakerNoteSection {
 }
 
 class AlternativeSpeakerNoteSection extends SpeakerNoteSection {
-  static RegExp regExp = RegExp(r'\[чтецу: [\s\S]*?\]', caseSensitive: false);
+  static RegExp regExp =
+      RegExp(r'\[чтецу:[\s]*[\s\S]*?\]', caseSensitive: false);
 
   AlternativeSpeakerNoteSection(String value)
       : super._(value.trim().replaceAll(RegExp(r'(^\[|\]$)'), '').trim());

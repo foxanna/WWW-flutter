@@ -57,6 +57,29 @@ void main() {
     );
   });
 
+  group('Speaker note with new line', () {
+    final _test = (String x) => questionParserTest(
+            text: '[$x:\nраз, два, три.]',
+            expectedSections: <dynamic>[
+              SpeakerNoteSection('[$x:\nраз, два, три.]'),
+            ]);
+
+    test(
+      supportedSpeakerNotes[0],
+      () => _test(supportedSpeakerNotes[0]),
+    );
+
+    test(
+      supportedSpeakerNotes[1],
+      () => _test(supportedSpeakerNotes[1]),
+    );
+
+    test(
+      supportedSpeakerNotes[2],
+      () => _test(supportedSpeakerNotes[2]),
+    );
+  });
+
   group('Speaker note in the beginning', () {
     final _test = (String x) => questionParserTest(
             text: '[$x: раз, два, три] Текст вопроса.',
