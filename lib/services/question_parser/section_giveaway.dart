@@ -1,13 +1,13 @@
 class GiveAwaySection {
   static RegExp regExp =
-      RegExp(r'<раздатка>[\s\S]*<\/раздатка>', caseSensitive: false);
+      RegExp(r'<раздатка>[\s\S]*?<\/раздатка>', caseSensitive: false);
 
   final String value;
 
   GiveAwaySection(String value)
       : this._(value
             .trim()
-            .replaceAll(RegExp(r'(<раздатка>|<\/раздатка>)'), '')
+            .replaceAll(RegExp(r'(^<раздатка>|<\/раздатка>$)'), '')
             .trim());
 
   GiveAwaySection._(this.value);
