@@ -1,7 +1,7 @@
 import 'package:what_when_where/constants.dart';
 
 class ImageSection {
-  static RegExp regExp = RegExp(r'\(pic: .*\)', caseSensitive: false);
+  static RegExp regExp = RegExp(r'\(pic: .*?\)', caseSensitive: false);
 
   final String _value;
 
