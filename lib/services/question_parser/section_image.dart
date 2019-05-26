@@ -12,4 +12,10 @@ class ImageSection {
   ImageSection(String value)
       : this._value =
             value.trim().replaceAll(RegExp(r'([\(\)\s]|pic:)'), '').trim();
+
+  @override
+  int get hashCode => url.hashCode;
+
+  @override
+  bool operator ==(dynamic other) => other is ImageSection && other.url == url;
 }

@@ -11,6 +11,13 @@ class GiveAwaySection {
             .trim());
 
   GiveAwaySection._(this.value);
+
+  @override
+  int get hashCode => value.hashCode;
+
+  @override
+  bool operator ==(dynamic other) =>
+      other is GiveAwaySection && other.value == value;
 }
 
 class AlternativeGiveAwaySection extends GiveAwaySection {

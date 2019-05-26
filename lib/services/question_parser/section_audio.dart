@@ -12,4 +12,10 @@ class AudioSection {
   AudioSection(String value)
       : this._value =
             value.trim().replaceAll(RegExp(r'([\(\)\s]|aud:)'), '').trim();
+
+  @override
+  int get hashCode => url.hashCode;
+
+  @override
+  bool operator ==(dynamic other) => other is AudioSection && other.url == url;
 }
