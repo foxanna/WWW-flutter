@@ -1,9 +1,10 @@
+import 'package:what_when_where/services/question_parser/question_parser_helper.dart';
+import 'package:what_when_where/services/question_parser/question_section_type.dart';
 import 'package:what_when_where/services/question_parser/section_audio.dart';
 import 'package:what_when_where/services/question_parser/section_giveaway.dart';
 import 'package:what_when_where/services/question_parser/section_image.dart';
 import 'package:what_when_where/services/question_parser/section_speaker_note.dart';
 import 'package:what_when_where/services/question_parser/section_text.dart';
-import 'package:what_when_where/utils/extensions.dart';
 import 'package:what_when_where/utils/texts.dart';
 
 class QuestionParser {
@@ -19,76 +20,43 @@ class QuestionParser {
     while (text.isNotEmpty) {
       text = text.trim();
 
-      if (text.startsWith(SpeakerNoteSection.regExp)) {
-        final notes = SpeakerNoteSection.regExp.stringMatch(text);
-        yield SpeakerNoteSection(notes);
-        text = text.replaceFirst(notes, '');
-        continue;
+      final nextSectionType = QuestionParserHelper.nextSectionType(text);
+      final nextSectionText =
+          QuestionParserHelper.nextSectionText(text, nextSectionType);
+
+      if (nextSectionText == null) {
+        break;
       }
 
-      if (text.startsWith(AlternativeSpeakerNoteSection.regExp)) {
-        final notes = AlternativeSpeakerNoteSection.regExp.stringMatch(text);
-        yield AlternativeSpeakerNoteSection(notes);
-        text = text.replaceFirst(notes, '');
-        continue;
+      switch (nextSectionType) {
+        case QuestionSectionType.SpeakerNote:
+          yield SpeakerNoteSection(nextSectionText);
+          break;
+        case QuestionSectionType.Image:
+          yield ImageSection(nextSectionText);
+          break;
+        case QuestionSectionType.Audio:
+          yield AudioSection(nextSectionText);
+          break;
+        case QuestionSectionType.GiveAway:
+          yield GiveAwaySection(nextSectionText);
+          break;
+        case QuestionSectionType.Text:
+          yield TextSection(nextSectionText);
+          break;
       }
 
-      if (text.startsWith(ImageSection.regExp)) {
-        final picture = ImageSection.regExp.stringMatch(text);
-        yield ImageSection(picture);
-        text = text.replaceFirst(picture, '');
-        continue;
-      }
-
-      if (text.startsWith(AudioSection.regExp)) {
-        final audio = AudioSection.regExp.stringMatch(text);
-        yield AudioSection(audio);
-        text = text.replaceFirst(audio, '');
-        continue;
-      }
-
-      if (text.startsWith(GiveAwaySection.regExp)) {
-        final giveaway = GiveAwaySection.regExp.stringMatch(text);
-        yield GiveAwaySection(giveaway);
-        text = text.replaceFirst(giveaway, '');
-        continue;
-      }
-
-      if (text.startsWith(AlternativeGiveAwaySection.regExp)) {
-        final giveaway = AlternativeGiveAwaySection.regExp.stringMatch(text);
-        yield AlternativeGiveAwaySection(giveaway);
-        text = text.replaceFirst(giveaway, '');
-        continue;
-      }
-
-      final nextRegExpIndexes = [
-        (text.indexOf(SpeakerNoteSection.regExp)),
-        (text.indexOf(AlternativeSpeakerNoteSection.regExp)),
-        (text.indexOf(ImageSection.regExp)),
-        (text.indexOf(AudioSection.regExp)),
-        (text.indexOf(GiveAwaySection.regExp)),
-        (text.indexOf(AlternativeGiveAwaySection.regExp)),
-      ].where((i) => i != -1);
-
-      var plainText = text;
-      if (nextRegExpIndexes.isNotEmpty) {
-        final firstOfRegExpMatchIndex =
-            IterableExtensions.min(nextRegExpIndexes);
-        plainText = text.substring(0, firstOfRegExpMatchIndex);
-      }
-      yield TextSection(plainText);
-      text = text.replaceFirst(plainText, '');
+      text = text.replaceFirst(nextSectionText, '');
     }
   }
 
   static String trim(String text) {
     text = TextUtils.normalizeToSingleLine(text);
-    text = text.replaceAll(SpeakerNoteSection.regExp, '');
-    text = text.replaceAll(AlternativeSpeakerNoteSection.regExp, '');
-    text = text.replaceAll(ImageSection.regExp, '');
-    text = text.replaceAll(GiveAwaySection.regExp, '');
-    text = text.replaceAll(AlternativeGiveAwaySection.regExp, '');
-    text = text.replaceAll(AudioSection.regExp, '');
+    text =
+        QuestionParserHelper.removeAll(text, QuestionSectionType.SpeakerNote);
+    text = QuestionParserHelper.removeAll(text, QuestionSectionType.GiveAway);
+    text = QuestionParserHelper.removeAll(text, QuestionSectionType.Audio);
+    text = QuestionParserHelper.removeAll(text, QuestionSectionType.Image);
     text = TextUtils.normalizeToSingleLine(text);
     text = text.trim();
     return text;
