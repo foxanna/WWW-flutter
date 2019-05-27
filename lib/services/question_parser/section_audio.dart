@@ -1,8 +1,6 @@
 import 'package:what_when_where/constants.dart';
 
 class AudioSection {
-  static RegExp regExp = RegExp(r'\(aud: .*?\)', caseSensitive: false);
-
   final String _value;
 
   String get url => (Uri.tryParse(_value).isAbsolute)

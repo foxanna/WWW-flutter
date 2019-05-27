@@ -1,7 +1,4 @@
 class GiveAwaySection {
-  static RegExp regExp =
-      RegExp(r'<раздатка>[\s\S]*?<\/раздатка>', caseSensitive: false);
-
   final String value;
 
   GiveAwaySection(String value)
@@ -21,9 +18,6 @@ class GiveAwaySection {
 }
 
 class AlternativeGiveAwaySection extends GiveAwaySection {
-  static RegExp regExp =
-      RegExp(r'\[раздаточный материал: [\s\S]*?\]', caseSensitive: false);
-
   AlternativeGiveAwaySection(String value)
       : super._(value
             .trim()
