@@ -5,6 +5,10 @@ class GiveAwaySection {
       : this._(value
             .trim()
             .replaceAll(RegExp(r'(^<раздатка>|<\/раздатка>$)'), '')
+            .replaceAll(
+                RegExp(r'(^\[|\]$|раздаточный материал: )',
+                    caseSensitive: false),
+                '')
             .trim());
 
   GiveAwaySection._(this.value);
@@ -15,15 +19,4 @@ class GiveAwaySection {
   @override
   bool operator ==(dynamic other) =>
       other is GiveAwaySection && other.value == value;
-}
-
-class AlternativeGiveAwaySection extends GiveAwaySection {
-  AlternativeGiveAwaySection(String value)
-      : super._(value
-            .trim()
-            .replaceAll(
-                RegExp(r'(^\[|\]$|раздаточный материал: )',
-                    caseSensitive: false),
-                '')
-            .trim());
 }
