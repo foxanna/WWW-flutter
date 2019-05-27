@@ -13,8 +13,3 @@ class SpeakerNoteSection {
   bool operator ==(dynamic other) =>
       other is SpeakerNoteSection && other.value == value;
 }
-
-class AlternativeSpeakerNoteSection extends SpeakerNoteSection {
-  AlternativeSpeakerNoteSection(String value)
-      : super._(value.trim().replaceAll(RegExp(r'(^\[|\]$)'), '').trim());
-}
