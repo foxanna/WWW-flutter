@@ -30,13 +30,17 @@ class TourQuestionsCards extends StatelessWidget {
               initialPage: startIndex,
               viewportFraction: _viewportFraction,
             ),
-            itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.only(bottom: kToolbarHeight),
-                  child: hasAdditionalCard && index == count
-                      ? isLoading
-                          ? const WWWProgressIndicator()
-                          : const QuestionsErrorMessage()
-                      : QuestionCard(index: index),
+            itemBuilder: (context, index) => Container(
+                  // keep it in the top of widget tree
+                  key: PageStorageKey(index),
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: kToolbarHeight),
+                    child: hasAdditionalCard && index == count
+                        ? isLoading
+                            ? const WWWProgressIndicator()
+                            : const QuestionsErrorMessage()
+                        : QuestionCard(index: index),
+                  ),
                 ),
             itemCount: hasAdditionalCard ? count + 1 : count,
             onPageChanged: (index) => _onPageChanged(context, index),
