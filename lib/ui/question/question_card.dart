@@ -21,8 +21,7 @@ class QuestionCard extends StatefulWidget {
   _QuestionCardState createState() => _QuestionCardState();
 }
 
-class _QuestionCardState extends State<QuestionCard>
-    with AutomaticKeepAliveClientMixin<QuestionCard> {
+class _QuestionCardState extends State<QuestionCard> {
   final _buttonStackKey = GlobalKey();
   final _listViewKey = GlobalKey();
 
