@@ -98,8 +98,8 @@ class AboutPage extends StatelessWidget {
       );
 
   void _openDatabaseInBrowser(BuildContext context) =>
-      StoreProvider.of<AppState>(context).dispatch(BrowseDatabase());
+      StoreProvider.of<AppState>(context).dispatch(const BrowseDatabase());
 
   void _sendEmail(BuildContext context) =>
-      StoreProvider.of<AppState>(context).dispatch(EmailDevelopers());
+      StoreProvider.of<AppState>(context).dispatch(const EmailDevelopers());
 }

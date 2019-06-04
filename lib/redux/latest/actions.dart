@@ -1,13 +1,17 @@
+import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/action.dart';
 
-abstract class LatestTournamentsAction {
-  const LatestTournamentsAction();
+abstract class LatestTournamentsAction extends Action {
+  const LatestTournamentsAction({BuildContext context})
+      : super(context: context);
 }
 
 @immutable
 class RefreshLatestTournaments extends LatestTournamentsAction {
-  const RefreshLatestTournaments();
+  const RefreshLatestTournaments({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$RefreshLatestTournaments';
@@ -15,7 +19,8 @@ class RefreshLatestTournaments extends LatestTournamentsAction {
 
 @immutable
 class LoadMoreLatestTournaments extends LatestTournamentsAction {
-  const LoadMoreLatestTournaments();
+  const LoadMoreLatestTournaments({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$LoadMoreLatestTournaments';
@@ -23,7 +28,8 @@ class LoadMoreLatestTournaments extends LatestTournamentsAction {
 
 @immutable
 class RepeatFailedLoadingLatestTournaments extends LatestTournamentsAction {
-  const RepeatFailedLoadingLatestTournaments();
+  const RepeatFailedLoadingLatestTournaments({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$RepeatFailedLoadingLatestTournaments';
@@ -31,7 +37,8 @@ class RepeatFailedLoadingLatestTournaments extends LatestTournamentsAction {
 
 @immutable
 class LatestTournamentsIsLoadingMore extends LatestTournamentsAction {
-  const LatestTournamentsIsLoadingMore();
+  const LatestTournamentsIsLoadingMore({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$LatestTournamentsIsLoadingMore';
@@ -41,7 +48,8 @@ class LatestTournamentsIsLoadingMore extends LatestTournamentsAction {
 class MoreLatestTournamentsLoaded extends LatestTournamentsAction {
   final Iterable<Tournament> data;
 
-  const MoreLatestTournamentsLoaded(this.data);
+  const MoreLatestTournamentsLoaded(this.data, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -50,7 +58,8 @@ class MoreLatestTournamentsLoaded extends LatestTournamentsAction {
 
 @immutable
 class ClearLatestTournaments extends LatestTournamentsAction {
-  const ClearLatestTournaments();
+  const ClearLatestTournaments({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$ClearLatestTournaments';
@@ -58,7 +67,8 @@ class ClearLatestTournaments extends LatestTournamentsAction {
 
 @immutable
 class LatestTournamentsIsRefreshing extends LatestTournamentsAction {
-  const LatestTournamentsIsRefreshing();
+  const LatestTournamentsIsRefreshing({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$LatestTournamentsIsRefreshing';
@@ -68,7 +78,8 @@ class LatestTournamentsIsRefreshing extends LatestTournamentsAction {
 class LatestTournamentsLoadFailed extends LatestTournamentsAction {
   final Exception exception;
 
-  const LatestTournamentsLoadFailed(this.exception);
+  const LatestTournamentsLoadFailed(this.exception, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -79,7 +90,8 @@ class LatestTournamentsLoadFailed extends LatestTournamentsAction {
 class LatestTournamentsRefreshFailed extends LatestTournamentsAction {
   final Exception exception;
 
-  const LatestTournamentsRefreshFailed(this.exception);
+  const LatestTournamentsRefreshFailed(this.exception, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -88,7 +100,8 @@ class LatestTournamentsRefreshFailed extends LatestTournamentsAction {
 
 @immutable
 class ClearLatestTournamentsException extends LatestTournamentsAction {
-  const ClearLatestTournamentsException();
+  const ClearLatestTournamentsException({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$ClearLatestTournamentsException';

@@ -1,20 +1,23 @@
+import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
+import 'package:what_when_where/redux/action.dart';
 import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/resources/themes.dart';
 
-abstract class SettingsAction {
-  const SettingsAction();
+abstract class SettingsAction extends Action {
+  const SettingsAction({BuildContext context}) : super(context: context);
 }
 
 abstract class UserSettingsAction extends SettingsAction {
-  const UserSettingsAction();
+  const UserSettingsAction({BuildContext context}) : super(context: context);
 }
 
 @immutable
 class ChangeTheme extends UserSettingsAction {
   final AppTheme appTheme;
 
-  const ChangeTheme(this.appTheme);
+  const ChangeTheme(this.appTheme, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$ChangeTheme appTheme = "$appTheme"';
@@ -24,7 +27,8 @@ class ChangeTheme extends UserSettingsAction {
 class ChangeTextScale extends UserSettingsAction {
   final TextScale textScale;
 
-  const ChangeTextScale(this.textScale);
+  const ChangeTextScale(this.textScale, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$ChangeTextScale textScale = "$textScale"';
@@ -34,7 +38,8 @@ class ChangeTextScale extends UserSettingsAction {
 class ChangeNotifyShortTimerExpiration extends UserSettingsAction {
   final bool newValue;
 
-  const ChangeNotifyShortTimerExpiration(this.newValue);
+  const ChangeNotifyShortTimerExpiration(this.newValue, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -44,7 +49,8 @@ class ChangeNotifyShortTimerExpiration extends UserSettingsAction {
 class ChangeNotifyLongTimerExpiration extends UserSettingsAction {
   final bool newValue;
 
-  const ChangeNotifyLongTimerExpiration(this.newValue);
+  const ChangeNotifyLongTimerExpiration(this.newValue, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -52,12 +58,12 @@ class ChangeNotifyLongTimerExpiration extends UserSettingsAction {
 }
 
 abstract class SystemSettingsAction extends SettingsAction {
-  const SystemSettingsAction();
+  const SystemSettingsAction({BuildContext context}) : super(context: context);
 }
 
 @immutable
 class ReadSettings extends SystemSettingsAction {
-  const ReadSettings();
+  const ReadSettings({BuildContext context}) : super(context: context);
 
   @override
   String toString() => '$ReadSettings';
@@ -70,12 +76,13 @@ class SettingsRead extends SystemSettingsAction {
   final bool notifyShortTimerExpiration;
   final bool notifyLongTimerExpiration;
 
-  const SettingsRead({
-    this.appTheme,
-    this.textScale,
-    this.notifyShortTimerExpiration,
-    this.notifyLongTimerExpiration,
-  });
+  const SettingsRead(
+      {this.appTheme,
+      this.textScale,
+      this.notifyShortTimerExpiration,
+      this.notifyLongTimerExpiration,
+      BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>

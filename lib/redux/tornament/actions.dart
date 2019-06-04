@@ -1,15 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/action.dart';
 
-abstract class TournamentAction {
-  const TournamentAction();
+abstract class TournamentAction extends Action {
+  const TournamentAction({BuildContext context}) : super(context: context);
 }
 
 @immutable
 class SetTournament extends TournamentAction {
   final Tournament tournament;
 
-  const SetTournament(this.tournament);
+  const SetTournament(this.tournament, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -18,7 +21,7 @@ class SetTournament extends TournamentAction {
 
 @immutable
 class VoidTournament extends TournamentAction {
-  const VoidTournament();
+  const VoidTournament({BuildContext context}) : super(context: context);
 
   @override
   String toString() => '$VoidTournament';
@@ -28,7 +31,8 @@ class VoidTournament extends TournamentAction {
 class LoadTournament extends TournamentAction {
   final String tournamentId;
 
-  const LoadTournament(this.tournamentId);
+  const LoadTournament(this.tournamentId, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$LoadTournament tournamentId = "$tournamentId"';
@@ -36,7 +40,7 @@ class LoadTournament extends TournamentAction {
 
 @immutable
 class ReloadTournament extends TournamentAction {
-  const ReloadTournament();
+  const ReloadTournament({BuildContext context}) : super(context: context);
 
   @override
   String toString() => '$ReloadTournament';
@@ -46,7 +50,8 @@ class ReloadTournament extends TournamentAction {
 class TournamentIsLoading extends TournamentAction {
   final String tournamentId;
 
-  const TournamentIsLoading(this.tournamentId);
+  const TournamentIsLoading(this.tournamentId, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$TournamentIsLoading tournamentId = "$tournamentId"';
@@ -56,7 +61,8 @@ class TournamentIsLoading extends TournamentAction {
 class TournamentLoaded extends TournamentAction {
   final Tournament tournament;
 
-  const TournamentLoaded(this.tournament);
+  const TournamentLoaded(this.tournament, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -68,7 +74,9 @@ class TournamentFailedLoading extends TournamentAction {
   final String tournamentId;
   final Exception exception;
 
-  const TournamentFailedLoading(this.tournamentId, this.exception);
+  const TournamentFailedLoading(this.tournamentId, this.exception,
+      {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>

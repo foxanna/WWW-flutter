@@ -1,15 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/action.dart';
 
-abstract class BrowseAction {}
+abstract class BrowseAction extends Action {
+  const BrowseAction({BuildContext context}) : super(context: context);
+}
 
 @immutable
 class BrowseQuestion extends BrowseAction {
   final Question question;
 
-  BrowseQuestion(this.question);
+  BrowseQuestion(this.question, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -20,7 +25,7 @@ class BrowseQuestion extends BrowseAction {
 class BrowseTour extends BrowseAction {
   final Tour tour;
 
-  BrowseTour(this.tour);
+  BrowseTour(this.tour, {BuildContext context}) : super(context: context);
 
   @override
   String toString() =>
@@ -31,7 +36,8 @@ class BrowseTour extends BrowseAction {
 class BrowseTournament extends BrowseAction {
   final Tournament tournament;
 
-  BrowseTournament(this.tournament);
+  BrowseTournament(this.tournament, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>

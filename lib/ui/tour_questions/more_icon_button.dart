@@ -88,6 +88,6 @@ class _AboutTourBottomSheetItem extends StatelessWidget {
     Navigator.pop(context);
 
     final store = StoreProvider.of<AppState>(context);
-    store.dispatch(OpenTourInfo(context: context, tour: tour));
+    store.dispatch(OpenTourInfo(tour, context: context));
   }
 }

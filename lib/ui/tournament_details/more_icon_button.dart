@@ -89,8 +89,8 @@ class _AboutTournamentBottomSheetItem extends StatelessWidget {
         converter: (store) => Tuple2(
             store.state.tournamentState.hasData,
             FunctionHolder(() => store.dispatch(OpenTournamentInfo(
-                context: context,
-                tournament: store.state.tournamentState.tournament)))),
+                store.state.tournamentState.tournament,
+                context: context)))),
         builder: (context, data) {
           final isEnabled = data.item1;
           final execute = data.item2.function;

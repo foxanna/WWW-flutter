@@ -121,49 +121,48 @@ void main() {
 
     test(
       '$OpenImage',
-      () =>
-          analyticsTest(OpenImage(context: null, imageUrl: null), 'open_image'),
+      () => analyticsTest(const OpenImage(null), 'open_image'),
     );
 
     test(
       '$OpenTourInfo',
-      () => analyticsTest(OpenTourInfo(tour: const Tour()), 'open_tour_info'),
+      () => analyticsTest(const OpenTourInfo(Tour()), 'open_tour_info'),
     );
 
     test(
       '$OpenTournamentInfo',
-      () => analyticsTest(OpenTournamentInfo(tournament: const Tournament()),
-          'open_tournament_info'),
+      () => analyticsTest(
+          const OpenTournamentInfo(Tournament()), 'open_tournament_info'),
     );
 
     test(
       '$OpenSettingsPage',
-      () => analyticsTest(OpenSettingsPage(null), 'settings'),
+      () => analyticsTest(const OpenSettingsPage(), 'settings'),
     );
 
     test(
       '$OpenSearchPage',
-      () => analyticsTest(OpenSearchPage(null), 'search'),
+      () => analyticsTest(const OpenSearchPage(), 'search'),
     );
 
     test(
       '$OpenRandomQuestionsPage',
-      () => analyticsTest(OpenRandomQuestionsPage(null), 'random'),
+      () => analyticsTest(const OpenRandomQuestionsPage(), 'random'),
     );
 
     test(
       '$OpenTournamentsTreePage',
-      () => analyticsTest(OpenTournamentsTreePage(context: null), 'tree'),
+      () => analyticsTest(const OpenTournamentsTreePage(), 'tree'),
     );
 
     test(
       '$EmailDevelopers',
-      () => analyticsTest(EmailDevelopers(), 'email_developers'),
+      () => analyticsTest(const EmailDevelopers(), 'email_developers'),
     );
 
     test(
       '$BrowseDatabase',
-      () => analyticsTest(BrowseDatabase(), 'browse_database'),
+      () => analyticsTest(const BrowseDatabase(), 'browse_database'),
     );
   });
 

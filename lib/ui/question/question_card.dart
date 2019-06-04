@@ -104,7 +104,4 @@ class _QuestionCardState extends State<QuestionCard> {
 
     super.dispose();
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }

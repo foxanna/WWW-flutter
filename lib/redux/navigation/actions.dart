@@ -3,15 +3,18 @@ import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/action.dart';
 
-abstract class NavigationAction {}
+abstract class NavigationAction extends Action {
+  const NavigationAction({BuildContext context}) : super(context: context);
+}
 
 @immutable
 class OpenImage extends NavigationAction {
-  final BuildContext context;
   final String imageUrl;
 
-  OpenImage({@required this.context, @required this.imageUrl});
+  const OpenImage(this.imageUrl, {@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$OpenImage imageUrl ="$imageUrl"';
@@ -19,10 +22,10 @@ class OpenImage extends NavigationAction {
 
 @immutable
 class OpenTourInfo extends NavigationAction {
-  final BuildContext context;
   final Tour tour;
 
-  OpenTourInfo({this.context, this.tour});
+  const OpenTourInfo(this.tour, {@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -31,10 +34,10 @@ class OpenTourInfo extends NavigationAction {
 
 @immutable
 class OpenTournamentInfo extends NavigationAction {
-  final BuildContext context;
   final Tournament tournament;
 
-  OpenTournamentInfo({this.context, this.tournament});
+  const OpenTournamentInfo(this.tournament, {@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -43,11 +46,12 @@ class OpenTournamentInfo extends NavigationAction {
 
 @immutable
 class OpenQuestions extends NavigationAction {
-  final BuildContext context;
   final Iterable<Question> questions;
   final int selectedQuestionIndex;
 
-  OpenQuestions(this.context, this.questions, this.selectedQuestionIndex);
+  const OpenQuestions(this.questions, this.selectedQuestionIndex,
+      {@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -56,10 +60,10 @@ class OpenQuestions extends NavigationAction {
 
 @immutable
 class OpenTournament extends NavigationAction {
-  final BuildContext context;
   final Tournament tournament;
 
-  OpenTournament(this.context, this.tournament);
+  const OpenTournament(this.tournament, {@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -68,9 +72,8 @@ class OpenTournament extends NavigationAction {
 
 @immutable
 class OpenAboutPage extends NavigationAction {
-  final BuildContext context;
-
-  OpenAboutPage(this.context);
+  const OpenAboutPage({@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$OpenAboutPage';
@@ -78,9 +81,8 @@ class OpenAboutPage extends NavigationAction {
 
 @immutable
 class OpenSearchPage extends NavigationAction {
-  final BuildContext context;
-
-  OpenSearchPage(this.context);
+  const OpenSearchPage({@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$OpenSearchPage';
@@ -88,9 +90,8 @@ class OpenSearchPage extends NavigationAction {
 
 @immutable
 class OpenSettingsPage extends NavigationAction {
-  final BuildContext context;
-
-  OpenSettingsPage(this.context);
+  const OpenSettingsPage({@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$OpenSettingsPage';
@@ -98,9 +99,8 @@ class OpenSettingsPage extends NavigationAction {
 
 @immutable
 class OpenRandomQuestionsPage extends NavigationAction {
-  final BuildContext context;
-
-  OpenRandomQuestionsPage(this.context);
+  const OpenRandomQuestionsPage({@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$OpenRandomQuestionsPage';
@@ -108,9 +108,8 @@ class OpenRandomQuestionsPage extends NavigationAction {
 
 @immutable
 class OpenTournamentsTreePage extends NavigationAction {
-  final BuildContext context;
-
-  OpenTournamentsTreePage({@required this.context});
+  const OpenTournamentsTreePage({@required BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$OpenTournamentsTreePage';
@@ -118,15 +117,14 @@ class OpenTournamentsTreePage extends NavigationAction {
 
 @immutable
 class OpenTournamentsSubTreePage extends NavigationAction {
-  final BuildContext context;
   final String rootId;
   final String title;
 
-  OpenTournamentsSubTreePage({
-    @required this.context,
+  const OpenTournamentsSubTreePage({
+    @required BuildContext context,
     @required this.rootId,
     this.title,
-  });
+  }) : super(context: context);
 
   @override
   String toString() =>

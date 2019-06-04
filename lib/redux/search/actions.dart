@@ -1,18 +1,21 @@
+import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/search/search_parameters.dart';
+import 'package:what_when_where/redux/action.dart';
 
-abstract class SearchAction {
-  const SearchAction();
+abstract class SearchAction extends Action {
+  const SearchAction({BuildContext context}) : super(context: context);
 }
 
-abstract class UserSearchAction {
-  const UserSearchAction();
+@immutable
+abstract class UserSearchAction extends SearchAction {
+  const UserSearchAction({BuildContext context}) : super(context: context);
 }
 
 @immutable
 class SearchTournaments extends UserSearchAction {
-  const SearchTournaments();
+  const SearchTournaments({BuildContext context}) : super(context: context);
 
   @override
   String toString() => '$SearchTournaments';
@@ -20,7 +23,8 @@ class SearchTournaments extends UserSearchAction {
 
 @immutable
 class RepeatFailedSearchTournaments extends UserSearchAction {
-  const RepeatFailedSearchTournaments();
+  const RepeatFailedSearchTournaments({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$RepeatFailedSearchTournaments';
@@ -28,7 +32,8 @@ class RepeatFailedSearchTournaments extends UserSearchAction {
 
 @immutable
 class VoidTournamentsSearchResults extends UserSearchAction {
-  const VoidTournamentsSearchResults();
+  const VoidTournamentsSearchResults({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$VoidTournamentsSearchResults';
@@ -36,7 +41,8 @@ class VoidTournamentsSearchResults extends UserSearchAction {
 
 @immutable
 class VoidTournamentsSearchParameters extends UserSearchAction {
-  const VoidTournamentsSearchParameters();
+  const VoidTournamentsSearchParameters({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$VoidTournamentsSearchParameters';
@@ -46,7 +52,8 @@ class VoidTournamentsSearchParameters extends UserSearchAction {
 class TournamentsSearchQueryChanged extends UserSearchAction {
   final String query;
 
-  const TournamentsSearchQueryChanged(this.query);
+  const TournamentsSearchQueryChanged(this.query, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$TournamentsSearchQueryChanged query = "$query"';
@@ -56,19 +63,21 @@ class TournamentsSearchQueryChanged extends UserSearchAction {
 class TournamentsSearchSortingChanged extends UserSearchAction {
   final Sorting sorting;
 
-  const TournamentsSearchSortingChanged(this.sorting);
+  const TournamentsSearchSortingChanged(this.sorting, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$TournamentsSearchSortingChanged sorting = "$sorting"';
 }
 
-abstract class SystemSearchAction {
-  const SystemSearchAction();
+abstract class SystemSearchAction extends SearchAction {
+  const SystemSearchAction({BuildContext context}) : super(context: context);
 }
 
 @immutable
 class TournamentsSearchIsLoading extends SystemSearchAction {
-  const TournamentsSearchIsLoading();
+  const TournamentsSearchIsLoading({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$TournamentsSearchIsLoading';
@@ -79,7 +88,9 @@ class TournamentsSearchLoaded extends SystemSearchAction {
   final Iterable<Tournament> data;
   final int nextPage;
 
-  const TournamentsSearchLoaded(this.data, this.nextPage);
+  const TournamentsSearchLoaded(this.data, this.nextPage,
+      {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -90,7 +101,8 @@ class TournamentsSearchLoaded extends SystemSearchAction {
 class TournamentsSearchFailedToLoad extends SystemSearchAction {
   final Exception exception;
 
-  const TournamentsSearchFailedToLoad(this.exception);
+  const TournamentsSearchFailedToLoad(this.exception, {BuildContext context})
+      : super(context: context);
 
   @override
   String toString() =>
@@ -99,7 +111,8 @@ class TournamentsSearchFailedToLoad extends SystemSearchAction {
 
 @immutable
 class ClearSearchTournamentsException extends SystemSearchAction {
-  const ClearSearchTournamentsException();
+  const ClearSearchTournamentsException({BuildContext context})
+      : super(context: context);
 
   @override
   String toString() => '$ClearSearchTournamentsException';
