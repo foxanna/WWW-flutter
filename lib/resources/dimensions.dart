@@ -9,4 +9,6 @@ class Dimensions {
   static const defaultListTilePadding = EdgeInsets.symmetric(
       vertical: Dimensions.defaultSidePadding,
       horizontal: Dimensions.defaultSidePadding * 2);
+  static const dialogContentPadding =
+      EdgeInsets.symmetric(vertical: 24, horizontal: 24);
 }

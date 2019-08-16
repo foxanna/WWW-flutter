@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
 
@@ -22,7 +23,7 @@ class InfoDialog extends StatelessWidget {
           foregroundDecoration: GradientDecoration(
               color: Theme.of(context).dialogBackgroundColor),
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
+            padding: Dimensions.dialogContentPadding,
             child: Text(
               content,
               style: Theme.of(context).textTheme.body2,
