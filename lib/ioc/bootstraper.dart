@@ -6,6 +6,7 @@ import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/dialogs.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/preferences.dart';
+import 'package:what_when_where/services/rating.dart';
 import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/sound.dart';
 import 'package:what_when_where/services/url_launcher.dart';
@@ -43,6 +44,8 @@ class Bootstrapper {
     _container.register<ISoundService>((c) => SoundService.ioc(),
         defaultMode: InjectMode.singleton);
     _container.register<ICrashService>((c) => CrashService.ioc(),
+        defaultMode: InjectMode.singleton);
+    _container.register<IRatingService>((c) => RatingService.ioc(),
         defaultMode: InjectMode.singleton);
   }
 }
