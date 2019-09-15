@@ -17,5 +17,5 @@ class LatestTournamentsTreeIconButton extends StatelessWidget {
 
   void _openTournamentsTree(BuildContext context) =>
       StoreProvider.of<AppState>(context)
-          .dispatch(OpenTournamentsTreePage(context: context));
+          .dispatch(const OpenTournamentsTreePage());
 }

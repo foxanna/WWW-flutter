@@ -35,7 +35,7 @@ class _SettingsBottomSheetItem extends StatelessWidget {
           Navigator.pop(context);
 
           StoreProvider.of<AppState>(context)
-              .dispatch(OpenSettingsPage(context: context));
+              .dispatch(const OpenSettingsPage());
         },
       );
 }
@@ -50,8 +50,7 @@ class _AboutBottomSheetItem extends StatelessWidget {
         onTap: () {
           Navigator.pop(context);
 
-          StoreProvider.of<AppState>(context)
-              .dispatch(OpenAboutPage(context: context));
+          StoreProvider.of<AppState>(context).dispatch(const OpenAboutPage());
         },
       );
 }

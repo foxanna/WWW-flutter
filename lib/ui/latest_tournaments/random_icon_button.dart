@@ -17,5 +17,5 @@ class LatestTournamentsRandomIconButton extends StatelessWidget {
 
   void _openRandomQuestions(BuildContext context) =>
       StoreProvider.of<AppState>(context)
-          .dispatch(OpenRandomQuestionsPage(context: context));
+          .dispatch(const OpenRandomQuestionsPage());
 }

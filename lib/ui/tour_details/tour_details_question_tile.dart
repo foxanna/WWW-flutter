@@ -33,6 +33,6 @@ class TourDetailsQuestionTile extends StatelessWidget {
           ),
         ),
         onTap: () => StoreProvider.of<AppState>(context)
-            .dispatch(OpenQuestions(tour.questions, index, context: context)),
+            .dispatch(OpenQuestions(tour.questions, index)),
       );
 }

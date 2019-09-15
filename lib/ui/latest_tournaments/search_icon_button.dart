@@ -14,6 +14,6 @@ class LatestTournamentsSearchIconButton extends StatelessWidget {
         onPressed: () => _search(context),
       );
 
-  void _search(BuildContext context) => StoreProvider.of<AppState>(context)
-      .dispatch(OpenSearchPage(context: context));
+  void _search(BuildContext context) =>
+      StoreProvider.of<AppState>(context).dispatch(const OpenSearchPage());
 }

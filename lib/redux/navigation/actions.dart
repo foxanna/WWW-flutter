@@ -2,31 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/redux/action.dart';
-
-abstract class NavigationAction extends Action {
-  const NavigationAction({BuildContext context}) : super(context: context);
-}
 
 @immutable
-class OpenImage extends NavigationAction {
+class OpenImage {
   final String imageUrl;
 
-  const OpenImage(this.imageUrl, {@required BuildContext context})
-      : super(context: context);
+  const OpenImage(this.imageUrl);
 
   @override
   String toString() => '$OpenImage imageUrl ="$imageUrl"';
 }
 
 @immutable
-class OpenQuestions extends NavigationAction {
+class OpenQuestions {
   final Iterable<Question> questions;
   final int selectedQuestionIndex;
 
-  const OpenQuestions(this.questions, this.selectedQuestionIndex,
-      {@required BuildContext context})
-      : super(context: context);
+  const OpenQuestions(this.questions, this.selectedQuestionIndex);
 
   @override
   String toString() =>
@@ -34,11 +26,10 @@ class OpenQuestions extends NavigationAction {
 }
 
 @immutable
-class OpenTournament extends NavigationAction {
+class OpenTournament {
   final Tournament tournament;
 
-  const OpenTournament(this.tournament, {@required BuildContext context})
-      : super(context: context);
+  const OpenTournament(this.tournament);
 
   @override
   String toString() =>
@@ -46,60 +37,54 @@ class OpenTournament extends NavigationAction {
 }
 
 @immutable
-class OpenAboutPage extends NavigationAction {
-  const OpenAboutPage({@required BuildContext context})
-      : super(context: context);
+class OpenAboutPage {
+  const OpenAboutPage();
 
   @override
   String toString() => '$OpenAboutPage';
 }
 
 @immutable
-class OpenSearchPage extends NavigationAction {
-  const OpenSearchPage({@required BuildContext context})
-      : super(context: context);
+class OpenSearchPage {
+  const OpenSearchPage();
 
   @override
   String toString() => '$OpenSearchPage';
 }
 
 @immutable
-class OpenSettingsPage extends NavigationAction {
-  const OpenSettingsPage({@required BuildContext context})
-      : super(context: context);
+class OpenSettingsPage {
+  const OpenSettingsPage();
 
   @override
   String toString() => '$OpenSettingsPage';
 }
 
 @immutable
-class OpenRandomQuestionsPage extends NavigationAction {
-  const OpenRandomQuestionsPage({@required BuildContext context})
-      : super(context: context);
+class OpenRandomQuestionsPage {
+  const OpenRandomQuestionsPage();
 
   @override
   String toString() => '$OpenRandomQuestionsPage';
 }
 
 @immutable
-class OpenTournamentsTreePage extends NavigationAction {
-  const OpenTournamentsTreePage({@required BuildContext context})
-      : super(context: context);
+class OpenTournamentsTreePage {
+  const OpenTournamentsTreePage();
 
   @override
   String toString() => '$OpenTournamentsTreePage';
 }
 
 @immutable
-class OpenTournamentsSubTreePage extends NavigationAction {
+class OpenTournamentsSubTreePage {
   final String rootId;
   final String title;
 
   const OpenTournamentsSubTreePage({
-    @required BuildContext context,
     @required this.rootId,
     this.title,
-  }) : super(context: context);
+  });
 
   @override
   String toString() =>
