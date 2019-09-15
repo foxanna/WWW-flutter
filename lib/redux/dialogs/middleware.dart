@@ -2,6 +2,7 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/services/dialogs.dart';
+import 'package:what_when_where/ui/rating/rating_dialog.dart';
 import 'package:what_when_where/ui/tour_questions/tour_details_about_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_about_dialog.dart';
 
@@ -11,6 +12,7 @@ class DialogMiddleware {
   static final List<Middleware<AppState>> middleware = [
     TypedMiddleware<AppState, OpenTourInfo>(_openTourInfo),
     TypedMiddleware<AppState, OpenTournamentInfo>(_openTournamentInfo),
+    TypedMiddleware<AppState, OpenRatingDialog>(_openRatingDialog),
   ];
 
   static IDialogService get _dialogService =>
@@ -31,5 +33,13 @@ class DialogMiddleware {
     await _dialogService.show<dynamic>(
         builder: (context) =>
             TournamentDetailsAboutDialog(tournament: action.tournament));
+  }
+
+  static Future _openRatingDialog(Store<AppState> store,
+      OpenRatingDialog action, NextDispatcher next) async {
+    next(action);
+
+    await _dialogService.show<dynamic>(
+        builder: (context) => const RatingDialog());
   }
 }
