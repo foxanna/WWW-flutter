@@ -23,3 +23,11 @@ class OpenTournamentInfo {
   String toString() =>
       '$OpenTournamentInfo tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
 }
+
+@immutable
+class OpenRatingDialog {
+  const OpenRatingDialog();
+
+  @override
+  String toString() => '$OpenRatingDialog';
+}
