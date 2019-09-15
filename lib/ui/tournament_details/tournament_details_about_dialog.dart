@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 
-class TournamentDetailsAboutDialog extends IDialog {
+class TournamentDetailsAboutDialog extends StatelessWidget {
   final String _detailsText;
   final String _tournamentTitle;
 
   final Tournament tournament;
-  final BuildContext context;
 
   TournamentDetailsAboutDialog({
-    @required this.context,
     @required this.tournament,
-  })  : this._tournamentTitle = tournament.title,
-        this._detailsText = _DialogContentBuilder(tournament).build();
+  })  : _tournamentTitle = tournament.title,
+        _detailsText = _DialogContentBuilder(tournament).build();
 
   @override
-  void show() => showDialog<Object>(
-        context: context,
-        builder: (context) => InfoDialog(
-              title: _tournamentTitle,
-              content: _detailsText,
-            ),
+  Widget build(BuildContext context) => InfoDialog(
+        title: _tournamentTitle,
+        content: _detailsText,
       );
 }
 
