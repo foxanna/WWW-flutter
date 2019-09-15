@@ -10,6 +10,7 @@ import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
+import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
@@ -20,6 +21,7 @@ import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/browsing.dart';
+import 'package:what_when_where/services/dialogs.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/sharing.dart';
@@ -38,6 +40,8 @@ void main() {
   WWWIoC.container.register<IBrowsingService>((c) => BrowsingServiceMock(),
       defaultMode: InjectMode.singleton);
   WWWIoC.container.register<INavigationService>((c) => NavigationServiceMock(),
+      defaultMode: InjectMode.singleton);
+  WWWIoC.container.register<IDialogService>((c) => DialogServiceMock(),
       defaultMode: InjectMode.singleton);
   WWWIoC.container.register<IPreferences>((c) => PreferencesMock(),
       defaultMode: InjectMode.singleton);
