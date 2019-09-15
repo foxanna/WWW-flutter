@@ -3,7 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tuple/tuple.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
-import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/utils/function_holder.dart';
@@ -88,9 +88,8 @@ class _AboutTournamentBottomSheetItem extends StatelessWidget {
         distinct: true,
         converter: (store) => Tuple2(
             store.state.tournamentState.hasData,
-            FunctionHolder(() => store.dispatch(OpenTournamentInfo(
-                store.state.tournamentState.tournament,
-                context: context)))),
+            FunctionHolder(() => store.dispatch(
+                OpenTournamentInfo(store.state.tournamentState.tournament)))),
         builder: (context, data) {
           final isEnabled = data.item1;
           final execute = data.item2.function;

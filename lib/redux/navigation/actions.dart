@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/action.dart';
 
@@ -18,30 +17,6 @@ class OpenImage extends NavigationAction {
 
   @override
   String toString() => '$OpenImage imageUrl ="$imageUrl"';
-}
-
-@immutable
-class OpenTourInfo extends NavigationAction {
-  final Tour tour;
-
-  const OpenTourInfo(this.tour, {@required BuildContext context})
-      : super(context: context);
-
-  @override
-  String toString() =>
-      '$OpenTourInfo tour.id = "${tour.id}", tour.title = "${tour.title}"';
-}
-
-@immutable
-class OpenTournamentInfo extends NavigationAction {
-  final Tournament tournament;
-
-  const OpenTournamentInfo(this.tournament, {@required BuildContext context})
-      : super(context: context);
-
-  @override
-  String toString() =>
-      '$OpenTournamentInfo tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
 }
 
 @immutable
