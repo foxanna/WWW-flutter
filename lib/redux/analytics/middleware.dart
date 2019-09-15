@@ -31,7 +31,7 @@ class AnalyticsMiddleware {
     BrowseTour: 'browse_tour',
     BrowseTournament: 'browse_tournament',
     // navigation
-    OpenImage: 'open_image',
+    OpenImagePage: 'open_image',
     OpenTourInfo: 'open_tour_info',
     OpenTournamentInfo: 'open_tournament_info',
     OpenSettingsPage: 'settings',
@@ -55,7 +55,7 @@ class AnalyticsMiddleware {
     TypedMiddleware<AppState, BrowseTournament>(_logAction),
     TypedMiddleware<AppState, BrowseTour>(_logAction),
     TypedMiddleware<AppState, BrowseQuestion>(_logAction),
-    TypedMiddleware<AppState, OpenImage>(_logAction),
+    TypedMiddleware<AppState, OpenImagePage>(_logAction),
     TypedMiddleware<AppState, OpenTourInfo>(_logAction),
     TypedMiddleware<AppState, OpenTournamentInfo>(_logAction),
     TypedMiddleware<AppState, EmailDevelopers>(_logAction),

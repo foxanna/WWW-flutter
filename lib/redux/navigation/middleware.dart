@@ -15,9 +15,9 @@ import 'package:what_when_where/ui/tree/tournaments_tree_page.dart';
 
 class NavigationMiddleware {
   static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, OpenImage>(_openImage),
-    TypedMiddleware<AppState, OpenTournament>(_openTournament),
-    TypedMiddleware<AppState, OpenQuestions>(_openQuestions),
+    TypedMiddleware<AppState, OpenImagePage>(_openImage),
+    TypedMiddleware<AppState, OpenTournamentPage>(_openTournament),
+    TypedMiddleware<AppState, OpenQuestionsPage>(_openQuestions),
     TypedMiddleware<AppState, OpenAboutPage>(_openAboutPage),
     TypedMiddleware<AppState, OpenSearchPage>(_openSearchPage),
     TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
@@ -33,7 +33,7 @@ class NavigationMiddleware {
       WWWIoC.container<INavigationService>();
 
   static void _openImage(
-      Store<AppState> store, OpenImage action, NextDispatcher next) {
+      Store<AppState> store, OpenImagePage action, NextDispatcher next) {
     next(action);
 
     _navigationService.navigateToPage(
@@ -43,7 +43,7 @@ class NavigationMiddleware {
   }
 
   static void _openTournament(
-      Store<AppState> store, OpenTournament action, NextDispatcher next) {
+      Store<AppState> store, OpenTournamentPage action, NextDispatcher next) {
     next(action);
 
     store.dispatch(SetTournament(action.tournament));
@@ -55,7 +55,7 @@ class NavigationMiddleware {
   }
 
   static void _openQuestions(
-      Store<AppState> store, OpenQuestions action, NextDispatcher next) {
+      Store<AppState> store, OpenQuestionsPage action, NextDispatcher next) {
     next(action);
 
     store.dispatch(SetQuestions(

@@ -4,36 +4,36 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
 @immutable
-class OpenImage {
+class OpenImagePage {
   final String imageUrl;
 
-  const OpenImage(this.imageUrl);
+  const OpenImagePage(this.imageUrl);
 
   @override
-  String toString() => '$OpenImage imageUrl ="$imageUrl"';
+  String toString() => '$OpenImagePage imageUrl ="$imageUrl"';
 }
 
 @immutable
-class OpenQuestions {
+class OpenQuestionsPage {
   final Iterable<Question> questions;
   final int selectedQuestionIndex;
 
-  const OpenQuestions(this.questions, this.selectedQuestionIndex);
+  const OpenQuestionsPage(this.questions, this.selectedQuestionIndex);
 
   @override
   String toString() =>
-      '$OpenQuestions questions.length = "${questions.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
+      '$OpenQuestionsPage questions.length = "${questions.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
 }
 
 @immutable
-class OpenTournament {
+class OpenTournamentPage {
   final Tournament tournament;
 
-  const OpenTournament(this.tournament);
+  const OpenTournamentPage(this.tournament);
 
   @override
   String toString() =>
-      '$OpenTournament tournament.textId = "${tournament.textId}", tournament.title = "${tournament.title}"';
+      '$OpenTournamentPage tournament.textId = "${tournament.textId}", tournament.title = "${tournament.title}"';
 }
 
 @immutable

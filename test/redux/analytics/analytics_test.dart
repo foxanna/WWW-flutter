@@ -124,8 +124,8 @@ void main() {
     );
 
     test(
-      '$OpenImage',
-      () => analyticsTest(const OpenImage(null), 'open_image'),
+      '$OpenImagePage',
+      () => analyticsTest(const OpenImagePage(null), 'open_image'),
     );
 
     test(

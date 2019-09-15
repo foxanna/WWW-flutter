@@ -39,5 +39,6 @@ class TournamentsTreeTournamentGridTile extends StatelessWidget {
   }
 
   void _openTournamentDetails(BuildContext context) =>
-      StoreProvider.of<AppState>(context).dispatch(OpenTournament(tournament));
+      StoreProvider.of<AppState>(context)
+          .dispatch(OpenTournamentPage(tournament));
 }
