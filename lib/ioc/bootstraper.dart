@@ -1,4 +1,5 @@
 import 'package:dioc/dioc.dart';
+import 'package:what_when_where/global/navigatorKey.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/browsing.dart';
@@ -28,7 +29,8 @@ class Bootstrapper {
         defaultMode: InjectMode.singleton);
     _container.register<IBrowsingService>((c) => BrowsingService.ioc(),
         defaultMode: InjectMode.singleton);
-    _container.register<INavigationService>((c) => NavigationService.ioc(),
+    _container.register<INavigationService>(
+        (c) => NavigationService.ioc(key: globalNavigatorKey),
         defaultMode: InjectMode.singleton);
     _container.register<IDialogService>((c) => DialogService.ioc(),
         defaultMode: InjectMode.singleton);
