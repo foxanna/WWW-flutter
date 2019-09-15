@@ -37,9 +37,9 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-        context: action.context,
-        routeName: ImagePage.routeName,
-        builder: (context) => ImagePage(url: action.imageUrl));
+      routeName: ImagePage.routeName,
+      builder: (context) => ImagePage(url: action.imageUrl),
+    );
   }
 
   static void _openTournament(
@@ -49,9 +49,9 @@ class NavigationMiddleware {
     store.dispatch(SetTournament(action.tournament));
 
     _navigationService.navigateToPage(
-        context: action.context,
-        routeName: TournamentDetailsPage.routeName,
-        builder: (context) => TournamentDetailsPage());
+      routeName: TournamentDetailsPage.routeName,
+      builder: (context) => TournamentDetailsPage(),
+    );
   }
 
   static void _openQuestions(
@@ -63,9 +63,9 @@ class NavigationMiddleware {
         selectedQuestionIndex: action.selectedQuestionIndex));
 
     _navigationService.navigateToPage(
-        context: action.context,
-        routeName: TourQuestionsPage.routeName,
-        builder: (context) => TourQuestionsPage());
+      routeName: TourQuestionsPage.routeName,
+      builder: (context) => TourQuestionsPage(),
+    );
   }
 
   static void _openAboutPage(
@@ -73,9 +73,9 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-        context: action.context,
-        routeName: AboutPage.routeName,
-        builder: (context) => AboutPage());
+      routeName: AboutPage.routeName,
+      builder: (context) => AboutPage(),
+    );
   }
 
   static void _openSearchPage(
@@ -83,9 +83,9 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-        context: action.context,
-        routeName: SearchPage.routeName,
-        builder: (context) => SearchPage());
+      routeName: SearchPage.routeName,
+      builder: (context) => SearchPage(),
+    );
   }
 
   static void _openSettingsPage(
@@ -93,9 +93,9 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-        context: action.context,
-        routeName: SettingsPage.routeName,
-        builder: (context) => SettingsPage());
+      routeName: SettingsPage.routeName,
+      builder: (context) => SettingsPage(),
+    );
   }
 
   static void _openRandomQuestionsPage(Store<AppState> store,
@@ -103,9 +103,9 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-        context: action.context,
-        routeName: TourQuestionsPage.randomQuestionsRouteName,
-        builder: (context) => TourQuestionsPage());
+      routeName: TourQuestionsPage.randomQuestionsRouteName,
+      builder: (context) => TourQuestionsPage(),
+    );
   }
 
   static void _openTournamentsTreePage(Store<AppState> store,
@@ -113,9 +113,9 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-        context: action.context,
-        routeName: TournamentsTreePage.routeName,
-        builder: (context) => const TournamentsTreePage(rootId: '0'));
+      routeName: TournamentsTreePage.routeName,
+      builder: (context) => const TournamentsTreePage(rootId: '0'),
+    );
   }
 
   static void _openTournamentsSubTreePage(Store<AppState> store,
@@ -123,11 +123,11 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-        context: action.context,
-        routeName: TournamentsTreePage.routeName,
-        builder: (context) => TournamentsTreePage(
-              rootId: action.rootId,
-              title: action.title,
-            ));
+      routeName: TournamentsTreePage.routeName,
+      builder: (context) => TournamentsTreePage(
+            rootId: action.rootId,
+            title: action.title,
+          ),
+    );
   }
 }
