@@ -9,6 +9,7 @@ import 'package:what_when_where/redux/settings/state.dart';
 import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
+import 'package:what_when_where/ui/common/dialog_presenter.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page.dart';
 
 void main() {
@@ -38,11 +39,18 @@ class WWWApp extends StatelessWidget {
                   final mediaQueryData = MediaQuery.of(context);
                   final defaultTextScaleFactor = mediaQueryData.textScaleFactor;
 
-                  return MediaQuery(
+                  final mediaQuery = MediaQuery(
                     child: child,
                     data: mediaQueryData.copyWith(
-                        textScaleFactor: defaultTextScaleFactor *
-                            Fonts.getTextScale(state.textScale)),
+                      textScaleFactor: defaultTextScaleFactor *
+                          Fonts.getTextScale(state.textScale),
+                    ),
+                  );
+                  return Navigator(
+                    onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
+                          builder: (context) =>
+                              DialogPresenter(child: mediaQuery),
+                        ),
                   );
                 },
               ),
