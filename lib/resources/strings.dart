@@ -10,6 +10,8 @@ class Strings {
       'База вопросов временно не доступна\nПроверьте интернет соединение или попробуйте позже';
   static const String retry = 'повторить';
   static const String close = 'закрыть';
+  static const String later = 'позже';
+  static const String neverAsk = 'никогда не спрашивать';
   static const String aboutTournament = 'о турнире';
   static const String aboutTour = 'о туре';
   static const String question = 'Вопрос';
@@ -42,4 +44,5 @@ class Strings {
   static const String forShortTimer = 'для вопросов дуплет и блиц';
   static const String randomQuestions = 'Случайный вопросы';
   static const String tournamentsTree = 'Дерево турниров';
+  static const String rateUs = 'Оцените работу приложения';
 }
