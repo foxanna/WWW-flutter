@@ -9,9 +9,7 @@ import 'package:what_when_where/ui/about/about_page.dart';
 import 'package:what_when_where/ui/image/image_page.dart';
 import 'package:what_when_where/ui/search/search_page.dart';
 import 'package:what_when_where/ui/settings/settings_page.dart';
-import 'package:what_when_where/ui/tour_questions/tour_details_about_dialog.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_page.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_about_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/tournament_details_page.dart';
 import 'package:what_when_where/ui/tree/tournaments_tree_page.dart';
 
@@ -19,9 +17,7 @@ class NavigationMiddleware {
   static final List<Middleware<AppState>> middleware = [
     TypedMiddleware<AppState, OpenImage>(_openImage),
     TypedMiddleware<AppState, OpenTournament>(_openTournament),
-    TypedMiddleware<AppState, OpenTourInfo>(_openTourInfo),
     TypedMiddleware<AppState, OpenQuestions>(_openQuestions),
-    TypedMiddleware<AppState, OpenTournamentInfo>(_openTournamentInfo),
     TypedMiddleware<AppState, OpenAboutPage>(_openAboutPage),
     TypedMiddleware<AppState, OpenSearchPage>(_openSearchPage),
     TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
@@ -56,18 +52,6 @@ class NavigationMiddleware {
         context: action.context,
         routeName: TournamentDetailsPage.routeName,
         builder: (context) => TournamentDetailsPage());
-  }
-
-  static void _openTourInfo(
-      Store<AppState> store, OpenTourInfo action, NextDispatcher next) {
-    next(action);
-
-    _navigationService.showDialog(
-      TourDetailsAboutDialog(
-        context: action.context,
-        tour: action.tour,
-      ),
-    );
   }
 
   static void _openQuestions(
@@ -112,18 +96,6 @@ class NavigationMiddleware {
         context: action.context,
         routeName: SettingsPage.routeName,
         builder: (context) => SettingsPage());
-  }
-
-  static void _openTournamentInfo(
-      Store<AppState> store, OpenTournamentInfo action, NextDispatcher next) {
-    next(action);
-
-    _navigationService.showDialog(
-      TournamentDetailsAboutDialog(
-        context: action.context,
-        tournament: action.tournament,
-      ),
-    );
   }
 
   static void _openRandomQuestionsPage(Store<AppState> store,
