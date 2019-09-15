@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/global/navigatorKey.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
@@ -30,6 +31,7 @@ class WWWApp extends StatelessWidget {
           builder: (context, state) => MaterialApp(
                 title: Constants.appName,
                 theme: Themes.get(state.appTheme),
+                navigatorKey: globalNavigatorKey,
                 navigatorObservers: <NavigatorObserver>[
                   WWWIoC.container<IAnalyticsService>()
                       .observer(home: LatestTournamentsPage.routeName),
