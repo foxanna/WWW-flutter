@@ -3,18 +3,12 @@ import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/redux/action.dart';
-
-abstract class ShareAction extends Action {
-  const ShareAction({BuildContext context}) : super(context: context);
-}
 
 @immutable
-class ShareQuestion extends ShareAction {
+class ShareQuestion {
   final Question question;
 
-  ShareQuestion(this.question, {BuildContext context})
-      : super(context: context);
+  const ShareQuestion(this.question);
 
   @override
   String toString() =>
@@ -22,10 +16,10 @@ class ShareQuestion extends ShareAction {
 }
 
 @immutable
-class ShareTour extends ShareAction {
+class ShareTour {
   final Tour tour;
 
-  ShareTour(this.tour, {BuildContext context}) : super(context: context);
+  const ShareTour(this.tour);
 
   @override
   String toString() =>
@@ -33,11 +27,10 @@ class ShareTour extends ShareAction {
 }
 
 @immutable
-class ShareTournament extends ShareAction {
+class ShareTournament {
   final Tournament tournament;
 
-  ShareTournament(this.tournament, {BuildContext context})
-      : super(context: context);
+  const ShareTournament(this.tournament);
 
   @override
   String toString() =>

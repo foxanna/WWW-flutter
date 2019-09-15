@@ -1,57 +1,50 @@
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:what_when_where/redux/action.dart';
-
-abstract class ToursAction extends Action {
-  const ToursAction({BuildContext context}) : super(context: context);
-}
 
 @immutable
-class SetTours extends ToursAction {
+class SetTours {
   final Iterable<Tour> tours;
 
-  const SetTours(this.tours, {BuildContext context}) : super(context: context);
+  const SetTours(this.tours);
 
   @override
   String toString() => '$SetTours tours.length = "${tours.length}"';
 }
 
 @immutable
-class SelectTour extends ToursAction {
+class SelectTour {
   final int tourIndex;
 
-  const SelectTour(this.tourIndex, {BuildContext context})
-      : super(context: context);
+  const SelectTour(this.tourIndex);
 
   @override
   String toString() => '$SelectTour tourIndex = "$tourIndex"';
 }
 
 @immutable
-class VoidTours extends ToursAction {
-  const VoidTours({BuildContext context}) : super(context: context);
+class VoidTours {
+  const VoidTours();
 
   @override
   String toString() => '$VoidTours';
 }
 
 @immutable
-class TourIsLoading extends ToursAction {
+class TourIsLoading {
   final String tourId;
 
-  const TourIsLoading(this.tourId, {BuildContext context})
-      : super(context: context);
+  const TourIsLoading(this.tourId);
 
   @override
   String toString() => '$TourIsLoading tourId = "$tourId"';
 }
 
 @immutable
-class TourLoaded extends ToursAction {
+class TourLoaded {
   final Tour tour;
 
-  const TourLoaded(this.tour, {BuildContext context}) : super(context: context);
+  const TourLoaded(this.tour);
 
   @override
   String toString() =>
@@ -59,12 +52,11 @@ class TourLoaded extends ToursAction {
 }
 
 @immutable
-class TourFailedLoading extends ToursAction {
+class TourFailedLoading {
   final String tourId;
   final Exception exception;
 
-  const TourFailedLoading(this.tourId, this.exception, {BuildContext context})
-      : super(context: context);
+  const TourFailedLoading(this.tourId, this.exception);
 
   @override
   String toString() =>
@@ -72,10 +64,10 @@ class TourFailedLoading extends ToursAction {
 }
 
 @immutable
-class LoadTour extends ToursAction {
+class LoadTour {
   final String tourId;
 
-  const LoadTour(this.tourId, {BuildContext context}) : super(context: context);
+  const LoadTour(this.tourId);
 
   @override
   String toString() => '$LoadTour tourId = "$tourId"';

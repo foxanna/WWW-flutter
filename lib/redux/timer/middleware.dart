@@ -28,7 +28,7 @@ class _TimerTickingMiddleware {
   static final _timer = WWWTimer(updateFrequency: _timerFrequency);
 
   static void _startTimer(
-      Store<AppState> store, TimerAction action, NextDispatcher next) {
+      Store<AppState> store, StartTimer action, NextDispatcher next) {
     next(action);
 
     final timerState = store.state.timerState;
@@ -53,7 +53,7 @@ class _TimerTickingMiddleware {
   }
 
   static void _stopTimer(
-      Store<AppState> store, TimerAction action, NextDispatcher next) {
+      Store<AppState> store, StopTimer action, NextDispatcher next) {
     next(action);
 
     _timer.pause();
@@ -67,7 +67,7 @@ class _TimerTickingMiddleware {
   }
 
   static void _resetTimer(
-      Store<AppState> store, TimerAction action, NextDispatcher next) {
+      Store<AppState> store, ResetTimer action, NextDispatcher next) {
     next(action);
 
     store.dispatch(const StopTimer());
@@ -125,7 +125,7 @@ class _TimerVibratingMiddleware {
       WWWIoC.container<IVibratingService>();
 
   static void _vibrate(
-      Store<AppState> store, TimerAction action, NextDispatcher next) {
+      Store<AppState> store, NotifyExpiration action, NextDispatcher next) {
     next(action);
 
     _vibratingService.vibrate();
@@ -140,7 +140,7 @@ class _TimerSoundMiddleware {
   static ISoundService get _soundService => WWWIoC.container<ISoundService>();
 
   static void _sound(
-      Store<AppState> store, TimerAction action, NextDispatcher next) {
+      Store<AppState> store, NotifyExpiration action, NextDispatcher next) {
     next(action);
 
     _soundService.playSound();

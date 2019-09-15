@@ -1,24 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/redux/action.dart';
-
-abstract class QuestionAction extends Action {
-  const QuestionAction({BuildContext context}) : super(context: context);
-}
-
-abstract class UserQuestionAction extends QuestionAction {
-  const UserQuestionAction({BuildContext context}) : super(context: context);
-}
 
 @immutable
-class SetQuestions extends UserQuestionAction {
+class SetQuestions {
   final Iterable<Question> questions;
   final int selectedQuestionIndex;
 
-  const SetQuestions(
-      {this.questions, this.selectedQuestionIndex, BuildContext context})
-      : super(context: context);
+  const SetQuestions({this.questions, this.selectedQuestionIndex});
 
   @override
   String toString() =>
@@ -26,72 +15,64 @@ class SetQuestions extends UserQuestionAction {
 }
 
 @immutable
-class VoidQuestions extends UserQuestionAction {
-  const VoidQuestions({BuildContext context}) : super(context: context);
+class VoidQuestions {
+  const VoidQuestions();
 
   @override
   String toString() => '$VoidQuestions';
 }
 
 @immutable
-class ReloadQuestions extends UserQuestionAction {
-  const ReloadQuestions({BuildContext context}) : super(context: context);
+class ReloadQuestions {
+  const ReloadQuestions();
 
   @override
   String toString() => '$ReloadQuestions';
 }
 
 @immutable
-class SelectQuestion extends UserQuestionAction {
+class SelectQuestion {
   final int questionIndex;
 
-  const SelectQuestion(this.questionIndex, {BuildContext context})
-      : super(context: context);
+  const SelectQuestion(this.questionIndex);
 
   @override
   String toString() => '$SelectQuestion questionIndex = "$questionIndex"';
 }
 
 @immutable
-class ShowAnswer extends UserQuestionAction {
+class ShowAnswer {
   final int questionIndex;
 
-  const ShowAnswer(this.questionIndex, {BuildContext context})
-      : super(context: context);
+  const ShowAnswer(this.questionIndex);
 
   @override
   String toString() => '$ShowAnswer questionIndex = "$questionIndex"';
 }
 
 @immutable
-class HideAnswer extends UserQuestionAction {
+class HideAnswer {
   final int questionIndex;
 
-  const HideAnswer(this.questionIndex, {BuildContext context})
-      : super(context: context);
+  const HideAnswer(this.questionIndex);
 
   @override
   String toString() => '$HideAnswer questionIndex = "$questionIndex"';
 }
 
-abstract class SystemQuestionAction extends QuestionAction {
-  const SystemQuestionAction({BuildContext context}) : super(context: context);
-}
-
 @immutable
-class QuestionsAreLoading extends SystemQuestionAction {
-  const QuestionsAreLoading({BuildContext context}) : super(context: context);
+class QuestionsAreLoading {
+  const QuestionsAreLoading();
 
   @override
   String toString() => '$QuestionsAreLoading';
 }
 
 @immutable
-class MoreQuestionsLoaded extends SystemQuestionAction {
+class MoreQuestionsLoaded {
   final List<Question> questions;
 
-  const MoreQuestionsLoaded(this.questions, {BuildContext context})
-      : super(context: context);
+  const MoreQuestionsLoaded(this.questions);
 
   @override
   String toString() =>
@@ -99,11 +80,10 @@ class MoreQuestionsLoaded extends SystemQuestionAction {
 }
 
 @immutable
-class QuestionsFailedToLoad extends SystemQuestionAction {
+class QuestionsFailedToLoad {
   final Exception exception;
 
-  const QuestionsFailedToLoad(this.exception, {BuildContext context})
-      : super(context: context);
+  const QuestionsFailedToLoad(this.exception);
 
   @override
   String toString() =>

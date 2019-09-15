@@ -1,18 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/redux/action.dart';
-
-abstract class TournamentAction extends Action {
-  const TournamentAction({BuildContext context}) : super(context: context);
-}
 
 @immutable
-class SetTournament extends TournamentAction {
+class SetTournament {
   final Tournament tournament;
 
-  const SetTournament(this.tournament, {BuildContext context})
-      : super(context: context);
+  const SetTournament(this.tournament);
 
   @override
   String toString() =>
@@ -28,41 +22,38 @@ class VoidTournament {
 }
 
 @immutable
-class LoadTournament extends TournamentAction {
+class LoadTournament {
   final String tournamentId;
 
-  const LoadTournament(this.tournamentId, {BuildContext context})
-      : super(context: context);
+  const LoadTournament(this.tournamentId);
 
   @override
   String toString() => '$LoadTournament tournamentId = "$tournamentId"';
 }
 
 @immutable
-class ReloadTournament extends TournamentAction {
-  const ReloadTournament({BuildContext context}) : super(context: context);
+class ReloadTournament {
+  const ReloadTournament();
 
   @override
   String toString() => '$ReloadTournament';
 }
 
 @immutable
-class TournamentIsLoading extends TournamentAction {
+class TournamentIsLoading {
   final String tournamentId;
 
-  const TournamentIsLoading(this.tournamentId, {BuildContext context})
-      : super(context: context);
+  const TournamentIsLoading(this.tournamentId);
 
   @override
   String toString() => '$TournamentIsLoading tournamentId = "$tournamentId"';
 }
 
 @immutable
-class TournamentLoaded extends TournamentAction {
+class TournamentLoaded {
   final Tournament tournament;
 
-  const TournamentLoaded(this.tournament, {BuildContext context})
-      : super(context: context);
+  const TournamentLoaded(this.tournament);
 
   @override
   String toString() =>
@@ -70,13 +61,11 @@ class TournamentLoaded extends TournamentAction {
 }
 
 @immutable
-class TournamentFailedLoading extends TournamentAction {
+class TournamentFailedLoading {
   final String tournamentId;
   final Exception exception;
 
-  const TournamentFailedLoading(this.tournamentId, this.exception,
-      {BuildContext context})
-      : super(context: context);
+  const TournamentFailedLoading(this.tournamentId, this.exception);
 
   @override
   String toString() =>

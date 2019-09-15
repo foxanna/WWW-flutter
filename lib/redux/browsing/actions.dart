@@ -3,18 +3,12 @@ import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/redux/action.dart';
-
-abstract class BrowseAction extends Action {
-  const BrowseAction({BuildContext context}) : super(context: context);
-}
 
 @immutable
-class BrowseQuestion extends BrowseAction {
+class BrowseQuestion {
   final Question question;
 
-  BrowseQuestion(this.question, {BuildContext context})
-      : super(context: context);
+  const BrowseQuestion(this.question);
 
   @override
   String toString() =>
@@ -22,10 +16,10 @@ class BrowseQuestion extends BrowseAction {
 }
 
 @immutable
-class BrowseTour extends BrowseAction {
+class BrowseTour {
   final Tour tour;
 
-  BrowseTour(this.tour, {BuildContext context}) : super(context: context);
+  const BrowseTour(this.tour);
 
   @override
   String toString() =>
@@ -33,11 +27,10 @@ class BrowseTour extends BrowseAction {
 }
 
 @immutable
-class BrowseTournament extends BrowseAction {
+class BrowseTournament {
   final Tournament tournament;
 
-  BrowseTournament(this.tournament, {BuildContext context})
-      : super(context: context);
+  const BrowseTournament(this.tournament);
 
   @override
   String toString() =>
