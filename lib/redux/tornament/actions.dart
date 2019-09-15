@@ -20,8 +20,8 @@ class SetTournament extends TournamentAction {
 }
 
 @immutable
-class VoidTournament extends TournamentAction {
-  const VoidTournament({BuildContext context}) : super(context: context);
+class VoidTournament {
+  const VoidTournament();
 
   @override
   String toString() => '$VoidTournament';
