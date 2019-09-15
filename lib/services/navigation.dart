@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/global/navigatorKey.dart';
 
 abstract class INavigationService {
   void navigateToPage({
-    BuildContext context,
     String routeName,
     WidgetBuilder builder,
   });
@@ -15,13 +15,11 @@ class NavigationService extends INavigationService {
 
   @override
   void navigateToPage({
-    @required BuildContext context,
     String routeName,
     @required WidgetBuilder builder,
   }) =>
-      Navigator.push<Object>(
-        context,
-        MaterialPageRoute(
+      globalNavigatorKey.currentState.push<dynamic>(
+        MaterialPageRoute<dynamic>(
           settings: RouteSettings(name: routeName),
           builder: builder,
         ),
