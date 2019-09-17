@@ -12,12 +12,15 @@ import 'package:xml2json/xml2json.dart';
 part 'http_client_logger.dart';
 part 'http_settings.dart';
 
-class HttpClient {
+abstract class IHttpClient {
+  Future<String> getRaw(Uri uri, {CancelToken cancelToken});
+  Future<Map<String, dynamic>> get(Uri uri, {CancelToken cancelToken});
+}
+
+class HttpClient implements IHttpClient {
   final Dio _dio;
 
-  static final _instance = HttpClient._internal(_createDioInstance());
-
-  factory HttpClient() => _instance;
+  factory HttpClient.ioc() => HttpClient._internal(_createDioInstance());
 
   HttpClient._internal(this._dio) {
     if (_logHttpCommunication) {
@@ -32,6 +35,7 @@ class HttpClient {
         receiveTimeout: _receiveTimeout));
   }
 
+  @override
   Future<String> getRaw(Uri uri, {CancelToken cancelToken}) async {
     try {
       final response =
@@ -49,6 +53,7 @@ class HttpClient {
     }
   }
 
+  @override
   Future<Map<String, dynamic>> get(Uri uri, {CancelToken cancelToken}) async {
     final xml = await getRaw(uri, cancelToken: cancelToken);
     return _parse(xml);
