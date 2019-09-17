@@ -36,7 +36,7 @@ class WWWApp extends StatelessWidget {
                 theme: Themes.get(state.appTheme),
                 navigatorKey: globalNavigatorKey,
                 navigatorObservers: <NavigatorObserver>[
-                  WWWIoC.container<IAnalyticsService>()
+                  ioc<IAnalyticsService>()
                       .observer(home: LatestTournamentsPage.routeName),
                 ],
                 home: LatestTournamentsPage(),
