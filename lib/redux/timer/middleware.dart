@@ -1,33 +1,55 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/common/timer_type.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/services/sound.dart';
 import 'package:what_when_where/services/vibrating.dart';
 import 'package:what_when_where/utils/timer.dart';
 
+const int _timerFrequency = 200;
+
 class TimerMiddleware {
-  static final middleware = <Middleware<AppState>>[]
-    ..addAll(_TimerConnectingMiddleware.middleware)
-    ..addAll(_TimerTickingMiddleware.middleware)
-    ..addAll(_TimerSoundMiddleware.middleware)
-    ..addAll(_TimerVibratingMiddleware.middleware);
+  final ISoundService _soundService;
+  final IVibratingService _vibratingService;
+
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
+
+  TimerMiddleware({
+    ISoundService soundService,
+    IVibratingService vibratingService,
+  })  : _soundService = soundService,
+        _vibratingService = vibratingService {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => []
+    ..addAll(_TimerConnectingMiddleware().middleware)
+    ..addAll(_TimerTickingMiddleware().middleware)
+    ..addAll(_TimerSoundMiddleware(soundService: _soundService).middleware)
+    ..addAll(_TimerVibratingMiddleware(vibratingService: _vibratingService)
+        .middleware);
 }
 
 class _TimerTickingMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, StartTimer>(_startTimer),
-    TypedMiddleware<AppState, StopTimer>(_stopTimer),
-    TypedMiddleware<AppState, ResetTimer>(_resetTimer),
-    TypedMiddleware<AppState, UpdateTimeValue>(_stopTimerAtZero),
-    TypedMiddleware<AppState, ChangeTimerType>(_changeTimerType),
-  ];
+  final _timer = WWWTimer(updateFrequency: _timerFrequency);
 
-  static const int _timerFrequency = 200;
-  static final _timer = WWWTimer(updateFrequency: _timerFrequency);
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static void _startTimer(
+  _TimerTickingMiddleware() {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, StartTimer>(_startTimer),
+        TypedMiddleware<AppState, StopTimer>(_stopTimer),
+        TypedMiddleware<AppState, ResetTimer>(_resetTimer),
+        TypedMiddleware<AppState, UpdateTimeValue>(_stopTimerAtZero),
+        TypedMiddleware<AppState, ChangeTimerType>(_changeTimerType),
+      ];
+
+  void _startTimer(
       Store<AppState> store, StartTimer action, NextDispatcher next) {
     next(action);
 
@@ -52,7 +74,7 @@ class _TimerTickingMiddleware {
     store.dispatch(UpdateIsRunningValue(_timer.isRunning));
   }
 
-  static void _stopTimer(
+  void _stopTimer(
       Store<AppState> store, StopTimer action, NextDispatcher next) {
     next(action);
 
@@ -60,13 +82,13 @@ class _TimerTickingMiddleware {
     store.dispatch(UpdateIsRunningValue(_timer.isRunning));
   }
 
-  static void _updateTime(Store<AppState> store, int seconds) {
+  void _updateTime(Store<AppState> store, int seconds) {
     if (store.state.timerState.secondsLeft != seconds) {
       store.dispatch(UpdateTimeValue(seconds));
     }
   }
 
-  static void _resetTimer(
+  void _resetTimer(
       Store<AppState> store, ResetTimer action, NextDispatcher next) {
     next(action);
 
@@ -75,7 +97,7 @@ class _TimerTickingMiddleware {
     _timer.reset();
   }
 
-  static void _stopTimerAtZero(
+  void _stopTimerAtZero(
       Store<AppState> store, UpdateTimeValue action, NextDispatcher next) {
     next(action);
 
@@ -84,7 +106,7 @@ class _TimerTickingMiddleware {
     }
   }
 
-  static void _changeTimerType(
+  void _changeTimerType(
       Store<AppState> store, ChangeTimerType action, NextDispatcher next) {
     next(action);
 
@@ -93,11 +115,18 @@ class _TimerTickingMiddleware {
 }
 
 class _TimerConnectingMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, UpdateTimeValue>(_notifyTimerExpiration),
-  ];
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static void _notifyTimerExpiration(
+  _TimerConnectingMiddleware() {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, UpdateTimeValue>(_notifyTimerExpiration),
+      ];
+
+  void _notifyTimerExpiration(
       Store<AppState> store, UpdateTimeValue action, NextDispatcher next) {
     next(action);
 
@@ -117,14 +146,22 @@ class _TimerConnectingMiddleware {
 }
 
 class _TimerVibratingMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, NotifyExpiration>(_vibrate),
-  ];
+  final IVibratingService _vibratingService;
 
-  static IVibratingService get _vibratingService =>
-      WWWIoC.container<IVibratingService>();
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static void _vibrate(
+  _TimerVibratingMiddleware({
+    IVibratingService vibratingService,
+  }) : _vibratingService = vibratingService {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, NotifyExpiration>(_vibrate),
+      ];
+
+  void _vibrate(
       Store<AppState> store, NotifyExpiration action, NextDispatcher next) {
     next(action);
 
@@ -133,13 +170,22 @@ class _TimerVibratingMiddleware {
 }
 
 class _TimerSoundMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, NotifyExpiration>(_sound),
-  ];
+  final ISoundService _soundService;
 
-  static ISoundService get _soundService => WWWIoC.container<ISoundService>();
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static void _sound(
+  _TimerSoundMiddleware({
+    ISoundService soundService,
+  }) : _soundService = soundService {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, NotifyExpiration>(_sound),
+      ];
+
+  void _sound(
       Store<AppState> store, NotifyExpiration action, NextDispatcher next) {
     next(action);
 

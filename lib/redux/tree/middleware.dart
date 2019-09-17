@@ -4,12 +4,21 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
 
 class TournamentsTreeMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, LoadTournamentsTree>(_loadTournamentsTree),
-  ];
+  final _loader = TournamentsTreeLoader();
 
-  static Future _loadTournamentsTree(Store<AppState> store,
-      LoadTournamentsTree action, NextDispatcher next) async {
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
+
+  TournamentsTreeMiddleware() {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, LoadTournamentsTree>(_loadTournamentsTree),
+      ];
+
+  Future _loadTournamentsTree(Store<AppState> store, LoadTournamentsTree action,
+      NextDispatcher next) async {
     next(action);
 
     final state = store.state.tournamentsTreeState[action.id];
@@ -20,7 +29,7 @@ class TournamentsTreeMiddleware {
     try {
       store.dispatch(TournamentsTreeIsLoading(id: action.id));
 
-      final tree = await TournamentsTreeLoader().get(id: action.id);
+      final tree = await _loader.get(id: action.id);
       store.dispatch(TournamentsTreeLoaded(id: action.id, tree: tree));
     } catch (e) {
       store.dispatch(TournamentsTreeFailedLoading(id: action.id, exception: e));

@@ -1,5 +1,4 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/services/dialogs.dart';
 import 'package:what_when_where/ui/rating/rating_dialog.dart';
@@ -9,16 +8,24 @@ import 'package:what_when_where/ui/tournament_details/tournament_details_about_d
 import 'actions.dart';
 
 class DialogMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, OpenTourInfo>(_openTourInfo),
-    TypedMiddleware<AppState, OpenTournamentInfo>(_openTournamentInfo),
-    TypedMiddleware<AppState, OpenRatingDialog>(_openRatingDialog),
-  ];
+  final IDialogService _dialogService;
 
-  static IDialogService get _dialogService =>
-      WWWIoC.container<IDialogService>();
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static Future _openTourInfo(
+  DialogMiddleware({
+    IDialogService dialogService,
+  }) : _dialogService = dialogService {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, OpenTourInfo>(_openTourInfo),
+        TypedMiddleware<AppState, OpenTournamentInfo>(_openTournamentInfo),
+        TypedMiddleware<AppState, OpenRatingDialog>(_openRatingDialog),
+      ];
+
+  Future _openTourInfo(
       Store<AppState> store, OpenTourInfo action, NextDispatcher next) async {
     next(action);
 
@@ -26,8 +33,8 @@ class DialogMiddleware {
         builder: (context) => TourDetailsAboutDialog(tour: action.tour));
   }
 
-  static Future _openTournamentInfo(Store<AppState> store,
-      OpenTournamentInfo action, NextDispatcher next) async {
+  Future _openTournamentInfo(Store<AppState> store, OpenTournamentInfo action,
+      NextDispatcher next) async {
     next(action);
 
     await _dialogService.show<dynamic>(
@@ -35,8 +42,8 @@ class DialogMiddleware {
             TournamentDetailsAboutDialog(tournament: action.tournament));
   }
 
-  static Future _openRatingDialog(Store<AppState> store,
-      OpenRatingDialog action, NextDispatcher next) async {
+  Future _openRatingDialog(Store<AppState> store, OpenRatingDialog action,
+      NextDispatcher next) async {
     next(action);
 
     await _dialogService.show<dynamic>(

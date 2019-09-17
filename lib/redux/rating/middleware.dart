@@ -1,5 +1,4 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/rating/actions.dart';
@@ -7,23 +6,31 @@ import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/rating.dart';
 
+const String _tournamentsViewedKey = 'tournaments_viewed';
+const String _ratedKey = 'rated';
+const int _maxOpenedTournamentsCount = 5;
+
 class RatingMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, VoidTournament>(_onTournamentClosed),
-    TypedMiddleware<AppState, RateOnStore>(_rateOnStore),
-  ];
+  final IPreferences _preferencesService;
+  final IRatingService _ratingService;
 
-  static IPreferences get _preferencesService =>
-      WWWIoC.container<IPreferences>();
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static IRatingService get _ratingService =>
-      WWWIoC.container<IRatingService>();
+  RatingMiddleware({
+    IPreferences preferences,
+    IRatingService ratingService,
+  })  : _preferencesService = preferences,
+        _ratingService = ratingService {
+    _middleware = _createMiddleware();
+  }
 
-  static const String _tournamentsViewedKey = 'tournaments_viewed';
-  static const String _ratedKey = 'rated';
-  static const int _maxOpenedTournamentsCount = 5;
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, VoidTournament>(_onTournamentClosed),
+        TypedMiddleware<AppState, RateOnStore>(_rateOnStore),
+      ];
 
-  static Future _onTournamentClosed(
+  Future _onTournamentClosed(
       Store<AppState> store, VoidTournament action, NextDispatcher next) async {
     next(action);
 
@@ -46,7 +53,7 @@ class RatingMiddleware {
     store.dispatch(const OpenRatingDialog());
   }
 
-  static void _rateOnStore(
+  void _rateOnStore(
       Store<AppState> store, RateOnStore action, NextDispatcher next) {
     next(action);
 

@@ -1,34 +1,41 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/services/sharing.dart';
 
 class ShareMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, ShareQuestion>(_shareQuestion),
-    TypedMiddleware<AppState, ShareTour>(_shareTour),
-    TypedMiddleware<AppState, ShareTournament>(_shareTournament),
-  ];
+  final ISharingService _sharingService;
 
-  static ISharingService get _sharingService =>
-      WWWIoC.container<ISharingService>();
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static void _shareTournament(
+  ShareMiddleware({
+    ISharingService sharingService,
+  }) : _sharingService = sharingService {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, ShareQuestion>(_shareQuestion),
+        TypedMiddleware<AppState, ShareTour>(_shareTour),
+        TypedMiddleware<AppState, ShareTournament>(_shareTournament),
+      ];
+
+  void _shareTournament(
       Store<AppState> store, ShareTournament action, NextDispatcher next) {
     next(action);
 
     _sharingService.shareTournament(action.tournament);
   }
 
-  static void _shareTour(
+  void _shareTour(
       Store<AppState> store, ShareTour action, NextDispatcher next) {
     next(action);
 
     _sharingService.shareTour(action.tour);
   }
 
-  static void _shareQuestion(
+  void _shareQuestion(
       Store<AppState> store, ShareQuestion action, NextDispatcher next) {
     next(action);
 

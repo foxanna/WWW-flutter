@@ -1,5 +1,4 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
@@ -14,25 +13,33 @@ import 'package:what_when_where/ui/tournament_details/tournament_details_page.da
 import 'package:what_when_where/ui/tree/tournaments_tree_page.dart';
 
 class NavigationMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, OpenImagePage>(_openImage),
-    TypedMiddleware<AppState, OpenTournamentPage>(_openTournament),
-    TypedMiddleware<AppState, OpenQuestionsPage>(_openQuestions),
-    TypedMiddleware<AppState, OpenAboutPage>(_openAboutPage),
-    TypedMiddleware<AppState, OpenSearchPage>(_openSearchPage),
-    TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
-    TypedMiddleware<AppState, OpenRandomQuestionsPage>(
-        _openRandomQuestionsPage),
-    TypedMiddleware<AppState, OpenTournamentsTreePage>(
-        _openTournamentsTreePage),
-    TypedMiddleware<AppState, OpenTournamentsSubTreePage>(
-        _openTournamentsSubTreePage),
-  ];
+  final INavigationService _navigationService;
 
-  static INavigationService get _navigationService =>
-      WWWIoC.container<INavigationService>();
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static void _openImage(
+  NavigationMiddleware({
+    INavigationService navigationService,
+  }) : _navigationService = navigationService {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, OpenImagePage>(_openImage),
+        TypedMiddleware<AppState, OpenTournamentPage>(_openTournament),
+        TypedMiddleware<AppState, OpenQuestionsPage>(_openQuestions),
+        TypedMiddleware<AppState, OpenAboutPage>(_openAboutPage),
+        TypedMiddleware<AppState, OpenSearchPage>(_openSearchPage),
+        TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
+        TypedMiddleware<AppState, OpenRandomQuestionsPage>(
+            _openRandomQuestionsPage),
+        TypedMiddleware<AppState, OpenTournamentsTreePage>(
+            _openTournamentsTreePage),
+        TypedMiddleware<AppState, OpenTournamentsSubTreePage>(
+            _openTournamentsSubTreePage),
+      ];
+
+  void _openImage(
       Store<AppState> store, OpenImagePage action, NextDispatcher next) {
     next(action);
 
@@ -42,7 +49,7 @@ class NavigationMiddleware {
     );
   }
 
-  static void _openTournament(
+  void _openTournament(
       Store<AppState> store, OpenTournamentPage action, NextDispatcher next) {
     next(action);
 
@@ -54,7 +61,7 @@ class NavigationMiddleware {
     );
   }
 
-  static void _openQuestions(
+  void _openQuestions(
       Store<AppState> store, OpenQuestionsPage action, NextDispatcher next) {
     next(action);
 
@@ -68,7 +75,7 @@ class NavigationMiddleware {
     );
   }
 
-  static void _openAboutPage(
+  void _openAboutPage(
       Store<AppState> store, OpenAboutPage action, NextDispatcher next) {
     next(action);
 
@@ -78,7 +85,7 @@ class NavigationMiddleware {
     );
   }
 
-  static void _openSearchPage(
+  void _openSearchPage(
       Store<AppState> store, OpenSearchPage action, NextDispatcher next) {
     next(action);
 
@@ -88,7 +95,7 @@ class NavigationMiddleware {
     );
   }
 
-  static void _openSettingsPage(
+  void _openSettingsPage(
       Store<AppState> store, OpenSettingsPage action, NextDispatcher next) {
     next(action);
 
@@ -98,7 +105,7 @@ class NavigationMiddleware {
     );
   }
 
-  static void _openRandomQuestionsPage(Store<AppState> store,
+  void _openRandomQuestionsPage(Store<AppState> store,
       OpenRandomQuestionsPage action, NextDispatcher next) {
     next(action);
 
@@ -108,7 +115,7 @@ class NavigationMiddleware {
     );
   }
 
-  static void _openTournamentsTreePage(Store<AppState> store,
+  void _openTournamentsTreePage(Store<AppState> store,
       OpenTournamentsTreePage action, NextDispatcher next) {
     next(action);
 
@@ -118,7 +125,7 @@ class NavigationMiddleware {
     );
   }
 
-  static void _openTournamentsSubTreePage(Store<AppState> store,
+  void _openTournamentsSubTreePage(Store<AppState> store,
       OpenTournamentsSubTreePage action, NextDispatcher next) {
     next(action);
 

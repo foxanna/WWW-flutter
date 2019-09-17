@@ -1,30 +1,38 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/preferences.dart';
 
+const _themeKey = 'theme';
+const _textScaleKey = 'scale';
+const _notifyShortTimerExpirationKey = 'notify_short_timer';
+const _notifyLongTimerExpirationKey = 'notify_long_timer';
+
 class SettingsMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, ReadSettings>(_onReadSettings),
-    TypedMiddleware<AppState, ChangeTheme>(_onThemeChanged),
-    TypedMiddleware<AppState, ChangeTextScale>(_onTextScaleChanged),
-    TypedMiddleware<AppState, ChangeNotifyShortTimerExpiration>(
-        _onNotifyShortTimerExpirationChanged),
-    TypedMiddleware<AppState, ChangeNotifyLongTimerExpiration>(
-        _onNotifyLongTimerExpirationChanged),
-  ];
+  final IPreferences _preferences;
 
-  static const _themeKey = 'theme';
-  static const _textScaleKey = 'scale';
-  static const _notifyShortTimerExpirationKey = 'notify_short_timer';
-  static const _notifyLongTimerExpirationKey = 'notify_long_timer';
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static IPreferences get _preferences => WWWIoC.container<IPreferences>();
+  SettingsMiddleware({
+    IPreferences preferences,
+  }) : _preferences = preferences {
+    _middleware = _createMiddleware();
+  }
 
-  static Future _onReadSettings(
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, ReadSettings>(_onReadSettings),
+        TypedMiddleware<AppState, ChangeTheme>(_onThemeChanged),
+        TypedMiddleware<AppState, ChangeTextScale>(_onTextScaleChanged),
+        TypedMiddleware<AppState, ChangeNotifyShortTimerExpiration>(
+            _onNotifyShortTimerExpirationChanged),
+        TypedMiddleware<AppState, ChangeNotifyLongTimerExpiration>(
+            _onNotifyLongTimerExpirationChanged),
+      ];
+
+  Future _onReadSettings(
       Store<AppState> store, ReadSettings action, NextDispatcher next) async {
     next(action);
 
@@ -46,7 +54,7 @@ class SettingsMiddleware {
         notifyLongTimerExpiration: notifyLongTimerExpiration));
   }
 
-  static Future _onThemeChanged(
+  Future _onThemeChanged(
       Store<AppState> store, ChangeTheme action, NextDispatcher next) async {
     final themeHasChanged =
         action.appTheme != store.state.settingsState.appTheme;
@@ -58,8 +66,8 @@ class SettingsMiddleware {
     }
   }
 
-  static Future _onTextScaleChanged(Store<AppState> store,
-      ChangeTextScale action, NextDispatcher next) async {
+  Future _onTextScaleChanged(Store<AppState> store, ChangeTextScale action,
+      NextDispatcher next) async {
     final textScaleHasChanged =
         action.textScale != store.state.settingsState.textScale;
 
@@ -70,7 +78,7 @@ class SettingsMiddleware {
     }
   }
 
-  static Future _onNotifyShortTimerExpirationChanged(Store<AppState> store,
+  Future _onNotifyShortTimerExpirationChanged(Store<AppState> store,
       ChangeNotifyShortTimerExpiration action, NextDispatcher next) async {
     final settingChanged =
         action.newValue != store.state.settingsState.notifyShortTimerExpiration;
@@ -83,7 +91,7 @@ class SettingsMiddleware {
     }
   }
 
-  static Future _onNotifyLongTimerExpirationChanged(Store<AppState> store,
+  Future _onNotifyLongTimerExpirationChanged(Store<AppState> store,
       ChangeNotifyLongTimerExpiration action, NextDispatcher next) async {
     final settingChanged =
         action.newValue != store.state.settingsState.notifyLongTimerExpiration;

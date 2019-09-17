@@ -1,6 +1,4 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/ioc/bootstraper.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/init/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
@@ -8,17 +6,29 @@ import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/sound.dart';
 
 class InitMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, Init>(_onInit),
-  ];
+  final ICrashService _crashService;
+  final ISoundService _soundService;
 
-  static void _onInit(Store<AppState> store, Init action, NextDispatcher next) {
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
+
+  InitMiddleware({
+    ICrashService crashService,
+    ISoundService soundService,
+  })  : _crashService = crashService,
+        _soundService = soundService {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, Init>(_onInit),
+      ];
+
+  void _onInit(Store<AppState> store, Init action, NextDispatcher next) {
     next(action);
 
-    Bootstrapper().init();
-
-    WWWIoC.container<ICrashService>().init();
-    WWWIoC.container<ISoundService>().init();
+    _crashService.init();
+    _soundService.init();
 
     store.dispatch(const ReadSettings());
   }

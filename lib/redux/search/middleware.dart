@@ -9,15 +9,25 @@ import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
 
 class SearchMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, SearchTournaments>(_searchTournaments),
-    TypedMiddleware<AppState, TournamentsSearchQueryChanged>(_queryChanged),
-    TypedMiddleware<AppState, TournamentsSearchSortingChanged>(_sortingChanged),
-    TypedMiddleware<AppState, RepeatFailedSearchTournaments>(_reloadMore),
-  ];
+  final _loader = SearchLoader();
 
-  static Future _searchTournaments(Store<AppState> store,
-      SearchTournaments action, NextDispatcher next) async {
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
+
+  SearchMiddleware() {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, SearchTournaments>(_searchTournaments),
+        TypedMiddleware<AppState, TournamentsSearchQueryChanged>(_queryChanged),
+        TypedMiddleware<AppState, TournamentsSearchSortingChanged>(
+            _sortingChanged),
+        TypedMiddleware<AppState, RepeatFailedSearchTournaments>(_reloadMore),
+      ];
+
+  Future _searchTournaments(Store<AppState> store, SearchTournaments action,
+      NextDispatcher next) async {
     next(action);
 
     final state = store.state.searchState.searchResults;
@@ -26,7 +36,7 @@ class SearchMiddleware {
     }
   }
 
-  static Future _search(Store<AppState> store, SearchTournaments action) async {
+  Future _search(Store<AppState> store, SearchTournaments action) async {
     final parameters = store.state.searchState.searchParameters;
 
     if (parameters.query.isEmpty) {
@@ -48,7 +58,7 @@ class SearchMiddleware {
     }
   }
 
-  static void _sortingChanged(Store<AppState> store,
+  void _sortingChanged(Store<AppState> store,
       TournamentsSearchSortingChanged action, NextDispatcher next) {
     final sortingHasChanged =
         action.sorting != store.state.searchState.searchParameters.sorting;
@@ -66,7 +76,7 @@ class SearchMiddleware {
     }
   }
 
-  static void _queryChanged(Store<AppState> store,
+  void _queryChanged(Store<AppState> store,
       TournamentsSearchQueryChanged action, NextDispatcher next) {
     final queryHasChanged =
         action.query != store.state.searchState.searchParameters.query;
@@ -78,17 +88,17 @@ class SearchMiddleware {
     }
   }
 
-  static void _reloadMore(Store<AppState> store,
-      RepeatFailedSearchTournaments action, NextDispatcher next) {
+  void _reloadMore(Store<AppState> store, RepeatFailedSearchTournaments action,
+      NextDispatcher next) {
     next(action);
 
     store.dispatch(const ClearSearchTournamentsException());
     store.dispatch(const SearchTournaments());
   }
 
-  static Future<Iterable<Tournament>> _fetch(
+  Future<Iterable<Tournament>> _fetch(
           SearchTournamentsParametersState parameters) =>
-      SearchLoader().searchTournaments(
+      _loader.searchTournaments(
           SearchParameters(
             query: parameters.query,
             sorting: parameters.sorting,

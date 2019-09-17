@@ -5,23 +5,30 @@ import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 
 class TournamentMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, SetTournament>(_setTournament),
-    TypedMiddleware<AppState, LoadTournament>(_loadTournament),
-    TypedMiddleware<AppState, ReloadTournament>(_reloadTournament),
-    TypedMiddleware<AppState, TournamentLoaded>(_tournamentLoaded),
-  ];
+  final _loader = TournamentDetailsLoader();
 
-  static final _loader = TournamentDetailsLoader();
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static void _setTournament(
+  TournamentMiddleware() {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, SetTournament>(_setTournament),
+        TypedMiddleware<AppState, LoadTournament>(_loadTournament),
+        TypedMiddleware<AppState, ReloadTournament>(_reloadTournament),
+        TypedMiddleware<AppState, TournamentLoaded>(_tournamentLoaded),
+      ];
+
+  void _setTournament(
       Store<AppState> store, SetTournament action, NextDispatcher next) {
     next(action);
 
     store.dispatch(LoadTournament(action.tournament.textId));
   }
 
-  static Future _loadTournament(
+  Future _loadTournament(
       Store<AppState> store, LoadTournament action, NextDispatcher next) async {
     next(action);
 
@@ -42,7 +49,7 @@ class TournamentMiddleware {
     }
   }
 
-  static void _tournamentLoaded(
+  void _tournamentLoaded(
       Store<AppState> store, TournamentLoaded action, NextDispatcher next) {
     next(action);
 
@@ -50,7 +57,7 @@ class TournamentMiddleware {
     store.dispatch(const SelectTour(0));
   }
 
-  static void _reloadTournament(
+  void _reloadTournament(
       Store<AppState> store, ReloadTournament action, NextDispatcher next) {
     next(action);
 

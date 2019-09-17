@@ -6,28 +6,38 @@ import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/random/actions.dart';
 
 class RandomQuestionsMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, LoadRandomQuestions>(_loadRandomQuestions),
-    TypedMiddleware<AppState, OpenRandomQuestionsPage>(_randomQuestionsOpened),
-    TypedMiddleware<AppState, ReloadQuestions>(_reloadQuestions),
-    TypedMiddleware<AppState, VoidQuestions>(_resetState),
-    TypedMiddleware<AppState, SelectQuestion>(_onQuestionsSelected),
-  ];
+  final _loader = RandomQuestionsLoader();
 
-  static Future _loadRandomQuestions(Store<AppState> store,
-      LoadRandomQuestions action, NextDispatcher next) async {
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
+
+  RandomQuestionsMiddleware() {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, LoadRandomQuestions>(_loadRandomQuestions),
+        TypedMiddleware<AppState, OpenRandomQuestionsPage>(
+            _randomQuestionsOpened),
+        TypedMiddleware<AppState, ReloadQuestions>(_reloadQuestions),
+        TypedMiddleware<AppState, VoidQuestions>(_resetState),
+        TypedMiddleware<AppState, SelectQuestion>(_onQuestionsSelected),
+      ];
+
+  Future _loadRandomQuestions(Store<AppState> store, LoadRandomQuestions action,
+      NextDispatcher next) async {
     next(action);
 
     try {
       store.dispatch(const QuestionsAreLoading());
-      final data = await RandomQuestionsLoader().get();
+      final data = await _loader.get();
       store.dispatch(MoreQuestionsLoaded(data));
     } catch (e) {
       store.dispatch(QuestionsFailedToLoad(e));
     }
   }
 
-  static void _randomQuestionsOpened(Store<AppState> store,
+  void _randomQuestionsOpened(Store<AppState> store,
       OpenRandomQuestionsPage action, NextDispatcher next) {
     next(action);
 
@@ -35,21 +45,21 @@ class RandomQuestionsMiddleware {
     store.dispatch(const LoadRandomQuestions());
   }
 
-  static void _reloadQuestions(
+  void _reloadQuestions(
       Store<AppState> store, ReloadQuestions action, NextDispatcher next) {
     next(action);
 
     store.dispatch(const LoadRandomQuestions());
   }
 
-  static void _resetState(
+  void _resetState(
       Store<AppState> store, VoidQuestions action, NextDispatcher next) {
     next(action);
 
     store.dispatch(const RandomQuestionsAreDisplayedChanged(false));
   }
 
-  static Future _onQuestionsSelected(
+  Future _onQuestionsSelected(
       Store<AppState> store, SelectQuestion action, NextDispatcher next) async {
     next(action);
 
@@ -60,7 +70,7 @@ class RandomQuestionsMiddleware {
     _loadMoreQuestionsIfRequired(store);
   }
 
-  static void _loadMoreQuestionsIfRequired(Store<AppState> store) {
+  void _loadMoreQuestionsIfRequired(Store<AppState> store) {
     final questionsState = store.state.questionsState;
 
     if (!questionsState.isLoading &&

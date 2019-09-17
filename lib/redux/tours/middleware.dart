@@ -4,14 +4,21 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 
 class ToursMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, SelectTour>(_selectTour),
-    TypedMiddleware<AppState, LoadTour>(_loadTour),
-  ];
+  final _loader = TourDetailsLoader();
 
-  static final _loader = TourDetailsLoader();
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static void _selectTour(
+  ToursMiddleware() {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, SelectTour>(_selectTour),
+        TypedMiddleware<AppState, LoadTour>(_loadTour),
+      ];
+
+  void _selectTour(
       Store<AppState> store, SelectTour action, NextDispatcher next) {
     next(action);
 
@@ -21,7 +28,7 @@ class ToursMiddleware {
     }
   }
 
-  static Future _loadTour(
+  Future _loadTour(
       Store<AppState> store, LoadTour action, NextDispatcher next) async {
     next(action);
 

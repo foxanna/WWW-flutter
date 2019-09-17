@@ -1,20 +1,28 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
 class MiscMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, EmailDevelopers>(_emailDevelopers),
-    TypedMiddleware<AppState, BrowseDatabase>(_openDatabase),
-  ];
+  final IUrlLauncher _urlLauncher;
 
-  static IUrlLauncher get _urlLauncher => WWWIoC.container<IUrlLauncher>();
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  static void _emailDevelopers(
+  MiscMiddleware({
+    IUrlLauncher urlLauncher,
+  }) : _urlLauncher = urlLauncher {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, EmailDevelopers>(_emailDevelopers),
+        TypedMiddleware<AppState, BrowseDatabase>(_openDatabase),
+      ];
+
+  void _emailDevelopers(
       Store<AppState> store, EmailDevelopers action, NextDispatcher next) {
     next(action);
 
@@ -22,7 +30,7 @@ class MiscMiddleware {
         Constants.developersEmail, '${Strings.app} ${Constants.appNameLong}');
   }
 
-  static void _openDatabase(
+  void _openDatabase(
       Store<AppState> store, BrowseDatabase action, NextDispatcher next) {
     next(action);
 

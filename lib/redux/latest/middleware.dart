@@ -5,14 +5,23 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 
 class LatestTournamentsMiddleware {
-  static final List<Middleware<AppState>> middleware = [
-    TypedMiddleware<AppState, RefreshLatestTournaments>(_refresh),
-    TypedMiddleware<AppState, LoadMoreLatestTournaments>(_loadMore),
-    TypedMiddleware<AppState, RepeatFailedLoadingLatestTournaments>(
-        _reloadMore),
-  ];
+  final _loader = LatestTournamentsLoader();
 
-  static Future _refresh(Store<AppState> store, RefreshLatestTournaments action,
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
+
+  LatestTournamentsMiddleware() {
+    _middleware = _createMiddleware();
+  }
+
+  List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, RefreshLatestTournaments>(_refresh),
+        TypedMiddleware<AppState, LoadMoreLatestTournaments>(_loadMore),
+        TypedMiddleware<AppState, RepeatFailedLoadingLatestTournaments>(
+            _reloadMore),
+      ];
+
+  Future _refresh(Store<AppState> store, RefreshLatestTournaments action,
       NextDispatcher next) async {
     next(action);
 
@@ -21,15 +30,15 @@ class LatestTournamentsMiddleware {
     try {
       store.dispatch(const LatestTournamentsIsRefreshing());
 
-      final data = await LatestTournamentsLoader().get(page: page);
+      final data = await _loader.get(page: page);
       _moreItemsLoaded(store, data, page);
     } on Exception catch (e) {
       store.dispatch(LatestTournamentsRefreshFailed(e));
     }
   }
 
-  static Future _loadMore(Store<AppState> store,
-      LoadMoreLatestTournaments action, NextDispatcher next) async {
+  Future _loadMore(Store<AppState> store, LoadMoreLatestTournaments action,
+      NextDispatcher next) async {
     next(action);
 
     final state = store.state.latestTournamentsState;
@@ -42,14 +51,14 @@ class LatestTournamentsMiddleware {
     try {
       store.dispatch(const LatestTournamentsIsLoadingMore());
 
-      final data = await LatestTournamentsLoader().get(page: page);
+      final data = await _loader.get(page: page);
       _moreItemsLoaded(store, data, page);
     } on Exception catch (e) {
       store.dispatch(LatestTournamentsLoadFailed(e));
     }
   }
 
-  static void _moreItemsLoaded(
+  void _moreItemsLoaded(
       Store<AppState> store, Iterable<Tournament> data, int page) {
     if (page == 0) {
       store.dispatch(const ClearLatestTournaments());
@@ -57,7 +66,7 @@ class LatestTournamentsMiddleware {
     store.dispatch(MoreLatestTournamentsLoaded(data));
   }
 
-  static void _reloadMore(Store<AppState> store,
+  void _reloadMore(Store<AppState> store,
       RepeatFailedLoadingLatestTournaments action, NextDispatcher next) {
     next(action);
 
