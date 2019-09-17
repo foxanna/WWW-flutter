@@ -1,4 +1,10 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
+import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
+import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
+import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
+import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
+import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/state.dart';
@@ -65,18 +71,30 @@ class AppMiddleware {
     ..addAll(DialogMiddleware(
       dialogService: _container<IDialogService>(),
     ).middleware)
-    ..addAll(ToursMiddleware().middleware)
-    ..addAll(TournamentMiddleware().middleware)
-    ..addAll(LatestTournamentsMiddleware().middleware)
+    ..addAll(ToursMiddleware(
+      loader: _container<ITourDetailsLoader>(),
+    ).middleware)
+    ..addAll(TournamentMiddleware(
+      loader: _container<ITournamentDetailsLoader>(),
+    ).middleware)
+    ..addAll(LatestTournamentsMiddleware(
+      loader: _container<ILatestTournamentsLoader>(),
+    ).middleware)
     ..addAll(MiscMiddleware(
       urlLauncher: _container<IUrlLauncher>(),
     ).middleware)
-    ..addAll(SearchMiddleware().middleware)
+    ..addAll(SearchMiddleware(
+      loader: _container<ISearchLoader>(),
+    ).middleware)
     ..addAll(SettingsMiddleware(
       preferences: _container<IPreferences>(),
     ).middleware)
-    ..addAll(RandomQuestionsMiddleware().middleware)
-    ..addAll(TournamentsTreeMiddleware().middleware)
+    ..addAll(RandomQuestionsMiddleware(
+      loader: _container<IRandomQuestionsLoader>(),
+    ).middleware)
+    ..addAll(TournamentsTreeMiddleware(
+      loader: _container<ITournamentsTreeLoader>(),
+    ).middleware)
     ..addAll(RatingMiddleware(
       preferences: _container<IPreferences>(),
       ratingService: _container<IRatingService>(),
