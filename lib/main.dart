@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/global/ioc.dart';
 import 'package:what_when_where/global/navigatorKey.dart';
-import 'package:what_when_where/ioc/container.dart';
+import 'package:what_when_where/ioc/initializer.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/init/actions.dart';
@@ -15,6 +16,8 @@ import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page.da
 
 void main() {
 //  debugPaintSizeEnabled = true;
+
+  IoCInitializer(container: ioc).init();
   runApp(WWWApp());
 }
 
