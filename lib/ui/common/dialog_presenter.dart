@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/ioc/container.dart';
+import 'package:what_when_where/global/ioc.dart';
 import 'package:what_when_where/services/dialogs.dart';
 
 class DialogPresenter extends StatefulWidget {
@@ -15,7 +15,7 @@ class _DialogPresenterState extends State<DialogPresenter> {
   @override
   void initState() {
     super.initState();
-    WWWIoC.container<IDialogHelper>().registerPresenter(_showDialog);
+    ioc<IDialogHelper>().registerPresenter(_showDialog);
   }
 
   @override
