@@ -93,34 +93,34 @@ void main() {
 
     test(
       '$ShareQuestion',
-      () => analyticsTest(ShareQuestion(const Question()), 'share_question'),
+      () => analyticsTest(const ShareQuestion(Question()), 'share_question'),
     );
 
     test(
       '$ShareTour',
-      () => analyticsTest(ShareTour(const Tour()), 'share_tour'),
+      () => analyticsTest(const ShareTour(Tour()), 'share_tour'),
     );
 
     test(
       '$ShareTournament',
       () => analyticsTest(
-          ShareTournament(const Tournament()), 'share_tournament'),
+          const ShareTournament(Tournament()), 'share_tournament'),
     );
 
     test(
       '$BrowseQuestion',
-      () => analyticsTest(BrowseQuestion(const Question()), 'browse_question'),
+      () => analyticsTest(const BrowseQuestion(Question()), 'browse_question'),
     );
 
     test(
       '$BrowseTour',
-      () => analyticsTest(BrowseTour(const Tour()), 'browse_tour'),
+      () => analyticsTest(const BrowseTour(Tour()), 'browse_tour'),
     );
 
     test(
       '$BrowseTournament',
       () => analyticsTest(
-          BrowseTournament(const Tournament()), 'browse_tournament'),
+          const BrowseTournament(Tournament()), 'browse_tournament'),
     );
 
     test(
