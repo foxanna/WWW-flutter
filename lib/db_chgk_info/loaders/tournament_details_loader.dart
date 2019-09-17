@@ -4,8 +4,11 @@ import 'package:what_when_where/db_chgk_info/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
-class TournamentDetailsLoader {
+abstract class ITournamentDetailsLoader {
+  Future<Tournament> get(String id);
+}
 
+class TournamentDetailsLoader implements ITournamentDetailsLoader {
   final IHttpClient _httpClient;
 
   final _cache = TournamentCache();
@@ -15,6 +18,7 @@ class TournamentDetailsLoader {
     IHttpClient httpClient,
   }) : _httpClient = httpClient;
 
+  @override
   Future<Tournament> get(String id) async {
     if (_cache.contains(id)) {
       return _cache.get(id);

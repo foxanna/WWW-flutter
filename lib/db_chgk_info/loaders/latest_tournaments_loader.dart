@@ -3,14 +3,18 @@ import 'package:what_when_where/db_chgk_info/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/utils/extensions.dart';
 
-class LatestTournamentsLoader {
+abstract class ILatestTournamentsLoader {
+  Future<Iterable<Tournament>> get({int page = 0});
+}
 
+class LatestTournamentsLoader implements ILatestTournamentsLoader {
   final IHttpClient _httpClient;
 
   LatestTournamentsLoader.ioc({
     IHttpClient httpClient,
   }) : _httpClient = httpClient;
 
+  @override
   Future<Iterable<Tournament>> get({int page = 0}) async {
     final queryParameters = {'page': page.toString()};
     final html = await _httpClient

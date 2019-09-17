@@ -5,19 +5,27 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/search/search_parameters.dart';
 
-class SearchLoader {
+abstract class ISearchLoader {
+  Future<Iterable<Question>> searchQuestions(SearchParameters parameters,
+      {int page = 0});
+  Future<Iterable<Tournament>> searchTournaments(SearchParameters parameters,
+      {int page = 0});
+}
 
+class SearchLoader implements ISearchLoader {
   final IHttpClient _httpClient;
 
   SearchLoader.ioc({
     IHttpClient httpClient,
   }) : _httpClient = httpClient;
 
+  @override
   Future<Iterable<Question>> searchQuestions(SearchParameters parameters,
       {int page = 0}) async {
     return Future.value(<Question>[]);
   }
 
+  @override
   Future<Iterable<Tournament>> searchTournaments(SearchParameters parameters,
       {int page = 0}) async {
     final queryParameters = {'page': page.toString()};
