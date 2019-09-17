@@ -12,7 +12,7 @@ import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
 import 'package:what_when_where/redux/init/middleware.dart';
 import 'package:what_when_where/redux/latest/middleware.dart';
-import 'package:what_when_where/redux/logs/logs.dart';
+import 'package:what_when_where/redux/logs/middleware.dart';
 import 'package:what_when_where/redux/misc/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/random/middleware.dart';
@@ -47,7 +47,7 @@ class AppMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => []
-    ..addAll(LogsMiddleware.middleware)
+    ..addAll(LogsMiddleware().middleware)
     ..addAll(InitMiddleware(
       crashService: _container<ICrashService>(),
       soundService: _container<ISoundService>(),
