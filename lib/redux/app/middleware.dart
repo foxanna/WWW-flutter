@@ -1,10 +1,4 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/state.dart';
@@ -24,22 +18,12 @@ import 'package:what_when_where/redux/timer/middleware.dart';
 import 'package:what_when_where/redux/tornament/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
-import 'package:what_when_where/services/analytics.dart';
-import 'package:what_when_where/services/browsing.dart';
-import 'package:what_when_where/services/crashes.dart';
-import 'package:what_when_where/services/dialogs.dart';
-import 'package:what_when_where/services/navigation.dart';
-import 'package:what_when_where/services/preferences.dart';
-import 'package:what_when_where/services/rating.dart';
-import 'package:what_when_where/services/sharing.dart';
-import 'package:what_when_where/services/sound.dart';
-import 'package:what_when_where/services/url_launcher.dart';
-import 'package:what_when_where/services/vibrating.dart';
 
 class AppMiddleware {
   final IContainer _container;
 
   List<Middleware<AppState>> _middleware;
+
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
   AppMiddleware({IContainer container}) : _container = container {
@@ -47,56 +31,21 @@ class AppMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => []
-    ..addAll(LogsMiddleware().middleware)
-    ..addAll(InitMiddleware(
-      crashService: _container<ICrashService>(),
-      soundService: _container<ISoundService>(),
-    ).middleware)
-    ..addAll(AnalyticsMiddleware(
-      analyticsService: _container<IAnalyticsService>(),
-    ).middleware)
-    ..addAll(TimerMiddleware(
-      soundService: _container<ISoundService>(),
-      vibratingService: _container<IVibratingService>(),
-    ).middleware)
-    ..addAll(ShareMiddleware(
-      sharingService: _container<ISharingService>(),
-    ).middleware)
-    ..addAll(BrowseMiddleware(
-      browsingService: _container<IBrowsingService>(),
-    ).middleware)
-    ..addAll(NavigationMiddleware(
-      navigationService: _container<INavigationService>(),
-    ).middleware)
-    ..addAll(DialogMiddleware(
-      dialogService: _container<IDialogService>(),
-    ).middleware)
-    ..addAll(ToursMiddleware(
-      loader: _container<ITourDetailsLoader>(),
-    ).middleware)
-    ..addAll(TournamentMiddleware(
-      loader: _container<ITournamentDetailsLoader>(),
-    ).middleware)
-    ..addAll(LatestTournamentsMiddleware(
-      loader: _container<ILatestTournamentsLoader>(),
-    ).middleware)
-    ..addAll(MiscMiddleware(
-      urlLauncher: _container<IUrlLauncher>(),
-    ).middleware)
-    ..addAll(SearchMiddleware(
-      loader: _container<ISearchLoader>(),
-    ).middleware)
-    ..addAll(SettingsMiddleware(
-      preferences: _container<IPreferences>(),
-    ).middleware)
-    ..addAll(RandomQuestionsMiddleware(
-      loader: _container<IRandomQuestionsLoader>(),
-    ).middleware)
-    ..addAll(TournamentsTreeMiddleware(
-      loader: _container<ITournamentsTreeLoader>(),
-    ).middleware)
-    ..addAll(RatingMiddleware(
-      preferences: _container<IPreferences>(),
-      ratingService: _container<IRatingService>(),
-    ).middleware);
+    ..addAll(_container<LogsMiddleware>().middleware)
+    ..addAll(_container<InitMiddleware>().middleware)
+    ..addAll(_container<AnalyticsMiddleware>().middleware)
+    ..addAll(_container<TimerMiddleware>().middleware)
+    ..addAll(_container<ShareMiddleware>().middleware)
+    ..addAll(_container<BrowseMiddleware>().middleware)
+    ..addAll(_container<NavigationMiddleware>().middleware)
+    ..addAll(_container<DialogMiddleware>().middleware)
+    ..addAll(_container<ToursMiddleware>().middleware)
+    ..addAll(_container<TournamentMiddleware>().middleware)
+    ..addAll(_container<LatestTournamentsMiddleware>().middleware)
+    ..addAll(_container<MiscMiddleware>().middleware)
+    ..addAll(_container<SearchMiddleware>().middleware)
+    ..addAll(_container<SettingsMiddleware>().middleware)
+    ..addAll(_container<RandomQuestionsMiddleware>().middleware)
+    ..addAll(_container<TournamentsTreeMiddleware>().middleware)
+    ..addAll(_container<RatingMiddleware>().middleware);
 }
