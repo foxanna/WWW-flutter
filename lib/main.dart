@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/global/ioc.dart';
 import 'package:what_when_where/global/navigatorKey.dart';
@@ -18,15 +19,19 @@ void main() {
 //  debugPaintSizeEnabled = true;
 
   IoCInitializer(container: ioc).init();
-  runApp(WWWApp());
+  runApp(WWWApp(storeBuilder: () => createStore(ioc)));
 }
 
 class WWWApp extends StatelessWidget {
-  final store = createStore();
+  final Store<AppState> Function() _storeBuilder;
+
+  const WWWApp({Key key, Store<AppState> Function() storeBuilder})
+      : _storeBuilder = storeBuilder,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) => StoreProvider<AppState>(
-        store: store,
+        store: _storeBuilder(),
         child: StoreConnector<AppState, SettingsState>(
           distinct: true,
           onInit: (store) => store.dispatch(const Init()),
