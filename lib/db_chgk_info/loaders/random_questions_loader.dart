@@ -3,14 +3,15 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/random_questions.dart';
 
 class RandomQuestionsLoader {
-  static final _instance = RandomQuestionsLoader._internal();
 
-  factory RandomQuestionsLoader() => _instance;
+  final IHttpClient _httpClient;
 
-  RandomQuestionsLoader._internal();
+  RandomQuestionsLoader.ioc({
+    IHttpClient httpClient,
+  }) : _httpClient = httpClient;
 
   Future<Iterable<Question>> get() async {
-    final map = await HttpClient().get(Uri(path: '/xml/random'));
+    final map = await _httpClient.get(Uri(path: '/xml/random'));
     final randomQuestions = RandomQuestions.fromJson(map);
     return randomQuestions.search;
   }

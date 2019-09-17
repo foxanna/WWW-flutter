@@ -4,21 +4,22 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/utils/extensions.dart';
 
 class LatestTournamentsLoader {
-  static final _instance = LatestTournamentsLoader._internal();
 
-  factory LatestTournamentsLoader() => _instance;
+  final IHttpClient _httpClient;
 
-  LatestTournamentsLoader._internal();
+  LatestTournamentsLoader.ioc({
+    IHttpClient httpClient,
+  }) : _httpClient = httpClient;
 
   Future<Iterable<Tournament>> get({int page = 0}) async {
     final queryParameters = {'page': page.toString()};
-    final html = await HttpClient()
+    final html = await _httpClient
         .getRaw(Uri(path: '/last', queryParameters: queryParameters));
-    final tournaments = parseHtml(html);
+    final tournaments = _parseHtml(html);
     return tournaments;
   }
 
-  Iterable<Tournament> parseHtml(String html) {
+  Iterable<Tournament> _parseHtml(String html) {
     final table = parse(html).getElementsByClassName('last_packages');
 
     final rows = IterableExtensions.merge(

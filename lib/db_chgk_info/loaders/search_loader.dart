@@ -6,11 +6,12 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/search/search_parameters.dart';
 
 class SearchLoader {
-  static final _instance = SearchLoader._internal();
 
-  factory SearchLoader() => _instance;
+  final IHttpClient _httpClient;
 
-  SearchLoader._internal();
+  SearchLoader.ioc({
+    IHttpClient httpClient,
+  }) : _httpClient = httpClient;
 
   Future<Iterable<Question>> searchQuestions(SearchParameters parameters,
       {int page = 0}) async {
@@ -21,7 +22,7 @@ class SearchLoader {
       {int page = 0}) async {
     final queryParameters = {'page': page.toString()};
     final query = parameters.toQuery();
-    final html = await HttpClient().getRaw(
+    final html = await _httpClient.getRaw(
         Uri(path: '/search/tours/$query', queryParameters: queryParameters));
 
     final tournaments = _parseHtml(html).toList();

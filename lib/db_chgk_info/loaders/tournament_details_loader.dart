@@ -5,22 +5,22 @@ import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
 class TournamentDetailsLoader {
-  static final TournamentDetailsLoader _instance =
-      TournamentDetailsLoader._internal();
 
-  factory TournamentDetailsLoader() => _instance;
-
-  TournamentDetailsLoader._internal();
+  final IHttpClient _httpClient;
 
   final _cache = TournamentCache();
   final _toursCache = TourCache();
+
+  TournamentDetailsLoader.ioc({
+    IHttpClient httpClient,
+  }) : _httpClient = httpClient;
 
   Future<Tournament> get(String id) async {
     if (_cache.contains(id)) {
       return _cache.get(id);
     }
 
-    var map = await HttpClient().get(Uri(path: '/tour/$id/xml'));
+    var map = await _httpClient.get(Uri(path: '/tour/$id/xml'));
     map = map['tournament'];
 
     _handleTourlessTournament(map);
