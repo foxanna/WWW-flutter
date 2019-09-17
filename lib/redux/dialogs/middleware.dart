@@ -20,21 +20,22 @@ class DialogMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, OpenTourInfo>(_openTourInfo),
-        TypedMiddleware<AppState, OpenTournamentInfo>(_openTournamentInfo),
+        TypedMiddleware<AppState, OpenTourInfoDialog>(_openTourInfo),
+        TypedMiddleware<AppState, OpenTournamentInfoDialog>(
+            _openTournamentInfo),
         TypedMiddleware<AppState, OpenRatingDialog>(_openRatingDialog),
       ];
 
-  Future _openTourInfo(
-      Store<AppState> store, OpenTourInfo action, NextDispatcher next) async {
+  Future _openTourInfo(Store<AppState> store, OpenTourInfoDialog action,
+      NextDispatcher next) async {
     next(action);
 
     await _dialogService.show<dynamic>(
         builder: (context) => TourDetailsAboutDialog(tour: action.tour));
   }
 
-  Future _openTournamentInfo(Store<AppState> store, OpenTournamentInfo action,
-      NextDispatcher next) async {
+  Future _openTournamentInfo(Store<AppState> store,
+      OpenTournamentInfoDialog action, NextDispatcher next) async {
     next(action);
 
     await _dialogService.show<dynamic>(

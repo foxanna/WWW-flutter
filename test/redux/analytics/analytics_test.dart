@@ -129,14 +129,14 @@ void main() {
     );
 
     test(
-      '$OpenTourInfo',
-      () => analyticsTest(const OpenTourInfo(Tour()), 'open_tour_info'),
+      '$OpenTourInfoDialog',
+      () => analyticsTest(const OpenTourInfoDialog(Tour()), 'open_tour_info'),
     );
 
     test(
-      '$OpenTournamentInfo',
+      '$OpenTournamentInfoDialog',
       () => analyticsTest(
-          const OpenTournamentInfo(Tournament()), 'open_tournament_info'),
+          const OpenTournamentInfoDialog(Tournament()), 'open_tournament_info'),
     );
 
     test(

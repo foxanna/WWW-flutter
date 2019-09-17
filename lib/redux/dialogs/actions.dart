@@ -3,25 +3,25 @@ import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
 @immutable
-class OpenTourInfo {
+class OpenTourInfoDialog {
   final Tour tour;
 
-  const OpenTourInfo(this.tour);
+  const OpenTourInfoDialog(this.tour);
 
   @override
   String toString() =>
-      '$OpenTourInfo tour.id = "${tour.id}", tour.title = "${tour.title}"';
+      '$OpenTourInfoDialog tour.id = "${tour.id}", tour.title = "${tour.title}"';
 }
 
 @immutable
-class OpenTournamentInfo {
+class OpenTournamentInfoDialog {
   final Tournament tournament;
 
-  const OpenTournamentInfo(this.tournament);
+  const OpenTournamentInfoDialog(this.tournament);
 
   @override
   String toString() =>
-      '$OpenTournamentInfo tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
+      '$OpenTournamentInfoDialog tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
 }
 
 @immutable
