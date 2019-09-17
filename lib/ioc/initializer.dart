@@ -8,6 +8,7 @@ import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dar
 import 'package:what_when_where/global/navigatorKey.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
+import 'package:what_when_where/redux/app/middleware.dart';
 import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
 import 'package:what_when_where/redux/init/middleware.dart';
@@ -118,6 +119,8 @@ class _MiddlewareInitializer {
   }) : _container = container;
 
   void init() {
+    _container.registerMultiInstance<AppMiddleware>(
+        (c) => AppMiddleware.ioc(container: c));
     _container
         .registerMultiInstance<LogsMiddleware>((c) => LogsMiddleware.ioc());
     _container.registerMultiInstance<InitMiddleware>((c) => InitMiddleware.ioc(

@@ -23,10 +23,11 @@ class AppMiddleware {
   final IContainer _container;
 
   List<Middleware<AppState>> _middleware;
-
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  AppMiddleware({IContainer container}) : _container = container {
+  AppMiddleware.ioc({
+    IContainer container,
+  }) : _container = container {
     _middleware = _createMiddleware();
   }
 
