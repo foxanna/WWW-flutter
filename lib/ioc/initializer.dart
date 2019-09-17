@@ -31,8 +31,9 @@ class _ServicesInitializer {
     _container
         .registerSingleton<IAnalyticsService>((c) => AnalyticsService.ioc());
     _container.registerSingleton<ISharingService>((c) => SharingService.ioc());
-    _container
-        .registerSingleton<IBrowsingService>((c) => BrowsingService.ioc());
+    _container.registerSingleton<IBrowsingService>((c) => BrowsingService.ioc(
+          urlLauncher: c<IUrlLauncher>(),
+        ));
     _container.registerSingleton<INavigationService>(
         (c) => NavigationService.ioc(key: globalNavigatorKey));
     _container.registerSingleton<IDialogService>((c) => DialogService.ioc());

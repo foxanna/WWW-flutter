@@ -1,7 +1,6 @@
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
 abstract class IBrowsingService {
@@ -12,12 +11,13 @@ abstract class IBrowsingService {
   void browseQuestion(Question question);
 }
 
-class BrowsingService extends IBrowsingService {
-  factory BrowsingService.ioc() => BrowsingService._();
+class BrowsingService implements IBrowsingService {
+  final IUrlLauncher _urlLauncher;
 
-  BrowsingService._();
+  factory BrowsingService.ioc({IUrlLauncher urlLauncher}) =>
+      BrowsingService._(urlLauncher);
 
-  IUrlLauncher get _urlLauncher => WWWIoC.container<IUrlLauncher>();
+  BrowsingService._(this._urlLauncher);
 
   @override
   void browseTournament(Tournament tournament) =>
