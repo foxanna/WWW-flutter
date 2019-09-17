@@ -4,12 +4,14 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
 
 class TournamentsTreeMiddleware {
-  final _loader = TournamentsTreeLoader();
+  final ITournamentsTreeLoader _loader;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  TournamentsTreeMiddleware() {
+  TournamentsTreeMiddleware({
+    ITournamentsTreeLoader loader,
+  }) : _loader = loader {
     _middleware = _createMiddleware();
   }
 

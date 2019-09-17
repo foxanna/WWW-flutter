@@ -4,12 +4,14 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 
 class ToursMiddleware {
-  final _loader = TourDetailsLoader();
+  final ITourDetailsLoader _loader;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  ToursMiddleware() {
+  ToursMiddleware({
+    ITourDetailsLoader loader,
+  }) : _loader = loader {
     _middleware = _createMiddleware();
   }
 

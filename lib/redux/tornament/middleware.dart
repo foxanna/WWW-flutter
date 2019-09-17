@@ -5,12 +5,14 @@ import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 
 class TournamentMiddleware {
-  final _loader = TournamentDetailsLoader();
+  final ITournamentDetailsLoader _loader;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  TournamentMiddleware() {
+  TournamentMiddleware({
+    ITournamentDetailsLoader loader,
+  }) : _loader = loader {
     _middleware = _createMiddleware();
   }
 

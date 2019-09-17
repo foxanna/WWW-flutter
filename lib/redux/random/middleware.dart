@@ -6,12 +6,14 @@ import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/random/actions.dart';
 
 class RandomQuestionsMiddleware {
-  final _loader = RandomQuestionsLoader();
+  final IRandomQuestionsLoader _loader;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  RandomQuestionsMiddleware() {
+  RandomQuestionsMiddleware({
+    IRandomQuestionsLoader loader,
+  }) : _loader = loader {
     _middleware = _createMiddleware();
   }
 

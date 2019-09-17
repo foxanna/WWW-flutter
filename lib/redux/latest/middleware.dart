@@ -5,12 +5,14 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 
 class LatestTournamentsMiddleware {
-  final _loader = LatestTournamentsLoader();
+  final ILatestTournamentsLoader _loader;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  LatestTournamentsMiddleware() {
+  LatestTournamentsMiddleware({
+    ILatestTournamentsLoader loader,
+  }) : _loader = loader {
     _middleware = _createMiddleware();
   }
 

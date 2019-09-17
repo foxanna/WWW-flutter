@@ -9,12 +9,14 @@ import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
 
 class SearchMiddleware {
-  final _loader = SearchLoader();
+  final ISearchLoader _loader;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  SearchMiddleware() {
+  SearchMiddleware({
+    ISearchLoader loader,
+  }) : _loader = loader {
     _middleware = _createMiddleware();
   }
 
