@@ -15,7 +15,7 @@ class TimerMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  TimerMiddleware({
+  TimerMiddleware.ioc({
     ISoundService soundService,
     IVibratingService vibratingService,
   })  : _soundService = soundService,

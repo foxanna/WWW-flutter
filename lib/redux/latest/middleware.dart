@@ -10,7 +10,7 @@ class LatestTournamentsMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  LatestTournamentsMiddleware({
+  LatestTournamentsMiddleware.ioc({
     ILatestTournamentsLoader loader,
   }) : _loader = loader {
     _middleware = _createMiddleware();

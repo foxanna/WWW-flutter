@@ -14,7 +14,7 @@ class SearchMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  SearchMiddleware({
+  SearchMiddleware.ioc({
     ISearchLoader loader,
   }) : _loader = loader {
     _middleware = _createMiddleware();

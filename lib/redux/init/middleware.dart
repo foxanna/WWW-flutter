@@ -12,7 +12,7 @@ class InitMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  InitMiddleware({
+  InitMiddleware.ioc({
     ICrashService crashService,
     ISoundService soundService,
   })  : _crashService = crashService,

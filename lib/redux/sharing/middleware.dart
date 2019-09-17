@@ -9,7 +9,7 @@ class ShareMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  ShareMiddleware({
+  ShareMiddleware.ioc({
     ISharingService sharingService,
   }) : _sharingService = sharingService {
     _middleware = _createMiddleware();

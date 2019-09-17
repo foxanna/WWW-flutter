@@ -11,7 +11,7 @@ class RandomQuestionsMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  RandomQuestionsMiddleware({
+  RandomQuestionsMiddleware.ioc({
     IRandomQuestionsLoader loader,
   }) : _loader = loader {
     _middleware = _createMiddleware();

@@ -16,7 +16,7 @@ class SettingsMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  SettingsMiddleware({
+  SettingsMiddleware.ioc({
     IPreferences preferences,
   }) : _preferences = preferences {
     _middleware = _createMiddleware();

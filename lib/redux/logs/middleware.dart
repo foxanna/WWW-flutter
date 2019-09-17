@@ -6,7 +6,7 @@ class LogsMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  LogsMiddleware() {
+  LogsMiddleware.ioc() {
     _middleware = _createMiddleware();
   }
 

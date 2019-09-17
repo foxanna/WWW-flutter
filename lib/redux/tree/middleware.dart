@@ -9,7 +9,7 @@ class TournamentsTreeMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  TournamentsTreeMiddleware({
+  TournamentsTreeMiddleware.ioc({
     ITournamentsTreeLoader loader,
   }) : _loader = loader {
     _middleware = _createMiddleware();

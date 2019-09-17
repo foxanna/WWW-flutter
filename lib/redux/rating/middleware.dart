@@ -17,7 +17,7 @@ class RatingMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  RatingMiddleware({
+  RatingMiddleware.ioc({
     IPreferences preferences,
     IRatingService ratingService,
   })  : _preferencesService = preferences,

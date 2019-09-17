@@ -47,7 +47,7 @@ class AnalyticsMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  AnalyticsMiddleware({
+  AnalyticsMiddleware.ioc({
     IAnalyticsService analyticsService,
   }) : _analyticsService = analyticsService {
     _middleware = _createMiddleware();

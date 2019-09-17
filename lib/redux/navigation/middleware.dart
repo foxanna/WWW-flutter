@@ -18,7 +18,7 @@ class NavigationMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  NavigationMiddleware({
+  NavigationMiddleware.ioc({
     INavigationService navigationService,
   }) : _navigationService = navigationService {
     _middleware = _createMiddleware();

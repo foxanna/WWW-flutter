@@ -11,7 +11,7 @@ class MiscMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  MiscMiddleware({
+  MiscMiddleware.ioc({
     IUrlLauncher urlLauncher,
   }) : _urlLauncher = urlLauncher {
     _middleware = _createMiddleware();

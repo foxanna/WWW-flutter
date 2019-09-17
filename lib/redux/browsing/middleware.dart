@@ -9,7 +9,7 @@ class BrowseMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  BrowseMiddleware({
+  BrowseMiddleware.ioc({
     IBrowsingService browsingService,
   }) : _browsingService = browsingService {
     _middleware = _createMiddleware();

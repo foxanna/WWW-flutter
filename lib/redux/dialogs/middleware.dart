@@ -13,7 +13,7 @@ class DialogMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  DialogMiddleware({
+  DialogMiddleware.ioc({
     IDialogService dialogService,
   }) : _dialogService = dialogService {
     _middleware = _createMiddleware();

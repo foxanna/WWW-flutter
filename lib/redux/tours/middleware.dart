@@ -9,7 +9,7 @@ class ToursMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  ToursMiddleware({
+  ToursMiddleware.ioc({
     ITourDetailsLoader loader,
   }) : _loader = loader {
     _middleware = _createMiddleware();
