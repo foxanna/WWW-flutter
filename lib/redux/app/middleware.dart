@@ -31,22 +31,23 @@ class AppMiddleware {
     _middleware = _createMiddleware();
   }
 
-  List<Middleware<AppState>> _createMiddleware() => []
-    ..addAll(_container<LogsMiddleware>().middleware)
-    ..addAll(_container<InitMiddleware>().middleware)
-    ..addAll(_container<AnalyticsMiddleware>().middleware)
-    ..addAll(_container<TimerMiddleware>().middleware)
-    ..addAll(_container<ShareMiddleware>().middleware)
-    ..addAll(_container<BrowseMiddleware>().middleware)
-    ..addAll(_container<NavigationMiddleware>().middleware)
-    ..addAll(_container<DialogMiddleware>().middleware)
-    ..addAll(_container<ToursMiddleware>().middleware)
-    ..addAll(_container<TournamentMiddleware>().middleware)
-    ..addAll(_container<LatestTournamentsMiddleware>().middleware)
-    ..addAll(_container<MiscMiddleware>().middleware)
-    ..addAll(_container<SearchMiddleware>().middleware)
-    ..addAll(_container<SettingsMiddleware>().middleware)
-    ..addAll(_container<RandomQuestionsMiddleware>().middleware)
-    ..addAll(_container<TournamentsTreeMiddleware>().middleware)
-    ..addAll(_container<RatingMiddleware>().middleware);
+  List<Middleware<AppState>> _createMiddleware() => [
+        ..._container<LogsMiddleware>().middleware,
+        ..._container<InitMiddleware>().middleware,
+        ..._container<AnalyticsMiddleware>().middleware,
+        ..._container<TimerMiddleware>().middleware,
+        ..._container<ShareMiddleware>().middleware,
+        ..._container<BrowseMiddleware>().middleware,
+        ..._container<NavigationMiddleware>().middleware,
+        ..._container<DialogMiddleware>().middleware,
+        ..._container<ToursMiddleware>().middleware,
+        ..._container<TournamentMiddleware>().middleware,
+        ..._container<LatestTournamentsMiddleware>().middleware,
+        ..._container<MiscMiddleware>().middleware,
+        ..._container<SearchMiddleware>().middleware,
+        ..._container<SettingsMiddleware>().middleware,
+        ..._container<RandomQuestionsMiddleware>().middleware,
+        ..._container<TournamentsTreeMiddleware>().middleware,
+        ..._container<RatingMiddleware>().middleware,
+      ];
 }
