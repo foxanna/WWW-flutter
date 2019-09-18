@@ -26,6 +26,5 @@ class LoggerInterceptor extends InterceptorsWrapper {
 
   static void _logError(DioError error) {
     log(error.message);
-    log(error.stackTrace);
   }
 }
