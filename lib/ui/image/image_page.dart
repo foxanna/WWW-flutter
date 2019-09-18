@@ -8,13 +8,13 @@ class ImagePage extends StatelessWidget {
   final String _url;
 
   const ImagePage({Key key, String url})
-      : this._url = url,
+      : _url = url,
         super(key: key);
 
   @override
   Widget build(BuildContext context) => Container(
         child: PhotoView(
-          heroTag: _url,
+          heroAttributes: PhotoViewHeroAttributes(tag: _url),
           imageProvider: NetworkImage(_url),
           loadingChild: const WWWProgressIndicator(),
           minScale: PhotoViewComputedScale.contained,
