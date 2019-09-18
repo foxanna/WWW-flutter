@@ -1,4 +1,3 @@
-import 'package:dioc/dioc.dart';
 import 'package:mockito/mockito.dart';
 import 'package:redux/redux.dart';
 import 'package:test_api/test_api.dart';
@@ -6,7 +5,6 @@ import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
@@ -20,39 +18,26 @@ import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
-import 'package:what_when_where/services/browsing.dart';
-import 'package:what_when_where/services/dialogs.dart';
-import 'package:what_when_where/services/navigation.dart';
-import 'package:what_when_where/services/preferences.dart';
-import 'package:what_when_where/services/sharing.dart';
-import 'package:what_when_where/services/url_launcher.dart';
 
+import '../../ioc/container.dart';
+import '../../ioc/initializer.dart';
 import '../../mocks.dart';
 
 void main() {
-  IAnalyticsService analyticsServiceMock;
   Store<AppState> store;
+  IAnalyticsService analyticsServiceMock;
 
-  WWWIoC.container.register<IUrlLauncher>((c) => UrlLauncherMock(),
-      defaultMode: InjectMode.singleton);
-  WWWIoC.container.register<ISharingService>((c) => SharingServiceMock(),
-      defaultMode: InjectMode.singleton);
-  WWWIoC.container.register<IBrowsingService>((c) => BrowsingServiceMock(),
-      defaultMode: InjectMode.singleton);
-  WWWIoC.container.register<INavigationService>((c) => NavigationServiceMock(),
-      defaultMode: InjectMode.singleton);
-  WWWIoC.container.register<IDialogService>((c) => DialogServiceMock(),
-      defaultMode: InjectMode.singleton);
-  WWWIoC.container.register<IPreferences>((c) => PreferencesMock(),
-      defaultMode: InjectMode.singleton);
-
-  WWWIoC.container.register<IAnalyticsService>((c) => analyticsServiceMock,
-      defaultMode: InjectMode.create);
   bool furtherInteractionAllowed;
 
   setUp(() {
-    store = createStore();
+    final testIoc = WWWTestContainer();
+    IoCTestInitializer(container: testIoc).init();
+
     analyticsServiceMock = AnalyticsServiceMock();
+    testIoc
+        .registerMultiInstance<IAnalyticsService>((c) => analyticsServiceMock);
+
+    store = createStore(testIoc);
     furtherInteractionAllowed = false;
   });
 
