@@ -10,7 +10,7 @@ class OpenTourInfoDialog {
 
   @override
   String toString() =>
-      '$OpenTourInfoDialog tour.id = "${tour.id}", tour.title = "${tour.title}"';
+      '$OpenTourInfoDialog tour.id = "${tour?.id}", tour.title = "${tour?.title}"';
 }
 
 @immutable
@@ -21,7 +21,7 @@ class OpenTournamentInfoDialog {
 
   @override
   String toString() =>
-      '$OpenTournamentInfoDialog tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
+      '$OpenTournamentInfoDialog tournament.id = "${tournament?.id}", tournament.title = "${tournament?.title}"';
 }
 
 @immutable

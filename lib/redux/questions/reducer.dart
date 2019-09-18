@@ -69,8 +69,12 @@ class QuestionsReducer {
   static QuestionsState _questionsLoaded(
           QuestionsState state, MoreQuestionsLoaded action) =>
       QuestionsState.from(
-        questions: state.questions.map((q) => q.question).toList()
-          ..addAll(action.questions),
+        questions: [
+          ...?state.questions.map((q) => q.question),
+          ...?action.questions
+        ],
+//        state.questions.map((q) => q.question).toList()
+//          ..addAll(action.questions),
         index: state.currentQuestionIndex ?? 0,
       );
 }

@@ -12,7 +12,7 @@ class ShareQuestion {
 
   @override
   String toString() =>
-      '$ShareQuestion question.questionId = "${question.questionId}", question.question = "${question.question}"';
+      '$ShareQuestion question.questionId = "${question?.questionId}", question.question = "${question?.question}"';
 }
 
 @immutable
@@ -23,7 +23,7 @@ class ShareTour {
 
   @override
   String toString() =>
-      '$ShareTour tour.id = "${tour.id}", tour.title = "${tour.title}"';
+      '$ShareTour tour.id = "${tour?.id}", tour.title = "${tour?.title}"';
 }
 
 @immutable
@@ -34,5 +34,5 @@ class ShareTournament {
 
   @override
   String toString() =>
-      '$ShareTournament tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
+      '$ShareTournament tournament.id = "${tournament?.id}", tournament.title = "${tournament?.title}"';
 }

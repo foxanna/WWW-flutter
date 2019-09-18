@@ -76,7 +76,7 @@ class MoreQuestionsLoaded {
 
   @override
   String toString() =>
-      '$MoreQuestionsLoaded questions.length = "${questions.length}"';
+      '$MoreQuestionsLoaded questions.length = "${questions?.length}"';
 }
 
 @immutable
@@ -87,5 +87,5 @@ class QuestionsFailedToLoad {
 
   @override
   String toString() =>
-      '$QuestionsFailedToLoad exception.runtimeType = "${exception.runtimeType}"';
+      '$QuestionsFailedToLoad exception.runtimeType = "${exception?.runtimeType}"';
 }

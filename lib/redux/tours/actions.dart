@@ -9,7 +9,7 @@ class SetTours {
   const SetTours(this.tours);
 
   @override
-  String toString() => '$SetTours tours.length = "${tours.length}"';
+  String toString() => '$SetTours tours.length = "${tours?.length}"';
 }
 
 @immutable
@@ -48,7 +48,7 @@ class TourLoaded {
 
   @override
   String toString() =>
-      '$TourLoaded tour.id = "${tour.id}", tour.title = "${tour.title}"';
+      '$TourLoaded tour.id = "${tour.id}", tour.title = "${tour?.title}"';
 }
 
 @immutable
@@ -60,7 +60,7 @@ class TourFailedLoading {
 
   @override
   String toString() =>
-      '$TourFailedLoading tourId = "$tourId", exception.runtimeType = "${exception.runtimeType}"';
+      '$TourFailedLoading tourId = "$tourId", exception.runtimeType = "${exception?.runtimeType}"';
 }
 
 @immutable

@@ -10,7 +10,7 @@ class SetTournament {
 
   @override
   String toString() =>
-      '$SetTournament tournament.textId = "${tournament.textId}", tournament.title = "${tournament.title}"';
+      '$SetTournament tournament.textId = "${tournament?.textId}", tournament.title = "${tournament?.title}"';
 }
 
 @immutable
@@ -57,7 +57,7 @@ class TournamentLoaded {
 
   @override
   String toString() =>
-      '$TournamentLoaded tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
+      '$TournamentLoaded tournament.id = "${tournament.id}", tournament.title = "${tournament?.title}"';
 }
 
 @immutable
@@ -69,5 +69,5 @@ class TournamentFailedLoading {
 
   @override
   String toString() =>
-      '$TournamentFailedLoading tournamentId = "$tournamentId", exception.runtimeType = "${exception.runtimeType}"';
+      '$TournamentFailedLoading tournamentId = "$tournamentId", exception.runtimeType = "${exception?.runtimeType}"';
 }

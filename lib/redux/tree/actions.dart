@@ -31,7 +31,7 @@ class TournamentsTreeFailedLoading {
 
   @override
   String toString() =>
-      '$TournamentsTreeFailedLoading id = "$id", exception.runtimeType = "${exception.runtimeType}"';
+      '$TournamentsTreeFailedLoading id = "$id", exception.runtimeType = "${exception?.runtimeType}"';
 }
 
 @immutable
@@ -43,5 +43,5 @@ class TournamentsTreeLoaded {
 
   @override
   String toString() =>
-      '$TournamentsTreeLoaded id = "$id", tree.childrenCount = "${tree.childrenCount}"';
+      '$TournamentsTreeLoaded id = "$id", tree.childrenCount = "${tree?.childrenCount}"';
 }

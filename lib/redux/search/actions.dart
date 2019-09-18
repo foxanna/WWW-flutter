@@ -72,7 +72,7 @@ class TournamentsSearchLoaded {
 
   @override
   String toString() =>
-      '$TournamentsSearchLoaded data.length = "${data.length}", nextPage = "$nextPage"';
+      '$TournamentsSearchLoaded data.length = "${data?.length}", nextPage = "$nextPage"';
 }
 
 @immutable
@@ -83,7 +83,7 @@ class TournamentsSearchFailedToLoad {
 
   @override
   String toString() =>
-      '$TournamentsSearchFailedToLoad exception.runtimeType = "${exception.runtimeType}"';
+      '$TournamentsSearchFailedToLoad exception.runtimeType = "${exception?.runtimeType}"';
 }
 
 @immutable

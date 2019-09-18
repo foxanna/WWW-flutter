@@ -42,7 +42,7 @@ class MoreLatestTournamentsLoaded {
 
   @override
   String toString() =>
-      '$MoreLatestTournamentsLoaded data.length = "${data.length}"';
+      '$MoreLatestTournamentsLoaded data.length = "${data?.length}"';
 }
 
 @immutable
@@ -69,7 +69,7 @@ class LatestTournamentsLoadFailed {
 
   @override
   String toString() =>
-      '$LatestTournamentsLoadFailed exception.runtimeType = "${exception.runtimeType}"';
+      '$LatestTournamentsLoadFailed exception.runtimeType = "${exception?.runtimeType}"';
 }
 
 @immutable
@@ -80,7 +80,7 @@ class LatestTournamentsRefreshFailed {
 
   @override
   String toString() =>
-      '$LatestTournamentsRefreshFailed exception.runtimeType = "${exception.runtimeType}"';
+      '$LatestTournamentsRefreshFailed exception.runtimeType = "${exception?.runtimeType}"';
 }
 
 @immutable

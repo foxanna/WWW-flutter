@@ -22,7 +22,7 @@ class OpenQuestionsPage {
 
   @override
   String toString() =>
-      '$OpenQuestionsPage questions.length = "${questions.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
+      '$OpenQuestionsPage questions.length = "${questions?.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
 }
 
 @immutable
@@ -33,7 +33,7 @@ class OpenTournamentPage {
 
   @override
   String toString() =>
-      '$OpenTournamentPage tournament.textId = "${tournament.textId}", tournament.title = "${tournament.title}"';
+      '$OpenTournamentPage tournament.textId = "${tournament?.textId}", tournament.title = "${tournament?.title}"';
 }
 
 @immutable

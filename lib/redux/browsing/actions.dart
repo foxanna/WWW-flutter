@@ -12,7 +12,7 @@ class BrowseQuestion {
 
   @override
   String toString() =>
-      '$BrowseQuestion question.questionId = "${question.questionId}", question.question = "${question.question}"';
+      '$BrowseQuestion question.questionId = "${question?.questionId}", question.question = "${question?.question}"';
 }
 
 @immutable
@@ -23,7 +23,7 @@ class BrowseTour {
 
   @override
   String toString() =>
-      '$BrowseTour tour.id = "${tour.id}", tour.title = "${tour.title}"';
+      '$BrowseTour tour.id = "${tour?.id}", tour.title = "${tour?.title}"';
 }
 
 @immutable
@@ -34,5 +34,5 @@ class BrowseTournament {
 
   @override
   String toString() =>
-      '$BrowseTournament tournament.id = "${tournament.id}", tournament.title = "${tournament.title}"';
+      '$BrowseTournament tournament.id = "${tournament?.id}", tournament.title = "${tournament?.title}"';
 }
