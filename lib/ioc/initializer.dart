@@ -45,7 +45,7 @@ class IoCInitializer {
   void init() {
     _ServicesInitializer(container: _container).init();
     _LoadersInitializer(container: _container).init();
-    _MiddlewareInitializer(container: _container).init();
+    MiddlewareInitializer(container: _container).init();
   }
 }
 
@@ -111,10 +111,10 @@ class _LoadersInitializer {
   }
 }
 
-class _MiddlewareInitializer {
+class MiddlewareInitializer {
   final IContainer _container;
 
-  _MiddlewareInitializer({
+  MiddlewareInitializer({
     IContainer container,
   }) : _container = container;
 
