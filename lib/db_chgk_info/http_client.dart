@@ -28,12 +28,13 @@ class HttpClient implements IHttpClient {
     }
   }
 
-  static Dio _createDioInstance() {
-    return Dio(BaseOptions(
-        baseUrl: _baseUrl,
-        connectTimeout: _connectTimeout,
-        receiveTimeout: _receiveTimeout));
-  }
+  static Dio _createDioInstance() => Dio(
+        BaseOptions(
+          baseUrl: _baseUrl,
+          connectTimeout: _connectTimeout,
+          receiveTimeout: _receiveTimeout,
+        ),
+      );
 
   @override
   Future<String> getRaw(Uri uri, {CancelToken cancelToken}) async {
@@ -41,12 +42,12 @@ class HttpClient implements IHttpClient {
       final response =
           await _dio.get<String>(uri.toString(), cancelToken: cancelToken);
       return response?.data;
-    } on Exception catch (e, s) {
-      log('$e: $s');
-      rethrow;
     } on DioError catch (e, s) {
       log('$e: $s');
       throw NetworkException(message: e.toString());
+    } on Exception catch (e, s) {
+      log('$e: $s');
+      rethrow;
     } on Error catch (e, s) {
       log('$e: $s');
       throw Exception(e.toString());
