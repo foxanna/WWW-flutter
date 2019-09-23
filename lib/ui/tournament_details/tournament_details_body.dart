@@ -68,11 +68,11 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
               .state.toursState.tours
               .map<String>((state) => state.tour.title))),
           builder: (context, data) => TabBar(
-                indicatorColor: Theme.of(context).primaryTextTheme.body2.color,
-                isScrollable: true,
-                controller: _tabController,
-                tabs: data.data.map((title) => Tab(text: title)).toList(),
-              ),
+            indicatorColor: Theme.of(context).primaryTextTheme.body2.color,
+            isScrollable: true,
+            controller: _tabController,
+            tabs: data.data.map((title) => Tab(text: title ?? '?')).toList(),
+          ),
         )
       : Container();
 
