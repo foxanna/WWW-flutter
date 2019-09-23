@@ -88,7 +88,10 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
             return PageView.builder(
               controller: _pageController,
               itemCount: count,
-              itemBuilder: (context, index) => TourDetailsTab(index: index),
+              itemBuilder: (context, index) => Container(
+                key: PageStorageKey(index),
+                child: TourDetailsTab(index: index),
+              ),
               onPageChanged: (index) => onPageChanged.function(index),
             );
           },
