@@ -21,8 +21,7 @@ class TourDetailsTab extends StatefulWidget {
   _TourDetailsTabState createState() => _TourDetailsTabState();
 }
 
-class _TourDetailsTabState extends State<TourDetailsTab>
-    with AutomaticKeepAliveClientMixin<TourDetailsTab> {
+class _TourDetailsTabState extends State<TourDetailsTab> {
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<TourState, FunctionHolder>>(
@@ -46,7 +45,4 @@ class _TourDetailsTabState extends State<TourDetailsTab>
           return TourDetailsQuestionsList(tour: state.tour);
         },
       );
-
-  @override
-  bool get wantKeepAlive => true;
 }
