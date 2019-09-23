@@ -12,10 +12,10 @@ class CrashService extends ICrashService {
 
   @override
   void init() {
-    Crashlytics.instance.enableInDevMode = true;
+//    Crashlytics.instance.enableInDevMode = true;
 
     FlutterError.onError = (FlutterErrorDetails details) {
-      Crashlytics.instance.onError(details);
+      Crashlytics.instance.recordFlutterError(details);
     };
   }
 }
