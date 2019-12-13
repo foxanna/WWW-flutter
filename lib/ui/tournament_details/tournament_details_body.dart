@@ -96,7 +96,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
             );
           },
           onDispose: (store) {
-            store.dispatch(VoidTours());
+            store.dispatch(const VoidTours());
           });
 
   @override
@@ -122,7 +122,7 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
       final index = _tabController.index;
       if (index != _pageController.page.round()) {
         _pageController.animateToPage(index,
-            duration: Duration(milliseconds: 300), curve: Curves.easeOut);
+            duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
       }
     }
   }

@@ -35,7 +35,7 @@ class _SearchTournamentsPageAppBarState
   _SearchTournamentsPageAppBarState() {
     _queryDebouncer = PublishSubject<String>()
       ..stream
-          .debounce(Duration(seconds: 1))
+          .debounce(const Duration(seconds: 1))
           .distinct()
           .listen((query) => _search());
   }

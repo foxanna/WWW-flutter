@@ -94,7 +94,7 @@ class _QuestionCardState extends State<QuestionCard> {
     _scrollController.animateTo(
         min(_scrollController.offset + position.dy - Dimensions.defaultSpacing,
             _scrollController.position.maxScrollExtent),
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         curve: Curves.easeOut);
   }
 

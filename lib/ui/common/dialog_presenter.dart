@@ -5,7 +5,7 @@ import 'package:what_when_where/services/dialogs.dart';
 class DialogPresenter extends StatefulWidget {
   final Widget child;
 
-  DialogPresenter({Key key, @required this.child}) : super(key: key);
+  const DialogPresenter({Key key, @required this.child}) : super(key: key);
 
   @override
   _DialogPresenterState createState() => _DialogPresenterState();
