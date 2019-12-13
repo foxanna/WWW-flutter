@@ -1,4 +1,4 @@
-import 'package:test_api/test_api.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:what_when_where/redux/app/store.dart';
 
 import '../../ioc/container.dart';
