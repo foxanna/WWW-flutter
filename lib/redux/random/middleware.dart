@@ -33,7 +33,7 @@ class RandomQuestionsMiddleware {
     try {
       store.dispatch(const QuestionsAreLoading());
       final data = await _loader.get();
-      store.dispatch(MoreQuestionsLoaded(data.toList()));
+      store.dispatch(MoreQuestionsLoaded(data?.toList()));
     } on Exception catch (e) {
       store.dispatch(QuestionsFailedToLoad(e));
     }
