@@ -11,3 +11,4 @@ analyzer:
     missing_return: warning
     todo: ignore
     always_put_required_named_parameters_first: ignore
+    close_sinks: ignore
