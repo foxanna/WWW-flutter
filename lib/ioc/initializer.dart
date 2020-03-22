@@ -5,7 +5,7 @@ import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
-import 'package:what_when_where/global/navigatorKey.dart';
+import 'package:what_when_where/global/navigator_key.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/middleware.dart';

@@ -1,7 +1,7 @@
 import 'package:vibrate/vibrate.dart';
 
 abstract class IVibratingService {
-  Future vibrate();
+  Future<void> vibrate();
 }
 
 class VibratingService extends IVibratingService {
@@ -10,9 +10,9 @@ class VibratingService extends IVibratingService {
   VibratingService._();
 
   @override
-  Future vibrate() async {
+  Future<void> vibrate() async {
     if (await Vibrate.canVibrate) {
-      Vibrate.vibrate();
+      await Vibrate.vibrate();
     }
   }
 }

@@ -37,19 +37,21 @@ class Question {
   });
 
   factory Question.fromJson(Map<String, dynamic> map) => Question(
-        questionId: map['QuestionId'],
-        question: map['Question'],
-        number: map['Number'],
-        answer: TextUtils.normalizeToMultiLine(map['Answer']),
-        authors: TextUtils.normalizeToSingleLine(map['Authors']),
-        passCriteria: TextUtils.normalizeToMultiLine(map['PassCriteria']),
-        comments: TextUtils.normalizeToMultiLine(map['Comments']),
-        sources: TextUtils.normalizeToMultiLine(map['Sources']),
-        parentId: map['ParentId'],
-        tourId: map['tourId'],
-        tournamentId: map['tournamentId'],
-        tourTitle: map['tourTitle'],
-        tournamentTitle: map['tournamentTitle'],
+        questionId: map['QuestionId'] as String,
+        question: map['Question'] as String,
+        number: map['Number'] as String,
+        answer: TextUtils.normalizeToMultiLine(map['Answer'] as String),
+        authors: TextUtils.normalizeToSingleLine(map['Authors'] as String),
+        passCriteria:
+            TextUtils.normalizeToMultiLine(map['PassCriteria'] as String),
+        comments: TextUtils.normalizeToMultiLine(map['Comments'] as String),
+        sources: TextUtils.normalizeToMultiLine(map['Sources'] as String),
+        parentId: map['ParentId'] as String,
+        tourId: map['tourId'] as String,
+        tournamentId: map['tournamentId'] as String,
+        tourTitle: TextUtils.normalizeToSingleLine(map['tourTitle'] as String),
+        tournamentTitle:
+            TextUtils.normalizeToSingleLine(map['tournamentTitle'] as String),
         url:
             '${Constants.databaseUrl}/question/${map['ParentId']}/${map['Number']}',
       );

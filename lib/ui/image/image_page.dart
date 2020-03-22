@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:what_when_where/ui/common/progress_indicator.dart';
 
 class ImagePage extends StatelessWidget {
   static const String routeName = 'image';
@@ -16,7 +15,6 @@ class ImagePage extends StatelessWidget {
         child: PhotoView(
           heroAttributes: PhotoViewHeroAttributes(tag: _url),
           imageProvider: NetworkImage(_url),
-          loadingChild: const WWWProgressIndicator(),
           minScale: PhotoViewComputedScale.contained,
         ),
       );

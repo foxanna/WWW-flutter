@@ -36,24 +36,27 @@ class Tour {
   });
 
   factory Tour.fromJson(Map<String, dynamic> map) => Tour(
-        id: map['Id'],
-        parentId: map['ParentId'],
-        title: map['Title'],
-        number: map['Number'],
-        questionsCount: map['QuestionsNum'],
-        tournamentTitle: map['tournamentTitle'],
-        description: TextUtils.normalizeToSingleLine(map['Info']),
+        id: map['Id'] as String,
+        parentId: map['ParentId'] as String,
+        title: TextUtils.normalizeToSingleLine(map['Title'] as String),
+        number: map['Number'] as String,
+        questionsCount: map['QuestionsNum'] as String,
+        tournamentTitle:
+            TextUtils.normalizeToSingleLine(map['tournamentTitle'] as String),
+        description: TextUtils.normalizeToSingleLine(map['Info'] as String),
         url: '${Constants.databaseUrl}/tour/${map['Id']}',
-        editors: TextUtils.normalizeToSingleLine(map['Editors']),
-        createdAt: map['CreatedAt'],
-        playedAt: map['PlayedAt'],
+        editors: TextUtils.normalizeToSingleLine(map['Editors'] as String),
+        createdAt: TextUtils.normalizeToSingleLine(map['CreatedAt'] as String),
+        playedAt: TextUtils.normalizeToSingleLine(map['PlayedAt'] as String),
         questions: map.containsKey('question')
             ? map['question'] is List
-                ? UnmodifiableListView(
-                    List<Map<String, dynamic>>.from(map['question'])
-                        .map((q) => Question.fromJson(q))
-                        .toList())
-                : UnmodifiableListView([Question.fromJson(map['question'])])
+                ? UnmodifiableListView(List<Map<String, dynamic>>.from(
+                        map['question'] as Iterable<dynamic>)
+                    .map((q) => Question.fromJson(q))
+                    .toList())
+                : UnmodifiableListView([
+                    Question.fromJson(map['question'] as Map<String, dynamic>)
+                  ])
             : UnmodifiableListView([]),
       );
 

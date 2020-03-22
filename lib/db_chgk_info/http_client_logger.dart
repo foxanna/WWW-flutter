@@ -5,7 +5,7 @@ class LoggerInterceptor extends InterceptorsWrapper {
       : super(onRequest: (RequestOptions options) {
           _logOptions(options);
           return options;
-        }, onResponse: (Response response) {
+        }, onResponse: (Response<dynamic> response) {
           _logResponse(response);
           return response;
         }, onError: (DioError error) {
@@ -17,7 +17,7 @@ class LoggerInterceptor extends InterceptorsWrapper {
     log('${options.method} ${options.baseUrl}${options.path}');
   }
 
-  static void _logResponse(Response response) {
+  static void _logResponse(Response<dynamic> response) {
     log('${response.request.method} ${response.statusCode} ${response.request.baseUrl}${response.request.path}');
     if (_logHttpResponseContent) {
       log(response.data);

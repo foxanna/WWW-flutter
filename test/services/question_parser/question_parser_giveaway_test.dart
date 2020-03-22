@@ -11,7 +11,7 @@ void main() {
   ];
 
   group('Giveaway', () {
-    final _test = (String x(String s)) => questionParserTest(
+    final _test = (String Function(String s) x) => questionParserTest(
           text: x('Текст'),
           expectedSections: <dynamic>[
             GiveAwaySection(x('Текст')),
@@ -30,7 +30,7 @@ void main() {
   });
 
   group('Giveaway with dot', () {
-    final _test = (String x(String s)) => questionParserTest(
+    final _test = (String Function(String s) x) => questionParserTest(
           text: x('Текст.'),
           expectedSections: <dynamic>[
             GiveAwaySection(x('Текст.')),
@@ -49,7 +49,7 @@ void main() {
   });
 
   group('Giveaway in the beginning', () {
-    final _test = (String x(String s)) => questionParserTest(
+    final _test = (String Function(String s) x) => questionParserTest(
           text: x('раз, два, три') + 'Текст вопроса.',
           expectedSections: <dynamic>[
             GiveAwaySection(x('раз, два, три')),
@@ -69,7 +69,7 @@ void main() {
   });
 
   group('Giveaway in the middle', () {
-    final _test = (String x(String s)) => questionParserTest(
+    final _test = (String Function(String s) x) => questionParserTest(
           text: 'Текст вопроса.' + x('раз, два, три') + 'Текст.',
           expectedSections: <dynamic>[
             TextSection('Текст вопроса.'),
@@ -90,7 +90,7 @@ void main() {
   });
 
   group('Giveaway in the end', () {
-    final _test = (String x(String s)) => questionParserTest(
+    final _test = (String Function(String s) x) => questionParserTest(
           text: 'Текст вопроса.' + x('раз, два, три'),
           expectedSections: <dynamic>[
             TextSection('Текст вопроса.'),
@@ -110,7 +110,7 @@ void main() {
   });
 
   group('Giveaway several entries', () {
-    final _test = (String x(String s)) => questionParserTest(
+    final _test = (String Function(String s) x) => questionParserTest(
           text: 'Текст вопроса раз.' +
               x('раз, два, три') +
               ' Текст вопроса два.' +
@@ -139,7 +139,7 @@ void main() {
   });
 
   group('Giveaway without spaces around', () {
-    final _test = (String x(String s)) => questionParserTest(
+    final _test = (String Function(String s) x) => questionParserTest(
           text: 'Текст' + x('раз, два, три') + 'Текст вопроса.',
           expectedSections: <dynamic>[
             TextSection('Текст'),

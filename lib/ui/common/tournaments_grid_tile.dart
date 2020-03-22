@@ -31,7 +31,7 @@ class TournamentsGridTile extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
+      children: [
         Text(
           tournament.title,
           style: textTheme.subhead,
@@ -49,14 +49,12 @@ class TournamentsGridTile extends StatelessWidget {
     );
   }
 
-  String _subheadText() => <String>[
-        (tournament.playedAt != null
-            ? '${Strings.playedAt} ${tournament.playedAt}'
-            : null),
-        (tournament.createdAt != null
-            ? '${Strings.addedAt} ${tournament.createdAt}'
-            : null)
-      ].where((x) => x != null).join('\n');
+  String _subheadText() => [
+        if (tournament.playedAt != null)
+          '${Strings.playedAt} ${tournament.playedAt}',
+        if (tournament.createdAt != null)
+          '${Strings.addedAt} ${tournament.createdAt}'
+      ].join('\n');
 
   void _openTournamentDetails(BuildContext context) =>
       StoreProvider.of<AppState>(context)

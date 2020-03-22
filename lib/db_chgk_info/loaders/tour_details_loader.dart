@@ -22,7 +22,7 @@ class TourDetailsLoader implements ITourDetailsLoader {
     }
 
     final map = await _httpClient.get(Uri(path: '/tour/$id/xml'));
-    final tour = Tour.fromJson(map['tournament']);
+    final tour = Tour.fromJson(map['tournament'] as Map<String, dynamic>);
     _cache.save(tour);
     return tour;
   }

@@ -25,31 +25,29 @@ class ErrorMessage extends StatelessWidget {
           padding: Dimensions.defaultPadding * (dense ? 1 : 3),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              dense
-                  ? Container()
-                  : Text(
-                      (exception is NetworkException)
-                          ? Strings.noInternetError
-                          : Strings.genericError,
-                      textAlign: TextAlign.center,
-                      style: color != null
-                          ? Theme.of(context)
-                              .textTheme
-                              .subhead
-                              .copyWith(color: color)
-                          : Theme.of(context).textTheme.subhead,
-                    ),
-              _retryFunction != null
-                  ? IconButton(
-                      iconSize: 56,
-                      icon: Icon(
-                        Icons.refresh,
-                        color: color,
-                      ),
-                      onPressed: () => _retryFunction(),
-                    )
-                  : Container()
+            children: [
+              if (!dense)
+                Text(
+                  (exception is NetworkException)
+                      ? Strings.noInternetError
+                      : Strings.genericError,
+                  textAlign: TextAlign.center,
+                  style: color != null
+                      ? Theme.of(context)
+                          .textTheme
+                          .subhead
+                          .copyWith(color: color)
+                      : Theme.of(context).textTheme.subhead,
+                ),
+              if (_retryFunction != null)
+                IconButton(
+                  iconSize: 56,
+                  icon: Icon(
+                    Icons.refresh,
+                    color: color,
+                  ),
+                  onPressed: () => _retryFunction(),
+                )
             ],
           ),
         ),

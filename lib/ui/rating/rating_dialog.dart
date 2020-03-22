@@ -36,6 +36,7 @@ class RatingDialog extends StatelessWidget {
                     Icons.star,
                     color: Theme.of(context).accentColor,
                   ),
+                  half: Container(),
                   empty: Icon(
                     Icons.star_border,
                     color: Theme.of(context).accentColor,

@@ -15,7 +15,7 @@ void main() {
       expect(GiveAwaySection(sectionText).value, expectedValue);
 
   group('Giveaway', () {
-    final _test = (String x(String s)) => giveAwayTest(
+    final _test = (String Function(String s) x) => giveAwayTest(
           sectionText: x('Текст раздатки'),
           expectedValue: 'Текст раздатки',
         );
@@ -32,7 +32,7 @@ void main() {
   });
 
   group('Giveaway with new lines', () {
-    final _test = (String x(String s)) => giveAwayTest(
+    final _test = (String Function(String s) x) => giveAwayTest(
           sectionText: x('Текст\nраздатки'),
           expectedValue: 'Текст\nраздатки',
         );

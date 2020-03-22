@@ -23,7 +23,7 @@ class LatestTournamentsMiddleware {
             _reloadMore),
       ];
 
-  Future _refresh(Store<AppState> store, RefreshLatestTournaments action,
+  Future<void> _refresh(Store<AppState> store, RefreshLatestTournaments action,
       NextDispatcher next) async {
     next(action);
 
@@ -39,8 +39,8 @@ class LatestTournamentsMiddleware {
     }
   }
 
-  Future _loadMore(Store<AppState> store, LoadMoreLatestTournaments action,
-      NextDispatcher next) async {
+  Future<void> _loadMore(Store<AppState> store,
+      LoadMoreLatestTournaments action, NextDispatcher next) async {
     next(action);
 
     final state = store.state.latestTournamentsState;

@@ -36,7 +36,7 @@ class QuestionParserHelper {
 
   static String removeAll(String text, QuestionSectionType sectionType) {
     if (_matchers.containsKey(sectionType)) {
-      for (var matcher in _matchers[sectionType]) {
+      for (final matcher in _matchers[sectionType]) {
         text = text.replaceAll(matcher, '');
       }
     }

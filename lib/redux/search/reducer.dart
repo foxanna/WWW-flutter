@@ -1,6 +1,5 @@
 import 'package:quiver/core.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
 
@@ -45,9 +44,7 @@ class SearchReducer {
       state.copyWith(
         searchResults: Optional.of(
           state.searchResults.copyWith(
-            data: Optional.of(<Tournament>[]
-              ..addAll(state.searchResults.data)
-              ..addAll(action.data)),
+            data: Optional.of([...state.searchResults.data, ...action.data]),
             emptyResults: Optional.of(action.data.isEmpty),
             canLoadMore: Optional.of(action.data.length == 50),
             isLoading: Optional.of(false),

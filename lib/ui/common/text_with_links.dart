@@ -57,7 +57,7 @@ class TextWithLinks extends StatelessWidget {
                                 ioc<IUrlLauncher>().launchURL(s.toString()),
                         )
                       : TextSpan(
-                          text: s,
+                          text: s?.toString(),
                           style: textStyle,
                         ),
                 )

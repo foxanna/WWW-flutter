@@ -13,9 +13,9 @@ void main() {
   test(
     'Trim keeps plain text',
     () => questionParserTrimTest(
-          text: 'Простой текст вопроса. Из нескольких предложений.',
-          expectedText: 'Простой текст вопроса. Из нескольких предложений.',
-        ),
+      text: 'Простой текст вопроса. Из нескольких предложений.',
+      expectedText: 'Простой текст вопроса. Из нескольких предложений.',
+    ),
   );
 
   group('Trim removes speaker notes', () {
@@ -48,17 +48,17 @@ void main() {
   test(
     'Trim removes audio',
     () => questionParserTrimTest(
-          text: 'Простой текст вопроса. (aud: xxx.mp3) Текст вопроса.',
-          expectedText: 'Простой текст вопроса. Текст вопроса.',
-        ),
+      text: 'Простой текст вопроса. (aud: xxx.mp3) Текст вопроса.',
+      expectedText: 'Простой текст вопроса. Текст вопроса.',
+    ),
   );
 
   test(
     'Trim removes image',
     () => questionParserTrimTest(
-          text: 'Простой текст вопроса. (pic: xxx) Текст вопроса.',
-          expectedText: 'Простой текст вопроса. Текст вопроса.',
-        ),
+      text: 'Простой текст вопроса. (pic: xxx) Текст вопроса.',
+      expectedText: 'Простой текст вопроса. Текст вопроса.',
+    ),
   );
 
   group('Trim removes giveaway', () {
@@ -67,10 +67,11 @@ void main() {
       (String x) => '[раздаточный материал: $x]',
     ];
 
-    final _test = (String format(String value)) => questionParserTrimTest(
-          text: '${format('текст раздатки')} Простой текст вопроса.',
-          expectedText: 'Простой текст вопроса.',
-        );
+    final _test =
+        (String Function(String value) format) => questionParserTrimTest(
+              text: '${format('текст раздатки')} Простой текст вопроса.',
+              expectedText: 'Простой текст вопроса.',
+            );
 
     test(
       supportedGiveAwayFormats[0](' '),

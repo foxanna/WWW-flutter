@@ -25,7 +25,7 @@ class TournamentDetailsLoader implements ITournamentDetailsLoader {
     }
 
     var map = await _httpClient.get(Uri(path: '/tour/$id/xml'));
-    map = map['tournament'];
+    map = map['tournament'] as Map<String, dynamic>;
 
     _handleTourlessTournament(map);
 

@@ -30,7 +30,7 @@ class TournamentMiddleware {
     store.dispatch(LoadTournament(action.tournament.textId));
   }
 
-  Future _loadTournament(
+  Future<void> _loadTournament(
       Store<AppState> store, LoadTournament action, NextDispatcher next) async {
     next(action);
 
@@ -46,7 +46,7 @@ class TournamentMiddleware {
       final data = await _loader.get(action.tournamentId);
 
       store.dispatch(TournamentLoaded(data));
-    } catch (e) {
+    } on Exception catch (e) {
       store.dispatch(TournamentFailedLoading(action.tournamentId, e));
     }
   }

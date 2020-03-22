@@ -17,7 +17,7 @@ class AboutPage extends StatelessWidget {
         body: _buildBody(context),
       );
 
-  Widget _buildAppBar(BuildContext context) => AppBar(
+  AppBar _buildAppBar(BuildContext context) => AppBar(
         iconTheme: Theme.of(context).iconTheme,
         backgroundColor: Theme.of(context).canvasColor,
         elevation: 0.0,

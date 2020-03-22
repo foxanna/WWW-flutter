@@ -26,15 +26,15 @@ class RandomQuestionsMiddleware {
         TypedMiddleware<AppState, SelectQuestion>(_onQuestionsSelected),
       ];
 
-  Future _loadRandomQuestions(Store<AppState> store, LoadRandomQuestions action,
-      NextDispatcher next) async {
+  Future<void> _loadRandomQuestions(Store<AppState> store,
+      LoadRandomQuestions action, NextDispatcher next) async {
     next(action);
 
     try {
       store.dispatch(const QuestionsAreLoading());
       final data = await _loader.get();
-      store.dispatch(MoreQuestionsLoaded(data));
-    } catch (e) {
+      store.dispatch(MoreQuestionsLoaded(data.toList()));
+    } on Exception catch (e) {
       store.dispatch(QuestionsFailedToLoad(e));
     }
   }
@@ -61,7 +61,7 @@ class RandomQuestionsMiddleware {
     store.dispatch(const RandomQuestionsAreDisplayedChanged(false));
   }
 
-  Future _onQuestionsSelected(
+  Future<void> _onQuestionsSelected(
       Store<AppState> store, SelectQuestion action, NextDispatcher next) async {
     next(action);
 

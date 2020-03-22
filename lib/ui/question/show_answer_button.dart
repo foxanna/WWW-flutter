@@ -47,7 +47,7 @@ class ShowAnswerButton extends StatelessWidget {
 
 class _ShowAnswerButton extends StatelessWidget {
   final IconData icon;
-  final Function onPressed;
+  final VoidCallback onPressed;
 
   const _ShowAnswerButton({
     Key key,

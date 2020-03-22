@@ -28,8 +28,8 @@ class SearchMiddleware {
         TypedMiddleware<AppState, RepeatFailedSearchTournaments>(_reloadMore),
       ];
 
-  Future _searchTournaments(Store<AppState> store, SearchTournaments action,
-      NextDispatcher next) async {
+  Future<void> _searchTournaments(Store<AppState> store,
+      SearchTournaments action, NextDispatcher next) async {
     next(action);
 
     final state = store.state.searchState.searchResults;
@@ -38,7 +38,7 @@ class SearchMiddleware {
     }
   }
 
-  Future _search(Store<AppState> store, SearchTournaments action) async {
+  Future<void> _search(Store<AppState> store, SearchTournaments action) async {
     final parameters = store.state.searchState.searchParameters;
 
     if (parameters.query.isEmpty) {
@@ -53,7 +53,7 @@ class SearchMiddleware {
       if (parameters == store.state.searchState.searchParameters) {
         store.dispatch(TournamentsSearchLoaded(data, parameters.nextPage + 1));
       }
-    } catch (e) {
+    } on Exception catch (e) {
       if (parameters == store.state.searchState.searchParameters) {
         store.dispatch(TournamentsSearchFailedToLoad(e));
       }

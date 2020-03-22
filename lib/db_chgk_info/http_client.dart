@@ -65,7 +65,7 @@ class HttpClient implements IHttpClient {
       final transformer = Xml2Json();
       transformer.parse(TextUtils.escapeBackSlashes(xml));
       final json = transformer.toParker();
-      final Map<String, dynamic> decoded = jsonDecode(json);
+      final decoded = jsonDecode(json) as Map<String, dynamic>;
       return decoded;
     } on Exception catch (e, s) {
       log('$e: $s');

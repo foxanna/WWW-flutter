@@ -50,23 +50,24 @@ class Tournament {
       );
 
   factory Tournament.fromJson(Map<String, dynamic> map) => Tournament(
-        id: map['Id'],
-        textId: map['TextId'],
-        parentId: map['ParentId'],
-        title: map['Title'],
-        questionsCount: map['QuestionsNum'],
-        description: TextUtils.normalizeToSingleLine(map['Info']),
+        id: map['Id'] as String,
+        textId: map['TextId'] as String,
+        parentId: map['ParentId'] as String,
+        title: TextUtils.normalizeToSingleLine(map['Title'] as String),
+        questionsCount: map['QuestionsNum'] as String,
+        description: TextUtils.normalizeToSingleLine(map['Info'] as String),
         url: '${Constants.databaseUrl}/tour/${map['Id']}',
-        editors: TextUtils.normalizeToSingleLine(map['Editors']),
-        createdAt: map['CreatedAt'],
-        playedAt: map['PlayedAt'],
+        editors: TextUtils.normalizeToSingleLine(map['Editors'] as String),
+        createdAt: TextUtils.normalizeToSingleLine(map['CreatedAt'] as String),
+        playedAt: TextUtils.normalizeToSingleLine(map['PlayedAt'] as String),
         tours: map.containsKey('tour')
             ? map['tour'] is List
-                ? UnmodifiableListView(
-                    List<Map<String, dynamic>>.from(map['tour'])
-                        .map((q) => Tour.fromJson(q))
-                        .toList())
-                : UnmodifiableListView([Tour.fromJson(map['tour'])])
+                ? UnmodifiableListView(List<Map<String, dynamic>>.from(
+                        map['tour'] as Iterable<dynamic>)
+                    .map((q) => Tour.fromJson(q))
+                    .toList())
+                : UnmodifiableListView(
+                    [Tour.fromJson(map['tour'] as Map<String, dynamic>)])
             : UnmodifiableListView([]),
       );
 

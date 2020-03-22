@@ -1,9 +1,9 @@
 import 'package:url_launcher/url_launcher.dart';
 
 abstract class IUrlLauncher {
-  Future launchURL(String url);
+  Future<void> launchURL(String url);
 
-  Future sendEmail(String to, String subject);
+  Future<void> sendEmail(String to, String subject);
 }
 
 class UrlLauncher extends IUrlLauncher {
@@ -12,14 +12,14 @@ class UrlLauncher extends IUrlLauncher {
   UrlLauncher._();
 
   @override
-  Future launchURL(String url) async {
+  Future<void> launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     }
   }
 
   @override
-  Future sendEmail(String to, String subject) async {
+  Future<void> sendEmail(String to, String subject) async {
     final url = 'mailto:$to?subject=$subject';
     await launchURL(url);
   }

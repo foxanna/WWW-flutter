@@ -29,7 +29,7 @@ class SoundService extends ISoundService {
         .catchError((Object error) => log('$SoundService init error: $error'));
   }
 
-  Future _init() async {
+  Future<void> _init() async {
     final tempDir = await getTemporaryDirectory();
     final tempFile = File('${tempDir.path}/$_timerAssetName');
 

@@ -20,11 +20,12 @@ class TournamentsTreeGrid extends StatelessWidget {
       crossAxisSpacing: 4.0,
       itemBuilder: (c, i) {
         if (tournamentsTree[i] is TournamentsTree) {
-          return TournamentsTreeGridTile(tournamentsTree: tournamentsTree[i]);
+          return TournamentsTreeGridTile(
+              tournamentsTree: tournamentsTree[i] as TournamentsTree);
         }
         if (tournamentsTree[i] is Tournament) {
           return TournamentsTreeTournamentGridTile(
-              tournament: tournamentsTree[i]);
+              tournament: tournamentsTree[i] as Tournament);
         }
 
         return Container();

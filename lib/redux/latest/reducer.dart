@@ -1,6 +1,5 @@
 import 'package:quiver/core.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 
@@ -49,8 +48,7 @@ class LatestTournamentsReducer {
   static LatestTournamentsState _onLoaded(
           LatestTournamentsState state, MoreLatestTournamentsLoaded action) =>
       state.copyWith(
-        data: Optional.of(
-            <Tournament>[]..addAll(state.data)..addAll(action.data)),
+        data: Optional.of([...state.data, ...action.data]),
         isRefreshing: Optional.of(false),
         isLoadingMore: Optional.of(false),
         nextPage: Optional.of(state.nextPage + 1),

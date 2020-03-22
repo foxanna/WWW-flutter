@@ -23,12 +23,13 @@ class TimerMiddleware {
     _middleware = _createMiddleware();
   }
 
-  List<Middleware<AppState>> _createMiddleware() => []
-    ..addAll(_TimerConnectingMiddleware().middleware)
-    ..addAll(_TimerTickingMiddleware().middleware)
-    ..addAll(_TimerSoundMiddleware(soundService: _soundService).middleware)
-    ..addAll(_TimerVibratingMiddleware(vibratingService: _vibratingService)
-        .middleware);
+  List<Middleware<AppState>> _createMiddleware() => [
+        ..._TimerConnectingMiddleware().middleware,
+        ..._TimerTickingMiddleware().middleware,
+        ..._TimerSoundMiddleware(soundService: _soundService).middleware,
+        ..._TimerVibratingMiddleware(vibratingService: _vibratingService)
+            .middleware
+      ];
 }
 
 class _TimerTickingMiddleware {

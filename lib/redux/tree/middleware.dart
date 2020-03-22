@@ -19,8 +19,8 @@ class TournamentsTreeMiddleware {
         TypedMiddleware<AppState, LoadTournamentsTree>(_loadTournamentsTree),
       ];
 
-  Future _loadTournamentsTree(Store<AppState> store, LoadTournamentsTree action,
-      NextDispatcher next) async {
+  Future<void> _loadTournamentsTree(Store<AppState> store,
+      LoadTournamentsTree action, NextDispatcher next) async {
     next(action);
 
     final state = store.state.tournamentsTreeState[action.id];
@@ -33,7 +33,7 @@ class TournamentsTreeMiddleware {
 
       final tree = await _loader.get(id: action.id);
       store.dispatch(TournamentsTreeLoaded(id: action.id, tree: tree));
-    } catch (e) {
+    } on Exception catch (e) {
       store.dispatch(TournamentsTreeFailedLoading(id: action.id, exception: e));
     }
   }

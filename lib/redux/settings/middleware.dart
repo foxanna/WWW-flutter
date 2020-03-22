@@ -32,7 +32,7 @@ class SettingsMiddleware {
             _onNotifyLongTimerExpirationChanged),
       ];
 
-  Future _onReadSettings(
+  Future<void> _onReadSettings(
       Store<AppState> store, ReadSettings action, NextDispatcher next) async {
     next(action);
 
@@ -54,7 +54,7 @@ class SettingsMiddleware {
         notifyLongTimerExpiration: notifyLongTimerExpiration));
   }
 
-  Future _onThemeChanged(
+  Future<void> _onThemeChanged(
       Store<AppState> store, ChangeTheme action, NextDispatcher next) async {
     final themeHasChanged =
         action.appTheme != store.state.settingsState.appTheme;
@@ -66,8 +66,8 @@ class SettingsMiddleware {
     }
   }
 
-  Future _onTextScaleChanged(Store<AppState> store, ChangeTextScale action,
-      NextDispatcher next) async {
+  Future<void> _onTextScaleChanged(Store<AppState> store,
+      ChangeTextScale action, NextDispatcher next) async {
     final textScaleHasChanged =
         action.textScale != store.state.settingsState.textScale;
 
@@ -78,7 +78,7 @@ class SettingsMiddleware {
     }
   }
 
-  Future _onNotifyShortTimerExpirationChanged(Store<AppState> store,
+  Future<void> _onNotifyShortTimerExpirationChanged(Store<AppState> store,
       ChangeNotifyShortTimerExpiration action, NextDispatcher next) async {
     final settingChanged =
         action.newValue != store.state.settingsState.notifyShortTimerExpiration;
@@ -91,7 +91,7 @@ class SettingsMiddleware {
     }
   }
 
-  Future _onNotifyLongTimerExpirationChanged(Store<AppState> store,
+  Future<void> _onNotifyLongTimerExpirationChanged(Store<AppState> store,
       ChangeNotifyLongTimerExpiration action, NextDispatcher next) async {
     final settingChanged =
         action.newValue != store.state.settingsState.notifyLongTimerExpiration;

@@ -51,13 +51,12 @@ class _SearchTournamentsPageAppBarState
           backgroundColor: Theme.of(context).canvasColor,
           leading: _buildBackButton(context),
           title: _buildSearchField(context),
-          actions: <Widget>[
-            state.query.isNotEmpty
-                ? IconButton(
-                    icon: const Icon(Icons.clear),
-                    onPressed: () => _clear(),
-                  )
-                : Container(),
+          actions: [
+            if (state.query.isNotEmpty)
+              IconButton(
+                icon: const Icon(Icons.clear),
+                onPressed: () => _clear(),
+              ),
             SortingButton(controller: _sortingController),
           ],
         ),

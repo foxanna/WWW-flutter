@@ -30,7 +30,7 @@ class RatingMiddleware {
         TypedMiddleware<AppState, RateOnStore>(_rateOnStore),
       ];
 
-  Future _onTournamentClosed(
+  Future<void> _onTournamentClosed(
       Store<AppState> store, VoidTournament action, NextDispatcher next) async {
     next(action);
 

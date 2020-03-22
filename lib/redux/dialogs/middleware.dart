@@ -26,7 +26,7 @@ class DialogMiddleware {
         TypedMiddleware<AppState, OpenRatingDialog>(_openRatingDialog),
       ];
 
-  Future _openTourInfo(Store<AppState> store, OpenTourInfoDialog action,
+  Future<void> _openTourInfo(Store<AppState> store, OpenTourInfoDialog action,
       NextDispatcher next) async {
     next(action);
 
@@ -34,7 +34,7 @@ class DialogMiddleware {
         builder: (context) => TourDetailsAboutDialog(tour: action.tour));
   }
 
-  Future _openTournamentInfo(Store<AppState> store,
+  Future<void> _openTournamentInfo(Store<AppState> store,
       OpenTournamentInfoDialog action, NextDispatcher next) async {
     next(action);
 
@@ -43,7 +43,7 @@ class DialogMiddleware {
             TournamentDetailsAboutDialog(tournament: action.tournament));
   }
 
-  Future _openRatingDialog(Store<AppState> store, OpenRatingDialog action,
+  Future<void> _openRatingDialog(Store<AppState> store, OpenRatingDialog action,
       NextDispatcher next) async {
     next(action);
 

@@ -16,7 +16,8 @@ class TournamentsTreeLoader implements ITournamentsTreeLoader {
   Future<TournamentsTree> get({String id}) async {
     final map = await _httpClient.get(Uri(path: '/tour/${id ?? ''}/xml'));
 
-    final tournamentsTree = TournamentsTree.fromJson(map['tournament']);
+    final tournamentsTree =
+        TournamentsTree.fromJson(map['tournament'] as Map<String, dynamic>);
     return tournamentsTree;
   }
 }

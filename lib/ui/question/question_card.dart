@@ -84,7 +84,8 @@ class _QuestionCardState extends State<QuestionCard> {
 
   void _scrollToAnswer() {
     final parent = _listViewKey?.currentContext?.findRenderObject();
-    final RenderBox box = _buttonStackKey?.currentContext?.findRenderObject();
+    final box =
+        _buttonStackKey?.currentContext?.findRenderObject() as RenderBox;
 
     if (parent == null || box == null) {
       return;

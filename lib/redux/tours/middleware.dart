@@ -30,7 +30,7 @@ class ToursMiddleware {
     }
   }
 
-  Future _loadTour(
+  Future<void> _loadTour(
       Store<AppState> store, LoadTour action, NextDispatcher next) async {
     next(action);
 
@@ -49,7 +49,7 @@ class ToursMiddleware {
       final data = await _loader.get(tourState.tour.id);
 
       store.dispatch(TourLoaded(data));
-    } catch (e) {
+    } on Exception catch (e) {
       store.dispatch(TourFailedLoading(tourId, e));
     }
   }

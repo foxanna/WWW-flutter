@@ -7,5 +7,5 @@ class NetworkException implements Exception {
   const NetworkException({this.message});
 
   @override
-  String toString() => '$NetworkException ${message != null ? message : ""}';
+  String toString() => '$NetworkException ${message ?? ""}';
 }
