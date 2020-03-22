@@ -10,10 +10,12 @@ import 'package:what_when_where/utils/texts.dart';
 import 'package:xml2json/xml2json.dart';
 
 part 'http_client_logger.dart';
+
 part 'http_settings.dart';
 
 abstract class IHttpClient {
   Future<String> getRaw(Uri uri, {CancelToken cancelToken});
+
   Future<Map<String, dynamic>> get(Uri uri, {CancelToken cancelToken});
 }
 
@@ -48,7 +50,9 @@ class HttpClient implements IHttpClient {
     } on Exception catch (e, s) {
       log('$e: $s');
       rethrow;
-    } on Error catch (e, s) {
+    }
+    // ignore: avoid_catching_errors
+    on Error catch (e, s) {
       log('$e: $s');
       throw Exception(e.toString());
     }
@@ -70,7 +74,9 @@ class HttpClient implements IHttpClient {
     } on Exception catch (e, s) {
       log('$e: $s');
       rethrow;
-    } on Error catch (e, s) {
+    }
+    // ignore: avoid_catching_errors
+    on Error catch (e, s) {
       log('$e: $s');
       throw Exception(e.toString());
     }
