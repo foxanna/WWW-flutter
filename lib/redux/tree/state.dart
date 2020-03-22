@@ -9,6 +9,7 @@ class TournamentsSubTreeState {
   final TournamentsTree tree;
 
   bool get hasError => exception != null;
+
   bool get hasData => tree != null;
 
   const TournamentsSubTreeState._({
@@ -43,8 +44,7 @@ class TournamentsSubTreeState {
 
 @immutable
 class TournamentsTreeState {
-  final Map<String, TournamentsSubTreeState> _states =
-      <String, TournamentsSubTreeState>{};
+  final Map<String, TournamentsSubTreeState> _states;
 
   TournamentsSubTreeState operator [](String id) {
     if (!_states.containsKey(id)) {
@@ -53,22 +53,27 @@ class TournamentsTreeState {
     return _states[id];
   }
 
-  TournamentsTreeState._();
+  TournamentsTreeState._({Map<String, TournamentsSubTreeState> states})
+      : _states = states ?? <String, TournamentsSubTreeState>{};
 
   TournamentsTreeState.initial() : this._();
 
-  TournamentsTreeState copyWith({
+  TournamentsTreeState copyWithSubTree({
     @required String id,
     Optional<bool> isLoading,
     Optional<Exception> exception,
     Optional<TournamentsTree> tree,
   }) {
     final subState = this[id] ?? const TournamentsSubTreeState.initial();
-    _states[id] = subState.copyWith(
+    final newSubState = subState.copyWith(
       isLoading: isLoading,
       exception: exception,
       tree: tree,
     );
-    return this;
+
+    final newStates = _states;
+    newStates[id] = newSubState;
+
+    return TournamentsTreeState._(states: newStates);
   }
 }

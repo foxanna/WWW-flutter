@@ -20,7 +20,7 @@ class TournamentsTreeReducer {
 
   static TournamentsTreeState _tournamentsTreeLoaded(
           TournamentsTreeState state, TournamentsTreeLoaded action) =>
-      state.copyWith(
+      state.copyWithSubTree(
         id: action.id,
         isLoading: Optional.of(false),
         exception: const Optional.absent(),
@@ -29,7 +29,7 @@ class TournamentsTreeReducer {
 
   static TournamentsTreeState _tournamentsTreeIsLoading(
           TournamentsTreeState state, TournamentsTreeIsLoading action) =>
-      state.copyWith(
+      state.copyWithSubTree(
         id: action.id,
         isLoading: Optional.of(true),
         exception: const Optional.absent(),
@@ -37,7 +37,7 @@ class TournamentsTreeReducer {
 
   static TournamentsTreeState _tournamentsTreeFailedLoading(
           TournamentsTreeState state, TournamentsTreeFailedLoading action) =>
-      state.copyWith(
+      state.copyWithSubTree(
         id: action.id,
         isLoading: Optional.of(false),
         exception: Optional.of(action.exception),
