@@ -28,7 +28,7 @@ class LatestTournamentsPageRefreshIndicatorState
     extends State<LatestTournamentsPageRefreshIndicator> {
   final _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
 
-  Completer _completer = Completer<dynamic>();
+  Completer<dynamic> _completer = Completer<dynamic>();
 
   @override
   Widget build(BuildContext context) =>
