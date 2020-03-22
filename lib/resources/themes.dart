@@ -31,6 +31,9 @@ class Themes {
             fontWeight: FontWeight.w400,
           ),
         ),
+        buttonTheme: base.buttonTheme.copyWith(
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
+        ),
       );
 
   static final _themes = <AppTheme, ThemeData>{
