@@ -25,16 +25,23 @@ class RatingDialog extends StatelessWidget {
             children: <Widget>[
               Text(
                 Strings.rateUs,
-                style: Theme.of(context).textTheme.title.copyWith(
-                      color: Theme.of(context).accentColor,
-                    ),
+                style: Theme.of(context).textTheme.body2,
               ),
               const SizedBox(
                 height: Dimensions.defaultSpacing * 4,
               ),
-              FlutterRatingBar(
-                fillColor: Theme.of(context).accentColor,
-                borderColor: Theme.of(context).accentColor.withAlpha(50),
+              RatingBar(
+                ratingWidget: RatingWidget(
+                  full: Icon(
+                    Icons.star,
+                    color: Theme.of(context).accentColor,
+                  ),
+                  empty: Icon(
+                    Icons.star_border,
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
+                glow: false,
                 onRatingUpdate: (rating) => StoreProvider.of<AppState>(context)
                     .dispatch(RateOnStore(rating.round())),
               ),

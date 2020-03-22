@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:rxdart/subjects.dart';
+import 'package:rxdart/transformers.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
@@ -35,7 +36,7 @@ class _SearchTournamentsPageAppBarState
   _SearchTournamentsPageAppBarState() {
     _queryDebouncer = PublishSubject<String>()
       ..stream
-          .debounce(const Duration(seconds: 1))
+          .debounceTime(const Duration(seconds: 1))
           .distinct()
           .listen((query) => _search());
   }
@@ -46,20 +47,20 @@ class _SearchTournamentsPageAppBarState
         distinct: true,
         converter: (store) => store.state.searchState.searchParameters,
         builder: (context, state) => AppBar(
-              iconTheme: Theme.of(context).iconTheme,
-              backgroundColor: Theme.of(context).canvasColor,
-              leading: _buildBackButton(context),
-              title: _buildSearchField(context),
-              actions: <Widget>[
-                state.query.isNotEmpty
-                    ? IconButton(
-                        icon: const Icon(Icons.clear),
-                        onPressed: () => _clear(),
-                      )
-                    : Container(),
-                SortingButton(controller: _sortingController),
-              ],
-            ),
+          iconTheme: Theme.of(context).iconTheme,
+          backgroundColor: Theme.of(context).canvasColor,
+          leading: _buildBackButton(context),
+          title: _buildSearchField(context),
+          actions: <Widget>[
+            state.query.isNotEmpty
+                ? IconButton(
+                    icon: const Icon(Icons.clear),
+                    onPressed: () => _clear(),
+                  )
+                : Container(),
+            SortingButton(controller: _sortingController),
+          ],
+        ),
         onInit: _onInit,
         onDispose: _onDispose,
       );
