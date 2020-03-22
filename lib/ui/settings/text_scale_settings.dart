@@ -23,7 +23,7 @@ class TextScaleSettings extends StatelessWidget {
               child: Text(
                 Strings.textScale,
                 textAlign: TextAlign.right,
-                style: Theme.of(context).textTheme.subhead,
+                style: Theme.of(context).textTheme.subtitle1,
               ),
             ),
           ),
@@ -53,29 +53,29 @@ class _TextScalePickerState extends State<_TextScalePicker> {
         children: <Widget>[
           Text(
             'A',
-            style: Theme.of(context).textTheme.body1,
+            style: Theme.of(context).textTheme.bodyText2,
             textScaleFactor: Fonts.getTextScale(TextScale.values.first),
           ),
           StoreConnector<AppState, TextScale>(
             distinct: true,
             converter: (store) => store.state.settingsState.textScale,
             builder: (context, scale) => ConstrainedBox(
-                  constraints:
-                      const BoxConstraints.tightFor(width: 120, height: 32),
-                  child: Slider(
-                    activeColor: Theme.of(context).accentColor,
-                    inactiveColor: Theme.of(context).dividerColor,
-                    min: 0.0,
-                    max: (TextScale.values.length - 1).toDouble(),
-                    divisions: TextScale.values.length - 1,
-                    value: scale.index.toDouble(),
-                    onChanged: (value) => _onTextScaleChanged(value.round()),
-                  ),
-                ),
+              constraints:
+                  const BoxConstraints.tightFor(width: 120, height: 32),
+              child: Slider(
+                activeColor: Theme.of(context).accentColor,
+                inactiveColor: Theme.of(context).dividerColor,
+                min: 0.0,
+                max: (TextScale.values.length - 1).toDouble(),
+                divisions: TextScale.values.length - 1,
+                value: scale.index.toDouble(),
+                onChanged: (value) => _onTextScaleChanged(value.round()),
+              ),
+            ),
           ),
           Text(
             'A',
-            style: Theme.of(context).textTheme.body1,
+            style: Theme.of(context).textTheme.bodyText2,
             textScaleFactor: Fonts.getTextScale(TextScale.values.last),
           ),
         ],

@@ -31,18 +31,18 @@ class _QuestionText extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeData = Theme.of(context);
     final textTheme = themeData.textTheme;
-    final fontSize = textTheme.title.fontSize - 2;
+    final fontSize = textTheme.headline6.fontSize - 2;
 
     return TextSections(
       sections: _sections,
-      speakersNoteStyle: textTheme.headline.copyWith(
+      speakersNoteStyle: textTheme.headline5.copyWith(
         fontSize: fontSize,
         fontStyle: FontStyle.italic,
-        color: textTheme.body2.color,
+        color: textTheme.bodyText1.color,
       ),
-      giveAwayStyle: textTheme.headline
+      giveAwayStyle: textTheme.headline5
           .copyWith(fontSize: fontSize, fontWeight: FontWeight.w500),
-      textStyle: textTheme.headline.copyWith(fontSize: fontSize),
+      textStyle: textTheme.headline5.copyWith(fontSize: fontSize),
       spacing: Dimensions.defaultSpacing * 2,
     );
   }

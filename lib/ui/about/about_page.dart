@@ -61,7 +61,7 @@ class AboutPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
-                .headline
+                .headline5
                 .copyWith(color: Theme.of(context).accentColor),
           ),
           IconButton(
@@ -80,11 +80,11 @@ class AboutPage extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: '${Strings.questionsDatabasePrefix}\n',
-                    style: Theme.of(context).textTheme.body2,
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                   TextSpan(
                     text: Strings.questionsDatabaseName,
-                    style: Theme.of(context).textTheme.body2.copyWith(
+                    style: Theme.of(context).textTheme.bodyText1.copyWith(
                         color: Theme.of(context).accentColor,
                         decoration: TextDecoration.underline),
                     recognizer: TapGestureRecognizer()

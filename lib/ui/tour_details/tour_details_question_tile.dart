@@ -29,7 +29,7 @@ class TourDetailsQuestionTile extends StatelessWidget {
             '$_questionNumber. $_shortQuestionText',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.subhead,
+            style: Theme.of(context).textTheme.subtitle1,
           ),
         ),
         onTap: () => StoreProvider.of<AppState>(context)

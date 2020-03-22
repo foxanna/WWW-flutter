@@ -35,9 +35,9 @@ class ErrorMessage extends StatelessWidget {
                   style: color != null
                       ? Theme.of(context)
                           .textTheme
-                          .subhead
+                          .subtitle1
                           .copyWith(color: color)
-                      : Theme.of(context).textTheme.subhead,
+                      : Theme.of(context).textTheme.subtitle1,
                 ),
               if (_retryFunction != null)
                 IconButton(

@@ -57,13 +57,13 @@ class TournamentsTreeGridTile extends StatelessWidget {
         Expanded(
           child: Text(
             tournamentsTree.title,
-            style: textTheme.subhead,
+            style: textTheme.subtitle1,
           ),
         ),
         const SizedBox(width: Dimensions.defaultSpacing * 2),
         Text(
           tournamentsTree.childrenCount,
-          style: textTheme.body2,
+          style: textTheme.bodyText1,
         ),
       ],
     );

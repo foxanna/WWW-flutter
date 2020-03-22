@@ -19,11 +19,11 @@ class QuestionNumber extends StatelessWidget {
                 ? (index + 1).toString()
                 : store.state.questionsState.questions[index].question.number,
         builder: (context, questionIndex) => Text(
-              '${Strings.question} $questionIndex',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline
-                  .copyWith(color: Theme.of(context).accentColor),
-            ),
+          '${Strings.question} $questionIndex',
+          style: Theme.of(context)
+              .textTheme
+              .headline5
+              .copyWith(color: Theme.of(context).accentColor),
+        ),
       );
 }

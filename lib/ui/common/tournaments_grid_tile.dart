@@ -34,15 +34,15 @@ class TournamentsGridTile extends StatelessWidget {
       children: [
         Text(
           tournament.title,
-          style: textTheme.subhead,
+          style: textTheme.subtitle1,
         ),
         const SizedBox(height: Dimensions.defaultSpacing * 2),
         AutoSizeText(
           _subheadText(),
           overflow: TextOverflow.ellipsis,
-          style: textTheme.body2,
+          style: textTheme.bodyText1,
           maxLines: 2,
-          maxFontSize: textTheme.body2.fontSize,
+          maxFontSize: textTheme.bodyText1.fontSize,
           minFontSize: 10,
         ),
       ],

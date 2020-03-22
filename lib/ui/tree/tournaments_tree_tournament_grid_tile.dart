@@ -32,7 +32,7 @@ class TournamentsTreeTournamentGridTile extends StatelessWidget {
       children: <Widget>[
         Text(
           tournament.title,
-          style: textTheme.subhead,
+          style: textTheme.subtitle1,
         ),
       ],
     );

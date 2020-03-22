@@ -39,12 +39,13 @@ class TournamentDetailsPageHeader extends StatelessWidget {
                                 top: (kToolbarHeight -
                                         Theme.of(context)
                                             .primaryTextTheme
-                                            .title
+                                            .headline6
                                             .fontSize) /
                                     2),
                             child: Text(
                               data,
-                              style: Theme.of(context).primaryTextTheme.title,
+                              style:
+                                  Theme.of(context).primaryTextTheme.headline6,
                             ),
                           )),
                 ),

@@ -26,7 +26,7 @@ class Themes {
 
   static ThemeData _customize(ThemeData base) => base.copyWith(
         textTheme: base.textTheme.copyWith(
-          body2: base.textTheme.body1.copyWith(
+          bodyText1: base.textTheme.bodyText1.copyWith(
             color: base.textTheme.caption.color,
             fontWeight: FontWeight.w400,
           ),

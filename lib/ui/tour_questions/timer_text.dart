@@ -43,12 +43,11 @@ class _TimerOptionsDropdownButton extends StatelessWidget {
             items: TimerType.values
                 .map(
                   (type) => DropdownMenuItem(
-                        value: type,
-                        child: Text(
-                          DurationFormatter.formatSeconds(
-                              Timers.getSeconds(type)),
-                        ),
-                      ),
+                    value: type,
+                    child: Text(
+                      DurationFormatter.formatSeconds(Timers.getSeconds(type)),
+                    ),
+                  ),
                 )
                 .toList(),
             onChanged: (newType) => _onTypeChanged(context, newType),
@@ -66,8 +65,8 @@ class _TimerValue extends StatelessWidget {
         distinct: true,
         converter: (store) => store.state.timerState.secondsLeft,
         builder: (context, seconds) => Text(
-              DurationFormatter.formatSeconds(seconds),
-              style: Theme.of(context).primaryTextTheme.title,
-            ),
+          DurationFormatter.formatSeconds(seconds),
+          style: Theme.of(context).primaryTextTheme.headline6,
+        ),
       );
 }

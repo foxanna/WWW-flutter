@@ -17,11 +17,11 @@ class QuestionComment extends StatelessWidget {
 
     return TextSections(
       sections: _sections,
-      speakersNoteStyle: textTheme.body1.copyWith(
+      speakersNoteStyle: textTheme.bodyText2.copyWith(
         fontStyle: FontStyle.italic,
-        color: textTheme.body2.color,
+        color: textTheme.bodyText1.color,
       ),
-      textStyle: textTheme.body1,
+      textStyle: textTheme.bodyText2,
     );
   }
 }

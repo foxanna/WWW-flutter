@@ -50,7 +50,7 @@ class _ExpiringTimerGeneralSettings extends StatelessWidget {
             child: Text(
               Strings.expiringTimerSignal,
               textAlign: TextAlign.end,
-              style: Theme.of(context).textTheme.subhead,
+              style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
           const SizedBox(width: Dimensions.defaultSpacing * 2),

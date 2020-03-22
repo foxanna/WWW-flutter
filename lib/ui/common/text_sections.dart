@@ -119,9 +119,9 @@ class TextSections extends StatelessWidget {
       (section is AudioSection)
           ? Text(
               'Аудио файлы пока не поддерживаются',
-              style: Theme.of(context).textTheme.body1.copyWith(
+              style: Theme.of(context).textTheme.bodyText2.copyWith(
                     fontStyle: FontStyle.italic,
-                    color: Theme.of(context).textTheme.body2.color,
+                    color: Theme.of(context).textTheme.bodyText1.color,
                   ),
             )
           : null;

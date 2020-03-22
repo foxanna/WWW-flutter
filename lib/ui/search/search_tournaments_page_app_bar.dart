@@ -77,7 +77,7 @@ class _SearchTournamentsPageAppBarState
         controller: _queryController,
         focusNode: _focusNode,
         autofocus: true,
-        style: Theme.of(context).textTheme.title,
+        style: Theme.of(context).textTheme.headline6,
         textInputAction: TextInputAction.done,
         keyboardAppearance: Theme.of(context).brightness,
         decoration: const InputDecoration(

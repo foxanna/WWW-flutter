@@ -72,8 +72,8 @@ class _QuestionAnswer extends StatelessWidget {
       yield const SizedBox(height: Dimensions.defaultSpacing);
       yield TextWithLinks(
         '${Strings.sources}:\n${question.sources}',
-        textStyle: textTheme.body1,
-        linkStyle: textTheme.body1.copyWith(
+        textStyle: textTheme.bodyText2,
+        linkStyle: textTheme.bodyText2.copyWith(
             color: Theme.of(context).accentColor,
             decoration: TextDecoration.underline),
       );
@@ -92,8 +92,8 @@ class _QuestionAnswerText extends StatelessWidget {
   @override
   Widget build(BuildContext context) => TextSections(
         sections: _sections,
-        textStyle: Theme.of(context).textTheme.headline.copyWith(
-              fontSize: Theme.of(context).textTheme.title.fontSize - 2,
+        textStyle: Theme.of(context).textTheme.headline5.copyWith(
+              fontSize: Theme.of(context).textTheme.headline6.fontSize - 2,
               color: Theme.of(context).accentColor,
             ),
       );

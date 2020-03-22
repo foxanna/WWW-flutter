@@ -16,7 +16,7 @@ class InfoDialog extends StatelessWidget {
           title,
           style: Theme.of(context)
               .textTheme
-              .title
+              .headline6
               .copyWith(color: Theme.of(context).accentColor),
         ),
         content: Container(
@@ -26,7 +26,7 @@ class InfoDialog extends StatelessWidget {
             padding: Dimensions.dialogContentPadding,
             child: Text(
               content,
-              style: Theme.of(context).textTheme.body2,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ),
         ),

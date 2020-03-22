@@ -48,7 +48,7 @@ class _SearchTournamentsPageState extends State<SearchTournamentsPage> {
               child: Text(
                 Strings.nothingFound,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subhead,
+                style: Theme.of(context).textTheme.subtitle1,
               ),
             );
           }
@@ -113,25 +113,25 @@ class _SearchTournamentsPageResults extends StatelessWidget {
         distinct: true,
         converter: (store) => store.state.searchState.searchResults,
         builder: (context, state) => CustomScrollView(
-              controller: _scrollController,
-              slivers: [
-                SliverPadding(
-                  sliver: TournamentsGrid(tournaments: state.data),
-                  padding: Dimensions.defaultPadding,
-                ),
-                SliverToBoxAdapter(
-                  child: state.isLoading
-                      ? WWWProgressIndicator(
-                          padding: Dimensions.defaultPadding * 3,
-                        )
-                      : Container(),
-                ),
-                SliverToBoxAdapter(
-                  child: state.hasError
-                      ? const SearchErrorMessage(dense: true)
-                      : Container(),
-                )
-              ],
+          controller: _scrollController,
+          slivers: [
+            SliverPadding(
+              sliver: TournamentsGrid(tournaments: state.data),
+              padding: Dimensions.defaultPadding,
             ),
+            SliverToBoxAdapter(
+              child: state.isLoading
+                  ? WWWProgressIndicator(
+                      padding: Dimensions.defaultPadding * 3,
+                    )
+                  : Container(),
+            ),
+            SliverToBoxAdapter(
+              child: state.hasError
+                  ? const SearchErrorMessage(dense: true)
+                  : Container(),
+            )
+          ],
+        ),
       );
 }
