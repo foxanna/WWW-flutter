@@ -34,7 +34,10 @@ class QuestionParserHelper {
     QuestionSectionType.Audio: _audioMatchers,
   };
 
-  static String removeAll(String text, QuestionSectionType sectionType) {
+  static String removeAll(
+      String originalText, QuestionSectionType sectionType) {
+    var text = originalText;
+
     if (_matchers.containsKey(sectionType)) {
       for (final matcher in _matchers[sectionType]) {
         text = text.replaceAll(matcher, '');

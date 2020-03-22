@@ -72,16 +72,18 @@ class UriDetector {
   static final _cyrillicDetector = RegExp(r'[\u0401\u0451\u0410-\u044f]');
 
   static Iterable<dynamic> split(String originalText) sync* {
-    if (originalText == null || originalText.isEmpty) {
+    var text = originalText;
+
+    if (text == null || text.isEmpty) {
       return;
     }
 
-    while (originalText.isNotEmpty) {
-      final text = _replaceCyrillic(originalText);
+    while (text.isNotEmpty) {
+      final textWithoutCyrillic = _replaceCyrillic(text);
 
-      final firstMatch = _urlDetector.firstMatch(text);
+      final firstMatch = _urlDetector.firstMatch(textWithoutCyrillic);
       if (firstMatch == null) {
-        yield originalText;
+        yield text;
         break;
       }
 
@@ -89,15 +91,15 @@ class UriDetector {
       final end = firstMatch.end;
 
       if (start > 0) {
-        yield originalText.substring(0, start);
+        yield text.substring(0, start);
       }
 
-      final potentialUriString = originalText.substring(start, end);
+      final potentialUriString = text.substring(start, end);
       final uri = Uri.tryParse(potentialUriString);
 
       yield (uri != null) ? uri : potentialUriString;
 
-      originalText = originalText.substring(end, originalText.length);
+      text = text.substring(end, text.length);
     }
   }
 

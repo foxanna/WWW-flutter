@@ -6,7 +6,9 @@ class TextUtils {
   static final RegExp _unescapedBackSlashDetector =
       RegExp('\\\\(?![e|f|n|t|x|u|U|\\\\|\\\'|\\\"|\\?|\\&])');
 
-  static String normalizeToSingleLine(String text) {
+  static String normalizeToSingleLine(String originalText) {
+    var text = originalText;
+
     if (text == null) {
       return null;
     }
@@ -17,7 +19,9 @@ class TextUtils {
     return text;
   }
 
-  static String normalizeToMultiLine(String text) {
+  static String normalizeToMultiLine(String originalText) {
+    var text = originalText;
+
     if (text == null) {
       return null;
     }
@@ -28,10 +32,8 @@ class TextUtils {
     return text;
   }
 
-  static String _normalize(String text) {
-    if (text == null) {
-      return null;
-    }
+  static String _normalize(String originalText) {
+    var text = originalText;
 
     text = _unescapeHtmlSymbols(text);
     text = _replaceUnsupportedSymbols(text);

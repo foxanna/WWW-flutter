@@ -14,7 +14,9 @@ class QuestionParser {
 
   QuestionParser._();
 
-  static Iterable<dynamic> split(String text) sync* {
+  static Iterable<dynamic> split(String originalText) sync* {
+    var text = originalText;
+
     text = TextUtils.normalizeToMultiLine(text);
 
     while (text.isNotEmpty) {
@@ -50,7 +52,9 @@ class QuestionParser {
     }
   }
 
-  static String trim(String text) {
+  static String trim(String originalText) {
+    var text = originalText;
+
     text = TextUtils.normalizeToSingleLine(text);
     text =
         QuestionParserHelper.removeAll(text, QuestionSectionType.SpeakerNote);
