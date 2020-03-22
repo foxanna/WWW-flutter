@@ -44,5 +44,5 @@ class Strings {
   static const String forShortTimer = 'для вопросов дуплет и блиц';
   static const String randomQuestions = 'Случайный вопросы';
   static const String tournamentsTree = 'Дерево турниров';
-  static const String rateUs = 'Оцените работу приложения';
+  static const String rateUs = 'Оцените нашу работу';
 }
