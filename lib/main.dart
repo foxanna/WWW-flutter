@@ -7,6 +7,7 @@ import 'package:what_when_where/redux/app/store.dart';
 void main() {
 //  debugPaintSizeEnabled = true;
 
+  WidgetsFlutterBinding.ensureInitialized();
   IoCInitializer(container: ioc).init();
-  runApp(WWWApp(storeBuilder: () => createStore(ioc)));
+  runApp(WWWApp(store: createStore(ioc)));
 }

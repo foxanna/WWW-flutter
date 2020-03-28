@@ -14,15 +14,15 @@ import 'package:what_when_where/ui/common/dialog_presenter.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page.dart';
 
 class WWWApp extends StatelessWidget {
-  final Store<AppState> Function() _storeBuilder;
+  final Store<AppState> _store;
 
-  const WWWApp({Key key, Store<AppState> Function() storeBuilder})
-      : _storeBuilder = storeBuilder,
+  const WWWApp({Key key, Store<AppState> store})
+      : _store = store,
         super(key: key);
 
   @override
   Widget build(BuildContext context) => StoreProvider<AppState>(
-        store: _storeBuilder(),
+        store: _store,
         child: StoreConnector<AppState, SettingsState>(
           distinct: true,
           onInit: (store) => store.dispatch(const Init()),
