@@ -132,9 +132,9 @@ class NavigationMiddleware {
     _navigationService.navigateToPage(
       routeName: TournamentsTreePage.routeName,
       builder: (context) => TournamentsTreePage(
-            rootId: action.rootId,
-            title: action.title,
-          ),
+        rootId: action.rootId,
+        title: action.title,
+      ),
     );
   }
 }

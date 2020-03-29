@@ -8,7 +8,7 @@ class TournamentState {
   final bool isLoading;
   final Exception exception;
 
-  bool get hasData => tournament.questionsCount != null;
+  bool get hasData => tournament?.questionsCount != null;
 
   bool get hasError => exception != null;
 
