@@ -38,7 +38,7 @@ class _QuestionText extends StatelessWidget {
       speakersNoteStyle: textTheme.headline5.copyWith(
         fontSize: fontSize,
         fontStyle: FontStyle.italic,
-        color: textTheme.bodyText1.color,
+        color: textTheme.caption.color,
       ),
       giveAwayStyle: textTheme.headline5
           .copyWith(fontSize: fontSize, fontWeight: FontWeight.w500),

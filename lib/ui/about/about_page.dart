@@ -80,11 +80,11 @@ class AboutPage extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: '${Strings.questionsDatabasePrefix}\n',
-                    style: Theme.of(context).textTheme.bodyText1,
+                    style: Theme.of(context).textTheme.caption,
                   ),
                   TextSpan(
                     text: Strings.questionsDatabaseName,
-                    style: Theme.of(context).textTheme.bodyText1.copyWith(
+                    style: Theme.of(context).textTheme.caption.copyWith(
                         color: Theme.of(context).accentColor,
                         decoration: TextDecoration.underline),
                     recognizer: TapGestureRecognizer()

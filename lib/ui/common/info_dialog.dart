@@ -26,7 +26,7 @@ class InfoDialog extends StatelessWidget {
             padding: Dimensions.dialogContentPadding,
             child: Text(
               content,
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.caption,
             ),
           ),
         ),

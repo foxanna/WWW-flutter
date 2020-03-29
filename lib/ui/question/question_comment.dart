@@ -19,7 +19,7 @@ class QuestionComment extends StatelessWidget {
       sections: _sections,
       speakersNoteStyle: textTheme.bodyText2.copyWith(
         fontStyle: FontStyle.italic,
-        color: textTheme.bodyText1.color,
+        color: textTheme.caption.color,
       ),
       textStyle: textTheme.bodyText2,
     );
