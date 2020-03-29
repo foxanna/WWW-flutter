@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:provider/provider.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/global/ioc.dart';
@@ -8,6 +9,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/init/actions.dart';
 import 'package:what_when_where/redux/settings/state.dart';
 import 'package:what_when_where/resources/fonts.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/ui/common/dialog_presenter.dart';
@@ -37,16 +39,25 @@ class WWWApp extends StatelessWidget {
             ],
             home: LatestTournamentsPage(),
             builder: (context, child) {
+              final provider = MultiProvider(
+                providers: [
+                  Provider.value(
+                      value: createStyleConfiguration(context: context)),
+                ],
+                child: child,
+              );
+
               final mediaQueryData = MediaQuery.of(context);
               final defaultTextScaleFactor = mediaQueryData.textScaleFactor;
 
               final mediaQuery = MediaQuery(
-                child: child,
+                child: provider,
                 data: mediaQueryData.copyWith(
                   textScaleFactor: defaultTextScaleFactor *
                       Fonts.getTextScale(state.textScale),
                 ),
               );
+
               return Navigator(
                 onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
                   builder: (context) => DialogPresenter(child: mediaQuery),
