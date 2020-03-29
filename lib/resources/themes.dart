@@ -5,7 +5,7 @@ enum AppTheme { light, dark }
 class Themes {
   Themes._();
 
-  static ThemeData appThemeLight = () {
+  static ThemeData createLightAppTheme() {
     final ThemeData base = ThemeData(
       brightness: Brightness.light,
       primaryColor: Colors.teal[900],
@@ -13,16 +13,16 @@ class Themes {
     );
 
     return _customize(base);
-  }();
+  }
 
-  static ThemeData appThemeDark = () {
+  static ThemeData createDarkAppTheme() {
     final ThemeData base = ThemeData(
       brightness: Brightness.dark,
       accentColor: Colors.teal[400],
     );
 
     return _customize(base);
-  }();
+  }
 
   static ThemeData _customize(ThemeData base) => base.copyWith(
         textTheme: base.textTheme.copyWith(
@@ -36,10 +36,14 @@ class Themes {
         ),
       );
 
-  static final _themes = <AppTheme, ThemeData>{
-    AppTheme.light: Themes.appThemeLight,
-    AppTheme.dark: Themes.appThemeDark,
-  };
-
-  static ThemeData get(AppTheme appTheme) => _themes[appTheme];
+  static ThemeData get(AppTheme appTheme) {
+    switch (appTheme) {
+      case AppTheme.dark:
+        return createDarkAppTheme();
+      case AppTheme.light:
+        return createLightAppTheme();
+      default:
+        return createLightAppTheme();
+    }
+  }
 }
