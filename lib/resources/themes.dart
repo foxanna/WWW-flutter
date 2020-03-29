@@ -34,6 +34,14 @@ class Themes {
         buttonTheme: base.buttonTheme.copyWith(
           colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
         ),
+        cardTheme: CardTheme(
+          color: Colors.white,
+          clipBehavior: Clip.hardEdge,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.0),
+          ),
+          elevation: 4.0,
+        ),
       );
 
   static ThemeData get(AppTheme appTheme) {
