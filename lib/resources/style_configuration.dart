@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:what_when_where/utils/style_configurator.dart';
 
 class StyleConfiguration {
   const StyleConfiguration({
@@ -9,15 +11,22 @@ class StyleConfiguration {
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
   final TournamentsGridStyleConfiguration tournamentsGridStyleConfiguration;
-}
 
-StyleConfiguration createStyleConfiguration({@required BuildContext context}) =>
-    StyleConfiguration(
-      tournamentDetailsStyleConfiguration:
-          createTournamentDetailsStyleConfiguration(context: context),
-      tournamentsGridStyleConfiguration:
-          createTournamentsGridStyleConfiguration(context: context),
-    );
+  factory StyleConfiguration.create({@required BuildContext context}) =>
+      StyleConfiguration(
+        tournamentDetailsStyleConfiguration:
+            TournamentDetailsStyleConfiguration.create(context: context),
+        tournamentsGridStyleConfiguration:
+            TournamentsGridStyleConfiguration.create(context: context),
+      );
+
+  static StyleConfiguration of(BuildContext context) {
+    final styleConfigurationInheritedWidget =
+        context.dependOnInheritedWidgetOfExactType<
+            StyleConfigurationInheritedWidget>();
+    return styleConfigurationInheritedWidget.styleConfiguration;
+  }
+}
 
 class TournamentDetailsStyleConfiguration {
   const TournamentDetailsStyleConfiguration({
@@ -27,9 +36,9 @@ class TournamentDetailsStyleConfiguration {
   final TextStyle tournamentTitleTextStyle;
 }
 
-TournamentDetailsStyleConfiguration createTournamentDetailsStyleConfiguration(
-    {@required BuildContext context}) {
-  final theme = Theme.of(context);
+  factory TournamentDetailsStyleConfiguration.create(
+      {@required BuildContext context}) {
+    final theme = Theme.of(context);
 
   return TournamentDetailsStyleConfiguration(
     tournamentTitleTextStyle: theme.textTheme.headline4.copyWith(
@@ -50,16 +59,16 @@ class TournamentsGridStyleConfiguration {
   final TextStyle gridTileSecondLineTextStyle;
   final int secondLineMaxLines;
   final double secondLineMinFontSize;
-}
 
-TournamentsGridStyleConfiguration createTournamentsGridStyleConfiguration(
-    {@required BuildContext context}) {
-  final theme = Theme.of(context);
+  factory TournamentsGridStyleConfiguration.create(
+      {@required BuildContext context}) {
+    final theme = Theme.of(context);
 
-  return TournamentsGridStyleConfiguration(
-    gridTileTitleTextStyle: theme.textTheme.subtitle1,
-    gridTileSecondLineTextStyle: theme.textTheme.caption,
-    secondLineMaxLines: 2,
-    secondLineMinFontSize: 10.0,
-  );
+    return TournamentsGridStyleConfiguration(
+      gridTileTitleTextStyle: theme.textTheme.subtitle1,
+      gridTileSecondLineTextStyle: theme.textTheme.caption,
+      secondLineMaxLines: 2,
+      secondLineMinFontSize: 10.0,
+    );
+  }
 }
