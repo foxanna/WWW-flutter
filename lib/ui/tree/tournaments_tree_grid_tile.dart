@@ -4,6 +4,7 @@ import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 
 class TournamentsTreeGridTile extends StatelessWidget {
   final TournamentsTree tournamentsTree;
@@ -50,20 +51,21 @@ class TournamentsTreeGridTile extends StatelessWidget {
       );
 
   Widget _buildContent(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final styleConfiguration =
+        StyleConfiguration.of(context).tournamentsGridStyleConfiguration;
 
     return Row(
-      children: <Widget>[
+      children: [
         Expanded(
           child: Text(
             tournamentsTree.title,
-            style: textTheme.subtitle1,
+            style: styleConfiguration.gridTileTitleTextStyle,
           ),
         ),
         const SizedBox(width: Dimensions.defaultSpacing * 2),
         Text(
           tournamentsTree.childrenCount,
-          style: textTheme.bodyText1,
+          style: styleConfiguration.gridTileSecondLineTextStyle,
         ),
       ],
     );
