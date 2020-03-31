@@ -18,7 +18,7 @@ class Tour {
   final String editors;
   final String createdAt;
   final String playedAt;
-  final UnmodifiableListView<Question> questions;
+  final List<Question> questions;
 
   const Tour({
     this.id,
@@ -50,11 +50,10 @@ class Tour {
         playedAt: TextUtils.normalizeToSingleLine(map['PlayedAt'] as String),
         questions: map.containsKey('question')
             ? map['question'] is List
-                ? UnmodifiableListView(List<Map<String, dynamic>>.from(
+                ? List.unmodifiable(List<Map<String, dynamic>>.from(
                         map['question'] as Iterable<dynamic>)
-                    .map((q) => Question.fromJson(q))
-                    .toList())
-                : UnmodifiableListView([
+                    .map<Question>((q) => Question.fromJson(q)))
+                : List.unmodifiable(<Question>[
                     Question.fromJson(map['question'] as Map<String, dynamic>)
                   ])
             : UnmodifiableListView([]),
