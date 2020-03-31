@@ -6,7 +6,7 @@ import 'package:what_when_where/db_chgk_info/models/tour.dart';
 
 @immutable
 class ToursState {
-  final UnmodifiableListView<TourState> tours;
+  final List<TourState> tours;
   final int currentTourIndex;
 
   TourState get currentTour =>
@@ -17,7 +17,7 @@ class ToursState {
   ToursState._({
     Iterable<TourState> tours,
     this.currentTourIndex,
-  }) : this.tours = UnmodifiableListView<TourState>(tours ?? <TourState>[]);
+  }) : this.tours = List.unmodifiable(tours ?? <TourState>[]);
 
   ToursState.initial() : this.from(tours: null);
 

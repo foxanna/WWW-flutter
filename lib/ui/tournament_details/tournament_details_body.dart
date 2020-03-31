@@ -64,14 +64,15 @@ class _TournamentDetailsBodyState extends State<TournamentDetailsBody>
   Widget _buildTabBar(BuildContext context) => _tabController.length > 1
       ? StoreConnector<AppState, IterableHolder<String>>(
           distinct: true,
-          converter: (store) => IterableHolder(List<String>.unmodifiable(store
-              .state.toursState.tours
-              .map<String>((state) => state.tour.title))),
-          builder: (context, data) => TabBar(
-            indicatorColor: Theme.of(context).primaryTextTheme.bodyText1.color,
-            isScrollable: true,
-            controller: _tabController,
-            tabs: data.data.map((title) => Tab(text: title ?? '?')).toList(),
+          converter: (store) => IterableHolder(store.state.toursState.tours
+              .map<String>((state) => state.tour.title)),
+          builder: (context, data) => Container(
+            color: Theme.of(context).primaryColor,
+            child: TabBar(
+              isScrollable: true,
+              controller: _tabController,
+              tabs: data.data.map((title) => Tab(text: title ?? '?')).toList(),
+            ),
           ),
         )
       : Container();
