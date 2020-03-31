@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class RoundedCornersHero extends StatelessWidget {
   final String tag;
-  final double startCornersRadius;
-  final double endCornersRadius;
+  final BorderRadius beginBorderRadius;
+  final BorderRadius endBorderRadius;
   final Widget child;
 
   final BorderRadiusTween _tween;
@@ -11,12 +11,13 @@ class RoundedCornersHero extends StatelessWidget {
   RoundedCornersHero({
     Key key,
     this.tag = '',
-    this.startCornersRadius = 0,
-    this.endCornersRadius = 0,
+    this.beginBorderRadius,
+    this.endBorderRadius,
     this.child,
   })  : _tween = BorderRadiusTween(
-            begin: BorderRadius.circular(startCornersRadius),
-            end: BorderRadius.circular(endCornersRadius)),
+          begin: beginBorderRadius,
+          end: endBorderRadius,
+        ),
         super(key: key);
 
   @override
