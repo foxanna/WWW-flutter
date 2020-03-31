@@ -8,8 +8,8 @@ import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 
-class MoreIconButton extends StatelessWidget {
-  const MoreIconButton({Key key}) : super(key: key);
+class TournamentDetailsMoreButton extends StatelessWidget {
+  const TournamentDetailsMoreButton({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => IconButton(

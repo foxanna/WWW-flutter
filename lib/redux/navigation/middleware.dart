@@ -9,7 +9,7 @@ import 'package:what_when_where/ui/image/image_page.dart';
 import 'package:what_when_where/ui/search/search_page.dart';
 import 'package:what_when_where/ui/settings/settings_page.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_page.dart';
-import 'package:what_when_where/ui/tournament_details/tournament_details_page.dart';
+import 'package:what_when_where/ui/tournament_details/route_page.dart';
 import 'package:what_when_where/ui/tree/tournaments_tree_page.dart';
 
 class NavigationMiddleware {
@@ -56,8 +56,10 @@ class NavigationMiddleware {
     store.dispatch(SetTournament(action.tournament));
 
     _navigationService.navigateToPage(
-      routeName: TournamentDetailsPage.routeName,
-      builder: (context) => TournamentDetailsPage(),
+      routeName: TournamentDetailsRoutePage.routeName,
+      builder: (context) => TournamentDetailsRoutePage(
+        tournamentId: action.tournament.textId,
+      ),
     );
   }
 
