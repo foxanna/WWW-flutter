@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/utils/style_configurator.dart';
 
 class StyleConfiguration {
@@ -30,6 +31,9 @@ class StyleConfiguration {
 
 class TournamentDetailsStyleConfiguration {
   const TournamentDetailsStyleConfiguration({
+    this.stubQuestionsCount,
+    this.toursListPadding,
+    this.stubToursCount,
     this.questionTextStyle,
     this.tourCardSize,
     this.tourTitleTextStyle,
@@ -58,6 +62,9 @@ class TournamentDetailsStyleConfiguration {
   final double elevation;
   final Color Function(int index) tourColorGenerator;
   final Size tourCardSize;
+  final int stubToursCount;
+  final int stubQuestionsCount;
+  final EdgeInsets toursListPadding;
 
   factory TournamentDetailsStyleConfiguration.create(
       {@required BuildContext context}) {
@@ -74,10 +81,10 @@ class TournamentDetailsStyleConfiguration {
             .toColor());
 
     return TournamentDetailsStyleConfiguration(
-      tournamentTitleTextStyle: theme.textTheme.headline4.copyWith(
+      tournamentTitleTextStyle: theme.textTheme.headline5.copyWith(
         color: theme.primaryColor,
       ),
-      tourTitleTextStyle: theme.accentTextTheme.headline5,
+      tourTitleTextStyle: theme.accentTextTheme.headline6,
       actionBarBackgroundColor: theme.cardColor,
       actionBarIconTheme: theme.iconTheme,
       scaffoldBackground: theme.primaryColor,
@@ -87,8 +94,8 @@ class TournamentDetailsStyleConfiguration {
         right: kMinInteractiveDimension,
       ),
       tourContentPadding: EdgeInsets.only(
-        bottom: radiusValue,
-        top: radiusValue * 2 + theme.cardTheme.elevation,
+        bottom: radiusValue + theme.cardTheme.elevation * 2,
+        top: radiusValue - theme.cardTheme.elevation,
         left: kMinInteractiveDimension,
         right: kMinInteractiveDimension,
       ),
@@ -107,6 +114,12 @@ class TournamentDetailsStyleConfiguration {
       },
       tourCardSize: const Size(150, 200),
       questionTextStyle: theme.textTheme.subtitle1,
+      stubToursCount: 3,
+      stubQuestionsCount: 12,
+      toursListPadding: EdgeInsets.only(
+        top: theme.cardTheme.elevation * 2,
+        bottom: Dimensions.defaultPadding.bottom,
+      ),
     );
   }
 }
