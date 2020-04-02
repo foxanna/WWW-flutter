@@ -87,7 +87,7 @@ class TournamentDetailsStyleConfiguration {
       tourTitleTextStyle: theme.accentTextTheme.headline6,
       actionBarBackgroundColor: theme.cardColor,
       actionBarIconTheme: theme.iconTheme,
-      scaffoldBackground: theme.primaryColor,
+      scaffoldBackground: theme.accentColor,
       tournamentTitlePadding: EdgeInsets.only(
         bottom: radiusValue,
         left: kMinInteractiveDimension,
@@ -118,7 +118,7 @@ class TournamentDetailsStyleConfiguration {
       stubQuestionsCount: 12,
       toursListPadding: EdgeInsets.only(
         top: theme.cardTheme.elevation * 2,
-        bottom: Dimensions.defaultPadding.bottom,
+        bottom: Dimensions.defaultPadding.bottom * 4,
       ),
     );
   }
