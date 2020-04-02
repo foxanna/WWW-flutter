@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:what_when_where/utils/extensions.dart';
 
 class TextStub extends StatelessWidget {
   final TextStyle textStyle;
+  final Color color;
+  final Color highlightColor;
 
-  const TextStub({
+  TextStub({
     Key key,
     this.textStyle,
-  }) : super(key: key);
+  })  : this.color = textStyle.color,
+        this.highlightColor =
+            ThemeData.estimateBrightnessForColor(textStyle.color) ==
+                    Brightness.dark
+                ? Colors.white
+                : Colors.black38,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
@@ -17,12 +26,18 @@ class TextStub extends StatelessWidget {
                   1.15)
               .roundToDouble();
 
-          return !constraints.hasBoundedHeight
+          final child = !constraints.hasBoundedHeight
               ? _buildSingleLineStub(Size(constraints.maxWidth, height))
               : _buildMultilineStub(
                   Size(constraints.maxWidth, constraints.maxHeight),
                   Size(constraints.maxWidth, height),
                 );
+
+          return Shimmer.fromColors(
+            child: child,
+            baseColor: textStyle.color,
+            highlightColor: highlightColor,
+          );
         },
       );
 
