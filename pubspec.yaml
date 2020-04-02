@@ -29,6 +29,7 @@ dependencies:
   rxdart: ^0.23.1
   share: ^0.6.3+6
   shared_preferences: ^0.5.6+3
+  shimmer: ^1.1.0
   transparent_image: ^1.0.0
   tuple: ^1.0.3
   url_launcher: ^5.4.2
