@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/ui/tournament_details/appbar.dart';
-import 'package:what_when_where/ui/tournament_details/tours_list_stub.dart';
+import 'package:what_when_where/ui/tournament_details/tours_list.dart';
 
-class TournamentDetailsLoadingPage extends StatelessWidget {
-  const TournamentDetailsLoadingPage({Key key}) : super(key: key);
-
+class TournamentDetailsDataPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const CustomScrollView(
         physics: BouncingScrollPhysics(),
         slivers: [
           TournamentDetailsAppBar(),
-          TournamentDetailsStubToursList(),
+          TournamentDetailsToursList(),
         ],
       );
 }
