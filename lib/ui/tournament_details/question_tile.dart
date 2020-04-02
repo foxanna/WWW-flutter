@@ -5,19 +5,14 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 
 class TournamentDetailsQuestionTile extends StatelessWidget {
-  final String _questionNumber;
-  final String _shortQuestionText;
-
   final GestureTapCallback onTap;
+  final Widget child;
 
-  TournamentDetailsQuestionTile({
+  const TournamentDetailsQuestionTile({
     Key key,
-    @required Question question,
     this.onTap,
-  })  : assert(question != null),
-        this._questionNumber = question.number,
-        this._shortQuestionText = QuestionParser.trim(question.question),
-        super(key: key);
+    this.child,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +22,13 @@ class TournamentDetailsQuestionTile extends StatelessWidget {
     return SizedBox(
       width: styleConfiguration.tourCardSize.width,
       height: styleConfiguration.tourCardSize.height,
-      child: Card(
-        child: InkWell(
+      child: InkWell(
+        child: Card(
           child: Stack(
             children: [
               Padding(
                 padding: (Dimensions.defaultPadding * 2).copyWith(bottom: 0.0),
-                child: Text(
-                  '$_questionNumber. $_shortQuestionText',
-                  style: styleConfiguration.questionTextStyle,
-                ),
+                child: child,
               ),
               Positioned.fill(
                 child: Container(
@@ -55,9 +47,34 @@ class TournamentDetailsQuestionTile extends StatelessWidget {
               )
             ],
           ),
-          onTap: onTap,
         ),
+        onTap: onTap,
       ),
+    );
+  }
+}
+
+class TournamentDetailsQuestionTileContent
+    extends TournamentDetailsQuestionTile {
+  final String _questionNumber;
+  final String _shortQuestionText;
+
+  TournamentDetailsQuestionTileContent({
+    Key key,
+    @required Question question,
+  })  : assert(question != null),
+        this._questionNumber = question.number,
+        this._shortQuestionText = QuestionParser.trim(question.question),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
+
+    return Text(
+      '$_questionNumber. $_shortQuestionText',
+      style: styleConfiguration.questionTextStyle,
     );
   }
 }

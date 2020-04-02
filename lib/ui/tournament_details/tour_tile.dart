@@ -1,80 +1,106 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
-import 'package:what_when_where/ui/tournament_details/question_tile.dart';
 
 class TournamentDetailsTourTile extends StatelessWidget {
-  final int index;
+  final Color foregroundColor;
+  final Color backgroundColor;
+  final int questionsCount;
 
-  const TournamentDetailsTourTile({Key key, this.index}) : super(key: key);
+  final WidgetBuilder titleBuilder;
+  final IndexedWidgetBuilder questionBuilder;
+
+  const TournamentDetailsTourTile({
+    Key key,
+    this.foregroundColor,
+    this.backgroundColor,
+    this.titleBuilder,
+    this.questionsCount,
+    this.questionBuilder,
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => StoreConnector<AppState, Tour>(
-        distinct: true,
-        converter: (store) => store.state.toursState.tours[index].tour,
-        builder: (context, tour) {
-          final styleConfiguration = StyleConfiguration.of(context)
-              .tournamentDetailsStyleConfiguration;
-
-          return Padding(
-            padding: EdgeInsets.only(bottom: styleConfiguration.elevation),
-            child: Material(
-              color: styleConfiguration.tourColorGenerator(index),
-              elevation: styleConfiguration.elevation,
-              shape: styleConfiguration.shape,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  top: styleConfiguration.tourContentPadding.top,
-                  bottom: styleConfiguration.tourContentPadding.bottom,
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: styleConfiguration.tourContentPadding.left,
-                        right: styleConfiguration.tourContentPadding.right,
-                      ),
-                      child: Text(
-                        tour.title,
-                        style: styleConfiguration.tourTitleTextStyle,
-                      ),
-                    ),
-                    SizedBox(
-                      height: Dimensions.defaultSpacing * 2,
-                    ),
-                    Container(
-                      height: styleConfiguration.tourCardSize.height,
-                      child: ListView.builder(
-                        padding: EdgeInsets.only(
-                          left: styleConfiguration.tourContentPadding.left,
-                          right: styleConfiguration.tourContentPadding.right,
-                        ),
-                        itemCount: tour.questions.length,
-                        physics: const BouncingScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) =>
-                            TournamentDetailsQuestionTile(
-                          question: tour.questions[index],
-                          onTap: () => _onQuestionTap(context, tour, index),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          );
-        },
+  Widget build(BuildContext context) => Stack(
+        children: [
+          ..._buildBackground(context),
+          _buildContent(context),
+        ],
       );
 
-  void _onQuestionTap(BuildContext context, Tour tour, int index) =>
-      StoreProvider.of<AppState>(context)
-          .dispatch(OpenQuestionsPage(tour.questions, index));
+  List<Widget> _buildBackground(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
+
+    return [
+      Positioned.fill(
+        child: Container(color: backgroundColor),
+      ),
+      Positioned(
+        left: 0.0,
+        right: 0.0,
+        bottom: 0.0,
+        height: styleConfiguration.cornerRadius.y +
+            styleConfiguration.elevation * 2 +
+            styleConfiguration.tourContentPadding.top,
+        child: Padding(
+          padding: EdgeInsets.only(bottom: styleConfiguration.elevation * 2),
+          child: Material(
+            color: foregroundColor,
+            elevation: styleConfiguration.elevation,
+            shape: styleConfiguration.shape,
+          ),
+        ),
+      ),
+      Positioned(
+        top: 0.0,
+        left: 0.0,
+        right: 0.0,
+        bottom: styleConfiguration.cornerRadius.y +
+            styleConfiguration.elevation * 2,
+        child: Container(color: foregroundColor),
+      ),
+    ];
+  }
+
+  Widget _buildContent(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
+
+    return Padding(
+      padding: EdgeInsets.only(
+        top: styleConfiguration.tourContentPadding.top,
+        bottom: styleConfiguration.tourContentPadding.bottom,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              left: styleConfiguration.tourContentPadding.left,
+              right: styleConfiguration.tourContentPadding.right,
+            ),
+            child: titleBuilder(context),
+          ),
+          SizedBox(
+            height: Dimensions.defaultSpacing * 2,
+          ),
+          Container(
+            height: styleConfiguration.tourCardSize.height,
+            child: ListView.builder(
+              padding: EdgeInsets.only(
+                left: styleConfiguration.tourContentPadding.left,
+                right: styleConfiguration.tourContentPadding.right,
+              ),
+              itemCount: questionsCount,
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => questionBuilder(context, index),
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }
