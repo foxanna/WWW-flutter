@@ -44,23 +44,27 @@ class TextStub extends StatelessWidget {
   Widget _buildSingleLineStub(Size size) => SizedBox(
         height: size.height,
         width: size.width,
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              stops: [0.7, 1.0],
-              colors: [
-                textStyle.color.withOpacity(0.2),
-                textStyle.color.withOpacity(0.0),
-              ],
+        child: Center(
+          child: Container(
+            height: size.height / 1.15,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                stops: [0.7, 1.0],
+                colors: [
+                  textStyle.color.withOpacity(0.2),
+                  textStyle.color.withOpacity(0.0),
+                ],
+              ),
             ),
           ),
         ),
       );
 
   Widget _buildMultilineStub(Size containerSize, Size lineSize) {
-    final linesCount = ((containerSize.height ~/ lineSize.height) / 2).round();
+    final linesCount =
+        ((containerSize.height ~/ lineSize.height) / 1.5).round();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +77,7 @@ class TextStub extends StatelessWidget {
             List.generate(
                 linesCount - 1,
                 (index) => SizedBox(
-                      height: lineSize.height,
+                      height: lineSize.height * 0.5,
                     ))),
         _buildSingleLineStub(Size(lineSize.width * 0.7, lineSize.height)),
       ],
