@@ -14,18 +14,21 @@ class TournamentDetailsErrorPage extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: [
-          const TournamentDetailsAppBar(),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: ErrorMessage(
-                exception: exception,
-                retryFunction: () => _loadTournament(context),
-                color: Theme.of(context).primaryTextTheme.bodyText2.color),
-          )
-        ],
+  Widget build(BuildContext context) => Scaffold(
+        backgroundColor: Theme.of(context).primaryColor,
+        body: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            const TournamentDetailsAppBar(),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: ErrorMessage(
+                  exception: exception,
+                  retryFunction: () => _loadTournament(context),
+                  color: Theme.of(context).primaryTextTheme.bodyText2.color),
+            )
+          ],
+        ),
       );
 
   void _loadTournament(BuildContext context) =>
