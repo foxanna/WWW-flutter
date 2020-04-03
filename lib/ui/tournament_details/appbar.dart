@@ -4,6 +4,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/common/text_hero.dart';
 import 'package:what_when_where/ui/tournament_details/more_button.dart';
 import 'package:what_when_where/utils/measure_text.dart';
 
@@ -57,21 +58,10 @@ class TournamentDetailsAppBar extends StatelessWidget {
             bottom: PreferredSize(
               child: Padding(
                 padding: styleConfiguration.tournamentTitlePadding,
-                child: Hero(
-                  createRectTween: (begin, end) => MaterialRectArcTween(
-                      begin: begin,
-                      end: Rect.fromLTWH(
-                          end.left,
-                          end.top,
-                          (end.width + mediaQuery.textScaleFactor)
-                              .ceilToDouble(),
-                          (end.height + mediaQuery.textScaleFactor)
-                              .ceilToDouble())),
+                child: TextHeroTo(
                   tag: '${tournament.textId}ttl',
-                  child: Text(
-                    tournament.title,
-                    style: styleConfiguration.tournamentTitleTextStyle,
-                  ),
+                  text: tournament.title,
+                  style: styleConfiguration.tournamentTitleTextStyle,
                 ),
               ),
               preferredSize: Size.fromHeight(appBarBottomHeight),
