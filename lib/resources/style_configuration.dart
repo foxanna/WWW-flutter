@@ -72,12 +72,13 @@ class TournamentDetailsStyleConfiguration {
     const radiusValue = 32.0;
     const radius = Radius.circular(radiusValue);
     const toursColorsCount = 5;
-    final firstTourColor = HSLColor.fromColor(theme.accentColor);
+    final firstTourColor = theme.primaryColor;
+    final firstTourHSLColor = HSLColor.fromColor(firstTourColor);
     final tourColorTween = ColorTween(
-        begin: firstTourColor.toColor(),
-        end: firstTourColor
+        begin: firstTourColor,
+        end: firstTourHSLColor
             .withLightness(
-                firstTourColor.lightness - (toursColorsCount - 1) * 0.04)
+                firstTourHSLColor.lightness + (toursColorsCount - 1) * 0.02)
             .toColor());
 
     return TournamentDetailsStyleConfiguration(
@@ -87,7 +88,7 @@ class TournamentDetailsStyleConfiguration {
       tourTitleTextStyle: theme.accentTextTheme.headline6,
       actionBarBackgroundColor: theme.cardColor,
       actionBarIconTheme: theme.iconTheme,
-      scaffoldBackground: theme.accentColor,
+      scaffoldBackground: firstTourColor,
       tournamentTitlePadding: EdgeInsets.only(
         bottom: radiusValue,
         left: kMinInteractiveDimension,
