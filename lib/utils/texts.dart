@@ -13,8 +13,10 @@ class TextUtils {
       return null;
     }
 
+    text = text.trim();
     text = _normalize(text);
-    text = removeMultipleSpaces(text);
+    text = _removeMultipleSpaces(text);
+    text = _removeTrailingDot(text);
 
     return text;
   }
@@ -26,8 +28,9 @@ class TextUtils {
       return null;
     }
 
+    text = text.trim();
     text = _normalize(text);
-    text = replaceMultipleSpacesWithNewLine(text);
+    text = _replaceMultipleSpacesWithNewLine(text);
 
     return text;
   }
@@ -37,18 +40,21 @@ class TextUtils {
 
     text = _unescapeHtmlSymbols(text);
     text = _replaceUnsupportedSymbols(text);
-    text = removeParagraphs(text);
+    text = _removeParagraphs(text);
 
     return text;
   }
 
-  static String removeParagraphs(String text) => text.replaceAll('\\n', ' ');
+  static String _removeParagraphs(String text) => text.replaceAll('\\n', ' ');
 
-  static String removeMultipleSpaces(String text) =>
-      text.trim().replaceAll(RegExp(r'\s{2,}'), ' ');
+  static String _removeMultipleSpaces(String text) =>
+      text.replaceAll(RegExp(r'\s{2,}'), ' ');
 
-  static String replaceMultipleSpacesWithNewLine(String text) =>
-      text.trim().replaceAll(RegExp(r'\s{2,}'), '\n');
+  static String _removeTrailingDot(String text) =>
+      (text.endsWith('.')) ? text.substring(0, text.length - 1) : text;
+
+  static String _replaceMultipleSpacesWithNewLine(String text) =>
+      text.replaceAll(RegExp(r'\s{2,}'), '\n');
 
   static String escapeBackSlashes(String text) =>
       text.replaceAll(_unescapedBackSlashDetector, '\\\\');

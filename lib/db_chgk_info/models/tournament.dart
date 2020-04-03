@@ -35,18 +35,21 @@ class Tournament {
   });
 
   factory Tournament.fromLatestHtml(Element element) => Tournament(
-        title: element.children[0].nodes.first.firstChild.text.trim(),
+        title: TextUtils.normalizeToSingleLine(
+            element.children[0].nodes.first.firstChild.text),
         textId:
             element.children[0].nodes.first.attributes['href'].split('/').last,
-        playedAt: element.children[0].nodes.last.text.trim().split(',').first,
-        createdAt: element.children[1].firstChild.text.trim(),
+        playedAt: TextUtils.normalizeToSingleLine(
+            element.children[0].nodes.last.text.trim().split(',').first),
+        createdAt: TextUtils.normalizeToSingleLine(
+            element.children[1].firstChild.text),
       );
 
   factory Tournament.fromSearchHtml(Node tournamentNode, Node dateNode) =>
       Tournament(
         textId: tournamentNode.attributes['href'].split('/').last,
-        title: tournamentNode.firstChild.text.trim(),
-        playedAt: dateNode.text.trim(),
+        title: TextUtils.normalizeToSingleLine(tournamentNode.firstChild.text),
+        playedAt: TextUtils.normalizeToSingleLine(dateNode.text),
       );
 
   factory Tournament.fromJson(Map<String, dynamic> map) => Tournament(
