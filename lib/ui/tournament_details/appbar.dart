@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
@@ -17,11 +18,12 @@ class TournamentDetailsAppBar extends StatelessWidget {
           final styleConfiguration = StyleConfiguration.of(context)
               .tournamentDetailsStyleConfiguration;
 
+          final mediaQuery = MediaQuery.of(context);
           final titleHeight = measureText(
                   context,
                   tournament.title,
                   styleConfiguration.tournamentTitleTextStyle,
-                  MediaQuery.of(context).size.width -
+                  mediaQuery.size.width -
                       styleConfiguration.tournamentTitlePadding.horizontal)
               .height;
           final appBarBottomHeight =
@@ -56,6 +58,15 @@ class TournamentDetailsAppBar extends StatelessWidget {
               child: Padding(
                 padding: styleConfiguration.tournamentTitlePadding,
                 child: Hero(
+                  createRectTween: (begin, end) => MaterialRectArcTween(
+                      begin: begin,
+                      end: Rect.fromLTWH(
+                          end.left,
+                          end.top,
+                          (end.width + mediaQuery.textScaleFactor)
+                              .ceilToDouble(),
+                          (end.height + mediaQuery.textScaleFactor)
+                              .ceilToDouble())),
                   tag: '${tournament.textId}ttl',
                   child: Text(
                     tournament.title,

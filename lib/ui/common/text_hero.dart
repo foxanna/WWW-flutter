@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class TextHero extends StatelessWidget {
@@ -25,7 +26,10 @@ class TextHero extends StatelessWidget {
             (flightContext, animation, direction, fromContext, toContext) =>
                 AnimatedBuilder(
           animation: animation,
-          child: Text(text),
+          child: AutoSizeText(
+            text,
+            stepGranularity: 0.2,
+          ),
           builder: (context, child) => DefaultTextStyle(
             child: child,
             style: _tween.lerp(animation.value),
