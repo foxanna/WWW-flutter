@@ -17,6 +17,17 @@ class TournamentDetailsAppBar extends StatelessWidget {
           final styleConfiguration = StyleConfiguration.of(context)
               .tournamentDetailsStyleConfiguration;
 
+          final titleHeight = measureText(
+                  context,
+                  tournament.title,
+                  styleConfiguration.tournamentTitleTextStyle,
+                  MediaQuery.of(context).size.width -
+                      styleConfiguration.tournamentTitlePadding.horizontal)
+              .height;
+          final appBarBottomHeight =
+              titleHeight + styleConfiguration.tournamentTitlePadding.vertical;
+          final expectedAppBarHeight = appBarBottomHeight + kToolbarHeight;
+
           return SliverAppBar(
             primary: true,
             iconTheme: styleConfiguration.actionBarIconTheme,
@@ -26,27 +37,33 @@ class TournamentDetailsAppBar extends StatelessWidget {
             backgroundColor: styleConfiguration.actionBarBackgroundColor,
             shape: styleConfiguration.shape,
             forceElevated: true,
+            flexibleSpace: FlexibleSpaceBar(
+              collapseMode: CollapseMode.pin,
+              background: Hero(
+                tag: '${tournament.textId}bg',
+                child: Card(
+                  shape: styleConfiguration.shape,
+                  color: styleConfiguration.actionBarBackgroundColor,
+                  margin: EdgeInsets.zero,
+                  elevation: 0.0,
+                ),
+              ),
+            ),
+            expandedHeight: expectedAppBarHeight,
             elevation: styleConfiguration.elevation,
             actions: const [TournamentDetailsMoreButton()],
             bottom: PreferredSize(
               child: Padding(
                 padding: styleConfiguration.tournamentTitlePadding,
-                child: Text(
-                  tournament.title,
-                  style: styleConfiguration.tournamentTitleTextStyle,
+                child: Hero(
+                  tag: '${tournament.textId}ttl',
+                  child: Text(
+                    tournament.title,
+                    style: styleConfiguration.tournamentTitleTextStyle,
+                  ),
                 ),
               ),
-              preferredSize: Size.fromHeight(
-                measureText(
-                            context,
-                            tournament.title,
-                            styleConfiguration.tournamentTitleTextStyle,
-                            MediaQuery.of(context).size.width -
-                                styleConfiguration
-                                    .tournamentTitlePadding.horizontal)
-                        .height +
-                    styleConfiguration.tournamentTitlePadding.vertical,
-              ),
+              preferredSize: Size.fromHeight(appBarBottomHeight),
             ),
           );
         },
