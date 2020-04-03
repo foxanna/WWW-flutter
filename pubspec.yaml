@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  audioplayer2: ^0.5.2
+  audioplayers: ^0.14.2
   auto_size_text: ^2.1.0
   dio: ^3.0.9
   dioc: ^0.1.6
