@@ -7,16 +7,19 @@ class TournamentDetailsLoadingPage extends StatelessWidget {
   const TournamentDetailsLoadingPage({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        backgroundColor: StyleConfiguration.of(context)
-            .tournamentDetailsStyleConfiguration
-            .scaffoldBackground,
-        body: const CustomScrollView(
-          physics: BouncingScrollPhysics(),
-          slivers: [
-            TournamentDetailsAppBar(),
-            TournamentDetailsStubToursList(),
-          ],
-        ),
-      );
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
+
+    return Scaffold(
+      backgroundColor: styleConfiguration.scaffoldBackground,
+      body: const CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        slivers: [
+          TournamentDetailsAppBar(),
+          TournamentDetailsStubToursList(),
+        ],
+      ),
+    );
+  }
 }
