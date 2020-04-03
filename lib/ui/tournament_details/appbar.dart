@@ -38,18 +38,18 @@ class TournamentDetailsAppBar extends StatelessWidget {
             shape: styleConfiguration.shape,
             forceElevated: true,
             flexibleSpace: FlexibleSpaceBar(
-              collapseMode: CollapseMode.pin,
+              collapseMode: CollapseMode.none,
               background: Hero(
                 tag: '${tournament.textId}bg',
-                child: Card(
-                  shape: styleConfiguration.shape,
-                  color: styleConfiguration.actionBarBackgroundColor,
-                  margin: EdgeInsets.zero,
-                  elevation: 0.0,
+                child: Container(
+                  decoration: ShapeDecoration(
+                    color: styleConfiguration.actionBarBackgroundColor,
+                    shape: styleConfiguration.shape,
+                  ),
                 ),
               ),
             ),
-            expandedHeight: expectedAppBarHeight,
+            expandedHeight: expectedAppBarHeight + 0.001,
             elevation: styleConfiguration.elevation,
             actions: const [TournamentDetailsMoreButton()],
             bottom: PreferredSize(
