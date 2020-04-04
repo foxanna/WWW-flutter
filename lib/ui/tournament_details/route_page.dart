@@ -4,7 +4,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/redux/tornament/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
-import 'package:what_when_where/ui/tournament_details/appbar.dart';
+import 'package:what_when_where/ui/tournament_details/app_bar.dart';
 import 'package:what_when_where/ui/tournament_details/data_page.dart';
 import 'package:what_when_where/ui/tournament_details/error_page.dart';
 import 'package:what_when_where/ui/tournament_details/loading_page.dart';
