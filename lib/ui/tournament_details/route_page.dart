@@ -3,6 +3,8 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/redux/tornament/state.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/tournament_details/appbar.dart';
 import 'package:what_when_where/ui/tournament_details/data_page.dart';
 import 'package:what_when_where/ui/tournament_details/error_page.dart';
 import 'package:what_when_where/ui/tournament_details/loading_page.dart';
@@ -17,7 +19,23 @@ class TournamentDetailsRoutePage extends StatelessWidget {
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) =>
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
+
+    return Scaffold(
+      backgroundColor: styleConfiguration.scaffoldBackground,
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          const TournamentDetailsAppBar(),
+          _buildBody(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBody(BuildContext context) =>
       StoreConnector<AppState, TournamentState>(
         distinct: true,
         converter: (store) => store.state.tournamentState,
