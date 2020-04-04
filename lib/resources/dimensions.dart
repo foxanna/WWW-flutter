@@ -11,4 +11,7 @@ class Dimensions {
       horizontal: Dimensions.defaultSidePadding * 2);
   static const dialogContentPadding =
       EdgeInsets.symmetric(vertical: 24, horizontal: 24);
+
+  static const double mediumComponentsCornerRadiusValue = 16.0;
+  static const double largeComponentsCornerRadiusValue = 32.0;
 }

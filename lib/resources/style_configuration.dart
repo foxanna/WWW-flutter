@@ -69,7 +69,7 @@ class TournamentDetailsStyleConfiguration {
   factory TournamentDetailsStyleConfiguration.create(
       {@required BuildContext context}) {
     final theme = Theme.of(context);
-    const radiusValue = 32.0;
+    const radiusValue = Dimensions.largeComponentsCornerRadiusValue;
     const radius = Radius.circular(radiusValue);
     const toursColorsCount = 5;
     final firstTourColor = theme.primaryColor;
