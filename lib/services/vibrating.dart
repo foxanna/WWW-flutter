@@ -1,4 +1,4 @@
-import 'package:vibrate/vibrate.dart';
+import 'package:flutter_vibrate/flutter_vibrate.dart';
 
 abstract class IVibratingService {
   Future<void> vibrate();
