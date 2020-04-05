@@ -59,12 +59,15 @@ class TournamentDetailsAppBar extends StatelessWidget {
             expandedHeight: expectedAppBarHeight + 0.001,
             actions: const [TournamentDetailsMoreButton()],
             bottom: PreferredSize(
-              child: Padding(
-                padding: styleConfiguration.tournamentTitlePadding,
-                child: TextHeroTo(
-                  tag: '${tournament.textId}ttl',
-                  text: tournament.title,
-                  style: styleConfiguration.tournamentTitleTextStyle,
+              child: Container(
+                width: double.infinity,
+                child: Padding(
+                  padding: styleConfiguration.tournamentTitlePadding,
+                  child: TextHeroTo(
+                    tag: '${tournament.textId}ttl',
+                    text: tournament.title,
+                    style: styleConfiguration.tournamentTitleTextStyle,
+                  ),
                 ),
               ),
               preferredSize: Size.fromHeight(appBarBottomHeight),
