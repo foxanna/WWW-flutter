@@ -4,7 +4,7 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/tree/tournaments_tree_grid_tile.dart';
-import 'package:what_when_where/ui/tree/tournaments_tree_tournament_grid_tile.dart';
+import 'package:what_when_where/ui/tree/tournament_tile.dart';
 
 class TournamentsTreeGrid extends StatelessWidget {
   final List<dynamic> tournamentsTree;
