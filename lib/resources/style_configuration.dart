@@ -83,9 +83,7 @@ class TournamentDetailsStyleConfiguration {
             .toColor());
 
     return TournamentDetailsStyleConfiguration(
-      tournamentTitleTextStyle: theme.textTheme.headline5.copyWith(
-        color: theme.primaryColor,
-      ),
+      tournamentTitleTextStyle: theme.textTheme.headline5,
       tourTitleTextStyle: theme.accentTextTheme.headline6,
       actionBarBackgroundColor: theme.cardColor,
       actionBarIconTheme: theme.iconTheme,
