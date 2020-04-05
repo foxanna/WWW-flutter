@@ -29,6 +29,7 @@ class WWWApp extends StatelessWidget {
           onInit: (store) => store.dispatch(const Init()),
           converter: (store) => store.state.settingsState,
           builder: (context, state) => MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: Constants.appName,
             theme: Themes.get(state.appTheme),
             navigatorKey: globalNavigatorKey,
@@ -37,24 +38,24 @@ class WWWApp extends StatelessWidget {
                   .observer(home: LatestTournamentsPage.routeName),
             ],
             home: LatestTournamentsPage(),
-            builder: (context, child) {
-              final mediaQueryData = MediaQuery.of(context);
-              final defaultTextScaleFactor = mediaQueryData.textScaleFactor;
+            builder: (context, child) => Navigator(
+              onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
+                builder: (context) {
+                  final styleConfigurator = StyleConfigurator(child: child);
+                  final mediaQueryData = MediaQuery.of(context);
+                  final defaultTextScaleFactor = mediaQueryData.textScaleFactor;
+                  final mediaQuery = MediaQuery(
+                    child: styleConfigurator,
+                    data: mediaQueryData.copyWith(
+                      textScaleFactor: defaultTextScaleFactor *
+                          Fonts.getTextScale(state.textScale),
+                    ),
+                  );
 
-              final mediaQuery = MediaQuery(
-                child: StyleConfigurator(child: child),
-                data: mediaQueryData.copyWith(
-                  textScaleFactor: defaultTextScaleFactor *
-                      Fonts.getTextScale(state.textScale),
-                ),
-              );
-
-              return Navigator(
-                onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
-                  builder: (context) => DialogPresenter(child: mediaQuery),
-                ),
-              );
-            },
+                  return DialogPresenter(child: mediaQuery);
+                },
+              ),
+            ),
           ),
         ),
       );
