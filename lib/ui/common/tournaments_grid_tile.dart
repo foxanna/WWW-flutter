@@ -11,10 +11,13 @@ import 'package:what_when_where/ui/common/text_hero.dart';
 class TournamentsGridTile extends StatelessWidget {
   final Tournament tournament;
 
-  const TournamentsGridTile({
+  final String _subheadText;
+
+  TournamentsGridTile({
     Key key,
     @required this.tournament,
-  }) : super(key: key);
+  })  : _subheadText = _buildSubheadText(tournament),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) => Stack(
@@ -65,13 +68,15 @@ class TournamentsGridTile extends StatelessWidget {
                     .tournamentTitleTextStyle,
                 text: tournament.title,
               ),
-              SizedBox(
-                height: gridStyleConfiguration.tileContentSpacing,
-              ),
-              Text(
-                _subheadText(),
-                style: gridStyleConfiguration.gridTileSecondLineTextStyle,
-              ),
+              if (_subheadText.isNotEmpty)
+                SizedBox(
+                  height: gridStyleConfiguration.tileContentSpacing,
+                ),
+              if (_subheadText.isNotEmpty)
+                Text(
+                  _subheadText,
+                  style: gridStyleConfiguration.gridTileSecondLineTextStyle,
+                ),
             ],
           ),
         ),
@@ -80,7 +85,7 @@ class TournamentsGridTile extends StatelessWidget {
     );
   }
 
-  String _subheadText() => [
+  static String _buildSubheadText(Tournament tournament) => [
         if (tournament.playedAt?.isNotEmpty ?? false)
           '${Strings.playedAt} ${tournament.playedAt}',
         if (tournament.createdAt?.isNotEmpty ?? false)
