@@ -21,5 +21,6 @@ class StyleConfigurationInheritedWidget extends InheritedWidget {
       : super(key: key, child: child);
 
   @override
-  bool updateShouldNotify(InheritedWidget oldWidget) => false;
+  bool updateShouldNotify(StyleConfigurationInheritedWidget oldWidget) =>
+      this.styleConfiguration != oldWidget.styleConfiguration;
 }
