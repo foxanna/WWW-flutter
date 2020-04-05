@@ -57,9 +57,7 @@ class NavigationMiddleware {
 
     _navigationService.navigateToPage(
       routeName: TournamentDetailsRoutePage.routeName,
-      builder: (context) => TournamentDetailsRoutePage(
-        tournamentId: action.tournament.textId,
-      ),
+      builder: (context) => const TournamentDetailsRoutePage(),
     );
   }
 
