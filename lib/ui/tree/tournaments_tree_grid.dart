@@ -3,8 +3,8 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/common/tournaments_grid_tile.dart';
 import 'package:what_when_where/ui/tree/tournaments_subtree_tile.dart';
-import 'package:what_when_where/ui/tree/tournament_tile.dart';
 
 class TournamentsTreeGrid extends StatelessWidget {
   final List<dynamic> tournamentsTree;
@@ -30,7 +30,7 @@ class TournamentsTreeGrid extends StatelessWidget {
                 tournamentsTree: tournamentsTree[i] as TournamentsTree);
           }
           if (tournamentsTree[i] is Tournament) {
-            return TournamentsTreeTournamentTile(
+            return TournamentsGridTile(
                 tournament: tournamentsTree[i] as Tournament);
           }
 
