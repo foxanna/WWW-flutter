@@ -3,7 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
-import 'package:what_when_where/ui/tree/tournaments_tree_grid_tile.dart';
+import 'package:what_when_where/ui/tree/tournaments_subtree_tile.dart';
 import 'package:what_when_where/ui/tree/tournament_tile.dart';
 
 class TournamentsTreeGrid extends StatelessWidget {
@@ -26,11 +26,11 @@ class TournamentsTreeGrid extends StatelessWidget {
         crossAxisSpacing: styleConfiguration.gridSpacing,
         itemBuilder: (c, i) {
           if (tournamentsTree[i] is TournamentsTree) {
-            return TournamentsTreeGridTile(
+            return TournamentsTreeTournamentSubtreeTile(
                 tournamentsTree: tournamentsTree[i] as TournamentsTree);
           }
           if (tournamentsTree[i] is Tournament) {
-            return TournamentsTreeTournamentGridTile(
+            return TournamentsTreeTournamentTile(
                 tournament: tournamentsTree[i] as Tournament);
           }
 

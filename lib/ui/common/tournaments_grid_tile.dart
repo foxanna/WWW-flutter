@@ -1,11 +1,12 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
-import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/common/shape_hero.dart';
+import 'package:what_when_where/ui/common/text_hero.dart';
 
 class TournamentsGridTile extends StatelessWidget {
   final Tournament tournament;
@@ -16,44 +17,74 @@ class TournamentsGridTile extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Card(
-        elevation: 4.0,
-        child: InkWell(
-          child: Padding(
-              padding: Dimensions.defaultListTilePadding,
-              child: _buildContent(context)),
-          onTap: () => _openTournamentDetails(context),
-        ),
+  Widget build(BuildContext context) => Stack(
+        children: [
+          _buildBackground(context),
+          _buildContent(context),
+        ],
       );
 
-  Widget _buildContent(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+  Positioned _buildBackground(BuildContext context) {
+    final styleConfiguration = StyleConfiguration.of(context);
+    final gridStyleConfiguration =
+        styleConfiguration.tournamentsGridStyleConfiguration;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Text(
-          tournament.title,
-          style: textTheme.subtitle1,
+    return Positioned.fill(
+      child: ShapeHeroFrom(
+        tag: '${tournament.textId}bg',
+        begin: gridStyleConfiguration.tileShape,
+        end: styleConfiguration.tournamentDetailsStyleConfiguration.shape,
+        child: Container(
+          color: gridStyleConfiguration.tileBackgroundColor,
         ),
-        const SizedBox(height: Dimensions.defaultSpacing * 2),
-        AutoSizeText(
-          _subheadText(),
-          overflow: TextOverflow.ellipsis,
-          style: textTheme.bodyText1,
-          maxLines: 2,
-          maxFontSize: textTheme.bodyText1.fontSize,
-          minFontSize: 10,
+      ),
+    );
+  }
+
+  Widget _buildContent(BuildContext context) {
+    final styleConfiguration = StyleConfiguration.of(context);
+    final gridStyleConfiguration =
+        styleConfiguration.tournamentsGridStyleConfiguration;
+
+    return Card(
+      shape: gridStyleConfiguration.tileShape,
+      color: gridStyleConfiguration.tileBackgroundColor,
+      elevation: gridStyleConfiguration.tileElevation,
+      child: InkWell(
+        child: Padding(
+          padding: gridStyleConfiguration.tileContentPadding,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              TextHeroFrom(
+                tag: '${tournament.textId}ttl',
+                startTextStyle: gridStyleConfiguration.gridTileTitleTextStyle,
+                endTextStyle: styleConfiguration
+                    .tournamentDetailsStyleConfiguration
+                    .tournamentTitleTextStyle,
+                text: tournament.title,
+              ),
+              SizedBox(
+                height: gridStyleConfiguration.tileContentSpacing,
+              ),
+              Text(
+                _subheadText(),
+                style: gridStyleConfiguration.gridTileSecondLineTextStyle,
+              ),
+            ],
+          ),
         ),
-      ],
+        onTap: () => _openTournamentDetails(context),
+      ),
     );
   }
 
   String _subheadText() => [
-        if (tournament.playedAt != null)
+        if (tournament.playedAt?.isNotEmpty ?? false)
           '${Strings.playedAt} ${tournament.playedAt}',
-        if (tournament.createdAt != null)
-          '${Strings.addedAt} ${tournament.createdAt}'
+        if (tournament.createdAt?.isNotEmpty ?? false)
+          '${Strings.addedAt} ${tournament.createdAt}',
       ].join('\n');
 
   void _openTournamentDetails(BuildContext context) =>
