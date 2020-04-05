@@ -56,7 +56,6 @@ class TournamentMiddleware {
     next(action);
 
     store.dispatch(SetTours(action.tournament.tours));
-    store.dispatch(const SelectTour(0));
   }
 
   void _reloadTournament(

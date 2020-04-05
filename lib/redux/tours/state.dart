@@ -7,19 +7,12 @@ import 'package:what_when_where/db_chgk_info/models/tour.dart';
 @immutable
 class ToursState {
   final List<TourState> tours;
-  final int currentTourIndex;
-
-  TourState get currentTour =>
-      (currentTourIndex != null && tours.length > currentTourIndex)
-          ? tours[currentTourIndex]
-          : null;
 
   ToursState._({
     Iterable<TourState> tours,
-    this.currentTourIndex,
   }) : this.tours = List.unmodifiable(tours ?? <TourState>[]);
 
-  ToursState.initial() : this.from(tours: null);
+  ToursState.initial() : this._(tours: null);
 
   ToursState.from({
     Iterable<Tour> tours,
@@ -29,13 +22,9 @@ class ToursState {
 
   ToursState copyWith({
     Optional<Iterable<TourState>> tours,
-    Optional<int> currentTourIndex,
   }) =>
       ToursState._(
         tours: tours != null ? tours.orNull : this.tours,
-        currentTourIndex: currentTourIndex != null
-            ? currentTourIndex.orNull
-            : this.currentTourIndex,
       );
 }
 

@@ -16,19 +16,9 @@ class ToursMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, SelectTour>(_selectTour),
+        TypedMiddleware<AppState, SetTours>(_setTours),
         TypedMiddleware<AppState, LoadTour>(_loadTour),
       ];
-
-  void _selectTour(
-      Store<AppState> store, SelectTour action, NextDispatcher next) {
-    next(action);
-
-    final tourId = store.state.toursState.currentTour?.tour?.id;
-    if (tourId != null) {
-      store.dispatch(LoadTour(tourId));
-    }
-  }
 
   Future<void> _loadTour(
       Store<AppState> store, LoadTour action, NextDispatcher next) async {
@@ -52,5 +42,11 @@ class ToursMiddleware {
     } on Exception catch (e) {
       store.dispatch(TourFailedLoading(tourId, e));
     }
+  }
+
+  void _setTours(Store<AppState> store, SetTours action, NextDispatcher next) {
+    next(action);
+
+    action.tours.map((e) => e.id).forEach((id) => store.dispatch(LoadTour(id)));
   }
 }

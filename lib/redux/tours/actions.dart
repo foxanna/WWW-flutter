@@ -13,16 +13,6 @@ class SetTours {
 }
 
 @immutable
-class SelectTour {
-  final int tourIndex;
-
-  const SelectTour(this.tourIndex);
-
-  @override
-  String toString() => '$SelectTour tourIndex = "$tourIndex"';
-}
-
-@immutable
 class VoidTours {
   const VoidTours();
 

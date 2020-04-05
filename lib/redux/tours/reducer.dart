@@ -8,7 +8,6 @@ class ToursReducer {
   static final Reducer<ToursState> _reducer = combineReducers<ToursState>([
     TypedReducer<ToursState, SetTours>(_setTours),
     TypedReducer<ToursState, VoidTours>(_voidTours),
-    TypedReducer<ToursState, SelectTour>(_selectTour),
     TypedReducer<ToursState, TourIsLoading>(_updateTourIsLoading),
     TypedReducer<ToursState, TourLoaded>(_updateTourLoaded),
     TypedReducer<ToursState, TourFailedLoading>(_updateTourFailed),
@@ -22,9 +21,6 @@ class ToursReducer {
 
   static ToursState _voidTours(ToursState state, VoidTours action) =>
       ToursState.initial();
-
-  static ToursState _selectTour(ToursState state, SelectTour action) =>
-      state.copyWith(currentTourIndex: Optional.of(action.tourIndex));
 
   static ToursState _updateTourIsLoading(
           ToursState state, TourIsLoading action) =>
