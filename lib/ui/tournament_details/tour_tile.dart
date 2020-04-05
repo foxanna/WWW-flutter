@@ -88,7 +88,7 @@ class TournamentDetailsTourTile extends StatelessWidget {
           ),
           Container(
             height: styleConfiguration.tourCardSize.height,
-            child: ListView.builder(
+            child: ListView.separated(
               padding: EdgeInsets.only(
                 left: styleConfiguration.tourContentPadding.left,
                 right: styleConfiguration.tourContentPadding.right,
@@ -97,6 +97,9 @@ class TournamentDetailsTourTile extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => questionBuilder(context, index),
+              separatorBuilder: (context, index) => SizedBox(
+                width: styleConfiguration.tourQuestionsSpacing,
+              ),
             ),
           )
         ],

@@ -31,6 +31,7 @@ class StyleConfiguration {
 
 class TournamentDetailsStyleConfiguration {
   const TournamentDetailsStyleConfiguration({
+    this.tourQuestionsSpacing,
     this.stubQuestionsCount,
     this.toursListPadding,
     this.stubToursCount,
@@ -65,6 +66,7 @@ class TournamentDetailsStyleConfiguration {
   final int stubToursCount;
   final int stubQuestionsCount;
   final EdgeInsets toursListPadding;
+  final double tourQuestionsSpacing;
 
   factory TournamentDetailsStyleConfiguration.create(
       {@required BuildContext context}) {
@@ -120,6 +122,7 @@ class TournamentDetailsStyleConfiguration {
         top: theme.cardTheme.elevation * 2,
         bottom: Dimensions.defaultPadding.bottom * 2 + padding.bottom,
       ),
+      tourQuestionsSpacing: 16.0,
     );
   }
 }
