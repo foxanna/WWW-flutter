@@ -22,8 +22,9 @@ class TournamentDetailsQuestionTile extends StatelessWidget {
     return SizedBox(
       width: styleConfiguration.tourCardSize.width,
       height: styleConfiguration.tourCardSize.height,
-      child: InkWell(
-        child: Card(
+      child: Card(
+        child: InkWell(
+          onTap: onTap,
           child: Stack(
             children: [
               Padding(
@@ -48,14 +49,12 @@ class TournamentDetailsQuestionTile extends StatelessWidget {
             ],
           ),
         ),
-        onTap: onTap,
       ),
     );
   }
 }
 
-class TournamentDetailsQuestionTileContent
-    extends TournamentDetailsQuestionTile {
+class TournamentDetailsQuestionTileContent extends StatelessWidget {
   final String _questionNumber;
   final String _shortQuestionText;
 
