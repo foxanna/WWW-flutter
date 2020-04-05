@@ -126,16 +126,28 @@ class TournamentDetailsStyleConfiguration {
 
 class TournamentsGridStyleConfiguration {
   const TournamentsGridStyleConfiguration({
+    this.gridPadding,
+    this.tileElevation,
+    this.tileContentSpacing,
+    this.columnsCount,
+    this.gridSpacing,
+    this.tileContentPadding,
+    this.tileBackgroundColor,
+    this.tileShape,
     this.gridTileTitleTextStyle,
     this.gridTileSecondLineTextStyle,
-    this.secondLineMaxLines,
-    this.secondLineMinFontSize,
   });
 
   final TextStyle gridTileTitleTextStyle;
   final TextStyle gridTileSecondLineTextStyle;
-  final int secondLineMaxLines;
-  final double secondLineMinFontSize;
+  final double gridSpacing;
+  final double tileContentSpacing;
+  final int columnsCount;
+  final ShapeBorder tileShape;
+  final Color tileBackgroundColor;
+  final EdgeInsets tileContentPadding;
+  final EdgeInsets gridPadding;
+  final double tileElevation;
 
   factory TournamentsGridStyleConfiguration.create(
       {@required BuildContext context}) {
@@ -144,8 +156,14 @@ class TournamentsGridStyleConfiguration {
     return TournamentsGridStyleConfiguration(
       gridTileTitleTextStyle: theme.textTheme.subtitle1,
       gridTileSecondLineTextStyle: theme.textTheme.caption,
-      secondLineMaxLines: 2,
-      secondLineMinFontSize: 10.0,
+      tileShape: theme.cardTheme.shape,
+      tileBackgroundColor: theme.cardColor,
+      tileContentPadding: Dimensions.defaultListTilePadding,
+      gridSpacing: 16.0,
+      columnsCount: 2,
+      tileContentSpacing: Dimensions.defaultSpacing * 2,
+      tileElevation: theme.cardTheme.elevation,
+      gridPadding: const EdgeInsets.all(16.0),
     );
   }
 }

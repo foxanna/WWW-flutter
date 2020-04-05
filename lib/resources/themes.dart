@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/resources/dimensions.dart';
 
 enum AppTheme { light, dark }
 
@@ -34,10 +35,12 @@ class Themes {
           colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
         ),
         cardTheme: CardTheme(
-          color: Colors.white,
+          margin: EdgeInsets.zero,
           clipBehavior: Clip.hardEdge,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.0),
+            borderRadius: BorderRadius.all(
+              Radius.circular(Dimensions.mediumComponentsCornerRadiusValue),
+            ),
           ),
           elevation: 4.0,
         ),

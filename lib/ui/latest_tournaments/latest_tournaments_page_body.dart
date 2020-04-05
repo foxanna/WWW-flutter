@@ -112,28 +112,26 @@ class _LatestTournamentsPageContent extends StatelessWidget {
         distinct: true,
         converter: (store) => store.state.latestTournamentsState,
         builder: (context, state) => CustomScrollView(
-              controller: _scrollController,
-              slivers: [
-                const LatestTournamentsAppBar(),
-                SliverPadding(
-                  sliver: TournamentsGrid(tournaments: state.data),
-                  padding: Dimensions.defaultPadding,
-                ),
-                SliverToBoxAdapter(
-                  child: state.isLoadingMore
-                      ? WWWProgressIndicator(
-                          padding: Dimensions.defaultPadding * 3,
-                        )
-                      : Container(),
-                ),
-                SliverToBoxAdapter(
-                  child: state.hasError
-                      ? const LatestTournamentsErrorMessage(
-                          dense: true,
-                        )
-                      : Container(),
-                )
-              ],
+          physics: const BouncingScrollPhysics(),
+          controller: _scrollController,
+          slivers: [
+            const LatestTournamentsAppBar(),
+            TournamentsGrid(tournaments: state.data),
+            SliverToBoxAdapter(
+              child: state.isLoadingMore
+                  ? WWWProgressIndicator(
+                      padding: Dimensions.defaultPadding * 3,
+                    )
+                  : Container(),
             ),
+            SliverToBoxAdapter(
+              child: state.hasError
+                  ? const LatestTournamentsErrorMessage(
+                      dense: true,
+                    )
+                  : Container(),
+            )
+          ],
+        ),
       );
 }

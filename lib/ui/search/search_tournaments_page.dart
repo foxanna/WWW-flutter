@@ -115,10 +115,7 @@ class _SearchTournamentsPageResults extends StatelessWidget {
         builder: (context, state) => CustomScrollView(
           controller: _scrollController,
           slivers: [
-            SliverPadding(
-              sliver: TournamentsGrid(tournaments: state.data),
-              padding: Dimensions.defaultPadding,
-            ),
+            TournamentsGrid(tournaments: state.data),
             SliverToBoxAdapter(
               child: state.isLoading
                   ? WWWProgressIndicator(

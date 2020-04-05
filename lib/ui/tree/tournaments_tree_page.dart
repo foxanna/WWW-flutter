@@ -3,7 +3,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/redux/tree/state.dart';
-import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
@@ -48,11 +47,8 @@ class TournamentsTreePage extends StatelessWidget {
               );
             }
             if (state.hasData) {
-              widget = SliverPadding(
-                sliver: TournamentsTreeGrid(
-                  tournamentsTree: state.tree.children,
-                ),
-                padding: Dimensions.defaultPadding,
+              widget = TournamentsTreeGrid(
+                tournamentsTree: state.tree.children,
               );
             }
 
