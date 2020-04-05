@@ -69,6 +69,7 @@ class TournamentDetailsStyleConfiguration {
   factory TournamentDetailsStyleConfiguration.create(
       {@required BuildContext context}) {
     final theme = Theme.of(context);
+    final padding = MediaQuery.of(context).padding;
     const radiusValue = Dimensions.largeComponentsCornerRadiusValue;
     const radius = Radius.circular(radiusValue);
     const toursColorsCount = 5;
@@ -97,8 +98,8 @@ class TournamentDetailsStyleConfiguration {
       tourContentPadding: EdgeInsets.only(
         bottom: radiusValue + theme.cardTheme.elevation * 2,
         top: radiusValue - theme.cardTheme.elevation,
-        left: kMinInteractiveDimension,
-        right: kMinInteractiveDimension,
+        left: kMinInteractiveDimension + padding.left,
+        right: kMinInteractiveDimension + padding.right,
       ),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(bottomLeft: radius),
@@ -119,7 +120,7 @@ class TournamentDetailsStyleConfiguration {
       stubQuestionsCount: 12,
       toursListPadding: EdgeInsets.only(
         top: theme.cardTheme.elevation * 2,
-        bottom: Dimensions.defaultPadding.bottom * 4,
+        bottom: Dimensions.defaultPadding.bottom * 2 + padding.bottom,
       ),
     );
   }
