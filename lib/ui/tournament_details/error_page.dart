@@ -16,9 +16,10 @@ class TournamentDetailsErrorPage extends StatelessWidget {
   Widget build(BuildContext context) => SliverFillRemaining(
         hasScrollBody: false,
         child: ErrorMessage(
-            exception: exception,
-            retryFunction: () => _loadTournament(context),
-            color: Theme.of(context).primaryTextTheme.bodyText2.color),
+          exception: exception,
+          retryFunction: () => _loadTournament(context),
+          color: Theme.of(context).primaryTextTheme.bodyText2.color,
+        ),
       );
 
   void _loadTournament(BuildContext context) =>

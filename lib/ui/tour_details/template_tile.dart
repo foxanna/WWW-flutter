@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
-class TournamentDetailsTourTile extends StatelessWidget {
+class TourDetailsTemplateTile extends StatelessWidget {
   final Color foregroundColor;
   final Color backgroundColor;
   final int questionsCount;
 
   final WidgetBuilder titleBuilder;
+  final WidgetBuilder childBuilder;
   final IndexedWidgetBuilder questionBuilder;
 
-  const TournamentDetailsTourTile({
+  const TourDetailsTemplateTile({
     Key key,
     this.foregroundColor,
     this.backgroundColor,
     this.titleBuilder,
     this.questionsCount,
     this.questionBuilder,
-  }) : super(key: key);
+    this.childBuilder,
+  })  : assert(questionBuilder == null || childBuilder == null),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) => Stack(
@@ -84,23 +86,26 @@ class TournamentDetailsTourTile extends StatelessWidget {
             child: titleBuilder(context),
           ),
           SizedBox(
-            height: Dimensions.defaultSpacing * 2,
+            height: styleConfiguration.tourContentPadding.top,
           ),
           Container(
             height: styleConfiguration.tourCardSize.height,
-            child: ListView.separated(
-              padding: EdgeInsets.only(
-                left: styleConfiguration.tourContentPadding.left,
-                right: styleConfiguration.tourContentPadding.right,
-              ),
-              itemCount: questionsCount,
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => questionBuilder(context, index),
-              separatorBuilder: (context, index) => SizedBox(
-                width: styleConfiguration.tourQuestionsSpacing,
-              ),
-            ),
+            child: (questionBuilder != null)
+                ? ListView.separated(
+                    padding: EdgeInsets.only(
+                      left: styleConfiguration.tourContentPadding.left,
+                      right: styleConfiguration.tourContentPadding.right,
+                    ),
+                    itemCount: questionsCount,
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) =>
+                        questionBuilder(context, index),
+                    separatorBuilder: (context, index) => SizedBox(
+                      width: styleConfiguration.tourQuestionsSpacing,
+                    ),
+                  )
+                : childBuilder(context),
           )
         ],
       ),
