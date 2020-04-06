@@ -11,7 +11,7 @@ import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/ui/common/dialog_presenter.dart';
-import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page.dart';
+import 'package:what_when_where/ui/latest_tournaments/route_page.dart';
 import 'package:what_when_where/utils/style_configurator.dart';
 
 class WWWApp extends StatelessWidget {

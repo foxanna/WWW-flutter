@@ -2,10 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:tuple/tuple.dart';
+import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
-import 'package:what_when_where/utils/function_holder.dart';
 
 class LatestTournamentsPageRefreshIndicator extends StatefulWidget {
   final Function onInit;
@@ -20,28 +19,21 @@ class LatestTournamentsPageRefreshIndicator extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  LatestTournamentsPageRefreshIndicatorState createState() =>
-      LatestTournamentsPageRefreshIndicatorState();
+  _LatestTournamentsPageRefreshIndicatorState createState() =>
+      _LatestTournamentsPageRefreshIndicatorState();
 }
 
-class LatestTournamentsPageRefreshIndicatorState
+class _LatestTournamentsPageRefreshIndicatorState
     extends State<LatestTournamentsPageRefreshIndicator> {
   final _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
 
   Completer<dynamic> _completer = Completer<dynamic>();
 
   @override
-  Widget build(BuildContext context) =>
-      StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
+  Widget build(BuildContext context) => StoreConnector<AppState, bool>(
         distinct: true,
-        converter: (store) => Tuple2(
-            store.state.latestTournamentsState.isRefreshing,
-            FunctionHolder(
-                () => store.dispatch(const RefreshLatestTournaments()))),
-        builder: (context, data) {
-          final isRefreshing = data.item1;
-          final refreshFunctionHolder = data.item2;
-
+        converter: (store) => store.state.latestTournamentsState.isRefreshing,
+        builder: (context, isRefreshing) {
           if (!isRefreshing) {
             _completer.complete();
             _completer = Completer<dynamic>();
@@ -49,22 +41,27 @@ class LatestTournamentsPageRefreshIndicatorState
 
           return RefreshIndicator(
             key: _refreshIndicatorKey,
-            onRefresh: () async {
-              refreshFunctionHolder.function();
-
-              await _completer.future;
-
-              if (widget.onRefresh != null) {
-                widget.onRefresh();
-              }
-            },
+            onRefresh: () => _onRefresh(context),
             child: widget.child,
           );
         },
-        onInit: (store) {
-          if (widget.onInit != null) {
-            widget.onInit();
-          }
-        },
+        onInit: _onInit,
       );
+
+  void _onInit(Store<AppState> store) {
+    if (widget.onInit != null) {
+      widget.onInit();
+    }
+  }
+
+  Future<void> _onRefresh(BuildContext context) async {
+    StoreProvider.of<AppState>(context)
+        .dispatch(const RefreshLatestTournaments());
+
+    await _completer.future;
+
+    if (widget.onRefresh != null) {
+      widget.onRefresh();
+    }
+  }
 }
