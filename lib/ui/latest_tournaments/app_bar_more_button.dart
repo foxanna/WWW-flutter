@@ -4,8 +4,8 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 
-class LatestTournamentsMoreIconButton extends StatelessWidget {
-  const LatestTournamentsMoreIconButton({Key key}) : super(key: key);
+class LatestTournamentsAppBarMoreButton extends StatelessWidget {
+  const LatestTournamentsAppBarMoreButton({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => IconButton(

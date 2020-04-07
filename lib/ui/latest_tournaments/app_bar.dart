@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
-import 'package:what_when_where/ui/latest_tournaments/more_icon_button.dart';
+import 'package:what_when_where/ui/latest_tournaments/app_bar_more_button.dart';
 import 'package:what_when_where/ui/latest_tournaments/app_bar_random_button.dart';
 import 'package:what_when_where/ui/latest_tournaments/app_bar_search_button.dart';
 import 'package:what_when_where/ui/latest_tournaments/app_bar_tree_button.dart';
@@ -37,7 +37,7 @@ class LatestTournamentsAppBar extends StatelessWidget {
               LatestTournamentsAppBarTreeButton(),
               LatestTournamentsAppBarRandomButton(),
               LatestTournamentsAppBarSearchButton(),
-              LatestTournamentsMoreIconButton()
+              LatestTournamentsAppBarMoreButton()
             ],
           ),
         ),
