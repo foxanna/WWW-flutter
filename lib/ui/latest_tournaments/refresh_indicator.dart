@@ -6,12 +6,12 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 
-class LatestTournamentsPageRefreshIndicator extends StatefulWidget {
+class LatestTournamentsRefreshIndicator extends StatefulWidget {
   final Function onInit;
   final Function onRefresh;
   final Widget child;
 
-  const LatestTournamentsPageRefreshIndicator({
+  const LatestTournamentsRefreshIndicator({
     Key key,
     this.child,
     this.onInit,
@@ -19,12 +19,12 @@ class LatestTournamentsPageRefreshIndicator extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _LatestTournamentsPageRefreshIndicatorState createState() =>
-      _LatestTournamentsPageRefreshIndicatorState();
+  _LatestTournamentsRefreshIndicatorState createState() =>
+      _LatestTournamentsRefreshIndicatorState();
 }
 
-class _LatestTournamentsPageRefreshIndicatorState
-    extends State<LatestTournamentsPageRefreshIndicator> {
+class _LatestTournamentsRefreshIndicatorState
+    extends State<LatestTournamentsRefreshIndicator> {
   final _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
 
   Completer<dynamic> _completer = Completer<dynamic>();
