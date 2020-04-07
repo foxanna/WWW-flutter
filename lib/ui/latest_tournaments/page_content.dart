@@ -2,21 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/state.dart';
-import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/common/tournaments_grid.dart';
-import 'package:what_when_where/ui/latest_tournaments/error_message.dart';
+import 'package:what_when_where/ui/latest_tournaments/data_page.dart';
 import 'package:what_when_where/ui/latest_tournaments/error_page.dart';
-import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page_appbar.dart';
 import 'package:what_when_where/ui/latest_tournaments/loading_page.dart';
 
 class LatestTournamentsPageContent extends StatelessWidget {
-  final ScrollController _scrollController;
-
-  const LatestTournamentsPageContent(
-      {Key key, ScrollController scrollController})
-      : this._scrollController = scrollController,
-        super(key: key);
+  const LatestTournamentsPageContent({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) =>
@@ -25,63 +16,20 @@ class LatestTournamentsPageContent extends StatelessWidget {
         converter: (store) => store.state.latestTournamentsState,
         builder: (context, state) {
           if (state.data.isNotEmpty) {
-            return _LatestTournamentsPageContent(
-              scrollController: _scrollController,
+            return const LatestTournamentsDataPage();
+          }
+
+          if (state.isLoading) {
+            return const LatestTournamentsLoadingPage();
+          }
+
+          if (state.hasError) {
+            return LatestTournamentsErrorPage(
+              exception: state.exception,
             );
-          } else {
-            if (state.isLoading) {
-              return LatestTournamentsLoadingPage(
-                scrollController: _scrollController,
-              );
-            }
-            if (state.hasError) {
-              return LatestTournamentsErrorPage(
-                scrollController: _scrollController,
-                exception: state.exception,
-              );
-            }
           }
 
           return Container();
         },
-      );
-}
-
-class _LatestTournamentsPageContent extends StatelessWidget {
-  final ScrollController _scrollController;
-
-  const _LatestTournamentsPageContent({
-    Key key,
-    ScrollController scrollController,
-  })  : this._scrollController = scrollController,
-        super(key: key);
-
-  @override
-  Widget build(BuildContext context) =>
-      StoreConnector<AppState, LatestTournamentsState>(
-        distinct: true,
-        converter: (store) => store.state.latestTournamentsState,
-        builder: (context, state) => CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          controller: _scrollController,
-          slivers: [
-            const LatestTournamentsAppBar(),
-            TournamentsGrid(tournaments: state.data),
-            SliverToBoxAdapter(
-              child: state.isLoadingMore
-                  ? WWWProgressIndicator(
-                      padding: Dimensions.defaultPadding * 3,
-                    )
-                  : Container(),
-            ),
-            SliverToBoxAdapter(
-              child: state.hasError
-                  ? const LatestTournamentsErrorMessage(
-                      dense: true,
-                    )
-                  : Container(),
-            )
-          ],
-        ),
       );
 }

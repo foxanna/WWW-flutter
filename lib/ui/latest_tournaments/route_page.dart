@@ -3,11 +3,14 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/latest_tournaments/app_bar.dart';
 import 'package:what_when_where/ui/latest_tournaments/refresh_indicator.dart';
 import 'package:what_when_where/ui/latest_tournaments/page_content.dart';
 
 class LatestTournamentsPage extends StatefulWidget {
   static const String routeName = 'latest_tournaments';
+
+  const LatestTournamentsPage({Key key}) : super(key: key);
 
   @override
   _LatestTournamentsPageState createState() => _LatestTournamentsPageState();
@@ -24,8 +27,13 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
     return Scaffold(
       backgroundColor: styleConfiguration.scaffoldBackground,
       body: LatestTournamentsRefreshIndicator(
-        child: LatestTournamentsPageContent(
-          scrollController: _scrollController,
+        child: CustomScrollView(
+          controller: _scrollController,
+          physics: const BouncingScrollPhysics(),
+          slivers: const [
+            LatestTournamentsAppBar(),
+            LatestTournamentsPageContent(),
+          ],
         ),
         onInit: _loadMore,
         onRefresh: _loadMoreIfRequested,
@@ -36,6 +44,7 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
   @override
   void initState() {
     super.initState();
+
     _scrollController.addListener(_scrollListener);
   }
 
@@ -43,6 +52,7 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
   void dispose() {
     _scrollController.removeListener(_scrollListener);
     _scrollController.dispose();
+
     super.dispose();
   }
 
