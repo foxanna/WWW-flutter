@@ -8,10 +8,12 @@ class StyleConfiguration {
   const StyleConfiguration({
     this.tournamentDetailsStyleConfiguration,
     this.tournamentsGridStyleConfiguration,
+    this.latestTournamentsStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
   final TournamentsGridStyleConfiguration tournamentsGridStyleConfiguration;
+  final LatestTournamentsStyleConfiguration latestTournamentsStyleConfiguration;
 
   factory StyleConfiguration.create({@required BuildContext context}) =>
       StyleConfiguration(
@@ -19,6 +21,8 @@ class StyleConfiguration {
             TournamentDetailsStyleConfiguration.create(context: context),
         tournamentsGridStyleConfiguration:
             TournamentsGridStyleConfiguration.create(context: context),
+        latestTournamentsStyleConfiguration:
+            LatestTournamentsStyleConfiguration.create(context: context),
       );
 
   static StyleConfiguration of(BuildContext context) {
@@ -167,6 +171,23 @@ class TournamentsGridStyleConfiguration {
       tileContentSpacing: Dimensions.defaultSpacing * 2,
       tileElevation: theme.cardTheme.elevation,
       gridPadding: const EdgeInsets.all(16.0),
+    );
+  }
+}
+
+class LatestTournamentsStyleConfiguration {
+  final Color scaffoldBackground;
+
+  const LatestTournamentsStyleConfiguration({
+    this.scaffoldBackground,
+  });
+
+  factory LatestTournamentsStyleConfiguration.create(
+      {@required BuildContext context}) {
+    final theme = Theme.of(context);
+
+    return LatestTournamentsStyleConfiguration(
+      scaffoldBackground: theme.primaryColor,
     );
   }
 }
