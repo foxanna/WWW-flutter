@@ -177,9 +177,11 @@ class TournamentsGridStyleConfiguration {
 
 class LatestTournamentsStyleConfiguration {
   final Color scaffoldBackground;
+  final Color errorColor;
 
   const LatestTournamentsStyleConfiguration({
     this.scaffoldBackground,
+    this.errorColor,
   });
 
   factory LatestTournamentsStyleConfiguration.create(
@@ -188,6 +190,7 @@ class LatestTournamentsStyleConfiguration {
 
     return LatestTournamentsStyleConfiguration(
       scaffoldBackground: theme.primaryColor,
+      errorColor: theme.primaryIconTheme.color,
     );
   }
 }
