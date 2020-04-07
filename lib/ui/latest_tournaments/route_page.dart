@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournament_page_refresh_indicator.dart';
-import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page_body.dart';
+import 'package:what_when_where/ui/latest_tournaments/page_content.dart';
 
 class LatestTournamentsPage extends StatefulWidget {
   static const String routeName = 'latest_tournaments';
@@ -16,24 +17,27 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
   final _scrollController = ScrollController();
 
   @override
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).latestTournamentsStyleConfiguration;
+
+    return Scaffold(
+      backgroundColor: styleConfiguration.scaffoldBackground,
+      body: LatestTournamentsPageRefreshIndicator(
+        child: LatestTournamentsPageContent(
+          scrollController: _scrollController,
+        ),
+        onInit: _loadMore,
+        onRefresh: _loadMoreIfRequested,
+      ),
+    );
+  }
+
+  @override
   void initState() {
     super.initState();
     _scrollController.addListener(_scrollListener);
   }
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
-        body: SafeArea(
-          child: LatestTournamentsPageRefreshIndicator(
-            child: LatestTournamentsPageBody(
-              scrollController: _scrollController,
-            ),
-            onInit: _loadMore,
-            onRefresh: _loadMoreIfRequested,
-          ),
-        ),
-      );
 
   @override
   void dispose() {

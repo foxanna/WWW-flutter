@@ -10,10 +10,11 @@ import 'package:what_when_where/ui/latest_tournaments/error_page.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page_appbar.dart';
 import 'package:what_when_where/ui/latest_tournaments/loading_page.dart';
 
-class LatestTournamentsPageBody extends StatelessWidget {
+class LatestTournamentsPageContent extends StatelessWidget {
   final ScrollController _scrollController;
 
-  const LatestTournamentsPageBody({Key key, ScrollController scrollController})
+  const LatestTournamentsPageContent(
+      {Key key, ScrollController scrollController})
       : this._scrollController = scrollController,
         super(key: key);
 
