@@ -3,26 +3,28 @@ import 'package:what_when_where/ui/latest_tournaments/error_message.dart';
 import 'package:what_when_where/ui/latest_tournaments/latest_tournaments_page_appbar.dart';
 
 class LatestTournamentsErrorPage extends StatelessWidget {
-  final ScrollController _scrollController;
+  final ScrollController scrollController;
   final Exception exception;
 
   const LatestTournamentsErrorPage({
     Key key,
-    ScrollController scrollController,
+    this.scrollController,
     this.exception,
-  })  : this._scrollController = scrollController,
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => CustomScrollView(
-        controller: _scrollController,
-        slivers: const [
+        controller: scrollController,
+        slivers: [
           LatestTournamentsAppBar(),
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.only(
                   top: LatestTournamentsAppBar.appBarHeight / 2),
-              child: LatestTournamentsErrorMessage(),
+              child: LatestTournamentsErrorMessage(
+                exception: exception,
+                dense: false,
+              ),
             ),
           )
         ],
