@@ -37,7 +37,7 @@ class WWWApp extends StatelessWidget {
               ioc<IAnalyticsService>()
                   .observer(home: LatestTournamentsPage.routeName),
             ],
-            home: LatestTournamentsPage(),
+            home: const LatestTournamentsPage(),
             builder: (context, child) => Navigator(
               onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
                 builder: (context) {
