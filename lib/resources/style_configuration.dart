@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/utils/style_configurator.dart';

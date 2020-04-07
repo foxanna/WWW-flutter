@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';

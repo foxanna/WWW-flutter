@@ -6,7 +6,6 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/tour_details/question_data_tile.dart';
-import 'package:what_when_where/ui/tour_details/question_template_tile.dart';
 import 'package:what_when_where/ui/tour_details/template_tile.dart';
 
 class TourDetailsDataTile extends StatelessWidget {

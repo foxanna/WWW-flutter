@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 import 'package:what_when_where/ui/tour_details/question_template_tile.dart';
