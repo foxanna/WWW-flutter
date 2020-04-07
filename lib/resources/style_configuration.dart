@@ -178,8 +178,16 @@ class TournamentsGridStyleConfiguration {
 class LatestTournamentsStyleConfiguration {
   final Color scaffoldBackground;
   final Color errorColor;
+  final IconThemeData appBarIconTheme;
+  final double appBarHeight;
+  final double appBarLogoHeight;
+  final double appBarBottomHeight;
 
   const LatestTournamentsStyleConfiguration({
+    this.appBarIconTheme,
+    this.appBarHeight,
+    this.appBarLogoHeight,
+    this.appBarBottomHeight,
     this.scaffoldBackground,
     this.errorColor,
   });
@@ -191,6 +199,10 @@ class LatestTournamentsStyleConfiguration {
     return LatestTournamentsStyleConfiguration(
       scaffoldBackground: theme.primaryColor,
       errorColor: theme.primaryIconTheme.color,
+      appBarHeight: 200.0,
+      appBarLogoHeight: 80.0,
+      appBarBottomHeight: kToolbarHeight,
+      appBarIconTheme: theme.primaryIconTheme,
     );
   }
 }
