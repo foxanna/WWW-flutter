@@ -5,17 +5,17 @@ import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/custom_icons.dart';
 import 'package:what_when_where/resources/strings.dart';
 
-class LatestTournamentsTreeIconButton extends StatelessWidget {
-  const LatestTournamentsTreeIconButton({Key key}) : super(key: key);
+class LatestTournamentsAppBarRandomButton extends StatelessWidget {
+  const LatestTournamentsAppBarRandomButton({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => IconButton(
-        icon: const Icon(CustomIcons.tree),
-        tooltip: Strings.tournamentsTree,
-        onPressed: () => _openTournamentsTree(context),
+        icon: const Icon(CustomIcons.random_card),
+        tooltip: Strings.randomQuestions,
+        onPressed: () => _openRandomQuestions(context),
       );
 
-  void _openTournamentsTree(BuildContext context) =>
+  void _openRandomQuestions(BuildContext context) =>
       StoreProvider.of<AppState>(context)
-          .dispatch(const OpenTournamentsTreePage());
+          .dispatch(const OpenRandomQuestionsPage());
 }
