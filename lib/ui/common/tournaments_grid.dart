@@ -6,9 +6,13 @@ import 'package:what_when_where/ui/common/tournaments_grid_tile.dart';
 
 class TournamentsGrid extends StatelessWidget {
   final List<Tournament> tournaments;
+  final WidgetBuilder footerBuilder;
 
-  const TournamentsGrid({Key key, @required this.tournaments})
-      : super(key: key);
+  const TournamentsGrid({
+    Key key,
+    @required this.tournaments,
+    this.footerBuilder,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +24,19 @@ class TournamentsGrid extends StatelessWidget {
         crossAxisCount: styleConfiguration.columnsCount,
         mainAxisSpacing: styleConfiguration.gridSpacing,
         crossAxisSpacing: styleConfiguration.gridSpacing,
-        itemBuilder: (c, i) => TournamentsGridTile(tournament: tournaments[i]),
-        itemCount: tournaments.length,
-        staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
+        itemBuilder: (context, index) => (_hasFooter() && _isFooterIndex(index))
+            ? footerBuilder(context)
+            : TournamentsGridTile(tournament: tournaments[index]),
+        itemCount: tournaments.length + (_hasFooter() ? 1 : 0),
+        staggeredTileBuilder: (index) => (_hasFooter() && _isFooterIndex(index))
+            ? StaggeredTile.fit(styleConfiguration.columnsCount)
+            : const StaggeredTile.fit(1),
       ),
       padding: styleConfiguration.gridPadding,
     );
   }
+
+  bool _hasFooter() => footerBuilder != null;
+
+  bool _isFooterIndex(int index) => index >= tournaments.length;
 }
