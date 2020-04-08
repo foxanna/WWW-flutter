@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/common/tournaments_grid_stub_tile.dart';
 import 'package:what_when_where/ui/common/tournaments_grid_tile.dart';
 
 class TournamentsGrid extends StatelessWidget {
   final List<Tournament> tournaments;
   final WidgetBuilder footerBuilder;
+  final int stubTournamentsCount;
 
   const TournamentsGrid({
     Key key,
     @required this.tournaments,
     this.footerBuilder,
+    this.stubTournamentsCount = 0,
   }) : super(key: key);
 
   @override
@@ -26,7 +29,9 @@ class TournamentsGrid extends StatelessWidget {
         crossAxisSpacing: styleConfiguration.gridSpacing,
         itemBuilder: (context, index) => (_isFooterIndex(index))
             ? footerBuilder(context)
-            : TournamentsGridTile(tournament: tournaments[index]),
+            : (_isStubTournamentIndex(index)
+                ? const TournamentsGridStubTile()
+                : TournamentsGridTile(tournament: tournaments[index])),
         itemCount: _itemsCount(),
         staggeredTileBuilder: (index) => (_isFooterIndex(index))
             ? StaggeredTile.fit(styleConfiguration.columnsCount)
@@ -39,7 +44,15 @@ class TournamentsGrid extends StatelessWidget {
   bool _hasFooter() => footerBuilder != null;
 
   bool _isFooterIndex(int index) =>
-      _hasFooter() && index >= (tournaments?.length ?? 0);
+      _hasFooter() &&
+      index >= (tournaments?.length ?? 0) + stubTournamentsCount;
 
-  int _itemsCount() => (tournaments?.length ?? 0) + (_hasFooter() ? 1 : 0);
+  bool _isStubTournamentIndex(int index) =>
+      index >= (tournaments?.length ?? 0) &&
+      index < (tournaments?.length ?? 0) + stubTournamentsCount;
+
+  int _itemsCount() =>
+      (tournaments?.length ?? 0) +
+      stubTournamentsCount +
+      (_hasFooter() ? 1 : 0);
 }
