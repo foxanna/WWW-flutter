@@ -180,6 +180,7 @@ class LatestTournamentsStyleConfiguration {
   final double appBarHeight;
   final double appBarLogoHeight;
   final double appBarBottomHeight;
+  final int stubTournamentsCount;
 
   const LatestTournamentsStyleConfiguration({
     this.appBarIconTheme,
@@ -188,6 +189,7 @@ class LatestTournamentsStyleConfiguration {
     this.appBarBottomHeight,
     this.scaffoldBackground,
     this.errorColor,
+    this.stubTournamentsCount,
   });
 
   factory LatestTournamentsStyleConfiguration.create(
@@ -201,6 +203,7 @@ class LatestTournamentsStyleConfiguration {
       appBarLogoHeight: 80.0,
       appBarBottomHeight: kToolbarHeight,
       appBarIconTheme: theme.primaryIconTheme,
+      stubTournamentsCount: 20,
     );
   }
 }
