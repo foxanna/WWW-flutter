@@ -24,11 +24,11 @@ class TournamentsGrid extends StatelessWidget {
         crossAxisCount: styleConfiguration.columnsCount,
         mainAxisSpacing: styleConfiguration.gridSpacing,
         crossAxisSpacing: styleConfiguration.gridSpacing,
-        itemBuilder: (context, index) => (_hasFooter() && _isFooterIndex(index))
+        itemBuilder: (context, index) => (_isFooterIndex(index))
             ? footerBuilder(context)
             : TournamentsGridTile(tournament: tournaments[index]),
-        itemCount: tournaments.length + (_hasFooter() ? 1 : 0),
-        staggeredTileBuilder: (index) => (_hasFooter() && _isFooterIndex(index))
+        itemCount: _itemsCount(),
+        staggeredTileBuilder: (index) => (_isFooterIndex(index))
             ? StaggeredTile.fit(styleConfiguration.columnsCount)
             : const StaggeredTile.fit(1),
       ),
@@ -38,5 +38,8 @@ class TournamentsGrid extends StatelessWidget {
 
   bool _hasFooter() => footerBuilder != null;
 
-  bool _isFooterIndex(int index) => index >= tournaments.length;
+  bool _isFooterIndex(int index) =>
+      _hasFooter() && index >= (tournaments?.length ?? 0);
+
+  int _itemsCount() => (tournaments?.length ?? 0) + (_hasFooter() ? 1 : 0);
 }
