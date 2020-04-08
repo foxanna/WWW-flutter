@@ -27,6 +27,7 @@ class LatestTournamentsAppBar extends StatelessWidget {
             color: styleConfiguration.appBarIconTheme.color,
           ),
         ),
+        centerTitle: false,
       ),
       bottom: PreferredSize(
         child: IconTheme.merge(
