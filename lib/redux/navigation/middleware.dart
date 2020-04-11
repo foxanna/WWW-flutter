@@ -4,10 +4,10 @@ import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/services/navigation.dart';
-import 'package:what_when_where/ui/about/about_page.dart';
+import 'package:what_when_where/ui/about/route_page.dart';
 import 'package:what_when_where/ui/image/image_page.dart';
 import 'package:what_when_where/ui/search/search_page.dart';
-import 'package:what_when_where/ui/settings/settings_page.dart';
+import 'package:what_when_where/ui/settings/route_page.dart';
 import 'package:what_when_where/ui/tour_questions/tour_questions_page.dart';
 import 'package:what_when_where/ui/tournament_details/route_page.dart';
 import 'package:what_when_where/ui/tree/tournaments_tree_page.dart';
@@ -80,8 +80,8 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-      routeName: AboutPage.routeName,
-      builder: (context) => AboutPage(),
+      routeName: AboutRoutePage.routeName,
+      builder: (context) => AboutRoutePage(),
     );
   }
 
@@ -100,8 +100,8 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-      routeName: SettingsPage.routeName,
-      builder: (context) => SettingsPage(),
+      routeName: SettingsRoutePage.routeName,
+      builder: (context) => SettingsRoutePage(),
     );
   }
 

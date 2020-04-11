@@ -4,7 +4,7 @@ import 'package:what_when_where/ui/settings/expiring_timer_settings.dart';
 import 'package:what_when_where/ui/settings/text_scale_settings.dart';
 import 'package:what_when_where/ui/settings/theme_settings.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsRoutePage extends StatelessWidget {
   static const String routeName = 'settings';
 
   @override

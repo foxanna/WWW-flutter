@@ -8,7 +8,7 @@ import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
 
-class AboutPage extends StatelessWidget {
+class AboutRoutePage extends StatelessWidget {
   static const String routeName = 'about';
 
   @override
