@@ -214,7 +214,6 @@ class BottomSheetStyleConfiguration {
 
   factory BottomSheetStyleConfiguration.create(
       {@required BuildContext context}) {
-    final theme = Theme.of(context);
     final padding = MediaQuery.of(context).padding;
 
     return BottomSheetStyleConfiguration(

@@ -28,16 +28,15 @@ class TournamentsGridTile extends StatelessWidget {
       );
 
   Positioned _buildBackground(BuildContext context) {
-    final styleConfiguration = StyleConfiguration.of(context);
-    final gridStyleConfiguration =
-        styleConfiguration.tournamentsGridStyleConfiguration;
+    final styleConfiguration =
+        StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
     final cardTheme = CardTheme.of(context);
 
     return Positioned.fill(
       child: ShapeHeroFrom(
         tag: '${tournament.textId}bg',
         begin: cardTheme.shape,
-        end: styleConfiguration.tournamentDetailsStyleConfiguration.shape,
+        end: styleConfiguration.shape,
         child: Container(color: cardTheme.color),
       ),
     );

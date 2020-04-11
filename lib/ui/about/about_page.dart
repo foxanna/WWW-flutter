@@ -14,7 +14,7 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: _buildAppBar(context),
-        body: _buildBody(context),
+        body: SafeArea(child: _buildBody(context)),
       );
 
   AppBar _buildAppBar(BuildContext context) => AppBar(
@@ -52,50 +52,51 @@ class AboutPage extends StatelessWidget {
         ),
       );
 
-  Widget _buildBottomSection(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Text(
-            Constants.appNameLong,
+  Widget _buildBottomSection(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Text(
+          Constants.appNameLong,
+          textAlign: TextAlign.center,
+          style: theme.textTheme.headline5.copyWith(color: theme.accentColor),
+        ),
+        IconButton(
+          icon: const Icon(Icons.email),
+          tooltip: Strings.emailDevelopers,
+          color: theme.accentColor,
+          onPressed: () => _sendEmail(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+              vertical: Dimensions.defaultSpacing * 5),
+          child: RichText(
             textAlign: TextAlign.center,
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                .copyWith(color: Theme.of(context).accentColor),
-          ),
-          IconButton(
-            icon: const Icon(Icons.email),
-            tooltip: Strings.emailDevelopers,
-            color: Theme.of(context).accentColor,
-            onPressed: () => _sendEmail(context),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                vertical: Dimensions.defaultSpacing * 5),
-            child: RichText(
-              textAlign: TextAlign.center,
-              textScaleFactor: MediaQuery.of(context).textScaleFactor,
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: '${Strings.questionsDatabasePrefix}\n',
-                    style: Theme.of(context).textTheme.caption,
-                  ),
-                  TextSpan(
-                    text: Strings.questionsDatabaseName,
-                    style: Theme.of(context).textTheme.caption.copyWith(
-                        color: Theme.of(context).accentColor,
-                        decoration: TextDecoration.underline),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () => _openDatabaseInBrowser(context),
-                  ),
-                ],
-              ),
+            textScaleFactor: MediaQuery.of(context).textScaleFactor,
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: '${Strings.questionsDatabasePrefix}\n',
+                  style: theme.textTheme.caption,
+                ),
+                TextSpan(
+                  text: Strings.questionsDatabaseName,
+                  style: theme.textTheme.caption.copyWith(
+                      color: theme.accentColor,
+                      decoration: TextDecoration.underline),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => _openDatabaseInBrowser(context),
+                ),
+              ],
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
+  }
 
   void _openDatabaseInBrowser(BuildContext context) =>
       StoreProvider.of<AppState>(context).dispatch(const BrowseDatabase());

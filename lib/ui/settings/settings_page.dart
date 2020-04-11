@@ -14,7 +14,7 @@ class SettingsPage extends StatelessWidget {
           backgroundColor: Theme.of(context).canvasColor,
           elevation: 0.0,
         ),
-        body: _buildBody(),
+        body: SafeArea(child: _buildBody()),
       );
 
   Widget _buildBody() => ListView(
