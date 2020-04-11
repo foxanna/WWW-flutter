@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
-import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/modal_bottom_sheet_container.dart';

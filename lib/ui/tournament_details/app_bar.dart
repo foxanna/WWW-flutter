@@ -5,7 +5,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/shape_hero.dart';
 import 'package:what_when_where/ui/common/text_hero.dart';
-import 'package:what_when_where/ui/tournament_details/more_button.dart';
+import 'package:what_when_where/ui/tournament_details/app_bar_buttons/more.dart';
 import 'package:what_when_where/utils/measure_text.dart';
 
 class TournamentDetailsAppBar extends StatelessWidget {
