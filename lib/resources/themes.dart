@@ -44,6 +44,15 @@ class Themes {
           ),
           elevation: 4.0,
         ),
+        bottomSheetTheme: BottomSheetThemeData(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(Dimensions.largeComponentsCornerRadiusValue),
+            ),
+          ),
+          modalElevation: 4.0,
+          clipBehavior: Clip.hardEdge,
+        ),
       );
 
   static ThemeData get(AppTheme appTheme) {
