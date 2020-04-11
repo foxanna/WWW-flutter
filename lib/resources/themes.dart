@@ -43,6 +43,7 @@ class Themes {
             ),
           ),
           elevation: 4.0,
+          color: base.cardColor,
         ),
         bottomSheetTheme: BottomSheetThemeData(
           shape: RoundedRectangleBorder(

@@ -11,9 +11,6 @@ class TournamentsGridStubTile extends StatelessWidget {
         StyleConfiguration.of(context).tournamentsGridStyleConfiguration;
 
     return Card(
-      shape: styleConfiguration.tileShape,
-      color: styleConfiguration.tileBackgroundColor,
-      elevation: styleConfiguration.tileElevation,
       child: Padding(
         padding: styleConfiguration.tileContentPadding +
             EdgeInsets.only(

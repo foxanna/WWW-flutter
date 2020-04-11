@@ -17,36 +17,38 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final styleConfiguration =
         StyleConfiguration.of(context).tournamentsGridStyleConfiguration;
+    final cardTheme = CardTheme.of(context);
 
     return Stack(
       children: [
         Positioned.fill(
-          child: _buildCard(
-            styleConfiguration: styleConfiguration,
+          child: Padding(
             padding: EdgeInsets.only(
-              top: styleConfiguration.tileElevation * 2,
-              left: styleConfiguration.tileElevation * 2,
+              top: cardTheme.elevation * 2,
+              left: cardTheme.elevation * 2,
             ),
+            child: const Card(),
           ),
         ),
         Positioned.fill(
-          child: _buildCard(
-            styleConfiguration: styleConfiguration,
-            padding: EdgeInsets.all(styleConfiguration.tileElevation),
+          child: Padding(
+            padding: EdgeInsets.all(cardTheme.elevation),
+            child: const Card(),
           ),
         ),
-        _buildCard(
-          styleConfiguration: styleConfiguration,
+        Padding(
           padding: EdgeInsets.only(
-            bottom: styleConfiguration.tileElevation * 2,
-            right: styleConfiguration.tileElevation * 2,
+            bottom: cardTheme.elevation * 2,
+            right: cardTheme.elevation * 2,
           ),
-          child: InkWell(
-            child: Padding(
-              padding: styleConfiguration.tileContentPadding,
-              child: _buildContent(context, styleConfiguration),
+          child: Card(
+            child: InkWell(
+              child: Padding(
+                padding: styleConfiguration.tileContentPadding,
+                child: _buildContent(context, styleConfiguration),
+              ),
+              onTap: () => _openTournamentDetails(context),
             ),
-            onTap: () => _openTournamentDetails(context),
           ),
         ),
       ],
@@ -69,21 +71,6 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
             style: styleConfiguration.gridTileSecondLineTextStyle,
           ),
         ],
-      );
-
-  Widget _buildCard({
-    TournamentsGridStyleConfiguration styleConfiguration,
-    Widget child,
-    EdgeInsets padding,
-  }) =>
-      Padding(
-        padding: padding,
-        child: Card(
-          elevation: styleConfiguration.tileElevation,
-          shape: styleConfiguration.tileShape,
-          color: styleConfiguration.tileBackgroundColor,
-          child: child,
-        ),
       );
 
   void _openTournamentDetails(BuildContext context) {

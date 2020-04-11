@@ -31,15 +31,14 @@ class TournamentsGridTile extends StatelessWidget {
     final styleConfiguration = StyleConfiguration.of(context);
     final gridStyleConfiguration =
         styleConfiguration.tournamentsGridStyleConfiguration;
+    final cardTheme = CardTheme.of(context);
 
     return Positioned.fill(
       child: ShapeHeroFrom(
         tag: '${tournament.textId}bg',
-        begin: gridStyleConfiguration.tileShape,
+        begin: cardTheme.shape,
         end: styleConfiguration.tournamentDetailsStyleConfiguration.shape,
-        child: Container(
-          color: gridStyleConfiguration.tileBackgroundColor,
-        ),
+        child: Container(color: cardTheme.color),
       ),
     );
   }
@@ -50,9 +49,6 @@ class TournamentsGridTile extends StatelessWidget {
         styleConfiguration.tournamentsGridStyleConfiguration;
 
     return Card(
-      shape: gridStyleConfiguration.tileShape,
-      color: gridStyleConfiguration.tileBackgroundColor,
-      elevation: gridStyleConfiguration.tileElevation,
       child: InkWell(
         child: Padding(
           padding: gridStyleConfiguration.tileContentPadding,
