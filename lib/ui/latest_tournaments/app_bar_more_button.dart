@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/ui/common/modal_bottom_sheet_container.dart';
 
 class LatestTournamentsAppBarMoreButton extends StatelessWidget {
   const LatestTournamentsAppBarMoreButton({Key key}) : super(key: key);
@@ -13,15 +14,15 @@ class LatestTournamentsAppBarMoreButton extends StatelessWidget {
         onPressed: () => _showMenu(context),
       );
 
-  void _showMenu(BuildContext context) => showModalBottomSheet<Object>(
-      context: context,
-      builder: (context) => Column(
-            mainAxisSize: MainAxisSize.min,
-            children: const [
-              _SettingsBottomSheetItem(),
-              _AboutBottomSheetItem(),
-            ],
-          ));
+  void _showMenu(BuildContext context) => showModalBottomSheet<dynamic>(
+        context: context,
+        builder: (context) => const ModalBottomSheetContainer(
+          children: [
+            _SettingsBottomSheetItem(),
+            _AboutBottomSheetItem(),
+          ],
+        ),
+      );
 }
 
 class _SettingsBottomSheetItem extends StatelessWidget {

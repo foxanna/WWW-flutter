@@ -6,6 +6,7 @@ import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/ui/common/modal_bottom_sheet_container.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 
 class TournamentDetailsMoreButton extends StatelessWidget {
@@ -17,19 +18,21 @@ class TournamentDetailsMoreButton extends StatelessWidget {
         onPressed: () => _showMenu(context),
       );
 
-  void _showMenu(BuildContext context) => showModalBottomSheet<Object>(
-      context: context,
-      builder: (context) => Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _BrowseTournamentBottomSheetItem(),
-              _ShareTournamentBottomSheetItem(),
-              _AboutTournamentBottomSheetItem(),
-            ],
-          ));
+  void _showMenu(BuildContext context) => showModalBottomSheet<dynamic>(
+        context: context,
+        builder: (context) => const ModalBottomSheetContainer(
+          children: [
+            _BrowseTournamentBottomSheetItem(),
+            _ShareTournamentBottomSheetItem(),
+            _AboutTournamentBottomSheetItem(),
+          ],
+        ),
+      );
 }
 
 class _BrowseTournamentBottomSheetItem extends StatelessWidget {
+  const _BrowseTournamentBottomSheetItem({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
@@ -56,6 +59,8 @@ class _BrowseTournamentBottomSheetItem extends StatelessWidget {
 }
 
 class _ShareTournamentBottomSheetItem extends StatelessWidget {
+  const _ShareTournamentBottomSheetItem({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(
@@ -82,6 +87,8 @@ class _ShareTournamentBottomSheetItem extends StatelessWidget {
 }
 
 class _AboutTournamentBottomSheetItem extends StatelessWidget {
+  const _AboutTournamentBottomSheetItem({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<bool, FunctionHolder>>(

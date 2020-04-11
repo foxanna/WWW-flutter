@@ -7,6 +7,7 @@ import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/ui/common/modal_bottom_sheet_container.dart';
 
 class TourQuestionsPageMoreIconButton extends StatelessWidget {
   @override
@@ -15,19 +16,21 @@ class TourQuestionsPageMoreIconButton extends StatelessWidget {
         onPressed: () => _showMenu(context),
       );
 
-  void _showMenu(BuildContext context) => showModalBottomSheet<Object>(
-      context: context,
-      builder: (context) => Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _BrowseQuestionBottomSheetItem(),
-              _ShareQuestionBottomSheetItem(),
-              _AboutTourBottomSheetItem(),
-            ],
-          ));
+  void _showMenu(BuildContext context) => showModalBottomSheet<dynamic>(
+        context: context,
+        builder: (context) => const ModalBottomSheetContainer(
+          children: [
+            _BrowseQuestionBottomSheetItem(),
+            _ShareQuestionBottomSheetItem(),
+//              _AboutTourBottomSheetItem(),
+          ],
+        ),
+      );
 }
 
 class _BrowseQuestionBottomSheetItem extends StatelessWidget {
+  const _BrowseQuestionBottomSheetItem({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => StoreConnector<AppState, Question>(
       distinct: true,
@@ -50,6 +53,8 @@ class _BrowseQuestionBottomSheetItem extends StatelessWidget {
 }
 
 class _ShareQuestionBottomSheetItem extends StatelessWidget {
+  const _ShareQuestionBottomSheetItem({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => StoreConnector<AppState, Question>(
       distinct: true,
