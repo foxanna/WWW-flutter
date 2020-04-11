@@ -7,11 +7,13 @@ class StyleConfiguration {
     this.tournamentDetailsStyleConfiguration,
     this.tournamentsGridStyleConfiguration,
     this.latestTournamentsStyleConfiguration,
+    this.bottomSheetStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
   final TournamentsGridStyleConfiguration tournamentsGridStyleConfiguration;
   final LatestTournamentsStyleConfiguration latestTournamentsStyleConfiguration;
+  final BottomSheetStyleConfiguration bottomSheetStyleConfiguration;
 
   factory StyleConfiguration.create({@required BuildContext context}) =>
       StyleConfiguration(
@@ -21,6 +23,8 @@ class StyleConfiguration {
             TournamentsGridStyleConfiguration.create(context: context),
         latestTournamentsStyleConfiguration:
             LatestTournamentsStyleConfiguration.create(context: context),
+        bottomSheetStyleConfiguration:
+            BottomSheetStyleConfiguration.create(context: context),
       );
 
   static StyleConfiguration of(BuildContext context) {
@@ -197,6 +201,29 @@ class LatestTournamentsStyleConfiguration {
       appBarBottomHeight: kToolbarHeight,
       appBarIconTheme: theme.primaryIconTheme,
       stubTournamentsCount: 20,
+    );
+  }
+}
+
+class BottomSheetStyleConfiguration {
+  final EdgeInsets contentPadding;
+
+  const BottomSheetStyleConfiguration({
+    this.contentPadding,
+  });
+
+  factory BottomSheetStyleConfiguration.create(
+      {@required BuildContext context}) {
+    final theme = Theme.of(context);
+    final padding = MediaQuery.of(context).padding;
+
+    return BottomSheetStyleConfiguration(
+      contentPadding: EdgeInsets.only(
+        left: padding.left,
+        right: padding.right,
+        top: Dimensions.largeComponentsCornerRadiusValue / 2,
+        bottom: padding.bottom,
+      ),
     );
   }
 }
