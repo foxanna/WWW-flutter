@@ -74,23 +74,25 @@ class _ShareQuestionBottomSheetItem extends StatelessWidget {
   }
 }
 
-class _AboutTourBottomSheetItem extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) => StoreConnector<AppState, Tour>(
-      distinct: true,
-      converter: (store) => store.state.toursState.currentTour?.tour,
-      builder: (context, data) => data != null
-          ? ListTile(
-              leading: const Icon(Icons.info_outline),
-              title: const Text(Strings.aboutTour),
-              onTap: () => _openAboutTourDialog(context, data),
-            )
-          : Container());
-
-  void _openAboutTourDialog(BuildContext context, Tour tour) {
-    Navigator.pop(context);
-
-    final store = StoreProvider.of<AppState>(context);
-    store.dispatch(OpenTourInfoDialog(tour));
-  }
-}
+//class _AboutTourBottomSheetItem extends StatelessWidget {
+//    const _AboutTourBottomSheetItem({Key key}) : super(key: key);
+//
+//  @override
+//  Widget build(BuildContext context) => StoreConnector<AppState, Tour>(
+//      distinct: true,
+//      converter: (store) => store.state.toursState.currentTour?.tour,
+//      builder: (context, data) => data != null
+//          ? ListTile(
+//              leading: const Icon(Icons.info_outline),
+//              title: const Text(Strings.aboutTour),
+//              onTap: () => _openAboutTourDialog(context, data),
+//            )
+//          : Container());
+//
+//  void _openAboutTourDialog(BuildContext context, Tour tour) {
+//    Navigator.pop(context);
+//
+//    final store = StoreProvider.of<AppState>(context);
+//    store.dispatch(OpenTourInfoDialog(tour));
+//  }
+//}

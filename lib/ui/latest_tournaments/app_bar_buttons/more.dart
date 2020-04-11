@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/navigation/actions.dart';
-import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/ui/common/modal_bottom_sheet_container.dart';
+import 'package:what_when_where/ui/latest_tournaments/bottom_sheet/bottom_sheet.dart';
 
 class LatestTournamentsAppBarMoreButton extends StatelessWidget {
   const LatestTournamentsAppBarMoreButton({Key key}) : super(key: key);
@@ -16,42 +12,6 @@ class LatestTournamentsAppBarMoreButton extends StatelessWidget {
 
   void _showMenu(BuildContext context) => showModalBottomSheet<dynamic>(
         context: context,
-        builder: (context) => const ModalBottomSheetContainer(
-          children: [
-            _SettingsBottomSheetItem(),
-            _AboutBottomSheetItem(),
-          ],
-        ),
-      );
-}
-
-class _SettingsBottomSheetItem extends StatelessWidget {
-  const _SettingsBottomSheetItem({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => ListTile(
-        leading: const Icon(Icons.settings),
-        title: const Text(Strings.settings),
-        onTap: () {
-          Navigator.pop(context);
-
-          StoreProvider.of<AppState>(context)
-              .dispatch(const OpenSettingsPage());
-        },
-      );
-}
-
-class _AboutBottomSheetItem extends StatelessWidget {
-  const _AboutBottomSheetItem({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => ListTile(
-        leading: const Icon(Icons.info_outline),
-        title: const Text(Strings.aboutApplication),
-        onTap: () {
-          Navigator.pop(context);
-
-          StoreProvider.of<AppState>(context).dispatch(const OpenAboutPage());
-        },
+        builder: (context) => const LatestTournamentsBottomSheet(),
       );
 }

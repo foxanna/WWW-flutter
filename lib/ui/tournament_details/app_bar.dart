@@ -57,7 +57,7 @@ class TournamentDetailsAppBar extends StatelessWidget {
               ),
             ),
             expandedHeight: expectedAppBarHeight + 0.001,
-            actions: const [TournamentDetailsMoreButton()],
+            actions: const [TournamentDetailsAppBarMoreButton()],
             bottom: PreferredSize(
               child: Container(
                 width: double.infinity,
