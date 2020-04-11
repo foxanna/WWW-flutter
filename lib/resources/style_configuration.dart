@@ -38,7 +38,7 @@ class TournamentDetailsStyleConfiguration {
     this.toursListPadding,
     this.stubToursCount,
     this.questionTextStyle,
-    this.tourCardSize,
+    this.questionsCardSize,
     this.tourTitleTextStyle,
     this.tourContentPadding,
     this.tourColorGenerator,
@@ -52,23 +52,23 @@ class TournamentDetailsStyleConfiguration {
     this.scaffoldBackground,
   });
 
-  final TextStyle tournamentTitleTextStyle;
-  final TextStyle tourTitleTextStyle;
-  final TextStyle questionTextStyle;
+  final Color scaffoldBackground;
   final Color actionBarBackgroundColor;
   final IconThemeData actionBarIconTheme;
-  final EdgeInsets tournamentTitlePadding;
-  final EdgeInsets tourContentPadding;
-  final Color scaffoldBackground;
   final ShapeBorder shape;
   final Radius cornerRadius;
   final double elevation;
+  final TextStyle tournamentTitleTextStyle;
+  final EdgeInsets tournamentTitlePadding;
+  final EdgeInsets toursListPadding;
   final Color Function(int index) tourColorGenerator;
-  final Size tourCardSize;
+  final Size questionsCardSize;
+  final TextStyle tourTitleTextStyle;
+  final EdgeInsets tourContentPadding;
+  final double tourQuestionsSpacing;
+  final TextStyle questionTextStyle;
   final int stubToursCount;
   final int stubQuestionsCount;
-  final EdgeInsets toursListPadding;
-  final double tourQuestionsSpacing;
 
   factory TournamentDetailsStyleConfiguration.create(
       {@required BuildContext context}) {
@@ -98,13 +98,15 @@ class TournamentDetailsStyleConfiguration {
         right: kMinInteractiveDimension,
       ),
       tourContentPadding: EdgeInsets.only(
-        bottom: radiusValue + theme.cardTheme.elevation * 2,
+        bottom: radiusValue * 1.5 + theme.cardTheme.elevation * 2,
         top: radiusValue - theme.cardTheme.elevation,
         left: kMinInteractiveDimension + padding.left,
         right: kMinInteractiveDimension + padding.right,
       ),
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(bottomLeft: radius),
+        borderRadius: BorderRadius.only(
+          bottomLeft: radius,
+        ),
       ),
       cornerRadius: radius,
       elevation: theme.cardTheme.elevation,
@@ -116,7 +118,7 @@ class TournamentDetailsStyleConfiguration {
         final color = tourColorTween.lerp(multiplier / (toursColorsCount - 1));
         return color;
       },
-      tourCardSize: const Size(150, 200),
+      questionsCardSize: const Size(150, 200),
       questionTextStyle: theme.textTheme.subtitle1,
       stubToursCount: 3,
       stubQuestionsCount: 12,

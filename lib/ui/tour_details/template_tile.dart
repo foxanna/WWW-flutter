@@ -89,7 +89,7 @@ class TourDetailsTemplateTile extends StatelessWidget {
             height: styleConfiguration.tourContentPadding.top,
           ),
           Container(
-            height: styleConfiguration.tourCardSize.height,
+            height: styleConfiguration.questionsCardSize.height,
             child: (questionBuilder != null)
                 ? ListView.separated(
                     padding: EdgeInsets.only(

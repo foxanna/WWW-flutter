@@ -18,8 +18,8 @@ class TourDetailsQuestionTemplateTile extends StatelessWidget {
         StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
 
     return SizedBox(
-      width: styleConfiguration.tourCardSize.width,
-      height: styleConfiguration.tourCardSize.height,
+      width: styleConfiguration.questionsCardSize.width,
+      height: styleConfiguration.questionsCardSize.height,
       child: Card(
         child: InkWell(
           onTap: onTap,
