@@ -12,7 +12,7 @@ class TournamentsGrid extends StatelessWidget {
 
   const TournamentsGrid({
     Key key,
-    @required this.tournaments,
+    this.tournaments,
     this.footerBuilder,
     this.stubTournamentsCount = 0,
   }) : super(key: key);
