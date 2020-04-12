@@ -9,6 +9,7 @@ class Themes {
       brightness: Brightness.light,
       primaryColor: Colors.teal[900],
       accentColor: Colors.teal[400],
+      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
     );
 
     return _customize(base);
@@ -18,41 +19,56 @@ class Themes {
     final ThemeData base = ThemeData(
       brightness: Brightness.dark,
       accentColor: Colors.teal[400],
+      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
     );
 
     return _customize(base);
   }
 
-  static ThemeData _customize(ThemeData base) => base.copyWith(
-        textTheme: base.textTheme.copyWith(
-          caption: base.textTheme.caption.copyWith(
-            fontSize: 14,
-          ),
-        ),
-        buttonTheme: base.buttonTheme.copyWith(
-          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
-        ),
-        cardTheme: CardTheme(
-          margin: EdgeInsets.zero,
-          clipBehavior: Clip.hardEdge,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(Dimensions.mediumComponentsCornerRadiusValue),
-            ),
-          ),
-          elevation: 4.0,
-          color: base.cardColor,
-        ),
-        bottomSheetTheme: BottomSheetThemeData(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(Dimensions.largeComponentsCornerRadiusValue),
-            ),
-          ),
-          modalElevation: 4.0,
-          clipBehavior: Clip.hardEdge,
-        ),
-      );
+  static ThemeData _customize(ThemeData base) {
+    final typography = Typography.material2018();
+    final theme = ThemeData.localize(
+        base, typography.geometryThemeFor(ScriptCategory.englishLike));
+    final textTheme = theme.textTheme.copyWith(
+      caption: theme.textTheme.caption.copyWith(
+        fontSize: theme.textTheme.bodyText2.fontSize,
+      ),
+    );
 
+    return theme.copyWith(
+      typography: typography,
+      textTheme: textTheme,
+      cardTheme: CardTheme(
+        margin: EdgeInsets.zero,
+        clipBehavior: Clip.hardEdge,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(Dimensions.mediumComponentsCornerRadiusValue),
+          ),
+        ),
+        elevation: 4.0,
+        color: theme.cardColor,
+      ),
+      bottomSheetTheme: BottomSheetThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(Dimensions.largeComponentsCornerRadiusValue),
+          ),
+        ),
+        modalElevation: 4.0,
+        clipBehavior: Clip.hardEdge,
+      ),
+      dialogTheme: DialogTheme(
+        titleTextStyle: textTheme.headline6.copyWith(
+          color: theme.accentColor,
+        ),
+        contentTextStyle: textTheme.caption,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(Dimensions.largeComponentsCornerRadiusValue),
+          ),
+        ),
+      ),
+    );
   }
 }
