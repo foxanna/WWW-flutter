@@ -4,6 +4,17 @@ import 'package:what_when_where/resources/dimensions.dart';
 class Themes {
   Themes._();
 
+  static ThemeData get(ThemeMode themeMode) {
+    switch (themeMode) {
+      case ThemeMode.dark:
+        return createDarkAppTheme();
+      case ThemeMode.light:
+        return createLightAppTheme();
+      default:
+        return createLightAppTheme();
+    }
+  }
+
   static ThemeData createLightAppTheme() {
     final ThemeData base = ThemeData(
       brightness: Brightness.light,
