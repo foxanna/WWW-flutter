@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 
-enum AppTheme { light, dark }
-
 class Themes {
   Themes._();
 
@@ -56,14 +54,5 @@ class Themes {
         ),
       );
 
-  static ThemeData get(AppTheme appTheme) {
-    switch (appTheme) {
-      case AppTheme.dark:
-        return createDarkAppTheme();
-      case AppTheme.light:
-        return createLightAppTheme();
-      default:
-        return createLightAppTheme();
-    }
   }
 }

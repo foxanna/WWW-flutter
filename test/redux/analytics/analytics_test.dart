@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:redux/redux.dart';
+import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
@@ -16,7 +17,6 @@ import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/resources/fonts.dart';
-import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 
 import '../../ioc/container.dart';

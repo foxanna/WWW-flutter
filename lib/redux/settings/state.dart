@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
+import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/resources/fonts.dart';
-import 'package:what_when_where/resources/themes.dart';
 
 @immutable
 class SettingsState {

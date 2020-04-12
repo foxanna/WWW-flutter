@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
+import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/resources/fonts.dart';
-import 'package:what_when_where/resources/themes.dart';
 
 @immutable
 class ChangeTheme {
