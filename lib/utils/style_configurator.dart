@@ -9,7 +9,7 @@ class StyleConfigurator extends StatelessWidget {
   @override
   Widget build(BuildContext context) => StyleConfigurationInheritedWidget(
         child: child,
-        styleConfiguration: StyleConfiguration.create(context: context),
+        styleConfiguration: StyleConfiguration(context: context),
       );
 }
 

@@ -3,29 +3,33 @@ import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/utils/style_configurator.dart';
 
 class StyleConfiguration {
-  const StyleConfiguration({
+  factory StyleConfiguration({@required BuildContext context}) =>
+      StyleConfiguration._(
+        tournamentDetailsStyleConfiguration:
+            TournamentDetailsStyleConfiguration(context: context),
+        tournamentsGridStyleConfiguration:
+            TournamentsGridStyleConfiguration(context: context),
+        latestTournamentsStyleConfiguration:
+            LatestTournamentsStyleConfiguration(context: context),
+        bottomSheetStyleConfiguration:
+            BottomSheetStyleConfiguration(context: context),
+        alertDialogStyleConfiguration:
+            AlertDialogStyleConfiguration(context: context),
+      );
+
+  const StyleConfiguration._({
     this.tournamentDetailsStyleConfiguration,
     this.tournamentsGridStyleConfiguration,
     this.latestTournamentsStyleConfiguration,
     this.bottomSheetStyleConfiguration,
+    this.alertDialogStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
   final TournamentsGridStyleConfiguration tournamentsGridStyleConfiguration;
   final LatestTournamentsStyleConfiguration latestTournamentsStyleConfiguration;
   final BottomSheetStyleConfiguration bottomSheetStyleConfiguration;
-
-  factory StyleConfiguration.create({@required BuildContext context}) =>
-      StyleConfiguration(
-        tournamentDetailsStyleConfiguration:
-            TournamentDetailsStyleConfiguration.create(context: context),
-        tournamentsGridStyleConfiguration:
-            TournamentsGridStyleConfiguration.create(context: context),
-        latestTournamentsStyleConfiguration:
-            LatestTournamentsStyleConfiguration.create(context: context),
-        bottomSheetStyleConfiguration:
-            BottomSheetStyleConfiguration.create(context: context),
-      );
+  final AlertDialogStyleConfiguration alertDialogStyleConfiguration;
 
   static StyleConfiguration of(BuildContext context) {
     final styleConfigurationInheritedWidget =
@@ -36,45 +40,7 @@ class StyleConfiguration {
 }
 
 class TournamentDetailsStyleConfiguration {
-  const TournamentDetailsStyleConfiguration({
-    this.tourQuestionsSpacing,
-    this.stubQuestionsCount,
-    this.toursListPadding,
-    this.stubToursCount,
-    this.questionTextStyle,
-    this.questionsCardSize,
-    this.tourTitleTextStyle,
-    this.tourContentPadding,
-    this.tourColorGenerator,
-    this.elevation,
-    this.cornerRadius,
-    this.shape,
-    this.tournamentTitlePadding,
-    this.tournamentTitleTextStyle,
-    this.actionBarBackgroundColor,
-    this.actionBarIconTheme,
-    this.scaffoldBackground,
-  });
-
-  final Color scaffoldBackground;
-  final Color actionBarBackgroundColor;
-  final IconThemeData actionBarIconTheme;
-  final ShapeBorder shape;
-  final Radius cornerRadius;
-  final double elevation;
-  final TextStyle tournamentTitleTextStyle;
-  final EdgeInsets tournamentTitlePadding;
-  final EdgeInsets toursListPadding;
-  final Color Function(int index) tourColorGenerator;
-  final Size questionsCardSize;
-  final TextStyle tourTitleTextStyle;
-  final EdgeInsets tourContentPadding;
-  final double tourQuestionsSpacing;
-  final TextStyle questionTextStyle;
-  final int stubToursCount;
-  final int stubQuestionsCount;
-
-  factory TournamentDetailsStyleConfiguration.create(
+  factory TournamentDetailsStyleConfiguration(
       {@required BuildContext context}) {
     final theme = Theme.of(context);
     final padding = MediaQuery.of(context).padding;
@@ -90,7 +56,7 @@ class TournamentDetailsStyleConfiguration {
                 firstTourHSLColor.lightness + (toursColorsCount - 1) * 0.02)
             .toColor());
 
-    return TournamentDetailsStyleConfiguration(
+    return TournamentDetailsStyleConfiguration._(
       tournamentTitleTextStyle: theme.textTheme.headline5,
       tourTitleTextStyle: theme.accentTextTheme.headline6,
       actionBarBackgroundColor: theme.cardColor,
@@ -133,10 +99,62 @@ class TournamentDetailsStyleConfiguration {
       tourQuestionsSpacing: 16.0,
     );
   }
+
+  const TournamentDetailsStyleConfiguration._({
+    this.tourQuestionsSpacing,
+    this.stubQuestionsCount,
+    this.toursListPadding,
+    this.stubToursCount,
+    this.questionTextStyle,
+    this.questionsCardSize,
+    this.tourTitleTextStyle,
+    this.tourContentPadding,
+    this.tourColorGenerator,
+    this.elevation,
+    this.cornerRadius,
+    this.shape,
+    this.tournamentTitlePadding,
+    this.tournamentTitleTextStyle,
+    this.actionBarBackgroundColor,
+    this.actionBarIconTheme,
+    this.scaffoldBackground,
+  });
+
+  final Color scaffoldBackground;
+  final Color actionBarBackgroundColor;
+  final IconThemeData actionBarIconTheme;
+  final ShapeBorder shape;
+  final Radius cornerRadius;
+  final double elevation;
+  final TextStyle tournamentTitleTextStyle;
+  final EdgeInsets tournamentTitlePadding;
+  final EdgeInsets toursListPadding;
+  final Color Function(int index) tourColorGenerator;
+  final Size questionsCardSize;
+  final TextStyle tourTitleTextStyle;
+  final EdgeInsets tourContentPadding;
+  final double tourQuestionsSpacing;
+  final TextStyle questionTextStyle;
+  final int stubToursCount;
+  final int stubQuestionsCount;
 }
 
 class TournamentsGridStyleConfiguration {
-  const TournamentsGridStyleConfiguration({
+  factory TournamentsGridStyleConfiguration({@required BuildContext context}) {
+    final theme = Theme.of(context);
+
+    return TournamentsGridStyleConfiguration._(
+      gridTileTitleTextStyle: theme.textTheme.subtitle1,
+      gridTileSecondLineTextStyle: theme.textTheme.caption,
+      tileContentPadding: Dimensions.defaultListTilePadding,
+      gridSpacing: 16.0,
+      columnsCount: 2,
+      tileContentSpacing: Dimensions.defaultSpacing * 2,
+      gridPadding: const EdgeInsets.all(16.0),
+    );
+  }
+
+  const TournamentsGridStyleConfiguration._({
     this.gridPadding,
     this.tileContentSpacing,
     this.columnsCount,
@@ -153,47 +171,14 @@ class TournamentsGridStyleConfiguration {
   final int columnsCount;
   final EdgeInsets tileContentPadding;
   final EdgeInsets gridPadding;
-
-  factory TournamentsGridStyleConfiguration.create(
-      {@required BuildContext context}) {
-    final theme = Theme.of(context);
-
-    return TournamentsGridStyleConfiguration(
-      gridTileTitleTextStyle: theme.textTheme.subtitle1,
-      gridTileSecondLineTextStyle: theme.textTheme.caption,
-      tileContentPadding: Dimensions.defaultListTilePadding,
-      gridSpacing: 16.0,
-      columnsCount: 2,
-      tileContentSpacing: Dimensions.defaultSpacing * 2,
-      gridPadding: const EdgeInsets.all(16.0),
-    );
-  }
 }
 
 class LatestTournamentsStyleConfiguration {
-  final Color scaffoldBackground;
-  final Color errorColor;
-  final IconThemeData appBarIconTheme;
-  final double appBarHeight;
-  final double appBarLogoHeight;
-  final double appBarBottomHeight;
-  final int stubTournamentsCount;
-
-  const LatestTournamentsStyleConfiguration({
-    this.appBarIconTheme,
-    this.appBarHeight,
-    this.appBarLogoHeight,
-    this.appBarBottomHeight,
-    this.scaffoldBackground,
-    this.errorColor,
-    this.stubTournamentsCount,
-  });
-
-  factory LatestTournamentsStyleConfiguration.create(
+  factory LatestTournamentsStyleConfiguration(
       {@required BuildContext context}) {
     final theme = Theme.of(context);
 
-    return LatestTournamentsStyleConfiguration(
+    return LatestTournamentsStyleConfiguration._(
       scaffoldBackground: theme.primaryColor,
       errorColor: theme.primaryIconTheme.color,
       appBarHeight: 200.0,
@@ -203,20 +188,31 @@ class LatestTournamentsStyleConfiguration {
       stubTournamentsCount: 20,
     );
   }
+
+  const LatestTournamentsStyleConfiguration._({
+    this.appBarIconTheme,
+    this.appBarHeight,
+    this.appBarLogoHeight,
+    this.appBarBottomHeight,
+    this.scaffoldBackground,
+    this.errorColor,
+    this.stubTournamentsCount,
+  });
+
+  final Color scaffoldBackground;
+  final Color errorColor;
+  final IconThemeData appBarIconTheme;
+  final double appBarHeight;
+  final double appBarLogoHeight;
+  final double appBarBottomHeight;
+  final int stubTournamentsCount;
 }
 
 class BottomSheetStyleConfiguration {
-  final EdgeInsets contentPadding;
-
-  const BottomSheetStyleConfiguration({
-    this.contentPadding,
-  });
-
-  factory BottomSheetStyleConfiguration.create(
-      {@required BuildContext context}) {
+  factory BottomSheetStyleConfiguration({@required BuildContext context}) {
     final padding = MediaQuery.of(context).padding;
 
-    return BottomSheetStyleConfiguration(
+    return BottomSheetStyleConfiguration._(
       contentPadding: EdgeInsets.only(
         left: padding.left,
         right: padding.right,
@@ -225,4 +221,29 @@ class BottomSheetStyleConfiguration {
       ),
     );
   }
+
+  const BottomSheetStyleConfiguration._({
+    this.contentPadding,
+  });
+
+  final EdgeInsets contentPadding;
+}
+
+class AlertDialogStyleConfiguration {
+  factory AlertDialogStyleConfiguration({@required BuildContext context}) {
+    final theme = Theme.of(context);
+
+    return AlertDialogStyleConfiguration._(
+      contentPadding: const EdgeInsets.symmetric(
+        vertical: 12,
+        horizontal: 0,
+      ),
+    );
+  }
+
+  const AlertDialogStyleConfiguration._({
+    this.contentPadding,
+  });
+
+  final EdgeInsets contentPadding;
 }
