@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tuple/tuple.dart';
+import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
@@ -63,7 +64,7 @@ class _ThemeDropdownButton extends StatelessWidget {
             value: appTheme,
             items: AppTheme.values.map(
               (theme) {
-                final themeData = Themes.get(theme);
+                final themeData = Themes.get(theme.toThemeMode());
 
                 return DropdownMenuItem(
                   value: theme,
