@@ -4,14 +4,14 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
-import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/ui/question/question_card.dart';
-import 'package:what_when_where/ui/tour_questions/error_message.dart';
+import 'package:what_when_where/ui/questions/error_page.dart';
+import 'package:what_when_where/ui/questions/loading_page.dart';
 
-class TourQuestionsCards extends StatelessWidget {
+class QuestionsDataPage extends StatelessWidget {
   static const _viewportFraction = 0.85;
 
-  const TourQuestionsCards({Key key}) : super(key: key);
+  const QuestionsDataPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) =>
@@ -31,17 +31,17 @@ class TourQuestionsCards extends StatelessWidget {
               viewportFraction: _viewportFraction,
             ),
             itemBuilder: (context, index) => Container(
-                  // keep it in the top of widget tree
-                  key: PageStorageKey(index),
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: kToolbarHeight),
-                    child: hasAdditionalCard && index == count
-                        ? isLoading
-                            ? const WWWProgressIndicator()
-                            : const QuestionsErrorMessage()
-                        : QuestionCard(index: index),
-                  ),
-                ),
+              // keep it in the top of widget tree
+              key: PageStorageKey(index),
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: kToolbarHeight),
+                child: hasAdditionalCard && index == count
+                    ? isLoading
+                        ? const QuestionsLoadingPage()
+                        : const QuestionsErrorPage()
+                    : QuestionCard(index: index),
+              ),
+            ),
             itemCount: hasAdditionalCard ? count + 1 : count,
             onPageChanged: (index) => _onPageChanged(context, index),
           );

@@ -6,7 +6,7 @@ import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/utils/duration_formatter.dart';
 
-class TimerText extends StatelessWidget {
+class QuestionsBottomAppBarTimerText extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Stack(
         children: [

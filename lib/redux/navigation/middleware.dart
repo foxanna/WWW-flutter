@@ -6,9 +6,9 @@ import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/about/route_page.dart';
 import 'package:what_when_where/ui/image/image_page.dart';
+import 'package:what_when_where/ui/questions/route_page.dart';
 import 'package:what_when_where/ui/search/search_page.dart';
 import 'package:what_when_where/ui/settings/route_page.dart';
-import 'package:what_when_where/ui/tour_questions/tour_questions_page.dart';
 import 'package:what_when_where/ui/tournament_details/route_page.dart';
 import 'package:what_when_where/ui/tree/tournaments_tree_page.dart';
 
@@ -70,8 +70,8 @@ class NavigationMiddleware {
         selectedQuestionIndex: action.selectedQuestionIndex));
 
     _navigationService.navigateToPage(
-      routeName: TourQuestionsPage.routeName,
-      builder: (context) => TourQuestionsPage(),
+      routeName: QuestionsRoutePage.routeName,
+      builder: (context) => QuestionsRoutePage(),
     );
   }
 
@@ -110,8 +110,8 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-      routeName: TourQuestionsPage.randomQuestionsRouteName,
-      builder: (context) => TourQuestionsPage(),
+      routeName: QuestionsRoutePage.randomQuestionsRouteName,
+      builder: (context) => QuestionsRoutePage(),
     );
   }
 

@@ -6,7 +6,7 @@ import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/utils/function_holder.dart';
 
-class TimerButton extends StatelessWidget {
+class QuestionsBottomAppBarTimerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, Tuple2<FunctionHolder, bool>>(

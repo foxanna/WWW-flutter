@@ -7,7 +7,7 @@ import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/modal_bottom_sheet_container.dart';
 
-class TourQuestionsPageMoreIconButton extends StatelessWidget {
+class QuestionsBottomAppBarMoreButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => IconButton(
         icon: const Icon(Icons.more_vert),

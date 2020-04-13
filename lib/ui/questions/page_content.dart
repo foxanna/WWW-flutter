@@ -5,11 +5,12 @@ import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/tour_questions/error_message.dart';
-import 'package:what_when_where/ui/tour_questions/tour_questions_cards.dart';
+import 'package:what_when_where/ui/questions/error_page.dart';
+import 'package:what_when_where/ui/questions/data_page.dart';
+import 'package:what_when_where/ui/questions/loading_page.dart';
 
-class TourQuestionsPageBody extends StatelessWidget {
-  const TourQuestionsPageBody({Key key}) : super(key: key);
+class QuestionsPageContent extends StatelessWidget {
+  const QuestionsPageContent({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) =>
@@ -18,14 +19,15 @@ class TourQuestionsPageBody extends StatelessWidget {
         converter: (store) => store.state.questionsState,
         builder: (context, state) {
           if (state.hasData) {
-            return const TourQuestionsCards();
-          } else {
-            if (state.isLoading) {
-              return const WWWProgressIndicator();
-            }
-            if (state.hasError) {
-              return const QuestionsErrorMessage();
-            }
+            return const QuestionsDataPage();
+          }
+
+          if (state.isLoading) {
+            return const QuestionsLoadingPage();
+          }
+
+          if (state.hasError) {
+            return const QuestionsErrorPage();
           }
 
           return Container();

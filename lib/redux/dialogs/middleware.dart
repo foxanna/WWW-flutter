@@ -1,8 +1,8 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/services/dialogs.dart';
+import 'package:what_when_where/ui/questions/tour_details_about_dialog.dart';
 import 'package:what_when_where/ui/rating/rating_dialog.dart';
-import 'package:what_when_where/ui/tour_questions/tour_details_about_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/about_dialog.dart';
 
 import 'actions.dart';
