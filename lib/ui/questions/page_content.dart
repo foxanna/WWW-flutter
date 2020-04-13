@@ -27,7 +27,9 @@ class QuestionsPageContent extends StatelessWidget {
           }
 
           if (state.hasError) {
-            return const QuestionsErrorPage();
+            return QuestionsErrorPage(
+              exception: state.exception,
+            );
           }
 
           return Container();

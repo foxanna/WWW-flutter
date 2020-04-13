@@ -38,7 +38,9 @@ class QuestionsDataPage extends StatelessWidget {
                 child: hasAdditionalCard && index == count
                     ? isLoading
                         ? const QuestionsLoadingPage()
-                        : const QuestionsErrorPage()
+                        : QuestionsErrorPage(
+                            exception: state.exception,
+                          )
                     : QuestionCard(index: index),
               ),
             ),

@@ -5,17 +5,18 @@ import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 
 class QuestionsErrorPage extends StatelessWidget {
-  const QuestionsErrorPage({Key key}) : super(key: key);
+  final Exception exception;
+
+  const QuestionsErrorPage({
+    Key key,
+    this.exception,
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => StoreConnector<AppState, Exception>(
-        distinct: true,
-        converter: (store) => store.state.questionsState.exception,
-        builder: (context, exception) => ErrorMessage(
-          exception: exception,
-          retryFunction: () => _reload(context),
-          color: Theme.of(context).primaryColor,
-        ),
+  Widget build(BuildContext context) => ErrorMessage(
+        exception: exception,
+        retryFunction: () => _reload(context),
+        color: Theme.of(context).primaryColor,
       );
 
   void _reload(BuildContext context) =>
