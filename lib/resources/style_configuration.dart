@@ -142,6 +142,7 @@ class TournamentDetailsStyleConfiguration {
 class TournamentsGridStyleConfiguration {
   factory TournamentsGridStyleConfiguration({@required BuildContext context}) {
     final theme = Theme.of(context);
+    final padding = MediaQuery.of(context).padding;
 
     return TournamentsGridStyleConfiguration._(
       gridTileTitleTextStyle: theme.textTheme.subtitle1,
@@ -150,7 +151,8 @@ class TournamentsGridStyleConfiguration {
       gridSpacing: 16.0,
       columnsCount: 2,
       tileContentSpacing: Dimensions.defaultSpacing * 2,
-      gridPadding: const EdgeInsets.all(16.0),
+      gridPadding: const EdgeInsets.all(16.0) +
+          EdgeInsets.only(left: padding.left, right: padding.right),
     );
   }
 
