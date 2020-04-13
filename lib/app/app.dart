@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/global/ioc.dart';
 import 'package:what_when_where/global/navigator_key.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/ui/common/dialog_presenter.dart';
@@ -31,24 +32,21 @@ class WWWApp extends StatelessWidget {
               .observer(home: LatestTournamentsPage.routeName),
         ],
         home: const LatestTournamentsPage(),
-        builder: (context, child) => Navigator(
-          onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
-            builder: (context) {
-              final mediaQueryData = MediaQuery.of(context);
-              final defaultTextScaleFactor = mediaQueryData.textScaleFactor;
+        builder: (context, navigator) {
+          final mediaQueryData = MediaQuery.of(context);
 
-              return DialogPresenter(
-                child: MediaQuery(
-                  data: mediaQueryData.copyWith(
-                    textScaleFactor: defaultTextScaleFactor * textScaleFactor,
-                  ),
-                  child: StyleConfigurator(
-                    child: child,
-                  ),
+          return MediaQuery(
+            data: mediaQueryData.copyWith(
+                textScaleFactor:
+                    mediaQueryData.textScaleFactor * textScaleFactor),
+            child: StyleConfigurator(
+              child: Navigator(
+                onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
+                  builder: (context) => DialogPresenter(child: navigator),
                 ),
-              );
-            },
-          ),
-        ),
+              ),
+            ),
+          );
+        },
       );
 }
