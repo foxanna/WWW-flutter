@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:tuple/tuple.dart';
+import 'package:what_when_where/common/text_sections_theme_data.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/resources/dimensions.dart';
+import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/services/question_parser/question_parser.dart';
-import 'package:what_when_where/ui/common/text_sections.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/text_with_links.dart';
-import 'package:what_when_where/ui/question/question_comment.dart';
+import 'package:what_when_where/ui/question/text_sections.dart';
 
 class QuestionAnswer extends StatelessWidget {
   final int index;
@@ -16,19 +15,12 @@ class QuestionAnswer extends StatelessWidget {
   const QuestionAnswer({Key key, @required this.index}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) =>
-      StoreConnector<AppState, Tuple2<bool, Question>>(
+  Widget build(BuildContext context) => StoreConnector<AppState, QuestionState>(
         distinct: true,
-        converter: (store) {
-          final state = store.state.questionsState.questions[index];
-          return Tuple2(state.showAnswer, state.question);
-        },
-        builder: (context, data) {
-          final showAnswer = data.item1;
-          final question = data.item2;
-
-          return showAnswer ? _QuestionAnswer(question: question) : Container();
-        },
+        converter: (store) => store.state.questionsState.questions[index],
+        builder: (context, state) => state.showAnswer
+            ? _QuestionAnswer(question: state.question)
+            : Container(),
       );
 }
 
@@ -45,56 +37,72 @@ class _QuestionAnswer extends StatelessWidget {
 
   Iterable<Widget> _buildAnswerContent(BuildContext context) sync* {
     final textTheme = Theme.of(context).textTheme;
+    final styleConfiguration =
+        StyleConfiguration.of(context).questionStyleConfiguration;
 
-    yield _QuestionAnswerText(
-      text: '${Strings.answer}: ${question.answer}'
-          '${(question.comments != null) ? '*' : ''}',
+    yield QuestionTextSectionsTheme(
+      data: StyleConfiguration.of(context)
+          .questionStyleConfiguration
+          .questionCardAnswerSectionsThemeData,
+      child: QuestionTextSections.text(
+        text: '${Strings.answer}: ${question.answer}'
+            '${(question.comments != null) ? '*' : ''}',
+      ),
     );
 
     if (question.passCriteria != null) {
-      yield const SizedBox(height: Dimensions.defaultSpacing * 2);
-      yield _QuestionAnswerText(
-        text: '${Strings.acceptableAnswer}: ${question.passCriteria}',
+      yield SizedBox(
+        height: styleConfiguration
+            .questionCardAnswerSectionsThemeData.sectionsSpacing,
+      );
+
+      yield QuestionTextSectionsTheme(
+        data: StyleConfiguration.of(context)
+            .questionStyleConfiguration
+            .questionCardAnswerSectionsThemeData,
+        child: QuestionTextSections.text(
+          text: '${Strings.acceptableAnswer}: ${question.passCriteria}',
+        ),
       );
     }
 
     if (question.comments != null) {
-      yield const SizedBox(height: Dimensions.defaultSpacing * 2);
-      yield QuestionComment(text: '* ${question.comments}');
+      yield SizedBox(
+        height: styleConfiguration
+            .questionCardAnswerSectionsThemeData.sectionsSpacing,
+      );
+
+      yield QuestionTextSectionsTheme(
+        data: StyleConfiguration.of(context)
+            .questionStyleConfiguration
+            .questionCardCommentSectionsThemeData,
+        child: QuestionTextSections.text(text: '* ${question.comments}'),
+      );
     }
 
     if (question.authors != null) {
-      yield const SizedBox(height: Dimensions.defaultSpacing);
+      yield SizedBox(
+        height: styleConfiguration
+            .questionCardAnswerSectionsThemeData.sectionsSpacing,
+      );
       yield Text('${Strings.author}: ${question.authors}');
     }
 
     if (question.sources != null) {
-      yield const SizedBox(height: Dimensions.defaultSpacing);
+      yield SizedBox(
+        height: styleConfiguration
+            .questionCardAnswerSectionsThemeData.sectionsSpacing,
+      );
       yield TextWithLinks(
         '${Strings.sources}:\n${question.sources}',
-        textStyle: textTheme.bodyText2,
-        linkStyle: textTheme.bodyText2.copyWith(
-            color: Theme.of(context).accentColor,
-            decoration: TextDecoration.underline),
+        textStyle:
+            styleConfiguration.questionCardCommentSectionsThemeData.textStyle,
+        linkStyle: styleConfiguration
+            .questionCardCommentSectionsThemeData.textStyle
+            .copyWith(
+                color: styleConfiguration.questionCardTitleTextStyle.color,
+                decoration: TextDecoration.underline),
       );
     }
   }
-}
-
-class _QuestionAnswerText extends StatelessWidget {
-  final String text;
-  final List<dynamic> _sections;
-
-  _QuestionAnswerText({Key key, this.text})
-      : _sections = QuestionParser.split(text).toList(),
-        super(key: key);
-
-  @override
-  Widget build(BuildContext context) => TextSections(
-        sections: _sections,
-        textStyle: Theme.of(context).textTheme.headline5.copyWith(
-              fontSize: Theme.of(context).textTheme.headline6.fontSize - 2,
-              color: Theme.of(context).accentColor,
-            ),
-      );
 }

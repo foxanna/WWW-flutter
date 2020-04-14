@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/common/text_sections_theme_data.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/utils/style_configurator.dart';
 
@@ -239,8 +240,8 @@ class AlertDialogStyleConfiguration {
   factory AlertDialogStyleConfiguration({@required BuildContext context}) {
     final theme = Theme.of(context);
 
-    return AlertDialogStyleConfiguration._(
-      contentPadding: const EdgeInsets.symmetric(
+    return const AlertDialogStyleConfiguration._(
+      contentPadding: EdgeInsets.symmetric(
         vertical: 12,
         horizontal: 0,
       ),
@@ -257,6 +258,26 @@ class AlertDialogStyleConfiguration {
 class QuestionStyleConfiguration {
   factory QuestionStyleConfiguration({@required BuildContext context}) {
     final theme = Theme.of(context);
+
+    final questionTextStyle = theme.textTheme.headline5.copyWith(
+      fontSize: theme.textTheme.headline6.fontSize - 2,
+    );
+
+    final questionTextSectionsThemeData = QuestionTextSectionsThemeData(
+      textStyle: questionTextStyle,
+      speakerNotesTextStyle: questionTextStyle.copyWith(
+        fontStyle: FontStyle.italic,
+        color: theme.textTheme.caption.color,
+      ),
+      giveAwayTextStyle: questionTextStyle.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
+      unsupportedSectionTextStyle: theme.textTheme.caption.copyWith(
+        fontStyle: FontStyle.italic,
+      ),
+      sectionsSpacing: 16.0,
+      imageHeight: 200.0,
+    );
 
     return QuestionStyleConfiguration._(
       appBarElevation: 0.0,
@@ -279,6 +300,23 @@ class QuestionStyleConfiguration {
       showAnswerButtonColor: theme.accentColor,
       showAnswerButtonHeight: 56.0,
       showAnswerButtonElevation: 4.0,
+      questionCardQuestionSectionsThemeData: questionTextSectionsThemeData,
+      questionCardAnswerSectionsThemeData:
+          questionTextSectionsThemeData.copyWith(
+        textStyle: questionTextSectionsThemeData.textStyle.copyWith(
+          color: theme.accentColor,
+        ),
+      ),
+      questionCardCommentSectionsThemeData:
+          questionTextSectionsThemeData.copyWith(
+        imageHeight: questionTextSectionsThemeData.imageHeight / 2,
+        sectionsSpacing: questionTextSectionsThemeData.sectionsSpacing / 2,
+        textStyle: theme.textTheme.bodyText2,
+        speakerNotesTextStyle:
+            questionTextSectionsThemeData.speakerNotesTextStyle.copyWith(
+          fontSize: theme.textTheme.bodyText2.fontSize,
+        ),
+      ),
     );
   }
 
@@ -297,6 +335,9 @@ class QuestionStyleConfiguration {
     this.showAnswerButtonColor,
     this.showAnswerButtonHeight,
     this.showAnswerButtonElevation,
+    this.questionCardQuestionSectionsThemeData,
+    this.questionCardAnswerSectionsThemeData,
+    this.questionCardCommentSectionsThemeData,
   });
 
   final IconThemeData appBarIconTheme;
@@ -313,4 +354,7 @@ class QuestionStyleConfiguration {
   final double showAnswerButtonElevation;
   final Color questionCardDividerColor;
   final double questionCardDividerHeight;
+  final QuestionTextSectionsThemeData questionCardQuestionSectionsThemeData;
+  final QuestionTextSectionsThemeData questionCardAnswerSectionsThemeData;
+  final QuestionTextSectionsThemeData questionCardCommentSectionsThemeData;
 }
