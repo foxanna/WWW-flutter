@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 
 class QuestionsCardSeparator extends StatelessWidget {
   const QuestionsCardSeparator({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30),
-        child: Container(
-            color: Theme.of(context).accentColor,
-            child: const SizedBox(
-              height: 1,
-            )),
-      );
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).questionStyleConfiguration;
+
+    return Divider(
+      height: styleConfiguration.questionCardDividerHeight,
+      color: styleConfiguration.questionCardDividerColor,
+    );
+  }
 }

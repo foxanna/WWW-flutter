@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 
 class QuestionNumber extends StatelessWidget {
   final int index;
@@ -20,10 +21,9 @@ class QuestionNumber extends StatelessWidget {
                 : store.state.questionsState.questions[index].question.number,
         builder: (context, questionIndex) => Text(
           '${Strings.question} $questionIndex',
-          style: Theme.of(context)
-              .textTheme
-              .headline5
-              .copyWith(color: Theme.of(context).accentColor),
+          style: StyleConfiguration.of(context)
+              .questionStyleConfiguration
+              .questionCardTitleTextStyle,
         ),
       );
 }

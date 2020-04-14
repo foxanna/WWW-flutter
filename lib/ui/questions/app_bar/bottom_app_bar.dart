@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/questions/app_bar/buttons/more.dart';
 import 'package:what_when_where/ui/questions/app_bar/timer_text.dart';
 
 class QuestionsBottomAppBar extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => BottomAppBar(
-        color: Theme.of(context).primaryColor,
-        child: IconTheme(
-          data: Theme.of(context).primaryIconTheme,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              QuestionsBottomAppBarTimerText(),
-              QuestionsBottomAppBarMoreButton(),
-            ],
-          ),
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).questionStyleConfiguration;
+
+    return BottomAppBar(
+      notchMargin: styleConfiguration.bottomAppBarNotchMargin,
+      child: IconTheme(
+        data: styleConfiguration.bottomAppBarIconTheme,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            QuestionsBottomAppBarTimerText(),
+            QuestionsBottomAppBarMoreButton(),
+          ],
         ),
-      );
+      ),
+    );
+  }
 }

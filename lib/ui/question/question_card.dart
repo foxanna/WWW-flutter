@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:what_when_where/resources/dimensions.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
 import 'package:what_when_where/ui/question/question_answer.dart';
 import 'package:what_when_where/ui/question/question_number.dart';
@@ -34,50 +35,43 @@ class _QuestionCardState extends State<QuestionCard> {
   }
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: Dimensions.defaultPadding,
-        child: _buildQuestionCard(context),
-      );
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).questionStyleConfiguration;
 
-  Widget _buildQuestionCard(BuildContext context) => Card(
-        elevation: 4.0,
-        child: Container(
-          foregroundDecoration:
-              GradientDecoration(color: Theme.of(context).cardColor),
-          child: ListView(
-            key: _listViewKey,
-            controller: _scrollController,
-            padding: const EdgeInsets.symmetric(
-                vertical: Dimensions.defaultSidePadding * 6,
-                horizontal: Dimensions.defaultSidePadding * 3),
-            children: [
-              QuestionNumber(index: widget.index),
-              const QuestionsCardSeparator(),
-              QuestionText(index: widget.index),
-              Stack(
-                  key: _buttonStackKey,
-                  alignment: Alignment.center,
-                  fit: StackFit.passthrough,
-                  children: [
-                    const QuestionsCardSeparator(),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          right: Dimensions.defaultSidePadding * 2,
-                        ),
-                        child: ShowAnswerButton(
-                          index: widget.index,
-                          onAnswerShown: _onAnswerShown,
-                        ),
-                      ),
-                    ),
-                  ]),
-              QuestionAnswer(index: widget.index)
-            ],
-          ),
+    return Card(
+      margin: styleConfiguration.questionCardMargin,
+      child: Container(
+        foregroundDecoration:
+            GradientDecoration(color: Theme.of(context).cardColor),
+        child: ListView(
+          key: _listViewKey,
+          controller: _scrollController,
+          physics: const BouncingScrollPhysics(),
+          padding: styleConfiguration.questionCardPadding,
+          children: [
+            QuestionNumber(index: widget.index),
+            const QuestionsCardSeparator(),
+            QuestionText(index: widget.index),
+            Stack(
+              key: _buttonStackKey,
+              children: [
+                const QuestionsCardSeparator(),
+                Positioned(
+                  right: styleConfiguration.questionCardPadding.right,
+                  child: ShowAnswerButton(
+                    index: widget.index,
+                    onAnswerShown: _onAnswerShown,
+                  ),
+                ),
+              ],
+            ),
+            QuestionAnswer(index: widget.index)
+          ],
         ),
-      );
+      ),
+    );
+  }
 
   void _onAnswerShown() =>
       WidgetsBinding.instance.addPostFrameCallback((d) => _scrollToAnswer());

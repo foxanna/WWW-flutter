@@ -4,34 +4,44 @@ import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/utils/duration_formatter.dart';
 
 class QuestionsBottomAppBarTimerText extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Stack(
-        children: [
-          Positioned.fill(child: _TimerOptionsDropdownButton()),
-          IgnorePointer(
-            child: Container(
-              color: Theme.of(context).primaryColor,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    left: Dimensions.defaultSidePadding * 2),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    _TimerValue(),
-                    Icon(
-                      Icons.arrow_drop_up,
-                      color: Theme.of(context).primaryIconTheme.color,
-                    ),
-                  ],
-                ),
+  Widget build(BuildContext context) {
+    final bottomAppBarTheme = Theme.of(context).bottomAppBarTheme;
+    final styleConfiguration =
+        StyleConfiguration.of(context).questionStyleConfiguration;
+
+    return Stack(
+      children: [
+        Positioned.fill(child: _TimerOptionsDropdownButton()),
+        IgnorePointer(
+          child: Container(
+            color: bottomAppBarTheme.color,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  left: Dimensions.defaultSidePadding * 2),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  DefaultTextStyle(
+                    style: styleConfiguration.bottomAppBarTextStyle,
+                    child: _TimerValue(),
+                  ),
+                  Icon(
+                    Icons.arrow_drop_up,
+                    color: styleConfiguration.bottomAppBarIconTheme.color,
+                  ),
+                ],
               ),
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
+  }
 }
 
 class _TimerOptionsDropdownButton extends StatelessWidget {
@@ -66,7 +76,6 @@ class _TimerValue extends StatelessWidget {
         converter: (store) => store.state.timerState.secondsLeft,
         builder: (context, seconds) => Text(
           DurationFormatter.formatSeconds(seconds),
-          style: Theme.of(context).primaryTextTheme.headline6,
         ),
       );
 }

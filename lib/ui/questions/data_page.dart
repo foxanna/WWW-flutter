@@ -26,6 +26,7 @@ class QuestionsDataPage extends StatelessWidget {
           final hasAdditionalCard = isLoading || hasError;
 
           return PageView.builder(
+            physics: const BouncingScrollPhysics(),
             controller: PageController(
               initialPage: startIndex,
               viewportFraction: _viewportFraction,

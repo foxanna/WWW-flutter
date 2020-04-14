@@ -15,6 +15,8 @@ class StyleConfiguration {
             BottomSheetStyleConfiguration(context: context),
         alertDialogStyleConfiguration:
             AlertDialogStyleConfiguration(context: context),
+        questionStyleConfiguration:
+            QuestionStyleConfiguration(context: context),
       );
 
   const StyleConfiguration._({
@@ -23,6 +25,7 @@ class StyleConfiguration {
     this.latestTournamentsStyleConfiguration,
     this.bottomSheetStyleConfiguration,
     this.alertDialogStyleConfiguration,
+    this.questionStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
@@ -30,6 +33,7 @@ class StyleConfiguration {
   final LatestTournamentsStyleConfiguration latestTournamentsStyleConfiguration;
   final BottomSheetStyleConfiguration bottomSheetStyleConfiguration;
   final AlertDialogStyleConfiguration alertDialogStyleConfiguration;
+  final QuestionStyleConfiguration questionStyleConfiguration;
 
   static StyleConfiguration of(BuildContext context) {
     final styleConfigurationInheritedWidget =
@@ -248,4 +252,65 @@ class AlertDialogStyleConfiguration {
   });
 
   final EdgeInsets contentPadding;
+}
+
+class QuestionStyleConfiguration {
+  factory QuestionStyleConfiguration({@required BuildContext context}) {
+    final theme = Theme.of(context);
+
+    return QuestionStyleConfiguration._(
+      appBarElevation: 0.0,
+      appBarBackgroundColor: Colors.transparent,
+      appBarIconTheme: theme.iconTheme,
+      bottomAppBarIconTheme: theme.primaryIconTheme,
+      bottomAppBarNotchMargin: 8.0,
+      bottomAppBarTextStyle: theme.primaryTextTheme.headline6,
+      questionCardMargin: const EdgeInsets.symmetric(
+        horizontal: Dimensions.defaultSidePadding,
+      ),
+      questionCardPadding: const EdgeInsets.symmetric(
+        vertical: 32,
+        horizontal: 24,
+      ),
+      questionCardTitleTextStyle:
+          theme.textTheme.headline5.copyWith(color: theme.accentColor),
+      questionCardDividerColor: theme.accentColor,
+      questionCardDividerHeight: 56.0,
+      showAnswerButtonColor: theme.accentColor,
+      showAnswerButtonHeight: 56.0,
+      showAnswerButtonElevation: 4.0,
+    );
+  }
+
+  const QuestionStyleConfiguration._({
+    this.appBarIconTheme,
+    this.appBarElevation,
+    this.appBarBackgroundColor,
+    this.bottomAppBarIconTheme,
+    this.bottomAppBarNotchMargin,
+    this.bottomAppBarTextStyle,
+    this.questionCardMargin,
+    this.questionCardPadding,
+    this.questionCardTitleTextStyle,
+    this.questionCardDividerColor,
+    this.questionCardDividerHeight,
+    this.showAnswerButtonColor,
+    this.showAnswerButtonHeight,
+    this.showAnswerButtonElevation,
+  });
+
+  final IconThemeData appBarIconTheme;
+  final double appBarElevation;
+  final Color appBarBackgroundColor;
+  final IconThemeData bottomAppBarIconTheme;
+  final double bottomAppBarNotchMargin;
+  final TextStyle bottomAppBarTextStyle;
+  final EdgeInsets questionCardMargin;
+  final EdgeInsets questionCardPadding;
+  final TextStyle questionCardTitleTextStyle;
+  final Color showAnswerButtonColor;
+  final double showAnswerButtonHeight;
+  final double showAnswerButtonElevation;
+  final Color questionCardDividerColor;
+  final double questionCardDividerHeight;
 }

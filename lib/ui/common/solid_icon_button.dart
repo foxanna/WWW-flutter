@@ -45,9 +45,13 @@ class SolidIconButton extends MaterialButton {
         clipBehavior: clipBehavior,
         fillColor: fillColor,
         shape: CircleBorder(
-            side: (borderColor != null && borderWidth != 0)
-                ? BorderSide(color: borderColor, width: 1)
-                : BorderSide.none),
+          side: (borderColor != null && borderWidth != 0)
+              ? BorderSide(
+                  color: borderColor,
+                  width: borderWidth,
+                )
+              : BorderSide.none,
+        ),
         child: icon,
       );
 }

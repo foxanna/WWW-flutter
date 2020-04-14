@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:tuple/tuple.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/solid_icon_button.dart';
-import 'package:what_when_where/utils/function_holder.dart';
 
 class ShowAnswerButton extends StatelessWidget {
   final int index;
@@ -17,31 +16,22 @@ class ShowAnswerButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) =>
-      StoreConnector<AppState, Tuple2<FunctionHolder, bool>>(
+  Widget build(BuildContext context) => StoreConnector<AppState, bool>(
         distinct: true,
-        converter: (store) {
-          final showAnswer =
-              store.state.questionsState.questions[index].showAnswer;
-          return Tuple2<FunctionHolder, bool>(
-              FunctionHolder(() => store.dispatch(
-                    showAnswer ? HideAnswer(index) : ShowAnswer(index),
-                  )),
-              showAnswer);
-        },
-        builder: (context, data) {
-          final functionHolder = data.item1;
-          final showAnswer = data.item2;
-          return _ShowAnswerButton(
-              icon: showAnswer ? Icons.visibility_off : Icons.visibility,
-              onPressed: () {
-                functionHolder.function();
+        converter: (store) =>
+            store.state.questionsState.questions[index].showAnswer,
+        builder: (context, showAnswer) => _ShowAnswerButton(
+          icon: showAnswer ? Icons.visibility_off : Icons.visibility,
+          onPressed: () {
+            StoreProvider.of<AppState>(context).dispatch(
+              showAnswer ? HideAnswer(index) : ShowAnswer(index),
+            );
 
-                if (!showAnswer && onAnswerShown != null) {
-                  onAnswerShown();
-                }
-              });
-        },
+            if (!showAnswer && onAnswerShown != null) {
+              onAnswerShown();
+            }
+          },
+        ),
       );
 }
 
@@ -56,15 +46,22 @@ class _ShowAnswerButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SolidIconButton(
-        icon: Icon(
-          icon,
-          color: Theme.of(context).accentColor,
-        ),
-        onPressed: onPressed,
-        elevation: 4.0,
-        fillColor: Theme.of(context).cardColor,
-        borderColor: Theme.of(context).accentColor,
-        borderWidth: 1,
-      );
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).questionStyleConfiguration;
+    final theme = Theme.of(context);
+
+    return SolidIconButton(
+      icon: Icon(
+        icon,
+        color: styleConfiguration.showAnswerButtonColor,
+      ),
+      onPressed: onPressed,
+      elevation: styleConfiguration.showAnswerButtonElevation,
+      fillColor: theme.cardColor,
+      borderColor: styleConfiguration.showAnswerButtonColor,
+      borderWidth: theme.dividerTheme.thickness,
+      buttonSize: Size.square(styleConfiguration.showAnswerButtonHeight),
+    );
+  }
 }

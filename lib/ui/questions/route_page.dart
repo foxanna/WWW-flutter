@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/questions/app_bar/bottom_app_bar.dart';
 import 'package:what_when_where/ui/questions/app_bar/buttons/timer.dart';
 import 'package:what_when_where/ui/questions/page_content.dart';
@@ -8,15 +9,20 @@ class QuestionsRoutePage extends StatelessWidget {
   static const String randomQuestionsRouteName = 'random_questions';
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).canvasColor,
-          iconTheme: Theme.of(context).iconTheme,
-          elevation: 0.0,
-        ),
-        floatingActionButton: QuestionsBottomAppBarTimerButton(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: QuestionsBottomAppBar(),
-        body: const QuestionsPageContent(),
-      );
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).questionStyleConfiguration;
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: styleConfiguration.appBarBackgroundColor,
+        iconTheme: styleConfiguration.appBarIconTheme,
+        elevation: styleConfiguration.appBarElevation,
+      ),
+      floatingActionButton: QuestionsBottomAppBarTimerButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: QuestionsBottomAppBar(),
+      body: const QuestionsPageContent(),
+    );
+  }
 }

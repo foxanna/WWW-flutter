@@ -60,6 +60,7 @@ class Themes {
         elevation: 4.0,
         color: theme.cardColor,
       ),
+      cardColor: theme.cardColor,
       bottomSheetTheme: BottomSheetThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -69,6 +70,12 @@ class Themes {
         modalElevation: 4.0,
         clipBehavior: Clip.hardEdge,
       ),
+      bottomAppBarTheme: BottomAppBarTheme(
+        color: theme.primaryColor,
+        elevation: 4.0,
+        shape: const CircularNotchedRectangle(),
+      ),
+      bottomAppBarColor: theme.primaryColor,
       dialogTheme: DialogTheme(
         titleTextStyle: textTheme.headline6.copyWith(
           color: theme.accentColor,
@@ -76,9 +83,12 @@ class Themes {
         contentTextStyle: textTheme.caption,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(Dimensions.largeComponentsCornerRadiusValue),
+            Radius.circular(Dimensions.mediumComponentsCornerRadiusValue),
           ),
         ),
+      ),
+      dividerTheme: const DividerThemeData(
+        thickness: 1.0,
       ),
     );
   }

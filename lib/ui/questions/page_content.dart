@@ -4,9 +4,8 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
-import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/ui/questions/error_page.dart';
 import 'package:what_when_where/ui/questions/data_page.dart';
+import 'package:what_when_where/ui/questions/error_page.dart';
 import 'package:what_when_where/ui/questions/loading_page.dart';
 
 class QuestionsPageContent extends StatelessWidget {
