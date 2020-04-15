@@ -76,12 +76,8 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
         ],
       );
 
-  void _openTournamentDetails(BuildContext context) {
-    StoreProvider.of<AppState>(context).dispatch(
-      OpenTournamentsSubTreePage(
-        rootId: tournamentsTree.id,
-        title: tournamentsTree.title,
-      ),
-    );
-  }
+  void _openTournamentDetails(BuildContext context) =>
+      StoreProvider.of<AppState>(context).dispatch(
+        OpenTournamentsSubTreePage(rootId: tournamentsTree.id),
+      );
 }

@@ -79,14 +79,11 @@ class OpenTournamentsTreePage {
 @immutable
 class OpenTournamentsSubTreePage {
   final String rootId;
-  final String title;
 
   const OpenTournamentsSubTreePage({
     @required this.rootId,
-    this.title,
   });
 
   @override
-  String toString() =>
-      '$OpenTournamentsSubTreePage rootId = "$rootId", title = "$title"';
+  String toString() => '$OpenTournamentsSubTreePage rootId = "$rootId"';
 }

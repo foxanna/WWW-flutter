@@ -4,12 +4,12 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/tournaments_grid_tile.dart';
-import 'package:what_when_where/ui/tree/tournaments_subtree_tile.dart';
+import 'package:what_when_where/ui/tree/subtree_tile.dart';
 
-class TournamentsTreeGrid extends StatelessWidget {
+class TournamentsTreeDataPage extends StatelessWidget {
   final List<dynamic> tournamentsTree;
 
-  const TournamentsTreeGrid({
+  const TournamentsTreeDataPage({
     Key key,
     @required this.tournamentsTree,
   }) : super(key: key);
@@ -20,6 +20,7 @@ class TournamentsTreeGrid extends StatelessWidget {
         StyleConfiguration.of(context).tournamentsGridStyleConfiguration;
 
     return SliverPadding(
+      padding: styleConfiguration.gridPadding,
       sliver: SliverStaggeredGrid.countBuilder(
         crossAxisCount: styleConfiguration.columnsCount,
         mainAxisSpacing: styleConfiguration.gridSpacing,
@@ -29,6 +30,7 @@ class TournamentsTreeGrid extends StatelessWidget {
             return TournamentsTreeTournamentSubtreeTile(
                 tournamentsTree: tournamentsTree[index] as TournamentsTree);
           }
+
           if (tournamentsTree[index] is Tournament) {
             return TournamentsGridTile(
                 tournament: tournamentsTree[index] as Tournament);
@@ -39,7 +41,6 @@ class TournamentsTreeGrid extends StatelessWidget {
         itemCount: tournamentsTree.length,
         staggeredTileBuilder: (i) => const StaggeredTile.fit(1),
       ),
-      padding: styleConfiguration.gridPadding,
     );
   }
 }

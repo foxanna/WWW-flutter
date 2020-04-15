@@ -10,7 +10,7 @@ import 'package:what_when_where/ui/questions/route_page.dart';
 import 'package:what_when_where/ui/search/search_page.dart';
 import 'package:what_when_where/ui/settings/route_page.dart';
 import 'package:what_when_where/ui/tournament_details/route_page.dart';
-import 'package:what_when_where/ui/tree/tournaments_tree_page.dart';
+import 'package:what_when_where/ui/tree/route_page.dart';
 
 class NavigationMiddleware {
   final INavigationService _navigationService;
@@ -120,8 +120,8 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-      routeName: TournamentsTreePage.routeName,
-      builder: (context) => const TournamentsTreePage(rootId: '0'),
+      routeName: TournamentsTreeRoutePage.routeName,
+      builder: (context) => const TournamentsTreeRoutePage(rootId: '0'),
     );
   }
 
@@ -130,11 +130,8 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-      routeName: TournamentsTreePage.routeName,
-      builder: (context) => TournamentsTreePage(
-        rootId: action.rootId,
-        title: action.title,
-      ),
+      routeName: TournamentsTreeRoutePage.routeName,
+      builder: (context) => TournamentsTreeRoutePage(rootId: action.rootId),
     );
   }
 }

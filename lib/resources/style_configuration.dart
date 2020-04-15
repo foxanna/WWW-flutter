@@ -18,6 +18,8 @@ class StyleConfiguration {
             AlertDialogStyleConfiguration(context: context),
         questionStyleConfiguration:
             QuestionStyleConfiguration(context: context),
+        tournamentsTreeStyleConfiguration:
+            TournamentsTreeStyleConfiguration(context: context),
       );
 
   const StyleConfiguration._({
@@ -27,6 +29,7 @@ class StyleConfiguration {
     this.bottomSheetStyleConfiguration,
     this.alertDialogStyleConfiguration,
     this.questionStyleConfiguration,
+    this.tournamentsTreeStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
@@ -35,6 +38,7 @@ class StyleConfiguration {
   final BottomSheetStyleConfiguration bottomSheetStyleConfiguration;
   final AlertDialogStyleConfiguration alertDialogStyleConfiguration;
   final QuestionStyleConfiguration questionStyleConfiguration;
+  final TournamentsTreeStyleConfiguration tournamentsTreeStyleConfiguration;
 
   static StyleConfiguration of(BuildContext context) {
     final styleConfigurationInheritedWidget =
@@ -357,4 +361,29 @@ class QuestionStyleConfiguration {
   final QuestionTextSectionsThemeData questionCardQuestionSectionsThemeData;
   final QuestionTextSectionsThemeData questionCardAnswerSectionsThemeData;
   final QuestionTextSectionsThemeData questionCardCommentSectionsThemeData;
+}
+
+class TournamentsTreeStyleConfiguration {
+  factory TournamentsTreeStyleConfiguration({@required BuildContext context}) {
+    final theme = Theme.of(context);
+
+    return TournamentsTreeStyleConfiguration._(
+      scaffoldBackground: theme.primaryColor,
+      errorColor: theme.primaryIconTheme.color,
+      appBarIconTheme: theme.primaryIconTheme,
+      stubTournamentsCount: 20,
+    );
+  }
+
+  const TournamentsTreeStyleConfiguration._({
+    this.scaffoldBackground,
+    this.errorColor,
+    this.appBarIconTheme,
+    this.stubTournamentsCount,
+  });
+
+  final Color scaffoldBackground;
+  final Color errorColor;
+  final IconThemeData appBarIconTheme;
+  final int stubTournamentsCount;
 }
