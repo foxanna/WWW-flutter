@@ -25,21 +25,24 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(
               top: cardTheme.elevation * 2,
-              left: cardTheme.elevation * 2,
+              left: cardTheme.elevation,
             ),
             child: const Card(),
           ),
         ),
         Positioned.fill(
           child: Padding(
-            padding: EdgeInsets.all(cardTheme.elevation),
+            padding: EdgeInsets.symmetric(
+              horizontal: cardTheme.elevation / 2,
+              vertical: cardTheme.elevation,
+            ),
             child: const Card(),
           ),
         ),
         Padding(
           padding: EdgeInsets.only(
             bottom: cardTheme.elevation * 2,
-            right: cardTheme.elevation * 2,
+            right: cardTheme.elevation,
           ),
           child: Card(
             child: InkWell(
