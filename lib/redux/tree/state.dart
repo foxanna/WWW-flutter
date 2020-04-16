@@ -10,7 +10,7 @@ class TournamentsSubTreeState {
 
   bool get hasError => exception != null;
 
-  bool get hasData => tree != null;
+  bool get hasData => tree?.children?.isNotEmpty ?? false;
 
   const TournamentsSubTreeState._({
     this.isLoading = false,
@@ -18,7 +18,9 @@ class TournamentsSubTreeState {
     this.tree,
   });
 
-  const TournamentsSubTreeState.initial() : this._();
+  const TournamentsSubTreeState.initial({
+    @required TournamentsTree tree,
+  }) : this._(tree: tree);
 
   TournamentsSubTreeState copyWith({
     Optional<bool> isLoading,
@@ -44,19 +46,23 @@ class TournamentsSubTreeState {
 
 @immutable
 class TournamentsTreeState {
+  static const String rootId = '0';
+
   final Map<String, TournamentsSubTreeState> _states;
 
-  TournamentsSubTreeState operator [](String id) {
-    if (!_states.containsKey(id)) {
-      _states[id] = const TournamentsSubTreeState.initial();
-    }
-    return _states[id];
-  }
+  TournamentsSubTreeState operator [](String id) => _states[id];
 
   TournamentsTreeState._({Map<String, TournamentsSubTreeState> states})
       : _states = states ?? <String, TournamentsSubTreeState>{};
 
-  TournamentsTreeState.initial() : this._();
+  TournamentsTreeState.initial()
+      : this._(
+          states: <String, TournamentsSubTreeState>{
+            rootId: const TournamentsSubTreeState.initial(
+              tree: TournamentsTree(id: rootId),
+            ),
+          },
+        );
 
   TournamentsTreeState copyWithSubTree({
     @required String id,
@@ -64,15 +70,19 @@ class TournamentsTreeState {
     Optional<Exception> exception,
     Optional<TournamentsTree> tree,
   }) {
-    final subState = this[id] ?? const TournamentsSubTreeState.initial();
-    final newSubState = subState.copyWith(
+    final newStates = Map<String, TournamentsSubTreeState>.from(_states);
+    newStates[id] = this[id].copyWith(
       isLoading: isLoading,
       exception: exception,
       tree: tree,
     );
-
-    final newStates = _states;
-    newStates[id] = newSubState;
+    if (tree?.isPresent ?? false) {
+      newStates.addEntries(
+          tree.value.children.whereType<TournamentsTree>().map((x) => MapEntry(
+                x.id,
+                TournamentsSubTreeState.initial(tree: x),
+              )));
+    }
 
     return TournamentsTreeState._(states: newStates);
   }
