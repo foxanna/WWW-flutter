@@ -9,7 +9,7 @@ class TournamentsTree {
   final String id;
   final String title;
   final String childrenCount;
-  final UnmodifiableListView<dynamic> children;
+  final List<dynamic> children;
 
   const TournamentsTree({
     this.id,
@@ -24,16 +24,14 @@ class TournamentsTree {
         childrenCount: map['ChildrenNum'] as String,
         children: map.containsKey('tour')
             ? map['tour'] is List
-                ? UnmodifiableListView<dynamic>(
-                    List<Map<String, dynamic>>.from(
-                            map['tour'] as Iterable<dynamic>)
-                        .map<dynamic>(_getTreeItem)
-                        .toList(),
-                  )
-                : UnmodifiableListView<dynamic>(<dynamic>[
+                ? List<Map<String, dynamic>>.from(
+                        map['tour'] as Iterable<dynamic>)
+                    .map<dynamic>(_getTreeItem)
+                    .toList()
+                : <dynamic>[
                     _getTreeItem(map['tour'] as Map<String, dynamic>),
-                  ])
-            : UnmodifiableListView<dynamic>(<dynamic>[]),
+                  ]
+            : <dynamic>[],
       );
 
   static dynamic _getTreeItem(Map<String, dynamic> map) =>
