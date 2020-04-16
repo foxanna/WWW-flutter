@@ -371,7 +371,7 @@ class TournamentsTreeStyleConfiguration {
       scaffoldBackground: theme.primaryColor,
       errorColor: theme.primaryIconTheme.color,
       appBarIconTheme: theme.primaryIconTheme,
-      stubTournamentsCount: 20,
+      stubTournamentsCount: 80,
     );
   }
 
