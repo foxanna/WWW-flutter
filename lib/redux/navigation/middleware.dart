@@ -8,7 +8,7 @@ import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/about/route_page.dart';
 import 'package:what_when_where/ui/image/route_page.dart';
 import 'package:what_when_where/ui/questions/route_page.dart';
-import 'package:what_when_where/ui/search/search_page.dart';
+import 'package:what_when_where/ui/search/route_page.dart';
 import 'package:what_when_where/ui/settings/route_page.dart';
 import 'package:what_when_where/ui/tournament_details/route_page.dart';
 import 'package:what_when_where/ui/tree/route_page.dart';
@@ -91,8 +91,8 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-      routeName: SearchPage.routeName,
-      builder: (context) => SearchPage(),
+      routeName: SearchRoutePage.routeName,
+      builder: (context) => SearchRoutePage(),
     );
   }
 

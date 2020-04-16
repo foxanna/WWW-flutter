@@ -22,6 +22,7 @@ class StyleConfiguration {
             TournamentsTreeStyleConfiguration(context: context),
         aboutStyleConfiguration: AboutStyleConfiguration(context: context),
         imageStyleConfiguration: ImageStyleConfiguration(context: context),
+        searchStyleConfiguration: SearchStyleConfiguration(context: context),
       );
 
   const StyleConfiguration._({
@@ -34,6 +35,7 @@ class StyleConfiguration {
     this.tournamentsTreeStyleConfiguration,
     this.aboutStyleConfiguration,
     this.imageStyleConfiguration,
+    this.searchStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
@@ -45,6 +47,7 @@ class StyleConfiguration {
   final TournamentsTreeStyleConfiguration tournamentsTreeStyleConfiguration;
   final AboutStyleConfiguration aboutStyleConfiguration;
   final ImageStyleConfiguration imageStyleConfiguration;
+  final SearchStyleConfiguration searchStyleConfiguration;
 
   static StyleConfiguration of(BuildContext context) {
     final styleConfigurationInheritedWidget =
@@ -456,4 +459,41 @@ class ImageStyleConfiguration {
   final IconThemeData appBarIconTheme;
   final Color appBarBackground;
   final double appBarElevation;
+}
+
+class SearchStyleConfiguration {
+  factory SearchStyleConfiguration({@required BuildContext context}) {
+    final theme = Theme.of(context);
+
+    return SearchStyleConfiguration._(
+      scaffoldBackground: Colors.black,
+      appBarIconTheme: theme.iconTheme,
+      appBarBackground: theme.canvasColor,
+      appBarElevation: 4.0,
+      searchFieldTextStyle: theme.textTheme.headline6,
+      noResultsTextStyle: theme.textTheme.subtitle1,
+      stubTournamentsCount: 20,
+      errorColor: theme.iconTheme.color,
+    );
+  }
+
+  const SearchStyleConfiguration._({
+    this.scaffoldBackground,
+    this.appBarIconTheme,
+    this.appBarBackground,
+    this.appBarElevation,
+    this.searchFieldTextStyle,
+    this.noResultsTextStyle,
+    this.stubTournamentsCount,
+    this.errorColor,
+  });
+
+  final Color scaffoldBackground;
+  final IconThemeData appBarIconTheme;
+  final Color appBarBackground;
+  final double appBarElevation;
+  final TextStyle searchFieldTextStyle;
+  final TextStyle noResultsTextStyle;
+  final int stubTournamentsCount;
+  final Color errorColor;
 }

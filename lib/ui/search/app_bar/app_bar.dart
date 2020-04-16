@@ -7,33 +7,26 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/ui/search/sorting_button.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/search/app_bar/buttons/sorting.dart';
 
-class SearchTournamentsPageAppBar extends StatefulWidget
-    implements PreferredSizeWidget {
-  final ScrollController scrollController;
-
-  const SearchTournamentsPageAppBar({
+class SearchPageAppBar extends StatefulWidget {
+  const SearchPageAppBar({
     Key key,
-    this.scrollController,
   }) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _SearchTournamentsPageAppBarState();
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  State<StatefulWidget> createState() => _SearchPageAppBarState();
 }
 
-class _SearchTournamentsPageAppBarState
-    extends State<SearchTournamentsPageAppBar> {
+class _SearchPageAppBarState extends State<SearchPageAppBar> {
   FocusNode _focusNode;
   TextEditingController _queryController;
   SortingController _sortingController;
 
   PublishSubject<String> _queryDebouncer;
 
-  _SearchTournamentsPageAppBarState() {
+  _SearchPageAppBarState() {
     _queryDebouncer = PublishSubject<String>()
       ..stream
           .debounceTime(const Duration(seconds: 1))
@@ -46,20 +39,30 @@ class _SearchTournamentsPageAppBarState
       StoreConnector<AppState, SearchTournamentsParametersState>(
         distinct: true,
         converter: (store) => store.state.searchState.searchParameters,
-        builder: (context, state) => AppBar(
-          iconTheme: Theme.of(context).iconTheme,
-          backgroundColor: Theme.of(context).canvasColor,
-          leading: _buildBackButton(context),
-          title: _buildSearchField(context),
-          actions: [
-            if (state.query.isNotEmpty)
-              IconButton(
-                icon: const Icon(Icons.clear),
-                onPressed: () => _clear(),
-              ),
-            SortingButton(controller: _sortingController),
-          ],
-        ),
+        builder: (context, state) {
+          final styleConfiguration =
+              StyleConfiguration.of(context).searchStyleConfiguration;
+
+          return SliverAppBar(
+            floating: true,
+            forceElevated: true,
+            snap: true,
+            centerTitle: false,
+            iconTheme: styleConfiguration.appBarIconTheme,
+            backgroundColor: styleConfiguration.appBarBackground,
+            elevation: styleConfiguration.appBarElevation,
+            leading: _buildBackButton(context),
+            title: _buildSearchField(context, styleConfiguration),
+            actions: [
+              if (state.query.isNotEmpty)
+                IconButton(
+                  icon: const Icon(Icons.clear),
+                  onPressed: () => _clear(),
+                ),
+              SearchAppBarSortingButton(controller: _sortingController),
+            ],
+          );
+        },
         onInit: _onInit,
         onDispose: _onDispose,
       );
@@ -73,11 +76,13 @@ class _SearchTournamentsPageAppBarState
         },
       );
 
-  Widget _buildSearchField(BuildContext context) => TextField(
+  Widget _buildSearchField(
+          BuildContext context, SearchStyleConfiguration styleConfiguration) =>
+      TextField(
         controller: _queryController,
         focusNode: _focusNode,
         autofocus: true,
-        style: Theme.of(context).textTheme.headline6,
+        style: styleConfiguration.searchFieldTextStyle,
         textInputAction: TextInputAction.done,
         keyboardAppearance: Theme.of(context).brightness,
         decoration: const InputDecoration(
@@ -111,48 +116,24 @@ class _SearchTournamentsPageAppBarState
     super.initState();
 
     _focusNode = FocusNode();
-
-    if (widget.scrollController != null) {
-      widget.scrollController.addListener(_onResultsScrolled);
-    }
   }
 
   @override
   void dispose() {
     _focusNode.dispose();
 
-    if (widget.scrollController != null) {
-      widget.scrollController.removeListener(_onResultsScrolled);
-    }
-
     super.dispose();
-  }
-
-  @override
-  void didUpdateWidget(SearchTournamentsPageAppBar oldWidget) {
-    super.didUpdateWidget(oldWidget);
-
-    if (oldWidget.scrollController != null) {
-      oldWidget.scrollController.removeListener(_onResultsScrolled);
-    }
-    if (widget.scrollController != null) {
-      widget.scrollController.addListener(_onResultsScrolled);
-    }
   }
 
   void _focus() => FocusScope.of(context).requestFocus(_focusNode);
 
   void _unFocus() => _focusNode.unfocus();
 
-  void _forceFocus() => WidgetsBinding.instance.addPostFrameCallback((d) {
-        _unFocus();
-        WidgetsBinding.instance.addPostFrameCallback((d) => _focus());
-      });
-
-  void _clear() {
+  Future<void> _clear() async {
     _queryController.clear();
 
-    _forceFocus();
+    await Future<void>.delayed(const Duration(seconds: 1));
+    _focus();
   }
 
   void _onSortingChanged() => StoreProvider.of<AppState>(context)
@@ -167,8 +148,4 @@ class _SearchTournamentsPageAppBarState
 
   void _search() =>
       StoreProvider.of<AppState>(context).dispatch(const SearchTournaments());
-
-  void _onResultsScrolled() {
-    _unFocus();
-  }
 }

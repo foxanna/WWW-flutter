@@ -6,10 +6,10 @@ class SortingController extends ValueNotifier<Sorting> {
   SortingController({Sorting value}) : super(value);
 }
 
-class SortingButton extends StatelessWidget {
+class SearchAppBarSortingButton extends StatelessWidget {
   final SortingController _sortingController;
 
-  SortingButton({
+  SearchAppBarSortingButton({
     Key key,
     SortingController controller,
   })  : _sortingController = controller ?? SortingController(),
