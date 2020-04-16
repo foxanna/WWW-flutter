@@ -20,6 +20,7 @@ class StyleConfiguration {
             QuestionStyleConfiguration(context: context),
         tournamentsTreeStyleConfiguration:
             TournamentsTreeStyleConfiguration(context: context),
+        aboutStyleConfiguration: AboutStyleConfiguration(context: context),
       );
 
   const StyleConfiguration._({
@@ -30,6 +31,7 @@ class StyleConfiguration {
     this.alertDialogStyleConfiguration,
     this.questionStyleConfiguration,
     this.tournamentsTreeStyleConfiguration,
+    this.aboutStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
@@ -39,6 +41,7 @@ class StyleConfiguration {
   final AlertDialogStyleConfiguration alertDialogStyleConfiguration;
   final QuestionStyleConfiguration questionStyleConfiguration;
   final TournamentsTreeStyleConfiguration tournamentsTreeStyleConfiguration;
+  final AboutStyleConfiguration aboutStyleConfiguration;
 
   static StyleConfiguration of(BuildContext context) {
     final styleConfigurationInheritedWidget =
@@ -46,6 +49,45 @@ class StyleConfiguration {
             StyleConfigurationInheritedWidget>();
     return styleConfigurationInheritedWidget.styleConfiguration;
   }
+}
+
+class AboutStyleConfiguration {
+  factory AboutStyleConfiguration({@required BuildContext context}) {
+    final theme = Theme.of(context);
+
+    return AboutStyleConfiguration._(
+      appBarIconTheme: theme.iconTheme,
+      scaffoldBackground: theme.canvasColor,
+      appBarBackgroundColor: Colors.transparent,
+      appBarElevation: 0.0,
+      contentPadding: const EdgeInsets.all(40.0),
+      accentColor: theme.accentColor,
+      titleStyle: theme.textTheme.headline5.copyWith(
+        color: theme.accentColor,
+      ),
+      textStyle: theme.textTheme.caption,
+    );
+  }
+
+  const AboutStyleConfiguration._({
+    this.scaffoldBackground,
+    this.appBarBackgroundColor,
+    this.appBarIconTheme,
+    this.appBarElevation,
+    this.contentPadding,
+    this.accentColor,
+    this.titleStyle,
+    this.textStyle,
+  });
+
+  final Color scaffoldBackground;
+  final Color appBarBackgroundColor;
+  final IconThemeData appBarIconTheme;
+  final double appBarElevation;
+  final EdgeInsets contentPadding;
+  final Color accentColor;
+  final TextStyle titleStyle;
+  final TextStyle textStyle;
 }
 
 class TournamentDetailsStyleConfiguration {

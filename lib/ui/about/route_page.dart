@@ -5,98 +5,112 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
-import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 
 class AboutRoutePage extends StatelessWidget {
   static const String routeName = 'about';
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: _buildAppBar(context),
-        body: SafeArea(child: _buildBody(context)),
-      );
+  Widget build(BuildContext context) {
+    final styleConfiguration =
+        StyleConfiguration.of(context).aboutStyleConfiguration;
 
-  AppBar _buildAppBar(BuildContext context) => AppBar(
-        iconTheme: Theme.of(context).iconTheme,
-        backgroundColor: Theme.of(context).canvasColor,
-        elevation: 0.0,
-      );
+    return Scaffold(
+      backgroundColor: styleConfiguration.scaffoldBackground,
+      appBar: AppBar(
+        iconTheme: styleConfiguration.appBarIconTheme,
+        backgroundColor: styleConfiguration.appBarBackgroundColor,
+        elevation: styleConfiguration.appBarElevation,
+      ),
+      body: SafeArea(
+        child: _buildBody(context, styleConfiguration),
+      ),
+    );
+  }
 
-  Widget _buildBody(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: Dimensions.defaultSidePadding * 5),
+  Widget _buildBody(
+          BuildContext context, AboutStyleConfiguration styleConfiguration) =>
+      Padding(
+        padding: EdgeInsets.only(
+          left: styleConfiguration.contentPadding.left,
+          right: styleConfiguration.contentPadding.right,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
+          children: [
             Expanded(
-              child: _buildImageSection(context),
+              child: _buildImageSection(styleConfiguration),
             ),
-            _buildBottomSection(context),
+            _buildBottomSection(context, styleConfiguration),
           ],
         ),
       );
 
-  Widget _buildImageSection(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: Dimensions.defaultSidePadding * 5),
+  Padding _buildImageSection(AboutStyleConfiguration styleConfiguration) =>
+      Padding(
+        padding: EdgeInsets.only(
+          top: styleConfiguration.contentPadding.top,
+          bottom: styleConfiguration.contentPadding.bottom,
+        ),
         child: Center(
           child: Hero(
             tag: 'owl',
             child: SvgPicture.asset(
               'assets/owl.svg',
               fit: BoxFit.fitHeight,
-              color: Theme.of(context).accentColor,
+              color: styleConfiguration.accentColor,
             ),
           ),
         ),
       );
 
-  Widget _buildBottomSection(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Text(
-          Constants.appNameLong,
-          textAlign: TextAlign.center,
-          style: theme.textTheme.headline5.copyWith(color: theme.accentColor),
-        ),
-        IconButton(
-          icon: const Icon(Icons.email),
-          tooltip: Strings.emailDevelopers,
-          color: theme.accentColor,
-          onPressed: () => _sendEmail(context),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
-              vertical: Dimensions.defaultSpacing * 5),
-          child: RichText(
+  Widget _buildBottomSection(
+          BuildContext context, AboutStyleConfiguration styleConfiguration) =>
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            Constants.appNameLong,
             textAlign: TextAlign.center,
-            textScaleFactor: MediaQuery.of(context).textScaleFactor,
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: '${Strings.questionsDatabasePrefix}\n',
-                  style: theme.textTheme.caption,
-                ),
-                TextSpan(
-                  text: Strings.questionsDatabaseName,
-                  style: theme.textTheme.caption.copyWith(
-                      color: theme.accentColor,
-                      decoration: TextDecoration.underline),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () => _openDatabaseInBrowser(context),
-                ),
-              ],
+            style: styleConfiguration.titleStyle,
+          ),
+          IconButton(
+            icon: const Icon(Icons.email),
+            tooltip: Strings.emailDevelopers,
+            color: styleConfiguration.accentColor,
+            onPressed: () => _sendEmail(context),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: styleConfiguration.contentPadding.top,
+              bottom: styleConfiguration.contentPadding.bottom,
+            ),
+            child: RichText(
+              textAlign: TextAlign.center,
+              textScaleFactor: MediaQuery.of(context).textScaleFactor,
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: '${Strings.questionsDatabasePrefix}\n',
+                    style: styleConfiguration.textStyle,
+                  ),
+                  TextSpan(
+                    text: Strings.questionsDatabaseName,
+                    style: styleConfiguration.textStyle.copyWith(
+                      color: styleConfiguration.accentColor,
+                      decoration: TextDecoration.underline,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => _openDatabaseInBrowser(context),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
-    );
-  }
+        ],
+      );
 
   void _openDatabaseInBrowser(BuildContext context) =>
       StoreProvider.of<AppState>(context).dispatch(const BrowseDatabase());
