@@ -118,6 +118,7 @@ class QuestionTextSections extends StatelessWidget {
           GestureDetector(
             child: Hero(
               tag: section.url,
+              transitionOnUserGestures: true,
               child: FadeInImage.memoryNetwork(
                 height: imageHeight,
                 fit: BoxFit.scaleDown,

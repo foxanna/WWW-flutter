@@ -21,6 +21,7 @@ class StyleConfiguration {
         tournamentsTreeStyleConfiguration:
             TournamentsTreeStyleConfiguration(context: context),
         aboutStyleConfiguration: AboutStyleConfiguration(context: context),
+        imageStyleConfiguration: ImageStyleConfiguration(context: context),
       );
 
   const StyleConfiguration._({
@@ -32,6 +33,7 @@ class StyleConfiguration {
     this.questionStyleConfiguration,
     this.tournamentsTreeStyleConfiguration,
     this.aboutStyleConfiguration,
+    this.imageStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
@@ -42,6 +44,7 @@ class StyleConfiguration {
   final QuestionStyleConfiguration questionStyleConfiguration;
   final TournamentsTreeStyleConfiguration tournamentsTreeStyleConfiguration;
   final AboutStyleConfiguration aboutStyleConfiguration;
+  final ImageStyleConfiguration imageStyleConfiguration;
 
   static StyleConfiguration of(BuildContext context) {
     final styleConfigurationInheritedWidget =
@@ -428,4 +431,29 @@ class TournamentsTreeStyleConfiguration {
   final Color errorColor;
   final IconThemeData appBarIconTheme;
   final int stubTournamentsCount;
+}
+
+class ImageStyleConfiguration {
+  factory ImageStyleConfiguration({@required BuildContext context}) {
+    final theme = Theme.of(context);
+
+    return ImageStyleConfiguration._(
+      scaffoldBackground: Colors.black,
+      appBarIconTheme: theme.primaryIconTheme,
+      appBarBackground: Colors.transparent,
+      appBarElevation: 0.0,
+    );
+  }
+
+  const ImageStyleConfiguration._({
+    this.scaffoldBackground,
+    this.appBarIconTheme,
+    this.appBarBackground,
+    this.appBarElevation,
+  });
+
+  final Color scaffoldBackground;
+  final IconThemeData appBarIconTheme;
+  final Color appBarBackground;
+  final double appBarElevation;
 }

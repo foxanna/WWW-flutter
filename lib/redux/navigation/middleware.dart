@@ -6,7 +6,7 @@ import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/redux/tree/state.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/about/route_page.dart';
-import 'package:what_when_where/ui/image/image_page.dart';
+import 'package:what_when_where/ui/image/route_page.dart';
 import 'package:what_when_where/ui/questions/route_page.dart';
 import 'package:what_when_where/ui/search/search_page.dart';
 import 'package:what_when_where/ui/settings/route_page.dart';
@@ -45,8 +45,8 @@ class NavigationMiddleware {
     next(action);
 
     _navigationService.navigateToPage(
-      routeName: ImagePage.routeName,
-      builder: (context) => ImagePage(url: action.imageUrl),
+      routeName: ImageRoutePage.routeName,
+      builder: (context) => ImageRoutePage(url: action.imageUrl),
     );
   }
 
