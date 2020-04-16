@@ -369,6 +369,9 @@ class QuestionStyleConfiguration {
           fontSize: theme.textTheme.bodyText2.fontSize,
         ),
       ),
+      stubQuestionsCount: 24,
+      cardsViewPortFraction: 0.85,
+      errorColor: theme.textTheme.bodyText2.color,
     );
   }
 
@@ -390,6 +393,9 @@ class QuestionStyleConfiguration {
     this.questionCardQuestionSectionsThemeData,
     this.questionCardAnswerSectionsThemeData,
     this.questionCardCommentSectionsThemeData,
+    this.stubQuestionsCount,
+    this.cardsViewPortFraction,
+    this.errorColor,
   });
 
   final IconThemeData appBarIconTheme;
@@ -409,6 +415,9 @@ class QuestionStyleConfiguration {
   final QuestionTextSectionsThemeData questionCardQuestionSectionsThemeData;
   final QuestionTextSectionsThemeData questionCardAnswerSectionsThemeData;
   final QuestionTextSectionsThemeData questionCardCommentSectionsThemeData;
+  final int stubQuestionsCount;
+  final double cardsViewPortFraction;
+  final Color errorColor;
 }
 
 class TournamentsTreeStyleConfiguration {

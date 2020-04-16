@@ -22,7 +22,10 @@ class QuestionsRoutePage extends StatelessWidget {
       floatingActionButton: QuestionsBottomAppBarTimerButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: QuestionsBottomAppBar(),
-      body: const QuestionsPageContent(),
+      body: const Padding(
+        padding: EdgeInsets.only(bottom: kToolbarHeight),
+        child: QuestionsPageContent(),
+      ),
     );
   }
 }
