@@ -40,6 +40,6 @@ class TournamentsTreePageContent extends StatelessWidget {
 
           return null;
         },
-        onInit: (store) => store.dispatch(LoadTournamentsTree(id: rootId)),
+        onInit: (store) => store.dispatch(LoadTournamentsTree(rootId: rootId)),
       );
 }

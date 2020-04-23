@@ -23,18 +23,19 @@ class TournamentsTreeMiddleware {
       LoadTournamentsTree action, NextDispatcher next) async {
     next(action);
 
-    final state = store.state.tournamentsTreeState[action.id];
+    final state = store.state.tournamentsTreeState[action.rootId];
     if (state.isLoading || state.hasData) {
       return;
     }
 
     try {
-      store.dispatch(TournamentsTreeIsLoading(id: action.id));
+      store.dispatch(TournamentsTreeIsLoading(rootId: action.rootId));
 
-      final tree = await _loader.get(id: action.id);
-      store.dispatch(TournamentsTreeLoaded(id: action.id, tree: tree));
+      final tree = await _loader.get(id: action.rootId);
+      store.dispatch(TournamentsTreeLoaded(rootId: action.rootId, tree: tree));
     } on Exception catch (e) {
-      store.dispatch(TournamentsTreeFailedLoading(id: action.id, exception: e));
+      store.dispatch(
+          TournamentsTreeFailedLoading(rootId: action.rootId, exception: e));
     }
   }
 }
