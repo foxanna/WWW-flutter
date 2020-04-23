@@ -22,6 +22,7 @@ dependencies:
   flutter_svg: ^0.17.3+1
   flutter_vibrate: ^1.0.0
   flutter_widget_from_html_core: ^0.3.2+2
+  freezed_annotation:
   html: ^0.14.0+3
   html_unescape: ^1.0.1+3
   path_provider: ^1.6.5
@@ -39,6 +40,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner:
+  freezed:
   mockito: ^4.1.1
   extra_pedantic: ^1.2.0
 
