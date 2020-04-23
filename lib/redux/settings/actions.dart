@@ -1,73 +1,57 @@
-import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/resources/fonts.dart';
 
-@immutable
-class ChangeTheme {
-  final AppTheme appTheme;
+part 'actions.freezed.dart';
 
-  const ChangeTheme(this.appTheme);
+abstract class SettingsAction {}
 
-  @override
-  String toString() => '$ChangeTheme appTheme = "$appTheme"';
+@freezed
+abstract class ChangeTheme with _$ChangeTheme implements SettingsAction {
+  const factory ChangeTheme({
+    @required AppTheme appTheme,
+  }) = _ChangeTheme;
 }
 
-@immutable
-class ChangeTextScale {
-  final TextScale textScale;
-
-  const ChangeTextScale(this.textScale);
-
-  @override
-  String toString() => '$ChangeTextScale textScale = "$textScale"';
+@freezed
+abstract class ChangeTextScale
+    with _$ChangeTextScale
+    implements SettingsAction {
+  const factory ChangeTextScale({
+    @required TextScale textScale,
+  }) = _ChangeTextScale;
 }
 
-@immutable
-class ChangeNotifyShortTimerExpiration {
-  final bool newValue;
-
-  const ChangeNotifyShortTimerExpiration(this.newValue);
-
-  @override
-  String toString() =>
-      '$ChangeNotifyShortTimerExpiration newValue = "$newValue"';
+@freezed
+abstract class ChangeNotifyShortTimerExpiration
+    with _$ChangeNotifyShortTimerExpiration
+    implements SettingsAction {
+  const factory ChangeNotifyShortTimerExpiration({
+    @required bool newValue,
+  }) = _ChangeNotifyShortTimerExpiration;
 }
 
-class ChangeNotifyLongTimerExpiration {
-  final bool newValue;
-
-  const ChangeNotifyLongTimerExpiration(this.newValue);
-
-  @override
-  String toString() =>
-      '$ChangeNotifyLongTimerExpiration newValue = "$newValue"';
+@freezed
+abstract class ChangeNotifyLongTimerExpiration
+    with _$ChangeNotifyLongTimerExpiration
+    implements SettingsAction {
+  const factory ChangeNotifyLongTimerExpiration({
+    @required bool newValue,
+  }) = _ChangeNotifyLongTimerExpiration;
 }
 
-@immutable
-class ReadSettings {
-  const ReadSettings();
-
-  @override
-  String toString() => '$ReadSettings';
+@freezed
+abstract class ReadSettings with _$ReadSettings implements SettingsAction {
+  const factory ReadSettings() = _ReadSettings;
 }
 
-@immutable
-class SettingsRead {
-  final AppTheme appTheme;
-  final TextScale textScale;
-  final bool notifyShortTimerExpiration;
-  final bool notifyLongTimerExpiration;
-
-  const SettingsRead(
-      {this.appTheme,
-      this.textScale,
-      this.notifyShortTimerExpiration,
-      this.notifyLongTimerExpiration});
-
-  @override
-  String toString() =>
-      '$SettingsRead textScale = "$textScale", appTheme = "$appTheme", '
-      'notifyShortTimerExpiration = "$notifyShortTimerExpiration", '
-      'notifyLongTimerExpiration = "$notifyLongTimerExpiration"';
+@freezed
+abstract class SettingsRead with _$SettingsRead implements SettingsAction {
+  const factory SettingsRead({
+    AppTheme appTheme,
+    TextScale textScale,
+    bool notifyShortTimerExpiration,
+    bool notifyLongTimerExpiration,
+  }) = _SettingsRead;
 }
