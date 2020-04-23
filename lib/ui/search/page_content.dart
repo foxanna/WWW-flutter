@@ -34,6 +34,6 @@ class SearchTournamentsPageContent extends StatelessWidget {
           return const SearchDataPage();
         },
         onDispose: (store) =>
-            store.dispatch(const VoidTournamentsSearchResults()),
+            store.dispatch(const ClearTournamentsSearchResults()),
       );
 }

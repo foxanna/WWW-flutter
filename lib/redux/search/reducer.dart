@@ -12,7 +12,7 @@ class SearchReducer {
         _tournamentsSearchSortingChanged),
     TypedReducer<SearchState, VoidTournamentsSearchParameters>(
         _voidTournamentsSearchParameters),
-    TypedReducer<SearchState, VoidTournamentsSearchResults>(
+    TypedReducer<SearchState, ClearTournamentsSearchResults>(
         _voidTournamentsSearchResults),
     // system actions
     TypedReducer<SearchState, TournamentsSearchLoaded>(
@@ -98,7 +98,7 @@ class SearchReducer {
       );
 
   static SearchState _voidTournamentsSearchResults(
-          SearchState state, VoidTournamentsSearchResults action) =>
+          SearchState state, ClearTournamentsSearchResults action) =>
       state.copyWith(
         searchResults: Optional.of(
           SearchTournamentsResultsState.initial(),

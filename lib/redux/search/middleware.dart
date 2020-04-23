@@ -70,7 +70,7 @@ class SearchMiddleware {
     if (sortingHasChanged) {
       final repeatSearch = store.state.searchState.searchResults.hasData ||
           store.state.searchState.searchResults.isLoading;
-      store.dispatch(const VoidTournamentsSearchResults());
+      store.dispatch(const ClearTournamentsSearchResults());
 
       if (repeatSearch) {
         store.dispatch(const SearchTournaments());
@@ -86,7 +86,7 @@ class SearchMiddleware {
     next(action);
 
     if (queryHasChanged) {
-      store.dispatch(const VoidTournamentsSearchResults());
+      store.dispatch(const ClearTournamentsSearchResults());
     }
   }
 
