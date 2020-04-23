@@ -1,64 +1,50 @@
-import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-@immutable
-class SetTours {
-  final Iterable<Tour> tours;
+part 'actions.freezed.dart';
 
-  const SetTours(this.tours);
+abstract class TourAction {}
 
-  @override
-  String toString() => '$SetTours tours.length = "${tours?.length}"';
+@freezed
+abstract class SetTours with _$SetTours implements TourAction {
+  const factory SetTours({
+    @required Iterable<Tour> tours,
+  }) = _SetTours;
 }
 
-@immutable
-class VoidTours {
-  const VoidTours();
-
-  @override
-  String toString() => '$VoidTours';
+@freezed
+abstract class ClearTours with _$ClearTours implements TourAction {
+  const factory ClearTours() = _ClearTours;
 }
 
-@immutable
-class TourIsLoading {
-  final String tourId;
-
-  const TourIsLoading(this.tourId);
-
-  @override
-  String toString() => '$TourIsLoading tourId = "$tourId"';
+@freezed
+abstract class TourIsLoading with _$TourIsLoading implements TourAction {
+  const factory TourIsLoading({
+    @required String tourId,
+  }) = _TourIsLoading;
 }
 
-@immutable
-class TourLoaded {
-  final Tour tour;
-
-  const TourLoaded(this.tour);
-
-  @override
-  String toString() =>
-      '$TourLoaded tour.id = "${tour.id}", tour.title = "${tour?.title}"';
+@freezed
+abstract class TourLoaded with _$TourLoaded implements TourAction {
+  const factory TourLoaded({
+    @required Tour tour,
+  }) = _TourLoaded;
 }
 
-@immutable
-class TourFailedLoading {
-  final String tourId;
-  final Exception exception;
-
-  const TourFailedLoading(this.tourId, this.exception);
-
-  @override
-  String toString() =>
-      '$TourFailedLoading tourId = "$tourId", exception.runtimeType = "${exception?.runtimeType}"';
+@freezed
+abstract class TourFailedLoading
+    with _$TourFailedLoading
+    implements TourAction {
+  const factory TourFailedLoading({
+    @required String tourId,
+    @required Exception exception,
+  }) = _TourFailedLoading;
 }
 
-@immutable
-class LoadTour {
-  final String tourId;
-
-  const LoadTour(this.tourId);
-
-  @override
-  String toString() => '$LoadTour tourId = "$tourId"';
+@freezed
+abstract class LoadTour with _$LoadTour implements TourAction {
+  const factory LoadTour({
+    @required String tourId,
+  }) = _LoadTour;
 }
