@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
@@ -7,7 +5,7 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 
 @immutable
 class QuestionsState {
-  final UnmodifiableListView<QuestionState> questions;
+  final List<QuestionState> questions;
   final int currentQuestionIndex;
   final bool isLoading;
   final Exception exception;
@@ -27,7 +25,7 @@ class QuestionsState {
     this.isLoading = false,
     this.exception,
   }) : this.questions =
-            UnmodifiableListView<QuestionState>(questions ?? <QuestionState>[]);
+            List<QuestionState>.unmodifiable(questions ?? <QuestionState>[]);
 
   QuestionsState.initial()
       : this(

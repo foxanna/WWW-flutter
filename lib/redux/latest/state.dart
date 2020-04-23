@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
@@ -9,7 +7,7 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 class LatestTournamentsState {
   final bool isLoadingMore;
   final bool isRefreshing;
-  final UnmodifiableListView<Tournament> data;
+  final List<Tournament> data;
   final Exception exception;
   final int nextPage;
 
@@ -23,7 +21,7 @@ class LatestTournamentsState {
     this.isRefreshing = false,
     this.exception,
     this.nextPage = 0,
-  }) : this.data = UnmodifiableListView<Tournament>(data ?? <Tournament>[]);
+  }) : this.data = data?.toList() ?? <Tournament>[];
 
   LatestTournamentsState.initial() : this._();
 

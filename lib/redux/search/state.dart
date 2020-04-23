@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
@@ -82,7 +80,7 @@ class SearchTournamentsParametersState {
 
 @immutable
 class SearchTournamentsResultsState {
-  final UnmodifiableListView<Tournament> data;
+  final List<Tournament> data;
   final bool isLoading;
   final Exception exception;
   final bool emptyResults;
@@ -97,7 +95,7 @@ class SearchTournamentsResultsState {
     this.exception,
     this.emptyResults = false,
     this.canLoadMore = true,
-  }) : this.data = UnmodifiableListView<Tournament>(data ?? <Tournament>[]);
+  }) : this.data = List<Tournament>.unmodifiable(data ?? <Tournament>[]);
 
   SearchTournamentsResultsState.initial() : this._();
 
