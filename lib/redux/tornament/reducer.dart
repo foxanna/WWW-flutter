@@ -7,7 +7,7 @@ class TournamentReducer {
   static final Reducer<TournamentState> _reducer =
       combineReducers<TournamentState>([
     TypedReducer<TournamentState, SetTournament>(_setTournament),
-    TypedReducer<TournamentState, VoidTournament>(_voidTournament),
+    TypedReducer<TournamentState, ClearTournament>(_voidTournament),
     TypedReducer<TournamentState, TournamentIsLoading>(
         _updateTournamentIsLoading),
     TypedReducer<TournamentState, TournamentLoaded>(_updateTournamentLoaded),
@@ -23,7 +23,7 @@ class TournamentReducer {
       TournamentState.from(action.tournament);
 
   static TournamentState _voidTournament(
-          TournamentState state, VoidTournament action) =>
+          TournamentState state, ClearTournament action) =>
       const TournamentState.initial();
 
   static TournamentState _updateTournamentIsLoading(

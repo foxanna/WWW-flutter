@@ -30,6 +30,6 @@ class TournamentDetailsPageContent extends StatelessWidget {
 
           return Container();
         },
-        onDispose: (store) => store.dispatch(const VoidTournament()),
+        onDispose: (store) => store.dispatch(const ClearTournament()),
       );
 }

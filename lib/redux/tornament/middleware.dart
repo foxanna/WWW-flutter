@@ -27,7 +27,7 @@ class TournamentMiddleware {
       Store<AppState> store, SetTournament action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(LoadTournament(action.tournament.textId));
+    store.dispatch(LoadTournament(tournamentId: action.tournament.textId));
   }
 
   Future<void> _loadTournament(
@@ -41,13 +41,16 @@ class TournamentMiddleware {
     }
 
     try {
-      store.dispatch(TournamentIsLoading(action.tournamentId));
+      store.dispatch(TournamentIsLoading(
+        tournamentId: action.tournamentId,
+      ));
 
       final data = await _loader.get(action.tournamentId);
 
-      store.dispatch(TournamentLoaded(data));
+      store.dispatch(TournamentLoaded(tournament: data));
     } on Exception catch (e) {
-      store.dispatch(TournamentFailedLoading(action.tournamentId, e));
+      store.dispatch(TournamentFailedLoading(
+          tournamentId: action.tournamentId, exception: e));
     }
   }
 
@@ -63,6 +66,6 @@ class TournamentMiddleware {
     next(action);
 
     final tournamentId = store.state.tournamentState.tournament.textId;
-    store.dispatch(LoadTournament(tournamentId));
+    store.dispatch(LoadTournament(tournamentId: tournamentId));
   }
 }

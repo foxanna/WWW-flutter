@@ -54,7 +54,7 @@ class NavigationMiddleware {
       Store<AppState> store, OpenTournamentPage action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(SetTournament(action.tournament));
+    store.dispatch(SetTournament(tournament: action.tournament));
 
     _navigationService.navigateToPage(
       routeName: TournamentDetailsRoutePage.routeName,
