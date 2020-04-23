@@ -72,7 +72,7 @@ class _TimerTickingMiddleware {
       _updateTime(store, secondsRemaining);
     });
 
-    store.dispatch(UpdateIsRunningValue(_timer.isRunning));
+    store.dispatch(UpdateIsRunningValue(newValue: _timer.isRunning));
   }
 
   void _stopTimer(
@@ -80,12 +80,12 @@ class _TimerTickingMiddleware {
     next(action);
 
     _timer.pause();
-    store.dispatch(UpdateIsRunningValue(_timer.isRunning));
+    store.dispatch(UpdateIsRunningValue(newValue: _timer.isRunning));
   }
 
   void _updateTime(Store<AppState> store, int seconds) {
     if (store.state.timerState.secondsLeft != seconds) {
-      store.dispatch(UpdateTimeValue(seconds));
+      store.dispatch(UpdateTimeValue(newValue: seconds));
     }
   }
 

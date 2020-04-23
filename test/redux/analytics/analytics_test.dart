@@ -61,8 +61,8 @@ void main() {
       '$ChangeTimerType',
       () {
         furtherInteractionAllowed = true;
-        TimerType.values.forEach(
-            (type) => analyticsTest(ChangeTimerType(type), 'timer_type_set'));
+        TimerType.values.forEach((type) =>
+            analyticsTest(ChangeTimerType(newValue: type), 'timer_type_set'));
       },
     );
 

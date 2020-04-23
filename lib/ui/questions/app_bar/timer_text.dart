@@ -68,7 +68,8 @@ class _TimerOptionsDropdownButton extends StatelessWidget {
       );
 
   void _onTypeChanged(BuildContext context, TimerType timerType) =>
-      StoreProvider.of<AppState>(context).dispatch(ChangeTimerType(timerType));
+      StoreProvider.of<AppState>(context)
+          .dispatch(ChangeTimerType(newValue: timerType));
 }
 
 class _TimerValue extends StatelessWidget {
