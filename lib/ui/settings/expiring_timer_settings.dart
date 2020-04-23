@@ -34,11 +34,11 @@ class _ExpiringTimerGeneralSettings extends StatelessWidget {
       distinct: true,
       converter: (store) => Tuple4(
           store.state.settingsState.notifyShortTimerExpiration,
-          FunctionHolder((bool newValue) =>
-              store.dispatch(ChangeNotifyShortTimerExpiration(newValue))),
+          FunctionHolder((bool newValue) => store
+              .dispatch(ChangeNotifyShortTimerExpiration(newValue: newValue))),
           store.state.settingsState.notifyLongTimerExpiration,
-          FunctionHolder((bool newValue) =>
-              store.dispatch(ChangeNotifyLongTimerExpiration(newValue)))),
+          FunctionHolder((bool newValue) => store
+              .dispatch(ChangeNotifyLongTimerExpiration(newValue: newValue)))),
       builder: (context, data) {
         final notifyShortTimerExpiration = data.item1;
         final changeNotifyShortTimerExpirationFunction = data.item2;
@@ -74,8 +74,8 @@ class _ExpiringShortTimerSettings extends StatelessWidget {
           distinct: true,
           converter: (store) => Tuple2(
                 store.state.settingsState.notifyShortTimerExpiration,
-                FunctionHolder((bool newValue) =>
-                    store.dispatch(ChangeNotifyShortTimerExpiration(newValue))),
+                FunctionHolder((bool newValue) => store.dispatch(
+                    ChangeNotifyShortTimerExpiration(newValue: newValue))),
               ),
           builder: (context, data) {
             final notifyShortTimerExpiration = data.item1;
@@ -107,8 +107,8 @@ class _ExpiringLongTimerSettings extends StatelessWidget {
           distinct: true,
           converter: (store) => Tuple2(
                 store.state.settingsState.notifyLongTimerExpiration,
-                FunctionHolder((bool newValue) =>
-                    store.dispatch(ChangeNotifyLongTimerExpiration(newValue))),
+                FunctionHolder((bool newValue) => store.dispatch(
+                    ChangeNotifyLongTimerExpiration(newValue: newValue))),
               ),
           builder: (context, data) {
             final notifyLongTimerExpiration = data.item1;

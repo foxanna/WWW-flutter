@@ -83,6 +83,6 @@ class _TextScalePickerState extends State<_TextScalePicker> {
 
   void _onTextScaleChanged(int index) {
     StoreProvider.of<AppState>(context)
-        .dispatch(ChangeTextScale(TextScale.values[index]));
+        .dispatch(ChangeTextScale(textScale: TextScale.values[index]));
   }
 }

@@ -54,8 +54,8 @@ class _ThemeDropdownButton extends StatelessWidget {
         distinct: true,
         converter: (store) => Tuple2(
             store.state.settingsState.appTheme,
-            FunctionHolder(
-                (AppTheme appTheme) => store.dispatch(ChangeTheme(appTheme)))),
+            FunctionHolder((AppTheme appTheme) =>
+                store.dispatch(ChangeTheme(appTheme: appTheme)))),
         builder: (context, data) {
           final appTheme = data.item1;
           final changeThemeFunction = data.item2;

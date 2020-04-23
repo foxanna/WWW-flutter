@@ -189,7 +189,7 @@ void main() {
     test(
         '$ChangeTheme',
         () => AppTheme.values.forEach((theme) => analyticsTest(
-            ChangeTheme(theme),
+            ChangeTheme(appTheme: theme),
             'theme',
             'value',
             theme.toString().split('.').last)));
@@ -197,7 +197,7 @@ void main() {
     test(
         '$ChangeTextScale',
         () => TextScale.values.forEach((textScale) => analyticsTest(
-            ChangeTextScale(textScale),
+            ChangeTextScale(textScale: textScale),
             'textScale',
             'value',
             textScale.toString().split('.').last)));
@@ -205,7 +205,7 @@ void main() {
     test(
         '$ChangeNotifyShortTimerExpiration',
         () => [false, true].forEach((setting) => analyticsTest(
-            ChangeNotifyShortTimerExpiration(setting),
+            ChangeNotifyShortTimerExpiration(newValue: setting),
             'timer_notifications',
             'short_timer',
             setting.toString())));
@@ -213,7 +213,7 @@ void main() {
     test(
         '$ChangeNotifyLongTimerExpiration',
         () => [false, true].forEach((setting) => analyticsTest(
-            ChangeNotifyLongTimerExpiration(setting),
+            ChangeNotifyLongTimerExpiration(newValue: setting),
             'timer_notifications',
             'long_timer',
             setting.toString())));
