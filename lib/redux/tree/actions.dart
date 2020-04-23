@@ -1,47 +1,45 @@
-import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
 
-@immutable
-class LoadTournamentsTree {
-  final String id;
+part 'actions.freezed.dart';
 
-  const LoadTournamentsTree({this.id});
+abstract class TournamentsTreeAction {}
 
-  @override
-  String toString() => '$LoadTournamentsTree id = "$id"';
+@freezed
+abstract class LoadTournamentsTree
+    with _$LoadTournamentsTree
+    implements TournamentsTreeAction {
+  const factory LoadTournamentsTree({
+    @required String rootId,
+  }) = _LoadTournamentsTree;
 }
 
-@immutable
-class TournamentsTreeIsLoading {
-  final String id;
-
-  const TournamentsTreeIsLoading({this.id});
-
-  @override
-  String toString() => '$TournamentsTreeIsLoading id = "$id"';
+@freezed
+abstract class TournamentsTreeIsLoading
+    with _$TournamentsTreeIsLoading
+    implements TournamentsTreeAction {
+  const factory TournamentsTreeIsLoading({
+    @required String rootId,
+  }) = _TournamentsTreeIsLoading;
 }
 
-@immutable
-class TournamentsTreeFailedLoading {
-  final String id;
-  final Exception exception;
-
-  const TournamentsTreeFailedLoading({this.id, this.exception});
-
-  @override
-  String toString() =>
-      '$TournamentsTreeFailedLoading id = "$id", exception.runtimeType = "${exception?.runtimeType}"';
+@freezed
+abstract class TournamentsTreeFailedLoading
+    with _$TournamentsTreeFailedLoading
+    implements TournamentsTreeAction {
+  const factory TournamentsTreeFailedLoading({
+    @required String rootId,
+    @required Exception exception,
+  }) = _TournamentsTreeFailedLoading;
 }
 
-@immutable
-class TournamentsTreeLoaded {
-  final String id;
-  final TournamentsTree tree;
-
-  const TournamentsTreeLoaded({this.id, this.tree});
-
-  @override
-  String toString() =>
-      '$TournamentsTreeLoaded id = "$id", tree.childrenCount = "${tree?.childrenCount}"';
+@freezed
+abstract class TournamentsTreeLoaded
+    with _$TournamentsTreeLoaded
+    implements TournamentsTreeAction {
+  const factory TournamentsTreeLoaded({
+    @required String rootId,
+    @required TournamentsTree tree,
+  }) = _TournamentsTreeLoaded;
 }
