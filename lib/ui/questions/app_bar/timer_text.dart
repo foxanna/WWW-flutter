@@ -8,6 +8,8 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/utils/duration_formatter.dart';
 
 class QuestionsBottomAppBarTimerText extends StatelessWidget {
+  const QuestionsBottomAppBarTimerText({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final bottomAppBarTheme = Theme.of(context).bottomAppBarTheme;

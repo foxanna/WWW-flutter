@@ -3,7 +3,6 @@ import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/resources/fonts.dart';
-import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/preferences.dart';
 
 const _themeKey = 'theme';

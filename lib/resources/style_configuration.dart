@@ -119,7 +119,7 @@ class TournamentDetailsStyleConfiguration {
       actionBarBackgroundColor: theme.cardColor,
       actionBarIconTheme: theme.iconTheme,
       scaffoldBackground: firstTourColor,
-      tournamentTitlePadding: EdgeInsets.only(
+      tournamentTitlePadding: const EdgeInsets.only(
         bottom: radiusValue,
         left: kMinInteractiveDimension,
         right: kMinInteractiveDimension,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/global/ioc.dart';
 import 'package:what_when_where/global/navigator_key.dart';
-import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/resources/themes.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/ui/common/dialog_presenter.dart';

@@ -20,6 +20,5 @@ class SearchEmptyPage extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

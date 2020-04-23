@@ -1,5 +1,6 @@
 import 'package:meta/meta.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/utils/texts.dart';
 
 @immutable

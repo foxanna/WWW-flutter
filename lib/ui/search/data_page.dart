@@ -5,7 +5,6 @@ import 'package:what_when_where/redux/search/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/tournaments_grid.dart';
 import 'package:what_when_where/ui/search/error_message.dart';
-import 'package:what_when_where/ui/search/error_page.dart';
 
 class SearchDataPage extends StatelessWidget {
   const SearchDataPage({Key key}) : super(key: key);

@@ -29,7 +29,7 @@ class LatestTournamentsPageContent extends StatelessWidget {
             );
           }
 
-          return Container();
+          return null;
         },
       );
 }
