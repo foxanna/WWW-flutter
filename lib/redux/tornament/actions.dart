@@ -1,73 +1,65 @@
-import 'package:flutter/cupertino.dart';
-import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-@immutable
-class SetTournament {
-  final Tournament tournament;
+part 'actions.freezed.dart';
 
-  const SetTournament(this.tournament);
+abstract class TournamentAction {}
 
-  @override
-  String toString() =>
-      '$SetTournament tournament.textId = "${tournament?.textId}", tournament.title = "${tournament?.title}"';
+@freezed
+abstract class SetTournament with _$SetTournament implements TournamentAction {
+  const factory SetTournament({
+    @required Tournament tournament,
+  }) = _SetTournament;
 }
 
-@immutable
-class VoidTournament {
-  const VoidTournament();
-
-  @override
-  String toString() => '$VoidTournament';
+@freezed
+abstract class ClearTournament
+    with _$ClearTournament
+    implements TournamentAction {
+  const factory ClearTournament() = _ClearTournament;
 }
 
-@immutable
-class LoadTournament {
-  final String tournamentId;
-
-  const LoadTournament(this.tournamentId);
-
-  @override
-  String toString() => '$LoadTournament tournamentId = "$tournamentId"';
+@freezed
+abstract class LoadTournament
+    with _$LoadTournament
+    implements TournamentAction {
+  const factory LoadTournament({
+    @required String tournamentId,
+  }) = _LoadTournament;
 }
 
-@immutable
-class ReloadTournament {
-  const ReloadTournament();
-
-  @override
-  String toString() => '$ReloadTournament';
+@freezed
+abstract class ReloadTournament
+    with _$ReloadTournament
+    implements TournamentAction {
+  const factory ReloadTournament() = _ReloadTournament;
 }
 
-@immutable
-class TournamentIsLoading {
-  final String tournamentId;
-
-  const TournamentIsLoading(this.tournamentId);
-
-  @override
-  String toString() => '$TournamentIsLoading tournamentId = "$tournamentId"';
+@freezed
+abstract class TournamentIsLoading
+    with _$TournamentIsLoading
+    implements TournamentAction {
+  const factory TournamentIsLoading({
+    @required String tournamentId,
+  }) = _TournamentIsLoading;
 }
 
-@immutable
-class TournamentLoaded {
-  final Tournament tournament;
-
-  const TournamentLoaded(this.tournament);
-
-  @override
-  String toString() =>
-      '$TournamentLoaded tournament.id = "${tournament.id}", tournament.title = "${tournament?.title}"';
+@freezed
+abstract class TournamentLoaded
+    with _$TournamentLoaded
+    implements TournamentAction {
+  const factory TournamentLoaded({
+    @required Tournament tournament,
+  }) = _TournamentLoaded;
 }
 
-@immutable
-class TournamentFailedLoading {
-  final String tournamentId;
-  final Exception exception;
-
-  const TournamentFailedLoading(this.tournamentId, this.exception);
-
-  @override
-  String toString() =>
-      '$TournamentFailedLoading tournamentId = "$tournamentId", exception.runtimeType = "${exception?.runtimeType}"';
+@freezed
+abstract class TournamentFailedLoading
+    with _$TournamentFailedLoading
+    implements TournamentAction {
+  const factory TournamentFailedLoading({
+    @required String tournamentId,
+    @required Exception exception,
+  }) = _TournamentFailedLoading;
 }
