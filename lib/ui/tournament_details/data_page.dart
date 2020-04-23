@@ -32,6 +32,6 @@ class TournamentDetailsDataPage extends StatelessWidget {
             ),
           );
         },
-        onDispose: (store) => store.dispatch(const VoidTours()),
+        onDispose: (store) => store.dispatch(const ClearTours()),
       );
 }

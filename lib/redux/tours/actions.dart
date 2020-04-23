@@ -1,6 +1,6 @@
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:what_when_where/db_chgk_info/models/tour.dart';
 
 part 'actions.freezed.dart';
 

@@ -58,7 +58,7 @@ class TournamentMiddleware {
       Store<AppState> store, TournamentLoaded action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(SetTours(action.tournament.tours));
+    store.dispatch(SetTours(tours: action.tournament.tours));
   }
 
   void _reloadTournament(

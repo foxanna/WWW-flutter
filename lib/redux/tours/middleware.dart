@@ -34,19 +34,21 @@ class ToursMiddleware {
     }
 
     try {
-      store.dispatch(TourIsLoading(tourId));
+      store.dispatch(TourIsLoading(tourId: tourId));
 
       final data = await _loader.get(tourState.tour.id);
 
-      store.dispatch(TourLoaded(data));
+      store.dispatch(TourLoaded(tour: data));
     } on Exception catch (e) {
-      store.dispatch(TourFailedLoading(tourId, e));
+      store.dispatch(TourFailedLoading(tourId: tourId, exception: e));
     }
   }
 
   void _setTours(Store<AppState> store, SetTours action, NextDispatcher next) {
     next(action);
 
-    action.tours.map((e) => e.id).forEach((id) => store.dispatch(LoadTour(id)));
+    action.tours
+        .map((e) => e.id)
+        .forEach((id) => store.dispatch(LoadTour(tourId: id)));
   }
 }

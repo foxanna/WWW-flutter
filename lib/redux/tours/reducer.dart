@@ -7,7 +7,7 @@ import 'package:what_when_where/utils/extensions.dart';
 class ToursReducer {
   static final Reducer<ToursState> _reducer = combineReducers<ToursState>([
     TypedReducer<ToursState, SetTours>(_setTours),
-    TypedReducer<ToursState, VoidTours>(_voidTours),
+    TypedReducer<ToursState, ClearTours>(_voidTours),
     TypedReducer<ToursState, TourIsLoading>(_updateTourIsLoading),
     TypedReducer<ToursState, TourLoaded>(_updateTourLoaded),
     TypedReducer<ToursState, TourFailedLoading>(_updateTourFailed),
@@ -19,7 +19,7 @@ class ToursReducer {
   static ToursState _setTours(ToursState state, SetTours action) =>
       ToursState.from(tours: action.tours);
 
-  static ToursState _voidTours(ToursState state, VoidTours action) =>
+  static ToursState _voidTours(ToursState state, ClearTours action) =>
       ToursState.initial();
 
   static ToursState _updateTourIsLoading(
