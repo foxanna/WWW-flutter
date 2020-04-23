@@ -1,95 +1,83 @@
-import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/search/search_parameters.dart';
 
-@immutable
-class SearchTournaments {
-  const SearchTournaments();
+part 'actions.freezed.dart';
 
-  @override
-  String toString() => '$SearchTournaments';
+abstract class SearchAction {}
+
+@freezed
+abstract class SearchTournaments
+    with _$SearchTournaments
+    implements SearchAction {
+  const factory SearchTournaments() = _SearchTournaments;
 }
 
-@immutable
-class RepeatFailedSearchTournaments {
-  const RepeatFailedSearchTournaments();
-
-  @override
-  String toString() => '$RepeatFailedSearchTournaments';
+@freezed
+abstract class RepeatFailedSearchTournaments
+    with _$RepeatFailedSearchTournaments
+    implements SearchAction {
+  const factory RepeatFailedSearchTournaments() =
+      _RepeatFailedSearchTournaments;
 }
 
-@immutable
-class VoidTournamentsSearchResults {
-  const VoidTournamentsSearchResults();
-
-  @override
-  String toString() => '$VoidTournamentsSearchResults';
+@freezed
+abstract class ClearTournamentsSearchResults
+    with _$ClearTournamentsSearchResults
+    implements SearchAction {
+  const factory ClearTournamentsSearchResults() =
+      _ClearTournamentsSearchResults;
 }
 
-@immutable
-class VoidTournamentsSearchParameters {
-  const VoidTournamentsSearchParameters();
-
-  @override
-  String toString() => '$VoidTournamentsSearchParameters';
+@freezed
+abstract class TournamentsSearchQueryChanged
+    with _$TournamentsSearchQueryChanged
+    implements SearchAction {
+  const factory TournamentsSearchQueryChanged({
+    @required String query,
+  }) = _TournamentsSearchQueryChanged;
 }
 
-@immutable
-class TournamentsSearchQueryChanged {
-  final String query;
-
-  const TournamentsSearchQueryChanged(this.query);
-
-  @override
-  String toString() => '$TournamentsSearchQueryChanged query = "$query"';
+@freezed
+abstract class TournamentsSearchSortingChanged
+    with _$TournamentsSearchSortingChanged
+    implements SearchAction {
+  const factory TournamentsSearchSortingChanged({
+    @required Sorting sorting,
+  }) = _TournamentsSearchSortingChanged;
 }
 
-@immutable
-class TournamentsSearchSortingChanged {
-  final Sorting sorting;
-
-  const TournamentsSearchSortingChanged(this.sorting);
-
-  @override
-  String toString() => '$TournamentsSearchSortingChanged sorting = "$sorting"';
+@freezed
+abstract class TournamentsSearchIsLoading
+    with _$TournamentsSearchIsLoading
+    implements SearchAction {
+  const factory TournamentsSearchIsLoading() = _TournamentsSearchIsLoading;
 }
 
-@immutable
-class TournamentsSearchIsLoading {
-  const TournamentsSearchIsLoading();
-
-  @override
-  String toString() => '$TournamentsSearchIsLoading';
+@freezed
+abstract class TournamentsSearchLoaded
+    with _$TournamentsSearchLoaded
+    implements SearchAction {
+  const factory TournamentsSearchLoaded({
+    @required Iterable<Tournament> data,
+    @required int nextPage,
+  }) = _TournamentsSearchLoaded;
 }
 
-@immutable
-class TournamentsSearchLoaded {
-  final Iterable<Tournament> data;
-  final int nextPage;
-
-  const TournamentsSearchLoaded(this.data, this.nextPage);
-
-  @override
-  String toString() =>
-      '$TournamentsSearchLoaded data.length = "${data?.length}", nextPage = "$nextPage"';
+@freezed
+abstract class TournamentsSearchFailedToLoad
+    with _$TournamentsSearchFailedToLoad
+    implements SearchAction {
+  const factory TournamentsSearchFailedToLoad({
+    @required Exception exception,
+  }) = _TournamentsSearchFailedToLoad;
 }
 
-@immutable
-class TournamentsSearchFailedToLoad {
-  final Exception exception;
-
-  const TournamentsSearchFailedToLoad(this.exception);
-
-  @override
-  String toString() =>
-      '$TournamentsSearchFailedToLoad exception.runtimeType = "${exception?.runtimeType}"';
-}
-
-@immutable
-class ClearSearchTournamentsException {
-  const ClearSearchTournamentsException();
-
-  @override
-  String toString() => '$ClearSearchTournamentsException';
+@freezed
+abstract class ClearSearchTournamentsException
+    with _$ClearSearchTournamentsException
+    implements SearchAction {
+  const factory ClearSearchTournamentsException() =
+      _ClearSearchTournamentsException;
 }
