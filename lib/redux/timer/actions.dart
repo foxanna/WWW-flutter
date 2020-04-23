@@ -1,65 +1,50 @@
-import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
 import 'package:what_when_where/common/timer_type.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-@immutable
-class StartTimer {
-  const StartTimer();
+part 'actions.freezed.dart';
 
-  @override
-  String toString() => '$StartTimer';
+abstract class TimerAction {}
+
+@freezed
+abstract class StartTimer with _$StartTimer implements TimerAction {
+  const factory StartTimer() = _StartTimer;
 }
 
-@immutable
-class StopTimer {
-  const StopTimer();
-
-  @override
-  String toString() => '$StopTimer';
+@freezed
+abstract class StopTimer with _$StopTimer implements TimerAction {
+  const factory StopTimer() = _StopTimer;
 }
 
-@immutable
-class ResetTimer {
-  const ResetTimer();
-
-  @override
-  String toString() => '$ResetTimer';
+@freezed
+abstract class ResetTimer with _$ResetTimer implements TimerAction {
+  const factory ResetTimer() = _ResetTimer;
 }
 
-@immutable
-class ChangeTimerType {
-  final TimerType newValue;
-
-  const ChangeTimerType(this.newValue);
-
-  @override
-  String toString() => '$ChangeTimerType newValue = "$newValue"';
+@freezed
+abstract class ChangeTimerType with _$ChangeTimerType implements TimerAction {
+  const factory ChangeTimerType({
+    @required TimerType newValue,
+  }) = _ChangeTimerType;
 }
 
-@immutable
-class UpdateTimeValue {
-  final int newValue;
-
-  const UpdateTimeValue(this.newValue);
-
-  @override
-  String toString() => '$UpdateTimeValue newValue = "$newValue"';
+@freezed
+abstract class UpdateTimeValue with _$UpdateTimeValue implements TimerAction {
+  const factory UpdateTimeValue({
+    @required int newValue,
+  }) = _UpdateTimeValue;
 }
 
-@immutable
-class UpdateIsRunningValue {
-  final bool newValue;
-
-  const UpdateIsRunningValue(this.newValue);
-
-  @override
-  String toString() => '$UpdateIsRunningValue newValue = "$newValue"';
+@freezed
+abstract class UpdateIsRunningValue
+    with _$UpdateIsRunningValue
+    implements TimerAction {
+  const factory UpdateIsRunningValue({
+    @required bool newValue,
+  }) = _UpdateIsRunningValue;
 }
 
-@immutable
-class NotifyExpiration {
-  const NotifyExpiration();
-
-  @override
-  String toString() => '$NotifyExpiration';
+@freezed
+abstract class NotifyExpiration with _$NotifyExpiration implements TimerAction {
+  const factory NotifyExpiration() = _NotifyExpiration;
 }
