@@ -21,7 +21,7 @@ class QuestionsShareBottomSheetItem extends StatelessWidget {
             Navigator.pop(context);
 
             StoreProvider.of<AppState>(context)
-                .dispatch(ShareQuestion(question));
+                .dispatch(ShareQuestion(question: question));
           },
         ),
       );

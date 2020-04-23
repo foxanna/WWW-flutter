@@ -22,6 +22,7 @@ import 'package:what_when_where/services/analytics.dart';
 import '../../ioc/container.dart';
 import '../../ioc/initializer.dart';
 import '../../mocks.dart';
+import '../../services/question_parser/question_parser_test_helper.dart';
 
 void main() {
   Store<AppState> store;
@@ -78,18 +79,19 @@ void main() {
 
     test(
       '$ShareQuestion',
-      () => analyticsTest(const ShareQuestion(Question()), 'share_question'),
+      () => analyticsTest(
+          const ShareQuestion(question: Question()), 'share_question'),
     );
 
     test(
       '$ShareTour',
-      () => analyticsTest(const ShareTour(Tour()), 'share_tour'),
+      () => analyticsTest(const ShareTour(tour: Tour()), 'share_tour'),
     );
 
     test(
       '$ShareTournament',
       () => analyticsTest(
-          const ShareTournament(Tournament()), 'share_tournament'),
+          const ShareTournament(tournament: Tournament()), 'share_tournament'),
     );
 
     test(

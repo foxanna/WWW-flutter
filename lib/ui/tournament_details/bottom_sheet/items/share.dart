@@ -22,7 +22,7 @@ class TournamentDetailsShareTournamentBottomSheetItem extends StatelessWidget {
             Navigator.pop(context);
 
             StoreProvider.of<AppState>(context)
-                .dispatch(ShareTournament(state.tournament));
+                .dispatch(ShareTournament(tournament: state.tournament));
           },
         ),
       );
