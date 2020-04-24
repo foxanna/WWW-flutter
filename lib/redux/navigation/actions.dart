@@ -1,89 +1,76 @@
-import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
-@immutable
-class OpenImagePage {
-  final String imageUrl;
+part 'actions.freezed.dart';
 
-  const OpenImagePage(this.imageUrl);
+abstract class NavigationAction {}
 
-  @override
-  String toString() => '$OpenImagePage imageUrl ="$imageUrl"';
+@freezed
+abstract class OpenImagePage with _$OpenImagePage implements NavigationAction {
+  const factory OpenImagePage({
+    @required String imageUrl,
+  }) = _OpenImagePage;
 }
 
-@immutable
-class OpenQuestionsPage {
-  final Iterable<Question> questions;
-  final int selectedQuestionIndex;
-
-  const OpenQuestionsPage(this.questions, this.selectedQuestionIndex);
-
-  @override
-  String toString() =>
-      '$OpenQuestionsPage questions.length = "${questions?.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
+@freezed
+abstract class OpenQuestionsPage
+    with _$OpenQuestionsPage
+    implements NavigationAction {
+  const factory OpenQuestionsPage({
+    @required Iterable<Question> questions,
+    @required int selectedQuestionIndex,
+  }) = _OpenQuestionsPage;
 }
 
-@immutable
-class OpenTournamentPage {
-  final Tournament tournament;
-
-  const OpenTournamentPage(this.tournament);
-
-  @override
-  String toString() =>
-      '$OpenTournamentPage tournament.textId = "${tournament?.textId}", tournament.title = "${tournament?.title}"';
+@freezed
+abstract class OpenTournamentPage
+    with _$OpenTournamentPage
+    implements NavigationAction {
+  const factory OpenTournamentPage({
+    @required Tournament tournament,
+  }) = _OpenTournamentPage;
 }
 
-@immutable
-class OpenAboutPage {
-  const OpenAboutPage();
-
-  @override
-  String toString() => '$OpenAboutPage';
+@freezed
+abstract class OpenAboutPage with _$OpenAboutPage implements NavigationAction {
+  const factory OpenAboutPage() = _OpenAboutPage;
 }
 
-@immutable
-class OpenSearchPage {
-  const OpenSearchPage();
-
-  @override
-  String toString() => '$OpenSearchPage';
+@freezed
+abstract class OpenSearchPage
+    with _$OpenSearchPage
+    implements NavigationAction {
+  const factory OpenSearchPage() = _OpenSearchPage;
 }
 
-@immutable
-class OpenSettingsPage {
-  const OpenSettingsPage();
-
-  @override
-  String toString() => '$OpenSettingsPage';
+@freezed
+abstract class OpenSettingsPage
+    with _$OpenSettingsPage
+    implements NavigationAction {
+  const factory OpenSettingsPage() = _OpenSettingsPage;
 }
 
-@immutable
-class OpenRandomQuestionsPage {
-  const OpenRandomQuestionsPage();
-
-  @override
-  String toString() => '$OpenRandomQuestionsPage';
+@freezed
+abstract class OpenRandomQuestionsPage
+    with _$OpenRandomQuestionsPage
+    implements NavigationAction {
+  const factory OpenRandomQuestionsPage() = _OpenRandomQuestionsPage;
 }
 
-@immutable
-class OpenTournamentsTreePage {
-  const OpenTournamentsTreePage();
-
-  @override
-  String toString() => '$OpenTournamentsTreePage';
+@freezed
+abstract class OpenTournamentsTreePage
+    with _$OpenTournamentsTreePage
+    implements NavigationAction {
+  const factory OpenTournamentsTreePage() = _OpenTournamentsTreePage;
 }
 
-@immutable
-class OpenTournamentsSubTreePage {
-  final String rootId;
-
-  const OpenTournamentsSubTreePage({
-    @required this.rootId,
-  });
-
-  @override
-  String toString() => '$OpenTournamentsSubTreePage rootId = "$rootId"';
+@freezed
+abstract class OpenTournamentsSubTreePage
+    with _$OpenTournamentsSubTreePage
+    implements NavigationAction {
+  const factory OpenTournamentsSubTreePage({
+    @required String rootId,
+  }) = _OpenTournamentsSubTreePage;
 }
