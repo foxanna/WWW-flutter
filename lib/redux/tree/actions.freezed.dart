@@ -435,6 +435,8 @@ abstract class $TournamentsTreeLoadedCopyWith<$Res> {
           $Res Function(TournamentsTreeLoaded) then) =
       _$TournamentsTreeLoadedCopyWithImpl<$Res>;
   $Res call({String rootId, TournamentsTree tree});
+
+  $TournamentsTreeCopyWith<$Res> get tree;
 }
 
 class _$TournamentsTreeLoadedCopyWithImpl<$Res>
@@ -455,6 +457,16 @@ class _$TournamentsTreeLoadedCopyWithImpl<$Res>
       tree: tree == freezed ? _value.tree : tree as TournamentsTree,
     ));
   }
+
+  @override
+  $TournamentsTreeCopyWith<$Res> get tree {
+    if (_value.tree == null) {
+      return null;
+    }
+    return $TournamentsTreeCopyWith<$Res>(_value.tree, (value) {
+      return _then(_value.copyWith(tree: value));
+    });
+  }
 }
 
 abstract class _$TournamentsTreeLoadedCopyWith<$Res>
@@ -464,6 +476,9 @@ abstract class _$TournamentsTreeLoadedCopyWith<$Res>
       __$TournamentsTreeLoadedCopyWithImpl<$Res>;
   @override
   $Res call({String rootId, TournamentsTree tree});
+
+  @override
+  $TournamentsTreeCopyWith<$Res> get tree;
 }
 
 class __$TournamentsTreeLoadedCopyWithImpl<$Res>

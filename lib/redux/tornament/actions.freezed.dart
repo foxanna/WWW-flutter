@@ -33,6 +33,8 @@ abstract class $SetTournamentCopyWith<$Res> {
           SetTournament value, $Res Function(SetTournament) then) =
       _$SetTournamentCopyWithImpl<$Res>;
   $Res call({Tournament tournament});
+
+  $TournamentCopyWith<$Res> get tournament;
 }
 
 class _$SetTournamentCopyWithImpl<$Res>
@@ -52,6 +54,16 @@ class _$SetTournamentCopyWithImpl<$Res>
           tournament == freezed ? _value.tournament : tournament as Tournament,
     ));
   }
+
+  @override
+  $TournamentCopyWith<$Res> get tournament {
+    if (_value.tournament == null) {
+      return null;
+    }
+    return $TournamentCopyWith<$Res>(_value.tournament, (value) {
+      return _then(_value.copyWith(tournament: value));
+    });
+  }
 }
 
 abstract class _$SetTournamentCopyWith<$Res>
@@ -61,6 +73,9 @@ abstract class _$SetTournamentCopyWith<$Res>
       __$SetTournamentCopyWithImpl<$Res>;
   @override
   $Res call({Tournament tournament});
+
+  @override
+  $TournamentCopyWith<$Res> get tournament;
 }
 
 class __$SetTournamentCopyWithImpl<$Res>
@@ -559,6 +574,8 @@ abstract class $TournamentLoadedCopyWith<$Res> {
           TournamentLoaded value, $Res Function(TournamentLoaded) then) =
       _$TournamentLoadedCopyWithImpl<$Res>;
   $Res call({Tournament tournament});
+
+  $TournamentCopyWith<$Res> get tournament;
 }
 
 class _$TournamentLoadedCopyWithImpl<$Res>
@@ -578,6 +595,16 @@ class _$TournamentLoadedCopyWithImpl<$Res>
           tournament == freezed ? _value.tournament : tournament as Tournament,
     ));
   }
+
+  @override
+  $TournamentCopyWith<$Res> get tournament {
+    if (_value.tournament == null) {
+      return null;
+    }
+    return $TournamentCopyWith<$Res>(_value.tournament, (value) {
+      return _then(_value.copyWith(tournament: value));
+    });
+  }
 }
 
 abstract class _$TournamentLoadedCopyWith<$Res>
@@ -587,6 +614,9 @@ abstract class _$TournamentLoadedCopyWith<$Res>
       __$TournamentLoadedCopyWithImpl<$Res>;
   @override
   $Res call({Tournament tournament});
+
+  @override
+  $TournamentCopyWith<$Res> get tournament;
 }
 
 class __$TournamentLoadedCopyWithImpl<$Res>

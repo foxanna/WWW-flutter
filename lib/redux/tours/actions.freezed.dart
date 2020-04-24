@@ -333,6 +333,8 @@ abstract class $TourLoadedCopyWith<$Res> {
           TourLoaded value, $Res Function(TourLoaded) then) =
       _$TourLoadedCopyWithImpl<$Res>;
   $Res call({Tour tour});
+
+  $TourCopyWith<$Res> get tour;
 }
 
 class _$TourLoadedCopyWithImpl<$Res> implements $TourLoadedCopyWith<$Res> {
@@ -350,6 +352,16 @@ class _$TourLoadedCopyWithImpl<$Res> implements $TourLoadedCopyWith<$Res> {
       tour: tour == freezed ? _value.tour : tour as Tour,
     ));
   }
+
+  @override
+  $TourCopyWith<$Res> get tour {
+    if (_value.tour == null) {
+      return null;
+    }
+    return $TourCopyWith<$Res>(_value.tour, (value) {
+      return _then(_value.copyWith(tour: value));
+    });
+  }
 }
 
 abstract class _$TourLoadedCopyWith<$Res> implements $TourLoadedCopyWith<$Res> {
@@ -358,6 +370,9 @@ abstract class _$TourLoadedCopyWith<$Res> implements $TourLoadedCopyWith<$Res> {
       __$TourLoadedCopyWithImpl<$Res>;
   @override
   $Res call({Tour tour});
+
+  @override
+  $TourCopyWith<$Res> get tour;
 }
 
 class __$TourLoadedCopyWithImpl<$Res> extends _$TourLoadedCopyWithImpl<$Res>

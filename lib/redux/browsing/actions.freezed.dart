@@ -170,6 +170,8 @@ abstract class $BrowseTourCopyWith<$Res> {
           BrowseTour value, $Res Function(BrowseTour) then) =
       _$BrowseTourCopyWithImpl<$Res>;
   $Res call({Tour tour});
+
+  $TourCopyWith<$Res> get tour;
 }
 
 class _$BrowseTourCopyWithImpl<$Res> implements $BrowseTourCopyWith<$Res> {
@@ -187,6 +189,16 @@ class _$BrowseTourCopyWithImpl<$Res> implements $BrowseTourCopyWith<$Res> {
       tour: tour == freezed ? _value.tour : tour as Tour,
     ));
   }
+
+  @override
+  $TourCopyWith<$Res> get tour {
+    if (_value.tour == null) {
+      return null;
+    }
+    return $TourCopyWith<$Res>(_value.tour, (value) {
+      return _then(_value.copyWith(tour: value));
+    });
+  }
 }
 
 abstract class _$BrowseTourCopyWith<$Res> implements $BrowseTourCopyWith<$Res> {
@@ -195,6 +207,9 @@ abstract class _$BrowseTourCopyWith<$Res> implements $BrowseTourCopyWith<$Res> {
       __$BrowseTourCopyWithImpl<$Res>;
   @override
   $Res call({Tour tour});
+
+  @override
+  $TourCopyWith<$Res> get tour;
 }
 
 class __$BrowseTourCopyWithImpl<$Res> extends _$BrowseTourCopyWithImpl<$Res>
@@ -285,6 +300,8 @@ abstract class $BrowseTournamentCopyWith<$Res> {
           BrowseTournament value, $Res Function(BrowseTournament) then) =
       _$BrowseTournamentCopyWithImpl<$Res>;
   $Res call({Tournament tournament});
+
+  $TournamentCopyWith<$Res> get tournament;
 }
 
 class _$BrowseTournamentCopyWithImpl<$Res>
@@ -304,6 +321,16 @@ class _$BrowseTournamentCopyWithImpl<$Res>
           tournament == freezed ? _value.tournament : tournament as Tournament,
     ));
   }
+
+  @override
+  $TournamentCopyWith<$Res> get tournament {
+    if (_value.tournament == null) {
+      return null;
+    }
+    return $TournamentCopyWith<$Res>(_value.tournament, (value) {
+      return _then(_value.copyWith(tournament: value));
+    });
+  }
 }
 
 abstract class _$BrowseTournamentCopyWith<$Res>
@@ -313,6 +340,9 @@ abstract class _$BrowseTournamentCopyWith<$Res>
       __$BrowseTournamentCopyWithImpl<$Res>;
   @override
   $Res call({Tournament tournament});
+
+  @override
+  $TournamentCopyWith<$Res> get tournament;
 }
 
 class __$BrowseTournamentCopyWithImpl<$Res>

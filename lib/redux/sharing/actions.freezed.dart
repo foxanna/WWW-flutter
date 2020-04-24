@@ -167,6 +167,8 @@ abstract class $ShareTourCopyWith<$Res> {
   factory $ShareTourCopyWith(ShareTour value, $Res Function(ShareTour) then) =
       _$ShareTourCopyWithImpl<$Res>;
   $Res call({Tour tour});
+
+  $TourCopyWith<$Res> get tour;
 }
 
 class _$ShareTourCopyWithImpl<$Res> implements $ShareTourCopyWith<$Res> {
@@ -184,6 +186,16 @@ class _$ShareTourCopyWithImpl<$Res> implements $ShareTourCopyWith<$Res> {
       tour: tour == freezed ? _value.tour : tour as Tour,
     ));
   }
+
+  @override
+  $TourCopyWith<$Res> get tour {
+    if (_value.tour == null) {
+      return null;
+    }
+    return $TourCopyWith<$Res>(_value.tour, (value) {
+      return _then(_value.copyWith(tour: value));
+    });
+  }
 }
 
 abstract class _$ShareTourCopyWith<$Res> implements $ShareTourCopyWith<$Res> {
@@ -192,6 +204,9 @@ abstract class _$ShareTourCopyWith<$Res> implements $ShareTourCopyWith<$Res> {
       __$ShareTourCopyWithImpl<$Res>;
   @override
   $Res call({Tour tour});
+
+  @override
+  $TourCopyWith<$Res> get tour;
 }
 
 class __$ShareTourCopyWithImpl<$Res> extends _$ShareTourCopyWithImpl<$Res>
@@ -281,6 +296,8 @@ abstract class $ShareTournamentCopyWith<$Res> {
           ShareTournament value, $Res Function(ShareTournament) then) =
       _$ShareTournamentCopyWithImpl<$Res>;
   $Res call({Tournament tournament});
+
+  $TournamentCopyWith<$Res> get tournament;
 }
 
 class _$ShareTournamentCopyWithImpl<$Res>
@@ -300,6 +317,16 @@ class _$ShareTournamentCopyWithImpl<$Res>
           tournament == freezed ? _value.tournament : tournament as Tournament,
     ));
   }
+
+  @override
+  $TournamentCopyWith<$Res> get tournament {
+    if (_value.tournament == null) {
+      return null;
+    }
+    return $TournamentCopyWith<$Res>(_value.tournament, (value) {
+      return _then(_value.copyWith(tournament: value));
+    });
+  }
 }
 
 abstract class _$ShareTournamentCopyWith<$Res>
@@ -309,6 +336,9 @@ abstract class _$ShareTournamentCopyWith<$Res>
       __$ShareTournamentCopyWithImpl<$Res>;
   @override
   $Res call({Tournament tournament});
+
+  @override
+  $TournamentCopyWith<$Res> get tournament;
 }
 
 class __$ShareTournamentCopyWithImpl<$Res>
