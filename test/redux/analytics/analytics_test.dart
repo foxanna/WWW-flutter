@@ -117,13 +117,15 @@ void main() {
 
     test(
       '$OpenTourInfoDialog',
-      () => analyticsTest(const OpenTourInfoDialog(Tour()), 'open_tour_info'),
+      () => analyticsTest(
+          const OpenTourInfoDialog(tour: Tour()), 'open_tour_info'),
     );
 
     test(
       '$OpenTournamentInfoDialog',
       () => analyticsTest(
-          const OpenTournamentInfoDialog(Tournament()), 'open_tournament_info'),
+          const OpenTournamentInfoDialog(tournament: Tournament()),
+          'open_tournament_info'),
     );
 
     test(

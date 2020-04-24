@@ -21,8 +21,8 @@ class TournamentDetailsAboutTournamentBottomSheetItem extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
 
-            StoreProvider.of<AppState>(context)
-                .dispatch(OpenTournamentInfoDialog(state.tournament));
+            StoreProvider.of<AppState>(context).dispatch(
+                OpenTournamentInfoDialog(tournament: state.tournament));
           },
         ),
       );
