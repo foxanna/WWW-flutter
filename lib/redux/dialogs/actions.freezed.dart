@@ -12,9 +12,9 @@ T _$identity<T>(T value) => value;
 class _$OpenTourInfoDialogTearOff {
   const _$OpenTourInfoDialogTearOff();
 
-  _OpenTourInfoDialog call({@required Tour tour}) {
+  _OpenTourInfoDialog call({@required TourInfo info}) {
     return _OpenTourInfoDialog(
-      tour: tour,
+      info: info,
     );
   }
 }
@@ -23,7 +23,7 @@ class _$OpenTourInfoDialogTearOff {
 const $OpenTourInfoDialog = _$OpenTourInfoDialogTearOff();
 
 mixin _$OpenTourInfoDialog {
-  Tour get tour;
+  TourInfo get info;
 
   $OpenTourInfoDialogCopyWith<OpenTourInfoDialog> get copyWith;
 }
@@ -32,7 +32,9 @@ abstract class $OpenTourInfoDialogCopyWith<$Res> {
   factory $OpenTourInfoDialogCopyWith(
           OpenTourInfoDialog value, $Res Function(OpenTourInfoDialog) then) =
       _$OpenTourInfoDialogCopyWithImpl<$Res>;
-  $Res call({Tour tour});
+  $Res call({TourInfo info});
+
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class _$OpenTourInfoDialogCopyWithImpl<$Res>
@@ -45,11 +47,21 @@ class _$OpenTourInfoDialogCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tour = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      tour: tour == freezed ? _value.tour : tour as Tour,
+      info: info == freezed ? _value.info : info as TourInfo,
     ));
+  }
+
+  @override
+  $TourInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TourInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
   }
 }
 
@@ -59,7 +71,10 @@ abstract class _$OpenTourInfoDialogCopyWith<$Res>
           _OpenTourInfoDialog value, $Res Function(_OpenTourInfoDialog) then) =
       __$OpenTourInfoDialogCopyWithImpl<$Res>;
   @override
-  $Res call({Tour tour});
+  $Res call({TourInfo info});
+
+  @override
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class __$OpenTourInfoDialogCopyWithImpl<$Res>
@@ -74,10 +89,10 @@ class __$OpenTourInfoDialogCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tour = freezed,
+    Object info = freezed,
   }) {
     return _then(_OpenTourInfoDialog(
-      tour: tour == freezed ? _value.tour : tour as Tour,
+      info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
 }
@@ -85,14 +100,14 @@ class __$OpenTourInfoDialogCopyWithImpl<$Res>
 class _$_OpenTourInfoDialog
     with DiagnosticableTreeMixin
     implements _OpenTourInfoDialog {
-  const _$_OpenTourInfoDialog({@required this.tour}) : assert(tour != null);
+  const _$_OpenTourInfoDialog({@required this.info}) : assert(info != null);
 
   @override
-  final Tour tour;
+  final TourInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenTourInfoDialog(tour: $tour)';
+    return 'OpenTourInfoDialog(info: $info)';
   }
 
   @override
@@ -100,20 +115,20 @@ class _$_OpenTourInfoDialog
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'OpenTourInfoDialog'))
-      ..add(DiagnosticsProperty('tour', tour));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _OpenTourInfoDialog &&
-            (identical(other.tour, tour) ||
-                const DeepCollectionEquality().equals(other.tour, tour)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tour);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$OpenTourInfoDialogCopyWith<_OpenTourInfoDialog> get copyWith =>
@@ -121,11 +136,11 @@ class _$_OpenTourInfoDialog
 }
 
 abstract class _OpenTourInfoDialog implements OpenTourInfoDialog {
-  const factory _OpenTourInfoDialog({@required Tour tour}) =
+  const factory _OpenTourInfoDialog({@required TourInfo info}) =
       _$_OpenTourInfoDialog;
 
   @override
-  Tour get tour;
+  TourInfo get info;
   @override
   _$OpenTourInfoDialogCopyWith<_OpenTourInfoDialog> get copyWith;
 }

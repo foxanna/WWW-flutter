@@ -30,7 +30,7 @@ class TourDetailsDataTile extends StatelessWidget {
       foregroundColor: foregroundColor,
       backgroundColor: backgroundColor,
       titleBuilder: (context) => Text(
-        tour.title,
+        tour.info.title,
         style: styleConfiguration.tourTitleTextStyle,
       ),
       questionsCount: tour.questions.length,

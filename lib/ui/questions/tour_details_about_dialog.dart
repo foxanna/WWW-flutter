@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 
@@ -7,11 +7,11 @@ class TourDetailsAboutDialog extends StatelessWidget {
   final String _detailsText;
   final String _tourTitle;
 
-  final Tour tour;
+  final TourInfo info;
 
-  TourDetailsAboutDialog({this.tour})
-      : _tourTitle = tour.title,
-        _detailsText = _DialogContentBuilder(tour).build();
+  TourDetailsAboutDialog({this.info})
+      : _tourTitle = info.title,
+        _detailsText = _DialogContentBuilder(info).build();
 
   @override
   Widget build(BuildContext context) => InfoDialog(
@@ -21,9 +21,9 @@ class TourDetailsAboutDialog extends StatelessWidget {
 }
 
 class _DialogContentBuilder {
-  final Tour tour;
+  final TourInfo info;
 
-  _DialogContentBuilder(this.tour);
+  _DialogContentBuilder(this.info);
 
   String build() {
     final result = StringBuffer();
@@ -35,24 +35,24 @@ class _DialogContentBuilder {
       result.writeln(s);
     };
 
-    if (tour.editors != null) {
-      addToResult(tour.editors);
+    if (info.editors != null) {
+      addToResult(info.editors);
     }
 
-    if (tour.description != null) {
-      addToResult(tour.description);
+    if (info.description != null) {
+      addToResult(info.description);
     }
 
-    if (tour.questionsCount != null) {
-      addToResult('${Strings.questions}: ${tour.questionsCount}');
+    if (info.questionsCount != null) {
+      addToResult('${Strings.questions}: ${info.questionsCount}');
     }
 
-    if (tour.playedAt != null) {
-      addToResult('${Strings.playedAt} ${tour.playedAt}');
+    if (info.playedAt != null) {
+      addToResult('${Strings.playedAt} ${info.playedAt}');
     }
 
-    if (tour.createdAt != null) {
-      addToResult('${Strings.addedAt} ${tour.createdAt}');
+    if (info.createdAt != null) {
+      addToResult('${Strings.addedAt} ${info.createdAt}');
     }
 
     return result.toString();

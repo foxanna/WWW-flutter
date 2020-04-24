@@ -24,7 +24,7 @@ class BrowsingService implements IBrowsingService {
       _urlLauncher.launchURL(tournament.url);
 
   @override
-  void browseTour(Tour tour) => _urlLauncher.launchURL(tour.url);
+  void browseTour(Tour tour) => _urlLauncher.launchURL(tour.info.url);
 
   @override
   void browseQuestion(Question question) =>

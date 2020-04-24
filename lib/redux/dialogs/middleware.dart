@@ -31,7 +31,7 @@ class DialogMiddleware {
     next(action);
 
     await _dialogService.show<dynamic>(
-        builder: (context) => TourDetailsAboutDialog(tour: action.tour));
+        builder: (context) => TourDetailsAboutDialog(info: action.info));
   }
 
   Future<void> _openTournamentInfo(Store<AppState> store,

@@ -27,7 +27,7 @@ class TourDetailsLoadingTile extends StatelessWidget {
       foregroundColor: foregroundColor,
       backgroundColor: backgroundColor,
       titleBuilder: (context) => Text(
-        tour.title,
+        tour.info.title,
         style: styleConfiguration.tourTitleTextStyle,
       ),
       questionsCount: _questionsCount(styleConfiguration.stubQuestionsCount),
@@ -39,8 +39,8 @@ class TourDetailsLoadingTile extends StatelessWidget {
   int _questionsCount(int or) {
     int count = 0;
 
-    if (tour.questionsCount?.isNotEmpty ?? false) {
-      count = int.tryParse(tour.questionsCount) ?? count;
+    if (tour.info.questionsCount?.isNotEmpty ?? false) {
+      count = int.tryParse(tour.info.questionsCount) ?? count;
     }
 
     return count > 0 ? count : or;

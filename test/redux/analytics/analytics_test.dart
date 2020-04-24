@@ -5,6 +5,7 @@ import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
@@ -119,7 +120,7 @@ void main() {
     test(
       '$OpenTourInfoDialog',
       () => analyticsTest(
-          const OpenTourInfoDialog(tour: Tour()), 'open_tour_info'),
+          const OpenTourInfoDialog(info: TourInfo()), 'open_tour_info'),
     );
 
     test(
