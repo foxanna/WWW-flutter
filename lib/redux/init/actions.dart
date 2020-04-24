@@ -1,10 +1,10 @@
-import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 
-@immutable
-class Init {
-  const Init();
+part 'actions.freezed.dart';
 
-  @override
-  String toString() => '$Init';
+@freezed
+abstract class Init with _$Init implements ReduxAction {
+  const factory Init() = _Init;
 }
