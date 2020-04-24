@@ -10,7 +10,7 @@ class SearchReducer {
         _tournamentsSearchQueryChanged),
     TypedReducer<SearchState, TournamentsSearchSortingChanged>(
         _tournamentsSearchSortingChanged),
-    TypedReducer<SearchState, VoidTournamentsSearchParameters>(
+    TypedReducer<SearchState, ClearTournamentsSearchParameters>(
         _voidTournamentsSearchParameters),
     TypedReducer<SearchState, ClearTournamentsSearchResults>(
         _voidTournamentsSearchResults),
@@ -90,7 +90,7 @@ class SearchReducer {
       );
 
   static SearchState _voidTournamentsSearchParameters(
-          SearchState state, VoidTournamentsSearchParameters action) =>
+          SearchState state, ClearTournamentsSearchParameters action) =>
       state.copyWith(
         searchParameters: Optional.of(
           const SearchTournamentsParametersState.initial(),

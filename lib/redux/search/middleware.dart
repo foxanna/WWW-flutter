@@ -51,11 +51,12 @@ class SearchMiddleware {
       final data = await _fetch(parameters);
 
       if (parameters == store.state.searchState.searchParameters) {
-        store.dispatch(TournamentsSearchLoaded(data, parameters.nextPage + 1));
+        store.dispatch(TournamentsSearchLoaded(
+            data: data, nextPage: parameters.nextPage + 1));
       }
     } on Exception catch (e) {
       if (parameters == store.state.searchState.searchParameters) {
-        store.dispatch(TournamentsSearchFailedToLoad(e));
+        store.dispatch(TournamentsSearchFailedToLoad(exception: e));
       }
     }
   }

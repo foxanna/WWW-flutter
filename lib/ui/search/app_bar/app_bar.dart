@@ -108,7 +108,7 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
     _queryController.removeListener(_onQueryChanged);
     _queryController.dispose();
 
-    store.dispatch(const VoidTournamentsSearchParameters());
+    store.dispatch(const ClearTournamentsSearchParameters());
   }
 
   @override
@@ -136,12 +136,12 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
     _focus();
   }
 
-  void _onSortingChanged() => StoreProvider.of<AppState>(context)
-      .dispatch(TournamentsSearchSortingChanged(_sortingController.value));
+  void _onSortingChanged() => StoreProvider.of<AppState>(context).dispatch(
+      TournamentsSearchSortingChanged(sorting: _sortingController.value));
 
   void _onQueryChanged() {
     StoreProvider.of<AppState>(context)
-        .dispatch(TournamentsSearchQueryChanged(_queryController.text));
+        .dispatch(TournamentsSearchQueryChanged(query: _queryController.text));
 
     _queryDebouncer.sink.add(_queryController.text);
   }
