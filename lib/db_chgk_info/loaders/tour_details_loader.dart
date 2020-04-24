@@ -1,5 +1,6 @@
 import 'package:what_when_where/db_chgk_info/cache/tour_cache.dart';
 import 'package:what_when_where/db_chgk_info/http_client.dart';
+import 'package:what_when_where/db_chgk_info/models/dto_models/tour_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 
 abstract class ITourDetailsLoader {
@@ -22,7 +23,8 @@ class TourDetailsLoader implements ITourDetailsLoader {
     }
 
     final map = await _httpClient.get(Uri(path: '/tour/$id/xml'));
-    final tour = Tour.fromJson(map['tournament'] as Map<String, dynamic>);
+    final tourDto = TourDto.fromJson(map['tournament'] as Map<String, dynamic>);
+    final tour = Tour.fromDto(tourDto);
     _cache.save(tour);
     return tour;
   }

@@ -1,4 +1,5 @@
 import 'package:what_when_where/db_chgk_info/http_client.dart';
+import 'package:what_when_where/db_chgk_info/models/dto_models/random_questions_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/random_questions.dart';
 
@@ -16,7 +17,8 @@ class RandomQuestionsLoader implements IRandomQuestionsLoader {
   @override
   Future<Iterable<Question>> get() async {
     final map = await _httpClient.get(Uri(path: '/xml/random'));
-    final randomQuestions = RandomQuestions.fromJson(map);
-    return randomQuestions.search;
+    final randomQuestionsDto = RandomQuestionsDto.fromJson(map);
+    final randomQuestions = RandomQuestions.fromDto(randomQuestionsDto);
+    return randomQuestions.questions;
   }
 }
