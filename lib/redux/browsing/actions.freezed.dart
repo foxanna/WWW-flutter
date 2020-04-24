@@ -33,6 +33,8 @@ abstract class $BrowseQuestionCopyWith<$Res> {
           BrowseQuestion value, $Res Function(BrowseQuestion) then) =
       _$BrowseQuestionCopyWithImpl<$Res>;
   $Res call({Question question});
+
+  $QuestionCopyWith<$Res> get question;
 }
 
 class _$BrowseQuestionCopyWithImpl<$Res>
@@ -51,6 +53,16 @@ class _$BrowseQuestionCopyWithImpl<$Res>
       question: question == freezed ? _value.question : question as Question,
     ));
   }
+
+  @override
+  $QuestionCopyWith<$Res> get question {
+    if (_value.question == null) {
+      return null;
+    }
+    return $QuestionCopyWith<$Res>(_value.question, (value) {
+      return _then(_value.copyWith(question: value));
+    });
+  }
 }
 
 abstract class _$BrowseQuestionCopyWith<$Res>
@@ -60,6 +72,9 @@ abstract class _$BrowseQuestionCopyWith<$Res>
       __$BrowseQuestionCopyWithImpl<$Res>;
   @override
   $Res call({Question question});
+
+  @override
+  $QuestionCopyWith<$Res> get question;
 }
 
 class __$BrowseQuestionCopyWithImpl<$Res>

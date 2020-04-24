@@ -33,6 +33,8 @@ abstract class $ShareQuestionCopyWith<$Res> {
           ShareQuestion value, $Res Function(ShareQuestion) then) =
       _$ShareQuestionCopyWithImpl<$Res>;
   $Res call({Question question});
+
+  $QuestionCopyWith<$Res> get question;
 }
 
 class _$ShareQuestionCopyWithImpl<$Res>
@@ -51,6 +53,16 @@ class _$ShareQuestionCopyWithImpl<$Res>
       question: question == freezed ? _value.question : question as Question,
     ));
   }
+
+  @override
+  $QuestionCopyWith<$Res> get question {
+    if (_value.question == null) {
+      return null;
+    }
+    return $QuestionCopyWith<$Res>(_value.question, (value) {
+      return _then(_value.copyWith(question: value));
+    });
+  }
 }
 
 abstract class _$ShareQuestionCopyWith<$Res>
@@ -60,6 +72,9 @@ abstract class _$ShareQuestionCopyWith<$Res>
       __$ShareQuestionCopyWithImpl<$Res>;
   @override
   $Res call({Question question});
+
+  @override
+  $QuestionCopyWith<$Res> get question;
 }
 
 class __$ShareQuestionCopyWithImpl<$Res>
