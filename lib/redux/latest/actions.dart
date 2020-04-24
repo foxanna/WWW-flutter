@@ -1,92 +1,88 @@
-import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 
-@immutable
-class RefreshLatestTournaments {
-  const RefreshLatestTournaments();
+part 'actions.freezed.dart';
 
-  @override
-  String toString() => '$RefreshLatestTournaments';
+abstract class LatestAction implements ReduxAction {}
+
+@freezed
+abstract class RefreshLatestTournaments
+    with _$RefreshLatestTournaments
+    implements LatestAction {
+  const factory RefreshLatestTournaments() = _RefreshLatestTournaments;
 }
 
-@immutable
-class LoadMoreLatestTournaments {
-  const LoadMoreLatestTournaments();
-
-  @override
-  String toString() => '$LoadMoreLatestTournaments';
+@freezed
+abstract class LoadMoreLatestTournaments
+    with _$LoadMoreLatestTournaments
+    implements LatestAction {
+  const factory LoadMoreLatestTournaments() = _LoadMoreLatestTournaments;
 }
 
-@immutable
-class RepeatFailedLoadingLatestTournaments {
-  const RepeatFailedLoadingLatestTournaments();
-
-  @override
-  String toString() => '$RepeatFailedLoadingLatestTournaments';
+@freezed
+abstract class RepeatFailedLoadingLatestTournaments
+    with _$RepeatFailedLoadingLatestTournaments
+    implements LatestAction {
+  const factory RepeatFailedLoadingLatestTournaments() =
+      _RepeatFailedLoadingLatestTournaments;
 }
 
-@immutable
-class LatestTournamentsIsLoadingMore {
-  const LatestTournamentsIsLoadingMore();
-
-  @override
-  String toString() => '$LatestTournamentsIsLoadingMore';
+@freezed
+abstract class LatestTournamentsIsLoadingMore
+    with _$LatestTournamentsIsLoadingMore
+    implements LatestAction {
+  const factory LatestTournamentsIsLoadingMore() =
+      _LatestTournamentsIsLoadingMore;
 }
 
-@immutable
-class MoreLatestTournamentsLoaded {
-  final Iterable<Tournament> data;
-
-  const MoreLatestTournamentsLoaded(this.data);
-
-  @override
-  String toString() =>
-      '$MoreLatestTournamentsLoaded data.length = "${data?.length}"';
+@freezed
+abstract class MoreLatestTournamentsLoaded
+    with _$MoreLatestTournamentsLoaded
+    implements LatestAction {
+  const factory MoreLatestTournamentsLoaded({
+    @required Iterable<Tournament> data,
+  }) = _MoreLatestTournamentsLoaded;
 }
 
-@immutable
-class ClearLatestTournaments {
-  const ClearLatestTournaments();
-
-  @override
-  String toString() => '$ClearLatestTournaments';
+@freezed
+abstract class ClearLatestTournaments
+    with _$ClearLatestTournaments
+    implements LatestAction {
+  const factory ClearLatestTournaments() = _ClearLatestTournaments;
 }
 
-@immutable
-class LatestTournamentsIsRefreshing {
-  const LatestTournamentsIsRefreshing();
-
-  @override
-  String toString() => '$LatestTournamentsIsRefreshing';
+@freezed
+abstract class LatestTournamentsIsRefreshing
+    with _$LatestTournamentsIsRefreshing
+    implements LatestAction {
+  const factory LatestTournamentsIsRefreshing() =
+      _LatestTournamentsIsRefreshing;
 }
 
-@immutable
-class LatestTournamentsLoadFailed {
-  final Exception exception;
-
-  const LatestTournamentsLoadFailed(this.exception);
-
-  @override
-  String toString() =>
-      '$LatestTournamentsLoadFailed exception.runtimeType = "${exception?.runtimeType}"';
+@freezed
+abstract class LatestTournamentsLoadFailed
+    with _$LatestTournamentsLoadFailed
+    implements LatestAction {
+  const factory LatestTournamentsLoadFailed({
+    @required Exception exception,
+  }) = _LatestTournamentsLoadFailed;
 }
 
-@immutable
-class LatestTournamentsRefreshFailed {
-  final Exception exception;
-
-  const LatestTournamentsRefreshFailed(this.exception);
-
-  @override
-  String toString() =>
-      '$LatestTournamentsRefreshFailed exception.runtimeType = "${exception?.runtimeType}"';
+@freezed
+abstract class LatestTournamentsRefreshFailed
+    with _$LatestTournamentsRefreshFailed
+    implements LatestAction {
+  const factory LatestTournamentsRefreshFailed({
+    @required Exception exception,
+  }) = _LatestTournamentsRefreshFailed;
 }
 
-@immutable
-class ClearLatestTournamentsException {
-  const ClearLatestTournamentsException();
-
-  @override
-  String toString() => '$ClearLatestTournamentsException';
+@freezed
+abstract class ClearLatestTournamentsException
+    with _$ClearLatestTournamentsException
+    implements LatestAction {
+  const factory ClearLatestTournamentsException() =
+      _ClearLatestTournamentsException;
 }
