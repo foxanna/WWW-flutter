@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 
 part 'tour_info.freezed.dart';
 
@@ -17,5 +18,6 @@ abstract class TourInfo with _$TourInfo {
     String editors,
     String createdAt,
     String playedAt,
+    TournamentInfo tournamentInfo,
   }) = _TourInfo;
 }

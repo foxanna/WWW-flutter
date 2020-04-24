@@ -20,7 +20,8 @@ class _$TourInfoTearOff {
       String url,
       String editors,
       String createdAt,
-      String playedAt}) {
+      String playedAt,
+      TournamentInfo tournamentInfo}) {
     return _TourInfo(
       id: id,
       title: title,
@@ -30,6 +31,7 @@ class _$TourInfoTearOff {
       editors: editors,
       createdAt: createdAt,
       playedAt: playedAt,
+      tournamentInfo: tournamentInfo,
     );
   }
 }
@@ -46,6 +48,7 @@ mixin _$TourInfo {
   String get editors;
   String get createdAt;
   String get playedAt;
+  TournamentInfo get tournamentInfo;
 
   $TourInfoCopyWith<TourInfo> get copyWith;
 }
@@ -61,7 +64,10 @@ abstract class $TourInfoCopyWith<$Res> {
       String url,
       String editors,
       String createdAt,
-      String playedAt});
+      String playedAt,
+      TournamentInfo tournamentInfo});
+
+  $TournamentInfoCopyWith<$Res> get tournamentInfo;
 }
 
 class _$TourInfoCopyWithImpl<$Res> implements $TourInfoCopyWith<$Res> {
@@ -81,6 +87,7 @@ class _$TourInfoCopyWithImpl<$Res> implements $TourInfoCopyWith<$Res> {
     Object editors = freezed,
     Object createdAt = freezed,
     Object playedAt = freezed,
+    Object tournamentInfo = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -94,7 +101,20 @@ class _$TourInfoCopyWithImpl<$Res> implements $TourInfoCopyWith<$Res> {
       editors: editors == freezed ? _value.editors : editors as String,
       createdAt: createdAt == freezed ? _value.createdAt : createdAt as String,
       playedAt: playedAt == freezed ? _value.playedAt : playedAt as String,
+      tournamentInfo: tournamentInfo == freezed
+          ? _value.tournamentInfo
+          : tournamentInfo as TournamentInfo,
     ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get tournamentInfo {
+    if (_value.tournamentInfo == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.tournamentInfo, (value) {
+      return _then(_value.copyWith(tournamentInfo: value));
+    });
   }
 }
 
@@ -110,7 +130,11 @@ abstract class _$TourInfoCopyWith<$Res> implements $TourInfoCopyWith<$Res> {
       String url,
       String editors,
       String createdAt,
-      String playedAt});
+      String playedAt,
+      TournamentInfo tournamentInfo});
+
+  @override
+  $TournamentInfoCopyWith<$Res> get tournamentInfo;
 }
 
 class __$TourInfoCopyWithImpl<$Res> extends _$TourInfoCopyWithImpl<$Res>
@@ -131,6 +155,7 @@ class __$TourInfoCopyWithImpl<$Res> extends _$TourInfoCopyWithImpl<$Res>
     Object editors = freezed,
     Object createdAt = freezed,
     Object playedAt = freezed,
+    Object tournamentInfo = freezed,
   }) {
     return _then(_TourInfo(
       id: id == freezed ? _value.id : id as String,
@@ -144,6 +169,9 @@ class __$TourInfoCopyWithImpl<$Res> extends _$TourInfoCopyWithImpl<$Res>
       editors: editors == freezed ? _value.editors : editors as String,
       createdAt: createdAt == freezed ? _value.createdAt : createdAt as String,
       playedAt: playedAt == freezed ? _value.playedAt : playedAt as String,
+      tournamentInfo: tournamentInfo == freezed
+          ? _value.tournamentInfo
+          : tournamentInfo as TournamentInfo,
     ));
   }
 }
@@ -157,7 +185,8 @@ class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
       this.url,
       this.editors,
       this.createdAt,
-      this.playedAt});
+      this.playedAt,
+      this.tournamentInfo});
 
   @override
   final String id;
@@ -175,10 +204,12 @@ class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
   final String createdAt;
   @override
   final String playedAt;
+  @override
+  final TournamentInfo tournamentInfo;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TourInfo(id: $id, title: $title, questionsCount: $questionsCount, description: $description, url: $url, editors: $editors, createdAt: $createdAt, playedAt: $playedAt)';
+    return 'TourInfo(id: $id, title: $title, questionsCount: $questionsCount, description: $description, url: $url, editors: $editors, createdAt: $createdAt, playedAt: $playedAt, tournamentInfo: $tournamentInfo)';
   }
 
   @override
@@ -193,7 +224,8 @@ class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
       ..add(DiagnosticsProperty('url', url))
       ..add(DiagnosticsProperty('editors', editors))
       ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('playedAt', playedAt));
+      ..add(DiagnosticsProperty('playedAt', playedAt))
+      ..add(DiagnosticsProperty('tournamentInfo', tournamentInfo));
   }
 
   @override
@@ -220,7 +252,10 @@ class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
                     .equals(other.createdAt, createdAt)) &&
             (identical(other.playedAt, playedAt) ||
                 const DeepCollectionEquality()
-                    .equals(other.playedAt, playedAt)));
+                    .equals(other.playedAt, playedAt)) &&
+            (identical(other.tournamentInfo, tournamentInfo) ||
+                const DeepCollectionEquality()
+                    .equals(other.tournamentInfo, tournamentInfo)));
   }
 
   @override
@@ -233,7 +268,8 @@ class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(editors) ^
       const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(playedAt);
+      const DeepCollectionEquality().hash(playedAt) ^
+      const DeepCollectionEquality().hash(tournamentInfo);
 
   @override
   _$TourInfoCopyWith<_TourInfo> get copyWith =>
@@ -249,7 +285,8 @@ abstract class _TourInfo implements TourInfo {
       String url,
       String editors,
       String createdAt,
-      String playedAt}) = _$_TourInfo;
+      String playedAt,
+      TournamentInfo tournamentInfo}) = _$_TourInfo;
 
   @override
   String get id;
@@ -267,6 +304,8 @@ abstract class _TourInfo implements TourInfo {
   String get createdAt;
   @override
   String get playedAt;
+  @override
+  TournamentInfo get tournamentInfo;
   @override
   _$TourInfoCopyWith<_TourInfo> get copyWith;
 }
