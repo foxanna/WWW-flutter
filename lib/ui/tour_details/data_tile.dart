@@ -37,7 +37,8 @@ class TourDetailsDataTile extends StatelessWidget {
       questionBuilder: (context, questionIndex) => TourDetailsQuestionDataTile(
         question: tour.questions[questionIndex],
         onTap: () => StoreProvider.of<AppState>(context).dispatch(
-          OpenQuestionsPage(tour.questions, questionIndex),
+          OpenQuestionsPage(
+              questions: tour.questions, selectedQuestionIndex: questionIndex),
         ),
       ),
     );

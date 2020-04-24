@@ -139,5 +139,6 @@ class QuestionTextSections extends StatelessWidget {
       );
 
   void _openImagePage(BuildContext context, String url) =>
-      StoreProvider.of<AppState>(context).dispatch(OpenImagePage(url));
+      StoreProvider.of<AppState>(context)
+          .dispatch(OpenImagePage(imageUrl: url));
 }

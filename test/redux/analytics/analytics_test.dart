@@ -112,7 +112,7 @@ void main() {
 
     test(
       '$OpenImagePage',
-      () => analyticsTest(const OpenImagePage(null), 'open_image'),
+      () => analyticsTest(const OpenImagePage(imageUrl: 'test'), 'open_image'),
     );
 
     test(
