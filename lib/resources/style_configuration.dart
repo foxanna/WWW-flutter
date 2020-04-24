@@ -338,9 +338,7 @@ class QuestionStyleConfiguration {
       bottomAppBarIconTheme: theme.primaryIconTheme,
       bottomAppBarNotchMargin: 8.0,
       bottomAppBarTextStyle: theme.primaryTextTheme.headline6,
-      questionCardMargin: const EdgeInsets.symmetric(
-        horizontal: Dimensions.defaultSidePadding,
-      ),
+      questionCardMargin: const EdgeInsets.all(12.0),
       questionCardPadding: const EdgeInsets.symmetric(
         vertical: 32,
         horizontal: 24,
