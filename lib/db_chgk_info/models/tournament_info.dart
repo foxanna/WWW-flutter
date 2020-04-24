@@ -10,11 +10,11 @@ abstract class TournamentInfo with _$TournamentInfo {
     String id2,
     String title,
     String questionsCount,
+    String toursCount,
     String description,
     String url,
     String editors,
     String createdAt,
     String playedAt,
-    int toursCount,
   }) = _TournamentInfo;
 }

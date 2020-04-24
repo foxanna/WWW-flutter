@@ -17,23 +17,23 @@ class _$TournamentInfoTearOff {
       String id2,
       String title,
       String questionsCount,
+      String toursCount,
       String description,
       String url,
       String editors,
       String createdAt,
-      String playedAt,
-      int toursCount}) {
+      String playedAt}) {
     return _TournamentInfo(
       id: id,
       id2: id2,
       title: title,
       questionsCount: questionsCount,
+      toursCount: toursCount,
       description: description,
       url: url,
       editors: editors,
       createdAt: createdAt,
       playedAt: playedAt,
-      toursCount: toursCount,
     );
   }
 }
@@ -46,12 +46,12 @@ mixin _$TournamentInfo {
   String get id2;
   String get title;
   String get questionsCount;
+  String get toursCount;
   String get description;
   String get url;
   String get editors;
   String get createdAt;
   String get playedAt;
-  int get toursCount;
 
   $TournamentInfoCopyWith<TournamentInfo> get copyWith;
 }
@@ -65,12 +65,12 @@ abstract class $TournamentInfoCopyWith<$Res> {
       String id2,
       String title,
       String questionsCount,
+      String toursCount,
       String description,
       String url,
       String editors,
       String createdAt,
-      String playedAt,
-      int toursCount});
+      String playedAt});
 }
 
 class _$TournamentInfoCopyWithImpl<$Res>
@@ -87,12 +87,12 @@ class _$TournamentInfoCopyWithImpl<$Res>
     Object id2 = freezed,
     Object title = freezed,
     Object questionsCount = freezed,
+    Object toursCount = freezed,
     Object description = freezed,
     Object url = freezed,
     Object editors = freezed,
     Object createdAt = freezed,
     Object playedAt = freezed,
-    Object toursCount = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -101,13 +101,14 @@ class _$TournamentInfoCopyWithImpl<$Res>
       questionsCount: questionsCount == freezed
           ? _value.questionsCount
           : questionsCount as String,
+      toursCount:
+          toursCount == freezed ? _value.toursCount : toursCount as String,
       description:
           description == freezed ? _value.description : description as String,
       url: url == freezed ? _value.url : url as String,
       editors: editors == freezed ? _value.editors : editors as String,
       createdAt: createdAt == freezed ? _value.createdAt : createdAt as String,
       playedAt: playedAt == freezed ? _value.playedAt : playedAt as String,
-      toursCount: toursCount == freezed ? _value.toursCount : toursCount as int,
     ));
   }
 }
@@ -123,12 +124,12 @@ abstract class _$TournamentInfoCopyWith<$Res>
       String id2,
       String title,
       String questionsCount,
+      String toursCount,
       String description,
       String url,
       String editors,
       String createdAt,
-      String playedAt,
-      int toursCount});
+      String playedAt});
 }
 
 class __$TournamentInfoCopyWithImpl<$Res>
@@ -147,12 +148,12 @@ class __$TournamentInfoCopyWithImpl<$Res>
     Object id2 = freezed,
     Object title = freezed,
     Object questionsCount = freezed,
+    Object toursCount = freezed,
     Object description = freezed,
     Object url = freezed,
     Object editors = freezed,
     Object createdAt = freezed,
     Object playedAt = freezed,
-    Object toursCount = freezed,
   }) {
     return _then(_TournamentInfo(
       id: id == freezed ? _value.id : id as String,
@@ -161,13 +162,14 @@ class __$TournamentInfoCopyWithImpl<$Res>
       questionsCount: questionsCount == freezed
           ? _value.questionsCount
           : questionsCount as String,
+      toursCount:
+          toursCount == freezed ? _value.toursCount : toursCount as String,
       description:
           description == freezed ? _value.description : description as String,
       url: url == freezed ? _value.url : url as String,
       editors: editors == freezed ? _value.editors : editors as String,
       createdAt: createdAt == freezed ? _value.createdAt : createdAt as String,
       playedAt: playedAt == freezed ? _value.playedAt : playedAt as String,
-      toursCount: toursCount == freezed ? _value.toursCount : toursCount as int,
     ));
   }
 }
@@ -180,12 +182,12 @@ class _$_TournamentInfo
       this.id2,
       this.title,
       this.questionsCount,
+      this.toursCount,
       this.description,
       this.url,
       this.editors,
       this.createdAt,
-      this.playedAt,
-      this.toursCount});
+      this.playedAt});
 
   @override
   final String id;
@@ -196,6 +198,8 @@ class _$_TournamentInfo
   @override
   final String questionsCount;
   @override
+  final String toursCount;
+  @override
   final String description;
   @override
   final String url;
@@ -205,12 +209,10 @@ class _$_TournamentInfo
   final String createdAt;
   @override
   final String playedAt;
-  @override
-  final int toursCount;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentInfo(id: $id, id2: $id2, title: $title, questionsCount: $questionsCount, description: $description, url: $url, editors: $editors, createdAt: $createdAt, playedAt: $playedAt, toursCount: $toursCount)';
+    return 'TournamentInfo(id: $id, id2: $id2, title: $title, questionsCount: $questionsCount, toursCount: $toursCount, description: $description, url: $url, editors: $editors, createdAt: $createdAt, playedAt: $playedAt)';
   }
 
   @override
@@ -222,12 +224,12 @@ class _$_TournamentInfo
       ..add(DiagnosticsProperty('id2', id2))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('questionsCount', questionsCount))
+      ..add(DiagnosticsProperty('toursCount', toursCount))
       ..add(DiagnosticsProperty('description', description))
       ..add(DiagnosticsProperty('url', url))
       ..add(DiagnosticsProperty('editors', editors))
       ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('playedAt', playedAt))
-      ..add(DiagnosticsProperty('toursCount', toursCount));
+      ..add(DiagnosticsProperty('playedAt', playedAt));
   }
 
   @override
@@ -243,6 +245,9 @@ class _$_TournamentInfo
             (identical(other.questionsCount, questionsCount) ||
                 const DeepCollectionEquality()
                     .equals(other.questionsCount, questionsCount)) &&
+            (identical(other.toursCount, toursCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.toursCount, toursCount)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
@@ -256,10 +261,7 @@ class _$_TournamentInfo
                     .equals(other.createdAt, createdAt)) &&
             (identical(other.playedAt, playedAt) ||
                 const DeepCollectionEquality()
-                    .equals(other.playedAt, playedAt)) &&
-            (identical(other.toursCount, toursCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.toursCount, toursCount)));
+                    .equals(other.playedAt, playedAt)));
   }
 
   @override
@@ -269,12 +271,12 @@ class _$_TournamentInfo
       const DeepCollectionEquality().hash(id2) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(questionsCount) ^
+      const DeepCollectionEquality().hash(toursCount) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(editors) ^
       const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(playedAt) ^
-      const DeepCollectionEquality().hash(toursCount);
+      const DeepCollectionEquality().hash(playedAt);
 
   @override
   _$TournamentInfoCopyWith<_TournamentInfo> get copyWith =>
@@ -287,12 +289,12 @@ abstract class _TournamentInfo implements TournamentInfo {
       String id2,
       String title,
       String questionsCount,
+      String toursCount,
       String description,
       String url,
       String editors,
       String createdAt,
-      String playedAt,
-      int toursCount}) = _$_TournamentInfo;
+      String playedAt}) = _$_TournamentInfo;
 
   @override
   String get id;
@@ -303,6 +305,8 @@ abstract class _TournamentInfo implements TournamentInfo {
   @override
   String get questionsCount;
   @override
+  String get toursCount;
+  @override
   String get description;
   @override
   String get url;
@@ -312,8 +316,6 @@ abstract class _TournamentInfo implements TournamentInfo {
   String get createdAt;
   @override
   String get playedAt;
-  @override
-  int get toursCount;
   @override
   _$TournamentInfoCopyWith<_TournamentInfo> get copyWith;
 }

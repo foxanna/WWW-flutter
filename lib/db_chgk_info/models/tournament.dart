@@ -1,88 +1,43 @@
-import 'dart:collection';
-
-import 'package:html/dom.dart';
-import 'package:meta/meta.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/db_chgk_info/models/dto_models/tournament_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/utils/texts.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-@immutable
-class Tournament {
-  final String id;
-  final String textId;
-  final String parentId;
-  final String title;
-  final String questionsCount;
-  final String description;
-  final String url;
-  final String editors;
-  final String createdAt;
-  final String playedAt;
-  final UnmodifiableListView<Tour> tours;
+part 'tournament.freezed.dart';
 
-  const Tournament({
-    this.id,
-    this.textId,
-    this.parentId,
-    this.title,
-    this.questionsCount,
-    this.description,
-    this.url,
-    this.editors,
-    this.createdAt,
-    this.playedAt,
-    this.tours,
-  });
+@freezed
+abstract class Tournament with _$Tournament {
+  const factory Tournament({
+    String id,
+    String id2,
+    TournamentInfo info,
+    List<Tour> tours,
+  }) = _Tournament;
 
-  factory Tournament.fromLatestHtml(Element element) => Tournament(
-        title: TextUtils.normalizeToSingleLine(
-            element.children[0].nodes.first.firstChild.text),
-        textId:
-            element.children[0].nodes.first.attributes['href'].split('/').last,
-        playedAt: TextUtils.normalizeToSingleLine(
-            element.children[0].nodes.last.text.trim().split(',').first),
-        createdAt: TextUtils.normalizeToSingleLine(
-            element.children[1].firstChild.text),
-      );
+  factory Tournament.fromDto(TournamentDto dto) {
+    final info = TournamentInfo(
+      id: dto.id,
+      id2: dto.textId,
+      title: TextUtils.normalizeToSingleLine(dto.title),
+      questionsCount: dto.questionsCount,
+      description: TextUtils.normalizeToSingleLine(dto.description),
+      url: '${Constants.databaseUrl}/tour/${dto.id}',
+      editors: TextUtils.normalizeToSingleLine(dto.editors),
+      createdAt: TextUtils.normalizeToSingleLine(dto.createdAt),
+      playedAt: TextUtils.normalizeToSingleLine(dto.playedAt),
+      toursCount: '${dto.tours?.length ?? 0}',
+    );
 
-  factory Tournament.fromSearchHtml(Node tournamentNode, Node dateNode) =>
-      Tournament(
-        textId: tournamentNode.attributes['href'].split('/').last,
-        title: TextUtils.normalizeToSingleLine(tournamentNode.firstChild.text),
-        playedAt: TextUtils.normalizeToSingleLine(dateNode.text),
-      );
-
-  factory Tournament.fromJson(Map<String, dynamic> map) => Tournament(
-        id: map['Id'] as String,
-        textId: map['TextId'] as String,
-        parentId: map['ParentId'] as String,
-        title: TextUtils.normalizeToSingleLine(map['Title'] as String),
-        questionsCount: map['QuestionsNum'] as String,
-        description: TextUtils.normalizeToSingleLine(map['Info'] as String),
-        url: '${Constants.databaseUrl}/tour/${map['Id']}',
-        editors: TextUtils.normalizeToSingleLine(map['Editors'] as String),
-        createdAt: TextUtils.normalizeToSingleLine(map['CreatedAt'] as String),
-        playedAt: TextUtils.normalizeToSingleLine(map['PlayedAt'] as String),
-        tours: map.containsKey('tour')
-            ? map['tour'] is List
-                ? UnmodifiableListView(List<Map<String, dynamic>>.from(
-                        map['tour'] as Iterable<dynamic>)
-                    .map((q) => Tour.fromJson(q))
-                    .toList())
-                : UnmodifiableListView(
-                    [Tour.fromJson(map['tour'] as Map<String, dynamic>)])
-            : UnmodifiableListView([]),
-      );
-
-  Map<String, dynamic> toMap() => <String, dynamic>{
-        'Id': id,
-        'TextId': textId,
-        'ParentId': parentId,
-        'Title': title,
-        'QuestionsNum': questionsCount,
-        'Info': description,
-        'Editors': editors,
-        'CreatedAt': createdAt,
-        'PlayedAt': playedAt,
-      };
+    return Tournament(
+      id: dto.id,
+      id2: dto.textId,
+      info: info,
+      tours: dto.tours
+          .map((dto) => Tour.fromDto(dto, tournamentInfo: info))
+          .toList(),
+    );
+  }
 }
