@@ -17,7 +17,8 @@ class RandomQuestionsLoader implements IRandomQuestionsLoader {
   @override
   Future<Iterable<Question>> get() async {
     final map = await _httpClient.get(Uri(path: '/xml/random'));
-    final randomQuestionsDto = RandomQuestionsDto.fromJson(map);
+    final randomQuestionsDto =
+        RandomQuestionsDto.fromJson(map['search'] as Map<String, dynamic>);
     final randomQuestions = RandomQuestions.fromDto(randomQuestionsDto);
     return randomQuestions.questions;
   }
