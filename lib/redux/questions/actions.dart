@@ -1,10 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 
 part 'actions.freezed.dart';
 
-abstract class QuestionsAction {}
+abstract class QuestionsAction implements ReduxAction {}
 
 @freezed
 abstract class SetQuestions with _$SetQuestions implements QuestionsAction {

@@ -1,10 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/common/timer_type.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 
 part 'actions.freezed.dart';
 
-abstract class TimerAction {}
+abstract class TimerAction implements ReduxAction {}
 
 @freezed
 abstract class StartTimer with _$StartTimer implements TimerAction {

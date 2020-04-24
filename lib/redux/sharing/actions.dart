@@ -3,10 +3,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 
 part 'actions.freezed.dart';
 
-abstract class SharingAction {}
+abstract class SharingAction implements ReduxAction {}
 
 @freezed
 abstract class ShareQuestion with _$ShareQuestion implements SharingAction {

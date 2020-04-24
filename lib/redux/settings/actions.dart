@@ -1,11 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/common/app_theme.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/resources/fonts.dart';
 
 part 'actions.freezed.dart';
 
-abstract class SettingsAction {}
+abstract class SettingsAction implements ReduxAction {}
 
 @freezed
 abstract class ChangeTheme with _$ChangeTheme implements SettingsAction {
