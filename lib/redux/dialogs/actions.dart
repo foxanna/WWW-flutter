@@ -1,33 +1,34 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 
-@immutable
-class OpenTourInfoDialog {
-  final Tour tour;
+part 'actions.freezed.dart';
 
-  const OpenTourInfoDialog(this.tour);
+abstract class DialogAction implements ReduxAction {}
 
-  @override
-  String toString() =>
-      '$OpenTourInfoDialog tour.id = "${tour?.id}", tour.title = "${tour?.title}"';
+@freezed
+abstract class OpenTourInfoDialog
+    with _$OpenTourInfoDialog
+    implements DialogAction {
+  const factory OpenTourInfoDialog({
+    @required Tour tour,
+  }) = _OpenTourInfoDialog;
 }
 
-@immutable
-class OpenTournamentInfoDialog {
-  final Tournament tournament;
-
-  const OpenTournamentInfoDialog(this.tournament);
-
-  @override
-  String toString() =>
-      '$OpenTournamentInfoDialog tournament.id = "${tournament?.id}", tournament.title = "${tournament?.title}"';
+@freezed
+abstract class OpenTournamentInfoDialog
+    with _$OpenTournamentInfoDialog
+    implements DialogAction {
+  const factory OpenTournamentInfoDialog({
+    @required Tournament tournament,
+  }) = _OpenTournamentInfoDialog;
 }
 
-@immutable
-class OpenRatingDialog {
-  const OpenRatingDialog();
-
-  @override
-  String toString() => '$OpenRatingDialog';
+@freezed
+abstract class OpenRatingDialog
+    with _$OpenRatingDialog
+    implements DialogAction {
+  const factory OpenRatingDialog() = _OpenRatingDialog;
 }
