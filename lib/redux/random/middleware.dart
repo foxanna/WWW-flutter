@@ -43,7 +43,8 @@ class RandomQuestionsMiddleware {
       OpenRandomQuestionsPage action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(const RandomQuestionsAreDisplayedChanged(true));
+    store.dispatch(const RandomQuestionsAreDisplayedChanged(
+        areRandomQuestionsDisplayed: true));
     store.dispatch(const LoadRandomQuestions());
   }
 
@@ -58,7 +59,8 @@ class RandomQuestionsMiddleware {
       Store<AppState> store, VoidQuestions action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(const RandomQuestionsAreDisplayedChanged(false));
+    store.dispatch(const RandomQuestionsAreDisplayedChanged(
+        areRandomQuestionsDisplayed: false));
   }
 
   Future<void> _onQuestionsSelected(
