@@ -69,12 +69,12 @@ void main() {
 
     test(
       '$ShowAnswer',
-      () => analyticsTest(const ShowAnswer(0), 'show_answer'),
+      () => analyticsTest(const ShowAnswer(questionIndex: 0), 'show_answer'),
     );
 
     test(
       '$HideAnswer',
-      () => analyticsTest(const HideAnswer(0), 'hide_answer'),
+      () => analyticsTest(const HideAnswer(questionIndex: 0), 'hide_answer'),
     );
 
     test(

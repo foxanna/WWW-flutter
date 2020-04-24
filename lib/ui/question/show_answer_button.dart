@@ -24,7 +24,9 @@ class ShowAnswerButton extends StatelessWidget {
           icon: showAnswer ? Icons.visibility_off : Icons.visibility,
           onPressed: () {
             StoreProvider.of<AppState>(context).dispatch(
-              showAnswer ? HideAnswer(index) : ShowAnswer(index),
+              showAnswer
+                  ? HideAnswer(questionIndex: index)
+                  : ShowAnswer(questionIndex: index),
             );
 
             if (!showAnswer && onAnswerShown != null) {

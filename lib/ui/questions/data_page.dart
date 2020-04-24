@@ -36,6 +36,6 @@ class QuestionsDataPage extends StatelessWidget {
     final store = StoreProvider.of<AppState>(context);
 
     store.dispatch(const ResetTimer());
-    store.dispatch(SelectQuestion(index));
+    store.dispatch(SelectQuestion(questionIndex: index));
   }
 }
