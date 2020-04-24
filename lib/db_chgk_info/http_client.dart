@@ -19,24 +19,22 @@ abstract class IHttpClient {
   Future<Map<String, dynamic>> get(Uri uri, {CancelToken cancelToken});
 }
 
+Dio _createDioInstance() => Dio(
+      BaseOptions(
+        baseUrl: _baseUrl,
+        connectTimeout: _connectTimeout,
+        receiveTimeout: _receiveTimeout,
+      ),
+    );
+
 class HttpClient implements IHttpClient {
   final Dio _dio;
 
-  factory HttpClient.ioc() => HttpClient._internal(_createDioInstance());
-
-  HttpClient._internal(this._dio) {
+  HttpClient.ioc({Dio dio}) : _dio = dio ?? _createDioInstance() {
     if (_logHttpCommunication) {
-      _dio.interceptors.add(LoggerInterceptor());
+      _dio.interceptors?.add(LoggerInterceptor());
     }
   }
-
-  static Dio _createDioInstance() => Dio(
-        BaseOptions(
-          baseUrl: _baseUrl,
-          connectTimeout: _connectTimeout,
-          receiveTimeout: _receiveTimeout,
-        ),
-      );
 
   @override
   Future<String> getRaw(Uri uri, {CancelToken cancelToken}) async {
