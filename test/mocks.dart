@@ -1,5 +1,5 @@
+import 'package:dio/dio.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/http_client.dart';
 import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
@@ -58,4 +58,4 @@ class TournamentDetailsLoaderMock extends Mock
 class TournamentsTreeLoaderMock extends Mock implements ITournamentsTreeLoader {
 }
 
-class HttpClientMock extends Mock implements IHttpClient {}
+class DioMock extends Mock implements Dio {}
