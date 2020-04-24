@@ -1,41 +1,30 @@
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:what_when_where/db_chgk_info/models/dto_models/tournament_dto.dart';
+import 'package:what_when_where/db_chgk_info/models/dto_models/tournaments_tree_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/utils/texts.dart';
 
-@immutable
-class TournamentsTree {
-  final String id;
-  final String title;
-  final String childrenCount;
-  final List<dynamic> children;
+part 'tournaments_tree.freezed.dart';
 
-  const TournamentsTree({
-    this.id,
-    this.title,
-    this.childrenCount,
-    this.children,
-  });
+@freezed
+abstract class TournamentsTree with _$TournamentsTree {
+  const factory TournamentsTree({
+    String id,
+    String title,
+    String childrenCount,
+    List<dynamic> children,
+  }) = _TournamentsTree;
 
-  factory TournamentsTree.fromJson(Map<String, dynamic> map) => TournamentsTree(
-        id: map['Id'] as String,
-        title: TextUtils.normalizeToSingleLine(map['Title'] as String),
-        childrenCount: map['ChildrenNum'] as String,
-        children: map.containsKey('tour')
-            ? map['tour'] is List
-                ? List<Map<String, dynamic>>.from(
-                        map['tour'] as Iterable<dynamic>)
-                    .map<dynamic>(_getTreeItem)
-                    .toList()
-                : <dynamic>[
-                    _getTreeItem(map['tour'] as Map<String, dynamic>),
-                  ]
-            : <dynamic>[],
+  factory TournamentsTree.fromDto(TournamentsTreeDto dto) => TournamentsTree(
+        id: dto.id,
+        title: TextUtils.normalizeToSingleLine(dto.title),
+        childrenCount: dto.childrenCount,
+        children: dto.children
+            .map((x) => x is TournamentsTreeDto
+                ? TournamentsTree.fromDto(x)
+                : x is TournamentDto ? Tournament.fromDto(x) : null)
+            .where((x) => x != null)
+            .toList(),
       );
-
-  static dynamic _getTreeItem(Map<String, dynamic> map) =>
-      map.containsKey('Type')
-          ? map['Type'] == 'Г'
-              ? TournamentsTree.fromJson(map)
-              : Tournament.fromJson(map)
-          : null;
 }
