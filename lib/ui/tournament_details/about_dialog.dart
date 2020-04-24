@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 
@@ -7,12 +7,12 @@ class TournamentDetailsAboutDialog extends StatelessWidget {
   final String _detailsText;
   final String _tournamentTitle;
 
-  final Tournament tournament;
+  final TournamentInfo tournamentInfo;
 
   TournamentDetailsAboutDialog({
-    @required this.tournament,
-  })  : _tournamentTitle = tournament.title,
-        _detailsText = _DialogContentBuilder(tournament).build();
+    @required this.tournamentInfo,
+  })  : _tournamentTitle = tournamentInfo.title,
+        _detailsText = _DialogContentBuilder(tournamentInfo).build();
 
   @override
   Widget build(BuildContext context) => InfoDialog(
@@ -22,9 +22,9 @@ class TournamentDetailsAboutDialog extends StatelessWidget {
 }
 
 class _DialogContentBuilder {
-  final Tournament tournament;
+  final TournamentInfo info;
 
-  _DialogContentBuilder(this.tournament);
+  _DialogContentBuilder(this.info);
 
   String build() {
     final result = StringBuffer();
@@ -36,12 +36,12 @@ class _DialogContentBuilder {
       result.writeln(s);
     };
 
-    if (tournament.editors != null) {
-      addToResult(tournament.editors);
+    if (info.editors != null) {
+      addToResult(info.editors);
     }
 
-    if (tournament.description != null) {
-      addToResult(tournament.description);
+    if (info.description != null) {
+      addToResult(info.description);
     }
 
     final toursAndQuestions = _buildToursAndQuestionsText();
@@ -49,12 +49,12 @@ class _DialogContentBuilder {
       addToResult(toursAndQuestions);
     }
 
-    if (tournament.playedAt != null) {
-      addToResult('${Strings.playedAt} ${tournament.playedAt}');
+    if (info.playedAt != null) {
+      addToResult('${Strings.playedAt} ${info.playedAt}');
     }
 
-    if (tournament.createdAt != null) {
-      addToResult('${Strings.addedAt} ${tournament.createdAt}');
+    if (info.createdAt != null) {
+      addToResult('${Strings.addedAt} ${info.createdAt}');
     }
 
     return result.toString();
@@ -63,17 +63,16 @@ class _DialogContentBuilder {
   String _buildToursAndQuestionsText() {
     final toursAndQuestions = StringBuffer();
 
-    if (tournament.tours != null && tournament.tours.isNotEmpty) {
-      toursAndQuestions.write('${Strings.tours}: ${tournament.tours.length}');
+    if (info.toursCount != null && info.toursCount != '0') {
+      toursAndQuestions.write('${Strings.tours}: ${info.toursCount}');
     }
 
-    if (tournament.questionsCount != null && tournament.questionsCount != '0') {
+    if (info.questionsCount != null && info.questionsCount != '0') {
       if (toursAndQuestions.isNotEmpty) {
         toursAndQuestions.write(', ');
       }
 
-      toursAndQuestions
-          .write('${Strings.questions}: ${tournament.questionsCount}');
+      toursAndQuestions.write('${Strings.questions}: ${info.questionsCount}');
     }
     return toursAndQuestions.toString();
   }

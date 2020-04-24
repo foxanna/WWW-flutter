@@ -7,6 +7,7 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
@@ -126,7 +127,7 @@ void main() {
     test(
       '$OpenTournamentInfoDialog',
       () => analyticsTest(
-          const OpenTournamentInfoDialog(tournament: Tournament()),
+          const OpenTournamentInfoDialog(info: TournamentInfo()),
           'open_tournament_info'),
     );
 

@@ -148,9 +148,9 @@ abstract class _OpenTourInfoDialog implements OpenTourInfoDialog {
 class _$OpenTournamentInfoDialogTearOff {
   const _$OpenTournamentInfoDialogTearOff();
 
-  _OpenTournamentInfoDialog call({@required Tournament tournament}) {
+  _OpenTournamentInfoDialog call({@required TournamentInfo info}) {
     return _OpenTournamentInfoDialog(
-      tournament: tournament,
+      info: info,
     );
   }
 }
@@ -159,7 +159,7 @@ class _$OpenTournamentInfoDialogTearOff {
 const $OpenTournamentInfoDialog = _$OpenTournamentInfoDialogTearOff();
 
 mixin _$OpenTournamentInfoDialog {
-  Tournament get tournament;
+  TournamentInfo get info;
 
   $OpenTournamentInfoDialogCopyWith<OpenTournamentInfoDialog> get copyWith;
 }
@@ -168,7 +168,9 @@ abstract class $OpenTournamentInfoDialogCopyWith<$Res> {
   factory $OpenTournamentInfoDialogCopyWith(OpenTournamentInfoDialog value,
           $Res Function(OpenTournamentInfoDialog) then) =
       _$OpenTournamentInfoDialogCopyWithImpl<$Res>;
-  $Res call({Tournament tournament});
+  $Res call({TournamentInfo info});
+
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class _$OpenTournamentInfoDialogCopyWithImpl<$Res>
@@ -181,12 +183,21 @@ class _$OpenTournamentInfoDialogCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournament = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      tournament:
-          tournament == freezed ? _value.tournament : tournament as Tournament,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
   }
 }
 
@@ -196,7 +207,10 @@ abstract class _$OpenTournamentInfoDialogCopyWith<$Res>
           $Res Function(_OpenTournamentInfoDialog) then) =
       __$OpenTournamentInfoDialogCopyWithImpl<$Res>;
   @override
-  $Res call({Tournament tournament});
+  $Res call({TournamentInfo info});
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class __$OpenTournamentInfoDialogCopyWithImpl<$Res>
@@ -212,11 +226,10 @@ class __$OpenTournamentInfoDialogCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournament = freezed,
+    Object info = freezed,
   }) {
     return _then(_OpenTournamentInfoDialog(
-      tournament:
-          tournament == freezed ? _value.tournament : tournament as Tournament,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
 }
@@ -224,15 +237,15 @@ class __$OpenTournamentInfoDialogCopyWithImpl<$Res>
 class _$_OpenTournamentInfoDialog
     with DiagnosticableTreeMixin
     implements _OpenTournamentInfoDialog {
-  const _$_OpenTournamentInfoDialog({@required this.tournament})
-      : assert(tournament != null);
+  const _$_OpenTournamentInfoDialog({@required this.info})
+      : assert(info != null);
 
   @override
-  final Tournament tournament;
+  final TournamentInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenTournamentInfoDialog(tournament: $tournament)';
+    return 'OpenTournamentInfoDialog(info: $info)';
   }
 
   @override
@@ -240,21 +253,20 @@ class _$_OpenTournamentInfoDialog
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'OpenTournamentInfoDialog'))
-      ..add(DiagnosticsProperty('tournament', tournament));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _OpenTournamentInfoDialog &&
-            (identical(other.tournament, tournament) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournament, tournament)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournament);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$OpenTournamentInfoDialogCopyWith<_OpenTournamentInfoDialog> get copyWith =>
@@ -263,11 +275,11 @@ class _$_OpenTournamentInfoDialog
 }
 
 abstract class _OpenTournamentInfoDialog implements OpenTournamentInfoDialog {
-  const factory _OpenTournamentInfoDialog({@required Tournament tournament}) =
+  const factory _OpenTournamentInfoDialog({@required TournamentInfo info}) =
       _$_OpenTournamentInfoDialog;
 
   @override
-  Tournament get tournament;
+  TournamentInfo get info;
   @override
   _$OpenTournamentInfoDialogCopyWith<_OpenTournamentInfoDialog> get copyWith;
 }
