@@ -35,7 +35,7 @@ class LatestTournamentsMiddleware {
       final data = await _loader.get(page: page);
       _moreItemsLoaded(store, data, page);
     } on Exception catch (e) {
-      store.dispatch(LatestTournamentsRefreshFailed(e));
+      store.dispatch(LatestTournamentsRefreshFailed(exception: e));
     }
   }
 
@@ -56,7 +56,7 @@ class LatestTournamentsMiddleware {
       final data = await _loader.get(page: page);
       _moreItemsLoaded(store, data, page);
     } on Exception catch (e) {
-      store.dispatch(LatestTournamentsLoadFailed(e));
+      store.dispatch(LatestTournamentsLoadFailed(exception: e));
     }
   }
 
@@ -65,7 +65,7 @@ class LatestTournamentsMiddleware {
     if (page == 0) {
       store.dispatch(const ClearLatestTournaments());
     }
-    store.dispatch(MoreLatestTournamentsLoaded(data));
+    store.dispatch(MoreLatestTournamentsLoaded(data: data));
   }
 
   void _reloadMore(Store<AppState> store,
