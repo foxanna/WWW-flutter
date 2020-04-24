@@ -13,8 +13,8 @@ class TournamentCache {
   bool contains(String id) =>
       _cacheById.containsKey(id) || _cacheByTextId.containsKey(id);
 
-  void save(Tournament tournament) => _cacheById[tournament.id] =
-      _cacheByTextId[tournament.textId] = tournament;
+  void save(Tournament tournament) =>
+      _cacheById[tournament.id] = _cacheByTextId[tournament.id2] = tournament;
 
   Tournament get(String id) => _cacheById[id] ?? _cacheByTextId[id];
 }
