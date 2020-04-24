@@ -1,91 +1,72 @@
-import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 
-@immutable
-class SetQuestions {
-  final Iterable<Question> questions;
-  final int selectedQuestionIndex;
+part 'actions.freezed.dart';
 
-  const SetQuestions({this.questions, this.selectedQuestionIndex});
+abstract class QuestionsAction {}
 
-  @override
-  String toString() =>
-      '$SetQuestions questions?.length = "${questions?.length}", selectedQuestionIndex = "$selectedQuestionIndex"';
+@freezed
+abstract class SetQuestions with _$SetQuestions implements QuestionsAction {
+  const factory SetQuestions({
+    @required Iterable<Question> questions,
+    @required int selectedQuestionIndex,
+  }) = _SetQuestions;
 }
 
-@immutable
-class VoidQuestions {
-  const VoidQuestions();
-
-  @override
-  String toString() => '$VoidQuestions';
+@freezed
+abstract class ClearQuestions with _$ClearQuestions implements QuestionsAction {
+  const factory ClearQuestions() = _ClearQuestions;
 }
 
-@immutable
-class ReloadQuestions {
-  const ReloadQuestions();
-
-  @override
-  String toString() => '$ReloadQuestions';
+@freezed
+abstract class ReloadQuestions
+    with _$ReloadQuestions
+    implements QuestionsAction {
+  const factory ReloadQuestions() = _ReloadQuestions;
 }
 
-@immutable
-class SelectQuestion {
-  final int questionIndex;
-
-  const SelectQuestion(this.questionIndex);
-
-  @override
-  String toString() => '$SelectQuestion questionIndex = "$questionIndex"';
+@freezed
+abstract class SelectQuestion with _$SelectQuestion implements QuestionsAction {
+  const factory SelectQuestion({
+    @required int questionIndex,
+  }) = _SelectQuestion;
 }
 
-@immutable
-class ShowAnswer {
-  final int questionIndex;
-
-  const ShowAnswer(this.questionIndex);
-
-  @override
-  String toString() => '$ShowAnswer questionIndex = "$questionIndex"';
+@freezed
+abstract class ShowAnswer with _$ShowAnswer implements QuestionsAction {
+  const factory ShowAnswer({
+    @required int questionIndex,
+  }) = _ShowAnswer;
 }
 
-@immutable
-class HideAnswer {
-  final int questionIndex;
-
-  const HideAnswer(this.questionIndex);
-
-  @override
-  String toString() => '$HideAnswer questionIndex = "$questionIndex"';
+@freezed
+abstract class HideAnswer with _$HideAnswer implements QuestionsAction {
+  const factory HideAnswer({
+    @required int questionIndex,
+  }) = _HideAnswer;
 }
 
-@immutable
-class QuestionsAreLoading {
-  const QuestionsAreLoading();
-
-  @override
-  String toString() => '$QuestionsAreLoading';
+@freezed
+abstract class QuestionsAreLoading
+    with _$QuestionsAreLoading
+    implements QuestionsAction {
+  const factory QuestionsAreLoading() = _QuestionsAreLoading;
 }
 
-@immutable
-class MoreQuestionsLoaded {
-  final List<Question> questions;
-
-  const MoreQuestionsLoaded(this.questions);
-
-  @override
-  String toString() =>
-      '$MoreQuestionsLoaded questions.length = "${questions?.length}"';
+@freezed
+abstract class MoreQuestionsLoaded
+    with _$MoreQuestionsLoaded
+    implements QuestionsAction {
+  const factory MoreQuestionsLoaded({
+    @required Iterable<Question> questions,
+  }) = _MoreQuestionsLoaded;
 }
 
-@immutable
-class QuestionsFailedToLoad {
-  final Exception exception;
-
-  const QuestionsFailedToLoad(this.exception);
-
-  @override
-  String toString() =>
-      '$QuestionsFailedToLoad exception.runtimeType = "${exception?.runtimeType}"';
+@freezed
+abstract class QuestionsFailedToLoad
+    with _$QuestionsFailedToLoad
+    implements QuestionsAction {
+  const factory QuestionsFailedToLoad({@required Exception exception}) =
+      _QuestionsFailedToLoad;
 }
