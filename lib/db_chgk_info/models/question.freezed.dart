@@ -22,7 +22,7 @@ class _$QuestionTearOff {
       String comments,
       String sources,
       String url,
-      Tour tour}) {
+      TourInfo tourInfo}) {
     return _Question(
       questionId: questionId,
       question: question,
@@ -33,7 +33,7 @@ class _$QuestionTearOff {
       comments: comments,
       sources: sources,
       url: url,
-      tour: tour,
+      tourInfo: tourInfo,
     );
   }
 }
@@ -51,7 +51,7 @@ mixin _$Question {
   String get comments;
   String get sources;
   String get url;
-  Tour get tour;
+  TourInfo get tourInfo;
 
   $QuestionCopyWith<Question> get copyWith;
 }
@@ -69,7 +69,9 @@ abstract class $QuestionCopyWith<$Res> {
       String comments,
       String sources,
       String url,
-      Tour tour});
+      TourInfo tourInfo});
+
+  $TourInfoCopyWith<$Res> get tourInfo;
 }
 
 class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
@@ -90,7 +92,7 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
     Object comments = freezed,
     Object sources = freezed,
     Object url = freezed,
-    Object tour = freezed,
+    Object tourInfo = freezed,
   }) {
     return _then(_value.copyWith(
       questionId:
@@ -105,8 +107,18 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
       comments: comments == freezed ? _value.comments : comments as String,
       sources: sources == freezed ? _value.sources : sources as String,
       url: url == freezed ? _value.url : url as String,
-      tour: tour == freezed ? _value.tour : tour as Tour,
+      tourInfo: tourInfo == freezed ? _value.tourInfo : tourInfo as TourInfo,
     ));
+  }
+
+  @override
+  $TourInfoCopyWith<$Res> get tourInfo {
+    if (_value.tourInfo == null) {
+      return null;
+    }
+    return $TourInfoCopyWith<$Res>(_value.tourInfo, (value) {
+      return _then(_value.copyWith(tourInfo: value));
+    });
   }
 }
 
@@ -124,7 +136,10 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       String comments,
       String sources,
       String url,
-      Tour tour});
+      TourInfo tourInfo});
+
+  @override
+  $TourInfoCopyWith<$Res> get tourInfo;
 }
 
 class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
@@ -146,7 +161,7 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
     Object comments = freezed,
     Object sources = freezed,
     Object url = freezed,
-    Object tour = freezed,
+    Object tourInfo = freezed,
   }) {
     return _then(_Question(
       questionId:
@@ -161,7 +176,7 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
       comments: comments == freezed ? _value.comments : comments as String,
       sources: sources == freezed ? _value.sources : sources as String,
       url: url == freezed ? _value.url : url as String,
-      tour: tour == freezed ? _value.tour : tour as Tour,
+      tourInfo: tourInfo == freezed ? _value.tourInfo : tourInfo as TourInfo,
     ));
   }
 }
@@ -177,7 +192,7 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
       this.comments,
       this.sources,
       this.url,
-      this.tour});
+      this.tourInfo});
 
   @override
   final String questionId;
@@ -198,11 +213,11 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
   @override
   final String url;
   @override
-  final Tour tour;
+  final TourInfo tourInfo;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Question(questionId: $questionId, question: $question, number: $number, answer: $answer, authors: $authors, passCriteria: $passCriteria, comments: $comments, sources: $sources, url: $url, tour: $tour)';
+    return 'Question(questionId: $questionId, question: $question, number: $number, answer: $answer, authors: $authors, passCriteria: $passCriteria, comments: $comments, sources: $sources, url: $url, tourInfo: $tourInfo)';
   }
 
   @override
@@ -219,7 +234,7 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
       ..add(DiagnosticsProperty('comments', comments))
       ..add(DiagnosticsProperty('sources', sources))
       ..add(DiagnosticsProperty('url', url))
-      ..add(DiagnosticsProperty('tour', tour));
+      ..add(DiagnosticsProperty('tourInfo', tourInfo));
   }
 
   @override
@@ -250,8 +265,9 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
                     .equals(other.sources, sources)) &&
             (identical(other.url, url) ||
                 const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.tour, tour) ||
-                const DeepCollectionEquality().equals(other.tour, tour)));
+            (identical(other.tourInfo, tourInfo) ||
+                const DeepCollectionEquality()
+                    .equals(other.tourInfo, tourInfo)));
   }
 
   @override
@@ -266,7 +282,7 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
       const DeepCollectionEquality().hash(comments) ^
       const DeepCollectionEquality().hash(sources) ^
       const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(tour);
+      const DeepCollectionEquality().hash(tourInfo);
 
   @override
   _$QuestionCopyWith<_Question> get copyWith =>
@@ -284,7 +300,7 @@ abstract class _Question implements Question {
       String comments,
       String sources,
       String url,
-      Tour tour}) = _$_Question;
+      TourInfo tourInfo}) = _$_Question;
 
   @override
   String get questionId;
@@ -305,7 +321,7 @@ abstract class _Question implements Question {
   @override
   String get url;
   @override
-  Tour get tour;
+  TourInfo get tourInfo;
   @override
   _$QuestionCopyWith<_Question> get copyWith;
 }
