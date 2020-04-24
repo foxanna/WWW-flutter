@@ -12,7 +12,10 @@ T _$identity<T>(T value) => value;
 class _$TourTearOff {
   const _$TourTearOff();
 
-  _Tour call({String id, TourInfo info, List<Question> questions}) {
+  _Tour call(
+      {String id,
+      TourInfo info = const TourInfo(),
+      List<Question> questions = const <Question>[]}) {
     return _Tour(
       id: id,
       info: info,
@@ -106,12 +109,19 @@ class __$TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res>
 }
 
 class _$_Tour with DiagnosticableTreeMixin implements _Tour {
-  const _$_Tour({this.id, this.info, this.questions});
+  const _$_Tour(
+      {this.id,
+      this.info = const TourInfo(),
+      this.questions = const <Question>[]})
+      : assert(info != null),
+        assert(questions != null);
 
   @override
   final String id;
+  @JsonKey(defaultValue: const TourInfo())
   @override
   final TourInfo info;
+  @JsonKey(defaultValue: const <Question>[])
   @override
   final List<Question> questions;
 

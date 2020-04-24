@@ -15,14 +15,14 @@ class _$TournamentInfoTearOff {
   _TournamentInfo call(
       {String id,
       String id2,
-      String title,
-      String questionsCount,
-      String toursCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt}) {
+      String title = '',
+      String questionsCount = '',
+      String toursCount = '',
+      String description = '',
+      String url = '',
+      String editors = '',
+      String createdAt = '',
+      String playedAt = ''}) {
     return _TournamentInfo(
       id: id,
       id2: id2,
@@ -180,33 +180,49 @@ class _$_TournamentInfo
   const _$_TournamentInfo(
       {this.id,
       this.id2,
-      this.title,
-      this.questionsCount,
-      this.toursCount,
-      this.description,
-      this.url,
-      this.editors,
-      this.createdAt,
-      this.playedAt});
+      this.title = '',
+      this.questionsCount = '',
+      this.toursCount = '',
+      this.description = '',
+      this.url = '',
+      this.editors = '',
+      this.createdAt = '',
+      this.playedAt = ''})
+      : assert(title != null),
+        assert(questionsCount != null),
+        assert(toursCount != null),
+        assert(description != null),
+        assert(url != null),
+        assert(editors != null),
+        assert(createdAt != null),
+        assert(playedAt != null);
 
   @override
   final String id;
   @override
   final String id2;
+  @JsonKey(defaultValue: '')
   @override
   final String title;
+  @JsonKey(defaultValue: '')
   @override
   final String questionsCount;
+  @JsonKey(defaultValue: '')
   @override
   final String toursCount;
+  @JsonKey(defaultValue: '')
   @override
   final String description;
+  @JsonKey(defaultValue: '')
   @override
   final String url;
+  @JsonKey(defaultValue: '')
   @override
   final String editors;
+  @JsonKey(defaultValue: '')
   @override
   final String createdAt;
+  @JsonKey(defaultValue: '')
   @override
   final String playedAt;
 

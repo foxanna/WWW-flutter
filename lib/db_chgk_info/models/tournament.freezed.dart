@@ -13,7 +13,10 @@ class _$TournamentTearOff {
   const _$TournamentTearOff();
 
   _Tournament call(
-      {String id, String id2, TournamentInfo info, List<Tour> tours}) {
+      {String id,
+      String id2,
+      TournamentInfo info = const TournamentInfo(),
+      List<Tour> tours = const <Tour>[]}) {
     return _Tournament(
       id: id,
       id2: id2,
@@ -114,14 +117,22 @@ class __$TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
 }
 
 class _$_Tournament with DiagnosticableTreeMixin implements _Tournament {
-  const _$_Tournament({this.id, this.id2, this.info, this.tours});
+  const _$_Tournament(
+      {this.id,
+      this.id2,
+      this.info = const TournamentInfo(),
+      this.tours = const <Tour>[]})
+      : assert(info != null),
+        assert(tours != null);
 
   @override
   final String id;
   @override
   final String id2;
+  @JsonKey(defaultValue: const TournamentInfo())
   @override
   final TournamentInfo info;
+  @JsonKey(defaultValue: const <Tour>[])
   @override
   final List<Tour> tours;
 

@@ -14,14 +14,14 @@ class _$TourInfoTearOff {
 
   _TourInfo call(
       {String id,
-      String title,
-      String questionsCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt,
-      TournamentInfo tournamentInfo}) {
+      String title = '',
+      String questionsCount = '',
+      String description = '',
+      String url = '',
+      String editors = '',
+      String createdAt = '',
+      String playedAt = '',
+      TournamentInfo tournamentInfo = const TournamentInfo()}) {
     return _TourInfo(
       id: id,
       title: title,
@@ -179,31 +179,47 @@ class __$TourInfoCopyWithImpl<$Res> extends _$TourInfoCopyWithImpl<$Res>
 class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
   const _$_TourInfo(
       {this.id,
-      this.title,
-      this.questionsCount,
-      this.description,
-      this.url,
-      this.editors,
-      this.createdAt,
-      this.playedAt,
-      this.tournamentInfo});
+      this.title = '',
+      this.questionsCount = '',
+      this.description = '',
+      this.url = '',
+      this.editors = '',
+      this.createdAt = '',
+      this.playedAt = '',
+      this.tournamentInfo = const TournamentInfo()})
+      : assert(title != null),
+        assert(questionsCount != null),
+        assert(description != null),
+        assert(url != null),
+        assert(editors != null),
+        assert(createdAt != null),
+        assert(playedAt != null),
+        assert(tournamentInfo != null);
 
   @override
   final String id;
+  @JsonKey(defaultValue: '')
   @override
   final String title;
+  @JsonKey(defaultValue: '')
   @override
   final String questionsCount;
+  @JsonKey(defaultValue: '')
   @override
   final String description;
+  @JsonKey(defaultValue: '')
   @override
   final String url;
+  @JsonKey(defaultValue: '')
   @override
   final String editors;
+  @JsonKey(defaultValue: '')
   @override
   final String createdAt;
+  @JsonKey(defaultValue: '')
   @override
   final String playedAt;
+  @JsonKey(defaultValue: const TournamentInfo())
   @override
   final TournamentInfo tournamentInfo;
 

@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$RandomQuestionsTearOff {
   const _$RandomQuestionsTearOff();
 
-  _RandomQuestions call({List<Question> questions}) {
+  _RandomQuestions call({List<Question> questions = const <Question>[]}) {
     return _RandomQuestions(
       questions: questions,
     );
@@ -87,8 +87,10 @@ class __$RandomQuestionsCopyWithImpl<$Res>
 class _$_RandomQuestions
     with DiagnosticableTreeMixin
     implements _RandomQuestions {
-  const _$_RandomQuestions({this.questions});
+  const _$_RandomQuestions({this.questions = const <Question>[]})
+      : assert(questions != null);
 
+  @JsonKey(defaultValue: const <Question>[])
   @override
   final List<Question> questions;
 

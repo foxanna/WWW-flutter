@@ -12,42 +12,41 @@ part 'question.freezed.dart';
 abstract class Question with _$Question {
   const factory Question({
     String questionId,
-    String question,
-    String number,
-    String answer,
-    String authors,
-    String passCriteria,
-    String comments,
-    String sources,
-    String url,
-    TourInfo tourInfo,
+    @Default('') String question,
+    @Default('') String number,
+    @Default('') String answer,
+    @Default('') String authors,
+    @Default('') String passCriteria,
+    @Default('') String comments,
+    @Default('') String sources,
+    @Default('') String url,
+    @Default(TourInfo()) TourInfo tourInfo,
   }) = _Question;
 
   factory Question.fromDto(QuestionDto dto,
-      {TourInfo tourInfo = const TourInfo()}) {
-    final tourInfoCopy = tourInfo
-        .copyWith(
-          id: tourInfo.id ?? dto.tourId,
-          title: tourInfo.title ?? dto.tourTitle,
-          tournamentInfo: tourInfo.tournamentInfo ?? const TournamentInfo(),
-        )
-        .copyWith
-        .tournamentInfo(
-          id: tourInfo.tournamentInfo?.id ?? dto.tournamentId,
-          title: tourInfo.tournamentInfo?.title ?? dto.tournamentTitle,
-        );
-
-    return Question(
-      questionId: dto.questionId,
-      question: dto.question,
-      number: dto.number,
-      answer: TextUtils.normalizeToMultiLine(dto.answer),
-      authors: TextUtils.normalizeToSingleLine(dto.authors),
-      passCriteria: TextUtils.normalizeToMultiLine(dto.passCriteria),
-      comments: TextUtils.normalizeToMultiLine(dto.comments),
-      sources: TextUtils.normalizeToMultiLine(dto.sources),
-      url: '${Constants.databaseUrl}/question/${dto.parentId}/${dto.number}',
-      tourInfo: tourInfoCopy,
-    );
-  }
+          {TourInfo tourInfo = const TourInfo()}) =>
+      Question(
+        questionId: dto.questionId,
+        question: dto.question ?? '',
+        number: dto.number ?? '',
+        answer: TextUtils.normalizeToMultiLine(dto.answer) ?? '',
+        authors: TextUtils.normalizeToSingleLine(dto.authors) ?? '',
+        passCriteria: TextUtils.normalizeToMultiLine(dto.passCriteria) ?? '',
+        comments: TextUtils.normalizeToMultiLine(dto.comments) ?? '',
+        sources: TextUtils.normalizeToMultiLine(dto.sources) ?? '',
+        url: dto.parentId != null && dto.number != null
+            ? '${Constants.databaseUrl}/question/${dto.parentId}/${dto.number}'
+            : '',
+        tourInfo: tourInfo
+            .copyWith(
+              id: tourInfo.id ?? dto.tourId,
+              title: tourInfo.title ?? dto.tourTitle ?? '',
+            )
+            .copyWith
+            .tournamentInfo(
+              id: tourInfo.tournamentInfo?.id ?? dto.tournamentId,
+              title:
+                  tourInfo.tournamentInfo?.title ?? dto.tournamentTitle ?? '',
+            ),
+      );
 }

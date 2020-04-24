@@ -8,12 +8,13 @@ part 'random_questions.freezed.dart';
 @freezed
 abstract class RandomQuestions with _$RandomQuestions {
   const factory RandomQuestions({
-    List<Question> questions,
+    @Default(<Question>[]) List<Question> questions,
   }) = _RandomQuestions;
 
   factory RandomQuestions.fromDto(RandomQuestionsDto dto) => RandomQuestions(
         questions: dto.search
-            .map((questionDto) => Question.fromDto(questionDto))
-            .toList(),
+                ?.map((questionDto) => Question.fromDto(questionDto))
+                ?.toList() ??
+            <Question>[],
       );
 }
