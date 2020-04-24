@@ -8,7 +8,7 @@ part 'random_questions_dto.g.dart';
 @freezed
 abstract class RandomQuestionsDto with _$RandomQuestionsDto {
   const factory RandomQuestionsDto({
-    List<QuestionDto> search,
+    @JsonKey(name: 'question') List<QuestionDto> search,
   }) = _RandomQuestionsDto;
 
   factory RandomQuestionsDto.fromJson(Map<String, dynamic> json) =>

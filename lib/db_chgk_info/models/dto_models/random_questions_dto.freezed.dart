@@ -15,7 +15,8 @@ RandomQuestionsDto _$RandomQuestionsDtoFromJson(Map<String, dynamic> json) {
 class _$RandomQuestionsDtoTearOff {
   const _$RandomQuestionsDtoTearOff();
 
-  _RandomQuestionsDto call({List<QuestionDto> search}) {
+  _RandomQuestionsDto call(
+      {@JsonKey(name: 'question') List<QuestionDto> search}) {
     return _RandomQuestionsDto(
       search: search,
     );
@@ -26,6 +27,7 @@ class _$RandomQuestionsDtoTearOff {
 const $RandomQuestionsDto = _$RandomQuestionsDtoTearOff();
 
 mixin _$RandomQuestionsDto {
+  @JsonKey(name: 'question')
   List<QuestionDto> get search;
 
   Map<String, dynamic> toJson();
@@ -36,7 +38,7 @@ abstract class $RandomQuestionsDtoCopyWith<$Res> {
   factory $RandomQuestionsDtoCopyWith(
           RandomQuestionsDto value, $Res Function(RandomQuestionsDto) then) =
       _$RandomQuestionsDtoCopyWithImpl<$Res>;
-  $Res call({List<QuestionDto> search});
+  $Res call({@JsonKey(name: 'question') List<QuestionDto> search});
 }
 
 class _$RandomQuestionsDtoCopyWithImpl<$Res>
@@ -63,7 +65,7 @@ abstract class _$RandomQuestionsDtoCopyWith<$Res>
           _RandomQuestionsDto value, $Res Function(_RandomQuestionsDto) then) =
       __$RandomQuestionsDtoCopyWithImpl<$Res>;
   @override
-  $Res call({List<QuestionDto> search});
+  $Res call({@JsonKey(name: 'question') List<QuestionDto> search});
 }
 
 class __$RandomQuestionsDtoCopyWithImpl<$Res>
@@ -90,12 +92,13 @@ class __$RandomQuestionsDtoCopyWithImpl<$Res>
 class _$_RandomQuestionsDto
     with DiagnosticableTreeMixin
     implements _RandomQuestionsDto {
-  const _$_RandomQuestionsDto({this.search});
+  const _$_RandomQuestionsDto({@JsonKey(name: 'question') this.search});
 
   factory _$_RandomQuestionsDto.fromJson(Map<String, dynamic> json) =>
       _$_$_RandomQuestionsDtoFromJson(json);
 
   @override
+  @JsonKey(name: 'question')
   final List<QuestionDto> search;
 
   @override
@@ -134,13 +137,15 @@ class _$_RandomQuestionsDto
 }
 
 abstract class _RandomQuestionsDto implements RandomQuestionsDto {
-  const factory _RandomQuestionsDto({List<QuestionDto> search}) =
+  const factory _RandomQuestionsDto(
+          {@JsonKey(name: 'question') List<QuestionDto> search}) =
       _$_RandomQuestionsDto;
 
   factory _RandomQuestionsDto.fromJson(Map<String, dynamic> json) =
       _$_RandomQuestionsDto.fromJson;
 
   @override
+  @JsonKey(name: 'question')
   List<QuestionDto> get search;
   @override
   _$RandomQuestionsDtoCopyWith<_RandomQuestionsDto> get copyWith;
