@@ -245,6 +245,89 @@ abstract class _ClearTournamentsSearchResults
       _$_ClearTournamentsSearchResults;
 }
 
+class _$ClearTournamentsSearchParametersTearOff {
+  const _$ClearTournamentsSearchParametersTearOff();
+
+  _ClearTournamentsSearchParameters call() {
+    return const _ClearTournamentsSearchParameters();
+  }
+}
+
+// ignore: unused_element
+const $ClearTournamentsSearchParameters =
+    _$ClearTournamentsSearchParametersTearOff();
+
+mixin _$ClearTournamentsSearchParameters {}
+
+abstract class $ClearTournamentsSearchParametersCopyWith<$Res> {
+  factory $ClearTournamentsSearchParametersCopyWith(
+          ClearTournamentsSearchParameters value,
+          $Res Function(ClearTournamentsSearchParameters) then) =
+      _$ClearTournamentsSearchParametersCopyWithImpl<$Res>;
+}
+
+class _$ClearTournamentsSearchParametersCopyWithImpl<$Res>
+    implements $ClearTournamentsSearchParametersCopyWith<$Res> {
+  _$ClearTournamentsSearchParametersCopyWithImpl(this._value, this._then);
+
+  final ClearTournamentsSearchParameters _value;
+  // ignore: unused_field
+  final $Res Function(ClearTournamentsSearchParameters) _then;
+}
+
+abstract class _$ClearTournamentsSearchParametersCopyWith<$Res> {
+  factory _$ClearTournamentsSearchParametersCopyWith(
+          _ClearTournamentsSearchParameters value,
+          $Res Function(_ClearTournamentsSearchParameters) then) =
+      __$ClearTournamentsSearchParametersCopyWithImpl<$Res>;
+}
+
+class __$ClearTournamentsSearchParametersCopyWithImpl<$Res>
+    extends _$ClearTournamentsSearchParametersCopyWithImpl<$Res>
+    implements _$ClearTournamentsSearchParametersCopyWith<$Res> {
+  __$ClearTournamentsSearchParametersCopyWithImpl(
+      _ClearTournamentsSearchParameters _value,
+      $Res Function(_ClearTournamentsSearchParameters) _then)
+      : super(_value, (v) => _then(v as _ClearTournamentsSearchParameters));
+
+  @override
+  _ClearTournamentsSearchParameters get _value =>
+      super._value as _ClearTournamentsSearchParameters;
+}
+
+class _$_ClearTournamentsSearchParameters
+    with DiagnosticableTreeMixin
+    implements _ClearTournamentsSearchParameters {
+  const _$_ClearTournamentsSearchParameters();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ClearTournamentsSearchParameters()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ClearTournamentsSearchParameters'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ClearTournamentsSearchParameters);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+}
+
+abstract class _ClearTournamentsSearchParameters
+    implements ClearTournamentsSearchParameters {
+  const factory _ClearTournamentsSearchParameters() =
+      _$_ClearTournamentsSearchParameters;
+}
+
 class _$TournamentsSearchQueryChangedTearOff {
   const _$TournamentsSearchQueryChangedTearOff();
 

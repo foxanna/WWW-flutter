@@ -31,6 +31,14 @@ abstract class ClearTournamentsSearchResults
 }
 
 @freezed
+abstract class ClearTournamentsSearchParameters
+    with _$ClearTournamentsSearchParameters
+    implements SearchAction {
+  const factory ClearTournamentsSearchParameters() =
+      _ClearTournamentsSearchParameters;
+}
+
+@freezed
 abstract class TournamentsSearchQueryChanged
     with _$TournamentsSearchQueryChanged
     implements SearchAction {
