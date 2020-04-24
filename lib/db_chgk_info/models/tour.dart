@@ -1,74 +1,39 @@
-import 'dart:collection';
-
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/db_chgk_info/models/dto_models/tour_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/utils/texts.dart';
 
-@immutable
-class Tour {
-  final String id;
-  final String parentId;
-  final String title;
-  final String number;
-  final String questionsCount;
-  final String tournamentTitle;
-  final String description;
-  final String url;
-  final String editors;
-  final String createdAt;
-  final String playedAt;
-  final List<Question> questions;
+part 'tour.freezed.dart';
 
-  const Tour({
-    this.id,
-    this.parentId,
-    this.title,
-    this.number,
-    this.questionsCount,
-    this.tournamentTitle,
-    this.description,
-    this.url,
-    this.editors,
-    this.createdAt,
-    this.playedAt,
-    this.questions,
-  });
+@freezed
+abstract class Tour with _$Tour {
+  const factory Tour({
+    String id,
+//    String parentId,
+    String title,
+//    String number,
+    String questionsCount,
+//    String tournamentTitle,
+    String description,
+    String url,
+    String editors,
+    String createdAt,
+    String playedAt,
+    List<Question> questions,
+  }) = _Tour;
 
-  factory Tour.fromJson(Map<String, dynamic> map) => Tour(
-        id: map['Id'] as String,
-        parentId: map['ParentId'] as String,
-        title: TextUtils.normalizeToSingleLine(map['Title'] as String),
-        number: map['Number'] as String,
-        questionsCount: map['QuestionsNum'] as String,
-        tournamentTitle:
-            TextUtils.normalizeToSingleLine(map['tournamentTitle'] as String),
-        description: TextUtils.normalizeToSingleLine(map['Info'] as String),
-        url: '${Constants.databaseUrl}/tour/${map['Id']}',
-        editors: TextUtils.normalizeToSingleLine(map['Editors'] as String),
-        createdAt: TextUtils.normalizeToSingleLine(map['CreatedAt'] as String),
-        playedAt: TextUtils.normalizeToSingleLine(map['PlayedAt'] as String),
-        questions: map.containsKey('question')
-            ? map['question'] is List
-                ? List.unmodifiable(List<Map<String, dynamic>>.from(
-                        map['question'] as Iterable<dynamic>)
-                    .map<Question>((q) => Question.fromJson(q)))
-                : List.unmodifiable(<Question>[
-                    Question.fromJson(map['question'] as Map<String, dynamic>)
-                  ])
-            : UnmodifiableListView([]),
+  factory Tour.fromDto(TourDto dto) => Tour(
+        id: dto.id,
+        title: TextUtils.normalizeToSingleLine(dto.title),
+//      number: dto.number,
+        questionsCount: dto.questionsCount,
+        description: TextUtils.normalizeToSingleLine(dto.description),
+        url: '${Constants.databaseUrl}/tour/${dto.id}',
+        editors: TextUtils.normalizeToSingleLine(dto.editors),
+        createdAt: TextUtils.normalizeToSingleLine(dto.createdAt),
+        playedAt: TextUtils.normalizeToSingleLine(dto.playedAt),
+        questions: dto.questions.map((dto) => Question.fromDto(dto)).toList(),
       );
-
-  Map<String, dynamic> toMap() => <String, dynamic>{
-        'Id': id,
-        'ParentId': parentId,
-        'Title': title,
-        'Number': number,
-        'QuestionsNum': questionsCount,
-        'tournamentTitle': tournamentTitle,
-        'Info': description,
-        'Editors': editors,
-        'CreatedAt': createdAt,
-        'PlayedAt': playedAt,
-      };
 }
