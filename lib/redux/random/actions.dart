@@ -1,21 +1,22 @@
-import 'package:flutter/cupertino.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-@immutable
-class LoadRandomQuestions {
-  const LoadRandomQuestions();
+part 'actions.freezed.dart';
 
-  @override
-  String toString() => '$LoadRandomQuestions';
+abstract class RandomQuestionsAction {}
+
+@freezed
+abstract class LoadRandomQuestions
+    with _$LoadRandomQuestions
+    implements RandomQuestionsAction {
+  const factory LoadRandomQuestions() = _LoadRandomQuestions;
 }
 
-@immutable
-class RandomQuestionsAreDisplayedChanged {
-  final bool areRandomQuestionsDisplayed;
-
-  const RandomQuestionsAreDisplayedChanged(this.areRandomQuestionsDisplayed);
-
-  @override
-  String toString() =>
-      '$RandomQuestionsAreDisplayedChanged areRandomQuestionsDisplayed = "$areRandomQuestionsDisplayed"';
+@freezed
+abstract class RandomQuestionsAreDisplayedChanged
+    with _$RandomQuestionsAreDisplayedChanged
+    implements RandomQuestionsAction {
+  const factory RandomQuestionsAreDisplayedChanged({
+    @required bool areRandomQuestionsDisplayed,
+  }) = _RandomQuestionsAreDisplayedChanged;
 }
