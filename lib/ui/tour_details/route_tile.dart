@@ -51,7 +51,7 @@ class TourDetailsRouteTile extends StatelessWidget {
             );
           }
 
-          return Container();
+          return null;
         },
       );
 }
