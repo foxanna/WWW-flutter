@@ -34,7 +34,7 @@ class TournamentsGridTile extends StatelessWidget {
 
     return Positioned.fill(
       child: ShapeHeroFrom(
-        tag: '${tournament.textId}bg',
+        tag: '${tournament.id2}bg',
         begin: cardTheme.shape,
         end: styleConfiguration.shape,
         child: Container(color: cardTheme.color),
@@ -56,7 +56,7 @@ class TournamentsGridTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               TextHeroFrom(
-                tag: '${tournament.textId}ttl',
+                tag: '${tournament.id2}ttl',
                 startTextStyle: gridStyleConfiguration.gridTileTitleTextStyle,
                 endTextStyle: styleConfiguration
                     .tournamentDetailsStyleConfiguration

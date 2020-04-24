@@ -27,7 +27,7 @@ class TournamentMiddleware {
       Store<AppState> store, SetTournament action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(LoadTournament(tournamentId: action.tournament.textId));
+    store.dispatch(LoadTournament(tournamentId: action.tournament.id2));
   }
 
   Future<void> _loadTournament(
@@ -65,7 +65,7 @@ class TournamentMiddleware {
       Store<AppState> store, ReloadTournament action, NextDispatcher next) {
     next(action);
 
-    final tournamentId = store.state.tournamentState.tournament.textId;
+    final tournamentId = store.state.tournamentState.tournament.id2;
     store.dispatch(LoadTournament(tournamentId: tournamentId));
   }
 }

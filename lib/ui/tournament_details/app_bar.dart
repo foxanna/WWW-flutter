@@ -48,7 +48,7 @@ class TournamentDetailsAppBar extends StatelessWidget {
               minExtent: 0.0,
               child: FlexibleSpaceBar(
                 background: ShapeHeroTo(
-                  tag: '${tournament.textId}bg',
+                  tag: '${tournament.id2}bg',
                   child: Container(
                     color: styleConfiguration.actionBarBackgroundColor,
                   ),
@@ -64,8 +64,8 @@ class TournamentDetailsAppBar extends StatelessWidget {
                 child: Padding(
                   padding: styleConfiguration.tournamentTitlePadding,
                   child: TextHeroTo(
-                    tag: '${tournament.textId}ttl',
-                    text: tournament.title,
+                    tag: '${tournament.id2}ttl',
+                    text: tournament.info.title,
                     style: styleConfiguration.tournamentTitleTextStyle,
                   ),
                 ),
