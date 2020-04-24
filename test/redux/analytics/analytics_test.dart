@@ -96,18 +96,19 @@ void main() {
 
     test(
       '$BrowseQuestion',
-      () => analyticsTest(const BrowseQuestion(Question()), 'browse_question'),
+      () => analyticsTest(
+          const BrowseQuestion(question: Question()), 'browse_question'),
     );
 
     test(
       '$BrowseTour',
-      () => analyticsTest(const BrowseTour(Tour()), 'browse_tour'),
+      () => analyticsTest(const BrowseTour(tour: Tour()), 'browse_tour'),
     );
 
     test(
       '$BrowseTournament',
-      () => analyticsTest(
-          const BrowseTournament(Tournament()), 'browse_tournament'),
+      () => analyticsTest(const BrowseTournament(tournament: Tournament()),
+          'browse_tournament'),
     );
 
     test(
