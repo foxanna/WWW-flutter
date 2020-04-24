@@ -22,7 +22,7 @@ class TournamentDetailsAppBar extends StatelessWidget {
           final mediaQuery = MediaQuery.of(context);
           final titleHeight = measureText(
                   context,
-                  tournament.title,
+                  tournament.info.title,
                   styleConfiguration.tournamentTitleTextStyle,
                   mediaQuery.size.width -
                       styleConfiguration.tournamentTitlePadding.horizontal)

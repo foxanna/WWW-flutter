@@ -21,25 +21,25 @@ class SharingService extends ISharingService {
 
   @override
   void shareTournament(Tournament tournament) {
-    Share.share('${tournament.title}\n'
-        '${tournament.url}'
+    Share.share('${tournament.info.title}\n'
+        '${tournament.info.url}'
         '${_createAppendix()}');
   }
 
   @override
   void shareTour(Tour tour) {
     Share.share(
-        '${(tour.tournamentTitle != null) ? ('${tour.tournamentTitle}, ') : ''}'
-        '${tour.title}\n'
-        '${tour.url}'
+        '${(tour.info?.tournamentInfo?.title != null) ? ('${tour.info?.tournamentInfo?.title}, ') : ''}'
+        '${tour.info.title}\n'
+        '${tour.info.url}'
         '${_createAppendix()}');
   }
 
   @override
   void shareQuestion(Question question) {
     final questionInfo = [
-      question.tournamentTitle,
-      question.tourTitle,
+      question.tourInfo?.tournamentInfo?.title,
+      question.tourInfo?.title,
       '${Strings.question.toLowerCase()} ${question.number}'
     ].where((x) => x != null).join(', ');
 

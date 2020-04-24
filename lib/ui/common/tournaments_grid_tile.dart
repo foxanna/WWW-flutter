@@ -61,7 +61,7 @@ class TournamentsGridTile extends StatelessWidget {
                 endTextStyle: styleConfiguration
                     .tournamentDetailsStyleConfiguration
                     .tournamentTitleTextStyle,
-                text: tournament.title,
+                text: tournament.info.title,
               ),
               if (_subheadText.isNotEmpty)
                 SizedBox(
@@ -81,10 +81,10 @@ class TournamentsGridTile extends StatelessWidget {
   }
 
   static String _buildSubheadText(Tournament tournament) => [
-        if (tournament.playedAt?.isNotEmpty ?? false)
-          '${Strings.playedAt} ${tournament.playedAt}',
-        if (tournament.createdAt?.isNotEmpty ?? false)
-          '${Strings.addedAt} ${tournament.createdAt}',
+        if (tournament.info.playedAt?.isNotEmpty ?? false)
+          '${Strings.playedAt} ${tournament.info.playedAt}',
+        if (tournament.info.createdAt?.isNotEmpty ?? false)
+          '${Strings.addedAt} ${tournament.info.createdAt}',
       ].join('\n');
 
   void _openTournamentDetails(BuildContext context) =>
