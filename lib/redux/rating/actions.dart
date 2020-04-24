@@ -1,8 +1,13 @@
-class RateOnStore {
-  final int rating;
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const RateOnStore(this.rating);
+part 'actions.freezed.dart';
 
-  @override
-  String toString() => '$RateOnStore rating = "$rating"';
+abstract class RatingAction {}
+
+@freezed
+abstract class RateOnStore with _$RateOnStore implements RatingAction {
+  const factory RateOnStore({
+    @required int rating,
+  }) = _RateOnStore;
 }
