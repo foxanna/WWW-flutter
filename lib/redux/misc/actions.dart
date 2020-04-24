@@ -1,18 +1,15 @@
-import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 
-@immutable
-class EmailDevelopers {
-  const EmailDevelopers();
+part 'actions.freezed.dart';
 
-  @override
-  String toString() => '$EmailDevelopers';
+@freezed
+abstract class EmailDevelopers with _$EmailDevelopers implements ReduxAction {
+  const factory EmailDevelopers() = _EmailDevelopers;
 }
 
-@immutable
-class BrowseDatabase {
-  const BrowseDatabase();
-
-  @override
-  String toString() => '$BrowseDatabase';
+@freezed
+abstract class BrowseDatabase with _$BrowseDatabase implements ReduxAction {
+  const factory BrowseDatabase() = _BrowseDatabase;
 }
