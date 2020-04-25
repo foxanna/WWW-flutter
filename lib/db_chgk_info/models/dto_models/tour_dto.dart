@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:what_when_where/db_chgk_info/models/dto_models/json_converters/questions_list_converter.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/question_dto.dart';
 
 part 'tour_dto.freezed.dart';
@@ -18,7 +19,9 @@ abstract class TourDto with _$TourDto {
     @JsonKey(name: 'Editors') String editors,
     @JsonKey(name: 'CreatedAt') String createdAt,
     @JsonKey(name: 'PlayedAt') String playedAt,
-    @JsonKey(name: 'question') List<QuestionDto> questions,
+    @JsonKey(name: 'question')
+    @QuestionsListConverter()
+        List<QuestionDto> questions,
   }) = _TourDto;
 
   factory TourDto.fromJson(Map<String, dynamic> json) =>

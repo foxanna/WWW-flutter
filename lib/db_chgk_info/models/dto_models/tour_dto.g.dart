@@ -18,10 +18,7 @@ _$_TourDto _$_$_TourDtoFromJson(Map<String, dynamic> json) {
     editors: json['Editors'] as String,
     createdAt: json['CreatedAt'] as String,
     playedAt: json['PlayedAt'] as String,
-    questions: (json['question'] as List)
-        ?.map((e) =>
-            e == null ? null : QuestionDto.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    questions: const QuestionsListConverter().fromJson(json['question']),
   );
 }
 
@@ -37,5 +34,5 @@ Map<String, dynamic> _$_$_TourDtoToJson(_$_TourDto instance) =>
       'Editors': instance.editors,
       'CreatedAt': instance.createdAt,
       'PlayedAt': instance.playedAt,
-      'question': instance.questions,
+      'question': const QuestionsListConverter().toJson(instance.questions),
     };

@@ -16,17 +16,29 @@ class _$TourDtoTearOff {
   const _$TourDtoTearOff();
 
   _TourDto call(
-      {@JsonKey(name: 'Id') String id,
-      @JsonKey(name: 'ParentId') String parentId,
-      @JsonKey(name: 'Title') String title,
-      @JsonKey(name: 'Number') String number,
-      @JsonKey(name: 'QuestionsNum') String questionsCount,
-      @JsonKey(name: 'tournamentTitle') String tournamentTitle,
-      @JsonKey(name: 'Info') String description,
-      @JsonKey(name: 'Editors') String editors,
-      @JsonKey(name: 'CreatedAt') String createdAt,
-      @JsonKey(name: 'PlayedAt') String playedAt,
-      @JsonKey(name: 'question') List<QuestionDto> questions}) {
+      {@JsonKey(name: 'Id')
+          String id,
+      @JsonKey(name: 'ParentId')
+          String parentId,
+      @JsonKey(name: 'Title')
+          String title,
+      @JsonKey(name: 'Number')
+          String number,
+      @JsonKey(name: 'QuestionsNum')
+          String questionsCount,
+      @JsonKey(name: 'tournamentTitle')
+          String tournamentTitle,
+      @JsonKey(name: 'Info')
+          String description,
+      @JsonKey(name: 'Editors')
+          String editors,
+      @JsonKey(name: 'CreatedAt')
+          String createdAt,
+      @JsonKey(name: 'PlayedAt')
+          String playedAt,
+      @JsonKey(name: 'question')
+      @QuestionsListConverter()
+          List<QuestionDto> questions}) {
     return _TourDto(
       id: id,
       parentId: parentId,
@@ -68,6 +80,7 @@ mixin _$TourDto {
   @JsonKey(name: 'PlayedAt')
   String get playedAt;
   @JsonKey(name: 'question')
+  @QuestionsListConverter()
   List<QuestionDto> get questions;
 
   Map<String, dynamic> toJson();
@@ -78,17 +91,29 @@ abstract class $TourDtoCopyWith<$Res> {
   factory $TourDtoCopyWith(TourDto value, $Res Function(TourDto) then) =
       _$TourDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'Id') String id,
-      @JsonKey(name: 'ParentId') String parentId,
-      @JsonKey(name: 'Title') String title,
-      @JsonKey(name: 'Number') String number,
-      @JsonKey(name: 'QuestionsNum') String questionsCount,
-      @JsonKey(name: 'tournamentTitle') String tournamentTitle,
-      @JsonKey(name: 'Info') String description,
-      @JsonKey(name: 'Editors') String editors,
-      @JsonKey(name: 'CreatedAt') String createdAt,
-      @JsonKey(name: 'PlayedAt') String playedAt,
-      @JsonKey(name: 'question') List<QuestionDto> questions});
+      {@JsonKey(name: 'Id')
+          String id,
+      @JsonKey(name: 'ParentId')
+          String parentId,
+      @JsonKey(name: 'Title')
+          String title,
+      @JsonKey(name: 'Number')
+          String number,
+      @JsonKey(name: 'QuestionsNum')
+          String questionsCount,
+      @JsonKey(name: 'tournamentTitle')
+          String tournamentTitle,
+      @JsonKey(name: 'Info')
+          String description,
+      @JsonKey(name: 'Editors')
+          String editors,
+      @JsonKey(name: 'CreatedAt')
+          String createdAt,
+      @JsonKey(name: 'PlayedAt')
+          String playedAt,
+      @JsonKey(name: 'question')
+      @QuestionsListConverter()
+          List<QuestionDto> questions});
 }
 
 class _$TourDtoCopyWithImpl<$Res> implements $TourDtoCopyWith<$Res> {
@@ -140,17 +165,29 @@ abstract class _$TourDtoCopyWith<$Res> implements $TourDtoCopyWith<$Res> {
       __$TourDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'Id') String id,
-      @JsonKey(name: 'ParentId') String parentId,
-      @JsonKey(name: 'Title') String title,
-      @JsonKey(name: 'Number') String number,
-      @JsonKey(name: 'QuestionsNum') String questionsCount,
-      @JsonKey(name: 'tournamentTitle') String tournamentTitle,
-      @JsonKey(name: 'Info') String description,
-      @JsonKey(name: 'Editors') String editors,
-      @JsonKey(name: 'CreatedAt') String createdAt,
-      @JsonKey(name: 'PlayedAt') String playedAt,
-      @JsonKey(name: 'question') List<QuestionDto> questions});
+      {@JsonKey(name: 'Id')
+          String id,
+      @JsonKey(name: 'ParentId')
+          String parentId,
+      @JsonKey(name: 'Title')
+          String title,
+      @JsonKey(name: 'Number')
+          String number,
+      @JsonKey(name: 'QuestionsNum')
+          String questionsCount,
+      @JsonKey(name: 'tournamentTitle')
+          String tournamentTitle,
+      @JsonKey(name: 'Info')
+          String description,
+      @JsonKey(name: 'Editors')
+          String editors,
+      @JsonKey(name: 'CreatedAt')
+          String createdAt,
+      @JsonKey(name: 'PlayedAt')
+          String playedAt,
+      @JsonKey(name: 'question')
+      @QuestionsListConverter()
+          List<QuestionDto> questions});
 }
 
 class __$TourDtoCopyWithImpl<$Res> extends _$TourDtoCopyWithImpl<$Res>
@@ -211,7 +248,7 @@ class _$_TourDto with DiagnosticableTreeMixin implements _TourDto {
       @JsonKey(name: 'Editors') this.editors,
       @JsonKey(name: 'CreatedAt') this.createdAt,
       @JsonKey(name: 'PlayedAt') this.playedAt,
-      @JsonKey(name: 'question') this.questions});
+      @JsonKey(name: 'question') @QuestionsListConverter() this.questions});
 
   factory _$_TourDto.fromJson(Map<String, dynamic> json) =>
       _$_$_TourDtoFromJson(json);
@@ -248,6 +285,7 @@ class _$_TourDto with DiagnosticableTreeMixin implements _TourDto {
   final String playedAt;
   @override
   @JsonKey(name: 'question')
+  @QuestionsListConverter()
   final List<QuestionDto> questions;
 
   @override
@@ -336,17 +374,29 @@ class _$_TourDto with DiagnosticableTreeMixin implements _TourDto {
 
 abstract class _TourDto implements TourDto {
   const factory _TourDto(
-      {@JsonKey(name: 'Id') String id,
-      @JsonKey(name: 'ParentId') String parentId,
-      @JsonKey(name: 'Title') String title,
-      @JsonKey(name: 'Number') String number,
-      @JsonKey(name: 'QuestionsNum') String questionsCount,
-      @JsonKey(name: 'tournamentTitle') String tournamentTitle,
-      @JsonKey(name: 'Info') String description,
-      @JsonKey(name: 'Editors') String editors,
-      @JsonKey(name: 'CreatedAt') String createdAt,
-      @JsonKey(name: 'PlayedAt') String playedAt,
-      @JsonKey(name: 'question') List<QuestionDto> questions}) = _$_TourDto;
+      {@JsonKey(name: 'Id')
+          String id,
+      @JsonKey(name: 'ParentId')
+          String parentId,
+      @JsonKey(name: 'Title')
+          String title,
+      @JsonKey(name: 'Number')
+          String number,
+      @JsonKey(name: 'QuestionsNum')
+          String questionsCount,
+      @JsonKey(name: 'tournamentTitle')
+          String tournamentTitle,
+      @JsonKey(name: 'Info')
+          String description,
+      @JsonKey(name: 'Editors')
+          String editors,
+      @JsonKey(name: 'CreatedAt')
+          String createdAt,
+      @JsonKey(name: 'PlayedAt')
+          String playedAt,
+      @JsonKey(name: 'question')
+      @QuestionsListConverter()
+          List<QuestionDto> questions}) = _$_TourDto;
 
   factory _TourDto.fromJson(Map<String, dynamic> json) = _$_TourDto.fromJson;
 
@@ -382,6 +432,7 @@ abstract class _TourDto implements TourDto {
   String get playedAt;
   @override
   @JsonKey(name: 'question')
+  @QuestionsListConverter()
   List<QuestionDto> get questions;
   @override
   _$TourDtoCopyWith<_TourDto> get copyWith;
