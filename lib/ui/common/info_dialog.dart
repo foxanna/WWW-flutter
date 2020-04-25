@@ -17,7 +17,7 @@ class InfoDialog extends StatelessWidget {
 
     return AlertDialog(
       contentPadding: styleConfiguration.contentPadding,
-      title: Text(title),
+      title: Text(title ?? ''),
       content: Container(
         foregroundDecoration:
             GradientDecoration(color: Theme.of(context).dialogBackgroundColor),

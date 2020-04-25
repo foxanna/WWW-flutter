@@ -61,7 +61,7 @@ class TournamentsGridTile extends StatelessWidget {
                 endTextStyle: styleConfiguration
                     .tournamentDetailsStyleConfiguration
                     .tournamentTitleTextStyle,
-                text: tournament.info.title,
+                text: tournament.info.title ?? '',
               ),
               if (_subheadText.isNotEmpty)
                 SizedBox(

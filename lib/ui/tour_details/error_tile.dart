@@ -32,7 +32,7 @@ class TourDetailsErrorTile extends StatelessWidget {
       foregroundColor: foregroundColor,
       backgroundColor: backgroundColor,
       titleBuilder: (context) => Text(
-        tour.info.title,
+        tour.info.title ?? '',
         style: styleConfiguration.tourTitleTextStyle,
       ),
       childBuilder: (context) => ErrorMessage(
