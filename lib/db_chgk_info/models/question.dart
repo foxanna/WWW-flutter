@@ -11,14 +11,14 @@ part 'question.freezed.dart';
 abstract class Question with _$Question {
   const factory Question({
     String questionId,
-    @Default('') String question,
-    @Default('') String number,
-    @Default('') String answer,
-    @Default('') String authors,
-    @Default('') String passCriteria,
-    @Default('') String comments,
-    @Default('') String sources,
-    @Default('') String url,
+    String question,
+    String number,
+    String answer,
+    String authors,
+    String passCriteria,
+    String comments,
+    String sources,
+    String url,
     @Default(TourInfo()) TourInfo tourInfo,
   }) = _Question;
 
@@ -26,27 +26,26 @@ abstract class Question with _$Question {
           {TourInfo tourInfo = const TourInfo()}) =>
       Question(
         questionId: dto.questionId,
-        question: dto.question ?? '',
-        number: dto.number ?? '',
-        answer: TextUtils.normalizeToMultiLine(dto.answer) ?? '',
-        authors: TextUtils.normalizeToSingleLine(dto.authors) ?? '',
-        passCriteria: TextUtils.normalizeToMultiLine(dto.passCriteria) ?? '',
-        comments: TextUtils.normalizeToMultiLine(dto.comments) ?? '',
-        sources: TextUtils.normalizeToMultiLine(dto.sources) ?? '',
+        question: dto.question,
+        number: dto.number,
+        answer: TextUtils.normalizeToMultiLine(dto.answer),
+        authors: TextUtils.normalizeToSingleLine(dto.authors),
+        passCriteria: TextUtils.normalizeToMultiLine(dto.passCriteria),
+        comments: TextUtils.normalizeToMultiLine(dto.comments),
+        sources: TextUtils.normalizeToMultiLine(dto.sources),
         url: dto.parentId != null && dto.number != null
             ? '${Constants.databaseUrl}/question/${dto.parentId}/${dto.number}'
-            : '',
+            : null,
         tourInfo: tourInfo
             .copyWith(
               id: tourInfo.id ?? dto.tourId,
-              title: tourInfo.title ?? dto.tourTitle.removeTrailingDot() ?? '',
+              title: tourInfo.title ?? dto.tourTitle.removeTrailingDot(),
             )
             .copyWith
             .tournamentInfo(
               id: tourInfo.tournamentInfo?.id ?? dto.tournamentId,
               title: tourInfo.tournamentInfo?.title ??
-                  dto.tournamentTitle.removeTrailingDot() ??
-                  '',
+                  dto.tournamentTitle.removeTrailingDot(),
             ),
       );
 }

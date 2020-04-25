@@ -11,15 +11,15 @@ part 'tournaments_tree.freezed.dart';
 abstract class TournamentsTree with _$TournamentsTree {
   const factory TournamentsTree({
     String id,
-    @Default('') String title,
-    @Default('') String childrenCount,
+    String title,
+    String childrenCount,
     @Default(<dynamic>[]) List<dynamic> children,
   }) = _TournamentsTree;
 
   factory TournamentsTree.fromDto(TournamentsTreeDto dto) => TournamentsTree(
         id: dto.id,
-        title: TextUtils.normalizeToSingleLine(dto.title) ?? '',
-        childrenCount: dto.childrenCount ?? '',
+        title: TextUtils.normalizeToSingleLine(dto.title),
+        childrenCount: dto.childrenCount,
         children: dto.children
                 ?.map((x) => x is TournamentsTreeDto
                     ? TournamentsTree.fromDto(x)

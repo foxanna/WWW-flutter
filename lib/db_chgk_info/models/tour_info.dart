@@ -8,13 +8,13 @@ part 'tour_info.freezed.dart';
 abstract class TourInfo with _$TourInfo {
   const factory TourInfo({
     String id,
-    @Default('') String title,
-    @Default('') String questionsCount,
-    @Default('') String description,
-    @Default('') String url,
-    @Default('') String editors,
-    @Default('') String createdAt,
-    @Default('') String playedAt,
+    String title,
+    String questionsCount,
+    String description,
+    String url,
+    String editors,
+    String createdAt,
+    String playedAt,
     @Default(TournamentInfo()) TournamentInfo tournamentInfo,
   }) = _TourInfo;
 }

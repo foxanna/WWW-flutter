@@ -21,19 +21,16 @@ abstract class Tour with _$Tour {
       {TournamentInfo tournamentInfo = const TournamentInfo()}) {
     final info = TourInfo(
       id: dto.id,
-      title:
-          TextUtils.normalizeToSingleLine(dto.title).removeTrailingDot() ?? '',
-      questionsCount: dto.questionsCount ?? '',
-      description: TextUtils.normalizeToSingleLine(dto.description) ?? '',
-      url: dto.id != null ? '${Constants.databaseUrl}/tour/${dto.id}' : '',
-      editors: TextUtils.normalizeToSingleLine(dto.editors) ?? '',
-      createdAt: TextUtils.normalizeToSingleLine(dto.createdAt) ?? '',
-      playedAt: TextUtils.normalizeToSingleLine(dto.playedAt) ?? '',
+      title: TextUtils.normalizeToSingleLine(dto.title).removeTrailingDot(),
+      questionsCount: dto.questionsCount,
+      description: TextUtils.normalizeToSingleLine(dto.description),
+      url: dto.id != null ? '${Constants.databaseUrl}/tour/${dto.id}' : null,
+      editors: TextUtils.normalizeToSingleLine(dto.editors),
+      createdAt: TextUtils.normalizeToSingleLine(dto.createdAt),
+      playedAt: TextUtils.normalizeToSingleLine(dto.playedAt),
       tournamentInfo: tournamentInfo.copyWith(
         id: tournamentInfo.id ?? dto.parentId,
-        title: tournamentInfo.title ??
-            dto.tournamentTitle.removeTrailingDot() ??
-            '',
+        title: tournamentInfo.title ?? dto.tournamentTitle.removeTrailingDot(),
       ),
     );
 

@@ -14,14 +14,14 @@ class _$QuestionTearOff {
 
   _Question call(
       {String questionId,
-      String question = '',
-      String number = '',
-      String answer = '',
-      String authors = '',
-      String passCriteria = '',
-      String comments = '',
-      String sources = '',
-      String url = '',
+      String question,
+      String number,
+      String answer,
+      String authors,
+      String passCriteria,
+      String comments,
+      String sources,
+      String url,
       TourInfo tourInfo = const TourInfo()}) {
     return _Question(
       questionId: questionId,
@@ -184,49 +184,33 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
 class _$_Question with DiagnosticableTreeMixin implements _Question {
   const _$_Question(
       {this.questionId,
-      this.question = '',
-      this.number = '',
-      this.answer = '',
-      this.authors = '',
-      this.passCriteria = '',
-      this.comments = '',
-      this.sources = '',
-      this.url = '',
+      this.question,
+      this.number,
+      this.answer,
+      this.authors,
+      this.passCriteria,
+      this.comments,
+      this.sources,
+      this.url,
       this.tourInfo = const TourInfo()})
-      : assert(question != null),
-        assert(number != null),
-        assert(answer != null),
-        assert(authors != null),
-        assert(passCriteria != null),
-        assert(comments != null),
-        assert(sources != null),
-        assert(url != null),
-        assert(tourInfo != null);
+      : assert(tourInfo != null);
 
   @override
   final String questionId;
-  @JsonKey(defaultValue: '')
   @override
   final String question;
-  @JsonKey(defaultValue: '')
   @override
   final String number;
-  @JsonKey(defaultValue: '')
   @override
   final String answer;
-  @JsonKey(defaultValue: '')
   @override
   final String authors;
-  @JsonKey(defaultValue: '')
   @override
   final String passCriteria;
-  @JsonKey(defaultValue: '')
   @override
   final String comments;
-  @JsonKey(defaultValue: '')
   @override
   final String sources;
-  @JsonKey(defaultValue: '')
   @override
   final String url;
   @JsonKey(defaultValue: const TourInfo())

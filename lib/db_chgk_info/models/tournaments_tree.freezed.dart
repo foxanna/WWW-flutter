@@ -14,8 +14,8 @@ class _$TournamentsTreeTearOff {
 
   _TournamentsTree call(
       {String id,
-      String title = '',
-      String childrenCount = '',
+      String title,
+      String childrenCount,
       List<dynamic> children = const <dynamic>[]}) {
     return _TournamentsTree(
       id: id,
@@ -117,19 +117,15 @@ class _$_TournamentsTree
     implements _TournamentsTree {
   const _$_TournamentsTree(
       {this.id,
-      this.title = '',
-      this.childrenCount = '',
+      this.title,
+      this.childrenCount,
       this.children = const <dynamic>[]})
-      : assert(title != null),
-        assert(childrenCount != null),
-        assert(children != null);
+      : assert(children != null);
 
   @override
   final String id;
-  @JsonKey(defaultValue: '')
   @override
   final String title;
-  @JsonKey(defaultValue: '')
   @override
   final String childrenCount;
   @JsonKey(defaultValue: const <dynamic>[])

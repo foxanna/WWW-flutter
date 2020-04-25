@@ -21,15 +21,14 @@ abstract class Tournament with _$Tournament {
     final info = TournamentInfo(
       id: dto.id,
       id2: dto.textId,
-      title:
-          TextUtils.normalizeToSingleLine(dto.title).removeTrailingDot() ?? '',
-      questionsCount: dto.questionsCount ?? '',
-      description: TextUtils.normalizeToSingleLine(dto.description) ?? '',
-      url: dto.id != null ? '${Constants.databaseUrl}/tour/${dto.id}' : '',
-      editors: TextUtils.normalizeToSingleLine(dto.editors) ?? '',
-      createdAt: TextUtils.normalizeToSingleLine(dto.createdAt) ?? '',
-      playedAt: TextUtils.normalizeToSingleLine(dto.playedAt) ?? '',
-      toursCount: dto.tours?.length?.toString() ?? '',
+      title: TextUtils.normalizeToSingleLine(dto.title).removeTrailingDot(),
+      questionsCount: dto.questionsCount,
+      description: TextUtils.normalizeToSingleLine(dto.description),
+      url: dto.id != null ? '${Constants.databaseUrl}/tour/${dto.id}' : null,
+      editors: TextUtils.normalizeToSingleLine(dto.editors),
+      createdAt: TextUtils.normalizeToSingleLine(dto.createdAt),
+      playedAt: TextUtils.normalizeToSingleLine(dto.playedAt),
+      toursCount: dto.tours?.length?.toString(),
     );
 
     return Tournament(
