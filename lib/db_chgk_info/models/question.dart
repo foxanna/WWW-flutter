@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/question_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/utils/texts.dart';
 
 part 'question.freezed.dart';
