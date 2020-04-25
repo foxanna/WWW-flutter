@@ -126,7 +126,7 @@ const expectedLatestTournaments1 = [
       id2: 'okr2019_u',
       title: 'Открытый Кубок России – 2019',
       createdAt: '04.04.2020',
-//      playedAt: '',
+      playedAt: '',
     ),
   ),
   Tournament(
