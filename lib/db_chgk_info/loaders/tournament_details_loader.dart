@@ -38,7 +38,7 @@ class TournamentDetailsLoader implements ITournamentDetailsLoader {
   }
 
   void _handleTourlessTournament(Map<String, dynamic> map) {
-    if (!map.containsKey('tour')) {
+    if (!map.containsKey('tour') && map.containsKey('question')) {
       final tourMap = Map<String, dynamic>.from(map);
       tourMap['ParentId'] = map['Id'];
 
