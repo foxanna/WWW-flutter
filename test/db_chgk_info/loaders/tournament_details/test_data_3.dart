@@ -9,10 +9,10 @@ const expectedTournamentDetails3 = Tournament(
   info: TournamentInfo(
     id: '14352',
     id2: 'zzz',
-    title: '''ZZZZZZZ''',
+    title: r'''ZZZZZZZ''',
     questionsCount: '0',
     toursCount: '0',
-    url: '''https://db.chgk.info/tour/14352''',
+    url: r'''https://db.chgk.info/tour/14352''',
   ),
   tours: <Tour>[],
 );

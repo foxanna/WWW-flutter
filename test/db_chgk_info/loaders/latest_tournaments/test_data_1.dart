@@ -6,7 +6,7 @@ const expectedLatestTournaments1 = [
     id2: 'thanos19.5_u',
     info: TournamentInfo(
       id2: 'thanos19.5_u',
-      title: 'Кубок Бесконечности. V этап: Камень Разума. Первый тур',
+      title: r'''Кубок Бесконечности. V этап: Камень Разума. Первый тур''',
       createdAt: '23.04.2020',
       playedAt: '2020-01-15',
     ),
@@ -15,7 +15,7 @@ const expectedLatestTournaments1 = [
     id2: 'azov19_u',
     info: TournamentInfo(
       id2: 'azov19_u',
-      title: 'Синхронный турнир "Азовский бриз - 2019"',
+      title: r'''Синхронный турнир "Азовский бриз - 2019"''',
       createdAt: '21.04.2020',
       playedAt: '2019-01-18',
     ),
@@ -24,7 +24,7 @@ const expectedLatestTournaments1 = [
     id2: 'azov20_u',
     info: TournamentInfo(
       id2: 'azov20_u',
-      title: 'Синхронный турнир "Азовский бриз - 2020"',
+      title: r'''Синхронный турнир "Азовский бриз - 2020"''',
       createdAt: '21.04.2020',
       playedAt: '2020-01-17',
     ),
@@ -34,7 +34,7 @@ const expectedLatestTournaments1 = [
     info: TournamentInfo(
       id2: 'dmitrybuts_u',
       title:
-          'XXI Международный турнир по интеллектуальным играм «Беловежская зима — 2019»',
+          r'''XXI Международный турнир по интеллектуальным играм «Беловежская зима — 2019»''',
       createdAt: '18.04.2020',
       playedAt: '07.12.2019 - 08.12.2019',
     ),
@@ -43,7 +43,7 @@ const expectedLatestTournaments1 = [
     id2: 'sls2018v_u',
     info: TournamentInfo(
       id2: 'sls2018v_u',
-      title: 'Студенческая Лига Сибири – 2018/19. V тур',
+      title: r'''Студенческая Лига Сибири – 2018/19. V тур''',
       createdAt: '16.04.2020',
       playedAt: '2019-03-12',
     ),
@@ -52,7 +52,7 @@ const expectedLatestTournaments1 = [
     id2: 'sls2018vi_u',
     info: TournamentInfo(
       id2: 'sls2018vi_u',
-      title: 'Студенческая Лига Сибири – 2018/19. VI тур',
+      title: r'''Студенческая Лига Сибири – 2018/19. VI тур''',
       createdAt: '16.04.2020',
       playedAt: '2019-04-12',
     ),
@@ -61,7 +61,7 @@ const expectedLatestTournaments1 = [
     id2: 'sls2018iii_u',
     info: TournamentInfo(
       id2: 'sls2018iii_u',
-      title: 'Студенческая Лига Сибири – 2018/19. III тур',
+      title: r'''Студенческая Лига Сибири – 2018/19. III тур''',
       createdAt: '15.04.2020',
       playedAt: '2018-12-25',
     ),
@@ -70,7 +70,7 @@ const expectedLatestTournaments1 = [
     id2: 'sls2018ii_u',
     info: TournamentInfo(
       id2: 'sls2018ii_u',
-      title: 'Студенческая Лига Сибири – 2018/19. II тур',
+      title: r'''Студенческая Лига Сибири – 2018/19. II тур''',
       createdAt: '14.04.2020',
       playedAt: '2018-11-13',
     ),
@@ -79,7 +79,7 @@ const expectedLatestTournaments1 = [
     id2: 'gostdvor19_u',
     info: TournamentInfo(
       id2: 'gostdvor19_u',
-      title: 'Гостиный Двор – 2019',
+      title: r'''Гостиный Двор – 2019''',
       createdAt: '10.04.2020',
       playedAt: '2019-12-07',
     ),
@@ -88,7 +88,7 @@ const expectedLatestTournaments1 = [
     id2: 'iqpfosto16_u',
     info: TournamentInfo(
       id2: 'iqpfosto16_u',
-      title: 'IQ ПФО 2016. Студенты. Первый отборочный этап',
+      title: r'''IQ ПФО 2016. Студенты. Первый отборочный этап''',
       createdAt: '10.04.2020',
       playedAt: '10.01.2020 - 10.02.2016',
     ),
@@ -97,7 +97,7 @@ const expectedLatestTournaments1 = [
     id2: 'iqpfoso16_u',
     info: TournamentInfo(
       id2: 'iqpfoso16_u',
-      title: 'IQ ПФО 2016. Студенты. Второй отборочный этап',
+      title: r'''IQ ПФО 2016. Студенты. Второй отборочный этап''',
       createdAt: '10.04.2020',
       playedAt: '10.02.2020 - 10.03.2016',
     ),
@@ -106,7 +106,7 @@ const expectedLatestTournaments1 = [
     id2: 'askcup2_19_u',
     info: TournamentInfo(
       id2: 'askcup2_19_u',
-      title: 'II Синхронный турнир «АSК-Cup-2»',
+      title: r'''II Синхронный турнир «АSК-Cup-2»''',
       createdAt: '09.04.2020',
       playedAt: '2019-04-04',
     ),
@@ -115,7 +115,7 @@ const expectedLatestTournaments1 = [
     id2: 'pudali19_u',
     info: TournamentInfo(
       id2: 'pudali19_u',
-      title: 'Пущинские Дали – 2019',
+      title: r'''Пущинские Дали – 2019''',
       createdAt: '09.04.2020',
       playedAt: '2019-07-13',
     ),
@@ -124,7 +124,7 @@ const expectedLatestTournaments1 = [
     id2: 'okr2019_u',
     info: TournamentInfo(
       id2: 'okr2019_u',
-      title: 'Открытый Кубок России – 2019',
+      title: r'''Открытый Кубок России – 2019''',
       createdAt: '04.04.2020',
       playedAt: '',
     ),
@@ -133,7 +133,7 @@ const expectedLatestTournaments1 = [
     id2: 'element19_u',
     info: TournamentInfo(
       id2: 'element19_u',
-      title: 'Синхронный турнир “Элементарно!”',
+      title: r'''Синхронный турнир “Элементарно!”''',
       createdAt: '03.04.2020',
       playedAt: '2019-10-01',
     ),
@@ -142,7 +142,7 @@ const expectedLatestTournaments1 = [
     id2: 'sls2018i_u',
     info: TournamentInfo(
       id2: 'sls2018i_u',
-      title: 'Студенческая Лига Сибири – 2018/19. I тур',
+      title: r'''Студенческая Лига Сибири – 2018/19. I тур''',
       createdAt: '02.04.2020',
       playedAt: '2018-11-09',
     ),
@@ -151,7 +151,7 @@ const expectedLatestTournaments1 = [
     id2: 'schoolig19-3_u',
     info: TournamentInfo(
       id2: 'schoolig19-3_u',
-      title: 'Школьная лига 2019/20. III тур',
+      title: r'''Школьная лига 2019/20. III тур''',
       createdAt: '02.04.2020',
       playedAt: '2019-12-15',
     ),
@@ -160,7 +160,7 @@ const expectedLatestTournaments1 = [
     id2: 'ligavuz19-5_u',
     info: TournamentInfo(
       id2: 'ligavuz19-5_u',
-      title: 'Лига вузов – 2019/20. V тур',
+      title: r'''Лига вузов – 2019/20. V тур''',
       createdAt: '02.04.2020',
       playedAt: '2020-02-19',
     ),
@@ -169,7 +169,7 @@ const expectedLatestTournaments1 = [
     id2: 'prost_19_u',
     info: TournamentInfo(
       id2: 'prost_19_u',
-      title: 'Синхронный турнир "Прост!"',
+      title: r'''Синхронный турнир "Прост!"''',
       createdAt: '31.03.2020',
       playedAt: '2019-04-26',
     ),
@@ -178,7 +178,7 @@ const expectedLatestTournaments1 = [
     id2: 'document_u',
     info: TournamentInfo(
       id2: 'document_u',
-      title: 'Синхронный турнир «Документ Microsoft Word (2).docx»',
+      title: r'''Синхронный турнир «Документ Microsoft Word (2).docx»''',
       createdAt: '31.03.2020',
       playedAt: '13.03.2020 - 18.03.2020',
     ),
