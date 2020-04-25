@@ -18,7 +18,7 @@ abstract class TournamentDto with _$TournamentDto {
     @JsonKey(name: 'Editors') String editors,
     @JsonKey(name: 'CreatedAt') String createdAt,
     @JsonKey(name: 'PlayedAt') String playedAt,
-    @JsonKey(name: 'tour') List<TourDto> tours,
+    @JsonKey(name: 'tour') @_ToursListConverter() List<TourDto> tours,
   }) = _TournamentDto;
 
   factory TournamentDto.fromJson(Map<String, dynamic> json) =>
@@ -39,12 +39,25 @@ abstract class TournamentDto with _$TournamentDto {
         playedAt: dateNode.text,
       );
 }
-//tours: map.containsKey('tour')
-//? map['tour'] is List
-//? UnmodifiableListView(List<Map<String, dynamic>>.from(
-//map['tour'] as Iterable<dynamic>)
-//.map((q) => Tour.fromJson(q))
-//.toList())
-//: UnmodifiableListView(
-//[Tour.fromJson(map['tour'] as Map<String, dynamic>)])
-//: UnmodifiableListView([]),
+
+class _ToursListConverter implements JsonConverter<List<TourDto>, Object> {
+  const _ToursListConverter();
+
+  @override
+  List<TourDto> fromJson(Object json) {
+    if (json is List) {
+      return List<Map<String, dynamic>>.from(json)
+          .map((q) => TourDto.fromJson(q))
+          .toList();
+    }
+
+    if (json is Map<String, dynamic>) {
+      return [TourDto.fromJson(json)];
+    }
+
+    return <TourDto>[];
+  }
+
+  @override
+  Object toJson(List<TourDto> object) => object;
+}
