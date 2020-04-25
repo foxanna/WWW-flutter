@@ -16,10 +16,15 @@ class _$TournamentsTreeDtoTearOff {
   const _$TournamentsTreeDtoTearOff();
 
   _TournamentsTreeDto call(
-      {@JsonKey(name: 'Id') String id,
-      @JsonKey(name: 'Title') String title,
-      @JsonKey(name: 'ChildrenNum') String childrenCount,
-      @JsonKey(name: 'tour') List<dynamic> children}) {
+      {@JsonKey(name: 'Id')
+          String id,
+      @JsonKey(name: 'Title')
+          String title,
+      @JsonKey(name: 'ChildrenNum')
+          String childrenCount,
+      @JsonKey(name: 'tour')
+      @TournamentsTreeConverter()
+          List<dynamic> children}) {
     return _TournamentsTreeDto(
       id: id,
       title: title,
@@ -40,6 +45,7 @@ mixin _$TournamentsTreeDto {
   @JsonKey(name: 'ChildrenNum')
   String get childrenCount;
   @JsonKey(name: 'tour')
+  @TournamentsTreeConverter()
   List<dynamic> get children;
 
   Map<String, dynamic> toJson();
@@ -51,10 +57,15 @@ abstract class $TournamentsTreeDtoCopyWith<$Res> {
           TournamentsTreeDto value, $Res Function(TournamentsTreeDto) then) =
       _$TournamentsTreeDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'Id') String id,
-      @JsonKey(name: 'Title') String title,
-      @JsonKey(name: 'ChildrenNum') String childrenCount,
-      @JsonKey(name: 'tour') List<dynamic> children});
+      {@JsonKey(name: 'Id')
+          String id,
+      @JsonKey(name: 'Title')
+          String title,
+      @JsonKey(name: 'ChildrenNum')
+          String childrenCount,
+      @JsonKey(name: 'tour')
+      @TournamentsTreeConverter()
+          List<dynamic> children});
 }
 
 class _$TournamentsTreeDtoCopyWithImpl<$Res>
@@ -91,10 +102,15 @@ abstract class _$TournamentsTreeDtoCopyWith<$Res>
       __$TournamentsTreeDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'Id') String id,
-      @JsonKey(name: 'Title') String title,
-      @JsonKey(name: 'ChildrenNum') String childrenCount,
-      @JsonKey(name: 'tour') List<dynamic> children});
+      {@JsonKey(name: 'Id')
+          String id,
+      @JsonKey(name: 'Title')
+          String title,
+      @JsonKey(name: 'ChildrenNum')
+          String childrenCount,
+      @JsonKey(name: 'tour')
+      @TournamentsTreeConverter()
+          List<dynamic> children});
 }
 
 class __$TournamentsTreeDtoCopyWithImpl<$Res>
@@ -134,7 +150,7 @@ class _$_TournamentsTreeDto
       {@JsonKey(name: 'Id') this.id,
       @JsonKey(name: 'Title') this.title,
       @JsonKey(name: 'ChildrenNum') this.childrenCount,
-      @JsonKey(name: 'tour') this.children});
+      @JsonKey(name: 'tour') @TournamentsTreeConverter() this.children});
 
   factory _$_TournamentsTreeDto.fromJson(Map<String, dynamic> json) =>
       _$_$_TournamentsTreeDtoFromJson(json);
@@ -150,6 +166,7 @@ class _$_TournamentsTreeDto
   final String childrenCount;
   @override
   @JsonKey(name: 'tour')
+  @TournamentsTreeConverter()
   final List<dynamic> children;
 
   @override
@@ -204,10 +221,15 @@ class _$_TournamentsTreeDto
 
 abstract class _TournamentsTreeDto implements TournamentsTreeDto {
   const factory _TournamentsTreeDto(
-      {@JsonKey(name: 'Id') String id,
-      @JsonKey(name: 'Title') String title,
-      @JsonKey(name: 'ChildrenNum') String childrenCount,
-      @JsonKey(name: 'tour') List<dynamic> children}) = _$_TournamentsTreeDto;
+      {@JsonKey(name: 'Id')
+          String id,
+      @JsonKey(name: 'Title')
+          String title,
+      @JsonKey(name: 'ChildrenNum')
+          String childrenCount,
+      @JsonKey(name: 'tour')
+      @TournamentsTreeConverter()
+          List<dynamic> children}) = _$_TournamentsTreeDto;
 
   factory _TournamentsTreeDto.fromJson(Map<String, dynamic> json) =
       _$_TournamentsTreeDto.fromJson;
@@ -223,6 +245,7 @@ abstract class _TournamentsTreeDto implements TournamentsTreeDto {
   String get childrenCount;
   @override
   @JsonKey(name: 'tour')
+  @TournamentsTreeConverter()
   List<dynamic> get children;
   @override
   _$TournamentsTreeDtoCopyWith<_TournamentsTreeDto> get copyWith;

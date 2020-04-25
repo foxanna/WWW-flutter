@@ -12,7 +12,7 @@ _$_TournamentsTreeDto _$_$_TournamentsTreeDtoFromJson(
     id: json['Id'] as String,
     title: json['Title'] as String,
     childrenCount: json['ChildrenNum'] as String,
-    children: json['tour'] as List,
+    children: const TournamentsTreeConverter().fromJson(json['tour']),
   );
 }
 
@@ -22,5 +22,5 @@ Map<String, dynamic> _$_$_TournamentsTreeDtoToJson(
       'Id': instance.id,
       'Title': instance.title,
       'ChildrenNum': instance.childrenCount,
-      'tour': instance.children,
+      'tour': const TournamentsTreeConverter().toJson(instance.children),
     };
