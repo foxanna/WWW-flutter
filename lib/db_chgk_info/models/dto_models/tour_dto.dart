@@ -26,12 +26,4 @@ abstract class TourDto with _$TourDto {
 
   factory TourDto.fromJson(Map<String, dynamic> json) =>
       _$TourDtoFromJson(json);
-//? map['question'] is List
-//? List.unmodifiable(List<Map<String, dynamic>>.from(
-//map['question'] as Iterable<dynamic>)
-//.map<Question>((q) => Question.fromJson(q)))
-//: List.unmodifiable(<Question>[
-//Question.fromJson(map['question'] as Map<String, dynamic>)
-//])
-//: UnmodifiableListView([]),
 }
