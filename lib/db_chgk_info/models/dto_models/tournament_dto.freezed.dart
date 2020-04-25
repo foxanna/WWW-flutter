@@ -25,7 +25,7 @@ class _$TournamentDtoTearOff {
       @JsonKey(name: 'Editors') String editors,
       @JsonKey(name: 'CreatedAt') String createdAt,
       @JsonKey(name: 'PlayedAt') String playedAt,
-      @JsonKey(name: 'tour') @_ToursListConverter() List<TourDto> tours}) {
+      @JsonKey(name: 'tour') @ToursListConverter() List<TourDto> tours}) {
     return _TournamentDto(
       id: id,
       textId: textId,
@@ -64,7 +64,7 @@ mixin _$TournamentDto {
   @JsonKey(name: 'PlayedAt')
   String get playedAt;
   @JsonKey(name: 'tour')
-  @_ToursListConverter()
+  @ToursListConverter()
   List<TourDto> get tours;
 
   Map<String, dynamic> toJson();
@@ -85,7 +85,7 @@ abstract class $TournamentDtoCopyWith<$Res> {
       @JsonKey(name: 'Editors') String editors,
       @JsonKey(name: 'CreatedAt') String createdAt,
       @JsonKey(name: 'PlayedAt') String playedAt,
-      @JsonKey(name: 'tour') @_ToursListConverter() List<TourDto> tours});
+      @JsonKey(name: 'tour') @ToursListConverter() List<TourDto> tours});
 }
 
 class _$TournamentDtoCopyWithImpl<$Res>
@@ -143,7 +143,7 @@ abstract class _$TournamentDtoCopyWith<$Res>
       @JsonKey(name: 'Editors') String editors,
       @JsonKey(name: 'CreatedAt') String createdAt,
       @JsonKey(name: 'PlayedAt') String playedAt,
-      @JsonKey(name: 'tour') @_ToursListConverter() List<TourDto> tours});
+      @JsonKey(name: 'tour') @ToursListConverter() List<TourDto> tours});
 }
 
 class __$TournamentDtoCopyWithImpl<$Res>
@@ -199,7 +199,7 @@ class _$_TournamentDto with DiagnosticableTreeMixin implements _TournamentDto {
       @JsonKey(name: 'Editors') this.editors,
       @JsonKey(name: 'CreatedAt') this.createdAt,
       @JsonKey(name: 'PlayedAt') this.playedAt,
-      @JsonKey(name: 'tour') @_ToursListConverter() this.tours});
+      @JsonKey(name: 'tour') @ToursListConverter() this.tours});
 
   factory _$_TournamentDto.fromJson(Map<String, dynamic> json) =>
       _$_$_TournamentDtoFromJson(json);
@@ -233,7 +233,7 @@ class _$_TournamentDto with DiagnosticableTreeMixin implements _TournamentDto {
   final String playedAt;
   @override
   @JsonKey(name: 'tour')
-  @_ToursListConverter()
+  @ToursListConverter()
   final List<TourDto> tours;
 
   @override
@@ -325,7 +325,7 @@ abstract class _TournamentDto implements TournamentDto {
           @JsonKey(name: 'Editors') String editors,
           @JsonKey(name: 'CreatedAt') String createdAt,
           @JsonKey(name: 'PlayedAt') String playedAt,
-          @JsonKey(name: 'tour') @_ToursListConverter() List<TourDto> tours}) =
+          @JsonKey(name: 'tour') @ToursListConverter() List<TourDto> tours}) =
       _$_TournamentDto;
 
   factory _TournamentDto.fromJson(Map<String, dynamic> json) =
@@ -360,7 +360,7 @@ abstract class _TournamentDto implements TournamentDto {
   String get playedAt;
   @override
   @JsonKey(name: 'tour')
-  @_ToursListConverter()
+  @ToursListConverter()
   List<TourDto> get tours;
   @override
   _$TournamentDtoCopyWith<_TournamentDto> get copyWith;

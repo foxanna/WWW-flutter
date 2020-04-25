@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:html/dom.dart';
+import 'package:what_when_where/db_chgk_info/models/dto_models/json_converters/tours_list_converter.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/tour_dto.dart';
 
 part 'tournament_dto.freezed.dart';
@@ -18,7 +19,7 @@ abstract class TournamentDto with _$TournamentDto {
     @JsonKey(name: 'Editors') String editors,
     @JsonKey(name: 'CreatedAt') String createdAt,
     @JsonKey(name: 'PlayedAt') String playedAt,
-    @JsonKey(name: 'tour') @_ToursListConverter() List<TourDto> tours,
+    @JsonKey(name: 'tour') @ToursListConverter() List<TourDto> tours,
   }) = _TournamentDto;
 
   factory TournamentDto.fromJson(Map<String, dynamic> json) =>
@@ -38,26 +39,4 @@ abstract class TournamentDto with _$TournamentDto {
         title: tournamentNode.firstChild.text,
         playedAt: dateNode.text,
       );
-}
-
-class _ToursListConverter implements JsonConverter<List<TourDto>, Object> {
-  const _ToursListConverter();
-
-  @override
-  List<TourDto> fromJson(Object json) {
-    if (json is List) {
-      return List<Map<String, dynamic>>.from(json)
-          .map((q) => TourDto.fromJson(q))
-          .toList();
-    }
-
-    if (json is Map<String, dynamic>) {
-      return [TourDto.fromJson(json)];
-    }
-
-    return <TourDto>[];
-  }
-
-  @override
-  Object toJson(List<TourDto> object) => object;
 }
