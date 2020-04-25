@@ -39,13 +39,14 @@ abstract class Question with _$Question {
         tourInfo: tourInfo
             .copyWith(
               id: tourInfo.id ?? dto.tourId,
-              title: tourInfo.title ?? dto.tourTitle ?? '',
+              title: tourInfo.title ?? dto.tourTitle.removeTrailingDot() ?? '',
             )
             .copyWith
             .tournamentInfo(
               id: tourInfo.tournamentInfo?.id ?? dto.tournamentId,
-              title:
-                  tourInfo.tournamentInfo?.title ?? dto.tournamentTitle ?? '',
+              title: tourInfo.tournamentInfo?.title ??
+                  dto.tournamentTitle.removeTrailingDot() ??
+                  '',
             ),
       );
 }
