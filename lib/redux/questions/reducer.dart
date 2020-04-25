@@ -2,7 +2,7 @@ import 'package:quiver/core.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
-import 'package:what_when_where/utils/extensions.dart';
+import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class QuestionsReducer {
   static final Reducer<QuestionsState> _reducer =

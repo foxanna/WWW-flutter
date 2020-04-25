@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:what_when_where/utils/extensions.dart';
+import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class TextStub extends StatelessWidget {
   final TextStyle textStyle;

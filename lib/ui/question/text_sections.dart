@@ -13,7 +13,7 @@ import 'package:what_when_where/services/question_parser/section_image.dart';
 import 'package:what_when_where/services/question_parser/section_speaker_note.dart';
 import 'package:what_when_where/services/question_parser/section_text.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
-import 'package:what_when_where/utils/extensions.dart';
+import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class QuestionTextSections extends StatelessWidget {
   final List<dynamic> _sections;

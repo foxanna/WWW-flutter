@@ -2,7 +2,7 @@ import 'package:quiver/core.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/redux/tours/state.dart';
-import 'package:what_when_where/utils/extensions.dart';
+import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class ToursReducer {
   static final Reducer<ToursState> _reducer = combineReducers<ToursState>([
