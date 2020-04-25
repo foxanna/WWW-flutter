@@ -1,5 +1,11 @@
 import 'package:html_unescape/html_unescape.dart';
 
+extension StringX on String {
+  String removeTrailingDot() => (this?.endsWith('.') ?? false)
+      ? this.substring(0, this.length - 1)
+      : this;
+}
+
 class TextUtils {
   static final _unescape = HtmlUnescape();
 
@@ -16,7 +22,6 @@ class TextUtils {
     text = text.trim();
     text = _normalize(text);
     text = _removeMultipleSpaces(text);
-    text = _removeTrailingDot(text);
 
     return text;
   }
@@ -49,9 +54,6 @@ class TextUtils {
 
   static String _removeMultipleSpaces(String text) =>
       text.replaceAll(RegExp(r'\s{2,}'), ' ');
-
-  static String _removeTrailingDot(String text) =>
-      (text.endsWith('.')) ? text.substring(0, text.length - 1) : text;
 
   static String _replaceMultipleSpacesWithNewLine(String text) =>
       text.replaceAll(RegExp(r'\s{2,}'), '\n');
