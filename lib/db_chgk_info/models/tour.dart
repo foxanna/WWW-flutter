@@ -5,7 +5,7 @@ import 'package:what_when_where/db_chgk_info/models/dto_models/tour_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
-import 'package:what_when_where/utils/texts.dart';
+import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 part 'tour.freezed.dart';
 
@@ -21,13 +21,13 @@ abstract class Tour with _$Tour {
       {TournamentInfo tournamentInfo = const TournamentInfo()}) {
     final info = TourInfo(
       id: dto.id,
-      title: TextUtils.normalizeToSingleLine(dto.title).removeTrailingDot(),
+      title: dto.title.normalizeToSingleLine().removeTrailingDot(),
       questionsCount: dto.questionsCount,
-      description: TextUtils.normalizeToSingleLine(dto.description),
+      description: dto.description.normalizeToSingleLine(),
       url: dto.id != null ? '${Constants.databaseUrl}/tour/${dto.id}' : null,
-      editors: TextUtils.normalizeToSingleLine(dto.editors),
-      createdAt: TextUtils.normalizeToSingleLine(dto.createdAt),
-      playedAt: TextUtils.normalizeToSingleLine(dto.playedAt),
+      editors: dto.editors.normalizeToSingleLine(),
+      createdAt: dto.createdAt.normalizeToSingleLine(),
+      playedAt: dto.playedAt.normalizeToSingleLine(),
       tournamentInfo: tournamentInfo.copyWith(
         id: tournamentInfo.id ?? dto.parentId,
         title: tournamentInfo.title ?? dto.tournamentTitle.removeTrailingDot(),

@@ -5,7 +5,7 @@ import 'package:what_when_where/services/question_parser/section_giveaway.dart';
 import 'package:what_when_where/services/question_parser/section_image.dart';
 import 'package:what_when_where/services/question_parser/section_speaker_note.dart';
 import 'package:what_when_where/services/question_parser/section_text.dart';
-import 'package:what_when_where/utils/texts.dart';
+import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 class QuestionParser {
   static final _instance = QuestionParser._();
@@ -17,7 +17,7 @@ class QuestionParser {
   static Iterable<dynamic> split(String originalText) sync* {
     var text = originalText;
 
-    text = TextUtils.normalizeToMultiLine(text);
+    text = text.normalizeToMultiLine();
 
     while (text.isNotEmpty) {
       text = text.trim();
@@ -55,13 +55,13 @@ class QuestionParser {
   static String trim(String originalText) {
     var text = originalText;
 
-    text = TextUtils.normalizeToSingleLine(text);
+    text = text.normalizeToSingleLine();
     text =
         QuestionParserHelper.removeAll(text, QuestionSectionType.SpeakerNote);
     text = QuestionParserHelper.removeAll(text, QuestionSectionType.GiveAway);
     text = QuestionParserHelper.removeAll(text, QuestionSectionType.Audio);
     text = QuestionParserHelper.removeAll(text, QuestionSectionType.Image);
-    text = TextUtils.normalizeToSingleLine(text);
+    text = text.normalizeToSingleLine();
     text = text.trim();
     return text;
   }

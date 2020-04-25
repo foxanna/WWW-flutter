@@ -4,7 +4,7 @@ import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/tournament_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
-import 'package:what_when_where/utils/texts.dart';
+import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 part 'tournament.freezed.dart';
 
@@ -21,13 +21,13 @@ abstract class Tournament with _$Tournament {
     final info = TournamentInfo(
       id: dto.id,
       id2: dto.textId,
-      title: TextUtils.normalizeToSingleLine(dto.title).removeTrailingDot(),
+      title: dto.title.normalizeToSingleLine().removeTrailingDot(),
       questionsCount: dto.questionsCount,
-      description: TextUtils.normalizeToSingleLine(dto.description),
+      description: dto.description.normalizeToSingleLine(),
       url: dto.id != null ? '${Constants.databaseUrl}/tour/${dto.id}' : null,
-      editors: TextUtils.normalizeToSingleLine(dto.editors),
-      createdAt: TextUtils.normalizeToSingleLine(dto.createdAt),
-      playedAt: TextUtils.normalizeToSingleLine(dto.playedAt),
+      editors: dto.editors.normalizeToSingleLine(),
+      createdAt: dto.createdAt.normalizeToSingleLine(),
+      playedAt: dto.playedAt.normalizeToSingleLine(),
       toursCount: dto.tours?.length?.toString(),
     );
 

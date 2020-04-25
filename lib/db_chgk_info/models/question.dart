@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/question_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
-import 'package:what_when_where/utils/texts.dart';
+import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 part 'question.freezed.dart';
 
@@ -28,11 +28,11 @@ abstract class Question with _$Question {
         questionId: dto.questionId,
         question: dto.question,
         number: dto.number,
-        answer: TextUtils.normalizeToMultiLine(dto.answer),
-        authors: TextUtils.normalizeToSingleLine(dto.authors),
-        passCriteria: TextUtils.normalizeToMultiLine(dto.passCriteria),
-        comments: TextUtils.normalizeToMultiLine(dto.comments),
-        sources: TextUtils.normalizeToMultiLine(dto.sources),
+        answer: dto.answer.normalizeToMultiLine(),
+        authors: dto.authors.normalizeToSingleLine(),
+        passCriteria: dto.passCriteria.normalizeToMultiLine(),
+        comments: dto.comments.normalizeToMultiLine(),
+        sources: dto.sources.normalizeToMultiLine(),
         url: dto.parentId != null && dto.number != null
             ? '${Constants.databaseUrl}/question/${dto.parentId}/${dto.number}'
             : null,
