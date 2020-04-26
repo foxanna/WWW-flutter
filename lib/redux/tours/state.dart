@@ -1,65 +1,42 @@
 import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 
-@immutable
-class ToursState {
-  final List<TourState> tours;
+part 'state.freezed.dart';
 
-  ToursState._({
-    Iterable<TourState> tours,
-  }) : this.tours = List.unmodifiable(tours ?? <TourState>[]);
+@freezed
+abstract class ToursState with _$ToursState {
+  const factory ToursState({
+    @required List<TourState> tours,
+  }) = _ToursState;
 
-  ToursState.initial() : this._(tours: null);
-
-  ToursState.from({
-    Iterable<Tour> tours,
-  }) : this._(
-          tours: tours?.map((tour) => TourState(tour: tour)),
-        );
-
-  ToursState copyWith({
-    Optional<Iterable<TourState>> tours,
-  }) =>
-      ToursState._(
-        tours: tours != null ? tours.orNull : this.tours,
+  factory ToursState.initial({@required List<TourInfo> toursInfo}) =>
+      ToursState(
+        tours: toursInfo.map((x) => TourState.initial(info: x)).toList(),
       );
 }
 
-@immutable
-class TourState {
-  final Tour tour;
-  final bool isLoading;
-  final Exception exception;
+@freezed
+abstract class TourState with _$TourState {
+  const factory TourState.initial({
+    @required TourInfo info,
+  }) = InitialTourState;
 
-  const TourState({
-    this.tour,
-    this.isLoading = false,
-    this.exception,
-  });
+  const factory TourState.data({
+    @required TourInfo info,
+    @required Tour tour,
+  }) = DataTourState;
 
-  TourState copyWith({
-    Optional<Tour> tour,
-    Optional<bool> isLoading,
-    Optional<Exception> exception,
-  }) =>
-      TourState(
-        tour: tour != null ? tour.orNull : this.tour,
-        isLoading: isLoading != null ? isLoading.orNull : this.isLoading,
-        exception: exception != null ? exception.orNull : this.exception,
-      );
+  const factory TourState.loading({
+    @required TourInfo info,
+  }) = LoadingTourState;
 
-  bool get hasError => exception != null;
-
-  bool get hasData => tour.questions.isNotEmpty;
-
-  @override
-  int get hashCode => hash3(tour, isLoading, exception.runtimeType);
-
-  @override
-  bool operator ==(dynamic other) =>
-      other is TourState &&
-      other.tour == tour &&
-      other.isLoading == isLoading &&
-      other.exception?.runtimeType == exception?.runtimeType;
+  const factory TourState.error({
+    @required TourInfo info,
+    @required Exception exception,
+  }) = ErrorTourState;
 }
