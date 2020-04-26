@@ -73,7 +73,8 @@ class TournamentMiddleware {
       Store<AppState> store, TournamentLoaded action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(SetTours(tours: action.tournament.tours));
+    store.dispatch(
+        SetTours(tours: action.tournament.tours.map((x) => x.info).toList()));
   }
 
   void _reloadTournament(
