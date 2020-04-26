@@ -17,12 +17,11 @@ class TournamentDetailsAboutTournamentBottomSheetItem extends StatelessWidget {
         builder: (context, state) => ListTile(
           leading: const Icon(Icons.info_outline),
           title: const Text(Strings.aboutTournament),
-          enabled: state.hasData,
           onTap: () {
             Navigator.pop(context);
 
-            StoreProvider.of<AppState>(context).dispatch(
-                OpenTournamentInfoDialog(info: state.tournament.info));
+            StoreProvider.of<AppState>(context)
+                .dispatch(OpenTournamentInfoDialog(info: state.info));
           },
         ),
       );
