@@ -1,29 +1,45 @@
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
+import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
 
 const expectedTournamentsTree1 = TournamentsTree(
   id: '0',
+  info: TournamentsTreeInfo(
+    id: '0',
+  ),
   children: [
     TournamentsTree(
       id: '1',
-      title: r'''Авторские вопросы''',
-      childrenCount: '45',
+      info: TournamentsTreeInfo(
+        id: '1',
+        title: r'''Авторские вопросы''',
+        childrenCount: '45',
+      ),
     ),
     TournamentsTree(
       id: '107',
-      title: r'''Чемпионаты разных стран и международные турниры''',
-      childrenCount: '33',
+      info: TournamentsTreeInfo(
+        id: '107',
+        title: r'''Чемпионаты разных стран и международные турниры''',
+        childrenCount: '33',
+      ),
     ),
     TournamentsTree(
       id: '803',
-      title: r'''Синхронные турниры''',
-      childrenCount: '377',
+      info: TournamentsTreeInfo(
+        id: '803',
+        title: r'''Синхронные турниры''',
+        childrenCount: '377',
+      ),
     ),
     TournamentsTree(
       id: '1391',
-      title: r'''Турниры для команд в неполном составе''',
-      childrenCount: '16',
+      info: TournamentsTreeInfo(
+        id: '1391',
+        title: r'''Турниры для команд в неполном составе''',
+        childrenCount: '16',
+      ),
     ),
     Tournament(
       id: '70492',

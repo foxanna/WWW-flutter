@@ -2,9 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:what_when_where/db_chgk_info/http_client.dart';
-import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
 
 import '../../../mocks.dart';
 import 'test_data_1.dart';
