@@ -16,15 +16,15 @@ class TournamentDetailsPageContent extends StatelessWidget {
         distinct: true,
         converter: (store) => store.state.tournamentState,
         builder: (context, state) {
-          if (state.isLoading) {
+          if (state is LoadingTournamentState) {
             return const TournamentDetailsLoadingPage();
           }
 
-          if (state.hasError) {
+          if (state is ErrorTournamentState) {
             return TournamentDetailsErrorPage(exception: state.exception);
           }
 
-          if (state.hasData) {
+          if (state is DataTournamentState) {
             return TournamentDetailsDataPage();
           }
 
