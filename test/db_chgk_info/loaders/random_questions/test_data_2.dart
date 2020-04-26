@@ -1,25 +1,29 @@
 import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 
 const expectedRandomQuestions2 = [
   Question(
-    questionId: '939869',
+    id: '939869',
     question:
         r'''На вопрос, что можно всегда найти в его холодильнике, актер Сергей Лавыгин ответил достаточно банально, назвав ЭТО, поскольку, мол, любит некий вид напитков. Назовите ЭТО коротким словом.''',
-    number: '84',
     answer: r'''Лед.''',
     authors: r'''Дмитрий Башук (Харьков)''',
     comments:
         r'''Действительно, самое простое, что всегда можно найти в холодильнике. :-) А любит актер напитки со льдом.''',
     sources: r'''"Телескоп", 2014, N 22.''',
-    url: r'''https://db.chgk.info/question/55201/84''',
-    tourInfo: TourInfo(
-      id: '55201',
-      title: r'''Групповой этап. Первый круг''',
-      tournamentInfo: TournamentInfo(
-        id: '29256',
-        title: r'''XVI Чемпионат Украины по брэйн-рингу (Николаев)''',
+    info: QuestionInfo(
+      id: '939869',
+      number: '84',
+      url: r'''https://db.chgk.info/question/55201/84''',
+      tourInfo: TourInfo(
+        id: '55201',
+        title: r'''Групповой этап. Первый круг''',
+        tournamentInfo: TournamentInfo(
+          id: '29256',
+          title: r'''XVI Чемпионат Украины по брэйн-рингу (Николаев)''',
+        ),
       ),
     ),
   ),

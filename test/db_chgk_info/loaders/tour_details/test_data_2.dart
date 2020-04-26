@@ -1,4 +1,5 @@
 import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
@@ -19,17 +20,20 @@ const expectedTourDetails2 = Tour(
   info: tourInfo2,
   questions: [
     Question(
-      questionId: '1198351',
+      id: '1198351',
       question:
           r'''В конце фильма 2018 года один из героев успевает произнести лишь «мать». Назовите исполнителя роли этого героя.''',
-      number: '1',
       answer: r'''Сэмюэль Л. Джексон.''',
       authors: r'''Живой Трибунал.''',
       comments:
           r'''Во вселенной Marvel Сэмюэль Л. Джексон играет Ника Фьюри. В конце фильма «Война Бесконечности» персонаж Сэмюэля Л. Джексона обращается в пыль, однако актёр всё же успевает наполовину произнести свою коронную однословную реплику «motherfucker» [мазафака].''',
       sources: r'''1. https://en.wikipedia.org/wiki/Post-credits_scene''',
-      url: r'''https://db.chgk.info/question/70693/1''',
-      tourInfo: tourInfo2,
+      info: QuestionInfo(
+        id: '1198351',
+        number: '1',
+        url: r'''https://db.chgk.info/question/70693/1''',
+        tourInfo: tourInfo2,
+      ),
     ),
   ],
 );

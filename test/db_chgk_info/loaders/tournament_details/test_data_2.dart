@@ -1,4 +1,5 @@
 import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
@@ -43,32 +44,38 @@ const expectedTournamentDetails2 = Tournament(
       info: tourInfo2,
       questions: [
         Question(
-          questionId: '1197982',
+          id: '1197982',
           question:
               r'''Отмечая, что отец Жакли́н Ке́ннеди был успешным брокером, а отчим — и вовсе миллионером, автор одной статьи говорит, что в её случае АЛЬФА была ТАКОЙ. ТАКАЯ АЛЬФА подаётся к самому дорогому в мире мороженому. Напишите слова, заменённые словами «ТАКАЯ АЛЬФА».''',
-          number: '1',
           answer: r'''золотая ложка.''',
           authors: r'''Сергей Терентьев (Санкт-Петербург)''',
           passCriteria: r'''золотая ложечка.''',
           comments:
               r'''про людей, родившихся в богатой семье, говорят, что они родились с серебряной ложечкой во рту. В одной нью-йоркском ресторане подают мороженое, приготовленное из какао-бобов 28 редких сортов, стоимостью 25000$. Неудивительно, что к блюду подаётся золотая ложечка — не стальной же таким блюдом лакомиться.''',
           sources: r'''https://lenta.ru/articles/2018/10/04/30swomen/''',
-          url: r'''https://db.chgk.info/question/70657/1''',
-          tourInfo: tourInfo2,
+          info: QuestionInfo(
+            id: '1197982',
+            number: '1',
+            url: r'''https://db.chgk.info/question/70657/1''',
+            tourInfo: tourInfo2,
+          ),
         ),
         Question(
-          questionId: '1197983',
+          id: '1197983',
           question:
               r'''В одном ролике, рассказывающем о НЁМ, говорится, что уже через десять лет человечество может стать узником гигантской тюрьмы. В качестве решения проблемы предлагается использовать лазеры или магниты. Назовите ЕГО двумя словами.''',
-          number: '2',
           answer: r'''космический мусор.''',
           authors: r'''Сергей Лобачёв (Нижний Новгород)''',
           comments:
               r'''согласно пессимистическому сценарию, космический мусор уже в самом ближайшем времени может существенно затруднить запуск космических кораблей.''',
           sources:
               r'''1. https://www.youtube.com // https://goo.gl/MHFCBm 2. https://ru.wikipedia.org/wiki/Космический_мусор''',
-          url: r'''https://db.chgk.info/question/70657/2''',
-          tourInfo: tourInfo2,
+          info: QuestionInfo(
+            id: '1197983',
+            number: '2',
+            url: r'''https://db.chgk.info/question/70657/2''',
+            tourInfo: tourInfo2,
+          ),
         ),
       ],
     ),

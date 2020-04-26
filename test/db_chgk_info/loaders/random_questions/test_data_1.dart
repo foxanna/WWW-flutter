@@ -1,45 +1,53 @@
 import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 
 const expectedRandomQuestions1 = [
   Question(
-    questionId: '872756',
+    id: '872756',
     question:
         r'''Поступок египетского царя Птолемея II, женившегося на Арсиное II, вызвал бурю возмущения у его приближенных. Однако царь сослался на мифологические традиции греков и египтян, создав новую традицию. Кстати, Арсиноя в результате получила второе имя, которое соответствует названию одного из крупных городов. Каких?''',
-    number: '90',
     answer: r'''Филадельфия.''',
     authors: r'''Дмитрий Соловьев (Саранск)''',
     comments:
         r'''Арсиноя была родной сестрой Птолемея. Получила прозвище "Любящая брата" - "Филадельфия". А ссылался Птолемей на египетский прецедент женитьбы Осириса на Исиде, с которой началась традиция фараонов, и на греческий прецедент женитьбы Зевса на Гере.''',
     sources:
         r'''М. Шово. Повседневная жизнь Египта во времена Клеопатры. - М.: Молодая гвардия, Палимпсест, 2004. - С. 40.''',
-    url: r'''https://db.chgk.info/question/51740/90''',
-    tourInfo: TourInfo(
-      id: '51740',
-      title: r'''1''',
-      tournamentInfo: TournamentInfo(
-        id: '495',
-        title:
-            r'''VII Чемпионат России среди студенческих команд по брэйн-рингу. Москва''',
+    info: QuestionInfo(
+      id: '872756',
+      number: '90',
+      url: r'''https://db.chgk.info/question/51740/90''',
+      tourInfo: TourInfo(
+        id: '51740',
+        title: r'''1''',
+        tournamentInfo: TournamentInfo(
+          id: '495',
+          title:
+              r'''VII Чемпионат России среди студенческих команд по брэйн-рингу. Москва''',
+        ),
       ),
     ),
   ),
   Question(
-    questionId: '925260',
+    id: '925260',
     question:
         r'''Отец главного героя мультфильма "Кунг-фу Панда - 2" говорит, что когда его сын был маленьким, то съел всю его мебель. А из чего была сделана эта мебель?''',
-    number: '43',
     answer: r'''Из бамбука.''',
     authors: r'''Андрей Бойко (Малая Виска)''',
     sources: r'''Мультфильм "Кунг-фу Панда - 2".''',
-    url: r'''https://db.chgk.info/question/54534/43''',
-    tourInfo: TourInfo(
-      id: '54534',
-      title: r'''Младшая возрастная группа. Игры основного этапа''',
-      tournamentInfo: TournamentInfo(
-        id: '735',
-        title: r'''Чемпионат Украины по брэйн-рингу среди школьников (Ялта)''',
+    info: QuestionInfo(
+      id: '925260',
+      number: '43',
+      url: r'''https://db.chgk.info/question/54534/43''',
+      tourInfo: TourInfo(
+        id: '54534',
+        title: r'''Младшая возрастная группа. Игры основного этапа''',
+        tournamentInfo: TournamentInfo(
+          id: '735',
+          title:
+              r'''Чемпионат Украины по брэйн-рингу среди школьников (Ялта)''',
+        ),
       ),
     ),
   ),

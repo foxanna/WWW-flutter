@@ -1,4 +1,5 @@
 import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
@@ -19,10 +20,9 @@ const expectedTourDetails1 = Tour(
   info: tourInfo1,
   questions: [
     Question(
-      questionId: '1198228',
+      id: '1198228',
       question:
           r'''На вопрос интервьюера [чтецу: пауза] Анжела Рае́цки, шутя, замечает, что в жизни крутить мужчинами не в её характере. Назовите хобби Анжелы.''',
-      number: '1',
       answer: r'''кикер.''',
       authors: r'''Константин Науменко (Киев)''',
       passCriteria: r'''настольный футбол.''',
@@ -30,22 +30,29 @@ const expectedTourDetails1 = Tour(
           r'''а вот фигурками футболистов девушка готова управлять хоть целыми сутками.''',
       sources:
           r'''1. https://www.canal3.md/ru/bystrota-ruk-i-nikakogo-moshennichestv_6100.html''',
-      url: r'''https://db.chgk.info/question/70679/1''',
-      tourInfo: tourInfo1,
+      info: QuestionInfo(
+        id: '1198228',
+        number: '1',
+        url: r'''https://db.chgk.info/question/70679/1''',
+        tourInfo: tourInfo1,
+      ),
     ),
     Question(
-      questionId: '1198229',
+      id: '1198229',
       question:
           r'''Телекомментатор Михаил Мельников рассказывает, что перед тем, как вести скучный матч посредственных команд, его коллеги частенько заходят… Куда?''',
-      number: '2',
       answer: r'''в букмекерскую контору.''',
       authors: r'''Константин Науменко (Киев)''',
       passCriteria: r'''в ставочную контору и т. д.''',
       comments:
           r'''ставишь, например, на то, что команды суммарно забьют больше трёх голов, и действительно активно комментируешь атакующие действия.''',
       sources: r'''https://www.sports.ru/tribuna/blogs/podcasts/2694615.html''',
-      url: r'''https://db.chgk.info/question/70679/2''',
-      tourInfo: tourInfo1,
+      info: QuestionInfo(
+        id: '1198229',
+        number: '2',
+        url: r'''https://db.chgk.info/question/70679/2''',
+        tourInfo: tourInfo1,
+      ),
     ),
   ],
 );

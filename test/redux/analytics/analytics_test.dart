@@ -4,9 +4,9 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
@@ -24,7 +24,6 @@ import 'package:what_when_where/services/analytics.dart';
 import '../../ioc/container.dart';
 import '../../ioc/initializer.dart';
 import '../../mocks.dart';
-import '../../services/question_parser/question_parser_test_helper.dart';
 
 void main() {
   Store<AppState> store;
@@ -82,12 +81,13 @@ void main() {
     test(
       '$ShareQuestion',
       () => analyticsTest(
-          const ShareQuestion(question: Question()), 'share_question'),
+          const ShareQuestion(info: QuestionInfo(), questionText: ''),
+          'share_question'),
     );
 
     test(
       '$ShareTour',
-      () => analyticsTest(const ShareTour(tour: Tour()), 'share_tour'),
+      () => analyticsTest(const ShareTour(info: TourInfo()), 'share_tour'),
     );
 
     test(
@@ -99,12 +99,12 @@ void main() {
     test(
       '$BrowseQuestion',
       () => analyticsTest(
-          const BrowseQuestion(question: Question()), 'browse_question'),
+          const BrowseQuestion(info: QuestionInfo()), 'browse_question'),
     );
 
     test(
       '$BrowseTour',
-      () => analyticsTest(const BrowseTour(tour: Tour()), 'browse_tour'),
+      () => analyticsTest(const BrowseTour(info: TourInfo()), 'browse_tour'),
     );
 
     test(
