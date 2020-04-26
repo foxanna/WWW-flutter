@@ -9,41 +9,41 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$SetTournamentTearOff {
-  const _$SetTournamentTearOff();
+class _$OpenTournamentTearOff {
+  const _$OpenTournamentTearOff();
 
-  _SetTournament call({@required Tournament tournament}) {
-    return _SetTournament(
+  _OpenTournament call({@required Tournament tournament}) {
+    return _OpenTournament(
       tournament: tournament,
     );
   }
 }
 
 // ignore: unused_element
-const $SetTournament = _$SetTournamentTearOff();
+const $OpenTournament = _$OpenTournamentTearOff();
 
-mixin _$SetTournament {
+mixin _$OpenTournament {
   Tournament get tournament;
 
-  $SetTournamentCopyWith<SetTournament> get copyWith;
+  $OpenTournamentCopyWith<OpenTournament> get copyWith;
 }
 
-abstract class $SetTournamentCopyWith<$Res> {
-  factory $SetTournamentCopyWith(
-          SetTournament value, $Res Function(SetTournament) then) =
-      _$SetTournamentCopyWithImpl<$Res>;
+abstract class $OpenTournamentCopyWith<$Res> {
+  factory $OpenTournamentCopyWith(
+          OpenTournament value, $Res Function(OpenTournament) then) =
+      _$OpenTournamentCopyWithImpl<$Res>;
   $Res call({Tournament tournament});
 
   $TournamentCopyWith<$Res> get tournament;
 }
 
-class _$SetTournamentCopyWithImpl<$Res>
-    implements $SetTournamentCopyWith<$Res> {
-  _$SetTournamentCopyWithImpl(this._value, this._then);
+class _$OpenTournamentCopyWithImpl<$Res>
+    implements $OpenTournamentCopyWith<$Res> {
+  _$OpenTournamentCopyWithImpl(this._value, this._then);
 
-  final SetTournament _value;
+  final OpenTournament _value;
   // ignore: unused_field
-  final $Res Function(SetTournament) _then;
+  final $Res Function(OpenTournament) _then;
 
   @override
   $Res call({
@@ -66,11 +66,11 @@ class _$SetTournamentCopyWithImpl<$Res>
   }
 }
 
-abstract class _$SetTournamentCopyWith<$Res>
-    implements $SetTournamentCopyWith<$Res> {
-  factory _$SetTournamentCopyWith(
-          _SetTournament value, $Res Function(_SetTournament) then) =
-      __$SetTournamentCopyWithImpl<$Res>;
+abstract class _$OpenTournamentCopyWith<$Res>
+    implements $OpenTournamentCopyWith<$Res> {
+  factory _$OpenTournamentCopyWith(
+          _OpenTournament value, $Res Function(_OpenTournament) then) =
+      __$OpenTournamentCopyWithImpl<$Res>;
   @override
   $Res call({Tournament tournament});
 
@@ -78,29 +78,31 @@ abstract class _$SetTournamentCopyWith<$Res>
   $TournamentCopyWith<$Res> get tournament;
 }
 
-class __$SetTournamentCopyWithImpl<$Res>
-    extends _$SetTournamentCopyWithImpl<$Res>
-    implements _$SetTournamentCopyWith<$Res> {
-  __$SetTournamentCopyWithImpl(
-      _SetTournament _value, $Res Function(_SetTournament) _then)
-      : super(_value, (v) => _then(v as _SetTournament));
+class __$OpenTournamentCopyWithImpl<$Res>
+    extends _$OpenTournamentCopyWithImpl<$Res>
+    implements _$OpenTournamentCopyWith<$Res> {
+  __$OpenTournamentCopyWithImpl(
+      _OpenTournament _value, $Res Function(_OpenTournament) _then)
+      : super(_value, (v) => _then(v as _OpenTournament));
 
   @override
-  _SetTournament get _value => super._value as _SetTournament;
+  _OpenTournament get _value => super._value as _OpenTournament;
 
   @override
   $Res call({
     Object tournament = freezed,
   }) {
-    return _then(_SetTournament(
+    return _then(_OpenTournament(
       tournament:
           tournament == freezed ? _value.tournament : tournament as Tournament,
     ));
   }
 }
 
-class _$_SetTournament with DiagnosticableTreeMixin implements _SetTournament {
-  const _$_SetTournament({@required this.tournament})
+class _$_OpenTournament
+    with DiagnosticableTreeMixin
+    implements _OpenTournament {
+  const _$_OpenTournament({@required this.tournament})
       : assert(tournament != null);
 
   @override
@@ -108,21 +110,21 @@ class _$_SetTournament with DiagnosticableTreeMixin implements _SetTournament {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SetTournament(tournament: $tournament)';
+    return 'OpenTournament(tournament: $tournament)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SetTournament'))
+      ..add(DiagnosticsProperty('type', 'OpenTournament'))
       ..add(DiagnosticsProperty('tournament', tournament));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SetTournament &&
+        (other is _OpenTournament &&
             (identical(other.tournament, tournament) ||
                 const DeepCollectionEquality()
                     .equals(other.tournament, tournament)));
@@ -133,18 +135,18 @@ class _$_SetTournament with DiagnosticableTreeMixin implements _SetTournament {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournament);
 
   @override
-  _$SetTournamentCopyWith<_SetTournament> get copyWith =>
-      __$SetTournamentCopyWithImpl<_SetTournament>(this, _$identity);
+  _$OpenTournamentCopyWith<_OpenTournament> get copyWith =>
+      __$OpenTournamentCopyWithImpl<_OpenTournament>(this, _$identity);
 }
 
-abstract class _SetTournament implements SetTournament {
-  const factory _SetTournament({@required Tournament tournament}) =
-      _$_SetTournament;
+abstract class _OpenTournament implements OpenTournament {
+  const factory _OpenTournament({@required Tournament tournament}) =
+      _$_OpenTournament;
 
   @override
   Tournament get tournament;
   @override
-  _$SetTournamentCopyWith<_SetTournament> get copyWith;
+  _$OpenTournamentCopyWith<_OpenTournament> get copyWith;
 }
 
 class _$ClearTournamentTearOff {

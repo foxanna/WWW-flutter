@@ -8,10 +8,12 @@ part 'actions.freezed.dart';
 abstract class TournamentAction implements ReduxAction {}
 
 @freezed
-abstract class SetTournament with _$SetTournament implements TournamentAction {
-  const factory SetTournament({
+abstract class OpenTournament
+    with _$OpenTournament
+    implements TournamentAction {
+  const factory OpenTournament({
     @required Tournament tournament,
-  }) = _SetTournament;
+  }) = _OpenTournament;
 }
 
 @freezed

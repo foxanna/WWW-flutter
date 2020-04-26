@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/redux/tornament/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/shape_hero.dart';
@@ -89,5 +89,5 @@ class TournamentsGridTile extends StatelessWidget {
 
   void _openTournamentDetails(BuildContext context) =>
       StoreProvider.of<AppState>(context)
-          .dispatch(OpenTournamentPage(tournament: tournament));
+          .dispatch(OpenTournament(tournament: tournament));
 }
