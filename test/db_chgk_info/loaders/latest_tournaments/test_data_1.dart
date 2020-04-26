@@ -9,6 +9,7 @@ const expectedLatestTournaments1 = [
       title: r'''Кубок Бесконечности. V этап: Камень Разума. Первый тур''',
       createdAt: '23.04.2020',
       playedAt: '2020-01-15',
+      url: r'''https://db.chgk.info/tour/thanos19.5_u''',
     ),
   ),
   Tournament(
@@ -18,6 +19,7 @@ const expectedLatestTournaments1 = [
       title: r'''Синхронный турнир "Азовский бриз - 2019"''',
       createdAt: '21.04.2020',
       playedAt: '2019-01-18',
+      url: r'''https://db.chgk.info/tour/azov19_u''',
     ),
   ),
   Tournament(
@@ -27,6 +29,7 @@ const expectedLatestTournaments1 = [
       title: r'''Синхронный турнир "Азовский бриз - 2020"''',
       createdAt: '21.04.2020',
       playedAt: '2020-01-17',
+      url: r'''https://db.chgk.info/tour/azov20_u''',
     ),
   ),
   Tournament(
@@ -37,6 +40,7 @@ const expectedLatestTournaments1 = [
           r'''XXI Международный турнир по интеллектуальным играм «Беловежская зима — 2019»''',
       createdAt: '18.04.2020',
       playedAt: '07.12.2019 - 08.12.2019',
+      url: r'''https://db.chgk.info/tour/dmitrybuts_u''',
     ),
   ),
   Tournament(
@@ -46,6 +50,7 @@ const expectedLatestTournaments1 = [
       title: r'''Студенческая Лига Сибири – 2018/19. V тур''',
       createdAt: '16.04.2020',
       playedAt: '2019-03-12',
+      url: r'''https://db.chgk.info/tour/sls2018v_u''',
     ),
   ),
   Tournament(
@@ -55,6 +60,7 @@ const expectedLatestTournaments1 = [
       title: r'''Студенческая Лига Сибири – 2018/19. VI тур''',
       createdAt: '16.04.2020',
       playedAt: '2019-04-12',
+      url: r'''https://db.chgk.info/tour/sls2018vi_u''',
     ),
   ),
   Tournament(
@@ -64,6 +70,7 @@ const expectedLatestTournaments1 = [
       title: r'''Студенческая Лига Сибири – 2018/19. III тур''',
       createdAt: '15.04.2020',
       playedAt: '2018-12-25',
+      url: r'''https://db.chgk.info/tour/sls2018iii_u''',
     ),
   ),
   Tournament(
@@ -73,6 +80,7 @@ const expectedLatestTournaments1 = [
       title: r'''Студенческая Лига Сибири – 2018/19. II тур''',
       createdAt: '14.04.2020',
       playedAt: '2018-11-13',
+      url: r'''https://db.chgk.info/tour/sls2018ii_u''',
     ),
   ),
   Tournament(
@@ -82,6 +90,7 @@ const expectedLatestTournaments1 = [
       title: r'''Гостиный Двор – 2019''',
       createdAt: '10.04.2020',
       playedAt: '2019-12-07',
+      url: r'''https://db.chgk.info/tour/gostdvor19_u''',
     ),
   ),
   Tournament(
@@ -91,6 +100,7 @@ const expectedLatestTournaments1 = [
       title: r'''IQ ПФО 2016. Студенты. Первый отборочный этап''',
       createdAt: '10.04.2020',
       playedAt: '10.01.2020 - 10.02.2016',
+      url: r'''https://db.chgk.info/tour/iqpfosto16_u''',
     ),
   ),
   Tournament(
@@ -100,6 +110,7 @@ const expectedLatestTournaments1 = [
       title: r'''IQ ПФО 2016. Студенты. Второй отборочный этап''',
       createdAt: '10.04.2020',
       playedAt: '10.02.2020 - 10.03.2016',
+      url: r'''https://db.chgk.info/tour/iqpfoso16_u''',
     ),
   ),
   Tournament(
@@ -109,6 +120,7 @@ const expectedLatestTournaments1 = [
       title: r'''II Синхронный турнир «АSК-Cup-2»''',
       createdAt: '09.04.2020',
       playedAt: '2019-04-04',
+      url: r'''https://db.chgk.info/tour/askcup2_19_u''',
     ),
   ),
   Tournament(
@@ -118,6 +130,7 @@ const expectedLatestTournaments1 = [
       title: r'''Пущинские Дали – 2019''',
       createdAt: '09.04.2020',
       playedAt: '2019-07-13',
+      url: r'''https://db.chgk.info/tour/pudali19_u''',
     ),
   ),
   Tournament(
@@ -127,6 +140,7 @@ const expectedLatestTournaments1 = [
       title: r'''Открытый Кубок России – 2019''',
       createdAt: '04.04.2020',
       playedAt: '',
+      url: r'''https://db.chgk.info/tour/okr2019_u''',
     ),
   ),
   Tournament(
@@ -136,6 +150,7 @@ const expectedLatestTournaments1 = [
       title: r'''Синхронный турнир “Элементарно!”''',
       createdAt: '03.04.2020',
       playedAt: '2019-10-01',
+      url: r'''https://db.chgk.info/tour/element19_u''',
     ),
   ),
   Tournament(
@@ -145,6 +160,7 @@ const expectedLatestTournaments1 = [
       title: r'''Студенческая Лига Сибири – 2018/19. I тур''',
       createdAt: '02.04.2020',
       playedAt: '2018-11-09',
+      url: r'''https://db.chgk.info/tour/sls2018i_u''',
     ),
   ),
   Tournament(
@@ -154,6 +170,7 @@ const expectedLatestTournaments1 = [
       title: r'''Школьная лига 2019/20. III тур''',
       createdAt: '02.04.2020',
       playedAt: '2019-12-15',
+      url: r'''https://db.chgk.info/tour/schoolig19-3_u''',
     ),
   ),
   Tournament(
@@ -163,6 +180,7 @@ const expectedLatestTournaments1 = [
       title: r'''Лига вузов – 2019/20. V тур''',
       createdAt: '02.04.2020',
       playedAt: '2020-02-19',
+      url: r'''https://db.chgk.info/tour/ligavuz19-5_u''',
     ),
   ),
   Tournament(
@@ -172,6 +190,7 @@ const expectedLatestTournaments1 = [
       title: r'''Синхронный турнир "Прост!"''',
       createdAt: '31.03.2020',
       playedAt: '2019-04-26',
+      url: r'''https://db.chgk.info/tour/prost_19_u''',
     ),
   ),
   Tournament(
@@ -181,6 +200,7 @@ const expectedLatestTournaments1 = [
       title: r'''Синхронный турнир «Документ Microsoft Word (2).docx»''',
       createdAt: '31.03.2020',
       playedAt: '13.03.2020 - 18.03.2020',
+      url: r'''https://db.chgk.info/tour/document_u''',
     ),
   ),
 ];
