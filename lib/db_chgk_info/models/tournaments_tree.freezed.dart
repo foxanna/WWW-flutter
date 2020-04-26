@@ -14,14 +14,12 @@ class _$TournamentsTreeTearOff {
 
   _TournamentsTree call(
       {String id,
-      String title,
-      String childrenCount,
-      List<dynamic> children = const <dynamic>[]}) {
+      List<dynamic> children = const <dynamic>[],
+      TournamentsTreeInfo info = const TournamentsTreeInfo()}) {
     return _TournamentsTree(
       id: id,
-      title: title,
-      childrenCount: childrenCount,
       children: children,
+      info: info,
     );
   }
 }
@@ -31,9 +29,8 @@ const $TournamentsTree = _$TournamentsTreeTearOff();
 
 mixin _$TournamentsTree {
   String get id;
-  String get title;
-  String get childrenCount;
   List<dynamic> get children;
+  TournamentsTreeInfo get info;
 
   $TournamentsTreeCopyWith<TournamentsTree> get copyWith;
 }
@@ -42,8 +39,9 @@ abstract class $TournamentsTreeCopyWith<$Res> {
   factory $TournamentsTreeCopyWith(
           TournamentsTree value, $Res Function(TournamentsTree) then) =
       _$TournamentsTreeCopyWithImpl<$Res>;
-  $Res call(
-      {String id, String title, String childrenCount, List<dynamic> children});
+  $Res call({String id, List<dynamic> children, TournamentsTreeInfo info});
+
+  $TournamentsTreeInfoCopyWith<$Res> get info;
 }
 
 class _$TournamentsTreeCopyWithImpl<$Res>
@@ -57,19 +55,25 @@ class _$TournamentsTreeCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
-    Object title = freezed,
-    Object childrenCount = freezed,
     Object children = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
-      childrenCount: childrenCount == freezed
-          ? _value.childrenCount
-          : childrenCount as String,
       children:
           children == freezed ? _value.children : children as List<dynamic>,
+      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
     ));
+  }
+
+  @override
+  $TournamentsTreeInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentsTreeInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
   }
 }
 
@@ -79,8 +83,10 @@ abstract class _$TournamentsTreeCopyWith<$Res>
           _TournamentsTree value, $Res Function(_TournamentsTree) then) =
       __$TournamentsTreeCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id, String title, String childrenCount, List<dynamic> children});
+  $Res call({String id, List<dynamic> children, TournamentsTreeInfo info});
+
+  @override
+  $TournamentsTreeInfoCopyWith<$Res> get info;
 }
 
 class __$TournamentsTreeCopyWithImpl<$Res>
@@ -96,18 +102,14 @@ class __$TournamentsTreeCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
-    Object title = freezed,
-    Object childrenCount = freezed,
     Object children = freezed,
+    Object info = freezed,
   }) {
     return _then(_TournamentsTree(
       id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
-      childrenCount: childrenCount == freezed
-          ? _value.childrenCount
-          : childrenCount as String,
       children:
           children == freezed ? _value.children : children as List<dynamic>,
+      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
     ));
   }
 }
@@ -117,24 +119,23 @@ class _$_TournamentsTree
     implements _TournamentsTree {
   const _$_TournamentsTree(
       {this.id,
-      this.title,
-      this.childrenCount,
-      this.children = const <dynamic>[]})
-      : assert(children != null);
+      this.children = const <dynamic>[],
+      this.info = const TournamentsTreeInfo()})
+      : assert(children != null),
+        assert(info != null);
 
   @override
   final String id;
-  @override
-  final String title;
-  @override
-  final String childrenCount;
   @JsonKey(defaultValue: const <dynamic>[])
   @override
   final List<dynamic> children;
+  @JsonKey(defaultValue: const TournamentsTreeInfo())
+  @override
+  final TournamentsTreeInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentsTree(id: $id, title: $title, childrenCount: $childrenCount, children: $children)';
+    return 'TournamentsTree(id: $id, children: $children, info: $info)';
   }
 
   @override
@@ -143,9 +144,8 @@ class _$_TournamentsTree
     properties
       ..add(DiagnosticsProperty('type', 'TournamentsTree'))
       ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('childrenCount', childrenCount))
-      ..add(DiagnosticsProperty('children', children));
+      ..add(DiagnosticsProperty('children', children))
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
@@ -154,23 +154,19 @@ class _$_TournamentsTree
         (other is _TournamentsTree &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.childrenCount, childrenCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.childrenCount, childrenCount)) &&
             (identical(other.children, children) ||
                 const DeepCollectionEquality()
-                    .equals(other.children, children)));
+                    .equals(other.children, children)) &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(childrenCount) ^
-      const DeepCollectionEquality().hash(children);
+      const DeepCollectionEquality().hash(children) ^
+      const DeepCollectionEquality().hash(info);
 
   @override
   _$TournamentsTreeCopyWith<_TournamentsTree> get copyWith =>
@@ -180,18 +176,15 @@ class _$_TournamentsTree
 abstract class _TournamentsTree implements TournamentsTree {
   const factory _TournamentsTree(
       {String id,
-      String title,
-      String childrenCount,
-      List<dynamic> children}) = _$_TournamentsTree;
+      List<dynamic> children,
+      TournamentsTreeInfo info}) = _$_TournamentsTree;
 
   @override
   String get id;
   @override
-  String get title;
-  @override
-  String get childrenCount;
-  @override
   List<dynamic> get children;
+  @override
+  TournamentsTreeInfo get info;
   @override
   _$TournamentsTreeCopyWith<_TournamentsTree> get copyWith;
 }
