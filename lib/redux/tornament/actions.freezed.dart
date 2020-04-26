@@ -226,9 +226,9 @@ abstract class _ClearTournament implements ClearTournament {
 class _$LoadTournamentTearOff {
   const _$LoadTournamentTearOff();
 
-  _LoadTournament call({@required String tournamentId}) {
+  _LoadTournament call({@required TournamentInfo info}) {
     return _LoadTournament(
-      tournamentId: tournamentId,
+      info: info,
     );
   }
 }
@@ -237,7 +237,7 @@ class _$LoadTournamentTearOff {
 const $LoadTournament = _$LoadTournamentTearOff();
 
 mixin _$LoadTournament {
-  String get tournamentId;
+  TournamentInfo get info;
 
   $LoadTournamentCopyWith<LoadTournament> get copyWith;
 }
@@ -246,7 +246,9 @@ abstract class $LoadTournamentCopyWith<$Res> {
   factory $LoadTournamentCopyWith(
           LoadTournament value, $Res Function(LoadTournament) then) =
       _$LoadTournamentCopyWithImpl<$Res>;
-  $Res call({String tournamentId});
+  $Res call({TournamentInfo info});
+
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class _$LoadTournamentCopyWithImpl<$Res>
@@ -259,13 +261,21 @@ class _$LoadTournamentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournamentId = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      tournamentId: tournamentId == freezed
-          ? _value.tournamentId
-          : tournamentId as String,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
   }
 }
 
@@ -275,7 +285,10 @@ abstract class _$LoadTournamentCopyWith<$Res>
           _LoadTournament value, $Res Function(_LoadTournament) then) =
       __$LoadTournamentCopyWithImpl<$Res>;
   @override
-  $Res call({String tournamentId});
+  $Res call({TournamentInfo info});
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class __$LoadTournamentCopyWithImpl<$Res>
@@ -290,12 +303,10 @@ class __$LoadTournamentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournamentId = freezed,
+    Object info = freezed,
   }) {
     return _then(_LoadTournament(
-      tournamentId: tournamentId == freezed
-          ? _value.tournamentId
-          : tournamentId as String,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
 }
@@ -303,15 +314,14 @@ class __$LoadTournamentCopyWithImpl<$Res>
 class _$_LoadTournament
     with DiagnosticableTreeMixin
     implements _LoadTournament {
-  const _$_LoadTournament({@required this.tournamentId})
-      : assert(tournamentId != null);
+  const _$_LoadTournament({@required this.info}) : assert(info != null);
 
   @override
-  final String tournamentId;
+  final TournamentInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoadTournament(tournamentId: $tournamentId)';
+    return 'LoadTournament(info: $info)';
   }
 
   @override
@@ -319,21 +329,20 @@ class _$_LoadTournament
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'LoadTournament'))
-      ..add(DiagnosticsProperty('tournamentId', tournamentId));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadTournament &&
-            (identical(other.tournamentId, tournamentId) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournamentId, tournamentId)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournamentId);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$LoadTournamentCopyWith<_LoadTournament> get copyWith =>
@@ -341,11 +350,11 @@ class _$_LoadTournament
 }
 
 abstract class _LoadTournament implements LoadTournament {
-  const factory _LoadTournament({@required String tournamentId}) =
+  const factory _LoadTournament({@required TournamentInfo info}) =
       _$_LoadTournament;
 
   @override
-  String get tournamentId;
+  TournamentInfo get info;
   @override
   _$LoadTournamentCopyWith<_LoadTournament> get copyWith;
 }
@@ -427,9 +436,9 @@ abstract class _ReloadTournament implements ReloadTournament {
 class _$TournamentIsLoadingTearOff {
   const _$TournamentIsLoadingTearOff();
 
-  _TournamentIsLoading call({@required String tournamentId}) {
+  _TournamentIsLoading call({@required TournamentInfo info}) {
     return _TournamentIsLoading(
-      tournamentId: tournamentId,
+      info: info,
     );
   }
 }
@@ -438,7 +447,7 @@ class _$TournamentIsLoadingTearOff {
 const $TournamentIsLoading = _$TournamentIsLoadingTearOff();
 
 mixin _$TournamentIsLoading {
-  String get tournamentId;
+  TournamentInfo get info;
 
   $TournamentIsLoadingCopyWith<TournamentIsLoading> get copyWith;
 }
@@ -447,7 +456,9 @@ abstract class $TournamentIsLoadingCopyWith<$Res> {
   factory $TournamentIsLoadingCopyWith(
           TournamentIsLoading value, $Res Function(TournamentIsLoading) then) =
       _$TournamentIsLoadingCopyWithImpl<$Res>;
-  $Res call({String tournamentId});
+  $Res call({TournamentInfo info});
+
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class _$TournamentIsLoadingCopyWithImpl<$Res>
@@ -460,13 +471,21 @@ class _$TournamentIsLoadingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournamentId = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      tournamentId: tournamentId == freezed
-          ? _value.tournamentId
-          : tournamentId as String,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
   }
 }
 
@@ -476,7 +495,10 @@ abstract class _$TournamentIsLoadingCopyWith<$Res>
           $Res Function(_TournamentIsLoading) then) =
       __$TournamentIsLoadingCopyWithImpl<$Res>;
   @override
-  $Res call({String tournamentId});
+  $Res call({TournamentInfo info});
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class __$TournamentIsLoadingCopyWithImpl<$Res>
@@ -491,12 +513,10 @@ class __$TournamentIsLoadingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournamentId = freezed,
+    Object info = freezed,
   }) {
     return _then(_TournamentIsLoading(
-      tournamentId: tournamentId == freezed
-          ? _value.tournamentId
-          : tournamentId as String,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
 }
@@ -504,15 +524,14 @@ class __$TournamentIsLoadingCopyWithImpl<$Res>
 class _$_TournamentIsLoading
     with DiagnosticableTreeMixin
     implements _TournamentIsLoading {
-  const _$_TournamentIsLoading({@required this.tournamentId})
-      : assert(tournamentId != null);
+  const _$_TournamentIsLoading({@required this.info}) : assert(info != null);
 
   @override
-  final String tournamentId;
+  final TournamentInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentIsLoading(tournamentId: $tournamentId)';
+    return 'TournamentIsLoading(info: $info)';
   }
 
   @override
@@ -520,21 +539,20 @@ class _$_TournamentIsLoading
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'TournamentIsLoading'))
-      ..add(DiagnosticsProperty('tournamentId', tournamentId));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TournamentIsLoading &&
-            (identical(other.tournamentId, tournamentId) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournamentId, tournamentId)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournamentId);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$TournamentIsLoadingCopyWith<_TournamentIsLoading> get copyWith =>
@@ -543,11 +561,11 @@ class _$_TournamentIsLoading
 }
 
 abstract class _TournamentIsLoading implements TournamentIsLoading {
-  const factory _TournamentIsLoading({@required String tournamentId}) =
+  const factory _TournamentIsLoading({@required TournamentInfo info}) =
       _$_TournamentIsLoading;
 
   @override
-  String get tournamentId;
+  TournamentInfo get info;
   @override
   _$TournamentIsLoadingCopyWith<_TournamentIsLoading> get copyWith;
 }
@@ -696,9 +714,9 @@ class _$TournamentFailedLoadingTearOff {
   const _$TournamentFailedLoadingTearOff();
 
   _TournamentFailedLoading call(
-      {@required String tournamentId, @required Exception exception}) {
+      {@required TournamentInfo info, @required Exception exception}) {
     return _TournamentFailedLoading(
-      tournamentId: tournamentId,
+      info: info,
       exception: exception,
     );
   }
@@ -708,7 +726,7 @@ class _$TournamentFailedLoadingTearOff {
 const $TournamentFailedLoading = _$TournamentFailedLoadingTearOff();
 
 mixin _$TournamentFailedLoading {
-  String get tournamentId;
+  TournamentInfo get info;
   Exception get exception;
 
   $TournamentFailedLoadingCopyWith<TournamentFailedLoading> get copyWith;
@@ -718,7 +736,9 @@ abstract class $TournamentFailedLoadingCopyWith<$Res> {
   factory $TournamentFailedLoadingCopyWith(TournamentFailedLoading value,
           $Res Function(TournamentFailedLoading) then) =
       _$TournamentFailedLoadingCopyWithImpl<$Res>;
-  $Res call({String tournamentId, Exception exception});
+  $Res call({TournamentInfo info, Exception exception});
+
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class _$TournamentFailedLoadingCopyWithImpl<$Res>
@@ -731,16 +751,24 @@ class _$TournamentFailedLoadingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournamentId = freezed,
+    Object info = freezed,
     Object exception = freezed,
   }) {
     return _then(_value.copyWith(
-      tournamentId: tournamentId == freezed
-          ? _value.tournamentId
-          : tournamentId as String,
+      info: info == freezed ? _value.info : info as TournamentInfo,
       exception:
           exception == freezed ? _value.exception : exception as Exception,
     ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
   }
 }
 
@@ -750,7 +778,10 @@ abstract class _$TournamentFailedLoadingCopyWith<$Res>
           $Res Function(_TournamentFailedLoading) then) =
       __$TournamentFailedLoadingCopyWithImpl<$Res>;
   @override
-  $Res call({String tournamentId, Exception exception});
+  $Res call({TournamentInfo info, Exception exception});
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class __$TournamentFailedLoadingCopyWithImpl<$Res>
@@ -766,13 +797,11 @@ class __$TournamentFailedLoadingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournamentId = freezed,
+    Object info = freezed,
     Object exception = freezed,
   }) {
     return _then(_TournamentFailedLoading(
-      tournamentId: tournamentId == freezed
-          ? _value.tournamentId
-          : tournamentId as String,
+      info: info == freezed ? _value.info : info as TournamentInfo,
       exception:
           exception == freezed ? _value.exception : exception as Exception,
     ));
@@ -783,18 +812,18 @@ class _$_TournamentFailedLoading
     with DiagnosticableTreeMixin
     implements _TournamentFailedLoading {
   const _$_TournamentFailedLoading(
-      {@required this.tournamentId, @required this.exception})
-      : assert(tournamentId != null),
+      {@required this.info, @required this.exception})
+      : assert(info != null),
         assert(exception != null);
 
   @override
-  final String tournamentId;
+  final TournamentInfo info;
   @override
   final Exception exception;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentFailedLoading(tournamentId: $tournamentId, exception: $exception)';
+    return 'TournamentFailedLoading(info: $info, exception: $exception)';
   }
 
   @override
@@ -802,7 +831,7 @@ class _$_TournamentFailedLoading
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'TournamentFailedLoading'))
-      ..add(DiagnosticsProperty('tournamentId', tournamentId))
+      ..add(DiagnosticsProperty('info', info))
       ..add(DiagnosticsProperty('exception', exception));
   }
 
@@ -810,9 +839,8 @@ class _$_TournamentFailedLoading
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TournamentFailedLoading &&
-            (identical(other.tournamentId, tournamentId) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournamentId, tournamentId)) &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)) &&
             (identical(other.exception, exception) ||
                 const DeepCollectionEquality()
                     .equals(other.exception, exception)));
@@ -821,7 +849,7 @@ class _$_TournamentFailedLoading
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(tournamentId) ^
+      const DeepCollectionEquality().hash(info) ^
       const DeepCollectionEquality().hash(exception);
 
   @override
@@ -832,11 +860,11 @@ class _$_TournamentFailedLoading
 
 abstract class _TournamentFailedLoading implements TournamentFailedLoading {
   const factory _TournamentFailedLoading(
-      {@required String tournamentId,
+      {@required TournamentInfo info,
       @required Exception exception}) = _$_TournamentFailedLoading;
 
   @override
-  String get tournamentId;
+  TournamentInfo get info;
   @override
   Exception get exception;
   @override
