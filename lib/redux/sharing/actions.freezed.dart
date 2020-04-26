@@ -12,9 +12,11 @@ T _$identity<T>(T value) => value;
 class _$ShareQuestionTearOff {
   const _$ShareQuestionTearOff();
 
-  _ShareQuestion call({@required Question question}) {
+  _ShareQuestion call(
+      {@required QuestionInfo info, @required String questionText}) {
     return _ShareQuestion(
-      question: question,
+      info: info,
+      questionText: questionText,
     );
   }
 }
@@ -23,7 +25,8 @@ class _$ShareQuestionTearOff {
 const $ShareQuestion = _$ShareQuestionTearOff();
 
 mixin _$ShareQuestion {
-  Question get question;
+  QuestionInfo get info;
+  String get questionText;
 
   $ShareQuestionCopyWith<ShareQuestion> get copyWith;
 }
@@ -32,9 +35,9 @@ abstract class $ShareQuestionCopyWith<$Res> {
   factory $ShareQuestionCopyWith(
           ShareQuestion value, $Res Function(ShareQuestion) then) =
       _$ShareQuestionCopyWithImpl<$Res>;
-  $Res call({Question question});
+  $Res call({QuestionInfo info, String questionText});
 
-  $QuestionCopyWith<$Res> get question;
+  $QuestionInfoCopyWith<$Res> get info;
 }
 
 class _$ShareQuestionCopyWithImpl<$Res>
@@ -47,20 +50,24 @@ class _$ShareQuestionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object question = freezed,
+    Object info = freezed,
+    Object questionText = freezed,
   }) {
     return _then(_value.copyWith(
-      question: question == freezed ? _value.question : question as Question,
+      info: info == freezed ? _value.info : info as QuestionInfo,
+      questionText: questionText == freezed
+          ? _value.questionText
+          : questionText as String,
     ));
   }
 
   @override
-  $QuestionCopyWith<$Res> get question {
-    if (_value.question == null) {
+  $QuestionInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
       return null;
     }
-    return $QuestionCopyWith<$Res>(_value.question, (value) {
-      return _then(_value.copyWith(question: value));
+    return $QuestionInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
     });
   }
 }
@@ -71,10 +78,10 @@ abstract class _$ShareQuestionCopyWith<$Res>
           _ShareQuestion value, $Res Function(_ShareQuestion) then) =
       __$ShareQuestionCopyWithImpl<$Res>;
   @override
-  $Res call({Question question});
+  $Res call({QuestionInfo info, String questionText});
 
   @override
-  $QuestionCopyWith<$Res> get question;
+  $QuestionInfoCopyWith<$Res> get info;
 }
 
 class __$ShareQuestionCopyWithImpl<$Res>
@@ -89,23 +96,31 @@ class __$ShareQuestionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object question = freezed,
+    Object info = freezed,
+    Object questionText = freezed,
   }) {
     return _then(_ShareQuestion(
-      question: question == freezed ? _value.question : question as Question,
+      info: info == freezed ? _value.info : info as QuestionInfo,
+      questionText: questionText == freezed
+          ? _value.questionText
+          : questionText as String,
     ));
   }
 }
 
 class _$_ShareQuestion with DiagnosticableTreeMixin implements _ShareQuestion {
-  const _$_ShareQuestion({@required this.question}) : assert(question != null);
+  const _$_ShareQuestion({@required this.info, @required this.questionText})
+      : assert(info != null),
+        assert(questionText != null);
 
   @override
-  final Question question;
+  final QuestionInfo info;
+  @override
+  final String questionText;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ShareQuestion(question: $question)';
+    return 'ShareQuestion(info: $info, questionText: $questionText)';
   }
 
   @override
@@ -113,21 +128,26 @@ class _$_ShareQuestion with DiagnosticableTreeMixin implements _ShareQuestion {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ShareQuestion'))
-      ..add(DiagnosticsProperty('question', question));
+      ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('questionText', questionText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ShareQuestion &&
-            (identical(other.question, question) ||
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)) &&
+            (identical(other.questionText, questionText) ||
                 const DeepCollectionEquality()
-                    .equals(other.question, question)));
+                    .equals(other.questionText, questionText)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(question);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(info) ^
+      const DeepCollectionEquality().hash(questionText);
 
   @override
   _$ShareQuestionCopyWith<_ShareQuestion> get copyWith =>
@@ -135,11 +155,14 @@ class _$_ShareQuestion with DiagnosticableTreeMixin implements _ShareQuestion {
 }
 
 abstract class _ShareQuestion implements ShareQuestion {
-  const factory _ShareQuestion({@required Question question}) =
-      _$_ShareQuestion;
+  const factory _ShareQuestion(
+      {@required QuestionInfo info,
+      @required String questionText}) = _$_ShareQuestion;
 
   @override
-  Question get question;
+  QuestionInfo get info;
+  @override
+  String get questionText;
   @override
   _$ShareQuestionCopyWith<_ShareQuestion> get copyWith;
 }
@@ -147,9 +170,9 @@ abstract class _ShareQuestion implements ShareQuestion {
 class _$ShareTourTearOff {
   const _$ShareTourTearOff();
 
-  _ShareTour call({@required Tour tour}) {
+  _ShareTour call({@required TourInfo info}) {
     return _ShareTour(
-      tour: tour,
+      info: info,
     );
   }
 }
@@ -158,7 +181,7 @@ class _$ShareTourTearOff {
 const $ShareTour = _$ShareTourTearOff();
 
 mixin _$ShareTour {
-  Tour get tour;
+  TourInfo get info;
 
   $ShareTourCopyWith<ShareTour> get copyWith;
 }
@@ -166,9 +189,9 @@ mixin _$ShareTour {
 abstract class $ShareTourCopyWith<$Res> {
   factory $ShareTourCopyWith(ShareTour value, $Res Function(ShareTour) then) =
       _$ShareTourCopyWithImpl<$Res>;
-  $Res call({Tour tour});
+  $Res call({TourInfo info});
 
-  $TourCopyWith<$Res> get tour;
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class _$ShareTourCopyWithImpl<$Res> implements $ShareTourCopyWith<$Res> {
@@ -180,20 +203,20 @@ class _$ShareTourCopyWithImpl<$Res> implements $ShareTourCopyWith<$Res> {
 
   @override
   $Res call({
-    Object tour = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      tour: tour == freezed ? _value.tour : tour as Tour,
+      info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
 
   @override
-  $TourCopyWith<$Res> get tour {
-    if (_value.tour == null) {
+  $TourInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
       return null;
     }
-    return $TourCopyWith<$Res>(_value.tour, (value) {
-      return _then(_value.copyWith(tour: value));
+    return $TourInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
     });
   }
 }
@@ -203,10 +226,10 @@ abstract class _$ShareTourCopyWith<$Res> implements $ShareTourCopyWith<$Res> {
           _ShareTour value, $Res Function(_ShareTour) then) =
       __$ShareTourCopyWithImpl<$Res>;
   @override
-  $Res call({Tour tour});
+  $Res call({TourInfo info});
 
   @override
-  $TourCopyWith<$Res> get tour;
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class __$ShareTourCopyWithImpl<$Res> extends _$ShareTourCopyWithImpl<$Res>
@@ -219,23 +242,23 @@ class __$ShareTourCopyWithImpl<$Res> extends _$ShareTourCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tour = freezed,
+    Object info = freezed,
   }) {
     return _then(_ShareTour(
-      tour: tour == freezed ? _value.tour : tour as Tour,
+      info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
 }
 
 class _$_ShareTour with DiagnosticableTreeMixin implements _ShareTour {
-  const _$_ShareTour({@required this.tour}) : assert(tour != null);
+  const _$_ShareTour({@required this.info}) : assert(info != null);
 
   @override
-  final Tour tour;
+  final TourInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ShareTour(tour: $tour)';
+    return 'ShareTour(info: $info)';
   }
 
   @override
@@ -243,20 +266,20 @@ class _$_ShareTour with DiagnosticableTreeMixin implements _ShareTour {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ShareTour'))
-      ..add(DiagnosticsProperty('tour', tour));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ShareTour &&
-            (identical(other.tour, tour) ||
-                const DeepCollectionEquality().equals(other.tour, tour)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tour);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$ShareTourCopyWith<_ShareTour> get copyWith =>
@@ -264,10 +287,10 @@ class _$_ShareTour with DiagnosticableTreeMixin implements _ShareTour {
 }
 
 abstract class _ShareTour implements ShareTour {
-  const factory _ShareTour({@required Tour tour}) = _$_ShareTour;
+  const factory _ShareTour({@required TourInfo info}) = _$_ShareTour;
 
   @override
-  Tour get tour;
+  TourInfo get info;
   @override
   _$ShareTourCopyWith<_ShareTour> get copyWith;
 }

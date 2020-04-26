@@ -32,13 +32,13 @@ class ShareMiddleware {
       Store<AppState> store, ShareTour action, NextDispatcher next) {
     next(action);
 
-    _sharingService.shareTour(action.tour);
+    _sharingService.shareTour(action.info);
   }
 
   void _shareQuestion(
       Store<AppState> store, ShareQuestion action, NextDispatcher next) {
     next(action);
 
-    _sharingService.shareQuestion(action.question);
+    _sharingService.shareQuestion(action.info, action.questionText);
   }
 }

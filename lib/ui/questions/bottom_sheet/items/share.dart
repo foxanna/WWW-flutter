@@ -20,8 +20,8 @@ class QuestionsShareBottomSheetItem extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
 
-            StoreProvider.of<AppState>(context)
-                .dispatch(ShareQuestion(question: question));
+            StoreProvider.of<AppState>(context).dispatch(ShareQuestion(
+                info: question.info, questionText: question.question));
           },
         ),
       );

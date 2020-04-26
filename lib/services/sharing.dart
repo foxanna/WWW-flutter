@@ -1,8 +1,7 @@
 import 'package:share/share.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/question_info.dart';
+import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
@@ -10,9 +9,9 @@ import 'package:what_when_where/services/question_parser/question_parser.dart';
 abstract class ISharingService {
   void shareTournament(TournamentInfo info);
 
-  void shareTour(Tour tour);
+  void shareTour(TourInfo info);
 
-  void shareQuestion(Question question);
+  void shareQuestion(QuestionInfo info, String questionText);
 }
 
 class SharingService extends ISharingService {
@@ -28,25 +27,25 @@ class SharingService extends ISharingService {
   }
 
   @override
-  void shareTour(Tour tour) {
+  void shareTour(TourInfo info) {
     Share.share(
-        '${(tour.info?.tournamentInfo?.title != null) ? ('${tour.info?.tournamentInfo?.title}, ') : ''}'
-        '${tour.info.title}\n'
-        '${tour.info.url}'
+        '${(info?.tournamentInfo?.title != null) ? ('${info?.tournamentInfo?.title}, ') : ''}'
+        '${info.title}\n'
+        '${info.url}'
         '${_createAppendix()}');
   }
 
   @override
-  void shareQuestion(Question question) {
+  void shareQuestion(QuestionInfo info, String questionText) {
     final questionInfo = [
-      question.tourInfo?.tournamentInfo?.title,
-      question.tourInfo?.title,
-      '${Strings.question.toLowerCase()} ${question.number}'
+      info.tourInfo?.tournamentInfo?.title,
+      info.tourInfo?.title,
+      '${Strings.question.toLowerCase()} ${info.number}'
     ].where((x) => x != null).join(', ');
 
-    final text = '${QuestionParser.trim(question.question)}\n\n'
+    final text = '${QuestionParser.trim(questionText)}\n\n'
         '$questionInfo\n'
-        '${question.url}'
+        '${info.url}'
         '${_createAppendix()}';
     Share.share(text);
   }
