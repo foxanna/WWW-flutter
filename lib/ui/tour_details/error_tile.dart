@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
@@ -9,7 +9,7 @@ import 'package:what_when_where/ui/common/error_message.dart';
 import 'package:what_when_where/ui/tour_details/template_tile.dart';
 
 class TourDetailsErrorTile extends StatelessWidget {
-  final Tour tour;
+  final TourInfo tourInfo;
   final Exception exception;
 
   final Color foregroundColor;
@@ -17,7 +17,7 @@ class TourDetailsErrorTile extends StatelessWidget {
 
   const TourDetailsErrorTile({
     Key key,
-    this.tour,
+    this.tourInfo,
     this.foregroundColor,
     this.backgroundColor,
     this.exception,
@@ -32,7 +32,7 @@ class TourDetailsErrorTile extends StatelessWidget {
       foregroundColor: foregroundColor,
       backgroundColor: backgroundColor,
       titleBuilder: (context) => Text(
-        tour.info.title ?? '',
+        tourInfo.title ?? '',
         style: styleConfiguration.tourTitleTextStyle,
       ),
       childBuilder: (context) => ErrorMessage(
@@ -44,5 +44,5 @@ class TourDetailsErrorTile extends StatelessWidget {
   }
 
   void _loadTournament(BuildContext context) =>
-      StoreProvider.of<AppState>(context).dispatch(LoadTour(tourId: tour.id));
+      StoreProvider.of<AppState>(context).dispatch(LoadTour(info: tourInfo));
 }

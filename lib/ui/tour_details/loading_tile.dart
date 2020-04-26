@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/tour_details/question_loading_tile.dart';
 import 'package:what_when_where/ui/tour_details/template_tile.dart';
 
 class TourDetailsLoadingTile extends StatelessWidget {
-  final Tour tour;
+  final TourInfo tourInfo;
 
   final Color foregroundColor;
   final Color backgroundColor;
 
   const TourDetailsLoadingTile({
     Key key,
-    this.tour,
+    this.tourInfo,
     this.foregroundColor,
     this.backgroundColor,
   }) : super(key: key);
@@ -27,7 +28,7 @@ class TourDetailsLoadingTile extends StatelessWidget {
       foregroundColor: foregroundColor,
       backgroundColor: backgroundColor,
       titleBuilder: (context) => Text(
-        tour.info.title ?? '',
+        tourInfo.title ?? '',
         style: styleConfiguration.tourTitleTextStyle,
       ),
       questionsCount: _questionsCount(styleConfiguration.stubQuestionsCount),
@@ -39,8 +40,8 @@ class TourDetailsLoadingTile extends StatelessWidget {
   int _questionsCount(int or) {
     int count = 0;
 
-    if (tour.info.questionsCount?.isNotEmpty ?? false) {
-      count = int.tryParse(tour.info.questionsCount) ?? count;
+    if (tourInfo.questionsCount?.isNotEmpty ?? false) {
+      count = int.tryParse(tourInfo.questionsCount) ?? count;
     }
 
     return count > 0 ? count : or;

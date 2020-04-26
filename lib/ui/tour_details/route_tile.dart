@@ -24,26 +24,26 @@ class TourDetailsRouteTile extends StatelessWidget {
   Widget build(BuildContext context) => StoreConnector<AppState, TourState>(
         distinct: true,
         converter: (store) => store.state.toursState.tours
-            .firstWhere((tourState) => tourState.tour.id == tourId),
+            .firstWhere((tourState) => tourState.info.id == tourId),
         builder: (context, state) {
-          if (state.isLoading) {
+          if (state is LoadingTourState) {
             return TourDetailsLoadingTile(
-              tour: state.tour,
+              tourInfo: state.info,
               backgroundColor: backgroundColor,
               foregroundColor: foregroundColor,
             );
           }
 
-          if (state.hasError) {
+          if (state is ErrorTourState) {
             return TourDetailsErrorTile(
               backgroundColor: backgroundColor,
               foregroundColor: foregroundColor,
-              tour: state.tour,
+              tourInfo: state.info,
               exception: state.exception,
             );
           }
 
-          if (state.hasData) {
+          if (state is DataTourState) {
             return TourDetailsDataTile(
               tour: state.tour,
               backgroundColor: backgroundColor,
@@ -51,7 +51,7 @@ class TourDetailsRouteTile extends StatelessWidget {
             );
           }
 
-          return null;
+          return Container();
         },
       );
 }
