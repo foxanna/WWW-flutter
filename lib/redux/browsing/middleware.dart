@@ -32,13 +32,13 @@ class BrowseMiddleware {
       Store<AppState> store, BrowseTour action, NextDispatcher next) {
     next(action);
 
-    _browsingService.browseTour(action.tour);
+    _browsingService.browseTour(action.info);
   }
 
   void _browseQuestion(
       Store<AppState> store, BrowseQuestion action, NextDispatcher next) {
     next(action);
 
-    _browsingService.browseQuestion(action.question);
+    _browsingService.browseQuestion(action.info);
   }
 }

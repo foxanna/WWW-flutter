@@ -12,9 +12,9 @@ T _$identity<T>(T value) => value;
 class _$BrowseQuestionTearOff {
   const _$BrowseQuestionTearOff();
 
-  _BrowseQuestion call({@required Question question}) {
+  _BrowseQuestion call({@required QuestionInfo info}) {
     return _BrowseQuestion(
-      question: question,
+      info: info,
     );
   }
 }
@@ -23,7 +23,7 @@ class _$BrowseQuestionTearOff {
 const $BrowseQuestion = _$BrowseQuestionTearOff();
 
 mixin _$BrowseQuestion {
-  Question get question;
+  QuestionInfo get info;
 
   $BrowseQuestionCopyWith<BrowseQuestion> get copyWith;
 }
@@ -32,9 +32,9 @@ abstract class $BrowseQuestionCopyWith<$Res> {
   factory $BrowseQuestionCopyWith(
           BrowseQuestion value, $Res Function(BrowseQuestion) then) =
       _$BrowseQuestionCopyWithImpl<$Res>;
-  $Res call({Question question});
+  $Res call({QuestionInfo info});
 
-  $QuestionCopyWith<$Res> get question;
+  $QuestionInfoCopyWith<$Res> get info;
 }
 
 class _$BrowseQuestionCopyWithImpl<$Res>
@@ -47,20 +47,20 @@ class _$BrowseQuestionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object question = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      question: question == freezed ? _value.question : question as Question,
+      info: info == freezed ? _value.info : info as QuestionInfo,
     ));
   }
 
   @override
-  $QuestionCopyWith<$Res> get question {
-    if (_value.question == null) {
+  $QuestionInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
       return null;
     }
-    return $QuestionCopyWith<$Res>(_value.question, (value) {
-      return _then(_value.copyWith(question: value));
+    return $QuestionInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
     });
   }
 }
@@ -71,10 +71,10 @@ abstract class _$BrowseQuestionCopyWith<$Res>
           _BrowseQuestion value, $Res Function(_BrowseQuestion) then) =
       __$BrowseQuestionCopyWithImpl<$Res>;
   @override
-  $Res call({Question question});
+  $Res call({QuestionInfo info});
 
   @override
-  $QuestionCopyWith<$Res> get question;
+  $QuestionInfoCopyWith<$Res> get info;
 }
 
 class __$BrowseQuestionCopyWithImpl<$Res>
@@ -89,10 +89,10 @@ class __$BrowseQuestionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object question = freezed,
+    Object info = freezed,
   }) {
     return _then(_BrowseQuestion(
-      question: question == freezed ? _value.question : question as Question,
+      info: info == freezed ? _value.info : info as QuestionInfo,
     ));
   }
 }
@@ -100,14 +100,14 @@ class __$BrowseQuestionCopyWithImpl<$Res>
 class _$_BrowseQuestion
     with DiagnosticableTreeMixin
     implements _BrowseQuestion {
-  const _$_BrowseQuestion({@required this.question}) : assert(question != null);
+  const _$_BrowseQuestion({@required this.info}) : assert(info != null);
 
   @override
-  final Question question;
+  final QuestionInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BrowseQuestion(question: $question)';
+    return 'BrowseQuestion(info: $info)';
   }
 
   @override
@@ -115,21 +115,20 @@ class _$_BrowseQuestion
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'BrowseQuestion'))
-      ..add(DiagnosticsProperty('question', question));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _BrowseQuestion &&
-            (identical(other.question, question) ||
-                const DeepCollectionEquality()
-                    .equals(other.question, question)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(question);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$BrowseQuestionCopyWith<_BrowseQuestion> get copyWith =>
@@ -137,11 +136,11 @@ class _$_BrowseQuestion
 }
 
 abstract class _BrowseQuestion implements BrowseQuestion {
-  const factory _BrowseQuestion({@required Question question}) =
+  const factory _BrowseQuestion({@required QuestionInfo info}) =
       _$_BrowseQuestion;
 
   @override
-  Question get question;
+  QuestionInfo get info;
   @override
   _$BrowseQuestionCopyWith<_BrowseQuestion> get copyWith;
 }
@@ -149,9 +148,9 @@ abstract class _BrowseQuestion implements BrowseQuestion {
 class _$BrowseTourTearOff {
   const _$BrowseTourTearOff();
 
-  _BrowseTour call({@required Tour tour}) {
+  _BrowseTour call({@required TourInfo info}) {
     return _BrowseTour(
-      tour: tour,
+      info: info,
     );
   }
 }
@@ -160,7 +159,7 @@ class _$BrowseTourTearOff {
 const $BrowseTour = _$BrowseTourTearOff();
 
 mixin _$BrowseTour {
-  Tour get tour;
+  TourInfo get info;
 
   $BrowseTourCopyWith<BrowseTour> get copyWith;
 }
@@ -169,9 +168,9 @@ abstract class $BrowseTourCopyWith<$Res> {
   factory $BrowseTourCopyWith(
           BrowseTour value, $Res Function(BrowseTour) then) =
       _$BrowseTourCopyWithImpl<$Res>;
-  $Res call({Tour tour});
+  $Res call({TourInfo info});
 
-  $TourCopyWith<$Res> get tour;
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class _$BrowseTourCopyWithImpl<$Res> implements $BrowseTourCopyWith<$Res> {
@@ -183,20 +182,20 @@ class _$BrowseTourCopyWithImpl<$Res> implements $BrowseTourCopyWith<$Res> {
 
   @override
   $Res call({
-    Object tour = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      tour: tour == freezed ? _value.tour : tour as Tour,
+      info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
 
   @override
-  $TourCopyWith<$Res> get tour {
-    if (_value.tour == null) {
+  $TourInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
       return null;
     }
-    return $TourCopyWith<$Res>(_value.tour, (value) {
-      return _then(_value.copyWith(tour: value));
+    return $TourInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
     });
   }
 }
@@ -206,10 +205,10 @@ abstract class _$BrowseTourCopyWith<$Res> implements $BrowseTourCopyWith<$Res> {
           _BrowseTour value, $Res Function(_BrowseTour) then) =
       __$BrowseTourCopyWithImpl<$Res>;
   @override
-  $Res call({Tour tour});
+  $Res call({TourInfo info});
 
   @override
-  $TourCopyWith<$Res> get tour;
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class __$BrowseTourCopyWithImpl<$Res> extends _$BrowseTourCopyWithImpl<$Res>
@@ -223,23 +222,23 @@ class __$BrowseTourCopyWithImpl<$Res> extends _$BrowseTourCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tour = freezed,
+    Object info = freezed,
   }) {
     return _then(_BrowseTour(
-      tour: tour == freezed ? _value.tour : tour as Tour,
+      info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
 }
 
 class _$_BrowseTour with DiagnosticableTreeMixin implements _BrowseTour {
-  const _$_BrowseTour({@required this.tour}) : assert(tour != null);
+  const _$_BrowseTour({@required this.info}) : assert(info != null);
 
   @override
-  final Tour tour;
+  final TourInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BrowseTour(tour: $tour)';
+    return 'BrowseTour(info: $info)';
   }
 
   @override
@@ -247,20 +246,20 @@ class _$_BrowseTour with DiagnosticableTreeMixin implements _BrowseTour {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'BrowseTour'))
-      ..add(DiagnosticsProperty('tour', tour));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _BrowseTour &&
-            (identical(other.tour, tour) ||
-                const DeepCollectionEquality().equals(other.tour, tour)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tour);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$BrowseTourCopyWith<_BrowseTour> get copyWith =>
@@ -268,10 +267,10 @@ class _$_BrowseTour with DiagnosticableTreeMixin implements _BrowseTour {
 }
 
 abstract class _BrowseTour implements BrowseTour {
-  const factory _BrowseTour({@required Tour tour}) = _$_BrowseTour;
+  const factory _BrowseTour({@required TourInfo info}) = _$_BrowseTour;
 
   @override
-  Tour get tour;
+  TourInfo get info;
   @override
   _$BrowseTourCopyWith<_BrowseTour> get copyWith;
 }

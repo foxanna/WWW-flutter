@@ -1,15 +1,14 @@
-import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/question_info.dart';
+import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
 abstract class IBrowsingService {
   void browseTournament(TournamentInfo info);
 
-  void browseTour(Tour tour);
+  void browseTour(TourInfo info);
 
-  void browseQuestion(Question question);
+  void browseQuestion(QuestionInfo info);
 }
 
 class BrowsingService implements IBrowsingService {
@@ -25,9 +24,8 @@ class BrowsingService implements IBrowsingService {
       _urlLauncher.launchURL(info.url);
 
   @override
-  void browseTour(Tour tour) => _urlLauncher.launchURL(tour.info.url);
+  void browseTour(TourInfo info) => _urlLauncher.launchURL(info.url);
 
   @override
-  void browseQuestion(Question question) =>
-      _urlLauncher.launchURL(question.url);
+  void browseQuestion(QuestionInfo info) => _urlLauncher.launchURL(info.url);
 }
