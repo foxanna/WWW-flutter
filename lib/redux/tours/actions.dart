@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/redux/redux_action.dart';
 
 part 'actions.freezed.dart';
@@ -8,10 +9,10 @@ part 'actions.freezed.dart';
 abstract class TourAction implements ReduxAction {}
 
 @freezed
-abstract class SetTours with _$SetTours implements TourAction {
-  const factory SetTours({
-    @required Iterable<Tour> tours,
-  }) = _SetTours;
+abstract class LoadTours with _$LoadTours implements TourAction {
+  const factory LoadTours({
+    @required List<TourInfo> tours,
+  }) = _LoadTours;
 }
 
 @freezed
@@ -20,9 +21,16 @@ abstract class ClearTours with _$ClearTours implements TourAction {
 }
 
 @freezed
+abstract class LoadTour with _$LoadTour implements TourAction {
+  const factory LoadTour({
+    @required TourInfo info,
+  }) = _LoadTour;
+}
+
+@freezed
 abstract class TourIsLoading with _$TourIsLoading implements TourAction {
   const factory TourIsLoading({
-    @required String tourId,
+    @required TourInfo info,
   }) = _TourIsLoading;
 }
 
@@ -38,14 +46,7 @@ abstract class TourFailedLoading
     with _$TourFailedLoading
     implements TourAction {
   const factory TourFailedLoading({
-    @required String tourId,
+    @required TourInfo info,
     @required Exception exception,
   }) = _TourFailedLoading;
-}
-
-@freezed
-abstract class LoadTour with _$LoadTour implements TourAction {
-  const factory LoadTour({
-    @required String tourId,
-  }) = _LoadTour;
 }

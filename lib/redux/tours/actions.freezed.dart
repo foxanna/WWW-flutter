@@ -9,96 +9,97 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$SetToursTearOff {
-  const _$SetToursTearOff();
+class _$LoadToursTearOff {
+  const _$LoadToursTearOff();
 
-  _SetTours call({@required Iterable<Tour> tours}) {
-    return _SetTours(
+  _LoadTours call({@required List<TourInfo> tours}) {
+    return _LoadTours(
       tours: tours,
     );
   }
 }
 
 // ignore: unused_element
-const $SetTours = _$SetToursTearOff();
+const $LoadTours = _$LoadToursTearOff();
 
-mixin _$SetTours {
-  Iterable<Tour> get tours;
+mixin _$LoadTours {
+  List<TourInfo> get tours;
 
-  $SetToursCopyWith<SetTours> get copyWith;
+  $LoadToursCopyWith<LoadTours> get copyWith;
 }
 
-abstract class $SetToursCopyWith<$Res> {
-  factory $SetToursCopyWith(SetTours value, $Res Function(SetTours) then) =
-      _$SetToursCopyWithImpl<$Res>;
-  $Res call({Iterable<Tour> tours});
+abstract class $LoadToursCopyWith<$Res> {
+  factory $LoadToursCopyWith(LoadTours value, $Res Function(LoadTours) then) =
+      _$LoadToursCopyWithImpl<$Res>;
+  $Res call({List<TourInfo> tours});
 }
 
-class _$SetToursCopyWithImpl<$Res> implements $SetToursCopyWith<$Res> {
-  _$SetToursCopyWithImpl(this._value, this._then);
+class _$LoadToursCopyWithImpl<$Res> implements $LoadToursCopyWith<$Res> {
+  _$LoadToursCopyWithImpl(this._value, this._then);
 
-  final SetTours _value;
+  final LoadTours _value;
   // ignore: unused_field
-  final $Res Function(SetTours) _then;
+  final $Res Function(LoadTours) _then;
 
   @override
   $Res call({
     Object tours = freezed,
   }) {
     return _then(_value.copyWith(
-      tours: tours == freezed ? _value.tours : tours as Iterable<Tour>,
+      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
     ));
   }
 }
 
-abstract class _$SetToursCopyWith<$Res> implements $SetToursCopyWith<$Res> {
-  factory _$SetToursCopyWith(_SetTours value, $Res Function(_SetTours) then) =
-      __$SetToursCopyWithImpl<$Res>;
+abstract class _$LoadToursCopyWith<$Res> implements $LoadToursCopyWith<$Res> {
+  factory _$LoadToursCopyWith(
+          _LoadTours value, $Res Function(_LoadTours) then) =
+      __$LoadToursCopyWithImpl<$Res>;
   @override
-  $Res call({Iterable<Tour> tours});
+  $Res call({List<TourInfo> tours});
 }
 
-class __$SetToursCopyWithImpl<$Res> extends _$SetToursCopyWithImpl<$Res>
-    implements _$SetToursCopyWith<$Res> {
-  __$SetToursCopyWithImpl(_SetTours _value, $Res Function(_SetTours) _then)
-      : super(_value, (v) => _then(v as _SetTours));
+class __$LoadToursCopyWithImpl<$Res> extends _$LoadToursCopyWithImpl<$Res>
+    implements _$LoadToursCopyWith<$Res> {
+  __$LoadToursCopyWithImpl(_LoadTours _value, $Res Function(_LoadTours) _then)
+      : super(_value, (v) => _then(v as _LoadTours));
 
   @override
-  _SetTours get _value => super._value as _SetTours;
+  _LoadTours get _value => super._value as _LoadTours;
 
   @override
   $Res call({
     Object tours = freezed,
   }) {
-    return _then(_SetTours(
-      tours: tours == freezed ? _value.tours : tours as Iterable<Tour>,
+    return _then(_LoadTours(
+      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
     ));
   }
 }
 
-class _$_SetTours with DiagnosticableTreeMixin implements _SetTours {
-  const _$_SetTours({@required this.tours}) : assert(tours != null);
+class _$_LoadTours with DiagnosticableTreeMixin implements _LoadTours {
+  const _$_LoadTours({@required this.tours}) : assert(tours != null);
 
   @override
-  final Iterable<Tour> tours;
+  final List<TourInfo> tours;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SetTours(tours: $tours)';
+    return 'LoadTours(tours: $tours)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SetTours'))
+      ..add(DiagnosticsProperty('type', 'LoadTours'))
       ..add(DiagnosticsProperty('tours', tours));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SetTours &&
+        (other is _LoadTours &&
             (identical(other.tours, tours) ||
                 const DeepCollectionEquality().equals(other.tours, tours)));
   }
@@ -108,17 +109,17 @@ class _$_SetTours with DiagnosticableTreeMixin implements _SetTours {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tours);
 
   @override
-  _$SetToursCopyWith<_SetTours> get copyWith =>
-      __$SetToursCopyWithImpl<_SetTours>(this, _$identity);
+  _$LoadToursCopyWith<_LoadTours> get copyWith =>
+      __$LoadToursCopyWithImpl<_LoadTours>(this, _$identity);
 }
 
-abstract class _SetTours implements SetTours {
-  const factory _SetTours({@required Iterable<Tour> tours}) = _$_SetTours;
+abstract class _LoadTours implements LoadTours {
+  const factory _LoadTours({@required List<TourInfo> tours}) = _$_LoadTours;
 
   @override
-  Iterable<Tour> get tours;
+  List<TourInfo> get tours;
   @override
-  _$SetToursCopyWith<_SetTours> get copyWith;
+  _$LoadToursCopyWith<_LoadTours> get copyWith;
 }
 
 class _$ClearToursTearOff {
@@ -191,12 +192,139 @@ abstract class _ClearTours implements ClearTours {
   const factory _ClearTours() = _$_ClearTours;
 }
 
+class _$LoadTourTearOff {
+  const _$LoadTourTearOff();
+
+  _LoadTour call({@required TourInfo info}) {
+    return _LoadTour(
+      info: info,
+    );
+  }
+}
+
+// ignore: unused_element
+const $LoadTour = _$LoadTourTearOff();
+
+mixin _$LoadTour {
+  TourInfo get info;
+
+  $LoadTourCopyWith<LoadTour> get copyWith;
+}
+
+abstract class $LoadTourCopyWith<$Res> {
+  factory $LoadTourCopyWith(LoadTour value, $Res Function(LoadTour) then) =
+      _$LoadTourCopyWithImpl<$Res>;
+  $Res call({TourInfo info});
+
+  $TourInfoCopyWith<$Res> get info;
+}
+
+class _$LoadTourCopyWithImpl<$Res> implements $LoadTourCopyWith<$Res> {
+  _$LoadTourCopyWithImpl(this._value, this._then);
+
+  final LoadTour _value;
+  // ignore: unused_field
+  final $Res Function(LoadTour) _then;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(_value.copyWith(
+      info: info == freezed ? _value.info : info as TourInfo,
+    ));
+  }
+
+  @override
+  $TourInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TourInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+abstract class _$LoadTourCopyWith<$Res> implements $LoadTourCopyWith<$Res> {
+  factory _$LoadTourCopyWith(_LoadTour value, $Res Function(_LoadTour) then) =
+      __$LoadTourCopyWithImpl<$Res>;
+  @override
+  $Res call({TourInfo info});
+
+  @override
+  $TourInfoCopyWith<$Res> get info;
+}
+
+class __$LoadTourCopyWithImpl<$Res> extends _$LoadTourCopyWithImpl<$Res>
+    implements _$LoadTourCopyWith<$Res> {
+  __$LoadTourCopyWithImpl(_LoadTour _value, $Res Function(_LoadTour) _then)
+      : super(_value, (v) => _then(v as _LoadTour));
+
+  @override
+  _LoadTour get _value => super._value as _LoadTour;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(_LoadTour(
+      info: info == freezed ? _value.info : info as TourInfo,
+    ));
+  }
+}
+
+class _$_LoadTour with DiagnosticableTreeMixin implements _LoadTour {
+  const _$_LoadTour({@required this.info}) : assert(info != null);
+
+  @override
+  final TourInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'LoadTour(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LoadTour'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LoadTour &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  _$LoadTourCopyWith<_LoadTour> get copyWith =>
+      __$LoadTourCopyWithImpl<_LoadTour>(this, _$identity);
+}
+
+abstract class _LoadTour implements LoadTour {
+  const factory _LoadTour({@required TourInfo info}) = _$_LoadTour;
+
+  @override
+  TourInfo get info;
+  @override
+  _$LoadTourCopyWith<_LoadTour> get copyWith;
+}
+
 class _$TourIsLoadingTearOff {
   const _$TourIsLoadingTearOff();
 
-  _TourIsLoading call({@required String tourId}) {
+  _TourIsLoading call({@required TourInfo info}) {
     return _TourIsLoading(
-      tourId: tourId,
+      info: info,
     );
   }
 }
@@ -205,7 +333,7 @@ class _$TourIsLoadingTearOff {
 const $TourIsLoading = _$TourIsLoadingTearOff();
 
 mixin _$TourIsLoading {
-  String get tourId;
+  TourInfo get info;
 
   $TourIsLoadingCopyWith<TourIsLoading> get copyWith;
 }
@@ -214,7 +342,9 @@ abstract class $TourIsLoadingCopyWith<$Res> {
   factory $TourIsLoadingCopyWith(
           TourIsLoading value, $Res Function(TourIsLoading) then) =
       _$TourIsLoadingCopyWithImpl<$Res>;
-  $Res call({String tourId});
+  $Res call({TourInfo info});
+
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class _$TourIsLoadingCopyWithImpl<$Res>
@@ -227,11 +357,21 @@ class _$TourIsLoadingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tourId = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      tourId: tourId == freezed ? _value.tourId : tourId as String,
+      info: info == freezed ? _value.info : info as TourInfo,
     ));
+  }
+
+  @override
+  $TourInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TourInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
   }
 }
 
@@ -241,7 +381,10 @@ abstract class _$TourIsLoadingCopyWith<$Res>
           _TourIsLoading value, $Res Function(_TourIsLoading) then) =
       __$TourIsLoadingCopyWithImpl<$Res>;
   @override
-  $Res call({String tourId});
+  $Res call({TourInfo info});
+
+  @override
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class __$TourIsLoadingCopyWithImpl<$Res>
@@ -256,23 +399,23 @@ class __$TourIsLoadingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tourId = freezed,
+    Object info = freezed,
   }) {
     return _then(_TourIsLoading(
-      tourId: tourId == freezed ? _value.tourId : tourId as String,
+      info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
 }
 
 class _$_TourIsLoading with DiagnosticableTreeMixin implements _TourIsLoading {
-  const _$_TourIsLoading({@required this.tourId}) : assert(tourId != null);
+  const _$_TourIsLoading({@required this.info}) : assert(info != null);
 
   @override
-  final String tourId;
+  final TourInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TourIsLoading(tourId: $tourId)';
+    return 'TourIsLoading(info: $info)';
   }
 
   @override
@@ -280,20 +423,20 @@ class _$_TourIsLoading with DiagnosticableTreeMixin implements _TourIsLoading {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'TourIsLoading'))
-      ..add(DiagnosticsProperty('tourId', tourId));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TourIsLoading &&
-            (identical(other.tourId, tourId) ||
-                const DeepCollectionEquality().equals(other.tourId, tourId)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tourId);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$TourIsLoadingCopyWith<_TourIsLoading> get copyWith =>
@@ -301,10 +444,10 @@ class _$_TourIsLoading with DiagnosticableTreeMixin implements _TourIsLoading {
 }
 
 abstract class _TourIsLoading implements TourIsLoading {
-  const factory _TourIsLoading({@required String tourId}) = _$_TourIsLoading;
+  const factory _TourIsLoading({@required TourInfo info}) = _$_TourIsLoading;
 
   @override
-  String get tourId;
+  TourInfo get info;
   @override
   _$TourIsLoadingCopyWith<_TourIsLoading> get copyWith;
 }
@@ -443,9 +586,9 @@ class _$TourFailedLoadingTearOff {
   const _$TourFailedLoadingTearOff();
 
   _TourFailedLoading call(
-      {@required String tourId, @required Exception exception}) {
+      {@required TourInfo info, @required Exception exception}) {
     return _TourFailedLoading(
-      tourId: tourId,
+      info: info,
       exception: exception,
     );
   }
@@ -455,7 +598,7 @@ class _$TourFailedLoadingTearOff {
 const $TourFailedLoading = _$TourFailedLoadingTearOff();
 
 mixin _$TourFailedLoading {
-  String get tourId;
+  TourInfo get info;
   Exception get exception;
 
   $TourFailedLoadingCopyWith<TourFailedLoading> get copyWith;
@@ -465,7 +608,9 @@ abstract class $TourFailedLoadingCopyWith<$Res> {
   factory $TourFailedLoadingCopyWith(
           TourFailedLoading value, $Res Function(TourFailedLoading) then) =
       _$TourFailedLoadingCopyWithImpl<$Res>;
-  $Res call({String tourId, Exception exception});
+  $Res call({TourInfo info, Exception exception});
+
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class _$TourFailedLoadingCopyWithImpl<$Res>
@@ -478,14 +623,24 @@ class _$TourFailedLoadingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tourId = freezed,
+    Object info = freezed,
     Object exception = freezed,
   }) {
     return _then(_value.copyWith(
-      tourId: tourId == freezed ? _value.tourId : tourId as String,
+      info: info == freezed ? _value.info : info as TourInfo,
       exception:
           exception == freezed ? _value.exception : exception as Exception,
     ));
+  }
+
+  @override
+  $TourInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TourInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
   }
 }
 
@@ -495,7 +650,10 @@ abstract class _$TourFailedLoadingCopyWith<$Res>
           _TourFailedLoading value, $Res Function(_TourFailedLoading) then) =
       __$TourFailedLoadingCopyWithImpl<$Res>;
   @override
-  $Res call({String tourId, Exception exception});
+  $Res call({TourInfo info, Exception exception});
+
+  @override
+  $TourInfoCopyWith<$Res> get info;
 }
 
 class __$TourFailedLoadingCopyWithImpl<$Res>
@@ -510,11 +668,11 @@ class __$TourFailedLoadingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tourId = freezed,
+    Object info = freezed,
     Object exception = freezed,
   }) {
     return _then(_TourFailedLoading(
-      tourId: tourId == freezed ? _value.tourId : tourId as String,
+      info: info == freezed ? _value.info : info as TourInfo,
       exception:
           exception == freezed ? _value.exception : exception as Exception,
     ));
@@ -524,18 +682,18 @@ class __$TourFailedLoadingCopyWithImpl<$Res>
 class _$_TourFailedLoading
     with DiagnosticableTreeMixin
     implements _TourFailedLoading {
-  const _$_TourFailedLoading({@required this.tourId, @required this.exception})
-      : assert(tourId != null),
+  const _$_TourFailedLoading({@required this.info, @required this.exception})
+      : assert(info != null),
         assert(exception != null);
 
   @override
-  final String tourId;
+  final TourInfo info;
   @override
   final Exception exception;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TourFailedLoading(tourId: $tourId, exception: $exception)';
+    return 'TourFailedLoading(info: $info, exception: $exception)';
   }
 
   @override
@@ -543,7 +701,7 @@ class _$_TourFailedLoading
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'TourFailedLoading'))
-      ..add(DiagnosticsProperty('tourId', tourId))
+      ..add(DiagnosticsProperty('info', info))
       ..add(DiagnosticsProperty('exception', exception));
   }
 
@@ -551,8 +709,8 @@ class _$_TourFailedLoading
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TourFailedLoading &&
-            (identical(other.tourId, tourId) ||
-                const DeepCollectionEquality().equals(other.tourId, tourId)) &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)) &&
             (identical(other.exception, exception) ||
                 const DeepCollectionEquality()
                     .equals(other.exception, exception)));
@@ -561,7 +719,7 @@ class _$_TourFailedLoading
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(tourId) ^
+      const DeepCollectionEquality().hash(info) ^
       const DeepCollectionEquality().hash(exception);
 
   @override
@@ -571,125 +729,13 @@ class _$_TourFailedLoading
 
 abstract class _TourFailedLoading implements TourFailedLoading {
   const factory _TourFailedLoading(
-      {@required String tourId,
+      {@required TourInfo info,
       @required Exception exception}) = _$_TourFailedLoading;
 
   @override
-  String get tourId;
+  TourInfo get info;
   @override
   Exception get exception;
   @override
   _$TourFailedLoadingCopyWith<_TourFailedLoading> get copyWith;
-}
-
-class _$LoadTourTearOff {
-  const _$LoadTourTearOff();
-
-  _LoadTour call({@required String tourId}) {
-    return _LoadTour(
-      tourId: tourId,
-    );
-  }
-}
-
-// ignore: unused_element
-const $LoadTour = _$LoadTourTearOff();
-
-mixin _$LoadTour {
-  String get tourId;
-
-  $LoadTourCopyWith<LoadTour> get copyWith;
-}
-
-abstract class $LoadTourCopyWith<$Res> {
-  factory $LoadTourCopyWith(LoadTour value, $Res Function(LoadTour) then) =
-      _$LoadTourCopyWithImpl<$Res>;
-  $Res call({String tourId});
-}
-
-class _$LoadTourCopyWithImpl<$Res> implements $LoadTourCopyWith<$Res> {
-  _$LoadTourCopyWithImpl(this._value, this._then);
-
-  final LoadTour _value;
-  // ignore: unused_field
-  final $Res Function(LoadTour) _then;
-
-  @override
-  $Res call({
-    Object tourId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      tourId: tourId == freezed ? _value.tourId : tourId as String,
-    ));
-  }
-}
-
-abstract class _$LoadTourCopyWith<$Res> implements $LoadTourCopyWith<$Res> {
-  factory _$LoadTourCopyWith(_LoadTour value, $Res Function(_LoadTour) then) =
-      __$LoadTourCopyWithImpl<$Res>;
-  @override
-  $Res call({String tourId});
-}
-
-class __$LoadTourCopyWithImpl<$Res> extends _$LoadTourCopyWithImpl<$Res>
-    implements _$LoadTourCopyWith<$Res> {
-  __$LoadTourCopyWithImpl(_LoadTour _value, $Res Function(_LoadTour) _then)
-      : super(_value, (v) => _then(v as _LoadTour));
-
-  @override
-  _LoadTour get _value => super._value as _LoadTour;
-
-  @override
-  $Res call({
-    Object tourId = freezed,
-  }) {
-    return _then(_LoadTour(
-      tourId: tourId == freezed ? _value.tourId : tourId as String,
-    ));
-  }
-}
-
-class _$_LoadTour with DiagnosticableTreeMixin implements _LoadTour {
-  const _$_LoadTour({@required this.tourId}) : assert(tourId != null);
-
-  @override
-  final String tourId;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoadTour(tourId: $tourId)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'LoadTour'))
-      ..add(DiagnosticsProperty('tourId', tourId));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadTour &&
-            (identical(other.tourId, tourId) ||
-                const DeepCollectionEquality().equals(other.tourId, tourId)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tourId);
-
-  @override
-  _$LoadTourCopyWith<_LoadTour> get copyWith =>
-      __$LoadTourCopyWithImpl<_LoadTour>(this, _$identity);
-}
-
-abstract class _LoadTour implements LoadTour {
-  const factory _LoadTour({@required String tourId}) = _$_LoadTour;
-
-  @override
-  String get tourId;
-  @override
-  _$LoadTourCopyWith<_LoadTour> get copyWith;
 }
