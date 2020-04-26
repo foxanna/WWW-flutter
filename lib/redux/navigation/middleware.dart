@@ -27,7 +27,7 @@ class NavigationMiddleware {
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenImagePage>(_openImage),
-        TypedMiddleware<AppState, OpenTournamentPage>(_openTournament),
+        TypedMiddleware<AppState, NavigateToTournamentPage>(_openTournament),
         TypedMiddleware<AppState, OpenQuestionsPage>(_openQuestions),
         TypedMiddleware<AppState, OpenAboutPage>(_openAboutPage),
         TypedMiddleware<AppState, OpenSearchPage>(_openSearchPage),
@@ -50,8 +50,8 @@ class NavigationMiddleware {
     );
   }
 
-  void _openTournament(
-      Store<AppState> store, OpenTournamentPage action, NextDispatcher next) {
+  void _openTournament(Store<AppState> store, NavigateToTournamentPage action,
+      NextDispatcher next) {
     next(action);
 
     store.dispatch(SetTournament(tournament: action.tournament));

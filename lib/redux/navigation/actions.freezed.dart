@@ -281,144 +281,79 @@ abstract class _OpenQuestionsPage implements OpenQuestionsPage {
   _$OpenQuestionsPageCopyWith<_OpenQuestionsPage> get copyWith;
 }
 
-class _$OpenTournamentPageTearOff {
-  const _$OpenTournamentPageTearOff();
+class _$NavigateToTournamentPageTearOff {
+  const _$NavigateToTournamentPageTearOff();
 
-  _OpenTournamentPage call({@required Tournament tournament}) {
-    return _OpenTournamentPage(
-      tournament: tournament,
-    );
+  _NavigateToTournamentPage call() {
+    return const _NavigateToTournamentPage();
   }
 }
 
 // ignore: unused_element
-const $OpenTournamentPage = _$OpenTournamentPageTearOff();
+const $NavigateToTournamentPage = _$NavigateToTournamentPageTearOff();
 
-mixin _$OpenTournamentPage {
-  Tournament get tournament;
+mixin _$NavigateToTournamentPage {}
 
-  $OpenTournamentPageCopyWith<OpenTournamentPage> get copyWith;
+abstract class $NavigateToTournamentPageCopyWith<$Res> {
+  factory $NavigateToTournamentPageCopyWith(NavigateToTournamentPage value,
+          $Res Function(NavigateToTournamentPage) then) =
+      _$NavigateToTournamentPageCopyWithImpl<$Res>;
 }
 
-abstract class $OpenTournamentPageCopyWith<$Res> {
-  factory $OpenTournamentPageCopyWith(
-          OpenTournamentPage value, $Res Function(OpenTournamentPage) then) =
-      _$OpenTournamentPageCopyWithImpl<$Res>;
-  $Res call({Tournament tournament});
+class _$NavigateToTournamentPageCopyWithImpl<$Res>
+    implements $NavigateToTournamentPageCopyWith<$Res> {
+  _$NavigateToTournamentPageCopyWithImpl(this._value, this._then);
 
-  $TournamentCopyWith<$Res> get tournament;
-}
-
-class _$OpenTournamentPageCopyWithImpl<$Res>
-    implements $OpenTournamentPageCopyWith<$Res> {
-  _$OpenTournamentPageCopyWithImpl(this._value, this._then);
-
-  final OpenTournamentPage _value;
+  final NavigateToTournamentPage _value;
   // ignore: unused_field
-  final $Res Function(OpenTournamentPage) _then;
-
-  @override
-  $Res call({
-    Object tournament = freezed,
-  }) {
-    return _then(_value.copyWith(
-      tournament:
-          tournament == freezed ? _value.tournament : tournament as Tournament,
-    ));
-  }
-
-  @override
-  $TournamentCopyWith<$Res> get tournament {
-    if (_value.tournament == null) {
-      return null;
-    }
-    return $TournamentCopyWith<$Res>(_value.tournament, (value) {
-      return _then(_value.copyWith(tournament: value));
-    });
-  }
+  final $Res Function(NavigateToTournamentPage) _then;
 }
 
-abstract class _$OpenTournamentPageCopyWith<$Res>
-    implements $OpenTournamentPageCopyWith<$Res> {
-  factory _$OpenTournamentPageCopyWith(
-          _OpenTournamentPage value, $Res Function(_OpenTournamentPage) then) =
-      __$OpenTournamentPageCopyWithImpl<$Res>;
-  @override
-  $Res call({Tournament tournament});
-
-  @override
-  $TournamentCopyWith<$Res> get tournament;
+abstract class _$NavigateToTournamentPageCopyWith<$Res> {
+  factory _$NavigateToTournamentPageCopyWith(_NavigateToTournamentPage value,
+          $Res Function(_NavigateToTournamentPage) then) =
+      __$NavigateToTournamentPageCopyWithImpl<$Res>;
 }
 
-class __$OpenTournamentPageCopyWithImpl<$Res>
-    extends _$OpenTournamentPageCopyWithImpl<$Res>
-    implements _$OpenTournamentPageCopyWith<$Res> {
-  __$OpenTournamentPageCopyWithImpl(
-      _OpenTournamentPage _value, $Res Function(_OpenTournamentPage) _then)
-      : super(_value, (v) => _then(v as _OpenTournamentPage));
+class __$NavigateToTournamentPageCopyWithImpl<$Res>
+    extends _$NavigateToTournamentPageCopyWithImpl<$Res>
+    implements _$NavigateToTournamentPageCopyWith<$Res> {
+  __$NavigateToTournamentPageCopyWithImpl(_NavigateToTournamentPage _value,
+      $Res Function(_NavigateToTournamentPage) _then)
+      : super(_value, (v) => _then(v as _NavigateToTournamentPage));
 
   @override
-  _OpenTournamentPage get _value => super._value as _OpenTournamentPage;
-
-  @override
-  $Res call({
-    Object tournament = freezed,
-  }) {
-    return _then(_OpenTournamentPage(
-      tournament:
-          tournament == freezed ? _value.tournament : tournament as Tournament,
-    ));
-  }
+  _NavigateToTournamentPage get _value =>
+      super._value as _NavigateToTournamentPage;
 }
 
-class _$_OpenTournamentPage
+class _$_NavigateToTournamentPage
     with DiagnosticableTreeMixin
-    implements _OpenTournamentPage {
-  const _$_OpenTournamentPage({@required this.tournament})
-      : assert(tournament != null);
-
-  @override
-  final Tournament tournament;
+    implements _NavigateToTournamentPage {
+  const _$_NavigateToTournamentPage();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenTournamentPage(tournament: $tournament)';
+    return 'NavigateToTournamentPage()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OpenTournamentPage'))
-      ..add(DiagnosticsProperty('tournament', tournament));
+    properties..add(DiagnosticsProperty('type', 'NavigateToTournamentPage'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _OpenTournamentPage &&
-            (identical(other.tournament, tournament) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournament, tournament)));
+    return identical(this, other) || (other is _NavigateToTournamentPage);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournament);
-
-  @override
-  _$OpenTournamentPageCopyWith<_OpenTournamentPage> get copyWith =>
-      __$OpenTournamentPageCopyWithImpl<_OpenTournamentPage>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 }
 
-abstract class _OpenTournamentPage implements OpenTournamentPage {
-  const factory _OpenTournamentPage({@required Tournament tournament}) =
-      _$_OpenTournamentPage;
-
-  @override
-  Tournament get tournament;
-  @override
-  _$OpenTournamentPageCopyWith<_OpenTournamentPage> get copyWith;
+abstract class _NavigateToTournamentPage implements NavigateToTournamentPage {
+  const factory _NavigateToTournamentPage() = _$_NavigateToTournamentPage;
 }
 
 class _$OpenAboutPageTearOff {

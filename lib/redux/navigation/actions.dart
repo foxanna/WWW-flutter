@@ -26,12 +26,10 @@ abstract class OpenQuestionsPage
 }
 
 @freezed
-abstract class OpenTournamentPage
-    with _$OpenTournamentPage
+abstract class NavigateToTournamentPage
+    with _$NavigateToTournamentPage
     implements NavigationAction {
-  const factory OpenTournamentPage({
-    @required Tournament tournament,
-  }) = _OpenTournamentPage;
+  const factory NavigateToTournamentPage() = _NavigateToTournamentPage;
 }
 
 @freezed
