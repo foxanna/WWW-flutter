@@ -25,7 +25,7 @@ class ShareMiddleware {
       Store<AppState> store, ShareTournament action, NextDispatcher next) {
     next(action);
 
-    _sharingService.shareTournament(action.tournament);
+    _sharingService.shareTournament(action.info);
   }
 
   void _shareTour(

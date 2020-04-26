@@ -3,11 +3,12 @@ import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/question_parser/question_parser.dart';
 
 abstract class ISharingService {
-  void shareTournament(Tournament tournament);
+  void shareTournament(TournamentInfo info);
 
   void shareTour(Tour tour);
 
@@ -20,9 +21,9 @@ class SharingService extends ISharingService {
   SharingService._();
 
   @override
-  void shareTournament(Tournament tournament) {
-    Share.share('${tournament.info.title}\n'
-        '${tournament.info.url}'
+  void shareTournament(TournamentInfo info) {
+    Share.share('${info.title}\n'
+        '${info.url}'
         '${_createAppendix()}');
   }
 

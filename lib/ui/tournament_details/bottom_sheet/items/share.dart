@@ -17,12 +17,11 @@ class TournamentDetailsShareTournamentBottomSheetItem extends StatelessWidget {
         builder: (context, state) => ListTile(
           leading: const Icon(Icons.share),
           title: const Text(Strings.share),
-          enabled: state.hasData,
           onTap: () {
             Navigator.pop(context);
 
             StoreProvider.of<AppState>(context)
-                .dispatch(ShareTournament(tournament: state.tournament));
+                .dispatch(ShareTournament(info: state.info));
           },
         ),
       );

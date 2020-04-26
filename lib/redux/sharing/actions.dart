@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/redux/redux_action.dart';
 
 part 'actions.freezed.dart';
@@ -26,6 +27,6 @@ abstract class ShareTour with _$ShareTour implements SharingAction {
 @freezed
 abstract class ShareTournament with _$ShareTournament implements SharingAction {
   const factory ShareTournament({
-    @required Tournament tournament,
+    @required TournamentInfo info,
   }) = _ShareTournament;
 }

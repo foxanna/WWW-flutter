@@ -275,9 +275,9 @@ abstract class _ShareTour implements ShareTour {
 class _$ShareTournamentTearOff {
   const _$ShareTournamentTearOff();
 
-  _ShareTournament call({@required Tournament tournament}) {
+  _ShareTournament call({@required TournamentInfo info}) {
     return _ShareTournament(
-      tournament: tournament,
+      info: info,
     );
   }
 }
@@ -286,7 +286,7 @@ class _$ShareTournamentTearOff {
 const $ShareTournament = _$ShareTournamentTearOff();
 
 mixin _$ShareTournament {
-  Tournament get tournament;
+  TournamentInfo get info;
 
   $ShareTournamentCopyWith<ShareTournament> get copyWith;
 }
@@ -295,9 +295,9 @@ abstract class $ShareTournamentCopyWith<$Res> {
   factory $ShareTournamentCopyWith(
           ShareTournament value, $Res Function(ShareTournament) then) =
       _$ShareTournamentCopyWithImpl<$Res>;
-  $Res call({Tournament tournament});
+  $Res call({TournamentInfo info});
 
-  $TournamentCopyWith<$Res> get tournament;
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class _$ShareTournamentCopyWithImpl<$Res>
@@ -310,21 +310,20 @@ class _$ShareTournamentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournament = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      tournament:
-          tournament == freezed ? _value.tournament : tournament as Tournament,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
 
   @override
-  $TournamentCopyWith<$Res> get tournament {
-    if (_value.tournament == null) {
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
       return null;
     }
-    return $TournamentCopyWith<$Res>(_value.tournament, (value) {
-      return _then(_value.copyWith(tournament: value));
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
     });
   }
 }
@@ -335,10 +334,10 @@ abstract class _$ShareTournamentCopyWith<$Res>
           _ShareTournament value, $Res Function(_ShareTournament) then) =
       __$ShareTournamentCopyWithImpl<$Res>;
   @override
-  $Res call({Tournament tournament});
+  $Res call({TournamentInfo info});
 
   @override
-  $TournamentCopyWith<$Res> get tournament;
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class __$ShareTournamentCopyWithImpl<$Res>
@@ -353,11 +352,10 @@ class __$ShareTournamentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournament = freezed,
+    Object info = freezed,
   }) {
     return _then(_ShareTournament(
-      tournament:
-          tournament == freezed ? _value.tournament : tournament as Tournament,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
 }
@@ -365,15 +363,14 @@ class __$ShareTournamentCopyWithImpl<$Res>
 class _$_ShareTournament
     with DiagnosticableTreeMixin
     implements _ShareTournament {
-  const _$_ShareTournament({@required this.tournament})
-      : assert(tournament != null);
+  const _$_ShareTournament({@required this.info}) : assert(info != null);
 
   @override
-  final Tournament tournament;
+  final TournamentInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ShareTournament(tournament: $tournament)';
+    return 'ShareTournament(info: $info)';
   }
 
   @override
@@ -381,21 +378,20 @@ class _$_ShareTournament
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ShareTournament'))
-      ..add(DiagnosticsProperty('tournament', tournament));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ShareTournament &&
-            (identical(other.tournament, tournament) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournament, tournament)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournament);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$ShareTournamentCopyWith<_ShareTournament> get copyWith =>
@@ -403,11 +399,11 @@ class _$_ShareTournament
 }
 
 abstract class _ShareTournament implements ShareTournament {
-  const factory _ShareTournament({@required Tournament tournament}) =
+  const factory _ShareTournament({@required TournamentInfo info}) =
       _$_ShareTournament;
 
   @override
-  Tournament get tournament;
+  TournamentInfo get info;
   @override
   _$ShareTournamentCopyWith<_ShareTournament> get copyWith;
 }
