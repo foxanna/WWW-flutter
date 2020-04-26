@@ -15,7 +15,7 @@ class TourDetailsQuestionDataTile extends StatelessWidget {
     @required Question question,
     this.onTap,
   })  : assert(question != null),
-        this._questionNumber = question.number,
+        this._questionNumber = question.info.number,
         this._shortQuestionText = QuestionParser.trim(question.question),
         super(key: key);
 

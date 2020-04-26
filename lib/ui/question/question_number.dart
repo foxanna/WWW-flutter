@@ -15,10 +15,10 @@ class QuestionNumber extends StatelessWidget {
   @override
   Widget build(BuildContext context) => StoreConnector<AppState, String>(
         distinct: true,
-        converter: (store) =>
-            store.state.randomQuestionsState.randomQuestionsAreDisplayed
-                ? (index + 1).toString()
-                : store.state.questionsState.questions[index].question.number,
+        converter: (store) => store
+                .state.randomQuestionsState.randomQuestionsAreDisplayed
+            ? (index + 1).toString()
+            : store.state.questionsState.questions[index].question.info.number,
         builder: (context, questionIndex) => Text(
           '${Strings.question} $questionIndex',
           style: StyleConfiguration.of(context)

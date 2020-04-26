@@ -11,8 +11,8 @@ class QuestionsAboutTourBottomSheetItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) => StoreConnector<AppState, TourInfo>(
         distinct: true,
-        converter: (store) =>
-            store.state.questionsState.currentQuestion?.question?.tourInfo,
+        converter: (store) => store
+            .state.questionsState.currentQuestion?.question?.info?.tourInfo,
         builder: (context, tourInfo) => ListTile(
           enabled: tourInfo != null,
           leading: const Icon(Icons.info_outline),
