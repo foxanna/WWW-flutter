@@ -13,7 +13,7 @@ abstract class OpenTournament
     with _$OpenTournament
     implements TournamentAction {
   const factory OpenTournament({
-    @required Tournament tournament,
+    @required TournamentInfo info,
   }) = _OpenTournament;
 }
 

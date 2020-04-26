@@ -89,5 +89,5 @@ class TournamentsGridTile extends StatelessWidget {
 
   void _openTournamentDetails(BuildContext context) =>
       StoreProvider.of<AppState>(context)
-          .dispatch(OpenTournament(tournament: tournament));
+          .dispatch(OpenTournament(info: tournament.info));
 }

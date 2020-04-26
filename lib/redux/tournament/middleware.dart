@@ -31,7 +31,7 @@ class TournamentMiddleware {
     next(action);
 
     store.dispatch(const NavigateToTournamentPage());
-    store.dispatch(LoadTournament(info: action.tournament.info));
+    store.dispatch(LoadTournament(info: action.info));
   }
 
   Future<void> _loadTournament(
