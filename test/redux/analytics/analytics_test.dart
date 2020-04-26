@@ -93,7 +93,7 @@ void main() {
     test(
       '$ShareTournament',
       () => analyticsTest(
-          const ShareTournament(tournament: Tournament()), 'share_tournament'),
+          const ShareTournament(info: TournamentInfo()), 'share_tournament'),
     );
 
     test(
@@ -109,8 +109,8 @@ void main() {
 
     test(
       '$BrowseTournament',
-      () => analyticsTest(const BrowseTournament(tournament: Tournament()),
-          'browse_tournament'),
+      () => analyticsTest(
+          const BrowseTournament(info: TournamentInfo()), 'browse_tournament'),
     );
 
     test(
