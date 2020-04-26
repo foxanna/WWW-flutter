@@ -1,5 +1,6 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
@@ -39,22 +40,33 @@ class TournamentMiddleware {
 
     final tournamentState = store.state.tournamentState;
 
-    if (tournamentState.isLoading) {
+    if (tournamentState is LoadingTournamentState &&
+        (tournamentState.info.id == action.info.id ||
+            tournamentState.info.id2 == action.info.id2)) {
       return;
     }
 
     try {
-      store.dispatch(TournamentIsLoading(
-        tournamentId: action.tournamentId,
-      ));
+      store.dispatch(TournamentIsLoading(info: action.info));
 
-      final data = await _loader.get(action.tournamentId);
+      final data = await _loader.get(action.info.id ?? action.info.id2);
 
-      store.dispatch(TournamentLoaded(tournament: data));
+      if (_isCurrentTournament(store, data.info)) {
+        store.dispatch(TournamentLoaded(tournament: data));
+      }
     } on Exception catch (e) {
-      store.dispatch(TournamentFailedLoading(
-          tournamentId: action.tournamentId, exception: e));
+      if (_isCurrentTournament(store, action.info)) {
+        store
+            .dispatch(TournamentFailedLoading(info: action.info, exception: e));
+      }
     }
+  }
+
+  bool _isCurrentTournament(Store<AppState> store, TournamentInfo info) {
+    final currentTournamentInfo = store.state.tournamentState.info;
+
+    return info.id == currentTournamentInfo.id ||
+        info.id2 == currentTournamentInfo.id2;
   }
 
   void _tournamentLoaded(
@@ -68,7 +80,6 @@ class TournamentMiddleware {
       Store<AppState> store, ReloadTournament action, NextDispatcher next) {
     next(action);
 
-    final tournamentId = store.state.tournamentState.tournament.id2;
-    store.dispatch(LoadTournament(tournamentId: tournamentId));
+    store.dispatch(LoadTournament(info: store.state.tournamentState.info));
   }
 }
