@@ -9,6 +9,118 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+class _$SetToursTearOff {
+  const _$SetToursTearOff();
+
+  _SetTours call({@required List<TourInfo> tours}) {
+    return _SetTours(
+      tours: tours,
+    );
+  }
+}
+
+// ignore: unused_element
+const $SetTours = _$SetToursTearOff();
+
+mixin _$SetTours {
+  List<TourInfo> get tours;
+
+  $SetToursCopyWith<SetTours> get copyWith;
+}
+
+abstract class $SetToursCopyWith<$Res> {
+  factory $SetToursCopyWith(SetTours value, $Res Function(SetTours) then) =
+      _$SetToursCopyWithImpl<$Res>;
+  $Res call({List<TourInfo> tours});
+}
+
+class _$SetToursCopyWithImpl<$Res> implements $SetToursCopyWith<$Res> {
+  _$SetToursCopyWithImpl(this._value, this._then);
+
+  final SetTours _value;
+  // ignore: unused_field
+  final $Res Function(SetTours) _then;
+
+  @override
+  $Res call({
+    Object tours = freezed,
+  }) {
+    return _then(_value.copyWith(
+      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
+    ));
+  }
+}
+
+abstract class _$SetToursCopyWith<$Res> implements $SetToursCopyWith<$Res> {
+  factory _$SetToursCopyWith(_SetTours value, $Res Function(_SetTours) then) =
+      __$SetToursCopyWithImpl<$Res>;
+  @override
+  $Res call({List<TourInfo> tours});
+}
+
+class __$SetToursCopyWithImpl<$Res> extends _$SetToursCopyWithImpl<$Res>
+    implements _$SetToursCopyWith<$Res> {
+  __$SetToursCopyWithImpl(_SetTours _value, $Res Function(_SetTours) _then)
+      : super(_value, (v) => _then(v as _SetTours));
+
+  @override
+  _SetTours get _value => super._value as _SetTours;
+
+  @override
+  $Res call({
+    Object tours = freezed,
+  }) {
+    return _then(_SetTours(
+      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
+    ));
+  }
+}
+
+class _$_SetTours with DiagnosticableTreeMixin implements _SetTours {
+  const _$_SetTours({@required this.tours}) : assert(tours != null);
+
+  @override
+  final List<TourInfo> tours;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SetTours(tours: $tours)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SetTours'))
+      ..add(DiagnosticsProperty('tours', tours));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SetTours &&
+            (identical(other.tours, tours) ||
+                const DeepCollectionEquality().equals(other.tours, tours)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tours);
+
+  @override
+  _$SetToursCopyWith<_SetTours> get copyWith =>
+      __$SetToursCopyWithImpl<_SetTours>(this, _$identity);
+}
+
+abstract class _SetTours implements SetTours {
+  const factory _SetTours({@required List<TourInfo> tours}) = _$_SetTours;
+
+  @override
+  List<TourInfo> get tours;
+  @override
+  _$SetToursCopyWith<_SetTours> get copyWith;
+}
+
 class _$LoadToursTearOff {
   const _$LoadToursTearOff();
 

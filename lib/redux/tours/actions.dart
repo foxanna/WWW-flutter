@@ -9,6 +9,13 @@ part 'actions.freezed.dart';
 abstract class TourAction implements ReduxAction {}
 
 @freezed
+abstract class SetTours with _$SetTours implements TourAction {
+  const factory SetTours({
+    @required List<TourInfo> tours,
+  }) = _SetTours;
+}
+
+@freezed
 abstract class LoadTours with _$LoadTours implements TourAction {
   const factory LoadTours({
     @required List<TourInfo> tours,
