@@ -19,7 +19,8 @@ class TournamentsTreeAppBar extends StatelessWidget {
 
     return StoreConnector<AppState, String>(
       distinct: true,
-      converter: (store) => store.state.tournamentsTreeState[rootId].tree.title,
+      converter: (store) =>
+          store.state.tournamentsTreeState[rootId].tree.info.title,
       builder: (context, title) => SliverAppBar(
         iconTheme: styleConfiguration.appBarIconTheme,
         title: Text(title ?? Strings.tournamentsTree),

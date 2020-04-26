@@ -64,13 +64,13 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              tournamentsTree.title,
+              tournamentsTree.info.title,
               style: styleConfiguration.gridTileTitleTextStyle,
             ),
           ),
           SizedBox(width: styleConfiguration.tileContentSpacing),
           Text(
-            tournamentsTree.childrenCount,
+            tournamentsTree.info.childrenCount,
             style: styleConfiguration.gridTileSecondLineTextStyle,
           ),
         ],
