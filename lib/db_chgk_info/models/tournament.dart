@@ -24,7 +24,9 @@ abstract class Tournament with _$Tournament {
       title: dto.title.normalizeToSingleLine().removeTrailingDot(),
       questionsCount: dto.questionsCount,
       description: dto.description.normalizeToSingleLine(),
-      url: dto.id != null ? '${Constants.databaseUrl}/tour/${dto.id}' : null,
+      url: (dto.id ?? dto.textId) != null
+          ? '${Constants.databaseUrl}/tour/${dto.id ?? dto.textId}'
+          : null,
       editors: dto.editors.normalizeToSingleLine(),
       createdAt: dto.createdAt.normalizeToSingleLine(),
       playedAt: dto.playedAt.normalizeToSingleLine(),
