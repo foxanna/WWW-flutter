@@ -13,27 +13,23 @@ class _$QuestionTearOff {
   const _$QuestionTearOff();
 
   _Question call(
-      {String questionId,
+      {String id,
       String question,
-      String number,
       String answer,
       String authors,
       String passCriteria,
       String comments,
       String sources,
-      String url,
-      TourInfo tourInfo = const TourInfo()}) {
+      QuestionInfo info = const QuestionInfo()}) {
     return _Question(
-      questionId: questionId,
+      id: id,
       question: question,
-      number: number,
       answer: answer,
       authors: authors,
       passCriteria: passCriteria,
       comments: comments,
       sources: sources,
-      url: url,
-      tourInfo: tourInfo,
+      info: info,
     );
   }
 }
@@ -42,16 +38,14 @@ class _$QuestionTearOff {
 const $Question = _$QuestionTearOff();
 
 mixin _$Question {
-  String get questionId;
+  String get id;
   String get question;
-  String get number;
   String get answer;
   String get authors;
   String get passCriteria;
   String get comments;
   String get sources;
-  String get url;
-  TourInfo get tourInfo;
+  QuestionInfo get info;
 
   $QuestionCopyWith<Question> get copyWith;
 }
@@ -60,18 +54,16 @@ abstract class $QuestionCopyWith<$Res> {
   factory $QuestionCopyWith(Question value, $Res Function(Question) then) =
       _$QuestionCopyWithImpl<$Res>;
   $Res call(
-      {String questionId,
+      {String id,
       String question,
-      String number,
       String answer,
       String authors,
       String passCriteria,
       String comments,
       String sources,
-      String url,
-      TourInfo tourInfo});
+      QuestionInfo info});
 
-  $TourInfoCopyWith<$Res> get tourInfo;
+  $QuestionInfoCopyWith<$Res> get info;
 }
 
 class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
@@ -83,22 +75,18 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
 
   @override
   $Res call({
-    Object questionId = freezed,
+    Object id = freezed,
     Object question = freezed,
-    Object number = freezed,
     Object answer = freezed,
     Object authors = freezed,
     Object passCriteria = freezed,
     Object comments = freezed,
     Object sources = freezed,
-    Object url = freezed,
-    Object tourInfo = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      questionId:
-          questionId == freezed ? _value.questionId : questionId as String,
+      id: id == freezed ? _value.id : id as String,
       question: question == freezed ? _value.question : question as String,
-      number: number == freezed ? _value.number : number as String,
       answer: answer == freezed ? _value.answer : answer as String,
       authors: authors == freezed ? _value.authors : authors as String,
       passCriteria: passCriteria == freezed
@@ -106,18 +94,17 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
           : passCriteria as String,
       comments: comments == freezed ? _value.comments : comments as String,
       sources: sources == freezed ? _value.sources : sources as String,
-      url: url == freezed ? _value.url : url as String,
-      tourInfo: tourInfo == freezed ? _value.tourInfo : tourInfo as TourInfo,
+      info: info == freezed ? _value.info : info as QuestionInfo,
     ));
   }
 
   @override
-  $TourInfoCopyWith<$Res> get tourInfo {
-    if (_value.tourInfo == null) {
+  $QuestionInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
       return null;
     }
-    return $TourInfoCopyWith<$Res>(_value.tourInfo, (value) {
-      return _then(_value.copyWith(tourInfo: value));
+    return $QuestionInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
     });
   }
 }
@@ -127,19 +114,17 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       __$QuestionCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String questionId,
+      {String id,
       String question,
-      String number,
       String answer,
       String authors,
       String passCriteria,
       String comments,
       String sources,
-      String url,
-      TourInfo tourInfo});
+      QuestionInfo info});
 
   @override
-  $TourInfoCopyWith<$Res> get tourInfo;
+  $QuestionInfoCopyWith<$Res> get info;
 }
 
 class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
@@ -152,22 +137,18 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object questionId = freezed,
+    Object id = freezed,
     Object question = freezed,
-    Object number = freezed,
     Object answer = freezed,
     Object authors = freezed,
     Object passCriteria = freezed,
     Object comments = freezed,
     Object sources = freezed,
-    Object url = freezed,
-    Object tourInfo = freezed,
+    Object info = freezed,
   }) {
     return _then(_Question(
-      questionId:
-          questionId == freezed ? _value.questionId : questionId as String,
+      id: id == freezed ? _value.id : id as String,
       question: question == freezed ? _value.question : question as String,
-      number: number == freezed ? _value.number : number as String,
       answer: answer == freezed ? _value.answer : answer as String,
       authors: authors == freezed ? _value.authors : authors as String,
       passCriteria: passCriteria == freezed
@@ -175,32 +156,27 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
           : passCriteria as String,
       comments: comments == freezed ? _value.comments : comments as String,
       sources: sources == freezed ? _value.sources : sources as String,
-      url: url == freezed ? _value.url : url as String,
-      tourInfo: tourInfo == freezed ? _value.tourInfo : tourInfo as TourInfo,
+      info: info == freezed ? _value.info : info as QuestionInfo,
     ));
   }
 }
 
 class _$_Question with DiagnosticableTreeMixin implements _Question {
   const _$_Question(
-      {this.questionId,
+      {this.id,
       this.question,
-      this.number,
       this.answer,
       this.authors,
       this.passCriteria,
       this.comments,
       this.sources,
-      this.url,
-      this.tourInfo = const TourInfo()})
-      : assert(tourInfo != null);
+      this.info = const QuestionInfo()})
+      : assert(info != null);
 
   @override
-  final String questionId;
+  final String id;
   @override
   final String question;
-  @override
-  final String number;
   @override
   final String answer;
   @override
@@ -211,15 +187,13 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
   final String comments;
   @override
   final String sources;
+  @JsonKey(defaultValue: const QuestionInfo())
   @override
-  final String url;
-  @JsonKey(defaultValue: const TourInfo())
-  @override
-  final TourInfo tourInfo;
+  final QuestionInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Question(questionId: $questionId, question: $question, number: $number, answer: $answer, authors: $authors, passCriteria: $passCriteria, comments: $comments, sources: $sources, url: $url, tourInfo: $tourInfo)';
+    return 'Question(id: $id, question: $question, answer: $answer, authors: $authors, passCriteria: $passCriteria, comments: $comments, sources: $sources, info: $info)';
   }
 
   @override
@@ -227,30 +201,25 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Question'))
-      ..add(DiagnosticsProperty('questionId', questionId))
+      ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('question', question))
-      ..add(DiagnosticsProperty('number', number))
       ..add(DiagnosticsProperty('answer', answer))
       ..add(DiagnosticsProperty('authors', authors))
       ..add(DiagnosticsProperty('passCriteria', passCriteria))
       ..add(DiagnosticsProperty('comments', comments))
       ..add(DiagnosticsProperty('sources', sources))
-      ..add(DiagnosticsProperty('url', url))
-      ..add(DiagnosticsProperty('tourInfo', tourInfo));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Question &&
-            (identical(other.questionId, questionId) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionId, questionId)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.question, question) ||
                 const DeepCollectionEquality()
                     .equals(other.question, question)) &&
-            (identical(other.number, number) ||
-                const DeepCollectionEquality().equals(other.number, number)) &&
             (identical(other.answer, answer) ||
                 const DeepCollectionEquality().equals(other.answer, answer)) &&
             (identical(other.authors, authors) ||
@@ -265,26 +234,21 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
             (identical(other.sources, sources) ||
                 const DeepCollectionEquality()
                     .equals(other.sources, sources)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.tourInfo, tourInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.tourInfo, tourInfo)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questionId) ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(question) ^
-      const DeepCollectionEquality().hash(number) ^
       const DeepCollectionEquality().hash(answer) ^
       const DeepCollectionEquality().hash(authors) ^
       const DeepCollectionEquality().hash(passCriteria) ^
       const DeepCollectionEquality().hash(comments) ^
       const DeepCollectionEquality().hash(sources) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(tourInfo);
+      const DeepCollectionEquality().hash(info);
 
   @override
   _$QuestionCopyWith<_Question> get copyWith =>
@@ -293,23 +257,19 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
 
 abstract class _Question implements Question {
   const factory _Question(
-      {String questionId,
+      {String id,
       String question,
-      String number,
       String answer,
       String authors,
       String passCriteria,
       String comments,
       String sources,
-      String url,
-      TourInfo tourInfo}) = _$_Question;
+      QuestionInfo info}) = _$_Question;
 
   @override
-  String get questionId;
+  String get id;
   @override
   String get question;
-  @override
-  String get number;
   @override
   String get answer;
   @override
@@ -321,9 +281,7 @@ abstract class _Question implements Question {
   @override
   String get sources;
   @override
-  String get url;
-  @override
-  TourInfo get tourInfo;
+  QuestionInfo get info;
   @override
   _$QuestionCopyWith<_Question> get copyWith;
 }
