@@ -1,36 +1,23 @@
-import 'package:meta/meta.dart';
-import 'package:quiver/core.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 
-@immutable
-class TournamentState {
-  final Tournament tournament;
-  final bool isLoading;
-  final Exception exception;
+part 'state.freezed.dart';
 
-  bool get hasData => tournament?.info?.questionsCount != null;
+@freezed
+abstract class TournamentState with _$TournamentState {
+  const factory TournamentState.data({
+    @required TournamentInfo info,
+    @required Tournament tournament,
+  }) = DataTournamentState;
 
-  bool get hasError => exception != null;
+  const factory TournamentState.loading({
+    @required TournamentInfo info,
+  }) = LoadingTournamentState;
 
-  const TournamentState._({
-    this.tournament,
-    this.isLoading = false,
-    this.exception,
-  });
-
-  const TournamentState.initial() : this._();
-
-  const TournamentState.from(Tournament tournament)
-      : this._(tournament: tournament);
-
-  TournamentState copyWith({
-    Optional<Tournament> tournament,
-    Optional<bool> isLoading,
-    Optional<Exception> exception,
-  }) =>
-      TournamentState._(
-        tournament: tournament != null ? tournament.orNull : this.tournament,
-        isLoading: isLoading != null ? isLoading.orNull : this.isLoading,
-        exception: exception != null ? exception.orNull : this.exception,
-      );
+  const factory TournamentState.error({
+    @required TournamentInfo info,
+    @required Exception exception,
+  }) = ErrorTournamentState;
 }
