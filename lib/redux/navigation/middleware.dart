@@ -54,8 +54,6 @@ class NavigationMiddleware {
       NextDispatcher next) {
     next(action);
 
-    store.dispatch(SetTournament(tournament: action.tournament));
-
     _navigationService.navigateToPage(
       routeName: TournamentDetailsRoutePage.routeName,
       builder: (context) => const TournamentDetailsRoutePage(),

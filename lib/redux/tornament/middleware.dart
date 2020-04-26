@@ -1,7 +1,9 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/tornament/actions.dart';
+import 'package:what_when_where/redux/tornament/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 
 class TournamentMiddleware {
@@ -17,17 +19,18 @@ class TournamentMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, SetTournament>(_setTournament),
+        TypedMiddleware<AppState, OpenTournament>(_openTournament),
         TypedMiddleware<AppState, LoadTournament>(_loadTournament),
         TypedMiddleware<AppState, ReloadTournament>(_reloadTournament),
         TypedMiddleware<AppState, TournamentLoaded>(_tournamentLoaded),
       ];
 
-  void _setTournament(
-      Store<AppState> store, SetTournament action, NextDispatcher next) {
+  void _openTournament(
+      Store<AppState> store, OpenTournament action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(LoadTournament(tournamentId: action.tournament.id2));
+    store.dispatch(const NavigateToTournamentPage());
+    store.dispatch(LoadTournament(info: action.tournament.info));
   }
 
   Future<void> _loadTournament(
