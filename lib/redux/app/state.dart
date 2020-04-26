@@ -5,7 +5,7 @@ import 'package:what_when_where/redux/random/state.dart';
 import 'package:what_when_where/redux/search/state.dart';
 import 'package:what_when_where/redux/settings/state.dart';
 import 'package:what_when_where/redux/timer/state.dart';
-import 'package:what_when_where/redux/tornament/state.dart';
+import 'package:what_when_where/redux/tournament/state.dart';
 import 'package:what_when_where/redux/tours/state.dart';
 import 'package:what_when_where/redux/tree/state.dart';
 

@@ -1,6 +1,6 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/redux/tornament/actions.dart';
-import 'package:what_when_where/redux/tornament/state.dart';
+import 'package:what_when_where/redux/tournament/actions.dart';
+import 'package:what_when_where/redux/tournament/state.dart';
 
 class TournamentReducer {
   static final Reducer<TournamentState> _reducer =

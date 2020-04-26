@@ -2,7 +2,7 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
-import 'package:what_when_where/redux/tornament/actions.dart';
+import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/redux/tree/state.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/about/route_page.dart';

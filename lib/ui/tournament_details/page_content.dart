@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/tornament/actions.dart';
-import 'package:what_when_where/redux/tornament/state.dart';
+import 'package:what_when_where/redux/tournament/actions.dart';
+import 'package:what_when_where/redux/tournament/state.dart';
 import 'package:what_when_where/ui/tournament_details/data_page.dart';
 import 'package:what_when_where/ui/tournament_details/error_page.dart';
 import 'package:what_when_where/ui/tournament_details/loading_page.dart';

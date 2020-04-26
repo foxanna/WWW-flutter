@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/tornament/actions.dart';
+import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 
 class TournamentDetailsErrorPage extends StatelessWidget {

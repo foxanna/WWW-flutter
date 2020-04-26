@@ -6,7 +6,7 @@ import 'package:what_when_where/redux/random/reducer.dart';
 import 'package:what_when_where/redux/search/reducer.dart';
 import 'package:what_when_where/redux/settings/reducer.dart';
 import 'package:what_when_where/redux/timer/reducer.dart';
-import 'package:what_when_where/redux/tornament/reducer.dart';
+import 'package:what_when_where/redux/tournament/reducer.dart';
 import 'package:what_when_where/redux/tours/reducer.dart';
 import 'package:what_when_where/redux/tree/reducer.dart';
 

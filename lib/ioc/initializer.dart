@@ -22,7 +22,7 @@ import 'package:what_when_where/redux/search/middleware.dart';
 import 'package:what_when_where/redux/settings/middleware.dart';
 import 'package:what_when_where/redux/sharing/middleware.dart';
 import 'package:what_when_where/redux/timer/middleware.dart';
-import 'package:what_when_where/redux/tornament/middleware.dart';
+import 'package:what_when_where/redux/tournament/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
 import 'package:what_when_where/services/analytics.dart';

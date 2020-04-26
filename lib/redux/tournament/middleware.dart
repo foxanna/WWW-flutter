@@ -3,8 +3,8 @@ import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.d
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
-import 'package:what_when_where/redux/tornament/actions.dart';
-import 'package:what_when_where/redux/tornament/state.dart';
+import 'package:what_when_where/redux/tournament/actions.dart';
+import 'package:what_when_where/redux/tournament/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 
 class TournamentMiddleware {

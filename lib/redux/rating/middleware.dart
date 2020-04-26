@@ -2,7 +2,7 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/rating/actions.dart';
-import 'package:what_when_where/redux/tornament/actions.dart';
+import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/rating.dart';
 
