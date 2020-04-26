@@ -1,10 +1,11 @@
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
 abstract class IBrowsingService {
-  void browseTournament(Tournament tournament);
+  void browseTournament(TournamentInfo info);
 
   void browseTour(Tour tour);
 
@@ -20,8 +21,8 @@ class BrowsingService implements IBrowsingService {
   BrowsingService._(this._urlLauncher);
 
   @override
-  void browseTournament(Tournament tournament) =>
-      _urlLauncher.launchURL(tournament.info.url);
+  void browseTournament(TournamentInfo info) =>
+      _urlLauncher.launchURL(info.url);
 
   @override
   void browseTour(Tour tour) => _urlLauncher.launchURL(tour.info.url);

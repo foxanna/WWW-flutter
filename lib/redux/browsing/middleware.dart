@@ -25,7 +25,7 @@ class BrowseMiddleware {
       Store<AppState> store, BrowseTournament action, NextDispatcher next) {
     next(action);
 
-    _browsingService.browseTournament(action.tournament);
+    _browsingService.browseTournament(action.info);
   }
 
   void _browseTour(

@@ -279,9 +279,9 @@ abstract class _BrowseTour implements BrowseTour {
 class _$BrowseTournamentTearOff {
   const _$BrowseTournamentTearOff();
 
-  _BrowseTournament call({@required Tournament tournament}) {
+  _BrowseTournament call({@required TournamentInfo info}) {
     return _BrowseTournament(
-      tournament: tournament,
+      info: info,
     );
   }
 }
@@ -290,7 +290,7 @@ class _$BrowseTournamentTearOff {
 const $BrowseTournament = _$BrowseTournamentTearOff();
 
 mixin _$BrowseTournament {
-  Tournament get tournament;
+  TournamentInfo get info;
 
   $BrowseTournamentCopyWith<BrowseTournament> get copyWith;
 }
@@ -299,9 +299,9 @@ abstract class $BrowseTournamentCopyWith<$Res> {
   factory $BrowseTournamentCopyWith(
           BrowseTournament value, $Res Function(BrowseTournament) then) =
       _$BrowseTournamentCopyWithImpl<$Res>;
-  $Res call({Tournament tournament});
+  $Res call({TournamentInfo info});
 
-  $TournamentCopyWith<$Res> get tournament;
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class _$BrowseTournamentCopyWithImpl<$Res>
@@ -314,21 +314,20 @@ class _$BrowseTournamentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournament = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      tournament:
-          tournament == freezed ? _value.tournament : tournament as Tournament,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
 
   @override
-  $TournamentCopyWith<$Res> get tournament {
-    if (_value.tournament == null) {
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
       return null;
     }
-    return $TournamentCopyWith<$Res>(_value.tournament, (value) {
-      return _then(_value.copyWith(tournament: value));
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
     });
   }
 }
@@ -339,10 +338,10 @@ abstract class _$BrowseTournamentCopyWith<$Res>
           _BrowseTournament value, $Res Function(_BrowseTournament) then) =
       __$BrowseTournamentCopyWithImpl<$Res>;
   @override
-  $Res call({Tournament tournament});
+  $Res call({TournamentInfo info});
 
   @override
-  $TournamentCopyWith<$Res> get tournament;
+  $TournamentInfoCopyWith<$Res> get info;
 }
 
 class __$BrowseTournamentCopyWithImpl<$Res>
@@ -357,11 +356,10 @@ class __$BrowseTournamentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournament = freezed,
+    Object info = freezed,
   }) {
     return _then(_BrowseTournament(
-      tournament:
-          tournament == freezed ? _value.tournament : tournament as Tournament,
+      info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
 }
@@ -369,15 +367,14 @@ class __$BrowseTournamentCopyWithImpl<$Res>
 class _$_BrowseTournament
     with DiagnosticableTreeMixin
     implements _BrowseTournament {
-  const _$_BrowseTournament({@required this.tournament})
-      : assert(tournament != null);
+  const _$_BrowseTournament({@required this.info}) : assert(info != null);
 
   @override
-  final Tournament tournament;
+  final TournamentInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BrowseTournament(tournament: $tournament)';
+    return 'BrowseTournament(info: $info)';
   }
 
   @override
@@ -385,21 +382,20 @@ class _$_BrowseTournament
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'BrowseTournament'))
-      ..add(DiagnosticsProperty('tournament', tournament));
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _BrowseTournament &&
-            (identical(other.tournament, tournament) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournament, tournament)));
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournament);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
   _$BrowseTournamentCopyWith<_BrowseTournament> get copyWith =>
@@ -407,11 +403,11 @@ class _$_BrowseTournament
 }
 
 abstract class _BrowseTournament implements BrowseTournament {
-  const factory _BrowseTournament({@required Tournament tournament}) =
+  const factory _BrowseTournament({@required TournamentInfo info}) =
       _$_BrowseTournament;
 
   @override
-  Tournament get tournament;
+  TournamentInfo get info;
   @override
   _$BrowseTournamentCopyWith<_BrowseTournament> get copyWith;
 }
