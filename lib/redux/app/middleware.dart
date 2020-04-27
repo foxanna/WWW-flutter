@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
@@ -19,13 +20,14 @@ import 'package:what_when_where/redux/tournament/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
 
+@injectable
 class AppMiddleware {
   final IContainer _container;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  AppMiddleware.ioc({
+  AppMiddleware({
     IContainer container,
   }) : _container = container {
     _middleware = _createMiddleware();

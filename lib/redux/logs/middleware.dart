@@ -1,12 +1,14 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/utils/logger.dart';
 
+@injectable
 class LogsMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  LogsMiddleware.ioc() {
+  LogsMiddleware() {
     _middleware = _createMiddleware();
   }
 

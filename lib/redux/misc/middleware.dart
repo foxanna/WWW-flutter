@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/redux/app/state.dart';
@@ -5,13 +6,14 @@ import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
+@injectable
 class MiscMiddleware {
   final IUrlLauncher _urlLauncher;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  MiscMiddleware.ioc({
+  MiscMiddleware({
     IUrlLauncher urlLauncher,
   }) : _urlLauncher = urlLauncher {
     _middleware = _createMiddleware();

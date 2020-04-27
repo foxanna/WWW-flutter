@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/redux/app/state.dart';
@@ -8,6 +9,7 @@ import 'package:what_when_where/utils/timer.dart';
 
 const int _timerFrequency = 200;
 
+@injectable
 class TimerMiddleware {
   final ISoundService _soundService;
   final IVibratingService _vibratingService;
@@ -15,7 +17,7 @@ class TimerMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  TimerMiddleware.ioc({
+  TimerMiddleware({
     ISoundService soundService,
     IVibratingService vibratingService,
   })  : _soundService = soundService,

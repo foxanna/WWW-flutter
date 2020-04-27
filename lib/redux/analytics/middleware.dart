@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/redux/app/state.dart';
@@ -41,13 +42,14 @@ final _analyticsEventNames = {
   BrowseDatabase: 'browse_database',
 };
 
+@injectable
 class AnalyticsMiddleware {
   final IAnalyticsService _analyticsService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  AnalyticsMiddleware.ioc({
+  AnalyticsMiddleware({
     IAnalyticsService analyticsService,
   }) : _analyticsService = analyticsService {
     _middleware = _createMiddleware();

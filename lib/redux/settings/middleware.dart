@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/redux/app/state.dart';
@@ -10,13 +11,14 @@ const _textScaleKey = 'scale';
 const _notifyShortTimerExpirationKey = 'notify_short_timer';
 const _notifyLongTimerExpirationKey = 'notify_long_timer';
 
+@injectable
 class SettingsMiddleware {
   final IPreferences _preferences;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  SettingsMiddleware.ioc({
+  SettingsMiddleware({
     IPreferences preferences,
   }) : _preferences = preferences {
     _middleware = _createMiddleware();

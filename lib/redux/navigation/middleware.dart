@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
@@ -11,13 +12,14 @@ import 'package:what_when_where/ui/settings/route_page.dart';
 import 'package:what_when_where/ui/tournament_details/route_page.dart';
 import 'package:what_when_where/ui/tree/route_page.dart';
 
+@injectable
 class NavigationMiddleware {
   final INavigationService _navigationService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  NavigationMiddleware.ioc({
+  NavigationMiddleware({
     INavigationService navigationService,
   }) : _navigationService = navigationService {
     _middleware = _createMiddleware();

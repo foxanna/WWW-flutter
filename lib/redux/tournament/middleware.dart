@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
@@ -7,13 +8,14 @@ import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/redux/tournament/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 
+@injectable
 class TournamentMiddleware {
   final ITournamentDetailsLoader _loader;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  TournamentMiddleware.ioc({
+  TournamentMiddleware({
     ITournamentDetailsLoader loader,
   }) : _loader = loader {
     _middleware = _createMiddleware();

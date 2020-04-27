@@ -1,19 +1,20 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/services/dialogs.dart';
 import 'package:what_when_where/ui/questions/tour_details_about_dialog.dart';
 import 'package:what_when_where/ui/rating/rating_dialog.dart';
 import 'package:what_when_where/ui/tournament_details/about_dialog.dart';
 
-import 'actions.dart';
-
+@injectable
 class DialogMiddleware {
   final IDialogService _dialogService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  DialogMiddleware.ioc({
+  DialogMiddleware({
     IDialogService dialogService,
   }) : _dialogService = dialogService {
     _middleware = _createMiddleware();

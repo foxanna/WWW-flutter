@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
@@ -10,6 +11,7 @@ const String _tournamentsViewedKey = 'tournaments_viewed';
 const String _ratedKey = 'rated';
 const int _maxOpenedTournamentsCount = 5;
 
+@injectable
 class RatingMiddleware {
   final IPreferences _preferencesService;
   final IRatingService _ratingService;
@@ -17,7 +19,7 @@ class RatingMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  RatingMiddleware.ioc({
+  RatingMiddleware({
     IPreferences preferences,
     IRatingService ratingService,
   })  : _preferencesService = preferences,

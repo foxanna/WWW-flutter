@@ -1,16 +1,18 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 
+@injectable
 class LatestTournamentsMiddleware {
   final ILatestTournamentsLoader _loader;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  LatestTournamentsMiddleware.ioc({
+  LatestTournamentsMiddleware({
     ILatestTournamentsLoader loader,
   }) : _loader = loader {
     _middleware = _createMiddleware();

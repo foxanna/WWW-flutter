@@ -1,15 +1,17 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/services/browsing.dart';
 
+@injectable
 class BrowseMiddleware {
   final IBrowsingService _browsingService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  BrowseMiddleware.ioc({
+  BrowseMiddleware({
     IBrowsingService browsingService,
   }) : _browsingService = browsingService {
     _middleware = _createMiddleware();

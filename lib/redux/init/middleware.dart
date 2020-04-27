@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/init/actions.dart';
@@ -5,6 +6,7 @@ import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/sound.dart';
 
+@injectable
 class InitMiddleware {
   final ICrashService _crashService;
   final ISoundService _soundService;
@@ -12,7 +14,7 @@ class InitMiddleware {
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
-  InitMiddleware.ioc({
+  InitMiddleware({
     ICrashService crashService,
     ISoundService soundService,
   })  : _crashService = crashService,
