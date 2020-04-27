@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
@@ -9,14 +10,14 @@ import 'package:what_when_where/ui/common/shape_hero.dart';
 import 'package:what_when_where/ui/common/text_hero.dart';
 
 class TournamentsGridTile extends StatelessWidget {
-  final Tournament tournament;
+  final TournamentInfo tournamentInfo;
 
   final String _subheadText;
 
   TournamentsGridTile({
     Key key,
-    @required this.tournament,
-  })  : _subheadText = _buildSubheadText(tournament),
+    @required this.tournamentInfo,
+  })  : _subheadText = _buildSubheadText(tournamentInfo),
         super(key: key);
 
   @override
@@ -34,7 +35,7 @@ class TournamentsGridTile extends StatelessWidget {
 
     return Positioned.fill(
       child: ShapeHeroFrom(
-        tag: '${tournament.id2}bg',
+        tag: '${tournamentInfo.id2}bg',
         begin: cardTheme.shape,
         end: styleConfiguration.shape,
         child: Container(color: cardTheme.color),
@@ -56,12 +57,12 @@ class TournamentsGridTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               TextHeroFrom(
-                tag: '${tournament.id2}ttl',
+                tag: '${tournamentInfo.id2}ttl',
                 startTextStyle: gridStyleConfiguration.gridTileTitleTextStyle,
                 endTextStyle: styleConfiguration
                     .tournamentDetailsStyleConfiguration
                     .tournamentTitleTextStyle,
-                text: tournament.info.title ?? '',
+                text: tournamentInfo.title ?? '',
               ),
               if (_subheadText.isNotEmpty)
                 SizedBox(
@@ -80,14 +81,14 @@ class TournamentsGridTile extends StatelessWidget {
     );
   }
 
-  static String _buildSubheadText(Tournament tournament) => [
-        if (tournament.info.playedAt?.isNotEmpty ?? false)
-          '${Strings.playedAt} ${tournament.info.playedAt}',
-        if (tournament.info.createdAt?.isNotEmpty ?? false)
-          '${Strings.addedAt} ${tournament.info.createdAt}',
+  static String _buildSubheadText(TournamentInfo tournamentInfo) => [
+        if (tournamentInfo.playedAt?.isNotEmpty ?? false)
+          '${Strings.playedAt} ${tournamentInfo.playedAt}',
+        if (tournamentInfo.createdAt?.isNotEmpty ?? false)
+          '${Strings.addedAt} ${tournamentInfo.createdAt}',
       ].join('\n');
 
   void _openTournamentDetails(BuildContext context) =>
       StoreProvider.of<AppState>(context)
-          .dispatch(OpenTournament(info: tournament.info));
+          .dispatch(OpenTournament(info: tournamentInfo));
 }

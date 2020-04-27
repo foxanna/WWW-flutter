@@ -31,7 +31,7 @@ class TournamentsGrid extends StatelessWidget {
             ? footerBuilder(context)
             : (_isStubTournamentIndex(index)
                 ? const TournamentsGridStubTile()
-                : TournamentsGridTile(tournament: tournaments[index])),
+                : TournamentsGridTile(tournamentInfo: tournaments[index].info)),
         itemCount: _itemsCount(),
         staggeredTileBuilder: (index) => (_isFooterIndex(index))
             ? StaggeredTile.fit(styleConfiguration.columnsCount)

@@ -31,9 +31,8 @@ class TournamentsTreeDataPage extends StatelessWidget {
                 tournamentsTree: tournamentsTree[index] as TournamentsTree);
           }
 
-          if (tournamentsTree[index] is Tournament) {
-            return TournamentsGridTile(
-                tournament: tournamentsTree[index] as Tournament);
+          if (item is Tournament) {
+            return TournamentsGridTile(tournamentInfo: item.info);
           }
 
           return Container();
