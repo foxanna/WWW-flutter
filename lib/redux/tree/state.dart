@@ -1,89 +1,36 @@
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
-import 'package:quiver/core.dart';
 import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
+import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
 
-@immutable
-class TournamentsSubTreeState {
-  final bool isLoading;
-  final Exception exception;
-  final TournamentsTree tree;
+part 'state.freezed.dart';
 
-  bool get hasError => exception != null;
-
-  bool get hasData => tree?.children?.isNotEmpty ?? false;
-
-  const TournamentsSubTreeState._({
-    this.isLoading = false,
-    this.exception,
-    this.tree,
-  });
-
-  const TournamentsSubTreeState.initial({
-    @required TournamentsTree tree,
-  }) : this._(tree: tree);
-
-  TournamentsSubTreeState copyWith({
-    Optional<bool> isLoading,
-    Optional<Exception> exception,
-    Optional<TournamentsTree> tree,
-  }) =>
-      TournamentsSubTreeState._(
-        isLoading: isLoading != null ? isLoading.orNull : this.isLoading,
-        exception: exception != null ? exception.orNull : this.exception,
-        tree: tree != null ? tree.orNull : this.tree,
-      );
-
-  @override
-  int get hashCode => hash3(tree, isLoading, exception.runtimeType);
-
-  @override
-  bool operator ==(dynamic other) =>
-      other is TournamentsSubTreeState &&
-      other.tree == tree &&
-      other.isLoading == isLoading &&
-      other.exception?.runtimeType == exception?.runtimeType;
+@freezed
+abstract class TournamentsTreeState with _$TournamentsTreeState {
+  const factory TournamentsTreeState({
+    @Default(<String, TournamentsSubTreeState>{})
+        Map<String, TournamentsSubTreeState> states,
+  }) = _TournamentsTreeState;
 }
 
-@immutable
-class TournamentsTreeState {
-  static const String rootId = '0';
+@freezed
+abstract class TournamentsSubTreeState with _$TournamentsSubTreeState {
+  const factory TournamentsSubTreeState.initial({
+    @required TournamentsTreeInfo info,
+  }) = InitialTournamentsSubTreeState;
 
-  final Map<String, TournamentsSubTreeState> _states;
+  const factory TournamentsSubTreeState.data({
+    @required TournamentsTreeInfo info,
+    @required TournamentsTree tree,
+  }) = DataTournamentsSubTreeState;
 
-  TournamentsSubTreeState operator [](String id) => _states[id];
+  const factory TournamentsSubTreeState.loading({
+    @required TournamentsTreeInfo info,
+  }) = LoadingTournamentsSubTreeState;
 
-  TournamentsTreeState._({Map<String, TournamentsSubTreeState> states})
-      : _states = states ?? <String, TournamentsSubTreeState>{};
-
-  TournamentsTreeState.initial()
-      : this._(
-          states: <String, TournamentsSubTreeState>{
-            rootId: const TournamentsSubTreeState.initial(
-              tree: TournamentsTree(id: rootId),
-            ),
-          },
-        );
-
-  TournamentsTreeState copyWithSubTree({
-    @required String id,
-    Optional<bool> isLoading,
-    Optional<Exception> exception,
-    Optional<TournamentsTree> tree,
-  }) {
-    final newStates = Map<String, TournamentsSubTreeState>.from(_states);
-    newStates[id] = this[id].copyWith(
-      isLoading: isLoading,
-      exception: exception,
-      tree: tree,
-    );
-    if (tree?.isPresent ?? false) {
-      newStates.addEntries(
-          tree.value.children.whereType<TournamentsTree>().map((x) => MapEntry(
-                x.id,
-                TournamentsSubTreeState.initial(tree: x),
-              )));
-    }
-
-    return TournamentsTreeState._(states: newStates);
-  }
+  const factory TournamentsSubTreeState.error({
+    @required TournamentsTreeInfo info,
+    @required Exception exception,
+  }) = ErrorTournamentsSubTreeState;
 }

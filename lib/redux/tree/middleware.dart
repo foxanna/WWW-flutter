@@ -1,7 +1,10 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
+import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
+import 'package:what_when_where/redux/tree/state.dart';
 
 class TournamentsTreeMiddleware {
   final ITournamentsTreeLoader _loader;
@@ -16,6 +19,8 @@ class TournamentsTreeMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, OpenTournamentsTree>(_openTournamentsTree),
+        TypedMiddleware<AppState, SetTournamentsSubTree>(_setTournamentsTree),
         TypedMiddleware<AppState, LoadTournamentsTree>(_loadTournamentsTree),
       ];
 
@@ -23,19 +28,37 @@ class TournamentsTreeMiddleware {
       LoadTournamentsTree action, NextDispatcher next) async {
     next(action);
 
-    final state = store.state.tournamentsTreeState[action.rootId];
-    if (state.isLoading || state.hasData) {
+    final state = store.state.tournamentsTreeState.states[action.info.id];
+    if (state is LoadingTournamentsSubTreeState ||
+        state is DataTournamentsSubTreeState) {
       return;
     }
 
     try {
-      store.dispatch(TournamentsTreeIsLoading(rootId: action.rootId));
+      store.dispatch(TournamentsTreeIsLoading(info: action.info));
 
-      final tree = await _loader.get(id: action.rootId);
-      store.dispatch(TournamentsTreeLoaded(rootId: action.rootId, tree: tree));
+      final tree = await _loader.get(id: action.info.id);
+
+      store.dispatch(TournamentsTreeLoaded(tree: tree));
     } on Exception catch (e) {
       store.dispatch(
-          TournamentsTreeFailedLoading(rootId: action.rootId, exception: e));
+          TournamentsTreeFailedLoading(info: action.info, exception: e));
     }
+  }
+
+  void _openTournamentsTree(
+      Store<AppState> store, OpenTournamentsTree action, NextDispatcher next) {
+    next(action);
+
+    final info = action.info ?? const TournamentsTreeInfo(id: '0');
+    store.dispatch(NavigateToTournamentsTreePage(info: info));
+    store.dispatch(SetTournamentsSubTree(info: info));
+  }
+
+  void _setTournamentsTree(Store<AppState> store, SetTournamentsSubTree action,
+      NextDispatcher next) {
+    next(action);
+
+    store.dispatch(LoadTournamentsTree(info: action.info));
   }
 }

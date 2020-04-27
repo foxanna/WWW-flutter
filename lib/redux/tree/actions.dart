@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
+import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
 import 'package:what_when_where/redux/redux_action.dart';
 
 part 'actions.freezed.dart';
@@ -8,11 +9,29 @@ part 'actions.freezed.dart';
 abstract class TournamentsTreeAction implements ReduxAction {}
 
 @freezed
+abstract class OpenTournamentsTree
+    with _$OpenTournamentsTree
+    implements TournamentsTreeAction {
+  const factory OpenTournamentsTree({
+    TournamentsTreeInfo info,
+  }) = _OpenTournamentsTree;
+}
+
+@freezed
+abstract class SetTournamentsSubTree
+    with _$SetTournamentsSubTree
+    implements TournamentsTreeAction {
+  const factory SetTournamentsSubTree({
+    TournamentsTreeInfo info,
+  }) = _SetTournamentsSubTree;
+}
+
+@freezed
 abstract class LoadTournamentsTree
     with _$LoadTournamentsTree
     implements TournamentsTreeAction {
   const factory LoadTournamentsTree({
-    @required String rootId,
+    @required TournamentsTreeInfo info,
   }) = _LoadTournamentsTree;
 }
 
@@ -21,7 +40,7 @@ abstract class TournamentsTreeIsLoading
     with _$TournamentsTreeIsLoading
     implements TournamentsTreeAction {
   const factory TournamentsTreeIsLoading({
-    @required String rootId,
+    @required TournamentsTreeInfo info,
   }) = _TournamentsTreeIsLoading;
 }
 
@@ -30,7 +49,7 @@ abstract class TournamentsTreeFailedLoading
     with _$TournamentsTreeFailedLoading
     implements TournamentsTreeAction {
   const factory TournamentsTreeFailedLoading({
-    @required String rootId,
+    @required TournamentsTreeInfo info,
     @required Exception exception,
   }) = _TournamentsTreeFailedLoading;
 }
@@ -40,7 +59,6 @@ abstract class TournamentsTreeLoaded
     with _$TournamentsTreeLoaded
     implements TournamentsTreeAction {
   const factory TournamentsTreeLoaded({
-    @required String rootId,
     @required TournamentsTree tree,
   }) = _TournamentsTreeLoaded;
 }
