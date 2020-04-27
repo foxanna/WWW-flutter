@@ -10,8 +10,8 @@ import 'package:what_when_where/utils/extensions/string_extensions.dart';
 import 'package:xml2json/xml2json.dart';
 
 part 'http_client_logger.dart';
-
 part 'http_settings.dart';
+part 'dio.dart';
 
 abstract class IHttpClient {
   Future<String> getRaw(Uri uri, {CancelToken cancelToken});
@@ -19,22 +19,12 @@ abstract class IHttpClient {
   Future<Map<String, dynamic>> get(Uri uri, {CancelToken cancelToken});
 }
 
-Dio _createDioInstance() => Dio(
-      BaseOptions(
-        baseUrl: _baseUrl,
-        connectTimeout: _connectTimeout,
-        receiveTimeout: _receiveTimeout,
-      ),
-    );
-
 class HttpClient implements IHttpClient {
   final Dio _dio;
 
-  HttpClient.ioc({Dio dio}) : _dio = dio ?? _createDioInstance() {
-    if (_logHttpCommunication) {
-      _dio.interceptors?.add(LoggerInterceptor());
-    }
-  }
+  const HttpClient({
+    Dio dio,
+  }) : _dio = dio;
 
   @override
   Future<String> getRaw(Uri uri, {CancelToken cancelToken}) async {
