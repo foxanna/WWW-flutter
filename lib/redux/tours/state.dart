@@ -11,7 +11,7 @@ part 'state.freezed.dart';
 @freezed
 abstract class ToursState with _$ToursState {
   const factory ToursState({
-    @required List<TourState> tours,
+    @Default(<TourState>[]) List<TourState> tours,
   }) = _ToursState;
 
   factory ToursState.initial({@required List<TourInfo> toursInfo}) =>

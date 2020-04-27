@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$ToursStateTearOff {
   const _$ToursStateTearOff();
 
-  _ToursState call({@required List<TourState> tours}) {
+  _ToursState call({List<TourState> tours = const <TourState>[]}) {
     return _ToursState(
       tours: tours,
     );
@@ -80,8 +80,10 @@ class __$ToursStateCopyWithImpl<$Res> extends _$ToursStateCopyWithImpl<$Res>
 }
 
 class _$_ToursState with DiagnosticableTreeMixin implements _ToursState {
-  const _$_ToursState({@required this.tours}) : assert(tours != null);
+  const _$_ToursState({this.tours = const <TourState>[]})
+      : assert(tours != null);
 
+  @JsonKey(defaultValue: const <TourState>[])
   @override
   final List<TourState> tours;
 
@@ -116,7 +118,7 @@ class _$_ToursState with DiagnosticableTreeMixin implements _ToursState {
 }
 
 abstract class _ToursState implements ToursState {
-  const factory _ToursState({@required List<TourState> tours}) = _$_ToursState;
+  const factory _ToursState({List<TourState> tours}) = _$_ToursState;
 
   @override
   List<TourState> get tours;
