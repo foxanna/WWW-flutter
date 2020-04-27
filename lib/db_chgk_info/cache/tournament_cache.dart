@@ -1,20 +1,27 @@
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
-class TournamentCache {
-  static final TournamentCache _instance = TournamentCache._();
+abstract class ITournamentCache {
+  bool contains(String id);
 
-  factory TournamentCache() => _instance;
+  void save(Tournament tournament);
 
-  TournamentCache._();
+  Tournament get(String id);
+}
 
-  final _cacheById = <String, Tournament>{};
-  final _cacheByTextId = <String, Tournament>{};
+class TournamentCache implements ITournamentCache {
+  const TournamentCache();
 
+  final _cacheById = const <String, Tournament>{};
+  final _cacheByTextId = const <String, Tournament>{};
+
+  @override
   bool contains(String id) =>
       _cacheById.containsKey(id) || _cacheByTextId.containsKey(id);
 
+  @override
   void save(Tournament tournament) =>
       _cacheById[tournament.id] = _cacheByTextId[tournament.id2] = tournament;
 
+  @override
   Tournament get(String id) => _cacheById[id] ?? _cacheByTextId[id];
 }

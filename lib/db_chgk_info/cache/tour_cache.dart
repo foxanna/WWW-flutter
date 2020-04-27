@@ -1,17 +1,24 @@
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 
-class TourCache {
-  static final TourCache _instance = TourCache._();
+abstract class ITourCache {
+  bool contains(String id);
 
-  factory TourCache() => _instance;
+  void save(Tour tour);
 
-  TourCache._();
+  Tour get(String id);
+}
 
-  final _cache = <String, Tour>{};
+class TourCache implements ITourCache {
+  const TourCache();
 
+  final _cache = const <String, Tour>{};
+
+  @override
   bool contains(String id) => _cache.containsKey(id);
 
+  @override
   void save(Tour tour) => _cache[tour.id] = tour;
 
+  @override
   Tour get(String id) => _cache[id];
 }
