@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/cache/tour_cache.dart';
 import 'package:what_when_where/db_chgk_info/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/tour_dto.dart';
@@ -7,14 +8,17 @@ abstract class ITourDetailsLoader {
   Future<Tour> get(String id);
 }
 
+@lazySingleton
+@RegisterAs(ITourDetailsLoader)
 class TourDetailsLoader implements ITourDetailsLoader {
   final IHttpClient _httpClient;
+  final ITourCache _cache;
 
-  final _cache = TourCache();
-
-  TourDetailsLoader.ioc({
+  const TourDetailsLoader({
     IHttpClient httpClient,
-  }) : _httpClient = httpClient;
+    ITourCache tourCache,
+  })  : _httpClient = httpClient,
+        _cache = tourCache;
 
   @override
   Future<Tour> get(String id) async {

@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/random_questions_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
@@ -7,10 +8,12 @@ abstract class IRandomQuestionsLoader {
   Future<Iterable<Question>> get();
 }
 
+@lazySingleton
+@RegisterAs(IRandomQuestionsLoader)
 class RandomQuestionsLoader implements IRandomQuestionsLoader {
   final IHttpClient _httpClient;
 
-  RandomQuestionsLoader.ioc({
+  const RandomQuestionsLoader({
     IHttpClient httpClient,
   }) : _httpClient = httpClient;
 

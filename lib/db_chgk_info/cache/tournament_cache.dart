@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
 abstract class ITournamentCache {
@@ -8,6 +9,8 @@ abstract class ITournamentCache {
   Tournament get(String id);
 }
 
+@lazySingleton
+@RegisterAs(ITournamentCache)
 class TournamentCache implements ITournamentCache {
   const TournamentCache();
 

@@ -1,4 +1,5 @@
 import 'package:html/parser.dart';
+import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/tournament_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
@@ -8,10 +9,12 @@ abstract class ILatestTournamentsLoader {
   Future<Iterable<Tournament>> get({int page = 0});
 }
 
+@lazySingleton
+@RegisterAs(ILatestTournamentsLoader)
 class LatestTournamentsLoader implements ILatestTournamentsLoader {
   final IHttpClient _httpClient;
 
-  LatestTournamentsLoader.ioc({
+  const LatestTournamentsLoader({
     IHttpClient httpClient,
   }) : _httpClient = httpClient;
 

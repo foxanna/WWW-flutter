@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 
 abstract class ITourCache {
@@ -8,6 +9,8 @@ abstract class ITourCache {
   Tour get(String id);
 }
 
+@lazySingleton
+@RegisterAs(ITourCache)
 class TourCache implements ITourCache {
   const TourCache();
 

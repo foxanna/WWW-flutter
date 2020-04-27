@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/cache/tour_cache.dart';
 import 'package:what_when_where/db_chgk_info/cache/tournament_cache.dart';
 import 'package:what_when_where/db_chgk_info/http_client.dart';
@@ -10,20 +11,25 @@ abstract class ITournamentDetailsLoader {
   Future<Tournament> get(String id);
 }
 
+@lazySingleton
+@RegisterAs(ITournamentDetailsLoader)
 class TournamentDetailsLoader implements ITournamentDetailsLoader {
   final IHttpClient _httpClient;
+  final ITournamentCache _tournamentsCache;
+  final ITourCache _toursCache;
 
-  final _cache = TournamentCache();
-  final _toursCache = TourCache();
-
-  TournamentDetailsLoader.ioc({
+  TournamentDetailsLoader({
     IHttpClient httpClient,
-  }) : _httpClient = httpClient;
+    ITournamentCache tournamentCache,
+    ITourCache tourCache,
+  })  : _httpClient = httpClient,
+        _tournamentsCache = tournamentCache,
+        _toursCache = tourCache;
 
   @override
   Future<Tournament> get(String id) async {
-    if (_cache.contains(id)) {
-      return _cache.get(id);
+    if (_tournamentsCache.contains(id)) {
+      return _tournamentsCache.get(id);
     }
 
     var map = await _httpClient.get(Uri(path: '/tour/$id/xml'));
@@ -33,7 +39,7 @@ class TournamentDetailsLoader implements ITournamentDetailsLoader {
 
     final tournamentDto = TournamentDto.fromJson(map);
     final tournament = Tournament.fromDto(tournamentDto);
-    _cache.save(tournament);
+    _tournamentsCache.save(tournament);
     return tournament;
   }
 
