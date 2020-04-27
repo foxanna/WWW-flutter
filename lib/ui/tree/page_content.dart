@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/redux/tree/state.dart';
@@ -8,38 +9,38 @@ import 'package:what_when_where/ui/tree/error_page.dart';
 import 'package:what_when_where/ui/tree/loading_page.dart';
 
 class TournamentsTreePageContent extends StatelessWidget {
-  final String rootId;
+  final TournamentsTreeInfo info;
 
   const TournamentsTreePageContent({
     Key key,
-    this.rootId,
+    this.info,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, TournamentsSubTreeState>(
         distinct: true,
-        converter: (store) => store.state.tournamentsTreeState[rootId],
+        converter: (store) => store.state.tournamentsTreeState.states[info.id],
         builder: (context, state) {
-          if (state.isLoading) {
+          if (state is LoadingTournamentsSubTreeState) {
             return const TournamentsTreeLoadingPage();
           }
 
-          if (state.hasError) {
+          if (state is ErrorTournamentsSubTreeState) {
             return TournamentsTreeErrorPage(
-              rootId: rootId,
+              tournamentsTreeInfo: state.info,
               exception: state.exception,
             );
           }
 
-          if (state.hasData) {
+          if (state is DataTournamentsSubTreeState) {
             return TournamentsTreeDataPage(
               tournamentsTree: state.tree.children,
             );
           }
 
-          return null;
+          return Container();
         },
-        onInit: (store) => store.dispatch(LoadTournamentsTree(rootId: rootId)),
+        onInit: (store) => store.dispatch(LoadTournamentsTree(info: info)),
       );
 }

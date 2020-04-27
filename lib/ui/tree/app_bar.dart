@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class TournamentsTreeAppBar extends StatelessWidget {
-  final String rootId;
+  final TournamentsTreeInfo info;
 
   const TournamentsTreeAppBar({
     Key key,
-    this.rootId,
+    this.info,
   }) : super(key: key);
 
   @override
@@ -20,7 +21,7 @@ class TournamentsTreeAppBar extends StatelessWidget {
     return StoreConnector<AppState, String>(
       distinct: true,
       converter: (store) =>
-          store.state.tournamentsTreeState[rootId].tree.info.title,
+          store.state.tournamentsTreeState.states[info.id].info.title,
       builder: (context, title) => SliverAppBar(
         iconTheme: styleConfiguration.appBarIconTheme,
         title: Text(title ?? Strings.tournamentsTree),

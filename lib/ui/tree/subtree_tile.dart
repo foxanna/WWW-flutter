@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
+import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
-  final TournamentsTree tournamentsTree;
+  final TournamentsTreeInfo info;
 
   const TournamentsTreeTournamentSubtreeTile({
     Key key,
-    @required this.tournamentsTree,
+    @required this.info,
   }) : super(key: key);
 
   @override
@@ -64,13 +65,13 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              tournamentsTree.info.title,
+              info.title,
               style: styleConfiguration.gridTileTitleTextStyle,
             ),
           ),
           SizedBox(width: styleConfiguration.tileContentSpacing),
           Text(
-            tournamentsTree.info.childrenCount,
+            info.childrenCount,
             style: styleConfiguration.gridTileSecondLineTextStyle,
           ),
         ],
@@ -78,6 +79,6 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
 
   void _openTournamentDetails(BuildContext context) =>
       StoreProvider.of<AppState>(context).dispatch(
-        OpenTournamentsSubTreePage(rootId: tournamentsTree.id),
+        OpenTournamentsTree(info: info),
       );
 }

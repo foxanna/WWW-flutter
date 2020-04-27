@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/tree/app_bar.dart';
 import 'package:what_when_where/ui/tree/page_content.dart';
@@ -6,11 +7,11 @@ import 'package:what_when_where/ui/tree/page_content.dart';
 class TournamentsTreeRoutePage extends StatelessWidget {
   static const String routeName = 'tree';
 
-  final String rootId;
+  final TournamentsTreeInfo info;
 
   const TournamentsTreeRoutePage({
     Key key,
-    @required this.rootId,
+    @required this.info,
   }) : super(key: key);
 
   @override
@@ -21,12 +22,8 @@ class TournamentsTreeRoutePage extends StatelessWidget {
         body: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
-            TournamentsTreeAppBar(
-              rootId: rootId,
-            ),
-            TournamentsTreePageContent(
-              rootId: rootId,
-            ),
+            TournamentsTreeAppBar(info: info),
+            TournamentsTreePageContent(info: info),
           ],
         ),
       );

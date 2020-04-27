@@ -26,9 +26,10 @@ class TournamentsTreeDataPage extends StatelessWidget {
         mainAxisSpacing: styleConfiguration.gridSpacing,
         crossAxisSpacing: styleConfiguration.gridSpacing,
         itemBuilder: (context, index) {
-          if (tournamentsTree[index] is TournamentsTree) {
-            return TournamentsTreeTournamentSubtreeTile(
-                tournamentsTree: tournamentsTree[index] as TournamentsTree);
+          final item = tournamentsTree[index];
+
+          if (item is TournamentsTree) {
+            return TournamentsTreeTournamentSubtreeTile(info: item.info);
           }
 
           if (item is Tournament) {
