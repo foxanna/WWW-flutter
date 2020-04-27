@@ -43,6 +43,6 @@ class AppState {
           searchState: SearchState.initial(),
           settingsState: const SettingsState.initial(),
           randomQuestionsState: const RandomQuestionsState.initial(),
-          tournamentsTreeState: TournamentsTreeState.initial(),
+          tournamentsTreeState: null,
         );
 }
