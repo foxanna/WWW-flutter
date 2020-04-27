@@ -651,204 +651,147 @@ abstract class _OpenRandomQuestionsPage implements OpenRandomQuestionsPage {
   const factory _OpenRandomQuestionsPage() = _$_OpenRandomQuestionsPage;
 }
 
-class _$OpenTournamentsTreePageTearOff {
-  const _$OpenTournamentsTreePageTearOff();
+class _$NavigateToTournamentsTreePageTearOff {
+  const _$NavigateToTournamentsTreePageTearOff();
 
-  _OpenTournamentsTreePage call() {
-    return const _OpenTournamentsTreePage();
-  }
-}
-
-// ignore: unused_element
-const $OpenTournamentsTreePage = _$OpenTournamentsTreePageTearOff();
-
-mixin _$OpenTournamentsTreePage {}
-
-abstract class $OpenTournamentsTreePageCopyWith<$Res> {
-  factory $OpenTournamentsTreePageCopyWith(OpenTournamentsTreePage value,
-          $Res Function(OpenTournamentsTreePage) then) =
-      _$OpenTournamentsTreePageCopyWithImpl<$Res>;
-}
-
-class _$OpenTournamentsTreePageCopyWithImpl<$Res>
-    implements $OpenTournamentsTreePageCopyWith<$Res> {
-  _$OpenTournamentsTreePageCopyWithImpl(this._value, this._then);
-
-  final OpenTournamentsTreePage _value;
-  // ignore: unused_field
-  final $Res Function(OpenTournamentsTreePage) _then;
-}
-
-abstract class _$OpenTournamentsTreePageCopyWith<$Res> {
-  factory _$OpenTournamentsTreePageCopyWith(_OpenTournamentsTreePage value,
-          $Res Function(_OpenTournamentsTreePage) then) =
-      __$OpenTournamentsTreePageCopyWithImpl<$Res>;
-}
-
-class __$OpenTournamentsTreePageCopyWithImpl<$Res>
-    extends _$OpenTournamentsTreePageCopyWithImpl<$Res>
-    implements _$OpenTournamentsTreePageCopyWith<$Res> {
-  __$OpenTournamentsTreePageCopyWithImpl(_OpenTournamentsTreePage _value,
-      $Res Function(_OpenTournamentsTreePage) _then)
-      : super(_value, (v) => _then(v as _OpenTournamentsTreePage));
-
-  @override
-  _OpenTournamentsTreePage get _value =>
-      super._value as _OpenTournamentsTreePage;
-}
-
-class _$_OpenTournamentsTreePage
-    with DiagnosticableTreeMixin
-    implements _OpenTournamentsTreePage {
-  const _$_OpenTournamentsTreePage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenTournamentsTreePage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OpenTournamentsTreePage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _OpenTournamentsTreePage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _OpenTournamentsTreePage implements OpenTournamentsTreePage {
-  const factory _OpenTournamentsTreePage() = _$_OpenTournamentsTreePage;
-}
-
-class _$OpenTournamentsSubTreePageTearOff {
-  const _$OpenTournamentsSubTreePageTearOff();
-
-  _OpenTournamentsSubTreePage call({@required String rootId}) {
-    return _OpenTournamentsSubTreePage(
-      rootId: rootId,
+  _NavigateToTournamentsTreePage call({@required TournamentsTreeInfo info}) {
+    return _NavigateToTournamentsTreePage(
+      info: info,
     );
   }
 }
 
 // ignore: unused_element
-const $OpenTournamentsSubTreePage = _$OpenTournamentsSubTreePageTearOff();
+const $NavigateToTournamentsTreePage = _$NavigateToTournamentsTreePageTearOff();
 
-mixin _$OpenTournamentsSubTreePage {
-  String get rootId;
+mixin _$NavigateToTournamentsTreePage {
+  TournamentsTreeInfo get info;
 
-  $OpenTournamentsSubTreePageCopyWith<OpenTournamentsSubTreePage> get copyWith;
+  $NavigateToTournamentsTreePageCopyWith<NavigateToTournamentsTreePage>
+      get copyWith;
 }
 
-abstract class $OpenTournamentsSubTreePageCopyWith<$Res> {
-  factory $OpenTournamentsSubTreePageCopyWith(OpenTournamentsSubTreePage value,
-          $Res Function(OpenTournamentsSubTreePage) then) =
-      _$OpenTournamentsSubTreePageCopyWithImpl<$Res>;
-  $Res call({String rootId});
+abstract class $NavigateToTournamentsTreePageCopyWith<$Res> {
+  factory $NavigateToTournamentsTreePageCopyWith(
+          NavigateToTournamentsTreePage value,
+          $Res Function(NavigateToTournamentsTreePage) then) =
+      _$NavigateToTournamentsTreePageCopyWithImpl<$Res>;
+  $Res call({TournamentsTreeInfo info});
+
+  $TournamentsTreeInfoCopyWith<$Res> get info;
 }
 
-class _$OpenTournamentsSubTreePageCopyWithImpl<$Res>
-    implements $OpenTournamentsSubTreePageCopyWith<$Res> {
-  _$OpenTournamentsSubTreePageCopyWithImpl(this._value, this._then);
+class _$NavigateToTournamentsTreePageCopyWithImpl<$Res>
+    implements $NavigateToTournamentsTreePageCopyWith<$Res> {
+  _$NavigateToTournamentsTreePageCopyWithImpl(this._value, this._then);
 
-  final OpenTournamentsSubTreePage _value;
+  final NavigateToTournamentsTreePage _value;
   // ignore: unused_field
-  final $Res Function(OpenTournamentsSubTreePage) _then;
+  final $Res Function(NavigateToTournamentsTreePage) _then;
 
   @override
   $Res call({
-    Object rootId = freezed,
+    Object info = freezed,
   }) {
     return _then(_value.copyWith(
-      rootId: rootId == freezed ? _value.rootId : rootId as String,
+      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
     ));
+  }
+
+  @override
+  $TournamentsTreeInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentsTreeInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
   }
 }
 
-abstract class _$OpenTournamentsSubTreePageCopyWith<$Res>
-    implements $OpenTournamentsSubTreePageCopyWith<$Res> {
-  factory _$OpenTournamentsSubTreePageCopyWith(
-          _OpenTournamentsSubTreePage value,
-          $Res Function(_OpenTournamentsSubTreePage) then) =
-      __$OpenTournamentsSubTreePageCopyWithImpl<$Res>;
+abstract class _$NavigateToTournamentsTreePageCopyWith<$Res>
+    implements $NavigateToTournamentsTreePageCopyWith<$Res> {
+  factory _$NavigateToTournamentsTreePageCopyWith(
+          _NavigateToTournamentsTreePage value,
+          $Res Function(_NavigateToTournamentsTreePage) then) =
+      __$NavigateToTournamentsTreePageCopyWithImpl<$Res>;
   @override
-  $Res call({String rootId});
+  $Res call({TournamentsTreeInfo info});
+
+  @override
+  $TournamentsTreeInfoCopyWith<$Res> get info;
 }
 
-class __$OpenTournamentsSubTreePageCopyWithImpl<$Res>
-    extends _$OpenTournamentsSubTreePageCopyWithImpl<$Res>
-    implements _$OpenTournamentsSubTreePageCopyWith<$Res> {
-  __$OpenTournamentsSubTreePageCopyWithImpl(_OpenTournamentsSubTreePage _value,
-      $Res Function(_OpenTournamentsSubTreePage) _then)
-      : super(_value, (v) => _then(v as _OpenTournamentsSubTreePage));
+class __$NavigateToTournamentsTreePageCopyWithImpl<$Res>
+    extends _$NavigateToTournamentsTreePageCopyWithImpl<$Res>
+    implements _$NavigateToTournamentsTreePageCopyWith<$Res> {
+  __$NavigateToTournamentsTreePageCopyWithImpl(
+      _NavigateToTournamentsTreePage _value,
+      $Res Function(_NavigateToTournamentsTreePage) _then)
+      : super(_value, (v) => _then(v as _NavigateToTournamentsTreePage));
 
   @override
-  _OpenTournamentsSubTreePage get _value =>
-      super._value as _OpenTournamentsSubTreePage;
+  _NavigateToTournamentsTreePage get _value =>
+      super._value as _NavigateToTournamentsTreePage;
 
   @override
   $Res call({
-    Object rootId = freezed,
+    Object info = freezed,
   }) {
-    return _then(_OpenTournamentsSubTreePage(
-      rootId: rootId == freezed ? _value.rootId : rootId as String,
+    return _then(_NavigateToTournamentsTreePage(
+      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
     ));
   }
 }
 
-class _$_OpenTournamentsSubTreePage
+class _$_NavigateToTournamentsTreePage
     with DiagnosticableTreeMixin
-    implements _OpenTournamentsSubTreePage {
-  const _$_OpenTournamentsSubTreePage({@required this.rootId})
-      : assert(rootId != null);
+    implements _NavigateToTournamentsTreePage {
+  const _$_NavigateToTournamentsTreePage({@required this.info})
+      : assert(info != null);
 
   @override
-  final String rootId;
+  final TournamentsTreeInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenTournamentsSubTreePage(rootId: $rootId)';
+    return 'NavigateToTournamentsTreePage(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OpenTournamentsSubTreePage'))
-      ..add(DiagnosticsProperty('rootId', rootId));
+      ..add(DiagnosticsProperty('type', 'NavigateToTournamentsTreePage'))
+      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OpenTournamentsSubTreePage &&
-            (identical(other.rootId, rootId) ||
-                const DeepCollectionEquality().equals(other.rootId, rootId)));
+        (other is _NavigateToTournamentsTreePage &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(rootId);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$OpenTournamentsSubTreePageCopyWith<_OpenTournamentsSubTreePage>
-      get copyWith => __$OpenTournamentsSubTreePageCopyWithImpl<
-          _OpenTournamentsSubTreePage>(this, _$identity);
+  _$NavigateToTournamentsTreePageCopyWith<_NavigateToTournamentsTreePage>
+      get copyWith => __$NavigateToTournamentsTreePageCopyWithImpl<
+          _NavigateToTournamentsTreePage>(this, _$identity);
 }
 
-abstract class _OpenTournamentsSubTreePage
-    implements OpenTournamentsSubTreePage {
-  const factory _OpenTournamentsSubTreePage({@required String rootId}) =
-      _$_OpenTournamentsSubTreePage;
+abstract class _NavigateToTournamentsTreePage
+    implements NavigateToTournamentsTreePage {
+  const factory _NavigateToTournamentsTreePage(
+      {@required TournamentsTreeInfo info}) = _$_NavigateToTournamentsTreePage;
 
   @override
-  String get rootId;
+  TournamentsTreeInfo get info;
   @override
-  _$OpenTournamentsSubTreePageCopyWith<_OpenTournamentsSubTreePage>
+  _$NavigateToTournamentsTreePageCopyWith<_NavigateToTournamentsTreePage>
       get copyWith;
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
 import 'package:what_when_where/redux/redux_action.dart';
 
 part 'actions.freezed.dart';
@@ -59,17 +59,10 @@ abstract class OpenRandomQuestionsPage
 }
 
 @freezed
-abstract class OpenTournamentsTreePage
-    with _$OpenTournamentsTreePage
+abstract class NavigateToTournamentsTreePage
+    with _$NavigateToTournamentsTreePage
     implements NavigationAction {
-  const factory OpenTournamentsTreePage() = _OpenTournamentsTreePage;
-}
-
-@freezed
-abstract class OpenTournamentsSubTreePage
-    with _$OpenTournamentsSubTreePage
-    implements NavigationAction {
-  const factory OpenTournamentsSubTreePage({
-    @required String rootId,
-  }) = _OpenTournamentsSubTreePage;
+  const factory NavigateToTournamentsTreePage({
+    @required TournamentsTreeInfo info,
+  }) = _NavigateToTournamentsTreePage;
 }

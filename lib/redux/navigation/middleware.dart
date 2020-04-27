@@ -2,8 +2,6 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
-import 'package:what_when_where/redux/tournament/actions.dart';
-import 'package:what_when_where/redux/tree/state.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/about/route_page.dart';
 import 'package:what_when_where/ui/image/route_page.dart';
@@ -34,10 +32,8 @@ class NavigationMiddleware {
         TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
         TypedMiddleware<AppState, OpenRandomQuestionsPage>(
             _openRandomQuestionsPage),
-        TypedMiddleware<AppState, OpenTournamentsTreePage>(
+        TypedMiddleware<AppState, NavigateToTournamentsTreePage>(
             _openTournamentsTreePage),
-        TypedMiddleware<AppState, OpenTournamentsSubTreePage>(
-            _openTournamentsSubTreePage),
       ];
 
   void _openImage(
@@ -115,23 +111,14 @@ class NavigationMiddleware {
   }
 
   void _openTournamentsTreePage(Store<AppState> store,
-      OpenTournamentsTreePage action, NextDispatcher next) {
+      NavigateToTournamentsTreePage action, NextDispatcher next) {
     next(action);
 
     _navigationService.navigateToPage(
       routeName: TournamentsTreeRoutePage.routeName,
-      builder: (context) =>
-          const TournamentsTreeRoutePage(rootId: TournamentsTreeState.rootId),
-    );
-  }
-
-  void _openTournamentsSubTreePage(Store<AppState> store,
-      OpenTournamentsSubTreePage action, NextDispatcher next) {
-    next(action);
-
-    _navigationService.navigateToPage(
-      routeName: TournamentsTreeRoutePage.routeName,
-      builder: (context) => TournamentsTreeRoutePage(rootId: action.rootId),
+      builder: (context) => TournamentsTreeRoutePage(
+        info: action.info,
+      ),
     );
   }
 }
