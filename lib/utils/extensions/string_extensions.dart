@@ -9,10 +9,10 @@ extension StringX on String {
       this?.replaceAll(_unescapedBackSlashDetector, '\\\\');
 
   String normalizeToSingleLine() =>
-      this?.trim()?._normalize()?._removeMultipleSpaces();
+      this?.trim()?._normalize()?._removeMultipleSpaces()?.trim();
 
   String normalizeToMultiLine() =>
-      this?.trim()?._normalize()?._replaceMultipleSpacesWithNewLine();
+      this?.trim()?._normalize()?._replaceMultipleSpacesWithNewLine()?.trim();
 
   String _normalize() => this
       ?._unescapeHtmlSymbols()

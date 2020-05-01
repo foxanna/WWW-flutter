@@ -60,6 +60,10 @@ class QuestionParser {
   }
 
   static String trim(String originalText) {
+    if (originalText?.isEmpty ?? true) {
+      return null;
+    }
+
     var text = originalText;
 
     text = text.normalizeToSingleLine();
@@ -69,7 +73,6 @@ class QuestionParser {
     text = QuestionParserHelper.removeAll(text, QuestionSectionType.Audio);
     text = QuestionParserHelper.removeAll(text, QuestionSectionType.Image);
     text = text.normalizeToSingleLine();
-    text = text.trim();
     return text;
   }
 }
