@@ -172,4 +172,155 @@ void main() {
       ),
     );
   });
+
+  group('Question image tests', () {
+    const oldFormatImageValue = 'xxx.jpg';
+    const oldFormatImage = '(pic: $oldFormatImageValue)';
+    const newFormatImageValue =
+        'https://db.chgk.info/sites/default/files/xxx.jpg';
+    const newFormatImage = '(pic: $newFormatImageValue)';
+
+    const imageDbUrl = '${Constants.databaseUrl}/images/db/';
+
+    test(
+      'image, question text, old format',
+      () => execute(
+        dto: const QuestionDto(question: oldFormatImage),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, question text, new format',
+      () => execute(
+        dto: const QuestionDto(question: newFormatImage),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            ImageSection.fromValue(value: newFormatImageValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, question text, in the beginning',
+      () => execute(
+        dto: const QuestionDto(question: '$newFormatImage text'),
+        expectedQuestion: const Question(
+          display: 'text',
+          question: <QuestionSection>[
+            ImageSection.fromValue(value: newFormatImageValue),
+            TextSection.fromValue(value: 'text'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'audio, question text, in the middle',
+      () => execute(
+        dto: const QuestionDto(question: 'text1 $newFormatImage text2'),
+        expectedQuestion: const Question(
+          display: 'text1 text2',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            ImageSection.fromValue(value: newFormatImageValue),
+            TextSection.fromValue(value: 'text2'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, question text, in the end',
+      () => execute(
+        dto: const QuestionDto(question: '$newFormatImage text1'),
+        expectedQuestion: const Question(
+          display: 'text1',
+          question: <QuestionSection>[
+            ImageSection.fromValue(value: newFormatImageValue),
+            TextSection.fromValue(value: 'text1'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, question text, several entries',
+      () => execute(
+        dto: const QuestionDto(
+            question: 'text1 $newFormatImage '
+                'text2 $oldFormatImage '
+                'text3 $newFormatImage'),
+        expectedQuestion: const Question(
+          display: 'text1 text2 text3',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            ImageSection.fromValue(value: newFormatImageValue),
+            TextSection.fromValue(value: 'text2'),
+            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
+            TextSection.fromValue(value: 'text3'),
+            ImageSection.fromValue(value: newFormatImageValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, question text, without spaces around ()',
+      () => execute(
+        dto: const QuestionDto(question: 'text1${newFormatImage}text2'),
+        expectedQuestion: const Question(
+          display: 'text1text2',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            ImageSection.fromValue(value: newFormatImageValue),
+            TextSection.fromValue(value: 'text2'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, answer text, new format',
+      () => execute(
+        dto: const QuestionDto(answer: newFormatImage),
+        expectedQuestion: const Question(
+          answer: <QuestionSection>[
+            ImageSection.fromValue(value: newFormatImageValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, passCriteria text, new format',
+      () => execute(
+        dto: const QuestionDto(passCriteria: newFormatImage),
+        expectedQuestion: const Question(
+          passCriteria: <QuestionSection>[
+            ImageSection.fromValue(value: newFormatImageValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, comments text, new format',
+      () => execute(
+        dto: const QuestionDto(comments: newFormatImage),
+        expectedQuestion: const Question(
+          comments: <QuestionSection>[
+            ImageSection.fromValue(value: newFormatImageValue),
+          ],
+        ),
+      ),
+    );
+  });
 }
