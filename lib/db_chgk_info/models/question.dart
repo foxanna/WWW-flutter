@@ -3,7 +3,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/question_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/question_info.dart';
+import 'package:what_when_where/db_chgk_info/models/question_section.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/question_parser.dart';
 import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 part 'question.freezed.dart';
@@ -12,11 +14,12 @@ part 'question.freezed.dart';
 abstract class Question with _$Question {
   const factory Question({
     String id,
-    String question,
-    String answer,
+    String display,
+    List<QuestionSection> question,
+    List<QuestionSection> answer,
+    List<QuestionSection> passCriteria,
+    List<QuestionSection> comments,
     String authors,
-    String passCriteria,
-    String comments,
     String sources,
     @Default(QuestionInfo()) QuestionInfo info,
   }) = _Question;
@@ -25,11 +28,12 @@ abstract class Question with _$Question {
           {TourInfo tourInfo = const TourInfo()}) =>
       Question(
         id: dto.questionId,
-        question: dto.question,
-        answer: dto.answer.normalizeToMultiLine(),
+        display: QuestionParser.trim(dto.question),
+        question: QuestionParser.split(dto.question),
+        answer: QuestionParser.split(dto.answer),
+        passCriteria: QuestionParser.split(dto.passCriteria),
+        comments: QuestionParser.split(dto.comments),
         authors: dto.authors.normalizeToSingleLine(),
-        passCriteria: dto.passCriteria.normalizeToMultiLine(),
-        comments: dto.comments.normalizeToMultiLine(),
         sources: dto.sources.normalizeToMultiLine(),
         info: QuestionInfo(
           id: dto.questionId,

@@ -14,20 +14,22 @@ class _$QuestionTearOff {
 
   _Question call(
       {String id,
-      String question,
-      String answer,
+      String display,
+      List<QuestionSection> question,
+      List<QuestionSection> answer,
+      List<QuestionSection> passCriteria,
+      List<QuestionSection> comments,
       String authors,
-      String passCriteria,
-      String comments,
       String sources,
       QuestionInfo info = const QuestionInfo()}) {
     return _Question(
       id: id,
+      display: display,
       question: question,
       answer: answer,
-      authors: authors,
       passCriteria: passCriteria,
       comments: comments,
+      authors: authors,
       sources: sources,
       info: info,
     );
@@ -39,11 +41,12 @@ const $Question = _$QuestionTearOff();
 
 mixin _$Question {
   String get id;
-  String get question;
-  String get answer;
+  String get display;
+  List<QuestionSection> get question;
+  List<QuestionSection> get answer;
+  List<QuestionSection> get passCriteria;
+  List<QuestionSection> get comments;
   String get authors;
-  String get passCriteria;
-  String get comments;
   String get sources;
   QuestionInfo get info;
 
@@ -55,11 +58,12 @@ abstract class $QuestionCopyWith<$Res> {
       _$QuestionCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      String question,
-      String answer,
+      String display,
+      List<QuestionSection> question,
+      List<QuestionSection> answer,
+      List<QuestionSection> passCriteria,
+      List<QuestionSection> comments,
       String authors,
-      String passCriteria,
-      String comments,
       String sources,
       QuestionInfo info});
 
@@ -76,23 +80,30 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
+    Object display = freezed,
     Object question = freezed,
     Object answer = freezed,
-    Object authors = freezed,
     Object passCriteria = freezed,
     Object comments = freezed,
+    Object authors = freezed,
     Object sources = freezed,
     Object info = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
-      question: question == freezed ? _value.question : question as String,
-      answer: answer == freezed ? _value.answer : answer as String,
-      authors: authors == freezed ? _value.authors : authors as String,
+      display: display == freezed ? _value.display : display as String,
+      question: question == freezed
+          ? _value.question
+          : question as List<QuestionSection>,
+      answer:
+          answer == freezed ? _value.answer : answer as List<QuestionSection>,
       passCriteria: passCriteria == freezed
           ? _value.passCriteria
-          : passCriteria as String,
-      comments: comments == freezed ? _value.comments : comments as String,
+          : passCriteria as List<QuestionSection>,
+      comments: comments == freezed
+          ? _value.comments
+          : comments as List<QuestionSection>,
+      authors: authors == freezed ? _value.authors : authors as String,
       sources: sources == freezed ? _value.sources : sources as String,
       info: info == freezed ? _value.info : info as QuestionInfo,
     ));
@@ -115,11 +126,12 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
   @override
   $Res call(
       {String id,
-      String question,
-      String answer,
+      String display,
+      List<QuestionSection> question,
+      List<QuestionSection> answer,
+      List<QuestionSection> passCriteria,
+      List<QuestionSection> comments,
       String authors,
-      String passCriteria,
-      String comments,
       String sources,
       QuestionInfo info});
 
@@ -138,23 +150,30 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
+    Object display = freezed,
     Object question = freezed,
     Object answer = freezed,
-    Object authors = freezed,
     Object passCriteria = freezed,
     Object comments = freezed,
+    Object authors = freezed,
     Object sources = freezed,
     Object info = freezed,
   }) {
     return _then(_Question(
       id: id == freezed ? _value.id : id as String,
-      question: question == freezed ? _value.question : question as String,
-      answer: answer == freezed ? _value.answer : answer as String,
-      authors: authors == freezed ? _value.authors : authors as String,
+      display: display == freezed ? _value.display : display as String,
+      question: question == freezed
+          ? _value.question
+          : question as List<QuestionSection>,
+      answer:
+          answer == freezed ? _value.answer : answer as List<QuestionSection>,
       passCriteria: passCriteria == freezed
           ? _value.passCriteria
-          : passCriteria as String,
-      comments: comments == freezed ? _value.comments : comments as String,
+          : passCriteria as List<QuestionSection>,
+      comments: comments == freezed
+          ? _value.comments
+          : comments as List<QuestionSection>,
+      authors: authors == freezed ? _value.authors : authors as String,
       sources: sources == freezed ? _value.sources : sources as String,
       info: info == freezed ? _value.info : info as QuestionInfo,
     ));
@@ -164,11 +183,12 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
 class _$_Question with DiagnosticableTreeMixin implements _Question {
   const _$_Question(
       {this.id,
+      this.display,
       this.question,
       this.answer,
-      this.authors,
       this.passCriteria,
       this.comments,
+      this.authors,
       this.sources,
       this.info = const QuestionInfo()})
       : assert(info != null);
@@ -176,15 +196,17 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
   @override
   final String id;
   @override
-  final String question;
+  final String display;
   @override
-  final String answer;
+  final List<QuestionSection> question;
+  @override
+  final List<QuestionSection> answer;
+  @override
+  final List<QuestionSection> passCriteria;
+  @override
+  final List<QuestionSection> comments;
   @override
   final String authors;
-  @override
-  final String passCriteria;
-  @override
-  final String comments;
   @override
   final String sources;
   @JsonKey(defaultValue: const QuestionInfo())
@@ -193,7 +215,7 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Question(id: $id, question: $question, answer: $answer, authors: $authors, passCriteria: $passCriteria, comments: $comments, sources: $sources, info: $info)';
+    return 'Question(id: $id, display: $display, question: $question, answer: $answer, passCriteria: $passCriteria, comments: $comments, authors: $authors, sources: $sources, info: $info)';
   }
 
   @override
@@ -202,11 +224,12 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
     properties
       ..add(DiagnosticsProperty('type', 'Question'))
       ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('display', display))
       ..add(DiagnosticsProperty('question', question))
       ..add(DiagnosticsProperty('answer', answer))
-      ..add(DiagnosticsProperty('authors', authors))
       ..add(DiagnosticsProperty('passCriteria', passCriteria))
       ..add(DiagnosticsProperty('comments', comments))
+      ..add(DiagnosticsProperty('authors', authors))
       ..add(DiagnosticsProperty('sources', sources))
       ..add(DiagnosticsProperty('info', info));
   }
@@ -217,20 +240,23 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
         (other is _Question &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.display, display) ||
+                const DeepCollectionEquality()
+                    .equals(other.display, display)) &&
             (identical(other.question, question) ||
                 const DeepCollectionEquality()
                     .equals(other.question, question)) &&
             (identical(other.answer, answer) ||
                 const DeepCollectionEquality().equals(other.answer, answer)) &&
-            (identical(other.authors, authors) ||
-                const DeepCollectionEquality()
-                    .equals(other.authors, authors)) &&
             (identical(other.passCriteria, passCriteria) ||
                 const DeepCollectionEquality()
                     .equals(other.passCriteria, passCriteria)) &&
             (identical(other.comments, comments) ||
                 const DeepCollectionEquality()
                     .equals(other.comments, comments)) &&
+            (identical(other.authors, authors) ||
+                const DeepCollectionEquality()
+                    .equals(other.authors, authors)) &&
             (identical(other.sources, sources) ||
                 const DeepCollectionEquality()
                     .equals(other.sources, sources)) &&
@@ -242,11 +268,12 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(display) ^
       const DeepCollectionEquality().hash(question) ^
       const DeepCollectionEquality().hash(answer) ^
-      const DeepCollectionEquality().hash(authors) ^
       const DeepCollectionEquality().hash(passCriteria) ^
       const DeepCollectionEquality().hash(comments) ^
+      const DeepCollectionEquality().hash(authors) ^
       const DeepCollectionEquality().hash(sources) ^
       const DeepCollectionEquality().hash(info);
 
@@ -258,26 +285,29 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
 abstract class _Question implements Question {
   const factory _Question(
       {String id,
-      String question,
-      String answer,
+      String display,
+      List<QuestionSection> question,
+      List<QuestionSection> answer,
+      List<QuestionSection> passCriteria,
+      List<QuestionSection> comments,
       String authors,
-      String passCriteria,
-      String comments,
       String sources,
       QuestionInfo info}) = _$_Question;
 
   @override
   String get id;
   @override
-  String get question;
+  String get display;
   @override
-  String get answer;
+  List<QuestionSection> get question;
+  @override
+  List<QuestionSection> get answer;
+  @override
+  List<QuestionSection> get passCriteria;
+  @override
+  List<QuestionSection> get comments;
   @override
   String get authors;
-  @override
-  String get passCriteria;
-  @override
-  String get comments;
   @override
   String get sources;
   @override
