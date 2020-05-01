@@ -1,4 +1,4 @@
-import 'package:what_when_where/services/question_parser/question_section_type.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/question_section_type.dart';
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class QuestionParserHelper {
