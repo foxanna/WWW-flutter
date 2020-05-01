@@ -3,6 +3,7 @@ library http_client;
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:what_when_where/common/network_exception.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/utils/logger.dart';
@@ -19,6 +20,8 @@ abstract class IHttpClient {
   Future<Map<String, dynamic>> get(Uri uri, {CancelToken cancelToken});
 }
 
+@lazySingleton
+@RegisterAs(IHttpClient)
 class HttpClient implements IHttpClient {
   final Dio _dio;
 
