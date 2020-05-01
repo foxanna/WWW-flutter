@@ -1,3 +1,4 @@
+import 'package:what_when_where/db_chgk_info/models/question_section.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/question_parser_helper.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/question_section_type.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_audio.dart';
@@ -14,7 +15,13 @@ class QuestionParser {
 
   QuestionParser._();
 
-  static Iterable<dynamic> split(String originalText) sync* {
+  static List<QuestionSection> split(String originalText) =>
+      originalText?.isEmpty ?? true
+          ? null
+          : _split(originalText)?.toList() ??
+              [TextSection.fromString(string: originalText)];
+
+  static Iterable<QuestionSection> _split(String originalText) sync* {
     var text = originalText;
 
     text = text.normalizeToMultiLine();
@@ -32,19 +39,19 @@ class QuestionParser {
 
       switch (nextSectionType) {
         case QuestionSectionType.SpeakerNote:
-          yield SpeakerNoteSection(nextSectionText);
+          yield SpeakerNoteSection.fromString(string: nextSectionText);
           break;
         case QuestionSectionType.Image:
-          yield ImageSection(nextSectionText);
+          yield ImageSection.fromString(string: nextSectionText);
           break;
         case QuestionSectionType.Audio:
-          yield AudioSection(nextSectionText);
+          yield AudioSection.fromString(string: nextSectionText);
           break;
         case QuestionSectionType.GiveAway:
-          yield GiveAwaySection(nextSectionText);
+          yield GiveAwaySection.fromString(string: nextSectionText);
           break;
         case QuestionSectionType.Text:
-          yield TextSection(nextSectionText);
+          yield TextSection.fromString(string: nextSectionText);
           break;
       }
 
