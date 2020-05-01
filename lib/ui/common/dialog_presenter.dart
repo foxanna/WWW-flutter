@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/global/ioc.dart';
+import 'package:what_when_where/ioc/ioc.dart';
 import 'package:what_when_where/services/dialogs.dart';
 
 class DialogPresenter extends StatefulWidget {

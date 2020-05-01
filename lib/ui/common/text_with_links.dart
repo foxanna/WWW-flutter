@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:what_when_where/global/ioc.dart';
+import 'package:what_when_where/ioc/ioc.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/utils/uri_detector.dart';
 
