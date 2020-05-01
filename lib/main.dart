@@ -7,5 +7,5 @@ import 'package:what_when_where/redux/app/store.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   IoCInitializer(container: ioc).init();
-  runApp(WWWAppContainer(store: createStore(ioc)));
+  runApp(WWWAppContainer(store: ioc<WWWStore>().store));
 }
