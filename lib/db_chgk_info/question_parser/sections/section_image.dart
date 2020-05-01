@@ -7,12 +7,13 @@ part 'section_image.freezed.dart';
 
 @freezed
 abstract class ImageSection with _$ImageSection implements QuestionSection {
-  const factory ImageSection._fromValue({String value}) = _ImageSection;
+  const factory ImageSection.fromValue({@required String value}) =
+      _ImageSection;
 
   factory ImageSection.fromString({@required String string}) {
     final value =
         string.trim().replaceAll(RegExp(r'([\(\)\s]|pic:)'), '').trim();
-    return ImageSection._fromValue(
+    return ImageSection.fromValue(
         value: (Uri.tryParse(value).isAbsolute)
             ? value
             : '${Constants.databaseUrl}/images/db/$value');

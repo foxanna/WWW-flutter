@@ -8,10 +8,11 @@ part 'section_giveaway.freezed.dart';
 abstract class GiveAwaySection
     with _$GiveAwaySection
     implements QuestionSection {
-  const factory GiveAwaySection._fromValue({String value}) = _GiveAwaySection;
+  const factory GiveAwaySection.fromValue({@required String value}) =
+      _GiveAwaySection;
 
   factory GiveAwaySection.fromString({@required String string}) =>
-      GiveAwaySection._fromValue(
+      GiveAwaySection.fromValue(
           value: string
               .trim()
               .replaceAll(RegExp(r'(^<раздатка>|<\/раздатка>$)'), '')

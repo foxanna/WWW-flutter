@@ -8,10 +8,10 @@ part 'section_speaker_note.freezed.dart';
 abstract class SpeakerNoteSection
     with _$SpeakerNoteSection
     implements QuestionSection {
-  const factory SpeakerNoteSection._fromValue({String value}) =
+  const factory SpeakerNoteSection.fromValue({@required String value}) =
       _SpeakerNoteSection;
 
   factory SpeakerNoteSection.fromString({@required String string}) =>
-      SpeakerNoteSection._fromValue(
+      SpeakerNoteSection.fromValue(
           value: string.trim().replaceAll(RegExp(r'(^\[|\]$)'), '').trim());
 }

@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$AudioSectionTearOff {
   const _$AudioSectionTearOff();
 
-  _AudioSection _fromValue({String value}) {
+  _AudioSection fromValue({@required String value}) {
     return _AudioSection(
       value: value,
     );
@@ -81,21 +81,21 @@ class __$AudioSectionCopyWithImpl<$Res> extends _$AudioSectionCopyWithImpl<$Res>
 }
 
 class _$_AudioSection with DiagnosticableTreeMixin implements _AudioSection {
-  const _$_AudioSection({this.value});
+  const _$_AudioSection({@required this.value}) : assert(value != null);
 
   @override
   final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AudioSection._fromValue(value: $value)';
+    return 'AudioSection.fromValue(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'AudioSection._fromValue'))
+      ..add(DiagnosticsProperty('type', 'AudioSection.fromValue'))
       ..add(DiagnosticsProperty('value', value));
   }
 
@@ -117,7 +117,7 @@ class _$_AudioSection with DiagnosticableTreeMixin implements _AudioSection {
 }
 
 abstract class _AudioSection implements AudioSection {
-  const factory _AudioSection({String value}) = _$_AudioSection;
+  const factory _AudioSection({@required String value}) = _$_AudioSection;
 
   @override
   String get value;

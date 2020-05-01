@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$ImageSectionTearOff {
   const _$ImageSectionTearOff();
 
-  _ImageSection _fromValue({String value}) {
+  _ImageSection fromValue({@required String value}) {
     return _ImageSection(
       value: value,
     );
@@ -81,21 +81,21 @@ class __$ImageSectionCopyWithImpl<$Res> extends _$ImageSectionCopyWithImpl<$Res>
 }
 
 class _$_ImageSection with DiagnosticableTreeMixin implements _ImageSection {
-  const _$_ImageSection({this.value});
+  const _$_ImageSection({@required this.value}) : assert(value != null);
 
   @override
   final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ImageSection._fromValue(value: $value)';
+    return 'ImageSection.fromValue(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ImageSection._fromValue'))
+      ..add(DiagnosticsProperty('type', 'ImageSection.fromValue'))
       ..add(DiagnosticsProperty('value', value));
   }
 
@@ -117,7 +117,7 @@ class _$_ImageSection with DiagnosticableTreeMixin implements _ImageSection {
 }
 
 abstract class _ImageSection implements ImageSection {
-  const factory _ImageSection({String value}) = _$_ImageSection;
+  const factory _ImageSection({@required String value}) = _$_ImageSection;
 
   @override
   String get value;

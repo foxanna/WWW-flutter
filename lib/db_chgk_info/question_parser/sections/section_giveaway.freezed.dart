@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$GiveAwaySectionTearOff {
   const _$GiveAwaySectionTearOff();
 
-  _GiveAwaySection _fromValue({String value}) {
+  _GiveAwaySection fromValue({@required String value}) {
     return _GiveAwaySection(
       value: value,
     );
@@ -85,21 +85,21 @@ class __$GiveAwaySectionCopyWithImpl<$Res>
 class _$_GiveAwaySection
     with DiagnosticableTreeMixin
     implements _GiveAwaySection {
-  const _$_GiveAwaySection({this.value});
+  const _$_GiveAwaySection({@required this.value}) : assert(value != null);
 
   @override
   final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GiveAwaySection._fromValue(value: $value)';
+    return 'GiveAwaySection.fromValue(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'GiveAwaySection._fromValue'))
+      ..add(DiagnosticsProperty('type', 'GiveAwaySection.fromValue'))
       ..add(DiagnosticsProperty('value', value));
   }
 
@@ -121,7 +121,7 @@ class _$_GiveAwaySection
 }
 
 abstract class _GiveAwaySection implements GiveAwaySection {
-  const factory _GiveAwaySection({String value}) = _$_GiveAwaySection;
+  const factory _GiveAwaySection({@required String value}) = _$_GiveAwaySection;
 
   @override
   String get value;

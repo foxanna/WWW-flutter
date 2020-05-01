@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$SpeakerNoteSectionTearOff {
   const _$SpeakerNoteSectionTearOff();
 
-  _SpeakerNoteSection _fromValue({String value}) {
+  _SpeakerNoteSection fromValue({@required String value}) {
     return _SpeakerNoteSection(
       value: value,
     );
@@ -85,21 +85,21 @@ class __$SpeakerNoteSectionCopyWithImpl<$Res>
 class _$_SpeakerNoteSection
     with DiagnosticableTreeMixin
     implements _SpeakerNoteSection {
-  const _$_SpeakerNoteSection({this.value});
+  const _$_SpeakerNoteSection({@required this.value}) : assert(value != null);
 
   @override
   final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SpeakerNoteSection._fromValue(value: $value)';
+    return 'SpeakerNoteSection.fromValue(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SpeakerNoteSection._fromValue'))
+      ..add(DiagnosticsProperty('type', 'SpeakerNoteSection.fromValue'))
       ..add(DiagnosticsProperty('value', value));
   }
 
@@ -121,7 +121,8 @@ class _$_SpeakerNoteSection
 }
 
 abstract class _SpeakerNoteSection implements SpeakerNoteSection {
-  const factory _SpeakerNoteSection({String value}) = _$_SpeakerNoteSection;
+  const factory _SpeakerNoteSection({@required String value}) =
+      _$_SpeakerNoteSection;
 
   @override
   String get value;
