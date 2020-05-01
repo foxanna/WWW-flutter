@@ -3,6 +3,7 @@ import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_text.dart';
 
 const tourInfo1 = TourInfo(
   id: '70679',
@@ -21,13 +22,12 @@ const expectedTourDetails1 = Tour(
   questions: [
     Question(
       id: '1198228',
-      question:
-          r'''На вопрос интервьюера [чтецу: пауза] Анжела Рае́цки, шутя, замечает, что в жизни крутить мужчинами не в её характере. Назовите хобби Анжелы.''',
-      answer: r'''кикер.''',
+      display: 'ZZZZZ',
+      question: [TextSection.fromValue(value: 'ZZZZZ')],
+      answer: [TextSection.fromValue(value: 'xxxxx')],
+      comments: [TextSection.fromValue(value: 'YYYYY')],
+      passCriteria: [TextSection.fromValue(value: 'uuuuu')],
       authors: r'''Константин Науменко (Киев)''',
-      passCriteria: r'''настольный футбол.''',
-      comments:
-          r'''а вот фигурками футболистов девушка готова управлять хоть целыми сутками.''',
       sources:
           r'''1. https://www.canal3.md/ru/bystrota-ruk-i-nikakogo-moshennichestv_6100.html''',
       info: QuestionInfo(
@@ -39,13 +39,12 @@ const expectedTourDetails1 = Tour(
     ),
     Question(
       id: '1198229',
-      question:
-          r'''Телекомментатор Михаил Мельников рассказывает, что перед тем, как вести скучный матч посредственных команд, его коллеги частенько заходят… Куда?''',
-      answer: r'''в букмекерскую контору.''',
+      display: 'ZZZZZ',
+      question: [TextSection.fromValue(value: 'ZZZZZ')],
+      answer: [TextSection.fromValue(value: 'xxxxx')],
+      comments: [TextSection.fromValue(value: 'YYYYY')],
+      passCriteria: [TextSection.fromValue(value: 'uuuuu')],
       authors: r'''Константин Науменко (Киев)''',
-      passCriteria: r'''в ставочную контору и т. д.''',
-      comments:
-          r'''ставишь, например, на то, что команды суммарно забьют больше трёх голов, и действительно активно комментируешь атакующие действия.''',
       sources: r'''https://www.sports.ru/tribuna/blogs/podcasts/2694615.html''',
       info: QuestionInfo(
         id: '1198229',
@@ -95,12 +94,12 @@ const tourDetailsApiResponse1 = '''
 <Type>Ч</Type>
 <TypeNum>0</TypeNum>
 <TextId>azov20_u.1-1</TextId>
-<Question>На вопрос интервьюера [чтецу: пауза] Анжела Рае́цки, шутя, замечает, что в жизни крутить мужчинами не в её характере. Назовите хобби Анжелы.</Question>
-<Answer>кикер.</Answer>
-<PassCriteria>настольный футбол.</PassCriteria>
+<Question>ZZZZZ</Question>
+<Answer>xxxxx</Answer>
+<PassCriteria>uuuuu</PassCriteria>
 <Authors>Константин Науменко (Киев)</Authors>
 <Sources>   1. https://www.canal3.md/ru/bystrota-ruk-i-nikakogo-moshennichestv_6100.html</Sources>
-<Comments>а вот фигурками футболистов девушка готова управлять хоть целыми сутками.</Comments>
+<Comments>YYYYY</Comments>
 <Rating/>
 <RatingNumber/>
 <Complexity/>
@@ -118,12 +117,12 @@ const tourDetailsApiResponse1 = '''
 <Type>Ч</Type>
 <TypeNum>0</TypeNum>
 <TextId>azov20_u.1-2</TextId>
-<Question>Телекомментатор Михаил Мельников рассказывает, что перед тем, как вести скучный матч посредственных команд, его коллеги частенько заходят… Куда?</Question>
-<Answer>в букмекерскую контору.</Answer>
-<PassCriteria>в ставочную контору и т. д.</PassCriteria>
+<Question>ZZZZZ</Question>
+<Answer>xxxxx</Answer>
+<PassCriteria>uuuuu</PassCriteria>
 <Authors>Константин Науменко (Киев)</Authors>
 <Sources>https://www.sports.ru/tribuna/blogs/podcasts/2694615.html</Sources>
-<Comments>ставишь, например, на то, что команды суммарно забьют больше трёх голов, и действительно активно комментируешь атакующие действия.</Comments>
+<Comments>YYYYY</Comments>
 <Rating/>
 <RatingNumber/>
 <Complexity/>

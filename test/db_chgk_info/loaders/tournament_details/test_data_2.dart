@@ -4,6 +4,7 @@ import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_text.dart';
 
 const tournamentInfo2 = TournamentInfo(
   id: '70656',
@@ -45,13 +46,12 @@ const expectedTournamentDetails2 = Tournament(
       questions: [
         Question(
           id: '1197982',
-          question:
-              r'''Отмечая, что отец Жакли́н Ке́ннеди был успешным брокером, а отчим — и вовсе миллионером, автор одной статьи говорит, что в её случае АЛЬФА была ТАКОЙ. ТАКАЯ АЛЬФА подаётся к самому дорогому в мире мороженому. Напишите слова, заменённые словами «ТАКАЯ АЛЬФА».''',
-          answer: r'''золотая ложка.''',
+          display: 'ZZZZZ',
+          question: [TextSection.fromValue(value: 'ZZZZZ')],
+          answer: [TextSection.fromValue(value: 'xxxxx')],
+          comments: [TextSection.fromValue(value: 'YYYYY')],
+          passCriteria: [TextSection.fromValue(value: 'uuuuu')],
           authors: r'''Сергей Терентьев (Санкт-Петербург)''',
-          passCriteria: r'''золотая ложечка.''',
-          comments:
-              r'''про людей, родившихся в богатой семье, говорят, что они родились с серебряной ложечкой во рту. В одной нью-йоркском ресторане подают мороженое, приготовленное из какао-бобов 28 редких сортов, стоимостью 25000$. Неудивительно, что к блюду подаётся золотая ложечка — не стальной же таким блюдом лакомиться.''',
           sources: r'''https://lenta.ru/articles/2018/10/04/30swomen/''',
           info: QuestionInfo(
             id: '1197982',
@@ -62,12 +62,12 @@ const expectedTournamentDetails2 = Tournament(
         ),
         Question(
           id: '1197983',
-          question:
-              r'''В одном ролике, рассказывающем о НЁМ, говорится, что уже через десять лет человечество может стать узником гигантской тюрьмы. В качестве решения проблемы предлагается использовать лазеры или магниты. Назовите ЕГО двумя словами.''',
-          answer: r'''космический мусор.''',
+          display: 'ZZZZZ',
+          question: [TextSection.fromValue(value: 'ZZZZZ')],
+          answer: [TextSection.fromValue(value: 'xxxxx')],
+          comments: [TextSection.fromValue(value: 'YYYYY')],
+          passCriteria: [TextSection.fromValue(value: 'uuuuu')],
           authors: r'''Сергей Лобачёв (Нижний Новгород)''',
-          comments:
-              r'''согласно пессимистическому сценарию, космический мусор уже в самом ближайшем времени может существенно затруднить запуск космических кораблей.''',
           sources:
               r'''1. https://www.youtube.com // https://goo.gl/MHFCBm 2. https://ru.wikipedia.org/wiki/Космический_мусор''',
           info: QuestionInfo(
@@ -118,12 +118,12 @@ const tournamentDetailsApiResponse2 = r'''
 <Type>Ч</Type>
 <TypeNum>0</TypeNum>
 <TextId>sls2018iii_u.1-1</TextId>
-<Question>Отмечая, что отец Жакли́н Ке́ннеди был успешным брокером, а отчим — и вовсе миллионером, автор одной статьи говорит, что в её случае АЛЬФА была ТАКОЙ. ТАКАЯ АЛЬФА подаётся к самому дорогому в мире мороженому. Напишите слова, заменённые словами «ТАКАЯ АЛЬФА».</Question>
-<Answer>золотая ложка.</Answer>
-<PassCriteria>золотая ложечка.</PassCriteria>
+<Question>ZZZZZ</Question>
+<Answer>xxxxx</Answer>
+<PassCriteria>uuuuu</PassCriteria>
 <Authors>Сергей Терентьев (Санкт-Петербург)</Authors>
 <Sources>https://lenta.ru/articles/2018/10/04/30swomen/</Sources>
-<Comments>про людей, родившихся в богатой семье, говорят, что они родились с серебряной ложечкой во рту. В одной нью-йоркском ресторане подают мороженое, приготовленное из какао-бобов 28 редких сортов, стоимостью 25000$. Неудивительно, что к блюду подаётся золотая ложечка — не стальной же таким блюдом лакомиться.</Comments>
+<Comments>YYYYY</Comments>
 <Rating/>
 <RatingNumber/>
 <Complexity/>
@@ -141,13 +141,12 @@ const tournamentDetailsApiResponse2 = r'''
 <Type>Ч</Type>
 <TypeNum>0</TypeNum>
 <TextId>sls2018iii_u.1-2</TextId>
-<Question>В одном ролике, рассказывающем о НЁМ, говорится, что уже через десять лет человечество может стать узником гигантской тюрьмы. В качестве решения проблемы предлагается использовать лазеры или магниты. Назовите ЕГО двумя словами.</Question>
-<Answer>космический мусор.</Answer>
-<PassCriteria>
-</PassCriteria>
+<Question>ZZZZZ</Question>
+<Answer>xxxxx</Answer>
+<PassCriteria>uuuuu</PassCriteria>
 <Authors>Сергей Лобачёв (Нижний Новгород)</Authors>
 <Sources>1. https://www.youtube.com // https://goo.gl/MHFCBm 2. https://ru.wikipedia.org/wiki/Космический_мусор</Sources>
-<Comments>согласно пессимистическому сценарию, космический мусор уже в самом ближайшем времени может существенно затруднить запуск космических кораблей.</Comments>
+<Comments>YYYYY</Comments>
 <Rating/>
 <RatingNumber/>
 <Complexity/>

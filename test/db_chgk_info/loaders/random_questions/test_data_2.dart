@@ -2,16 +2,16 @@ import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_text.dart';
 
 const expectedRandomQuestions2 = [
   Question(
     id: '939869',
-    question:
-        r'''На вопрос, что можно всегда найти в его холодильнике, актер Сергей Лавыгин ответил достаточно банально, назвав ЭТО, поскольку, мол, любит некий вид напитков. Назовите ЭТО коротким словом.''',
-    answer: r'''Лед.''',
+    display: 'ZZZZZ',
+    question: [TextSection.fromValue(value: 'ZZZZZ')],
+    answer: [TextSection.fromValue(value: 'xxxxx')],
+    comments: [TextSection.fromValue(value: 'YYYYY')],
     authors: r'''Дмитрий Башук (Харьков)''',
-    comments:
-        r'''Действительно, самое простое, что всегда можно найти в холодильнике. :-) А любит актер напитки со льдом.''',
     sources: r'''"Телескоп", 2014, N 22.''',
     info: QuestionInfo(
       id: '939869',
@@ -41,13 +41,12 @@ const randomQuestionsApiResponse2 = '''
 <Type>Б</Type>
 <TypeNum>2</TypeNum>
 <TextId>ukrbr14.1-84</TextId>
-<Question>На вопрос, что можно всегда найти в его холодильнике, актер Сергей Лавыгин ответил достаточно банально, назвав ЭТО, поскольку, мол, любит некий вид напитков. Назовите ЭТО коротким словом.</Question>
-<Answer>Лед.</Answer>
+<Question>ZZZZZ</Question>
+<Answer>xxxxx</Answer>
 <PassCriteria/>
 <Authors>Дмитрий Башук (Харьков)</Authors>
 <Sources>&quot;Телескоп&quot;, 2014, N 22.</Sources>
-<Comments>Действительно, самое простое, что всегда можно найти в холодильнике. :-)
-А любит актер напитки со льдом.</Comments>
+<Comments>YYYYY</Comments>
 <Rating/>
 <RatingNumber/>
 <Complexity/>

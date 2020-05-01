@@ -3,6 +3,7 @@ import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_text.dart';
 
 const tourInfo2 = TourInfo(
   id: '70693',
@@ -21,12 +22,12 @@ const expectedTourDetails2 = Tour(
   questions: [
     Question(
       id: '1198351',
-      question:
-          r'''В конце фильма 2018 года один из героев успевает произнести лишь «мать». Назовите исполнителя роли этого героя.''',
-      answer: r'''Сэмюэль Л. Джексон.''',
+      display: 'ZZZZZ',
+      question: [TextSection.fromValue(value: 'ZZZZZ')],
+      answer: [TextSection.fromValue(value: 'xxxxx')],
+      comments: [TextSection.fromValue(value: 'YYYYY')],
+      passCriteria: [TextSection.fromValue(value: 'uuuuu')],
       authors: r'''Живой Трибунал.''',
-      comments:
-          r'''Во вселенной Marvel Сэмюэль Л. Джексон играет Ника Фьюри. В конце фильма «Война Бесконечности» персонаж Сэмюэля Л. Джексона обращается в пыль, однако актёр всё же успевает наполовину произнести свою коронную однословную реплику «motherfucker» [мазафака].''',
       sources: r'''1. https://en.wikipedia.org/wiki/Post-credits_scene''',
       info: QuestionInfo(
         id: '1198351',
@@ -76,13 +77,12 @@ const tourDetailsApiResponse2 = '''
 <Type>Ч</Type>
 <TypeNum>0</TypeNum>
 <TextId>thanos19.6_u.4-1</TextId>
-<Question>В конце фильма 2018 года один из героев успевает произнести лишь «мать». Назовите исполнителя роли этого героя.</Question>
-<Answer>Сэмюэль Л. Джексон.</Answer>
-<PassCriteria>
-</PassCriteria>
+<Question>ZZZZZ</Question>
+<Answer>xxxxx</Answer>
+<PassCriteria>uuuuu</PassCriteria>
 <Authors>Живой Трибунал.</Authors>
 <Sources>   1. https://en.wikipedia.org/wiki/Post-credits_scene</Sources>
-<Comments>Во вселенной Marvel Сэмюэль Л. Джексон играет Ника Фьюри. В конце фильма «Война Бесконечности» персонаж Сэмюэля Л. Джексона обращается в пыль, однако актёр всё же успевает наполовину произнести свою коронную однословную реплику «motherfucker» [мазафака].</Comments>
+<Comments>YYYYY</Comments>
 <Rating/>
 <RatingNumber/>
 <Complexity/>

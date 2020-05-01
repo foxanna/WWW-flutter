@@ -6,8 +6,8 @@ part 'section_text.freezed.dart';
 
 @freezed
 abstract class TextSection with _$TextSection implements QuestionSection {
-  const factory TextSection._fromValue({String value}) = _TextSection;
+  const factory TextSection.fromValue({String value}) = _TextSection;
 
   factory TextSection.fromString({@required String string}) =>
-      TextSection._fromValue(value: string.trim());
+      TextSection.fromValue(value: string.trim());
 }

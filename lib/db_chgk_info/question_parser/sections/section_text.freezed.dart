@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$TextSectionTearOff {
   const _$TextSectionTearOff();
 
-  _TextSection _fromValue({String value}) {
+  _TextSection fromValue({String value}) {
     return _TextSection(
       value: value,
     );
@@ -88,14 +88,14 @@ class _$_TextSection with DiagnosticableTreeMixin implements _TextSection {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TextSection._fromValue(value: $value)';
+    return 'TextSection.fromValue(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'TextSection._fromValue'))
+      ..add(DiagnosticsProperty('type', 'TextSection.fromValue'))
       ..add(DiagnosticsProperty('value', value));
   }
 
