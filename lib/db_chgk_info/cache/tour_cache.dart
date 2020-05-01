@@ -12,9 +12,7 @@ abstract class ITourCache {
 @lazySingleton
 @RegisterAs(ITourCache)
 class TourCache implements ITourCache {
-  const TourCache();
-
-  final _cache = const <String, Tour>{};
+  final _cache = <String, Tour>{};
 
   @override
   bool contains(String id) => _cache.containsKey(id);

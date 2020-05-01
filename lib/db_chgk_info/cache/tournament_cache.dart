@@ -12,10 +12,8 @@ abstract class ITournamentCache {
 @lazySingleton
 @RegisterAs(ITournamentCache)
 class TournamentCache implements ITournamentCache {
-  const TournamentCache();
-
-  final _cacheById = const <String, Tournament>{};
-  final _cacheByTextId = const <String, Tournament>{};
+  final _cacheById = <String, Tournament>{};
+  final _cacheByTextId = <String, Tournament>{};
 
   @override
   bool contains(String id) =>
