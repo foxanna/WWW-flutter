@@ -16,16 +16,23 @@ void main() {
       String apiResponse,
       Tournament expectedTournament,
     }) async {
+      // arrange
       final tournamentId = expectedTournament.id;
 
       final dioMock = DioMock();
       when(dioMock.get<String>('/tour/$tournamentId/xml'))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
 
-      final loader =
-          TournamentDetailsLoader.ioc(httpClient: HttpClient.ioc(dio: dioMock));
+      final loader = TournamentDetailsLoader(
+        httpClient: HttpClient(
+          dio: dioMock,
+        ),
+      );
+
+      // act
       final tournament = await loader.get(tournamentId);
 
+      // assert
       expect(tournament, expectedTournament);
     };
 

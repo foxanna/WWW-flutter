@@ -8,16 +8,24 @@ import '../../../mocks.dart';
 import 'test_data_1.dart';
 
 void main() {
-  test('Loads and parses latest tournaments', () async {
-    final dioMock = DioMock();
-    when(dioMock.get<String>('/last?page=0')).thenAnswer(
-        (_) => Future.value(Response(data: latestTournamentsApiResponse1)));
+  group('Loads and parses latest tournaments', () {
+    test('Tournaments list in xml', () async {
+      // arrange
+      final dioMock = DioMock();
+      when(dioMock.get<String>('/last?page=0')).thenAnswer(
+          (_) => Future.value(Response(data: latestTournamentsApiResponse1)));
 
-    final loader =
-        LatestTournamentsLoader.ioc(httpClient: HttpClient.ioc(dio: dioMock));
+      final loader = LatestTournamentsLoader(
+        httpClient: HttpClient(
+          dio: dioMock,
+        ),
+      );
 
-    final tournaments = await loader.get(page: 0);
+      // act
+      final tournaments = await loader.get(page: 0);
 
-    expect(tournaments, expectedLatestTournaments1);
+      // assert
+      expect(tournaments, expectedLatestTournaments1);
+    });
   });
 }

@@ -16,16 +16,23 @@ void main() {
       String apiResponse,
       Tour expectedTour,
     }) async {
+      // arrange
       final tourId = expectedTour.id;
 
       final dioMock = DioMock();
       when(dioMock.get<String>('/tour/$tourId/xml'))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
 
-      final loader =
-          TourDetailsLoader.ioc(httpClient: HttpClient.ioc(dio: dioMock));
+      final loader = TourDetailsLoader(
+        httpClient: HttpClient(
+          dio: dioMock,
+        ),
+      );
+
+      // act
       final tour = await loader.get(tourId);
 
+      // assert
       expect(tour, expectedTour);
     };
 

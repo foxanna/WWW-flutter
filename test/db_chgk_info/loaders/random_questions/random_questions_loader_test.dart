@@ -16,14 +16,21 @@ void main() {
       String apiResponse,
       List<Question> expectedQuestions,
     }) async {
+      // arrange
       final dioMock = DioMock();
       when(dioMock.get<String>('/xml/random'))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
 
-      final loader =
-          RandomQuestionsLoader.ioc(httpClient: HttpClient.ioc(dio: dioMock));
+      final loader = RandomQuestionsLoader(
+        httpClient: HttpClient(
+          dio: dioMock,
+        ),
+      );
+
+      // act
       final questions = await loader.get();
 
+      // assert
       expect(questions, expectedQuestions);
     };
 
