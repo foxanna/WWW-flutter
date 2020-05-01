@@ -23,10 +23,17 @@ void main() {
       when(dioMock.get<String>('/tour/$tournamentId/xml'))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
 
+      final tournamentCache = TournamentCacheMock();
+      when(tournamentCache.contains(any)).thenReturn(false);
+
+      final tourCache = TourCacheMock();
+
       final loader = TournamentDetailsLoader(
         httpClient: HttpClient(
           dio: dioMock,
         ),
+        tournamentCache: tournamentCache,
+        tourCache: tourCache,
       );
 
       // act

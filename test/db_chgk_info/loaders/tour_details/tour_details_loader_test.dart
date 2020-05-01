@@ -23,10 +23,14 @@ void main() {
       when(dioMock.get<String>('/tour/$tourId/xml'))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
 
+      final tourCache = TourCacheMock();
+      when(tourCache.contains(any)).thenReturn(false);
+
       final loader = TourDetailsLoader(
         httpClient: HttpClient(
           dio: dioMock,
         ),
+        tourCache: tourCache,
       );
 
       // act
