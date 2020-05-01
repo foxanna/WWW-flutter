@@ -1,19 +1,20 @@
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/db_chgk_info/models/question_section.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class AudioSection {
-  final String _value;
+part 'section_audio.freezed.dart';
 
-  String get url => (Uri.tryParse(_value).isAbsolute)
-      ? _value
-      : '${Constants.databaseUrl}/sounds/db/$_value';
+@freezed
+abstract class AudioSection with _$AudioSection implements QuestionSection {
+  const factory AudioSection._fromValue({String value}) = _AudioSection;
 
-  AudioSection(String value)
-      : this._value =
-            value.trim().replaceAll(RegExp(r'([\(\)\s]|aud:)'), '').trim();
-
-  @override
-  int get hashCode => url.hashCode;
-
-  @override
-  bool operator ==(dynamic other) => other is AudioSection && other.url == url;
+  factory AudioSection.fromString({@required String string}) {
+    final value =
+        string.trim().replaceAll(RegExp(r'([\(\)\s]|aud:)'), '').trim();
+    return AudioSection._fromValue(
+        value: (Uri.tryParse(value).isAbsolute)
+            ? value
+            : '${Constants.databaseUrl}/sounds/db/$value');
+  }
 }

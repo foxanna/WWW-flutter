@@ -1,19 +1,20 @@
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/db_chgk_info/models/question_section.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class ImageSection {
-  final String _value;
+part 'section_image.freezed.dart';
 
-  String get url => (Uri.tryParse(_value).isAbsolute)
-      ? _value
-      : '${Constants.databaseUrl}/images/db/$_value';
+@freezed
+abstract class ImageSection with _$ImageSection implements QuestionSection {
+  const factory ImageSection._fromValue({String value}) = _ImageSection;
 
-  ImageSection(String value)
-      : this._value =
-            value.trim().replaceAll(RegExp(r'([\(\)\s]|pic:)'), '').trim();
-
-  @override
-  int get hashCode => url.hashCode;
-
-  @override
-  bool operator ==(dynamic other) => other is ImageSection && other.url == url;
+  factory ImageSection.fromString({@required String string}) {
+    final value =
+        string.trim().replaceAll(RegExp(r'([\(\)\s]|pic:)'), '').trim();
+    return ImageSection._fromValue(
+        value: (Uri.tryParse(value).isAbsolute)
+            ? value
+            : '${Constants.databaseUrl}/images/db/$value');
+  }
 }

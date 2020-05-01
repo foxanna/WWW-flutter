@@ -1,15 +1,17 @@
-class SpeakerNoteSection {
-  final String value;
+import 'package:what_when_where/db_chgk_info/models/question_section.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  SpeakerNoteSection(String value)
-      : this._(value.trim().replaceAll(RegExp(r'(^\[|\]$)'), '').trim());
+part 'section_speaker_note.freezed.dart';
 
-  SpeakerNoteSection._(this.value);
+@freezed
+abstract class SpeakerNoteSection
+    with _$SpeakerNoteSection
+    implements QuestionSection {
+  const factory SpeakerNoteSection._fromValue({String value}) =
+      _SpeakerNoteSection;
 
-  @override
-  int get hashCode => value.hashCode;
-
-  @override
-  bool operator ==(dynamic other) =>
-      other is SpeakerNoteSection && other.value == value;
+  factory SpeakerNoteSection.fromString({@required String string}) =>
+      SpeakerNoteSection._fromValue(
+          value: string.trim().replaceAll(RegExp(r'(^\[|\]$)'), '').trim());
 }

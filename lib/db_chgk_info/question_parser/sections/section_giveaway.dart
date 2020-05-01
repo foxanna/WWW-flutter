@@ -1,22 +1,23 @@
-class GiveAwaySection {
-  final String value;
+import 'package:what_when_where/db_chgk_info/models/question_section.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  GiveAwaySection(String value)
-      : this._(value
-            .trim()
-            .replaceAll(RegExp(r'(^<раздатка>|<\/раздатка>$)'), '')
-            .replaceAll(
-                RegExp(r'(^\[|\]$|раздаточный материал: )',
-                    caseSensitive: false),
-                '')
-            .trim());
+part 'section_giveaway.freezed.dart';
 
-  GiveAwaySection._(this.value);
+@freezed
+abstract class GiveAwaySection
+    with _$GiveAwaySection
+    implements QuestionSection {
+  const factory GiveAwaySection._fromValue({String value}) = _GiveAwaySection;
 
-  @override
-  int get hashCode => value.hashCode;
-
-  @override
-  bool operator ==(dynamic other) =>
-      other is GiveAwaySection && other.value == value;
+  factory GiveAwaySection.fromString({@required String string}) =>
+      GiveAwaySection._fromValue(
+          value: string
+              .trim()
+              .replaceAll(RegExp(r'(^<раздатка>|<\/раздатка>$)'), '')
+              .replaceAll(
+                  RegExp(r'(^\[|\]$|раздаточный материал: )',
+                      caseSensitive: false),
+                  '')
+              .trim());
 }
