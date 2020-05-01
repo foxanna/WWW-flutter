@@ -7,7 +7,7 @@ import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/text_with_links.dart';
-import 'package:what_when_where/ui/question/text_sections.dart';
+import 'package:what_when_where/ui/question/question_sections.dart';
 
 class QuestionAnswer extends StatelessWidget {
   final int index;
@@ -40,17 +40,20 @@ class _QuestionAnswer extends StatelessWidget {
     final styleConfiguration =
         StyleConfiguration.of(context).questionStyleConfiguration;
 
-    yield QuestionTextSectionsTheme(
-      data: StyleConfiguration.of(context)
-          .questionStyleConfiguration
-          .questionCardAnswerSectionsThemeData,
-      child: QuestionTextSections.text(
-        text: '${Strings.answer}: ${question.answer}'
-            '${(question.comments != null) ? '*' : ''}',
-      ),
-    );
+    if (question.answer?.isNotEmpty ?? false) {
+      yield QuestionTextSectionsTheme(
+        data: StyleConfiguration.of(context)
+            .questionStyleConfiguration
+            .questionCardAnswerSectionsThemeData,
+        child: QuestionSections(
+          prefix: '${Strings.answer}: ',
+          suffix: question.comments?.isNotEmpty ?? false ? '*' : '',
+          sections: question.answer,
+        ),
+      );
+    }
 
-    if (question.passCriteria != null) {
+    if (question.passCriteria?.isNotEmpty ?? false) {
       yield SizedBox(
         height: styleConfiguration
             .questionCardAnswerSectionsThemeData.sectionsSpacing,
@@ -60,13 +63,14 @@ class _QuestionAnswer extends StatelessWidget {
         data: StyleConfiguration.of(context)
             .questionStyleConfiguration
             .questionCardAnswerSectionsThemeData,
-        child: QuestionTextSections.text(
-          text: '${Strings.acceptableAnswer}: ${question.passCriteria}',
+        child: QuestionSections(
+          prefix: '${Strings.acceptableAnswer}: ',
+          sections: question.passCriteria,
         ),
       );
     }
 
-    if (question.comments != null) {
+    if (question.comments?.isNotEmpty ?? false) {
       yield SizedBox(
         height: styleConfiguration
             .questionCardAnswerSectionsThemeData.sectionsSpacing,
@@ -76,7 +80,10 @@ class _QuestionAnswer extends StatelessWidget {
         data: StyleConfiguration.of(context)
             .questionStyleConfiguration
             .questionCardCommentSectionsThemeData,
-        child: QuestionTextSections.text(text: '* ${question.comments}'),
+        child: QuestionSections(
+          prefix: '* ',
+          sections: question.comments,
+        ),
       );
     }
 
