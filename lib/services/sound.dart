@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/services.dart';
+import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:what_when_where/utils/logger.dart';
 
@@ -12,12 +13,10 @@ abstract class ISoundService {
   void playSound();
 }
 
-class SoundService extends ISoundService {
+@lazySingleton
+@RegisterAs(ISoundService)
+class SoundService implements ISoundService {
   static const _timerAssetName = 'timer.mp3';
-
-  factory SoundService.ioc() => SoundService._();
-
-  SoundService._();
 
   final _audioPlugin = AudioPlayer();
 

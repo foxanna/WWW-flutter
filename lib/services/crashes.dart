@@ -1,15 +1,14 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class ICrashService {
   void init();
 }
 
-class CrashService extends ICrashService {
-  factory CrashService.ioc() => CrashService._();
-
-  CrashService._();
-
+@lazySingleton
+@RegisterAs(ICrashService)
+class CrashService implements ICrashService {
   @override
   void init() {
 //    Crashlytics.instance.enableInDevMode = true;

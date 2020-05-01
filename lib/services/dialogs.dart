@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class IDialogService {
   Future<T> show<T>({@required WidgetBuilder builder});
@@ -9,11 +10,9 @@ abstract class IDialogHelper {
       Future<T> Function<T>(WidgetBuilder builder) presenter);
 }
 
+@lazySingleton
+@RegisterAs(IDialogService)
 class DialogService implements IDialogService, IDialogHelper {
-  factory DialogService.ioc() => DialogService._();
-
-  DialogService._();
-
   Future<T> Function<T>(WidgetBuilder builder) _presenter;
 
   @override

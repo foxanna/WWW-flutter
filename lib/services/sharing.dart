@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:share/share.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/db_chgk_info/models/question_info.dart';
@@ -14,11 +15,9 @@ abstract class ISharingService {
   void shareQuestion(QuestionInfo info, String questionText);
 }
 
-class SharingService extends ISharingService {
-  factory SharingService.ioc() => SharingService._();
-
-  SharingService._();
-
+@lazySingleton
+@RegisterAs(ISharingService)
+class SharingService implements ISharingService {
   @override
   void shareTournament(TournamentInfo info) {
     Share.share('${info.title}\n'

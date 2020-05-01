@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class IPreferences {
@@ -8,11 +9,9 @@ abstract class IPreferences {
   Future<void> setBool(String key, bool value);
 }
 
-class Preferences extends IPreferences {
-  factory Preferences.ioc() => Preferences._();
-
-  Preferences._();
-
+@lazySingleton
+@RegisterAs(IPreferences)
+class Preferences implements IPreferences {
   @override
   Future<int> getInt(String key, {int defaultValue = 0}) async {
     final prefs = await SharedPreferences.getInstance();

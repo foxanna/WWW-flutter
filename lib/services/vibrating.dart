@@ -1,14 +1,13 @@
 import 'package:flutter_vibrate/flutter_vibrate.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class IVibratingService {
   Future<void> vibrate();
 }
 
-class VibratingService extends IVibratingService {
-  factory VibratingService.ioc() => VibratingService._();
-
-  VibratingService._();
-
+@lazySingleton
+@RegisterAs(IVibratingService)
+class VibratingService implements IVibratingService {
   @override
   Future<void> vibrate() async {
     if (await Vibrate.canVibrate) {

@@ -1,6 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:what_when_where/utils/logger.dart';
 
@@ -10,12 +11,10 @@ abstract class IAnalyticsService {
   void logEvent({@required String name, Map<String, dynamic> parameters});
 }
 
-class AnalyticsService extends IAnalyticsService {
+@lazySingleton
+@RegisterAs(IAnalyticsService)
+class AnalyticsService implements IAnalyticsService {
   final FirebaseAnalytics _analytics = FirebaseAnalytics();
-
-  factory AnalyticsService.ioc() => AnalyticsService._();
-
-  AnalyticsService._();
 
   @override
   RouteObserver<PageRoute<dynamic>> observer({String home}) =>

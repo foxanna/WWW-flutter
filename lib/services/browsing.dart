@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
@@ -11,13 +12,14 @@ abstract class IBrowsingService {
   void browseQuestion(QuestionInfo info);
 }
 
+@lazySingleton
+@RegisterAs(IBrowsingService)
 class BrowsingService implements IBrowsingService {
   final IUrlLauncher _urlLauncher;
 
-  factory BrowsingService.ioc({IUrlLauncher urlLauncher}) =>
-      BrowsingService._(urlLauncher);
-
-  BrowsingService._(this._urlLauncher);
+  BrowsingService({
+    IUrlLauncher urlLauncher,
+  }) : _urlLauncher = urlLauncher;
 
   @override
   void browseTournament(TournamentInfo info) =>

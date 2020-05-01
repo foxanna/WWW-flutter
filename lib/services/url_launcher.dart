@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 abstract class IUrlLauncher {
@@ -6,11 +7,9 @@ abstract class IUrlLauncher {
   Future<void> sendEmail(String to, String subject);
 }
 
-class UrlLauncher extends IUrlLauncher {
-  factory UrlLauncher.ioc() => UrlLauncher._();
-
-  UrlLauncher._();
-
+@lazySingleton
+@RegisterAs(IUrlLauncher)
+class UrlLauncher implements IUrlLauncher {
   @override
   Future<void> launchURL(String url) async {
     if (await canLaunch(url)) {
