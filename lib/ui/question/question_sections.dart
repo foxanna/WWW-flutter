@@ -3,32 +3,58 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:what_when_where/common/text_sections_theme_data.dart';
+import 'package:what_when_where/db_chgk_info/models/question_section.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_audio.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_giveaway.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_image.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_speaker_note.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_text.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/services/question_parser/question_parser.dart';
-import 'package:what_when_where/services/question_parser/section_audio.dart';
-import 'package:what_when_where/services/question_parser/section_giveaway.dart';
-import 'package:what_when_where/services/question_parser/section_image.dart';
-import 'package:what_when_where/services/question_parser/section_speaker_note.dart';
-import 'package:what_when_where/services/question_parser/section_text.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
-class QuestionTextSections extends StatelessWidget {
-  final List<dynamic> _sections;
+class QuestionSections extends StatelessWidget {
+  final List<QuestionSection> _sections;
 
-  const QuestionTextSections.sections({
+  factory QuestionSections({
     Key key,
-    List<dynamic> sections,
-  })  : _sections = sections,
-        super(key: key);
+    List<QuestionSection> sections,
+    String prefix,
+    String suffix,
+  }) {
+    final finalSection = List<QuestionSection>.from(sections);
 
-  QuestionTextSections.text({
+    if (prefix?.isNotEmpty ?? false) {
+      const index = 0;
+
+      if (finalSection[index] is TextSection) {
+        finalSection[index] = TextSection.fromString(
+            string: '$prefix${finalSection[index].value}');
+      } else {
+        finalSection.insert(index, TextSection.fromString(string: prefix));
+      }
+    }
+
+    if (suffix?.isNotEmpty ?? false) {
+      final index = finalSection.length - 1;
+
+      if (finalSection[index] is TextSection) {
+        finalSection[index] = TextSection.fromString(
+            string: '${finalSection[index].value}$suffix');
+      } else {
+        finalSection.add(TextSection.fromString(string: suffix));
+      }
+    }
+
+    return QuestionSections._(finalSection, key: key);
+  }
+
+  const QuestionSections._(
+    this._sections, {
     Key key,
-    String text,
-  })  : _sections = QuestionParser.split(text).toList(),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +66,7 @@ class QuestionTextSections extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: IterableExtensions.mix(
         _sections
-            .map((dynamic section) => _getChild(context, section, theme))
+            .map((section) => _getChild(context, section, theme))
             .where((widget) => widget != null)
             .toList(),
         SizedBox(height: theme.sectionsSpacing),
@@ -50,22 +76,26 @@ class QuestionTextSections extends StatelessWidget {
 
   Widget _getChild(BuildContext context, Object section,
       QuestionTextSectionsThemeData theme) {
-    switch (section.runtimeType) {
-      case SpeakerNoteSection:
-        return _buildSpeakersNoteSection(context, section as SpeakerNoteSection,
-            theme.speakerNotesTextStyle);
-      case GiveAwaySection:
-        return _buildGiveAwaySection(
-            context, section as GiveAwaySection, theme.giveAwayTextStyle);
-      case TextSection:
-        return _buildTextSection(
-            context, section as TextSection, theme.textStyle);
-      case ImageSection:
-        return _buildImageSection(
-            context, section as ImageSection, theme.imageHeight);
-      case AudioSection:
-        return _buildAudioSection(context, section as AudioSection,
-            theme.unsupportedSectionTextStyle);
+    if (section is SpeakerNoteSection) {
+      return _buildSpeakersNoteSection(
+          context, section, theme.speakerNotesTextStyle);
+    }
+
+    if (section is GiveAwaySection) {
+      return _buildGiveAwaySection(context, section, theme.giveAwayTextStyle);
+    }
+
+    if (section is ImageSection) {
+      return _buildImageSection(context, section, theme.imageHeight);
+    }
+
+    if (section is AudioSection) {
+      return _buildAudioSection(
+          context, section, theme.unsupportedSectionTextStyle);
+    }
+
+    if (section is TextSection) {
+      return _buildTextSection(context, section, theme.textStyle);
     }
 
     return null;
@@ -117,16 +147,16 @@ class QuestionTextSections extends StatelessWidget {
           const WWWProgressIndicator(),
           GestureDetector(
             child: Hero(
-              tag: section.url,
+              tag: section.value,
               transitionOnUserGestures: true,
               child: FadeInImage.memoryNetwork(
                 height: imageHeight,
                 fit: BoxFit.scaleDown,
                 placeholder: kTransparentImage,
-                image: section.url,
+                image: section.value,
               ),
             ),
-            onTap: () => _openImagePage(context, section.url),
+            onTap: () => _openImagePage(context, section.value),
           ),
         ],
       );
