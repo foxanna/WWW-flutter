@@ -5,7 +5,6 @@ import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/resources/strings.dart';
-import 'package:what_when_where/services/question_parser/question_parser.dart';
 
 abstract class ISharingService {
   void shareTournament(TournamentInfo info);
@@ -42,7 +41,7 @@ class SharingService implements ISharingService {
       '${Strings.question.toLowerCase()} ${info.number}'
     ].where((x) => x != null).join(', ');
 
-    final text = '${QuestionParser.trim(questionText)}\n\n'
+    final text = '${questionText}\n\n'
         '$questionInfo\n'
         '${info.url}'
         '${_createAppendix()}';
