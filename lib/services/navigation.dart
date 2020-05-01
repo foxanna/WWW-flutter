@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class INavigationService {
   void navigateToPage({
@@ -7,13 +8,14 @@ abstract class INavigationService {
   });
 }
 
-class NavigationService extends INavigationService {
-  factory NavigationService.ioc({GlobalKey<NavigatorState> key}) =>
-      NavigationService._(key);
-
+@lazySingleton
+@RegisterAs(INavigationService)
+class NavigationService implements INavigationService {
   final GlobalKey<NavigatorState> _key;
 
-  NavigationService._(this._key) : assert(_key != null);
+  NavigationService({
+    GlobalKey<NavigatorState> key,
+  }) : _key = key;
 
   @override
   void navigateToPage({

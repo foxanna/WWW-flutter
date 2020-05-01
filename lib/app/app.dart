@@ -25,7 +25,7 @@ class WWWApp extends StatelessWidget {
         theme: Themes.get(ThemeMode.light),
         darkTheme: Themes.get(ThemeMode.dark),
         themeMode: themeMode,
-        navigatorKey: globalNavigatorKey,
+        navigatorKey: ioc<GlobalKey<NavigatorState>>(),
         navigatorObservers: [
           ioc<IAnalyticsService>()
               .observer(home: LatestTournamentsPage.routeName),
