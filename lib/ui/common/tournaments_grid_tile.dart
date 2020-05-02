@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';

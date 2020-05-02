@@ -398,8 +398,8 @@ void main() {
 
   group('Question giveaway tests', () {
     const giveAwayValue = 'test giveaway';
-    final oldFormatGiveAway = (s) => '<раздатка>$s</раздатка>';
-    final newFormatGiveAway = (s) => '[раздаточный материал: $s]';
+    final oldFormatGiveAway = (String s) => '<раздатка>$s</раздатка>';
+    final newFormatGiveAway = (String s) => '[раздаточный материал: $s]';
 
     test(
       'giveaway, question text, old format',

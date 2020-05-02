@@ -1,8 +1,6 @@
-import 'package:meta/meta.dart';
-import 'package:quiver/core.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:meta/meta.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 

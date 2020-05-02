@@ -36,7 +36,6 @@ class _QuestionAnswer extends StatelessWidget {
       );
 
   Iterable<Widget> _buildAnswerContent(BuildContext context) sync* {
-    final textTheme = Theme.of(context).textTheme;
     final styleConfiguration =
         StyleConfiguration.of(context).questionStyleConfiguration;
 

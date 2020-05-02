@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/tour_details/question_loading_tile.dart';
