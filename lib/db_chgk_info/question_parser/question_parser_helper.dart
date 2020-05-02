@@ -19,8 +19,8 @@ class QuestionParserHelper {
   ];
 
   static final _giveAwayMatchers = [
-    RegExp(r'<раздатка>[\s\S]*?<\/раздатка>', caseSensitive: false),
-    RegExp(r'\[раздаточный материал: [\s\S]*?\]', caseSensitive: false),
+    RegExp(r'<раздатка>[\s]*[\s\S]*?<\/раздатка>', caseSensitive: false),
+    RegExp(r'\[раздаточный материал:[\s]*[\s\S]*?\]', caseSensitive: false),
   ];
 
   static final _imageMatchers = [

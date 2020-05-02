@@ -17,7 +17,7 @@ abstract class GiveAwaySection
               .trim()
               .replaceAll(RegExp(r'(^<раздатка>|<\/раздатка>$)'), '')
               .replaceAll(
-                  RegExp(r'(^\[|\]$|раздаточный материал: )',
+                  RegExp(r'(^\[|\]$|раздаточный материал:)',
                       caseSensitive: false),
                   '')
               .trim());

@@ -395,4 +395,274 @@ void main() {
       ),
     );
   });
+
+  group('Question giveaway tests', () {
+    const giveAwayValue = 'test giveaway';
+    final oldFormatGiveAway = (s) => '<раздатка>$s</раздатка>';
+    final newFormatGiveAway = (s) => '[раздаточный материал: $s]';
+
+    test(
+      'giveaway, question text, old format',
+      () => execute(
+        dto: QuestionDto(question: oldFormatGiveAway(giveAwayValue)),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: giveAwayValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, new format',
+      () => execute(
+        dto: QuestionDto(question: newFormatGiveAway(giveAwayValue)),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: giveAwayValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, new format, no spase after :',
+      () => execute(
+        dto: const QuestionDto(
+            question: '[раздаточный материал:$giveAwayValue]'),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: giveAwayValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, new format, multiple spases around',
+      () => execute(
+        dto: const QuestionDto(
+            question: '<раздатка>   $giveAwayValue   </раздатка>'),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: giveAwayValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, new format, multiple spases around',
+      () => execute(
+        dto: const QuestionDto(
+            question: '[раздаточный материал:   $giveAwayValue   ]'),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: giveAwayValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, old format with new lines',
+      () => execute(
+        dto: QuestionDto(
+            question: oldFormatGiveAway('$giveAwayValue\n$giveAwayValue')),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: '$giveAwayValue\n$giveAwayValue'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, new format with new lines',
+      () => execute(
+        dto: QuestionDto(
+            question: newFormatGiveAway('$giveAwayValue\n$giveAwayValue')),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: '$giveAwayValue\n$giveAwayValue'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, old format with trailing dot',
+      () => execute(
+        dto: QuestionDto(question: oldFormatGiveAway('$giveAwayValue.')),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: '$giveAwayValue.'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, new format with trailing dot',
+      () => execute(
+        dto: QuestionDto(question: newFormatGiveAway('$giveAwayValue.')),
+        expectedQuestion: const Question(
+          display: '',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: '$giveAwayValue.'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, in the beginning',
+      () => execute(
+        dto: QuestionDto(question: '${newFormatGiveAway(giveAwayValue)} text'),
+        expectedQuestion: const Question(
+          display: 'text',
+          question: <QuestionSection>[
+            GiveAwaySection.fromValue(value: giveAwayValue),
+            TextSection.fromValue(value: 'text'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, in the middle',
+      () => execute(
+        dto: QuestionDto(
+            question: 'text1 ${newFormatGiveAway(giveAwayValue)} text2'),
+        expectedQuestion: const Question(
+          display: 'text1 text2',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            GiveAwaySection.fromValue(value: giveAwayValue),
+            TextSection.fromValue(value: 'text2'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, in the end',
+      () => execute(
+        dto: QuestionDto(question: 'text ${newFormatGiveAway(giveAwayValue)}'),
+        expectedQuestion: const Question(
+          display: 'text',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text'),
+            GiveAwaySection.fromValue(value: giveAwayValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, several entries, old format',
+      () => execute(
+        dto: QuestionDto(
+            question: 'text1 ${oldFormatGiveAway('${giveAwayValue}1')} '
+                'text2 ${oldFormatGiveAway('${giveAwayValue}2')} '
+                'text3 ${oldFormatGiveAway('${giveAwayValue}3')} '
+                'text4'),
+        expectedQuestion: const Question(
+          display: 'text1 text2 text3 text4',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            GiveAwaySection.fromValue(value: '${giveAwayValue}1'),
+            TextSection.fromValue(value: 'text2'),
+            GiveAwaySection.fromValue(value: '${giveAwayValue}2'),
+            TextSection.fromValue(value: 'text3'),
+            GiveAwaySection.fromValue(value: '${giveAwayValue}3'),
+            TextSection.fromValue(value: 'text4'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, several entries, new format',
+      () => execute(
+        dto: QuestionDto(
+            question: 'text1 ${newFormatGiveAway('${giveAwayValue}1')} '
+                'text2 ${newFormatGiveAway('${giveAwayValue}2')} '
+                'text3 ${newFormatGiveAway('${giveAwayValue}3')} '
+                'text4'),
+        expectedQuestion: const Question(
+          display: 'text1 text2 text3 text4',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            GiveAwaySection.fromValue(value: '${giveAwayValue}1'),
+            TextSection.fromValue(value: 'text2'),
+            GiveAwaySection.fromValue(value: '${giveAwayValue}2'),
+            TextSection.fromValue(value: 'text3'),
+            GiveAwaySection.fromValue(value: '${giveAwayValue}3'),
+            TextSection.fromValue(value: 'text4'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, question text, without spaces around ()',
+      () => execute(
+        dto: QuestionDto(
+            question: 'text1${newFormatGiveAway(giveAwayValue)}text2'),
+        expectedQuestion: const Question(
+          display: 'text1text2',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            GiveAwaySection.fromValue(value: giveAwayValue),
+            TextSection.fromValue(value: 'text2'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, answer text, new format',
+      () => execute(
+        dto: QuestionDto(answer: newFormatGiveAway(giveAwayValue)),
+        expectedQuestion: const Question(
+          answer: <QuestionSection>[
+            GiveAwaySection.fromValue(value: giveAwayValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, passCriteria text, new format',
+      () => execute(
+        dto: QuestionDto(passCriteria: newFormatGiveAway(giveAwayValue)),
+        expectedQuestion: const Question(
+          passCriteria: <QuestionSection>[
+            GiveAwaySection.fromValue(value: giveAwayValue),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'giveaway, comments text, new format',
+      () => execute(
+        dto: QuestionDto(comments: newFormatGiveAway(giveAwayValue)),
+        expectedQuestion: const Question(
+          comments: <QuestionSection>[
+            GiveAwaySection.fromValue(value: giveAwayValue),
+          ],
+        ),
+      ),
+    );
+  });
 }
