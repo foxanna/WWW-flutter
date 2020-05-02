@@ -2,7 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/question_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/db_chgk_info/models/question_info.dart';
+import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/question_section.dart';
+import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_audio.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_giveaway.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_image.dart';
@@ -13,11 +16,12 @@ void main() {
   final execute = ({
     QuestionDto dto,
     Question expectedQuestion,
+    TourInfo tourInfo = const TourInfo(),
   }) {
     // arrange
 
     // act
-    final question = Question.fromDto(dto);
+    final question = Question.fromDto(dto, tourInfo: tourInfo);
 
     // assert
     expect(question, expectedQuestion);
@@ -886,5 +890,178 @@ void main() {
                 ),
               ),
             ));
+  });
+
+  group('Question.id and Question.info.id tests', () {
+    test(
+        'copies id from dto',
+        () => <String>['0', null, '142', 'q43r34'].forEach(
+              (id) => execute(
+                dto: QuestionDto(questionId: id),
+                expectedQuestion: Question(
+                  id: id,
+                  info: QuestionInfo(id: id),
+                ),
+              ),
+            ));
+  });
+
+  group('Question.display tests', () {
+    test(
+        'removes all sections from question except text',
+        () => execute(
+              dto: const QuestionDto(
+                question: 'text1 (aud: audio1) '
+                    'text2 (aud: https://test.com/audio2) '
+                    'text3 (pic: image1) '
+                    'text4 (pic: https://test.com/image2) '
+                    'text5 <раздатка>giveaway1</раздатка> '
+                    'text6 [раздаточный материал: giveaway2] '
+                    'text7 [Ведущему: speakerNote1] '
+                    'text8 [Чтецу: speakerNote2] '
+                    'text9 [Примечание ведущему: speakerNote3] '
+                    'text0',
+              ),
+              expectedQuestion: const Question(
+                display:
+                    'text1 text2 text3 text4 text5 text6 text7 text8 text9 text0',
+                question: <QuestionSection>[
+                  TextSection.fromValue(value: 'text1'),
+                  AudioSection.fromValue(
+                      value: '${Constants.databaseUrl}/sounds/db/audio1'),
+                  TextSection.fromValue(value: 'text2'),
+                  AudioSection.fromValue(value: 'https://test.com/audio2'),
+                  TextSection.fromValue(value: 'text3'),
+                  ImageSection.fromValue(
+                      value: '${Constants.databaseUrl}/images/db/image1'),
+                  TextSection.fromValue(value: 'text4'),
+                  ImageSection.fromValue(value: 'https://test.com/image2'),
+                  TextSection.fromValue(value: 'text5'),
+                  GiveAwaySection.fromValue(value: 'giveaway1'),
+                  TextSection.fromValue(value: 'text6'),
+                  GiveAwaySection.fromValue(value: 'giveaway2'),
+                  TextSection.fromValue(value: 'text7'),
+                  SpeakerNoteSection.fromValue(value: 'Ведущему: speakerNote1'),
+                  TextSection.fromValue(value: 'text8'),
+                  SpeakerNoteSection.fromValue(value: 'Чтецу: speakerNote2'),
+                  TextSection.fromValue(value: 'text9'),
+                  SpeakerNoteSection.fromValue(
+                      value: 'Примечание ведущему: speakerNote3'),
+                  TextSection.fromValue(value: 'text0'),
+                ],
+              ),
+            ));
+  });
+
+  group('Question.authors tests', () {
+    test(
+        'copies author from dto',
+        () => <String>[
+              'text1 text2',
+              'text1   text2',
+              'text1\n  text2',
+            ].forEach(
+              (author) => execute(
+                dto: QuestionDto(authors: author),
+                expectedQuestion: const Question(authors: 'text1 text2'),
+              ),
+            ));
+  });
+
+  group('Question.sources tests', () {
+    test(
+        'copies sources from dto',
+        () => <String, String>{
+              'text1 text2': 'text1 text2',
+              'text1   text2': 'text1\ntext2',
+              'text1\n  text2': 'text1\ntext2',
+            }.forEach(
+              (dtoSources, expectedSources) => execute(
+                dto: QuestionDto(sources: dtoSources),
+                expectedQuestion: Question(sources: expectedSources),
+              ),
+            ));
+  });
+
+  group('Question.info.number tests', () {
+    test(
+        'copies number from dto',
+        () => <String>['0', null, '142', 'q43r34'].forEach(
+              (number) => execute(
+                dto: QuestionDto(number: number),
+                expectedQuestion: Question(
+                  info: QuestionInfo(number: number),
+                ),
+              ),
+            ));
+  });
+
+  group('Question.info.url tests', () {
+    test(
+        'composes url from dto number and parentId',
+        () => <List<String>>[
+              <String>[null, 'number', null],
+              <String>['parentId', null, null],
+              <String>[
+                'parentId',
+                'number',
+                '${Constants.databaseUrl}/question/parentId/number'
+              ],
+            ].forEach(
+              (values) => execute(
+                dto: QuestionDto(
+                  parentId: values[0],
+                  number: values[1],
+                ),
+                expectedQuestion: Question(
+                  info: QuestionInfo(
+                    number: values[1],
+                    url: values[2],
+                  ),
+                ),
+              ),
+            ));
+  });
+
+  group('Question.info.tourInfo tests', () {
+    const tourInfo = TourInfo(
+      id: 'tour id',
+      title: 'tour title',
+      tournamentInfo: TournamentInfo(
+        id: 'tournament id',
+        title: 'tournament title',
+      ),
+    );
+
+    test(
+      'copies info from TourInfo parameter',
+      () => execute(
+        dto: QuestionDto(
+          tourId: '${tourInfo.id}+',
+          tourTitle: '${tourInfo.title}+',
+          tournamentId: '${tourInfo.tournamentInfo.id}+',
+          tournamentTitle: '${tourInfo.tournamentInfo.title}+',
+        ),
+        expectedQuestion: const Question(
+          info: QuestionInfo(tourInfo: tourInfo),
+        ),
+        tourInfo: tourInfo,
+      ),
+    );
+
+    test(
+      'copies info from dto when TourInfo is empty and removes trailing .',
+      () => execute(
+        dto: QuestionDto(
+          tourId: tourInfo.id,
+          tourTitle: '${tourInfo.title}.',
+          tournamentId: tourInfo.tournamentInfo.id,
+          tournamentTitle: '${tourInfo.tournamentInfo.title}.',
+        ),
+        expectedQuestion: const Question(
+          info: QuestionInfo(tourInfo: tourInfo),
+        ),
+      ),
+    );
   });
 }
