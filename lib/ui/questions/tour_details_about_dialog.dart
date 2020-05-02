@@ -7,32 +7,44 @@ class TourDetailsAboutDialog extends StatelessWidget {
   final String _detailsText;
   final String _tourTitle;
 
-  final TourInfo info;
-
-  TourDetailsAboutDialog({this.info})
-      : _tourTitle = info.title,
-        _detailsText = _DialogContentBuilder(info).build();
+  TourDetailsAboutDialog({TourInfo info})
+      : _tourTitle = _buildTitleText(info),
+        _detailsText = _buildDetailsText(info);
 
   @override
   Widget build(BuildContext context) => InfoDialog(
         title: _tourTitle,
         content: _detailsText,
       );
-}
 
-class _DialogContentBuilder {
-  final TourInfo info;
+  static String _buildTitleText(TourInfo info) {
+    final result = StringBuffer();
 
-  _DialogContentBuilder(this.info);
+    if (info.tournamentInfo.title?.isNotEmpty ?? false) {
+      result.write(info.tournamentInfo.title);
+    }
 
-  String build() {
+    if (info.title?.isNotEmpty ?? false) {
+      if (result.isNotEmpty) {
+        result.writeln();
+        result.writeln();
+      }
+
+      result.write(info.title);
+    }
+
+    return result.toString();
+  }
+
+  static String _buildDetailsText(TourInfo info) {
     final result = StringBuffer();
 
     final addToResult = (String s) {
       if (result.isNotEmpty) {
         result.writeln();
+        result.writeln();
       }
-      result.writeln(s);
+      result.write(s);
     };
 
     if (info.editors != null) {
