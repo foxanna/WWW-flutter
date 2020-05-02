@@ -22,7 +22,7 @@ abstract class Tour with _$Tour {
     final info = TourInfo(
       id: dto.id,
       title: dto.title.normalizeToSingleLine().removeTrailingDot(),
-      questionsCount: dto.questionsCount,
+      questionsCount: '${dto.questions.length}',
       description: dto.description.normalizeToSingleLine(),
       url: dto.id != null ? '${Constants.databaseUrl}/tour/${dto.id}' : null,
       editors: dto.editors.normalizeToSingleLine(),
