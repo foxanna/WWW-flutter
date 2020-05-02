@@ -4,8 +4,8 @@ Dio createDioInstance() {
   final dio = Dio(
     BaseOptions(
       baseUrl: _baseUrl,
-      connectTimeout: 15000,
-      receiveTimeout: 3000,
+      connectTimeout: _connectTimeout,
+      receiveTimeout: _receiveTimeout,
     ),
   );
   if (_logHttpCommunication) {
