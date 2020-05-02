@@ -6,6 +6,7 @@ import 'package:what_when_where/db_chgk_info/models/question_section.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_audio.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_giveaway.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_image.dart';
+import 'package:what_when_where/db_chgk_info/question_parser/sections/section_speaker_note.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_text.dart';
 
 void main() {
@@ -664,5 +665,226 @@ void main() {
         ),
       ),
     );
+  });
+
+  group('Question speaker note tests', () {
+    const speakerNoteValue = 'test speaker note';
+
+    final supportedSpeakerNotePrefixes = [
+      'Ведущему:',
+      'Чтецу:',
+      'Примечание ведущему:',
+    ];
+
+    final formatSpeakerNote =
+        (String value, String prefix) => '[$prefix$value]';
+
+    test(
+        'speaker note, question text',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  question: formatSpeakerNote(speakerNoteValue, prefix),
+                ),
+                expectedQuestion: Question(
+                  display: '',
+                  question: <QuestionSection>[
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, question text, with dot',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  question: formatSpeakerNote(
+                      '$speakerNoteValue.$speakerNoteValue.', prefix),
+                ),
+                expectedQuestion: Question(
+                  display: '',
+                  question: <QuestionSection>[
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue.$speakerNoteValue.'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, question text, with new line',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  question: formatSpeakerNote(
+                      '$speakerNoteValue\n$speakerNoteValue', prefix),
+                ),
+                expectedQuestion: Question(
+                  display: '',
+                  question: <QuestionSection>[
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue\n$speakerNoteValue'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, question text, in the beginning',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  question:
+                      '${formatSpeakerNote(speakerNoteValue, prefix)} text',
+                ),
+                expectedQuestion: Question(
+                  display: 'text',
+                  question: <QuestionSection>[
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                    const TextSection.fromValue(value: 'text'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, question text, in the middle',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  question:
+                      'text1 ${formatSpeakerNote(speakerNoteValue, prefix)} text2',
+                ),
+                expectedQuestion: Question(
+                  display: 'text1 text2',
+                  question: <QuestionSection>[
+                    const TextSection.fromValue(value: 'text1'),
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                    const TextSection.fromValue(value: 'text2'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, question text, in the end',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  question:
+                      'text ${formatSpeakerNote(speakerNoteValue, prefix)}',
+                ),
+                expectedQuestion: Question(
+                  display: 'text',
+                  question: <QuestionSection>[
+                    const TextSection.fromValue(value: 'text'),
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, question text, several entries',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  question:
+                      'text1 ${formatSpeakerNote(speakerNoteValue, prefix)} '
+                      'text2 ${formatSpeakerNote(speakerNoteValue, prefix)} '
+                      'text3 ${formatSpeakerNote(speakerNoteValue, prefix)} '
+                      'text4',
+                ),
+                expectedQuestion: Question(
+                  display: 'text1 text2 text3 text4',
+                  question: <QuestionSection>[
+                    const TextSection.fromValue(value: 'text1'),
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                    const TextSection.fromValue(value: 'text2'),
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                    const TextSection.fromValue(value: 'text3'),
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                    const TextSection.fromValue(value: 'text4'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, question text, without spaces around',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  question:
+                      'text1${formatSpeakerNote(speakerNoteValue, prefix)}text2',
+                ),
+                expectedQuestion: Question(
+                  display: 'text1text2',
+                  question: <QuestionSection>[
+                    const TextSection.fromValue(value: 'text1'),
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                    const TextSection.fromValue(value: 'text2'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, answer text',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  answer: formatSpeakerNote(speakerNoteValue, prefix),
+                ),
+                expectedQuestion: Question(
+                  answer: <QuestionSection>[
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, passCriteria text',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  passCriteria: formatSpeakerNote(speakerNoteValue, prefix),
+                ),
+                expectedQuestion: Question(
+                  passCriteria: <QuestionSection>[
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                  ],
+                ),
+              ),
+            ));
+
+    test(
+        'speaker note, comments text',
+        () => supportedSpeakerNotePrefixes.forEach(
+              (prefix) => execute(
+                dto: QuestionDto(
+                  comments: formatSpeakerNote(speakerNoteValue, prefix),
+                ),
+                expectedQuestion: Question(
+                  comments: <QuestionSection>[
+                    SpeakerNoteSection.fromValue(
+                        value: '$prefix$speakerNoteValue'),
+                  ],
+                ),
+              ),
+            ));
   });
 }
