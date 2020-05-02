@@ -101,11 +101,32 @@ void main() {
     );
 
     test(
-      'audio, question text, several entries',
+      'audio, question text, several entries, old format',
+      () => execute(
+        dto: const QuestionDto(
+            question: 'text1 $oldFormatAudio '
+                'text2 $oldFormatAudio '
+                'text3 $oldFormatAudio'),
+        expectedQuestion: const Question(
+          display: 'text1 text2 text3',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
+            TextSection.fromValue(value: 'text2'),
+            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
+            TextSection.fromValue(value: 'text3'),
+            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'audio, question text, several entries, new format',
       () => execute(
         dto: const QuestionDto(
             question: 'text1 $newFormatAudio '
-                'text2 $oldFormatAudio '
+                'text2 $newFormatAudio '
                 'text3 $newFormatAudio'),
         expectedQuestion: const Question(
           display: 'text1 text2 text3',
@@ -113,7 +134,7 @@ void main() {
             TextSection.fromValue(value: 'text1'),
             AudioSection.fromValue(value: newFormatAudioValue),
             TextSection.fromValue(value: 'text2'),
-            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
+            AudioSection.fromValue(value: newFormatAudioValue),
             TextSection.fromValue(value: 'text3'),
             AudioSection.fromValue(value: newFormatAudioValue),
           ],
@@ -122,7 +143,22 @@ void main() {
     );
 
     test(
-      'audio, question text, without spaces around ()',
+      'audio, question text, without spaces around (), old format',
+      () => execute(
+        dto: const QuestionDto(question: 'text1${oldFormatAudio}text2'),
+        expectedQuestion: const Question(
+          display: 'text1text2',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
+            TextSection.fromValue(value: 'text2'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'audio, question text, without spaces around (), new format',
       () => execute(
         dto: const QuestionDto(question: 'text1${newFormatAudio}text2'),
         expectedQuestion: const Question(
@@ -252,11 +288,32 @@ void main() {
     );
 
     test(
-      'image, question text, several entries',
+      'image, question text, several entries, old format',
+      () => execute(
+        dto: const QuestionDto(
+            question: 'text1 $oldFormatImage '
+                'text2 $oldFormatImage '
+                'text3 $oldFormatImage'),
+        expectedQuestion: const Question(
+          display: 'text1 text2 text3',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
+            TextSection.fromValue(value: 'text2'),
+            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
+            TextSection.fromValue(value: 'text3'),
+            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, question text, several entries, new format',
       () => execute(
         dto: const QuestionDto(
             question: 'text1 $newFormatImage '
-                'text2 $oldFormatImage '
+                'text2 $newFormatImage '
                 'text3 $newFormatImage'),
         expectedQuestion: const Question(
           display: 'text1 text2 text3',
@@ -264,7 +321,7 @@ void main() {
             TextSection.fromValue(value: 'text1'),
             ImageSection.fromValue(value: newFormatImageValue),
             TextSection.fromValue(value: 'text2'),
-            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
+            ImageSection.fromValue(value: newFormatImageValue),
             TextSection.fromValue(value: 'text3'),
             ImageSection.fromValue(value: newFormatImageValue),
           ],
@@ -273,7 +330,22 @@ void main() {
     );
 
     test(
-      'image, question text, without spaces around ()',
+      'image, question text, without spaces around (), old format',
+      () => execute(
+        dto: const QuestionDto(question: 'text1${oldFormatImage}text2'),
+        expectedQuestion: const Question(
+          display: 'text1text2',
+          question: <QuestionSection>[
+            TextSection.fromValue(value: 'text1'),
+            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
+            TextSection.fromValue(value: 'text2'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'image, question text, without spaces around (), new format',
       () => execute(
         dto: const QuestionDto(question: 'text1${newFormatImage}text2'),
         expectedQuestion: const Question(
