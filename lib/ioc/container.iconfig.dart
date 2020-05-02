@@ -22,7 +22,6 @@ import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
 import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/sound.dart';
 import 'package:what_when_where/db_chgk_info/cache/tour_cache.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/cache/tournament_cache.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
@@ -41,11 +40,12 @@ import 'package:what_when_where/redux/sharing/middleware.dart';
 import 'package:what_when_where/redux/timer/middleware.dart';
 import 'package:what_when_where/redux/tournament/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
-import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
 import 'package:what_when_where/services/browsing.dart';
+import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
+import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:get_it/get_it.dart';
@@ -72,8 +72,6 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<ISharingService>(() => SharingService());
   g.registerLazySingleton<ISoundService>(() => SoundService());
   g.registerLazySingleton<ITourCache>(() => TourCache());
-  g.registerLazySingleton<ITourDetailsLoader>(() => TourDetailsLoader(
-      httpClient: g<IHttpClient>(), tourCache: g<ITourCache>()));
   g.registerLazySingleton<ITournamentCache>(() => TournamentCache());
   g.registerLazySingleton<ITournamentDetailsLoader>(
       () => TournamentDetailsLoader(
@@ -111,8 +109,6 @@ void $initGetIt(GetIt g, {String environment}) {
       () => TournamentMiddleware(loader: g<ITournamentDetailsLoader>()));
   g.registerFactory<TournamentsTreeMiddleware>(
       () => TournamentsTreeMiddleware(loader: g<ITournamentsTreeLoader>()));
-  g.registerFactory<ToursMiddleware>(
-      () => ToursMiddleware(loader: g<ITourDetailsLoader>()));
   g.registerFactory<AnalyticsMiddleware>(
       () => AnalyticsMiddleware(analyticsService: g<IAnalyticsService>()));
   g.registerFactory<AppMiddleware>(
@@ -121,6 +117,13 @@ void $initGetIt(GetIt g, {String environment}) {
       () => DialogMiddleware(dialogService: g<IDialogService>()));
   g.registerLazySingleton<IBrowsingService>(
       () => BrowsingService(urlLauncher: g<IUrlLauncher>()));
+  g.registerLazySingleton<ITourDetailsLoader>(() => TourDetailsLoader(
+        httpClient: g<IHttpClient>(),
+        tournamentCache: g<ITournamentCache>(),
+        tourCache: g<ITourCache>(),
+      ));
+  g.registerFactory<ToursMiddleware>(
+      () => ToursMiddleware(loader: g<ITourDetailsLoader>()));
   g.registerFactory<WWWStore>(
       () => WWWStore(appMiddleware: g<AppMiddleware>()));
   g.registerFactory<BrowseMiddleware>(
