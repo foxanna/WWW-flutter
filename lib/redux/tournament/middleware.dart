@@ -26,6 +26,7 @@ class TournamentMiddleware {
         TypedMiddleware<AppState, LoadTournament>(_loadTournament),
         TypedMiddleware<AppState, ReloadTournament>(_reloadTournament),
         TypedMiddleware<AppState, TournamentLoaded>(_tournamentLoaded),
+        TypedMiddleware<AppState, ClearTournament>(_clearTournament),
       ];
 
   void _openTournament(
@@ -75,8 +76,8 @@ class TournamentMiddleware {
       Store<AppState> store, TournamentLoaded action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(
-        SetTours(tours: action.tournament.tours.map((x) => x.info).toList()));
+    store.dispatch(SystemActionTours.init(
+        tours: action.tournament.tours.map((x) => x.info).toList()));
   }
 
   void _reloadTournament(
@@ -84,5 +85,12 @@ class TournamentMiddleware {
     next(action);
 
     store.dispatch(LoadTournament(info: store.state.tournamentState.info));
+  }
+
+  void _clearTournament(
+      Store<AppState> store, ClearTournament action, NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const SystemActionTours.deInit());
   }
 }
