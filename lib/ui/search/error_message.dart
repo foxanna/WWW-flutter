@@ -29,5 +29,5 @@ class SearchErrorMessage extends StatelessWidget {
   }
 
   void _reload(BuildContext context) => StoreProvider.of<AppState>(context)
-      .dispatch(const UserActionSearch.rerun());
+      .dispatch(const UserActionSearch.execute());
 }

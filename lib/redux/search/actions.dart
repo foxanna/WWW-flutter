@@ -17,10 +17,6 @@ abstract class UserActionSearch
 
   const factory UserActionSearch.execute() = ExecuteSearchUserAction;
 
-  const factory UserActionSearch.proceed() = ProceedSearchUserAction;
-
-  const factory UserActionSearch.rerun() = RerunSearchUserAction;
-
   const factory UserActionSearch.close() = CloseSearchUserAction;
 
   const factory UserActionSearch.updateText({

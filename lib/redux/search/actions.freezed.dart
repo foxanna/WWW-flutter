@@ -45,18 +45,14 @@ mixin _$UserActionSearch {
   Result when<Result extends Object>({
     @required Result open(),
     @required Result execute(),
-    @required Result proceed(),
-    @required Result rerun(),
     @required Result close(),
-    @required Result newQuery(String query),
-    @required Result newSorting(Sorting sorting),
+    @required Result updateText(String query),
+    @required Result updateSorting(Sorting sorting),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result open(),
     Result execute(),
-    Result proceed(),
-    Result rerun(),
     Result close(),
     Result updateText(String query),
     Result updateSorting(Sorting sorting),
@@ -66,8 +62,6 @@ mixin _$UserActionSearch {
   Result map<Result extends Object>({
     @required Result open(OpenSearchUserAction value),
     @required Result execute(ExecuteSearchUserAction value),
-    @required Result proceed(ProceedSearchUserAction value),
-    @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
     @required Result updateText(UpdateTextSearchUserAction value),
     @required Result updateSorting(UpdateSortingSearchUserAction value),
@@ -76,8 +70,6 @@ mixin _$UserActionSearch {
   Result maybeMap<Result extends Object>({
     Result open(OpenSearchUserAction value),
     Result execute(ExecuteSearchUserAction value),
-    Result proceed(ProceedSearchUserAction value),
-    Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
     Result updateText(UpdateTextSearchUserAction value),
     Result updateSorting(UpdateSortingSearchUserAction value),
@@ -146,16 +138,12 @@ class _$OpenSearchUserAction
   Result when<Result extends Object>({
     @required Result open(),
     @required Result execute(),
-    @required Result proceed(),
-    @required Result rerun(),
     @required Result close(),
     @required Result updateText(String query),
     @required Result updateSorting(Sorting sorting),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -167,8 +155,6 @@ class _$OpenSearchUserAction
   Result maybeWhen<Result extends Object>({
     Result open(),
     Result execute(),
-    Result proceed(),
-    Result rerun(),
     Result close(),
     Result updateText(String query),
     Result updateSorting(Sorting sorting),
@@ -186,16 +172,12 @@ class _$OpenSearchUserAction
   Result map<Result extends Object>({
     @required Result open(OpenSearchUserAction value),
     @required Result execute(ExecuteSearchUserAction value),
-    @required Result proceed(ProceedSearchUserAction value),
-    @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
     @required Result updateText(UpdateTextSearchUserAction value),
     @required Result updateSorting(UpdateSortingSearchUserAction value),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -207,8 +189,6 @@ class _$OpenSearchUserAction
   Result maybeMap<Result extends Object>({
     Result open(OpenSearchUserAction value),
     Result execute(ExecuteSearchUserAction value),
-    Result proceed(ProceedSearchUserAction value),
-    Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
     Result updateText(UpdateTextSearchUserAction value),
     Result updateSorting(UpdateSortingSearchUserAction value),
@@ -272,16 +252,12 @@ class _$ExecuteSearchUserAction
   Result when<Result extends Object>({
     @required Result open(),
     @required Result execute(),
-    @required Result proceed(),
-    @required Result rerun(),
     @required Result close(),
     @required Result updateText(String query),
     @required Result updateSorting(Sorting sorting),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -293,8 +269,6 @@ class _$ExecuteSearchUserAction
   Result maybeWhen<Result extends Object>({
     Result open(),
     Result execute(),
-    Result proceed(),
-    Result rerun(),
     Result close(),
     Result updateText(String query),
     Result updateSorting(Sorting sorting),
@@ -312,16 +286,12 @@ class _$ExecuteSearchUserAction
   Result map<Result extends Object>({
     @required Result open(OpenSearchUserAction value),
     @required Result execute(ExecuteSearchUserAction value),
-    @required Result proceed(ProceedSearchUserAction value),
-    @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
     @required Result updateText(UpdateTextSearchUserAction value),
     @required Result updateSorting(UpdateSortingSearchUserAction value),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -333,8 +303,6 @@ class _$ExecuteSearchUserAction
   Result maybeMap<Result extends Object>({
     Result open(OpenSearchUserAction value),
     Result execute(ExecuteSearchUserAction value),
-    Result proceed(ProceedSearchUserAction value),
-    Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
     Result updateText(UpdateTextSearchUserAction value),
     Result updateSorting(UpdateSortingSearchUserAction value),
@@ -350,258 +318,6 @@ class _$ExecuteSearchUserAction
 
 abstract class ExecuteSearchUserAction implements UserActionSearch {
   const factory ExecuteSearchUserAction() = _$ExecuteSearchUserAction;
-}
-
-abstract class $ProceedSearchUserActionCopyWith<$Res> {
-  factory $ProceedSearchUserActionCopyWith(ProceedSearchUserAction value,
-          $Res Function(ProceedSearchUserAction) then) =
-      _$ProceedSearchUserActionCopyWithImpl<$Res>;
-}
-
-class _$ProceedSearchUserActionCopyWithImpl<$Res>
-    extends _$UserActionSearchCopyWithImpl<$Res>
-    implements $ProceedSearchUserActionCopyWith<$Res> {
-  _$ProceedSearchUserActionCopyWithImpl(ProceedSearchUserAction _value,
-      $Res Function(ProceedSearchUserAction) _then)
-      : super(_value, (v) => _then(v as ProceedSearchUserAction));
-
-  @override
-  ProceedSearchUserAction get _value => super._value as ProceedSearchUserAction;
-}
-
-class _$ProceedSearchUserAction
-    with DiagnosticableTreeMixin
-    implements ProceedSearchUserAction {
-  const _$ProceedSearchUserAction();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionSearch.proceed()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionSearch.proceed'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ProceedSearchUserAction);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result execute(),
-    @required Result proceed(),
-    @required Result rerun(),
-    @required Result close(),
-    @required Result newQuery(String query),
-    @required Result newSorting(Sorting sorting),
-  }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
-    assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
-    return proceed();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result execute(),
-    Result proceed(),
-    Result rerun(),
-    Result close(),
-    Result updateText(String query),
-    Result updateSorting(Sorting sorting),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (proceed != null) {
-      return proceed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenSearchUserAction value),
-    @required Result execute(ExecuteSearchUserAction value),
-    @required Result proceed(ProceedSearchUserAction value),
-    @required Result rerun(RerunSearchUserAction value),
-    @required Result close(CloseSearchUserAction value),
-    @required Result newQuery(NewQuerySearchUserAction value),
-    @required Result newSorting(NewSortingSearchUserAction value),
-  }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
-    assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
-    return proceed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenSearchUserAction value),
-    Result execute(ExecuteSearchUserAction value),
-    Result proceed(ProceedSearchUserAction value),
-    Result rerun(RerunSearchUserAction value),
-    Result close(CloseSearchUserAction value),
-    Result updateText(UpdateTextSearchUserAction value),
-    Result updateSorting(UpdateSortingSearchUserAction value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (proceed != null) {
-      return proceed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ProceedSearchUserAction implements UserActionSearch {
-  const factory ProceedSearchUserAction() = _$ProceedSearchUserAction;
-}
-
-abstract class $RerunSearchUserActionCopyWith<$Res> {
-  factory $RerunSearchUserActionCopyWith(RerunSearchUserAction value,
-          $Res Function(RerunSearchUserAction) then) =
-      _$RerunSearchUserActionCopyWithImpl<$Res>;
-}
-
-class _$RerunSearchUserActionCopyWithImpl<$Res>
-    extends _$UserActionSearchCopyWithImpl<$Res>
-    implements $RerunSearchUserActionCopyWith<$Res> {
-  _$RerunSearchUserActionCopyWithImpl(
-      RerunSearchUserAction _value, $Res Function(RerunSearchUserAction) _then)
-      : super(_value, (v) => _then(v as RerunSearchUserAction));
-
-  @override
-  RerunSearchUserAction get _value => super._value as RerunSearchUserAction;
-}
-
-class _$RerunSearchUserAction
-    with DiagnosticableTreeMixin
-    implements RerunSearchUserAction {
-  const _$RerunSearchUserAction();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionSearch.rerun()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionSearch.rerun'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is RerunSearchUserAction);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result execute(),
-    @required Result proceed(),
-    @required Result rerun(),
-    @required Result close(),
-    @required Result newQuery(String query),
-    @required Result newSorting(Sorting sorting),
-  }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
-    assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
-    return rerun();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result execute(),
-    Result proceed(),
-    Result rerun(),
-    Result close(),
-    Result updateText(String query),
-    Result updateSorting(Sorting sorting),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (rerun != null) {
-      return rerun();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenSearchUserAction value),
-    @required Result execute(ExecuteSearchUserAction value),
-    @required Result proceed(ProceedSearchUserAction value),
-    @required Result rerun(RerunSearchUserAction value),
-    @required Result close(CloseSearchUserAction value),
-    @required Result newQuery(NewQuerySearchUserAction value),
-    @required Result newSorting(NewSortingSearchUserAction value),
-  }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
-    assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
-    return rerun(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenSearchUserAction value),
-    Result execute(ExecuteSearchUserAction value),
-    Result proceed(ProceedSearchUserAction value),
-    Result rerun(RerunSearchUserAction value),
-    Result close(CloseSearchUserAction value),
-    Result updateText(UpdateTextSearchUserAction value),
-    Result updateSorting(UpdateSortingSearchUserAction value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (rerun != null) {
-      return rerun(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RerunSearchUserAction implements UserActionSearch {
-  const factory RerunSearchUserAction() = _$RerunSearchUserAction;
 }
 
 abstract class $CloseSearchUserActionCopyWith<$Res> {
@@ -650,16 +366,12 @@ class _$CloseSearchUserAction
   Result when<Result extends Object>({
     @required Result open(),
     @required Result execute(),
-    @required Result proceed(),
-    @required Result rerun(),
     @required Result close(),
     @required Result updateText(String query),
     @required Result updateSorting(Sorting sorting),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -671,8 +383,6 @@ class _$CloseSearchUserAction
   Result maybeWhen<Result extends Object>({
     Result open(),
     Result execute(),
-    Result proceed(),
-    Result rerun(),
     Result close(),
     Result updateText(String query),
     Result updateSorting(Sorting sorting),
@@ -690,16 +400,12 @@ class _$CloseSearchUserAction
   Result map<Result extends Object>({
     @required Result open(OpenSearchUserAction value),
     @required Result execute(ExecuteSearchUserAction value),
-    @required Result proceed(ProceedSearchUserAction value),
-    @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
     @required Result updateText(UpdateTextSearchUserAction value),
     @required Result updateSorting(UpdateSortingSearchUserAction value),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -711,8 +417,6 @@ class _$CloseSearchUserAction
   Result maybeMap<Result extends Object>({
     Result open(OpenSearchUserAction value),
     Result execute(ExecuteSearchUserAction value),
-    Result proceed(ProceedSearchUserAction value),
-    Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
     Result updateText(UpdateTextSearchUserAction value),
     Result updateSorting(UpdateSortingSearchUserAction value),
@@ -803,16 +507,12 @@ class _$UpdateTextSearchUserAction
   Result when<Result extends Object>({
     @required Result open(),
     @required Result execute(),
-    @required Result proceed(),
-    @required Result rerun(),
     @required Result close(),
     @required Result updateText(String query),
     @required Result updateSorting(Sorting sorting),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -824,8 +524,6 @@ class _$UpdateTextSearchUserAction
   Result maybeWhen<Result extends Object>({
     Result open(),
     Result execute(),
-    Result proceed(),
-    Result rerun(),
     Result close(),
     Result updateText(String query),
     Result updateSorting(Sorting sorting),
@@ -843,16 +541,12 @@ class _$UpdateTextSearchUserAction
   Result map<Result extends Object>({
     @required Result open(OpenSearchUserAction value),
     @required Result execute(ExecuteSearchUserAction value),
-    @required Result proceed(ProceedSearchUserAction value),
-    @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
     @required Result updateText(UpdateTextSearchUserAction value),
     @required Result updateSorting(UpdateSortingSearchUserAction value),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -864,8 +558,6 @@ class _$UpdateTextSearchUserAction
   Result maybeMap<Result extends Object>({
     Result open(OpenSearchUserAction value),
     Result execute(ExecuteSearchUserAction value),
-    Result proceed(ProceedSearchUserAction value),
-    Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
     Result updateText(UpdateTextSearchUserAction value),
     Result updateSorting(UpdateSortingSearchUserAction value),
@@ -961,16 +653,12 @@ class _$UpdateSortingSearchUserAction
   Result when<Result extends Object>({
     @required Result open(),
     @required Result execute(),
-    @required Result proceed(),
-    @required Result rerun(),
     @required Result close(),
     @required Result updateText(String query),
     @required Result updateSorting(Sorting sorting),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -982,8 +670,6 @@ class _$UpdateSortingSearchUserAction
   Result maybeWhen<Result extends Object>({
     Result open(),
     Result execute(),
-    Result proceed(),
-    Result rerun(),
     Result close(),
     Result updateText(String query),
     Result updateSorting(Sorting sorting),
@@ -1001,16 +687,12 @@ class _$UpdateSortingSearchUserAction
   Result map<Result extends Object>({
     @required Result open(OpenSearchUserAction value),
     @required Result execute(ExecuteSearchUserAction value),
-    @required Result proceed(ProceedSearchUserAction value),
-    @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
     @required Result updateText(UpdateTextSearchUserAction value),
     @required Result updateSorting(UpdateSortingSearchUserAction value),
   }) {
     assert(open != null);
     assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
     assert(close != null);
     assert(updateText != null);
     assert(updateSorting != null);
@@ -1022,8 +704,6 @@ class _$UpdateSortingSearchUserAction
   Result maybeMap<Result extends Object>({
     Result open(OpenSearchUserAction value),
     Result execute(ExecuteSearchUserAction value),
-    Result proceed(ProceedSearchUserAction value),
-    Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
     Result updateText(UpdateTextSearchUserAction value),
     Result updateSorting(UpdateSortingSearchUserAction value),

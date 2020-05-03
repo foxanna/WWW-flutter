@@ -28,8 +28,6 @@ class SearchMiddleware {
         TypedMiddleware<AppState, UpdateSortingSearchUserAction>(
             _updateSorting),
         TypedMiddleware<AppState, ExecuteSearchUserAction>(_execute),
-        TypedMiddleware<AppState, ProceedSearchUserAction>(_proceed),
-        TypedMiddleware<AppState, RerunSearchUserAction>(_rerun),
       ];
 
   void _open(
@@ -68,7 +66,8 @@ class SearchMiddleware {
 
     final state = store.state.searchState;
     if (state is LoadingFirstPageSearchState ||
-        state is LoadingWithDataSearchState) {
+        state is LoadingWithDataSearchState ||
+        (state is DataSearchState && !state.canLoadMore)) {
       return;
     }
 
@@ -98,27 +97,6 @@ class SearchMiddleware {
         parameters: parameters,
         exception: e,
       ));
-    }
-  }
-
-  void _proceed(Store<AppState> store, ProceedSearchUserAction action,
-      NextDispatcher next) {
-    next(action);
-
-    final searchState = store.state.searchState;
-    if (searchState is DataSearchState && searchState.canLoadMore) {
-      store.dispatch(const UserActionSearch.execute());
-    }
-  }
-
-  void _rerun(Store<AppState> store, RerunSearchUserAction action,
-      NextDispatcher next) {
-    next(action);
-
-    final searchState = store.state.searchState;
-    if (searchState is ErrorFirstPageSearchState ||
-        searchState is ErrorWithDataSearchState) {
-      store.dispatch(const UserActionSearch.execute());
     }
   }
 }
