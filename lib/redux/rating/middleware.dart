@@ -30,7 +30,7 @@ class RatingMiddleware {
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, CloseTournamentUserAction>(
             _onTournamentClosed),
-        TypedMiddleware<AppState, RateOnStore>(_rateOnStore),
+        TypedMiddleware<AppState, RateRatingUserAction>(_rate),
       ];
 
   Future<void> _onTournamentClosed(Store<AppState> store,
@@ -56,8 +56,8 @@ class RatingMiddleware {
     store.dispatch(const OpenRatingDialog());
   }
 
-  void _rateOnStore(
-      Store<AppState> store, RateOnStore action, NextDispatcher next) {
+  void _rate(
+      Store<AppState> store, RateRatingUserAction action, NextDispatcher next) {
     next(action);
 
     _ratingService.rateApp();

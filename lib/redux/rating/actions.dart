@@ -7,8 +7,10 @@ part 'actions.freezed.dart';
 abstract class RatingAction implements ReduxAction {}
 
 @freezed
-abstract class RateOnStore with _$RateOnStore implements RatingAction {
-  const factory RateOnStore({
+abstract class UserActionRating
+    with _$UserActionRating
+    implements RatingAction {
+  const factory UserActionRating.rate({
     @required int rating,
-  }) = _RateOnStore;
+  }) = RateRatingUserAction;
 }

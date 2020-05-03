@@ -9,38 +9,39 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$RateOnStoreTearOff {
-  const _$RateOnStoreTearOff();
+class _$UserActionRatingTearOff {
+  const _$UserActionRatingTearOff();
 
-  _RateOnStore call({@required int rating}) {
-    return _RateOnStore(
+  RateRatingUserAction rate({@required int rating}) {
+    return RateRatingUserAction(
       rating: rating,
     );
   }
 }
 
 // ignore: unused_element
-const $RateOnStore = _$RateOnStoreTearOff();
+const $UserActionRating = _$UserActionRatingTearOff();
 
-mixin _$RateOnStore {
+mixin _$UserActionRating {
   int get rating;
 
-  $RateOnStoreCopyWith<RateOnStore> get copyWith;
+  $UserActionRatingCopyWith<UserActionRating> get copyWith;
 }
 
-abstract class $RateOnStoreCopyWith<$Res> {
-  factory $RateOnStoreCopyWith(
-          RateOnStore value, $Res Function(RateOnStore) then) =
-      _$RateOnStoreCopyWithImpl<$Res>;
+abstract class $UserActionRatingCopyWith<$Res> {
+  factory $UserActionRatingCopyWith(
+          UserActionRating value, $Res Function(UserActionRating) then) =
+      _$UserActionRatingCopyWithImpl<$Res>;
   $Res call({int rating});
 }
 
-class _$RateOnStoreCopyWithImpl<$Res> implements $RateOnStoreCopyWith<$Res> {
-  _$RateOnStoreCopyWithImpl(this._value, this._then);
+class _$UserActionRatingCopyWithImpl<$Res>
+    implements $UserActionRatingCopyWith<$Res> {
+  _$UserActionRatingCopyWithImpl(this._value, this._then);
 
-  final RateOnStore _value;
+  final UserActionRating _value;
   // ignore: unused_field
-  final $Res Function(RateOnStore) _then;
+  final $Res Function(UserActionRating) _then;
 
   @override
   $Res call({
@@ -52,57 +53,61 @@ class _$RateOnStoreCopyWithImpl<$Res> implements $RateOnStoreCopyWith<$Res> {
   }
 }
 
-abstract class _$RateOnStoreCopyWith<$Res>
-    implements $RateOnStoreCopyWith<$Res> {
-  factory _$RateOnStoreCopyWith(
-          _RateOnStore value, $Res Function(_RateOnStore) then) =
-      __$RateOnStoreCopyWithImpl<$Res>;
+abstract class $RateRatingUserActionCopyWith<$Res>
+    implements $UserActionRatingCopyWith<$Res> {
+  factory $RateRatingUserActionCopyWith(RateRatingUserAction value,
+          $Res Function(RateRatingUserAction) then) =
+      _$RateRatingUserActionCopyWithImpl<$Res>;
   @override
   $Res call({int rating});
 }
 
-class __$RateOnStoreCopyWithImpl<$Res> extends _$RateOnStoreCopyWithImpl<$Res>
-    implements _$RateOnStoreCopyWith<$Res> {
-  __$RateOnStoreCopyWithImpl(
-      _RateOnStore _value, $Res Function(_RateOnStore) _then)
-      : super(_value, (v) => _then(v as _RateOnStore));
+class _$RateRatingUserActionCopyWithImpl<$Res>
+    extends _$UserActionRatingCopyWithImpl<$Res>
+    implements $RateRatingUserActionCopyWith<$Res> {
+  _$RateRatingUserActionCopyWithImpl(
+      RateRatingUserAction _value, $Res Function(RateRatingUserAction) _then)
+      : super(_value, (v) => _then(v as RateRatingUserAction));
 
   @override
-  _RateOnStore get _value => super._value as _RateOnStore;
+  RateRatingUserAction get _value => super._value as RateRatingUserAction;
 
   @override
   $Res call({
     Object rating = freezed,
   }) {
-    return _then(_RateOnStore(
+    return _then(RateRatingUserAction(
       rating: rating == freezed ? _value.rating : rating as int,
     ));
   }
 }
 
-class _$_RateOnStore with DiagnosticableTreeMixin implements _RateOnStore {
-  const _$_RateOnStore({@required this.rating}) : assert(rating != null);
+class _$RateRatingUserAction
+    with DiagnosticableTreeMixin
+    implements RateRatingUserAction {
+  const _$RateRatingUserAction({@required this.rating})
+      : assert(rating != null);
 
   @override
   final int rating;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RateOnStore(rating: $rating)';
+    return 'UserActionRating.rate(rating: $rating)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'RateOnStore'))
+      ..add(DiagnosticsProperty('type', 'UserActionRating.rate'))
       ..add(DiagnosticsProperty('rating', rating));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RateOnStore &&
+        (other is RateRatingUserAction &&
             (identical(other.rating, rating) ||
                 const DeepCollectionEquality().equals(other.rating, rating)));
   }
@@ -112,15 +117,17 @@ class _$_RateOnStore with DiagnosticableTreeMixin implements _RateOnStore {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(rating);
 
   @override
-  _$RateOnStoreCopyWith<_RateOnStore> get copyWith =>
-      __$RateOnStoreCopyWithImpl<_RateOnStore>(this, _$identity);
+  $RateRatingUserActionCopyWith<RateRatingUserAction> get copyWith =>
+      _$RateRatingUserActionCopyWithImpl<RateRatingUserAction>(
+          this, _$identity);
 }
 
-abstract class _RateOnStore implements RateOnStore {
-  const factory _RateOnStore({@required int rating}) = _$_RateOnStore;
+abstract class RateRatingUserAction implements UserActionRating {
+  const factory RateRatingUserAction({@required int rating}) =
+      _$RateRatingUserAction;
 
   @override
   int get rating;
   @override
-  _$RateOnStoreCopyWith<_RateOnStore> get copyWith;
+  $RateRatingUserActionCopyWith<RateRatingUserAction> get copyWith;
 }
