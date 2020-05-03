@@ -136,8 +136,8 @@ void main() {
     );
 
     test(
-      '$OpenSearchPage',
-      () => analyticsTest(const OpenSearchPage(), 'search'),
+      '$NavigateToSearchPage()',
+      () => analyticsTest(const NavigateToSearchPage(), 'search'),
     );
 
     test(
