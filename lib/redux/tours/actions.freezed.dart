@@ -9,334 +9,41 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$SetToursTearOff {
-  const _$SetToursTearOff();
+class _$UserActionToursTearOff {
+  const _$UserActionToursTearOff();
 
-  _SetTours call({@required List<TourInfo> tours}) {
-    return _SetTours(
-      tours: tours,
-    );
-  }
-}
-
-// ignore: unused_element
-const $SetTours = _$SetToursTearOff();
-
-mixin _$SetTours {
-  List<TourInfo> get tours;
-
-  $SetToursCopyWith<SetTours> get copyWith;
-}
-
-abstract class $SetToursCopyWith<$Res> {
-  factory $SetToursCopyWith(SetTours value, $Res Function(SetTours) then) =
-      _$SetToursCopyWithImpl<$Res>;
-  $Res call({List<TourInfo> tours});
-}
-
-class _$SetToursCopyWithImpl<$Res> implements $SetToursCopyWith<$Res> {
-  _$SetToursCopyWithImpl(this._value, this._then);
-
-  final SetTours _value;
-  // ignore: unused_field
-  final $Res Function(SetTours) _then;
-
-  @override
-  $Res call({
-    Object tours = freezed,
-  }) {
-    return _then(_value.copyWith(
-      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
-    ));
-  }
-}
-
-abstract class _$SetToursCopyWith<$Res> implements $SetToursCopyWith<$Res> {
-  factory _$SetToursCopyWith(_SetTours value, $Res Function(_SetTours) then) =
-      __$SetToursCopyWithImpl<$Res>;
-  @override
-  $Res call({List<TourInfo> tours});
-}
-
-class __$SetToursCopyWithImpl<$Res> extends _$SetToursCopyWithImpl<$Res>
-    implements _$SetToursCopyWith<$Res> {
-  __$SetToursCopyWithImpl(_SetTours _value, $Res Function(_SetTours) _then)
-      : super(_value, (v) => _then(v as _SetTours));
-
-  @override
-  _SetTours get _value => super._value as _SetTours;
-
-  @override
-  $Res call({
-    Object tours = freezed,
-  }) {
-    return _then(_SetTours(
-      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
-    ));
-  }
-}
-
-class _$_SetTours with DiagnosticableTreeMixin implements _SetTours {
-  const _$_SetTours({@required this.tours}) : assert(tours != null);
-
-  @override
-  final List<TourInfo> tours;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SetTours(tours: $tours)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SetTours'))
-      ..add(DiagnosticsProperty('tours', tours));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SetTours &&
-            (identical(other.tours, tours) ||
-                const DeepCollectionEquality().equals(other.tours, tours)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tours);
-
-  @override
-  _$SetToursCopyWith<_SetTours> get copyWith =>
-      __$SetToursCopyWithImpl<_SetTours>(this, _$identity);
-}
-
-abstract class _SetTours implements SetTours {
-  const factory _SetTours({@required List<TourInfo> tours}) = _$_SetTours;
-
-  @override
-  List<TourInfo> get tours;
-  @override
-  _$SetToursCopyWith<_SetTours> get copyWith;
-}
-
-class _$LoadToursTearOff {
-  const _$LoadToursTearOff();
-
-  _LoadTours call({@required List<TourInfo> tours}) {
-    return _LoadTours(
-      tours: tours,
-    );
-  }
-}
-
-// ignore: unused_element
-const $LoadTours = _$LoadToursTearOff();
-
-mixin _$LoadTours {
-  List<TourInfo> get tours;
-
-  $LoadToursCopyWith<LoadTours> get copyWith;
-}
-
-abstract class $LoadToursCopyWith<$Res> {
-  factory $LoadToursCopyWith(LoadTours value, $Res Function(LoadTours) then) =
-      _$LoadToursCopyWithImpl<$Res>;
-  $Res call({List<TourInfo> tours});
-}
-
-class _$LoadToursCopyWithImpl<$Res> implements $LoadToursCopyWith<$Res> {
-  _$LoadToursCopyWithImpl(this._value, this._then);
-
-  final LoadTours _value;
-  // ignore: unused_field
-  final $Res Function(LoadTours) _then;
-
-  @override
-  $Res call({
-    Object tours = freezed,
-  }) {
-    return _then(_value.copyWith(
-      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
-    ));
-  }
-}
-
-abstract class _$LoadToursCopyWith<$Res> implements $LoadToursCopyWith<$Res> {
-  factory _$LoadToursCopyWith(
-          _LoadTours value, $Res Function(_LoadTours) then) =
-      __$LoadToursCopyWithImpl<$Res>;
-  @override
-  $Res call({List<TourInfo> tours});
-}
-
-class __$LoadToursCopyWithImpl<$Res> extends _$LoadToursCopyWithImpl<$Res>
-    implements _$LoadToursCopyWith<$Res> {
-  __$LoadToursCopyWithImpl(_LoadTours _value, $Res Function(_LoadTours) _then)
-      : super(_value, (v) => _then(v as _LoadTours));
-
-  @override
-  _LoadTours get _value => super._value as _LoadTours;
-
-  @override
-  $Res call({
-    Object tours = freezed,
-  }) {
-    return _then(_LoadTours(
-      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
-    ));
-  }
-}
-
-class _$_LoadTours with DiagnosticableTreeMixin implements _LoadTours {
-  const _$_LoadTours({@required this.tours}) : assert(tours != null);
-
-  @override
-  final List<TourInfo> tours;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoadTours(tours: $tours)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'LoadTours'))
-      ..add(DiagnosticsProperty('tours', tours));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadTours &&
-            (identical(other.tours, tours) ||
-                const DeepCollectionEquality().equals(other.tours, tours)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tours);
-
-  @override
-  _$LoadToursCopyWith<_LoadTours> get copyWith =>
-      __$LoadToursCopyWithImpl<_LoadTours>(this, _$identity);
-}
-
-abstract class _LoadTours implements LoadTours {
-  const factory _LoadTours({@required List<TourInfo> tours}) = _$_LoadTours;
-
-  @override
-  List<TourInfo> get tours;
-  @override
-  _$LoadToursCopyWith<_LoadTours> get copyWith;
-}
-
-class _$ClearToursTearOff {
-  const _$ClearToursTearOff();
-
-  _ClearTours call() {
-    return const _ClearTours();
-  }
-}
-
-// ignore: unused_element
-const $ClearTours = _$ClearToursTearOff();
-
-mixin _$ClearTours {}
-
-abstract class $ClearToursCopyWith<$Res> {
-  factory $ClearToursCopyWith(
-          ClearTours value, $Res Function(ClearTours) then) =
-      _$ClearToursCopyWithImpl<$Res>;
-}
-
-class _$ClearToursCopyWithImpl<$Res> implements $ClearToursCopyWith<$Res> {
-  _$ClearToursCopyWithImpl(this._value, this._then);
-
-  final ClearTours _value;
-  // ignore: unused_field
-  final $Res Function(ClearTours) _then;
-}
-
-abstract class _$ClearToursCopyWith<$Res> {
-  factory _$ClearToursCopyWith(
-          _ClearTours value, $Res Function(_ClearTours) then) =
-      __$ClearToursCopyWithImpl<$Res>;
-}
-
-class __$ClearToursCopyWithImpl<$Res> extends _$ClearToursCopyWithImpl<$Res>
-    implements _$ClearToursCopyWith<$Res> {
-  __$ClearToursCopyWithImpl(
-      _ClearTours _value, $Res Function(_ClearTours) _then)
-      : super(_value, (v) => _then(v as _ClearTours));
-
-  @override
-  _ClearTours get _value => super._value as _ClearTours;
-}
-
-class _$_ClearTours with DiagnosticableTreeMixin implements _ClearTours {
-  const _$_ClearTours();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ClearTours()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ClearTours'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ClearTours);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _ClearTours implements ClearTours {
-  const factory _ClearTours() = _$_ClearTours;
-}
-
-class _$LoadTourTearOff {
-  const _$LoadTourTearOff();
-
-  _LoadTour call({@required TourInfo info}) {
-    return _LoadTour(
+  LoadToursUserAction load({@required TourInfo info}) {
+    return LoadToursUserAction(
       info: info,
     );
   }
 }
 
 // ignore: unused_element
-const $LoadTour = _$LoadTourTearOff();
+const $UserActionTours = _$UserActionToursTearOff();
 
-mixin _$LoadTour {
+mixin _$UserActionTours {
   TourInfo get info;
 
-  $LoadTourCopyWith<LoadTour> get copyWith;
+  $UserActionToursCopyWith<UserActionTours> get copyWith;
 }
 
-abstract class $LoadTourCopyWith<$Res> {
-  factory $LoadTourCopyWith(LoadTour value, $Res Function(LoadTour) then) =
-      _$LoadTourCopyWithImpl<$Res>;
+abstract class $UserActionToursCopyWith<$Res> {
+  factory $UserActionToursCopyWith(
+          UserActionTours value, $Res Function(UserActionTours) then) =
+      _$UserActionToursCopyWithImpl<$Res>;
   $Res call({TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
 }
 
-class _$LoadTourCopyWithImpl<$Res> implements $LoadTourCopyWith<$Res> {
-  _$LoadTourCopyWithImpl(this._value, this._then);
+class _$UserActionToursCopyWithImpl<$Res>
+    implements $UserActionToursCopyWith<$Res> {
+  _$UserActionToursCopyWithImpl(this._value, this._then);
 
-  final LoadTour _value;
+  final UserActionTours _value;
   // ignore: unused_field
-  final $Res Function(LoadTour) _then;
+  final $Res Function(UserActionTours) _then;
 
   @override
   $Res call({
@@ -358,9 +65,11 @@ class _$LoadTourCopyWithImpl<$Res> implements $LoadTourCopyWith<$Res> {
   }
 }
 
-abstract class _$LoadTourCopyWith<$Res> implements $LoadTourCopyWith<$Res> {
-  factory _$LoadTourCopyWith(_LoadTour value, $Res Function(_LoadTour) then) =
-      __$LoadTourCopyWithImpl<$Res>;
+abstract class $LoadToursUserActionCopyWith<$Res>
+    implements $UserActionToursCopyWith<$Res> {
+  factory $LoadToursUserActionCopyWith(
+          LoadToursUserAction value, $Res Function(LoadToursUserAction) then) =
+      _$LoadToursUserActionCopyWithImpl<$Res>;
   @override
   $Res call({TourInfo info});
 
@@ -368,47 +77,51 @@ abstract class _$LoadTourCopyWith<$Res> implements $LoadTourCopyWith<$Res> {
   $TourInfoCopyWith<$Res> get info;
 }
 
-class __$LoadTourCopyWithImpl<$Res> extends _$LoadTourCopyWithImpl<$Res>
-    implements _$LoadTourCopyWith<$Res> {
-  __$LoadTourCopyWithImpl(_LoadTour _value, $Res Function(_LoadTour) _then)
-      : super(_value, (v) => _then(v as _LoadTour));
+class _$LoadToursUserActionCopyWithImpl<$Res>
+    extends _$UserActionToursCopyWithImpl<$Res>
+    implements $LoadToursUserActionCopyWith<$Res> {
+  _$LoadToursUserActionCopyWithImpl(
+      LoadToursUserAction _value, $Res Function(LoadToursUserAction) _then)
+      : super(_value, (v) => _then(v as LoadToursUserAction));
 
   @override
-  _LoadTour get _value => super._value as _LoadTour;
+  LoadToursUserAction get _value => super._value as LoadToursUserAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(_LoadTour(
+    return _then(LoadToursUserAction(
       info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
 }
 
-class _$_LoadTour with DiagnosticableTreeMixin implements _LoadTour {
-  const _$_LoadTour({@required this.info}) : assert(info != null);
+class _$LoadToursUserAction
+    with DiagnosticableTreeMixin
+    implements LoadToursUserAction {
+  const _$LoadToursUserAction({@required this.info}) : assert(info != null);
 
   @override
   final TourInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoadTour(info: $info)';
+    return 'UserActionTours.load(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'LoadTour'))
+      ..add(DiagnosticsProperty('type', 'UserActionTours.load'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadTour &&
+        (other is LoadToursUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -418,192 +131,716 @@ class _$_LoadTour with DiagnosticableTreeMixin implements _LoadTour {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$LoadTourCopyWith<_LoadTour> get copyWith =>
-      __$LoadTourCopyWithImpl<_LoadTour>(this, _$identity);
+  $LoadToursUserActionCopyWith<LoadToursUserAction> get copyWith =>
+      _$LoadToursUserActionCopyWithImpl<LoadToursUserAction>(this, _$identity);
 }
 
-abstract class _LoadTour implements LoadTour {
-  const factory _LoadTour({@required TourInfo info}) = _$_LoadTour;
+abstract class LoadToursUserAction implements UserActionTours {
+  const factory LoadToursUserAction({@required TourInfo info}) =
+      _$LoadToursUserAction;
 
   @override
   TourInfo get info;
   @override
-  _$LoadTourCopyWith<_LoadTour> get copyWith;
+  $LoadToursUserActionCopyWith<LoadToursUserAction> get copyWith;
 }
 
-class _$TourIsLoadingTearOff {
-  const _$TourIsLoadingTearOff();
+class _$SystemActionToursTearOff {
+  const _$SystemActionToursTearOff();
 
-  _TourIsLoading call({@required TourInfo info}) {
-    return _TourIsLoading(
+  InitToursSystemAction init({@required List<TourInfo> tours}) {
+    return InitToursSystemAction(
+      tours: tours,
+    );
+  }
+
+  DeInitToursSystemAction deInit() {
+    return const DeInitToursSystemAction();
+  }
+
+  LoadingToursSystemAction loading({@required TourInfo info}) {
+    return LoadingToursSystemAction(
       info: info,
     );
   }
-}
 
-// ignore: unused_element
-const $TourIsLoading = _$TourIsLoadingTearOff();
-
-mixin _$TourIsLoading {
-  TourInfo get info;
-
-  $TourIsLoadingCopyWith<TourIsLoading> get copyWith;
-}
-
-abstract class $TourIsLoadingCopyWith<$Res> {
-  factory $TourIsLoadingCopyWith(
-          TourIsLoading value, $Res Function(TourIsLoading) then) =
-      _$TourIsLoadingCopyWithImpl<$Res>;
-  $Res call({TourInfo info});
-
-  $TourInfoCopyWith<$Res> get info;
-}
-
-class _$TourIsLoadingCopyWithImpl<$Res>
-    implements $TourIsLoadingCopyWith<$Res> {
-  _$TourIsLoadingCopyWithImpl(this._value, this._then);
-
-  final TourIsLoading _value;
-  // ignore: unused_field
-  final $Res Function(TourIsLoading) _then;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_value.copyWith(
-      info: info == freezed ? _value.info : info as TourInfo,
-    ));
+  FailedToursSystemAction failed(
+      {@required TourInfo info, @required Exception exception}) {
+    return FailedToursSystemAction(
+      info: info,
+      exception: exception,
+    );
   }
 
-  @override
-  $TourInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
-    return $TourInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
-    });
-  }
-}
-
-abstract class _$TourIsLoadingCopyWith<$Res>
-    implements $TourIsLoadingCopyWith<$Res> {
-  factory _$TourIsLoadingCopyWith(
-          _TourIsLoading value, $Res Function(_TourIsLoading) then) =
-      __$TourIsLoadingCopyWithImpl<$Res>;
-  @override
-  $Res call({TourInfo info});
-
-  @override
-  $TourInfoCopyWith<$Res> get info;
-}
-
-class __$TourIsLoadingCopyWithImpl<$Res>
-    extends _$TourIsLoadingCopyWithImpl<$Res>
-    implements _$TourIsLoadingCopyWith<$Res> {
-  __$TourIsLoadingCopyWithImpl(
-      _TourIsLoading _value, $Res Function(_TourIsLoading) _then)
-      : super(_value, (v) => _then(v as _TourIsLoading));
-
-  @override
-  _TourIsLoading get _value => super._value as _TourIsLoading;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_TourIsLoading(
-      info: info == freezed ? _value.info : info as TourInfo,
-    ));
-  }
-}
-
-class _$_TourIsLoading with DiagnosticableTreeMixin implements _TourIsLoading {
-  const _$_TourIsLoading({@required this.info}) : assert(info != null);
-
-  @override
-  final TourInfo info;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TourIsLoading(info: $info)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TourIsLoading'))
-      ..add(DiagnosticsProperty('info', info));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _TourIsLoading &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
-
-  @override
-  _$TourIsLoadingCopyWith<_TourIsLoading> get copyWith =>
-      __$TourIsLoadingCopyWithImpl<_TourIsLoading>(this, _$identity);
-}
-
-abstract class _TourIsLoading implements TourIsLoading {
-  const factory _TourIsLoading({@required TourInfo info}) = _$_TourIsLoading;
-
-  @override
-  TourInfo get info;
-  @override
-  _$TourIsLoadingCopyWith<_TourIsLoading> get copyWith;
-}
-
-class _$TourLoadedTearOff {
-  const _$TourLoadedTearOff();
-
-  _TourLoaded call({@required Tour tour}) {
-    return _TourLoaded(
+  CompletedToursSystemAction completed({@required Tour tour}) {
+    return CompletedToursSystemAction(
       tour: tour,
     );
   }
 }
 
 // ignore: unused_element
-const $TourLoaded = _$TourLoadedTearOff();
+const $SystemActionTours = _$SystemActionToursTearOff();
 
-mixin _$TourLoaded {
-  Tour get tour;
-
-  $TourLoadedCopyWith<TourLoaded> get copyWith;
+mixin _$SystemActionTours {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(List<TourInfo> tours),
+    @required Result deInit(),
+    @required Result loading(TourInfo info),
+    @required Result failed(TourInfo info, Exception exception),
+    @required Result completed(Tour tour),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(List<TourInfo> tours),
+    Result deInit(),
+    Result loading(TourInfo info),
+    Result failed(TourInfo info, Exception exception),
+    Result completed(Tour tour),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitToursSystemAction value),
+    @required Result deInit(DeInitToursSystemAction value),
+    @required Result loading(LoadingToursSystemAction value),
+    @required Result failed(FailedToursSystemAction value),
+    @required Result completed(CompletedToursSystemAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitToursSystemAction value),
+    Result deInit(DeInitToursSystemAction value),
+    Result loading(LoadingToursSystemAction value),
+    Result failed(FailedToursSystemAction value),
+    Result completed(CompletedToursSystemAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $TourLoadedCopyWith<$Res> {
-  factory $TourLoadedCopyWith(
-          TourLoaded value, $Res Function(TourLoaded) then) =
-      _$TourLoadedCopyWithImpl<$Res>;
+abstract class $SystemActionToursCopyWith<$Res> {
+  factory $SystemActionToursCopyWith(
+          SystemActionTours value, $Res Function(SystemActionTours) then) =
+      _$SystemActionToursCopyWithImpl<$Res>;
+}
+
+class _$SystemActionToursCopyWithImpl<$Res>
+    implements $SystemActionToursCopyWith<$Res> {
+  _$SystemActionToursCopyWithImpl(this._value, this._then);
+
+  final SystemActionTours _value;
+  // ignore: unused_field
+  final $Res Function(SystemActionTours) _then;
+}
+
+abstract class $InitToursSystemActionCopyWith<$Res> {
+  factory $InitToursSystemActionCopyWith(InitToursSystemAction value,
+          $Res Function(InitToursSystemAction) then) =
+      _$InitToursSystemActionCopyWithImpl<$Res>;
+  $Res call({List<TourInfo> tours});
+}
+
+class _$InitToursSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res>
+    implements $InitToursSystemActionCopyWith<$Res> {
+  _$InitToursSystemActionCopyWithImpl(
+      InitToursSystemAction _value, $Res Function(InitToursSystemAction) _then)
+      : super(_value, (v) => _then(v as InitToursSystemAction));
+
+  @override
+  InitToursSystemAction get _value => super._value as InitToursSystemAction;
+
+  @override
+  $Res call({
+    Object tours = freezed,
+  }) {
+    return _then(InitToursSystemAction(
+      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
+    ));
+  }
+}
+
+class _$InitToursSystemAction
+    with DiagnosticableTreeMixin
+    implements InitToursSystemAction {
+  const _$InitToursSystemAction({@required this.tours}) : assert(tours != null);
+
+  @override
+  final List<TourInfo> tours;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTours.init(tours: $tours)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTours.init'))
+      ..add(DiagnosticsProperty('tours', tours));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InitToursSystemAction &&
+            (identical(other.tours, tours) ||
+                const DeepCollectionEquality().equals(other.tours, tours)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tours);
+
+  @override
+  $InitToursSystemActionCopyWith<InitToursSystemAction> get copyWith =>
+      _$InitToursSystemActionCopyWithImpl<InitToursSystemAction>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(List<TourInfo> tours),
+    @required Result deInit(),
+    @required Result loading(TourInfo info),
+    @required Result failed(TourInfo info, Exception exception),
+    @required Result completed(Tour tour),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return init(tours);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(List<TourInfo> tours),
+    Result deInit(),
+    Result loading(TourInfo info),
+    Result failed(TourInfo info, Exception exception),
+    Result completed(Tour tour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(tours);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitToursSystemAction value),
+    @required Result deInit(DeInitToursSystemAction value),
+    @required Result loading(LoadingToursSystemAction value),
+    @required Result failed(FailedToursSystemAction value),
+    @required Result completed(CompletedToursSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitToursSystemAction value),
+    Result deInit(DeInitToursSystemAction value),
+    Result loading(LoadingToursSystemAction value),
+    Result failed(FailedToursSystemAction value),
+    Result completed(CompletedToursSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitToursSystemAction implements SystemActionTours {
+  const factory InitToursSystemAction({@required List<TourInfo> tours}) =
+      _$InitToursSystemAction;
+
+  List<TourInfo> get tours;
+  $InitToursSystemActionCopyWith<InitToursSystemAction> get copyWith;
+}
+
+abstract class $DeInitToursSystemActionCopyWith<$Res> {
+  factory $DeInitToursSystemActionCopyWith(DeInitToursSystemAction value,
+          $Res Function(DeInitToursSystemAction) then) =
+      _$DeInitToursSystemActionCopyWithImpl<$Res>;
+}
+
+class _$DeInitToursSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res>
+    implements $DeInitToursSystemActionCopyWith<$Res> {
+  _$DeInitToursSystemActionCopyWithImpl(DeInitToursSystemAction _value,
+      $Res Function(DeInitToursSystemAction) _then)
+      : super(_value, (v) => _then(v as DeInitToursSystemAction));
+
+  @override
+  DeInitToursSystemAction get _value => super._value as DeInitToursSystemAction;
+}
+
+class _$DeInitToursSystemAction
+    with DiagnosticableTreeMixin
+    implements DeInitToursSystemAction {
+  const _$DeInitToursSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTours.deInit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SystemActionTours.deInit'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is DeInitToursSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(List<TourInfo> tours),
+    @required Result deInit(),
+    @required Result loading(TourInfo info),
+    @required Result failed(TourInfo info, Exception exception),
+    @required Result completed(Tour tour),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(List<TourInfo> tours),
+    Result deInit(),
+    Result loading(TourInfo info),
+    Result failed(TourInfo info, Exception exception),
+    Result completed(Tour tour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitToursSystemAction value),
+    @required Result deInit(DeInitToursSystemAction value),
+    @required Result loading(LoadingToursSystemAction value),
+    @required Result failed(FailedToursSystemAction value),
+    @required Result completed(CompletedToursSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitToursSystemAction value),
+    Result deInit(DeInitToursSystemAction value),
+    Result loading(LoadingToursSystemAction value),
+    Result failed(FailedToursSystemAction value),
+    Result completed(CompletedToursSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeInitToursSystemAction implements SystemActionTours {
+  const factory DeInitToursSystemAction() = _$DeInitToursSystemAction;
+}
+
+abstract class $LoadingToursSystemActionCopyWith<$Res> {
+  factory $LoadingToursSystemActionCopyWith(LoadingToursSystemAction value,
+          $Res Function(LoadingToursSystemAction) then) =
+      _$LoadingToursSystemActionCopyWithImpl<$Res>;
+  $Res call({TourInfo info});
+
+  $TourInfoCopyWith<$Res> get info;
+}
+
+class _$LoadingToursSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res>
+    implements $LoadingToursSystemActionCopyWith<$Res> {
+  _$LoadingToursSystemActionCopyWithImpl(LoadingToursSystemAction _value,
+      $Res Function(LoadingToursSystemAction) _then)
+      : super(_value, (v) => _then(v as LoadingToursSystemAction));
+
+  @override
+  LoadingToursSystemAction get _value =>
+      super._value as LoadingToursSystemAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(LoadingToursSystemAction(
+      info: info == freezed ? _value.info : info as TourInfo,
+    ));
+  }
+
+  @override
+  $TourInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TourInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$LoadingToursSystemAction
+    with DiagnosticableTreeMixin
+    implements LoadingToursSystemAction {
+  const _$LoadingToursSystemAction({@required this.info})
+      : assert(info != null);
+
+  @override
+  final TourInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTours.loading(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTours.loading'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LoadingToursSystemAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $LoadingToursSystemActionCopyWith<LoadingToursSystemAction> get copyWith =>
+      _$LoadingToursSystemActionCopyWithImpl<LoadingToursSystemAction>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(List<TourInfo> tours),
+    @required Result deInit(),
+    @required Result loading(TourInfo info),
+    @required Result failed(TourInfo info, Exception exception),
+    @required Result completed(Tour tour),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return loading(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(List<TourInfo> tours),
+    Result deInit(),
+    Result loading(TourInfo info),
+    Result failed(TourInfo info, Exception exception),
+    Result completed(Tour tour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitToursSystemAction value),
+    @required Result deInit(DeInitToursSystemAction value),
+    @required Result loading(LoadingToursSystemAction value),
+    @required Result failed(FailedToursSystemAction value),
+    @required Result completed(CompletedToursSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitToursSystemAction value),
+    Result deInit(DeInitToursSystemAction value),
+    Result loading(LoadingToursSystemAction value),
+    Result failed(FailedToursSystemAction value),
+    Result completed(CompletedToursSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingToursSystemAction implements SystemActionTours {
+  const factory LoadingToursSystemAction({@required TourInfo info}) =
+      _$LoadingToursSystemAction;
+
+  TourInfo get info;
+  $LoadingToursSystemActionCopyWith<LoadingToursSystemAction> get copyWith;
+}
+
+abstract class $FailedToursSystemActionCopyWith<$Res> {
+  factory $FailedToursSystemActionCopyWith(FailedToursSystemAction value,
+          $Res Function(FailedToursSystemAction) then) =
+      _$FailedToursSystemActionCopyWithImpl<$Res>;
+  $Res call({TourInfo info, Exception exception});
+
+  $TourInfoCopyWith<$Res> get info;
+}
+
+class _$FailedToursSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res>
+    implements $FailedToursSystemActionCopyWith<$Res> {
+  _$FailedToursSystemActionCopyWithImpl(FailedToursSystemAction _value,
+      $Res Function(FailedToursSystemAction) _then)
+      : super(_value, (v) => _then(v as FailedToursSystemAction));
+
+  @override
+  FailedToursSystemAction get _value => super._value as FailedToursSystemAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+    Object exception = freezed,
+  }) {
+    return _then(FailedToursSystemAction(
+      info: info == freezed ? _value.info : info as TourInfo,
+      exception:
+          exception == freezed ? _value.exception : exception as Exception,
+    ));
+  }
+
+  @override
+  $TourInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TourInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$FailedToursSystemAction
+    with DiagnosticableTreeMixin
+    implements FailedToursSystemAction {
+  const _$FailedToursSystemAction(
+      {@required this.info, @required this.exception})
+      : assert(info != null),
+        assert(exception != null);
+
+  @override
+  final TourInfo info;
+  @override
+  final Exception exception;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTours.failed(info: $info, exception: $exception)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTours.failed'))
+      ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('exception', exception));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is FailedToursSystemAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)) &&
+            (identical(other.exception, exception) ||
+                const DeepCollectionEquality()
+                    .equals(other.exception, exception)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(info) ^
+      const DeepCollectionEquality().hash(exception);
+
+  @override
+  $FailedToursSystemActionCopyWith<FailedToursSystemAction> get copyWith =>
+      _$FailedToursSystemActionCopyWithImpl<FailedToursSystemAction>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(List<TourInfo> tours),
+    @required Result deInit(),
+    @required Result loading(TourInfo info),
+    @required Result failed(TourInfo info, Exception exception),
+    @required Result completed(Tour tour),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return failed(info, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(List<TourInfo> tours),
+    Result deInit(),
+    Result loading(TourInfo info),
+    Result failed(TourInfo info, Exception exception),
+    Result completed(Tour tour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(info, exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitToursSystemAction value),
+    @required Result deInit(DeInitToursSystemAction value),
+    @required Result loading(LoadingToursSystemAction value),
+    @required Result failed(FailedToursSystemAction value),
+    @required Result completed(CompletedToursSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return failed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitToursSystemAction value),
+    Result deInit(DeInitToursSystemAction value),
+    Result loading(LoadingToursSystemAction value),
+    Result failed(FailedToursSystemAction value),
+    Result completed(CompletedToursSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FailedToursSystemAction implements SystemActionTours {
+  const factory FailedToursSystemAction(
+      {@required TourInfo info,
+      @required Exception exception}) = _$FailedToursSystemAction;
+
+  TourInfo get info;
+  Exception get exception;
+  $FailedToursSystemActionCopyWith<FailedToursSystemAction> get copyWith;
+}
+
+abstract class $CompletedToursSystemActionCopyWith<$Res> {
+  factory $CompletedToursSystemActionCopyWith(CompletedToursSystemAction value,
+          $Res Function(CompletedToursSystemAction) then) =
+      _$CompletedToursSystemActionCopyWithImpl<$Res>;
   $Res call({Tour tour});
 
   $TourCopyWith<$Res> get tour;
 }
 
-class _$TourLoadedCopyWithImpl<$Res> implements $TourLoadedCopyWith<$Res> {
-  _$TourLoadedCopyWithImpl(this._value, this._then);
+class _$CompletedToursSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res>
+    implements $CompletedToursSystemActionCopyWith<$Res> {
+  _$CompletedToursSystemActionCopyWithImpl(CompletedToursSystemAction _value,
+      $Res Function(CompletedToursSystemAction) _then)
+      : super(_value, (v) => _then(v as CompletedToursSystemAction));
 
-  final TourLoaded _value;
-  // ignore: unused_field
-  final $Res Function(TourLoaded) _then;
+  @override
+  CompletedToursSystemAction get _value =>
+      super._value as CompletedToursSystemAction;
 
   @override
   $Res call({
     Object tour = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(CompletedToursSystemAction(
       tour: tour == freezed ? _value.tour : tour as Tour,
     ));
   }
@@ -619,59 +856,32 @@ class _$TourLoadedCopyWithImpl<$Res> implements $TourLoadedCopyWith<$Res> {
   }
 }
 
-abstract class _$TourLoadedCopyWith<$Res> implements $TourLoadedCopyWith<$Res> {
-  factory _$TourLoadedCopyWith(
-          _TourLoaded value, $Res Function(_TourLoaded) then) =
-      __$TourLoadedCopyWithImpl<$Res>;
-  @override
-  $Res call({Tour tour});
-
-  @override
-  $TourCopyWith<$Res> get tour;
-}
-
-class __$TourLoadedCopyWithImpl<$Res> extends _$TourLoadedCopyWithImpl<$Res>
-    implements _$TourLoadedCopyWith<$Res> {
-  __$TourLoadedCopyWithImpl(
-      _TourLoaded _value, $Res Function(_TourLoaded) _then)
-      : super(_value, (v) => _then(v as _TourLoaded));
-
-  @override
-  _TourLoaded get _value => super._value as _TourLoaded;
-
-  @override
-  $Res call({
-    Object tour = freezed,
-  }) {
-    return _then(_TourLoaded(
-      tour: tour == freezed ? _value.tour : tour as Tour,
-    ));
-  }
-}
-
-class _$_TourLoaded with DiagnosticableTreeMixin implements _TourLoaded {
-  const _$_TourLoaded({@required this.tour}) : assert(tour != null);
+class _$CompletedToursSystemAction
+    with DiagnosticableTreeMixin
+    implements CompletedToursSystemAction {
+  const _$CompletedToursSystemAction({@required this.tour})
+      : assert(tour != null);
 
   @override
   final Tour tour;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TourLoaded(tour: $tour)';
+    return 'SystemActionTours.completed(tour: $tour)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'TourLoaded'))
+      ..add(DiagnosticsProperty('type', 'SystemActionTours.completed'))
       ..add(DiagnosticsProperty('tour', tour));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TourLoaded &&
+        (other is CompletedToursSystemAction &&
             (identical(other.tour, tour) ||
                 const DeepCollectionEquality().equals(other.tour, tour)));
   }
@@ -681,173 +891,84 @@ class _$_TourLoaded with DiagnosticableTreeMixin implements _TourLoaded {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tour);
 
   @override
-  _$TourLoadedCopyWith<_TourLoaded> get copyWith =>
-      __$TourLoadedCopyWithImpl<_TourLoaded>(this, _$identity);
-}
-
-abstract class _TourLoaded implements TourLoaded {
-  const factory _TourLoaded({@required Tour tour}) = _$_TourLoaded;
+  $CompletedToursSystemActionCopyWith<CompletedToursSystemAction>
+      get copyWith =>
+          _$CompletedToursSystemActionCopyWithImpl<CompletedToursSystemAction>(
+              this, _$identity);
 
   @override
-  Tour get tour;
-  @override
-  _$TourLoadedCopyWith<_TourLoaded> get copyWith;
-}
-
-class _$TourFailedLoadingTearOff {
-  const _$TourFailedLoadingTearOff();
-
-  _TourFailedLoading call(
-      {@required TourInfo info, @required Exception exception}) {
-    return _TourFailedLoading(
-      info: info,
-      exception: exception,
-    );
-  }
-}
-
-// ignore: unused_element
-const $TourFailedLoading = _$TourFailedLoadingTearOff();
-
-mixin _$TourFailedLoading {
-  TourInfo get info;
-  Exception get exception;
-
-  $TourFailedLoadingCopyWith<TourFailedLoading> get copyWith;
-}
-
-abstract class $TourFailedLoadingCopyWith<$Res> {
-  factory $TourFailedLoadingCopyWith(
-          TourFailedLoading value, $Res Function(TourFailedLoading) then) =
-      _$TourFailedLoadingCopyWithImpl<$Res>;
-  $Res call({TourInfo info, Exception exception});
-
-  $TourInfoCopyWith<$Res> get info;
-}
-
-class _$TourFailedLoadingCopyWithImpl<$Res>
-    implements $TourFailedLoadingCopyWith<$Res> {
-  _$TourFailedLoadingCopyWithImpl(this._value, this._then);
-
-  final TourFailedLoading _value;
-  // ignore: unused_field
-  final $Res Function(TourFailedLoading) _then;
-
-  @override
-  $Res call({
-    Object info = freezed,
-    Object exception = freezed,
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(List<TourInfo> tours),
+    @required Result deInit(),
+    @required Result loading(TourInfo info),
+    @required Result failed(TourInfo info, Exception exception),
+    @required Result completed(Tour tour),
   }) {
-    return _then(_value.copyWith(
-      info: info == freezed ? _value.info : info as TourInfo,
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
-    ));
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return completed(tour);
   }
 
   @override
-  $TourInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(List<TourInfo> tours),
+    Result deInit(),
+    Result loading(TourInfo info),
+    Result failed(TourInfo info, Exception exception),
+    Result completed(Tour tour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(tour);
     }
-    return $TourInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
-    });
+    return orElse();
   }
-}
-
-abstract class _$TourFailedLoadingCopyWith<$Res>
-    implements $TourFailedLoadingCopyWith<$Res> {
-  factory _$TourFailedLoadingCopyWith(
-          _TourFailedLoading value, $Res Function(_TourFailedLoading) then) =
-      __$TourFailedLoadingCopyWithImpl<$Res>;
-  @override
-  $Res call({TourInfo info, Exception exception});
 
   @override
-  $TourInfoCopyWith<$Res> get info;
-}
-
-class __$TourFailedLoadingCopyWithImpl<$Res>
-    extends _$TourFailedLoadingCopyWithImpl<$Res>
-    implements _$TourFailedLoadingCopyWith<$Res> {
-  __$TourFailedLoadingCopyWithImpl(
-      _TourFailedLoading _value, $Res Function(_TourFailedLoading) _then)
-      : super(_value, (v) => _then(v as _TourFailedLoading));
-
-  @override
-  _TourFailedLoading get _value => super._value as _TourFailedLoading;
-
-  @override
-  $Res call({
-    Object info = freezed,
-    Object exception = freezed,
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitToursSystemAction value),
+    @required Result deInit(DeInitToursSystemAction value),
+    @required Result loading(LoadingToursSystemAction value),
+    @required Result failed(FailedToursSystemAction value),
+    @required Result completed(CompletedToursSystemAction value),
   }) {
-    return _then(_TourFailedLoading(
-      info: info == freezed ? _value.info : info as TourInfo,
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
-    ));
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return completed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitToursSystemAction value),
+    Result deInit(DeInitToursSystemAction value),
+    Result loading(LoadingToursSystemAction value),
+    Result failed(FailedToursSystemAction value),
+    Result completed(CompletedToursSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(this);
+    }
+    return orElse();
   }
 }
 
-class _$_TourFailedLoading
-    with DiagnosticableTreeMixin
-    implements _TourFailedLoading {
-  const _$_TourFailedLoading({@required this.info, @required this.exception})
-      : assert(info != null),
-        assert(exception != null);
+abstract class CompletedToursSystemAction implements SystemActionTours {
+  const factory CompletedToursSystemAction({@required Tour tour}) =
+      _$CompletedToursSystemAction;
 
-  @override
-  final TourInfo info;
-  @override
-  final Exception exception;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TourFailedLoading(info: $info, exception: $exception)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TourFailedLoading'))
-      ..add(DiagnosticsProperty('info', info))
-      ..add(DiagnosticsProperty('exception', exception));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _TourFailedLoading &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(exception);
-
-  @override
-  _$TourFailedLoadingCopyWith<_TourFailedLoading> get copyWith =>
-      __$TourFailedLoadingCopyWithImpl<_TourFailedLoading>(this, _$identity);
-}
-
-abstract class _TourFailedLoading implements TourFailedLoading {
-  const factory _TourFailedLoading(
-      {@required TourInfo info,
-      @required Exception exception}) = _$_TourFailedLoading;
-
-  @override
-  TourInfo get info;
-  @override
-  Exception get exception;
-  @override
-  _$TourFailedLoadingCopyWith<_TourFailedLoading> get copyWith;
+  Tour get tour;
+  $CompletedToursSystemActionCopyWith<CompletedToursSystemAction> get copyWith;
 }

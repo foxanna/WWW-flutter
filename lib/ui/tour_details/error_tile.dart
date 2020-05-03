@@ -44,5 +44,6 @@ class TourDetailsErrorTile extends StatelessWidget {
   }
 
   void _loadTournament(BuildContext context) =>
-      StoreProvider.of<AppState>(context).dispatch(LoadTour(info: tourInfo));
+      StoreProvider.of<AppState>(context)
+          .dispatch(UserActionTours.load(info: tourInfo));
 }

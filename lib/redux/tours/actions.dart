@@ -6,54 +6,35 @@ import 'package:what_when_where/redux/redux_action.dart';
 
 part 'actions.freezed.dart';
 
-abstract class TourAction implements ReduxAction {}
+abstract class ToursAction implements ReduxAction {}
 
 @freezed
-abstract class SetTours with _$SetTours implements TourAction {
-  const factory SetTours({
-    @required List<TourInfo> tours,
-  }) = _SetTours;
-}
-
-@freezed
-abstract class LoadTours with _$LoadTours implements TourAction {
-  const factory LoadTours({
-    @required List<TourInfo> tours,
-  }) = _LoadTours;
-}
-
-@freezed
-abstract class ClearTours with _$ClearTours implements TourAction {
-  const factory ClearTours() = _ClearTours;
-}
-
-@freezed
-abstract class LoadTour with _$LoadTour implements TourAction {
-  const factory LoadTour({
+abstract class UserActionTours with _$UserActionTours implements ToursAction {
+  const factory UserActionTours.load({
     @required TourInfo info,
-  }) = _LoadTour;
+  }) = LoadToursUserAction;
 }
 
 @freezed
-abstract class TourIsLoading with _$TourIsLoading implements TourAction {
-  const factory TourIsLoading({
+abstract class SystemActionTours
+    with _$SystemActionTours
+    implements ToursAction {
+  const factory SystemActionTours.init({
+    @required List<TourInfo> tours,
+  }) = InitToursSystemAction;
+
+  const factory SystemActionTours.deInit() = DeInitToursSystemAction;
+
+  const factory SystemActionTours.loading({
     @required TourInfo info,
-  }) = _TourIsLoading;
-}
+  }) = LoadingToursSystemAction;
 
-@freezed
-abstract class TourLoaded with _$TourLoaded implements TourAction {
-  const factory TourLoaded({
-    @required Tour tour,
-  }) = _TourLoaded;
-}
-
-@freezed
-abstract class TourFailedLoading
-    with _$TourFailedLoading
-    implements TourAction {
-  const factory TourFailedLoading({
+  const factory SystemActionTours.failed({
     @required TourInfo info,
     @required Exception exception,
-  }) = _TourFailedLoading;
+  }) = FailedToursSystemAction;
+
+  const factory SystemActionTours.completed({
+    @required Tour tour,
+  }) = CompletedToursSystemAction;
 }

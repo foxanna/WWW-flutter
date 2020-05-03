@@ -4,30 +4,32 @@ import 'package:what_when_where/redux/tours/state.dart';
 
 class ToursReducer {
   static final Reducer<ToursState> _reducer = combineReducers<ToursState>([
-    TypedReducer<ToursState, SetTours>(_setTours),
-    TypedReducer<ToursState, ClearTours>(_clearTours),
-    TypedReducer<ToursState, TourIsLoading>(_onTourIsLoading),
-    TypedReducer<ToursState, TourLoaded>(_updateTourLoaded),
-    TypedReducer<ToursState, TourFailedLoading>(_updateTourFailed),
+    TypedReducer<ToursState, InitToursSystemAction>(_init),
+    TypedReducer<ToursState, DeInitToursSystemAction>(_deInit),
+    TypedReducer<ToursState, LoadingToursSystemAction>(_loading),
+    TypedReducer<ToursState, CompletedToursSystemAction>(_completed),
+    TypedReducer<ToursState, FailedToursSystemAction>(_failed),
   ]);
 
   static ToursState reduce(ToursState state, dynamic action) =>
       _reducer(state, action);
 
-  static ToursState _setTours(ToursState state, SetTours action) =>
+  static ToursState _init(ToursState state, InitToursSystemAction action) =>
       ToursState.initial(toursInfo: action.tours);
 
-  static ToursState _clearTours(ToursState state, ClearTours action) => null;
+  static ToursState _deInit(ToursState state, DeInitToursSystemAction action) =>
+      null;
 
-  static ToursState _onTourIsLoading(ToursState state, TourIsLoading action) =>
+  static ToursState _loading(
+          ToursState state, LoadingToursSystemAction action) =>
       _replaceTour(state, TourState.loading(info: action.info));
 
-  static ToursState _updateTourLoaded(ToursState state, TourLoaded action) =>
+  static ToursState _completed(
+          ToursState state, CompletedToursSystemAction action) =>
       _replaceTour(
           state, TourState.data(info: action.tour.info, tour: action.tour));
 
-  static ToursState _updateTourFailed(
-          ToursState state, TourFailedLoading action) =>
+  static ToursState _failed(ToursState state, FailedToursSystemAction action) =>
       _replaceTour(state,
           TourState.error(info: action.info, exception: action.exception));
 

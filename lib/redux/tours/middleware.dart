@@ -19,13 +19,20 @@ class ToursMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, SetTours>(_setTours),
-        TypedMiddleware<AppState, LoadTours>(_loadTours),
-        TypedMiddleware<AppState, LoadTour>(_loadTour),
+        TypedMiddleware<AppState, InitToursSystemAction>(_initTours),
+        TypedMiddleware<AppState, LoadToursUserAction>(_loadTour),
       ];
 
-  Future<void> _loadTour(
-      Store<AppState> store, LoadTour action, NextDispatcher next) async {
+  void _initTours(Store<AppState> store, InitToursSystemAction action,
+      NextDispatcher next) {
+    next(action);
+
+    action.tours
+        .forEach((info) => store.dispatch(UserActionTours.load(info: info)));
+  }
+
+  Future<void> _loadTour(Store<AppState> store, LoadToursUserAction action,
+      NextDispatcher next) async {
     next(action);
 
     final tourState = store.state.toursState.tours.firstWhere(
@@ -37,26 +44,13 @@ class ToursMiddleware {
     }
 
     try {
-      store.dispatch(TourIsLoading(info: action.info));
+      store.dispatch(SystemActionTours.loading(info: action.info));
 
       final data = await _loader.get(action.info.id);
 
-      store.dispatch(TourLoaded(tour: data));
+      store.dispatch(SystemActionTours.completed(tour: data));
     } on Exception catch (e) {
-      store.dispatch(TourFailedLoading(info: action.info, exception: e));
+      store.dispatch(SystemActionTours.failed(info: action.info, exception: e));
     }
-  }
-
-  void _loadTours(
-      Store<AppState> store, LoadTours action, NextDispatcher next) {
-    next(action);
-
-    action.tours.forEach((info) => store.dispatch(LoadTour(info: info)));
-  }
-
-  void _setTours(Store<AppState> store, SetTours action, NextDispatcher next) {
-    next(action);
-
-    store.dispatch(LoadTours(tours: action.tours));
   }
 }
