@@ -9,407 +9,767 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$SearchTournamentsTearOff {
-  const _$SearchTournamentsTearOff();
+class _$UserActionSearchTearOff {
+  const _$UserActionSearchTearOff();
 
-  _SearchTournaments call() {
-    return const _SearchTournaments();
-  }
-}
-
-// ignore: unused_element
-const $SearchTournaments = _$SearchTournamentsTearOff();
-
-mixin _$SearchTournaments {}
-
-abstract class $SearchTournamentsCopyWith<$Res> {
-  factory $SearchTournamentsCopyWith(
-          SearchTournaments value, $Res Function(SearchTournaments) then) =
-      _$SearchTournamentsCopyWithImpl<$Res>;
-}
-
-class _$SearchTournamentsCopyWithImpl<$Res>
-    implements $SearchTournamentsCopyWith<$Res> {
-  _$SearchTournamentsCopyWithImpl(this._value, this._then);
-
-  final SearchTournaments _value;
-  // ignore: unused_field
-  final $Res Function(SearchTournaments) _then;
-}
-
-abstract class _$SearchTournamentsCopyWith<$Res> {
-  factory _$SearchTournamentsCopyWith(
-          _SearchTournaments value, $Res Function(_SearchTournaments) then) =
-      __$SearchTournamentsCopyWithImpl<$Res>;
-}
-
-class __$SearchTournamentsCopyWithImpl<$Res>
-    extends _$SearchTournamentsCopyWithImpl<$Res>
-    implements _$SearchTournamentsCopyWith<$Res> {
-  __$SearchTournamentsCopyWithImpl(
-      _SearchTournaments _value, $Res Function(_SearchTournaments) _then)
-      : super(_value, (v) => _then(v as _SearchTournaments));
-
-  @override
-  _SearchTournaments get _value => super._value as _SearchTournaments;
-}
-
-class _$_SearchTournaments
-    with DiagnosticableTreeMixin
-    implements _SearchTournaments {
-  const _$_SearchTournaments();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SearchTournaments()';
+  OpenSearchUserAction open() {
+    return const OpenSearchUserAction();
   }
 
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SearchTournaments'));
+  ExecuteSearchUserAction execute() {
+    return const ExecuteSearchUserAction();
   }
 
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SearchTournaments);
+  ProceedSearchUserAction proceed() {
+    return const ProceedSearchUserAction();
   }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _SearchTournaments implements SearchTournaments {
-  const factory _SearchTournaments() = _$_SearchTournaments;
-}
-
-class _$RepeatFailedSearchTournamentsTearOff {
-  const _$RepeatFailedSearchTournamentsTearOff();
-
-  _RepeatFailedSearchTournaments call() {
-    return const _RepeatFailedSearchTournaments();
-  }
-}
-
-// ignore: unused_element
-const $RepeatFailedSearchTournaments = _$RepeatFailedSearchTournamentsTearOff();
-
-mixin _$RepeatFailedSearchTournaments {}
-
-abstract class $RepeatFailedSearchTournamentsCopyWith<$Res> {
-  factory $RepeatFailedSearchTournamentsCopyWith(
-          RepeatFailedSearchTournaments value,
-          $Res Function(RepeatFailedSearchTournaments) then) =
-      _$RepeatFailedSearchTournamentsCopyWithImpl<$Res>;
-}
-
-class _$RepeatFailedSearchTournamentsCopyWithImpl<$Res>
-    implements $RepeatFailedSearchTournamentsCopyWith<$Res> {
-  _$RepeatFailedSearchTournamentsCopyWithImpl(this._value, this._then);
-
-  final RepeatFailedSearchTournaments _value;
-  // ignore: unused_field
-  final $Res Function(RepeatFailedSearchTournaments) _then;
-}
-
-abstract class _$RepeatFailedSearchTournamentsCopyWith<$Res> {
-  factory _$RepeatFailedSearchTournamentsCopyWith(
-          _RepeatFailedSearchTournaments value,
-          $Res Function(_RepeatFailedSearchTournaments) then) =
-      __$RepeatFailedSearchTournamentsCopyWithImpl<$Res>;
-}
-
-class __$RepeatFailedSearchTournamentsCopyWithImpl<$Res>
-    extends _$RepeatFailedSearchTournamentsCopyWithImpl<$Res>
-    implements _$RepeatFailedSearchTournamentsCopyWith<$Res> {
-  __$RepeatFailedSearchTournamentsCopyWithImpl(
-      _RepeatFailedSearchTournaments _value,
-      $Res Function(_RepeatFailedSearchTournaments) _then)
-      : super(_value, (v) => _then(v as _RepeatFailedSearchTournaments));
-
-  @override
-  _RepeatFailedSearchTournaments get _value =>
-      super._value as _RepeatFailedSearchTournaments;
-}
-
-class _$_RepeatFailedSearchTournaments
-    with DiagnosticableTreeMixin
-    implements _RepeatFailedSearchTournaments {
-  const _$_RepeatFailedSearchTournaments();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RepeatFailedSearchTournaments()';
+  RerunSearchUserAction rerun() {
+    return const RerunSearchUserAction();
   }
 
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RepeatFailedSearchTournaments'));
+  CloseSearchUserAction close() {
+    return const CloseSearchUserAction();
   }
 
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RepeatFailedSearchTournaments);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _RepeatFailedSearchTournaments
-    implements RepeatFailedSearchTournaments {
-  const factory _RepeatFailedSearchTournaments() =
-      _$_RepeatFailedSearchTournaments;
-}
-
-class _$ClearTournamentsSearchResultsTearOff {
-  const _$ClearTournamentsSearchResultsTearOff();
-
-  _ClearTournamentsSearchResults call() {
-    return const _ClearTournamentsSearchResults();
-  }
-}
-
-// ignore: unused_element
-const $ClearTournamentsSearchResults = _$ClearTournamentsSearchResultsTearOff();
-
-mixin _$ClearTournamentsSearchResults {}
-
-abstract class $ClearTournamentsSearchResultsCopyWith<$Res> {
-  factory $ClearTournamentsSearchResultsCopyWith(
-          ClearTournamentsSearchResults value,
-          $Res Function(ClearTournamentsSearchResults) then) =
-      _$ClearTournamentsSearchResultsCopyWithImpl<$Res>;
-}
-
-class _$ClearTournamentsSearchResultsCopyWithImpl<$Res>
-    implements $ClearTournamentsSearchResultsCopyWith<$Res> {
-  _$ClearTournamentsSearchResultsCopyWithImpl(this._value, this._then);
-
-  final ClearTournamentsSearchResults _value;
-  // ignore: unused_field
-  final $Res Function(ClearTournamentsSearchResults) _then;
-}
-
-abstract class _$ClearTournamentsSearchResultsCopyWith<$Res> {
-  factory _$ClearTournamentsSearchResultsCopyWith(
-          _ClearTournamentsSearchResults value,
-          $Res Function(_ClearTournamentsSearchResults) then) =
-      __$ClearTournamentsSearchResultsCopyWithImpl<$Res>;
-}
-
-class __$ClearTournamentsSearchResultsCopyWithImpl<$Res>
-    extends _$ClearTournamentsSearchResultsCopyWithImpl<$Res>
-    implements _$ClearTournamentsSearchResultsCopyWith<$Res> {
-  __$ClearTournamentsSearchResultsCopyWithImpl(
-      _ClearTournamentsSearchResults _value,
-      $Res Function(_ClearTournamentsSearchResults) _then)
-      : super(_value, (v) => _then(v as _ClearTournamentsSearchResults));
-
-  @override
-  _ClearTournamentsSearchResults get _value =>
-      super._value as _ClearTournamentsSearchResults;
-}
-
-class _$_ClearTournamentsSearchResults
-    with DiagnosticableTreeMixin
-    implements _ClearTournamentsSearchResults {
-  const _$_ClearTournamentsSearchResults();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ClearTournamentsSearchResults()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ClearTournamentsSearchResults'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ClearTournamentsSearchResults);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _ClearTournamentsSearchResults
-    implements ClearTournamentsSearchResults {
-  const factory _ClearTournamentsSearchResults() =
-      _$_ClearTournamentsSearchResults;
-}
-
-class _$ClearTournamentsSearchParametersTearOff {
-  const _$ClearTournamentsSearchParametersTearOff();
-
-  _ClearTournamentsSearchParameters call() {
-    return const _ClearTournamentsSearchParameters();
-  }
-}
-
-// ignore: unused_element
-const $ClearTournamentsSearchParameters =
-    _$ClearTournamentsSearchParametersTearOff();
-
-mixin _$ClearTournamentsSearchParameters {}
-
-abstract class $ClearTournamentsSearchParametersCopyWith<$Res> {
-  factory $ClearTournamentsSearchParametersCopyWith(
-          ClearTournamentsSearchParameters value,
-          $Res Function(ClearTournamentsSearchParameters) then) =
-      _$ClearTournamentsSearchParametersCopyWithImpl<$Res>;
-}
-
-class _$ClearTournamentsSearchParametersCopyWithImpl<$Res>
-    implements $ClearTournamentsSearchParametersCopyWith<$Res> {
-  _$ClearTournamentsSearchParametersCopyWithImpl(this._value, this._then);
-
-  final ClearTournamentsSearchParameters _value;
-  // ignore: unused_field
-  final $Res Function(ClearTournamentsSearchParameters) _then;
-}
-
-abstract class _$ClearTournamentsSearchParametersCopyWith<$Res> {
-  factory _$ClearTournamentsSearchParametersCopyWith(
-          _ClearTournamentsSearchParameters value,
-          $Res Function(_ClearTournamentsSearchParameters) then) =
-      __$ClearTournamentsSearchParametersCopyWithImpl<$Res>;
-}
-
-class __$ClearTournamentsSearchParametersCopyWithImpl<$Res>
-    extends _$ClearTournamentsSearchParametersCopyWithImpl<$Res>
-    implements _$ClearTournamentsSearchParametersCopyWith<$Res> {
-  __$ClearTournamentsSearchParametersCopyWithImpl(
-      _ClearTournamentsSearchParameters _value,
-      $Res Function(_ClearTournamentsSearchParameters) _then)
-      : super(_value, (v) => _then(v as _ClearTournamentsSearchParameters));
-
-  @override
-  _ClearTournamentsSearchParameters get _value =>
-      super._value as _ClearTournamentsSearchParameters;
-}
-
-class _$_ClearTournamentsSearchParameters
-    with DiagnosticableTreeMixin
-    implements _ClearTournamentsSearchParameters {
-  const _$_ClearTournamentsSearchParameters();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ClearTournamentsSearchParameters()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ClearTournamentsSearchParameters'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ClearTournamentsSearchParameters);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _ClearTournamentsSearchParameters
-    implements ClearTournamentsSearchParameters {
-  const factory _ClearTournamentsSearchParameters() =
-      _$_ClearTournamentsSearchParameters;
-}
-
-class _$TournamentsSearchQueryChangedTearOff {
-  const _$TournamentsSearchQueryChangedTearOff();
-
-  _TournamentsSearchQueryChanged call({@required String query}) {
-    return _TournamentsSearchQueryChanged(
+  NewQuerySearchUserAction newQuery({@required String query}) {
+    return NewQuerySearchUserAction(
       query: query,
+    );
+  }
+
+  NewSortingSearchUserAction newSorting({@required Sorting sorting}) {
+    return NewSortingSearchUserAction(
+      sorting: sorting,
     );
   }
 }
 
 // ignore: unused_element
-const $TournamentsSearchQueryChanged = _$TournamentsSearchQueryChangedTearOff();
+const $UserActionSearch = _$UserActionSearchTearOff();
 
-mixin _$TournamentsSearchQueryChanged {
-  String get query;
-
-  $TournamentsSearchQueryChangedCopyWith<TournamentsSearchQueryChanged>
-      get copyWith;
+mixin _$UserActionSearch {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result execute(),
+    @required Result proceed(),
+    @required Result rerun(),
+    @required Result close(),
+    @required Result newQuery(String query),
+    @required Result newSorting(Sorting sorting),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result execute(),
+    Result proceed(),
+    Result rerun(),
+    Result close(),
+    Result newQuery(String query),
+    Result newSorting(Sorting sorting),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSearchUserAction value),
+    @required Result execute(ExecuteSearchUserAction value),
+    @required Result proceed(ProceedSearchUserAction value),
+    @required Result rerun(RerunSearchUserAction value),
+    @required Result close(CloseSearchUserAction value),
+    @required Result newQuery(NewQuerySearchUserAction value),
+    @required Result newSorting(NewSortingSearchUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSearchUserAction value),
+    Result execute(ExecuteSearchUserAction value),
+    Result proceed(ProceedSearchUserAction value),
+    Result rerun(RerunSearchUserAction value),
+    Result close(CloseSearchUserAction value),
+    Result newQuery(NewQuerySearchUserAction value),
+    Result newSorting(NewSortingSearchUserAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $TournamentsSearchQueryChangedCopyWith<$Res> {
-  factory $TournamentsSearchQueryChangedCopyWith(
-          TournamentsSearchQueryChanged value,
-          $Res Function(TournamentsSearchQueryChanged) then) =
-      _$TournamentsSearchQueryChangedCopyWithImpl<$Res>;
-  $Res call({String query});
+abstract class $UserActionSearchCopyWith<$Res> {
+  factory $UserActionSearchCopyWith(
+          UserActionSearch value, $Res Function(UserActionSearch) then) =
+      _$UserActionSearchCopyWithImpl<$Res>;
 }
 
-class _$TournamentsSearchQueryChangedCopyWithImpl<$Res>
-    implements $TournamentsSearchQueryChangedCopyWith<$Res> {
-  _$TournamentsSearchQueryChangedCopyWithImpl(this._value, this._then);
+class _$UserActionSearchCopyWithImpl<$Res>
+    implements $UserActionSearchCopyWith<$Res> {
+  _$UserActionSearchCopyWithImpl(this._value, this._then);
 
-  final TournamentsSearchQueryChanged _value;
+  final UserActionSearch _value;
   // ignore: unused_field
-  final $Res Function(TournamentsSearchQueryChanged) _then;
+  final $Res Function(UserActionSearch) _then;
+}
+
+abstract class $OpenSearchUserActionCopyWith<$Res> {
+  factory $OpenSearchUserActionCopyWith(OpenSearchUserAction value,
+          $Res Function(OpenSearchUserAction) then) =
+      _$OpenSearchUserActionCopyWithImpl<$Res>;
+}
+
+class _$OpenSearchUserActionCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res>
+    implements $OpenSearchUserActionCopyWith<$Res> {
+  _$OpenSearchUserActionCopyWithImpl(
+      OpenSearchUserAction _value, $Res Function(OpenSearchUserAction) _then)
+      : super(_value, (v) => _then(v as OpenSearchUserAction));
 
   @override
-  $Res call({
-    Object query = freezed,
+  OpenSearchUserAction get _value => super._value as OpenSearchUserAction;
+}
+
+class _$OpenSearchUserAction
+    with DiagnosticableTreeMixin
+    implements OpenSearchUserAction {
+  const _$OpenSearchUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionSearch.open()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionSearch.open'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is OpenSearchUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result execute(),
+    @required Result proceed(),
+    @required Result rerun(),
+    @required Result close(),
+    @required Result newQuery(String query),
+    @required Result newSorting(Sorting sorting),
   }) {
-    return _then(_value.copyWith(
-      query: query == freezed ? _value.query : query as String,
-    ));
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return open();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result execute(),
+    Result proceed(),
+    Result rerun(),
+    Result close(),
+    Result newQuery(String query),
+    Result newSorting(Sorting sorting),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (open != null) {
+      return open();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSearchUserAction value),
+    @required Result execute(ExecuteSearchUserAction value),
+    @required Result proceed(ProceedSearchUserAction value),
+    @required Result rerun(RerunSearchUserAction value),
+    @required Result close(CloseSearchUserAction value),
+    @required Result newQuery(NewQuerySearchUserAction value),
+    @required Result newSorting(NewSortingSearchUserAction value),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return open(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSearchUserAction value),
+    Result execute(ExecuteSearchUserAction value),
+    Result proceed(ProceedSearchUserAction value),
+    Result rerun(RerunSearchUserAction value),
+    Result close(CloseSearchUserAction value),
+    Result newQuery(NewQuerySearchUserAction value),
+    Result newSorting(NewSortingSearchUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (open != null) {
+      return open(this);
+    }
+    return orElse();
   }
 }
 
-abstract class _$TournamentsSearchQueryChangedCopyWith<$Res>
-    implements $TournamentsSearchQueryChangedCopyWith<$Res> {
-  factory _$TournamentsSearchQueryChangedCopyWith(
-          _TournamentsSearchQueryChanged value,
-          $Res Function(_TournamentsSearchQueryChanged) then) =
-      __$TournamentsSearchQueryChangedCopyWithImpl<$Res>;
+abstract class OpenSearchUserAction implements UserActionSearch {
+  const factory OpenSearchUserAction() = _$OpenSearchUserAction;
+}
+
+abstract class $ExecuteSearchUserActionCopyWith<$Res> {
+  factory $ExecuteSearchUserActionCopyWith(ExecuteSearchUserAction value,
+          $Res Function(ExecuteSearchUserAction) then) =
+      _$ExecuteSearchUserActionCopyWithImpl<$Res>;
+}
+
+class _$ExecuteSearchUserActionCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res>
+    implements $ExecuteSearchUserActionCopyWith<$Res> {
+  _$ExecuteSearchUserActionCopyWithImpl(ExecuteSearchUserAction _value,
+      $Res Function(ExecuteSearchUserAction) _then)
+      : super(_value, (v) => _then(v as ExecuteSearchUserAction));
+
   @override
+  ExecuteSearchUserAction get _value => super._value as ExecuteSearchUserAction;
+}
+
+class _$ExecuteSearchUserAction
+    with DiagnosticableTreeMixin
+    implements ExecuteSearchUserAction {
+  const _$ExecuteSearchUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionSearch.execute()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionSearch.execute'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ExecuteSearchUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result execute(),
+    @required Result proceed(),
+    @required Result rerun(),
+    @required Result close(),
+    @required Result newQuery(String query),
+    @required Result newSorting(Sorting sorting),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return execute();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result execute(),
+    Result proceed(),
+    Result rerun(),
+    Result close(),
+    Result newQuery(String query),
+    Result newSorting(Sorting sorting),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (execute != null) {
+      return execute();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSearchUserAction value),
+    @required Result execute(ExecuteSearchUserAction value),
+    @required Result proceed(ProceedSearchUserAction value),
+    @required Result rerun(RerunSearchUserAction value),
+    @required Result close(CloseSearchUserAction value),
+    @required Result newQuery(NewQuerySearchUserAction value),
+    @required Result newSorting(NewSortingSearchUserAction value),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return execute(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSearchUserAction value),
+    Result execute(ExecuteSearchUserAction value),
+    Result proceed(ProceedSearchUserAction value),
+    Result rerun(RerunSearchUserAction value),
+    Result close(CloseSearchUserAction value),
+    Result newQuery(NewQuerySearchUserAction value),
+    Result newSorting(NewSortingSearchUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (execute != null) {
+      return execute(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ExecuteSearchUserAction implements UserActionSearch {
+  const factory ExecuteSearchUserAction() = _$ExecuteSearchUserAction;
+}
+
+abstract class $ProceedSearchUserActionCopyWith<$Res> {
+  factory $ProceedSearchUserActionCopyWith(ProceedSearchUserAction value,
+          $Res Function(ProceedSearchUserAction) then) =
+      _$ProceedSearchUserActionCopyWithImpl<$Res>;
+}
+
+class _$ProceedSearchUserActionCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res>
+    implements $ProceedSearchUserActionCopyWith<$Res> {
+  _$ProceedSearchUserActionCopyWithImpl(ProceedSearchUserAction _value,
+      $Res Function(ProceedSearchUserAction) _then)
+      : super(_value, (v) => _then(v as ProceedSearchUserAction));
+
+  @override
+  ProceedSearchUserAction get _value => super._value as ProceedSearchUserAction;
+}
+
+class _$ProceedSearchUserAction
+    with DiagnosticableTreeMixin
+    implements ProceedSearchUserAction {
+  const _$ProceedSearchUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionSearch.proceed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionSearch.proceed'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ProceedSearchUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result execute(),
+    @required Result proceed(),
+    @required Result rerun(),
+    @required Result close(),
+    @required Result newQuery(String query),
+    @required Result newSorting(Sorting sorting),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return proceed();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result execute(),
+    Result proceed(),
+    Result rerun(),
+    Result close(),
+    Result newQuery(String query),
+    Result newSorting(Sorting sorting),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (proceed != null) {
+      return proceed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSearchUserAction value),
+    @required Result execute(ExecuteSearchUserAction value),
+    @required Result proceed(ProceedSearchUserAction value),
+    @required Result rerun(RerunSearchUserAction value),
+    @required Result close(CloseSearchUserAction value),
+    @required Result newQuery(NewQuerySearchUserAction value),
+    @required Result newSorting(NewSortingSearchUserAction value),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return proceed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSearchUserAction value),
+    Result execute(ExecuteSearchUserAction value),
+    Result proceed(ProceedSearchUserAction value),
+    Result rerun(RerunSearchUserAction value),
+    Result close(CloseSearchUserAction value),
+    Result newQuery(NewQuerySearchUserAction value),
+    Result newSorting(NewSortingSearchUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (proceed != null) {
+      return proceed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProceedSearchUserAction implements UserActionSearch {
+  const factory ProceedSearchUserAction() = _$ProceedSearchUserAction;
+}
+
+abstract class $RerunSearchUserActionCopyWith<$Res> {
+  factory $RerunSearchUserActionCopyWith(RerunSearchUserAction value,
+          $Res Function(RerunSearchUserAction) then) =
+      _$RerunSearchUserActionCopyWithImpl<$Res>;
+}
+
+class _$RerunSearchUserActionCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res>
+    implements $RerunSearchUserActionCopyWith<$Res> {
+  _$RerunSearchUserActionCopyWithImpl(
+      RerunSearchUserAction _value, $Res Function(RerunSearchUserAction) _then)
+      : super(_value, (v) => _then(v as RerunSearchUserAction));
+
+  @override
+  RerunSearchUserAction get _value => super._value as RerunSearchUserAction;
+}
+
+class _$RerunSearchUserAction
+    with DiagnosticableTreeMixin
+    implements RerunSearchUserAction {
+  const _$RerunSearchUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionSearch.rerun()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionSearch.rerun'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is RerunSearchUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result execute(),
+    @required Result proceed(),
+    @required Result rerun(),
+    @required Result close(),
+    @required Result newQuery(String query),
+    @required Result newSorting(Sorting sorting),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return rerun();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result execute(),
+    Result proceed(),
+    Result rerun(),
+    Result close(),
+    Result newQuery(String query),
+    Result newSorting(Sorting sorting),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (rerun != null) {
+      return rerun();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSearchUserAction value),
+    @required Result execute(ExecuteSearchUserAction value),
+    @required Result proceed(ProceedSearchUserAction value),
+    @required Result rerun(RerunSearchUserAction value),
+    @required Result close(CloseSearchUserAction value),
+    @required Result newQuery(NewQuerySearchUserAction value),
+    @required Result newSorting(NewSortingSearchUserAction value),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return rerun(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSearchUserAction value),
+    Result execute(ExecuteSearchUserAction value),
+    Result proceed(ProceedSearchUserAction value),
+    Result rerun(RerunSearchUserAction value),
+    Result close(CloseSearchUserAction value),
+    Result newQuery(NewQuerySearchUserAction value),
+    Result newSorting(NewSortingSearchUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (rerun != null) {
+      return rerun(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RerunSearchUserAction implements UserActionSearch {
+  const factory RerunSearchUserAction() = _$RerunSearchUserAction;
+}
+
+abstract class $CloseSearchUserActionCopyWith<$Res> {
+  factory $CloseSearchUserActionCopyWith(CloseSearchUserAction value,
+          $Res Function(CloseSearchUserAction) then) =
+      _$CloseSearchUserActionCopyWithImpl<$Res>;
+}
+
+class _$CloseSearchUserActionCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res>
+    implements $CloseSearchUserActionCopyWith<$Res> {
+  _$CloseSearchUserActionCopyWithImpl(
+      CloseSearchUserAction _value, $Res Function(CloseSearchUserAction) _then)
+      : super(_value, (v) => _then(v as CloseSearchUserAction));
+
+  @override
+  CloseSearchUserAction get _value => super._value as CloseSearchUserAction;
+}
+
+class _$CloseSearchUserAction
+    with DiagnosticableTreeMixin
+    implements CloseSearchUserAction {
+  const _$CloseSearchUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionSearch.close()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionSearch.close'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is CloseSearchUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result execute(),
+    @required Result proceed(),
+    @required Result rerun(),
+    @required Result close(),
+    @required Result newQuery(String query),
+    @required Result newSorting(Sorting sorting),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return close();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result execute(),
+    Result proceed(),
+    Result rerun(),
+    Result close(),
+    Result newQuery(String query),
+    Result newSorting(Sorting sorting),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (close != null) {
+      return close();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSearchUserAction value),
+    @required Result execute(ExecuteSearchUserAction value),
+    @required Result proceed(ProceedSearchUserAction value),
+    @required Result rerun(RerunSearchUserAction value),
+    @required Result close(CloseSearchUserAction value),
+    @required Result newQuery(NewQuerySearchUserAction value),
+    @required Result newSorting(NewSortingSearchUserAction value),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return close(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSearchUserAction value),
+    Result execute(ExecuteSearchUserAction value),
+    Result proceed(ProceedSearchUserAction value),
+    Result rerun(RerunSearchUserAction value),
+    Result close(CloseSearchUserAction value),
+    Result newQuery(NewQuerySearchUserAction value),
+    Result newSorting(NewSortingSearchUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (close != null) {
+      return close(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloseSearchUserAction implements UserActionSearch {
+  const factory CloseSearchUserAction() = _$CloseSearchUserAction;
+}
+
+abstract class $NewQuerySearchUserActionCopyWith<$Res> {
+  factory $NewQuerySearchUserActionCopyWith(NewQuerySearchUserAction value,
+          $Res Function(NewQuerySearchUserAction) then) =
+      _$NewQuerySearchUserActionCopyWithImpl<$Res>;
   $Res call({String query});
 }
 
-class __$TournamentsSearchQueryChangedCopyWithImpl<$Res>
-    extends _$TournamentsSearchQueryChangedCopyWithImpl<$Res>
-    implements _$TournamentsSearchQueryChangedCopyWith<$Res> {
-  __$TournamentsSearchQueryChangedCopyWithImpl(
-      _TournamentsSearchQueryChanged _value,
-      $Res Function(_TournamentsSearchQueryChanged) _then)
-      : super(_value, (v) => _then(v as _TournamentsSearchQueryChanged));
+class _$NewQuerySearchUserActionCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res>
+    implements $NewQuerySearchUserActionCopyWith<$Res> {
+  _$NewQuerySearchUserActionCopyWithImpl(NewQuerySearchUserAction _value,
+      $Res Function(NewQuerySearchUserAction) _then)
+      : super(_value, (v) => _then(v as NewQuerySearchUserAction));
 
   @override
-  _TournamentsSearchQueryChanged get _value =>
-      super._value as _TournamentsSearchQueryChanged;
+  NewQuerySearchUserAction get _value =>
+      super._value as NewQuerySearchUserAction;
 
   @override
   $Res call({
     Object query = freezed,
   }) {
-    return _then(_TournamentsSearchQueryChanged(
+    return _then(NewQuerySearchUserAction(
       query: query == freezed ? _value.query : query as String,
     ));
   }
 }
 
-class _$_TournamentsSearchQueryChanged
+class _$NewQuerySearchUserAction
     with DiagnosticableTreeMixin
-    implements _TournamentsSearchQueryChanged {
-  const _$_TournamentsSearchQueryChanged({@required this.query})
+    implements NewQuerySearchUserAction {
+  const _$NewQuerySearchUserAction({@required this.query})
       : assert(query != null);
 
   @override
@@ -417,21 +777,21 @@ class _$_TournamentsSearchQueryChanged
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentsSearchQueryChanged(query: $query)';
+    return 'UserActionSearch.newQuery(query: $query)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'TournamentsSearchQueryChanged'))
+      ..add(DiagnosticsProperty('type', 'UserActionSearch.newQuery'))
       ..add(DiagnosticsProperty('query', query));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TournamentsSearchQueryChanged &&
+        (other is NewQuerySearchUserAction &&
             (identical(other.query, query) ||
                 const DeepCollectionEquality().equals(other.query, query)));
   }
@@ -441,106 +801,131 @@ class _$_TournamentsSearchQueryChanged
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
 
   @override
-  _$TournamentsSearchQueryChangedCopyWith<_TournamentsSearchQueryChanged>
-      get copyWith => __$TournamentsSearchQueryChangedCopyWithImpl<
-          _TournamentsSearchQueryChanged>(this, _$identity);
-}
-
-abstract class _TournamentsSearchQueryChanged
-    implements TournamentsSearchQueryChanged {
-  const factory _TournamentsSearchQueryChanged({@required String query}) =
-      _$_TournamentsSearchQueryChanged;
+  $NewQuerySearchUserActionCopyWith<NewQuerySearchUserAction> get copyWith =>
+      _$NewQuerySearchUserActionCopyWithImpl<NewQuerySearchUserAction>(
+          this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result execute(),
+    @required Result proceed(),
+    @required Result rerun(),
+    @required Result close(),
+    @required Result newQuery(String query),
+    @required Result newSorting(Sorting sorting),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return newQuery(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result execute(),
+    Result proceed(),
+    Result rerun(),
+    Result close(),
+    Result newQuery(String query),
+    Result newSorting(Sorting sorting),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (newQuery != null) {
+      return newQuery(query);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSearchUserAction value),
+    @required Result execute(ExecuteSearchUserAction value),
+    @required Result proceed(ProceedSearchUserAction value),
+    @required Result rerun(RerunSearchUserAction value),
+    @required Result close(CloseSearchUserAction value),
+    @required Result newQuery(NewQuerySearchUserAction value),
+    @required Result newSorting(NewSortingSearchUserAction value),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return newQuery(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSearchUserAction value),
+    Result execute(ExecuteSearchUserAction value),
+    Result proceed(ProceedSearchUserAction value),
+    Result rerun(RerunSearchUserAction value),
+    Result close(CloseSearchUserAction value),
+    Result newQuery(NewQuerySearchUserAction value),
+    Result newSorting(NewSortingSearchUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (newQuery != null) {
+      return newQuery(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NewQuerySearchUserAction implements UserActionSearch {
+  const factory NewQuerySearchUserAction({@required String query}) =
+      _$NewQuerySearchUserAction;
+
   String get query;
-  @override
-  _$TournamentsSearchQueryChangedCopyWith<_TournamentsSearchQueryChanged>
-      get copyWith;
+  $NewQuerySearchUserActionCopyWith<NewQuerySearchUserAction> get copyWith;
 }
 
-class _$TournamentsSearchSortingChangedTearOff {
-  const _$TournamentsSearchSortingChangedTearOff();
-
-  _TournamentsSearchSortingChanged call({@required Sorting sorting}) {
-    return _TournamentsSearchSortingChanged(
-      sorting: sorting,
-    );
-  }
-}
-
-// ignore: unused_element
-const $TournamentsSearchSortingChanged =
-    _$TournamentsSearchSortingChangedTearOff();
-
-mixin _$TournamentsSearchSortingChanged {
-  Sorting get sorting;
-
-  $TournamentsSearchSortingChangedCopyWith<TournamentsSearchSortingChanged>
-      get copyWith;
-}
-
-abstract class $TournamentsSearchSortingChangedCopyWith<$Res> {
-  factory $TournamentsSearchSortingChangedCopyWith(
-          TournamentsSearchSortingChanged value,
-          $Res Function(TournamentsSearchSortingChanged) then) =
-      _$TournamentsSearchSortingChangedCopyWithImpl<$Res>;
+abstract class $NewSortingSearchUserActionCopyWith<$Res> {
+  factory $NewSortingSearchUserActionCopyWith(NewSortingSearchUserAction value,
+          $Res Function(NewSortingSearchUserAction) then) =
+      _$NewSortingSearchUserActionCopyWithImpl<$Res>;
   $Res call({Sorting sorting});
 }
 
-class _$TournamentsSearchSortingChangedCopyWithImpl<$Res>
-    implements $TournamentsSearchSortingChangedCopyWith<$Res> {
-  _$TournamentsSearchSortingChangedCopyWithImpl(this._value, this._then);
+class _$NewSortingSearchUserActionCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res>
+    implements $NewSortingSearchUserActionCopyWith<$Res> {
+  _$NewSortingSearchUserActionCopyWithImpl(NewSortingSearchUserAction _value,
+      $Res Function(NewSortingSearchUserAction) _then)
+      : super(_value, (v) => _then(v as NewSortingSearchUserAction));
 
-  final TournamentsSearchSortingChanged _value;
-  // ignore: unused_field
-  final $Res Function(TournamentsSearchSortingChanged) _then;
+  @override
+  NewSortingSearchUserAction get _value =>
+      super._value as NewSortingSearchUserAction;
 
   @override
   $Res call({
     Object sorting = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(NewSortingSearchUserAction(
       sorting: sorting == freezed ? _value.sorting : sorting as Sorting,
     ));
   }
 }
 
-abstract class _$TournamentsSearchSortingChangedCopyWith<$Res>
-    implements $TournamentsSearchSortingChangedCopyWith<$Res> {
-  factory _$TournamentsSearchSortingChangedCopyWith(
-          _TournamentsSearchSortingChanged value,
-          $Res Function(_TournamentsSearchSortingChanged) then) =
-      __$TournamentsSearchSortingChangedCopyWithImpl<$Res>;
-  @override
-  $Res call({Sorting sorting});
-}
-
-class __$TournamentsSearchSortingChangedCopyWithImpl<$Res>
-    extends _$TournamentsSearchSortingChangedCopyWithImpl<$Res>
-    implements _$TournamentsSearchSortingChangedCopyWith<$Res> {
-  __$TournamentsSearchSortingChangedCopyWithImpl(
-      _TournamentsSearchSortingChanged _value,
-      $Res Function(_TournamentsSearchSortingChanged) _then)
-      : super(_value, (v) => _then(v as _TournamentsSearchSortingChanged));
-
-  @override
-  _TournamentsSearchSortingChanged get _value =>
-      super._value as _TournamentsSearchSortingChanged;
-
-  @override
-  $Res call({
-    Object sorting = freezed,
-  }) {
-    return _then(_TournamentsSearchSortingChanged(
-      sorting: sorting == freezed ? _value.sorting : sorting as Sorting,
-    ));
-  }
-}
-
-class _$_TournamentsSearchSortingChanged
+class _$NewSortingSearchUserAction
     with DiagnosticableTreeMixin
-    implements _TournamentsSearchSortingChanged {
-  const _$_TournamentsSearchSortingChanged({@required this.sorting})
+    implements NewSortingSearchUserAction {
+  const _$NewSortingSearchUserAction({@required this.sorting})
       : assert(sorting != null);
 
   @override
@@ -548,21 +933,21 @@ class _$_TournamentsSearchSortingChanged
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentsSearchSortingChanged(sorting: $sorting)';
+    return 'UserActionSearch.newSorting(sorting: $sorting)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'TournamentsSearchSortingChanged'))
+      ..add(DiagnosticsProperty('type', 'UserActionSearch.newSorting'))
       ..add(DiagnosticsProperty('sorting', sorting));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TournamentsSearchSortingChanged &&
+        (other is NewSortingSearchUserAction &&
             (identical(other.sorting, sorting) ||
                 const DeepCollectionEquality().equals(other.sorting, sorting)));
   }
@@ -572,350 +957,827 @@ class _$_TournamentsSearchSortingChanged
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(sorting);
 
   @override
-  _$TournamentsSearchSortingChangedCopyWith<_TournamentsSearchSortingChanged>
-      get copyWith => __$TournamentsSearchSortingChangedCopyWithImpl<
-          _TournamentsSearchSortingChanged>(this, _$identity);
-}
-
-abstract class _TournamentsSearchSortingChanged
-    implements TournamentsSearchSortingChanged {
-  const factory _TournamentsSearchSortingChanged({@required Sorting sorting}) =
-      _$_TournamentsSearchSortingChanged;
+  $NewSortingSearchUserActionCopyWith<NewSortingSearchUserAction>
+      get copyWith =>
+          _$NewSortingSearchUserActionCopyWithImpl<NewSortingSearchUserAction>(
+              this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result execute(),
+    @required Result proceed(),
+    @required Result rerun(),
+    @required Result close(),
+    @required Result newQuery(String query),
+    @required Result newSorting(Sorting sorting),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return newSorting(sorting);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result execute(),
+    Result proceed(),
+    Result rerun(),
+    Result close(),
+    Result newQuery(String query),
+    Result newSorting(Sorting sorting),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (newSorting != null) {
+      return newSorting(sorting);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSearchUserAction value),
+    @required Result execute(ExecuteSearchUserAction value),
+    @required Result proceed(ProceedSearchUserAction value),
+    @required Result rerun(RerunSearchUserAction value),
+    @required Result close(CloseSearchUserAction value),
+    @required Result newQuery(NewQuerySearchUserAction value),
+    @required Result newSorting(NewSortingSearchUserAction value),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(newQuery != null);
+    assert(newSorting != null);
+    return newSorting(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSearchUserAction value),
+    Result execute(ExecuteSearchUserAction value),
+    Result proceed(ProceedSearchUserAction value),
+    Result rerun(RerunSearchUserAction value),
+    Result close(CloseSearchUserAction value),
+    Result newQuery(NewQuerySearchUserAction value),
+    Result newSorting(NewSortingSearchUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (newSorting != null) {
+      return newSorting(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NewSortingSearchUserAction implements UserActionSearch {
+  const factory NewSortingSearchUserAction({@required Sorting sorting}) =
+      _$NewSortingSearchUserAction;
+
   Sorting get sorting;
-  @override
-  _$TournamentsSearchSortingChangedCopyWith<_TournamentsSearchSortingChanged>
-      get copyWith;
+  $NewSortingSearchUserActionCopyWith<NewSortingSearchUserAction> get copyWith;
 }
 
-class _$TournamentsSearchIsLoadingTearOff {
-  const _$TournamentsSearchIsLoadingTearOff();
+class _$SystemActionSearchTearOff {
+  const _$SystemActionSearchTearOff();
 
-  _TournamentsSearchIsLoading call() {
-    return const _TournamentsSearchIsLoading();
-  }
-}
-
-// ignore: unused_element
-const $TournamentsSearchIsLoading = _$TournamentsSearchIsLoadingTearOff();
-
-mixin _$TournamentsSearchIsLoading {}
-
-abstract class $TournamentsSearchIsLoadingCopyWith<$Res> {
-  factory $TournamentsSearchIsLoadingCopyWith(TournamentsSearchIsLoading value,
-          $Res Function(TournamentsSearchIsLoading) then) =
-      _$TournamentsSearchIsLoadingCopyWithImpl<$Res>;
-}
-
-class _$TournamentsSearchIsLoadingCopyWithImpl<$Res>
-    implements $TournamentsSearchIsLoadingCopyWith<$Res> {
-  _$TournamentsSearchIsLoadingCopyWithImpl(this._value, this._then);
-
-  final TournamentsSearchIsLoading _value;
-  // ignore: unused_field
-  final $Res Function(TournamentsSearchIsLoading) _then;
-}
-
-abstract class _$TournamentsSearchIsLoadingCopyWith<$Res> {
-  factory _$TournamentsSearchIsLoadingCopyWith(
-          _TournamentsSearchIsLoading value,
-          $Res Function(_TournamentsSearchIsLoading) then) =
-      __$TournamentsSearchIsLoadingCopyWithImpl<$Res>;
-}
-
-class __$TournamentsSearchIsLoadingCopyWithImpl<$Res>
-    extends _$TournamentsSearchIsLoadingCopyWithImpl<$Res>
-    implements _$TournamentsSearchIsLoadingCopyWith<$Res> {
-  __$TournamentsSearchIsLoadingCopyWithImpl(_TournamentsSearchIsLoading _value,
-      $Res Function(_TournamentsSearchIsLoading) _then)
-      : super(_value, (v) => _then(v as _TournamentsSearchIsLoading));
-
-  @override
-  _TournamentsSearchIsLoading get _value =>
-      super._value as _TournamentsSearchIsLoading;
-}
-
-class _$_TournamentsSearchIsLoading
-    with DiagnosticableTreeMixin
-    implements _TournamentsSearchIsLoading {
-  const _$_TournamentsSearchIsLoading();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentsSearchIsLoading()';
+  InitSearchSystemAction init() {
+    return const InitSearchSystemAction();
   }
 
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'TournamentsSearchIsLoading'));
+  DeInitSearchSystemAction deInit() {
+    return const DeInitSearchSystemAction();
   }
 
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _TournamentsSearchIsLoading);
+  ClearResultsSearchSystemAction clearResults() {
+    return const ClearResultsSearchSystemAction();
   }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
+  LoadingSearchSystemAction loading({@required SearchParameters parameters}) {
+    return LoadingSearchSystemAction(
+      parameters: parameters,
+    );
+  }
 
-abstract class _TournamentsSearchIsLoading
-    implements TournamentsSearchIsLoading {
-  const factory _TournamentsSearchIsLoading() = _$_TournamentsSearchIsLoading;
-}
+  FailedSearchSystemAction failed(
+      {@required SearchParameters parameters, @required Exception exception}) {
+    return FailedSearchSystemAction(
+      parameters: parameters,
+      exception: exception,
+    );
+  }
 
-class _$TournamentsSearchLoadedTearOff {
-  const _$TournamentsSearchLoadedTearOff();
-
-  _TournamentsSearchLoaded call(
-      {@required Iterable<Tournament> data, @required int nextPage}) {
-    return _TournamentsSearchLoaded(
+  CompletedSearchSystemAction completed(
+      {@required SearchParameters parameters,
+      @required Iterable<Tournament> data,
+      @required int nextPage,
+      @required bool canLoadMore}) {
+    return CompletedSearchSystemAction(
+      parameters: parameters,
       data: data,
       nextPage: nextPage,
+      canLoadMore: canLoadMore,
     );
   }
 }
 
 // ignore: unused_element
-const $TournamentsSearchLoaded = _$TournamentsSearchLoadedTearOff();
+const $SystemActionSearch = _$SystemActionSearchTearOff();
 
-mixin _$TournamentsSearchLoaded {
-  Iterable<Tournament> get data;
-  int get nextPage;
-
-  $TournamentsSearchLoadedCopyWith<TournamentsSearchLoaded> get copyWith;
+mixin _$SystemActionSearch {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result clearResults(),
+    @required Result loading(SearchParameters parameters),
+    @required Result failed(SearchParameters parameters, Exception exception),
+    @required
+        Result completed(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result clearResults(),
+    Result loading(SearchParameters parameters),
+    Result failed(SearchParameters parameters, Exception exception),
+    Result completed(SearchParameters parameters, Iterable<Tournament> data,
+        int nextPage, bool canLoadMore),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitSearchSystemAction value),
+    @required Result deInit(DeInitSearchSystemAction value),
+    @required Result clearResults(ClearResultsSearchSystemAction value),
+    @required Result loading(LoadingSearchSystemAction value),
+    @required Result failed(FailedSearchSystemAction value),
+    @required Result completed(CompletedSearchSystemAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitSearchSystemAction value),
+    Result deInit(DeInitSearchSystemAction value),
+    Result clearResults(ClearResultsSearchSystemAction value),
+    Result loading(LoadingSearchSystemAction value),
+    Result failed(FailedSearchSystemAction value),
+    Result completed(CompletedSearchSystemAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $TournamentsSearchLoadedCopyWith<$Res> {
-  factory $TournamentsSearchLoadedCopyWith(TournamentsSearchLoaded value,
-          $Res Function(TournamentsSearchLoaded) then) =
-      _$TournamentsSearchLoadedCopyWithImpl<$Res>;
-  $Res call({Iterable<Tournament> data, int nextPage});
+abstract class $SystemActionSearchCopyWith<$Res> {
+  factory $SystemActionSearchCopyWith(
+          SystemActionSearch value, $Res Function(SystemActionSearch) then) =
+      _$SystemActionSearchCopyWithImpl<$Res>;
 }
 
-class _$TournamentsSearchLoadedCopyWithImpl<$Res>
-    implements $TournamentsSearchLoadedCopyWith<$Res> {
-  _$TournamentsSearchLoadedCopyWithImpl(this._value, this._then);
+class _$SystemActionSearchCopyWithImpl<$Res>
+    implements $SystemActionSearchCopyWith<$Res> {
+  _$SystemActionSearchCopyWithImpl(this._value, this._then);
 
-  final TournamentsSearchLoaded _value;
+  final SystemActionSearch _value;
   // ignore: unused_field
-  final $Res Function(TournamentsSearchLoaded) _then;
-
-  @override
-  $Res call({
-    Object data = freezed,
-    Object nextPage = freezed,
-  }) {
-    return _then(_value.copyWith(
-      data: data == freezed ? _value.data : data as Iterable<Tournament>,
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as int,
-    ));
-  }
+  final $Res Function(SystemActionSearch) _then;
 }
 
-abstract class _$TournamentsSearchLoadedCopyWith<$Res>
-    implements $TournamentsSearchLoadedCopyWith<$Res> {
-  factory _$TournamentsSearchLoadedCopyWith(_TournamentsSearchLoaded value,
-          $Res Function(_TournamentsSearchLoaded) then) =
-      __$TournamentsSearchLoadedCopyWithImpl<$Res>;
-  @override
-  $Res call({Iterable<Tournament> data, int nextPage});
+abstract class $InitSearchSystemActionCopyWith<$Res> {
+  factory $InitSearchSystemActionCopyWith(InitSearchSystemAction value,
+          $Res Function(InitSearchSystemAction) then) =
+      _$InitSearchSystemActionCopyWithImpl<$Res>;
 }
 
-class __$TournamentsSearchLoadedCopyWithImpl<$Res>
-    extends _$TournamentsSearchLoadedCopyWithImpl<$Res>
-    implements _$TournamentsSearchLoadedCopyWith<$Res> {
-  __$TournamentsSearchLoadedCopyWithImpl(_TournamentsSearchLoaded _value,
-      $Res Function(_TournamentsSearchLoaded) _then)
-      : super(_value, (v) => _then(v as _TournamentsSearchLoaded));
+class _$InitSearchSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res>
+    implements $InitSearchSystemActionCopyWith<$Res> {
+  _$InitSearchSystemActionCopyWithImpl(InitSearchSystemAction _value,
+      $Res Function(InitSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as InitSearchSystemAction));
 
   @override
-  _TournamentsSearchLoaded get _value =>
-      super._value as _TournamentsSearchLoaded;
-
-  @override
-  $Res call({
-    Object data = freezed,
-    Object nextPage = freezed,
-  }) {
-    return _then(_TournamentsSearchLoaded(
-      data: data == freezed ? _value.data : data as Iterable<Tournament>,
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as int,
-    ));
-  }
+  InitSearchSystemAction get _value => super._value as InitSearchSystemAction;
 }
 
-class _$_TournamentsSearchLoaded
+class _$InitSearchSystemAction
     with DiagnosticableTreeMixin
-    implements _TournamentsSearchLoaded {
-  const _$_TournamentsSearchLoaded(
-      {@required this.data, @required this.nextPage})
-      : assert(data != null),
-        assert(nextPage != null);
-
-  @override
-  final Iterable<Tournament> data;
-  @override
-  final int nextPage;
+    implements InitSearchSystemAction {
+  const _$InitSearchSystemAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentsSearchLoaded(data: $data, nextPage: $nextPage)';
+    return 'SystemActionSearch.init()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SystemActionSearch.init'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InitSearchSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result clearResults(),
+    @required Result loading(SearchParameters parameters),
+    @required Result failed(SearchParameters parameters, Exception exception),
+    @required
+        Result completed(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result clearResults(),
+    Result loading(SearchParameters parameters),
+    Result failed(SearchParameters parameters, Exception exception),
+    Result completed(SearchParameters parameters, Iterable<Tournament> data,
+        int nextPage, bool canLoadMore),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitSearchSystemAction value),
+    @required Result deInit(DeInitSearchSystemAction value),
+    @required Result clearResults(ClearResultsSearchSystemAction value),
+    @required Result loading(LoadingSearchSystemAction value),
+    @required Result failed(FailedSearchSystemAction value),
+    @required Result completed(CompletedSearchSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitSearchSystemAction value),
+    Result deInit(DeInitSearchSystemAction value),
+    Result clearResults(ClearResultsSearchSystemAction value),
+    Result loading(LoadingSearchSystemAction value),
+    Result failed(FailedSearchSystemAction value),
+    Result completed(CompletedSearchSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitSearchSystemAction implements SystemActionSearch {
+  const factory InitSearchSystemAction() = _$InitSearchSystemAction;
+}
+
+abstract class $DeInitSearchSystemActionCopyWith<$Res> {
+  factory $DeInitSearchSystemActionCopyWith(DeInitSearchSystemAction value,
+          $Res Function(DeInitSearchSystemAction) then) =
+      _$DeInitSearchSystemActionCopyWithImpl<$Res>;
+}
+
+class _$DeInitSearchSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res>
+    implements $DeInitSearchSystemActionCopyWith<$Res> {
+  _$DeInitSearchSystemActionCopyWithImpl(DeInitSearchSystemAction _value,
+      $Res Function(DeInitSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as DeInitSearchSystemAction));
+
+  @override
+  DeInitSearchSystemAction get _value =>
+      super._value as DeInitSearchSystemAction;
+}
+
+class _$DeInitSearchSystemAction
+    with DiagnosticableTreeMixin
+    implements DeInitSearchSystemAction {
+  const _$DeInitSearchSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionSearch.deInit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SystemActionSearch.deInit'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is DeInitSearchSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result clearResults(),
+    @required Result loading(SearchParameters parameters),
+    @required Result failed(SearchParameters parameters, Exception exception),
+    @required
+        Result completed(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result clearResults(),
+    Result loading(SearchParameters parameters),
+    Result failed(SearchParameters parameters, Exception exception),
+    Result completed(SearchParameters parameters, Iterable<Tournament> data,
+        int nextPage, bool canLoadMore),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitSearchSystemAction value),
+    @required Result deInit(DeInitSearchSystemAction value),
+    @required Result clearResults(ClearResultsSearchSystemAction value),
+    @required Result loading(LoadingSearchSystemAction value),
+    @required Result failed(FailedSearchSystemAction value),
+    @required Result completed(CompletedSearchSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitSearchSystemAction value),
+    Result deInit(DeInitSearchSystemAction value),
+    Result clearResults(ClearResultsSearchSystemAction value),
+    Result loading(LoadingSearchSystemAction value),
+    Result failed(FailedSearchSystemAction value),
+    Result completed(CompletedSearchSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeInitSearchSystemAction implements SystemActionSearch {
+  const factory DeInitSearchSystemAction() = _$DeInitSearchSystemAction;
+}
+
+abstract class $ClearResultsSearchSystemActionCopyWith<$Res> {
+  factory $ClearResultsSearchSystemActionCopyWith(
+          ClearResultsSearchSystemAction value,
+          $Res Function(ClearResultsSearchSystemAction) then) =
+      _$ClearResultsSearchSystemActionCopyWithImpl<$Res>;
+}
+
+class _$ClearResultsSearchSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res>
+    implements $ClearResultsSearchSystemActionCopyWith<$Res> {
+  _$ClearResultsSearchSystemActionCopyWithImpl(
+      ClearResultsSearchSystemAction _value,
+      $Res Function(ClearResultsSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as ClearResultsSearchSystemAction));
+
+  @override
+  ClearResultsSearchSystemAction get _value =>
+      super._value as ClearResultsSearchSystemAction;
+}
+
+class _$ClearResultsSearchSystemAction
+    with DiagnosticableTreeMixin
+    implements ClearResultsSearchSystemAction {
+  const _$ClearResultsSearchSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionSearch.clearResults()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'TournamentsSearchLoaded'))
-      ..add(DiagnosticsProperty('data', data))
-      ..add(DiagnosticsProperty('nextPage', nextPage));
+      ..add(DiagnosticsProperty('type', 'SystemActionSearch.clearResults'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ClearResultsSearchSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result clearResults(),
+    @required Result loading(SearchParameters parameters),
+    @required Result failed(SearchParameters parameters, Exception exception),
+    @required
+        Result completed(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return clearResults();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result clearResults(),
+    Result loading(SearchParameters parameters),
+    Result failed(SearchParameters parameters, Exception exception),
+    Result completed(SearchParameters parameters, Iterable<Tournament> data,
+        int nextPage, bool canLoadMore),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (clearResults != null) {
+      return clearResults();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitSearchSystemAction value),
+    @required Result deInit(DeInitSearchSystemAction value),
+    @required Result clearResults(ClearResultsSearchSystemAction value),
+    @required Result loading(LoadingSearchSystemAction value),
+    @required Result failed(FailedSearchSystemAction value),
+    @required Result completed(CompletedSearchSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return clearResults(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitSearchSystemAction value),
+    Result deInit(DeInitSearchSystemAction value),
+    Result clearResults(ClearResultsSearchSystemAction value),
+    Result loading(LoadingSearchSystemAction value),
+    Result failed(FailedSearchSystemAction value),
+    Result completed(CompletedSearchSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (clearResults != null) {
+      return clearResults(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ClearResultsSearchSystemAction implements SystemActionSearch {
+  const factory ClearResultsSearchSystemAction() =
+      _$ClearResultsSearchSystemAction;
+}
+
+abstract class $LoadingSearchSystemActionCopyWith<$Res> {
+  factory $LoadingSearchSystemActionCopyWith(LoadingSearchSystemAction value,
+          $Res Function(LoadingSearchSystemAction) then) =
+      _$LoadingSearchSystemActionCopyWithImpl<$Res>;
+  $Res call({SearchParameters parameters});
+
+  $SearchParametersCopyWith<$Res> get parameters;
+}
+
+class _$LoadingSearchSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res>
+    implements $LoadingSearchSystemActionCopyWith<$Res> {
+  _$LoadingSearchSystemActionCopyWithImpl(LoadingSearchSystemAction _value,
+      $Res Function(LoadingSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as LoadingSearchSystemAction));
+
+  @override
+  LoadingSearchSystemAction get _value =>
+      super._value as LoadingSearchSystemAction;
+
+  @override
+  $Res call({
+    Object parameters = freezed,
+  }) {
+    return _then(LoadingSearchSystemAction(
+      parameters: parameters == freezed
+          ? _value.parameters
+          : parameters as SearchParameters,
+    ));
+  }
+
+  @override
+  $SearchParametersCopyWith<$Res> get parameters {
+    if (_value.parameters == null) {
+      return null;
+    }
+    return $SearchParametersCopyWith<$Res>(_value.parameters, (value) {
+      return _then(_value.copyWith(parameters: value));
+    });
+  }
+}
+
+class _$LoadingSearchSystemAction
+    with DiagnosticableTreeMixin
+    implements LoadingSearchSystemAction {
+  const _$LoadingSearchSystemAction({@required this.parameters})
+      : assert(parameters != null);
+
+  @override
+  final SearchParameters parameters;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionSearch.loading(parameters: $parameters)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionSearch.loading'))
+      ..add(DiagnosticsProperty('parameters', parameters));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TournamentsSearchLoaded &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.nextPage, nextPage) ||
+        (other is LoadingSearchSystemAction &&
+            (identical(other.parameters, parameters) ||
                 const DeepCollectionEquality()
-                    .equals(other.nextPage, nextPage)));
+                    .equals(other.parameters, parameters)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(nextPage);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(parameters);
 
   @override
-  _$TournamentsSearchLoadedCopyWith<_TournamentsSearchLoaded> get copyWith =>
-      __$TournamentsSearchLoadedCopyWithImpl<_TournamentsSearchLoaded>(
+  $LoadingSearchSystemActionCopyWith<LoadingSearchSystemAction> get copyWith =>
+      _$LoadingSearchSystemActionCopyWithImpl<LoadingSearchSystemAction>(
           this, _$identity);
-}
-
-abstract class _TournamentsSearchLoaded implements TournamentsSearchLoaded {
-  const factory _TournamentsSearchLoaded(
-      {@required Iterable<Tournament> data,
-      @required int nextPage}) = _$_TournamentsSearchLoaded;
 
   @override
-  Iterable<Tournament> get data;
-  @override
-  int get nextPage;
-  @override
-  _$TournamentsSearchLoadedCopyWith<_TournamentsSearchLoaded> get copyWith;
-}
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result clearResults(),
+    @required Result loading(SearchParameters parameters),
+    @required Result failed(SearchParameters parameters, Exception exception),
+    @required
+        Result completed(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return loading(parameters);
+  }
 
-class _$TournamentsSearchFailedToLoadTearOff {
-  const _$TournamentsSearchFailedToLoadTearOff();
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result clearResults(),
+    Result loading(SearchParameters parameters),
+    Result failed(SearchParameters parameters, Exception exception),
+    Result completed(SearchParameters parameters, Iterable<Tournament> data,
+        int nextPage, bool canLoadMore),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(parameters);
+    }
+    return orElse();
+  }
 
-  _TournamentsSearchFailedToLoad call({@required Exception exception}) {
-    return _TournamentsSearchFailedToLoad(
-      exception: exception,
-    );
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitSearchSystemAction value),
+    @required Result deInit(DeInitSearchSystemAction value),
+    @required Result clearResults(ClearResultsSearchSystemAction value),
+    @required Result loading(LoadingSearchSystemAction value),
+    @required Result failed(FailedSearchSystemAction value),
+    @required Result completed(CompletedSearchSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitSearchSystemAction value),
+    Result deInit(DeInitSearchSystemAction value),
+    Result clearResults(ClearResultsSearchSystemAction value),
+    Result loading(LoadingSearchSystemAction value),
+    Result failed(FailedSearchSystemAction value),
+    Result completed(CompletedSearchSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $TournamentsSearchFailedToLoad = _$TournamentsSearchFailedToLoadTearOff();
+abstract class LoadingSearchSystemAction implements SystemActionSearch {
+  const factory LoadingSearchSystemAction(
+      {@required SearchParameters parameters}) = _$LoadingSearchSystemAction;
 
-mixin _$TournamentsSearchFailedToLoad {
-  Exception get exception;
-
-  $TournamentsSearchFailedToLoadCopyWith<TournamentsSearchFailedToLoad>
-      get copyWith;
+  SearchParameters get parameters;
+  $LoadingSearchSystemActionCopyWith<LoadingSearchSystemAction> get copyWith;
 }
 
-abstract class $TournamentsSearchFailedToLoadCopyWith<$Res> {
-  factory $TournamentsSearchFailedToLoadCopyWith(
-          TournamentsSearchFailedToLoad value,
-          $Res Function(TournamentsSearchFailedToLoad) then) =
-      _$TournamentsSearchFailedToLoadCopyWithImpl<$Res>;
-  $Res call({Exception exception});
+abstract class $FailedSearchSystemActionCopyWith<$Res> {
+  factory $FailedSearchSystemActionCopyWith(FailedSearchSystemAction value,
+          $Res Function(FailedSearchSystemAction) then) =
+      _$FailedSearchSystemActionCopyWithImpl<$Res>;
+  $Res call({SearchParameters parameters, Exception exception});
+
+  $SearchParametersCopyWith<$Res> get parameters;
 }
 
-class _$TournamentsSearchFailedToLoadCopyWithImpl<$Res>
-    implements $TournamentsSearchFailedToLoadCopyWith<$Res> {
-  _$TournamentsSearchFailedToLoadCopyWithImpl(this._value, this._then);
+class _$FailedSearchSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res>
+    implements $FailedSearchSystemActionCopyWith<$Res> {
+  _$FailedSearchSystemActionCopyWithImpl(FailedSearchSystemAction _value,
+      $Res Function(FailedSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as FailedSearchSystemAction));
 
-  final TournamentsSearchFailedToLoad _value;
-  // ignore: unused_field
-  final $Res Function(TournamentsSearchFailedToLoad) _then;
+  @override
+  FailedSearchSystemAction get _value =>
+      super._value as FailedSearchSystemAction;
 
   @override
   $Res call({
+    Object parameters = freezed,
     Object exception = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(FailedSearchSystemAction(
+      parameters: parameters == freezed
+          ? _value.parameters
+          : parameters as SearchParameters,
       exception:
           exception == freezed ? _value.exception : exception as Exception,
     ));
   }
-}
-
-abstract class _$TournamentsSearchFailedToLoadCopyWith<$Res>
-    implements $TournamentsSearchFailedToLoadCopyWith<$Res> {
-  factory _$TournamentsSearchFailedToLoadCopyWith(
-          _TournamentsSearchFailedToLoad value,
-          $Res Function(_TournamentsSearchFailedToLoad) then) =
-      __$TournamentsSearchFailedToLoadCopyWithImpl<$Res>;
-  @override
-  $Res call({Exception exception});
-}
-
-class __$TournamentsSearchFailedToLoadCopyWithImpl<$Res>
-    extends _$TournamentsSearchFailedToLoadCopyWithImpl<$Res>
-    implements _$TournamentsSearchFailedToLoadCopyWith<$Res> {
-  __$TournamentsSearchFailedToLoadCopyWithImpl(
-      _TournamentsSearchFailedToLoad _value,
-      $Res Function(_TournamentsSearchFailedToLoad) _then)
-      : super(_value, (v) => _then(v as _TournamentsSearchFailedToLoad));
 
   @override
-  _TournamentsSearchFailedToLoad get _value =>
-      super._value as _TournamentsSearchFailedToLoad;
-
-  @override
-  $Res call({
-    Object exception = freezed,
-  }) {
-    return _then(_TournamentsSearchFailedToLoad(
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
-    ));
+  $SearchParametersCopyWith<$Res> get parameters {
+    if (_value.parameters == null) {
+      return null;
+    }
+    return $SearchParametersCopyWith<$Res>(_value.parameters, (value) {
+      return _then(_value.copyWith(parameters: value));
+    });
   }
 }
 
-class _$_TournamentsSearchFailedToLoad
+class _$FailedSearchSystemAction
     with DiagnosticableTreeMixin
-    implements _TournamentsSearchFailedToLoad {
-  const _$_TournamentsSearchFailedToLoad({@required this.exception})
-      : assert(exception != null);
+    implements FailedSearchSystemAction {
+  const _$FailedSearchSystemAction(
+      {@required this.parameters, @required this.exception})
+      : assert(parameters != null),
+        assert(exception != null);
 
+  @override
+  final SearchParameters parameters;
   @override
   final Exception exception;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentsSearchFailedToLoad(exception: $exception)';
+    return 'SystemActionSearch.failed(parameters: $parameters, exception: $exception)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'TournamentsSearchFailedToLoad'))
+      ..add(DiagnosticsProperty('type', 'SystemActionSearch.failed'))
+      ..add(DiagnosticsProperty('parameters', parameters))
       ..add(DiagnosticsProperty('exception', exception));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TournamentsSearchFailedToLoad &&
+        (other is FailedSearchSystemAction &&
+            (identical(other.parameters, parameters) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameters, parameters)) &&
             (identical(other.exception, exception) ||
                 const DeepCollectionEquality()
                     .equals(other.exception, exception)));
@@ -923,105 +1785,314 @@ class _$_TournamentsSearchFailedToLoad
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(exception);
 
   @override
-  _$TournamentsSearchFailedToLoadCopyWith<_TournamentsSearchFailedToLoad>
-      get copyWith => __$TournamentsSearchFailedToLoadCopyWithImpl<
-          _TournamentsSearchFailedToLoad>(this, _$identity);
-}
-
-abstract class _TournamentsSearchFailedToLoad
-    implements TournamentsSearchFailedToLoad {
-  const factory _TournamentsSearchFailedToLoad(
-      {@required Exception exception}) = _$_TournamentsSearchFailedToLoad;
+  $FailedSearchSystemActionCopyWith<FailedSearchSystemAction> get copyWith =>
+      _$FailedSearchSystemActionCopyWithImpl<FailedSearchSystemAction>(
+          this, _$identity);
 
   @override
-  Exception get exception;
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result clearResults(),
+    @required Result loading(SearchParameters parameters),
+    @required Result failed(SearchParameters parameters, Exception exception),
+    @required
+        Result completed(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return failed(parameters, exception);
+  }
+
   @override
-  _$TournamentsSearchFailedToLoadCopyWith<_TournamentsSearchFailedToLoad>
-      get copyWith;
-}
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result clearResults(),
+    Result loading(SearchParameters parameters),
+    Result failed(SearchParameters parameters, Exception exception),
+    Result completed(SearchParameters parameters, Iterable<Tournament> data,
+        int nextPage, bool canLoadMore),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(parameters, exception);
+    }
+    return orElse();
+  }
 
-class _$ClearSearchTournamentsExceptionTearOff {
-  const _$ClearSearchTournamentsExceptionTearOff();
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitSearchSystemAction value),
+    @required Result deInit(DeInitSearchSystemAction value),
+    @required Result clearResults(ClearResultsSearchSystemAction value),
+    @required Result loading(LoadingSearchSystemAction value),
+    @required Result failed(FailedSearchSystemAction value),
+    @required Result completed(CompletedSearchSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return failed(this);
+  }
 
-  _ClearSearchTournamentsException call() {
-    return const _ClearSearchTournamentsException();
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitSearchSystemAction value),
+    Result deInit(DeInitSearchSystemAction value),
+    Result clearResults(ClearResultsSearchSystemAction value),
+    Result loading(LoadingSearchSystemAction value),
+    Result failed(FailedSearchSystemAction value),
+    Result completed(CompletedSearchSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $ClearSearchTournamentsException =
-    _$ClearSearchTournamentsExceptionTearOff();
+abstract class FailedSearchSystemAction implements SystemActionSearch {
+  const factory FailedSearchSystemAction(
+      {@required SearchParameters parameters,
+      @required Exception exception}) = _$FailedSearchSystemAction;
 
-mixin _$ClearSearchTournamentsException {}
-
-abstract class $ClearSearchTournamentsExceptionCopyWith<$Res> {
-  factory $ClearSearchTournamentsExceptionCopyWith(
-          ClearSearchTournamentsException value,
-          $Res Function(ClearSearchTournamentsException) then) =
-      _$ClearSearchTournamentsExceptionCopyWithImpl<$Res>;
+  SearchParameters get parameters;
+  Exception get exception;
+  $FailedSearchSystemActionCopyWith<FailedSearchSystemAction> get copyWith;
 }
 
-class _$ClearSearchTournamentsExceptionCopyWithImpl<$Res>
-    implements $ClearSearchTournamentsExceptionCopyWith<$Res> {
-  _$ClearSearchTournamentsExceptionCopyWithImpl(this._value, this._then);
+abstract class $CompletedSearchSystemActionCopyWith<$Res> {
+  factory $CompletedSearchSystemActionCopyWith(
+          CompletedSearchSystemAction value,
+          $Res Function(CompletedSearchSystemAction) then) =
+      _$CompletedSearchSystemActionCopyWithImpl<$Res>;
+  $Res call(
+      {SearchParameters parameters,
+      Iterable<Tournament> data,
+      int nextPage,
+      bool canLoadMore});
 
-  final ClearSearchTournamentsException _value;
-  // ignore: unused_field
-  final $Res Function(ClearSearchTournamentsException) _then;
+  $SearchParametersCopyWith<$Res> get parameters;
 }
 
-abstract class _$ClearSearchTournamentsExceptionCopyWith<$Res> {
-  factory _$ClearSearchTournamentsExceptionCopyWith(
-          _ClearSearchTournamentsException value,
-          $Res Function(_ClearSearchTournamentsException) then) =
-      __$ClearSearchTournamentsExceptionCopyWithImpl<$Res>;
-}
-
-class __$ClearSearchTournamentsExceptionCopyWithImpl<$Res>
-    extends _$ClearSearchTournamentsExceptionCopyWithImpl<$Res>
-    implements _$ClearSearchTournamentsExceptionCopyWith<$Res> {
-  __$ClearSearchTournamentsExceptionCopyWithImpl(
-      _ClearSearchTournamentsException _value,
-      $Res Function(_ClearSearchTournamentsException) _then)
-      : super(_value, (v) => _then(v as _ClearSearchTournamentsException));
+class _$CompletedSearchSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res>
+    implements $CompletedSearchSystemActionCopyWith<$Res> {
+  _$CompletedSearchSystemActionCopyWithImpl(CompletedSearchSystemAction _value,
+      $Res Function(CompletedSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as CompletedSearchSystemAction));
 
   @override
-  _ClearSearchTournamentsException get _value =>
-      super._value as _ClearSearchTournamentsException;
+  CompletedSearchSystemAction get _value =>
+      super._value as CompletedSearchSystemAction;
+
+  @override
+  $Res call({
+    Object parameters = freezed,
+    Object data = freezed,
+    Object nextPage = freezed,
+    Object canLoadMore = freezed,
+  }) {
+    return _then(CompletedSearchSystemAction(
+      parameters: parameters == freezed
+          ? _value.parameters
+          : parameters as SearchParameters,
+      data: data == freezed ? _value.data : data as Iterable<Tournament>,
+      nextPage: nextPage == freezed ? _value.nextPage : nextPage as int,
+      canLoadMore:
+          canLoadMore == freezed ? _value.canLoadMore : canLoadMore as bool,
+    ));
+  }
+
+  @override
+  $SearchParametersCopyWith<$Res> get parameters {
+    if (_value.parameters == null) {
+      return null;
+    }
+    return $SearchParametersCopyWith<$Res>(_value.parameters, (value) {
+      return _then(_value.copyWith(parameters: value));
+    });
+  }
 }
 
-class _$_ClearSearchTournamentsException
+class _$CompletedSearchSystemAction
     with DiagnosticableTreeMixin
-    implements _ClearSearchTournamentsException {
-  const _$_ClearSearchTournamentsException();
+    implements CompletedSearchSystemAction {
+  const _$CompletedSearchSystemAction(
+      {@required this.parameters,
+      @required this.data,
+      @required this.nextPage,
+      @required this.canLoadMore})
+      : assert(parameters != null),
+        assert(data != null),
+        assert(nextPage != null),
+        assert(canLoadMore != null);
+
+  @override
+  final SearchParameters parameters;
+  @override
+  final Iterable<Tournament> data;
+  @override
+  final int nextPage;
+  @override
+  final bool canLoadMore;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ClearSearchTournamentsException()';
+    return 'SystemActionSearch.completed(parameters: $parameters, data: $data, nextPage: $nextPage, canLoadMore: $canLoadMore)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ClearSearchTournamentsException'));
+      ..add(DiagnosticsProperty('type', 'SystemActionSearch.completed'))
+      ..add(DiagnosticsProperty('parameters', parameters))
+      ..add(DiagnosticsProperty('data', data))
+      ..add(DiagnosticsProperty('nextPage', nextPage))
+      ..add(DiagnosticsProperty('canLoadMore', canLoadMore));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ClearSearchTournamentsException);
+        (other is CompletedSearchSystemAction &&
+            (identical(other.parameters, parameters) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameters, parameters)) &&
+            (identical(other.data, data) ||
+                const DeepCollectionEquality().equals(other.data, data)) &&
+            (identical(other.nextPage, nextPage) ||
+                const DeepCollectionEquality()
+                    .equals(other.nextPage, nextPage)) &&
+            (identical(other.canLoadMore, canLoadMore) ||
+                const DeepCollectionEquality()
+                    .equals(other.canLoadMore, canLoadMore)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(data) ^
+      const DeepCollectionEquality().hash(nextPage) ^
+      const DeepCollectionEquality().hash(canLoadMore);
+
+  @override
+  $CompletedSearchSystemActionCopyWith<CompletedSearchSystemAction>
+      get copyWith => _$CompletedSearchSystemActionCopyWithImpl<
+          CompletedSearchSystemAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result clearResults(),
+    @required Result loading(SearchParameters parameters),
+    @required Result failed(SearchParameters parameters, Exception exception),
+    @required
+        Result completed(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return completed(parameters, data, nextPage, canLoadMore);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result clearResults(),
+    Result loading(SearchParameters parameters),
+    Result failed(SearchParameters parameters, Exception exception),
+    Result completed(SearchParameters parameters, Iterable<Tournament> data,
+        int nextPage, bool canLoadMore),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(parameters, data, nextPage, canLoadMore);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitSearchSystemAction value),
+    @required Result deInit(DeInitSearchSystemAction value),
+    @required Result clearResults(ClearResultsSearchSystemAction value),
+    @required Result loading(LoadingSearchSystemAction value),
+    @required Result failed(FailedSearchSystemAction value),
+    @required Result completed(CompletedSearchSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(clearResults != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return completed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitSearchSystemAction value),
+    Result deInit(DeInitSearchSystemAction value),
+    Result clearResults(ClearResultsSearchSystemAction value),
+    Result loading(LoadingSearchSystemAction value),
+    Result failed(FailedSearchSystemAction value),
+    Result completed(CompletedSearchSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _ClearSearchTournamentsException
-    implements ClearSearchTournamentsException {
-  const factory _ClearSearchTournamentsException() =
-      _$_ClearSearchTournamentsException;
+abstract class CompletedSearchSystemAction implements SystemActionSearch {
+  const factory CompletedSearchSystemAction(
+      {@required SearchParameters parameters,
+      @required Iterable<Tournament> data,
+      @required int nextPage,
+      @required bool canLoadMore}) = _$CompletedSearchSystemAction;
+
+  SearchParameters get parameters;
+  Iterable<Tournament> get data;
+  int get nextPage;
+  bool get canLoadMore;
+  $CompletedSearchSystemActionCopyWith<CompletedSearchSystemAction>
+      get copyWith;
 }

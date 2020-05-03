@@ -1,92 +1,61 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/search/search_parameters.dart';
+import 'package:what_when_where/db_chgk_info/search/sorting.dart';
 import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/redux/search/state.dart';
 
 part 'actions.freezed.dart';
 
 abstract class SearchAction implements ReduxAction {}
 
 @freezed
-abstract class SearchTournaments
-    with _$SearchTournaments
+abstract class UserActionSearch
+    with _$UserActionSearch
     implements SearchAction {
-  const factory SearchTournaments() = _SearchTournaments;
-}
+  const factory UserActionSearch.open() = OpenSearchUserAction;
 
-@freezed
-abstract class RepeatFailedSearchTournaments
-    with _$RepeatFailedSearchTournaments
-    implements SearchAction {
-  const factory RepeatFailedSearchTournaments() =
-      _RepeatFailedSearchTournaments;
-}
+  const factory UserActionSearch.execute() = ExecuteSearchUserAction;
 
-@freezed
-abstract class ClearTournamentsSearchResults
-    with _$ClearTournamentsSearchResults
-    implements SearchAction {
-  const factory ClearTournamentsSearchResults() =
-      _ClearTournamentsSearchResults;
-}
+  const factory UserActionSearch.proceed() = ProceedSearchUserAction;
 
-@freezed
-abstract class ClearTournamentsSearchParameters
-    with _$ClearTournamentsSearchParameters
-    implements SearchAction {
-  const factory ClearTournamentsSearchParameters() =
-      _ClearTournamentsSearchParameters;
-}
+  const factory UserActionSearch.rerun() = RerunSearchUserAction;
 
-@freezed
-abstract class TournamentsSearchQueryChanged
-    with _$TournamentsSearchQueryChanged
-    implements SearchAction {
-  const factory TournamentsSearchQueryChanged({
+  const factory UserActionSearch.close() = CloseSearchUserAction;
+
+  const factory UserActionSearch.newQuery({
     @required String query,
-  }) = _TournamentsSearchQueryChanged;
-}
+  }) = NewQuerySearchUserAction;
 
-@freezed
-abstract class TournamentsSearchSortingChanged
-    with _$TournamentsSearchSortingChanged
-    implements SearchAction {
-  const factory TournamentsSearchSortingChanged({
+  const factory UserActionSearch.newSorting({
     @required Sorting sorting,
-  }) = _TournamentsSearchSortingChanged;
+  }) = NewSortingSearchUserAction;
 }
 
 @freezed
-abstract class TournamentsSearchIsLoading
-    with _$TournamentsSearchIsLoading
+abstract class SystemActionSearch
+    with _$SystemActionSearch
     implements SearchAction {
-  const factory TournamentsSearchIsLoading() = _TournamentsSearchIsLoading;
-}
+  const factory SystemActionSearch.init() = InitSearchSystemAction;
 
-@freezed
-abstract class TournamentsSearchLoaded
-    with _$TournamentsSearchLoaded
-    implements SearchAction {
-  const factory TournamentsSearchLoaded({
+  const factory SystemActionSearch.deInit() = DeInitSearchSystemAction;
+
+  const factory SystemActionSearch.clearResults() =
+      ClearResultsSearchSystemAction;
+
+  const factory SystemActionSearch.loading({
+    @required SearchParameters parameters,
+  }) = LoadingSearchSystemAction;
+
+  const factory SystemActionSearch.failed({
+    @required SearchParameters parameters,
+    @required Exception exception,
+  }) = FailedSearchSystemAction;
+
+  const factory SystemActionSearch.completed({
+    @required SearchParameters parameters,
     @required Iterable<Tournament> data,
     @required int nextPage,
-  }) = _TournamentsSearchLoaded;
-}
-
-@freezed
-abstract class TournamentsSearchFailedToLoad
-    with _$TournamentsSearchFailedToLoad
-    implements SearchAction {
-  const factory TournamentsSearchFailedToLoad({
-    @required Exception exception,
-  }) = _TournamentsSearchFailedToLoad;
-}
-
-@freezed
-abstract class ClearSearchTournamentsException
-    with _$ClearSearchTournamentsException
-    implements SearchAction {
-  const factory ClearSearchTournamentsException() =
-      _ClearSearchTournamentsException;
+    @required bool canLoadMore,
+  }) = CompletedSearchSystemAction;
 }
