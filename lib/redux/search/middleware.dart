@@ -24,8 +24,9 @@ class SearchMiddleware {
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenSearchUserAction>(_open),
         TypedMiddleware<AppState, CloseSearchUserAction>(_close),
-        TypedMiddleware<AppState, NewQuerySearchUserAction>(_newQuery),
-        TypedMiddleware<AppState, NewSortingSearchUserAction>(_newSorting),
+        TypedMiddleware<AppState, UpdateTextSearchUserAction>(_updateText),
+        TypedMiddleware<AppState, UpdateSortingSearchUserAction>(
+            _updateSorting),
         TypedMiddleware<AppState, ExecuteSearchUserAction>(_execute),
         TypedMiddleware<AppState, ProceedSearchUserAction>(_proceed),
         TypedMiddleware<AppState, RerunSearchUserAction>(_rerun),
@@ -46,15 +47,15 @@ class SearchMiddleware {
     store.dispatch(const SystemActionSearch.deInit());
   }
 
-  void _newQuery(Store<AppState> store, NewQuerySearchUserAction action,
+  void _updateText(Store<AppState> store, UpdateTextSearchUserAction action,
       NextDispatcher next) {
     next(action);
 
     store.dispatch(const SystemActionSearch.clearResults());
   }
 
-  void _newSorting(Store<AppState> store, NewSortingSearchUserAction action,
-      NextDispatcher next) {
+  void _updateSorting(Store<AppState> store,
+      UpdateSortingSearchUserAction action, NextDispatcher next) {
     next(action);
 
     store.dispatch(const SystemActionSearch.clearResults());

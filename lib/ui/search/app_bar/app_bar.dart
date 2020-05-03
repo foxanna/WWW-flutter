@@ -139,14 +139,14 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
     if (store.state.searchState.parameters.sorting !=
         _sortingController.value) {
       store.dispatch(
-          UserActionSearch.newSorting(sorting: _sortingController.value));
+          UserActionSearch.updateSorting(sorting: _sortingController.value));
     }
   }
 
   void _onQueryChanged() {
     final store = StoreProvider.of<AppState>(context);
     if (store.state.searchState.parameters.query != _queryController.text) {
-      store.dispatch(UserActionSearch.newQuery(query: _queryController.text));
+      store.dispatch(UserActionSearch.updateText(query: _queryController.text));
     }
 
     _queryDebouncer.sink.add(_queryController.text);

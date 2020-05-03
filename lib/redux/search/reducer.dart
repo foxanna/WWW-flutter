@@ -4,8 +4,8 @@ import 'package:what_when_where/redux/search/state.dart';
 
 class SearchReducer {
   static final Reducer<SearchState> _reducer = combineReducers<SearchState>([
-    TypedReducer<SearchState, NewQuerySearchUserAction>(_newQuery),
-    TypedReducer<SearchState, NewSortingSearchUserAction>(_newSorting),
+    TypedReducer<SearchState, UpdateTextSearchUserAction>(_updateText),
+    TypedReducer<SearchState, UpdateSortingSearchUserAction>(_updateSorting),
     TypedReducer<SearchState, InitSearchSystemAction>(_initSearch),
     TypedReducer<SearchState, DeInitSearchSystemAction>(_deInitSearch),
     TypedReducer<SearchState, ClearResultsSearchSystemAction>(_clearResults),
@@ -17,12 +17,12 @@ class SearchReducer {
   static SearchState reduce(SearchState state, dynamic action) =>
       _reducer(state, action);
 
-  static SearchState _newQuery(
-          SearchState state, NewQuerySearchUserAction action) =>
+  static SearchState _updateText(
+          SearchState state, UpdateTextSearchUserAction action) =>
       state.copyWith.parameters(query: action.query);
 
-  static SearchState _newSorting(
-          SearchState state, NewSortingSearchUserAction action) =>
+  static SearchState _updateSorting(
+          SearchState state, UpdateSortingSearchUserAction action) =>
       state.copyWith.parameters(sorting: action.sorting);
 
   static SearchState _initSearch(

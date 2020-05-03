@@ -20,26 +20,18 @@ class _$UserActionSearchTearOff {
     return const ExecuteSearchUserAction();
   }
 
-  ProceedSearchUserAction proceed() {
-    return const ProceedSearchUserAction();
-  }
-
-  RerunSearchUserAction rerun() {
-    return const RerunSearchUserAction();
-  }
-
   CloseSearchUserAction close() {
     return const CloseSearchUserAction();
   }
 
-  NewQuerySearchUserAction newQuery({@required String query}) {
-    return NewQuerySearchUserAction(
+  UpdateTextSearchUserAction updateText({@required String query}) {
+    return UpdateTextSearchUserAction(
       query: query,
     );
   }
 
-  NewSortingSearchUserAction newSorting({@required Sorting sorting}) {
-    return NewSortingSearchUserAction(
+  UpdateSortingSearchUserAction updateSorting({@required Sorting sorting}) {
+    return UpdateSortingSearchUserAction(
       sorting: sorting,
     );
   }
@@ -66,8 +58,8 @@ mixin _$UserActionSearch {
     Result proceed(),
     Result rerun(),
     Result close(),
-    Result newQuery(String query),
-    Result newSorting(Sorting sorting),
+    Result updateText(String query),
+    Result updateSorting(Sorting sorting),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -77,8 +69,8 @@ mixin _$UserActionSearch {
     @required Result proceed(ProceedSearchUserAction value),
     @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
-    @required Result newQuery(NewQuerySearchUserAction value),
-    @required Result newSorting(NewSortingSearchUserAction value),
+    @required Result updateText(UpdateTextSearchUserAction value),
+    @required Result updateSorting(UpdateSortingSearchUserAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -87,8 +79,8 @@ mixin _$UserActionSearch {
     Result proceed(ProceedSearchUserAction value),
     Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
-    Result newQuery(NewQuerySearchUserAction value),
-    Result newSorting(NewSortingSearchUserAction value),
+    Result updateText(UpdateTextSearchUserAction value),
+    Result updateSorting(UpdateSortingSearchUserAction value),
     @required Result orElse(),
   });
 }
@@ -157,16 +149,16 @@ class _$OpenSearchUserAction
     @required Result proceed(),
     @required Result rerun(),
     @required Result close(),
-    @required Result newQuery(String query),
-    @required Result newSorting(Sorting sorting),
+    @required Result updateText(String query),
+    @required Result updateSorting(Sorting sorting),
   }) {
     assert(open != null);
     assert(execute != null);
     assert(proceed != null);
     assert(rerun != null);
     assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
+    assert(updateText != null);
+    assert(updateSorting != null);
     return open();
   }
 
@@ -178,8 +170,8 @@ class _$OpenSearchUserAction
     Result proceed(),
     Result rerun(),
     Result close(),
-    Result newQuery(String query),
-    Result newSorting(Sorting sorting),
+    Result updateText(String query),
+    Result updateSorting(Sorting sorting),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -197,16 +189,16 @@ class _$OpenSearchUserAction
     @required Result proceed(ProceedSearchUserAction value),
     @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
-    @required Result newQuery(NewQuerySearchUserAction value),
-    @required Result newSorting(NewSortingSearchUserAction value),
+    @required Result updateText(UpdateTextSearchUserAction value),
+    @required Result updateSorting(UpdateSortingSearchUserAction value),
   }) {
     assert(open != null);
     assert(execute != null);
     assert(proceed != null);
     assert(rerun != null);
     assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
+    assert(updateText != null);
+    assert(updateSorting != null);
     return open(this);
   }
 
@@ -218,8 +210,8 @@ class _$OpenSearchUserAction
     Result proceed(ProceedSearchUserAction value),
     Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
-    Result newQuery(NewQuerySearchUserAction value),
-    Result newSorting(NewSortingSearchUserAction value),
+    Result updateText(UpdateTextSearchUserAction value),
+    Result updateSorting(UpdateSortingSearchUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -283,16 +275,16 @@ class _$ExecuteSearchUserAction
     @required Result proceed(),
     @required Result rerun(),
     @required Result close(),
-    @required Result newQuery(String query),
-    @required Result newSorting(Sorting sorting),
+    @required Result updateText(String query),
+    @required Result updateSorting(Sorting sorting),
   }) {
     assert(open != null);
     assert(execute != null);
     assert(proceed != null);
     assert(rerun != null);
     assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
+    assert(updateText != null);
+    assert(updateSorting != null);
     return execute();
   }
 
@@ -304,8 +296,8 @@ class _$ExecuteSearchUserAction
     Result proceed(),
     Result rerun(),
     Result close(),
-    Result newQuery(String query),
-    Result newSorting(Sorting sorting),
+    Result updateText(String query),
+    Result updateSorting(Sorting sorting),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -323,16 +315,16 @@ class _$ExecuteSearchUserAction
     @required Result proceed(ProceedSearchUserAction value),
     @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
-    @required Result newQuery(NewQuerySearchUserAction value),
-    @required Result newSorting(NewSortingSearchUserAction value),
+    @required Result updateText(UpdateTextSearchUserAction value),
+    @required Result updateSorting(UpdateSortingSearchUserAction value),
   }) {
     assert(open != null);
     assert(execute != null);
     assert(proceed != null);
     assert(rerun != null);
     assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
+    assert(updateText != null);
+    assert(updateSorting != null);
     return execute(this);
   }
 
@@ -344,8 +336,8 @@ class _$ExecuteSearchUserAction
     Result proceed(ProceedSearchUserAction value),
     Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
-    Result newQuery(NewQuerySearchUserAction value),
-    Result newSorting(NewSortingSearchUserAction value),
+    Result updateText(UpdateTextSearchUserAction value),
+    Result updateSorting(UpdateSortingSearchUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -430,8 +422,8 @@ class _$ProceedSearchUserAction
     Result proceed(),
     Result rerun(),
     Result close(),
-    Result newQuery(String query),
-    Result newSorting(Sorting sorting),
+    Result updateText(String query),
+    Result updateSorting(Sorting sorting),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -470,8 +462,8 @@ class _$ProceedSearchUserAction
     Result proceed(ProceedSearchUserAction value),
     Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
-    Result newQuery(NewQuerySearchUserAction value),
-    Result newSorting(NewSortingSearchUserAction value),
+    Result updateText(UpdateTextSearchUserAction value),
+    Result updateSorting(UpdateSortingSearchUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -556,8 +548,8 @@ class _$RerunSearchUserAction
     Result proceed(),
     Result rerun(),
     Result close(),
-    Result newQuery(String query),
-    Result newSorting(Sorting sorting),
+    Result updateText(String query),
+    Result updateSorting(Sorting sorting),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -596,8 +588,8 @@ class _$RerunSearchUserAction
     Result proceed(ProceedSearchUserAction value),
     Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
-    Result newQuery(NewQuerySearchUserAction value),
-    Result newSorting(NewSortingSearchUserAction value),
+    Result updateText(UpdateTextSearchUserAction value),
+    Result updateSorting(UpdateSortingSearchUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -661,16 +653,16 @@ class _$CloseSearchUserAction
     @required Result proceed(),
     @required Result rerun(),
     @required Result close(),
-    @required Result newQuery(String query),
-    @required Result newSorting(Sorting sorting),
+    @required Result updateText(String query),
+    @required Result updateSorting(Sorting sorting),
   }) {
     assert(open != null);
     assert(execute != null);
     assert(proceed != null);
     assert(rerun != null);
     assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
+    assert(updateText != null);
+    assert(updateSorting != null);
     return close();
   }
 
@@ -682,8 +674,8 @@ class _$CloseSearchUserAction
     Result proceed(),
     Result rerun(),
     Result close(),
-    Result newQuery(String query),
-    Result newSorting(Sorting sorting),
+    Result updateText(String query),
+    Result updateSorting(Sorting sorting),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -701,16 +693,16 @@ class _$CloseSearchUserAction
     @required Result proceed(ProceedSearchUserAction value),
     @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
-    @required Result newQuery(NewQuerySearchUserAction value),
-    @required Result newSorting(NewSortingSearchUserAction value),
+    @required Result updateText(UpdateTextSearchUserAction value),
+    @required Result updateSorting(UpdateSortingSearchUserAction value),
   }) {
     assert(open != null);
     assert(execute != null);
     assert(proceed != null);
     assert(rerun != null);
     assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
+    assert(updateText != null);
+    assert(updateSorting != null);
     return close(this);
   }
 
@@ -722,8 +714,8 @@ class _$CloseSearchUserAction
     Result proceed(ProceedSearchUserAction value),
     Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
-    Result newQuery(NewQuerySearchUserAction value),
-    Result newSorting(NewSortingSearchUserAction value),
+    Result updateText(UpdateTextSearchUserAction value),
+    Result updateSorting(UpdateSortingSearchUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -738,38 +730,38 @@ abstract class CloseSearchUserAction implements UserActionSearch {
   const factory CloseSearchUserAction() = _$CloseSearchUserAction;
 }
 
-abstract class $NewQuerySearchUserActionCopyWith<$Res> {
-  factory $NewQuerySearchUserActionCopyWith(NewQuerySearchUserAction value,
-          $Res Function(NewQuerySearchUserAction) then) =
-      _$NewQuerySearchUserActionCopyWithImpl<$Res>;
+abstract class $UpdateTextSearchUserActionCopyWith<$Res> {
+  factory $UpdateTextSearchUserActionCopyWith(UpdateTextSearchUserAction value,
+          $Res Function(UpdateTextSearchUserAction) then) =
+      _$UpdateTextSearchUserActionCopyWithImpl<$Res>;
   $Res call({String query});
 }
 
-class _$NewQuerySearchUserActionCopyWithImpl<$Res>
+class _$UpdateTextSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
-    implements $NewQuerySearchUserActionCopyWith<$Res> {
-  _$NewQuerySearchUserActionCopyWithImpl(NewQuerySearchUserAction _value,
-      $Res Function(NewQuerySearchUserAction) _then)
-      : super(_value, (v) => _then(v as NewQuerySearchUserAction));
+    implements $UpdateTextSearchUserActionCopyWith<$Res> {
+  _$UpdateTextSearchUserActionCopyWithImpl(UpdateTextSearchUserAction _value,
+      $Res Function(UpdateTextSearchUserAction) _then)
+      : super(_value, (v) => _then(v as UpdateTextSearchUserAction));
 
   @override
-  NewQuerySearchUserAction get _value =>
-      super._value as NewQuerySearchUserAction;
+  UpdateTextSearchUserAction get _value =>
+      super._value as UpdateTextSearchUserAction;
 
   @override
   $Res call({
     Object query = freezed,
   }) {
-    return _then(NewQuerySearchUserAction(
+    return _then(UpdateTextSearchUserAction(
       query: query == freezed ? _value.query : query as String,
     ));
   }
 }
 
-class _$NewQuerySearchUserAction
+class _$UpdateTextSearchUserAction
     with DiagnosticableTreeMixin
-    implements NewQuerySearchUserAction {
-  const _$NewQuerySearchUserAction({@required this.query})
+    implements UpdateTextSearchUserAction {
+  const _$UpdateTextSearchUserAction({@required this.query})
       : assert(query != null);
 
   @override
@@ -777,21 +769,21 @@ class _$NewQuerySearchUserAction
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionSearch.newQuery(query: $query)';
+    return 'UserActionSearch.updateText(query: $query)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'UserActionSearch.newQuery'))
+      ..add(DiagnosticsProperty('type', 'UserActionSearch.updateText'))
       ..add(DiagnosticsProperty('query', query));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NewQuerySearchUserAction &&
+        (other is UpdateTextSearchUserAction &&
             (identical(other.query, query) ||
                 const DeepCollectionEquality().equals(other.query, query)));
   }
@@ -801,165 +793,9 @@ class _$NewQuerySearchUserAction
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
 
   @override
-  $NewQuerySearchUserActionCopyWith<NewQuerySearchUserAction> get copyWith =>
-      _$NewQuerySearchUserActionCopyWithImpl<NewQuerySearchUserAction>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result execute(),
-    @required Result proceed(),
-    @required Result rerun(),
-    @required Result close(),
-    @required Result newQuery(String query),
-    @required Result newSorting(Sorting sorting),
-  }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
-    assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
-    return newQuery(query);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result execute(),
-    Result proceed(),
-    Result rerun(),
-    Result close(),
-    Result newQuery(String query),
-    Result newSorting(Sorting sorting),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (newQuery != null) {
-      return newQuery(query);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenSearchUserAction value),
-    @required Result execute(ExecuteSearchUserAction value),
-    @required Result proceed(ProceedSearchUserAction value),
-    @required Result rerun(RerunSearchUserAction value),
-    @required Result close(CloseSearchUserAction value),
-    @required Result newQuery(NewQuerySearchUserAction value),
-    @required Result newSorting(NewSortingSearchUserAction value),
-  }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(proceed != null);
-    assert(rerun != null);
-    assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
-    return newQuery(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenSearchUserAction value),
-    Result execute(ExecuteSearchUserAction value),
-    Result proceed(ProceedSearchUserAction value),
-    Result rerun(RerunSearchUserAction value),
-    Result close(CloseSearchUserAction value),
-    Result newQuery(NewQuerySearchUserAction value),
-    Result newSorting(NewSortingSearchUserAction value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (newQuery != null) {
-      return newQuery(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NewQuerySearchUserAction implements UserActionSearch {
-  const factory NewQuerySearchUserAction({@required String query}) =
-      _$NewQuerySearchUserAction;
-
-  String get query;
-  $NewQuerySearchUserActionCopyWith<NewQuerySearchUserAction> get copyWith;
-}
-
-abstract class $NewSortingSearchUserActionCopyWith<$Res> {
-  factory $NewSortingSearchUserActionCopyWith(NewSortingSearchUserAction value,
-          $Res Function(NewSortingSearchUserAction) then) =
-      _$NewSortingSearchUserActionCopyWithImpl<$Res>;
-  $Res call({Sorting sorting});
-}
-
-class _$NewSortingSearchUserActionCopyWithImpl<$Res>
-    extends _$UserActionSearchCopyWithImpl<$Res>
-    implements $NewSortingSearchUserActionCopyWith<$Res> {
-  _$NewSortingSearchUserActionCopyWithImpl(NewSortingSearchUserAction _value,
-      $Res Function(NewSortingSearchUserAction) _then)
-      : super(_value, (v) => _then(v as NewSortingSearchUserAction));
-
-  @override
-  NewSortingSearchUserAction get _value =>
-      super._value as NewSortingSearchUserAction;
-
-  @override
-  $Res call({
-    Object sorting = freezed,
-  }) {
-    return _then(NewSortingSearchUserAction(
-      sorting: sorting == freezed ? _value.sorting : sorting as Sorting,
-    ));
-  }
-}
-
-class _$NewSortingSearchUserAction
-    with DiagnosticableTreeMixin
-    implements NewSortingSearchUserAction {
-  const _$NewSortingSearchUserAction({@required this.sorting})
-      : assert(sorting != null);
-
-  @override
-  final Sorting sorting;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionSearch.newSorting(sorting: $sorting)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'UserActionSearch.newSorting'))
-      ..add(DiagnosticsProperty('sorting', sorting));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is NewSortingSearchUserAction &&
-            (identical(other.sorting, sorting) ||
-                const DeepCollectionEquality().equals(other.sorting, sorting)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(sorting);
-
-  @override
-  $NewSortingSearchUserActionCopyWith<NewSortingSearchUserAction>
+  $UpdateTextSearchUserActionCopyWith<UpdateTextSearchUserAction>
       get copyWith =>
-          _$NewSortingSearchUserActionCopyWithImpl<NewSortingSearchUserAction>(
+          _$UpdateTextSearchUserActionCopyWithImpl<UpdateTextSearchUserAction>(
               this, _$identity);
 
   @override
@@ -970,17 +806,17 @@ class _$NewSortingSearchUserAction
     @required Result proceed(),
     @required Result rerun(),
     @required Result close(),
-    @required Result newQuery(String query),
-    @required Result newSorting(Sorting sorting),
+    @required Result updateText(String query),
+    @required Result updateSorting(Sorting sorting),
   }) {
     assert(open != null);
     assert(execute != null);
     assert(proceed != null);
     assert(rerun != null);
     assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
-    return newSorting(sorting);
+    assert(updateText != null);
+    assert(updateSorting != null);
+    return updateText(query);
   }
 
   @override
@@ -991,13 +827,13 @@ class _$NewSortingSearchUserAction
     Result proceed(),
     Result rerun(),
     Result close(),
-    Result newQuery(String query),
-    Result newSorting(Sorting sorting),
+    Result updateText(String query),
+    Result updateSorting(Sorting sorting),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (newSorting != null) {
-      return newSorting(sorting);
+    if (updateText != null) {
+      return updateText(query);
     }
     return orElse();
   }
@@ -1010,17 +846,17 @@ class _$NewSortingSearchUserAction
     @required Result proceed(ProceedSearchUserAction value),
     @required Result rerun(RerunSearchUserAction value),
     @required Result close(CloseSearchUserAction value),
-    @required Result newQuery(NewQuerySearchUserAction value),
-    @required Result newSorting(NewSortingSearchUserAction value),
+    @required Result updateText(UpdateTextSearchUserAction value),
+    @required Result updateSorting(UpdateSortingSearchUserAction value),
   }) {
     assert(open != null);
     assert(execute != null);
     assert(proceed != null);
     assert(rerun != null);
     assert(close != null);
-    assert(newQuery != null);
-    assert(newSorting != null);
-    return newSorting(this);
+    assert(updateText != null);
+    assert(updateSorting != null);
+    return updateText(this);
   }
 
   @override
@@ -1031,24 +867,183 @@ class _$NewSortingSearchUserAction
     Result proceed(ProceedSearchUserAction value),
     Result rerun(RerunSearchUserAction value),
     Result close(CloseSearchUserAction value),
-    Result newQuery(NewQuerySearchUserAction value),
-    Result newSorting(NewSortingSearchUserAction value),
+    Result updateText(UpdateTextSearchUserAction value),
+    Result updateSorting(UpdateSortingSearchUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (newSorting != null) {
-      return newSorting(this);
+    if (updateText != null) {
+      return updateText(this);
     }
     return orElse();
   }
 }
 
-abstract class NewSortingSearchUserAction implements UserActionSearch {
-  const factory NewSortingSearchUserAction({@required Sorting sorting}) =
-      _$NewSortingSearchUserAction;
+abstract class UpdateTextSearchUserAction implements UserActionSearch {
+  const factory UpdateTextSearchUserAction({@required String query}) =
+      _$UpdateTextSearchUserAction;
+
+  String get query;
+  $UpdateTextSearchUserActionCopyWith<UpdateTextSearchUserAction> get copyWith;
+}
+
+abstract class $UpdateSortingSearchUserActionCopyWith<$Res> {
+  factory $UpdateSortingSearchUserActionCopyWith(
+          UpdateSortingSearchUserAction value,
+          $Res Function(UpdateSortingSearchUserAction) then) =
+      _$UpdateSortingSearchUserActionCopyWithImpl<$Res>;
+  $Res call({Sorting sorting});
+}
+
+class _$UpdateSortingSearchUserActionCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res>
+    implements $UpdateSortingSearchUserActionCopyWith<$Res> {
+  _$UpdateSortingSearchUserActionCopyWithImpl(
+      UpdateSortingSearchUserAction _value,
+      $Res Function(UpdateSortingSearchUserAction) _then)
+      : super(_value, (v) => _then(v as UpdateSortingSearchUserAction));
+
+  @override
+  UpdateSortingSearchUserAction get _value =>
+      super._value as UpdateSortingSearchUserAction;
+
+  @override
+  $Res call({
+    Object sorting = freezed,
+  }) {
+    return _then(UpdateSortingSearchUserAction(
+      sorting: sorting == freezed ? _value.sorting : sorting as Sorting,
+    ));
+  }
+}
+
+class _$UpdateSortingSearchUserAction
+    with DiagnosticableTreeMixin
+    implements UpdateSortingSearchUserAction {
+  const _$UpdateSortingSearchUserAction({@required this.sorting})
+      : assert(sorting != null);
+
+  @override
+  final Sorting sorting;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionSearch.updateSorting(sorting: $sorting)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserActionSearch.updateSorting'))
+      ..add(DiagnosticsProperty('sorting', sorting));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UpdateSortingSearchUserAction &&
+            (identical(other.sorting, sorting) ||
+                const DeepCollectionEquality().equals(other.sorting, sorting)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(sorting);
+
+  @override
+  $UpdateSortingSearchUserActionCopyWith<UpdateSortingSearchUserAction>
+      get copyWith => _$UpdateSortingSearchUserActionCopyWithImpl<
+          UpdateSortingSearchUserAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result execute(),
+    @required Result proceed(),
+    @required Result rerun(),
+    @required Result close(),
+    @required Result updateText(String query),
+    @required Result updateSorting(Sorting sorting),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(updateText != null);
+    assert(updateSorting != null);
+    return updateSorting(sorting);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result execute(),
+    Result proceed(),
+    Result rerun(),
+    Result close(),
+    Result updateText(String query),
+    Result updateSorting(Sorting sorting),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (updateSorting != null) {
+      return updateSorting(sorting);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSearchUserAction value),
+    @required Result execute(ExecuteSearchUserAction value),
+    @required Result proceed(ProceedSearchUserAction value),
+    @required Result rerun(RerunSearchUserAction value),
+    @required Result close(CloseSearchUserAction value),
+    @required Result updateText(UpdateTextSearchUserAction value),
+    @required Result updateSorting(UpdateSortingSearchUserAction value),
+  }) {
+    assert(open != null);
+    assert(execute != null);
+    assert(proceed != null);
+    assert(rerun != null);
+    assert(close != null);
+    assert(updateText != null);
+    assert(updateSorting != null);
+    return updateSorting(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSearchUserAction value),
+    Result execute(ExecuteSearchUserAction value),
+    Result proceed(ProceedSearchUserAction value),
+    Result rerun(RerunSearchUserAction value),
+    Result close(CloseSearchUserAction value),
+    Result updateText(UpdateTextSearchUserAction value),
+    Result updateSorting(UpdateSortingSearchUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (updateSorting != null) {
+      return updateSorting(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateSortingSearchUserAction implements UserActionSearch {
+  const factory UpdateSortingSearchUserAction({@required Sorting sorting}) =
+      _$UpdateSortingSearchUserAction;
 
   Sorting get sorting;
-  $NewSortingSearchUserActionCopyWith<NewSortingSearchUserAction> get copyWith;
+  $UpdateSortingSearchUserActionCopyWith<UpdateSortingSearchUserAction>
+      get copyWith;
 }
 
 class _$SystemActionSearchTearOff {

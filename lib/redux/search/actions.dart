@@ -23,13 +23,13 @@ abstract class UserActionSearch
 
   const factory UserActionSearch.close() = CloseSearchUserAction;
 
-  const factory UserActionSearch.newQuery({
+  const factory UserActionSearch.updateText({
     @required String query,
-  }) = NewQuerySearchUserAction;
+  }) = UpdateTextSearchUserAction;
 
-  const factory UserActionSearch.newSorting({
+  const factory UserActionSearch.updateSorting({
     @required Sorting sorting,
-  }) = NewSortingSearchUserAction;
+  }) = UpdateSortingSearchUserAction;
 }
 
 @freezed
