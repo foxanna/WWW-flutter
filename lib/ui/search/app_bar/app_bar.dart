@@ -146,6 +146,6 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
     _queryDebouncer.sink.add(_queryController.text);
   }
 
-  void _search() =>
-      StoreProvider.of<AppState>(context).dispatch(const SearchTournaments());
+  void _search() => StoreProvider.of<AppState>(context)
+      .dispatch(const UserActionSearch.execute());
 }

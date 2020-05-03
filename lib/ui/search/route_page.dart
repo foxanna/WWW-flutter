@@ -54,6 +54,6 @@ class SearchRoutePageState extends State<SearchRoutePage> {
     }
   }
 
-  void _loadMore() =>
-      StoreProvider.of<AppState>(context).dispatch(const SearchTournaments());
+  void _loadMore() => StoreProvider.of<AppState>(context)
+      .dispatch(const UserActionSearch.proceed());
 }
