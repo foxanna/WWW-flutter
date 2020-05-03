@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
+import 'package:what_when_where/ui/common/empty_sliver.dart';
 import 'package:what_when_where/ui/search/data_page.dart';
 import 'package:what_when_where/ui/search/error_page.dart';
 import 'package:what_when_where/ui/search/loading_page.dart';
@@ -29,10 +30,7 @@ class SearchTournamentsPageContent extends StatelessWidget {
             return const SearchDataPage();
           }
 
-          return SliverFillRemaining(
-            hasScrollBody: false,
-            child: Container(),
-          );
+          return const EmptySliver();
         },
         onDispose: (store) => store.dispatch(const UserActionSearch.close()),
       );
