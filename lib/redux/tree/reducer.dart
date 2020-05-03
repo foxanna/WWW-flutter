@@ -6,22 +6,22 @@ import 'package:what_when_where/redux/tree/state.dart';
 class TournamentsTreeReducer {
   static final Reducer<TournamentsTreeState> _reducer =
       combineReducers<TournamentsTreeState>([
-    TypedReducer<TournamentsTreeState, SetTournamentsSubTree>(
-        _setTournamentsSubTree),
-    TypedReducer<TournamentsTreeState, TournamentsTreeLoaded>(
-        _tournamentsTreeLoaded),
-    TypedReducer<TournamentsTreeState, TournamentsTreeIsLoading>(
-        _tournamentsTreeIsLoading),
-    TypedReducer<TournamentsTreeState, TournamentsTreeFailedLoading>(
-        _tournamentsTreeFailedLoading),
+    TypedReducer<TournamentsTreeState, SetSubTreeTournamentsTreeSystemAction>(
+        _setSubTree),
+    TypedReducer<TournamentsTreeState, CompletedTournamentsTreeSystemAction>(
+        _completed),
+    TypedReducer<TournamentsTreeState, LoadingTournamentsTreeSystemAction>(
+        _loading),
+    TypedReducer<TournamentsTreeState, FailedTournamentsTreeSystemAction>(
+        _failed),
   ]);
 
   static TournamentsTreeState reduce(
           TournamentsTreeState state, dynamic action) =>
       _reducer(state, action);
 
-  static TournamentsTreeState _tournamentsTreeLoaded(
-          TournamentsTreeState state, TournamentsTreeLoaded action) =>
+  static TournamentsTreeState _completed(TournamentsTreeState state,
+          CompletedTournamentsTreeSystemAction action) =>
       _copyWithSubTree(
           state,
           TournamentsSubTreeState.data(
@@ -29,13 +29,13 @@ class TournamentsTreeReducer {
             tree: action.tree,
           ));
 
-  static TournamentsTreeState _tournamentsTreeIsLoading(
-          TournamentsTreeState state, TournamentsTreeIsLoading action) =>
+  static TournamentsTreeState _loading(TournamentsTreeState state,
+          LoadingTournamentsTreeSystemAction action) =>
       _copyWithSubTree(
           state, TournamentsSubTreeState.loading(info: action.info));
 
-  static TournamentsTreeState _tournamentsTreeFailedLoading(
-          TournamentsTreeState state, TournamentsTreeFailedLoading action) =>
+  static TournamentsTreeState _failed(TournamentsTreeState state,
+          FailedTournamentsTreeSystemAction action) =>
       _copyWithSubTree(
           state,
           TournamentsSubTreeState.error(
@@ -43,8 +43,8 @@ class TournamentsTreeReducer {
             exception: action.exception,
           ));
 
-  static TournamentsTreeState _setTournamentsSubTree(
-      TournamentsTreeState state, SetTournamentsSubTree action) {
+  static TournamentsTreeState _setSubTree(TournamentsTreeState state,
+      SetSubTreeTournamentsTreeSystemAction action) {
     final existingState = state ?? const TournamentsTreeState();
     final newStates =
         Map<String, TournamentsSubTreeState>.from(existingState.states);

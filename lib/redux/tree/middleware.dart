@@ -21,13 +21,14 @@ class TournamentsTreeMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, OpenTournamentsTree>(_openTournamentsTree),
-        TypedMiddleware<AppState, SetTournamentsSubTree>(_setTournamentsTree),
-        TypedMiddleware<AppState, LoadTournamentsTree>(_loadTournamentsTree),
+        TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_open),
+        TypedMiddleware<AppState, SetSubTreeTournamentsTreeSystemAction>(
+            _setSubTree),
+        TypedMiddleware<AppState, LoadTournamentsTreeUserAction>(_load),
       ];
 
-  Future<void> _loadTournamentsTree(Store<AppState> store,
-      LoadTournamentsTree action, NextDispatcher next) async {
+  Future<void> _load(Store<AppState> store,
+      LoadTournamentsTreeUserAction action, NextDispatcher next) async {
     next(action);
 
     final state = store.state.tournamentsTreeState.states[action.info.id];
@@ -37,30 +38,30 @@ class TournamentsTreeMiddleware {
     }
 
     try {
-      store.dispatch(TournamentsTreeIsLoading(info: action.info));
+      store.dispatch(SystemActionTournamentsTree.loading(info: action.info));
 
       final tree = await _loader.get(id: action.info.id);
 
-      store.dispatch(TournamentsTreeLoaded(tree: tree));
+      store.dispatch(SystemActionTournamentsTree.completed(tree: tree));
     } on Exception catch (e) {
       store.dispatch(
-          TournamentsTreeFailedLoading(info: action.info, exception: e));
+          SystemActionTournamentsTree.failed(info: action.info, exception: e));
     }
   }
 
-  void _openTournamentsTree(
-      Store<AppState> store, OpenTournamentsTree action, NextDispatcher next) {
+  void _open(Store<AppState> store, OpenTournamentsTreeUserAction action,
+      NextDispatcher next) {
     next(action);
 
     final info = action.info ?? const TournamentsTreeInfo(id: '0');
     store.dispatch(NavigateToTournamentsTreePage(info: info));
-    store.dispatch(SetTournamentsSubTree(info: info));
+    store.dispatch(SystemActionTournamentsTree.setSubTree(info: info));
   }
 
-  void _setTournamentsTree(Store<AppState> store, SetTournamentsSubTree action,
-      NextDispatcher next) {
+  void _setSubTree(Store<AppState> store,
+      SetSubTreeTournamentsTreeSystemAction action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(LoadTournamentsTree(info: action.info));
+    store.dispatch(UserActionTournamentsTree.load(info: action.info));
   }
 }

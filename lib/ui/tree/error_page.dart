@@ -29,5 +29,5 @@ class TournamentsTreeErrorPage extends StatelessWidget {
       );
 
   void _reload(BuildContext context) => StoreProvider.of<AppState>(context)
-      .dispatch(LoadTournamentsTree(info: tournamentsTreeInfo));
+      .dispatch(UserActionTournamentsTree.load(info: tournamentsTreeInfo));
 }

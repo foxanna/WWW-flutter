@@ -78,6 +78,6 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
 
   void _openTournamentDetails(BuildContext context) =>
       StoreProvider.of<AppState>(context).dispatch(
-        OpenTournamentsTree(info: info),
+        UserActionTournamentsTree.open(info: info),
       );
 }

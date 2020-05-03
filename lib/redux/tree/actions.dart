@@ -9,56 +9,36 @@ part 'actions.freezed.dart';
 abstract class TournamentsTreeAction implements ReduxAction {}
 
 @freezed
-abstract class OpenTournamentsTree
-    with _$OpenTournamentsTree
+abstract class UserActionTournamentsTree
+    with _$UserActionTournamentsTree
     implements TournamentsTreeAction {
-  const factory OpenTournamentsTree({
+  const factory UserActionTournamentsTree.open({
     TournamentsTreeInfo info,
-  }) = _OpenTournamentsTree;
-}
+  }) = OpenTournamentsTreeUserAction;
 
-@freezed
-abstract class SetTournamentsSubTree
-    with _$SetTournamentsSubTree
-    implements TournamentsTreeAction {
-  const factory SetTournamentsSubTree({
-    TournamentsTreeInfo info,
-  }) = _SetTournamentsSubTree;
-}
-
-@freezed
-abstract class LoadTournamentsTree
-    with _$LoadTournamentsTree
-    implements TournamentsTreeAction {
-  const factory LoadTournamentsTree({
+  const factory UserActionTournamentsTree.load({
     @required TournamentsTreeInfo info,
-  }) = _LoadTournamentsTree;
+  }) = LoadTournamentsTreeUserAction;
 }
 
 @freezed
-abstract class TournamentsTreeIsLoading
-    with _$TournamentsTreeIsLoading
+abstract class SystemActionTournamentsTree
+    with _$SystemActionTournamentsTree
     implements TournamentsTreeAction {
-  const factory TournamentsTreeIsLoading({
+  const factory SystemActionTournamentsTree.setSubTree({
     @required TournamentsTreeInfo info,
-  }) = _TournamentsTreeIsLoading;
-}
+  }) = SetSubTreeTournamentsTreeSystemAction;
 
-@freezed
-abstract class TournamentsTreeFailedLoading
-    with _$TournamentsTreeFailedLoading
-    implements TournamentsTreeAction {
-  const factory TournamentsTreeFailedLoading({
+  const factory SystemActionTournamentsTree.loading({
+    @required TournamentsTreeInfo info,
+  }) = LoadingTournamentsTreeSystemAction;
+
+  const factory SystemActionTournamentsTree.failed({
     @required TournamentsTreeInfo info,
     @required Exception exception,
-  }) = _TournamentsTreeFailedLoading;
-}
+  }) = FailedTournamentsTreeSystemAction;
 
-@freezed
-abstract class TournamentsTreeLoaded
-    with _$TournamentsTreeLoaded
-    implements TournamentsTreeAction {
-  const factory TournamentsTreeLoaded({
+  const factory SystemActionTournamentsTree.completed({
     @required TournamentsTree tree,
-  }) = _TournamentsTreeLoaded;
+  }) = CompletedTournamentsTreeSystemAction;
 }
