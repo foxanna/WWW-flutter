@@ -18,10 +18,11 @@ class LatestTournamentsDataPage extends StatelessWidget {
       distinct: true,
       converter: (store) => store.state.latestTournamentsState,
       builder: (context, state) => TournamentsGrid(
-        tournaments: state.data,
-        stubTournamentsCount:
-            state.isLoadingMore ? styleConfiguration.stubTournamentsCount : 0,
-        footerBuilder: (context) => (state.hasError)
+        tournaments: state.dataOrEmpty,
+        stubTournamentsCount: state is LoadingWithDataLatestTournamentsState
+            ? styleConfiguration.stubTournamentsCount
+            : 0,
+        footerBuilder: (context) => state is ErrorWithDataLatestTournamentsState
             ? LatestTournamentsErrorMessage(
                 exception: state.exception,
                 dense: true,

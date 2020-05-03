@@ -8,6 +8,13 @@ part 'actions.freezed.dart';
 abstract class LatestAction implements ReduxAction {}
 
 @freezed
+abstract class InitLatestTournaments
+    with _$InitLatestTournaments
+    implements LatestAction {
+  const factory InitLatestTournaments() = _InitLatestTournaments;
+}
+
+@freezed
 abstract class RefreshLatestTournaments
     with _$RefreshLatestTournaments
     implements LatestAction {
@@ -15,26 +22,17 @@ abstract class RefreshLatestTournaments
 }
 
 @freezed
-abstract class LoadMoreLatestTournaments
-    with _$LoadMoreLatestTournaments
+abstract class LoadLatestTournaments
+    with _$LoadLatestTournaments
     implements LatestAction {
-  const factory LoadMoreLatestTournaments() = _LoadMoreLatestTournaments;
+  const factory LoadLatestTournaments() = _LoadLatestTournaments;
 }
 
 @freezed
-abstract class RepeatFailedLoadingLatestTournaments
-    with _$RepeatFailedLoadingLatestTournaments
+abstract class LatestTournamentsIsLoading
+    with _$LatestTournamentsIsLoading
     implements LatestAction {
-  const factory RepeatFailedLoadingLatestTournaments() =
-      _RepeatFailedLoadingLatestTournaments;
-}
-
-@freezed
-abstract class LatestTournamentsIsLoadingMore
-    with _$LatestTournamentsIsLoadingMore
-    implements LatestAction {
-  const factory LatestTournamentsIsLoadingMore() =
-      _LatestTournamentsIsLoadingMore;
+  const factory LatestTournamentsIsLoading() = _LatestTournamentsIsLoading;
 }
 
 @freezed
@@ -43,14 +41,8 @@ abstract class MoreLatestTournamentsLoaded
     implements LatestAction {
   const factory MoreLatestTournamentsLoaded({
     @required Iterable<Tournament> data,
+    @required int nexPage,
   }) = _MoreLatestTournamentsLoaded;
-}
-
-@freezed
-abstract class ClearLatestTournaments
-    with _$ClearLatestTournaments
-    implements LatestAction {
-  const factory ClearLatestTournaments() = _ClearLatestTournaments;
 }
 
 @freezed
@@ -68,21 +60,4 @@ abstract class LatestTournamentsLoadFailed
   const factory LatestTournamentsLoadFailed({
     @required Exception exception,
   }) = _LatestTournamentsLoadFailed;
-}
-
-@freezed
-abstract class LatestTournamentsRefreshFailed
-    with _$LatestTournamentsRefreshFailed
-    implements LatestAction {
-  const factory LatestTournamentsRefreshFailed({
-    @required Exception exception,
-  }) = _LatestTournamentsRefreshFailed;
-}
-
-@freezed
-abstract class ClearLatestTournamentsException
-    with _$ClearLatestTournamentsException
-    implements LatestAction {
-  const factory ClearLatestTournamentsException() =
-      _ClearLatestTournamentsException;
 }

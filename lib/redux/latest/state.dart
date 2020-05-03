@@ -1,62 +1,78 @@
-import 'package:collection/collection.dart';
-import 'package:meta/meta.dart';
-import 'package:quiver/core.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
-@immutable
-class LatestTournamentsState {
-  final bool isLoadingMore;
-  final bool isRefreshing;
-  final List<Tournament> data;
-  final Exception exception;
-  final int nextPage;
+part 'state.freezed.dart';
 
-  bool get isLoading => isLoadingMore || isRefreshing;
-  bool get hasError => exception != null;
-  bool get hasData => data.isNotEmpty;
+@freezed
+abstract class LatestTournamentsState with _$LatestTournamentsState {
+  const factory LatestTournamentsState.initial() =
+      InitialLatestTournamentsState;
 
-  LatestTournamentsState._({
-    Iterable<Tournament> data,
-    this.isLoadingMore = false,
-    this.isRefreshing = false,
-    this.exception,
-    this.nextPage = 0,
-  }) : this.data = data?.toList() ?? <Tournament>[];
+  const factory LatestTournamentsState.loadingFirstPage() =
+      LoadingFirstPageLatestTournamentsState;
 
-  LatestTournamentsState.initial() : this._();
+  const factory LatestTournamentsState.loadingWithData({
+    @required List<Tournament> data,
+    @required int nextPage,
+  }) = LoadingWithDataLatestTournamentsState;
 
-  @override
-  int get hashCode => hashObjects(<dynamic>[
-        data,
-        isLoadingMore,
-        isRefreshing,
-        exception.runtimeType,
-        nextPage
-      ]);
+  const factory LatestTournamentsState.errorFirstPage({
+    @required Exception exception,
+  }) = ErrorFirstPageLatestTournamentsState;
 
-  LatestTournamentsState copyWith({
-    Optional<Iterable<Tournament>> data,
-    Optional<bool> isLoadingMore,
-    Optional<bool> isRefreshing,
-    Optional<Exception> exception,
-    Optional<int> nextPage,
-  }) =>
-      LatestTournamentsState._(
-        data: data != null ? data.orNull : this.data,
-        isLoadingMore:
-            isLoadingMore != null ? isLoadingMore.orNull : this.isLoadingMore,
-        isRefreshing:
-            isRefreshing != null ? isRefreshing.orNull : this.isRefreshing,
-        exception: exception != null ? exception.orNull : this.exception,
-        nextPage: nextPage != null ? nextPage.orNull : this.nextPage,
-      );
+  const factory LatestTournamentsState.errorWithData({
+    @required List<Tournament> data,
+    @required Exception exception,
+    @required int nextPage,
+  }) = ErrorWithDataLatestTournamentsState;
 
-  @override
-  bool operator ==(dynamic other) =>
-      other is LatestTournamentsState &&
-      const DeepCollectionEquality().equals(other.data, data) &&
-      other.isLoadingMore == isLoadingMore &&
-      other.isRefreshing == isRefreshing &&
-      other.exception?.runtimeType == exception?.runtimeType &&
-      other.nextPage == nextPage;
+  const factory LatestTournamentsState.refreshing({
+    @required List<Tournament> data,
+  }) = RefreshingLatestTournamentsState;
+
+  const factory LatestTournamentsState.data({
+    @required int nextPage,
+    @required List<Tournament> data,
+  }) = DataLatestTournamentsState;
+}
+
+extension LatestTournamentsStateX on LatestTournamentsState {
+  List<Tournament> get dataOrEmpty => this.dataOrNull ?? <Tournament>[];
+
+  List<Tournament> get dataOrNull {
+    if (this is DataLatestTournamentsState) {
+      return (this as DataLatestTournamentsState).data;
+    }
+
+    if (this is RefreshingLatestTournamentsState) {
+      return (this as RefreshingLatestTournamentsState).data;
+    }
+
+    if (this is ErrorWithDataLatestTournamentsState) {
+      return (this as ErrorWithDataLatestTournamentsState).data;
+    }
+
+    if (this is LoadingWithDataLatestTournamentsState) {
+      return (this as LoadingWithDataLatestTournamentsState).data;
+    }
+
+    return null;
+  }
+
+  int get nextPageOrZero {
+    if (this is LoadingWithDataLatestTournamentsState) {
+      return (this as LoadingWithDataLatestTournamentsState).nextPage;
+    }
+
+    if (this is ErrorWithDataLatestTournamentsState) {
+      return (this as ErrorWithDataLatestTournamentsState).nextPage;
+    }
+
+    if (this is DataLatestTournamentsState) {
+      return (this as DataLatestTournamentsState).nextPage;
+    }
+
+    return 0;
+  }
 }

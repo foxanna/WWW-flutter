@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
+import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/latest_tournaments/app_bar.dart';
 import 'package:what_when_where/ui/latest_tournaments/refresh_indicator.dart';
@@ -35,7 +36,6 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
             LatestTournamentsPageContent(),
           ],
         ),
-        onInit: _loadMore,
         onRefresh: _loadMoreIfRequested,
       ),
     );
@@ -64,6 +64,11 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
     }
   }
 
-  void _loadMore() => StoreProvider.of<AppState>(context)
-      .dispatch(const LoadMoreLatestTournaments());
+  void _loadMore() {
+    final store = StoreProvider.of<AppState>(context);
+
+    if (store.state.latestTournamentsState is DataLatestTournamentsState) {
+      store.dispatch(const LoadLatestTournaments());
+    }
+  }
 }

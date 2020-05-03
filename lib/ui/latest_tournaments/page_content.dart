@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
+import 'package:what_when_where/ui/common/empty_sliver.dart';
 import 'package:what_when_where/ui/latest_tournaments/data_page.dart';
 import 'package:what_when_where/ui/latest_tournaments/error_page.dart';
 import 'package:what_when_where/ui/latest_tournaments/loading_page.dart';
@@ -15,21 +17,22 @@ class LatestTournamentsPageContent extends StatelessWidget {
         distinct: true,
         converter: (store) => store.state.latestTournamentsState,
         builder: (context, state) {
-          if (state.data.isNotEmpty) {
-            return const LatestTournamentsDataPage();
-          }
-
-          if (state.isLoading) {
+          if (state is LoadingFirstPageLatestTournamentsState) {
             return const LatestTournamentsLoadingPage();
           }
 
-          if (state.hasError) {
+          if (state is ErrorFirstPageLatestTournamentsState) {
             return LatestTournamentsErrorPage(
               exception: state.exception,
             );
           }
 
-          return null;
+          if (state.dataOrNull != null) {
+            return const LatestTournamentsDataPage();
+          }
+
+          return const EmptySliver();
         },
+        onInit: (store) => store.dispatch(const InitLatestTournaments()),
       );
 }

@@ -2,19 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
+import 'package:what_when_where/redux/latest/state.dart';
 
 class LatestTournamentsRefreshIndicator extends StatefulWidget {
-  final Function onInit;
   final Function onRefresh;
   final Widget child;
 
   const LatestTournamentsRefreshIndicator({
     Key key,
     this.child,
-    this.onInit,
     this.onRefresh,
   }) : super(key: key);
 
@@ -32,7 +30,8 @@ class _LatestTournamentsRefreshIndicatorState
   @override
   Widget build(BuildContext context) => StoreConnector<AppState, bool>(
         distinct: true,
-        converter: (store) => store.state.latestTournamentsState.isRefreshing,
+        converter: (store) => store.state.latestTournamentsState
+            is RefreshingLatestTournamentsState,
         builder: (context, isRefreshing) {
           if (!isRefreshing) {
             _completer.complete();
@@ -45,14 +44,7 @@ class _LatestTournamentsRefreshIndicatorState
             child: widget.child,
           );
         },
-        onInit: _onInit,
       );
-
-  void _onInit(Store<AppState> store) {
-    if (widget.onInit != null) {
-      widget.onInit();
-    }
-  }
 
   Future<void> _onRefresh(BuildContext context) async {
     StoreProvider.of<AppState>(context)

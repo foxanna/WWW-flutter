@@ -36,7 +36,7 @@ class AppState {
   AppState.initial()
       : this(
           timerState: TimerState.initial(),
-          latestTournamentsState: LatestTournamentsState.initial(),
+          latestTournamentsState: null,
           tournamentState: null,
           toursState: null,
           questionsState: QuestionsState.initial(),
