@@ -15,8 +15,9 @@ class QuestionsBottomAppBarTimerButton extends StatelessWidget {
           ),
           tooltip: isRunning ? Strings.pauseTimer : Strings.startTimer,
           onPressed: () {
-            StoreProvider.of<AppState>(context)
-                .dispatch(isRunning ? const StopTimer() : const StartTimer());
+            StoreProvider.of<AppState>(context).dispatch(isRunning
+                ? const UserActionTimer.stop()
+                : const UserActionTimer.start());
           },
         ),
       );

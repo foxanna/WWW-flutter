@@ -35,7 +35,7 @@ class QuestionsDataPage extends StatelessWidget {
   void _onPageChanged(BuildContext context, int index) {
     final store = StoreProvider.of<AppState>(context);
 
-    store.dispatch(const ResetTimer());
+    store.dispatch(const UserActionTimer.reset());
     store.dispatch(SelectQuestion(questionIndex: index));
   }
 }

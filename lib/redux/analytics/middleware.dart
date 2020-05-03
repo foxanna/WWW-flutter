@@ -15,9 +15,9 @@ import 'package:what_when_where/services/analytics.dart';
 
 final _analyticsEventNames = {
   // timer
-  StartTimer: 'start_timer',
-  StopTimer: 'pause_timer',
-  ChangeTimerType: 'timer_type_set',
+  StartTimerUserAction: 'start_timer',
+  StopTimerUserAction: 'pause_timer',
+  ChangeTypeTimerUserAction: 'timer_type_set',
   // answer
   ShowAnswer: 'show_answer',
   HideAnswer: 'hide_answer',
@@ -56,9 +56,9 @@ class AnalyticsMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, StartTimer>(_logAction),
-        TypedMiddleware<AppState, StopTimer>(_logAction),
-        TypedMiddleware<AppState, ChangeTimerType>(_logAction),
+        TypedMiddleware<AppState, StartTimerUserAction>(_logAction),
+        TypedMiddleware<AppState, StopTimerUserAction>(_logAction),
+        TypedMiddleware<AppState, ChangeTypeTimerUserAction>(_logAction),
         TypedMiddleware<AppState, ShowAnswer>(_logAction),
         TypedMiddleware<AppState, HideAnswer>(_logAction),
         TypedMiddleware<AppState, QuestionSharingUserAction>(_logAction),

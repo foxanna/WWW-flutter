@@ -34,7 +34,7 @@ class QuestionsPageContent extends StatelessWidget {
           return null;
         },
         onDispose: (store) {
-          store.dispatch(const ResetTimer());
+          store.dispatch(const UserActionTimer.reset());
           store.dispatch(const ClearQuestions());
         },
       );

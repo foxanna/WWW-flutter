@@ -1,40 +1,37 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/redux/timer/state.dart';
 
 class TimerReducer {
   static final Reducer<TimerState> _reducer = combineReducers<TimerState>([
-    TypedReducer<TimerState, UpdateTimeValue>(_updateTimeValue),
-    TypedReducer<TimerState, UpdateIsRunningValue>(_updateIsRunningValue),
-    TypedReducer<TimerState, ResetTimer>(_resetValues),
-    TypedReducer<TimerState, ChangeTimerType>(_changeTimerTypeValues),
+    TypedReducer<TimerState, UpdateTimeTimerSystemAction>(_updateTime),
+    TypedReducer<TimerState, UpdateIsRunningTimerSystemAction>(
+        _updateIsRunning),
+    TypedReducer<TimerState, ResetTimerUserAction>(_reset),
+    TypedReducer<TimerState, ChangeTypeTimerUserAction>(_changeType),
   ]);
 
   static TimerState reduce(TimerState state, dynamic action) =>
       _reducer(state, action);
 
-  static TimerState _updateTimeValue(
-          TimerState state, UpdateTimeValue action) =>
+  static TimerState _updateTime(
+          TimerState state, UpdateTimeTimerSystemAction action) =>
       state.copyWith(
         secondsLeft: action.newValue,
       );
 
-  static TimerState _updateIsRunningValue(
-          TimerState state, UpdateIsRunningValue action) =>
+  static TimerState _updateIsRunning(
+          TimerState state, UpdateIsRunningTimerSystemAction action) =>
       state.copyWith(
         isRunning: action.newValue,
       );
 
-  static TimerState _resetValues(TimerState state, ResetTimer action) =>
-      state.copyWith(
-        secondsLeft: Timers.getSeconds(state.timerType),
-        isRunning: false,
-      );
+  static TimerState _reset(TimerState state, ResetTimerUserAction action) =>
+      TimerState.initial(timerType: state.timerType);
 
-  static TimerState _changeTimerTypeValues(
-          TimerState state, ChangeTimerType action) =>
+  static TimerState _changeType(
+          TimerState state, ChangeTypeTimerUserAction action) =>
       state.copyWith(
-        timerType: action.newValue,
+        timerType: action.type,
       );
 }

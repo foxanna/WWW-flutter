@@ -45,15 +45,16 @@ class _TimerTickingMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, StartTimer>(_startTimer),
-        TypedMiddleware<AppState, StopTimer>(_stopTimer),
-        TypedMiddleware<AppState, ResetTimer>(_resetTimer),
-        TypedMiddleware<AppState, UpdateTimeValue>(_stopTimerAtZero),
-        TypedMiddleware<AppState, ChangeTimerType>(_changeTimerType),
+        TypedMiddleware<AppState, StartTimerUserAction>(_startTimer),
+        TypedMiddleware<AppState, StopTimerUserAction>(_stopTimer),
+        TypedMiddleware<AppState, ResetTimerUserAction>(_resetTimer),
+        TypedMiddleware<AppState, UpdateTimeTimerSystemAction>(
+            _stopTimerAtZero),
+        TypedMiddleware<AppState, ChangeTypeTimerUserAction>(_changeType),
       ];
 
   void _startTimer(
-      Store<AppState> store, StartTimer action, NextDispatcher next) {
+      Store<AppState> store, StartTimerUserAction action, NextDispatcher next) {
     next(action);
 
     final timerState = store.state.timerState;
@@ -74,46 +75,48 @@ class _TimerTickingMiddleware {
       _updateTime(store, secondsRemaining);
     });
 
-    store.dispatch(UpdateIsRunningValue(newValue: _timer.isRunning));
+    store.dispatch(SystemActionTimer.isRunning(newValue: _timer.isRunning));
   }
 
   void _stopTimer(
-      Store<AppState> store, StopTimer action, NextDispatcher next) {
+      Store<AppState> store, StopTimerUserAction action, NextDispatcher next) {
     next(action);
 
-    _timer.pause();
-    store.dispatch(UpdateIsRunningValue(newValue: _timer.isRunning));
+    _onTimerStop(store);
   }
 
-  void _updateTime(Store<AppState> store, int seconds) {
-    if (store.state.timerState.secondsLeft != seconds) {
-      store.dispatch(UpdateTimeValue(newValue: seconds));
-    }
+  void _onTimerStop(Store<AppState> store) {
+    _timer.pause();
+    store.dispatch(SystemActionTimer.isRunning(newValue: _timer.isRunning));
   }
 
   void _resetTimer(
-      Store<AppState> store, ResetTimer action, NextDispatcher next) {
+      Store<AppState> store, ResetTimerUserAction action, NextDispatcher next) {
     next(action);
-
-    store.dispatch(const StopTimer());
 
     _timer.reset();
   }
 
-  void _stopTimerAtZero(
-      Store<AppState> store, UpdateTimeValue action, NextDispatcher next) {
-    next(action);
-
-    if (action.newValue == 0) {
-      store.dispatch(const StopTimer());
+  void _updateTime(Store<AppState> store, int seconds) {
+    if (store.state.timerState.secondsLeft != seconds) {
+      store.dispatch(SystemActionTimer.updateTime(newValue: seconds));
     }
   }
 
-  void _changeTimerType(
-      Store<AppState> store, ChangeTimerType action, NextDispatcher next) {
+  void _stopTimerAtZero(Store<AppState> store,
+      UpdateTimeTimerSystemAction action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(const ResetTimer());
+    if (action.newValue == 0) {
+      _onTimerStop(store);
+    }
+  }
+
+  void _changeType(Store<AppState> store, ChangeTypeTimerUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const UserActionTimer.reset());
   }
 }
 
@@ -126,11 +129,12 @@ class _TimerConnectingMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, UpdateTimeValue>(_notifyTimerExpiration),
+        TypedMiddleware<AppState, UpdateTimeTimerSystemAction>(
+            _notifyTimerExpiration),
       ];
 
-  void _notifyTimerExpiration(
-      Store<AppState> store, UpdateTimeValue action, NextDispatcher next) {
+  void _notifyTimerExpiration(Store<AppState> store,
+      UpdateTimeTimerSystemAction action, NextDispatcher next) {
     next(action);
 
     final isTimerLong = store.state.timerState.timerType == TimerType.normal;
@@ -143,7 +147,7 @@ class _TimerConnectingMiddleware {
                 (!isTimerLong && settings.notifyShortTimerExpiration)));
 
     if (shouldNotify) {
-      store.dispatch(const NotifyExpiration());
+      store.dispatch(const SystemActionTimer.notify());
     }
   }
 }
@@ -161,11 +165,11 @@ class _TimerVibratingMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, NotifyExpiration>(_vibrate),
+        TypedMiddleware<AppState, NotifyTimerSystemAction>(_vibrate),
       ];
 
-  void _vibrate(
-      Store<AppState> store, NotifyExpiration action, NextDispatcher next) {
+  void _vibrate(Store<AppState> store, NotifyTimerSystemAction action,
+      NextDispatcher next) {
     next(action);
 
     _vibratingService.vibrate();
@@ -185,11 +189,11 @@ class _TimerSoundMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, NotifyExpiration>(_sound),
+        TypedMiddleware<AppState, NotifyTimerSystemAction>(_sound),
       ];
 
-  void _sound(
-      Store<AppState> store, NotifyExpiration action, NextDispatcher next) {
+  void _sound(Store<AppState> store, NotifyTimerSystemAction action,
+      NextDispatcher next) {
     next(action);
 
     _soundService.playSound();

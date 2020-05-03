@@ -8,44 +8,29 @@ part 'actions.freezed.dart';
 abstract class TimerAction implements ReduxAction {}
 
 @freezed
-abstract class StartTimer with _$StartTimer implements TimerAction {
-  const factory StartTimer() = _StartTimer;
+abstract class UserActionTimer with _$UserActionTimer implements TimerAction {
+  const factory UserActionTimer.start() = StartTimerUserAction;
+
+  const factory UserActionTimer.stop() = StopTimerUserAction;
+
+  const factory UserActionTimer.reset() = ResetTimerUserAction;
+
+  const factory UserActionTimer.changeType({
+    @required TimerType type,
+  }) = ChangeTypeTimerUserAction;
 }
 
 @freezed
-abstract class StopTimer with _$StopTimer implements TimerAction {
-  const factory StopTimer() = _StopTimer;
-}
-
-@freezed
-abstract class ResetTimer with _$ResetTimer implements TimerAction {
-  const factory ResetTimer() = _ResetTimer;
-}
-
-@freezed
-abstract class ChangeTimerType with _$ChangeTimerType implements TimerAction {
-  const factory ChangeTimerType({
-    @required TimerType newValue,
-  }) = _ChangeTimerType;
-}
-
-@freezed
-abstract class UpdateTimeValue with _$UpdateTimeValue implements TimerAction {
-  const factory UpdateTimeValue({
-    @required int newValue,
-  }) = _UpdateTimeValue;
-}
-
-@freezed
-abstract class UpdateIsRunningValue
-    with _$UpdateIsRunningValue
+abstract class SystemActionTimer
+    with _$SystemActionTimer
     implements TimerAction {
-  const factory UpdateIsRunningValue({
-    @required bool newValue,
-  }) = _UpdateIsRunningValue;
-}
+  const factory SystemActionTimer.notify() = NotifyTimerSystemAction;
 
-@freezed
-abstract class NotifyExpiration with _$NotifyExpiration implements TimerAction {
-  const factory NotifyExpiration() = _NotifyExpiration;
+  const factory SystemActionTimer.updateTime({
+    @required int newValue,
+  }) = UpdateTimeTimerSystemAction;
+
+  const factory SystemActionTimer.isRunning({
+    @required bool newValue,
+  }) = UpdateIsRunningTimerSystemAction;
 }

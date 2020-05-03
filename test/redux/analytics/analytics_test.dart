@@ -49,21 +49,21 @@ void main() {
     };
 
     test(
-      '$StartTimer',
-      () => analyticsTest(const StartTimer(), 'start_timer'),
+      '$StartTimerUserAction',
+      () => analyticsTest(const UserActionTimer.start(), 'start_timer'),
     );
 
     test(
-      '$StopTimer',
-      () => analyticsTest(const StopTimer(), 'pause_timer'),
+      '$StopTimerUserAction',
+      () => analyticsTest(const UserActionTimer.stop(), 'pause_timer'),
     );
 
     test(
-      '$ChangeTimerType',
+      '$ChangeTypeTimerUserAction',
       () {
         furtherInteractionAllowed = true;
-        TimerType.values.forEach((type) =>
-            analyticsTest(ChangeTimerType(newValue: type), 'timer_type_set'));
+        TimerType.values.forEach((type) => analyticsTest(
+            UserActionTimer.changeType(type: type), 'timer_type_set'));
       },
     );
 
