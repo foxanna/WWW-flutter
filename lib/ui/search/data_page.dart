@@ -4,6 +4,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/tournaments_grid.dart';
+import 'package:what_when_where/ui/search/empty_page.dart';
 import 'package:what_when_where/ui/search/error_message.dart';
 
 class SearchDataPage extends StatelessWidget {
@@ -14,20 +15,23 @@ class SearchDataPage extends StatelessWidget {
     final styleConfiguration =
         StyleConfiguration.of(context).searchStyleConfiguration;
 
-    return StoreConnector<AppState, SearchTournamentsResultsState>(
+    return StoreConnector<AppState, SearchState>(
       distinct: true,
-      converter: (store) => store.state.searchState.searchResults,
-      builder: (context, state) => TournamentsGrid(
-        tournaments: state.data,
-        stubTournamentsCount:
-            state.isLoading ? styleConfiguration.stubTournamentsCount : 0,
-        footerBuilder: (context) => (state.hasError)
-            ? SearchErrorMessage(
-                exception: state.exception,
-                dense: true,
-              )
-            : Container(),
-      ),
+      converter: (store) => store.state.searchState,
+      builder: (context, state) => state.dataOrEmpty.isNotEmpty
+          ? TournamentsGrid(
+              tournaments: state.dataOrEmpty,
+              stubTournamentsCount: state is LoadingWithDataSearchState
+                  ? styleConfiguration.stubTournamentsCount
+                  : 0,
+              footerBuilder: (context) => state is ErrorWithDataSearchState
+                  ? SearchErrorMessage(
+                      exception: state.exception,
+                      dense: true,
+                    )
+                  : Container(),
+            )
+          : const SearchEmptyPage(),
     );
   }
 }

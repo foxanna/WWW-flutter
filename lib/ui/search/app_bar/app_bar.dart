@@ -36,9 +36,9 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
 
   @override
   Widget build(BuildContext context) =>
-      StoreConnector<AppState, SearchTournamentsParametersState>(
+      StoreConnector<AppState, SearchParameters>(
         distinct: true,
-        converter: (store) => store.state.searchState.searchParameters,
+        converter: (store) => store.state.searchState.parameters,
         builder: (context, state) {
           final styleConfiguration =
               StyleConfiguration.of(context).searchStyleConfiguration;
@@ -92,12 +92,12 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
       );
 
   void _onInit(Store<AppState> store) {
-    _queryController = TextEditingController(
-        text: store.state.searchState.searchParameters.query);
+    _queryController =
+        TextEditingController(text: store.state.searchState.parameters.query);
     _queryController.addListener(_onQueryChanged);
 
-    _sortingController = SortingController(
-        value: store.state.searchState.searchParameters.sorting);
+    _sortingController =
+        SortingController(value: store.state.searchState.parameters.sorting);
     _sortingController.addListener(_onSortingChanged);
   }
 
@@ -107,8 +107,6 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
 
     _queryController.removeListener(_onQueryChanged);
     _queryController.dispose();
-
-    store.dispatch(const ClearTournamentsSearchParameters());
   }
 
   @override
@@ -136,12 +134,20 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
     _focus();
   }
 
-  void _onSortingChanged() => StoreProvider.of<AppState>(context).dispatch(
-      TournamentsSearchSortingChanged(sorting: _sortingController.value));
+  void _onSortingChanged() {
+    final store = StoreProvider.of<AppState>(context);
+    if (store.state.searchState.parameters.sorting !=
+        _sortingController.value) {
+      store.dispatch(
+          UserActionSearch.newSorting(sorting: _sortingController.value));
+    }
+  }
 
   void _onQueryChanged() {
-    StoreProvider.of<AppState>(context)
-        .dispatch(TournamentsSearchQueryChanged(query: _queryController.text));
+    final store = StoreProvider.of<AppState>(context);
+    if (store.state.searchState.parameters.query != _queryController.text) {
+      store.dispatch(UserActionSearch.newQuery(query: _queryController.text));
+    }
 
     _queryDebouncer.sink.add(_queryController.text);
   }
