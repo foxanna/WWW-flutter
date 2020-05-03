@@ -18,35 +18,35 @@ class BrowseMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, BrowseQuestion>(_browseQuestion),
-        TypedMiddleware<AppState, BrowseTour>(_browseTour),
-        TypedMiddleware<AppState, BrowseTournament>(_browseTournament),
-        TypedMiddleware<AppState, BrowseDatabase>(_openDatabase),
+        TypedMiddleware<AppState, DatabaseBrowseUserAction>(_database),
+        TypedMiddleware<AppState, QuestionBrowseUserAction>(_question),
+        TypedMiddleware<AppState, TourBrowseUserAction>(_tour),
+        TypedMiddleware<AppState, TournamentBrowseUserAction>(_tournament),
       ];
 
-  void _browseTournament(
-      Store<AppState> store, BrowseTournament action, NextDispatcher next) {
+  void _tournament(Store<AppState> store, TournamentBrowseUserAction action,
+      NextDispatcher next) {
     next(action);
 
     _browsingService.browseTournament(action.info);
   }
 
-  void _browseTour(
-      Store<AppState> store, BrowseTour action, NextDispatcher next) {
+  void _tour(
+      Store<AppState> store, TourBrowseUserAction action, NextDispatcher next) {
     next(action);
 
     _browsingService.browseTour(action.info);
   }
 
-  void _browseQuestion(
-      Store<AppState> store, BrowseQuestion action, NextDispatcher next) {
+  void _question(Store<AppState> store, QuestionBrowseUserAction action,
+      NextDispatcher next) {
     next(action);
 
     _browsingService.browseQuestion(action.info);
   }
 
-  void _openDatabase(
-      Store<AppState> store, BrowseDatabase action, NextDispatcher next) {
+  void _database(Store<AppState> store, DatabaseBrowseUserAction action,
+      NextDispatcher next) {
     next(action);
 
     _browsingService.browseDatabase();

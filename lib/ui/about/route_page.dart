@@ -114,7 +114,8 @@ class AboutRoutePage extends StatelessWidget {
       );
 
   void _openDatabaseInBrowser(BuildContext context) =>
-      StoreProvider.of<AppState>(context).dispatch(const BrowseDatabase());
+      StoreProvider.of<AppState>(context)
+          .dispatch(const UserActionBrowse.database());
 
   void _sendEmail(BuildContext context) =>
       StoreProvider.of<AppState>(context).dispatch(const EmailDevelopers());

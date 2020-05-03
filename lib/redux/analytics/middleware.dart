@@ -26,9 +26,10 @@ final _analyticsEventNames = {
   TourSharingUserAction: 'share_tour',
   TournamentSharingUserAction: 'share_tournament',
   // browsing
-  BrowseQuestion: 'browse_question',
-  BrowseTour: 'browse_tour',
-  BrowseTournament: 'browse_tournament',
+  QuestionBrowseUserAction: 'browse_question',
+  TourBrowseUserAction: 'browse_tour',
+  TournamentBrowseUserAction: 'browse_tournament',
+  DatabaseBrowseUserAction: 'browse_database',
   // navigation
   OpenImagePage: 'open_image',
   TourInfoDialogUserAction: 'open_tour_info',
@@ -39,7 +40,6 @@ final _analyticsEventNames = {
   NavigateToTournamentsTreePage: 'tree',
   // misc
   EmailDevelopers: 'email_developers',
-  BrowseDatabase: 'browse_database',
 };
 
 @injectable
@@ -64,14 +64,14 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, QuestionSharingUserAction>(_logAction),
         TypedMiddleware<AppState, TourSharingUserAction>(_logAction),
         TypedMiddleware<AppState, TournamentSharingUserAction>(_logAction),
-        TypedMiddleware<AppState, BrowseTournament>(_logAction),
-        TypedMiddleware<AppState, BrowseTour>(_logAction),
-        TypedMiddleware<AppState, BrowseQuestion>(_logAction),
+        TypedMiddleware<AppState, TournamentBrowseUserAction>(_logAction),
+        TypedMiddleware<AppState, TourBrowseUserAction>(_logAction),
+        TypedMiddleware<AppState, QuestionBrowseUserAction>(_logAction),
         TypedMiddleware<AppState, OpenImagePage>(_logAction),
         TypedMiddleware<AppState, TourInfoDialogUserAction>(_logAction),
         TypedMiddleware<AppState, TournamentInfoDialogUserAction>(_logAction),
         TypedMiddleware<AppState, EmailDevelopers>(_logAction),
-        TypedMiddleware<AppState, BrowseDatabase>(_logAction),
+        TypedMiddleware<AppState, DatabaseBrowseUserAction>(_logAction),
         TypedMiddleware<AppState, NavigateToSearchPage>(_logAction),
         TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
         TypedMiddleware<AppState, OpenRandomQuestionsPage>(_logAction),

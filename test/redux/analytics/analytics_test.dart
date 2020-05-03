@@ -99,20 +99,22 @@ void main() {
     );
 
     test(
-      '$BrowseQuestion',
-      () => analyticsTest(
-          const BrowseQuestion(info: QuestionInfo()), 'browse_question'),
+      '$QuestionBrowseUserAction',
+      () => analyticsTest(const UserActionBrowse.question(info: QuestionInfo()),
+          'browse_question'),
     );
 
     test(
-      '$BrowseTour',
-      () => analyticsTest(const BrowseTour(info: TourInfo()), 'browse_tour'),
+      '$TourBrowseUserAction',
+      () => analyticsTest(
+          const UserActionBrowse.tour(info: TourInfo()), 'browse_tour'),
     );
 
     test(
-      '$BrowseTournament',
+      '$TournamentBrowseUserAction',
       () => analyticsTest(
-          const BrowseTournament(info: TournamentInfo()), 'browse_tournament'),
+          const UserActionBrowse.tournament(info: TournamentInfo()),
+          'browse_tournament'),
     );
 
     test(
@@ -161,8 +163,8 @@ void main() {
     );
 
     test(
-      '$BrowseDatabase',
-      () => analyticsTest(const BrowseDatabase(), 'browse_database'),
+      '$DatabaseBrowseUserAction',
+      () => analyticsTest(const UserActionBrowse.database(), 'browse_database'),
     );
   });
 

@@ -9,47 +9,217 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$BrowseQuestionTearOff {
-  const _$BrowseQuestionTearOff();
+class _$UserActionBrowseTearOff {
+  const _$UserActionBrowseTearOff();
 
-  _BrowseQuestion call({@required QuestionInfo info}) {
-    return _BrowseQuestion(
+  DatabaseBrowseUserAction database() {
+    return const DatabaseBrowseUserAction();
+  }
+
+  QuestionBrowseUserAction question({@required QuestionInfo info}) {
+    return QuestionBrowseUserAction(
+      info: info,
+    );
+  }
+
+  TourBrowseUserAction tour({@required TourInfo info}) {
+    return TourBrowseUserAction(
+      info: info,
+    );
+  }
+
+  TournamentBrowseUserAction tournament({@required TournamentInfo info}) {
+    return TournamentBrowseUserAction(
       info: info,
     );
   }
 }
 
 // ignore: unused_element
-const $BrowseQuestion = _$BrowseQuestionTearOff();
+const $UserActionBrowse = _$UserActionBrowseTearOff();
 
-mixin _$BrowseQuestion {
-  QuestionInfo get info;
-
-  $BrowseQuestionCopyWith<BrowseQuestion> get copyWith;
+mixin _$UserActionBrowse {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result database(),
+    @required Result question(QuestionInfo info),
+    @required Result tour(TourInfo info),
+    @required Result tournament(TournamentInfo info),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result database(),
+    Result question(QuestionInfo info),
+    Result tour(TourInfo info),
+    Result tournament(TournamentInfo info),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result database(DatabaseBrowseUserAction value),
+    @required Result question(QuestionBrowseUserAction value),
+    @required Result tour(TourBrowseUserAction value),
+    @required Result tournament(TournamentBrowseUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result database(DatabaseBrowseUserAction value),
+    Result question(QuestionBrowseUserAction value),
+    Result tour(TourBrowseUserAction value),
+    Result tournament(TournamentBrowseUserAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $BrowseQuestionCopyWith<$Res> {
-  factory $BrowseQuestionCopyWith(
-          BrowseQuestion value, $Res Function(BrowseQuestion) then) =
-      _$BrowseQuestionCopyWithImpl<$Res>;
+abstract class $UserActionBrowseCopyWith<$Res> {
+  factory $UserActionBrowseCopyWith(
+          UserActionBrowse value, $Res Function(UserActionBrowse) then) =
+      _$UserActionBrowseCopyWithImpl<$Res>;
+}
+
+class _$UserActionBrowseCopyWithImpl<$Res>
+    implements $UserActionBrowseCopyWith<$Res> {
+  _$UserActionBrowseCopyWithImpl(this._value, this._then);
+
+  final UserActionBrowse _value;
+  // ignore: unused_field
+  final $Res Function(UserActionBrowse) _then;
+}
+
+abstract class $DatabaseBrowseUserActionCopyWith<$Res> {
+  factory $DatabaseBrowseUserActionCopyWith(DatabaseBrowseUserAction value,
+          $Res Function(DatabaseBrowseUserAction) then) =
+      _$DatabaseBrowseUserActionCopyWithImpl<$Res>;
+}
+
+class _$DatabaseBrowseUserActionCopyWithImpl<$Res>
+    extends _$UserActionBrowseCopyWithImpl<$Res>
+    implements $DatabaseBrowseUserActionCopyWith<$Res> {
+  _$DatabaseBrowseUserActionCopyWithImpl(DatabaseBrowseUserAction _value,
+      $Res Function(DatabaseBrowseUserAction) _then)
+      : super(_value, (v) => _then(v as DatabaseBrowseUserAction));
+
+  @override
+  DatabaseBrowseUserAction get _value =>
+      super._value as DatabaseBrowseUserAction;
+}
+
+class _$DatabaseBrowseUserAction
+    with DiagnosticableTreeMixin
+    implements DatabaseBrowseUserAction {
+  const _$DatabaseBrowseUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionBrowse.database()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionBrowse.database'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is DatabaseBrowseUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result database(),
+    @required Result question(QuestionInfo info),
+    @required Result tour(TourInfo info),
+    @required Result tournament(TournamentInfo info),
+  }) {
+    assert(database != null);
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return database();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result database(),
+    Result question(QuestionInfo info),
+    Result tour(TourInfo info),
+    Result tournament(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (database != null) {
+      return database();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result database(DatabaseBrowseUserAction value),
+    @required Result question(QuestionBrowseUserAction value),
+    @required Result tour(TourBrowseUserAction value),
+    @required Result tournament(TournamentBrowseUserAction value),
+  }) {
+    assert(database != null);
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return database(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result database(DatabaseBrowseUserAction value),
+    Result question(QuestionBrowseUserAction value),
+    Result tour(TourBrowseUserAction value),
+    Result tournament(TournamentBrowseUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (database != null) {
+      return database(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DatabaseBrowseUserAction implements UserActionBrowse {
+  const factory DatabaseBrowseUserAction() = _$DatabaseBrowseUserAction;
+}
+
+abstract class $QuestionBrowseUserActionCopyWith<$Res> {
+  factory $QuestionBrowseUserActionCopyWith(QuestionBrowseUserAction value,
+          $Res Function(QuestionBrowseUserAction) then) =
+      _$QuestionBrowseUserActionCopyWithImpl<$Res>;
   $Res call({QuestionInfo info});
 
   $QuestionInfoCopyWith<$Res> get info;
 }
 
-class _$BrowseQuestionCopyWithImpl<$Res>
-    implements $BrowseQuestionCopyWith<$Res> {
-  _$BrowseQuestionCopyWithImpl(this._value, this._then);
+class _$QuestionBrowseUserActionCopyWithImpl<$Res>
+    extends _$UserActionBrowseCopyWithImpl<$Res>
+    implements $QuestionBrowseUserActionCopyWith<$Res> {
+  _$QuestionBrowseUserActionCopyWithImpl(QuestionBrowseUserAction _value,
+      $Res Function(QuestionBrowseUserAction) _then)
+      : super(_value, (v) => _then(v as QuestionBrowseUserAction));
 
-  final BrowseQuestion _value;
-  // ignore: unused_field
-  final $Res Function(BrowseQuestion) _then;
+  @override
+  QuestionBrowseUserAction get _value =>
+      super._value as QuestionBrowseUserAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(QuestionBrowseUserAction(
       info: info == freezed ? _value.info : info as QuestionInfo,
     ));
   }
@@ -65,63 +235,32 @@ class _$BrowseQuestionCopyWithImpl<$Res>
   }
 }
 
-abstract class _$BrowseQuestionCopyWith<$Res>
-    implements $BrowseQuestionCopyWith<$Res> {
-  factory _$BrowseQuestionCopyWith(
-          _BrowseQuestion value, $Res Function(_BrowseQuestion) then) =
-      __$BrowseQuestionCopyWithImpl<$Res>;
-  @override
-  $Res call({QuestionInfo info});
-
-  @override
-  $QuestionInfoCopyWith<$Res> get info;
-}
-
-class __$BrowseQuestionCopyWithImpl<$Res>
-    extends _$BrowseQuestionCopyWithImpl<$Res>
-    implements _$BrowseQuestionCopyWith<$Res> {
-  __$BrowseQuestionCopyWithImpl(
-      _BrowseQuestion _value, $Res Function(_BrowseQuestion) _then)
-      : super(_value, (v) => _then(v as _BrowseQuestion));
-
-  @override
-  _BrowseQuestion get _value => super._value as _BrowseQuestion;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_BrowseQuestion(
-      info: info == freezed ? _value.info : info as QuestionInfo,
-    ));
-  }
-}
-
-class _$_BrowseQuestion
+class _$QuestionBrowseUserAction
     with DiagnosticableTreeMixin
-    implements _BrowseQuestion {
-  const _$_BrowseQuestion({@required this.info}) : assert(info != null);
+    implements QuestionBrowseUserAction {
+  const _$QuestionBrowseUserAction({@required this.info})
+      : assert(info != null);
 
   @override
   final QuestionInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BrowseQuestion(info: $info)';
+    return 'UserActionBrowse.question(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'BrowseQuestion'))
+      ..add(DiagnosticsProperty('type', 'UserActionBrowse.question'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BrowseQuestion &&
+        (other is QuestionBrowseUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -131,60 +270,105 @@ class _$_BrowseQuestion
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$BrowseQuestionCopyWith<_BrowseQuestion> get copyWith =>
-      __$BrowseQuestionCopyWithImpl<_BrowseQuestion>(this, _$identity);
-}
-
-abstract class _BrowseQuestion implements BrowseQuestion {
-  const factory _BrowseQuestion({@required QuestionInfo info}) =
-      _$_BrowseQuestion;
+  $QuestionBrowseUserActionCopyWith<QuestionBrowseUserAction> get copyWith =>
+      _$QuestionBrowseUserActionCopyWithImpl<QuestionBrowseUserAction>(
+          this, _$identity);
 
   @override
-  QuestionInfo get info;
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result database(),
+    @required Result question(QuestionInfo info),
+    @required Result tour(TourInfo info),
+    @required Result tournament(TournamentInfo info),
+  }) {
+    assert(database != null);
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return question(info);
+  }
+
   @override
-  _$BrowseQuestionCopyWith<_BrowseQuestion> get copyWith;
-}
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result database(),
+    Result question(QuestionInfo info),
+    Result tour(TourInfo info),
+    Result tournament(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (question != null) {
+      return question(info);
+    }
+    return orElse();
+  }
 
-class _$BrowseTourTearOff {
-  const _$BrowseTourTearOff();
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result database(DatabaseBrowseUserAction value),
+    @required Result question(QuestionBrowseUserAction value),
+    @required Result tour(TourBrowseUserAction value),
+    @required Result tournament(TournamentBrowseUserAction value),
+  }) {
+    assert(database != null);
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return question(this);
+  }
 
-  _BrowseTour call({@required TourInfo info}) {
-    return _BrowseTour(
-      info: info,
-    );
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result database(DatabaseBrowseUserAction value),
+    Result question(QuestionBrowseUserAction value),
+    Result tour(TourBrowseUserAction value),
+    Result tournament(TournamentBrowseUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (question != null) {
+      return question(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $BrowseTour = _$BrowseTourTearOff();
+abstract class QuestionBrowseUserAction implements UserActionBrowse {
+  const factory QuestionBrowseUserAction({@required QuestionInfo info}) =
+      _$QuestionBrowseUserAction;
 
-mixin _$BrowseTour {
-  TourInfo get info;
-
-  $BrowseTourCopyWith<BrowseTour> get copyWith;
+  QuestionInfo get info;
+  $QuestionBrowseUserActionCopyWith<QuestionBrowseUserAction> get copyWith;
 }
 
-abstract class $BrowseTourCopyWith<$Res> {
-  factory $BrowseTourCopyWith(
-          BrowseTour value, $Res Function(BrowseTour) then) =
-      _$BrowseTourCopyWithImpl<$Res>;
+abstract class $TourBrowseUserActionCopyWith<$Res> {
+  factory $TourBrowseUserActionCopyWith(TourBrowseUserAction value,
+          $Res Function(TourBrowseUserAction) then) =
+      _$TourBrowseUserActionCopyWithImpl<$Res>;
   $Res call({TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
 }
 
-class _$BrowseTourCopyWithImpl<$Res> implements $BrowseTourCopyWith<$Res> {
-  _$BrowseTourCopyWithImpl(this._value, this._then);
+class _$TourBrowseUserActionCopyWithImpl<$Res>
+    extends _$UserActionBrowseCopyWithImpl<$Res>
+    implements $TourBrowseUserActionCopyWith<$Res> {
+  _$TourBrowseUserActionCopyWithImpl(
+      TourBrowseUserAction _value, $Res Function(TourBrowseUserAction) _then)
+      : super(_value, (v) => _then(v as TourBrowseUserAction));
 
-  final BrowseTour _value;
-  // ignore: unused_field
-  final $Res Function(BrowseTour) _then;
+  @override
+  TourBrowseUserAction get _value => super._value as TourBrowseUserAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(TourBrowseUserAction(
       info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
@@ -200,59 +384,31 @@ class _$BrowseTourCopyWithImpl<$Res> implements $BrowseTourCopyWith<$Res> {
   }
 }
 
-abstract class _$BrowseTourCopyWith<$Res> implements $BrowseTourCopyWith<$Res> {
-  factory _$BrowseTourCopyWith(
-          _BrowseTour value, $Res Function(_BrowseTour) then) =
-      __$BrowseTourCopyWithImpl<$Res>;
-  @override
-  $Res call({TourInfo info});
-
-  @override
-  $TourInfoCopyWith<$Res> get info;
-}
-
-class __$BrowseTourCopyWithImpl<$Res> extends _$BrowseTourCopyWithImpl<$Res>
-    implements _$BrowseTourCopyWith<$Res> {
-  __$BrowseTourCopyWithImpl(
-      _BrowseTour _value, $Res Function(_BrowseTour) _then)
-      : super(_value, (v) => _then(v as _BrowseTour));
-
-  @override
-  _BrowseTour get _value => super._value as _BrowseTour;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_BrowseTour(
-      info: info == freezed ? _value.info : info as TourInfo,
-    ));
-  }
-}
-
-class _$_BrowseTour with DiagnosticableTreeMixin implements _BrowseTour {
-  const _$_BrowseTour({@required this.info}) : assert(info != null);
+class _$TourBrowseUserAction
+    with DiagnosticableTreeMixin
+    implements TourBrowseUserAction {
+  const _$TourBrowseUserAction({@required this.info}) : assert(info != null);
 
   @override
   final TourInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BrowseTour(info: $info)';
+    return 'UserActionBrowse.tour(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'BrowseTour'))
+      ..add(DiagnosticsProperty('type', 'UserActionBrowse.tour'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BrowseTour &&
+        (other is TourBrowseUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -262,60 +418,106 @@ class _$_BrowseTour with DiagnosticableTreeMixin implements _BrowseTour {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$BrowseTourCopyWith<_BrowseTour> get copyWith =>
-      __$BrowseTourCopyWithImpl<_BrowseTour>(this, _$identity);
-}
-
-abstract class _BrowseTour implements BrowseTour {
-  const factory _BrowseTour({@required TourInfo info}) = _$_BrowseTour;
+  $TourBrowseUserActionCopyWith<TourBrowseUserAction> get copyWith =>
+      _$TourBrowseUserActionCopyWithImpl<TourBrowseUserAction>(
+          this, _$identity);
 
   @override
-  TourInfo get info;
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result database(),
+    @required Result question(QuestionInfo info),
+    @required Result tour(TourInfo info),
+    @required Result tournament(TournamentInfo info),
+  }) {
+    assert(database != null);
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return tour(info);
+  }
+
   @override
-  _$BrowseTourCopyWith<_BrowseTour> get copyWith;
-}
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result database(),
+    Result question(QuestionInfo info),
+    Result tour(TourInfo info),
+    Result tournament(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tour != null) {
+      return tour(info);
+    }
+    return orElse();
+  }
 
-class _$BrowseTournamentTearOff {
-  const _$BrowseTournamentTearOff();
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result database(DatabaseBrowseUserAction value),
+    @required Result question(QuestionBrowseUserAction value),
+    @required Result tour(TourBrowseUserAction value),
+    @required Result tournament(TournamentBrowseUserAction value),
+  }) {
+    assert(database != null);
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return tour(this);
+  }
 
-  _BrowseTournament call({@required TournamentInfo info}) {
-    return _BrowseTournament(
-      info: info,
-    );
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result database(DatabaseBrowseUserAction value),
+    Result question(QuestionBrowseUserAction value),
+    Result tour(TourBrowseUserAction value),
+    Result tournament(TournamentBrowseUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tour != null) {
+      return tour(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $BrowseTournament = _$BrowseTournamentTearOff();
+abstract class TourBrowseUserAction implements UserActionBrowse {
+  const factory TourBrowseUserAction({@required TourInfo info}) =
+      _$TourBrowseUserAction;
 
-mixin _$BrowseTournament {
-  TournamentInfo get info;
-
-  $BrowseTournamentCopyWith<BrowseTournament> get copyWith;
+  TourInfo get info;
+  $TourBrowseUserActionCopyWith<TourBrowseUserAction> get copyWith;
 }
 
-abstract class $BrowseTournamentCopyWith<$Res> {
-  factory $BrowseTournamentCopyWith(
-          BrowseTournament value, $Res Function(BrowseTournament) then) =
-      _$BrowseTournamentCopyWithImpl<$Res>;
+abstract class $TournamentBrowseUserActionCopyWith<$Res> {
+  factory $TournamentBrowseUserActionCopyWith(TournamentBrowseUserAction value,
+          $Res Function(TournamentBrowseUserAction) then) =
+      _$TournamentBrowseUserActionCopyWithImpl<$Res>;
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
 }
 
-class _$BrowseTournamentCopyWithImpl<$Res>
-    implements $BrowseTournamentCopyWith<$Res> {
-  _$BrowseTournamentCopyWithImpl(this._value, this._then);
+class _$TournamentBrowseUserActionCopyWithImpl<$Res>
+    extends _$UserActionBrowseCopyWithImpl<$Res>
+    implements $TournamentBrowseUserActionCopyWith<$Res> {
+  _$TournamentBrowseUserActionCopyWithImpl(TournamentBrowseUserAction _value,
+      $Res Function(TournamentBrowseUserAction) _then)
+      : super(_value, (v) => _then(v as TournamentBrowseUserAction));
 
-  final BrowseTournament _value;
-  // ignore: unused_field
-  final $Res Function(BrowseTournament) _then;
+  @override
+  TournamentBrowseUserAction get _value =>
+      super._value as TournamentBrowseUserAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(TournamentBrowseUserAction(
       info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
@@ -331,63 +533,32 @@ class _$BrowseTournamentCopyWithImpl<$Res>
   }
 }
 
-abstract class _$BrowseTournamentCopyWith<$Res>
-    implements $BrowseTournamentCopyWith<$Res> {
-  factory _$BrowseTournamentCopyWith(
-          _BrowseTournament value, $Res Function(_BrowseTournament) then) =
-      __$BrowseTournamentCopyWithImpl<$Res>;
-  @override
-  $Res call({TournamentInfo info});
-
-  @override
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class __$BrowseTournamentCopyWithImpl<$Res>
-    extends _$BrowseTournamentCopyWithImpl<$Res>
-    implements _$BrowseTournamentCopyWith<$Res> {
-  __$BrowseTournamentCopyWithImpl(
-      _BrowseTournament _value, $Res Function(_BrowseTournament) _then)
-      : super(_value, (v) => _then(v as _BrowseTournament));
-
-  @override
-  _BrowseTournament get _value => super._value as _BrowseTournament;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_BrowseTournament(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-    ));
-  }
-}
-
-class _$_BrowseTournament
+class _$TournamentBrowseUserAction
     with DiagnosticableTreeMixin
-    implements _BrowseTournament {
-  const _$_BrowseTournament({@required this.info}) : assert(info != null);
+    implements TournamentBrowseUserAction {
+  const _$TournamentBrowseUserAction({@required this.info})
+      : assert(info != null);
 
   @override
   final TournamentInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BrowseTournament(info: $info)';
+    return 'UserActionBrowse.tournament(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'BrowseTournament'))
+      ..add(DiagnosticsProperty('type', 'UserActionBrowse.tournament'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BrowseTournament &&
+        (other is TournamentBrowseUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -397,90 +568,78 @@ class _$_BrowseTournament
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$BrowseTournamentCopyWith<_BrowseTournament> get copyWith =>
-      __$BrowseTournamentCopyWithImpl<_BrowseTournament>(this, _$identity);
-}
-
-abstract class _BrowseTournament implements BrowseTournament {
-  const factory _BrowseTournament({@required TournamentInfo info}) =
-      _$_BrowseTournament;
+  $TournamentBrowseUserActionCopyWith<TournamentBrowseUserAction>
+      get copyWith =>
+          _$TournamentBrowseUserActionCopyWithImpl<TournamentBrowseUserAction>(
+              this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result database(),
+    @required Result question(QuestionInfo info),
+    @required Result tour(TourInfo info),
+    @required Result tournament(TournamentInfo info),
+  }) {
+    assert(database != null);
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return tournament(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result database(),
+    Result question(QuestionInfo info),
+    Result tour(TourInfo info),
+    Result tournament(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tournament != null) {
+      return tournament(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result database(DatabaseBrowseUserAction value),
+    @required Result question(QuestionBrowseUserAction value),
+    @required Result tour(TourBrowseUserAction value),
+    @required Result tournament(TournamentBrowseUserAction value),
+  }) {
+    assert(database != null);
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return tournament(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result database(DatabaseBrowseUserAction value),
+    Result question(QuestionBrowseUserAction value),
+    Result tour(TourBrowseUserAction value),
+    Result tournament(TournamentBrowseUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tournament != null) {
+      return tournament(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TournamentBrowseUserAction implements UserActionBrowse {
+  const factory TournamentBrowseUserAction({@required TournamentInfo info}) =
+      _$TournamentBrowseUserAction;
+
   TournamentInfo get info;
-  @override
-  _$BrowseTournamentCopyWith<_BrowseTournament> get copyWith;
-}
-
-class _$BrowseDatabaseTearOff {
-  const _$BrowseDatabaseTearOff();
-
-  _BrowseDatabase call() {
-    return const _BrowseDatabase();
-  }
-}
-
-// ignore: unused_element
-const $BrowseDatabase = _$BrowseDatabaseTearOff();
-
-mixin _$BrowseDatabase {}
-
-abstract class $BrowseDatabaseCopyWith<$Res> {
-  factory $BrowseDatabaseCopyWith(
-          BrowseDatabase value, $Res Function(BrowseDatabase) then) =
-      _$BrowseDatabaseCopyWithImpl<$Res>;
-}
-
-class _$BrowseDatabaseCopyWithImpl<$Res>
-    implements $BrowseDatabaseCopyWith<$Res> {
-  _$BrowseDatabaseCopyWithImpl(this._value, this._then);
-
-  final BrowseDatabase _value;
-  // ignore: unused_field
-  final $Res Function(BrowseDatabase) _then;
-}
-
-abstract class _$BrowseDatabaseCopyWith<$Res> {
-  factory _$BrowseDatabaseCopyWith(
-          _BrowseDatabase value, $Res Function(_BrowseDatabase) then) =
-      __$BrowseDatabaseCopyWithImpl<$Res>;
-}
-
-class __$BrowseDatabaseCopyWithImpl<$Res>
-    extends _$BrowseDatabaseCopyWithImpl<$Res>
-    implements _$BrowseDatabaseCopyWith<$Res> {
-  __$BrowseDatabaseCopyWithImpl(
-      _BrowseDatabase _value, $Res Function(_BrowseDatabase) _then)
-      : super(_value, (v) => _then(v as _BrowseDatabase));
-
-  @override
-  _BrowseDatabase get _value => super._value as _BrowseDatabase;
-}
-
-class _$_BrowseDatabase
-    with DiagnosticableTreeMixin
-    implements _BrowseDatabase {
-  const _$_BrowseDatabase();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BrowseDatabase()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'BrowseDatabase'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BrowseDatabase);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _BrowseDatabase implements BrowseDatabase {
-  const factory _BrowseDatabase() = _$_BrowseDatabase;
+  $TournamentBrowseUserActionCopyWith<TournamentBrowseUserAction> get copyWith;
 }

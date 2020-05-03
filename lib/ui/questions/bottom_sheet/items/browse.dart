@@ -21,7 +21,7 @@ class QuestionsBrowseBottomSheetItem extends StatelessWidget {
             Navigator.pop(context);
 
             StoreProvider.of<AppState>(context)
-                .dispatch(BrowseQuestion(info: question.info));
+                .dispatch(UserActionBrowse.question(info: question.info));
           },
         ),
       );

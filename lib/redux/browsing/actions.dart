@@ -10,29 +10,20 @@ part 'actions.freezed.dart';
 abstract class BrowseAction implements ReduxAction {}
 
 @freezed
-abstract class BrowseQuestion with _$BrowseQuestion implements BrowseAction {
-  const factory BrowseQuestion({
-    @required QuestionInfo info,
-  }) = _BrowseQuestion;
-}
-
-@freezed
-abstract class BrowseTour with _$BrowseTour implements BrowseAction {
-  const factory BrowseTour({
-    @required TourInfo info,
-  }) = _BrowseTour;
-}
-
-@freezed
-abstract class BrowseTournament
-    with _$BrowseTournament
+abstract class UserActionBrowse
+    with _$UserActionBrowse
     implements BrowseAction {
-  const factory BrowseTournament({
-    @required TournamentInfo info,
-  }) = _BrowseTournament;
-}
+  const factory UserActionBrowse.database() = DatabaseBrowseUserAction;
 
-@freezed
-abstract class BrowseDatabase with _$BrowseDatabase implements BrowseAction {
-  const factory BrowseDatabase() = _BrowseDatabase;
+  const factory UserActionBrowse.question({
+    @required QuestionInfo info,
+  }) = QuestionBrowseUserAction;
+
+  const factory UserActionBrowse.tour({
+    @required TourInfo info,
+  }) = TourBrowseUserAction;
+
+  const factory UserActionBrowse.tournament({
+    @required TournamentInfo info,
+  }) = TournamentBrowseUserAction;
 }
