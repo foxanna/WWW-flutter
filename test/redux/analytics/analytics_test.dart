@@ -78,21 +78,24 @@ void main() {
     );
 
     test(
-      '$ShareQuestion',
+      '$QuestionSharingUserAction',
       () => analyticsTest(
-          const ShareQuestion(info: QuestionInfo(), questionText: ''),
+          const UserActionSharing.question(
+              info: QuestionInfo(), questionText: ''),
           'share_question'),
     );
 
     test(
-      '$ShareTour',
-      () => analyticsTest(const ShareTour(info: TourInfo()), 'share_tour'),
+      '$TourSharingUserAction',
+      () => analyticsTest(
+          const UserActionSharing.tour(info: TourInfo()), 'share_tour'),
     );
 
     test(
-      '$ShareTournament',
+      '$TournamentSharingUserAction',
       () => analyticsTest(
-          const ShareTournament(info: TournamentInfo()), 'share_tournament'),
+          const UserActionSharing.tournament(info: TournamentInfo()),
+          'share_tournament'),
     );
 
     test(

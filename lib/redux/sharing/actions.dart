@@ -10,23 +10,19 @@ part 'actions.freezed.dart';
 abstract class SharingAction implements ReduxAction {}
 
 @freezed
-abstract class ShareQuestion with _$ShareQuestion implements SharingAction {
-  const factory ShareQuestion({
+abstract class UserActionSharing
+    with _$UserActionSharing
+    implements SharingAction {
+  const factory UserActionSharing.question({
     @required QuestionInfo info,
     @required String questionText,
-  }) = _ShareQuestion;
-}
+  }) = QuestionSharingUserAction;
 
-@freezed
-abstract class ShareTour with _$ShareTour implements SharingAction {
-  const factory ShareTour({
+  const factory UserActionSharing.tour({
     @required TourInfo info,
-  }) = _ShareTour;
-}
+  }) = TourSharingUserAction;
 
-@freezed
-abstract class ShareTournament with _$ShareTournament implements SharingAction {
-  const factory ShareTournament({
+  const factory UserActionSharing.tournament({
     @required TournamentInfo info,
-  }) = _ShareTournament;
+  }) = TournamentSharingUserAction;
 }

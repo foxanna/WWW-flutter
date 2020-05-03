@@ -9,51 +9,103 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$ShareQuestionTearOff {
-  const _$ShareQuestionTearOff();
+class _$UserActionSharingTearOff {
+  const _$UserActionSharingTearOff();
 
-  _ShareQuestion call(
+  QuestionSharingUserAction question(
       {@required QuestionInfo info, @required String questionText}) {
-    return _ShareQuestion(
+    return QuestionSharingUserAction(
       info: info,
       questionText: questionText,
+    );
+  }
+
+  TourSharingUserAction tour({@required TourInfo info}) {
+    return TourSharingUserAction(
+      info: info,
+    );
+  }
+
+  TournamentSharingUserAction tournament({@required TournamentInfo info}) {
+    return TournamentSharingUserAction(
+      info: info,
     );
   }
 }
 
 // ignore: unused_element
-const $ShareQuestion = _$ShareQuestionTearOff();
+const $UserActionSharing = _$UserActionSharingTearOff();
 
-mixin _$ShareQuestion {
-  QuestionInfo get info;
-  String get questionText;
-
-  $ShareQuestionCopyWith<ShareQuestion> get copyWith;
+mixin _$UserActionSharing {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result question(QuestionInfo info, String questionText),
+    @required Result tour(TourInfo info),
+    @required Result tournament(TournamentInfo info),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result question(QuestionInfo info, String questionText),
+    Result tour(TourInfo info),
+    Result tournament(TournamentInfo info),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result question(QuestionSharingUserAction value),
+    @required Result tour(TourSharingUserAction value),
+    @required Result tournament(TournamentSharingUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result question(QuestionSharingUserAction value),
+    Result tour(TourSharingUserAction value),
+    Result tournament(TournamentSharingUserAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $ShareQuestionCopyWith<$Res> {
-  factory $ShareQuestionCopyWith(
-          ShareQuestion value, $Res Function(ShareQuestion) then) =
-      _$ShareQuestionCopyWithImpl<$Res>;
+abstract class $UserActionSharingCopyWith<$Res> {
+  factory $UserActionSharingCopyWith(
+          UserActionSharing value, $Res Function(UserActionSharing) then) =
+      _$UserActionSharingCopyWithImpl<$Res>;
+}
+
+class _$UserActionSharingCopyWithImpl<$Res>
+    implements $UserActionSharingCopyWith<$Res> {
+  _$UserActionSharingCopyWithImpl(this._value, this._then);
+
+  final UserActionSharing _value;
+  // ignore: unused_field
+  final $Res Function(UserActionSharing) _then;
+}
+
+abstract class $QuestionSharingUserActionCopyWith<$Res> {
+  factory $QuestionSharingUserActionCopyWith(QuestionSharingUserAction value,
+          $Res Function(QuestionSharingUserAction) then) =
+      _$QuestionSharingUserActionCopyWithImpl<$Res>;
   $Res call({QuestionInfo info, String questionText});
 
   $QuestionInfoCopyWith<$Res> get info;
 }
 
-class _$ShareQuestionCopyWithImpl<$Res>
-    implements $ShareQuestionCopyWith<$Res> {
-  _$ShareQuestionCopyWithImpl(this._value, this._then);
+class _$QuestionSharingUserActionCopyWithImpl<$Res>
+    extends _$UserActionSharingCopyWithImpl<$Res>
+    implements $QuestionSharingUserActionCopyWith<$Res> {
+  _$QuestionSharingUserActionCopyWithImpl(QuestionSharingUserAction _value,
+      $Res Function(QuestionSharingUserAction) _then)
+      : super(_value, (v) => _then(v as QuestionSharingUserAction));
 
-  final ShareQuestion _value;
-  // ignore: unused_field
-  final $Res Function(ShareQuestion) _then;
+  @override
+  QuestionSharingUserAction get _value =>
+      super._value as QuestionSharingUserAction;
 
   @override
   $Res call({
     Object info = freezed,
     Object questionText = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(QuestionSharingUserAction(
       info: info == freezed ? _value.info : info as QuestionInfo,
       questionText: questionText == freezed
           ? _value.questionText
@@ -72,44 +124,11 @@ class _$ShareQuestionCopyWithImpl<$Res>
   }
 }
 
-abstract class _$ShareQuestionCopyWith<$Res>
-    implements $ShareQuestionCopyWith<$Res> {
-  factory _$ShareQuestionCopyWith(
-          _ShareQuestion value, $Res Function(_ShareQuestion) then) =
-      __$ShareQuestionCopyWithImpl<$Res>;
-  @override
-  $Res call({QuestionInfo info, String questionText});
-
-  @override
-  $QuestionInfoCopyWith<$Res> get info;
-}
-
-class __$ShareQuestionCopyWithImpl<$Res>
-    extends _$ShareQuestionCopyWithImpl<$Res>
-    implements _$ShareQuestionCopyWith<$Res> {
-  __$ShareQuestionCopyWithImpl(
-      _ShareQuestion _value, $Res Function(_ShareQuestion) _then)
-      : super(_value, (v) => _then(v as _ShareQuestion));
-
-  @override
-  _ShareQuestion get _value => super._value as _ShareQuestion;
-
-  @override
-  $Res call({
-    Object info = freezed,
-    Object questionText = freezed,
-  }) {
-    return _then(_ShareQuestion(
-      info: info == freezed ? _value.info : info as QuestionInfo,
-      questionText: questionText == freezed
-          ? _value.questionText
-          : questionText as String,
-    ));
-  }
-}
-
-class _$_ShareQuestion with DiagnosticableTreeMixin implements _ShareQuestion {
-  const _$_ShareQuestion({@required this.info, @required this.questionText})
+class _$QuestionSharingUserAction
+    with DiagnosticableTreeMixin
+    implements QuestionSharingUserAction {
+  const _$QuestionSharingUserAction(
+      {@required this.info, @required this.questionText})
       : assert(info != null),
         assert(questionText != null);
 
@@ -120,14 +139,14 @@ class _$_ShareQuestion with DiagnosticableTreeMixin implements _ShareQuestion {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ShareQuestion(info: $info, questionText: $questionText)';
+    return 'UserActionSharing.question(info: $info, questionText: $questionText)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ShareQuestion'))
+      ..add(DiagnosticsProperty('type', 'UserActionSharing.question'))
       ..add(DiagnosticsProperty('info', info))
       ..add(DiagnosticsProperty('questionText', questionText));
   }
@@ -135,7 +154,7 @@ class _$_ShareQuestion with DiagnosticableTreeMixin implements _ShareQuestion {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ShareQuestion &&
+        (other is QuestionSharingUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)) &&
             (identical(other.questionText, questionText) ||
@@ -150,62 +169,101 @@ class _$_ShareQuestion with DiagnosticableTreeMixin implements _ShareQuestion {
       const DeepCollectionEquality().hash(questionText);
 
   @override
-  _$ShareQuestionCopyWith<_ShareQuestion> get copyWith =>
-      __$ShareQuestionCopyWithImpl<_ShareQuestion>(this, _$identity);
-}
-
-abstract class _ShareQuestion implements ShareQuestion {
-  const factory _ShareQuestion(
-      {@required QuestionInfo info,
-      @required String questionText}) = _$_ShareQuestion;
+  $QuestionSharingUserActionCopyWith<QuestionSharingUserAction> get copyWith =>
+      _$QuestionSharingUserActionCopyWithImpl<QuestionSharingUserAction>(
+          this, _$identity);
 
   @override
-  QuestionInfo get info;
-  @override
-  String get questionText;
-  @override
-  _$ShareQuestionCopyWith<_ShareQuestion> get copyWith;
-}
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result question(QuestionInfo info, String questionText),
+    @required Result tour(TourInfo info),
+    @required Result tournament(TournamentInfo info),
+  }) {
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return question(info, questionText);
+  }
 
-class _$ShareTourTearOff {
-  const _$ShareTourTearOff();
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result question(QuestionInfo info, String questionText),
+    Result tour(TourInfo info),
+    Result tournament(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (question != null) {
+      return question(info, questionText);
+    }
+    return orElse();
+  }
 
-  _ShareTour call({@required TourInfo info}) {
-    return _ShareTour(
-      info: info,
-    );
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result question(QuestionSharingUserAction value),
+    @required Result tour(TourSharingUserAction value),
+    @required Result tournament(TournamentSharingUserAction value),
+  }) {
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return question(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result question(QuestionSharingUserAction value),
+    Result tour(TourSharingUserAction value),
+    Result tournament(TournamentSharingUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (question != null) {
+      return question(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $ShareTour = _$ShareTourTearOff();
+abstract class QuestionSharingUserAction implements UserActionSharing {
+  const factory QuestionSharingUserAction(
+      {@required QuestionInfo info,
+      @required String questionText}) = _$QuestionSharingUserAction;
 
-mixin _$ShareTour {
-  TourInfo get info;
-
-  $ShareTourCopyWith<ShareTour> get copyWith;
+  QuestionInfo get info;
+  String get questionText;
+  $QuestionSharingUserActionCopyWith<QuestionSharingUserAction> get copyWith;
 }
 
-abstract class $ShareTourCopyWith<$Res> {
-  factory $ShareTourCopyWith(ShareTour value, $Res Function(ShareTour) then) =
-      _$ShareTourCopyWithImpl<$Res>;
+abstract class $TourSharingUserActionCopyWith<$Res> {
+  factory $TourSharingUserActionCopyWith(TourSharingUserAction value,
+          $Res Function(TourSharingUserAction) then) =
+      _$TourSharingUserActionCopyWithImpl<$Res>;
   $Res call({TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
 }
 
-class _$ShareTourCopyWithImpl<$Res> implements $ShareTourCopyWith<$Res> {
-  _$ShareTourCopyWithImpl(this._value, this._then);
+class _$TourSharingUserActionCopyWithImpl<$Res>
+    extends _$UserActionSharingCopyWithImpl<$Res>
+    implements $TourSharingUserActionCopyWith<$Res> {
+  _$TourSharingUserActionCopyWithImpl(
+      TourSharingUserAction _value, $Res Function(TourSharingUserAction) _then)
+      : super(_value, (v) => _then(v as TourSharingUserAction));
 
-  final ShareTour _value;
-  // ignore: unused_field
-  final $Res Function(ShareTour) _then;
+  @override
+  TourSharingUserAction get _value => super._value as TourSharingUserAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(TourSharingUserAction(
       info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
@@ -221,58 +279,31 @@ class _$ShareTourCopyWithImpl<$Res> implements $ShareTourCopyWith<$Res> {
   }
 }
 
-abstract class _$ShareTourCopyWith<$Res> implements $ShareTourCopyWith<$Res> {
-  factory _$ShareTourCopyWith(
-          _ShareTour value, $Res Function(_ShareTour) then) =
-      __$ShareTourCopyWithImpl<$Res>;
-  @override
-  $Res call({TourInfo info});
-
-  @override
-  $TourInfoCopyWith<$Res> get info;
-}
-
-class __$ShareTourCopyWithImpl<$Res> extends _$ShareTourCopyWithImpl<$Res>
-    implements _$ShareTourCopyWith<$Res> {
-  __$ShareTourCopyWithImpl(_ShareTour _value, $Res Function(_ShareTour) _then)
-      : super(_value, (v) => _then(v as _ShareTour));
-
-  @override
-  _ShareTour get _value => super._value as _ShareTour;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_ShareTour(
-      info: info == freezed ? _value.info : info as TourInfo,
-    ));
-  }
-}
-
-class _$_ShareTour with DiagnosticableTreeMixin implements _ShareTour {
-  const _$_ShareTour({@required this.info}) : assert(info != null);
+class _$TourSharingUserAction
+    with DiagnosticableTreeMixin
+    implements TourSharingUserAction {
+  const _$TourSharingUserAction({@required this.info}) : assert(info != null);
 
   @override
   final TourInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ShareTour(info: $info)';
+    return 'UserActionSharing.tour(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ShareTour'))
+      ..add(DiagnosticsProperty('type', 'UserActionSharing.tour'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ShareTour &&
+        (other is TourSharingUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -282,60 +313,101 @@ class _$_ShareTour with DiagnosticableTreeMixin implements _ShareTour {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$ShareTourCopyWith<_ShareTour> get copyWith =>
-      __$ShareTourCopyWithImpl<_ShareTour>(this, _$identity);
-}
-
-abstract class _ShareTour implements ShareTour {
-  const factory _ShareTour({@required TourInfo info}) = _$_ShareTour;
+  $TourSharingUserActionCopyWith<TourSharingUserAction> get copyWith =>
+      _$TourSharingUserActionCopyWithImpl<TourSharingUserAction>(
+          this, _$identity);
 
   @override
-  TourInfo get info;
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result question(QuestionInfo info, String questionText),
+    @required Result tour(TourInfo info),
+    @required Result tournament(TournamentInfo info),
+  }) {
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return tour(info);
+  }
+
   @override
-  _$ShareTourCopyWith<_ShareTour> get copyWith;
-}
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result question(QuestionInfo info, String questionText),
+    Result tour(TourInfo info),
+    Result tournament(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tour != null) {
+      return tour(info);
+    }
+    return orElse();
+  }
 
-class _$ShareTournamentTearOff {
-  const _$ShareTournamentTearOff();
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result question(QuestionSharingUserAction value),
+    @required Result tour(TourSharingUserAction value),
+    @required Result tournament(TournamentSharingUserAction value),
+  }) {
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return tour(this);
+  }
 
-  _ShareTournament call({@required TournamentInfo info}) {
-    return _ShareTournament(
-      info: info,
-    );
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result question(QuestionSharingUserAction value),
+    Result tour(TourSharingUserAction value),
+    Result tournament(TournamentSharingUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tour != null) {
+      return tour(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $ShareTournament = _$ShareTournamentTearOff();
+abstract class TourSharingUserAction implements UserActionSharing {
+  const factory TourSharingUserAction({@required TourInfo info}) =
+      _$TourSharingUserAction;
 
-mixin _$ShareTournament {
-  TournamentInfo get info;
-
-  $ShareTournamentCopyWith<ShareTournament> get copyWith;
+  TourInfo get info;
+  $TourSharingUserActionCopyWith<TourSharingUserAction> get copyWith;
 }
 
-abstract class $ShareTournamentCopyWith<$Res> {
-  factory $ShareTournamentCopyWith(
-          ShareTournament value, $Res Function(ShareTournament) then) =
-      _$ShareTournamentCopyWithImpl<$Res>;
+abstract class $TournamentSharingUserActionCopyWith<$Res> {
+  factory $TournamentSharingUserActionCopyWith(
+          TournamentSharingUserAction value,
+          $Res Function(TournamentSharingUserAction) then) =
+      _$TournamentSharingUserActionCopyWithImpl<$Res>;
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
 }
 
-class _$ShareTournamentCopyWithImpl<$Res>
-    implements $ShareTournamentCopyWith<$Res> {
-  _$ShareTournamentCopyWithImpl(this._value, this._then);
+class _$TournamentSharingUserActionCopyWithImpl<$Res>
+    extends _$UserActionSharingCopyWithImpl<$Res>
+    implements $TournamentSharingUserActionCopyWith<$Res> {
+  _$TournamentSharingUserActionCopyWithImpl(TournamentSharingUserAction _value,
+      $Res Function(TournamentSharingUserAction) _then)
+      : super(_value, (v) => _then(v as TournamentSharingUserAction));
 
-  final ShareTournament _value;
-  // ignore: unused_field
-  final $Res Function(ShareTournament) _then;
+  @override
+  TournamentSharingUserAction get _value =>
+      super._value as TournamentSharingUserAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(TournamentSharingUserAction(
       info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
@@ -351,63 +423,32 @@ class _$ShareTournamentCopyWithImpl<$Res>
   }
 }
 
-abstract class _$ShareTournamentCopyWith<$Res>
-    implements $ShareTournamentCopyWith<$Res> {
-  factory _$ShareTournamentCopyWith(
-          _ShareTournament value, $Res Function(_ShareTournament) then) =
-      __$ShareTournamentCopyWithImpl<$Res>;
-  @override
-  $Res call({TournamentInfo info});
-
-  @override
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class __$ShareTournamentCopyWithImpl<$Res>
-    extends _$ShareTournamentCopyWithImpl<$Res>
-    implements _$ShareTournamentCopyWith<$Res> {
-  __$ShareTournamentCopyWithImpl(
-      _ShareTournament _value, $Res Function(_ShareTournament) _then)
-      : super(_value, (v) => _then(v as _ShareTournament));
-
-  @override
-  _ShareTournament get _value => super._value as _ShareTournament;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_ShareTournament(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-    ));
-  }
-}
-
-class _$_ShareTournament
+class _$TournamentSharingUserAction
     with DiagnosticableTreeMixin
-    implements _ShareTournament {
-  const _$_ShareTournament({@required this.info}) : assert(info != null);
+    implements TournamentSharingUserAction {
+  const _$TournamentSharingUserAction({@required this.info})
+      : assert(info != null);
 
   @override
   final TournamentInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ShareTournament(info: $info)';
+    return 'UserActionSharing.tournament(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ShareTournament'))
+      ..add(DiagnosticsProperty('type', 'UserActionSharing.tournament'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ShareTournament &&
+        (other is TournamentSharingUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -417,16 +458,72 @@ class _$_ShareTournament
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$ShareTournamentCopyWith<_ShareTournament> get copyWith =>
-      __$ShareTournamentCopyWithImpl<_ShareTournament>(this, _$identity);
+  $TournamentSharingUserActionCopyWith<TournamentSharingUserAction>
+      get copyWith => _$TournamentSharingUserActionCopyWithImpl<
+          TournamentSharingUserAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result question(QuestionInfo info, String questionText),
+    @required Result tour(TourInfo info),
+    @required Result tournament(TournamentInfo info),
+  }) {
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return tournament(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result question(QuestionInfo info, String questionText),
+    Result tour(TourInfo info),
+    Result tournament(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tournament != null) {
+      return tournament(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result question(QuestionSharingUserAction value),
+    @required Result tour(TourSharingUserAction value),
+    @required Result tournament(TournamentSharingUserAction value),
+  }) {
+    assert(question != null);
+    assert(tour != null);
+    assert(tournament != null);
+    return tournament(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result question(QuestionSharingUserAction value),
+    Result tour(TourSharingUserAction value),
+    Result tournament(TournamentSharingUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tournament != null) {
+      return tournament(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _ShareTournament implements ShareTournament {
-  const factory _ShareTournament({@required TournamentInfo info}) =
-      _$_ShareTournament;
+abstract class TournamentSharingUserAction implements UserActionSharing {
+  const factory TournamentSharingUserAction({@required TournamentInfo info}) =
+      _$TournamentSharingUserAction;
 
-  @override
   TournamentInfo get info;
-  @override
-  _$ShareTournamentCopyWith<_ShareTournament> get copyWith;
+  $TournamentSharingUserActionCopyWith<TournamentSharingUserAction>
+      get copyWith;
 }

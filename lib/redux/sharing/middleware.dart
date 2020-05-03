@@ -18,27 +18,27 @@ class ShareMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, ShareQuestion>(_shareQuestion),
-        TypedMiddleware<AppState, ShareTour>(_shareTour),
-        TypedMiddleware<AppState, ShareTournament>(_shareTournament),
+        TypedMiddleware<AppState, QuestionSharingUserAction>(_question),
+        TypedMiddleware<AppState, TourSharingUserAction>(_tour),
+        TypedMiddleware<AppState, TournamentSharingUserAction>(_tournament),
       ];
 
-  void _shareTournament(
-      Store<AppState> store, ShareTournament action, NextDispatcher next) {
+  void _tournament(Store<AppState> store, TournamentSharingUserAction action,
+      NextDispatcher next) {
     next(action);
 
     _sharingService.shareTournament(action.info);
   }
 
-  void _shareTour(
-      Store<AppState> store, ShareTour action, NextDispatcher next) {
+  void _tour(Store<AppState> store, TourSharingUserAction action,
+      NextDispatcher next) {
     next(action);
 
     _sharingService.shareTour(action.info);
   }
 
-  void _shareQuestion(
-      Store<AppState> store, ShareQuestion action, NextDispatcher next) {
+  void _question(Store<AppState> store, QuestionSharingUserAction action,
+      NextDispatcher next) {
     next(action);
 
     _sharingService.shareQuestion(action.info, action.questionText);
