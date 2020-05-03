@@ -29,9 +29,6 @@ class SearchLoader implements ISearchLoader {
     Sorting sorting,
     int page,
   }) async {
-    await Future<void>.delayed(const Duration(seconds: 2));
-//    throw Exception();
-
     final html = await _httpClient.getRaw(Uri(
         path: '/search/tours/${_toQuery(query, sorting)}',
         queryParameters: {'page': page.toString()}));
