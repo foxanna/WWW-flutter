@@ -1,0 +1,1 @@
+enum Sorting { relevance, date }
