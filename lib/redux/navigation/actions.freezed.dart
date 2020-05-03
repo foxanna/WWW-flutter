@@ -428,78 +428,78 @@ abstract class _OpenAboutPage implements OpenAboutPage {
   const factory _OpenAboutPage() = _$_OpenAboutPage;
 }
 
-class _$OpenSearchPageTearOff {
-  const _$OpenSearchPageTearOff();
+class _$NavigateToSearchPageTearOff {
+  const _$NavigateToSearchPageTearOff();
 
-  _OpenSearchPage call() {
-    return const _OpenSearchPage();
+  _NavigateToSearchPage call() {
+    return const _NavigateToSearchPage();
   }
 }
 
 // ignore: unused_element
-const $OpenSearchPage = _$OpenSearchPageTearOff();
+const $NavigateToSearchPage = _$NavigateToSearchPageTearOff();
 
-mixin _$OpenSearchPage {}
+mixin _$NavigateToSearchPage {}
 
-abstract class $OpenSearchPageCopyWith<$Res> {
-  factory $OpenSearchPageCopyWith(
-          OpenSearchPage value, $Res Function(OpenSearchPage) then) =
-      _$OpenSearchPageCopyWithImpl<$Res>;
+abstract class $NavigateToSearchPageCopyWith<$Res> {
+  factory $NavigateToSearchPageCopyWith(NavigateToSearchPage value,
+          $Res Function(NavigateToSearchPage) then) =
+      _$NavigateToSearchPageCopyWithImpl<$Res>;
 }
 
-class _$OpenSearchPageCopyWithImpl<$Res>
-    implements $OpenSearchPageCopyWith<$Res> {
-  _$OpenSearchPageCopyWithImpl(this._value, this._then);
+class _$NavigateToSearchPageCopyWithImpl<$Res>
+    implements $NavigateToSearchPageCopyWith<$Res> {
+  _$NavigateToSearchPageCopyWithImpl(this._value, this._then);
 
-  final OpenSearchPage _value;
+  final NavigateToSearchPage _value;
   // ignore: unused_field
-  final $Res Function(OpenSearchPage) _then;
+  final $Res Function(NavigateToSearchPage) _then;
 }
 
-abstract class _$OpenSearchPageCopyWith<$Res> {
-  factory _$OpenSearchPageCopyWith(
-          _OpenSearchPage value, $Res Function(_OpenSearchPage) then) =
-      __$OpenSearchPageCopyWithImpl<$Res>;
+abstract class _$NavigateToSearchPageCopyWith<$Res> {
+  factory _$NavigateToSearchPageCopyWith(_NavigateToSearchPage value,
+          $Res Function(_NavigateToSearchPage) then) =
+      __$NavigateToSearchPageCopyWithImpl<$Res>;
 }
 
-class __$OpenSearchPageCopyWithImpl<$Res>
-    extends _$OpenSearchPageCopyWithImpl<$Res>
-    implements _$OpenSearchPageCopyWith<$Res> {
-  __$OpenSearchPageCopyWithImpl(
-      _OpenSearchPage _value, $Res Function(_OpenSearchPage) _then)
-      : super(_value, (v) => _then(v as _OpenSearchPage));
+class __$NavigateToSearchPageCopyWithImpl<$Res>
+    extends _$NavigateToSearchPageCopyWithImpl<$Res>
+    implements _$NavigateToSearchPageCopyWith<$Res> {
+  __$NavigateToSearchPageCopyWithImpl(
+      _NavigateToSearchPage _value, $Res Function(_NavigateToSearchPage) _then)
+      : super(_value, (v) => _then(v as _NavigateToSearchPage));
 
   @override
-  _OpenSearchPage get _value => super._value as _OpenSearchPage;
+  _NavigateToSearchPage get _value => super._value as _NavigateToSearchPage;
 }
 
-class _$_OpenSearchPage
+class _$_NavigateToSearchPage
     with DiagnosticableTreeMixin
-    implements _OpenSearchPage {
-  const _$_OpenSearchPage();
+    implements _NavigateToSearchPage {
+  const _$_NavigateToSearchPage();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenSearchPage()';
+    return 'NavigateToSearchPage()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OpenSearchPage'));
+    properties..add(DiagnosticsProperty('type', 'NavigateToSearchPage'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _OpenSearchPage);
+    return identical(this, other) || (other is _NavigateToSearchPage);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 }
 
-abstract class _OpenSearchPage implements OpenSearchPage {
-  const factory _OpenSearchPage() = _$_OpenSearchPage;
+abstract class _NavigateToSearchPage implements NavigateToSearchPage {
+  const factory _NavigateToSearchPage() = _$_NavigateToSearchPage;
 }
 
 class _$OpenSettingsPageTearOff {

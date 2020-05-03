@@ -30,7 +30,7 @@ class NavigationMiddleware {
         TypedMiddleware<AppState, NavigateToTournamentPage>(_openTournament),
         TypedMiddleware<AppState, OpenQuestionsPage>(_openQuestions),
         TypedMiddleware<AppState, OpenAboutPage>(_openAboutPage),
-        TypedMiddleware<AppState, OpenSearchPage>(_openSearchPage),
+        TypedMiddleware<AppState, NavigateToSearchPage>(_openSearchPage),
         TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
         TypedMiddleware<AppState, OpenRandomQuestionsPage>(
             _openRandomQuestionsPage),
@@ -83,7 +83,7 @@ class NavigationMiddleware {
   }
 
   void _openSearchPage(
-      Store<AppState> store, OpenSearchPage action, NextDispatcher next) {
+      Store<AppState> store, NavigateToSearchPage action, NextDispatcher next) {
     next(action);
 
     _navigationService.navigateToPage(

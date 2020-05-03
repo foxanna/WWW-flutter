@@ -34,7 +34,7 @@ final _analyticsEventNames = {
   OpenTourInfoDialog: 'open_tour_info',
   OpenTournamentInfoDialog: 'open_tournament_info',
   OpenSettingsPage: 'settings',
-  OpenSearchPage: 'search',
+  NavigateToSearchPage: 'search',
   OpenRandomQuestionsPage: 'random',
   NavigateToTournamentsTreePage: 'tree',
   // misc
@@ -72,7 +72,7 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, OpenTournamentInfoDialog>(_logAction),
         TypedMiddleware<AppState, EmailDevelopers>(_logAction),
         TypedMiddleware<AppState, BrowseDatabase>(_logAction),
-        TypedMiddleware<AppState, OpenSearchPage>(_logAction),
+        TypedMiddleware<AppState, NavigateToSearchPage>(_logAction),
         TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
         TypedMiddleware<AppState, OpenRandomQuestionsPage>(_logAction),
         TypedMiddleware<AppState, NavigateToTournamentsTreePage>(_logAction),

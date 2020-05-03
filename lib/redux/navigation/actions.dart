@@ -38,10 +38,10 @@ abstract class OpenAboutPage with _$OpenAboutPage implements NavigationAction {
 }
 
 @freezed
-abstract class OpenSearchPage
-    with _$OpenSearchPage
+abstract class NavigateToSearchPage
+    with _$NavigateToSearchPage
     implements NavigationAction {
-  const factory OpenSearchPage() = _OpenSearchPage;
+  const factory NavigateToSearchPage() = _NavigateToSearchPage;
 }
 
 @freezed
