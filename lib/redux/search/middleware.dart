@@ -3,9 +3,8 @@ import 'dart:async';
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/search/search_parameters.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
 
@@ -23,90 +22,102 @@ class SearchMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, SearchTournaments>(_searchTournaments),
-        TypedMiddleware<AppState, TournamentsSearchQueryChanged>(_queryChanged),
-        TypedMiddleware<AppState, TournamentsSearchSortingChanged>(
-            _sortingChanged),
-        TypedMiddleware<AppState, RepeatFailedSearchTournaments>(_reloadMore),
+        TypedMiddleware<AppState, OpenSearchUserAction>(_open),
+        TypedMiddleware<AppState, CloseSearchUserAction>(_close),
+        TypedMiddleware<AppState, NewQuerySearchUserAction>(_newQuery),
+        TypedMiddleware<AppState, NewSortingSearchUserAction>(_newSorting),
+        TypedMiddleware<AppState, ExecuteSearchUserAction>(_execute),
+        TypedMiddleware<AppState, ProceedSearchUserAction>(_proceed),
+        TypedMiddleware<AppState, RerunSearchUserAction>(_rerun),
       ];
 
-  Future<void> _searchTournaments(Store<AppState> store,
-      SearchTournaments action, NextDispatcher next) async {
+  void _open(
+      Store<AppState> store, OpenSearchUserAction action, NextDispatcher next) {
     next(action);
 
-    final state = store.state.searchState.searchResults;
-    if (!state.isLoading && state.canLoadMore && !state.hasError) {
-      await _search(store, action);
-    }
+    store.dispatch(const NavigateToSearchPage());
+    store.dispatch(const SystemActionSearch.init());
   }
 
-  Future<void> _search(Store<AppState> store, SearchTournaments action) async {
-    final parameters = store.state.searchState.searchParameters;
+  void _close(Store<AppState> store, CloseSearchUserAction action,
+      NextDispatcher next) {
+    next(action);
 
+    store.dispatch(const SystemActionSearch.deInit());
+  }
+
+  void _newQuery(Store<AppState> store, NewQuerySearchUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const SystemActionSearch.clearResults());
+  }
+
+  void _newSorting(Store<AppState> store, NewSortingSearchUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const SystemActionSearch.clearResults());
+    store.dispatch(const UserActionSearch.execute());
+  }
+
+  Future<void> _execute(Store<AppState> store, ExecuteSearchUserAction action,
+      NextDispatcher next) async {
+    next(action);
+
+    final state = store.state.searchState;
+    if (state is LoadingFirstPageSearchState ||
+        state is LoadingWithDataSearchState) {
+      return;
+    }
+
+    final parameters = store.state.searchState.parameters;
     if (parameters.query.isEmpty) {
       return;
     }
 
     try {
-      store.dispatch(const TournamentsSearchIsLoading());
+      store.dispatch(SystemActionSearch.loading(
+        parameters: parameters,
+      ));
 
-      final data = await _fetch(parameters);
+      final data = await _loader.searchTournaments(
+          query: parameters.query,
+          sorting: parameters.sorting,
+          page: parameters.nextPage);
 
-      if (parameters == store.state.searchState.searchParameters) {
-        store.dispatch(TournamentsSearchLoaded(
-            data: data, nextPage: parameters.nextPage + 1));
-      }
+      store.dispatch(SystemActionSearch.completed(
+        parameters: parameters,
+        data: data,
+        nextPage: parameters.nextPage + 1,
+        canLoadMore: data.length == 50,
+      ));
     } on Exception catch (e) {
-      if (parameters == store.state.searchState.searchParameters) {
-        store.dispatch(TournamentsSearchFailedToLoad(exception: e));
-      }
+      store.dispatch(SystemActionSearch.failed(
+        parameters: parameters,
+        exception: e,
+      ));
     }
   }
 
-  void _sortingChanged(Store<AppState> store,
-      TournamentsSearchSortingChanged action, NextDispatcher next) {
-    final sortingHasChanged =
-        action.sorting != store.state.searchState.searchParameters.sorting;
-
-    next(action);
-
-    if (sortingHasChanged) {
-      final repeatSearch = store.state.searchState.searchResults.hasData ||
-          store.state.searchState.searchResults.isLoading;
-      store.dispatch(const ClearTournamentsSearchResults());
-
-      if (repeatSearch) {
-        store.dispatch(const SearchTournaments());
-      }
-    }
-  }
-
-  void _queryChanged(Store<AppState> store,
-      TournamentsSearchQueryChanged action, NextDispatcher next) {
-    final queryHasChanged =
-        action.query != store.state.searchState.searchParameters.query;
-
-    next(action);
-
-    if (queryHasChanged) {
-      store.dispatch(const ClearTournamentsSearchResults());
-    }
-  }
-
-  void _reloadMore(Store<AppState> store, RepeatFailedSearchTournaments action,
+  void _proceed(Store<AppState> store, ProceedSearchUserAction action,
       NextDispatcher next) {
     next(action);
 
-    store.dispatch(const ClearSearchTournamentsException());
-    store.dispatch(const SearchTournaments());
+    final searchState = store.state.searchState;
+    if (searchState is DataSearchState && searchState.canLoadMore) {
+      store.dispatch(const UserActionSearch.execute());
+    }
   }
 
-  Future<Iterable<Tournament>> _fetch(
-          SearchTournamentsParametersState parameters) =>
-      _loader.searchTournaments(
-          SearchParameters(
-            query: parameters.query,
-            sorting: parameters.sorting,
-          ),
-          page: parameters.nextPage);
+  void _rerun(Store<AppState> store, RerunSearchUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    final searchState = store.state.searchState;
+    if (searchState is ErrorFirstPageSearchState ||
+        searchState is ErrorWithDataSearchState) {
+      store.dispatch(const UserActionSearch.execute());
+    }
+  }
 }
