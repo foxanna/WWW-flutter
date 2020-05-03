@@ -9,26 +9,21 @@ part 'actions.freezed.dart';
 abstract class DialogAction implements ReduxAction {}
 
 @freezed
-abstract class OpenTourInfoDialog
-    with _$OpenTourInfoDialog
+abstract class UserActionDialog
+    with _$UserActionDialog
     implements DialogAction {
-  const factory OpenTourInfoDialog({
+  const factory UserActionDialog.tourInfo({
     @required TourInfo info,
-  }) = _OpenTourInfoDialog;
-}
+  }) = TourInfoDialogUserAction;
 
-@freezed
-abstract class OpenTournamentInfoDialog
-    with _$OpenTournamentInfoDialog
-    implements DialogAction {
-  const factory OpenTournamentInfoDialog({
+  const factory UserActionDialog.tournamentInfo({
     @required TournamentInfo info,
-  }) = _OpenTournamentInfoDialog;
+  }) = TournamentInfoDialogUserAction;
 }
 
 @freezed
-abstract class OpenRatingDialog
-    with _$OpenRatingDialog
+abstract class SystemActionDialog
+    with _$SystemActionDialog
     implements DialogAction {
-  const factory OpenRatingDialog() = _OpenRatingDialog;
+  const factory SystemActionDialog.rating() = RatingDialogSystemAction;
 }

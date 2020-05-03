@@ -53,7 +53,7 @@ class RatingMiddleware {
 
     await _preferencesService.setInt(_tournamentsViewedKey, 0);
 
-    store.dispatch(const OpenRatingDialog());
+    store.dispatch(const SystemActionDialog.rating());
   }
 
   void _rate(

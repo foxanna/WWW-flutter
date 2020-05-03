@@ -21,7 +21,7 @@ class QuestionsAboutTourBottomSheetItem extends StatelessWidget {
             Navigator.pop(context);
 
             StoreProvider.of<AppState>(context)
-                .dispatch(OpenTourInfoDialog(info: tourInfo));
+                .dispatch(UserActionDialog.tourInfo(info: tourInfo));
           },
         ),
       );

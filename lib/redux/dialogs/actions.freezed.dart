@@ -9,47 +9,91 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$OpenTourInfoDialogTearOff {
-  const _$OpenTourInfoDialogTearOff();
+class _$UserActionDialogTearOff {
+  const _$UserActionDialogTearOff();
 
-  _OpenTourInfoDialog call({@required TourInfo info}) {
-    return _OpenTourInfoDialog(
+  TourInfoDialogUserAction tourInfo({@required TourInfo info}) {
+    return TourInfoDialogUserAction(
+      info: info,
+    );
+  }
+
+  TournamentInfoDialogUserAction tournamentInfo(
+      {@required TournamentInfo info}) {
+    return TournamentInfoDialogUserAction(
       info: info,
     );
   }
 }
 
 // ignore: unused_element
-const $OpenTourInfoDialog = _$OpenTourInfoDialogTearOff();
+const $UserActionDialog = _$UserActionDialogTearOff();
 
-mixin _$OpenTourInfoDialog {
-  TourInfo get info;
-
-  $OpenTourInfoDialogCopyWith<OpenTourInfoDialog> get copyWith;
+mixin _$UserActionDialog {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tourInfo(TourInfo info),
+    @required Result tournamentInfo(TournamentInfo info),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tourInfo(TourInfo info),
+    Result tournamentInfo(TournamentInfo info),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tourInfo(TourInfoDialogUserAction value),
+    @required Result tournamentInfo(TournamentInfoDialogUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tourInfo(TourInfoDialogUserAction value),
+    Result tournamentInfo(TournamentInfoDialogUserAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $OpenTourInfoDialogCopyWith<$Res> {
-  factory $OpenTourInfoDialogCopyWith(
-          OpenTourInfoDialog value, $Res Function(OpenTourInfoDialog) then) =
-      _$OpenTourInfoDialogCopyWithImpl<$Res>;
+abstract class $UserActionDialogCopyWith<$Res> {
+  factory $UserActionDialogCopyWith(
+          UserActionDialog value, $Res Function(UserActionDialog) then) =
+      _$UserActionDialogCopyWithImpl<$Res>;
+}
+
+class _$UserActionDialogCopyWithImpl<$Res>
+    implements $UserActionDialogCopyWith<$Res> {
+  _$UserActionDialogCopyWithImpl(this._value, this._then);
+
+  final UserActionDialog _value;
+  // ignore: unused_field
+  final $Res Function(UserActionDialog) _then;
+}
+
+abstract class $TourInfoDialogUserActionCopyWith<$Res> {
+  factory $TourInfoDialogUserActionCopyWith(TourInfoDialogUserAction value,
+          $Res Function(TourInfoDialogUserAction) then) =
+      _$TourInfoDialogUserActionCopyWithImpl<$Res>;
   $Res call({TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
 }
 
-class _$OpenTourInfoDialogCopyWithImpl<$Res>
-    implements $OpenTourInfoDialogCopyWith<$Res> {
-  _$OpenTourInfoDialogCopyWithImpl(this._value, this._then);
+class _$TourInfoDialogUserActionCopyWithImpl<$Res>
+    extends _$UserActionDialogCopyWithImpl<$Res>
+    implements $TourInfoDialogUserActionCopyWith<$Res> {
+  _$TourInfoDialogUserActionCopyWithImpl(TourInfoDialogUserAction _value,
+      $Res Function(TourInfoDialogUserAction) _then)
+      : super(_value, (v) => _then(v as TourInfoDialogUserAction));
 
-  final OpenTourInfoDialog _value;
-  // ignore: unused_field
-  final $Res Function(OpenTourInfoDialog) _then;
+  @override
+  TourInfoDialogUserAction get _value =>
+      super._value as TourInfoDialogUserAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(TourInfoDialogUserAction(
       info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
@@ -65,63 +109,32 @@ class _$OpenTourInfoDialogCopyWithImpl<$Res>
   }
 }
 
-abstract class _$OpenTourInfoDialogCopyWith<$Res>
-    implements $OpenTourInfoDialogCopyWith<$Res> {
-  factory _$OpenTourInfoDialogCopyWith(
-          _OpenTourInfoDialog value, $Res Function(_OpenTourInfoDialog) then) =
-      __$OpenTourInfoDialogCopyWithImpl<$Res>;
-  @override
-  $Res call({TourInfo info});
-
-  @override
-  $TourInfoCopyWith<$Res> get info;
-}
-
-class __$OpenTourInfoDialogCopyWithImpl<$Res>
-    extends _$OpenTourInfoDialogCopyWithImpl<$Res>
-    implements _$OpenTourInfoDialogCopyWith<$Res> {
-  __$OpenTourInfoDialogCopyWithImpl(
-      _OpenTourInfoDialog _value, $Res Function(_OpenTourInfoDialog) _then)
-      : super(_value, (v) => _then(v as _OpenTourInfoDialog));
-
-  @override
-  _OpenTourInfoDialog get _value => super._value as _OpenTourInfoDialog;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_OpenTourInfoDialog(
-      info: info == freezed ? _value.info : info as TourInfo,
-    ));
-  }
-}
-
-class _$_OpenTourInfoDialog
+class _$TourInfoDialogUserAction
     with DiagnosticableTreeMixin
-    implements _OpenTourInfoDialog {
-  const _$_OpenTourInfoDialog({@required this.info}) : assert(info != null);
+    implements TourInfoDialogUserAction {
+  const _$TourInfoDialogUserAction({@required this.info})
+      : assert(info != null);
 
   @override
   final TourInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenTourInfoDialog(info: $info)';
+    return 'UserActionDialog.tourInfo(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OpenTourInfoDialog'))
+      ..add(DiagnosticsProperty('type', 'UserActionDialog.tourInfo'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OpenTourInfoDialog &&
+        (other is TourInfoDialogUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -131,61 +144,96 @@ class _$_OpenTourInfoDialog
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$OpenTourInfoDialogCopyWith<_OpenTourInfoDialog> get copyWith =>
-      __$OpenTourInfoDialogCopyWithImpl<_OpenTourInfoDialog>(this, _$identity);
-}
-
-abstract class _OpenTourInfoDialog implements OpenTourInfoDialog {
-  const factory _OpenTourInfoDialog({@required TourInfo info}) =
-      _$_OpenTourInfoDialog;
+  $TourInfoDialogUserActionCopyWith<TourInfoDialogUserAction> get copyWith =>
+      _$TourInfoDialogUserActionCopyWithImpl<TourInfoDialogUserAction>(
+          this, _$identity);
 
   @override
-  TourInfo get info;
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tourInfo(TourInfo info),
+    @required Result tournamentInfo(TournamentInfo info),
+  }) {
+    assert(tourInfo != null);
+    assert(tournamentInfo != null);
+    return tourInfo(info);
+  }
+
   @override
-  _$OpenTourInfoDialogCopyWith<_OpenTourInfoDialog> get copyWith;
-}
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tourInfo(TourInfo info),
+    Result tournamentInfo(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tourInfo != null) {
+      return tourInfo(info);
+    }
+    return orElse();
+  }
 
-class _$OpenTournamentInfoDialogTearOff {
-  const _$OpenTournamentInfoDialogTearOff();
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tourInfo(TourInfoDialogUserAction value),
+    @required Result tournamentInfo(TournamentInfoDialogUserAction value),
+  }) {
+    assert(tourInfo != null);
+    assert(tournamentInfo != null);
+    return tourInfo(this);
+  }
 
-  _OpenTournamentInfoDialog call({@required TournamentInfo info}) {
-    return _OpenTournamentInfoDialog(
-      info: info,
-    );
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tourInfo(TourInfoDialogUserAction value),
+    Result tournamentInfo(TournamentInfoDialogUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tourInfo != null) {
+      return tourInfo(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $OpenTournamentInfoDialog = _$OpenTournamentInfoDialogTearOff();
+abstract class TourInfoDialogUserAction implements UserActionDialog {
+  const factory TourInfoDialogUserAction({@required TourInfo info}) =
+      _$TourInfoDialogUserAction;
 
-mixin _$OpenTournamentInfoDialog {
-  TournamentInfo get info;
-
-  $OpenTournamentInfoDialogCopyWith<OpenTournamentInfoDialog> get copyWith;
+  TourInfo get info;
+  $TourInfoDialogUserActionCopyWith<TourInfoDialogUserAction> get copyWith;
 }
 
-abstract class $OpenTournamentInfoDialogCopyWith<$Res> {
-  factory $OpenTournamentInfoDialogCopyWith(OpenTournamentInfoDialog value,
-          $Res Function(OpenTournamentInfoDialog) then) =
-      _$OpenTournamentInfoDialogCopyWithImpl<$Res>;
+abstract class $TournamentInfoDialogUserActionCopyWith<$Res> {
+  factory $TournamentInfoDialogUserActionCopyWith(
+          TournamentInfoDialogUserAction value,
+          $Res Function(TournamentInfoDialogUserAction) then) =
+      _$TournamentInfoDialogUserActionCopyWithImpl<$Res>;
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
 }
 
-class _$OpenTournamentInfoDialogCopyWithImpl<$Res>
-    implements $OpenTournamentInfoDialogCopyWith<$Res> {
-  _$OpenTournamentInfoDialogCopyWithImpl(this._value, this._then);
+class _$TournamentInfoDialogUserActionCopyWithImpl<$Res>
+    extends _$UserActionDialogCopyWithImpl<$Res>
+    implements $TournamentInfoDialogUserActionCopyWith<$Res> {
+  _$TournamentInfoDialogUserActionCopyWithImpl(
+      TournamentInfoDialogUserAction _value,
+      $Res Function(TournamentInfoDialogUserAction) _then)
+      : super(_value, (v) => _then(v as TournamentInfoDialogUserAction));
 
-  final OpenTournamentInfoDialog _value;
-  // ignore: unused_field
-  final $Res Function(OpenTournamentInfoDialog) _then;
+  @override
+  TournamentInfoDialogUserAction get _value =>
+      super._value as TournamentInfoDialogUserAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(TournamentInfoDialogUserAction(
       info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
@@ -201,43 +249,10 @@ class _$OpenTournamentInfoDialogCopyWithImpl<$Res>
   }
 }
 
-abstract class _$OpenTournamentInfoDialogCopyWith<$Res>
-    implements $OpenTournamentInfoDialogCopyWith<$Res> {
-  factory _$OpenTournamentInfoDialogCopyWith(_OpenTournamentInfoDialog value,
-          $Res Function(_OpenTournamentInfoDialog) then) =
-      __$OpenTournamentInfoDialogCopyWithImpl<$Res>;
-  @override
-  $Res call({TournamentInfo info});
-
-  @override
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class __$OpenTournamentInfoDialogCopyWithImpl<$Res>
-    extends _$OpenTournamentInfoDialogCopyWithImpl<$Res>
-    implements _$OpenTournamentInfoDialogCopyWith<$Res> {
-  __$OpenTournamentInfoDialogCopyWithImpl(_OpenTournamentInfoDialog _value,
-      $Res Function(_OpenTournamentInfoDialog) _then)
-      : super(_value, (v) => _then(v as _OpenTournamentInfoDialog));
-
-  @override
-  _OpenTournamentInfoDialog get _value =>
-      super._value as _OpenTournamentInfoDialog;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_OpenTournamentInfoDialog(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-    ));
-  }
-}
-
-class _$_OpenTournamentInfoDialog
+class _$TournamentInfoDialogUserAction
     with DiagnosticableTreeMixin
-    implements _OpenTournamentInfoDialog {
-  const _$_OpenTournamentInfoDialog({@required this.info})
+    implements TournamentInfoDialogUserAction {
+  const _$TournamentInfoDialogUserAction({@required this.info})
       : assert(info != null);
 
   @override
@@ -245,21 +260,21 @@ class _$_OpenTournamentInfoDialog
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenTournamentInfoDialog(info: $info)';
+    return 'UserActionDialog.tournamentInfo(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OpenTournamentInfoDialog'))
+      ..add(DiagnosticsProperty('type', 'UserActionDialog.tournamentInfo'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OpenTournamentInfoDialog &&
+        (other is TournamentInfoDialogUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -269,91 +284,141 @@ class _$_OpenTournamentInfoDialog
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$OpenTournamentInfoDialogCopyWith<_OpenTournamentInfoDialog> get copyWith =>
-      __$OpenTournamentInfoDialogCopyWithImpl<_OpenTournamentInfoDialog>(
-          this, _$identity);
-}
-
-abstract class _OpenTournamentInfoDialog implements OpenTournamentInfoDialog {
-  const factory _OpenTournamentInfoDialog({@required TournamentInfo info}) =
-      _$_OpenTournamentInfoDialog;
+  $TournamentInfoDialogUserActionCopyWith<TournamentInfoDialogUserAction>
+      get copyWith => _$TournamentInfoDialogUserActionCopyWithImpl<
+          TournamentInfoDialogUserAction>(this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tourInfo(TourInfo info),
+    @required Result tournamentInfo(TournamentInfo info),
+  }) {
+    assert(tourInfo != null);
+    assert(tournamentInfo != null);
+    return tournamentInfo(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tourInfo(TourInfo info),
+    Result tournamentInfo(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tournamentInfo != null) {
+      return tournamentInfo(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tourInfo(TourInfoDialogUserAction value),
+    @required Result tournamentInfo(TournamentInfoDialogUserAction value),
+  }) {
+    assert(tourInfo != null);
+    assert(tournamentInfo != null);
+    return tournamentInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tourInfo(TourInfoDialogUserAction value),
+    Result tournamentInfo(TournamentInfoDialogUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tournamentInfo != null) {
+      return tournamentInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TournamentInfoDialogUserAction implements UserActionDialog {
+  const factory TournamentInfoDialogUserAction(
+      {@required TournamentInfo info}) = _$TournamentInfoDialogUserAction;
+
   TournamentInfo get info;
-  @override
-  _$OpenTournamentInfoDialogCopyWith<_OpenTournamentInfoDialog> get copyWith;
+  $TournamentInfoDialogUserActionCopyWith<TournamentInfoDialogUserAction>
+      get copyWith;
 }
 
-class _$OpenRatingDialogTearOff {
-  const _$OpenRatingDialogTearOff();
+class _$SystemActionDialogTearOff {
+  const _$SystemActionDialogTearOff();
 
-  _OpenRatingDialog call() {
-    return const _OpenRatingDialog();
+  RatingDialogSystemAction rating() {
+    return const RatingDialogSystemAction();
   }
 }
 
 // ignore: unused_element
-const $OpenRatingDialog = _$OpenRatingDialogTearOff();
+const $SystemActionDialog = _$SystemActionDialogTearOff();
 
-mixin _$OpenRatingDialog {}
+mixin _$SystemActionDialog {}
 
-abstract class $OpenRatingDialogCopyWith<$Res> {
-  factory $OpenRatingDialogCopyWith(
-          OpenRatingDialog value, $Res Function(OpenRatingDialog) then) =
-      _$OpenRatingDialogCopyWithImpl<$Res>;
+abstract class $SystemActionDialogCopyWith<$Res> {
+  factory $SystemActionDialogCopyWith(
+          SystemActionDialog value, $Res Function(SystemActionDialog) then) =
+      _$SystemActionDialogCopyWithImpl<$Res>;
 }
 
-class _$OpenRatingDialogCopyWithImpl<$Res>
-    implements $OpenRatingDialogCopyWith<$Res> {
-  _$OpenRatingDialogCopyWithImpl(this._value, this._then);
+class _$SystemActionDialogCopyWithImpl<$Res>
+    implements $SystemActionDialogCopyWith<$Res> {
+  _$SystemActionDialogCopyWithImpl(this._value, this._then);
 
-  final OpenRatingDialog _value;
+  final SystemActionDialog _value;
   // ignore: unused_field
-  final $Res Function(OpenRatingDialog) _then;
+  final $Res Function(SystemActionDialog) _then;
 }
 
-abstract class _$OpenRatingDialogCopyWith<$Res> {
-  factory _$OpenRatingDialogCopyWith(
-          _OpenRatingDialog value, $Res Function(_OpenRatingDialog) then) =
-      __$OpenRatingDialogCopyWithImpl<$Res>;
+abstract class $RatingDialogSystemActionCopyWith<$Res> {
+  factory $RatingDialogSystemActionCopyWith(RatingDialogSystemAction value,
+          $Res Function(RatingDialogSystemAction) then) =
+      _$RatingDialogSystemActionCopyWithImpl<$Res>;
 }
 
-class __$OpenRatingDialogCopyWithImpl<$Res>
-    extends _$OpenRatingDialogCopyWithImpl<$Res>
-    implements _$OpenRatingDialogCopyWith<$Res> {
-  __$OpenRatingDialogCopyWithImpl(
-      _OpenRatingDialog _value, $Res Function(_OpenRatingDialog) _then)
-      : super(_value, (v) => _then(v as _OpenRatingDialog));
+class _$RatingDialogSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionDialogCopyWithImpl<$Res>
+    implements $RatingDialogSystemActionCopyWith<$Res> {
+  _$RatingDialogSystemActionCopyWithImpl(RatingDialogSystemAction _value,
+      $Res Function(RatingDialogSystemAction) _then)
+      : super(_value, (v) => _then(v as RatingDialogSystemAction));
 
   @override
-  _OpenRatingDialog get _value => super._value as _OpenRatingDialog;
+  RatingDialogSystemAction get _value =>
+      super._value as RatingDialogSystemAction;
 }
 
-class _$_OpenRatingDialog
+class _$RatingDialogSystemAction
     with DiagnosticableTreeMixin
-    implements _OpenRatingDialog {
-  const _$_OpenRatingDialog();
+    implements RatingDialogSystemAction {
+  const _$RatingDialogSystemAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenRatingDialog()';
+    return 'SystemActionDialog.rating()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OpenRatingDialog'));
+    properties..add(DiagnosticsProperty('type', 'SystemActionDialog.rating'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _OpenRatingDialog);
+    return identical(this, other) || (other is RatingDialogSystemAction);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 }
 
-abstract class _OpenRatingDialog implements OpenRatingDialog {
-  const factory _OpenRatingDialog() = _$_OpenRatingDialog;
+abstract class RatingDialogSystemAction implements SystemActionDialog {
+  const factory RatingDialogSystemAction() = _$RatingDialogSystemAction;
 }

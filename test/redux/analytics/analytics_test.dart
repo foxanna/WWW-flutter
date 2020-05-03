@@ -121,15 +121,15 @@ void main() {
     );
 
     test(
-      '$OpenTourInfoDialog',
+      '$TourInfoDialogUserAction',
       () => analyticsTest(
-          const OpenTourInfoDialog(info: TourInfo()), 'open_tour_info'),
+          const UserActionDialog.tourInfo(info: TourInfo()), 'open_tour_info'),
     );
 
     test(
-      '$OpenTournamentInfoDialog',
+      '$TournamentInfoDialogUserAction',
       () => analyticsTest(
-          const OpenTournamentInfoDialog(info: TournamentInfo()),
+          const UserActionDialog.tournamentInfo(info: TournamentInfo()),
           'open_tournament_info'),
     );
 

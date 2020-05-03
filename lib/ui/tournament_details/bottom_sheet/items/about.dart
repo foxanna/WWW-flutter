@@ -21,7 +21,7 @@ class TournamentDetailsAboutTournamentBottomSheetItem extends StatelessWidget {
             Navigator.pop(context);
 
             StoreProvider.of<AppState>(context)
-                .dispatch(OpenTournamentInfoDialog(info: state.info));
+                .dispatch(UserActionDialog.tournamentInfo(info: state.info));
           },
         ),
       );
