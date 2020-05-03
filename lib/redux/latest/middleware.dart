@@ -20,37 +20,37 @@ class LatestTournamentsMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, InitLatestTournaments>(_init),
-        TypedMiddleware<AppState, RefreshLatestTournaments>(_refresh),
-        TypedMiddleware<AppState, LoadLatestTournaments>(_loadMore),
+        TypedMiddleware<AppState, InitLatestUserAction>(_init),
+        TypedMiddleware<AppState, RefreshLatestUserAction>(_refresh),
+        TypedMiddleware<AppState, LoadLatestUserAction>(_load),
       ];
 
-  void _init(Store<AppState> store, InitLatestTournaments action,
-      NextDispatcher next) {
+  void _init(
+      Store<AppState> store, InitLatestUserAction action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(const LoadLatestTournaments());
+    store.dispatch(const UserActionLatest.load());
   }
 
-  Future<void> _refresh(Store<AppState> store, RefreshLatestTournaments action,
+  Future<void> _refresh(Store<AppState> store, RefreshLatestUserAction action,
       NextDispatcher next) async {
     next(action);
 
     try {
       const int page = 0;
-      store.dispatch(const LatestTournamentsIsRefreshing());
+      store.dispatch(const SystemActionLatest.loading());
 
       final data = await _loader.get(page: page);
-      store.dispatch(MoreLatestTournamentsLoaded(
+      store.dispatch(SystemActionLatest.completed(
         data: data,
         nexPage: page + 1,
       ));
     } on Exception catch (e) {
-      store.dispatch(LatestTournamentsLoadFailed(exception: e));
+      store.dispatch(SystemActionLatest.failed(exception: e));
     }
   }
 
-  Future<void> _loadMore(Store<AppState> store, LoadLatestTournaments action,
+  Future<void> _load(Store<AppState> store, LoadLatestUserAction action,
       NextDispatcher next) async {
     next(action);
 
@@ -63,15 +63,15 @@ class LatestTournamentsMiddleware {
 
     try {
       final page = state.nextPageOrZero;
-      store.dispatch(const LatestTournamentsIsLoading());
+      store.dispatch(const SystemActionLatest.loading());
 
       final data = await _loader.get(page: page);
-      store.dispatch(MoreLatestTournamentsLoaded(
+      store.dispatch(SystemActionLatest.completed(
         data: data,
         nexPage: page + 1,
       ));
     } on Exception catch (e) {
-      store.dispatch(LatestTournamentsLoadFailed(exception: e));
+      store.dispatch(SystemActionLatest.failed(exception: e));
     }
   }
 }

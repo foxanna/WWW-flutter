@@ -68,7 +68,7 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
     final store = StoreProvider.of<AppState>(context);
 
     if (store.state.latestTournamentsState is DataLatestTournamentsState) {
-      store.dispatch(const LoadLatestTournaments());
+      store.dispatch(const UserActionLatest.load());
     }
   }
 }

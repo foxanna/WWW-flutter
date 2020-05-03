@@ -5,15 +5,13 @@ import 'package:what_when_where/redux/latest/state.dart';
 class LatestTournamentsReducer {
   static final Reducer<LatestTournamentsState> _reducer =
       combineReducers<LatestTournamentsState>([
-    TypedReducer<LatestTournamentsState, InitLatestTournaments>(_init),
-    TypedReducer<LatestTournamentsState, LatestTournamentsIsRefreshing>(
-        _onRefreshing),
-    TypedReducer<LatestTournamentsState, LatestTournamentsIsLoading>(
-        _onLoadingMore),
-    TypedReducer<LatestTournamentsState, MoreLatestTournamentsLoaded>(
-        _onLoaded),
-    TypedReducer<LatestTournamentsState, LatestTournamentsLoadFailed>(
-        _onLoadFailed),
+    TypedReducer<LatestTournamentsState, InitLatestUserAction>(_init),
+    TypedReducer<LatestTournamentsState, RefreshingLatestSystemAction>(
+        _refreshing),
+    TypedReducer<LatestTournamentsState, LoadingLatestSystemAction>(_loading),
+    TypedReducer<LatestTournamentsState, CompletedLatestSystemAction>(
+        _completed),
+    TypedReducer<LatestTournamentsState, FailedLatestSystemAction>(_failed),
   ]);
 
   static LatestTournamentsState reduce(
@@ -21,15 +19,15 @@ class LatestTournamentsReducer {
       _reducer(state, action);
 
   static LatestTournamentsState _init(
-          LatestTournamentsState state, InitLatestTournaments action) =>
+          LatestTournamentsState state, InitLatestUserAction action) =>
       const LatestTournamentsState.initial();
 
-  static LatestTournamentsState _onRefreshing(
-          LatestTournamentsState state, LatestTournamentsIsRefreshing action) =>
+  static LatestTournamentsState _refreshing(
+          LatestTournamentsState state, RefreshingLatestSystemAction action) =>
       LatestTournamentsState.refreshing(data: state.dataOrEmpty);
 
-  static LatestTournamentsState _onLoadingMore(
-          LatestTournamentsState state, LatestTournamentsIsLoading action) =>
+  static LatestTournamentsState _loading(
+          LatestTournamentsState state, LoadingLatestSystemAction action) =>
       state.nextPageOrZero != 0
           ? LatestTournamentsState.loadingWithData(
               data: state.dataOrEmpty,
@@ -37,8 +35,8 @@ class LatestTournamentsReducer {
             )
           : const LatestTournamentsState.loadingFirstPage();
 
-  static LatestTournamentsState _onLoaded(
-          LatestTournamentsState state, MoreLatestTournamentsLoaded action) =>
+  static LatestTournamentsState _completed(
+          LatestTournamentsState state, CompletedLatestSystemAction action) =>
       state.nextPageOrZero != 0
           ? LatestTournamentsState.data(
               nextPage: action.nexPage,
@@ -49,8 +47,8 @@ class LatestTournamentsReducer {
               data: [...action.data],
             );
 
-  static LatestTournamentsState _onLoadFailed(
-          LatestTournamentsState state, LatestTournamentsLoadFailed action) =>
+  static LatestTournamentsState _failed(
+          LatestTournamentsState state, FailedLatestSystemAction action) =>
       state.nextPageOrZero != 0
           ? LatestTournamentsState.errorWithData(
               data: state.dataOrEmpty,

@@ -48,7 +48,7 @@ class _LatestTournamentsRefreshIndicatorState
 
   Future<void> _onRefresh(BuildContext context) async {
     StoreProvider.of<AppState>(context)
-        .dispatch(const RefreshLatestTournaments());
+        .dispatch(const UserActionLatest.refresh());
 
     await _completer.future;
 

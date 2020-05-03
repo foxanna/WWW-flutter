@@ -29,5 +29,5 @@ class LatestTournamentsErrorMessage extends StatelessWidget {
   }
 
   void _reload(BuildContext context) => StoreProvider.of<AppState>(context)
-      .dispatch(const LoadLatestTournaments());
+      .dispatch(const UserActionLatest.load());
 }

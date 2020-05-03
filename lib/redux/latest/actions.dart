@@ -8,56 +8,30 @@ part 'actions.freezed.dart';
 abstract class LatestAction implements ReduxAction {}
 
 @freezed
-abstract class InitLatestTournaments
-    with _$InitLatestTournaments
+abstract class UserActionLatest
+    with _$UserActionLatest
     implements LatestAction {
-  const factory InitLatestTournaments() = _InitLatestTournaments;
+  const factory UserActionLatest.init() = InitLatestUserAction;
+
+  const factory UserActionLatest.refresh() = RefreshLatestUserAction;
+
+  const factory UserActionLatest.load() = LoadLatestUserAction;
 }
 
 @freezed
-abstract class RefreshLatestTournaments
-    with _$RefreshLatestTournaments
+abstract class SystemActionLatest
+    with _$SystemActionLatest
     implements LatestAction {
-  const factory RefreshLatestTournaments() = _RefreshLatestTournaments;
-}
+  const factory SystemActionLatest.loading() = LoadingLatestSystemAction;
 
-@freezed
-abstract class LoadLatestTournaments
-    with _$LoadLatestTournaments
-    implements LatestAction {
-  const factory LoadLatestTournaments() = _LoadLatestTournaments;
-}
+  const factory SystemActionLatest.refreshing() = RefreshingLatestSystemAction;
 
-@freezed
-abstract class LatestTournamentsIsLoading
-    with _$LatestTournamentsIsLoading
-    implements LatestAction {
-  const factory LatestTournamentsIsLoading() = _LatestTournamentsIsLoading;
-}
-
-@freezed
-abstract class MoreLatestTournamentsLoaded
-    with _$MoreLatestTournamentsLoaded
-    implements LatestAction {
-  const factory MoreLatestTournamentsLoaded({
+  const factory SystemActionLatest.completed({
     @required Iterable<Tournament> data,
     @required int nexPage,
-  }) = _MoreLatestTournamentsLoaded;
-}
+  }) = CompletedLatestSystemAction;
 
-@freezed
-abstract class LatestTournamentsIsRefreshing
-    with _$LatestTournamentsIsRefreshing
-    implements LatestAction {
-  const factory LatestTournamentsIsRefreshing() =
-      _LatestTournamentsIsRefreshing;
-}
-
-@freezed
-abstract class LatestTournamentsLoadFailed
-    with _$LatestTournamentsLoadFailed
-    implements LatestAction {
-  const factory LatestTournamentsLoadFailed({
+  const factory SystemActionLatest.failed({
     @required Exception exception,
-  }) = _LatestTournamentsLoadFailed;
+  }) = FailedLatestSystemAction;
 }

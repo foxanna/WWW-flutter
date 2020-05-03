@@ -9,395 +9,708 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$InitLatestTournamentsTearOff {
-  const _$InitLatestTournamentsTearOff();
+class _$UserActionLatestTearOff {
+  const _$UserActionLatestTearOff();
 
-  _InitLatestTournaments call() {
-    return const _InitLatestTournaments();
+  InitLatestUserAction init() {
+    return const InitLatestUserAction();
+  }
+
+  RefreshLatestUserAction refresh() {
+    return const RefreshLatestUserAction();
+  }
+
+  LoadLatestUserAction load() {
+    return const LoadLatestUserAction();
   }
 }
 
 // ignore: unused_element
-const $InitLatestTournaments = _$InitLatestTournamentsTearOff();
+const $UserActionLatest = _$UserActionLatestTearOff();
 
-mixin _$InitLatestTournaments {}
-
-abstract class $InitLatestTournamentsCopyWith<$Res> {
-  factory $InitLatestTournamentsCopyWith(InitLatestTournaments value,
-          $Res Function(InitLatestTournaments) then) =
-      _$InitLatestTournamentsCopyWithImpl<$Res>;
+mixin _$UserActionLatest {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result refresh(),
+    @required Result load(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result refresh(),
+    Result load(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitLatestUserAction value),
+    @required Result refresh(RefreshLatestUserAction value),
+    @required Result load(LoadLatestUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitLatestUserAction value),
+    Result refresh(RefreshLatestUserAction value),
+    Result load(LoadLatestUserAction value),
+    @required Result orElse(),
+  });
 }
 
-class _$InitLatestTournamentsCopyWithImpl<$Res>
-    implements $InitLatestTournamentsCopyWith<$Res> {
-  _$InitLatestTournamentsCopyWithImpl(this._value, this._then);
+abstract class $UserActionLatestCopyWith<$Res> {
+  factory $UserActionLatestCopyWith(
+          UserActionLatest value, $Res Function(UserActionLatest) then) =
+      _$UserActionLatestCopyWithImpl<$Res>;
+}
 
-  final InitLatestTournaments _value;
+class _$UserActionLatestCopyWithImpl<$Res>
+    implements $UserActionLatestCopyWith<$Res> {
+  _$UserActionLatestCopyWithImpl(this._value, this._then);
+
+  final UserActionLatest _value;
   // ignore: unused_field
-  final $Res Function(InitLatestTournaments) _then;
+  final $Res Function(UserActionLatest) _then;
 }
 
-abstract class _$InitLatestTournamentsCopyWith<$Res> {
-  factory _$InitLatestTournamentsCopyWith(_InitLatestTournaments value,
-          $Res Function(_InitLatestTournaments) then) =
-      __$InitLatestTournamentsCopyWithImpl<$Res>;
+abstract class $InitLatestUserActionCopyWith<$Res> {
+  factory $InitLatestUserActionCopyWith(InitLatestUserAction value,
+          $Res Function(InitLatestUserAction) then) =
+      _$InitLatestUserActionCopyWithImpl<$Res>;
 }
 
-class __$InitLatestTournamentsCopyWithImpl<$Res>
-    extends _$InitLatestTournamentsCopyWithImpl<$Res>
-    implements _$InitLatestTournamentsCopyWith<$Res> {
-  __$InitLatestTournamentsCopyWithImpl(_InitLatestTournaments _value,
-      $Res Function(_InitLatestTournaments) _then)
-      : super(_value, (v) => _then(v as _InitLatestTournaments));
+class _$InitLatestUserActionCopyWithImpl<$Res>
+    extends _$UserActionLatestCopyWithImpl<$Res>
+    implements $InitLatestUserActionCopyWith<$Res> {
+  _$InitLatestUserActionCopyWithImpl(
+      InitLatestUserAction _value, $Res Function(InitLatestUserAction) _then)
+      : super(_value, (v) => _then(v as InitLatestUserAction));
 
   @override
-  _InitLatestTournaments get _value => super._value as _InitLatestTournaments;
+  InitLatestUserAction get _value => super._value as InitLatestUserAction;
 }
 
-class _$_InitLatestTournaments
+class _$InitLatestUserAction
     with DiagnosticableTreeMixin
-    implements _InitLatestTournaments {
-  const _$_InitLatestTournaments();
+    implements InitLatestUserAction {
+  const _$InitLatestUserAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'InitLatestTournaments()';
+    return 'UserActionLatest.init()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'InitLatestTournaments'));
+    properties..add(DiagnosticsProperty('type', 'UserActionLatest.init'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InitLatestTournaments);
+    return identical(this, other) || (other is InitLatestUserAction);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-}
 
-abstract class _InitLatestTournaments implements InitLatestTournaments {
-  const factory _InitLatestTournaments() = _$_InitLatestTournaments;
-}
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result refresh(),
+    @required Result load(),
+  }) {
+    assert(init != null);
+    assert(refresh != null);
+    assert(load != null);
+    return init();
+  }
 
-class _$RefreshLatestTournamentsTearOff {
-  const _$RefreshLatestTournamentsTearOff();
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result refresh(),
+    Result load(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
 
-  _RefreshLatestTournaments call() {
-    return const _RefreshLatestTournaments();
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitLatestUserAction value),
+    @required Result refresh(RefreshLatestUserAction value),
+    @required Result load(LoadLatestUserAction value),
+  }) {
+    assert(init != null);
+    assert(refresh != null);
+    assert(load != null);
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitLatestUserAction value),
+    Result refresh(RefreshLatestUserAction value),
+    Result load(LoadLatestUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $RefreshLatestTournaments = _$RefreshLatestTournamentsTearOff();
-
-mixin _$RefreshLatestTournaments {}
-
-abstract class $RefreshLatestTournamentsCopyWith<$Res> {
-  factory $RefreshLatestTournamentsCopyWith(RefreshLatestTournaments value,
-          $Res Function(RefreshLatestTournaments) then) =
-      _$RefreshLatestTournamentsCopyWithImpl<$Res>;
+abstract class InitLatestUserAction implements UserActionLatest {
+  const factory InitLatestUserAction() = _$InitLatestUserAction;
 }
 
-class _$RefreshLatestTournamentsCopyWithImpl<$Res>
-    implements $RefreshLatestTournamentsCopyWith<$Res> {
-  _$RefreshLatestTournamentsCopyWithImpl(this._value, this._then);
-
-  final RefreshLatestTournaments _value;
-  // ignore: unused_field
-  final $Res Function(RefreshLatestTournaments) _then;
+abstract class $RefreshLatestUserActionCopyWith<$Res> {
+  factory $RefreshLatestUserActionCopyWith(RefreshLatestUserAction value,
+          $Res Function(RefreshLatestUserAction) then) =
+      _$RefreshLatestUserActionCopyWithImpl<$Res>;
 }
 
-abstract class _$RefreshLatestTournamentsCopyWith<$Res> {
-  factory _$RefreshLatestTournamentsCopyWith(_RefreshLatestTournaments value,
-          $Res Function(_RefreshLatestTournaments) then) =
-      __$RefreshLatestTournamentsCopyWithImpl<$Res>;
-}
-
-class __$RefreshLatestTournamentsCopyWithImpl<$Res>
-    extends _$RefreshLatestTournamentsCopyWithImpl<$Res>
-    implements _$RefreshLatestTournamentsCopyWith<$Res> {
-  __$RefreshLatestTournamentsCopyWithImpl(_RefreshLatestTournaments _value,
-      $Res Function(_RefreshLatestTournaments) _then)
-      : super(_value, (v) => _then(v as _RefreshLatestTournaments));
+class _$RefreshLatestUserActionCopyWithImpl<$Res>
+    extends _$UserActionLatestCopyWithImpl<$Res>
+    implements $RefreshLatestUserActionCopyWith<$Res> {
+  _$RefreshLatestUserActionCopyWithImpl(RefreshLatestUserAction _value,
+      $Res Function(RefreshLatestUserAction) _then)
+      : super(_value, (v) => _then(v as RefreshLatestUserAction));
 
   @override
-  _RefreshLatestTournaments get _value =>
-      super._value as _RefreshLatestTournaments;
+  RefreshLatestUserAction get _value => super._value as RefreshLatestUserAction;
 }
 
-class _$_RefreshLatestTournaments
+class _$RefreshLatestUserAction
     with DiagnosticableTreeMixin
-    implements _RefreshLatestTournaments {
-  const _$_RefreshLatestTournaments();
+    implements RefreshLatestUserAction {
+  const _$RefreshLatestUserAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RefreshLatestTournaments()';
+    return 'UserActionLatest.refresh()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'RefreshLatestTournaments'));
+    properties..add(DiagnosticsProperty('type', 'UserActionLatest.refresh'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RefreshLatestTournaments);
+    return identical(this, other) || (other is RefreshLatestUserAction);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-}
 
-abstract class _RefreshLatestTournaments implements RefreshLatestTournaments {
-  const factory _RefreshLatestTournaments() = _$_RefreshLatestTournaments;
-}
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result refresh(),
+    @required Result load(),
+  }) {
+    assert(init != null);
+    assert(refresh != null);
+    assert(load != null);
+    return refresh();
+  }
 
-class _$LoadLatestTournamentsTearOff {
-  const _$LoadLatestTournamentsTearOff();
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result refresh(),
+    Result load(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (refresh != null) {
+      return refresh();
+    }
+    return orElse();
+  }
 
-  _LoadLatestTournaments call() {
-    return const _LoadLatestTournaments();
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitLatestUserAction value),
+    @required Result refresh(RefreshLatestUserAction value),
+    @required Result load(LoadLatestUserAction value),
+  }) {
+    assert(init != null);
+    assert(refresh != null);
+    assert(load != null);
+    return refresh(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitLatestUserAction value),
+    Result refresh(RefreshLatestUserAction value),
+    Result load(LoadLatestUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (refresh != null) {
+      return refresh(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $LoadLatestTournaments = _$LoadLatestTournamentsTearOff();
-
-mixin _$LoadLatestTournaments {}
-
-abstract class $LoadLatestTournamentsCopyWith<$Res> {
-  factory $LoadLatestTournamentsCopyWith(LoadLatestTournaments value,
-          $Res Function(LoadLatestTournaments) then) =
-      _$LoadLatestTournamentsCopyWithImpl<$Res>;
+abstract class RefreshLatestUserAction implements UserActionLatest {
+  const factory RefreshLatestUserAction() = _$RefreshLatestUserAction;
 }
 
-class _$LoadLatestTournamentsCopyWithImpl<$Res>
-    implements $LoadLatestTournamentsCopyWith<$Res> {
-  _$LoadLatestTournamentsCopyWithImpl(this._value, this._then);
-
-  final LoadLatestTournaments _value;
-  // ignore: unused_field
-  final $Res Function(LoadLatestTournaments) _then;
+abstract class $LoadLatestUserActionCopyWith<$Res> {
+  factory $LoadLatestUserActionCopyWith(LoadLatestUserAction value,
+          $Res Function(LoadLatestUserAction) then) =
+      _$LoadLatestUserActionCopyWithImpl<$Res>;
 }
 
-abstract class _$LoadLatestTournamentsCopyWith<$Res> {
-  factory _$LoadLatestTournamentsCopyWith(_LoadLatestTournaments value,
-          $Res Function(_LoadLatestTournaments) then) =
-      __$LoadLatestTournamentsCopyWithImpl<$Res>;
-}
-
-class __$LoadLatestTournamentsCopyWithImpl<$Res>
-    extends _$LoadLatestTournamentsCopyWithImpl<$Res>
-    implements _$LoadLatestTournamentsCopyWith<$Res> {
-  __$LoadLatestTournamentsCopyWithImpl(_LoadLatestTournaments _value,
-      $Res Function(_LoadLatestTournaments) _then)
-      : super(_value, (v) => _then(v as _LoadLatestTournaments));
+class _$LoadLatestUserActionCopyWithImpl<$Res>
+    extends _$UserActionLatestCopyWithImpl<$Res>
+    implements $LoadLatestUserActionCopyWith<$Res> {
+  _$LoadLatestUserActionCopyWithImpl(
+      LoadLatestUserAction _value, $Res Function(LoadLatestUserAction) _then)
+      : super(_value, (v) => _then(v as LoadLatestUserAction));
 
   @override
-  _LoadLatestTournaments get _value => super._value as _LoadLatestTournaments;
+  LoadLatestUserAction get _value => super._value as LoadLatestUserAction;
 }
 
-class _$_LoadLatestTournaments
+class _$LoadLatestUserAction
     with DiagnosticableTreeMixin
-    implements _LoadLatestTournaments {
-  const _$_LoadLatestTournaments();
+    implements LoadLatestUserAction {
+  const _$LoadLatestUserAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoadLatestTournaments()';
+    return 'UserActionLatest.load()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'LoadLatestTournaments'));
+    properties..add(DiagnosticsProperty('type', 'UserActionLatest.load'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadLatestTournaments);
+    return identical(this, other) || (other is LoadLatestUserAction);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _LoadLatestTournaments implements LoadLatestTournaments {
-  const factory _LoadLatestTournaments() = _$_LoadLatestTournaments;
-}
-
-class _$LatestTournamentsIsLoadingTearOff {
-  const _$LatestTournamentsIsLoadingTearOff();
-
-  _LatestTournamentsIsLoading call() {
-    return const _LatestTournamentsIsLoading();
-  }
-}
-
-// ignore: unused_element
-const $LatestTournamentsIsLoading = _$LatestTournamentsIsLoadingTearOff();
-
-mixin _$LatestTournamentsIsLoading {}
-
-abstract class $LatestTournamentsIsLoadingCopyWith<$Res> {
-  factory $LatestTournamentsIsLoadingCopyWith(LatestTournamentsIsLoading value,
-          $Res Function(LatestTournamentsIsLoading) then) =
-      _$LatestTournamentsIsLoadingCopyWithImpl<$Res>;
-}
-
-class _$LatestTournamentsIsLoadingCopyWithImpl<$Res>
-    implements $LatestTournamentsIsLoadingCopyWith<$Res> {
-  _$LatestTournamentsIsLoadingCopyWithImpl(this._value, this._then);
-
-  final LatestTournamentsIsLoading _value;
-  // ignore: unused_field
-  final $Res Function(LatestTournamentsIsLoading) _then;
-}
-
-abstract class _$LatestTournamentsIsLoadingCopyWith<$Res> {
-  factory _$LatestTournamentsIsLoadingCopyWith(
-          _LatestTournamentsIsLoading value,
-          $Res Function(_LatestTournamentsIsLoading) then) =
-      __$LatestTournamentsIsLoadingCopyWithImpl<$Res>;
-}
-
-class __$LatestTournamentsIsLoadingCopyWithImpl<$Res>
-    extends _$LatestTournamentsIsLoadingCopyWithImpl<$Res>
-    implements _$LatestTournamentsIsLoadingCopyWith<$Res> {
-  __$LatestTournamentsIsLoadingCopyWithImpl(_LatestTournamentsIsLoading _value,
-      $Res Function(_LatestTournamentsIsLoading) _then)
-      : super(_value, (v) => _then(v as _LatestTournamentsIsLoading));
 
   @override
-  _LatestTournamentsIsLoading get _value =>
-      super._value as _LatestTournamentsIsLoading;
-}
-
-class _$_LatestTournamentsIsLoading
-    with DiagnosticableTreeMixin
-    implements _LatestTournamentsIsLoading {
-  const _$_LatestTournamentsIsLoading();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LatestTournamentsIsLoading()';
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result refresh(),
+    @required Result load(),
+  }) {
+    assert(init != null);
+    assert(refresh != null);
+    assert(load != null);
+    return load();
   }
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'LatestTournamentsIsLoading'));
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result refresh(),
+    Result load(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (load != null) {
+      return load();
+    }
+    return orElse();
   }
 
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LatestTournamentsIsLoading);
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitLatestUserAction value),
+    @required Result refresh(RefreshLatestUserAction value),
+    @required Result load(LoadLatestUserAction value),
+  }) {
+    assert(init != null);
+    assert(refresh != null);
+    assert(load != null);
+    return load(this);
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitLatestUserAction value),
+    Result refresh(RefreshLatestUserAction value),
+    Result load(LoadLatestUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (load != null) {
+      return load(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _LatestTournamentsIsLoading
-    implements LatestTournamentsIsLoading {
-  const factory _LatestTournamentsIsLoading() = _$_LatestTournamentsIsLoading;
+abstract class LoadLatestUserAction implements UserActionLatest {
+  const factory LoadLatestUserAction() = _$LoadLatestUserAction;
 }
 
-class _$MoreLatestTournamentsLoadedTearOff {
-  const _$MoreLatestTournamentsLoadedTearOff();
+class _$SystemActionLatestTearOff {
+  const _$SystemActionLatestTearOff();
 
-  _MoreLatestTournamentsLoaded call(
+  LoadingLatestSystemAction loading() {
+    return const LoadingLatestSystemAction();
+  }
+
+  RefreshingLatestSystemAction refreshing() {
+    return const RefreshingLatestSystemAction();
+  }
+
+  CompletedLatestSystemAction completed(
       {@required Iterable<Tournament> data, @required int nexPage}) {
-    return _MoreLatestTournamentsLoaded(
+    return CompletedLatestSystemAction(
       data: data,
       nexPage: nexPage,
+    );
+  }
+
+  FailedLatestSystemAction failed({@required Exception exception}) {
+    return FailedLatestSystemAction(
+      exception: exception,
     );
   }
 }
 
 // ignore: unused_element
-const $MoreLatestTournamentsLoaded = _$MoreLatestTournamentsLoadedTearOff();
+const $SystemActionLatest = _$SystemActionLatestTearOff();
 
-mixin _$MoreLatestTournamentsLoaded {
-  Iterable<Tournament> get data;
-  int get nexPage;
-
-  $MoreLatestTournamentsLoadedCopyWith<MoreLatestTournamentsLoaded>
-      get copyWith;
+mixin _$SystemActionLatest {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loading(),
+    @required Result refreshing(),
+    @required Result completed(Iterable<Tournament> data, int nexPage),
+    @required Result failed(Exception exception),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loading(),
+    Result refreshing(),
+    Result completed(Iterable<Tournament> data, int nexPage),
+    Result failed(Exception exception),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loading(LoadingLatestSystemAction value),
+    @required Result refreshing(RefreshingLatestSystemAction value),
+    @required Result completed(CompletedLatestSystemAction value),
+    @required Result failed(FailedLatestSystemAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loading(LoadingLatestSystemAction value),
+    Result refreshing(RefreshingLatestSystemAction value),
+    Result completed(CompletedLatestSystemAction value),
+    Result failed(FailedLatestSystemAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $MoreLatestTournamentsLoadedCopyWith<$Res> {
-  factory $MoreLatestTournamentsLoadedCopyWith(
-          MoreLatestTournamentsLoaded value,
-          $Res Function(MoreLatestTournamentsLoaded) then) =
-      _$MoreLatestTournamentsLoadedCopyWithImpl<$Res>;
-  $Res call({Iterable<Tournament> data, int nexPage});
+abstract class $SystemActionLatestCopyWith<$Res> {
+  factory $SystemActionLatestCopyWith(
+          SystemActionLatest value, $Res Function(SystemActionLatest) then) =
+      _$SystemActionLatestCopyWithImpl<$Res>;
 }
 
-class _$MoreLatestTournamentsLoadedCopyWithImpl<$Res>
-    implements $MoreLatestTournamentsLoadedCopyWith<$Res> {
-  _$MoreLatestTournamentsLoadedCopyWithImpl(this._value, this._then);
+class _$SystemActionLatestCopyWithImpl<$Res>
+    implements $SystemActionLatestCopyWith<$Res> {
+  _$SystemActionLatestCopyWithImpl(this._value, this._then);
 
-  final MoreLatestTournamentsLoaded _value;
+  final SystemActionLatest _value;
   // ignore: unused_field
-  final $Res Function(MoreLatestTournamentsLoaded) _then;
+  final $Res Function(SystemActionLatest) _then;
+}
+
+abstract class $LoadingLatestSystemActionCopyWith<$Res> {
+  factory $LoadingLatestSystemActionCopyWith(LoadingLatestSystemAction value,
+          $Res Function(LoadingLatestSystemAction) then) =
+      _$LoadingLatestSystemActionCopyWithImpl<$Res>;
+}
+
+class _$LoadingLatestSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res>
+    implements $LoadingLatestSystemActionCopyWith<$Res> {
+  _$LoadingLatestSystemActionCopyWithImpl(LoadingLatestSystemAction _value,
+      $Res Function(LoadingLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as LoadingLatestSystemAction));
 
   @override
-  $Res call({
-    Object data = freezed,
-    Object nexPage = freezed,
+  LoadingLatestSystemAction get _value =>
+      super._value as LoadingLatestSystemAction;
+}
+
+class _$LoadingLatestSystemAction
+    with DiagnosticableTreeMixin
+    implements LoadingLatestSystemAction {
+  const _$LoadingLatestSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionLatest.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SystemActionLatest.loading'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is LoadingLatestSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loading(),
+    @required Result refreshing(),
+    @required Result completed(Iterable<Tournament> data, int nexPage),
+    @required Result failed(Exception exception),
   }) {
-    return _then(_value.copyWith(
-      data: data == freezed ? _value.data : data as Iterable<Tournament>,
-      nexPage: nexPage == freezed ? _value.nexPage : nexPage as int,
-    ));
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loading(),
+    Result refreshing(),
+    Result completed(Iterable<Tournament> data, int nexPage),
+    Result failed(Exception exception),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loading(LoadingLatestSystemAction value),
+    @required Result refreshing(RefreshingLatestSystemAction value),
+    @required Result completed(CompletedLatestSystemAction value),
+    @required Result failed(FailedLatestSystemAction value),
+  }) {
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loading(LoadingLatestSystemAction value),
+    Result refreshing(RefreshingLatestSystemAction value),
+    Result completed(CompletedLatestSystemAction value),
+    Result failed(FailedLatestSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
   }
 }
 
-abstract class _$MoreLatestTournamentsLoadedCopyWith<$Res>
-    implements $MoreLatestTournamentsLoadedCopyWith<$Res> {
-  factory _$MoreLatestTournamentsLoadedCopyWith(
-          _MoreLatestTournamentsLoaded value,
-          $Res Function(_MoreLatestTournamentsLoaded) then) =
-      __$MoreLatestTournamentsLoadedCopyWithImpl<$Res>;
+abstract class LoadingLatestSystemAction implements SystemActionLatest {
+  const factory LoadingLatestSystemAction() = _$LoadingLatestSystemAction;
+}
+
+abstract class $RefreshingLatestSystemActionCopyWith<$Res> {
+  factory $RefreshingLatestSystemActionCopyWith(
+          RefreshingLatestSystemAction value,
+          $Res Function(RefreshingLatestSystemAction) then) =
+      _$RefreshingLatestSystemActionCopyWithImpl<$Res>;
+}
+
+class _$RefreshingLatestSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res>
+    implements $RefreshingLatestSystemActionCopyWith<$Res> {
+  _$RefreshingLatestSystemActionCopyWithImpl(
+      RefreshingLatestSystemAction _value,
+      $Res Function(RefreshingLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as RefreshingLatestSystemAction));
+
   @override
+  RefreshingLatestSystemAction get _value =>
+      super._value as RefreshingLatestSystemAction;
+}
+
+class _$RefreshingLatestSystemAction
+    with DiagnosticableTreeMixin
+    implements RefreshingLatestSystemAction {
+  const _$RefreshingLatestSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionLatest.refreshing()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionLatest.refreshing'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is RefreshingLatestSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loading(),
+    @required Result refreshing(),
+    @required Result completed(Iterable<Tournament> data, int nexPage),
+    @required Result failed(Exception exception),
+  }) {
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return refreshing();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loading(),
+    Result refreshing(),
+    Result completed(Iterable<Tournament> data, int nexPage),
+    Result failed(Exception exception),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (refreshing != null) {
+      return refreshing();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loading(LoadingLatestSystemAction value),
+    @required Result refreshing(RefreshingLatestSystemAction value),
+    @required Result completed(CompletedLatestSystemAction value),
+    @required Result failed(FailedLatestSystemAction value),
+  }) {
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return refreshing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loading(LoadingLatestSystemAction value),
+    Result refreshing(RefreshingLatestSystemAction value),
+    Result completed(CompletedLatestSystemAction value),
+    Result failed(FailedLatestSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (refreshing != null) {
+      return refreshing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshingLatestSystemAction implements SystemActionLatest {
+  const factory RefreshingLatestSystemAction() = _$RefreshingLatestSystemAction;
+}
+
+abstract class $CompletedLatestSystemActionCopyWith<$Res> {
+  factory $CompletedLatestSystemActionCopyWith(
+          CompletedLatestSystemAction value,
+          $Res Function(CompletedLatestSystemAction) then) =
+      _$CompletedLatestSystemActionCopyWithImpl<$Res>;
   $Res call({Iterable<Tournament> data, int nexPage});
 }
 
-class __$MoreLatestTournamentsLoadedCopyWithImpl<$Res>
-    extends _$MoreLatestTournamentsLoadedCopyWithImpl<$Res>
-    implements _$MoreLatestTournamentsLoadedCopyWith<$Res> {
-  __$MoreLatestTournamentsLoadedCopyWithImpl(
-      _MoreLatestTournamentsLoaded _value,
-      $Res Function(_MoreLatestTournamentsLoaded) _then)
-      : super(_value, (v) => _then(v as _MoreLatestTournamentsLoaded));
+class _$CompletedLatestSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res>
+    implements $CompletedLatestSystemActionCopyWith<$Res> {
+  _$CompletedLatestSystemActionCopyWithImpl(CompletedLatestSystemAction _value,
+      $Res Function(CompletedLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as CompletedLatestSystemAction));
 
   @override
-  _MoreLatestTournamentsLoaded get _value =>
-      super._value as _MoreLatestTournamentsLoaded;
+  CompletedLatestSystemAction get _value =>
+      super._value as CompletedLatestSystemAction;
 
   @override
   $Res call({
     Object data = freezed,
     Object nexPage = freezed,
   }) {
-    return _then(_MoreLatestTournamentsLoaded(
+    return _then(CompletedLatestSystemAction(
       data: data == freezed ? _value.data : data as Iterable<Tournament>,
       nexPage: nexPage == freezed ? _value.nexPage : nexPage as int,
     ));
   }
 }
 
-class _$_MoreLatestTournamentsLoaded
+class _$CompletedLatestSystemAction
     with DiagnosticableTreeMixin
-    implements _MoreLatestTournamentsLoaded {
-  const _$_MoreLatestTournamentsLoaded(
+    implements CompletedLatestSystemAction {
+  const _$CompletedLatestSystemAction(
       {@required this.data, @required this.nexPage})
       : assert(data != null),
         assert(nexPage != null);
@@ -409,14 +722,14 @@ class _$_MoreLatestTournamentsLoaded
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MoreLatestTournamentsLoaded(data: $data, nexPage: $nexPage)';
+    return 'SystemActionLatest.completed(data: $data, nexPage: $nexPage)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'MoreLatestTournamentsLoaded'))
+      ..add(DiagnosticsProperty('type', 'SystemActionLatest.completed'))
       ..add(DiagnosticsProperty('data', data))
       ..add(DiagnosticsProperty('nexPage', nexPage));
   }
@@ -424,7 +737,7 @@ class _$_MoreLatestTournamentsLoaded
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MoreLatestTournamentsLoaded &&
+        (other is CompletedLatestSystemAction &&
             (identical(other.data, data) ||
                 const DeepCollectionEquality().equals(other.data, data)) &&
             (identical(other.nexPage, nexPage) ||
@@ -438,191 +751,117 @@ class _$_MoreLatestTournamentsLoaded
       const DeepCollectionEquality().hash(nexPage);
 
   @override
-  _$MoreLatestTournamentsLoadedCopyWith<_MoreLatestTournamentsLoaded>
-      get copyWith => __$MoreLatestTournamentsLoadedCopyWithImpl<
-          _MoreLatestTournamentsLoaded>(this, _$identity);
+  $CompletedLatestSystemActionCopyWith<CompletedLatestSystemAction>
+      get copyWith => _$CompletedLatestSystemActionCopyWithImpl<
+          CompletedLatestSystemAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loading(),
+    @required Result refreshing(),
+    @required Result completed(Iterable<Tournament> data, int nexPage),
+    @required Result failed(Exception exception),
+  }) {
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return completed(data, nexPage);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loading(),
+    Result refreshing(),
+    Result completed(Iterable<Tournament> data, int nexPage),
+    Result failed(Exception exception),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(data, nexPage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loading(LoadingLatestSystemAction value),
+    @required Result refreshing(RefreshingLatestSystemAction value),
+    @required Result completed(CompletedLatestSystemAction value),
+    @required Result failed(FailedLatestSystemAction value),
+  }) {
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return completed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loading(LoadingLatestSystemAction value),
+    Result refreshing(RefreshingLatestSystemAction value),
+    Result completed(CompletedLatestSystemAction value),
+    Result failed(FailedLatestSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _MoreLatestTournamentsLoaded
-    implements MoreLatestTournamentsLoaded {
-  const factory _MoreLatestTournamentsLoaded(
+abstract class CompletedLatestSystemAction implements SystemActionLatest {
+  const factory CompletedLatestSystemAction(
       {@required Iterable<Tournament> data,
-      @required int nexPage}) = _$_MoreLatestTournamentsLoaded;
+      @required int nexPage}) = _$CompletedLatestSystemAction;
 
-  @override
   Iterable<Tournament> get data;
-  @override
   int get nexPage;
-  @override
-  _$MoreLatestTournamentsLoadedCopyWith<_MoreLatestTournamentsLoaded>
+  $CompletedLatestSystemActionCopyWith<CompletedLatestSystemAction>
       get copyWith;
 }
 
-class _$LatestTournamentsIsRefreshingTearOff {
-  const _$LatestTournamentsIsRefreshingTearOff();
-
-  _LatestTournamentsIsRefreshing call() {
-    return const _LatestTournamentsIsRefreshing();
-  }
-}
-
-// ignore: unused_element
-const $LatestTournamentsIsRefreshing = _$LatestTournamentsIsRefreshingTearOff();
-
-mixin _$LatestTournamentsIsRefreshing {}
-
-abstract class $LatestTournamentsIsRefreshingCopyWith<$Res> {
-  factory $LatestTournamentsIsRefreshingCopyWith(
-          LatestTournamentsIsRefreshing value,
-          $Res Function(LatestTournamentsIsRefreshing) then) =
-      _$LatestTournamentsIsRefreshingCopyWithImpl<$Res>;
-}
-
-class _$LatestTournamentsIsRefreshingCopyWithImpl<$Res>
-    implements $LatestTournamentsIsRefreshingCopyWith<$Res> {
-  _$LatestTournamentsIsRefreshingCopyWithImpl(this._value, this._then);
-
-  final LatestTournamentsIsRefreshing _value;
-  // ignore: unused_field
-  final $Res Function(LatestTournamentsIsRefreshing) _then;
-}
-
-abstract class _$LatestTournamentsIsRefreshingCopyWith<$Res> {
-  factory _$LatestTournamentsIsRefreshingCopyWith(
-          _LatestTournamentsIsRefreshing value,
-          $Res Function(_LatestTournamentsIsRefreshing) then) =
-      __$LatestTournamentsIsRefreshingCopyWithImpl<$Res>;
-}
-
-class __$LatestTournamentsIsRefreshingCopyWithImpl<$Res>
-    extends _$LatestTournamentsIsRefreshingCopyWithImpl<$Res>
-    implements _$LatestTournamentsIsRefreshingCopyWith<$Res> {
-  __$LatestTournamentsIsRefreshingCopyWithImpl(
-      _LatestTournamentsIsRefreshing _value,
-      $Res Function(_LatestTournamentsIsRefreshing) _then)
-      : super(_value, (v) => _then(v as _LatestTournamentsIsRefreshing));
-
-  @override
-  _LatestTournamentsIsRefreshing get _value =>
-      super._value as _LatestTournamentsIsRefreshing;
-}
-
-class _$_LatestTournamentsIsRefreshing
-    with DiagnosticableTreeMixin
-    implements _LatestTournamentsIsRefreshing {
-  const _$_LatestTournamentsIsRefreshing();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LatestTournamentsIsRefreshing()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'LatestTournamentsIsRefreshing'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LatestTournamentsIsRefreshing);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _LatestTournamentsIsRefreshing
-    implements LatestTournamentsIsRefreshing {
-  const factory _LatestTournamentsIsRefreshing() =
-      _$_LatestTournamentsIsRefreshing;
-}
-
-class _$LatestTournamentsLoadFailedTearOff {
-  const _$LatestTournamentsLoadFailedTearOff();
-
-  _LatestTournamentsLoadFailed call({@required Exception exception}) {
-    return _LatestTournamentsLoadFailed(
-      exception: exception,
-    );
-  }
-}
-
-// ignore: unused_element
-const $LatestTournamentsLoadFailed = _$LatestTournamentsLoadFailedTearOff();
-
-mixin _$LatestTournamentsLoadFailed {
-  Exception get exception;
-
-  $LatestTournamentsLoadFailedCopyWith<LatestTournamentsLoadFailed>
-      get copyWith;
-}
-
-abstract class $LatestTournamentsLoadFailedCopyWith<$Res> {
-  factory $LatestTournamentsLoadFailedCopyWith(
-          LatestTournamentsLoadFailed value,
-          $Res Function(LatestTournamentsLoadFailed) then) =
-      _$LatestTournamentsLoadFailedCopyWithImpl<$Res>;
+abstract class $FailedLatestSystemActionCopyWith<$Res> {
+  factory $FailedLatestSystemActionCopyWith(FailedLatestSystemAction value,
+          $Res Function(FailedLatestSystemAction) then) =
+      _$FailedLatestSystemActionCopyWithImpl<$Res>;
   $Res call({Exception exception});
 }
 
-class _$LatestTournamentsLoadFailedCopyWithImpl<$Res>
-    implements $LatestTournamentsLoadFailedCopyWith<$Res> {
-  _$LatestTournamentsLoadFailedCopyWithImpl(this._value, this._then);
+class _$FailedLatestSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res>
+    implements $FailedLatestSystemActionCopyWith<$Res> {
+  _$FailedLatestSystemActionCopyWithImpl(FailedLatestSystemAction _value,
+      $Res Function(FailedLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as FailedLatestSystemAction));
 
-  final LatestTournamentsLoadFailed _value;
-  // ignore: unused_field
-  final $Res Function(LatestTournamentsLoadFailed) _then;
+  @override
+  FailedLatestSystemAction get _value =>
+      super._value as FailedLatestSystemAction;
 
   @override
   $Res call({
     Object exception = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(FailedLatestSystemAction(
       exception:
           exception == freezed ? _value.exception : exception as Exception,
     ));
   }
 }
 
-abstract class _$LatestTournamentsLoadFailedCopyWith<$Res>
-    implements $LatestTournamentsLoadFailedCopyWith<$Res> {
-  factory _$LatestTournamentsLoadFailedCopyWith(
-          _LatestTournamentsLoadFailed value,
-          $Res Function(_LatestTournamentsLoadFailed) then) =
-      __$LatestTournamentsLoadFailedCopyWithImpl<$Res>;
-  @override
-  $Res call({Exception exception});
-}
-
-class __$LatestTournamentsLoadFailedCopyWithImpl<$Res>
-    extends _$LatestTournamentsLoadFailedCopyWithImpl<$Res>
-    implements _$LatestTournamentsLoadFailedCopyWith<$Res> {
-  __$LatestTournamentsLoadFailedCopyWithImpl(
-      _LatestTournamentsLoadFailed _value,
-      $Res Function(_LatestTournamentsLoadFailed) _then)
-      : super(_value, (v) => _then(v as _LatestTournamentsLoadFailed));
-
-  @override
-  _LatestTournamentsLoadFailed get _value =>
-      super._value as _LatestTournamentsLoadFailed;
-
-  @override
-  $Res call({
-    Object exception = freezed,
-  }) {
-    return _then(_LatestTournamentsLoadFailed(
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
-    ));
-  }
-}
-
-class _$_LatestTournamentsLoadFailed
+class _$FailedLatestSystemAction
     with DiagnosticableTreeMixin
-    implements _LatestTournamentsLoadFailed {
-  const _$_LatestTournamentsLoadFailed({@required this.exception})
+    implements FailedLatestSystemAction {
+  const _$FailedLatestSystemAction({@required this.exception})
       : assert(exception != null);
 
   @override
@@ -630,21 +869,21 @@ class _$_LatestTournamentsLoadFailed
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LatestTournamentsLoadFailed(exception: $exception)';
+    return 'SystemActionLatest.failed(exception: $exception)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'LatestTournamentsLoadFailed'))
+      ..add(DiagnosticsProperty('type', 'SystemActionLatest.failed'))
       ..add(DiagnosticsProperty('exception', exception));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LatestTournamentsLoadFailed &&
+        (other is FailedLatestSystemAction &&
             (identical(other.exception, exception) ||
                 const DeepCollectionEquality()
                     .equals(other.exception, exception)));
@@ -655,19 +894,77 @@ class _$_LatestTournamentsLoadFailed
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
 
   @override
-  _$LatestTournamentsLoadFailedCopyWith<_LatestTournamentsLoadFailed>
-      get copyWith => __$LatestTournamentsLoadFailedCopyWithImpl<
-          _LatestTournamentsLoadFailed>(this, _$identity);
+  $FailedLatestSystemActionCopyWith<FailedLatestSystemAction> get copyWith =>
+      _$FailedLatestSystemActionCopyWithImpl<FailedLatestSystemAction>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loading(),
+    @required Result refreshing(),
+    @required Result completed(Iterable<Tournament> data, int nexPage),
+    @required Result failed(Exception exception),
+  }) {
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return failed(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loading(),
+    Result refreshing(),
+    Result completed(Iterable<Tournament> data, int nexPage),
+    Result failed(Exception exception),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loading(LoadingLatestSystemAction value),
+    @required Result refreshing(RefreshingLatestSystemAction value),
+    @required Result completed(CompletedLatestSystemAction value),
+    @required Result failed(FailedLatestSystemAction value),
+  }) {
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return failed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loading(LoadingLatestSystemAction value),
+    Result refreshing(RefreshingLatestSystemAction value),
+    Result completed(CompletedLatestSystemAction value),
+    Result failed(FailedLatestSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _LatestTournamentsLoadFailed
-    implements LatestTournamentsLoadFailed {
-  const factory _LatestTournamentsLoadFailed({@required Exception exception}) =
-      _$_LatestTournamentsLoadFailed;
+abstract class FailedLatestSystemAction implements SystemActionLatest {
+  const factory FailedLatestSystemAction({@required Exception exception}) =
+      _$FailedLatestSystemAction;
 
-  @override
   Exception get exception;
-  @override
-  _$LatestTournamentsLoadFailedCopyWith<_LatestTournamentsLoadFailed>
-      get copyWith;
+  $FailedLatestSystemActionCopyWith<FailedLatestSystemAction> get copyWith;
 }
