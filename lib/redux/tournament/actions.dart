@@ -9,61 +9,40 @@ part 'actions.freezed.dart';
 abstract class TournamentAction implements ReduxAction {}
 
 @freezed
-abstract class OpenTournament
-    with _$OpenTournament
+abstract class UserActionTournament
+    with _$UserActionTournament
     implements TournamentAction {
-  const factory OpenTournament({
+  const factory UserActionTournament.open({
     @required TournamentInfo info,
-  }) = _OpenTournament;
-}
+  }) = OpenTournamentUserAction;
 
-@freezed
-abstract class ClearTournament
-    with _$ClearTournament
-    implements TournamentAction {
-  const factory ClearTournament() = _ClearTournament;
-}
+  const factory UserActionTournament.close() = CloseTournamentUserAction;
 
-@freezed
-abstract class LoadTournament
-    with _$LoadTournament
-    implements TournamentAction {
-  const factory LoadTournament({
+  const factory UserActionTournament.load({
     @required TournamentInfo info,
-  }) = _LoadTournament;
+  }) = LoadTournamentUserAction;
 }
 
 @freezed
-abstract class ReloadTournament
-    with _$ReloadTournament
+abstract class SystemActionTournament
+    with _$SystemActionTournament
     implements TournamentAction {
-  const factory ReloadTournament() = _ReloadTournament;
-}
-
-@freezed
-abstract class TournamentIsLoading
-    with _$TournamentIsLoading
-    implements TournamentAction {
-  const factory TournamentIsLoading({
+  const factory SystemActionTournament.init({
     @required TournamentInfo info,
-  }) = _TournamentIsLoading;
-}
+  }) = InitTournamentSystemAction;
 
-@freezed
-abstract class TournamentLoaded
-    with _$TournamentLoaded
-    implements TournamentAction {
-  const factory TournamentLoaded({
-    @required Tournament tournament,
-  }) = _TournamentLoaded;
-}
+  const factory SystemActionTournament.deInit() = DeInitTournamentSystemAction;
 
-@freezed
-abstract class TournamentFailedLoading
-    with _$TournamentFailedLoading
-    implements TournamentAction {
-  const factory TournamentFailedLoading({
+  const factory SystemActionTournament.loading({
+    @required TournamentInfo info,
+  }) = LoadingTournamentSystemAction;
+
+  const factory SystemActionTournament.failed({
     @required TournamentInfo info,
     @required Exception exception,
-  }) = _TournamentFailedLoading;
+  }) = FailedTournamentSystemAction;
+
+  const factory SystemActionTournament.completed({
+    @required Tournament tournament,
+  }) = CompletedTournamentSystemAction;
 }

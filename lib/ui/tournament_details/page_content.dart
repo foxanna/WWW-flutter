@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/redux/tournament/state.dart';
+import 'package:what_when_where/ui/common/empty_sliver.dart';
 import 'package:what_when_where/ui/tournament_details/data_page.dart';
 import 'package:what_when_where/ui/tournament_details/error_page.dart';
 import 'package:what_when_where/ui/tournament_details/loading_page.dart';
@@ -28,8 +29,9 @@ class TournamentDetailsPageContent extends StatelessWidget {
             return TournamentDetailsDataPage();
           }
 
-          return Container();
+          return const EmptySliver();
         },
-        onDispose: (store) => store.dispatch(const ClearTournament()),
+        onDispose: (store) =>
+            store.dispatch(const UserActionTournament.close()),
       );
 }

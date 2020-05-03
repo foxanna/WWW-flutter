@@ -12,6 +12,12 @@ T _$identity<T>(T value) => value;
 class _$TournamentStateTearOff {
   const _$TournamentStateTearOff();
 
+  InitialTournamentState initial({@required TournamentInfo info}) {
+    return InitialTournamentState(
+      info: info,
+    );
+  }
+
   DataTournamentState data(
       {@required TournamentInfo info, @required Tournament tournament}) {
     return DataTournamentState(
@@ -43,12 +49,14 @@ mixin _$TournamentState {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result initial(TournamentInfo info),
     @required Result data(TournamentInfo info, Tournament tournament),
     @required Result loading(TournamentInfo info),
     @required Result error(TournamentInfo info, Exception exception),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result initial(TournamentInfo info),
     Result data(TournamentInfo info, Tournament tournament),
     Result loading(TournamentInfo info),
     Result error(TournamentInfo info, Exception exception),
@@ -56,12 +64,14 @@ mixin _$TournamentState {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result initial(InitialTournamentState value),
     @required Result data(DataTournamentState value),
     @required Result loading(LoadingTournamentState value),
     @required Result error(ErrorTournamentState value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result initial(InitialTournamentState value),
     Result data(DataTournamentState value),
     Result loading(LoadingTournamentState value),
     Result error(ErrorTournamentState value),
@@ -106,6 +116,149 @@ class _$TournamentStateCopyWithImpl<$Res>
       return _then(_value.copyWith(info: value));
     });
   }
+}
+
+abstract class $InitialTournamentStateCopyWith<$Res>
+    implements $TournamentStateCopyWith<$Res> {
+  factory $InitialTournamentStateCopyWith(InitialTournamentState value,
+          $Res Function(InitialTournamentState) then) =
+      _$InitialTournamentStateCopyWithImpl<$Res>;
+  @override
+  $Res call({TournamentInfo info});
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info;
+}
+
+class _$InitialTournamentStateCopyWithImpl<$Res>
+    extends _$TournamentStateCopyWithImpl<$Res>
+    implements $InitialTournamentStateCopyWith<$Res> {
+  _$InitialTournamentStateCopyWithImpl(InitialTournamentState _value,
+      $Res Function(InitialTournamentState) _then)
+      : super(_value, (v) => _then(v as InitialTournamentState));
+
+  @override
+  InitialTournamentState get _value => super._value as InitialTournamentState;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(InitialTournamentState(
+      info: info == freezed ? _value.info : info as TournamentInfo,
+    ));
+  }
+}
+
+class _$InitialTournamentState
+    with DiagnosticableTreeMixin
+    implements InitialTournamentState {
+  const _$InitialTournamentState({@required this.info}) : assert(info != null);
+
+  @override
+  final TournamentInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TournamentState.initial(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'TournamentState.initial'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InitialTournamentState &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $InitialTournamentStateCopyWith<InitialTournamentState> get copyWith =>
+      _$InitialTournamentStateCopyWithImpl<InitialTournamentState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(TournamentInfo info),
+    @required Result data(TournamentInfo info, Tournament tournament),
+    @required Result loading(TournamentInfo info),
+    @required Result error(TournamentInfo info, Exception exception),
+  }) {
+    assert(initial != null);
+    assert(data != null);
+    assert(loading != null);
+    assert(error != null);
+    return initial(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(TournamentInfo info),
+    Result data(TournamentInfo info, Tournament tournament),
+    Result loading(TournamentInfo info),
+    Result error(TournamentInfo info, Exception exception),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (initial != null) {
+      return initial(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(InitialTournamentState value),
+    @required Result data(DataTournamentState value),
+    @required Result loading(LoadingTournamentState value),
+    @required Result error(ErrorTournamentState value),
+  }) {
+    assert(initial != null);
+    assert(data != null);
+    assert(loading != null);
+    assert(error != null);
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(InitialTournamentState value),
+    Result data(DataTournamentState value),
+    Result loading(LoadingTournamentState value),
+    Result error(ErrorTournamentState value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitialTournamentState implements TournamentState {
+  const factory InitialTournamentState({@required TournamentInfo info}) =
+      _$InitialTournamentState;
+
+  @override
+  TournamentInfo get info;
+  @override
+  $InitialTournamentStateCopyWith<InitialTournamentState> get copyWith;
 }
 
 abstract class $DataTournamentStateCopyWith<$Res>
@@ -204,10 +357,12 @@ class _$DataTournamentState
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result initial(TournamentInfo info),
     @required Result data(TournamentInfo info, Tournament tournament),
     @required Result loading(TournamentInfo info),
     @required Result error(TournamentInfo info, Exception exception),
   }) {
+    assert(initial != null);
     assert(data != null);
     assert(loading != null);
     assert(error != null);
@@ -217,6 +372,7 @@ class _$DataTournamentState
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result initial(TournamentInfo info),
     Result data(TournamentInfo info, Tournament tournament),
     Result loading(TournamentInfo info),
     Result error(TournamentInfo info, Exception exception),
@@ -232,10 +388,12 @@ class _$DataTournamentState
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result initial(InitialTournamentState value),
     @required Result data(DataTournamentState value),
     @required Result loading(LoadingTournamentState value),
     @required Result error(ErrorTournamentState value),
   }) {
+    assert(initial != null);
     assert(data != null);
     assert(loading != null);
     assert(error != null);
@@ -245,6 +403,7 @@ class _$DataTournamentState
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result initial(InitialTournamentState value),
     Result data(DataTournamentState value),
     Result loading(LoadingTournamentState value),
     Result error(ErrorTournamentState value),
@@ -343,10 +502,12 @@ class _$LoadingTournamentState
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result initial(TournamentInfo info),
     @required Result data(TournamentInfo info, Tournament tournament),
     @required Result loading(TournamentInfo info),
     @required Result error(TournamentInfo info, Exception exception),
   }) {
+    assert(initial != null);
     assert(data != null);
     assert(loading != null);
     assert(error != null);
@@ -356,6 +517,7 @@ class _$LoadingTournamentState
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result initial(TournamentInfo info),
     Result data(TournamentInfo info, Tournament tournament),
     Result loading(TournamentInfo info),
     Result error(TournamentInfo info, Exception exception),
@@ -371,10 +533,12 @@ class _$LoadingTournamentState
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result initial(InitialTournamentState value),
     @required Result data(DataTournamentState value),
     @required Result loading(LoadingTournamentState value),
     @required Result error(ErrorTournamentState value),
   }) {
+    assert(initial != null);
     assert(data != null);
     assert(loading != null);
     assert(error != null);
@@ -384,6 +548,7 @@ class _$LoadingTournamentState
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result initial(InitialTournamentState value),
     Result data(DataTournamentState value),
     Result loading(LoadingTournamentState value),
     Result error(ErrorTournamentState value),
@@ -493,10 +658,12 @@ class _$ErrorTournamentState
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result initial(TournamentInfo info),
     @required Result data(TournamentInfo info, Tournament tournament),
     @required Result loading(TournamentInfo info),
     @required Result error(TournamentInfo info, Exception exception),
   }) {
+    assert(initial != null);
     assert(data != null);
     assert(loading != null);
     assert(error != null);
@@ -506,6 +673,7 @@ class _$ErrorTournamentState
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result initial(TournamentInfo info),
     Result data(TournamentInfo info, Tournament tournament),
     Result loading(TournamentInfo info),
     Result error(TournamentInfo info, Exception exception),
@@ -521,10 +689,12 @@ class _$ErrorTournamentState
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result initial(InitialTournamentState value),
     @required Result data(DataTournamentState value),
     @required Result loading(LoadingTournamentState value),
     @required Result error(ErrorTournamentState value),
   }) {
+    assert(initial != null);
     assert(data != null);
     assert(loading != null);
     assert(error != null);
@@ -534,6 +704,7 @@ class _$ErrorTournamentState
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result initial(InitialTournamentState value),
     Result data(DataTournamentState value),
     Result loading(LoadingTournamentState value),
     Result error(ErrorTournamentState value),

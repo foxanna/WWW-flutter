@@ -22,23 +22,23 @@ class TournamentMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, OpenTournament>(_openTournament),
-        TypedMiddleware<AppState, LoadTournament>(_loadTournament),
-        TypedMiddleware<AppState, ReloadTournament>(_reloadTournament),
-        TypedMiddleware<AppState, TournamentLoaded>(_tournamentLoaded),
-        TypedMiddleware<AppState, ClearTournament>(_clearTournament),
+        TypedMiddleware<AppState, OpenTournamentUserAction>(_open),
+        TypedMiddleware<AppState, LoadTournamentUserAction>(_load),
+        TypedMiddleware<AppState, CompletedTournamentSystemAction>(_completed),
+        TypedMiddleware<AppState, CloseTournamentUserAction>(_close),
       ];
 
-  void _openTournament(
-      Store<AppState> store, OpenTournament action, NextDispatcher next) {
+  void _open(Store<AppState> store, OpenTournamentUserAction action,
+      NextDispatcher next) {
     next(action);
 
     store.dispatch(const NavigateToTournamentPage());
-    store.dispatch(LoadTournament(info: action.info));
+    store.dispatch(SystemActionTournament.init(info: action.info));
+    store.dispatch(UserActionTournament.load(info: action.info));
   }
 
-  Future<void> _loadTournament(
-      Store<AppState> store, LoadTournament action, NextDispatcher next) async {
+  Future<void> _load(Store<AppState> store, LoadTournamentUserAction action,
+      NextDispatcher next) async {
     next(action);
 
     final tournamentState = store.state.tournamentState;
@@ -50,47 +50,33 @@ class TournamentMiddleware {
     }
 
     try {
-      store.dispatch(TournamentIsLoading(info: action.info));
+      store.dispatch(SystemActionTournament.loading(info: action.info));
 
       final data = await _loader.get(action.info.id ?? action.info.id2);
 
-      if (_isCurrentTournament(store, data.info)) {
-        store.dispatch(TournamentLoaded(tournament: data));
-      }
+      store.dispatch(SystemActionTournament.completed(tournament: data));
     } on Exception catch (e) {
-      if (_isCurrentTournament(store, action.info)) {
-        store
-            .dispatch(TournamentFailedLoading(info: action.info, exception: e));
-      }
+      store.dispatch(
+          SystemActionTournament.failed(info: action.info, exception: e));
     }
   }
 
-  bool _isCurrentTournament(Store<AppState> store, TournamentInfo info) {
+  void _completed(Store<AppState> store, CompletedTournamentSystemAction action,
+      NextDispatcher next) {
+    next(action);
+
     final currentTournamentInfo = store.state.tournamentState.info;
-
-    return info.id == currentTournamentInfo.id ||
-        info.id2 == currentTournamentInfo.id2;
+    if (currentTournamentInfo == action.tournament.info) {
+      store.dispatch(SystemActionTours.init(
+          tours: action.tournament.tours.map((x) => x.info).toList()));
+    }
   }
 
-  void _tournamentLoaded(
-      Store<AppState> store, TournamentLoaded action, NextDispatcher next) {
+  void _close(Store<AppState> store, CloseTournamentUserAction action,
+      NextDispatcher next) {
     next(action);
 
-    store.dispatch(SystemActionTours.init(
-        tours: action.tournament.tours.map((x) => x.info).toList()));
-  }
-
-  void _reloadTournament(
-      Store<AppState> store, ReloadTournament action, NextDispatcher next) {
-    next(action);
-
-    store.dispatch(LoadTournament(info: store.state.tournamentState.info));
-  }
-
-  void _clearTournament(
-      Store<AppState> store, ClearTournament action, NextDispatcher next) {
-    next(action);
-
+    store.dispatch(const SystemActionTournament.deInit());
     store.dispatch(const SystemActionTours.deInit());
   }
 }

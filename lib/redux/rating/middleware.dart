@@ -28,12 +28,13 @@ class RatingMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, ClearTournament>(_onTournamentClosed),
+        TypedMiddleware<AppState, CloseTournamentUserAction>(
+            _onTournamentClosed),
         TypedMiddleware<AppState, RateOnStore>(_rateOnStore),
       ];
 
   Future<void> _onTournamentClosed(Store<AppState> store,
-      ClearTournament action, NextDispatcher next) async {
+      CloseTournamentUserAction action, NextDispatcher next) async {
     next(action);
 
     if (await _preferencesService.getBool(_ratedKey)) {

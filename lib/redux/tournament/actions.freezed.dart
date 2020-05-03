@@ -9,47 +9,98 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$OpenTournamentTearOff {
-  const _$OpenTournamentTearOff();
+class _$UserActionTournamentTearOff {
+  const _$UserActionTournamentTearOff();
 
-  _OpenTournament call({@required TournamentInfo info}) {
-    return _OpenTournament(
+  OpenTournamentUserAction open({@required TournamentInfo info}) {
+    return OpenTournamentUserAction(
+      info: info,
+    );
+  }
+
+  CloseTournamentUserAction close() {
+    return const CloseTournamentUserAction();
+  }
+
+  LoadTournamentUserAction load({@required TournamentInfo info}) {
+    return LoadTournamentUserAction(
       info: info,
     );
   }
 }
 
 // ignore: unused_element
-const $OpenTournament = _$OpenTournamentTearOff();
+const $UserActionTournament = _$UserActionTournamentTearOff();
 
-mixin _$OpenTournament {
-  TournamentInfo get info;
-
-  $OpenTournamentCopyWith<OpenTournament> get copyWith;
+mixin _$UserActionTournament {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(TournamentInfo info),
+    @required Result close(),
+    @required Result load(TournamentInfo info),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(TournamentInfo info),
+    Result close(),
+    Result load(TournamentInfo info),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenTournamentUserAction value),
+    @required Result close(CloseTournamentUserAction value),
+    @required Result load(LoadTournamentUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenTournamentUserAction value),
+    Result close(CloseTournamentUserAction value),
+    Result load(LoadTournamentUserAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $OpenTournamentCopyWith<$Res> {
-  factory $OpenTournamentCopyWith(
-          OpenTournament value, $Res Function(OpenTournament) then) =
-      _$OpenTournamentCopyWithImpl<$Res>;
+abstract class $UserActionTournamentCopyWith<$Res> {
+  factory $UserActionTournamentCopyWith(UserActionTournament value,
+          $Res Function(UserActionTournament) then) =
+      _$UserActionTournamentCopyWithImpl<$Res>;
+}
+
+class _$UserActionTournamentCopyWithImpl<$Res>
+    implements $UserActionTournamentCopyWith<$Res> {
+  _$UserActionTournamentCopyWithImpl(this._value, this._then);
+
+  final UserActionTournament _value;
+  // ignore: unused_field
+  final $Res Function(UserActionTournament) _then;
+}
+
+abstract class $OpenTournamentUserActionCopyWith<$Res> {
+  factory $OpenTournamentUserActionCopyWith(OpenTournamentUserAction value,
+          $Res Function(OpenTournamentUserAction) then) =
+      _$OpenTournamentUserActionCopyWithImpl<$Res>;
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
 }
 
-class _$OpenTournamentCopyWithImpl<$Res>
-    implements $OpenTournamentCopyWith<$Res> {
-  _$OpenTournamentCopyWithImpl(this._value, this._then);
+class _$OpenTournamentUserActionCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res>
+    implements $OpenTournamentUserActionCopyWith<$Res> {
+  _$OpenTournamentUserActionCopyWithImpl(OpenTournamentUserAction _value,
+      $Res Function(OpenTournamentUserAction) _then)
+      : super(_value, (v) => _then(v as OpenTournamentUserAction));
 
-  final OpenTournament _value;
-  // ignore: unused_field
-  final $Res Function(OpenTournament) _then;
+  @override
+  OpenTournamentUserAction get _value =>
+      super._value as OpenTournamentUserAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(OpenTournamentUserAction(
       info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
@@ -65,63 +116,32 @@ class _$OpenTournamentCopyWithImpl<$Res>
   }
 }
 
-abstract class _$OpenTournamentCopyWith<$Res>
-    implements $OpenTournamentCopyWith<$Res> {
-  factory _$OpenTournamentCopyWith(
-          _OpenTournament value, $Res Function(_OpenTournament) then) =
-      __$OpenTournamentCopyWithImpl<$Res>;
-  @override
-  $Res call({TournamentInfo info});
-
-  @override
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class __$OpenTournamentCopyWithImpl<$Res>
-    extends _$OpenTournamentCopyWithImpl<$Res>
-    implements _$OpenTournamentCopyWith<$Res> {
-  __$OpenTournamentCopyWithImpl(
-      _OpenTournament _value, $Res Function(_OpenTournament) _then)
-      : super(_value, (v) => _then(v as _OpenTournament));
-
-  @override
-  _OpenTournament get _value => super._value as _OpenTournament;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_OpenTournament(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-    ));
-  }
-}
-
-class _$_OpenTournament
+class _$OpenTournamentUserAction
     with DiagnosticableTreeMixin
-    implements _OpenTournament {
-  const _$_OpenTournament({@required this.info}) : assert(info != null);
+    implements OpenTournamentUserAction {
+  const _$OpenTournamentUserAction({@required this.info})
+      : assert(info != null);
 
   @override
   final TournamentInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenTournament(info: $info)';
+    return 'UserActionTournament.open(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OpenTournament'))
+      ..add(DiagnosticsProperty('type', 'UserActionTournament.open'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OpenTournament &&
+        (other is OpenTournamentUserAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -131,482 +151,1046 @@ class _$_OpenTournament
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  _$OpenTournamentCopyWith<_OpenTournament> get copyWith =>
-      __$OpenTournamentCopyWithImpl<_OpenTournament>(this, _$identity);
-}
-
-abstract class _OpenTournament implements OpenTournament {
-  const factory _OpenTournament({@required TournamentInfo info}) =
-      _$_OpenTournament;
-
-  @override
-  TournamentInfo get info;
-  @override
-  _$OpenTournamentCopyWith<_OpenTournament> get copyWith;
-}
-
-class _$ClearTournamentTearOff {
-  const _$ClearTournamentTearOff();
-
-  _ClearTournament call() {
-    return const _ClearTournament();
-  }
-}
-
-// ignore: unused_element
-const $ClearTournament = _$ClearTournamentTearOff();
-
-mixin _$ClearTournament {}
-
-abstract class $ClearTournamentCopyWith<$Res> {
-  factory $ClearTournamentCopyWith(
-          ClearTournament value, $Res Function(ClearTournament) then) =
-      _$ClearTournamentCopyWithImpl<$Res>;
-}
-
-class _$ClearTournamentCopyWithImpl<$Res>
-    implements $ClearTournamentCopyWith<$Res> {
-  _$ClearTournamentCopyWithImpl(this._value, this._then);
-
-  final ClearTournament _value;
-  // ignore: unused_field
-  final $Res Function(ClearTournament) _then;
-}
-
-abstract class _$ClearTournamentCopyWith<$Res> {
-  factory _$ClearTournamentCopyWith(
-          _ClearTournament value, $Res Function(_ClearTournament) then) =
-      __$ClearTournamentCopyWithImpl<$Res>;
-}
-
-class __$ClearTournamentCopyWithImpl<$Res>
-    extends _$ClearTournamentCopyWithImpl<$Res>
-    implements _$ClearTournamentCopyWith<$Res> {
-  __$ClearTournamentCopyWithImpl(
-      _ClearTournament _value, $Res Function(_ClearTournament) _then)
-      : super(_value, (v) => _then(v as _ClearTournament));
-
-  @override
-  _ClearTournament get _value => super._value as _ClearTournament;
-}
-
-class _$_ClearTournament
-    with DiagnosticableTreeMixin
-    implements _ClearTournament {
-  const _$_ClearTournament();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ClearTournament()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ClearTournament'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ClearTournament);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _ClearTournament implements ClearTournament {
-  const factory _ClearTournament() = _$_ClearTournament;
-}
-
-class _$LoadTournamentTearOff {
-  const _$LoadTournamentTearOff();
-
-  _LoadTournament call({@required TournamentInfo info}) {
-    return _LoadTournament(
-      info: info,
-    );
-  }
-}
-
-// ignore: unused_element
-const $LoadTournament = _$LoadTournamentTearOff();
-
-mixin _$LoadTournament {
-  TournamentInfo get info;
-
-  $LoadTournamentCopyWith<LoadTournament> get copyWith;
-}
-
-abstract class $LoadTournamentCopyWith<$Res> {
-  factory $LoadTournamentCopyWith(
-          LoadTournament value, $Res Function(LoadTournament) then) =
-      _$LoadTournamentCopyWithImpl<$Res>;
-  $Res call({TournamentInfo info});
-
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class _$LoadTournamentCopyWithImpl<$Res>
-    implements $LoadTournamentCopyWith<$Res> {
-  _$LoadTournamentCopyWithImpl(this._value, this._then);
-
-  final LoadTournament _value;
-  // ignore: unused_field
-  final $Res Function(LoadTournament) _then;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_value.copyWith(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-    ));
-  }
-
-  @override
-  $TournamentInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
-    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
-    });
-  }
-}
-
-abstract class _$LoadTournamentCopyWith<$Res>
-    implements $LoadTournamentCopyWith<$Res> {
-  factory _$LoadTournamentCopyWith(
-          _LoadTournament value, $Res Function(_LoadTournament) then) =
-      __$LoadTournamentCopyWithImpl<$Res>;
-  @override
-  $Res call({TournamentInfo info});
-
-  @override
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class __$LoadTournamentCopyWithImpl<$Res>
-    extends _$LoadTournamentCopyWithImpl<$Res>
-    implements _$LoadTournamentCopyWith<$Res> {
-  __$LoadTournamentCopyWithImpl(
-      _LoadTournament _value, $Res Function(_LoadTournament) _then)
-      : super(_value, (v) => _then(v as _LoadTournament));
-
-  @override
-  _LoadTournament get _value => super._value as _LoadTournament;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_LoadTournament(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-    ));
-  }
-}
-
-class _$_LoadTournament
-    with DiagnosticableTreeMixin
-    implements _LoadTournament {
-  const _$_LoadTournament({@required this.info}) : assert(info != null);
-
-  @override
-  final TournamentInfo info;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoadTournament(info: $info)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'LoadTournament'))
-      ..add(DiagnosticsProperty('info', info));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadTournament &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
-
-  @override
-  _$LoadTournamentCopyWith<_LoadTournament> get copyWith =>
-      __$LoadTournamentCopyWithImpl<_LoadTournament>(this, _$identity);
-}
-
-abstract class _LoadTournament implements LoadTournament {
-  const factory _LoadTournament({@required TournamentInfo info}) =
-      _$_LoadTournament;
-
-  @override
-  TournamentInfo get info;
-  @override
-  _$LoadTournamentCopyWith<_LoadTournament> get copyWith;
-}
-
-class _$ReloadTournamentTearOff {
-  const _$ReloadTournamentTearOff();
-
-  _ReloadTournament call() {
-    return const _ReloadTournament();
-  }
-}
-
-// ignore: unused_element
-const $ReloadTournament = _$ReloadTournamentTearOff();
-
-mixin _$ReloadTournament {}
-
-abstract class $ReloadTournamentCopyWith<$Res> {
-  factory $ReloadTournamentCopyWith(
-          ReloadTournament value, $Res Function(ReloadTournament) then) =
-      _$ReloadTournamentCopyWithImpl<$Res>;
-}
-
-class _$ReloadTournamentCopyWithImpl<$Res>
-    implements $ReloadTournamentCopyWith<$Res> {
-  _$ReloadTournamentCopyWithImpl(this._value, this._then);
-
-  final ReloadTournament _value;
-  // ignore: unused_field
-  final $Res Function(ReloadTournament) _then;
-}
-
-abstract class _$ReloadTournamentCopyWith<$Res> {
-  factory _$ReloadTournamentCopyWith(
-          _ReloadTournament value, $Res Function(_ReloadTournament) then) =
-      __$ReloadTournamentCopyWithImpl<$Res>;
-}
-
-class __$ReloadTournamentCopyWithImpl<$Res>
-    extends _$ReloadTournamentCopyWithImpl<$Res>
-    implements _$ReloadTournamentCopyWith<$Res> {
-  __$ReloadTournamentCopyWithImpl(
-      _ReloadTournament _value, $Res Function(_ReloadTournament) _then)
-      : super(_value, (v) => _then(v as _ReloadTournament));
-
-  @override
-  _ReloadTournament get _value => super._value as _ReloadTournament;
-}
-
-class _$_ReloadTournament
-    with DiagnosticableTreeMixin
-    implements _ReloadTournament {
-  const _$_ReloadTournament();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ReloadTournament()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ReloadTournament'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ReloadTournament);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _ReloadTournament implements ReloadTournament {
-  const factory _ReloadTournament() = _$_ReloadTournament;
-}
-
-class _$TournamentIsLoadingTearOff {
-  const _$TournamentIsLoadingTearOff();
-
-  _TournamentIsLoading call({@required TournamentInfo info}) {
-    return _TournamentIsLoading(
-      info: info,
-    );
-  }
-}
-
-// ignore: unused_element
-const $TournamentIsLoading = _$TournamentIsLoadingTearOff();
-
-mixin _$TournamentIsLoading {
-  TournamentInfo get info;
-
-  $TournamentIsLoadingCopyWith<TournamentIsLoading> get copyWith;
-}
-
-abstract class $TournamentIsLoadingCopyWith<$Res> {
-  factory $TournamentIsLoadingCopyWith(
-          TournamentIsLoading value, $Res Function(TournamentIsLoading) then) =
-      _$TournamentIsLoadingCopyWithImpl<$Res>;
-  $Res call({TournamentInfo info});
-
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class _$TournamentIsLoadingCopyWithImpl<$Res>
-    implements $TournamentIsLoadingCopyWith<$Res> {
-  _$TournamentIsLoadingCopyWithImpl(this._value, this._then);
-
-  final TournamentIsLoading _value;
-  // ignore: unused_field
-  final $Res Function(TournamentIsLoading) _then;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_value.copyWith(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-    ));
-  }
-
-  @override
-  $TournamentInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
-    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
-    });
-  }
-}
-
-abstract class _$TournamentIsLoadingCopyWith<$Res>
-    implements $TournamentIsLoadingCopyWith<$Res> {
-  factory _$TournamentIsLoadingCopyWith(_TournamentIsLoading value,
-          $Res Function(_TournamentIsLoading) then) =
-      __$TournamentIsLoadingCopyWithImpl<$Res>;
-  @override
-  $Res call({TournamentInfo info});
-
-  @override
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class __$TournamentIsLoadingCopyWithImpl<$Res>
-    extends _$TournamentIsLoadingCopyWithImpl<$Res>
-    implements _$TournamentIsLoadingCopyWith<$Res> {
-  __$TournamentIsLoadingCopyWithImpl(
-      _TournamentIsLoading _value, $Res Function(_TournamentIsLoading) _then)
-      : super(_value, (v) => _then(v as _TournamentIsLoading));
-
-  @override
-  _TournamentIsLoading get _value => super._value as _TournamentIsLoading;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_TournamentIsLoading(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-    ));
-  }
-}
-
-class _$_TournamentIsLoading
-    with DiagnosticableTreeMixin
-    implements _TournamentIsLoading {
-  const _$_TournamentIsLoading({@required this.info}) : assert(info != null);
-
-  @override
-  final TournamentInfo info;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentIsLoading(info: $info)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TournamentIsLoading'))
-      ..add(DiagnosticsProperty('info', info));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _TournamentIsLoading &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
-
-  @override
-  _$TournamentIsLoadingCopyWith<_TournamentIsLoading> get copyWith =>
-      __$TournamentIsLoadingCopyWithImpl<_TournamentIsLoading>(
+  $OpenTournamentUserActionCopyWith<OpenTournamentUserAction> get copyWith =>
+      _$OpenTournamentUserActionCopyWithImpl<OpenTournamentUserAction>(
           this, _$identity);
-}
-
-abstract class _TournamentIsLoading implements TournamentIsLoading {
-  const factory _TournamentIsLoading({@required TournamentInfo info}) =
-      _$_TournamentIsLoading;
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(TournamentInfo info),
+    @required Result close(),
+    @required Result load(TournamentInfo info),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    return open(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(TournamentInfo info),
+    Result close(),
+    Result load(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (open != null) {
+      return open(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenTournamentUserAction value),
+    @required Result close(CloseTournamentUserAction value),
+    @required Result load(LoadTournamentUserAction value),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    return open(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenTournamentUserAction value),
+    Result close(CloseTournamentUserAction value),
+    Result load(LoadTournamentUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (open != null) {
+      return open(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OpenTournamentUserAction implements UserActionTournament {
+  const factory OpenTournamentUserAction({@required TournamentInfo info}) =
+      _$OpenTournamentUserAction;
+
   TournamentInfo get info;
-  @override
-  _$TournamentIsLoadingCopyWith<_TournamentIsLoading> get copyWith;
+  $OpenTournamentUserActionCopyWith<OpenTournamentUserAction> get copyWith;
 }
 
-class _$TournamentLoadedTearOff {
-  const _$TournamentLoadedTearOff();
+abstract class $CloseTournamentUserActionCopyWith<$Res> {
+  factory $CloseTournamentUserActionCopyWith(CloseTournamentUserAction value,
+          $Res Function(CloseTournamentUserAction) then) =
+      _$CloseTournamentUserActionCopyWithImpl<$Res>;
+}
 
-  _TournamentLoaded call({@required Tournament tournament}) {
-    return _TournamentLoaded(
+class _$CloseTournamentUserActionCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res>
+    implements $CloseTournamentUserActionCopyWith<$Res> {
+  _$CloseTournamentUserActionCopyWithImpl(CloseTournamentUserAction _value,
+      $Res Function(CloseTournamentUserAction) _then)
+      : super(_value, (v) => _then(v as CloseTournamentUserAction));
+
+  @override
+  CloseTournamentUserAction get _value =>
+      super._value as CloseTournamentUserAction;
+}
+
+class _$CloseTournamentUserAction
+    with DiagnosticableTreeMixin
+    implements CloseTournamentUserAction {
+  const _$CloseTournamentUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionTournament.close()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionTournament.close'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is CloseTournamentUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(TournamentInfo info),
+    @required Result close(),
+    @required Result load(TournamentInfo info),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    return close();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(TournamentInfo info),
+    Result close(),
+    Result load(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (close != null) {
+      return close();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenTournamentUserAction value),
+    @required Result close(CloseTournamentUserAction value),
+    @required Result load(LoadTournamentUserAction value),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    return close(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenTournamentUserAction value),
+    Result close(CloseTournamentUserAction value),
+    Result load(LoadTournamentUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (close != null) {
+      return close(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloseTournamentUserAction implements UserActionTournament {
+  const factory CloseTournamentUserAction() = _$CloseTournamentUserAction;
+}
+
+abstract class $LoadTournamentUserActionCopyWith<$Res> {
+  factory $LoadTournamentUserActionCopyWith(LoadTournamentUserAction value,
+          $Res Function(LoadTournamentUserAction) then) =
+      _$LoadTournamentUserActionCopyWithImpl<$Res>;
+  $Res call({TournamentInfo info});
+
+  $TournamentInfoCopyWith<$Res> get info;
+}
+
+class _$LoadTournamentUserActionCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res>
+    implements $LoadTournamentUserActionCopyWith<$Res> {
+  _$LoadTournamentUserActionCopyWithImpl(LoadTournamentUserAction _value,
+      $Res Function(LoadTournamentUserAction) _then)
+      : super(_value, (v) => _then(v as LoadTournamentUserAction));
+
+  @override
+  LoadTournamentUserAction get _value =>
+      super._value as LoadTournamentUserAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(LoadTournamentUserAction(
+      info: info == freezed ? _value.info : info as TournamentInfo,
+    ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$LoadTournamentUserAction
+    with DiagnosticableTreeMixin
+    implements LoadTournamentUserAction {
+  const _$LoadTournamentUserAction({@required this.info})
+      : assert(info != null);
+
+  @override
+  final TournamentInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionTournament.load(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserActionTournament.load'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LoadTournamentUserAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $LoadTournamentUserActionCopyWith<LoadTournamentUserAction> get copyWith =>
+      _$LoadTournamentUserActionCopyWithImpl<LoadTournamentUserAction>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(TournamentInfo info),
+    @required Result close(),
+    @required Result load(TournamentInfo info),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    return load(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(TournamentInfo info),
+    Result close(),
+    Result load(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (load != null) {
+      return load(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenTournamentUserAction value),
+    @required Result close(CloseTournamentUserAction value),
+    @required Result load(LoadTournamentUserAction value),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    return load(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenTournamentUserAction value),
+    Result close(CloseTournamentUserAction value),
+    Result load(LoadTournamentUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (load != null) {
+      return load(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadTournamentUserAction implements UserActionTournament {
+  const factory LoadTournamentUserAction({@required TournamentInfo info}) =
+      _$LoadTournamentUserAction;
+
+  TournamentInfo get info;
+  $LoadTournamentUserActionCopyWith<LoadTournamentUserAction> get copyWith;
+}
+
+class _$SystemActionTournamentTearOff {
+  const _$SystemActionTournamentTearOff();
+
+  InitTournamentSystemAction init({@required TournamentInfo info}) {
+    return InitTournamentSystemAction(
+      info: info,
+    );
+  }
+
+  DeInitTournamentSystemAction deInit() {
+    return const DeInitTournamentSystemAction();
+  }
+
+  LoadingTournamentSystemAction loading({@required TournamentInfo info}) {
+    return LoadingTournamentSystemAction(
+      info: info,
+    );
+  }
+
+  FailedTournamentSystemAction failed(
+      {@required TournamentInfo info, @required Exception exception}) {
+    return FailedTournamentSystemAction(
+      info: info,
+      exception: exception,
+    );
+  }
+
+  CompletedTournamentSystemAction completed({@required Tournament tournament}) {
+    return CompletedTournamentSystemAction(
       tournament: tournament,
     );
   }
 }
 
 // ignore: unused_element
-const $TournamentLoaded = _$TournamentLoadedTearOff();
+const $SystemActionTournament = _$SystemActionTournamentTearOff();
 
-mixin _$TournamentLoaded {
-  Tournament get tournament;
-
-  $TournamentLoadedCopyWith<TournamentLoaded> get copyWith;
+mixin _$SystemActionTournament {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(TournamentInfo info),
+    @required Result deInit(),
+    @required Result loading(TournamentInfo info),
+    @required Result failed(TournamentInfo info, Exception exception),
+    @required Result completed(Tournament tournament),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(TournamentInfo info),
+    Result deInit(),
+    Result loading(TournamentInfo info),
+    Result failed(TournamentInfo info, Exception exception),
+    Result completed(Tournament tournament),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentSystemAction value),
+    @required Result deInit(DeInitTournamentSystemAction value),
+    @required Result loading(LoadingTournamentSystemAction value),
+    @required Result failed(FailedTournamentSystemAction value),
+    @required Result completed(CompletedTournamentSystemAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentSystemAction value),
+    Result deInit(DeInitTournamentSystemAction value),
+    Result loading(LoadingTournamentSystemAction value),
+    Result failed(FailedTournamentSystemAction value),
+    Result completed(CompletedTournamentSystemAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $TournamentLoadedCopyWith<$Res> {
-  factory $TournamentLoadedCopyWith(
-          TournamentLoaded value, $Res Function(TournamentLoaded) then) =
-      _$TournamentLoadedCopyWithImpl<$Res>;
+abstract class $SystemActionTournamentCopyWith<$Res> {
+  factory $SystemActionTournamentCopyWith(SystemActionTournament value,
+          $Res Function(SystemActionTournament) then) =
+      _$SystemActionTournamentCopyWithImpl<$Res>;
+}
+
+class _$SystemActionTournamentCopyWithImpl<$Res>
+    implements $SystemActionTournamentCopyWith<$Res> {
+  _$SystemActionTournamentCopyWithImpl(this._value, this._then);
+
+  final SystemActionTournament _value;
+  // ignore: unused_field
+  final $Res Function(SystemActionTournament) _then;
+}
+
+abstract class $InitTournamentSystemActionCopyWith<$Res> {
+  factory $InitTournamentSystemActionCopyWith(InitTournamentSystemAction value,
+          $Res Function(InitTournamentSystemAction) then) =
+      _$InitTournamentSystemActionCopyWithImpl<$Res>;
+  $Res call({TournamentInfo info});
+
+  $TournamentInfoCopyWith<$Res> get info;
+}
+
+class _$InitTournamentSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    implements $InitTournamentSystemActionCopyWith<$Res> {
+  _$InitTournamentSystemActionCopyWithImpl(InitTournamentSystemAction _value,
+      $Res Function(InitTournamentSystemAction) _then)
+      : super(_value, (v) => _then(v as InitTournamentSystemAction));
+
+  @override
+  InitTournamentSystemAction get _value =>
+      super._value as InitTournamentSystemAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(InitTournamentSystemAction(
+      info: info == freezed ? _value.info : info as TournamentInfo,
+    ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$InitTournamentSystemAction
+    with DiagnosticableTreeMixin
+    implements InitTournamentSystemAction {
+  const _$InitTournamentSystemAction({@required this.info})
+      : assert(info != null);
+
+  @override
+  final TournamentInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTournament.init(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTournament.init'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InitTournamentSystemAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $InitTournamentSystemActionCopyWith<InitTournamentSystemAction>
+      get copyWith =>
+          _$InitTournamentSystemActionCopyWithImpl<InitTournamentSystemAction>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(TournamentInfo info),
+    @required Result deInit(),
+    @required Result loading(TournamentInfo info),
+    @required Result failed(TournamentInfo info, Exception exception),
+    @required Result completed(Tournament tournament),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return init(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(TournamentInfo info),
+    Result deInit(),
+    Result loading(TournamentInfo info),
+    Result failed(TournamentInfo info, Exception exception),
+    Result completed(Tournament tournament),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentSystemAction value),
+    @required Result deInit(DeInitTournamentSystemAction value),
+    @required Result loading(LoadingTournamentSystemAction value),
+    @required Result failed(FailedTournamentSystemAction value),
+    @required Result completed(CompletedTournamentSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentSystemAction value),
+    Result deInit(DeInitTournamentSystemAction value),
+    Result loading(LoadingTournamentSystemAction value),
+    Result failed(FailedTournamentSystemAction value),
+    Result completed(CompletedTournamentSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitTournamentSystemAction implements SystemActionTournament {
+  const factory InitTournamentSystemAction({@required TournamentInfo info}) =
+      _$InitTournamentSystemAction;
+
+  TournamentInfo get info;
+  $InitTournamentSystemActionCopyWith<InitTournamentSystemAction> get copyWith;
+}
+
+abstract class $DeInitTournamentSystemActionCopyWith<$Res> {
+  factory $DeInitTournamentSystemActionCopyWith(
+          DeInitTournamentSystemAction value,
+          $Res Function(DeInitTournamentSystemAction) then) =
+      _$DeInitTournamentSystemActionCopyWithImpl<$Res>;
+}
+
+class _$DeInitTournamentSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    implements $DeInitTournamentSystemActionCopyWith<$Res> {
+  _$DeInitTournamentSystemActionCopyWithImpl(
+      DeInitTournamentSystemAction _value,
+      $Res Function(DeInitTournamentSystemAction) _then)
+      : super(_value, (v) => _then(v as DeInitTournamentSystemAction));
+
+  @override
+  DeInitTournamentSystemAction get _value =>
+      super._value as DeInitTournamentSystemAction;
+}
+
+class _$DeInitTournamentSystemAction
+    with DiagnosticableTreeMixin
+    implements DeInitTournamentSystemAction {
+  const _$DeInitTournamentSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTournament.deInit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTournament.deInit'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is DeInitTournamentSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(TournamentInfo info),
+    @required Result deInit(),
+    @required Result loading(TournamentInfo info),
+    @required Result failed(TournamentInfo info, Exception exception),
+    @required Result completed(Tournament tournament),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(TournamentInfo info),
+    Result deInit(),
+    Result loading(TournamentInfo info),
+    Result failed(TournamentInfo info, Exception exception),
+    Result completed(Tournament tournament),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentSystemAction value),
+    @required Result deInit(DeInitTournamentSystemAction value),
+    @required Result loading(LoadingTournamentSystemAction value),
+    @required Result failed(FailedTournamentSystemAction value),
+    @required Result completed(CompletedTournamentSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentSystemAction value),
+    Result deInit(DeInitTournamentSystemAction value),
+    Result loading(LoadingTournamentSystemAction value),
+    Result failed(FailedTournamentSystemAction value),
+    Result completed(CompletedTournamentSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeInitTournamentSystemAction implements SystemActionTournament {
+  const factory DeInitTournamentSystemAction() = _$DeInitTournamentSystemAction;
+}
+
+abstract class $LoadingTournamentSystemActionCopyWith<$Res> {
+  factory $LoadingTournamentSystemActionCopyWith(
+          LoadingTournamentSystemAction value,
+          $Res Function(LoadingTournamentSystemAction) then) =
+      _$LoadingTournamentSystemActionCopyWithImpl<$Res>;
+  $Res call({TournamentInfo info});
+
+  $TournamentInfoCopyWith<$Res> get info;
+}
+
+class _$LoadingTournamentSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    implements $LoadingTournamentSystemActionCopyWith<$Res> {
+  _$LoadingTournamentSystemActionCopyWithImpl(
+      LoadingTournamentSystemAction _value,
+      $Res Function(LoadingTournamentSystemAction) _then)
+      : super(_value, (v) => _then(v as LoadingTournamentSystemAction));
+
+  @override
+  LoadingTournamentSystemAction get _value =>
+      super._value as LoadingTournamentSystemAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(LoadingTournamentSystemAction(
+      info: info == freezed ? _value.info : info as TournamentInfo,
+    ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$LoadingTournamentSystemAction
+    with DiagnosticableTreeMixin
+    implements LoadingTournamentSystemAction {
+  const _$LoadingTournamentSystemAction({@required this.info})
+      : assert(info != null);
+
+  @override
+  final TournamentInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTournament.loading(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTournament.loading'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LoadingTournamentSystemAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $LoadingTournamentSystemActionCopyWith<LoadingTournamentSystemAction>
+      get copyWith => _$LoadingTournamentSystemActionCopyWithImpl<
+          LoadingTournamentSystemAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(TournamentInfo info),
+    @required Result deInit(),
+    @required Result loading(TournamentInfo info),
+    @required Result failed(TournamentInfo info, Exception exception),
+    @required Result completed(Tournament tournament),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return loading(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(TournamentInfo info),
+    Result deInit(),
+    Result loading(TournamentInfo info),
+    Result failed(TournamentInfo info, Exception exception),
+    Result completed(Tournament tournament),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentSystemAction value),
+    @required Result deInit(DeInitTournamentSystemAction value),
+    @required Result loading(LoadingTournamentSystemAction value),
+    @required Result failed(FailedTournamentSystemAction value),
+    @required Result completed(CompletedTournamentSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentSystemAction value),
+    Result deInit(DeInitTournamentSystemAction value),
+    Result loading(LoadingTournamentSystemAction value),
+    Result failed(FailedTournamentSystemAction value),
+    Result completed(CompletedTournamentSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingTournamentSystemAction implements SystemActionTournament {
+  const factory LoadingTournamentSystemAction({@required TournamentInfo info}) =
+      _$LoadingTournamentSystemAction;
+
+  TournamentInfo get info;
+  $LoadingTournamentSystemActionCopyWith<LoadingTournamentSystemAction>
+      get copyWith;
+}
+
+abstract class $FailedTournamentSystemActionCopyWith<$Res> {
+  factory $FailedTournamentSystemActionCopyWith(
+          FailedTournamentSystemAction value,
+          $Res Function(FailedTournamentSystemAction) then) =
+      _$FailedTournamentSystemActionCopyWithImpl<$Res>;
+  $Res call({TournamentInfo info, Exception exception});
+
+  $TournamentInfoCopyWith<$Res> get info;
+}
+
+class _$FailedTournamentSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    implements $FailedTournamentSystemActionCopyWith<$Res> {
+  _$FailedTournamentSystemActionCopyWithImpl(
+      FailedTournamentSystemAction _value,
+      $Res Function(FailedTournamentSystemAction) _then)
+      : super(_value, (v) => _then(v as FailedTournamentSystemAction));
+
+  @override
+  FailedTournamentSystemAction get _value =>
+      super._value as FailedTournamentSystemAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+    Object exception = freezed,
+  }) {
+    return _then(FailedTournamentSystemAction(
+      info: info == freezed ? _value.info : info as TournamentInfo,
+      exception:
+          exception == freezed ? _value.exception : exception as Exception,
+    ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$FailedTournamentSystemAction
+    with DiagnosticableTreeMixin
+    implements FailedTournamentSystemAction {
+  const _$FailedTournamentSystemAction(
+      {@required this.info, @required this.exception})
+      : assert(info != null),
+        assert(exception != null);
+
+  @override
+  final TournamentInfo info;
+  @override
+  final Exception exception;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTournament.failed(info: $info, exception: $exception)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTournament.failed'))
+      ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('exception', exception));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is FailedTournamentSystemAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)) &&
+            (identical(other.exception, exception) ||
+                const DeepCollectionEquality()
+                    .equals(other.exception, exception)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(info) ^
+      const DeepCollectionEquality().hash(exception);
+
+  @override
+  $FailedTournamentSystemActionCopyWith<FailedTournamentSystemAction>
+      get copyWith => _$FailedTournamentSystemActionCopyWithImpl<
+          FailedTournamentSystemAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(TournamentInfo info),
+    @required Result deInit(),
+    @required Result loading(TournamentInfo info),
+    @required Result failed(TournamentInfo info, Exception exception),
+    @required Result completed(Tournament tournament),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return failed(info, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(TournamentInfo info),
+    Result deInit(),
+    Result loading(TournamentInfo info),
+    Result failed(TournamentInfo info, Exception exception),
+    Result completed(Tournament tournament),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(info, exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentSystemAction value),
+    @required Result deInit(DeInitTournamentSystemAction value),
+    @required Result loading(LoadingTournamentSystemAction value),
+    @required Result failed(FailedTournamentSystemAction value),
+    @required Result completed(CompletedTournamentSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return failed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentSystemAction value),
+    Result deInit(DeInitTournamentSystemAction value),
+    Result loading(LoadingTournamentSystemAction value),
+    Result failed(FailedTournamentSystemAction value),
+    Result completed(CompletedTournamentSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FailedTournamentSystemAction implements SystemActionTournament {
+  const factory FailedTournamentSystemAction(
+      {@required TournamentInfo info,
+      @required Exception exception}) = _$FailedTournamentSystemAction;
+
+  TournamentInfo get info;
+  Exception get exception;
+  $FailedTournamentSystemActionCopyWith<FailedTournamentSystemAction>
+      get copyWith;
+}
+
+abstract class $CompletedTournamentSystemActionCopyWith<$Res> {
+  factory $CompletedTournamentSystemActionCopyWith(
+          CompletedTournamentSystemAction value,
+          $Res Function(CompletedTournamentSystemAction) then) =
+      _$CompletedTournamentSystemActionCopyWithImpl<$Res>;
   $Res call({Tournament tournament});
 
   $TournamentCopyWith<$Res> get tournament;
 }
 
-class _$TournamentLoadedCopyWithImpl<$Res>
-    implements $TournamentLoadedCopyWith<$Res> {
-  _$TournamentLoadedCopyWithImpl(this._value, this._then);
+class _$CompletedTournamentSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    implements $CompletedTournamentSystemActionCopyWith<$Res> {
+  _$CompletedTournamentSystemActionCopyWithImpl(
+      CompletedTournamentSystemAction _value,
+      $Res Function(CompletedTournamentSystemAction) _then)
+      : super(_value, (v) => _then(v as CompletedTournamentSystemAction));
 
-  final TournamentLoaded _value;
-  // ignore: unused_field
-  final $Res Function(TournamentLoaded) _then;
+  @override
+  CompletedTournamentSystemAction get _value =>
+      super._value as CompletedTournamentSystemAction;
 
   @override
   $Res call({
     Object tournament = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(CompletedTournamentSystemAction(
       tournament:
           tournament == freezed ? _value.tournament : tournament as Tournament,
     ));
@@ -623,43 +1207,10 @@ class _$TournamentLoadedCopyWithImpl<$Res>
   }
 }
 
-abstract class _$TournamentLoadedCopyWith<$Res>
-    implements $TournamentLoadedCopyWith<$Res> {
-  factory _$TournamentLoadedCopyWith(
-          _TournamentLoaded value, $Res Function(_TournamentLoaded) then) =
-      __$TournamentLoadedCopyWithImpl<$Res>;
-  @override
-  $Res call({Tournament tournament});
-
-  @override
-  $TournamentCopyWith<$Res> get tournament;
-}
-
-class __$TournamentLoadedCopyWithImpl<$Res>
-    extends _$TournamentLoadedCopyWithImpl<$Res>
-    implements _$TournamentLoadedCopyWith<$Res> {
-  __$TournamentLoadedCopyWithImpl(
-      _TournamentLoaded _value, $Res Function(_TournamentLoaded) _then)
-      : super(_value, (v) => _then(v as _TournamentLoaded));
-
-  @override
-  _TournamentLoaded get _value => super._value as _TournamentLoaded;
-
-  @override
-  $Res call({
-    Object tournament = freezed,
-  }) {
-    return _then(_TournamentLoaded(
-      tournament:
-          tournament == freezed ? _value.tournament : tournament as Tournament,
-    ));
-  }
-}
-
-class _$_TournamentLoaded
+class _$CompletedTournamentSystemAction
     with DiagnosticableTreeMixin
-    implements _TournamentLoaded {
-  const _$_TournamentLoaded({@required this.tournament})
+    implements CompletedTournamentSystemAction {
+  const _$CompletedTournamentSystemAction({@required this.tournament})
       : assert(tournament != null);
 
   @override
@@ -667,21 +1218,21 @@ class _$_TournamentLoaded
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentLoaded(tournament: $tournament)';
+    return 'SystemActionTournament.completed(tournament: $tournament)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'TournamentLoaded'))
+      ..add(DiagnosticsProperty('type', 'SystemActionTournament.completed'))
       ..add(DiagnosticsProperty('tournament', tournament));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TournamentLoaded &&
+        (other is CompletedTournamentSystemAction &&
             (identical(other.tournament, tournament) ||
                 const DeepCollectionEquality()
                     .equals(other.tournament, tournament)));
@@ -692,177 +1243,85 @@ class _$_TournamentLoaded
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournament);
 
   @override
-  _$TournamentLoadedCopyWith<_TournamentLoaded> get copyWith =>
-      __$TournamentLoadedCopyWithImpl<_TournamentLoaded>(this, _$identity);
-}
-
-abstract class _TournamentLoaded implements TournamentLoaded {
-  const factory _TournamentLoaded({@required Tournament tournament}) =
-      _$_TournamentLoaded;
+  $CompletedTournamentSystemActionCopyWith<CompletedTournamentSystemAction>
+      get copyWith => _$CompletedTournamentSystemActionCopyWithImpl<
+          CompletedTournamentSystemAction>(this, _$identity);
 
   @override
-  Tournament get tournament;
-  @override
-  _$TournamentLoadedCopyWith<_TournamentLoaded> get copyWith;
-}
-
-class _$TournamentFailedLoadingTearOff {
-  const _$TournamentFailedLoadingTearOff();
-
-  _TournamentFailedLoading call(
-      {@required TournamentInfo info, @required Exception exception}) {
-    return _TournamentFailedLoading(
-      info: info,
-      exception: exception,
-    );
-  }
-}
-
-// ignore: unused_element
-const $TournamentFailedLoading = _$TournamentFailedLoadingTearOff();
-
-mixin _$TournamentFailedLoading {
-  TournamentInfo get info;
-  Exception get exception;
-
-  $TournamentFailedLoadingCopyWith<TournamentFailedLoading> get copyWith;
-}
-
-abstract class $TournamentFailedLoadingCopyWith<$Res> {
-  factory $TournamentFailedLoadingCopyWith(TournamentFailedLoading value,
-          $Res Function(TournamentFailedLoading) then) =
-      _$TournamentFailedLoadingCopyWithImpl<$Res>;
-  $Res call({TournamentInfo info, Exception exception});
-
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class _$TournamentFailedLoadingCopyWithImpl<$Res>
-    implements $TournamentFailedLoadingCopyWith<$Res> {
-  _$TournamentFailedLoadingCopyWithImpl(this._value, this._then);
-
-  final TournamentFailedLoading _value;
-  // ignore: unused_field
-  final $Res Function(TournamentFailedLoading) _then;
-
-  @override
-  $Res call({
-    Object info = freezed,
-    Object exception = freezed,
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(TournamentInfo info),
+    @required Result deInit(),
+    @required Result loading(TournamentInfo info),
+    @required Result failed(TournamentInfo info, Exception exception),
+    @required Result completed(Tournament tournament),
   }) {
-    return _then(_value.copyWith(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
-    ));
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return completed(tournament);
   }
 
   @override
-  $TournamentInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(TournamentInfo info),
+    Result deInit(),
+    Result loading(TournamentInfo info),
+    Result failed(TournamentInfo info, Exception exception),
+    Result completed(Tournament tournament),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(tournament);
     }
-    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
-    });
+    return orElse();
   }
-}
-
-abstract class _$TournamentFailedLoadingCopyWith<$Res>
-    implements $TournamentFailedLoadingCopyWith<$Res> {
-  factory _$TournamentFailedLoadingCopyWith(_TournamentFailedLoading value,
-          $Res Function(_TournamentFailedLoading) then) =
-      __$TournamentFailedLoadingCopyWithImpl<$Res>;
-  @override
-  $Res call({TournamentInfo info, Exception exception});
 
   @override
-  $TournamentInfoCopyWith<$Res> get info;
-}
-
-class __$TournamentFailedLoadingCopyWithImpl<$Res>
-    extends _$TournamentFailedLoadingCopyWithImpl<$Res>
-    implements _$TournamentFailedLoadingCopyWith<$Res> {
-  __$TournamentFailedLoadingCopyWithImpl(_TournamentFailedLoading _value,
-      $Res Function(_TournamentFailedLoading) _then)
-      : super(_value, (v) => _then(v as _TournamentFailedLoading));
-
-  @override
-  _TournamentFailedLoading get _value =>
-      super._value as _TournamentFailedLoading;
-
-  @override
-  $Res call({
-    Object info = freezed,
-    Object exception = freezed,
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentSystemAction value),
+    @required Result deInit(DeInitTournamentSystemAction value),
+    @required Result loading(LoadingTournamentSystemAction value),
+    @required Result failed(FailedTournamentSystemAction value),
+    @required Result completed(CompletedTournamentSystemAction value),
   }) {
-    return _then(_TournamentFailedLoading(
-      info: info == freezed ? _value.info : info as TournamentInfo,
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
-    ));
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return completed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentSystemAction value),
+    Result deInit(DeInitTournamentSystemAction value),
+    Result loading(LoadingTournamentSystemAction value),
+    Result failed(FailedTournamentSystemAction value),
+    Result completed(CompletedTournamentSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(this);
+    }
+    return orElse();
   }
 }
 
-class _$_TournamentFailedLoading
-    with DiagnosticableTreeMixin
-    implements _TournamentFailedLoading {
-  const _$_TournamentFailedLoading(
-      {@required this.info, @required this.exception})
-      : assert(info != null),
-        assert(exception != null);
+abstract class CompletedTournamentSystemAction
+    implements SystemActionTournament {
+  const factory CompletedTournamentSystemAction(
+      {@required Tournament tournament}) = _$CompletedTournamentSystemAction;
 
-  @override
-  final TournamentInfo info;
-  @override
-  final Exception exception;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentFailedLoading(info: $info, exception: $exception)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TournamentFailedLoading'))
-      ..add(DiagnosticsProperty('info', info))
-      ..add(DiagnosticsProperty('exception', exception));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _TournamentFailedLoading &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(exception);
-
-  @override
-  _$TournamentFailedLoadingCopyWith<_TournamentFailedLoading> get copyWith =>
-      __$TournamentFailedLoadingCopyWithImpl<_TournamentFailedLoading>(
-          this, _$identity);
-}
-
-abstract class _TournamentFailedLoading implements TournamentFailedLoading {
-  const factory _TournamentFailedLoading(
-      {@required TournamentInfo info,
-      @required Exception exception}) = _$_TournamentFailedLoading;
-
-  @override
-  TournamentInfo get info;
-  @override
-  Exception get exception;
-  @override
-  _$TournamentFailedLoadingCopyWith<_TournamentFailedLoading> get copyWith;
+  Tournament get tournament;
+  $CompletedTournamentSystemActionCopyWith<CompletedTournamentSystemAction>
+      get copyWith;
 }

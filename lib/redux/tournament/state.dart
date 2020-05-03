@@ -7,6 +7,10 @@ part 'state.freezed.dart';
 
 @freezed
 abstract class TournamentState with _$TournamentState {
+  const factory TournamentState.initial({
+    @required TournamentInfo info,
+  }) = InitialTournamentState;
+
   const factory TournamentState.data({
     @required TournamentInfo info,
     @required Tournament tournament,

@@ -22,6 +22,10 @@ class TournamentDetailsErrorPage extends StatelessWidget {
         ),
       );
 
-  void _loadTournament(BuildContext context) =>
-      StoreProvider.of<AppState>(context).dispatch(const ReloadTournament());
+  void _loadTournament(BuildContext context) {
+    final store = StoreProvider.of<AppState>(context);
+
+    store.dispatch(
+        UserActionTournament.load(info: store.state.tournamentState.info));
+  }
 }
