@@ -8,8 +8,3 @@ part 'actions.freezed.dart';
 abstract class EmailDevelopers with _$EmailDevelopers implements ReduxAction {
   const factory EmailDevelopers() = _EmailDevelopers;
 }
-
-@freezed
-abstract class BrowseDatabase with _$BrowseDatabase implements ReduxAction {
-  const factory BrowseDatabase() = _BrowseDatabase;
-}

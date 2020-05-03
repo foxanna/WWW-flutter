@@ -21,7 +21,6 @@ class MiscMiddleware {
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, EmailDevelopers>(_emailDevelopers),
-        TypedMiddleware<AppState, BrowseDatabase>(_openDatabase),
       ];
 
   void _emailDevelopers(
@@ -30,12 +29,5 @@ class MiscMiddleware {
 
     _urlLauncher.sendEmail(
         Constants.developersEmail, '${Strings.app} ${Constants.appNameLong}');
-  }
-
-  void _openDatabase(
-      Store<AppState> store, BrowseDatabase action, NextDispatcher next) {
-    next(action);
-
-    _urlLauncher.launchURL(Constants.databaseUrl);
   }
 }

@@ -21,6 +21,7 @@ class BrowseMiddleware {
         TypedMiddleware<AppState, BrowseQuestion>(_browseQuestion),
         TypedMiddleware<AppState, BrowseTour>(_browseTour),
         TypedMiddleware<AppState, BrowseTournament>(_browseTournament),
+        TypedMiddleware<AppState, BrowseDatabase>(_openDatabase),
       ];
 
   void _browseTournament(
@@ -42,5 +43,12 @@ class BrowseMiddleware {
     next(action);
 
     _browsingService.browseQuestion(action.info);
+  }
+
+  void _openDatabase(
+      Store<AppState> store, BrowseDatabase action, NextDispatcher next) {
+    next(action);
+
+    _browsingService.browseDatabase();
   }
 }

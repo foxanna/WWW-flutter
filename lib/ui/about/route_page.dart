@@ -4,6 +4,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';

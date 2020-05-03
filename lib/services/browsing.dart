@@ -1,4 +1,5 @@
 import 'package:injectable/injectable.dart';
+import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
@@ -10,6 +11,8 @@ abstract class IBrowsingService {
   void browseTour(TourInfo info);
 
   void browseQuestion(QuestionInfo info);
+
+  void browseDatabase();
 }
 
 @lazySingleton
@@ -30,4 +33,7 @@ class BrowsingService implements IBrowsingService {
 
   @override
   void browseQuestion(QuestionInfo info) => _urlLauncher.launchURL(info.url);
+
+  @override
+  void browseDatabase() => _urlLauncher.launchURL(Constants.databaseUrl);
 }

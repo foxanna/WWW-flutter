@@ -31,3 +31,8 @@ abstract class BrowseTournament
     @required TournamentInfo info,
   }) = _BrowseTournament;
 }
+
+@freezed
+abstract class BrowseDatabase with _$BrowseDatabase implements BrowseAction {
+  const factory BrowseDatabase() = _BrowseDatabase;
+}
