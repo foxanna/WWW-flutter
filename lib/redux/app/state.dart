@@ -40,7 +40,7 @@ class AppState {
           tournamentState: null,
           toursState: null,
           questionsState: QuestionsState.initial(),
-          searchState: SearchState.initial(),
+          searchState: null,
           settingsState: const SettingsState.initial(),
           randomQuestionsState: const RandomQuestionsState.initial(),
           tournamentsTreeState: null,
