@@ -36,7 +36,7 @@ class AppState {
           latestTournamentsState: null,
           tournamentState: null,
           toursState: null,
-          questionsState: QuestionsState.initial(),
+          questionsState: null,
           searchState: null,
           settingsState: const SettingsState.initial(),
           tournamentsTreeState: null,

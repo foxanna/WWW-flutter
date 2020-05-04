@@ -16,6 +16,7 @@ class QuestionsMiddleware {
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenQuestionsUserAction>(_open),
         TypedMiddleware<AppState, OpenRandomQuestionsUserAction>(_openRandom),
+        TypedMiddleware<AppState, CloseQuestionsUserAction>(_close),
       ];
 
   void _open(Store<AppState> store, OpenQuestionsUserAction action,
@@ -23,6 +24,10 @@ class QuestionsMiddleware {
     next(action);
 
     store.dispatch(const SystemActionNavigation.questions());
+    store.dispatch(SystemActionQuestions.init(
+      questions: action.questions,
+      selectedQuestionIndex: action.selectedQuestionIndex,
+    ));
   }
 
   void _openRandom(Store<AppState> store, OpenRandomQuestionsUserAction action,
@@ -30,5 +35,13 @@ class QuestionsMiddleware {
     next(action);
 
     store.dispatch(const SystemActionNavigation.questions());
+    store.dispatch(const SystemActionQuestions.initRandom());
+  }
+
+  void _close(Store<AppState> store, CloseQuestionsUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const SystemActionQuestions.deInit());
   }
 }

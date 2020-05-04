@@ -18,18 +18,31 @@ abstract class UserActionQuestions
 
   const factory UserActionQuestions.openRandom() =
       OpenRandomQuestionsUserAction;
+
+  const factory UserActionQuestions.close() = CloseQuestionsUserAction;
 }
+
+@freezed
+abstract class SystemActionQuestions
+    with _$SystemActionQuestions
+    implements QuestionsAction {
+  const factory SystemActionQuestions.init({
+    @required Iterable<Question> questions,
+    @required int selectedQuestionIndex,
+  }) = InitQuestionsSystemAction;
+
+  const factory SystemActionQuestions.initRandom() =
+      InitRandomQuestionsSystemAction;
+
+  const factory SystemActionQuestions.deInit() = DeInitQuestionsSystemAction;
+}
+
 @freezed
 abstract class SetQuestions with _$SetQuestions implements QuestionsAction {
   const factory SetQuestions({
     @required Iterable<Question> questions,
     @required int selectedQuestionIndex,
   }) = _SetQuestions;
-}
-
-@freezed
-abstract class ClearQuestions with _$ClearQuestions implements QuestionsAction {
-  const factory ClearQuestions() = _ClearQuestions;
 }
 
 @freezed
