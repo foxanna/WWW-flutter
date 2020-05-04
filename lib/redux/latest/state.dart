@@ -40,39 +40,18 @@ abstract class LatestTournamentsState with _$LatestTournamentsState {
 extension LatestTournamentsStateX on LatestTournamentsState {
   List<Tournament> get dataOrEmpty => this.dataOrNull ?? <Tournament>[];
 
-  List<Tournament> get dataOrNull {
-    if (this is DataLatestTournamentsState) {
-      return (this as DataLatestTournamentsState).data;
-    }
+  List<Tournament> get dataOrNull => this.maybeMap(
+        data: (value) => value.data,
+        refreshing: (value) => value.data,
+        errorWithData: (value) => value.data,
+        loadingWithData: (value) => value.data,
+        orElse: () => null,
+      );
 
-    if (this is RefreshingLatestTournamentsState) {
-      return (this as RefreshingLatestTournamentsState).data;
-    }
-
-    if (this is ErrorWithDataLatestTournamentsState) {
-      return (this as ErrorWithDataLatestTournamentsState).data;
-    }
-
-    if (this is LoadingWithDataLatestTournamentsState) {
-      return (this as LoadingWithDataLatestTournamentsState).data;
-    }
-
-    return null;
-  }
-
-  int get nextPageOrZero {
-    if (this is LoadingWithDataLatestTournamentsState) {
-      return (this as LoadingWithDataLatestTournamentsState).nextPage;
-    }
-
-    if (this is ErrorWithDataLatestTournamentsState) {
-      return (this as ErrorWithDataLatestTournamentsState).nextPage;
-    }
-
-    if (this is DataLatestTournamentsState) {
-      return (this as DataLatestTournamentsState).nextPage;
-    }
-
-    return 0;
-  }
+  int get nextPageOrZero => this.maybeMap(
+        data: (value) => value.nextPage,
+        errorWithData: (value) => value.nextPage,
+        loadingWithData: (value) => value.nextPage,
+        orElse: () => 0,
+      );
 }

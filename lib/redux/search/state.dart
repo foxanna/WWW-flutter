@@ -50,19 +50,10 @@ abstract class SearchParameters with _$SearchParameters {
 extension SearchStateX on SearchState {
   List<Tournament> get dataOrEmpty => this.dataOrNull ?? <Tournament>[];
 
-  List<Tournament> get dataOrNull {
-    if (this is DataSearchState) {
-      return (this as DataSearchState).data;
-    }
-
-    if (this is ErrorWithDataSearchState) {
-      return (this as ErrorWithDataSearchState).data;
-    }
-
-    if (this is LoadingWithDataSearchState) {
-      return (this as LoadingWithDataSearchState).data;
-    }
-
-    return null;
-  }
+  List<Tournament> get dataOrNull => this.maybeMap(
+        data: (value) => value.data,
+        errorWithData: (value) => value.data,
+        loadingWithData: (value) => value.data,
+        orElse: () => null,
+      );
 }
