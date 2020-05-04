@@ -35,14 +35,7 @@ abstract class SystemActionQuestions
       InitRandomQuestionsSystemAction;
 
   const factory SystemActionQuestions.deInit() = DeInitQuestionsSystemAction;
-}
 
-@freezed
-abstract class SetQuestions with _$SetQuestions implements QuestionsAction {
-  const factory SetQuestions({
-    @required Iterable<Question> questions,
-    @required int selectedQuestionIndex,
-  }) = _SetQuestions;
 }
 
 @freezed

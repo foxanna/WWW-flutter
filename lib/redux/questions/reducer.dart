@@ -10,7 +10,6 @@ class QuestionsReducer {
     TypedReducer<QuestionsState, InitQuestionsSystemAction>(_init),
     TypedReducer<QuestionsState, InitRandomQuestionsSystemAction>(_initRandom),
     TypedReducer<QuestionsState, DeInitQuestionsSystemAction>(_deInit),
-    TypedReducer<QuestionsState, SetQuestions>(_setQuestions),
     TypedReducer<QuestionsState, SelectQuestion>(_selectQuestion),
     TypedReducer<QuestionsState, ShowAnswer>(_showAnswer),
     TypedReducer<QuestionsState, HideAnswer>(_hideAnswer),
@@ -25,7 +24,8 @@ class QuestionsReducer {
 
   static QuestionsState _init(QuestionsState state,
       InitQuestionsSystemAction action) =>
-  ;
+      QuestionsState.from(
+          questions: action.questions, index: action.selectedQuestionIndex);
 
   static QuestionsState _initRandom(QuestionsState state,
       InitRandomQuestionsSystemAction action) =>
@@ -55,10 +55,7 @@ class QuestionsReducer {
       SelectQuestion action) =>
       state.copyWith(currentQuestionIndex: Optional.of(action.questionIndex));
 
-  static QuestionsState _setQuestions(QuestionsState state,
-      SetQuestions action) =>
-      QuestionsState.from(
-          questions: action.questions, index: action.selectedQuestionIndex);
+
 
   static QuestionsState _loadingQuestions(QuestionsState state,
       QuestionsAreLoading action) =>
