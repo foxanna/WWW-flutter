@@ -32,6 +32,7 @@ import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:what_when_where/redux/logs/middleware.dart';
 import 'package:what_when_where/redux/misc/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
+import 'package:what_when_where/redux/questions/middleware.dart';
 import 'package:what_when_where/redux/random/middleware.dart';
 import 'package:what_when_where/redux/rating/middleware.dart';
 import 'package:what_when_where/redux/search/middleware.dart';
@@ -92,6 +93,7 @@ void $initGetIt(GetIt g, {String environment}) {
       () => MiscMiddleware(urlLauncher: g<IUrlLauncher>()));
   g.registerFactory<NavigationMiddleware>(
       () => NavigationMiddleware(navigationService: g<INavigationService>()));
+  g.registerFactory<QuestionsMiddleware>(() => QuestionsMiddleware());
   g.registerFactory<RandomQuestionsMiddleware>(
       () => RandomQuestionsMiddleware(loader: g<IRandomQuestionsLoader>()));
   g.registerFactory<RatingMiddleware>(() => RatingMiddleware(
