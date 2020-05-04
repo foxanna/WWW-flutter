@@ -4,6 +4,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/tour_details/question_data_tile.dart';
 import 'package:what_when_where/ui/tour_details/template_tile.dart';
@@ -36,10 +37,11 @@ class TourDetailsDataTile extends StatelessWidget {
       questionsCount: tour.questions.length,
       questionBuilder: (context, questionIndex) => TourDetailsQuestionDataTile(
         question: tour.questions[questionIndex],
-        onTap: () => StoreProvider.of<AppState>(context).dispatch(
-          OpenQuestionsPage(
-              questions: tour.questions, selectedQuestionIndex: questionIndex),
-        ),
+        onTap: () => StoreProvider.of<AppState>(context)
+            .dispatch(UserActionQuestions.open(
+          questions: tour.questions,
+          selectedQuestionIndex: questionIndex,
+        )),
       ),
     );
   }

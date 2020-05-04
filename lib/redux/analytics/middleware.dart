@@ -40,7 +40,7 @@ final _analyticsEventNames = {
   OpenSettingsPage: 'settings',
   OpenTournamentUserAction: 'tournament',
   OpenSearchUserAction: 'search',
-  OpenRandomQuestionsPage: 'random',
+  OpenRandomQuestionsUserAction: 'random',
   OpenTournamentsTreeUserAction: 'tree',
   // misc
   EmailDevelopers: 'email_developers',
@@ -79,7 +79,7 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, OpenTournamentUserAction>(_logAction),
         TypedMiddleware<AppState, OpenSearchUserAction>(_logAction),
         TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
-        TypedMiddleware<AppState, OpenRandomQuestionsPage>(_logAction),
+        TypedMiddleware<AppState, OpenRandomQuestionsUserAction>(_logAction),
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_logAction),
         // settings
         TypedMiddleware<AppState, SettingsRead>(_logSettings),

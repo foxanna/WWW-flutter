@@ -303,6 +303,10 @@ class _$SystemActionNavigationTearOff {
     );
   }
 
+  QuestionsNavigationSystemAction questions() {
+    return const QuestionsNavigationSystemAction();
+  }
+
   SearchNavigationSystemAction search() {
     return const SearchNavigationSystemAction();
   }
@@ -316,12 +320,14 @@ mixin _$SystemActionNavigation {
   Result when<Result extends Object>({
     @required Result tournament(),
     @required Result tree(TournamentsTreeInfo info),
+    @required Result questions(),
     @required Result search(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result tournament(),
     Result tree(TournamentsTreeInfo info),
+    Result questions(),
     Result search(),
     @required Result orElse(),
   });
@@ -329,12 +335,14 @@ mixin _$SystemActionNavigation {
   Result map<Result extends Object>({
     @required Result tournament(TournamentNavigationSystemAction value),
     @required Result tree(TreeNavigationSystemAction value),
+    @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result tournament(TournamentNavigationSystemAction value),
     Result tree(TreeNavigationSystemAction value),
+    Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     @required Result orElse(),
   });
@@ -406,10 +414,12 @@ class _$TournamentNavigationSystemAction
   Result when<Result extends Object>({
     @required Result tournament(),
     @required Result tree(TournamentsTreeInfo info),
+    @required Result questions(),
     @required Result search(),
   }) {
     assert(tournament != null);
     assert(tree != null);
+    assert(questions != null);
     assert(search != null);
     return tournament();
   }
@@ -419,6 +429,7 @@ class _$TournamentNavigationSystemAction
   Result maybeWhen<Result extends Object>({
     Result tournament(),
     Result tree(TournamentsTreeInfo info),
+    Result questions(),
     Result search(),
     @required Result orElse(),
   }) {
@@ -434,10 +445,12 @@ class _$TournamentNavigationSystemAction
   Result map<Result extends Object>({
     @required Result tournament(TournamentNavigationSystemAction value),
     @required Result tree(TreeNavigationSystemAction value),
+    @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
+    assert(questions != null);
     assert(search != null);
     return tournament(this);
   }
@@ -447,6 +460,7 @@ class _$TournamentNavigationSystemAction
   Result maybeMap<Result extends Object>({
     Result tournament(TournamentNavigationSystemAction value),
     Result tree(TreeNavigationSystemAction value),
+    Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     @required Result orElse(),
   }) {
@@ -549,10 +563,12 @@ class _$TreeNavigationSystemAction
   Result when<Result extends Object>({
     @required Result tournament(),
     @required Result tree(TournamentsTreeInfo info),
+    @required Result questions(),
     @required Result search(),
   }) {
     assert(tournament != null);
     assert(tree != null);
+    assert(questions != null);
     assert(search != null);
     return tree(info);
   }
@@ -562,6 +578,7 @@ class _$TreeNavigationSystemAction
   Result maybeWhen<Result extends Object>({
     Result tournament(),
     Result tree(TournamentsTreeInfo info),
+    Result questions(),
     Result search(),
     @required Result orElse(),
   }) {
@@ -577,10 +594,12 @@ class _$TreeNavigationSystemAction
   Result map<Result extends Object>({
     @required Result tournament(TournamentNavigationSystemAction value),
     @required Result tree(TreeNavigationSystemAction value),
+    @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
+    assert(questions != null);
     assert(search != null);
     return tree(this);
   }
@@ -590,6 +609,7 @@ class _$TreeNavigationSystemAction
   Result maybeMap<Result extends Object>({
     Result tournament(TournamentNavigationSystemAction value),
     Result tree(TreeNavigationSystemAction value),
+    Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     @required Result orElse(),
   }) {
@@ -607,6 +627,120 @@ abstract class TreeNavigationSystemAction implements SystemActionNavigation {
 
   TournamentsTreeInfo get info;
   $TreeNavigationSystemActionCopyWith<TreeNavigationSystemAction> get copyWith;
+}
+
+abstract class $QuestionsNavigationSystemActionCopyWith<$Res> {
+  factory $QuestionsNavigationSystemActionCopyWith(
+          QuestionsNavigationSystemAction value,
+          $Res Function(QuestionsNavigationSystemAction) then) =
+      _$QuestionsNavigationSystemActionCopyWithImpl<$Res>;
+}
+
+class _$QuestionsNavigationSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    implements $QuestionsNavigationSystemActionCopyWith<$Res> {
+  _$QuestionsNavigationSystemActionCopyWithImpl(
+      QuestionsNavigationSystemAction _value,
+      $Res Function(QuestionsNavigationSystemAction) _then)
+      : super(_value, (v) => _then(v as QuestionsNavigationSystemAction));
+
+  @override
+  QuestionsNavigationSystemAction get _value =>
+      super._value as QuestionsNavigationSystemAction;
+}
+
+class _$QuestionsNavigationSystemAction
+    with DiagnosticableTreeMixin
+    implements QuestionsNavigationSystemAction {
+  const _$QuestionsNavigationSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionNavigation.questions()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionNavigation.questions'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is QuestionsNavigationSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tournament(),
+    @required Result tree(TournamentsTreeInfo info),
+    @required Result questions(),
+    @required Result search(),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(questions != null);
+    assert(search != null);
+    return questions();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tournament(),
+    Result tree(TournamentsTreeInfo info),
+    Result questions(),
+    Result search(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (questions != null) {
+      return questions();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tournament(TournamentNavigationSystemAction value),
+    @required Result tree(TreeNavigationSystemAction value),
+    @required Result questions(QuestionsNavigationSystemAction value),
+    @required Result search(SearchNavigationSystemAction value),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(questions != null);
+    assert(search != null);
+    return questions(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tournament(TournamentNavigationSystemAction value),
+    Result tree(TreeNavigationSystemAction value),
+    Result questions(QuestionsNavigationSystemAction value),
+    Result search(SearchNavigationSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (questions != null) {
+      return questions(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class QuestionsNavigationSystemAction
+    implements SystemActionNavigation {
+  const factory QuestionsNavigationSystemAction() =
+      _$QuestionsNavigationSystemAction;
 }
 
 abstract class $SearchNavigationSystemActionCopyWith<$Res> {
@@ -659,10 +793,12 @@ class _$SearchNavigationSystemAction
   Result when<Result extends Object>({
     @required Result tournament(),
     @required Result tree(TournamentsTreeInfo info),
+    @required Result questions(),
     @required Result search(),
   }) {
     assert(tournament != null);
     assert(tree != null);
+    assert(questions != null);
     assert(search != null);
     return search();
   }
@@ -672,6 +808,7 @@ class _$SearchNavigationSystemAction
   Result maybeWhen<Result extends Object>({
     Result tournament(),
     Result tree(TournamentsTreeInfo info),
+    Result questions(),
     Result search(),
     @required Result orElse(),
   }) {
@@ -687,10 +824,12 @@ class _$SearchNavigationSystemAction
   Result map<Result extends Object>({
     @required Result tournament(TournamentNavigationSystemAction value),
     @required Result tree(TreeNavigationSystemAction value),
+    @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
+    assert(questions != null);
     assert(search != null);
     return search(this);
   }
@@ -700,6 +839,7 @@ class _$SearchNavigationSystemAction
   Result maybeMap<Result extends Object>({
     Result tournament(TournamentNavigationSystemAction value),
     Result tree(TreeNavigationSystemAction value),
+    Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     @required Result orElse(),
   }) {
@@ -713,159 +853,6 @@ class _$SearchNavigationSystemAction
 
 abstract class SearchNavigationSystemAction implements SystemActionNavigation {
   const factory SearchNavigationSystemAction() = _$SearchNavigationSystemAction;
-}
-
-class _$OpenQuestionsPageTearOff {
-  const _$OpenQuestionsPageTearOff();
-
-  _OpenQuestionsPage call(
-      {@required Iterable<Question> questions,
-      @required int selectedQuestionIndex}) {
-    return _OpenQuestionsPage(
-      questions: questions,
-      selectedQuestionIndex: selectedQuestionIndex,
-    );
-  }
-}
-
-// ignore: unused_element
-const $OpenQuestionsPage = _$OpenQuestionsPageTearOff();
-
-mixin _$OpenQuestionsPage {
-  Iterable<Question> get questions;
-  int get selectedQuestionIndex;
-
-  $OpenQuestionsPageCopyWith<OpenQuestionsPage> get copyWith;
-}
-
-abstract class $OpenQuestionsPageCopyWith<$Res> {
-  factory $OpenQuestionsPageCopyWith(
-          OpenQuestionsPage value, $Res Function(OpenQuestionsPage) then) =
-      _$OpenQuestionsPageCopyWithImpl<$Res>;
-  $Res call({Iterable<Question> questions, int selectedQuestionIndex});
-}
-
-class _$OpenQuestionsPageCopyWithImpl<$Res>
-    implements $OpenQuestionsPageCopyWith<$Res> {
-  _$OpenQuestionsPageCopyWithImpl(this._value, this._then);
-
-  final OpenQuestionsPage _value;
-  // ignore: unused_field
-  final $Res Function(OpenQuestionsPage) _then;
-
-  @override
-  $Res call({
-    Object questions = freezed,
-    Object selectedQuestionIndex = freezed,
-  }) {
-    return _then(_value.copyWith(
-      questions: questions == freezed
-          ? _value.questions
-          : questions as Iterable<Question>,
-      selectedQuestionIndex: selectedQuestionIndex == freezed
-          ? _value.selectedQuestionIndex
-          : selectedQuestionIndex as int,
-    ));
-  }
-}
-
-abstract class _$OpenQuestionsPageCopyWith<$Res>
-    implements $OpenQuestionsPageCopyWith<$Res> {
-  factory _$OpenQuestionsPageCopyWith(
-          _OpenQuestionsPage value, $Res Function(_OpenQuestionsPage) then) =
-      __$OpenQuestionsPageCopyWithImpl<$Res>;
-  @override
-  $Res call({Iterable<Question> questions, int selectedQuestionIndex});
-}
-
-class __$OpenQuestionsPageCopyWithImpl<$Res>
-    extends _$OpenQuestionsPageCopyWithImpl<$Res>
-    implements _$OpenQuestionsPageCopyWith<$Res> {
-  __$OpenQuestionsPageCopyWithImpl(
-      _OpenQuestionsPage _value, $Res Function(_OpenQuestionsPage) _then)
-      : super(_value, (v) => _then(v as _OpenQuestionsPage));
-
-  @override
-  _OpenQuestionsPage get _value => super._value as _OpenQuestionsPage;
-
-  @override
-  $Res call({
-    Object questions = freezed,
-    Object selectedQuestionIndex = freezed,
-  }) {
-    return _then(_OpenQuestionsPage(
-      questions: questions == freezed
-          ? _value.questions
-          : questions as Iterable<Question>,
-      selectedQuestionIndex: selectedQuestionIndex == freezed
-          ? _value.selectedQuestionIndex
-          : selectedQuestionIndex as int,
-    ));
-  }
-}
-
-class _$_OpenQuestionsPage
-    with DiagnosticableTreeMixin
-    implements _OpenQuestionsPage {
-  const _$_OpenQuestionsPage(
-      {@required this.questions, @required this.selectedQuestionIndex})
-      : assert(questions != null),
-        assert(selectedQuestionIndex != null);
-
-  @override
-  final Iterable<Question> questions;
-  @override
-  final int selectedQuestionIndex;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenQuestionsPage(questions: $questions, selectedQuestionIndex: $selectedQuestionIndex)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OpenQuestionsPage'))
-      ..add(DiagnosticsProperty('questions', questions))
-      ..add(
-          DiagnosticsProperty('selectedQuestionIndex', selectedQuestionIndex));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _OpenQuestionsPage &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)) &&
-            (identical(other.selectedQuestionIndex, selectedQuestionIndex) ||
-                const DeepCollectionEquality().equals(
-                    other.selectedQuestionIndex, selectedQuestionIndex)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questions) ^
-      const DeepCollectionEquality().hash(selectedQuestionIndex);
-
-  @override
-  _$OpenQuestionsPageCopyWith<_OpenQuestionsPage> get copyWith =>
-      __$OpenQuestionsPageCopyWithImpl<_OpenQuestionsPage>(this, _$identity);
-}
-
-abstract class _OpenQuestionsPage implements OpenQuestionsPage {
-  const factory _OpenQuestionsPage(
-      {@required Iterable<Question> questions,
-      @required int selectedQuestionIndex}) = _$_OpenQuestionsPage;
-
-  @override
-  Iterable<Question> get questions;
-  @override
-  int get selectedQuestionIndex;
-  @override
-  _$OpenQuestionsPageCopyWith<_OpenQuestionsPage> get copyWith;
 }
 
 class _$OpenSettingsPageTearOff {
@@ -940,79 +927,4 @@ class _$_OpenSettingsPage
 
 abstract class _OpenSettingsPage implements OpenSettingsPage {
   const factory _OpenSettingsPage() = _$_OpenSettingsPage;
-}
-
-class _$OpenRandomQuestionsPageTearOff {
-  const _$OpenRandomQuestionsPageTearOff();
-
-  _OpenRandomQuestionsPage call() {
-    return const _OpenRandomQuestionsPage();
-  }
-}
-
-// ignore: unused_element
-const $OpenRandomQuestionsPage = _$OpenRandomQuestionsPageTearOff();
-
-mixin _$OpenRandomQuestionsPage {}
-
-abstract class $OpenRandomQuestionsPageCopyWith<$Res> {
-  factory $OpenRandomQuestionsPageCopyWith(OpenRandomQuestionsPage value,
-          $Res Function(OpenRandomQuestionsPage) then) =
-      _$OpenRandomQuestionsPageCopyWithImpl<$Res>;
-}
-
-class _$OpenRandomQuestionsPageCopyWithImpl<$Res>
-    implements $OpenRandomQuestionsPageCopyWith<$Res> {
-  _$OpenRandomQuestionsPageCopyWithImpl(this._value, this._then);
-
-  final OpenRandomQuestionsPage _value;
-  // ignore: unused_field
-  final $Res Function(OpenRandomQuestionsPage) _then;
-}
-
-abstract class _$OpenRandomQuestionsPageCopyWith<$Res> {
-  factory _$OpenRandomQuestionsPageCopyWith(_OpenRandomQuestionsPage value,
-          $Res Function(_OpenRandomQuestionsPage) then) =
-      __$OpenRandomQuestionsPageCopyWithImpl<$Res>;
-}
-
-class __$OpenRandomQuestionsPageCopyWithImpl<$Res>
-    extends _$OpenRandomQuestionsPageCopyWithImpl<$Res>
-    implements _$OpenRandomQuestionsPageCopyWith<$Res> {
-  __$OpenRandomQuestionsPageCopyWithImpl(_OpenRandomQuestionsPage _value,
-      $Res Function(_OpenRandomQuestionsPage) _then)
-      : super(_value, (v) => _then(v as _OpenRandomQuestionsPage));
-
-  @override
-  _OpenRandomQuestionsPage get _value =>
-      super._value as _OpenRandomQuestionsPage;
-}
-
-class _$_OpenRandomQuestionsPage
-    with DiagnosticableTreeMixin
-    implements _OpenRandomQuestionsPage {
-  const _$_OpenRandomQuestionsPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenRandomQuestionsPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OpenRandomQuestionsPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _OpenRandomQuestionsPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _OpenRandomQuestionsPage implements OpenRandomQuestionsPage {
-  const factory _OpenRandomQuestionsPage() = _$_OpenRandomQuestionsPage;
 }

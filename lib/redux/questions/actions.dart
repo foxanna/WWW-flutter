@@ -8,6 +8,18 @@ part 'actions.freezed.dart';
 abstract class QuestionsAction implements ReduxAction {}
 
 @freezed
+abstract class UserActionQuestions
+    with _$UserActionQuestions
+    implements QuestionsAction {
+  const factory UserActionQuestions.open({
+    @required Iterable<Question> questions,
+    @required int selectedQuestionIndex,
+  }) = OpenQuestionsUserAction;
+
+  const factory UserActionQuestions.openRandom() =
+      OpenRandomQuestionsUserAction;
+}
+@freezed
 abstract class SetQuestions with _$SetQuestions implements QuestionsAction {
   const factory SetQuestions({
     @required Iterable<Question> questions,

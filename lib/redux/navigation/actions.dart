@@ -30,17 +30,10 @@ abstract class SystemActionNavigation
     @required TournamentsTreeInfo info,
   }) = TreeNavigationSystemAction;
 
-  const factory SystemActionNavigation.search() = SearchNavigationSystemAction;
-}
+  const factory SystemActionNavigation.questions() =
+      QuestionsNavigationSystemAction;
 
-@freezed
-abstract class OpenQuestionsPage
-    with _$OpenQuestionsPage
-    implements NavigationAction {
-  const factory OpenQuestionsPage({
-    @required Iterable<Question> questions,
-    @required int selectedQuestionIndex,
-  }) = _OpenQuestionsPage;
+  const factory SystemActionNavigation.search() = SearchNavigationSystemAction;
 }
 
 @freezed
@@ -48,11 +41,4 @@ abstract class OpenSettingsPage
     with _$OpenSettingsPage
     implements NavigationAction {
   const factory OpenSettingsPage() = _OpenSettingsPage;
-}
-
-@freezed
-abstract class OpenRandomQuestionsPage
-    with _$OpenRandomQuestionsPage
-    implements NavigationAction {
-  const factory OpenRandomQuestionsPage() = _OpenRandomQuestionsPage;
 }

@@ -2,7 +2,6 @@ import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
-import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/about/route_page.dart';
 import 'package:what_when_where/ui/image/route_page.dart';
@@ -29,12 +28,10 @@ class NavigationMiddleware {
         TypedMiddleware<AppState, ImageNavigationUserAction>(_image),
         TypedMiddleware<AppState, TournamentNavigationSystemAction>(
             _tournament),
-        TypedMiddleware<AppState, OpenQuestionsPage>(_openQuestions),
+        TypedMiddleware<AppState, QuestionsNavigationSystemAction>(_questions),
         TypedMiddleware<AppState, AboutNavigationUserAction>(_about),
         TypedMiddleware<AppState, SearchNavigationSystemAction>(_search),
         TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
-        TypedMiddleware<AppState, OpenRandomQuestionsPage>(
-            _openRandomQuestionsPage),
         TypedMiddleware<AppState, TreeNavigationSystemAction>(_tree),
       ];
 
@@ -58,13 +55,9 @@ class NavigationMiddleware {
     );
   }
 
-  void _openQuestions(
-      Store<AppState> store, OpenQuestionsPage action, NextDispatcher next) {
+  void _questions(Store<AppState> store, QuestionsNavigationSystemAction action,
+      NextDispatcher next) {
     next(action);
-
-    store.dispatch(SetQuestions(
-        questions: action.questions,
-        selectedQuestionIndex: action.selectedQuestionIndex));
 
     _navigationService.navigateToPage(
       routeName: QuestionsRoutePage.routeName,
@@ -99,16 +92,6 @@ class NavigationMiddleware {
     _navigationService.navigateToPage(
       routeName: SettingsRoutePage.routeName,
       builder: (context) => SettingsRoutePage(),
-    );
-  }
-
-  void _openRandomQuestionsPage(Store<AppState> store,
-      OpenRandomQuestionsPage action, NextDispatcher next) {
-    next(action);
-
-    _navigationService.navigateToPage(
-      routeName: QuestionsRoutePage.randomQuestionsRouteName,
-      builder: (context) => QuestionsRoutePage(),
     );
   }
 

@@ -157,8 +157,8 @@ void main() {
     );
 
     test(
-      '$OpenRandomQuestionsPage',
-      () => analyticsTest(const OpenRandomQuestionsPage(), 'random'),
+      '$OpenRandomQuestionsUserAction',
+      () => analyticsTest(const UserActionQuestions.openRandom(), 'random'),
     );
 
     test(
