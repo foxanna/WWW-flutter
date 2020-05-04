@@ -1,39 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/solid_icon_button.dart';
 
 class ShowAnswerButton extends StatelessWidget {
-  final int index;
+  final bool show;
+  final Question question;
   final Function onAnswerShown;
 
   const ShowAnswerButton({
     Key key,
-    @required this.index,
+    this.show,
+    this.question,
     this.onAnswerShown,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => StoreConnector<AppState, bool>(
-        distinct: true,
-        converter: (store) =>
-            store.state.questionsState.questions[index].showAnswer,
-        builder: (context, showAnswer) => _ShowAnswerButton(
-          icon: showAnswer ? Icons.visibility_off : Icons.visibility,
-          onPressed: () {
-            StoreProvider.of<AppState>(context).dispatch(
-              showAnswer
-                  ? HideAnswer(questionIndex: index)
-                  : ShowAnswer(questionIndex: index),
-            );
+  Widget build(BuildContext context) => _ShowAnswerButton(
+        icon: show ? Icons.visibility_off : Icons.visibility,
+        onPressed: () {
+          StoreProvider.of<AppState>(context).dispatch(
+            show
+                ? HideAnswer(question: question)
+                : ShowAnswer(question: question),
+          );
 
-            if (!showAnswer && onAnswerShown != null) {
-              onAnswerShown();
-            }
-          },
-        ),
+          if (!show && onAnswerShown != null) {
+            onAnswerShown();
+          }
+        },
       );
 }
 

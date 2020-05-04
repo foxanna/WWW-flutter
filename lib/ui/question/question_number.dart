@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class QuestionNumber extends StatelessWidget {
-  final int index;
+  final String number;
 
   const QuestionNumber({
     Key key,
-    @required this.index,
+    this.number,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => StoreConnector<AppState, String>(
-        distinct: true,
-        converter: (store) => store
-                .state.randomQuestionsState.randomQuestionsAreDisplayed
-            ? (index + 1).toString()
-            : store.state.questionsState.questions[index].question.info.number,
-        builder: (context, questionIndex) => Text(
-          '${Strings.question} $questionIndex',
-          style: StyleConfiguration.of(context)
-              .questionStyleConfiguration
-              .questionCardTitleTextStyle,
-        ),
+  Widget build(BuildContext context) => Text(
+        '${Strings.question} ${number}',
+        style: StyleConfiguration.of(context)
+            .questionStyleConfiguration
+            .questionCardTitleTextStyle,
       );
 }

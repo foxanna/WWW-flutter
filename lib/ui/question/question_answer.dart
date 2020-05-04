@@ -10,18 +10,18 @@ import 'package:what_when_where/ui/common/text_with_links.dart';
 import 'package:what_when_where/ui/question/question_sections.dart';
 
 class QuestionAnswer extends StatelessWidget {
-  final int index;
+  final bool show;
+  final Question question;
 
-  const QuestionAnswer({Key key, @required this.index}) : super(key: key);
+  const QuestionAnswer({
+    Key key,
+    this.show,
+    this.question,
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => StoreConnector<AppState, QuestionState>(
-        distinct: true,
-        converter: (store) => store.state.questionsState.questions[index],
-        builder: (context, state) => state.showAnswer
-            ? _QuestionAnswer(question: state.question)
-            : Container(),
-      );
+  Widget build(BuildContext context) =>
+      show ? _QuestionAnswer(question: question) : Container();
 }
 
 class _QuestionAnswer extends StatelessWidget {

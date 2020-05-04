@@ -1,6 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
@@ -39,35 +42,43 @@ class _QuestionCardState extends State<QuestionCard> {
     final styleConfiguration =
         StyleConfiguration.of(context).questionStyleConfiguration;
 
-    return Card(
-      margin: styleConfiguration.questionCardMargin,
-      child: Container(
-        foregroundDecoration:
-            GradientDecoration(color: Theme.of(context).cardColor),
-        child: ListView(
-          key: _listViewKey,
-          controller: _scrollController,
-          physics: const BouncingScrollPhysics(),
-          padding: styleConfiguration.questionCardPadding,
-          children: [
-            QuestionNumber(index: widget.index),
-            const QuestionsCardSeparator(),
-            QuestionText(index: widget.index),
-            Stack(
-              key: _buttonStackKey,
-              children: [
-                const QuestionsCardSeparator(),
-                Positioned(
-                  right: styleConfiguration.questionCardPadding.right,
-                  child: ShowAnswerButton(
-                    index: widget.index,
-                    onAnswerShown: _onAnswerShown,
+    return StoreConnector<AppState, QuestionState>(
+      distinct: true,
+      converter: (store) => store.state.questionsState.questions[widget.index],
+      builder: (context, state) => Card(
+        margin: styleConfiguration.questionCardMargin,
+        child: Container(
+          foregroundDecoration:
+              GradientDecoration(color: Theme.of(context).cardColor),
+          child: ListView(
+            key: _listViewKey,
+            controller: _scrollController,
+            physics: const BouncingScrollPhysics(),
+            padding: styleConfiguration.questionCardPadding,
+            children: [
+              QuestionNumber(number: state.question.info.number),
+              const QuestionsCardSeparator(),
+              QuestionText(question: state.question),
+              Stack(
+                key: _buttonStackKey,
+                children: [
+                  const QuestionsCardSeparator(),
+                  Positioned(
+                    right: styleConfiguration.questionCardPadding.right,
+                    child: ShowAnswerButton(
+                      show: state.showAnswer,
+                      question: state.question,
+                      onAnswerShown: _onAnswerShown,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            QuestionAnswer(index: widget.index)
-          ],
+                ],
+              ),
+              QuestionAnswer(
+                show: state.showAnswer,
+                question: state.question,
+              )
+            ],
+          ),
         ),
       ),
     );
