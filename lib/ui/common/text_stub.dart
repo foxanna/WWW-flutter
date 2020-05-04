@@ -69,12 +69,11 @@ class TextStub extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ...IterableExtensions.merge(
-            List.generate(
+        ...List.generate(
                 linesCount - 1,
-                (index) => _buildSingleLineStub(
-                    Size(lineSize.width, lineSize.height))),
-            List.generate(
+                (index) =>
+                    _buildSingleLineStub(Size(lineSize.width, lineSize.height)))
+            .merge(List.generate(
                 linesCount - 1,
                 (index) => SizedBox(
                       height: lineSize.height * 0.5,

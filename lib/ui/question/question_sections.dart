@@ -64,13 +64,11 @@ class QuestionSections extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
-      children: IterableExtensions.mix(
-        _sections
-            .map((section) => _getChild(context, section, theme))
-            .where((widget) => widget != null)
-            .toList(),
-        SizedBox(height: theme.sectionsSpacing),
-      ).toList(),
+      children: _sections
+          .map((section) => _getChild(context, section, theme))
+          .where((widget) => widget != null)
+          .mix(SizedBox(height: theme.sectionsSpacing))
+          .toList(),
     );
   }
 

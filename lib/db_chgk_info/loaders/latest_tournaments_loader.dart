@@ -30,9 +30,9 @@ class LatestTournamentsLoader implements ILatestTournamentsLoader {
   Iterable<Tournament> _parseHtml(String html) {
     final table = parse(html).getElementsByClassName('last_packages');
 
-    final rows = IterableExtensions.merge(
-            table.first.getElementsByClassName('odd'),
-            table.first.getElementsByClassName('even'))
+    final rows = table.first
+        .getElementsByClassName('odd')
+        .merge(table.first.getElementsByClassName('even'))
         .toList();
 
     final tournamentsDto =

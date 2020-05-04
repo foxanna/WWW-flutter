@@ -24,8 +24,7 @@ class QuestionsReducer {
   static QuestionsState _showAnswer(QuestionsState state, ShowAnswer action) =>
       state.currentQuestion != null
           ? state.copyWith(
-              questions: Optional.of(IterableExtensions.replaceAt(
-                  state.questions,
+              questions: Optional.of(state.questions.replaceAt(
                   state.currentQuestionIndex,
                   state.currentQuestion.copyWith(showAnswer: true))))
           : state;
@@ -33,8 +32,7 @@ class QuestionsReducer {
   static QuestionsState _hideAnswer(QuestionsState state, HideAnswer action) =>
       state.currentQuestion != null
           ? state.copyWith(
-              questions: Optional.of(IterableExtensions.replaceAt(
-                  state.questions,
+              questions: Optional.of(state.questions.replaceAt(
                   state.currentQuestionIndex,
                   state.currentQuestion.copyWith(showAnswer: false))))
           : state;

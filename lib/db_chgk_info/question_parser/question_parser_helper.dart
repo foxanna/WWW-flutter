@@ -67,8 +67,6 @@ class QuestionParserHelper {
         .expand((x) => x)
         .map((x) => text.indexOf(x))
         .where((i) => i != -1);
-    return sectionsIndexes.isNotEmpty
-        ? IterableExtensions.min(sectionsIndexes)
-        : null;
+    return sectionsIndexes.isNotEmpty ? sectionsIndexes.min() : null;
   }
 }
