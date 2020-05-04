@@ -54,7 +54,7 @@ class TournamentsTreeMiddleware {
     next(action);
 
     final info = action.info ?? const TournamentsTreeInfo(id: '0');
-    store.dispatch(NavigateToTournamentsTreePage(info: info));
+    store.dispatch(SystemActionNavigation.tree(info: info));
     store.dispatch(SystemActionTournamentsTree.setSubTree(info: info));
   }
 

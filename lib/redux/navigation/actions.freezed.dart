@@ -9,102 +9,117 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$OpenImagePageTearOff {
-  const _$OpenImagePageTearOff();
+class _$UserActionNavigationTearOff {
+  const _$UserActionNavigationTearOff();
 
-  _OpenImagePage call({@required String imageUrl}) {
-    return _OpenImagePage(
+  ImageNavigationUserAction image({@required String imageUrl}) {
+    return ImageNavigationUserAction(
       imageUrl: imageUrl,
     );
+  }
+
+  AboutNavigationUserAction about() {
+    return const AboutNavigationUserAction();
   }
 }
 
 // ignore: unused_element
-const $OpenImagePage = _$OpenImagePageTearOff();
+const $UserActionNavigation = _$UserActionNavigationTearOff();
 
-mixin _$OpenImagePage {
-  String get imageUrl;
-
-  $OpenImagePageCopyWith<OpenImagePage> get copyWith;
+mixin _$UserActionNavigation {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result image(String imageUrl),
+    @required Result about(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result image(String imageUrl),
+    Result about(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result image(ImageNavigationUserAction value),
+    @required Result about(AboutNavigationUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result image(ImageNavigationUserAction value),
+    Result about(AboutNavigationUserAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $OpenImagePageCopyWith<$Res> {
-  factory $OpenImagePageCopyWith(
-          OpenImagePage value, $Res Function(OpenImagePage) then) =
-      _$OpenImagePageCopyWithImpl<$Res>;
-  $Res call({String imageUrl});
+abstract class $UserActionNavigationCopyWith<$Res> {
+  factory $UserActionNavigationCopyWith(UserActionNavigation value,
+          $Res Function(UserActionNavigation) then) =
+      _$UserActionNavigationCopyWithImpl<$Res>;
 }
 
-class _$OpenImagePageCopyWithImpl<$Res>
-    implements $OpenImagePageCopyWith<$Res> {
-  _$OpenImagePageCopyWithImpl(this._value, this._then);
+class _$UserActionNavigationCopyWithImpl<$Res>
+    implements $UserActionNavigationCopyWith<$Res> {
+  _$UserActionNavigationCopyWithImpl(this._value, this._then);
 
-  final OpenImagePage _value;
+  final UserActionNavigation _value;
   // ignore: unused_field
-  final $Res Function(OpenImagePage) _then;
-
-  @override
-  $Res call({
-    Object imageUrl = freezed,
-  }) {
-    return _then(_value.copyWith(
-      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
-    ));
-  }
+  final $Res Function(UserActionNavigation) _then;
 }
 
-abstract class _$OpenImagePageCopyWith<$Res>
-    implements $OpenImagePageCopyWith<$Res> {
-  factory _$OpenImagePageCopyWith(
-          _OpenImagePage value, $Res Function(_OpenImagePage) then) =
-      __$OpenImagePageCopyWithImpl<$Res>;
-  @override
+abstract class $ImageNavigationUserActionCopyWith<$Res> {
+  factory $ImageNavigationUserActionCopyWith(ImageNavigationUserAction value,
+          $Res Function(ImageNavigationUserAction) then) =
+      _$ImageNavigationUserActionCopyWithImpl<$Res>;
   $Res call({String imageUrl});
 }
 
-class __$OpenImagePageCopyWithImpl<$Res>
-    extends _$OpenImagePageCopyWithImpl<$Res>
-    implements _$OpenImagePageCopyWith<$Res> {
-  __$OpenImagePageCopyWithImpl(
-      _OpenImagePage _value, $Res Function(_OpenImagePage) _then)
-      : super(_value, (v) => _then(v as _OpenImagePage));
+class _$ImageNavigationUserActionCopyWithImpl<$Res>
+    extends _$UserActionNavigationCopyWithImpl<$Res>
+    implements $ImageNavigationUserActionCopyWith<$Res> {
+  _$ImageNavigationUserActionCopyWithImpl(ImageNavigationUserAction _value,
+      $Res Function(ImageNavigationUserAction) _then)
+      : super(_value, (v) => _then(v as ImageNavigationUserAction));
 
   @override
-  _OpenImagePage get _value => super._value as _OpenImagePage;
+  ImageNavigationUserAction get _value =>
+      super._value as ImageNavigationUserAction;
 
   @override
   $Res call({
     Object imageUrl = freezed,
   }) {
-    return _then(_OpenImagePage(
+    return _then(ImageNavigationUserAction(
       imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
     ));
   }
 }
 
-class _$_OpenImagePage with DiagnosticableTreeMixin implements _OpenImagePage {
-  const _$_OpenImagePage({@required this.imageUrl}) : assert(imageUrl != null);
+class _$ImageNavigationUserAction
+    with DiagnosticableTreeMixin
+    implements ImageNavigationUserAction {
+  const _$ImageNavigationUserAction({@required this.imageUrl})
+      : assert(imageUrl != null);
 
   @override
   final String imageUrl;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenImagePage(imageUrl: $imageUrl)';
+    return 'UserActionNavigation.image(imageUrl: $imageUrl)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OpenImagePage'))
+      ..add(DiagnosticsProperty('type', 'UserActionNavigation.image'))
       ..add(DiagnosticsProperty('imageUrl', imageUrl));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OpenImagePage &&
+        (other is ImageNavigationUserAction &&
             (identical(other.imageUrl, imageUrl) ||
                 const DeepCollectionEquality()
                     .equals(other.imageUrl, imageUrl)));
@@ -115,17 +130,589 @@ class _$_OpenImagePage with DiagnosticableTreeMixin implements _OpenImagePage {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageUrl);
 
   @override
-  _$OpenImagePageCopyWith<_OpenImagePage> get copyWith =>
-      __$OpenImagePageCopyWithImpl<_OpenImagePage>(this, _$identity);
+  $ImageNavigationUserActionCopyWith<ImageNavigationUserAction> get copyWith =>
+      _$ImageNavigationUserActionCopyWithImpl<ImageNavigationUserAction>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result image(String imageUrl),
+    @required Result about(),
+  }) {
+    assert(image != null);
+    assert(about != null);
+    return image(imageUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result image(String imageUrl),
+    Result about(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (image != null) {
+      return image(imageUrl);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result image(ImageNavigationUserAction value),
+    @required Result about(AboutNavigationUserAction value),
+  }) {
+    assert(image != null);
+    assert(about != null);
+    return image(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result image(ImageNavigationUserAction value),
+    Result about(AboutNavigationUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (image != null) {
+      return image(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _OpenImagePage implements OpenImagePage {
-  const factory _OpenImagePage({@required String imageUrl}) = _$_OpenImagePage;
+abstract class ImageNavigationUserAction implements UserActionNavigation {
+  const factory ImageNavigationUserAction({@required String imageUrl}) =
+      _$ImageNavigationUserAction;
+
+  String get imageUrl;
+  $ImageNavigationUserActionCopyWith<ImageNavigationUserAction> get copyWith;
+}
+
+abstract class $AboutNavigationUserActionCopyWith<$Res> {
+  factory $AboutNavigationUserActionCopyWith(AboutNavigationUserAction value,
+          $Res Function(AboutNavigationUserAction) then) =
+      _$AboutNavigationUserActionCopyWithImpl<$Res>;
+}
+
+class _$AboutNavigationUserActionCopyWithImpl<$Res>
+    extends _$UserActionNavigationCopyWithImpl<$Res>
+    implements $AboutNavigationUserActionCopyWith<$Res> {
+  _$AboutNavigationUserActionCopyWithImpl(AboutNavigationUserAction _value,
+      $Res Function(AboutNavigationUserAction) _then)
+      : super(_value, (v) => _then(v as AboutNavigationUserAction));
 
   @override
-  String get imageUrl;
+  AboutNavigationUserAction get _value =>
+      super._value as AboutNavigationUserAction;
+}
+
+class _$AboutNavigationUserAction
+    with DiagnosticableTreeMixin
+    implements AboutNavigationUserAction {
+  const _$AboutNavigationUserAction();
+
   @override
-  _$OpenImagePageCopyWith<_OpenImagePage> get copyWith;
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionNavigation.about()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionNavigation.about'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is AboutNavigationUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result image(String imageUrl),
+    @required Result about(),
+  }) {
+    assert(image != null);
+    assert(about != null);
+    return about();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result image(String imageUrl),
+    Result about(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (about != null) {
+      return about();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result image(ImageNavigationUserAction value),
+    @required Result about(AboutNavigationUserAction value),
+  }) {
+    assert(image != null);
+    assert(about != null);
+    return about(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result image(ImageNavigationUserAction value),
+    Result about(AboutNavigationUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (about != null) {
+      return about(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AboutNavigationUserAction implements UserActionNavigation {
+  const factory AboutNavigationUserAction() = _$AboutNavigationUserAction;
+}
+
+class _$SystemActionNavigationTearOff {
+  const _$SystemActionNavigationTearOff();
+
+  TournamentNavigationSystemAction tournament() {
+    return const TournamentNavigationSystemAction();
+  }
+
+  TreeNavigationSystemAction tree({@required TournamentsTreeInfo info}) {
+    return TreeNavigationSystemAction(
+      info: info,
+    );
+  }
+
+  SearchNavigationSystemAction search() {
+    return const SearchNavigationSystemAction();
+  }
+}
+
+// ignore: unused_element
+const $SystemActionNavigation = _$SystemActionNavigationTearOff();
+
+mixin _$SystemActionNavigation {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tournament(),
+    @required Result tree(TournamentsTreeInfo info),
+    @required Result search(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tournament(),
+    Result tree(TournamentsTreeInfo info),
+    Result search(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tournament(TournamentNavigationSystemAction value),
+    @required Result tree(TreeNavigationSystemAction value),
+    @required Result search(SearchNavigationSystemAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tournament(TournamentNavigationSystemAction value),
+    Result tree(TreeNavigationSystemAction value),
+    Result search(SearchNavigationSystemAction value),
+    @required Result orElse(),
+  });
+}
+
+abstract class $SystemActionNavigationCopyWith<$Res> {
+  factory $SystemActionNavigationCopyWith(SystemActionNavigation value,
+          $Res Function(SystemActionNavigation) then) =
+      _$SystemActionNavigationCopyWithImpl<$Res>;
+}
+
+class _$SystemActionNavigationCopyWithImpl<$Res>
+    implements $SystemActionNavigationCopyWith<$Res> {
+  _$SystemActionNavigationCopyWithImpl(this._value, this._then);
+
+  final SystemActionNavigation _value;
+  // ignore: unused_field
+  final $Res Function(SystemActionNavigation) _then;
+}
+
+abstract class $TournamentNavigationSystemActionCopyWith<$Res> {
+  factory $TournamentNavigationSystemActionCopyWith(
+          TournamentNavigationSystemAction value,
+          $Res Function(TournamentNavigationSystemAction) then) =
+      _$TournamentNavigationSystemActionCopyWithImpl<$Res>;
+}
+
+class _$TournamentNavigationSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    implements $TournamentNavigationSystemActionCopyWith<$Res> {
+  _$TournamentNavigationSystemActionCopyWithImpl(
+      TournamentNavigationSystemAction _value,
+      $Res Function(TournamentNavigationSystemAction) _then)
+      : super(_value, (v) => _then(v as TournamentNavigationSystemAction));
+
+  @override
+  TournamentNavigationSystemAction get _value =>
+      super._value as TournamentNavigationSystemAction;
+}
+
+class _$TournamentNavigationSystemAction
+    with DiagnosticableTreeMixin
+    implements TournamentNavigationSystemAction {
+  const _$TournamentNavigationSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionNavigation.tournament()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionNavigation.tournament'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is TournamentNavigationSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tournament(),
+    @required Result tree(TournamentsTreeInfo info),
+    @required Result search(),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(search != null);
+    return tournament();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tournament(),
+    Result tree(TournamentsTreeInfo info),
+    Result search(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tournament != null) {
+      return tournament();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tournament(TournamentNavigationSystemAction value),
+    @required Result tree(TreeNavigationSystemAction value),
+    @required Result search(SearchNavigationSystemAction value),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(search != null);
+    return tournament(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tournament(TournamentNavigationSystemAction value),
+    Result tree(TreeNavigationSystemAction value),
+    Result search(SearchNavigationSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tournament != null) {
+      return tournament(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TournamentNavigationSystemAction
+    implements SystemActionNavigation {
+  const factory TournamentNavigationSystemAction() =
+      _$TournamentNavigationSystemAction;
+}
+
+abstract class $TreeNavigationSystemActionCopyWith<$Res> {
+  factory $TreeNavigationSystemActionCopyWith(TreeNavigationSystemAction value,
+          $Res Function(TreeNavigationSystemAction) then) =
+      _$TreeNavigationSystemActionCopyWithImpl<$Res>;
+  $Res call({TournamentsTreeInfo info});
+
+  $TournamentsTreeInfoCopyWith<$Res> get info;
+}
+
+class _$TreeNavigationSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    implements $TreeNavigationSystemActionCopyWith<$Res> {
+  _$TreeNavigationSystemActionCopyWithImpl(TreeNavigationSystemAction _value,
+      $Res Function(TreeNavigationSystemAction) _then)
+      : super(_value, (v) => _then(v as TreeNavigationSystemAction));
+
+  @override
+  TreeNavigationSystemAction get _value =>
+      super._value as TreeNavigationSystemAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(TreeNavigationSystemAction(
+      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
+    ));
+  }
+
+  @override
+  $TournamentsTreeInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentsTreeInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$TreeNavigationSystemAction
+    with DiagnosticableTreeMixin
+    implements TreeNavigationSystemAction {
+  const _$TreeNavigationSystemAction({@required this.info})
+      : assert(info != null);
+
+  @override
+  final TournamentsTreeInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionNavigation.tree(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionNavigation.tree'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is TreeNavigationSystemAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $TreeNavigationSystemActionCopyWith<TreeNavigationSystemAction>
+      get copyWith =>
+          _$TreeNavigationSystemActionCopyWithImpl<TreeNavigationSystemAction>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tournament(),
+    @required Result tree(TournamentsTreeInfo info),
+    @required Result search(),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(search != null);
+    return tree(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tournament(),
+    Result tree(TournamentsTreeInfo info),
+    Result search(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tree != null) {
+      return tree(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tournament(TournamentNavigationSystemAction value),
+    @required Result tree(TreeNavigationSystemAction value),
+    @required Result search(SearchNavigationSystemAction value),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(search != null);
+    return tree(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tournament(TournamentNavigationSystemAction value),
+    Result tree(TreeNavigationSystemAction value),
+    Result search(SearchNavigationSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tree != null) {
+      return tree(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TreeNavigationSystemAction implements SystemActionNavigation {
+  const factory TreeNavigationSystemAction(
+      {@required TournamentsTreeInfo info}) = _$TreeNavigationSystemAction;
+
+  TournamentsTreeInfo get info;
+  $TreeNavigationSystemActionCopyWith<TreeNavigationSystemAction> get copyWith;
+}
+
+abstract class $SearchNavigationSystemActionCopyWith<$Res> {
+  factory $SearchNavigationSystemActionCopyWith(
+          SearchNavigationSystemAction value,
+          $Res Function(SearchNavigationSystemAction) then) =
+      _$SearchNavigationSystemActionCopyWithImpl<$Res>;
+}
+
+class _$SearchNavigationSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    implements $SearchNavigationSystemActionCopyWith<$Res> {
+  _$SearchNavigationSystemActionCopyWithImpl(
+      SearchNavigationSystemAction _value,
+      $Res Function(SearchNavigationSystemAction) _then)
+      : super(_value, (v) => _then(v as SearchNavigationSystemAction));
+
+  @override
+  SearchNavigationSystemAction get _value =>
+      super._value as SearchNavigationSystemAction;
+}
+
+class _$SearchNavigationSystemAction
+    with DiagnosticableTreeMixin
+    implements SearchNavigationSystemAction {
+  const _$SearchNavigationSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionNavigation.search()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionNavigation.search'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SearchNavigationSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tournament(),
+    @required Result tree(TournamentsTreeInfo info),
+    @required Result search(),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(search != null);
+    return search();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tournament(),
+    Result tree(TournamentsTreeInfo info),
+    Result search(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (search != null) {
+      return search();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tournament(TournamentNavigationSystemAction value),
+    @required Result tree(TreeNavigationSystemAction value),
+    @required Result search(SearchNavigationSystemAction value),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(search != null);
+    return search(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tournament(TournamentNavigationSystemAction value),
+    Result tree(TreeNavigationSystemAction value),
+    Result search(SearchNavigationSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (search != null) {
+      return search(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchNavigationSystemAction implements SystemActionNavigation {
+  const factory SearchNavigationSystemAction() = _$SearchNavigationSystemAction;
 }
 
 class _$OpenQuestionsPageTearOff {
@@ -281,227 +868,6 @@ abstract class _OpenQuestionsPage implements OpenQuestionsPage {
   _$OpenQuestionsPageCopyWith<_OpenQuestionsPage> get copyWith;
 }
 
-class _$NavigateToTournamentPageTearOff {
-  const _$NavigateToTournamentPageTearOff();
-
-  _NavigateToTournamentPage call() {
-    return const _NavigateToTournamentPage();
-  }
-}
-
-// ignore: unused_element
-const $NavigateToTournamentPage = _$NavigateToTournamentPageTearOff();
-
-mixin _$NavigateToTournamentPage {}
-
-abstract class $NavigateToTournamentPageCopyWith<$Res> {
-  factory $NavigateToTournamentPageCopyWith(NavigateToTournamentPage value,
-          $Res Function(NavigateToTournamentPage) then) =
-      _$NavigateToTournamentPageCopyWithImpl<$Res>;
-}
-
-class _$NavigateToTournamentPageCopyWithImpl<$Res>
-    implements $NavigateToTournamentPageCopyWith<$Res> {
-  _$NavigateToTournamentPageCopyWithImpl(this._value, this._then);
-
-  final NavigateToTournamentPage _value;
-  // ignore: unused_field
-  final $Res Function(NavigateToTournamentPage) _then;
-}
-
-abstract class _$NavigateToTournamentPageCopyWith<$Res> {
-  factory _$NavigateToTournamentPageCopyWith(_NavigateToTournamentPage value,
-          $Res Function(_NavigateToTournamentPage) then) =
-      __$NavigateToTournamentPageCopyWithImpl<$Res>;
-}
-
-class __$NavigateToTournamentPageCopyWithImpl<$Res>
-    extends _$NavigateToTournamentPageCopyWithImpl<$Res>
-    implements _$NavigateToTournamentPageCopyWith<$Res> {
-  __$NavigateToTournamentPageCopyWithImpl(_NavigateToTournamentPage _value,
-      $Res Function(_NavigateToTournamentPage) _then)
-      : super(_value, (v) => _then(v as _NavigateToTournamentPage));
-
-  @override
-  _NavigateToTournamentPage get _value =>
-      super._value as _NavigateToTournamentPage;
-}
-
-class _$_NavigateToTournamentPage
-    with DiagnosticableTreeMixin
-    implements _NavigateToTournamentPage {
-  const _$_NavigateToTournamentPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NavigateToTournamentPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'NavigateToTournamentPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NavigateToTournamentPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _NavigateToTournamentPage implements NavigateToTournamentPage {
-  const factory _NavigateToTournamentPage() = _$_NavigateToTournamentPage;
-}
-
-class _$OpenAboutPageTearOff {
-  const _$OpenAboutPageTearOff();
-
-  _OpenAboutPage call() {
-    return const _OpenAboutPage();
-  }
-}
-
-// ignore: unused_element
-const $OpenAboutPage = _$OpenAboutPageTearOff();
-
-mixin _$OpenAboutPage {}
-
-abstract class $OpenAboutPageCopyWith<$Res> {
-  factory $OpenAboutPageCopyWith(
-          OpenAboutPage value, $Res Function(OpenAboutPage) then) =
-      _$OpenAboutPageCopyWithImpl<$Res>;
-}
-
-class _$OpenAboutPageCopyWithImpl<$Res>
-    implements $OpenAboutPageCopyWith<$Res> {
-  _$OpenAboutPageCopyWithImpl(this._value, this._then);
-
-  final OpenAboutPage _value;
-  // ignore: unused_field
-  final $Res Function(OpenAboutPage) _then;
-}
-
-abstract class _$OpenAboutPageCopyWith<$Res> {
-  factory _$OpenAboutPageCopyWith(
-          _OpenAboutPage value, $Res Function(_OpenAboutPage) then) =
-      __$OpenAboutPageCopyWithImpl<$Res>;
-}
-
-class __$OpenAboutPageCopyWithImpl<$Res>
-    extends _$OpenAboutPageCopyWithImpl<$Res>
-    implements _$OpenAboutPageCopyWith<$Res> {
-  __$OpenAboutPageCopyWithImpl(
-      _OpenAboutPage _value, $Res Function(_OpenAboutPage) _then)
-      : super(_value, (v) => _then(v as _OpenAboutPage));
-
-  @override
-  _OpenAboutPage get _value => super._value as _OpenAboutPage;
-}
-
-class _$_OpenAboutPage with DiagnosticableTreeMixin implements _OpenAboutPage {
-  const _$_OpenAboutPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenAboutPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OpenAboutPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _OpenAboutPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _OpenAboutPage implements OpenAboutPage {
-  const factory _OpenAboutPage() = _$_OpenAboutPage;
-}
-
-class _$NavigateToSearchPageTearOff {
-  const _$NavigateToSearchPageTearOff();
-
-  _NavigateToSearchPage call() {
-    return const _NavigateToSearchPage();
-  }
-}
-
-// ignore: unused_element
-const $NavigateToSearchPage = _$NavigateToSearchPageTearOff();
-
-mixin _$NavigateToSearchPage {}
-
-abstract class $NavigateToSearchPageCopyWith<$Res> {
-  factory $NavigateToSearchPageCopyWith(NavigateToSearchPage value,
-          $Res Function(NavigateToSearchPage) then) =
-      _$NavigateToSearchPageCopyWithImpl<$Res>;
-}
-
-class _$NavigateToSearchPageCopyWithImpl<$Res>
-    implements $NavigateToSearchPageCopyWith<$Res> {
-  _$NavigateToSearchPageCopyWithImpl(this._value, this._then);
-
-  final NavigateToSearchPage _value;
-  // ignore: unused_field
-  final $Res Function(NavigateToSearchPage) _then;
-}
-
-abstract class _$NavigateToSearchPageCopyWith<$Res> {
-  factory _$NavigateToSearchPageCopyWith(_NavigateToSearchPage value,
-          $Res Function(_NavigateToSearchPage) then) =
-      __$NavigateToSearchPageCopyWithImpl<$Res>;
-}
-
-class __$NavigateToSearchPageCopyWithImpl<$Res>
-    extends _$NavigateToSearchPageCopyWithImpl<$Res>
-    implements _$NavigateToSearchPageCopyWith<$Res> {
-  __$NavigateToSearchPageCopyWithImpl(
-      _NavigateToSearchPage _value, $Res Function(_NavigateToSearchPage) _then)
-      : super(_value, (v) => _then(v as _NavigateToSearchPage));
-
-  @override
-  _NavigateToSearchPage get _value => super._value as _NavigateToSearchPage;
-}
-
-class _$_NavigateToSearchPage
-    with DiagnosticableTreeMixin
-    implements _NavigateToSearchPage {
-  const _$_NavigateToSearchPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NavigateToSearchPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'NavigateToSearchPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NavigateToSearchPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _NavigateToSearchPage implements NavigateToSearchPage {
-  const factory _NavigateToSearchPage() = _$_NavigateToSearchPage;
-}
-
 class _$OpenSettingsPageTearOff {
   const _$OpenSettingsPageTearOff();
 
@@ -649,149 +1015,4 @@ class _$_OpenRandomQuestionsPage
 
 abstract class _OpenRandomQuestionsPage implements OpenRandomQuestionsPage {
   const factory _OpenRandomQuestionsPage() = _$_OpenRandomQuestionsPage;
-}
-
-class _$NavigateToTournamentsTreePageTearOff {
-  const _$NavigateToTournamentsTreePageTearOff();
-
-  _NavigateToTournamentsTreePage call({@required TournamentsTreeInfo info}) {
-    return _NavigateToTournamentsTreePage(
-      info: info,
-    );
-  }
-}
-
-// ignore: unused_element
-const $NavigateToTournamentsTreePage = _$NavigateToTournamentsTreePageTearOff();
-
-mixin _$NavigateToTournamentsTreePage {
-  TournamentsTreeInfo get info;
-
-  $NavigateToTournamentsTreePageCopyWith<NavigateToTournamentsTreePage>
-      get copyWith;
-}
-
-abstract class $NavigateToTournamentsTreePageCopyWith<$Res> {
-  factory $NavigateToTournamentsTreePageCopyWith(
-          NavigateToTournamentsTreePage value,
-          $Res Function(NavigateToTournamentsTreePage) then) =
-      _$NavigateToTournamentsTreePageCopyWithImpl<$Res>;
-  $Res call({TournamentsTreeInfo info});
-
-  $TournamentsTreeInfoCopyWith<$Res> get info;
-}
-
-class _$NavigateToTournamentsTreePageCopyWithImpl<$Res>
-    implements $NavigateToTournamentsTreePageCopyWith<$Res> {
-  _$NavigateToTournamentsTreePageCopyWithImpl(this._value, this._then);
-
-  final NavigateToTournamentsTreePage _value;
-  // ignore: unused_field
-  final $Res Function(NavigateToTournamentsTreePage) _then;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_value.copyWith(
-      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
-    ));
-  }
-
-  @override
-  $TournamentsTreeInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
-    return $TournamentsTreeInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
-    });
-  }
-}
-
-abstract class _$NavigateToTournamentsTreePageCopyWith<$Res>
-    implements $NavigateToTournamentsTreePageCopyWith<$Res> {
-  factory _$NavigateToTournamentsTreePageCopyWith(
-          _NavigateToTournamentsTreePage value,
-          $Res Function(_NavigateToTournamentsTreePage) then) =
-      __$NavigateToTournamentsTreePageCopyWithImpl<$Res>;
-  @override
-  $Res call({TournamentsTreeInfo info});
-
-  @override
-  $TournamentsTreeInfoCopyWith<$Res> get info;
-}
-
-class __$NavigateToTournamentsTreePageCopyWithImpl<$Res>
-    extends _$NavigateToTournamentsTreePageCopyWithImpl<$Res>
-    implements _$NavigateToTournamentsTreePageCopyWith<$Res> {
-  __$NavigateToTournamentsTreePageCopyWithImpl(
-      _NavigateToTournamentsTreePage _value,
-      $Res Function(_NavigateToTournamentsTreePage) _then)
-      : super(_value, (v) => _then(v as _NavigateToTournamentsTreePage));
-
-  @override
-  _NavigateToTournamentsTreePage get _value =>
-      super._value as _NavigateToTournamentsTreePage;
-
-  @override
-  $Res call({
-    Object info = freezed,
-  }) {
-    return _then(_NavigateToTournamentsTreePage(
-      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
-    ));
-  }
-}
-
-class _$_NavigateToTournamentsTreePage
-    with DiagnosticableTreeMixin
-    implements _NavigateToTournamentsTreePage {
-  const _$_NavigateToTournamentsTreePage({@required this.info})
-      : assert(info != null);
-
-  @override
-  final TournamentsTreeInfo info;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NavigateToTournamentsTreePage(info: $info)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'NavigateToTournamentsTreePage'))
-      ..add(DiagnosticsProperty('info', info));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _NavigateToTournamentsTreePage &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
-
-  @override
-  _$NavigateToTournamentsTreePageCopyWith<_NavigateToTournamentsTreePage>
-      get copyWith => __$NavigateToTournamentsTreePageCopyWithImpl<
-          _NavigateToTournamentsTreePage>(this, _$identity);
-}
-
-abstract class _NavigateToTournamentsTreePage
-    implements NavigateToTournamentsTreePage {
-  const factory _NavigateToTournamentsTreePage(
-      {@required TournamentsTreeInfo info}) = _$_NavigateToTournamentsTreePage;
-
-  @override
-  TournamentsTreeInfo get info;
-  @override
-  _$NavigateToTournamentsTreePageCopyWith<_NavigateToTournamentsTreePage>
-      get copyWith;
 }

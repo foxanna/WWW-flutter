@@ -14,7 +14,8 @@ class LatestTournamentsAboutBottomSheetItem extends StatelessWidget {
         onTap: () {
           Navigator.pop(context);
 
-          StoreProvider.of<AppState>(context).dispatch(const OpenAboutPage());
+          StoreProvider.of<AppState>(context)
+              .dispatch(const UserActionNavigation.about());
         },
       );
 }

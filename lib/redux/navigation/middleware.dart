@@ -26,20 +26,20 @@ class NavigationMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, OpenImagePage>(_openImage),
-        TypedMiddleware<AppState, NavigateToTournamentPage>(_openTournament),
+        TypedMiddleware<AppState, ImageNavigationUserAction>(_image),
+        TypedMiddleware<AppState, TournamentNavigationSystemAction>(
+            _tournament),
         TypedMiddleware<AppState, OpenQuestionsPage>(_openQuestions),
-        TypedMiddleware<AppState, OpenAboutPage>(_openAboutPage),
-        TypedMiddleware<AppState, NavigateToSearchPage>(_openSearchPage),
+        TypedMiddleware<AppState, AboutNavigationUserAction>(_about),
+        TypedMiddleware<AppState, SearchNavigationSystemAction>(_search),
         TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
         TypedMiddleware<AppState, OpenRandomQuestionsPage>(
             _openRandomQuestionsPage),
-        TypedMiddleware<AppState, NavigateToTournamentsTreePage>(
-            _openTournamentsTreePage),
+        TypedMiddleware<AppState, TreeNavigationSystemAction>(_tree),
       ];
 
-  void _openImage(
-      Store<AppState> store, OpenImagePage action, NextDispatcher next) {
+  void _image(Store<AppState> store, ImageNavigationUserAction action,
+      NextDispatcher next) {
     next(action);
 
     _navigationService.navigateToPage(
@@ -48,8 +48,8 @@ class NavigationMiddleware {
     );
   }
 
-  void _openTournament(Store<AppState> store, NavigateToTournamentPage action,
-      NextDispatcher next) {
+  void _tournament(Store<AppState> store,
+      TournamentNavigationSystemAction action, NextDispatcher next) {
     next(action);
 
     _navigationService.navigateToPage(
@@ -72,8 +72,8 @@ class NavigationMiddleware {
     );
   }
 
-  void _openAboutPage(
-      Store<AppState> store, OpenAboutPage action, NextDispatcher next) {
+  void _about(Store<AppState> store, AboutNavigationUserAction action,
+      NextDispatcher next) {
     next(action);
 
     _navigationService.navigateToPage(
@@ -82,8 +82,8 @@ class NavigationMiddleware {
     );
   }
 
-  void _openSearchPage(
-      Store<AppState> store, NavigateToSearchPage action, NextDispatcher next) {
+  void _search(Store<AppState> store, SearchNavigationSystemAction action,
+      NextDispatcher next) {
     next(action);
 
     _navigationService.navigateToPage(
@@ -112,8 +112,8 @@ class NavigationMiddleware {
     );
   }
 
-  void _openTournamentsTreePage(Store<AppState> store,
-      NavigateToTournamentsTreePage action, NextDispatcher next) {
+  void _tree(Store<AppState> store, TreeNavigationSystemAction action,
+      NextDispatcher next) {
     next(action);
 
     _navigationService.navigateToPage(

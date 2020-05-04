@@ -34,7 +34,7 @@ class SearchMiddleware {
       Store<AppState> store, OpenSearchUserAction action, NextDispatcher next) {
     next(action);
 
-    store.dispatch(const NavigateToSearchPage());
+    store.dispatch(const SystemActionNavigation.search());
     store.dispatch(const SystemActionSearch.init());
   }
 

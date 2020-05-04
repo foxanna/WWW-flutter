@@ -7,9 +7,12 @@ import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
+import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
+import 'package:what_when_where/redux/tournament/actions.dart';
+import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/services/analytics.dart';
 
@@ -31,13 +34,14 @@ final _analyticsEventNames = {
   TournamentBrowseUserAction: 'browse_tournament',
   DatabaseBrowseUserAction: 'browse_database',
   // navigation
-  OpenImagePage: 'open_image',
+  ImageNavigationUserAction: 'open_image',
   TourInfoDialogUserAction: 'open_tour_info',
   TournamentInfoDialogUserAction: 'open_tournament_info',
   OpenSettingsPage: 'settings',
-  NavigateToSearchPage: 'search',
+  OpenTournamentUserAction: 'tournament',
+  OpenSearchUserAction: 'search',
   OpenRandomQuestionsPage: 'random',
-  NavigateToTournamentsTreePage: 'tree',
+  OpenTournamentsTreeUserAction: 'tree',
   // misc
   EmailDevelopers: 'email_developers',
 };
@@ -67,15 +71,16 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, TournamentBrowseUserAction>(_logAction),
         TypedMiddleware<AppState, TourBrowseUserAction>(_logAction),
         TypedMiddleware<AppState, QuestionBrowseUserAction>(_logAction),
-        TypedMiddleware<AppState, OpenImagePage>(_logAction),
+        TypedMiddleware<AppState, ImageNavigationUserAction>(_logAction),
         TypedMiddleware<AppState, TourInfoDialogUserAction>(_logAction),
         TypedMiddleware<AppState, TournamentInfoDialogUserAction>(_logAction),
         TypedMiddleware<AppState, EmailDevelopers>(_logAction),
         TypedMiddleware<AppState, DatabaseBrowseUserAction>(_logAction),
-        TypedMiddleware<AppState, NavigateToSearchPage>(_logAction),
+        TypedMiddleware<AppState, OpenTournamentUserAction>(_logAction),
+        TypedMiddleware<AppState, OpenSearchUserAction>(_logAction),
         TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
         TypedMiddleware<AppState, OpenRandomQuestionsPage>(_logAction),
-        TypedMiddleware<AppState, NavigateToTournamentsTreePage>(_logAction),
+        TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_logAction),
         // settings
         TypedMiddleware<AppState, SettingsRead>(_logSettings),
         TypedMiddleware<AppState, ChangeTheme>(_logTheme),

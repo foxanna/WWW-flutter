@@ -14,9 +14,12 @@ import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/misc/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
+import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
+import 'package:what_when_where/redux/tournament/actions.dart';
+import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/services/analytics.dart';
 
@@ -118,8 +121,9 @@ void main() {
     );
 
     test(
-      '$OpenImagePage',
-      () => analyticsTest(const OpenImagePage(imageUrl: 'test'), 'open_image'),
+      '$ImageNavigationUserAction',
+      () => analyticsTest(
+          const UserActionNavigation.image(imageUrl: 'test'), 'open_image'),
     );
 
     test(
@@ -141,8 +145,15 @@ void main() {
     );
 
     test(
-      '$NavigateToSearchPage()',
-      () => analyticsTest(const NavigateToSearchPage(), 'search'),
+      '$OpenTournamentUserAction',
+      () => analyticsTest(
+          const UserActionTournament.open(info: TournamentInfo()),
+          'tournament'),
+    );
+
+    test(
+      '$OpenSearchUserAction()',
+      () => analyticsTest(const UserActionSearch.open(), 'search'),
     );
 
     test(
@@ -151,9 +162,9 @@ void main() {
     );
 
     test(
-      '$NavigateToTournamentsTreePage',
+      '$OpenTournamentsTreeUserAction',
       () => analyticsTest(
-          const NavigateToTournamentsTreePage(info: TournamentsTreeInfo()),
+          const UserActionTournamentsTree.open(info: TournamentsTreeInfo()),
           'tree'),
     );
 

@@ -32,7 +32,7 @@ class TournamentMiddleware {
       NextDispatcher next) {
     next(action);
 
-    store.dispatch(const NavigateToTournamentPage());
+    store.dispatch(const SystemActionNavigation.tournament());
     store.dispatch(SystemActionTournament.init(info: action.info));
     store.dispatch(UserActionTournament.load(info: action.info));
   }

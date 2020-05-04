@@ -170,5 +170,5 @@ class QuestionSections extends StatelessWidget {
 
   void _openImagePage(BuildContext context, String url) =>
       StoreProvider.of<AppState>(context)
-          .dispatch(OpenImagePage(imageUrl: url));
+          .dispatch(UserActionNavigation.image(imageUrl: url));
 }

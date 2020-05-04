@@ -9,10 +9,28 @@ part 'actions.freezed.dart';
 abstract class NavigationAction implements ReduxAction {}
 
 @freezed
-abstract class OpenImagePage with _$OpenImagePage implements NavigationAction {
-  const factory OpenImagePage({
+abstract class UserActionNavigation
+    with _$UserActionNavigation
+    implements NavigationAction {
+  const factory UserActionNavigation.image({
     @required String imageUrl,
-  }) = _OpenImagePage;
+  }) = ImageNavigationUserAction;
+
+  const factory UserActionNavigation.about() = AboutNavigationUserAction;
+}
+
+@freezed
+abstract class SystemActionNavigation
+    with _$SystemActionNavigation
+    implements NavigationAction {
+  const factory SystemActionNavigation.tournament() =
+      TournamentNavigationSystemAction;
+
+  const factory SystemActionNavigation.tree({
+    @required TournamentsTreeInfo info,
+  }) = TreeNavigationSystemAction;
+
+  const factory SystemActionNavigation.search() = SearchNavigationSystemAction;
 }
 
 @freezed
@@ -23,25 +41,6 @@ abstract class OpenQuestionsPage
     @required Iterable<Question> questions,
     @required int selectedQuestionIndex,
   }) = _OpenQuestionsPage;
-}
-
-@freezed
-abstract class NavigateToTournamentPage
-    with _$NavigateToTournamentPage
-    implements NavigationAction {
-  const factory NavigateToTournamentPage() = _NavigateToTournamentPage;
-}
-
-@freezed
-abstract class OpenAboutPage with _$OpenAboutPage implements NavigationAction {
-  const factory OpenAboutPage() = _OpenAboutPage;
-}
-
-@freezed
-abstract class NavigateToSearchPage
-    with _$NavigateToSearchPage
-    implements NavigationAction {
-  const factory NavigateToSearchPage() = _NavigateToSearchPage;
 }
 
 @freezed
@@ -56,13 +55,4 @@ abstract class OpenRandomQuestionsPage
     with _$OpenRandomQuestionsPage
     implements NavigationAction {
   const factory OpenRandomQuestionsPage() = _OpenRandomQuestionsPage;
-}
-
-@freezed
-abstract class NavigateToTournamentsTreePage
-    with _$NavigateToTournamentsTreePage
-    implements NavigationAction {
-  const factory NavigateToTournamentsTreePage({
-    @required TournamentsTreeInfo info,
-  }) = _NavigateToTournamentsTreePage;
 }
