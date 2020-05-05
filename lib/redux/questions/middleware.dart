@@ -11,13 +11,12 @@ class QuestionsMiddleware {
   final IRandomQuestionsLoader _loader;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   QuestionsMiddleware({
     IRandomQuestionsLoader loader,
-  }) : _loader = loader {
-    _middleware = _createMiddleware();
-  }
+  }) : _loader = loader;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenQuestionsUserAction>(_open),

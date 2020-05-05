@@ -9,13 +9,12 @@ class ShareMiddleware {
   final ISharingService _sharingService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   ShareMiddleware({
     ISharingService sharingService,
-  }) : _sharingService = sharingService {
-    _middleware = _createMiddleware();
-  }
+  }) : _sharingService = sharingService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, QuestionSharingUserAction>(_question),

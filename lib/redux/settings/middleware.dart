@@ -16,13 +16,12 @@ class SettingsMiddleware {
   final IPreferences _preferences;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   SettingsMiddleware({
     IPreferences preferences,
-  }) : _preferences = preferences {
-    _middleware = _createMiddleware();
-  }
+  }) : _preferences = preferences;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, ReadSettings>(_onReadSettings),

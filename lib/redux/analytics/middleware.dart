@@ -51,13 +51,12 @@ class AnalyticsMiddleware {
   final IAnalyticsService _analyticsService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   AnalyticsMiddleware({
     IAnalyticsService analyticsService,
-  }) : _analyticsService = analyticsService {
-    _middleware = _createMiddleware();
-  }
+  }) : _analyticsService = analyticsService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, StartTimerUserAction>(_logAction),

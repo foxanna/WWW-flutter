@@ -12,13 +12,12 @@ class DialogMiddleware {
   final IDialogService _dialogService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   DialogMiddleware({
     IDialogService dialogService,
-  }) : _dialogService = dialogService {
-    _middleware = _createMiddleware();
-  }
+  }) : _dialogService = dialogService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, TourInfoDialogUserAction>(_tourInfo),

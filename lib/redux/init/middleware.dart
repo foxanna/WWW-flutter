@@ -12,15 +12,14 @@ class InitMiddleware {
   final ISoundService _soundService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   InitMiddleware({
     ICrashService crashService,
     ISoundService soundService,
   })  : _crashService = crashService,
-        _soundService = soundService {
-    _middleware = _createMiddleware();
-  }
+        _soundService = soundService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, Init>(_onInit),

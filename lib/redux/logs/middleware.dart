@@ -6,11 +6,8 @@ import 'package:what_when_where/utils/logger.dart';
 @injectable
 class LogsMiddleware {
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
-
-  LogsMiddleware() {
-    _middleware = _createMiddleware();
-  }
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, dynamic>(_log),

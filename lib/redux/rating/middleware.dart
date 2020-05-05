@@ -17,15 +17,14 @@ class RatingMiddleware {
   final IRatingService _ratingService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   RatingMiddleware({
     IPreferences preferences,
     IRatingService ratingService,
   })  : _preferencesService = preferences,
-        _ratingService = ratingService {
-    _middleware = _createMiddleware();
-  }
+        _ratingService = ratingService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, CloseTournamentUserAction>(

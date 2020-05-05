@@ -16,13 +16,12 @@ class NavigationMiddleware {
   final INavigationService _navigationService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   NavigationMiddleware({
     INavigationService navigationService,
-  }) : _navigationService = navigationService {
-    _middleware = _createMiddleware();
-  }
+  }) : _navigationService = navigationService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, ImageNavigationUserAction>(_image),

@@ -25,13 +25,12 @@ class AppMiddleware {
   final IContainer _container;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   AppMiddleware({
     IContainer container,
-  }) : _container = container {
-    _middleware = _createMiddleware();
-  }
+  }) : _container = container;
 
   List<Middleware<AppState>> _createMiddleware() => [
         ..._container<LogsMiddleware>().middleware,

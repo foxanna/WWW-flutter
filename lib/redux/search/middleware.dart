@@ -13,13 +13,12 @@ class SearchMiddleware {
   final ISearchLoader _loader;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   SearchMiddleware({
     ISearchLoader loader,
-  }) : _loader = loader {
-    _middleware = _createMiddleware();
-  }
+  }) : _loader = loader;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenSearchUserAction>(_open),

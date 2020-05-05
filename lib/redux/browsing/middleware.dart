@@ -9,13 +9,12 @@ class BrowseMiddleware {
   final IBrowsingService _browsingService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   BrowseMiddleware({
     IBrowsingService browsingService,
-  }) : _browsingService = browsingService {
-    _middleware = _createMiddleware();
-  }
+  }) : _browsingService = browsingService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, DatabaseBrowseUserAction>(_database),

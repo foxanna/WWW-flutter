@@ -15,15 +15,14 @@ class TimerMiddleware {
   final IVibratingService _vibratingService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   TimerMiddleware({
     ISoundService soundService,
     IVibratingService vibratingService,
   })  : _soundService = soundService,
-        _vibratingService = vibratingService {
-    _middleware = _createMiddleware();
-  }
+        _vibratingService = vibratingService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         ..._TimerConnectingMiddleware().middleware,
@@ -38,11 +37,8 @@ class _TimerTickingMiddleware {
   final _timer = WWWTimer(updateFrequency: _timerFrequency);
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
-
-  _TimerTickingMiddleware() {
-    _middleware = _createMiddleware();
-  }
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, DeInitTimerUserAction>(_deInit),
@@ -134,11 +130,8 @@ class _TimerTickingMiddleware {
 
 class _TimerConnectingMiddleware {
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
-
-  _TimerConnectingMiddleware() {
-    _middleware = _createMiddleware();
-  }
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, UpdateTimeTimerSystemAction>(
@@ -168,13 +161,12 @@ class _TimerVibratingMiddleware {
   final IVibratingService _vibratingService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   _TimerVibratingMiddleware({
     IVibratingService vibratingService,
-  }) : _vibratingService = vibratingService {
-    _middleware = _createMiddleware();
-  }
+  }) : _vibratingService = vibratingService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, NotifyTimerSystemAction>(_vibrate),
@@ -192,13 +184,12 @@ class _TimerSoundMiddleware {
   final ISoundService _soundService;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   _TimerSoundMiddleware({
     ISoundService soundService,
-  }) : _soundService = soundService {
-    _middleware = _createMiddleware();
-  }
+  }) : _soundService = soundService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, NotifyTimerSystemAction>(_sound),

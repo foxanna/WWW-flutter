@@ -11,13 +11,12 @@ class MiscMiddleware {
   final IUrlLauncher _urlLauncher;
 
   List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware => _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   MiscMiddleware({
     IUrlLauncher urlLauncher,
-  }) : _urlLauncher = urlLauncher {
-    _middleware = _createMiddleware();
-  }
+  }) : _urlLauncher = urlLauncher;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, EmailDevelopers>(_emailDevelopers),
