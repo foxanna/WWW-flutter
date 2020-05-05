@@ -36,7 +36,7 @@ class LatestTournamentsMiddleware {
 
     try {
       const int page = 0;
-      store.dispatch(const SystemActionLatest.loading());
+      store.dispatch(const SystemActionLatest.refreshing());
 
       final data = await _loader.get(page: page);
       store.dispatch(SystemActionLatest.completed(
