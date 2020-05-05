@@ -92,7 +92,8 @@ void $initGetIt(GetIt g, {String environment}) {
       () => MiscMiddleware(urlLauncher: g<IUrlLauncher>()));
   g.registerFactory<NavigationMiddleware>(
       () => NavigationMiddleware(navigationService: g<INavigationService>()));
-  g.registerFactory<QuestionsMiddleware>(() => QuestionsMiddleware());
+  g.registerFactory<QuestionsMiddleware>(
+      () => QuestionsMiddleware(loader: g<IRandomQuestionsLoader>()));
   g.registerFactory<RatingMiddleware>(() => RatingMiddleware(
       preferences: g<IPreferences>(), ratingService: g<IRatingService>()));
   g.registerFactory<SearchMiddleware>(

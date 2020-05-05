@@ -13,11 +13,10 @@ class _$UserActionQuestionsTearOff {
   const _$UserActionQuestionsTearOff();
 
   OpenQuestionsUserAction open(
-      {@required Iterable<Question> questions,
-      @required int selectedQuestionIndex}) {
+      {@required List<Question> questions, @required int index}) {
     return OpenQuestionsUserAction(
       questions: questions,
-      selectedQuestionIndex: selectedQuestionIndex,
+      index: index,
     );
   }
 
@@ -28,6 +27,28 @@ class _$UserActionQuestionsTearOff {
   CloseQuestionsUserAction close() {
     return const CloseQuestionsUserAction();
   }
+
+  ShowAnswerQuestionsUserAction showAnswer({@required Question question}) {
+    return ShowAnswerQuestionsUserAction(
+      question: question,
+    );
+  }
+
+  HideAnswerQuestionsUserAction hideAnswer({@required Question question}) {
+    return HideAnswerQuestionsUserAction(
+      question: question,
+    );
+  }
+
+  LoadRandomQuestionsUserAction loadRandom() {
+    return const LoadRandomQuestionsUserAction();
+  }
+
+  SelectQuestionsUserAction select({@required int questionIndex}) {
+    return SelectQuestionsUserAction(
+      questionIndex: questionIndex,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -36,16 +57,23 @@ const $UserActionQuestions = _$UserActionQuestionsTearOff();
 mixin _$UserActionQuestions {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result open(Iterable<Question> questions, int selectedQuestionIndex),
+    @required Result open(List<Question> questions, int index),
     @required Result openRandom(),
     @required Result close(),
+    @required Result showAnswer(Question question),
+    @required Result hideAnswer(Question question),
+    @required Result loadRandom(),
+    @required Result select(int questionIndex),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result open(Iterable<Question> questions, int selectedQuestionIndex),
+    Result open(List<Question> questions, int index),
     Result openRandom(),
     Result close(),
+    Result showAnswer(Question question),
+    Result hideAnswer(Question question),
+    Result loadRandom(),
+    Result select(int questionIndex),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -53,12 +81,20 @@ mixin _$UserActionQuestions {
     @required Result open(OpenQuestionsUserAction value),
     @required Result openRandom(OpenRandomQuestionsUserAction value),
     @required Result close(CloseQuestionsUserAction value),
+    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
+    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
+    @required Result loadRandom(LoadRandomQuestionsUserAction value),
+    @required Result select(SelectQuestionsUserAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result open(OpenQuestionsUserAction value),
     Result openRandom(OpenRandomQuestionsUserAction value),
     Result close(CloseQuestionsUserAction value),
+    Result showAnswer(ShowAnswerQuestionsUserAction value),
+    Result hideAnswer(HideAnswerQuestionsUserAction value),
+    Result loadRandom(LoadRandomQuestionsUserAction value),
+    Result select(SelectQuestionsUserAction value),
     @required Result orElse(),
   });
 }
@@ -82,7 +118,7 @@ abstract class $OpenQuestionsUserActionCopyWith<$Res> {
   factory $OpenQuestionsUserActionCopyWith(OpenQuestionsUserAction value,
           $Res Function(OpenQuestionsUserAction) then) =
       _$OpenQuestionsUserActionCopyWithImpl<$Res>;
-  $Res call({Iterable<Question> questions, int selectedQuestionIndex});
+  $Res call({List<Question> questions, int index});
 }
 
 class _$OpenQuestionsUserActionCopyWithImpl<$Res>
@@ -98,15 +134,12 @@ class _$OpenQuestionsUserActionCopyWithImpl<$Res>
   @override
   $Res call({
     Object questions = freezed,
-    Object selectedQuestionIndex = freezed,
+    Object index = freezed,
   }) {
     return _then(OpenQuestionsUserAction(
-      questions: questions == freezed
-          ? _value.questions
-          : questions as Iterable<Question>,
-      selectedQuestionIndex: selectedQuestionIndex == freezed
-          ? _value.selectedQuestionIndex
-          : selectedQuestionIndex as int,
+      questions:
+          questions == freezed ? _value.questions : questions as List<Question>,
+      index: index == freezed ? _value.index : index as int,
     ));
   }
 }
@@ -115,18 +148,18 @@ class _$OpenQuestionsUserAction
     with DiagnosticableTreeMixin
     implements OpenQuestionsUserAction {
   const _$OpenQuestionsUserAction(
-      {@required this.questions, @required this.selectedQuestionIndex})
+      {@required this.questions, @required this.index})
       : assert(questions != null),
-        assert(selectedQuestionIndex != null);
+        assert(index != null);
 
   @override
-  final Iterable<Question> questions;
+  final List<Question> questions;
   @override
-  final int selectedQuestionIndex;
+  final int index;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionQuestions.open(questions: $questions, selectedQuestionIndex: $selectedQuestionIndex)';
+    return 'UserActionQuestions.open(questions: $questions, index: $index)';
   }
 
   @override
@@ -135,8 +168,7 @@ class _$OpenQuestionsUserAction
     properties
       ..add(DiagnosticsProperty('type', 'UserActionQuestions.open'))
       ..add(DiagnosticsProperty('questions', questions))
-      ..add(
-          DiagnosticsProperty('selectedQuestionIndex', selectedQuestionIndex));
+      ..add(DiagnosticsProperty('index', index));
   }
 
   @override
@@ -146,16 +178,15 @@ class _$OpenQuestionsUserAction
             (identical(other.questions, questions) ||
                 const DeepCollectionEquality()
                     .equals(other.questions, questions)) &&
-            (identical(other.selectedQuestionIndex, selectedQuestionIndex) ||
-                const DeepCollectionEquality().equals(
-                    other.selectedQuestionIndex, selectedQuestionIndex)));
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(questions) ^
-      const DeepCollectionEquality().hash(selectedQuestionIndex);
+      const DeepCollectionEquality().hash(index);
 
   @override
   $OpenQuestionsUserActionCopyWith<OpenQuestionsUserAction> get copyWith =>
@@ -165,28 +196,39 @@ class _$OpenQuestionsUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result open(Iterable<Question> questions, int selectedQuestionIndex),
+    @required Result open(List<Question> questions, int index),
     @required Result openRandom(),
     @required Result close(),
+    @required Result showAnswer(Question question),
+    @required Result hideAnswer(Question question),
+    @required Result loadRandom(),
+    @required Result select(int questionIndex),
   }) {
     assert(open != null);
     assert(openRandom != null);
     assert(close != null);
-    return open(questions, selectedQuestionIndex);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
+    return open(questions, index);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result open(Iterable<Question> questions, int selectedQuestionIndex),
+    Result open(List<Question> questions, int index),
     Result openRandom(),
     Result close(),
+    Result showAnswer(Question question),
+    Result hideAnswer(Question question),
+    Result loadRandom(),
+    Result select(int questionIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (open != null) {
-      return open(questions, selectedQuestionIndex);
+      return open(questions, index);
     }
     return orElse();
   }
@@ -197,10 +239,18 @@ class _$OpenQuestionsUserAction
     @required Result open(OpenQuestionsUserAction value),
     @required Result openRandom(OpenRandomQuestionsUserAction value),
     @required Result close(CloseQuestionsUserAction value),
+    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
+    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
+    @required Result loadRandom(LoadRandomQuestionsUserAction value),
+    @required Result select(SelectQuestionsUserAction value),
   }) {
     assert(open != null);
     assert(openRandom != null);
     assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
     return open(this);
   }
 
@@ -210,6 +260,10 @@ class _$OpenQuestionsUserAction
     Result open(OpenQuestionsUserAction value),
     Result openRandom(OpenRandomQuestionsUserAction value),
     Result close(CloseQuestionsUserAction value),
+    Result showAnswer(ShowAnswerQuestionsUserAction value),
+    Result hideAnswer(HideAnswerQuestionsUserAction value),
+    Result loadRandom(LoadRandomQuestionsUserAction value),
+    Result select(SelectQuestionsUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -222,11 +276,11 @@ class _$OpenQuestionsUserAction
 
 abstract class OpenQuestionsUserAction implements UserActionQuestions {
   const factory OpenQuestionsUserAction(
-      {@required Iterable<Question> questions,
-      @required int selectedQuestionIndex}) = _$OpenQuestionsUserAction;
+      {@required List<Question> questions,
+      @required int index}) = _$OpenQuestionsUserAction;
 
-  Iterable<Question> get questions;
-  int get selectedQuestionIndex;
+  List<Question> get questions;
+  int get index;
   $OpenQuestionsUserActionCopyWith<OpenQuestionsUserAction> get copyWith;
 }
 
@@ -278,23 +332,34 @@ class _$OpenRandomQuestionsUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result open(Iterable<Question> questions, int selectedQuestionIndex),
+    @required Result open(List<Question> questions, int index),
     @required Result openRandom(),
     @required Result close(),
+    @required Result showAnswer(Question question),
+    @required Result hideAnswer(Question question),
+    @required Result loadRandom(),
+    @required Result select(int questionIndex),
   }) {
     assert(open != null);
     assert(openRandom != null);
     assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
     return openRandom();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result open(Iterable<Question> questions, int selectedQuestionIndex),
+    Result open(List<Question> questions, int index),
     Result openRandom(),
     Result close(),
+    Result showAnswer(Question question),
+    Result hideAnswer(Question question),
+    Result loadRandom(),
+    Result select(int questionIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -310,10 +375,18 @@ class _$OpenRandomQuestionsUserAction
     @required Result open(OpenQuestionsUserAction value),
     @required Result openRandom(OpenRandomQuestionsUserAction value),
     @required Result close(CloseQuestionsUserAction value),
+    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
+    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
+    @required Result loadRandom(LoadRandomQuestionsUserAction value),
+    @required Result select(SelectQuestionsUserAction value),
   }) {
     assert(open != null);
     assert(openRandom != null);
     assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
     return openRandom(this);
   }
 
@@ -323,6 +396,10 @@ class _$OpenRandomQuestionsUserAction
     Result open(OpenQuestionsUserAction value),
     Result openRandom(OpenRandomQuestionsUserAction value),
     Result close(CloseQuestionsUserAction value),
+    Result showAnswer(ShowAnswerQuestionsUserAction value),
+    Result hideAnswer(HideAnswerQuestionsUserAction value),
+    Result loadRandom(LoadRandomQuestionsUserAction value),
+    Result select(SelectQuestionsUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -383,23 +460,34 @@ class _$CloseQuestionsUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result open(Iterable<Question> questions, int selectedQuestionIndex),
+    @required Result open(List<Question> questions, int index),
     @required Result openRandom(),
     @required Result close(),
+    @required Result showAnswer(Question question),
+    @required Result hideAnswer(Question question),
+    @required Result loadRandom(),
+    @required Result select(int questionIndex),
   }) {
     assert(open != null);
     assert(openRandom != null);
     assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
     return close();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result open(Iterable<Question> questions, int selectedQuestionIndex),
+    Result open(List<Question> questions, int index),
     Result openRandom(),
     Result close(),
+    Result showAnswer(Question question),
+    Result hideAnswer(Question question),
+    Result loadRandom(),
+    Result select(int questionIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -415,10 +503,18 @@ class _$CloseQuestionsUserAction
     @required Result open(OpenQuestionsUserAction value),
     @required Result openRandom(OpenRandomQuestionsUserAction value),
     @required Result close(CloseQuestionsUserAction value),
+    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
+    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
+    @required Result loadRandom(LoadRandomQuestionsUserAction value),
+    @required Result select(SelectQuestionsUserAction value),
   }) {
     assert(open != null);
     assert(openRandom != null);
     assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
     return close(this);
   }
 
@@ -428,6 +524,10 @@ class _$CloseQuestionsUserAction
     Result open(OpenQuestionsUserAction value),
     Result openRandom(OpenRandomQuestionsUserAction value),
     Result close(CloseQuestionsUserAction value),
+    Result showAnswer(ShowAnswerQuestionsUserAction value),
+    Result hideAnswer(HideAnswerQuestionsUserAction value),
+    Result loadRandom(LoadRandomQuestionsUserAction value),
+    Result select(SelectQuestionsUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -442,15 +542,648 @@ abstract class CloseQuestionsUserAction implements UserActionQuestions {
   const factory CloseQuestionsUserAction() = _$CloseQuestionsUserAction;
 }
 
+abstract class $ShowAnswerQuestionsUserActionCopyWith<$Res> {
+  factory $ShowAnswerQuestionsUserActionCopyWith(
+          ShowAnswerQuestionsUserAction value,
+          $Res Function(ShowAnswerQuestionsUserAction) then) =
+      _$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>;
+  $Res call({Question question});
+
+  $QuestionCopyWith<$Res> get question;
+}
+
+class _$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>
+    extends _$UserActionQuestionsCopyWithImpl<$Res>
+    implements $ShowAnswerQuestionsUserActionCopyWith<$Res> {
+  _$ShowAnswerQuestionsUserActionCopyWithImpl(
+      ShowAnswerQuestionsUserAction _value,
+      $Res Function(ShowAnswerQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as ShowAnswerQuestionsUserAction));
+
+  @override
+  ShowAnswerQuestionsUserAction get _value =>
+      super._value as ShowAnswerQuestionsUserAction;
+
+  @override
+  $Res call({
+    Object question = freezed,
+  }) {
+    return _then(ShowAnswerQuestionsUserAction(
+      question: question == freezed ? _value.question : question as Question,
+    ));
+  }
+
+  @override
+  $QuestionCopyWith<$Res> get question {
+    if (_value.question == null) {
+      return null;
+    }
+    return $QuestionCopyWith<$Res>(_value.question, (value) {
+      return _then(_value.copyWith(question: value));
+    });
+  }
+}
+
+class _$ShowAnswerQuestionsUserAction
+    with DiagnosticableTreeMixin
+    implements ShowAnswerQuestionsUserAction {
+  const _$ShowAnswerQuestionsUserAction({@required this.question})
+      : assert(question != null);
+
+  @override
+  final Question question;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionQuestions.showAnswer(question: $question)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserActionQuestions.showAnswer'))
+      ..add(DiagnosticsProperty('question', question));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ShowAnswerQuestionsUserAction &&
+            (identical(other.question, question) ||
+                const DeepCollectionEquality()
+                    .equals(other.question, question)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(question);
+
+  @override
+  $ShowAnswerQuestionsUserActionCopyWith<ShowAnswerQuestionsUserAction>
+      get copyWith => _$ShowAnswerQuestionsUserActionCopyWithImpl<
+          ShowAnswerQuestionsUserAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(List<Question> questions, int index),
+    @required Result openRandom(),
+    @required Result close(),
+    @required Result showAnswer(Question question),
+    @required Result hideAnswer(Question question),
+    @required Result loadRandom(),
+    @required Result select(int questionIndex),
+  }) {
+    assert(open != null);
+    assert(openRandom != null);
+    assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
+    return showAnswer(question);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(List<Question> questions, int index),
+    Result openRandom(),
+    Result close(),
+    Result showAnswer(Question question),
+    Result hideAnswer(Question question),
+    Result loadRandom(),
+    Result select(int questionIndex),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (showAnswer != null) {
+      return showAnswer(question);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenQuestionsUserAction value),
+    @required Result openRandom(OpenRandomQuestionsUserAction value),
+    @required Result close(CloseQuestionsUserAction value),
+    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
+    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
+    @required Result loadRandom(LoadRandomQuestionsUserAction value),
+    @required Result select(SelectQuestionsUserAction value),
+  }) {
+    assert(open != null);
+    assert(openRandom != null);
+    assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
+    return showAnswer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenQuestionsUserAction value),
+    Result openRandom(OpenRandomQuestionsUserAction value),
+    Result close(CloseQuestionsUserAction value),
+    Result showAnswer(ShowAnswerQuestionsUserAction value),
+    Result hideAnswer(HideAnswerQuestionsUserAction value),
+    Result loadRandom(LoadRandomQuestionsUserAction value),
+    Result select(SelectQuestionsUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (showAnswer != null) {
+      return showAnswer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowAnswerQuestionsUserAction implements UserActionQuestions {
+  const factory ShowAnswerQuestionsUserAction({@required Question question}) =
+      _$ShowAnswerQuestionsUserAction;
+
+  Question get question;
+  $ShowAnswerQuestionsUserActionCopyWith<ShowAnswerQuestionsUserAction>
+      get copyWith;
+}
+
+abstract class $HideAnswerQuestionsUserActionCopyWith<$Res> {
+  factory $HideAnswerQuestionsUserActionCopyWith(
+          HideAnswerQuestionsUserAction value,
+          $Res Function(HideAnswerQuestionsUserAction) then) =
+      _$HideAnswerQuestionsUserActionCopyWithImpl<$Res>;
+  $Res call({Question question});
+
+  $QuestionCopyWith<$Res> get question;
+}
+
+class _$HideAnswerQuestionsUserActionCopyWithImpl<$Res>
+    extends _$UserActionQuestionsCopyWithImpl<$Res>
+    implements $HideAnswerQuestionsUserActionCopyWith<$Res> {
+  _$HideAnswerQuestionsUserActionCopyWithImpl(
+      HideAnswerQuestionsUserAction _value,
+      $Res Function(HideAnswerQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as HideAnswerQuestionsUserAction));
+
+  @override
+  HideAnswerQuestionsUserAction get _value =>
+      super._value as HideAnswerQuestionsUserAction;
+
+  @override
+  $Res call({
+    Object question = freezed,
+  }) {
+    return _then(HideAnswerQuestionsUserAction(
+      question: question == freezed ? _value.question : question as Question,
+    ));
+  }
+
+  @override
+  $QuestionCopyWith<$Res> get question {
+    if (_value.question == null) {
+      return null;
+    }
+    return $QuestionCopyWith<$Res>(_value.question, (value) {
+      return _then(_value.copyWith(question: value));
+    });
+  }
+}
+
+class _$HideAnswerQuestionsUserAction
+    with DiagnosticableTreeMixin
+    implements HideAnswerQuestionsUserAction {
+  const _$HideAnswerQuestionsUserAction({@required this.question})
+      : assert(question != null);
+
+  @override
+  final Question question;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionQuestions.hideAnswer(question: $question)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserActionQuestions.hideAnswer'))
+      ..add(DiagnosticsProperty('question', question));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is HideAnswerQuestionsUserAction &&
+            (identical(other.question, question) ||
+                const DeepCollectionEquality()
+                    .equals(other.question, question)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(question);
+
+  @override
+  $HideAnswerQuestionsUserActionCopyWith<HideAnswerQuestionsUserAction>
+      get copyWith => _$HideAnswerQuestionsUserActionCopyWithImpl<
+          HideAnswerQuestionsUserAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(List<Question> questions, int index),
+    @required Result openRandom(),
+    @required Result close(),
+    @required Result showAnswer(Question question),
+    @required Result hideAnswer(Question question),
+    @required Result loadRandom(),
+    @required Result select(int questionIndex),
+  }) {
+    assert(open != null);
+    assert(openRandom != null);
+    assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
+    return hideAnswer(question);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(List<Question> questions, int index),
+    Result openRandom(),
+    Result close(),
+    Result showAnswer(Question question),
+    Result hideAnswer(Question question),
+    Result loadRandom(),
+    Result select(int questionIndex),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (hideAnswer != null) {
+      return hideAnswer(question);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenQuestionsUserAction value),
+    @required Result openRandom(OpenRandomQuestionsUserAction value),
+    @required Result close(CloseQuestionsUserAction value),
+    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
+    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
+    @required Result loadRandom(LoadRandomQuestionsUserAction value),
+    @required Result select(SelectQuestionsUserAction value),
+  }) {
+    assert(open != null);
+    assert(openRandom != null);
+    assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
+    return hideAnswer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenQuestionsUserAction value),
+    Result openRandom(OpenRandomQuestionsUserAction value),
+    Result close(CloseQuestionsUserAction value),
+    Result showAnswer(ShowAnswerQuestionsUserAction value),
+    Result hideAnswer(HideAnswerQuestionsUserAction value),
+    Result loadRandom(LoadRandomQuestionsUserAction value),
+    Result select(SelectQuestionsUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (hideAnswer != null) {
+      return hideAnswer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HideAnswerQuestionsUserAction implements UserActionQuestions {
+  const factory HideAnswerQuestionsUserAction({@required Question question}) =
+      _$HideAnswerQuestionsUserAction;
+
+  Question get question;
+  $HideAnswerQuestionsUserActionCopyWith<HideAnswerQuestionsUserAction>
+      get copyWith;
+}
+
+abstract class $LoadRandomQuestionsUserActionCopyWith<$Res> {
+  factory $LoadRandomQuestionsUserActionCopyWith(
+          LoadRandomQuestionsUserAction value,
+          $Res Function(LoadRandomQuestionsUserAction) then) =
+      _$LoadRandomQuestionsUserActionCopyWithImpl<$Res>;
+}
+
+class _$LoadRandomQuestionsUserActionCopyWithImpl<$Res>
+    extends _$UserActionQuestionsCopyWithImpl<$Res>
+    implements $LoadRandomQuestionsUserActionCopyWith<$Res> {
+  _$LoadRandomQuestionsUserActionCopyWithImpl(
+      LoadRandomQuestionsUserAction _value,
+      $Res Function(LoadRandomQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as LoadRandomQuestionsUserAction));
+
+  @override
+  LoadRandomQuestionsUserAction get _value =>
+      super._value as LoadRandomQuestionsUserAction;
+}
+
+class _$LoadRandomQuestionsUserAction
+    with DiagnosticableTreeMixin
+    implements LoadRandomQuestionsUserAction {
+  const _$LoadRandomQuestionsUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionQuestions.loadRandom()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserActionQuestions.loadRandom'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is LoadRandomQuestionsUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(List<Question> questions, int index),
+    @required Result openRandom(),
+    @required Result close(),
+    @required Result showAnswer(Question question),
+    @required Result hideAnswer(Question question),
+    @required Result loadRandom(),
+    @required Result select(int questionIndex),
+  }) {
+    assert(open != null);
+    assert(openRandom != null);
+    assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
+    return loadRandom();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(List<Question> questions, int index),
+    Result openRandom(),
+    Result close(),
+    Result showAnswer(Question question),
+    Result hideAnswer(Question question),
+    Result loadRandom(),
+    Result select(int questionIndex),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadRandom != null) {
+      return loadRandom();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenQuestionsUserAction value),
+    @required Result openRandom(OpenRandomQuestionsUserAction value),
+    @required Result close(CloseQuestionsUserAction value),
+    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
+    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
+    @required Result loadRandom(LoadRandomQuestionsUserAction value),
+    @required Result select(SelectQuestionsUserAction value),
+  }) {
+    assert(open != null);
+    assert(openRandom != null);
+    assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
+    return loadRandom(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenQuestionsUserAction value),
+    Result openRandom(OpenRandomQuestionsUserAction value),
+    Result close(CloseQuestionsUserAction value),
+    Result showAnswer(ShowAnswerQuestionsUserAction value),
+    Result hideAnswer(HideAnswerQuestionsUserAction value),
+    Result loadRandom(LoadRandomQuestionsUserAction value),
+    Result select(SelectQuestionsUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadRandom != null) {
+      return loadRandom(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadRandomQuestionsUserAction implements UserActionQuestions {
+  const factory LoadRandomQuestionsUserAction() =
+      _$LoadRandomQuestionsUserAction;
+}
+
+abstract class $SelectQuestionsUserActionCopyWith<$Res> {
+  factory $SelectQuestionsUserActionCopyWith(SelectQuestionsUserAction value,
+          $Res Function(SelectQuestionsUserAction) then) =
+      _$SelectQuestionsUserActionCopyWithImpl<$Res>;
+  $Res call({int questionIndex});
+}
+
+class _$SelectQuestionsUserActionCopyWithImpl<$Res>
+    extends _$UserActionQuestionsCopyWithImpl<$Res>
+    implements $SelectQuestionsUserActionCopyWith<$Res> {
+  _$SelectQuestionsUserActionCopyWithImpl(SelectQuestionsUserAction _value,
+      $Res Function(SelectQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as SelectQuestionsUserAction));
+
+  @override
+  SelectQuestionsUserAction get _value =>
+      super._value as SelectQuestionsUserAction;
+
+  @override
+  $Res call({
+    Object questionIndex = freezed,
+  }) {
+    return _then(SelectQuestionsUserAction(
+      questionIndex: questionIndex == freezed
+          ? _value.questionIndex
+          : questionIndex as int,
+    ));
+  }
+}
+
+class _$SelectQuestionsUserAction
+    with DiagnosticableTreeMixin
+    implements SelectQuestionsUserAction {
+  const _$SelectQuestionsUserAction({@required this.questionIndex})
+      : assert(questionIndex != null);
+
+  @override
+  final int questionIndex;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionQuestions.select(questionIndex: $questionIndex)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserActionQuestions.select'))
+      ..add(DiagnosticsProperty('questionIndex', questionIndex));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SelectQuestionsUserAction &&
+            (identical(other.questionIndex, questionIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.questionIndex, questionIndex)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questionIndex);
+
+  @override
+  $SelectQuestionsUserActionCopyWith<SelectQuestionsUserAction> get copyWith =>
+      _$SelectQuestionsUserActionCopyWithImpl<SelectQuestionsUserAction>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(List<Question> questions, int index),
+    @required Result openRandom(),
+    @required Result close(),
+    @required Result showAnswer(Question question),
+    @required Result hideAnswer(Question question),
+    @required Result loadRandom(),
+    @required Result select(int questionIndex),
+  }) {
+    assert(open != null);
+    assert(openRandom != null);
+    assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
+    return select(questionIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(List<Question> questions, int index),
+    Result openRandom(),
+    Result close(),
+    Result showAnswer(Question question),
+    Result hideAnswer(Question question),
+    Result loadRandom(),
+    Result select(int questionIndex),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (select != null) {
+      return select(questionIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenQuestionsUserAction value),
+    @required Result openRandom(OpenRandomQuestionsUserAction value),
+    @required Result close(CloseQuestionsUserAction value),
+    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
+    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
+    @required Result loadRandom(LoadRandomQuestionsUserAction value),
+    @required Result select(SelectQuestionsUserAction value),
+  }) {
+    assert(open != null);
+    assert(openRandom != null);
+    assert(close != null);
+    assert(showAnswer != null);
+    assert(hideAnswer != null);
+    assert(loadRandom != null);
+    assert(select != null);
+    return select(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenQuestionsUserAction value),
+    Result openRandom(OpenRandomQuestionsUserAction value),
+    Result close(CloseQuestionsUserAction value),
+    Result showAnswer(ShowAnswerQuestionsUserAction value),
+    Result hideAnswer(HideAnswerQuestionsUserAction value),
+    Result loadRandom(LoadRandomQuestionsUserAction value),
+    Result select(SelectQuestionsUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (select != null) {
+      return select(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectQuestionsUserAction implements UserActionQuestions {
+  const factory SelectQuestionsUserAction({@required int questionIndex}) =
+      _$SelectQuestionsUserAction;
+
+  int get questionIndex;
+  $SelectQuestionsUserActionCopyWith<SelectQuestionsUserAction> get copyWith;
+}
+
 class _$SystemActionQuestionsTearOff {
   const _$SystemActionQuestionsTearOff();
 
   InitQuestionsSystemAction init(
-      {@required Iterable<Question> questions,
-      @required int selectedQuestionIndex}) {
+      {@required List<Question> questions, @required int index}) {
     return InitQuestionsSystemAction(
       questions: questions,
-      selectedQuestionIndex: selectedQuestionIndex,
+      index: index,
     );
   }
 
@@ -461,6 +1194,23 @@ class _$SystemActionQuestionsTearOff {
   DeInitQuestionsSystemAction deInit() {
     return const DeInitQuestionsSystemAction();
   }
+
+  LoadingQuestionsSystemAction loading() {
+    return const LoadingQuestionsSystemAction();
+  }
+
+  FailedQuestionsSystemAction failed({@required Exception exception}) {
+    return FailedQuestionsSystemAction(
+      exception: exception,
+    );
+  }
+
+  CompletedQuestionsSystemAction completed(
+      {@required Iterable<Question> questions}) {
+    return CompletedQuestionsSystemAction(
+      questions: questions,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -469,16 +1219,21 @@ const $SystemActionQuestions = _$SystemActionQuestionsTearOff();
 mixin _$SystemActionQuestions {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result init(Iterable<Question> questions, int selectedQuestionIndex),
+    @required Result init(List<Question> questions, int index),
     @required Result initRandom(),
     @required Result deInit(),
+    @required Result loading(),
+    @required Result failed(Exception exception),
+    @required Result completed(Iterable<Question> questions),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(Iterable<Question> questions, int selectedQuestionIndex),
+    Result init(List<Question> questions, int index),
     Result initRandom(),
     Result deInit(),
+    Result loading(),
+    Result failed(Exception exception),
+    Result completed(Iterable<Question> questions),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -486,12 +1241,18 @@ mixin _$SystemActionQuestions {
     @required Result init(InitQuestionsSystemAction value),
     @required Result initRandom(InitRandomQuestionsSystemAction value),
     @required Result deInit(DeInitQuestionsSystemAction value),
+    @required Result loading(LoadingQuestionsSystemAction value),
+    @required Result failed(FailedQuestionsSystemAction value),
+    @required Result completed(CompletedQuestionsSystemAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result init(InitQuestionsSystemAction value),
     Result initRandom(InitRandomQuestionsSystemAction value),
     Result deInit(DeInitQuestionsSystemAction value),
+    Result loading(LoadingQuestionsSystemAction value),
+    Result failed(FailedQuestionsSystemAction value),
+    Result completed(CompletedQuestionsSystemAction value),
     @required Result orElse(),
   });
 }
@@ -515,7 +1276,7 @@ abstract class $InitQuestionsSystemActionCopyWith<$Res> {
   factory $InitQuestionsSystemActionCopyWith(InitQuestionsSystemAction value,
           $Res Function(InitQuestionsSystemAction) then) =
       _$InitQuestionsSystemActionCopyWithImpl<$Res>;
-  $Res call({Iterable<Question> questions, int selectedQuestionIndex});
+  $Res call({List<Question> questions, int index});
 }
 
 class _$InitQuestionsSystemActionCopyWithImpl<$Res>
@@ -532,15 +1293,12 @@ class _$InitQuestionsSystemActionCopyWithImpl<$Res>
   @override
   $Res call({
     Object questions = freezed,
-    Object selectedQuestionIndex = freezed,
+    Object index = freezed,
   }) {
     return _then(InitQuestionsSystemAction(
-      questions: questions == freezed
-          ? _value.questions
-          : questions as Iterable<Question>,
-      selectedQuestionIndex: selectedQuestionIndex == freezed
-          ? _value.selectedQuestionIndex
-          : selectedQuestionIndex as int,
+      questions:
+          questions == freezed ? _value.questions : questions as List<Question>,
+      index: index == freezed ? _value.index : index as int,
     ));
   }
 }
@@ -549,18 +1307,18 @@ class _$InitQuestionsSystemAction
     with DiagnosticableTreeMixin
     implements InitQuestionsSystemAction {
   const _$InitQuestionsSystemAction(
-      {@required this.questions, @required this.selectedQuestionIndex})
+      {@required this.questions, @required this.index})
       : assert(questions != null),
-        assert(selectedQuestionIndex != null);
+        assert(index != null);
 
   @override
-  final Iterable<Question> questions;
+  final List<Question> questions;
   @override
-  final int selectedQuestionIndex;
+  final int index;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SystemActionQuestions.init(questions: $questions, selectedQuestionIndex: $selectedQuestionIndex)';
+    return 'SystemActionQuestions.init(questions: $questions, index: $index)';
   }
 
   @override
@@ -569,8 +1327,7 @@ class _$InitQuestionsSystemAction
     properties
       ..add(DiagnosticsProperty('type', 'SystemActionQuestions.init'))
       ..add(DiagnosticsProperty('questions', questions))
-      ..add(
-          DiagnosticsProperty('selectedQuestionIndex', selectedQuestionIndex));
+      ..add(DiagnosticsProperty('index', index));
   }
 
   @override
@@ -580,16 +1337,15 @@ class _$InitQuestionsSystemAction
             (identical(other.questions, questions) ||
                 const DeepCollectionEquality()
                     .equals(other.questions, questions)) &&
-            (identical(other.selectedQuestionIndex, selectedQuestionIndex) ||
-                const DeepCollectionEquality().equals(
-                    other.selectedQuestionIndex, selectedQuestionIndex)));
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(questions) ^
-      const DeepCollectionEquality().hash(selectedQuestionIndex);
+      const DeepCollectionEquality().hash(index);
 
   @override
   $InitQuestionsSystemActionCopyWith<InitQuestionsSystemAction> get copyWith =>
@@ -599,28 +1355,36 @@ class _$InitQuestionsSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result init(Iterable<Question> questions, int selectedQuestionIndex),
+    @required Result init(List<Question> questions, int index),
     @required Result initRandom(),
     @required Result deInit(),
+    @required Result loading(),
+    @required Result failed(Exception exception),
+    @required Result completed(Iterable<Question> questions),
   }) {
     assert(init != null);
     assert(initRandom != null);
     assert(deInit != null);
-    return init(questions, selectedQuestionIndex);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return init(questions, index);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(Iterable<Question> questions, int selectedQuestionIndex),
+    Result init(List<Question> questions, int index),
     Result initRandom(),
     Result deInit(),
+    Result loading(),
+    Result failed(Exception exception),
+    Result completed(Iterable<Question> questions),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (init != null) {
-      return init(questions, selectedQuestionIndex);
+      return init(questions, index);
     }
     return orElse();
   }
@@ -631,10 +1395,16 @@ class _$InitQuestionsSystemAction
     @required Result init(InitQuestionsSystemAction value),
     @required Result initRandom(InitRandomQuestionsSystemAction value),
     @required Result deInit(DeInitQuestionsSystemAction value),
+    @required Result loading(LoadingQuestionsSystemAction value),
+    @required Result failed(FailedQuestionsSystemAction value),
+    @required Result completed(CompletedQuestionsSystemAction value),
   }) {
     assert(init != null);
     assert(initRandom != null);
     assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
     return init(this);
   }
 
@@ -644,6 +1414,9 @@ class _$InitQuestionsSystemAction
     Result init(InitQuestionsSystemAction value),
     Result initRandom(InitRandomQuestionsSystemAction value),
     Result deInit(DeInitQuestionsSystemAction value),
+    Result loading(LoadingQuestionsSystemAction value),
+    Result failed(FailedQuestionsSystemAction value),
+    Result completed(CompletedQuestionsSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -656,11 +1429,11 @@ class _$InitQuestionsSystemAction
 
 abstract class InitQuestionsSystemAction implements SystemActionQuestions {
   const factory InitQuestionsSystemAction(
-      {@required Iterable<Question> questions,
-      @required int selectedQuestionIndex}) = _$InitQuestionsSystemAction;
+      {@required List<Question> questions,
+      @required int index}) = _$InitQuestionsSystemAction;
 
-  Iterable<Question> get questions;
-  int get selectedQuestionIndex;
+  List<Question> get questions;
+  int get index;
   $InitQuestionsSystemActionCopyWith<InitQuestionsSystemAction> get copyWith;
 }
 
@@ -712,23 +1485,31 @@ class _$InitRandomQuestionsSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result init(Iterable<Question> questions, int selectedQuestionIndex),
+    @required Result init(List<Question> questions, int index),
     @required Result initRandom(),
     @required Result deInit(),
+    @required Result loading(),
+    @required Result failed(Exception exception),
+    @required Result completed(Iterable<Question> questions),
   }) {
     assert(init != null);
     assert(initRandom != null);
     assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
     return initRandom();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(Iterable<Question> questions, int selectedQuestionIndex),
+    Result init(List<Question> questions, int index),
     Result initRandom(),
     Result deInit(),
+    Result loading(),
+    Result failed(Exception exception),
+    Result completed(Iterable<Question> questions),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -744,10 +1525,16 @@ class _$InitRandomQuestionsSystemAction
     @required Result init(InitQuestionsSystemAction value),
     @required Result initRandom(InitRandomQuestionsSystemAction value),
     @required Result deInit(DeInitQuestionsSystemAction value),
+    @required Result loading(LoadingQuestionsSystemAction value),
+    @required Result failed(FailedQuestionsSystemAction value),
+    @required Result completed(CompletedQuestionsSystemAction value),
   }) {
     assert(init != null);
     assert(initRandom != null);
     assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
     return initRandom(this);
   }
 
@@ -757,6 +1544,9 @@ class _$InitRandomQuestionsSystemAction
     Result init(InitQuestionsSystemAction value),
     Result initRandom(InitRandomQuestionsSystemAction value),
     Result deInit(DeInitQuestionsSystemAction value),
+    Result loading(LoadingQuestionsSystemAction value),
+    Result failed(FailedQuestionsSystemAction value),
+    Result completed(CompletedQuestionsSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -820,23 +1610,31 @@ class _$DeInitQuestionsSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result init(Iterable<Question> questions, int selectedQuestionIndex),
+    @required Result init(List<Question> questions, int index),
     @required Result initRandom(),
     @required Result deInit(),
+    @required Result loading(),
+    @required Result failed(Exception exception),
+    @required Result completed(Iterable<Question> questions),
   }) {
     assert(init != null);
     assert(initRandom != null);
     assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
     return deInit();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(Iterable<Question> questions, int selectedQuestionIndex),
+    Result init(List<Question> questions, int index),
     Result initRandom(),
     Result deInit(),
+    Result loading(),
+    Result failed(Exception exception),
+    Result completed(Iterable<Question> questions),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -852,10 +1650,16 @@ class _$DeInitQuestionsSystemAction
     @required Result init(InitQuestionsSystemAction value),
     @required Result initRandom(InitRandomQuestionsSystemAction value),
     @required Result deInit(DeInitQuestionsSystemAction value),
+    @required Result loading(LoadingQuestionsSystemAction value),
+    @required Result failed(FailedQuestionsSystemAction value),
+    @required Result completed(CompletedQuestionsSystemAction value),
   }) {
     assert(init != null);
     assert(initRandom != null);
     assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
     return deInit(this);
   }
 
@@ -865,6 +1669,9 @@ class _$DeInitQuestionsSystemAction
     Result init(InitQuestionsSystemAction value),
     Result initRandom(InitRandomQuestionsSystemAction value),
     Result deInit(DeInitQuestionsSystemAction value),
+    Result loading(LoadingQuestionsSystemAction value),
+    Result failed(FailedQuestionsSystemAction value),
+    Result completed(CompletedQuestionsSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -879,730 +1686,164 @@ abstract class DeInitQuestionsSystemAction implements SystemActionQuestions {
   const factory DeInitQuestionsSystemAction() = _$DeInitQuestionsSystemAction;
 }
 
-class _$ReloadQuestionsTearOff {
-  const _$ReloadQuestionsTearOff();
-
-  _ReloadQuestions call() {
-    return const _ReloadQuestions();
-  }
+abstract class $LoadingQuestionsSystemActionCopyWith<$Res> {
+  factory $LoadingQuestionsSystemActionCopyWith(
+          LoadingQuestionsSystemAction value,
+          $Res Function(LoadingQuestionsSystemAction) then) =
+      _$LoadingQuestionsSystemActionCopyWithImpl<$Res>;
 }
 
-// ignore: unused_element
-const $ReloadQuestions = _$ReloadQuestionsTearOff();
-
-mixin _$ReloadQuestions {}
-
-abstract class $ReloadQuestionsCopyWith<$Res> {
-  factory $ReloadQuestionsCopyWith(
-          ReloadQuestions value, $Res Function(ReloadQuestions) then) =
-      _$ReloadQuestionsCopyWithImpl<$Res>;
-}
-
-class _$ReloadQuestionsCopyWithImpl<$Res>
-    implements $ReloadQuestionsCopyWith<$Res> {
-  _$ReloadQuestionsCopyWithImpl(this._value, this._then);
-
-  final ReloadQuestions _value;
-  // ignore: unused_field
-  final $Res Function(ReloadQuestions) _then;
-}
-
-abstract class _$ReloadQuestionsCopyWith<$Res> {
-  factory _$ReloadQuestionsCopyWith(
-          _ReloadQuestions value, $Res Function(_ReloadQuestions) then) =
-      __$ReloadQuestionsCopyWithImpl<$Res>;
-}
-
-class __$ReloadQuestionsCopyWithImpl<$Res>
-    extends _$ReloadQuestionsCopyWithImpl<$Res>
-    implements _$ReloadQuestionsCopyWith<$Res> {
-  __$ReloadQuestionsCopyWithImpl(
-      _ReloadQuestions _value, $Res Function(_ReloadQuestions) _then)
-      : super(_value, (v) => _then(v as _ReloadQuestions));
+class _$LoadingQuestionsSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionQuestionsCopyWithImpl<$Res>
+    implements $LoadingQuestionsSystemActionCopyWith<$Res> {
+  _$LoadingQuestionsSystemActionCopyWithImpl(
+      LoadingQuestionsSystemAction _value,
+      $Res Function(LoadingQuestionsSystemAction) _then)
+      : super(_value, (v) => _then(v as LoadingQuestionsSystemAction));
 
   @override
-  _ReloadQuestions get _value => super._value as _ReloadQuestions;
+  LoadingQuestionsSystemAction get _value =>
+      super._value as LoadingQuestionsSystemAction;
 }
 
-class _$_ReloadQuestions
+class _$LoadingQuestionsSystemAction
     with DiagnosticableTreeMixin
-    implements _ReloadQuestions {
-  const _$_ReloadQuestions();
+    implements LoadingQuestionsSystemAction {
+  const _$LoadingQuestionsSystemAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ReloadQuestions()';
+    return 'SystemActionQuestions.loading()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ReloadQuestions'));
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionQuestions.loading'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ReloadQuestions);
+    return identical(this, other) || (other is LoadingQuestionsSystemAction);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _ReloadQuestions implements ReloadQuestions {
-  const factory _ReloadQuestions() = _$_ReloadQuestions;
-}
-
-class _$SelectQuestionTearOff {
-  const _$SelectQuestionTearOff();
-
-  _SelectQuestion call({@required int questionIndex}) {
-    return _SelectQuestion(
-      questionIndex: questionIndex,
-    );
-  }
-}
-
-// ignore: unused_element
-const $SelectQuestion = _$SelectQuestionTearOff();
-
-mixin _$SelectQuestion {
-  int get questionIndex;
-
-  $SelectQuestionCopyWith<SelectQuestion> get copyWith;
-}
-
-abstract class $SelectQuestionCopyWith<$Res> {
-  factory $SelectQuestionCopyWith(
-          SelectQuestion value, $Res Function(SelectQuestion) then) =
-      _$SelectQuestionCopyWithImpl<$Res>;
-  $Res call({int questionIndex});
-}
-
-class _$SelectQuestionCopyWithImpl<$Res>
-    implements $SelectQuestionCopyWith<$Res> {
-  _$SelectQuestionCopyWithImpl(this._value, this._then);
-
-  final SelectQuestion _value;
-  // ignore: unused_field
-  final $Res Function(SelectQuestion) _then;
 
   @override
-  $Res call({
-    Object questionIndex = freezed,
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(List<Question> questions, int index),
+    @required Result initRandom(),
+    @required Result deInit(),
+    @required Result loading(),
+    @required Result failed(Exception exception),
+    @required Result completed(Iterable<Question> questions),
   }) {
-    return _then(_value.copyWith(
-      questionIndex: questionIndex == freezed
-          ? _value.questionIndex
-          : questionIndex as int,
-    ));
+    assert(init != null);
+    assert(initRandom != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return loading();
   }
-}
-
-abstract class _$SelectQuestionCopyWith<$Res>
-    implements $SelectQuestionCopyWith<$Res> {
-  factory _$SelectQuestionCopyWith(
-          _SelectQuestion value, $Res Function(_SelectQuestion) then) =
-      __$SelectQuestionCopyWithImpl<$Res>;
-  @override
-  $Res call({int questionIndex});
-}
-
-class __$SelectQuestionCopyWithImpl<$Res>
-    extends _$SelectQuestionCopyWithImpl<$Res>
-    implements _$SelectQuestionCopyWith<$Res> {
-  __$SelectQuestionCopyWithImpl(
-      _SelectQuestion _value, $Res Function(_SelectQuestion) _then)
-      : super(_value, (v) => _then(v as _SelectQuestion));
 
   @override
-  _SelectQuestion get _value => super._value as _SelectQuestion;
-
-  @override
-  $Res call({
-    Object questionIndex = freezed,
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(List<Question> questions, int index),
+    Result initRandom(),
+    Result deInit(),
+    Result loading(),
+    Result failed(Exception exception),
+    Result completed(Iterable<Question> questions),
+    @required Result orElse(),
   }) {
-    return _then(_SelectQuestion(
-      questionIndex: questionIndex == freezed
-          ? _value.questionIndex
-          : questionIndex as int,
-    ));
-  }
-}
-
-class _$_SelectQuestion
-    with DiagnosticableTreeMixin
-    implements _SelectQuestion {
-  const _$_SelectQuestion({@required this.questionIndex})
-      : assert(questionIndex != null);
-
-  @override
-  final int questionIndex;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SelectQuestion(questionIndex: $questionIndex)';
+    assert(orElse != null);
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
   }
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SelectQuestion'))
-      ..add(DiagnosticsProperty('questionIndex', questionIndex));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SelectQuestion &&
-            (identical(other.questionIndex, questionIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionIndex, questionIndex)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questionIndex);
-
-  @override
-  _$SelectQuestionCopyWith<_SelectQuestion> get copyWith =>
-      __$SelectQuestionCopyWithImpl<_SelectQuestion>(this, _$identity);
-}
-
-abstract class _SelectQuestion implements SelectQuestion {
-  const factory _SelectQuestion({@required int questionIndex}) =
-      _$_SelectQuestion;
-
-  @override
-  int get questionIndex;
-  @override
-  _$SelectQuestionCopyWith<_SelectQuestion> get copyWith;
-}
-
-class _$ShowAnswerTearOff {
-  const _$ShowAnswerTearOff();
-
-  _ShowAnswer call({@required int questionIndex}) {
-    return _ShowAnswer(
-      questionIndex: questionIndex,
-    );
-  }
-}
-
-// ignore: unused_element
-const $ShowAnswer = _$ShowAnswerTearOff();
-
-mixin _$ShowAnswer {
-  int get questionIndex;
-
-  $ShowAnswerCopyWith<ShowAnswer> get copyWith;
-}
-
-abstract class $ShowAnswerCopyWith<$Res> {
-  factory $ShowAnswerCopyWith(
-          ShowAnswer value, $Res Function(ShowAnswer) then) =
-      _$ShowAnswerCopyWithImpl<$Res>;
-  $Res call({int questionIndex});
-}
-
-class _$ShowAnswerCopyWithImpl<$Res> implements $ShowAnswerCopyWith<$Res> {
-  _$ShowAnswerCopyWithImpl(this._value, this._then);
-
-  final ShowAnswer _value;
-  // ignore: unused_field
-  final $Res Function(ShowAnswer) _then;
-
-  @override
-  $Res call({
-    Object questionIndex = freezed,
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitQuestionsSystemAction value),
+    @required Result initRandom(InitRandomQuestionsSystemAction value),
+    @required Result deInit(DeInitQuestionsSystemAction value),
+    @required Result loading(LoadingQuestionsSystemAction value),
+    @required Result failed(FailedQuestionsSystemAction value),
+    @required Result completed(CompletedQuestionsSystemAction value),
   }) {
-    return _then(_value.copyWith(
-      questionIndex: questionIndex == freezed
-          ? _value.questionIndex
-          : questionIndex as int,
-    ));
+    assert(init != null);
+    assert(initRandom != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return loading(this);
   }
-}
-
-abstract class _$ShowAnswerCopyWith<$Res> implements $ShowAnswerCopyWith<$Res> {
-  factory _$ShowAnswerCopyWith(
-          _ShowAnswer value, $Res Function(_ShowAnswer) then) =
-      __$ShowAnswerCopyWithImpl<$Res>;
-  @override
-  $Res call({int questionIndex});
-}
-
-class __$ShowAnswerCopyWithImpl<$Res> extends _$ShowAnswerCopyWithImpl<$Res>
-    implements _$ShowAnswerCopyWith<$Res> {
-  __$ShowAnswerCopyWithImpl(
-      _ShowAnswer _value, $Res Function(_ShowAnswer) _then)
-      : super(_value, (v) => _then(v as _ShowAnswer));
 
   @override
-  _ShowAnswer get _value => super._value as _ShowAnswer;
-
-  @override
-  $Res call({
-    Object questionIndex = freezed,
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitQuestionsSystemAction value),
+    Result initRandom(InitRandomQuestionsSystemAction value),
+    Result deInit(DeInitQuestionsSystemAction value),
+    Result loading(LoadingQuestionsSystemAction value),
+    Result failed(FailedQuestionsSystemAction value),
+    Result completed(CompletedQuestionsSystemAction value),
+    @required Result orElse(),
   }) {
-    return _then(_ShowAnswer(
-      questionIndex: questionIndex == freezed
-          ? _value.questionIndex
-          : questionIndex as int,
-    ));
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
   }
 }
 
-class _$_ShowAnswer with DiagnosticableTreeMixin implements _ShowAnswer {
-  const _$_ShowAnswer({@required this.questionIndex})
-      : assert(questionIndex != null);
-
-  @override
-  final int questionIndex;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ShowAnswer(questionIndex: $questionIndex)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ShowAnswer'))
-      ..add(DiagnosticsProperty('questionIndex', questionIndex));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ShowAnswer &&
-            (identical(other.questionIndex, questionIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionIndex, questionIndex)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questionIndex);
-
-  @override
-  _$ShowAnswerCopyWith<_ShowAnswer> get copyWith =>
-      __$ShowAnswerCopyWithImpl<_ShowAnswer>(this, _$identity);
+abstract class LoadingQuestionsSystemAction implements SystemActionQuestions {
+  const factory LoadingQuestionsSystemAction() = _$LoadingQuestionsSystemAction;
 }
 
-abstract class _ShowAnswer implements ShowAnswer {
-  const factory _ShowAnswer({@required int questionIndex}) = _$_ShowAnswer;
-
-  @override
-  int get questionIndex;
-  @override
-  _$ShowAnswerCopyWith<_ShowAnswer> get copyWith;
-}
-
-class _$HideAnswerTearOff {
-  const _$HideAnswerTearOff();
-
-  _HideAnswer call({@required int questionIndex}) {
-    return _HideAnswer(
-      questionIndex: questionIndex,
-    );
-  }
-}
-
-// ignore: unused_element
-const $HideAnswer = _$HideAnswerTearOff();
-
-mixin _$HideAnswer {
-  int get questionIndex;
-
-  $HideAnswerCopyWith<HideAnswer> get copyWith;
-}
-
-abstract class $HideAnswerCopyWith<$Res> {
-  factory $HideAnswerCopyWith(
-          HideAnswer value, $Res Function(HideAnswer) then) =
-      _$HideAnswerCopyWithImpl<$Res>;
-  $Res call({int questionIndex});
-}
-
-class _$HideAnswerCopyWithImpl<$Res> implements $HideAnswerCopyWith<$Res> {
-  _$HideAnswerCopyWithImpl(this._value, this._then);
-
-  final HideAnswer _value;
-  // ignore: unused_field
-  final $Res Function(HideAnswer) _then;
-
-  @override
-  $Res call({
-    Object questionIndex = freezed,
-  }) {
-    return _then(_value.copyWith(
-      questionIndex: questionIndex == freezed
-          ? _value.questionIndex
-          : questionIndex as int,
-    ));
-  }
-}
-
-abstract class _$HideAnswerCopyWith<$Res> implements $HideAnswerCopyWith<$Res> {
-  factory _$HideAnswerCopyWith(
-          _HideAnswer value, $Res Function(_HideAnswer) then) =
-      __$HideAnswerCopyWithImpl<$Res>;
-  @override
-  $Res call({int questionIndex});
-}
-
-class __$HideAnswerCopyWithImpl<$Res> extends _$HideAnswerCopyWithImpl<$Res>
-    implements _$HideAnswerCopyWith<$Res> {
-  __$HideAnswerCopyWithImpl(
-      _HideAnswer _value, $Res Function(_HideAnswer) _then)
-      : super(_value, (v) => _then(v as _HideAnswer));
-
-  @override
-  _HideAnswer get _value => super._value as _HideAnswer;
-
-  @override
-  $Res call({
-    Object questionIndex = freezed,
-  }) {
-    return _then(_HideAnswer(
-      questionIndex: questionIndex == freezed
-          ? _value.questionIndex
-          : questionIndex as int,
-    ));
-  }
-}
-
-class _$_HideAnswer with DiagnosticableTreeMixin implements _HideAnswer {
-  const _$_HideAnswer({@required this.questionIndex})
-      : assert(questionIndex != null);
-
-  @override
-  final int questionIndex;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HideAnswer(questionIndex: $questionIndex)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'HideAnswer'))
-      ..add(DiagnosticsProperty('questionIndex', questionIndex));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _HideAnswer &&
-            (identical(other.questionIndex, questionIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionIndex, questionIndex)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questionIndex);
-
-  @override
-  _$HideAnswerCopyWith<_HideAnswer> get copyWith =>
-      __$HideAnswerCopyWithImpl<_HideAnswer>(this, _$identity);
-}
-
-abstract class _HideAnswer implements HideAnswer {
-  const factory _HideAnswer({@required int questionIndex}) = _$_HideAnswer;
-
-  @override
-  int get questionIndex;
-  @override
-  _$HideAnswerCopyWith<_HideAnswer> get copyWith;
-}
-
-class _$QuestionsAreLoadingTearOff {
-  const _$QuestionsAreLoadingTearOff();
-
-  _QuestionsAreLoading call() {
-    return const _QuestionsAreLoading();
-  }
-}
-
-// ignore: unused_element
-const $QuestionsAreLoading = _$QuestionsAreLoadingTearOff();
-
-mixin _$QuestionsAreLoading {}
-
-abstract class $QuestionsAreLoadingCopyWith<$Res> {
-  factory $QuestionsAreLoadingCopyWith(
-          QuestionsAreLoading value, $Res Function(QuestionsAreLoading) then) =
-      _$QuestionsAreLoadingCopyWithImpl<$Res>;
-}
-
-class _$QuestionsAreLoadingCopyWithImpl<$Res>
-    implements $QuestionsAreLoadingCopyWith<$Res> {
-  _$QuestionsAreLoadingCopyWithImpl(this._value, this._then);
-
-  final QuestionsAreLoading _value;
-  // ignore: unused_field
-  final $Res Function(QuestionsAreLoading) _then;
-}
-
-abstract class _$QuestionsAreLoadingCopyWith<$Res> {
-  factory _$QuestionsAreLoadingCopyWith(_QuestionsAreLoading value,
-          $Res Function(_QuestionsAreLoading) then) =
-      __$QuestionsAreLoadingCopyWithImpl<$Res>;
-}
-
-class __$QuestionsAreLoadingCopyWithImpl<$Res>
-    extends _$QuestionsAreLoadingCopyWithImpl<$Res>
-    implements _$QuestionsAreLoadingCopyWith<$Res> {
-  __$QuestionsAreLoadingCopyWithImpl(
-      _QuestionsAreLoading _value, $Res Function(_QuestionsAreLoading) _then)
-      : super(_value, (v) => _then(v as _QuestionsAreLoading));
-
-  @override
-  _QuestionsAreLoading get _value => super._value as _QuestionsAreLoading;
-}
-
-class _$_QuestionsAreLoading
-    with DiagnosticableTreeMixin
-    implements _QuestionsAreLoading {
-  const _$_QuestionsAreLoading();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'QuestionsAreLoading()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'QuestionsAreLoading'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _QuestionsAreLoading);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _QuestionsAreLoading implements QuestionsAreLoading {
-  const factory _QuestionsAreLoading() = _$_QuestionsAreLoading;
-}
-
-class _$MoreQuestionsLoadedTearOff {
-  const _$MoreQuestionsLoadedTearOff();
-
-  _MoreQuestionsLoaded call({@required Iterable<Question> questions}) {
-    return _MoreQuestionsLoaded(
-      questions: questions,
-    );
-  }
-}
-
-// ignore: unused_element
-const $MoreQuestionsLoaded = _$MoreQuestionsLoadedTearOff();
-
-mixin _$MoreQuestionsLoaded {
-  Iterable<Question> get questions;
-
-  $MoreQuestionsLoadedCopyWith<MoreQuestionsLoaded> get copyWith;
-}
-
-abstract class $MoreQuestionsLoadedCopyWith<$Res> {
-  factory $MoreQuestionsLoadedCopyWith(
-          MoreQuestionsLoaded value, $Res Function(MoreQuestionsLoaded) then) =
-      _$MoreQuestionsLoadedCopyWithImpl<$Res>;
-  $Res call({Iterable<Question> questions});
-}
-
-class _$MoreQuestionsLoadedCopyWithImpl<$Res>
-    implements $MoreQuestionsLoadedCopyWith<$Res> {
-  _$MoreQuestionsLoadedCopyWithImpl(this._value, this._then);
-
-  final MoreQuestionsLoaded _value;
-  // ignore: unused_field
-  final $Res Function(MoreQuestionsLoaded) _then;
-
-  @override
-  $Res call({
-    Object questions = freezed,
-  }) {
-    return _then(_value.copyWith(
-      questions: questions == freezed
-          ? _value.questions
-          : questions as Iterable<Question>,
-    ));
-  }
-}
-
-abstract class _$MoreQuestionsLoadedCopyWith<$Res>
-    implements $MoreQuestionsLoadedCopyWith<$Res> {
-  factory _$MoreQuestionsLoadedCopyWith(_MoreQuestionsLoaded value,
-          $Res Function(_MoreQuestionsLoaded) then) =
-      __$MoreQuestionsLoadedCopyWithImpl<$Res>;
-  @override
-  $Res call({Iterable<Question> questions});
-}
-
-class __$MoreQuestionsLoadedCopyWithImpl<$Res>
-    extends _$MoreQuestionsLoadedCopyWithImpl<$Res>
-    implements _$MoreQuestionsLoadedCopyWith<$Res> {
-  __$MoreQuestionsLoadedCopyWithImpl(
-      _MoreQuestionsLoaded _value, $Res Function(_MoreQuestionsLoaded) _then)
-      : super(_value, (v) => _then(v as _MoreQuestionsLoaded));
-
-  @override
-  _MoreQuestionsLoaded get _value => super._value as _MoreQuestionsLoaded;
-
-  @override
-  $Res call({
-    Object questions = freezed,
-  }) {
-    return _then(_MoreQuestionsLoaded(
-      questions: questions == freezed
-          ? _value.questions
-          : questions as Iterable<Question>,
-    ));
-  }
-}
-
-class _$_MoreQuestionsLoaded
-    with DiagnosticableTreeMixin
-    implements _MoreQuestionsLoaded {
-  const _$_MoreQuestionsLoaded({@required this.questions})
-      : assert(questions != null);
-
-  @override
-  final Iterable<Question> questions;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MoreQuestionsLoaded(questions: $questions)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MoreQuestionsLoaded'))
-      ..add(DiagnosticsProperty('questions', questions));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _MoreQuestionsLoaded &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questions);
-
-  @override
-  _$MoreQuestionsLoadedCopyWith<_MoreQuestionsLoaded> get copyWith =>
-      __$MoreQuestionsLoadedCopyWithImpl<_MoreQuestionsLoaded>(
-          this, _$identity);
-}
-
-abstract class _MoreQuestionsLoaded implements MoreQuestionsLoaded {
-  const factory _MoreQuestionsLoaded({@required Iterable<Question> questions}) =
-      _$_MoreQuestionsLoaded;
-
-  @override
-  Iterable<Question> get questions;
-  @override
-  _$MoreQuestionsLoadedCopyWith<_MoreQuestionsLoaded> get copyWith;
-}
-
-class _$QuestionsFailedToLoadTearOff {
-  const _$QuestionsFailedToLoadTearOff();
-
-  _QuestionsFailedToLoad call({@required Exception exception}) {
-    return _QuestionsFailedToLoad(
-      exception: exception,
-    );
-  }
-}
-
-// ignore: unused_element
-const $QuestionsFailedToLoad = _$QuestionsFailedToLoadTearOff();
-
-mixin _$QuestionsFailedToLoad {
-  Exception get exception;
-
-  $QuestionsFailedToLoadCopyWith<QuestionsFailedToLoad> get copyWith;
-}
-
-abstract class $QuestionsFailedToLoadCopyWith<$Res> {
-  factory $QuestionsFailedToLoadCopyWith(QuestionsFailedToLoad value,
-          $Res Function(QuestionsFailedToLoad) then) =
-      _$QuestionsFailedToLoadCopyWithImpl<$Res>;
+abstract class $FailedQuestionsSystemActionCopyWith<$Res> {
+  factory $FailedQuestionsSystemActionCopyWith(
+          FailedQuestionsSystemAction value,
+          $Res Function(FailedQuestionsSystemAction) then) =
+      _$FailedQuestionsSystemActionCopyWithImpl<$Res>;
   $Res call({Exception exception});
 }
 
-class _$QuestionsFailedToLoadCopyWithImpl<$Res>
-    implements $QuestionsFailedToLoadCopyWith<$Res> {
-  _$QuestionsFailedToLoadCopyWithImpl(this._value, this._then);
+class _$FailedQuestionsSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionQuestionsCopyWithImpl<$Res>
+    implements $FailedQuestionsSystemActionCopyWith<$Res> {
+  _$FailedQuestionsSystemActionCopyWithImpl(FailedQuestionsSystemAction _value,
+      $Res Function(FailedQuestionsSystemAction) _then)
+      : super(_value, (v) => _then(v as FailedQuestionsSystemAction));
 
-  final QuestionsFailedToLoad _value;
-  // ignore: unused_field
-  final $Res Function(QuestionsFailedToLoad) _then;
+  @override
+  FailedQuestionsSystemAction get _value =>
+      super._value as FailedQuestionsSystemAction;
 
   @override
   $Res call({
     Object exception = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(FailedQuestionsSystemAction(
       exception:
           exception == freezed ? _value.exception : exception as Exception,
     ));
   }
 }
 
-abstract class _$QuestionsFailedToLoadCopyWith<$Res>
-    implements $QuestionsFailedToLoadCopyWith<$Res> {
-  factory _$QuestionsFailedToLoadCopyWith(_QuestionsFailedToLoad value,
-          $Res Function(_QuestionsFailedToLoad) then) =
-      __$QuestionsFailedToLoadCopyWithImpl<$Res>;
-  @override
-  $Res call({Exception exception});
-}
-
-class __$QuestionsFailedToLoadCopyWithImpl<$Res>
-    extends _$QuestionsFailedToLoadCopyWithImpl<$Res>
-    implements _$QuestionsFailedToLoadCopyWith<$Res> {
-  __$QuestionsFailedToLoadCopyWithImpl(_QuestionsFailedToLoad _value,
-      $Res Function(_QuestionsFailedToLoad) _then)
-      : super(_value, (v) => _then(v as _QuestionsFailedToLoad));
-
-  @override
-  _QuestionsFailedToLoad get _value => super._value as _QuestionsFailedToLoad;
-
-  @override
-  $Res call({
-    Object exception = freezed,
-  }) {
-    return _then(_QuestionsFailedToLoad(
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
-    ));
-  }
-}
-
-class _$_QuestionsFailedToLoad
+class _$FailedQuestionsSystemAction
     with DiagnosticableTreeMixin
-    implements _QuestionsFailedToLoad {
-  const _$_QuestionsFailedToLoad({@required this.exception})
+    implements FailedQuestionsSystemAction {
+  const _$FailedQuestionsSystemAction({@required this.exception})
       : assert(exception != null);
 
   @override
@@ -1610,21 +1851,21 @@ class _$_QuestionsFailedToLoad
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'QuestionsFailedToLoad(exception: $exception)';
+    return 'SystemActionQuestions.failed(exception: $exception)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'QuestionsFailedToLoad'))
+      ..add(DiagnosticsProperty('type', 'SystemActionQuestions.failed'))
       ..add(DiagnosticsProperty('exception', exception));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _QuestionsFailedToLoad &&
+        (other is FailedQuestionsSystemAction &&
             (identical(other.exception, exception) ||
                 const DeepCollectionEquality()
                     .equals(other.exception, exception)));
@@ -1635,17 +1876,247 @@ class _$_QuestionsFailedToLoad
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
 
   @override
-  _$QuestionsFailedToLoadCopyWith<_QuestionsFailedToLoad> get copyWith =>
-      __$QuestionsFailedToLoadCopyWithImpl<_QuestionsFailedToLoad>(
-          this, _$identity);
+  $FailedQuestionsSystemActionCopyWith<FailedQuestionsSystemAction>
+      get copyWith => _$FailedQuestionsSystemActionCopyWithImpl<
+          FailedQuestionsSystemAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(List<Question> questions, int index),
+    @required Result initRandom(),
+    @required Result deInit(),
+    @required Result loading(),
+    @required Result failed(Exception exception),
+    @required Result completed(Iterable<Question> questions),
+  }) {
+    assert(init != null);
+    assert(initRandom != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return failed(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(List<Question> questions, int index),
+    Result initRandom(),
+    Result deInit(),
+    Result loading(),
+    Result failed(Exception exception),
+    Result completed(Iterable<Question> questions),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitQuestionsSystemAction value),
+    @required Result initRandom(InitRandomQuestionsSystemAction value),
+    @required Result deInit(DeInitQuestionsSystemAction value),
+    @required Result loading(LoadingQuestionsSystemAction value),
+    @required Result failed(FailedQuestionsSystemAction value),
+    @required Result completed(CompletedQuestionsSystemAction value),
+  }) {
+    assert(init != null);
+    assert(initRandom != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return failed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitQuestionsSystemAction value),
+    Result initRandom(InitRandomQuestionsSystemAction value),
+    Result deInit(DeInitQuestionsSystemAction value),
+    Result loading(LoadingQuestionsSystemAction value),
+    Result failed(FailedQuestionsSystemAction value),
+    Result completed(CompletedQuestionsSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failed != null) {
+      return failed(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _QuestionsFailedToLoad implements QuestionsFailedToLoad {
-  const factory _QuestionsFailedToLoad({@required Exception exception}) =
-      _$_QuestionsFailedToLoad;
+abstract class FailedQuestionsSystemAction implements SystemActionQuestions {
+  const factory FailedQuestionsSystemAction({@required Exception exception}) =
+      _$FailedQuestionsSystemAction;
+
+  Exception get exception;
+  $FailedQuestionsSystemActionCopyWith<FailedQuestionsSystemAction>
+      get copyWith;
+}
+
+abstract class $CompletedQuestionsSystemActionCopyWith<$Res> {
+  factory $CompletedQuestionsSystemActionCopyWith(
+          CompletedQuestionsSystemAction value,
+          $Res Function(CompletedQuestionsSystemAction) then) =
+      _$CompletedQuestionsSystemActionCopyWithImpl<$Res>;
+  $Res call({Iterable<Question> questions});
+}
+
+class _$CompletedQuestionsSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionQuestionsCopyWithImpl<$Res>
+    implements $CompletedQuestionsSystemActionCopyWith<$Res> {
+  _$CompletedQuestionsSystemActionCopyWithImpl(
+      CompletedQuestionsSystemAction _value,
+      $Res Function(CompletedQuestionsSystemAction) _then)
+      : super(_value, (v) => _then(v as CompletedQuestionsSystemAction));
 
   @override
-  Exception get exception;
+  CompletedQuestionsSystemAction get _value =>
+      super._value as CompletedQuestionsSystemAction;
+
   @override
-  _$QuestionsFailedToLoadCopyWith<_QuestionsFailedToLoad> get copyWith;
+  $Res call({
+    Object questions = freezed,
+  }) {
+    return _then(CompletedQuestionsSystemAction(
+      questions: questions == freezed
+          ? _value.questions
+          : questions as Iterable<Question>,
+    ));
+  }
+}
+
+class _$CompletedQuestionsSystemAction
+    with DiagnosticableTreeMixin
+    implements CompletedQuestionsSystemAction {
+  const _$CompletedQuestionsSystemAction({@required this.questions})
+      : assert(questions != null);
+
+  @override
+  final Iterable<Question> questions;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionQuestions.completed(questions: $questions)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionQuestions.completed'))
+      ..add(DiagnosticsProperty('questions', questions));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CompletedQuestionsSystemAction &&
+            (identical(other.questions, questions) ||
+                const DeepCollectionEquality()
+                    .equals(other.questions, questions)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questions);
+
+  @override
+  $CompletedQuestionsSystemActionCopyWith<CompletedQuestionsSystemAction>
+      get copyWith => _$CompletedQuestionsSystemActionCopyWithImpl<
+          CompletedQuestionsSystemAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(List<Question> questions, int index),
+    @required Result initRandom(),
+    @required Result deInit(),
+    @required Result loading(),
+    @required Result failed(Exception exception),
+    @required Result completed(Iterable<Question> questions),
+  }) {
+    assert(init != null);
+    assert(initRandom != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return completed(questions);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(List<Question> questions, int index),
+    Result initRandom(),
+    Result deInit(),
+    Result loading(),
+    Result failed(Exception exception),
+    Result completed(Iterable<Question> questions),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(questions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitQuestionsSystemAction value),
+    @required Result initRandom(InitRandomQuestionsSystemAction value),
+    @required Result deInit(DeInitQuestionsSystemAction value),
+    @required Result loading(LoadingQuestionsSystemAction value),
+    @required Result failed(FailedQuestionsSystemAction value),
+    @required Result completed(CompletedQuestionsSystemAction value),
+  }) {
+    assert(init != null);
+    assert(initRandom != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return completed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitQuestionsSystemAction value),
+    Result initRandom(InitRandomQuestionsSystemAction value),
+    Result deInit(DeInitQuestionsSystemAction value),
+    Result loading(LoadingQuestionsSystemAction value),
+    Result failed(FailedQuestionsSystemAction value),
+    Result completed(CompletedQuestionsSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (completed != null) {
+      return completed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CompletedQuestionsSystemAction implements SystemActionQuestions {
+  const factory CompletedQuestionsSystemAction(
+          {@required Iterable<Question> questions}) =
+      _$CompletedQuestionsSystemAction;
+
+  Iterable<Question> get questions;
+  $CompletedQuestionsSystemActionCopyWith<CompletedQuestionsSystemAction>
+      get copyWith;
 }

@@ -12,14 +12,29 @@ abstract class UserActionQuestions
     with _$UserActionQuestions
     implements QuestionsAction {
   const factory UserActionQuestions.open({
-    @required Iterable<Question> questions,
-    @required int selectedQuestionIndex,
+    @required List<Question> questions,
+    @required int index,
   }) = OpenQuestionsUserAction;
 
   const factory UserActionQuestions.openRandom() =
       OpenRandomQuestionsUserAction;
 
   const factory UserActionQuestions.close() = CloseQuestionsUserAction;
+
+  const factory UserActionQuestions.showAnswer({
+    @required Question question,
+  }) = ShowAnswerQuestionsUserAction;
+
+  const factory UserActionQuestions.hideAnswer({
+    @required Question question,
+  }) = HideAnswerQuestionsUserAction;
+
+  const factory UserActionQuestions.loadRandom() =
+      LoadRandomQuestionsUserAction;
+
+  const factory UserActionQuestions.select({
+    @required int questionIndex,
+  }) = SelectQuestionsUserAction;
 }
 
 @freezed
@@ -27,8 +42,8 @@ abstract class SystemActionQuestions
     with _$SystemActionQuestions
     implements QuestionsAction {
   const factory SystemActionQuestions.init({
-    @required Iterable<Question> questions,
-    @required int selectedQuestionIndex,
+    @required List<Question> questions,
+    @required int index,
   }) = InitQuestionsSystemAction;
 
   const factory SystemActionQuestions.initRandom() =
@@ -36,56 +51,13 @@ abstract class SystemActionQuestions
 
   const factory SystemActionQuestions.deInit() = DeInitQuestionsSystemAction;
 
-}
+  const factory SystemActionQuestions.loading() = LoadingQuestionsSystemAction;
 
-@freezed
-abstract class ReloadQuestions
-    with _$ReloadQuestions
-    implements QuestionsAction {
-  const factory ReloadQuestions() = _ReloadQuestions;
-}
+  const factory SystemActionQuestions.failed({
+    @required Exception exception,
+  }) = FailedQuestionsSystemAction;
 
-@freezed
-abstract class SelectQuestion with _$SelectQuestion implements QuestionsAction {
-  const factory SelectQuestion({
-    @required int questionIndex,
-  }) = _SelectQuestion;
-}
-
-@freezed
-abstract class ShowAnswer with _$ShowAnswer implements QuestionsAction {
-  const factory ShowAnswer({
-    @required int questionIndex,
-  }) = _ShowAnswer;
-}
-
-@freezed
-abstract class HideAnswer with _$HideAnswer implements QuestionsAction {
-  const factory HideAnswer({
-    @required int questionIndex,
-  }) = _HideAnswer;
-}
-
-@freezed
-abstract class QuestionsAreLoading
-    with _$QuestionsAreLoading
-    implements QuestionsAction {
-  const factory QuestionsAreLoading() = _QuestionsAreLoading;
-}
-
-@freezed
-abstract class MoreQuestionsLoaded
-    with _$MoreQuestionsLoaded
-    implements QuestionsAction {
-  const factory MoreQuestionsLoaded({
+  const factory SystemActionQuestions.completed({
     @required Iterable<Question> questions,
-  }) = _MoreQuestionsLoaded;
-}
-
-@freezed
-abstract class QuestionsFailedToLoad
-    with _$QuestionsFailedToLoad
-    implements QuestionsAction {
-  const factory QuestionsFailedToLoad({@required Exception exception}) =
-      _QuestionsFailedToLoad;
+  }) = CompletedQuestionsSystemAction;
 }

@@ -1,95 +1,68 @@
-import 'package:collection/collection.dart';
-import 'package:meta/meta.dart';
-import 'package:quiver/core.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-@immutable
-class QuestionsState {
-  final List<QuestionState> questions;
-  final int currentQuestionIndex;
-  final bool isLoading;
-  final Exception exception;
+part 'state.freezed.dart';
 
-  bool get hasError => exception != null;
+@freezed
+abstract class QuestionsState with _$QuestionsState {
+  const factory QuestionsState.initial() = InitialQuestionsState;
 
-  bool get hasData => questions.isNotEmpty;
+  const factory QuestionsState.loadingFirstPage() =
+      LoadingFirstPageQuestionsState;
 
-  QuestionState get currentQuestion =>
-      (currentQuestionIndex != null && questions.length > currentQuestionIndex)
-          ? questions[currentQuestionIndex]
-          : null;
+  const factory QuestionsState.loadingWithData({
+    @required List<QuestionState> questions,
+    @required int currentQuestionIndex,
+  }) = LoadingWithDataQuestionsState;
 
-  QuestionsState({
-    Iterable<QuestionState> questions,
-    this.currentQuestionIndex,
-    this.isLoading = false,
-    this.exception,
-  }) : this.questions =
-            List<QuestionState>.unmodifiable(questions ?? <QuestionState>[]);
+  const factory QuestionsState.errorFirstPage({
+    @required Exception exception,
+  }) = ErrorFirstPageQuestionsState;
 
-  QuestionsState.initial()
-      : this(
-          questions: null,
-          currentQuestionIndex: null,
-        );
+  const factory QuestionsState.errorWithData({
+    @required List<QuestionState> questions,
+    @required int currentQuestionIndex,
+    @required Exception exception,
+  }) = ErrorWithDataQuestionsState;
 
-  QuestionsState.from({
-    @required Iterable<Question> questions,
-    int index,
-  }) : this(
-          questions: questions?.map((q) => QuestionState(question: q)),
-          currentQuestionIndex: index,
-        );
-
-  QuestionsState copyWith({
-    Optional<Iterable<QuestionState>> questions,
-    Optional<int> currentQuestionIndex,
-    Optional<bool> isLoading,
-    Optional<Exception> exception,
-  }) =>
-      QuestionsState(
-        questions: questions != null ? questions.orNull : this.questions,
-        currentQuestionIndex: currentQuestionIndex != null
-            ? currentQuestionIndex.orNull
-            : this.currentQuestionIndex,
-        isLoading: isLoading != null ? isLoading.orNull : this.isLoading,
-        exception: exception != null ? exception.orNull : this.exception,
-      );
-
-  @override
-  int get hashCode =>
-      hash4(questions, currentQuestionIndex, isLoading, exception);
-
-  @override
-  bool operator ==(dynamic other) =>
-      other is QuestionsState &&
-      const DeepCollectionEquality().equals(questions, other.questions) &&
-      currentQuestionIndex == other.currentQuestionIndex &&
-      exception == other.exception &&
-      isLoading == other.isLoading;
+  const factory QuestionsState.data({
+    @required List<QuestionState> questions,
+    @required int currentQuestionIndex,
+    @Default(false) bool canLoadMore,
+  }) = DataQuestionsState;
 }
 
-@immutable
-class QuestionState {
-  final Question question;
-  final bool showAnswer;
+@freezed
+abstract class QuestionState with _$QuestionState {
+  const factory QuestionState({
+    @required Question question,
+    @Default(false) bool showAnswer,
+  }) = _QuestionState;
+}
 
-  QuestionState({@required this.question, this.showAnswer = false})
-      : assert(question != null),
-        assert(question.question != null),
-        assert(question.answer != null);
+extension QuestionsStateX on QuestionsState {
+  List<QuestionState> get questionsOrEmpty =>
+      this.questionsOrNull ?? <QuestionState>[];
 
-  QuestionState copyWith({Question question, bool showAnswer}) => QuestionState(
-        question: question ?? this.question,
-        showAnswer: showAnswer ?? this.showAnswer,
+  List<QuestionState> get questionsOrNull => this.maybeMap(
+        data: (value) => value.questions,
+        errorWithData: (value) => value.questions,
+        loadingWithData: (value) => value.questions,
+        orElse: () => null,
       );
 
-  @override
-  int get hashCode => hash2(question, showAnswer);
+  QuestionState get currentQuestionOrNull => this.maybeMap(
+        data: (value) => value.questions[value.currentQuestionIndex],
+        errorWithData: (value) => value.questions[value.currentQuestionIndex],
+        loadingWithData: (value) => value.questions[value.currentQuestionIndex],
+        orElse: () => null,
+      );
 
-  @override
-  bool operator ==(dynamic other) =>
-      other is QuestionState &&
-      question == other.question &&
-      showAnswer == other.showAnswer;
+  int get currentQuestionIndexOrZero => this.maybeMap(
+        data: (value) => value.currentQuestionIndex,
+        errorWithData: (value) => value.currentQuestionIndex,
+        loadingWithData: (value) => value.currentQuestionIndex,
+        orElse: () => 0,
+      );
 }
