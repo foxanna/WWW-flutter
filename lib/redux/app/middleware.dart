@@ -11,7 +11,6 @@ import 'package:what_when_where/redux/logs/middleware.dart';
 import 'package:what_when_where/redux/misc/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
-import 'package:what_when_where/redux/random/middleware.dart';
 import 'package:what_when_where/redux/rating/middleware.dart';
 import 'package:what_when_where/redux/search/middleware.dart';
 import 'package:what_when_where/redux/settings/middleware.dart';
@@ -50,7 +49,6 @@ class AppMiddleware {
         ..._container<SearchMiddleware>().middleware,
         ..._container<SettingsMiddleware>().middleware,
         ..._container<QuestionsMiddleware>().middleware,
-        ..._container<RandomQuestionsMiddleware>().middleware,
         ..._container<TournamentsTreeMiddleware>().middleware,
         ..._container<RatingMiddleware>().middleware,
       ];
