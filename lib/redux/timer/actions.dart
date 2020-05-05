@@ -9,6 +9,10 @@ abstract class TimerAction implements ReduxAction {}
 
 @freezed
 abstract class UserActionTimer with _$UserActionTimer implements TimerAction {
+  const factory UserActionTimer.init() = InitTimerUserAction;
+
+  const factory UserActionTimer.deInit() = DeInitTimerUserAction;
+
   const factory UserActionTimer.start() = StartTimerUserAction;
 
   const factory UserActionTimer.stop() = StopTimerUserAction;

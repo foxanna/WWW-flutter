@@ -45,6 +45,7 @@ class _TimerTickingMiddleware {
   }
 
   List<Middleware<AppState>> _createMiddleware() => [
+        TypedMiddleware<AppState, DeInitTimerUserAction>(_deInit),
         TypedMiddleware<AppState, StartTimerUserAction>(_startTimer),
         TypedMiddleware<AppState, StopTimerUserAction>(_stopTimer),
         TypedMiddleware<AppState, ResetTimerUserAction>(_resetTimer),
@@ -52,6 +53,13 @@ class _TimerTickingMiddleware {
             _stopTimerAtZero),
         TypedMiddleware<AppState, ChangeTypeTimerUserAction>(_changeType),
       ];
+
+  void _deInit(Store<AppState> store, DeInitTimerUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    _onTimerReset();
+  }
 
   void _startTimer(
       Store<AppState> store, StartTimerUserAction action, NextDispatcher next) {
@@ -63,7 +71,7 @@ class _TimerTickingMiddleware {
             ? Timers.getSeconds(timerState.timerType)
             : timerState.secondsLeft);
 
-    _timer.reset();
+    _onTimerReset();
     _timer.start(callback: (duration) {
       final remainingTime = initialTime - duration;
 
@@ -94,6 +102,10 @@ class _TimerTickingMiddleware {
       Store<AppState> store, ResetTimerUserAction action, NextDispatcher next) {
     next(action);
 
+    _onTimerReset();
+  }
+
+  void _onTimerReset() {
     _timer.reset();
   }
 

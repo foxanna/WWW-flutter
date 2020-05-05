@@ -4,6 +4,8 @@ import 'package:what_when_where/redux/timer/state.dart';
 
 class TimerReducer {
   static final Reducer<TimerState> _reducer = combineReducers<TimerState>([
+    TypedReducer<TimerState, InitTimerUserAction>(_init),
+    TypedReducer<TimerState, DeInitTimerUserAction>(_deInit),
     TypedReducer<TimerState, UpdateTimeTimerSystemAction>(_updateTime),
     TypedReducer<TimerState, UpdateIsRunningTimerSystemAction>(
         _updateIsRunning),
@@ -13,6 +15,12 @@ class TimerReducer {
 
   static TimerState reduce(TimerState state, dynamic action) =>
       _reducer(state, action);
+
+  static TimerState _init(TimerState state, InitTimerUserAction action) =>
+      TimerState.initial();
+
+  static TimerState _deInit(TimerState state, DeInitTimerUserAction action) =>
+      null;
 
   static TimerState _updateTime(
           TimerState state, UpdateTimeTimerSystemAction action) =>

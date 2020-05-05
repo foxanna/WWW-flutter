@@ -12,6 +12,14 @@ T _$identity<T>(T value) => value;
 class _$UserActionTimerTearOff {
   const _$UserActionTimerTearOff();
 
+  InitTimerUserAction init() {
+    return const InitTimerUserAction();
+  }
+
+  DeInitTimerUserAction deInit() {
+    return const DeInitTimerUserAction();
+  }
+
   StartTimerUserAction start() {
     return const StartTimerUserAction();
   }
@@ -37,6 +45,8 @@ const $UserActionTimer = _$UserActionTimerTearOff();
 mixin _$UserActionTimer {
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result start(),
     @required Result stop(),
     @required Result reset(),
@@ -44,6 +54,8 @@ mixin _$UserActionTimer {
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result start(),
     Result stop(),
     Result reset(),
@@ -52,6 +64,8 @@ mixin _$UserActionTimer {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTimerUserAction value),
+    @required Result deInit(DeInitTimerUserAction value),
     @required Result start(StartTimerUserAction value),
     @required Result stop(StopTimerUserAction value),
     @required Result reset(ResetTimerUserAction value),
@@ -59,6 +73,8 @@ mixin _$UserActionTimer {
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTimerUserAction value),
+    Result deInit(DeInitTimerUserAction value),
     Result start(StartTimerUserAction value),
     Result stop(StopTimerUserAction value),
     Result reset(ResetTimerUserAction value),
@@ -80,6 +96,246 @@ class _$UserActionTimerCopyWithImpl<$Res>
   final UserActionTimer _value;
   // ignore: unused_field
   final $Res Function(UserActionTimer) _then;
+}
+
+abstract class $InitTimerUserActionCopyWith<$Res> {
+  factory $InitTimerUserActionCopyWith(
+          InitTimerUserAction value, $Res Function(InitTimerUserAction) then) =
+      _$InitTimerUserActionCopyWithImpl<$Res>;
+}
+
+class _$InitTimerUserActionCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res>
+    implements $InitTimerUserActionCopyWith<$Res> {
+  _$InitTimerUserActionCopyWithImpl(
+      InitTimerUserAction _value, $Res Function(InitTimerUserAction) _then)
+      : super(_value, (v) => _then(v as InitTimerUserAction));
+
+  @override
+  InitTimerUserAction get _value => super._value as InitTimerUserAction;
+}
+
+class _$InitTimerUserAction
+    with DiagnosticableTreeMixin
+    implements InitTimerUserAction {
+  const _$InitTimerUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionTimer.init()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionTimer.init'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InitTimerUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result start(),
+    @required Result stop(),
+    @required Result reset(),
+    @required Result changeType(TimerType type),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(start != null);
+    assert(stop != null);
+    assert(reset != null);
+    assert(changeType != null);
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result start(),
+    Result stop(),
+    Result reset(),
+    Result changeType(TimerType type),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTimerUserAction value),
+    @required Result deInit(DeInitTimerUserAction value),
+    @required Result start(StartTimerUserAction value),
+    @required Result stop(StopTimerUserAction value),
+    @required Result reset(ResetTimerUserAction value),
+    @required Result changeType(ChangeTypeTimerUserAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(start != null);
+    assert(stop != null);
+    assert(reset != null);
+    assert(changeType != null);
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTimerUserAction value),
+    Result deInit(DeInitTimerUserAction value),
+    Result start(StartTimerUserAction value),
+    Result stop(StopTimerUserAction value),
+    Result reset(ResetTimerUserAction value),
+    Result changeType(ChangeTypeTimerUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitTimerUserAction implements UserActionTimer {
+  const factory InitTimerUserAction() = _$InitTimerUserAction;
+}
+
+abstract class $DeInitTimerUserActionCopyWith<$Res> {
+  factory $DeInitTimerUserActionCopyWith(DeInitTimerUserAction value,
+          $Res Function(DeInitTimerUserAction) then) =
+      _$DeInitTimerUserActionCopyWithImpl<$Res>;
+}
+
+class _$DeInitTimerUserActionCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res>
+    implements $DeInitTimerUserActionCopyWith<$Res> {
+  _$DeInitTimerUserActionCopyWithImpl(
+      DeInitTimerUserAction _value, $Res Function(DeInitTimerUserAction) _then)
+      : super(_value, (v) => _then(v as DeInitTimerUserAction));
+
+  @override
+  DeInitTimerUserAction get _value => super._value as DeInitTimerUserAction;
+}
+
+class _$DeInitTimerUserAction
+    with DiagnosticableTreeMixin
+    implements DeInitTimerUserAction {
+  const _$DeInitTimerUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionTimer.deInit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionTimer.deInit'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is DeInitTimerUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result start(),
+    @required Result stop(),
+    @required Result reset(),
+    @required Result changeType(TimerType type),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(start != null);
+    assert(stop != null);
+    assert(reset != null);
+    assert(changeType != null);
+    return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result start(),
+    Result stop(),
+    Result reset(),
+    Result changeType(TimerType type),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTimerUserAction value),
+    @required Result deInit(DeInitTimerUserAction value),
+    @required Result start(StartTimerUserAction value),
+    @required Result stop(StopTimerUserAction value),
+    @required Result reset(ResetTimerUserAction value),
+    @required Result changeType(ChangeTypeTimerUserAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(start != null);
+    assert(stop != null);
+    assert(reset != null);
+    assert(changeType != null);
+    return deInit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTimerUserAction value),
+    Result deInit(DeInitTimerUserAction value),
+    Result start(StartTimerUserAction value),
+    Result stop(StopTimerUserAction value),
+    Result reset(ResetTimerUserAction value),
+    Result changeType(ChangeTypeTimerUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeInitTimerUserAction implements UserActionTimer {
+  const factory DeInitTimerUserAction() = _$DeInitTimerUserAction;
 }
 
 abstract class $StartTimerUserActionCopyWith<$Res> {
@@ -126,11 +382,15 @@ class _$StartTimerUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result start(),
     @required Result stop(),
     @required Result reset(),
     @required Result changeType(TimerType type),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(start != null);
     assert(stop != null);
     assert(reset != null);
@@ -141,6 +401,8 @@ class _$StartTimerUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result start(),
     Result stop(),
     Result reset(),
@@ -157,11 +419,15 @@ class _$StartTimerUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTimerUserAction value),
+    @required Result deInit(DeInitTimerUserAction value),
     @required Result start(StartTimerUserAction value),
     @required Result stop(StopTimerUserAction value),
     @required Result reset(ResetTimerUserAction value),
     @required Result changeType(ChangeTypeTimerUserAction value),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(start != null);
     assert(stop != null);
     assert(reset != null);
@@ -172,6 +438,8 @@ class _$StartTimerUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTimerUserAction value),
+    Result deInit(DeInitTimerUserAction value),
     Result start(StartTimerUserAction value),
     Result stop(StopTimerUserAction value),
     Result reset(ResetTimerUserAction value),
@@ -234,11 +502,15 @@ class _$StopTimerUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result start(),
     @required Result stop(),
     @required Result reset(),
     @required Result changeType(TimerType type),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(start != null);
     assert(stop != null);
     assert(reset != null);
@@ -249,6 +521,8 @@ class _$StopTimerUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result start(),
     Result stop(),
     Result reset(),
@@ -265,11 +539,15 @@ class _$StopTimerUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTimerUserAction value),
+    @required Result deInit(DeInitTimerUserAction value),
     @required Result start(StartTimerUserAction value),
     @required Result stop(StopTimerUserAction value),
     @required Result reset(ResetTimerUserAction value),
     @required Result changeType(ChangeTypeTimerUserAction value),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(start != null);
     assert(stop != null);
     assert(reset != null);
@@ -280,6 +558,8 @@ class _$StopTimerUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTimerUserAction value),
+    Result deInit(DeInitTimerUserAction value),
     Result start(StartTimerUserAction value),
     Result stop(StopTimerUserAction value),
     Result reset(ResetTimerUserAction value),
@@ -342,11 +622,15 @@ class _$ResetTimerUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result start(),
     @required Result stop(),
     @required Result reset(),
     @required Result changeType(TimerType type),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(start != null);
     assert(stop != null);
     assert(reset != null);
@@ -357,6 +641,8 @@ class _$ResetTimerUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result start(),
     Result stop(),
     Result reset(),
@@ -373,11 +659,15 @@ class _$ResetTimerUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTimerUserAction value),
+    @required Result deInit(DeInitTimerUserAction value),
     @required Result start(StartTimerUserAction value),
     @required Result stop(StopTimerUserAction value),
     @required Result reset(ResetTimerUserAction value),
     @required Result changeType(ChangeTypeTimerUserAction value),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(start != null);
     assert(stop != null);
     assert(reset != null);
@@ -388,6 +678,8 @@ class _$ResetTimerUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTimerUserAction value),
+    Result deInit(DeInitTimerUserAction value),
     Result start(StartTimerUserAction value),
     Result stop(StopTimerUserAction value),
     Result reset(ResetTimerUserAction value),
@@ -476,11 +768,15 @@ class _$ChangeTypeTimerUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result start(),
     @required Result stop(),
     @required Result reset(),
     @required Result changeType(TimerType type),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(start != null);
     assert(stop != null);
     assert(reset != null);
@@ -491,6 +787,8 @@ class _$ChangeTypeTimerUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result start(),
     Result stop(),
     Result reset(),
@@ -507,11 +805,15 @@ class _$ChangeTypeTimerUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTimerUserAction value),
+    @required Result deInit(DeInitTimerUserAction value),
     @required Result start(StartTimerUserAction value),
     @required Result stop(StopTimerUserAction value),
     @required Result reset(ResetTimerUserAction value),
     @required Result changeType(ChangeTypeTimerUserAction value),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(start != null);
     assert(stop != null);
     assert(reset != null);
@@ -522,6 +824,8 @@ class _$ChangeTypeTimerUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTimerUserAction value),
+    Result deInit(DeInitTimerUserAction value),
     Result start(StartTimerUserAction value),
     Result stop(StopTimerUserAction value),
     Result reset(ResetTimerUserAction value),
