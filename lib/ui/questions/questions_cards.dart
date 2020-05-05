@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/question/question_card.dart';
 import 'package:what_when_where/ui/question/question_card_stub.dart';
 
 class QuestionsCards extends StatelessWidget {
   final int initialPage;
-  final int questionsCount;
+  final List<QuestionState> questions;
   final ValueChanged<int> onPageChanged;
   final int stubQuestionsCount;
   final Widget footer;
@@ -13,12 +14,11 @@ class QuestionsCards extends StatelessWidget {
   const QuestionsCards({
     Key key,
     this.initialPage = 0,
-    this.questionsCount = 0,
+    this.questions,
     this.onPageChanged,
     this.stubQuestionsCount = 0,
     this.footer,
   })  : assert(stubQuestionsCount != null),
-        assert(questionsCount != null),
         super(key: key);
 
   @override
@@ -39,7 +39,7 @@ class QuestionsCards extends StatelessWidget {
             ? footer
             : (_isStubIndex(index)
                 ? StubQuestionCard(index: index)
-                : QuestionCard(index: index)),
+                : QuestionCard(questionState: questions[index])),
       ),
       itemCount: _itemsCount(),
       onPageChanged: onPageChanged,
@@ -49,11 +49,12 @@ class QuestionsCards extends StatelessWidget {
   bool _hasFooter() => footer != null;
 
   bool _isFooterIndex(int index) =>
-      _hasFooter() && index >= questionsCount + stubQuestionsCount;
+      _hasFooter() && index >= (questions?.length ?? 0) + stubQuestionsCount;
 
   bool _isStubIndex(int index) =>
-      index >= questionsCount && index < questionsCount + stubQuestionsCount;
+      index >= (questions?.length ?? 0) &&
+      index < (questions?.length ?? 0) + stubQuestionsCount;
 
   int _itemsCount() =>
-      questionsCount + stubQuestionsCount + (_hasFooter() ? 1 : 0);
+      (questions?.length ?? 0) + stubQuestionsCount + (_hasFooter() ? 1 : 0);
 }

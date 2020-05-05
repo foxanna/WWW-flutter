@@ -40,7 +40,7 @@ class TourDetailsDataTile extends StatelessWidget {
         onTap: () => StoreProvider.of<AppState>(context)
             .dispatch(UserActionQuestions.open(
           questions: tour.questions,
-          selectedQuestionIndex: questionIndex,
+          index: questionIndex,
         )),
       ),
     );

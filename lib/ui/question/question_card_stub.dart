@@ -23,7 +23,7 @@ class StubQuestionCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            QuestionNumber(number: '$index'),
+            QuestionNumber(number: '${index + 1}'),
             const QuestionsCardSeparator(),
             Expanded(
               child: TextStub(

@@ -17,21 +17,19 @@ class QuestionsPageContent extends StatelessWidget {
         distinct: true,
         converter: (store) => store.state.questionsState,
         builder: (context, state) {
-          if (state.hasData) {
-            return const QuestionsDataPage();
-          }
-
-          if (state.isLoading) {
+          if (state is LoadingFirstPageQuestionsState) {
             return const QuestionsLoadingPage();
           }
 
-          if (state.hasError) {
-            return QuestionsErrorPage(
-              exception: state.exception,
-            );
+          if (state is ErrorFirstPageQuestionsState) {
+            return QuestionsErrorPage(exception: state.exception);
           }
 
-          return null;
+          if (state.questionsOrNull != null) {
+            return const QuestionsDataPage();
+          }
+
+          return Container();
         },
         onDispose: (store) {
           store.dispatch(const UserActionTimer.reset());

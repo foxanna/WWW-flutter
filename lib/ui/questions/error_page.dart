@@ -22,6 +22,6 @@ class QuestionsErrorPage extends StatelessWidget {
             .errorColor,
       );
 
-  void _reload(BuildContext context) =>
-      StoreProvider.of<AppState>(context).dispatch(const ReloadQuestions());
+  void _reload(BuildContext context) => StoreProvider.of<AppState>(context)
+      .dispatch(const UserActionQuestions.loadRandom());
 }

@@ -20,13 +20,14 @@ class QuestionsDataPage extends StatelessWidget {
       distinct: true,
       converter: (store) => store.state.questionsState,
       builder: (context, state) => QuestionsCards(
-        initialPage: state.currentQuestionIndex,
-        questionsCount: state.questions.length,
-        footer: state.hasError
+        initialPage: state.currentQuestionIndexOrZero,
+        questions: state.questionsOrEmpty,
+        footer: state is ErrorWithDataQuestionsState
             ? QuestionsErrorPage(exception: state.exception)
             : null,
-        stubQuestionsCount:
-            state.isLoading ? styleConfiguration.stubQuestionsCount : 0,
+        stubQuestionsCount: state is LoadingWithDataQuestionsState
+            ? styleConfiguration.stubQuestionsCount
+            : 0,
         onPageChanged: (index) => _onPageChanged(context, index),
       ),
     );
@@ -36,6 +37,6 @@ class QuestionsDataPage extends StatelessWidget {
     final store = StoreProvider.of<AppState>(context);
 
     store.dispatch(const UserActionTimer.reset());
-    store.dispatch(SelectQuestion(questionIndex: index));
+    store.dispatch(UserActionQuestions.select(questionIndex: index));
   }
 }
