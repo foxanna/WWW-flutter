@@ -22,8 +22,8 @@ final _analyticsEventNames = {
   StopTimerUserAction: 'pause_timer',
   ChangeTypeTimerUserAction: 'timer_type_set',
   // answer
-  ShowAnswer: 'show_answer',
-  HideAnswer: 'hide_answer',
+  ShowAnswerQuestionsUserAction: 'show_answer',
+  HideAnswerQuestionsUserAction: 'hide_answer',
   // sharing
   QuestionSharingUserAction: 'share_question',
   TourSharingUserAction: 'share_tour',
@@ -63,8 +63,8 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, StartTimerUserAction>(_logAction),
         TypedMiddleware<AppState, StopTimerUserAction>(_logAction),
         TypedMiddleware<AppState, ChangeTypeTimerUserAction>(_logAction),
-        TypedMiddleware<AppState, ShowAnswer>(_logAction),
-        TypedMiddleware<AppState, HideAnswer>(_logAction),
+        TypedMiddleware<AppState, ShowAnswerQuestionsUserAction>(_logAction),
+        TypedMiddleware<AppState, HideAnswerQuestionsUserAction>(_logAction),
         TypedMiddleware<AppState, QuestionSharingUserAction>(_logAction),
         TypedMiddleware<AppState, TourSharingUserAction>(_logAction),
         TypedMiddleware<AppState, TournamentSharingUserAction>(_logAction),
