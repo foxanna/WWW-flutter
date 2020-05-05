@@ -1,6 +1,7 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 
 class LatestTournamentsReducer {
   static final Reducer<LatestTournamentsState> _reducer =
@@ -15,7 +16,7 @@ class LatestTournamentsReducer {
   ]);
 
   static LatestTournamentsState reduce(
-          LatestTournamentsState state, dynamic action) =>
+          LatestTournamentsState state, ReduxAction action) =>
       _reducer(state, action);
 
   static LatestTournamentsState _init(

@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/redux/timer/state.dart';
 
@@ -13,7 +14,7 @@ class TimerReducer {
     TypedReducer<TimerState, ChangeTypeTimerUserAction>(_changeType),
   ]);
 
-  static TimerState reduce(TimerState state, dynamic action) =>
+  static TimerState reduce(TimerState state, ReduxAction action) =>
       _reducer(state, action);
 
   static TimerState _init(TimerState state, InitTimerUserAction action) =>

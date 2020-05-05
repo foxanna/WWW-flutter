@@ -2,6 +2,7 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/reducer.dart';
 import 'package:what_when_where/redux/questions/reducer.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/search/reducer.dart';
 import 'package:what_when_where/redux/settings/reducer.dart';
 import 'package:what_when_where/redux/timer/reducer.dart';
@@ -11,9 +12,9 @@ import 'package:what_when_where/redux/tree/reducer.dart';
 
 class AppReducer {
   static final Reducer<AppState> reducer =
-      TypedReducer<AppState, dynamic>(_reduce);
+      TypedReducer<AppState, ReduxAction>(_reduce);
 
-  static AppState _reduce(AppState state, dynamic action) => AppState(
+  static AppState _reduce(AppState state, ReduxAction action) => AppState(
         timerState: TimerReducer.reduce(state.timerState, action),
         latestTournamentsState: LatestTournamentsReducer.reduce(
             state.latestTournamentsState, action),

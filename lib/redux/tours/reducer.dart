@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/redux/tours/state.dart';
 
@@ -11,7 +12,7 @@ class ToursReducer {
     TypedReducer<ToursState, FailedToursSystemAction>(_failed),
   ]);
 
-  static ToursState reduce(ToursState state, dynamic action) =>
+  static ToursState reduce(ToursState state, ReduxAction action) =>
       _reducer(state, action);
 
   static ToursState _init(ToursState state, InitToursSystemAction action) =>

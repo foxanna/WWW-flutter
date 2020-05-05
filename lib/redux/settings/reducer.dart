@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/settings/state.dart';
 
@@ -14,7 +15,7 @@ class SettingsReducer {
         _notifyLongTimerExpirationChanged),
   ]);
 
-  static SettingsState reduce(SettingsState state, dynamic action) =>
+  static SettingsState reduce(SettingsState state, ReduxAction action) =>
       _reducer(state, action);
 
   static SettingsState _settingsChanged(

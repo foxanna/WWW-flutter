@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
 
@@ -14,7 +15,7 @@ class SearchReducer {
     TypedReducer<SearchState, CompletedSearchSystemAction>(_completed),
   ]);
 
-  static SearchState reduce(SearchState state, dynamic action) =>
+  static SearchState reduce(SearchState state, ReduxAction action) =>
       _reducer(state, action);
 
   static SearchState _updateText(

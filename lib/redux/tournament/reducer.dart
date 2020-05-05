@@ -1,4 +1,5 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/redux/tournament/state.dart';
 
@@ -12,7 +13,7 @@ class TournamentReducer {
     TypedReducer<TournamentState, FailedTournamentSystemAction>(_failed),
   ]);
 
-  static TournamentState reduce(TournamentState state, dynamic action) =>
+  static TournamentState reduce(TournamentState state, ReduxAction action) =>
       _reducer(state, action);
 
   static TournamentState _init(

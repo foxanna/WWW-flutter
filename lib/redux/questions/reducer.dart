@@ -1,6 +1,7 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class QuestionsReducer {
@@ -17,7 +18,7 @@ class QuestionsReducer {
     TypedReducer<QuestionsState, FailedQuestionsSystemAction>(_failed),
   ]);
 
-  static QuestionsState reduce(QuestionsState state, dynamic action) =>
+  static QuestionsState reduce(QuestionsState state, ReduxAction action) =>
       _reducer(state, action);
 
   static QuestionsState _init(
