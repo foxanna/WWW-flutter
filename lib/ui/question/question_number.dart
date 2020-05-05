@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 

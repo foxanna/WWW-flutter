@@ -30,7 +30,7 @@ class AppState {
     this.tournamentsTreeState,
   });
 
-  AppState.initial()
+  const AppState.initial()
       : this(
           timerState: null,
           latestTournamentsState: null,

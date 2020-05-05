@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/common/text_sections_theme_data.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/questions/state.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/text_with_links.dart';
