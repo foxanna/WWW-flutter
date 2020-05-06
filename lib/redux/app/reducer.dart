@@ -1,5 +1,7 @@
 import 'package:redux/redux.dart';
+import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/initialization/reducer.dart';
 import 'package:what_when_where/redux/latest/reducer.dart';
 import 'package:what_when_where/redux/questions/reducer.dart';
 import 'package:what_when_where/redux/redux_action.dart';
@@ -26,5 +28,7 @@ class AppReducer {
         settingsState: SettingsReducer.reduce(state.settingsState, action),
         tournamentsTreeState:
             TournamentsTreeReducer.reduce(state.tournamentsTreeState, action),
+        initializationState:
+            InitializationReducer.reduce(state.initializationState, action),
       );
 }

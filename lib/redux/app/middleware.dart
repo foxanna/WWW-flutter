@@ -5,7 +5,7 @@ import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
-import 'package:what_when_where/redux/init/middleware.dart';
+import 'package:what_when_where/redux/initialization/middleware.dart';
 import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:what_when_where/redux/logs/middleware.dart';
 import 'package:what_when_where/redux/misc/middleware.dart';
@@ -35,7 +35,7 @@ class AppMiddleware {
 
   List<Middleware<AppState>> _createMiddleware() => [
         ..._container<LogsMiddleware>().middleware,
-        ..._container<InitMiddleware>().middleware,
+        ..._container<InitializationMiddleware>().middleware,
         ..._container<ServicesMiddleware>().middleware,
         ..._container<AnalyticsMiddleware>().middleware,
         ..._container<TimerMiddleware>().middleware,

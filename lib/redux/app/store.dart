@@ -12,7 +12,7 @@ class WWWStore {
     AppMiddleware appMiddleware,
   }) : _store = Store<AppState>(
           AppReducer.reducer,
-          initialState: const AppState.initial(),
+          initialState: const AppState(),
           middleware: appMiddleware.middleware.toList(),
         );
 
