@@ -5,10 +5,9 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:what_when_where/utils/logger.dart';
 
 abstract class ISoundService {
-  void init();
+  Future<void> init();
 
   void playSound();
 }
@@ -23,12 +22,7 @@ class SoundService implements ISoundService {
   String _mp3Uri;
 
   @override
-  void init() {
-    _init()
-        .catchError((Object error) => log('$SoundService init error: $error'));
-  }
-
-  Future<void> _init() async {
+  Future<void> init() async {
     final tempDir = await getTemporaryDirectory();
     final tempFile = File('${tempDir.path}/$_timerAssetName');
 
