@@ -54,7 +54,7 @@ class _ThemeDropdownButton extends StatelessWidget {
           value: appTheme,
           items: AppTheme.values.map(
             (theme) {
-              final themeData = Themes.get(theme.toThemeMode());
+              final themeData = Themes.get(context, theme.toThemeMode());
 
               return DropdownMenuItem(
                 value: theme,

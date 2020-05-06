@@ -4,8 +4,11 @@ import 'package:what_when_where/resources/dimensions.dart';
 class Themes {
   Themes._();
 
-  static ThemeData get(ThemeMode themeMode) {
-    switch (themeMode) {
+  static ThemeData get(BuildContext context, ThemeMode themeMode) {
+    final finalThemeModel =
+        themeMode != ThemeMode.system ? themeMode : _platformThemeMode(context);
+
+    switch (finalThemeModel) {
       case ThemeMode.dark:
         return createDarkAppTheme();
       case ThemeMode.light:
@@ -13,6 +16,14 @@ class Themes {
       default:
         return createLightAppTheme();
     }
+  }
+
+  static ThemeMode _platformThemeMode(BuildContext context) {
+    final platformBrightness = MediaQuery.of(context).platformBrightness;
+
+    return platformBrightness == Brightness.dark
+        ? ThemeMode.dark
+        : ThemeMode.light;
   }
 
   static ThemeData createLightAppTheme() {

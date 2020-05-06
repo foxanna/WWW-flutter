@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/common/text_scale.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/resources/strings.dart';
 
 class TextScaleSettings extends StatelessWidget {
@@ -54,7 +54,7 @@ class _TextScalePickerState extends State<_TextScalePicker> {
           Text(
             'A',
             style: Theme.of(context).textTheme.bodyText2,
-            textScaleFactor: Fonts.getTextScale(TextScale.values.first),
+            textScaleFactor: TextScale.values.first.toDouble(),
           ),
           StoreConnector<AppState, TextScale>(
             distinct: true,
@@ -76,7 +76,7 @@ class _TextScalePickerState extends State<_TextScalePicker> {
           Text(
             'A',
             style: Theme.of(context).textTheme.bodyText2,
-            textScaleFactor: Fonts.getTextScale(TextScale.values.last),
+            textScaleFactor: TextScale.values.last.toDouble(),
           ),
         ],
       );
