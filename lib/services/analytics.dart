@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 import 'package:what_when_where/utils/logger.dart';
 
 abstract class IAnalyticsService {
-  RouteObserver<PageRoute<dynamic>> observer({String home});
+  RouteObserver<PageRoute<dynamic>> observer();
 
   void logEvent({@required String name, Map<String, dynamic> parameters});
 }
@@ -17,11 +17,9 @@ class AnalyticsService implements IAnalyticsService {
   final FirebaseAnalytics _analytics = FirebaseAnalytics();
 
   @override
-  RouteObserver<PageRoute<dynamic>> observer({String home}) =>
-      FirebaseAnalyticsObserver(
-          analytics: _analytics,
-          nameExtractor: (RouteSettings settings) =>
-              settings.name == '/' && home != null ? home : settings.name);
+  RouteObserver<PageRoute<dynamic>> observer() => FirebaseAnalyticsObserver(
+      analytics: _analytics,
+      nameExtractor: (RouteSettings settings) => settings.name);
 
   @override
   void logEvent({@required String name, Map<String, dynamic> parameters}) =>
