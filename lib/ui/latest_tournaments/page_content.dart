@@ -33,6 +33,5 @@ class LatestTournamentsPageContent extends StatelessWidget {
 
           return const EmptySliver();
         },
-        onInit: (store) => store.dispatch(const UserActionLatest.init()),
       );
 }
