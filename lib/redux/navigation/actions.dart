@@ -33,6 +33,8 @@ abstract class SystemActionNavigation
       QuestionsNavigationSystemAction;
 
   const factory SystemActionNavigation.search() = SearchNavigationSystemAction;
+
+  const factory SystemActionNavigation.latest() = LatestNavigationSystemAction;
 }
 
 @freezed

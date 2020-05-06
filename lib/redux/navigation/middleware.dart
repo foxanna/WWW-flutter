@@ -5,6 +5,7 @@ import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/about/route_page.dart';
 import 'package:what_when_where/ui/image/route_page.dart';
+import 'package:what_when_where/ui/latest_tournaments/route_page.dart';
 import 'package:what_when_where/ui/questions/route_page.dart';
 import 'package:what_when_where/ui/search/route_page.dart';
 import 'package:what_when_where/ui/settings/route_page.dart';
@@ -32,6 +33,7 @@ class NavigationMiddleware {
         TypedMiddleware<AppState, SearchNavigationSystemAction>(_search),
         TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
         TypedMiddleware<AppState, TreeNavigationSystemAction>(_tree),
+        TypedMiddleware<AppState, LatestNavigationSystemAction>(_latest),
       ];
 
   void _image(Store<AppState> store, ImageNavigationUserAction action,
@@ -103,6 +105,16 @@ class NavigationMiddleware {
       builder: (context) => TournamentsTreeRoutePage(
         info: action.info,
       ),
+    );
+  }
+
+  void _latest(Store<AppState> store, LatestNavigationSystemAction action,
+      NextDispatcher next) {
+    next(action);
+
+    _navigationService.replacePage(
+      routeName: LatestTournamentsPage.routeName,
+      builder: (context) => const LatestTournamentsPage(),
     );
   }
 }
