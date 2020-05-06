@@ -13,6 +13,7 @@ import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
 import 'package:what_when_where/redux/rating/middleware.dart';
 import 'package:what_when_where/redux/search/middleware.dart';
+import 'package:what_when_where/redux/services/middleware.dart';
 import 'package:what_when_where/redux/settings/middleware.dart';
 import 'package:what_when_where/redux/sharing/middleware.dart';
 import 'package:what_when_where/redux/timer/middleware.dart';
@@ -35,6 +36,7 @@ class AppMiddleware {
   List<Middleware<AppState>> _createMiddleware() => [
         ..._container<LogsMiddleware>().middleware,
         ..._container<InitMiddleware>().middleware,
+        ..._container<ServicesMiddleware>().middleware,
         ..._container<AnalyticsMiddleware>().middleware,
         ..._container<TimerMiddleware>().middleware,
         ..._container<ShareMiddleware>().middleware,

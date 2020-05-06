@@ -35,6 +35,7 @@ import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
 import 'package:what_when_where/redux/rating/middleware.dart';
 import 'package:what_when_where/redux/search/middleware.dart';
+import 'package:what_when_where/redux/services/middleware.dart';
 import 'package:what_when_where/redux/settings/middleware.dart';
 import 'package:what_when_where/redux/sharing/middleware.dart';
 import 'package:what_when_where/redux/timer/middleware.dart';
@@ -98,6 +99,8 @@ void $initGetIt(GetIt g, {String environment}) {
       preferences: g<IPreferences>(), ratingService: g<IRatingService>()));
   g.registerFactory<SearchMiddleware>(
       () => SearchMiddleware(loader: g<ISearchLoader>()));
+  g.registerFactory<ServicesMiddleware>(() => ServicesMiddleware(
+      crashService: g<ICrashService>(), soundService: g<ISoundService>()));
   g.registerFactory<SettingsMiddleware>(
       () => SettingsMiddleware(preferences: g<IPreferences>()));
   g.registerFactory<ShareMiddleware>(
