@@ -30,7 +30,6 @@ import 'package:what_when_where/services/vibrating.dart';
 import 'package:what_when_where/redux/initialization/middleware.dart';
 import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:what_when_where/redux/logs/middleware.dart';
-import 'package:what_when_where/redux/misc/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
 import 'package:what_when_where/redux/rating/middleware.dart';
@@ -44,6 +43,7 @@ import 'package:what_when_where/redux/tree/middleware.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
+import 'package:what_when_where/redux/email/middleware.dart';
 import 'package:what_when_where/services/browsing.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
@@ -88,8 +88,6 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<LatestTournamentsMiddleware>(
       () => LatestTournamentsMiddleware(loader: g<ILatestTournamentsLoader>()));
   g.registerFactory<LogsMiddleware>(() => LogsMiddleware());
-  g.registerFactory<MiscMiddleware>(
-      () => MiscMiddleware(urlLauncher: g<IUrlLauncher>()));
   g.registerFactory<NavigationMiddleware>(
       () => NavigationMiddleware(navigationService: g<INavigationService>()));
   g.registerFactory<QuestionsMiddleware>(
@@ -117,6 +115,8 @@ void $initGetIt(GetIt g, {String environment}) {
       () => AppMiddleware(container: g<IContainer>()));
   g.registerFactory<DialogMiddleware>(
       () => DialogMiddleware(dialogService: g<IDialogService>()));
+  g.registerFactory<EmailMiddleware>(
+      () => EmailMiddleware(urlLauncher: g<IUrlLauncher>()));
   g.registerLazySingleton<IBrowsingService>(
       () => BrowsingService(urlLauncher: g<IUrlLauncher>()));
   g.registerLazySingleton<ITourDetailsLoader>(() => TourDetailsLoader(

@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
-import 'package:what_when_where/redux/misc/actions.dart';
+import 'package:what_when_where/redux/email/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
@@ -117,6 +117,6 @@ class AboutRoutePage extends StatelessWidget {
       StoreProvider.of<AppState>(context)
           .dispatch(const UserActionBrowse.database());
 
-  void _sendEmail(BuildContext context) =>
-      StoreProvider.of<AppState>(context).dispatch(const EmailDevelopers());
+  void _sendEmail(BuildContext context) => StoreProvider.of<AppState>(context)
+      .dispatch(const UserActionEmail.toDevelopers());
 }

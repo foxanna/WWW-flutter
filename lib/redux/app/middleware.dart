@@ -5,10 +5,10 @@ import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
+import 'package:what_when_where/redux/email/middleware.dart';
 import 'package:what_when_where/redux/initialization/middleware.dart';
 import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:what_when_where/redux/logs/middleware.dart';
-import 'package:what_when_where/redux/misc/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
 import 'package:what_when_where/redux/rating/middleware.dart';
@@ -46,7 +46,7 @@ class AppMiddleware {
         ..._container<ToursMiddleware>().middleware,
         ..._container<TournamentMiddleware>().middleware,
         ..._container<LatestTournamentsMiddleware>().middleware,
-        ..._container<MiscMiddleware>().middleware,
+        ..._container<EmailMiddleware>().middleware,
         ..._container<SearchMiddleware>().middleware,
         ..._container<SettingsMiddleware>().middleware,
         ..._container<QuestionsMiddleware>().middleware,
