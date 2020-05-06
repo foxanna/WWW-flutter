@@ -47,9 +47,11 @@ class _ExpiringTimerGeneralSettings extends StatelessWidget {
               onChanged: (newValue) {
                 final store = StoreProvider.of<AppState>(context);
                 store.dispatch(
-                    ChangeNotifyShortTimerExpiration(newValue: newValue));
+                    UserActionSettings.changeNotifyShortTimerExpiration(
+                        value: newValue));
                 store.dispatch(
-                    ChangeNotifyLongTimerExpiration(newValue: newValue));
+                    UserActionSettings.changeNotifyLongTimerExpiration(
+                        value: newValue));
               },
             ),
           ],
@@ -77,8 +79,8 @@ class _ExpiringShortTimerSettings extends StatelessWidget {
             Switch(
               value: data,
               onChanged: (newValue) => StoreProvider.of<AppState>(context)
-                  .dispatch(
-                      ChangeNotifyShortTimerExpiration(newValue: newValue)),
+                  .dispatch(UserActionSettings.changeNotifyShortTimerExpiration(
+                      value: newValue)),
             )
           ],
         ),
@@ -105,8 +107,8 @@ class _ExpiringLongTimerSettings extends StatelessWidget {
             Switch(
               value: data,
               onChanged: (newValue) => StoreProvider.of<AppState>(context)
-                  .dispatch(
-                      ChangeNotifyLongTimerExpiration(newValue: newValue)),
+                  .dispatch(UserActionSettings.changeNotifyLongTimerExpiration(
+                      value: newValue)),
             ),
           ],
         ),

@@ -75,7 +75,7 @@ class _ThemeDropdownButton extends StatelessWidget {
             },
           ).toList(),
           onChanged: (newTheme) => StoreProvider.of<AppState>(context)
-              .dispatch(ChangeTheme(appTheme: newTheme)),
+              .dispatch(UserActionSettings.changeTheme(appTheme: newTheme)),
         ),
       );
 }
