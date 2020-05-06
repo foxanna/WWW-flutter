@@ -9,100 +9,150 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$ChangeThemeTearOff {
-  const _$ChangeThemeTearOff();
+class _$UserActionSettingsTearOff {
+  const _$UserActionSettingsTearOff();
 
-  _ChangeTheme call({@required AppTheme appTheme}) {
-    return _ChangeTheme(
+  ChangeThemeSettingsUserAction changeTheme({@required AppTheme appTheme}) {
+    return ChangeThemeSettingsUserAction(
       appTheme: appTheme,
+    );
+  }
+
+  ChangeTextScaleSettingsUserAction changeTextScale(
+      {@required TextScale textScale}) {
+    return ChangeTextScaleSettingsUserAction(
+      textScale: textScale,
+    );
+  }
+
+  ChangeNotifyShortTimerExpirationSettingsUserAction
+      changeNotifyShortTimerExpiration({@required bool value}) {
+    return ChangeNotifyShortTimerExpirationSettingsUserAction(
+      value: value,
+    );
+  }
+
+  ChangeNotifyLongTimerExpirationSettingsUserAction
+      changeNotifyLongTimerExpiration({@required bool value}) {
+    return ChangeNotifyLongTimerExpirationSettingsUserAction(
+      value: value,
     );
   }
 }
 
 // ignore: unused_element
-const $ChangeTheme = _$ChangeThemeTearOff();
+const $UserActionSettings = _$UserActionSettingsTearOff();
 
-mixin _$ChangeTheme {
-  AppTheme get appTheme;
-
-  $ChangeThemeCopyWith<ChangeTheme> get copyWith;
+mixin _$UserActionSettings {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result changeTheme(AppTheme appTheme),
+    @required Result changeTextScale(TextScale textScale),
+    @required Result changeNotifyShortTimerExpiration(bool value),
+    @required Result changeNotifyLongTimerExpiration(bool value),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result changeTheme(AppTheme appTheme),
+    Result changeTextScale(TextScale textScale),
+    Result changeNotifyShortTimerExpiration(bool value),
+    Result changeNotifyLongTimerExpiration(bool value),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result changeTheme(ChangeThemeSettingsUserAction value),
+    @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    @required
+        Result changeNotifyShortTimerExpiration(
+            ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    @required
+        Result changeNotifyLongTimerExpiration(
+            ChangeNotifyLongTimerExpirationSettingsUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result changeTheme(ChangeThemeSettingsUserAction value),
+    Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    Result changeNotifyShortTimerExpiration(
+        ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    Result changeNotifyLongTimerExpiration(
+        ChangeNotifyLongTimerExpirationSettingsUserAction value),
+    @required Result orElse(),
+  });
 }
 
-abstract class $ChangeThemeCopyWith<$Res> {
-  factory $ChangeThemeCopyWith(
-          ChangeTheme value, $Res Function(ChangeTheme) then) =
-      _$ChangeThemeCopyWithImpl<$Res>;
-  $Res call({AppTheme appTheme});
+abstract class $UserActionSettingsCopyWith<$Res> {
+  factory $UserActionSettingsCopyWith(
+          UserActionSettings value, $Res Function(UserActionSettings) then) =
+      _$UserActionSettingsCopyWithImpl<$Res>;
 }
 
-class _$ChangeThemeCopyWithImpl<$Res> implements $ChangeThemeCopyWith<$Res> {
-  _$ChangeThemeCopyWithImpl(this._value, this._then);
+class _$UserActionSettingsCopyWithImpl<$Res>
+    implements $UserActionSettingsCopyWith<$Res> {
+  _$UserActionSettingsCopyWithImpl(this._value, this._then);
 
-  final ChangeTheme _value;
+  final UserActionSettings _value;
   // ignore: unused_field
-  final $Res Function(ChangeTheme) _then;
-
-  @override
-  $Res call({
-    Object appTheme = freezed,
-  }) {
-    return _then(_value.copyWith(
-      appTheme: appTheme == freezed ? _value.appTheme : appTheme as AppTheme,
-    ));
-  }
+  final $Res Function(UserActionSettings) _then;
 }
 
-abstract class _$ChangeThemeCopyWith<$Res>
-    implements $ChangeThemeCopyWith<$Res> {
-  factory _$ChangeThemeCopyWith(
-          _ChangeTheme value, $Res Function(_ChangeTheme) then) =
-      __$ChangeThemeCopyWithImpl<$Res>;
-  @override
+abstract class $ChangeThemeSettingsUserActionCopyWith<$Res> {
+  factory $ChangeThemeSettingsUserActionCopyWith(
+          ChangeThemeSettingsUserAction value,
+          $Res Function(ChangeThemeSettingsUserAction) then) =
+      _$ChangeThemeSettingsUserActionCopyWithImpl<$Res>;
   $Res call({AppTheme appTheme});
 }
 
-class __$ChangeThemeCopyWithImpl<$Res> extends _$ChangeThemeCopyWithImpl<$Res>
-    implements _$ChangeThemeCopyWith<$Res> {
-  __$ChangeThemeCopyWithImpl(
-      _ChangeTheme _value, $Res Function(_ChangeTheme) _then)
-      : super(_value, (v) => _then(v as _ChangeTheme));
+class _$ChangeThemeSettingsUserActionCopyWithImpl<$Res>
+    extends _$UserActionSettingsCopyWithImpl<$Res>
+    implements $ChangeThemeSettingsUserActionCopyWith<$Res> {
+  _$ChangeThemeSettingsUserActionCopyWithImpl(
+      ChangeThemeSettingsUserAction _value,
+      $Res Function(ChangeThemeSettingsUserAction) _then)
+      : super(_value, (v) => _then(v as ChangeThemeSettingsUserAction));
 
   @override
-  _ChangeTheme get _value => super._value as _ChangeTheme;
+  ChangeThemeSettingsUserAction get _value =>
+      super._value as ChangeThemeSettingsUserAction;
 
   @override
   $Res call({
     Object appTheme = freezed,
   }) {
-    return _then(_ChangeTheme(
+    return _then(ChangeThemeSettingsUserAction(
       appTheme: appTheme == freezed ? _value.appTheme : appTheme as AppTheme,
     ));
   }
 }
 
-class _$_ChangeTheme with DiagnosticableTreeMixin implements _ChangeTheme {
-  const _$_ChangeTheme({@required this.appTheme}) : assert(appTheme != null);
+class _$ChangeThemeSettingsUserAction
+    with DiagnosticableTreeMixin
+    implements ChangeThemeSettingsUserAction {
+  const _$ChangeThemeSettingsUserAction({@required this.appTheme})
+      : assert(appTheme != null);
 
   @override
   final AppTheme appTheme;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChangeTheme(appTheme: $appTheme)';
+    return 'UserActionSettings.changeTheme(appTheme: $appTheme)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ChangeTheme'))
+      ..add(DiagnosticsProperty('type', 'UserActionSettings.changeTheme'))
       ..add(DiagnosticsProperty('appTheme', appTheme));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangeTheme &&
+        (other is ChangeThemeSettingsUserAction &&
             (identical(other.appTheme, appTheme) ||
                 const DeepCollectionEquality()
                     .equals(other.appTheme, appTheme)));
@@ -113,98 +163,123 @@ class _$_ChangeTheme with DiagnosticableTreeMixin implements _ChangeTheme {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(appTheme);
 
   @override
-  _$ChangeThemeCopyWith<_ChangeTheme> get copyWith =>
-      __$ChangeThemeCopyWithImpl<_ChangeTheme>(this, _$identity);
-}
-
-abstract class _ChangeTheme implements ChangeTheme {
-  const factory _ChangeTheme({@required AppTheme appTheme}) = _$_ChangeTheme;
+  $ChangeThemeSettingsUserActionCopyWith<ChangeThemeSettingsUserAction>
+      get copyWith => _$ChangeThemeSettingsUserActionCopyWithImpl<
+          ChangeThemeSettingsUserAction>(this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result changeTheme(AppTheme appTheme),
+    @required Result changeTextScale(TextScale textScale),
+    @required Result changeNotifyShortTimerExpiration(bool value),
+    @required Result changeNotifyLongTimerExpiration(bool value),
+  }) {
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return changeTheme(appTheme);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result changeTheme(AppTheme appTheme),
+    Result changeTextScale(TextScale textScale),
+    Result changeNotifyShortTimerExpiration(bool value),
+    Result changeNotifyLongTimerExpiration(bool value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeTheme != null) {
+      return changeTheme(appTheme);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result changeTheme(ChangeThemeSettingsUserAction value),
+    @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    @required
+        Result changeNotifyShortTimerExpiration(
+            ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    @required
+        Result changeNotifyLongTimerExpiration(
+            ChangeNotifyLongTimerExpirationSettingsUserAction value),
+  }) {
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return changeTheme(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result changeTheme(ChangeThemeSettingsUserAction value),
+    Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    Result changeNotifyShortTimerExpiration(
+        ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    Result changeNotifyLongTimerExpiration(
+        ChangeNotifyLongTimerExpirationSettingsUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeTheme != null) {
+      return changeTheme(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeThemeSettingsUserAction implements UserActionSettings {
+  const factory ChangeThemeSettingsUserAction({@required AppTheme appTheme}) =
+      _$ChangeThemeSettingsUserAction;
+
   AppTheme get appTheme;
-  @override
-  _$ChangeThemeCopyWith<_ChangeTheme> get copyWith;
+  $ChangeThemeSettingsUserActionCopyWith<ChangeThemeSettingsUserAction>
+      get copyWith;
 }
 
-class _$ChangeTextScaleTearOff {
-  const _$ChangeTextScaleTearOff();
-
-  _ChangeTextScale call({@required TextScale textScale}) {
-    return _ChangeTextScale(
-      textScale: textScale,
-    );
-  }
-}
-
-// ignore: unused_element
-const $ChangeTextScale = _$ChangeTextScaleTearOff();
-
-mixin _$ChangeTextScale {
-  TextScale get textScale;
-
-  $ChangeTextScaleCopyWith<ChangeTextScale> get copyWith;
-}
-
-abstract class $ChangeTextScaleCopyWith<$Res> {
-  factory $ChangeTextScaleCopyWith(
-          ChangeTextScale value, $Res Function(ChangeTextScale) then) =
-      _$ChangeTextScaleCopyWithImpl<$Res>;
+abstract class $ChangeTextScaleSettingsUserActionCopyWith<$Res> {
+  factory $ChangeTextScaleSettingsUserActionCopyWith(
+          ChangeTextScaleSettingsUserAction value,
+          $Res Function(ChangeTextScaleSettingsUserAction) then) =
+      _$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>;
   $Res call({TextScale textScale});
 }
 
-class _$ChangeTextScaleCopyWithImpl<$Res>
-    implements $ChangeTextScaleCopyWith<$Res> {
-  _$ChangeTextScaleCopyWithImpl(this._value, this._then);
+class _$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>
+    extends _$UserActionSettingsCopyWithImpl<$Res>
+    implements $ChangeTextScaleSettingsUserActionCopyWith<$Res> {
+  _$ChangeTextScaleSettingsUserActionCopyWithImpl(
+      ChangeTextScaleSettingsUserAction _value,
+      $Res Function(ChangeTextScaleSettingsUserAction) _then)
+      : super(_value, (v) => _then(v as ChangeTextScaleSettingsUserAction));
 
-  final ChangeTextScale _value;
-  // ignore: unused_field
-  final $Res Function(ChangeTextScale) _then;
+  @override
+  ChangeTextScaleSettingsUserAction get _value =>
+      super._value as ChangeTextScaleSettingsUserAction;
 
   @override
   $Res call({
     Object textScale = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(ChangeTextScaleSettingsUserAction(
       textScale:
           textScale == freezed ? _value.textScale : textScale as TextScale,
     ));
   }
 }
 
-abstract class _$ChangeTextScaleCopyWith<$Res>
-    implements $ChangeTextScaleCopyWith<$Res> {
-  factory _$ChangeTextScaleCopyWith(
-          _ChangeTextScale value, $Res Function(_ChangeTextScale) then) =
-      __$ChangeTextScaleCopyWithImpl<$Res>;
-  @override
-  $Res call({TextScale textScale});
-}
-
-class __$ChangeTextScaleCopyWithImpl<$Res>
-    extends _$ChangeTextScaleCopyWithImpl<$Res>
-    implements _$ChangeTextScaleCopyWith<$Res> {
-  __$ChangeTextScaleCopyWithImpl(
-      _ChangeTextScale _value, $Res Function(_ChangeTextScale) _then)
-      : super(_value, (v) => _then(v as _ChangeTextScale));
-
-  @override
-  _ChangeTextScale get _value => super._value as _ChangeTextScale;
-
-  @override
-  $Res call({
-    Object textScale = freezed,
-  }) {
-    return _then(_ChangeTextScale(
-      textScale:
-          textScale == freezed ? _value.textScale : textScale as TextScale,
-    ));
-  }
-}
-
-class _$_ChangeTextScale
+class _$ChangeTextScaleSettingsUserAction
     with DiagnosticableTreeMixin
-    implements _ChangeTextScale {
-  const _$_ChangeTextScale({@required this.textScale})
+    implements ChangeTextScaleSettingsUserAction {
+  const _$ChangeTextScaleSettingsUserAction({@required this.textScale})
       : assert(textScale != null);
 
   @override
@@ -212,21 +287,21 @@ class _$_ChangeTextScale
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChangeTextScale(textScale: $textScale)';
+    return 'UserActionSettings.changeTextScale(textScale: $textScale)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ChangeTextScale'))
+      ..add(DiagnosticsProperty('type', 'UserActionSettings.changeTextScale'))
       ..add(DiagnosticsProperty('textScale', textScale));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangeTextScale &&
+        (other is ChangeTextScaleSettingsUserAction &&
             (identical(other.textScale, textScale) ||
                 const DeepCollectionEquality()
                     .equals(other.textScale, textScale)));
@@ -237,363 +312,417 @@ class _$_ChangeTextScale
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(textScale);
 
   @override
-  _$ChangeTextScaleCopyWith<_ChangeTextScale> get copyWith =>
-      __$ChangeTextScaleCopyWithImpl<_ChangeTextScale>(this, _$identity);
-}
-
-abstract class _ChangeTextScale implements ChangeTextScale {
-  const factory _ChangeTextScale({@required TextScale textScale}) =
-      _$_ChangeTextScale;
+  $ChangeTextScaleSettingsUserActionCopyWith<ChangeTextScaleSettingsUserAction>
+      get copyWith => _$ChangeTextScaleSettingsUserActionCopyWithImpl<
+          ChangeTextScaleSettingsUserAction>(this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result changeTheme(AppTheme appTheme),
+    @required Result changeTextScale(TextScale textScale),
+    @required Result changeNotifyShortTimerExpiration(bool value),
+    @required Result changeNotifyLongTimerExpiration(bool value),
+  }) {
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return changeTextScale(textScale);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result changeTheme(AppTheme appTheme),
+    Result changeTextScale(TextScale textScale),
+    Result changeNotifyShortTimerExpiration(bool value),
+    Result changeNotifyLongTimerExpiration(bool value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeTextScale != null) {
+      return changeTextScale(textScale);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result changeTheme(ChangeThemeSettingsUserAction value),
+    @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    @required
+        Result changeNotifyShortTimerExpiration(
+            ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    @required
+        Result changeNotifyLongTimerExpiration(
+            ChangeNotifyLongTimerExpirationSettingsUserAction value),
+  }) {
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return changeTextScale(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result changeTheme(ChangeThemeSettingsUserAction value),
+    Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    Result changeNotifyShortTimerExpiration(
+        ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    Result changeNotifyLongTimerExpiration(
+        ChangeNotifyLongTimerExpirationSettingsUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeTextScale != null) {
+      return changeTextScale(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeTextScaleSettingsUserAction implements UserActionSettings {
+  const factory ChangeTextScaleSettingsUserAction(
+      {@required TextScale textScale}) = _$ChangeTextScaleSettingsUserAction;
+
   TextScale get textScale;
-  @override
-  _$ChangeTextScaleCopyWith<_ChangeTextScale> get copyWith;
-}
-
-class _$ChangeNotifyShortTimerExpirationTearOff {
-  const _$ChangeNotifyShortTimerExpirationTearOff();
-
-  _ChangeNotifyShortTimerExpiration call({@required bool newValue}) {
-    return _ChangeNotifyShortTimerExpiration(
-      newValue: newValue,
-    );
-  }
-}
-
-// ignore: unused_element
-const $ChangeNotifyShortTimerExpiration =
-    _$ChangeNotifyShortTimerExpirationTearOff();
-
-mixin _$ChangeNotifyShortTimerExpiration {
-  bool get newValue;
-
-  $ChangeNotifyShortTimerExpirationCopyWith<ChangeNotifyShortTimerExpiration>
+  $ChangeTextScaleSettingsUserActionCopyWith<ChangeTextScaleSettingsUserAction>
       get copyWith;
 }
 
-abstract class $ChangeNotifyShortTimerExpirationCopyWith<$Res> {
-  factory $ChangeNotifyShortTimerExpirationCopyWith(
-          ChangeNotifyShortTimerExpiration value,
-          $Res Function(ChangeNotifyShortTimerExpiration) then) =
-      _$ChangeNotifyShortTimerExpirationCopyWithImpl<$Res>;
-  $Res call({bool newValue});
+abstract class $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
+    $Res> {
+  factory $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith(
+          ChangeNotifyShortTimerExpirationSettingsUserAction value,
+          $Res Function(ChangeNotifyShortTimerExpirationSettingsUserAction)
+              then) =
+      _$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>;
+  $Res call({bool value});
 }
 
-class _$ChangeNotifyShortTimerExpirationCopyWithImpl<$Res>
-    implements $ChangeNotifyShortTimerExpirationCopyWith<$Res> {
-  _$ChangeNotifyShortTimerExpirationCopyWithImpl(this._value, this._then);
+class _$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>
+    extends _$UserActionSettingsCopyWithImpl<$Res>
+    implements
+        $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<$Res> {
+  _$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl(
+      ChangeNotifyShortTimerExpirationSettingsUserAction _value,
+      $Res Function(ChangeNotifyShortTimerExpirationSettingsUserAction) _then)
+      : super(
+            _value,
+            (v) =>
+                _then(v as ChangeNotifyShortTimerExpirationSettingsUserAction));
 
-  final ChangeNotifyShortTimerExpiration _value;
-  // ignore: unused_field
-  final $Res Function(ChangeNotifyShortTimerExpiration) _then;
+  @override
+  ChangeNotifyShortTimerExpirationSettingsUserAction get _value =>
+      super._value as ChangeNotifyShortTimerExpirationSettingsUserAction;
 
   @override
   $Res call({
-    Object newValue = freezed,
+    Object value = freezed,
   }) {
-    return _then(_value.copyWith(
-      newValue: newValue == freezed ? _value.newValue : newValue as bool,
+    return _then(ChangeNotifyShortTimerExpirationSettingsUserAction(
+      value: value == freezed ? _value.value : value as bool,
     ));
   }
 }
 
-abstract class _$ChangeNotifyShortTimerExpirationCopyWith<$Res>
-    implements $ChangeNotifyShortTimerExpirationCopyWith<$Res> {
-  factory _$ChangeNotifyShortTimerExpirationCopyWith(
-          _ChangeNotifyShortTimerExpiration value,
-          $Res Function(_ChangeNotifyShortTimerExpiration) then) =
-      __$ChangeNotifyShortTimerExpirationCopyWithImpl<$Res>;
-  @override
-  $Res call({bool newValue});
-}
-
-class __$ChangeNotifyShortTimerExpirationCopyWithImpl<$Res>
-    extends _$ChangeNotifyShortTimerExpirationCopyWithImpl<$Res>
-    implements _$ChangeNotifyShortTimerExpirationCopyWith<$Res> {
-  __$ChangeNotifyShortTimerExpirationCopyWithImpl(
-      _ChangeNotifyShortTimerExpiration _value,
-      $Res Function(_ChangeNotifyShortTimerExpiration) _then)
-      : super(_value, (v) => _then(v as _ChangeNotifyShortTimerExpiration));
-
-  @override
-  _ChangeNotifyShortTimerExpiration get _value =>
-      super._value as _ChangeNotifyShortTimerExpiration;
-
-  @override
-  $Res call({
-    Object newValue = freezed,
-  }) {
-    return _then(_ChangeNotifyShortTimerExpiration(
-      newValue: newValue == freezed ? _value.newValue : newValue as bool,
-    ));
-  }
-}
-
-class _$_ChangeNotifyShortTimerExpiration
+class _$ChangeNotifyShortTimerExpirationSettingsUserAction
     with DiagnosticableTreeMixin
-    implements _ChangeNotifyShortTimerExpiration {
-  const _$_ChangeNotifyShortTimerExpiration({@required this.newValue})
-      : assert(newValue != null);
+    implements ChangeNotifyShortTimerExpirationSettingsUserAction {
+  const _$ChangeNotifyShortTimerExpirationSettingsUserAction(
+      {@required this.value})
+      : assert(value != null);
 
   @override
-  final bool newValue;
+  final bool value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChangeNotifyShortTimerExpiration(newValue: $newValue)';
+    return 'UserActionSettings.changeNotifyShortTimerExpiration(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ChangeNotifyShortTimerExpiration'))
-      ..add(DiagnosticsProperty('newValue', newValue));
+      ..add(DiagnosticsProperty(
+          'type', 'UserActionSettings.changeNotifyShortTimerExpiration'))
+      ..add(DiagnosticsProperty('value', value));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangeNotifyShortTimerExpiration &&
-            (identical(other.newValue, newValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.newValue, newValue)));
+        (other is ChangeNotifyShortTimerExpirationSettingsUserAction &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newValue);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
   @override
-  _$ChangeNotifyShortTimerExpirationCopyWith<_ChangeNotifyShortTimerExpiration>
-      get copyWith => __$ChangeNotifyShortTimerExpirationCopyWithImpl<
-          _ChangeNotifyShortTimerExpiration>(this, _$identity);
-}
-
-abstract class _ChangeNotifyShortTimerExpiration
-    implements ChangeNotifyShortTimerExpiration {
-  const factory _ChangeNotifyShortTimerExpiration({@required bool newValue}) =
-      _$_ChangeNotifyShortTimerExpiration;
+  $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
+          ChangeNotifyShortTimerExpirationSettingsUserAction>
+      get copyWith =>
+          _$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<
+                  ChangeNotifyShortTimerExpirationSettingsUserAction>(
+              this, _$identity);
 
   @override
-  bool get newValue;
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result changeTheme(AppTheme appTheme),
+    @required Result changeTextScale(TextScale textScale),
+    @required Result changeNotifyShortTimerExpiration(bool value),
+    @required Result changeNotifyLongTimerExpiration(bool value),
+  }) {
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return changeNotifyShortTimerExpiration(value);
+  }
+
   @override
-  _$ChangeNotifyShortTimerExpirationCopyWith<_ChangeNotifyShortTimerExpiration>
-      get copyWith;
-}
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result changeTheme(AppTheme appTheme),
+    Result changeTextScale(TextScale textScale),
+    Result changeNotifyShortTimerExpiration(bool value),
+    Result changeNotifyLongTimerExpiration(bool value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeNotifyShortTimerExpiration != null) {
+      return changeNotifyShortTimerExpiration(value);
+    }
+    return orElse();
+  }
 
-class _$ChangeNotifyLongTimerExpirationTearOff {
-  const _$ChangeNotifyLongTimerExpirationTearOff();
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result changeTheme(ChangeThemeSettingsUserAction value),
+    @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    @required
+        Result changeNotifyShortTimerExpiration(
+            ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    @required
+        Result changeNotifyLongTimerExpiration(
+            ChangeNotifyLongTimerExpirationSettingsUserAction value),
+  }) {
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return changeNotifyShortTimerExpiration(this);
+  }
 
-  _ChangeNotifyLongTimerExpiration call({@required bool newValue}) {
-    return _ChangeNotifyLongTimerExpiration(
-      newValue: newValue,
-    );
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result changeTheme(ChangeThemeSettingsUserAction value),
+    Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    Result changeNotifyShortTimerExpiration(
+        ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    Result changeNotifyLongTimerExpiration(
+        ChangeNotifyLongTimerExpirationSettingsUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeNotifyShortTimerExpiration != null) {
+      return changeNotifyShortTimerExpiration(this);
+    }
+    return orElse();
   }
 }
 
-// ignore: unused_element
-const $ChangeNotifyLongTimerExpiration =
-    _$ChangeNotifyLongTimerExpirationTearOff();
+abstract class ChangeNotifyShortTimerExpirationSettingsUserAction
+    implements UserActionSettings {
+  const factory ChangeNotifyShortTimerExpirationSettingsUserAction(
+          {@required bool value}) =
+      _$ChangeNotifyShortTimerExpirationSettingsUserAction;
 
-mixin _$ChangeNotifyLongTimerExpiration {
-  bool get newValue;
-
-  $ChangeNotifyLongTimerExpirationCopyWith<ChangeNotifyLongTimerExpiration>
-      get copyWith;
+  bool get value;
+  $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
+      ChangeNotifyShortTimerExpirationSettingsUserAction> get copyWith;
 }
 
-abstract class $ChangeNotifyLongTimerExpirationCopyWith<$Res> {
-  factory $ChangeNotifyLongTimerExpirationCopyWith(
-          ChangeNotifyLongTimerExpiration value,
-          $Res Function(ChangeNotifyLongTimerExpiration) then) =
-      _$ChangeNotifyLongTimerExpirationCopyWithImpl<$Res>;
-  $Res call({bool newValue});
+abstract class $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
+    $Res> {
+  factory $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith(
+          ChangeNotifyLongTimerExpirationSettingsUserAction value,
+          $Res Function(ChangeNotifyLongTimerExpirationSettingsUserAction)
+              then) =
+      _$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>;
+  $Res call({bool value});
 }
 
-class _$ChangeNotifyLongTimerExpirationCopyWithImpl<$Res>
-    implements $ChangeNotifyLongTimerExpirationCopyWith<$Res> {
-  _$ChangeNotifyLongTimerExpirationCopyWithImpl(this._value, this._then);
+class _$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>
+    extends _$UserActionSettingsCopyWithImpl<$Res>
+    implements
+        $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<$Res> {
+  _$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl(
+      ChangeNotifyLongTimerExpirationSettingsUserAction _value,
+      $Res Function(ChangeNotifyLongTimerExpirationSettingsUserAction) _then)
+      : super(
+            _value,
+            (v) =>
+                _then(v as ChangeNotifyLongTimerExpirationSettingsUserAction));
 
-  final ChangeNotifyLongTimerExpiration _value;
-  // ignore: unused_field
-  final $Res Function(ChangeNotifyLongTimerExpiration) _then;
+  @override
+  ChangeNotifyLongTimerExpirationSettingsUserAction get _value =>
+      super._value as ChangeNotifyLongTimerExpirationSettingsUserAction;
 
   @override
   $Res call({
-    Object newValue = freezed,
+    Object value = freezed,
   }) {
-    return _then(_value.copyWith(
-      newValue: newValue == freezed ? _value.newValue : newValue as bool,
+    return _then(ChangeNotifyLongTimerExpirationSettingsUserAction(
+      value: value == freezed ? _value.value : value as bool,
     ));
   }
 }
 
-abstract class _$ChangeNotifyLongTimerExpirationCopyWith<$Res>
-    implements $ChangeNotifyLongTimerExpirationCopyWith<$Res> {
-  factory _$ChangeNotifyLongTimerExpirationCopyWith(
-          _ChangeNotifyLongTimerExpiration value,
-          $Res Function(_ChangeNotifyLongTimerExpiration) then) =
-      __$ChangeNotifyLongTimerExpirationCopyWithImpl<$Res>;
-  @override
-  $Res call({bool newValue});
-}
-
-class __$ChangeNotifyLongTimerExpirationCopyWithImpl<$Res>
-    extends _$ChangeNotifyLongTimerExpirationCopyWithImpl<$Res>
-    implements _$ChangeNotifyLongTimerExpirationCopyWith<$Res> {
-  __$ChangeNotifyLongTimerExpirationCopyWithImpl(
-      _ChangeNotifyLongTimerExpiration _value,
-      $Res Function(_ChangeNotifyLongTimerExpiration) _then)
-      : super(_value, (v) => _then(v as _ChangeNotifyLongTimerExpiration));
-
-  @override
-  _ChangeNotifyLongTimerExpiration get _value =>
-      super._value as _ChangeNotifyLongTimerExpiration;
-
-  @override
-  $Res call({
-    Object newValue = freezed,
-  }) {
-    return _then(_ChangeNotifyLongTimerExpiration(
-      newValue: newValue == freezed ? _value.newValue : newValue as bool,
-    ));
-  }
-}
-
-class _$_ChangeNotifyLongTimerExpiration
+class _$ChangeNotifyLongTimerExpirationSettingsUserAction
     with DiagnosticableTreeMixin
-    implements _ChangeNotifyLongTimerExpiration {
-  const _$_ChangeNotifyLongTimerExpiration({@required this.newValue})
-      : assert(newValue != null);
+    implements ChangeNotifyLongTimerExpirationSettingsUserAction {
+  const _$ChangeNotifyLongTimerExpirationSettingsUserAction(
+      {@required this.value})
+      : assert(value != null);
 
   @override
-  final bool newValue;
+  final bool value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChangeNotifyLongTimerExpiration(newValue: $newValue)';
+    return 'UserActionSettings.changeNotifyLongTimerExpiration(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ChangeNotifyLongTimerExpiration'))
-      ..add(DiagnosticsProperty('newValue', newValue));
+      ..add(DiagnosticsProperty(
+          'type', 'UserActionSettings.changeNotifyLongTimerExpiration'))
+      ..add(DiagnosticsProperty('value', value));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangeNotifyLongTimerExpiration &&
-            (identical(other.newValue, newValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.newValue, newValue)));
+        (other is ChangeNotifyLongTimerExpirationSettingsUserAction &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newValue);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
   @override
-  _$ChangeNotifyLongTimerExpirationCopyWith<_ChangeNotifyLongTimerExpiration>
-      get copyWith => __$ChangeNotifyLongTimerExpirationCopyWithImpl<
-          _ChangeNotifyLongTimerExpiration>(this, _$identity);
-}
-
-abstract class _ChangeNotifyLongTimerExpiration
-    implements ChangeNotifyLongTimerExpiration {
-  const factory _ChangeNotifyLongTimerExpiration({@required bool newValue}) =
-      _$_ChangeNotifyLongTimerExpiration;
+  $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
+          ChangeNotifyLongTimerExpirationSettingsUserAction>
+      get copyWith =>
+          _$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<
+                  ChangeNotifyLongTimerExpirationSettingsUserAction>(
+              this, _$identity);
 
   @override
-  bool get newValue;
-  @override
-  _$ChangeNotifyLongTimerExpirationCopyWith<_ChangeNotifyLongTimerExpiration>
-      get copyWith;
-}
-
-class _$ReadSettingsTearOff {
-  const _$ReadSettingsTearOff();
-
-  _ReadSettings call() {
-    return const _ReadSettings();
-  }
-}
-
-// ignore: unused_element
-const $ReadSettings = _$ReadSettingsTearOff();
-
-mixin _$ReadSettings {}
-
-abstract class $ReadSettingsCopyWith<$Res> {
-  factory $ReadSettingsCopyWith(
-          ReadSettings value, $Res Function(ReadSettings) then) =
-      _$ReadSettingsCopyWithImpl<$Res>;
-}
-
-class _$ReadSettingsCopyWithImpl<$Res> implements $ReadSettingsCopyWith<$Res> {
-  _$ReadSettingsCopyWithImpl(this._value, this._then);
-
-  final ReadSettings _value;
-  // ignore: unused_field
-  final $Res Function(ReadSettings) _then;
-}
-
-abstract class _$ReadSettingsCopyWith<$Res> {
-  factory _$ReadSettingsCopyWith(
-          _ReadSettings value, $Res Function(_ReadSettings) then) =
-      __$ReadSettingsCopyWithImpl<$Res>;
-}
-
-class __$ReadSettingsCopyWithImpl<$Res> extends _$ReadSettingsCopyWithImpl<$Res>
-    implements _$ReadSettingsCopyWith<$Res> {
-  __$ReadSettingsCopyWithImpl(
-      _ReadSettings _value, $Res Function(_ReadSettings) _then)
-      : super(_value, (v) => _then(v as _ReadSettings));
-
-  @override
-  _ReadSettings get _value => super._value as _ReadSettings;
-}
-
-class _$_ReadSettings with DiagnosticableTreeMixin implements _ReadSettings {
-  const _$_ReadSettings();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ReadSettings()';
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result changeTheme(AppTheme appTheme),
+    @required Result changeTextScale(TextScale textScale),
+    @required Result changeNotifyShortTimerExpiration(bool value),
+    @required Result changeNotifyLongTimerExpiration(bool value),
+  }) {
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return changeNotifyLongTimerExpiration(value);
   }
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ReadSettings'));
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result changeTheme(AppTheme appTheme),
+    Result changeTextScale(TextScale textScale),
+    Result changeNotifyShortTimerExpiration(bool value),
+    Result changeNotifyLongTimerExpiration(bool value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeNotifyLongTimerExpiration != null) {
+      return changeNotifyLongTimerExpiration(value);
+    }
+    return orElse();
   }
 
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ReadSettings);
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result changeTheme(ChangeThemeSettingsUserAction value),
+    @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    @required
+        Result changeNotifyShortTimerExpiration(
+            ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    @required
+        Result changeNotifyLongTimerExpiration(
+            ChangeNotifyLongTimerExpirationSettingsUserAction value),
+  }) {
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return changeNotifyLongTimerExpiration(this);
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result changeTheme(ChangeThemeSettingsUserAction value),
+    Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    Result changeNotifyShortTimerExpiration(
+        ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    Result changeNotifyLongTimerExpiration(
+        ChangeNotifyLongTimerExpirationSettingsUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeNotifyLongTimerExpiration != null) {
+      return changeNotifyLongTimerExpiration(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _ReadSettings implements ReadSettings {
-  const factory _ReadSettings() = _$_ReadSettings;
+abstract class ChangeNotifyLongTimerExpirationSettingsUserAction
+    implements UserActionSettings {
+  const factory ChangeNotifyLongTimerExpirationSettingsUserAction(
+          {@required bool value}) =
+      _$ChangeNotifyLongTimerExpirationSettingsUserAction;
+
+  bool get value;
+  $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
+      ChangeNotifyLongTimerExpirationSettingsUserAction> get copyWith;
 }
 
-class _$SettingsReadTearOff {
-  const _$SettingsReadTearOff();
+class _$SystemActionSettingsTearOff {
+  const _$SystemActionSettingsTearOff();
 
-  _SettingsRead call(
+  ReadySettingsSystemAction ready(
       {AppTheme appTheme,
       TextScale textScale,
       bool notifyShortTimerExpiration,
       bool notifyLongTimerExpiration}) {
-    return _SettingsRead(
+    return ReadySettingsSystemAction(
       appTheme: appTheme,
       textScale: textScale,
       notifyShortTimerExpiration: notifyShortTimerExpiration,
@@ -603,21 +732,21 @@ class _$SettingsReadTearOff {
 }
 
 // ignore: unused_element
-const $SettingsRead = _$SettingsReadTearOff();
+const $SystemActionSettings = _$SystemActionSettingsTearOff();
 
-mixin _$SettingsRead {
+mixin _$SystemActionSettings {
   AppTheme get appTheme;
   TextScale get textScale;
   bool get notifyShortTimerExpiration;
   bool get notifyLongTimerExpiration;
 
-  $SettingsReadCopyWith<SettingsRead> get copyWith;
+  $SystemActionSettingsCopyWith<SystemActionSettings> get copyWith;
 }
 
-abstract class $SettingsReadCopyWith<$Res> {
-  factory $SettingsReadCopyWith(
-          SettingsRead value, $Res Function(SettingsRead) then) =
-      _$SettingsReadCopyWithImpl<$Res>;
+abstract class $SystemActionSettingsCopyWith<$Res> {
+  factory $SystemActionSettingsCopyWith(SystemActionSettings value,
+          $Res Function(SystemActionSettings) then) =
+      _$SystemActionSettingsCopyWithImpl<$Res>;
   $Res call(
       {AppTheme appTheme,
       TextScale textScale,
@@ -625,12 +754,13 @@ abstract class $SettingsReadCopyWith<$Res> {
       bool notifyLongTimerExpiration});
 }
 
-class _$SettingsReadCopyWithImpl<$Res> implements $SettingsReadCopyWith<$Res> {
-  _$SettingsReadCopyWithImpl(this._value, this._then);
+class _$SystemActionSettingsCopyWithImpl<$Res>
+    implements $SystemActionSettingsCopyWith<$Res> {
+  _$SystemActionSettingsCopyWithImpl(this._value, this._then);
 
-  final SettingsRead _value;
+  final SystemActionSettings _value;
   // ignore: unused_field
-  final $Res Function(SettingsRead) _then;
+  final $Res Function(SystemActionSettings) _then;
 
   @override
   $Res call({
@@ -653,11 +783,11 @@ class _$SettingsReadCopyWithImpl<$Res> implements $SettingsReadCopyWith<$Res> {
   }
 }
 
-abstract class _$SettingsReadCopyWith<$Res>
-    implements $SettingsReadCopyWith<$Res> {
-  factory _$SettingsReadCopyWith(
-          _SettingsRead value, $Res Function(_SettingsRead) then) =
-      __$SettingsReadCopyWithImpl<$Res>;
+abstract class $ReadySettingsSystemActionCopyWith<$Res>
+    implements $SystemActionSettingsCopyWith<$Res> {
+  factory $ReadySettingsSystemActionCopyWith(ReadySettingsSystemAction value,
+          $Res Function(ReadySettingsSystemAction) then) =
+      _$ReadySettingsSystemActionCopyWithImpl<$Res>;
   @override
   $Res call(
       {AppTheme appTheme,
@@ -666,14 +796,16 @@ abstract class _$SettingsReadCopyWith<$Res>
       bool notifyLongTimerExpiration});
 }
 
-class __$SettingsReadCopyWithImpl<$Res> extends _$SettingsReadCopyWithImpl<$Res>
-    implements _$SettingsReadCopyWith<$Res> {
-  __$SettingsReadCopyWithImpl(
-      _SettingsRead _value, $Res Function(_SettingsRead) _then)
-      : super(_value, (v) => _then(v as _SettingsRead));
+class _$ReadySettingsSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionSettingsCopyWithImpl<$Res>
+    implements $ReadySettingsSystemActionCopyWith<$Res> {
+  _$ReadySettingsSystemActionCopyWithImpl(ReadySettingsSystemAction _value,
+      $Res Function(ReadySettingsSystemAction) _then)
+      : super(_value, (v) => _then(v as ReadySettingsSystemAction));
 
   @override
-  _SettingsRead get _value => super._value as _SettingsRead;
+  ReadySettingsSystemAction get _value =>
+      super._value as ReadySettingsSystemAction;
 
   @override
   $Res call({
@@ -682,7 +814,7 @@ class __$SettingsReadCopyWithImpl<$Res> extends _$SettingsReadCopyWithImpl<$Res>
     Object notifyShortTimerExpiration = freezed,
     Object notifyLongTimerExpiration = freezed,
   }) {
-    return _then(_SettingsRead(
+    return _then(ReadySettingsSystemAction(
       appTheme: appTheme == freezed ? _value.appTheme : appTheme as AppTheme,
       textScale:
           textScale == freezed ? _value.textScale : textScale as TextScale,
@@ -696,8 +828,10 @@ class __$SettingsReadCopyWithImpl<$Res> extends _$SettingsReadCopyWithImpl<$Res>
   }
 }
 
-class _$_SettingsRead with DiagnosticableTreeMixin implements _SettingsRead {
-  const _$_SettingsRead(
+class _$ReadySettingsSystemAction
+    with DiagnosticableTreeMixin
+    implements ReadySettingsSystemAction {
+  const _$ReadySettingsSystemAction(
       {this.appTheme,
       this.textScale,
       this.notifyShortTimerExpiration,
@@ -714,14 +848,14 @@ class _$_SettingsRead with DiagnosticableTreeMixin implements _SettingsRead {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingsRead(appTheme: $appTheme, textScale: $textScale, notifyShortTimerExpiration: $notifyShortTimerExpiration, notifyLongTimerExpiration: $notifyLongTimerExpiration)';
+    return 'SystemActionSettings.ready(appTheme: $appTheme, textScale: $textScale, notifyShortTimerExpiration: $notifyShortTimerExpiration, notifyLongTimerExpiration: $notifyLongTimerExpiration)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SettingsRead'))
+      ..add(DiagnosticsProperty('type', 'SystemActionSettings.ready'))
       ..add(DiagnosticsProperty('appTheme', appTheme))
       ..add(DiagnosticsProperty('textScale', textScale))
       ..add(DiagnosticsProperty(
@@ -733,7 +867,7 @@ class _$_SettingsRead with DiagnosticableTreeMixin implements _SettingsRead {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SettingsRead &&
+        (other is ReadySettingsSystemAction &&
             (identical(other.appTheme, appTheme) ||
                 const DeepCollectionEquality()
                     .equals(other.appTheme, appTheme)) &&
@@ -761,16 +895,17 @@ class _$_SettingsRead with DiagnosticableTreeMixin implements _SettingsRead {
       const DeepCollectionEquality().hash(notifyLongTimerExpiration);
 
   @override
-  _$SettingsReadCopyWith<_SettingsRead> get copyWith =>
-      __$SettingsReadCopyWithImpl<_SettingsRead>(this, _$identity);
+  $ReadySettingsSystemActionCopyWith<ReadySettingsSystemAction> get copyWith =>
+      _$ReadySettingsSystemActionCopyWithImpl<ReadySettingsSystemAction>(
+          this, _$identity);
 }
 
-abstract class _SettingsRead implements SettingsRead {
-  const factory _SettingsRead(
+abstract class ReadySettingsSystemAction implements SystemActionSettings {
+  const factory ReadySettingsSystemAction(
       {AppTheme appTheme,
       TextScale textScale,
       bool notifyShortTimerExpiration,
-      bool notifyLongTimerExpiration}) = _$_SettingsRead;
+      bool notifyLongTimerExpiration}) = _$ReadySettingsSystemAction;
 
   @override
   AppTheme get appTheme;
@@ -781,5 +916,5 @@ abstract class _SettingsRead implements SettingsRead {
   @override
   bool get notifyLongTimerExpiration;
   @override
-  _$SettingsReadCopyWith<_SettingsRead> get copyWith;
+  $ReadySettingsSystemActionCopyWith<ReadySettingsSystemAction> get copyWith;
 }

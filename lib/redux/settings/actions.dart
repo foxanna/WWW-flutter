@@ -1,58 +1,42 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/common/app_theme.dart';
+import 'package:what_when_where/common/text_scale.dart';
 import 'package:what_when_where/redux/redux_action.dart';
-import 'package:what_when_where/resources/fonts.dart';
 
 part 'actions.freezed.dart';
 
 abstract class SettingsAction implements ReduxAction {}
 
 @freezed
-abstract class ChangeTheme with _$ChangeTheme implements SettingsAction {
-  const factory ChangeTheme({
+abstract class UserActionSettings
+    with _$UserActionSettings
+    implements SettingsAction {
+  const factory UserActionSettings.changeTheme({
     @required AppTheme appTheme,
-  }) = _ChangeTheme;
-}
+  }) = ChangeThemeSettingsUserAction;
 
-@freezed
-abstract class ChangeTextScale
-    with _$ChangeTextScale
-    implements SettingsAction {
-  const factory ChangeTextScale({
+  const factory UserActionSettings.changeTextScale({
     @required TextScale textScale,
-  }) = _ChangeTextScale;
+  }) = ChangeTextScaleSettingsUserAction;
+
+  const factory UserActionSettings.changeNotifyShortTimerExpiration({
+    @required bool value,
+  }) = ChangeNotifyShortTimerExpirationSettingsUserAction;
+
+  const factory UserActionSettings.changeNotifyLongTimerExpiration({
+    @required bool value,
+  }) = ChangeNotifyLongTimerExpirationSettingsUserAction;
 }
 
 @freezed
-abstract class ChangeNotifyShortTimerExpiration
-    with _$ChangeNotifyShortTimerExpiration
+abstract class SystemActionSettings
+    with _$SystemActionSettings
     implements SettingsAction {
-  const factory ChangeNotifyShortTimerExpiration({
-    @required bool newValue,
-  }) = _ChangeNotifyShortTimerExpiration;
-}
-
-@freezed
-abstract class ChangeNotifyLongTimerExpiration
-    with _$ChangeNotifyLongTimerExpiration
-    implements SettingsAction {
-  const factory ChangeNotifyLongTimerExpiration({
-    @required bool newValue,
-  }) = _ChangeNotifyLongTimerExpiration;
-}
-
-@freezed
-abstract class ReadSettings with _$ReadSettings implements SettingsAction {
-  const factory ReadSettings() = _ReadSettings;
-}
-
-@freezed
-abstract class SettingsRead with _$SettingsRead implements SettingsAction {
-  const factory SettingsRead({
+  const factory SystemActionSettings.ready({
     AppTheme appTheme,
     TextScale textScale,
     bool notifyShortTimerExpiration,
     bool notifyLongTimerExpiration,
-  }) = _SettingsRead;
+  }) = ReadySettingsSystemAction;
 }

@@ -1,9 +1,10 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/common/app_theme.dart';
+import 'package:what_when_where/common/text_scale.dart';
+import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
-import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/services/preferences.dart';
 
 const _themeKey = 'theme';
@@ -24,17 +25,20 @@ class SettingsMiddleware {
   }) : _preferences = preferences;
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, ReadSettings>(_onReadSettings),
-        TypedMiddleware<AppState, ChangeTheme>(_onThemeChanged),
-        TypedMiddleware<AppState, ChangeTextScale>(_onTextScaleChanged),
-        TypedMiddleware<AppState, ChangeNotifyShortTimerExpiration>(
-            _onNotifyShortTimerExpirationChanged),
-        TypedMiddleware<AppState, ChangeNotifyLongTimerExpiration>(
-            _onNotifyLongTimerExpirationChanged),
+        TypedMiddleware<AppState, InitInitializationAction>(_init),
+        TypedMiddleware<AppState, ChangeThemeSettingsUserAction>(_changeTheme),
+        TypedMiddleware<AppState, ChangeTextScaleSettingsUserAction>(
+            _changeTextScale),
+        TypedMiddleware<AppState,
+                ChangeNotifyShortTimerExpirationSettingsUserAction>(
+            _changeNotifyShortTimerExpiration),
+        TypedMiddleware<AppState,
+                ChangeNotifyLongTimerExpirationSettingsUserAction>(
+            _changeNotifyLongTimerExpiration),
       ];
 
-  Future<void> _onReadSettings(
-      Store<AppState> store, ReadSettings action, NextDispatcher next) async {
+  Future<void> _init(Store<AppState> store, InitInitializationAction action,
+      NextDispatcher next) async {
     next(action);
 
     final appThemeIndex = await _preferences.getInt(_themeKey);
@@ -48,15 +52,16 @@ class SettingsMiddleware {
     final notifyLongTimerExpiration = await _preferences
         .getBool(_notifyLongTimerExpirationKey, defaultValue: true);
 
-    store.dispatch(SettingsRead(
-        appTheme: appTheme,
-        textScale: textScale,
-        notifyShortTimerExpiration: notifyShortTimerExpiration,
-        notifyLongTimerExpiration: notifyLongTimerExpiration));
+    store.dispatch(SystemActionSettings.ready(
+      appTheme: appTheme,
+      textScale: textScale,
+      notifyShortTimerExpiration: notifyShortTimerExpiration,
+      notifyLongTimerExpiration: notifyLongTimerExpiration,
+    ));
   }
 
-  Future<void> _onThemeChanged(
-      Store<AppState> store, ChangeTheme action, NextDispatcher next) async {
+  Future<void> _changeTheme(Store<AppState> store,
+      ChangeThemeSettingsUserAction action, NextDispatcher next) async {
     final themeHasChanged =
         action.appTheme != store.state.settingsState.appTheme;
 
@@ -67,8 +72,8 @@ class SettingsMiddleware {
     }
   }
 
-  Future<void> _onTextScaleChanged(Store<AppState> store,
-      ChangeTextScale action, NextDispatcher next) async {
+  Future<void> _changeTextScale(Store<AppState> store,
+      ChangeTextScaleSettingsUserAction action, NextDispatcher next) async {
     final textScaleHasChanged =
         action.textScale != store.state.settingsState.textScale;
 
@@ -79,29 +84,31 @@ class SettingsMiddleware {
     }
   }
 
-  Future<void> _onNotifyShortTimerExpirationChanged(Store<AppState> store,
-      ChangeNotifyShortTimerExpiration action, NextDispatcher next) async {
+  Future<void> _changeNotifyShortTimerExpiration(
+      Store<AppState> store,
+      ChangeNotifyShortTimerExpirationSettingsUserAction action,
+      NextDispatcher next) async {
     final settingChanged =
-        action.newValue != store.state.settingsState.notifyShortTimerExpiration;
+        action.value != store.state.settingsState.notifyShortTimerExpiration;
 
     next(action);
 
     if (settingChanged) {
-      await _preferences.setBool(
-          _notifyShortTimerExpirationKey, action.newValue);
+      await _preferences.setBool(_notifyShortTimerExpirationKey, action.value);
     }
   }
 
-  Future<void> _onNotifyLongTimerExpirationChanged(Store<AppState> store,
-      ChangeNotifyLongTimerExpiration action, NextDispatcher next) async {
+  Future<void> _changeNotifyLongTimerExpiration(
+      Store<AppState> store,
+      ChangeNotifyLongTimerExpirationSettingsUserAction action,
+      NextDispatcher next) async {
     final settingChanged =
-        action.newValue != store.state.settingsState.notifyLongTimerExpiration;
+        action.value != store.state.settingsState.notifyLongTimerExpiration;
 
     next(action);
 
     if (settingChanged) {
-      await _preferences.setBool(
-          _notifyLongTimerExpirationKey, action.newValue);
+      await _preferences.setBool(_notifyLongTimerExpirationKey, action.value);
     }
   }
 }
