@@ -27,7 +27,7 @@ import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.d
 import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/services/vibrating.dart';
-import 'package:what_when_where/redux/init/middleware.dart';
+import 'package:what_when_where/redux/initialization/middleware.dart';
 import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:what_when_where/redux/logs/middleware.dart';
 import 'package:what_when_where/redux/misc/middleware.dart';
@@ -84,8 +84,7 @@ void $initGetIt(GetIt g, {String environment}) {
       () => TournamentsTreeLoader(httpClient: g<IHttpClient>()));
   g.registerLazySingleton<IUrlLauncher>(() => UrlLauncher());
   g.registerLazySingleton<IVibratingService>(() => VibratingService());
-  g.registerFactory<InitMiddleware>(() => InitMiddleware(
-      crashService: g<ICrashService>(), soundService: g<ISoundService>()));
+  g.registerFactory<InitializationMiddleware>(() => InitializationMiddleware());
   g.registerFactory<LatestTournamentsMiddleware>(
       () => LatestTournamentsMiddleware(loader: g<ILatestTournamentsLoader>()));
   g.registerFactory<LogsMiddleware>(() => LogsMiddleware());
