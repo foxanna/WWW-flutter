@@ -36,6 +36,7 @@ class Strings {
   static const String byDate = 'по дате';
   static const String nothingFound = 'Ничего не найдено';
   static const String appTheme = 'Тема интерфейса';
+  static const String system = 'системная';
   static const String dark = 'темная';
   static const String light = 'светлая';
   static const String textScale = 'Размер шрифта';

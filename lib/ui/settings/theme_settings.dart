@@ -40,6 +40,7 @@ class ThemeSetting extends StatelessWidget {
 
 class _ThemeDropdownButton extends StatelessWidget {
   static const _translations = <AppTheme, String>{
+    AppTheme.none: Strings.system,
     AppTheme.light: Strings.light,
     AppTheme.dark: Strings.dark,
   };
