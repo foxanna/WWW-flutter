@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/common/app_theme.dart';
+import 'package:what_when_where/common/text_scale.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
@@ -13,7 +14,6 @@ import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
-import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/services/analytics.dart';
 
 final _analyticsEventNames = {
@@ -81,12 +81,15 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, OpenRandomQuestionsUserAction>(_logAction),
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_logAction),
         // settings
-        TypedMiddleware<AppState, SettingsRead>(_logSettings),
-        TypedMiddleware<AppState, ChangeTheme>(_logTheme),
-        TypedMiddleware<AppState, ChangeTextScale>(_logTextScale),
-        TypedMiddleware<AppState, ChangeNotifyShortTimerExpiration>(
+        TypedMiddleware<AppState, ReadySettingsSystemAction>(_logSettings),
+        TypedMiddleware<AppState, ChangeThemeSettingsUserAction>(_logTheme),
+        TypedMiddleware<AppState, ChangeTextScaleSettingsUserAction>(
+            _logTextScale),
+        TypedMiddleware<AppState,
+                ChangeNotifyShortTimerExpirationSettingsUserAction>(
             _logNotifyShortTimerExpiration),
-        TypedMiddleware<AppState, ChangeNotifyLongTimerExpiration>(
+        TypedMiddleware<AppState,
+                ChangeNotifyLongTimerExpirationSettingsUserAction>(
             _logNotifyLongTimerExpiration),
       ];
 
@@ -96,8 +99,8 @@ class AnalyticsMiddleware {
     _analyticsService.logEvent(name: _analyticsEventNames[action.runtimeType]);
   }
 
-  void _logSettings(
-      Store<AppState> store, SettingsRead action, NextDispatcher next) {
+  void _logSettings(Store<AppState> store, ReadySettingsSystemAction action,
+      NextDispatcher next) {
     next(action);
 
     _logThemeValue(action.appTheme);
@@ -106,8 +109,8 @@ class AnalyticsMiddleware {
     _logNotifyLongTimerExpirationValue(action.notifyLongTimerExpiration);
   }
 
-  void _logTheme(
-      Store<AppState> store, ChangeTheme action, NextDispatcher next) {
+  void _logTheme(Store<AppState> store, ChangeThemeSettingsUserAction action,
+      NextDispatcher next) {
     next(action);
 
     _logThemeValue(action.appTheme);
@@ -120,8 +123,8 @@ class AnalyticsMiddleware {
         },
       );
 
-  void _logTextScale(
-      Store<AppState> store, ChangeTextScale action, NextDispatcher next) {
+  void _logTextScale(Store<AppState> store,
+      ChangeTextScaleSettingsUserAction action, NextDispatcher next) {
     next(action);
 
     _logTextScaleValue(action.textScale);
@@ -134,11 +137,13 @@ class AnalyticsMiddleware {
         },
       );
 
-  void _logNotifyShortTimerExpiration(Store<AppState> store,
-      ChangeNotifyShortTimerExpiration action, NextDispatcher next) {
+  void _logNotifyShortTimerExpiration(
+      Store<AppState> store,
+      ChangeNotifyShortTimerExpirationSettingsUserAction action,
+      NextDispatcher next) {
     next(action);
 
-    _logNotifyShortTimerExpirationValue(action.newValue);
+    _logNotifyShortTimerExpirationValue(action.value);
   }
 
   void _logNotifyShortTimerExpirationValue(bool value) =>
@@ -149,11 +154,13 @@ class AnalyticsMiddleware {
         },
       );
 
-  void _logNotifyLongTimerExpiration(Store<AppState> store,
-      ChangeNotifyLongTimerExpiration action, NextDispatcher next) {
+  void _logNotifyLongTimerExpiration(
+      Store<AppState> store,
+      ChangeNotifyLongTimerExpirationSettingsUserAction action,
+      NextDispatcher next) {
     next(action);
 
-    _logNotifyLongTimerExpirationValue(action.newValue);
+    _logNotifyLongTimerExpirationValue(action.value);
   }
 
   void _logNotifyLongTimerExpirationValue(bool value) =>
