@@ -4,6 +4,7 @@ import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.d
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 
 @injectable
 class LatestTournamentsMiddleware {
@@ -18,15 +19,17 @@ class LatestTournamentsMiddleware {
   }) : _loader = loader;
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, InitLatestUserAction>(_init),
+        TypedMiddleware<AppState, OpenLatestSystemAction>(_open),
         TypedMiddleware<AppState, RefreshLatestUserAction>(_refresh),
         TypedMiddleware<AppState, LoadLatestUserAction>(_load),
       ];
 
-  void _init(
-      Store<AppState> store, InitLatestUserAction action, NextDispatcher next) {
+  void _open(Store<AppState> store, OpenLatestSystemAction action,
+      NextDispatcher next) {
     next(action);
 
+    store.dispatch(const SystemActionNavigation.latest());
+    store.dispatch(const SystemActionLatest.init());
     store.dispatch(const UserActionLatest.load());
   }
 

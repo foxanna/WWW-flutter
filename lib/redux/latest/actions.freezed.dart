@@ -12,10 +12,6 @@ T _$identity<T>(T value) => value;
 class _$UserActionLatestTearOff {
   const _$UserActionLatestTearOff();
 
-  InitLatestUserAction init() {
-    return const InitLatestUserAction();
-  }
-
   RefreshLatestUserAction refresh() {
     return const RefreshLatestUserAction();
   }
@@ -31,26 +27,22 @@ const $UserActionLatest = _$UserActionLatestTearOff();
 mixin _$UserActionLatest {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(),
     @required Result refresh(),
     @required Result load(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(),
     Result refresh(),
     Result load(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result init(InitLatestUserAction value),
     @required Result refresh(RefreshLatestUserAction value),
     @required Result load(LoadLatestUserAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result init(InitLatestUserAction value),
     Result refresh(RefreshLatestUserAction value),
     Result load(LoadLatestUserAction value),
     @required Result orElse(),
@@ -70,108 +62,6 @@ class _$UserActionLatestCopyWithImpl<$Res>
   final UserActionLatest _value;
   // ignore: unused_field
   final $Res Function(UserActionLatest) _then;
-}
-
-abstract class $InitLatestUserActionCopyWith<$Res> {
-  factory $InitLatestUserActionCopyWith(InitLatestUserAction value,
-          $Res Function(InitLatestUserAction) then) =
-      _$InitLatestUserActionCopyWithImpl<$Res>;
-}
-
-class _$InitLatestUserActionCopyWithImpl<$Res>
-    extends _$UserActionLatestCopyWithImpl<$Res>
-    implements $InitLatestUserActionCopyWith<$Res> {
-  _$InitLatestUserActionCopyWithImpl(
-      InitLatestUserAction _value, $Res Function(InitLatestUserAction) _then)
-      : super(_value, (v) => _then(v as InitLatestUserAction));
-
-  @override
-  InitLatestUserAction get _value => super._value as InitLatestUserAction;
-}
-
-class _$InitLatestUserAction
-    with DiagnosticableTreeMixin
-    implements InitLatestUserAction {
-  const _$InitLatestUserAction();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionLatest.init()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionLatest.init'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitLatestUserAction);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result refresh(),
-    @required Result load(),
-  }) {
-    assert(init != null);
-    assert(refresh != null);
-    assert(load != null);
-    return init();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result refresh(),
-    Result load(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (init != null) {
-      return init();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitLatestUserAction value),
-    @required Result refresh(RefreshLatestUserAction value),
-    @required Result load(LoadLatestUserAction value),
-  }) {
-    assert(init != null);
-    assert(refresh != null);
-    assert(load != null);
-    return init(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitLatestUserAction value),
-    Result refresh(RefreshLatestUserAction value),
-    Result load(LoadLatestUserAction value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (init != null) {
-      return init(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InitLatestUserAction implements UserActionLatest {
-  const factory InitLatestUserAction() = _$InitLatestUserAction;
 }
 
 abstract class $RefreshLatestUserActionCopyWith<$Res> {
@@ -218,11 +108,9 @@ class _$RefreshLatestUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(),
     @required Result refresh(),
     @required Result load(),
   }) {
-    assert(init != null);
     assert(refresh != null);
     assert(load != null);
     return refresh();
@@ -231,7 +119,6 @@ class _$RefreshLatestUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(),
     Result refresh(),
     Result load(),
     @required Result orElse(),
@@ -246,11 +133,9 @@ class _$RefreshLatestUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result init(InitLatestUserAction value),
     @required Result refresh(RefreshLatestUserAction value),
     @required Result load(LoadLatestUserAction value),
   }) {
-    assert(init != null);
     assert(refresh != null);
     assert(load != null);
     return refresh(this);
@@ -259,7 +144,6 @@ class _$RefreshLatestUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result init(InitLatestUserAction value),
     Result refresh(RefreshLatestUserAction value),
     Result load(LoadLatestUserAction value),
     @required Result orElse(),
@@ -320,11 +204,9 @@ class _$LoadLatestUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(),
     @required Result refresh(),
     @required Result load(),
   }) {
-    assert(init != null);
     assert(refresh != null);
     assert(load != null);
     return load();
@@ -333,7 +215,6 @@ class _$LoadLatestUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(),
     Result refresh(),
     Result load(),
     @required Result orElse(),
@@ -348,11 +229,9 @@ class _$LoadLatestUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result init(InitLatestUserAction value),
     @required Result refresh(RefreshLatestUserAction value),
     @required Result load(LoadLatestUserAction value),
   }) {
-    assert(init != null);
     assert(refresh != null);
     assert(load != null);
     return load(this);
@@ -361,7 +240,6 @@ class _$LoadLatestUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result init(InitLatestUserAction value),
     Result refresh(RefreshLatestUserAction value),
     Result load(LoadLatestUserAction value),
     @required Result orElse(),
@@ -380,6 +258,14 @@ abstract class LoadLatestUserAction implements UserActionLatest {
 
 class _$SystemActionLatestTearOff {
   const _$SystemActionLatestTearOff();
+
+  OpenLatestSystemAction open() {
+    return const OpenLatestSystemAction();
+  }
+
+  InitLatestSystemAction init() {
+    return const InitLatestSystemAction();
+  }
 
   LoadingLatestSystemAction loading() {
     return const LoadingLatestSystemAction();
@@ -410,6 +296,8 @@ const $SystemActionLatest = _$SystemActionLatestTearOff();
 mixin _$SystemActionLatest {
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
+    @required Result init(),
     @required Result loading(),
     @required Result refreshing(),
     @required Result completed(Iterable<Tournament> data, int nexPage),
@@ -417,6 +305,8 @@ mixin _$SystemActionLatest {
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result init(),
     Result loading(),
     Result refreshing(),
     Result completed(Iterable<Tournament> data, int nexPage),
@@ -425,6 +315,8 @@ mixin _$SystemActionLatest {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenLatestSystemAction value),
+    @required Result init(InitLatestSystemAction value),
     @required Result loading(LoadingLatestSystemAction value),
     @required Result refreshing(RefreshingLatestSystemAction value),
     @required Result completed(CompletedLatestSystemAction value),
@@ -432,6 +324,8 @@ mixin _$SystemActionLatest {
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenLatestSystemAction value),
+    Result init(InitLatestSystemAction value),
     Result loading(LoadingLatestSystemAction value),
     Result refreshing(RefreshingLatestSystemAction value),
     Result completed(CompletedLatestSystemAction value),
@@ -453,6 +347,246 @@ class _$SystemActionLatestCopyWithImpl<$Res>
   final SystemActionLatest _value;
   // ignore: unused_field
   final $Res Function(SystemActionLatest) _then;
+}
+
+abstract class $OpenLatestSystemActionCopyWith<$Res> {
+  factory $OpenLatestSystemActionCopyWith(OpenLatestSystemAction value,
+          $Res Function(OpenLatestSystemAction) then) =
+      _$OpenLatestSystemActionCopyWithImpl<$Res>;
+}
+
+class _$OpenLatestSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res>
+    implements $OpenLatestSystemActionCopyWith<$Res> {
+  _$OpenLatestSystemActionCopyWithImpl(OpenLatestSystemAction _value,
+      $Res Function(OpenLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as OpenLatestSystemAction));
+
+  @override
+  OpenLatestSystemAction get _value => super._value as OpenLatestSystemAction;
+}
+
+class _$OpenLatestSystemAction
+    with DiagnosticableTreeMixin
+    implements OpenLatestSystemAction {
+  const _$OpenLatestSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionLatest.open()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SystemActionLatest.open'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is OpenLatestSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result init(),
+    @required Result loading(),
+    @required Result refreshing(),
+    @required Result completed(Iterable<Tournament> data, int nexPage),
+    @required Result failed(Exception exception),
+  }) {
+    assert(open != null);
+    assert(init != null);
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return open();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result init(),
+    Result loading(),
+    Result refreshing(),
+    Result completed(Iterable<Tournament> data, int nexPage),
+    Result failed(Exception exception),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (open != null) {
+      return open();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenLatestSystemAction value),
+    @required Result init(InitLatestSystemAction value),
+    @required Result loading(LoadingLatestSystemAction value),
+    @required Result refreshing(RefreshingLatestSystemAction value),
+    @required Result completed(CompletedLatestSystemAction value),
+    @required Result failed(FailedLatestSystemAction value),
+  }) {
+    assert(open != null);
+    assert(init != null);
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return open(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenLatestSystemAction value),
+    Result init(InitLatestSystemAction value),
+    Result loading(LoadingLatestSystemAction value),
+    Result refreshing(RefreshingLatestSystemAction value),
+    Result completed(CompletedLatestSystemAction value),
+    Result failed(FailedLatestSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (open != null) {
+      return open(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OpenLatestSystemAction implements SystemActionLatest {
+  const factory OpenLatestSystemAction() = _$OpenLatestSystemAction;
+}
+
+abstract class $InitLatestSystemActionCopyWith<$Res> {
+  factory $InitLatestSystemActionCopyWith(InitLatestSystemAction value,
+          $Res Function(InitLatestSystemAction) then) =
+      _$InitLatestSystemActionCopyWithImpl<$Res>;
+}
+
+class _$InitLatestSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res>
+    implements $InitLatestSystemActionCopyWith<$Res> {
+  _$InitLatestSystemActionCopyWithImpl(InitLatestSystemAction _value,
+      $Res Function(InitLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as InitLatestSystemAction));
+
+  @override
+  InitLatestSystemAction get _value => super._value as InitLatestSystemAction;
+}
+
+class _$InitLatestSystemAction
+    with DiagnosticableTreeMixin
+    implements InitLatestSystemAction {
+  const _$InitLatestSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionLatest.init()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SystemActionLatest.init'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InitLatestSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result init(),
+    @required Result loading(),
+    @required Result refreshing(),
+    @required Result completed(Iterable<Tournament> data, int nexPage),
+    @required Result failed(Exception exception),
+  }) {
+    assert(open != null);
+    assert(init != null);
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result init(),
+    Result loading(),
+    Result refreshing(),
+    Result completed(Iterable<Tournament> data, int nexPage),
+    Result failed(Exception exception),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenLatestSystemAction value),
+    @required Result init(InitLatestSystemAction value),
+    @required Result loading(LoadingLatestSystemAction value),
+    @required Result refreshing(RefreshingLatestSystemAction value),
+    @required Result completed(CompletedLatestSystemAction value),
+    @required Result failed(FailedLatestSystemAction value),
+  }) {
+    assert(open != null);
+    assert(init != null);
+    assert(loading != null);
+    assert(refreshing != null);
+    assert(completed != null);
+    assert(failed != null);
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenLatestSystemAction value),
+    Result init(InitLatestSystemAction value),
+    Result loading(LoadingLatestSystemAction value),
+    Result refreshing(RefreshingLatestSystemAction value),
+    Result completed(CompletedLatestSystemAction value),
+    Result failed(FailedLatestSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitLatestSystemAction implements SystemActionLatest {
+  const factory InitLatestSystemAction() = _$InitLatestSystemAction;
 }
 
 abstract class $LoadingLatestSystemActionCopyWith<$Res> {
@@ -500,11 +634,15 @@ class _$LoadingLatestSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
+    @required Result init(),
     @required Result loading(),
     @required Result refreshing(),
     @required Result completed(Iterable<Tournament> data, int nexPage),
     @required Result failed(Exception exception),
   }) {
+    assert(open != null);
+    assert(init != null);
     assert(loading != null);
     assert(refreshing != null);
     assert(completed != null);
@@ -515,6 +653,8 @@ class _$LoadingLatestSystemAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result init(),
     Result loading(),
     Result refreshing(),
     Result completed(Iterable<Tournament> data, int nexPage),
@@ -531,11 +671,15 @@ class _$LoadingLatestSystemAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenLatestSystemAction value),
+    @required Result init(InitLatestSystemAction value),
     @required Result loading(LoadingLatestSystemAction value),
     @required Result refreshing(RefreshingLatestSystemAction value),
     @required Result completed(CompletedLatestSystemAction value),
     @required Result failed(FailedLatestSystemAction value),
   }) {
+    assert(open != null);
+    assert(init != null);
     assert(loading != null);
     assert(refreshing != null);
     assert(completed != null);
@@ -546,6 +690,8 @@ class _$LoadingLatestSystemAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenLatestSystemAction value),
+    Result init(InitLatestSystemAction value),
     Result loading(LoadingLatestSystemAction value),
     Result refreshing(RefreshingLatestSystemAction value),
     Result completed(CompletedLatestSystemAction value),
@@ -612,11 +758,15 @@ class _$RefreshingLatestSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
+    @required Result init(),
     @required Result loading(),
     @required Result refreshing(),
     @required Result completed(Iterable<Tournament> data, int nexPage),
     @required Result failed(Exception exception),
   }) {
+    assert(open != null);
+    assert(init != null);
     assert(loading != null);
     assert(refreshing != null);
     assert(completed != null);
@@ -627,6 +777,8 @@ class _$RefreshingLatestSystemAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result init(),
     Result loading(),
     Result refreshing(),
     Result completed(Iterable<Tournament> data, int nexPage),
@@ -643,11 +795,15 @@ class _$RefreshingLatestSystemAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenLatestSystemAction value),
+    @required Result init(InitLatestSystemAction value),
     @required Result loading(LoadingLatestSystemAction value),
     @required Result refreshing(RefreshingLatestSystemAction value),
     @required Result completed(CompletedLatestSystemAction value),
     @required Result failed(FailedLatestSystemAction value),
   }) {
+    assert(open != null);
+    assert(init != null);
     assert(loading != null);
     assert(refreshing != null);
     assert(completed != null);
@@ -658,6 +814,8 @@ class _$RefreshingLatestSystemAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenLatestSystemAction value),
+    Result init(InitLatestSystemAction value),
     Result loading(LoadingLatestSystemAction value),
     Result refreshing(RefreshingLatestSystemAction value),
     Result completed(CompletedLatestSystemAction value),
@@ -758,11 +916,15 @@ class _$CompletedLatestSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
+    @required Result init(),
     @required Result loading(),
     @required Result refreshing(),
     @required Result completed(Iterable<Tournament> data, int nexPage),
     @required Result failed(Exception exception),
   }) {
+    assert(open != null);
+    assert(init != null);
     assert(loading != null);
     assert(refreshing != null);
     assert(completed != null);
@@ -773,6 +935,8 @@ class _$CompletedLatestSystemAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result init(),
     Result loading(),
     Result refreshing(),
     Result completed(Iterable<Tournament> data, int nexPage),
@@ -789,11 +953,15 @@ class _$CompletedLatestSystemAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenLatestSystemAction value),
+    @required Result init(InitLatestSystemAction value),
     @required Result loading(LoadingLatestSystemAction value),
     @required Result refreshing(RefreshingLatestSystemAction value),
     @required Result completed(CompletedLatestSystemAction value),
     @required Result failed(FailedLatestSystemAction value),
   }) {
+    assert(open != null);
+    assert(init != null);
     assert(loading != null);
     assert(refreshing != null);
     assert(completed != null);
@@ -804,6 +972,8 @@ class _$CompletedLatestSystemAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenLatestSystemAction value),
+    Result init(InitLatestSystemAction value),
     Result loading(LoadingLatestSystemAction value),
     Result refreshing(RefreshingLatestSystemAction value),
     Result completed(CompletedLatestSystemAction value),
@@ -901,11 +1071,15 @@ class _$FailedLatestSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
+    @required Result init(),
     @required Result loading(),
     @required Result refreshing(),
     @required Result completed(Iterable<Tournament> data, int nexPage),
     @required Result failed(Exception exception),
   }) {
+    assert(open != null);
+    assert(init != null);
     assert(loading != null);
     assert(refreshing != null);
     assert(completed != null);
@@ -916,6 +1090,8 @@ class _$FailedLatestSystemAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result init(),
     Result loading(),
     Result refreshing(),
     Result completed(Iterable<Tournament> data, int nexPage),
@@ -932,11 +1108,15 @@ class _$FailedLatestSystemAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenLatestSystemAction value),
+    @required Result init(InitLatestSystemAction value),
     @required Result loading(LoadingLatestSystemAction value),
     @required Result refreshing(RefreshingLatestSystemAction value),
     @required Result completed(CompletedLatestSystemAction value),
     @required Result failed(FailedLatestSystemAction value),
   }) {
+    assert(open != null);
+    assert(init != null);
     assert(loading != null);
     assert(refreshing != null);
     assert(completed != null);
@@ -947,6 +1127,8 @@ class _$FailedLatestSystemAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenLatestSystemAction value),
+    Result init(InitLatestSystemAction value),
     Result loading(LoadingLatestSystemAction value),
     Result refreshing(RefreshingLatestSystemAction value),
     Result completed(CompletedLatestSystemAction value),

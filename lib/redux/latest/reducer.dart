@@ -6,7 +6,7 @@ import 'package:what_when_where/redux/redux_action.dart';
 class LatestTournamentsReducer {
   static final Reducer<LatestTournamentsState> _reducer =
       combineReducers<LatestTournamentsState>([
-    TypedReducer<LatestTournamentsState, InitLatestUserAction>(_init),
+    TypedReducer<LatestTournamentsState, InitLatestSystemAction>(_init),
     TypedReducer<LatestTournamentsState, RefreshingLatestSystemAction>(
         _refreshing),
     TypedReducer<LatestTournamentsState, LoadingLatestSystemAction>(_loading),
@@ -20,7 +20,7 @@ class LatestTournamentsReducer {
       _reducer(state, action);
 
   static LatestTournamentsState _init(
-          LatestTournamentsState state, InitLatestUserAction action) =>
+          LatestTournamentsState state, InitLatestSystemAction action) =>
       const LatestTournamentsState.initial();
 
   static LatestTournamentsState _refreshing(

@@ -11,8 +11,6 @@ abstract class LatestAction implements ReduxAction {}
 abstract class UserActionLatest
     with _$UserActionLatest
     implements LatestAction {
-  const factory UserActionLatest.init() = InitLatestUserAction;
-
   const factory UserActionLatest.refresh() = RefreshLatestUserAction;
 
   const factory UserActionLatest.load() = LoadLatestUserAction;
@@ -22,6 +20,10 @@ abstract class UserActionLatest
 abstract class SystemActionLatest
     with _$SystemActionLatest
     implements LatestAction {
+  const factory SystemActionLatest.open() = OpenLatestSystemAction;
+
+  const factory SystemActionLatest.init() = InitLatestSystemAction;
+
   const factory SystemActionLatest.loading() = LoadingLatestSystemAction;
 
   const factory SystemActionLatest.refreshing() = RefreshingLatestSystemAction;
