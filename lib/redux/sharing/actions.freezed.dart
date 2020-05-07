@@ -13,21 +13,28 @@ class _$UserActionSharingTearOff {
   const _$UserActionSharingTearOff();
 
   QuestionSharingUserAction question(
-      {@required QuestionInfo info, @required String questionText}) {
+      {@required BuildContext context,
+      @required QuestionInfo info,
+      @required String questionText}) {
     return QuestionSharingUserAction(
+      context: context,
       info: info,
       questionText: questionText,
     );
   }
 
-  TourSharingUserAction tour({@required TourInfo info}) {
+  TourSharingUserAction tour(
+      {@required BuildContext context, @required TourInfo info}) {
     return TourSharingUserAction(
+      context: context,
       info: info,
     );
   }
 
-  TournamentSharingUserAction tournament({@required TournamentInfo info}) {
+  TournamentSharingUserAction tournament(
+      {@required BuildContext context, @required TournamentInfo info}) {
     return TournamentSharingUserAction(
+      context: context,
       info: info,
     );
   }
@@ -37,17 +44,22 @@ class _$UserActionSharingTearOff {
 const $UserActionSharing = _$UserActionSharingTearOff();
 
 mixin _$UserActionSharing {
+  BuildContext get context;
+
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result question(QuestionInfo info, String questionText),
-    @required Result tour(TourInfo info),
-    @required Result tournament(TournamentInfo info),
+    @required
+        Result question(
+            BuildContext context, QuestionInfo info, String questionText),
+    @required Result tour(BuildContext context, TourInfo info),
+    @required Result tournament(BuildContext context, TournamentInfo info),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result question(QuestionInfo info, String questionText),
-    Result tour(TourInfo info),
-    Result tournament(TournamentInfo info),
+    Result question(
+        BuildContext context, QuestionInfo info, String questionText),
+    Result tour(BuildContext context, TourInfo info),
+    Result tournament(BuildContext context, TournamentInfo info),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -63,12 +75,15 @@ mixin _$UserActionSharing {
     Result tournament(TournamentSharingUserAction value),
     @required Result orElse(),
   });
+
+  $UserActionSharingCopyWith<UserActionSharing> get copyWith;
 }
 
 abstract class $UserActionSharingCopyWith<$Res> {
   factory $UserActionSharingCopyWith(
           UserActionSharing value, $Res Function(UserActionSharing) then) =
       _$UserActionSharingCopyWithImpl<$Res>;
+  $Res call({BuildContext context});
 }
 
 class _$UserActionSharingCopyWithImpl<$Res>
@@ -78,13 +93,24 @@ class _$UserActionSharingCopyWithImpl<$Res>
   final UserActionSharing _value;
   // ignore: unused_field
   final $Res Function(UserActionSharing) _then;
+
+  @override
+  $Res call({
+    Object context = freezed,
+  }) {
+    return _then(_value.copyWith(
+      context: context == freezed ? _value.context : context as BuildContext,
+    ));
+  }
 }
 
-abstract class $QuestionSharingUserActionCopyWith<$Res> {
+abstract class $QuestionSharingUserActionCopyWith<$Res>
+    implements $UserActionSharingCopyWith<$Res> {
   factory $QuestionSharingUserActionCopyWith(QuestionSharingUserAction value,
           $Res Function(QuestionSharingUserAction) then) =
       _$QuestionSharingUserActionCopyWithImpl<$Res>;
-  $Res call({QuestionInfo info, String questionText});
+  @override
+  $Res call({BuildContext context, QuestionInfo info, String questionText});
 
   $QuestionInfoCopyWith<$Res> get info;
 }
@@ -102,10 +128,12 @@ class _$QuestionSharingUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object context = freezed,
     Object info = freezed,
     Object questionText = freezed,
   }) {
     return _then(QuestionSharingUserAction(
+      context: context == freezed ? _value.context : context as BuildContext,
       info: info == freezed ? _value.info : info as QuestionInfo,
       questionText: questionText == freezed
           ? _value.questionText
@@ -128,10 +156,15 @@ class _$QuestionSharingUserAction
     with DiagnosticableTreeMixin
     implements QuestionSharingUserAction {
   const _$QuestionSharingUserAction(
-      {@required this.info, @required this.questionText})
-      : assert(info != null),
+      {@required this.context,
+      @required this.info,
+      @required this.questionText})
+      : assert(context != null),
+        assert(info != null),
         assert(questionText != null);
 
+  @override
+  final BuildContext context;
   @override
   final QuestionInfo info;
   @override
@@ -139,7 +172,7 @@ class _$QuestionSharingUserAction
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionSharing.question(info: $info, questionText: $questionText)';
+    return 'UserActionSharing.question(context: $context, info: $info, questionText: $questionText)';
   }
 
   @override
@@ -147,6 +180,7 @@ class _$QuestionSharingUserAction
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'UserActionSharing.question'))
+      ..add(DiagnosticsProperty('context', context))
       ..add(DiagnosticsProperty('info', info))
       ..add(DiagnosticsProperty('questionText', questionText));
   }
@@ -155,6 +189,9 @@ class _$QuestionSharingUserAction
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is QuestionSharingUserAction &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality()
+                    .equals(other.context, context)) &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)) &&
             (identical(other.questionText, questionText) ||
@@ -165,6 +202,7 @@ class _$QuestionSharingUserAction
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(context) ^
       const DeepCollectionEquality().hash(info) ^
       const DeepCollectionEquality().hash(questionText);
 
@@ -176,27 +214,30 @@ class _$QuestionSharingUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result question(QuestionInfo info, String questionText),
-    @required Result tour(TourInfo info),
-    @required Result tournament(TournamentInfo info),
+    @required
+        Result question(
+            BuildContext context, QuestionInfo info, String questionText),
+    @required Result tour(BuildContext context, TourInfo info),
+    @required Result tournament(BuildContext context, TournamentInfo info),
   }) {
     assert(question != null);
     assert(tour != null);
     assert(tournament != null);
-    return question(info, questionText);
+    return question(context, info, questionText);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result question(QuestionInfo info, String questionText),
-    Result tour(TourInfo info),
-    Result tournament(TournamentInfo info),
+    Result question(
+        BuildContext context, QuestionInfo info, String questionText),
+    Result tour(BuildContext context, TourInfo info),
+    Result tournament(BuildContext context, TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (question != null) {
-      return question(info, questionText);
+      return question(context, info, questionText);
     }
     return orElse();
   }
@@ -232,19 +273,25 @@ class _$QuestionSharingUserAction
 
 abstract class QuestionSharingUserAction implements UserActionSharing {
   const factory QuestionSharingUserAction(
-      {@required QuestionInfo info,
+      {@required BuildContext context,
+      @required QuestionInfo info,
       @required String questionText}) = _$QuestionSharingUserAction;
 
+  @override
+  BuildContext get context;
   QuestionInfo get info;
   String get questionText;
+  @override
   $QuestionSharingUserActionCopyWith<QuestionSharingUserAction> get copyWith;
 }
 
-abstract class $TourSharingUserActionCopyWith<$Res> {
+abstract class $TourSharingUserActionCopyWith<$Res>
+    implements $UserActionSharingCopyWith<$Res> {
   factory $TourSharingUserActionCopyWith(TourSharingUserAction value,
           $Res Function(TourSharingUserAction) then) =
       _$TourSharingUserActionCopyWithImpl<$Res>;
-  $Res call({TourInfo info});
+  @override
+  $Res call({BuildContext context, TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
 }
@@ -261,9 +308,11 @@ class _$TourSharingUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object context = freezed,
     Object info = freezed,
   }) {
     return _then(TourSharingUserAction(
+      context: context == freezed ? _value.context : context as BuildContext,
       info: info == freezed ? _value.info : info as TourInfo,
     ));
   }
@@ -282,14 +331,18 @@ class _$TourSharingUserActionCopyWithImpl<$Res>
 class _$TourSharingUserAction
     with DiagnosticableTreeMixin
     implements TourSharingUserAction {
-  const _$TourSharingUserAction({@required this.info}) : assert(info != null);
+  const _$TourSharingUserAction({@required this.context, @required this.info})
+      : assert(context != null),
+        assert(info != null);
 
+  @override
+  final BuildContext context;
   @override
   final TourInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionSharing.tour(info: $info)';
+    return 'UserActionSharing.tour(context: $context, info: $info)';
   }
 
   @override
@@ -297,6 +350,7 @@ class _$TourSharingUserAction
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'UserActionSharing.tour'))
+      ..add(DiagnosticsProperty('context', context))
       ..add(DiagnosticsProperty('info', info));
   }
 
@@ -304,13 +358,18 @@ class _$TourSharingUserAction
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is TourSharingUserAction &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality()
+                    .equals(other.context, context)) &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(context) ^
+      const DeepCollectionEquality().hash(info);
 
   @override
   $TourSharingUserActionCopyWith<TourSharingUserAction> get copyWith =>
@@ -320,27 +379,30 @@ class _$TourSharingUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result question(QuestionInfo info, String questionText),
-    @required Result tour(TourInfo info),
-    @required Result tournament(TournamentInfo info),
+    @required
+        Result question(
+            BuildContext context, QuestionInfo info, String questionText),
+    @required Result tour(BuildContext context, TourInfo info),
+    @required Result tournament(BuildContext context, TournamentInfo info),
   }) {
     assert(question != null);
     assert(tour != null);
     assert(tournament != null);
-    return tour(info);
+    return tour(context, info);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result question(QuestionInfo info, String questionText),
-    Result tour(TourInfo info),
-    Result tournament(TournamentInfo info),
+    Result question(
+        BuildContext context, QuestionInfo info, String questionText),
+    Result tour(BuildContext context, TourInfo info),
+    Result tournament(BuildContext context, TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (tour != null) {
-      return tour(info);
+      return tour(context, info);
     }
     return orElse();
   }
@@ -375,19 +437,25 @@ class _$TourSharingUserAction
 }
 
 abstract class TourSharingUserAction implements UserActionSharing {
-  const factory TourSharingUserAction({@required TourInfo info}) =
-      _$TourSharingUserAction;
+  const factory TourSharingUserAction(
+      {@required BuildContext context,
+      @required TourInfo info}) = _$TourSharingUserAction;
 
+  @override
+  BuildContext get context;
   TourInfo get info;
+  @override
   $TourSharingUserActionCopyWith<TourSharingUserAction> get copyWith;
 }
 
-abstract class $TournamentSharingUserActionCopyWith<$Res> {
+abstract class $TournamentSharingUserActionCopyWith<$Res>
+    implements $UserActionSharingCopyWith<$Res> {
   factory $TournamentSharingUserActionCopyWith(
           TournamentSharingUserAction value,
           $Res Function(TournamentSharingUserAction) then) =
       _$TournamentSharingUserActionCopyWithImpl<$Res>;
-  $Res call({TournamentInfo info});
+  @override
+  $Res call({BuildContext context, TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
 }
@@ -405,9 +473,11 @@ class _$TournamentSharingUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object context = freezed,
     Object info = freezed,
   }) {
     return _then(TournamentSharingUserAction(
+      context: context == freezed ? _value.context : context as BuildContext,
       info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
@@ -426,15 +496,19 @@ class _$TournamentSharingUserActionCopyWithImpl<$Res>
 class _$TournamentSharingUserAction
     with DiagnosticableTreeMixin
     implements TournamentSharingUserAction {
-  const _$TournamentSharingUserAction({@required this.info})
-      : assert(info != null);
+  const _$TournamentSharingUserAction(
+      {@required this.context, @required this.info})
+      : assert(context != null),
+        assert(info != null);
 
+  @override
+  final BuildContext context;
   @override
   final TournamentInfo info;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionSharing.tournament(info: $info)';
+    return 'UserActionSharing.tournament(context: $context, info: $info)';
   }
 
   @override
@@ -442,6 +516,7 @@ class _$TournamentSharingUserAction
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'UserActionSharing.tournament'))
+      ..add(DiagnosticsProperty('context', context))
       ..add(DiagnosticsProperty('info', info));
   }
 
@@ -449,13 +524,18 @@ class _$TournamentSharingUserAction
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is TournamentSharingUserAction &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality()
+                    .equals(other.context, context)) &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(context) ^
+      const DeepCollectionEquality().hash(info);
 
   @override
   $TournamentSharingUserActionCopyWith<TournamentSharingUserAction>
@@ -465,27 +545,30 @@ class _$TournamentSharingUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result question(QuestionInfo info, String questionText),
-    @required Result tour(TourInfo info),
-    @required Result tournament(TournamentInfo info),
+    @required
+        Result question(
+            BuildContext context, QuestionInfo info, String questionText),
+    @required Result tour(BuildContext context, TourInfo info),
+    @required Result tournament(BuildContext context, TournamentInfo info),
   }) {
     assert(question != null);
     assert(tour != null);
     assert(tournament != null);
-    return tournament(info);
+    return tournament(context, info);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result question(QuestionInfo info, String questionText),
-    Result tour(TourInfo info),
-    Result tournament(TournamentInfo info),
+    Result question(
+        BuildContext context, QuestionInfo info, String questionText),
+    Result tour(BuildContext context, TourInfo info),
+    Result tournament(BuildContext context, TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (tournament != null) {
-      return tournament(info);
+      return tournament(context, info);
     }
     return orElse();
   }
@@ -520,10 +603,14 @@ class _$TournamentSharingUserAction
 }
 
 abstract class TournamentSharingUserAction implements UserActionSharing {
-  const factory TournamentSharingUserAction({@required TournamentInfo info}) =
-      _$TournamentSharingUserAction;
+  const factory TournamentSharingUserAction(
+      {@required BuildContext context,
+      @required TournamentInfo info}) = _$TournamentSharingUserAction;
 
+  @override
+  BuildContext get context;
   TournamentInfo get info;
+  @override
   $TournamentSharingUserActionCopyWith<TournamentSharingUserAction>
       get copyWith;
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
@@ -14,15 +15,18 @@ abstract class UserActionSharing
     with _$UserActionSharing
     implements SharingAction {
   const factory UserActionSharing.question({
+    @required BuildContext context,
     @required QuestionInfo info,
     @required String questionText,
   }) = QuestionSharingUserAction;
 
   const factory UserActionSharing.tour({
+    @required BuildContext context,
     @required TourInfo info,
   }) = TourSharingUserAction;
 
   const factory UserActionSharing.tournament({
+    @required BuildContext context,
     @required TournamentInfo info,
   }) = TournamentSharingUserAction;
 }
