@@ -12,7 +12,6 @@ import 'package:what_when_where/db_chgk_info/question_parser/sections/section_te
 import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
-import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 

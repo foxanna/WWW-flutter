@@ -290,6 +290,7 @@ class BottomSheetStyleConfiguration {
 
 class AlertDialogStyleConfiguration {
   factory AlertDialogStyleConfiguration({@required BuildContext context}) {
+    // ignore: unused_local_variable
     final theme = Theme.of(context);
 
     return const AlertDialogStyleConfiguration._(

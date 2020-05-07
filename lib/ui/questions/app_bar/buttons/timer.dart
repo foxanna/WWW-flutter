@@ -3,7 +3,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
-import 'package:what_when_where/resources/strings.dart';
 
 class QuestionsBottomAppBarTimerButton extends StatelessWidget {
   @override

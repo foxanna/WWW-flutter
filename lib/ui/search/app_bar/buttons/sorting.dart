@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/search/sorting.dart';
 import 'package:what_when_where/localization/localizations.dart';
-import 'package:what_when_where/resources/strings.dart';
 
 class SortingController extends ValueNotifier<Sorting> {
   SortingController({Sorting value}) : super(value);
