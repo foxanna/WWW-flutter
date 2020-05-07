@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/app/splash_screen.dart';
 import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/ioc/ioc.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/settings/state.dart';
@@ -28,9 +30,13 @@ class WWWApp extends StatelessWidget {
           darkTheme: Themes.createDarkAppTheme(),
           themeMode: settings?.appTheme?.toThemeMode(),
           navigatorKey: ioc<GlobalKey<NavigatorState>>(),
-          navigatorObservers: [
-            ioc<IAnalyticsService>().observer(),
+          navigatorObservers: [ioc<IAnalyticsService>().observer()],
+          localizationsDelegates: [
+            WWWLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
           ],
+          supportedLocales: WWWLocalizations.supportedLocales,
           home: const SplashScreen(),
           builder: (context, navigator) {
             final mediaQueryData = MediaQuery.of(context);
