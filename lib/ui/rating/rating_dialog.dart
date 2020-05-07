@@ -49,8 +49,12 @@ class RatingDialog extends StatelessWidget {
                 ),
               ),
               glow: false,
-              onRatingUpdate: (rating) => StoreProvider.of<AppState>(context)
-                  .dispatch(UserActionRating.rate(rating: rating.round())),
+              onRatingUpdate: (rating) {
+                Navigator.of(context).pop();
+
+                StoreProvider.of<AppState>(context)
+                    .dispatch(UserActionRating.rate(rating: rating.round()));
+              },
             ),
           ],
         ),
