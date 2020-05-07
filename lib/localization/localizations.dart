@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:what_when_where/localization/translations/translations.i69n.dart';
 import 'package:what_when_where/localization/translations/translations_ru.i69n.dart';
-import 'package:what_when_where/localization/translations/translations_ua.i69n.dart';
+import 'package:what_when_where/localization/translations/translations_uk.i69n.dart';
 
-const _supportedLocales = ['en', 'ru', 'ua'];
+const _supportedLocales = ['en', 'ru', 'uk'];
 
 class WWWLocalizations {
   final Translations translations;
@@ -19,7 +19,7 @@ class WWWLocalizations {
   static final _translations = <String, Translations Function()>{
     'en': () => const Translations(),
     'ru': () => const Translations_ru(),
-    'ua': () => const Translations_ua(),
+    'uk': () => const Translations_uk(),
   };
 
   static Future<WWWLocalizations> load(Locale locale) async {

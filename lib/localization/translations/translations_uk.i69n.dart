@@ -3,8 +3,8 @@
 import 'package:i69n/i69n.dart' as i69n;
 import 'translations.i69n.dart';
 
-String get _languageCode => 'ua';
-String get _localeName => 'ua';
+String get _languageCode => 'uk';
+String get _localeName => 'uk';
 
 String _plural(int count,
         {String zero,
@@ -34,8 +34,8 @@ String _cardinal(int count,
     i69n.cardinal(count, _languageCode,
         zero: zero, one: one, two: two, few: few, many: many, other: other);
 
-class Translations_ua extends Translations {
-  const Translations_ua();
+class Translations_uk extends Translations {
+  const Translations_uk();
   String get dialogCloseButton => "закрити";
   String get emptySearchResults => "Нічого не знайдено";
   String get errorMessageGeneric => "Щось пішло не так :(";
