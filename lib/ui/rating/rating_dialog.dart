@@ -6,6 +6,7 @@ import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/rating/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 
 class RatingDialog extends StatelessWidget {
   const RatingDialog({Key key}) : super(key: key);
@@ -13,9 +14,11 @@ class RatingDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final translations = WWWLocalizations.of(context);
+    final styleConfiguration =
+        StyleConfiguration.of(context).alertDialogStyleConfiguration;
 
     return AlertDialog(
-      contentPadding: const EdgeInsets.symmetric(vertical: 24, horizontal: 0),
+      contentPadding: styleConfiguration.contentPadding,
       title: SvgPicture.asset(
         'assets/owl.svg',
         height: 100,
