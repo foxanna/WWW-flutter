@@ -1,4 +1,6 @@
+appNameFull: Интеллектуальное казино Сова
 dialogCloseButton: закрыть
+downloadAppVia: Загружайте приложение из
 emptySearchResults: Ничего не найдено
 errorMessageGeneric: Что-то пошло не так :(
 errorMessageNoInternet: "База вопросов временно не доступна\nПроверьте интернет соединение или попробуйте позже"
@@ -18,6 +20,7 @@ settingsFontSize: Размер шрифта
 settingsTimerNotifications: Предупредительный сигнал таймера
 settingsTimerNotificationsForLongTimer: для обычных вопросов
 settingsTimerNotificationsForShortTimer: для вопросов дуплет и блиц
+sharedVia: Отправлено из приложения
 tooltipEmailDeveloper: написать автору
 tooltipPauseTimer: остановить таймер
 tooltipRandomQuestions: случайный вопросы

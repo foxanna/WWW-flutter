@@ -35,7 +35,9 @@ String _cardinal(int count,
 
 class Translations implements i69n.I69nMessageBundle {
   const Translations();
+  String get appNameFull => "Intellectual casino Sova";
   String get dialogCloseButton => "close";
+  String get downloadAppVia => "Download the application from";
   String get emptySearchResults => "No search results";
   String get errorMessageGeneric => "Something went wrong :(";
   String get errorMessageNoInternet =>
@@ -57,6 +59,7 @@ class Translations implements i69n.I69nMessageBundle {
   String get settingsTimerNotificationsForLongTimer => "for ordinary questions";
   String get settingsTimerNotificationsForShortTimer =>
       "for blitz and doublet questions";
+  String get sharedVia => "Shared from application";
   String get tooltipEmailDeveloper => "email author";
   String get tooltipPauseTimer => "pause timer";
   String get tooltipRandomQuestions => "random questions";
@@ -89,8 +92,12 @@ class Translations implements i69n.I69nMessageBundle {
           as i69n.I69nMessageBundle)[key.substring(index + 1)];
     }
     switch (key) {
+      case 'appNameFull':
+        return appNameFull;
       case 'dialogCloseButton':
         return dialogCloseButton;
+      case 'downloadAppVia':
+        return downloadAppVia;
       case 'emptySearchResults':
         return emptySearchResults;
       case 'errorMessageGeneric':
@@ -129,6 +136,8 @@ class Translations implements i69n.I69nMessageBundle {
         return settingsTimerNotificationsForLongTimer;
       case 'settingsTimerNotificationsForShortTimer':
         return settingsTimerNotificationsForShortTimer;
+      case 'sharedVia':
+        return sharedVia;
       case 'tooltipEmailDeveloper':
         return tooltipEmailDeveloper;
       case 'tooltipPauseTimer':

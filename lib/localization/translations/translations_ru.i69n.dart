@@ -36,7 +36,9 @@ String _cardinal(int count,
 
 class Translations_ru extends Translations {
   const Translations_ru();
+  String get appNameFull => "Интеллектуальное казино Сова";
   String get dialogCloseButton => "закрыть";
+  String get downloadAppVia => "Загружайте приложение из";
   String get emptySearchResults => "Ничего не найдено";
   String get errorMessageGeneric => "Что-то пошло не так :(";
   String get errorMessageNoInternet =>
@@ -58,6 +60,7 @@ class Translations_ru extends Translations {
   String get settingsTimerNotificationsForLongTimer => "для обычных вопросов";
   String get settingsTimerNotificationsForShortTimer =>
       "для вопросов дуплет и блиц";
+  String get sharedVia => "Отправлено из приложения";
   String get tooltipEmailDeveloper => "написать автору";
   String get tooltipPauseTimer => "остановить таймер";
   String get tooltipRandomQuestions => "случайный вопросы";
@@ -90,8 +93,12 @@ class Translations_ru extends Translations {
           as i69n.I69nMessageBundle)[key.substring(index + 1)];
     }
     switch (key) {
+      case 'appNameFull':
+        return appNameFull;
       case 'dialogCloseButton':
         return dialogCloseButton;
+      case 'downloadAppVia':
+        return downloadAppVia;
       case 'emptySearchResults':
         return emptySearchResults;
       case 'errorMessageGeneric':
@@ -130,6 +137,8 @@ class Translations_ru extends Translations {
         return settingsTimerNotificationsForLongTimer;
       case 'settingsTimerNotificationsForShortTimer':
         return settingsTimerNotificationsForShortTimer;
+      case 'sharedVia':
+        return sharedVia;
       case 'tooltipEmailDeveloper':
         return tooltipEmailDeveloper;
       case 'tooltipPauseTimer':

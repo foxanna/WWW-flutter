@@ -1,4 +1,6 @@
+appNameFull: Intellectual casino Sova
 dialogCloseButton: close
+downloadAppVia: Download the application from
 emptySearchResults: No search results
 errorMessageGeneric: Something went wrong :(
 errorMessageNoInternet: "Questions database is temporary unavailable\nCheck your internet connection or try later"
@@ -18,6 +20,7 @@ settingsFontSize: Font size
 settingsTimerNotifications: Timer expiration notifications
 settingsTimerNotificationsForLongTimer: for ordinary questions
 settingsTimerNotificationsForShortTimer: for blitz and doublet questions
+sharedVia: Shared from application
 tooltipEmailDeveloper: email author
 tooltipPauseTimer: pause timer
 tooltipRandomQuestions: random questions
