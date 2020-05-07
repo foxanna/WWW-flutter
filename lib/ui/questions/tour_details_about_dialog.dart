@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/localization/localizations.dart';
-import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 
 class TourDetailsAboutDialog extends StatelessWidget {
@@ -64,15 +63,16 @@ class TourDetailsAboutDialog extends StatelessWidget {
     }
 
     if (info.questionsCount != null) {
-      addToResult('${Strings.questions}: ${info.questionsCount}');
+      addToResult(
+          '${translations.tournamentQuestionsCount}: ${info.questionsCount}');
     }
 
     if (info.playedAt != null) {
-      addToResult('${translations.playedAt} ${info.playedAt}');
+      addToResult('${translations.tournamentPlayedAt} ${info.playedAt}');
     }
 
     if (info.createdAt != null) {
-      addToResult('${translations.addedAt} ${info.createdAt}');
+      addToResult('${translations.tournamentAddedAt} ${info.createdAt}');
     }
 
     return result.toString();

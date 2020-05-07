@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
@@ -10,7 +11,7 @@ class LatestTournamentsAppBarSearchButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => IconButton(
         icon: const Icon(Icons.search),
-        tooltip: Strings.search,
+        tooltip: WWWLocalizations.of(context).tooltipTournamentsSearch,
         onPressed: () => _search(context),
       );
 

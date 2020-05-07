@@ -3,10 +3,10 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:rxdart/subjects.dart';
 import 'package:rxdart/transformers.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
-import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/search/app_bar/buttons/sorting.dart';
 
@@ -85,9 +85,9 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
         style: styleConfiguration.searchFieldTextStyle,
         textInputAction: TextInputAction.done,
         keyboardAppearance: Theme.of(context).brightness,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
           border: InputBorder.none,
-          hintText: Strings.search,
+          hintText: WWWLocalizations.of(context).tournamentsSeachFieldHint,
         ),
       );
 

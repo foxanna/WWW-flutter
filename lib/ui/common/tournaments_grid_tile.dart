@@ -4,7 +4,6 @@ import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
-import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/shape_hero.dart';
 import 'package:what_when_where/ui/common/text_hero.dart';
@@ -12,13 +11,10 @@ import 'package:what_when_where/ui/common/text_hero.dart';
 class TournamentsGridTile extends StatelessWidget {
   final TournamentInfo tournamentInfo;
 
-//  final String _subheadText;
-
-  TournamentsGridTile({
+  const TournamentsGridTile({
     Key key,
     @required this.tournamentInfo,
-  }) : //_subheadText = _buildSubheadText(tournamentInfo),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Stack(
@@ -87,9 +83,9 @@ class TournamentsGridTile extends StatelessWidget {
           BuildContext context, TournamentInfo tournamentInfo) =>
       [
         if (tournamentInfo.playedAt?.isNotEmpty ?? false)
-          '${WWWLocalizations.of(context).playedAt} ${tournamentInfo.playedAt}',
+          '${WWWLocalizations.of(context).tournamentPlayedAt} ${tournamentInfo.playedAt}',
         if (tournamentInfo.createdAt?.isNotEmpty ?? false)
-          '${WWWLocalizations.of(context).addedAt} ${tournamentInfo.createdAt}',
+          '${WWWLocalizations.of(context).tournamentAddedAt} ${tournamentInfo.createdAt}',
       ].join('\n');
 
   void _openTournamentDetails(BuildContext context) =>

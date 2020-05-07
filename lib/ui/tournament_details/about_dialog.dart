@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/localization/localizations.dart';
-import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 
 class TournamentDetailsAboutDialog extends StatelessWidget {
@@ -49,11 +48,11 @@ class TournamentDetailsAboutDialog extends StatelessWidget {
     }
 
     if (info.playedAt != null) {
-      addToResult('${translations.playedAt} ${info.playedAt}');
+      addToResult('${translations.tournamentPlayedAt} ${info.playedAt}');
     }
 
     if (info.createdAt != null) {
-      addToResult('${translations.addedAt} ${info.createdAt}');
+      addToResult('${translations.tournamentAddedAt} ${info.createdAt}');
     }
 
     return result.toString();
@@ -61,10 +60,13 @@ class TournamentDetailsAboutDialog extends StatelessWidget {
 
   static String _buildToursAndQuestionsText(
       BuildContext context, TournamentInfo info) {
+    final translations = WWWLocalizations.of(context);
+
     final toursAndQuestions = StringBuffer();
 
     if (info.toursCount != null && info.toursCount != '0') {
-      toursAndQuestions.write('${Strings.tours}: ${info.toursCount}');
+      toursAndQuestions
+          .write('${translations.tournamentToursCount}: ${info.toursCount}');
     }
 
     if (info.questionsCount != null && info.questionsCount != '0') {
@@ -72,7 +74,8 @@ class TournamentDetailsAboutDialog extends StatelessWidget {
         toursAndQuestions.write(', ');
       }
 
-      toursAndQuestions.write('${Strings.questions}: ${info.questionsCount}');
+      toursAndQuestions.write(
+          '${translations.tournamentQuestionsCount}: ${info.questionsCount}');
     }
 
     return toursAndQuestions.toString();

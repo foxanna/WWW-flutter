@@ -1,14 +1,10 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/app/splash_screen.dart';
-import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/services/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
-import 'package:what_when_where/services/crashes.dart';
-import 'package:what_when_where/services/sound.dart';
-import 'package:what_when_where/utils/logger.dart';
 
 @injectable
 class InitializationMiddleware {

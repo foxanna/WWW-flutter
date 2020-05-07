@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/common/text_sections_theme_data.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/resources/strings.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/text_with_links.dart';
 import 'package:what_when_where/ui/question/question_sections.dart';
@@ -35,6 +35,7 @@ class _QuestionAnswer extends StatelessWidget {
   Iterable<Widget> _buildAnswerContent(BuildContext context) sync* {
     final styleConfiguration =
         StyleConfiguration.of(context).questionStyleConfiguration;
+    final translations = WWWLocalizations.of(context);
 
     if (question.answer?.isNotEmpty ?? false) {
       yield QuestionTextSectionsTheme(
@@ -42,7 +43,7 @@ class _QuestionAnswer extends StatelessWidget {
             .questionStyleConfiguration
             .questionCardAnswerSectionsThemeData,
         child: QuestionSections(
-          prefix: '${Strings.answer}: ',
+          prefix: '${translations.questionAnswer}: ',
           suffix: question.comments?.isNotEmpty ?? false ? '*' : '',
           sections: question.answer,
         ),
@@ -60,7 +61,7 @@ class _QuestionAnswer extends StatelessWidget {
             .questionStyleConfiguration
             .questionCardAnswerSectionsThemeData,
         child: QuestionSections(
-          prefix: '${Strings.acceptableAnswer}: ',
+          prefix: '${translations.questionAcceptableAnswer}: ',
           sections: question.passCriteria,
         ),
       );
@@ -88,7 +89,7 @@ class _QuestionAnswer extends StatelessWidget {
         height: styleConfiguration
             .questionCardAnswerSectionsThemeData.sectionsSpacing,
       );
-      yield Text('${Strings.author}: ${question.authors}');
+      yield Text('${translations.questionAuthor}: ${question.authors}');
     }
 
     if (question.sources != null) {
@@ -97,7 +98,7 @@ class _QuestionAnswer extends StatelessWidget {
             .questionCardAnswerSectionsThemeData.sectionsSpacing,
       );
       yield TextWithLinks(
-        '${Strings.sources}:\n${question.sources}',
+        '${translations.questionSources}:\n${question.sources}',
         textStyle:
             styleConfiguration.questionCardCommentSectionsThemeData.textStyle,
         linkStyle: styleConfiguration

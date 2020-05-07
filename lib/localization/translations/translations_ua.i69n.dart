@@ -36,8 +36,53 @@ String _cardinal(int count,
 
 class Translations_ua extends Translations {
   const Translations_ua();
-  String get addedAt => "додано";
-  String get playedAt => "відіграно";
+  String get dialogCloseButton => "закрити";
+  String get emptySearchResults => "Нічого не знайдено";
+  String get errorMessageGeneric => "Щось пішло не так :(";
+  String get errorMessageNoInternet =>
+      "База питань тимчасово не доступна\nПеревірте інтернет з'єднання або спробуйте пізніше";
+  String get menuAbout => "Про додаток";
+  String get menuBrowse => "Відкрити у браузері";
+  String get menuSettings => "Налаштування";
+  String get menuShare => "Поділитися";
+  String get noAudioSupport => "Аудіо файли не підтримуються";
+  String get ratingDialogTitle => "Оцініть додаток";
+  String get ratingDialogLaterButton => "пізніше";
+  String get ratingDialogNeverButton => "більше не питати";
+  String get settingsAppTheme => "Тема інтерфейсу";
+  String get settingsAppThemeDark => "темна";
+  String get settingsAppThemeLight => "світла";
+  String get settingsAppThemeSystem => "системна";
+  String get settingsFontSize => "Розмір шрифту";
+  String get settingsTimerNotifications => "Попереджувальний сигнал таймеру";
+  String get settingsTimerNotificationsForLongTimer => "для звичайних питань";
+  String get settingsTimerNotificationsForShortTimer =>
+      "для питань дуплет та бліц";
+  String get tooltipEmailDeveloper => "написати автору";
+  String get tooltipPauseTimer => "зупинити таймер";
+  String get tooltipRandomQuestions => "випадкові питання";
+  String get tooltipRetry => "повторити";
+  String get tooltipSorting => "впорядкувати";
+  String get tooltipSortingByDate => "за датою";
+  String get tooltipSortingByRelevance => "за релевантністю";
+  String get tooltipStartTimer => "запустити таймер";
+  String get tooltipTournamentsSearch => "пошук турнірів";
+  String get tooltipTournamentsTree => "дерево турнірів";
+  String get tournamentInfoAboutTour => "Про тур";
+  String get tournamentAboutTournament => "Про турнір";
+  String get tournamentAddedAt => "додано";
+  String get tournamentPlayedAt => "відіграно";
+  String get tournamentToursCount => "турів";
+  String get tournamentsSeachFieldHint => "Пошук турнірів";
+  String get tournamentsTreeRootTitle => "Дерево турнірів";
+  String get tournamentQuestionsCount => "питань";
+  String get questionAcceptableAnswer => "Залік";
+  String get questionAnswer => "Відповідь";
+  String get questionAuthor => "Автор";
+  String get questionNumber => "Питання";
+  String get questionSources => "Джерела";
+  String get questionsDatabasePrefix => "База Питаннь Інтернет-клубу";
+  String get questionsDatabaseName => "Що? Де? Коли?";
   Object operator [](String key) {
     var index = key.indexOf('.');
     if (index > 0) {
@@ -45,10 +90,96 @@ class Translations_ua extends Translations {
           as i69n.I69nMessageBundle)[key.substring(index + 1)];
     }
     switch (key) {
-      case 'addedAt':
-        return addedAt;
-      case 'playedAt':
-        return playedAt;
+      case 'dialogCloseButton':
+        return dialogCloseButton;
+      case 'emptySearchResults':
+        return emptySearchResults;
+      case 'errorMessageGeneric':
+        return errorMessageGeneric;
+      case 'errorMessageNoInternet':
+        return errorMessageNoInternet;
+      case 'menuAbout':
+        return menuAbout;
+      case 'menuBrowse':
+        return menuBrowse;
+      case 'menuSettings':
+        return menuSettings;
+      case 'menuShare':
+        return menuShare;
+      case 'noAudioSupport':
+        return noAudioSupport;
+      case 'ratingDialogTitle':
+        return ratingDialogTitle;
+      case 'ratingDialogLaterButton':
+        return ratingDialogLaterButton;
+      case 'ratingDialogNeverButton':
+        return ratingDialogNeverButton;
+      case 'settingsAppTheme':
+        return settingsAppTheme;
+      case 'settingsAppThemeDark':
+        return settingsAppThemeDark;
+      case 'settingsAppThemeLight':
+        return settingsAppThemeLight;
+      case 'settingsAppThemeSystem':
+        return settingsAppThemeSystem;
+      case 'settingsFontSize':
+        return settingsFontSize;
+      case 'settingsTimerNotifications':
+        return settingsTimerNotifications;
+      case 'settingsTimerNotificationsForLongTimer':
+        return settingsTimerNotificationsForLongTimer;
+      case 'settingsTimerNotificationsForShortTimer':
+        return settingsTimerNotificationsForShortTimer;
+      case 'tooltipEmailDeveloper':
+        return tooltipEmailDeveloper;
+      case 'tooltipPauseTimer':
+        return tooltipPauseTimer;
+      case 'tooltipRandomQuestions':
+        return tooltipRandomQuestions;
+      case 'tooltipRetry':
+        return tooltipRetry;
+      case 'tooltipSorting':
+        return tooltipSorting;
+      case 'tooltipSortingByDate':
+        return tooltipSortingByDate;
+      case 'tooltipSortingByRelevance':
+        return tooltipSortingByRelevance;
+      case 'tooltipStartTimer':
+        return tooltipStartTimer;
+      case 'tooltipTournamentsSearch':
+        return tooltipTournamentsSearch;
+      case 'tooltipTournamentsTree':
+        return tooltipTournamentsTree;
+      case 'tournamentInfoAboutTour':
+        return tournamentInfoAboutTour;
+      case 'tournamentAboutTournament':
+        return tournamentAboutTournament;
+      case 'tournamentAddedAt':
+        return tournamentAddedAt;
+      case 'tournamentPlayedAt':
+        return tournamentPlayedAt;
+      case 'tournamentToursCount':
+        return tournamentToursCount;
+      case 'tournamentsSeachFieldHint':
+        return tournamentsSeachFieldHint;
+      case 'tournamentsTreeRootTitle':
+        return tournamentsTreeRootTitle;
+      case 'tournamentQuestionsCount':
+        return tournamentQuestionsCount;
+      case 'questionAcceptableAnswer':
+        return questionAcceptableAnswer;
+      case 'questionAnswer':
+        return questionAnswer;
+      case 'questionAuthor':
+        return questionAuthor;
+      case 'questionNumber':
+        return questionNumber;
+      case 'questionSources':
+        return questionSources;
+      case 'questionsDatabasePrefix':
+        return questionsDatabasePrefix;
+      case 'questionsDatabaseName':
+        return questionsDatabaseName;
       default:
         return super[key];
     }

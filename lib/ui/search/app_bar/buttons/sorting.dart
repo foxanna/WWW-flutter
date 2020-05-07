@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/db_chgk_info/search/sorting.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/resources/strings.dart';
 
 class SortingController extends ValueNotifier<Sorting> {
@@ -15,22 +16,26 @@ class SearchAppBarSortingButton extends StatelessWidget {
   })  : _sortingController = controller ?? SortingController(),
         super(key: key);
 
-  static final _translations = <Sorting, String>{
-    Sorting.relevance: Strings.byRelevance,
-    Sorting.date: Strings.byDate,
-  };
-
   @override
-  Widget build(BuildContext context) => PopupMenuButton<Sorting>(
-        tooltip: Strings.sorting,
-        icon: const Icon(Icons.sort),
-        initialValue: _sortingController.value,
-        itemBuilder: (context) => Sorting.values
-            .map((x) => PopupMenuItem<Sorting>(
-                  value: x,
-                  child: Text(_translations[x]),
-                ))
-            .toList(),
-        onSelected: (s) => _sortingController.value = s,
-      );
+  Widget build(BuildContext context) {
+    final translations = WWWLocalizations.of(context);
+
+    final sortOptionsTranslations = <Sorting, String>{
+      Sorting.relevance: translations.tooltipSortingByRelevance,
+      Sorting.date: translations.tooltipSortingByDate,
+    };
+
+    return PopupMenuButton<Sorting>(
+      tooltip: translations.tooltipSorting,
+      icon: const Icon(Icons.sort),
+      initialValue: _sortingController.value,
+      itemBuilder: (context) => Sorting.values
+          .map((x) => PopupMenuItem<Sorting>(
+                value: x,
+                child: Text(sortOptionsTranslations[x]),
+              ))
+          .toList(),
+      onSelected: (s) => _sortingController.value = s,
+    );
+  }
 }

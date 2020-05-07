@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/tournament/state.dart';
-import 'package:what_when_where/resources/strings.dart';
 
 class TournamentDetailsAboutTournamentBottomSheetItem extends StatelessWidget {
   const TournamentDetailsAboutTournamentBottomSheetItem({Key key})
@@ -16,7 +16,7 @@ class TournamentDetailsAboutTournamentBottomSheetItem extends StatelessWidget {
         converter: (store) => store.state.tournamentState,
         builder: (context, state) => ListTile(
           leading: const Icon(Icons.info_outline),
-          title: const Text(Strings.aboutTournament),
+          title: Text(WWWLocalizations.of(context).tournamentAboutTournament),
           onTap: () {
             Navigator.pop(context);
 

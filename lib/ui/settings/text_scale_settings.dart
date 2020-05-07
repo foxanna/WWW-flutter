@@ -4,10 +4,10 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/common/text_scale.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/resources/strings.dart';
 
 class TextScaleSettings extends StatelessWidget {
   const TextScaleSettings({Key key}) : super(key: key);
@@ -21,7 +21,7 @@ class TextScaleSettings extends StatelessWidget {
               padding:
                   const EdgeInsets.only(right: Dimensions.defaultSpacing * 2),
               child: Text(
-                Strings.textScale,
+                WWWLocalizations.of(context).settingsFontSize,
                 textAlign: TextAlign.right,
                 style: Theme.of(context).textTheme.subtitle1,
               ),

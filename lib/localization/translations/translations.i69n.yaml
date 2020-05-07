@@ -1,2 +1,45 @@
-addedAt: added at
-playedAt: played at
+dialogCloseButton: close
+emptySearchResults: No search results
+errorMessageGeneric: Something went wrong :(
+errorMessageNoInternet: "Questions database is temporary unavailable\nCheck your internet connection or try later"
+menuAbout: About application
+menuBrowse: Open in browser
+menuSettings: Settings
+menuShare: Share
+noAudioSupport: Audio files are not supported
+ratingDialogTitle: Rate the application
+ratingDialogLaterButton: later
+ratingDialogNeverButton: don't ask again
+settingsAppTheme: Interface theme
+settingsAppThemeDark: dark
+settingsAppThemeLight: light
+settingsAppThemeSystem: system
+settingsFontSize: Font size
+settingsTimerNotifications: Timer expiration notifications
+settingsTimerNotificationsForLongTimer: for ordinary questions
+settingsTimerNotificationsForShortTimer: for blitz and doublet questions
+tooltipEmailDeveloper: email author
+tooltipPauseTimer: pause timer
+tooltipRandomQuestions: random questions
+tooltipRetry: retry
+tooltipSorting: !sorting
+tooltipSortingByDate: by date
+tooltipSortingByRelevance: by relevance
+tooltipStartTimer: start timer
+tooltipTournamentsSearch: tournaments search
+tooltipTournamentsTree: tournaments tree
+tournamentAboutTour: About tour
+tournamentAboutTournament: About tournament
+tournamentAddedAt: added at
+tournamentPlayedAt: played at
+tournamentToursCount: tours
+tournamentsSeachFieldHint: Tournaments search
+tournamentsTreeRootTitle: Tournaments tree
+tournamentQuestionsCount: questions
+questionAcceptableAnswer: Acceptable answer
+questionAnswer: Answer
+questionAuthor: Author
+questionNumber: Question
+questionSources: Sources
+questionsDatabasePrefix: Questions database of Internet-club
+questionsDatabaseName: What? Where? When?

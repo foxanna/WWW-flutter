@@ -9,6 +9,7 @@ import 'package:what_when_where/db_chgk_info/question_parser/sections/section_gi
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_image.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_speaker_note.dart';
 import 'package:what_when_where/db_chgk_info/question_parser/sections/section_text.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
@@ -162,7 +163,7 @@ class QuestionSections extends StatelessWidget {
   Widget _buildAudioSection(
           BuildContext context, AudioSection section, TextStyle style) =>
       Text(
-        Strings.noAudioSupport,
+        WWWLocalizations.of(context).noAudioSupport,
         style: style,
       );
 

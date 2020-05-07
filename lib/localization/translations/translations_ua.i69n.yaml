@@ -1,2 +1,45 @@
-addedAt: додано
-playedAt: відіграно
+dialogCloseButton: закрити
+emptySearchResults: Нічого не знайдено
+errorMessageGeneric: Щось пішло не так :(
+errorMessageNoInternet: "База питань тимчасово не доступна\nПеревірте інтернет з'єднання або спробуйте пізніше"
+menuAbout: Про додаток
+menuBrowse: Відкрити у браузері
+menuSettings: Налаштування
+menuShare: Поділитися
+noAudioSupport: Аудіо файли не підтримуються
+ratingDialogTitle: Оцініть додаток
+ratingDialogLaterButton: пізніше
+ratingDialogNeverButton: більше не питати
+settingsAppTheme: Тема інтерфейсу
+settingsAppThemeDark: темна
+settingsAppThemeLight: світла
+settingsAppThemeSystem: системна
+settingsFontSize: Розмір шрифту
+settingsTimerNotifications: Попереджувальний сигнал таймеру
+settingsTimerNotificationsForLongTimer: для звичайних питань
+settingsTimerNotificationsForShortTimer: для питань дуплет та бліц
+tooltipEmailDeveloper: написати автору
+tooltipPauseTimer: зупинити таймер
+tooltipRandomQuestions: випадкові питання
+tooltipRetry: повторити
+tooltipSorting: !впорядкувати
+tooltipSortingByDate: за датою
+tooltipSortingByRelevance: за релевантністю
+tooltipStartTimer: запустити таймер
+tooltipTournamentsSearch: пошук турнірів
+tooltipTournamentsTree: дерево турнірів
+tournamentInfoAboutTour: Про тур
+tournamentAboutTournament: Про турнір
+tournamentAddedAt: додано
+tournamentPlayedAt: відіграно
+tournamentToursCount: турів
+tournamentsSeachFieldHint: Пошук турнірів
+tournamentsTreeRootTitle: Дерево турнірів
+tournamentQuestionsCount: питань
+questionAcceptableAnswer: Залік
+questionAnswer: Відповідь
+questionAuthor: Автор
+questionNumber: Питання
+questionSources: Джерела
+questionsDatabasePrefix: База Питаннь Інтернет-клубу
+questionsDatabaseName: Що? Де? Коли?

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/tournament/state.dart';
-import 'package:what_when_where/resources/strings.dart';
 
 class TournamentDetailsShareTournamentBottomSheetItem extends StatelessWidget {
   const TournamentDetailsShareTournamentBottomSheetItem({Key key})
@@ -16,7 +16,7 @@ class TournamentDetailsShareTournamentBottomSheetItem extends StatelessWidget {
         converter: (store) => store.state.tournamentState,
         builder: (context, state) => ListTile(
           leading: const Icon(Icons.share),
-          title: const Text(Strings.share),
+          title: Text(WWWLocalizations.of(context).menuShare),
           onTap: () {
             Navigator.pop(context);
 

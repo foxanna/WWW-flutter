@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
 
@@ -14,6 +14,7 @@ class InfoDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final styleConfiguration =
         StyleConfiguration.of(context).alertDialogStyleConfiguration;
+    final translations = WWWLocalizations.of(context);
 
     return AlertDialog(
       contentPadding: styleConfiguration.contentPadding,
@@ -30,7 +31,7 @@ class InfoDialog extends StatelessWidget {
       actions: [
         FlatButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text(Strings.close),
+          child: Text(translations.dialogCloseButton),
         ),
       ],
     );

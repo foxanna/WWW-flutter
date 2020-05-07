@@ -1,2 +1,45 @@
-addedAt: добавлено
-playedAt: сыграно
+dialogCloseButton: закрыть
+emptySearchResults: Ничего не найдено
+errorMessageGeneric: Что-то пошло не так :(
+errorMessageNoInternet: "База вопросов временно не доступна\nПроверьте интернет соединение или попробуйте позже"
+menuAbout: О приложении
+menuBrowse: Открыть в браузере
+menuSettings: Настройки
+menuShare: Поделиться
+noAudioSupport: Аудио файлы не поддерживаются
+ratingDialogTitle: Оцените приложение
+ratingDialogLaterButton: позже
+ratingDialogNeverButton: больше не спрашивать
+settingsAppTheme: Тема интерфейса
+settingsAppThemeDark: темная
+settingsAppThemeLight: светлая
+settingsAppThemeSystem: системная
+settingsFontSize: Размер шрифта
+settingsTimerNotifications: Предупредительный сигнал таймера
+settingsTimerNotificationsForLongTimer: для обычных вопросов
+settingsTimerNotificationsForShortTimer: для вопросов дуплет и блиц
+tooltipEmailDeveloper: написать автору
+tooltipPauseTimer: остановить таймер
+tooltipRandomQuestions: случайный вопросы
+tooltipRetry: повторить
+tooltipSorting: !сортировка
+tooltipSortingByDate: по дате
+tooltipSortingByRelevance: по релевантности
+tooltipStartTimer: запустить таймер
+tooltipTournamentsSearch: поиск турниров
+tooltipTournamentsTree: дерево турниров
+tournamentAboutTour: О туре
+tournamentAboutTournament: О турнире
+tournamentAddedAt: добавлено
+tournamentPlayedAt: сыграно
+tournamentToursCount: туров
+tournamentsSeachFieldHint: Поиск турниров
+tournamentsTreeRootTitle: Дерево турниров
+tournamentQuestionsCount: вопросов
+questionAcceptableAnswer: Зачет
+questionAnswer: Ответ
+questionAuthor: Автор
+questionNumber: Вопрос
+questionSources: Источники
+questionsDatabasePrefix: База Вопросов Интернет-клуба
+questionsDatabaseName: Что? Где? Когда?

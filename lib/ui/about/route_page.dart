@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/email/actions.dart';
@@ -67,51 +68,54 @@ class AboutRoutePage extends StatelessWidget {
       );
 
   Widget _buildBottomSection(
-          BuildContext context, AboutStyleConfiguration styleConfiguration) =>
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            Constants.appNameLong,
+      BuildContext context, AboutStyleConfiguration styleConfiguration) {
+    final translations = WWWLocalizations.of(context);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          Constants.appNameLong,
+          textAlign: TextAlign.center,
+          style: styleConfiguration.titleStyle,
+        ),
+        IconButton(
+          icon: const Icon(Icons.email),
+          tooltip: translations.tooltipEmailDeveloper,
+          color: styleConfiguration.accentColor,
+          onPressed: () => _sendEmail(context),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+            top: styleConfiguration.contentPadding.top,
+            bottom: styleConfiguration.contentPadding.bottom,
+          ),
+          child: RichText(
             textAlign: TextAlign.center,
-            style: styleConfiguration.titleStyle,
-          ),
-          IconButton(
-            icon: const Icon(Icons.email),
-            tooltip: Strings.emailDevelopers,
-            color: styleConfiguration.accentColor,
-            onPressed: () => _sendEmail(context),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              top: styleConfiguration.contentPadding.top,
-              bottom: styleConfiguration.contentPadding.bottom,
-            ),
-            child: RichText(
-              textAlign: TextAlign.center,
-              textScaleFactor: MediaQuery.of(context).textScaleFactor,
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: '${Strings.questionsDatabasePrefix}\n',
-                    style: styleConfiguration.textStyle,
+            textScaleFactor: MediaQuery.of(context).textScaleFactor,
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: '${translations.questionsDatabasePrefix}\n',
+                  style: styleConfiguration.textStyle,
+                ),
+                TextSpan(
+                  text: translations.questionsDatabaseName,
+                  style: styleConfiguration.textStyle.copyWith(
+                    color: styleConfiguration.accentColor,
+                    decoration: TextDecoration.underline,
                   ),
-                  TextSpan(
-                    text: Strings.questionsDatabaseName,
-                    style: styleConfiguration.textStyle.copyWith(
-                      color: styleConfiguration.accentColor,
-                      decoration: TextDecoration.underline,
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () => _openDatabaseInBrowser(context),
-                  ),
-                ],
-              ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => _openDatabaseInBrowser(context),
+                ),
+              ],
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
+  }
 
   void _openDatabaseInBrowser(BuildContext context) =>
       StoreProvider.of<AppState>(context)

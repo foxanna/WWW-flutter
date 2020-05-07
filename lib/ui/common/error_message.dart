@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/common/network_exception.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/resources/dimensions.dart';
-import 'package:what_when_where/resources/strings.dart';
 
 class ErrorMessage extends StatelessWidget {
   final Function _retryFunction;
@@ -20,36 +20,41 @@ class ErrorMessage extends StatelessWidget {
         super(key: key);
 
   @override
-  Widget build(BuildContext context) => Center(
-        child: Padding(
-          padding: Dimensions.defaultPadding * (dense ? 1 : 3),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (!dense)
-                Text(
-                  (exception is NetworkException)
-                      ? Strings.noInternetError
-                      : Strings.genericError,
-                  textAlign: TextAlign.center,
-                  style: color != null
-                      ? Theme.of(context)
-                          .textTheme
-                          .subtitle1
-                          .copyWith(color: color)
-                      : Theme.of(context).textTheme.subtitle1,
+  Widget build(BuildContext context) {
+    final translations = WWWLocalizations.of(context);
+
+    return Center(
+      child: Padding(
+        padding: Dimensions.defaultPadding * (dense ? 1 : 3),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (!dense)
+              Text(
+                (exception is NetworkException)
+                    ? translations.errorMessageNoInternet
+                    : translations.errorMessageGeneric,
+                textAlign: TextAlign.center,
+                style: color != null
+                    ? Theme.of(context)
+                        .textTheme
+                        .subtitle1
+                        .copyWith(color: color)
+                    : Theme.of(context).textTheme.subtitle1,
+              ),
+            if (_retryFunction != null)
+              IconButton(
+                iconSize: 56,
+                icon: Icon(
+                  Icons.refresh,
+                  color: color,
                 ),
-              if (_retryFunction != null)
-                IconButton(
-                  iconSize: 56,
-                  icon: Icon(
-                    Icons.refresh,
-                    color: color,
-                  ),
-                  onPressed: () => _retryFunction(),
-                )
-            ],
-          ),
+                tooltip: translations.tooltipRetry,
+                onPressed: () => _retryFunction(),
+              )
+          ],
         ),
-      );
+      ),
+    );
+  }
 }
