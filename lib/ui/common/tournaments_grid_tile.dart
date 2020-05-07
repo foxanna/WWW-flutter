@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/resources/strings.dart';
@@ -11,12 +12,12 @@ import 'package:what_when_where/ui/common/text_hero.dart';
 class TournamentsGridTile extends StatelessWidget {
   final TournamentInfo tournamentInfo;
 
-  final String _subheadText;
+//  final String _subheadText;
 
   TournamentsGridTile({
     Key key,
     @required this.tournamentInfo,
-  })  : _subheadText = _buildSubheadText(tournamentInfo),
+  }) : //_subheadText = _buildSubheadText(tournamentInfo),
         super(key: key);
 
   @override
@@ -46,6 +47,8 @@ class TournamentsGridTile extends StatelessWidget {
     final styleConfiguration = StyleConfiguration.of(context);
     final gridStyleConfiguration =
         styleConfiguration.tournamentsGridStyleConfiguration;
+
+    final _subheadText = _buildSubheadText(context, tournamentInfo);
 
     return Card(
       child: InkWell(
@@ -80,11 +83,13 @@ class TournamentsGridTile extends StatelessWidget {
     );
   }
 
-  static String _buildSubheadText(TournamentInfo tournamentInfo) => [
+  static String _buildSubheadText(
+          BuildContext context, TournamentInfo tournamentInfo) =>
+      [
         if (tournamentInfo.playedAt?.isNotEmpty ?? false)
-          '${Strings.playedAt} ${tournamentInfo.playedAt}',
+          '${WWWLocalizations.of(context).playedAt} ${tournamentInfo.playedAt}',
         if (tournamentInfo.createdAt?.isNotEmpty ?? false)
-          '${Strings.addedAt} ${tournamentInfo.createdAt}',
+          '${WWWLocalizations.of(context).addedAt} ${tournamentInfo.createdAt}',
       ].join('\n');
 
   void _openTournamentDetails(BuildContext context) =>

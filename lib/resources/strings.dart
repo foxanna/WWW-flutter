@@ -1,8 +1,6 @@
 class Strings {
   Strings._();
 
-  static const String addedAt = 'добавлено';
-  static const String playedAt = 'сыграно';
   static const String tours = 'туров';
   static const String questions = 'вопросов';
   static const String genericError = 'Что-то пошло не так :(';
