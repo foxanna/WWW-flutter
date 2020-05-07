@@ -14,6 +14,7 @@ dependencies:
 
   audioplayers: ^0.15.1
   auto_size_text: ^2.1.0
+  app_review: ^1.1.0+1
   dartx: ^0.4.0
   dio: ^3.0.9
   firebase_analytics: ^5.0.11
