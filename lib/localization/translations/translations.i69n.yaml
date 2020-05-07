@@ -33,7 +33,7 @@ tournamentAboutTournament: About tournament
 tournamentAddedAt: added at
 tournamentPlayedAt: played at
 tournamentToursCount: tours
-tournamentsSeachFieldHint: Tournaments search
+tournamentsSearchFieldHint: Tournaments search
 tournamentsTreeRootTitle: Tournaments tree
 tournamentQuestionsCount: questions
 questionAcceptableAnswer: Acceptable answer

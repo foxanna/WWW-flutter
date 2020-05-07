@@ -73,7 +73,7 @@ class Translations_ru extends Translations {
   String get tournamentAddedAt => "добавлено";
   String get tournamentPlayedAt => "сыграно";
   String get tournamentToursCount => "туров";
-  String get tournamentsSeachFieldHint => "Поиск турниров";
+  String get tournamentsSearchFieldHint => "Поиск турниров";
   String get tournamentsTreeRootTitle => "Дерево турниров";
   String get tournamentQuestionsCount => "вопросов";
   String get questionAcceptableAnswer => "Зачет";
@@ -160,8 +160,8 @@ class Translations_ru extends Translations {
         return tournamentPlayedAt;
       case 'tournamentToursCount':
         return tournamentToursCount;
-      case 'tournamentsSeachFieldHint':
-        return tournamentsSeachFieldHint;
+      case 'tournamentsSearchFieldHint':
+        return tournamentsSearchFieldHint;
       case 'tournamentsTreeRootTitle':
         return tournamentsTreeRootTitle;
       case 'tournamentQuestionsCount':

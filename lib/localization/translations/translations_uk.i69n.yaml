@@ -28,12 +28,12 @@ tooltipSortingByRelevance: за релевантністю
 tooltipStartTimer: запустити таймер
 tooltipTournamentsSearch: пошук турнірів
 tooltipTournamentsTree: дерево турнірів
-tournamentInfoAboutTour: Про тур
+tournamentAboutTour: Про тур
 tournamentAboutTournament: Про турнір
 tournamentAddedAt: додано
 tournamentPlayedAt: відіграно
 tournamentToursCount: турів
-tournamentsSeachFieldHint: Пошук турнірів
+tournamentsSearchFieldHint: Пошук турнірів
 tournamentsTreeRootTitle: Дерево турнірів
 tournamentQuestionsCount: питань
 questionAcceptableAnswer: Залік

@@ -33,7 +33,7 @@ tournamentAboutTournament: О турнире
 tournamentAddedAt: добавлено
 tournamentPlayedAt: сыграно
 tournamentToursCount: туров
-tournamentsSeachFieldHint: Поиск турниров
+tournamentsSearchFieldHint: Поиск турниров
 tournamentsTreeRootTitle: Дерево турниров
 tournamentQuestionsCount: вопросов
 questionAcceptableAnswer: Зачет

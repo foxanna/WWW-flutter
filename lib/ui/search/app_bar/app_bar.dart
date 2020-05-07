@@ -87,7 +87,7 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
         keyboardAppearance: Theme.of(context).brightness,
         decoration: InputDecoration(
           border: InputBorder.none,
-          hintText: WWWLocalizations.of(context).tournamentsSeachFieldHint,
+          hintText: WWWLocalizations.of(context).tournamentsSearchFieldHint,
         ),
       );
 

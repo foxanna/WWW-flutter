@@ -72,7 +72,7 @@ class Translations implements i69n.I69nMessageBundle {
   String get tournamentAddedAt => "added at";
   String get tournamentPlayedAt => "played at";
   String get tournamentToursCount => "tours";
-  String get tournamentsSeachFieldHint => "Tournaments search";
+  String get tournamentsSearchFieldHint => "Tournaments search";
   String get tournamentsTreeRootTitle => "Tournaments tree";
   String get tournamentQuestionsCount => "questions";
   String get questionAcceptableAnswer => "Acceptable answer";
@@ -159,8 +159,8 @@ class Translations implements i69n.I69nMessageBundle {
         return tournamentPlayedAt;
       case 'tournamentToursCount':
         return tournamentToursCount;
-      case 'tournamentsSeachFieldHint':
-        return tournamentsSeachFieldHint;
+      case 'tournamentsSearchFieldHint':
+        return tournamentsSearchFieldHint;
       case 'tournamentsTreeRootTitle':
         return tournamentsTreeRootTitle;
       case 'tournamentQuestionsCount':

@@ -68,12 +68,12 @@ class Translations_uk extends Translations {
   String get tooltipStartTimer => "запустити таймер";
   String get tooltipTournamentsSearch => "пошук турнірів";
   String get tooltipTournamentsTree => "дерево турнірів";
-  String get tournamentInfoAboutTour => "Про тур";
+  String get tournamentAboutTour => "Про тур";
   String get tournamentAboutTournament => "Про турнір";
   String get tournamentAddedAt => "додано";
   String get tournamentPlayedAt => "відіграно";
   String get tournamentToursCount => "турів";
-  String get tournamentsSeachFieldHint => "Пошук турнірів";
+  String get tournamentsSearchFieldHint => "Пошук турнірів";
   String get tournamentsTreeRootTitle => "Дерево турнірів";
   String get tournamentQuestionsCount => "питань";
   String get questionAcceptableAnswer => "Залік";
@@ -150,8 +150,8 @@ class Translations_uk extends Translations {
         return tooltipTournamentsSearch;
       case 'tooltipTournamentsTree':
         return tooltipTournamentsTree;
-      case 'tournamentInfoAboutTour':
-        return tournamentInfoAboutTour;
+      case 'tournamentAboutTour':
+        return tournamentAboutTour;
       case 'tournamentAboutTournament':
         return tournamentAboutTournament;
       case 'tournamentAddedAt':
@@ -160,8 +160,8 @@ class Translations_uk extends Translations {
         return tournamentPlayedAt;
       case 'tournamentToursCount':
         return tournamentToursCount;
-      case 'tournamentsSeachFieldHint':
-        return tournamentsSeachFieldHint;
+      case 'tournamentsSearchFieldHint':
+        return tournamentsSearchFieldHint;
       case 'tournamentsTreeRootTitle':
         return tournamentsTreeRootTitle;
       case 'tournamentQuestionsCount':
