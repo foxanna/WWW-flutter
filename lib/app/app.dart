@@ -25,7 +25,6 @@ class WWWApp extends StatelessWidget {
         converter: (store) => store.state.settingsState,
         builder: (context, settings) => MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: Constants.appName,
           theme: Themes.createLightAppTheme(),
           darkTheme: Themes.createDarkAppTheme(),
           themeMode: settings?.appTheme?.toThemeMode(),
