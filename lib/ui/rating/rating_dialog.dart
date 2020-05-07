@@ -54,7 +54,12 @@ class RatingDialog extends StatelessWidget {
       ),
       actions: [
         FlatButton(
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () {
+            Navigator.of(context).pop();
+
+            StoreProvider.of<AppState>(context)
+                .dispatch(const UserActionRating.neverAsk());
+          },
           child: Text(translations.ratingDialogNeverButton),
         ),
         FlatButton(

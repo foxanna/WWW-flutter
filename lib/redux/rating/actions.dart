@@ -13,4 +13,6 @@ abstract class UserActionRating
   const factory UserActionRating.rate({
     @required int rating,
   }) = RateRatingUserAction;
+
+  const factory UserActionRating.neverAsk() = NeverAskRatingUserAction;
 }

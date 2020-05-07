@@ -17,22 +17,44 @@ class _$UserActionRatingTearOff {
       rating: rating,
     );
   }
+
+  NeverAskRatingUserAction neverAsk() {
+    return const NeverAskRatingUserAction();
+  }
 }
 
 // ignore: unused_element
 const $UserActionRating = _$UserActionRatingTearOff();
 
 mixin _$UserActionRating {
-  int get rating;
-
-  $UserActionRatingCopyWith<UserActionRating> get copyWith;
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result rate(int rating),
+    @required Result neverAsk(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result rate(int rating),
+    Result neverAsk(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result rate(RateRatingUserAction value),
+    @required Result neverAsk(NeverAskRatingUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result rate(RateRatingUserAction value),
+    Result neverAsk(NeverAskRatingUserAction value),
+    @required Result orElse(),
+  });
 }
 
 abstract class $UserActionRatingCopyWith<$Res> {
   factory $UserActionRatingCopyWith(
           UserActionRating value, $Res Function(UserActionRating) then) =
       _$UserActionRatingCopyWithImpl<$Res>;
-  $Res call({int rating});
 }
 
 class _$UserActionRatingCopyWithImpl<$Res>
@@ -42,23 +64,12 @@ class _$UserActionRatingCopyWithImpl<$Res>
   final UserActionRating _value;
   // ignore: unused_field
   final $Res Function(UserActionRating) _then;
-
-  @override
-  $Res call({
-    Object rating = freezed,
-  }) {
-    return _then(_value.copyWith(
-      rating: rating == freezed ? _value.rating : rating as int,
-    ));
-  }
 }
 
-abstract class $RateRatingUserActionCopyWith<$Res>
-    implements $UserActionRatingCopyWith<$Res> {
+abstract class $RateRatingUserActionCopyWith<$Res> {
   factory $RateRatingUserActionCopyWith(RateRatingUserAction value,
           $Res Function(RateRatingUserAction) then) =
       _$RateRatingUserActionCopyWithImpl<$Res>;
-  @override
   $Res call({int rating});
 }
 
@@ -120,14 +131,159 @@ class _$RateRatingUserAction
   $RateRatingUserActionCopyWith<RateRatingUserAction> get copyWith =>
       _$RateRatingUserActionCopyWithImpl<RateRatingUserAction>(
           this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result rate(int rating),
+    @required Result neverAsk(),
+  }) {
+    assert(rate != null);
+    assert(neverAsk != null);
+    return rate(rating);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result rate(int rating),
+    Result neverAsk(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (rate != null) {
+      return rate(rating);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result rate(RateRatingUserAction value),
+    @required Result neverAsk(NeverAskRatingUserAction value),
+  }) {
+    assert(rate != null);
+    assert(neverAsk != null);
+    return rate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result rate(RateRatingUserAction value),
+    Result neverAsk(NeverAskRatingUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (rate != null) {
+      return rate(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class RateRatingUserAction implements UserActionRating {
   const factory RateRatingUserAction({@required int rating}) =
       _$RateRatingUserAction;
 
-  @override
   int get rating;
-  @override
   $RateRatingUserActionCopyWith<RateRatingUserAction> get copyWith;
+}
+
+abstract class $NeverAskRatingUserActionCopyWith<$Res> {
+  factory $NeverAskRatingUserActionCopyWith(NeverAskRatingUserAction value,
+          $Res Function(NeverAskRatingUserAction) then) =
+      _$NeverAskRatingUserActionCopyWithImpl<$Res>;
+}
+
+class _$NeverAskRatingUserActionCopyWithImpl<$Res>
+    extends _$UserActionRatingCopyWithImpl<$Res>
+    implements $NeverAskRatingUserActionCopyWith<$Res> {
+  _$NeverAskRatingUserActionCopyWithImpl(NeverAskRatingUserAction _value,
+      $Res Function(NeverAskRatingUserAction) _then)
+      : super(_value, (v) => _then(v as NeverAskRatingUserAction));
+
+  @override
+  NeverAskRatingUserAction get _value =>
+      super._value as NeverAskRatingUserAction;
+}
+
+class _$NeverAskRatingUserAction
+    with DiagnosticableTreeMixin
+    implements NeverAskRatingUserAction {
+  const _$NeverAskRatingUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionRating.neverAsk()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionRating.neverAsk'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is NeverAskRatingUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result rate(int rating),
+    @required Result neverAsk(),
+  }) {
+    assert(rate != null);
+    assert(neverAsk != null);
+    return neverAsk();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result rate(int rating),
+    Result neverAsk(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (neverAsk != null) {
+      return neverAsk();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result rate(RateRatingUserAction value),
+    @required Result neverAsk(NeverAskRatingUserAction value),
+  }) {
+    assert(rate != null);
+    assert(neverAsk != null);
+    return neverAsk(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result rate(RateRatingUserAction value),
+    Result neverAsk(NeverAskRatingUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (neverAsk != null) {
+      return neverAsk(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NeverAskRatingUserAction implements UserActionRating {
+  const factory NeverAskRatingUserAction() = _$NeverAskRatingUserAction;
 }
