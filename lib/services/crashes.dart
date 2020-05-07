@@ -4,6 +4,8 @@ import 'package:injectable/injectable.dart';
 
 abstract class ICrashService {
   void init();
+
+  void recordException(Exception exception, {StackTrace stackTrace});
 }
 
 @lazySingleton
@@ -16,5 +18,10 @@ class CrashService implements ICrashService {
     FlutterError.onError = (FlutterErrorDetails details) {
       Crashlytics.instance.recordFlutterError(details);
     };
+  }
+
+  @override
+  void recordException(Exception exception, {StackTrace stackTrace}) {
+    Crashlytics.instance.recordError(exception, stackTrace);
   }
 }
