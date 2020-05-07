@@ -41,10 +41,12 @@ class SettingsMiddleware {
       NextDispatcher next) async {
     next(action);
 
-    final appThemeIndex = await _preferences.getInt(_themeKey);
-    final appTheme = AppTheme.values[appThemeIndex];
+    final appThemeSettingsValue =
+        await _preferences.getInt(_themeKey, defaultValue: null);
+    final appTheme = _appThemeFromSettings(appThemeSettingsValue);
 
-    final textScaleIndex = await _preferences.getInt(_textScaleKey);
+    final textScaleIndex =
+        await _preferences.getInt(_textScaleKey, defaultValue: 0);
     final textScale = TextScale.values[textScaleIndex];
 
     final notifyShortTimerExpiration = await _preferences
@@ -67,8 +69,10 @@ class SettingsMiddleware {
 
     next(action);
 
+    final newSettingsValue = _settingsValueForAppTheme(action.appTheme);
+
     if (themeHasChanged) {
-      await _preferences.setInt(_themeKey, action.appTheme.index);
+      await _preferences.setInt(_themeKey, newSettingsValue);
     }
   }
 
@@ -109,6 +113,29 @@ class SettingsMiddleware {
 
     if (settingChanged) {
       await _preferences.setBool(_notifyLongTimerExpirationKey, action.value);
+    }
+  }
+
+  AppTheme _appThemeFromSettings(int settingsValue) {
+    switch (settingsValue) {
+      case 0:
+        return AppTheme.light;
+      case 1:
+        return AppTheme.dark;
+      default:
+        return AppTheme.none;
+    }
+  }
+
+  int _settingsValueForAppTheme(AppTheme theme) {
+    switch (theme) {
+      case AppTheme.light:
+        return 0;
+      case AppTheme.dark:
+        return 1;
+      default:
+        // ignore: avoid_returning_null
+        return null;
     }
   }
 }
