@@ -2,12 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/email/actions.dart';
-import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class AboutRoutePage extends StatelessWidget {
@@ -76,7 +74,7 @@ class AboutRoutePage extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          Constants.appNameLong,
+          translations.appNameFull,
           textAlign: TextAlign.center,
           style: styleConfiguration.titleStyle,
         ),
@@ -122,5 +120,5 @@ class AboutRoutePage extends StatelessWidget {
           .dispatch(const UserActionBrowse.database());
 
   void _sendEmail(BuildContext context) => StoreProvider.of<AppState>(context)
-      .dispatch(const UserActionEmail.toDevelopers());
+      .dispatch(UserActionEmail.toDevelopers(context: context));
 }
