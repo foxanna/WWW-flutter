@@ -1,9 +1,9 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/email/actions.dart';
-import 'package:what_when_where/resources/strings.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
 @injectable
@@ -27,7 +27,7 @@ class EmailMiddleware {
       ToDevelopersEmailUserAction action, NextDispatcher next) {
     next(action);
 
-    _urlLauncher.sendEmail(
-        Constants.developersEmail, '${Strings.app} ${Constants.appNameLong}');
+    _urlLauncher.sendEmail(Constants.developersEmail,
+        WWWLocalizations.of(action.context).appNameFull);
   }
 }
