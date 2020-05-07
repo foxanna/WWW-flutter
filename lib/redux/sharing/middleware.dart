@@ -1,5 +1,8 @@
+import 'package:flutter/widgets.dart';
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
+import 'package:what_when_where/constants.dart';
+import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/services/sharing.dart';
@@ -26,20 +29,63 @@ class ShareMiddleware {
       NextDispatcher next) {
     next(action);
 
-    _sharingService.shareTournament(action.info);
+    final text = '${action.info.title}\n'
+        '${action.info.url}'
+        '${_createAppendix(action.context)}';
+
+    _sharingService.share(text);
   }
 
   void _tour(Store<AppState> store, TourSharingUserAction action,
       NextDispatcher next) {
     next(action);
 
-    _sharingService.shareTour(action.info);
+    final text =
+        '${(action.info?.tournamentInfo?.title != null) ? ('${action.info?.tournamentInfo?.title}, ') : ''}'
+        '${action.info.title}\n'
+        '${action.info.url}'
+        '${_createAppendix(action.context)}';
+
+    _sharingService.share(text);
   }
 
   void _question(Store<AppState> store, QuestionSharingUserAction action,
       NextDispatcher next) {
     next(action);
 
-    _sharingService.shareQuestion(action.info, action.questionText);
+    final questionNumber = action.info.number.toLowerCase().contains('вопрос')
+        ? action.info.number
+        : 'Вопрос ${action.info.number}';
+
+    final questionInfo = [
+      action.info.tourInfo?.tournamentInfo?.title,
+      action.info.tourInfo?.title,
+      questionNumber,
+    ].where((x) => x != null).join(', ');
+
+    final text = '${action.questionText}\n\n'
+        '$questionInfo\n'
+        '${action.info.url}'
+        '${_createAppendix(action.context)}';
+
+    _sharingService.share(text);
+  }
+
+  String _createAppendix(BuildContext context) {
+    final translations = WWWLocalizations.of(context);
+
+    final sb = StringBuffer();
+
+    sb.writeln('\n\n${translations.sharedVia} "${translations.appNameFull}"');
+
+    sb.writeln('\n${translations.downloadAppVia}');
+    if (Constants.playMarketLink.isNotEmpty) {
+      sb.writeln('Google Play ${Constants.playMarketLink}');
+    }
+    if (Constants.appStoreLink.isNotEmpty) {
+      sb.writeln('App Store ${Constants.appStoreLink}');
+    }
+
+    return sb.toString();
   }
 }
