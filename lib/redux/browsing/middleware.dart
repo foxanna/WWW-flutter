@@ -1,20 +1,22 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
+import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
-import 'package:what_when_where/services/browsing.dart';
+import 'package:what_when_where/services/url_launcher.dart';
 
 @injectable
 class BrowseMiddleware {
-  final IBrowsingService _browsingService;
+  final IUrlLauncher _urlLauncher;
 
   List<Middleware<AppState>> _middleware;
+
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
 
   BrowseMiddleware({
-    IBrowsingService browsingService,
-  }) : _browsingService = browsingService;
+    IUrlLauncher urlLauncher,
+  }) : _urlLauncher = urlLauncher;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, DatabaseBrowseUserAction>(_database),
@@ -27,27 +29,27 @@ class BrowseMiddleware {
       NextDispatcher next) {
     next(action);
 
-    _browsingService.browseTournament(action.info);
+    _urlLauncher.launchURL(action.info.url);
   }
 
   void _tour(
       Store<AppState> store, TourBrowseUserAction action, NextDispatcher next) {
     next(action);
 
-    _browsingService.browseTour(action.info);
+    _urlLauncher.launchURL(action.info.url);
   }
 
   void _question(Store<AppState> store, QuestionBrowseUserAction action,
       NextDispatcher next) {
     next(action);
 
-    _browsingService.browseQuestion(action.info);
+    _urlLauncher.launchURL(action.info.url);
   }
 
   void _database(Store<AppState> store, DatabaseBrowseUserAction action,
       NextDispatcher next) {
     next(action);
 
-    _browsingService.browseDatabase();
+    _urlLauncher.launchURL(Constants.databaseUrl);
   }
 }

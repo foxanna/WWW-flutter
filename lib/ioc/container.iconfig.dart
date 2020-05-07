@@ -42,13 +42,12 @@ import 'package:what_when_where/redux/tournament/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/middleware.dart';
+import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
 import 'package:what_when_where/redux/email/middleware.dart';
-import 'package:what_when_where/services/browsing.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/app/store.dart';
-import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
@@ -113,12 +112,12 @@ void $initGetIt(GetIt g, {String environment}) {
       () => AnalyticsMiddleware(analyticsService: g<IAnalyticsService>()));
   g.registerFactory<AppMiddleware>(
       () => AppMiddleware(container: g<IContainer>()));
+  g.registerFactory<BrowseMiddleware>(
+      () => BrowseMiddleware(urlLauncher: g<IUrlLauncher>()));
   g.registerFactory<DialogMiddleware>(
       () => DialogMiddleware(dialogService: g<IDialogService>()));
   g.registerFactory<EmailMiddleware>(
       () => EmailMiddleware(urlLauncher: g<IUrlLauncher>()));
-  g.registerLazySingleton<IBrowsingService>(
-      () => BrowsingService(urlLauncher: g<IUrlLauncher>()));
   g.registerLazySingleton<ITourDetailsLoader>(() => TourDetailsLoader(
         httpClient: g<IHttpClient>(),
         tournamentCache: g<ITournamentCache>(),
@@ -128,8 +127,6 @@ void $initGetIt(GetIt g, {String environment}) {
       () => ToursMiddleware(loader: g<ITourDetailsLoader>()));
   g.registerFactory<WWWStore>(
       () => WWWStore(appMiddleware: g<AppMiddleware>()));
-  g.registerFactory<BrowseMiddleware>(
-      () => BrowseMiddleware(browsingService: g<IBrowsingService>()));
 }
 
 class _$RegisterModule extends RegisterModule {}
