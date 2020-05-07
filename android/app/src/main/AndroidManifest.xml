@@ -6,7 +6,7 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="Сова"
+        android:label="@string/app_name"
         android:icon="@mipmap/owl_launcher">
         <activity
             android:name=".MainActivity"
