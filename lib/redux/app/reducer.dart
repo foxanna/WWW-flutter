@@ -1,5 +1,4 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/initialization/reducer.dart';
 import 'package:what_when_where/redux/latest/reducer.dart';

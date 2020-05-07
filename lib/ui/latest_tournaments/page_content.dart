@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
-import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/ui/common/empty_sliver.dart';
 import 'package:what_when_where/ui/latest_tournaments/data_page.dart';
