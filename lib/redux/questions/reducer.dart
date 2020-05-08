@@ -94,27 +94,35 @@ class QuestionsReducer {
 
   static QuestionsState _loading(
           QuestionsState state, LoadingQuestionsSystemAction action) =>
-      state.questionsOrNull != null
-          ? LoadingWithDataQuestionsState(
-              questions: state.questionsOrEmpty,
-              currentQuestionIndex: state.currentQuestionIndexOrZero,
-            )
-          : const LoadingFirstPageQuestionsState();
+      state != null
+          ? state.questionsOrNull != null
+              ? LoadingWithDataQuestionsState(
+                  questions: state.questionsOrEmpty,
+                  currentQuestionIndex: state.currentQuestionIndexOrZero,
+                )
+              : const LoadingFirstPageQuestionsState()
+          : state;
 
   static QuestionsState _failed(
           QuestionsState state, FailedQuestionsSystemAction action) =>
-      state.questionsOrNull != null
-          ? ErrorWithDataQuestionsState(
-              questions: state.questionsOrEmpty,
-              currentQuestionIndex: state.currentQuestionIndexOrZero,
-              exception: action.exception,
-            )
-          : ErrorFirstPageQuestionsState(
-              exception: action.exception,
-            );
+      state != null
+          ? state.questionsOrNull != null
+              ? ErrorWithDataQuestionsState(
+                  questions: state.questionsOrEmpty,
+                  currentQuestionIndex: state.currentQuestionIndexOrZero,
+                  exception: action.exception,
+                )
+              : ErrorFirstPageQuestionsState(
+                  exception: action.exception,
+                )
+          : state;
 
   static QuestionsState _completed(
       QuestionsState state, CompletedQuestionsSystemAction action) {
+    if (state == null) {
+      return state;
+    }
+
     final questions = [
       ...state.questionsOrEmpty,
       ...action.questions.map((x) => QuestionState(question: x))
