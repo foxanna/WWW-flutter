@@ -35,6 +35,7 @@ String _cardinal(int count,
 
 class Translations implements i69n.I69nMessageBundle {
   const Translations();
+  String get appDeveloper => "Application developer";
   String get appDeveloperName => "Anna Domashych";
   String get appNameFull => "Intellectual casino Sova";
   String get dialogCloseButton => "close";
@@ -93,6 +94,8 @@ class Translations implements i69n.I69nMessageBundle {
           as i69n.I69nMessageBundle)[key.substring(index + 1)];
     }
     switch (key) {
+      case 'appDeveloper':
+        return appDeveloper;
       case 'appDeveloperName':
         return appDeveloperName;
       case 'appNameFull':
