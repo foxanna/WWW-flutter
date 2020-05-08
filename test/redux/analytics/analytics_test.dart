@@ -16,6 +16,7 @@ import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/email/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
+import 'package:what_when_where/redux/rating/actions.dart';
 import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
@@ -188,6 +189,16 @@ void main() {
     test(
       '$DatabaseBrowseUserAction',
       () => execute(const UserActionBrowse.database(), 'browse_database'),
+    );
+
+    test(
+      '$RateRatingUserAction',
+      () => execute(const UserActionRating.rate(rating: 4), 'rate'),
+    );
+
+    test(
+      '$NeverAskRatingUserAction',
+      () => execute(const UserActionRating.neverAsk(), 'rate_never'),
     );
   });
 

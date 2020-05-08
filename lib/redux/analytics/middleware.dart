@@ -8,6 +8,8 @@ import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/email/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
+import 'package:what_when_where/redux/rating/actions.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
@@ -44,6 +46,7 @@ final _analyticsEventNames = {
   OpenTournamentsTreeUserAction: 'tree',
   // misc
   ToDevelopersEmailUserAction: 'email_developers',
+  NeverAskRatingUserAction: 'rate_never',
 };
 
 @injectable
@@ -80,6 +83,7 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, OpenSettingsPage>(_logAction),
         TypedMiddleware<AppState, OpenRandomQuestionsUserAction>(_logAction),
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_logAction),
+        TypedMiddleware<AppState, NeverAskRatingUserAction>(_logAction),
         // settings
         TypedMiddleware<AppState, ReadySettingsSystemAction>(_logSettings),
         TypedMiddleware<AppState, ChangeThemeSettingsUserAction>(_logTheme),
@@ -91,9 +95,11 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState,
                 ChangeNotifyLongTimerExpirationSettingsUserAction>(
             _logNotifyLongTimerExpiration),
+        TypedMiddleware<AppState, RateRatingUserAction>(_logRating),
       ];
 
-  void _logAction(Store<AppState> store, dynamic action, NextDispatcher next) {
+  void _logAction(
+      Store<AppState> store, ReduxAction action, NextDispatcher next) {
     next(action);
 
     _analyticsService.logEvent(name: _analyticsEventNames[action.runtimeType]);
@@ -170,4 +176,16 @@ class AnalyticsMiddleware {
           'long_timer': value.toString(),
         },
       );
+
+  void _logRating(
+      Store<AppState> store, RateRatingUserAction action, NextDispatcher next) {
+    next(action);
+
+    _analyticsService.logEvent(
+      name: 'rate',
+      parameters: <String, String>{
+        'value': action.rating.toString(),
+      },
+    );
+  }
 }
