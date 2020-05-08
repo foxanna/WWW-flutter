@@ -43,8 +43,8 @@ import 'package:what_when_where/redux/tree/middleware.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/middleware.dart';
 import 'package:what_when_where/redux/browsing/middleware.dart';
+import 'package:what_when_where/redux/developer/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
-import 'package:what_when_where/redux/email/middleware.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/app/store.dart';
@@ -117,10 +117,10 @@ void $initGetIt(GetIt g, {String environment}) {
       () => AppMiddleware(container: g<IContainer>()));
   g.registerFactory<BrowseMiddleware>(
       () => BrowseMiddleware(urlLauncher: g<IUrlLauncher>()));
+  g.registerFactory<DeveloperMiddleware>(
+      () => DeveloperMiddleware(urlLauncher: g<IUrlLauncher>()));
   g.registerFactory<DialogMiddleware>(
       () => DialogMiddleware(dialogService: g<IDialogService>()));
-  g.registerFactory<EmailMiddleware>(
-      () => EmailMiddleware(urlLauncher: g<IUrlLauncher>()));
   g.registerLazySingleton<ITourDetailsLoader>(() => TourDetailsLoader(
         httpClient: g<IHttpClient>(),
         tournamentCache: g<ITournamentCache>(),

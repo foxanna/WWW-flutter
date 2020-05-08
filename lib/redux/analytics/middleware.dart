@@ -4,8 +4,8 @@ import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/common/text_scale.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
+import 'package:what_when_where/redux/developer/actions.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
-import 'package:what_when_where/redux/email/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/rating/actions.dart';
@@ -44,8 +44,10 @@ final _analyticsEventNames = {
   OpenSearchUserAction: 'search',
   OpenRandomQuestionsUserAction: 'random',
   OpenTournamentsTreeUserAction: 'tree',
+  // developer
+  EmailDeveloperUserAction: 'email_developers',
+  VisitWebsiteDeveloperUserAction: 'visit_developers_website',
   // misc
-  ToDevelopersEmailUserAction: 'email_developers',
   NeverAskRatingUserAction: 'rate_never',
 };
 
@@ -76,7 +78,8 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, ImageNavigationUserAction>(_logAction),
         TypedMiddleware<AppState, TourInfoDialogUserAction>(_logAction),
         TypedMiddleware<AppState, TournamentInfoDialogUserAction>(_logAction),
-        TypedMiddleware<AppState, ToDevelopersEmailUserAction>(_logAction),
+        TypedMiddleware<AppState, EmailDeveloperUserAction>(_logAction),
+        TypedMiddleware<AppState, VisitWebsiteDeveloperUserAction>(_logAction),
         TypedMiddleware<AppState, DatabaseBrowseUserAction>(_logAction),
         TypedMiddleware<AppState, OpenTournamentUserAction>(_logAction),
         TypedMiddleware<AppState, OpenSearchUserAction>(_logAction),
