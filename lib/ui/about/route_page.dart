@@ -86,6 +86,32 @@ class AboutRoutePage extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.only(
+            top: styleConfiguration.contentPadding.top / 2,
+          ),
+          child: RichText(
+            textAlign: TextAlign.center,
+            textScaleFactor: MediaQuery.of(context).textScaleFactor,
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: '${translations.appDeveloper}\n',
+                  style: styleConfiguration.textStyle,
+                ),
+                TextSpan(
+                  text: translations.appDeveloperName,
+                  style: styleConfiguration.textStyle.copyWith(
+                    color: styleConfiguration.accentColor,
+                    decoration: TextDecoration.underline,
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => _visitWebsite(context),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
             top: styleConfiguration.contentPadding.top,
             bottom: styleConfiguration.contentPadding.bottom,
           ),
@@ -121,4 +147,8 @@ class AboutRoutePage extends StatelessWidget {
 
   void _sendEmail(BuildContext context) => StoreProvider.of<AppState>(context)
       .dispatch(UserActionDeveloper.email(context: context));
+
+  void _visitWebsite(BuildContext context) =>
+      StoreProvider.of<AppState>(context)
+          .dispatch(const UserActionDeveloper.visitWebsite());
 }
