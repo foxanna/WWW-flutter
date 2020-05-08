@@ -29,7 +29,7 @@ class TimerMiddleware {
         ..._TimerTickingMiddleware().middleware,
         ..._TimerSoundMiddleware(soundService: _soundService).middleware,
         ..._TimerVibratingMiddleware(vibratingService: _vibratingService)
-            .middleware
+            .middleware,
       ];
 }
 
