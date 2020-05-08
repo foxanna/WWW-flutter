@@ -56,6 +56,10 @@ class TournamentsTreeReducer {
 
   static TournamentsTreeState _copyWithSubTree(
       TournamentsTreeState state, TournamentsSubTreeState subState) {
+    if (state == null) {
+      return state;
+    }
+
     final newStates = Map<String, TournamentsSubTreeState>.from(state.states);
     newStates[subState.info.id] = subState;
 
