@@ -24,6 +24,8 @@ abstract class SystemActionLatest
 
   const factory SystemActionLatest.init() = InitLatestSystemAction;
 
+  const factory SystemActionLatest.deInit() = DeInitLatestSystemAction;
+
   const factory SystemActionLatest.loading() = LoadingLatestSystemAction;
 
   const factory SystemActionLatest.refreshing() = RefreshingLatestSystemAction;
