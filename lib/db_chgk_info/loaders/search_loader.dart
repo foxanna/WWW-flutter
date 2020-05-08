@@ -60,18 +60,7 @@ class SearchLoader implements ISearchLoader {
   }
 
   String _toQuery(String query, Sorting sorting) {
-    String _twoDigits(int n) => n >= 10 ? '$n' : '0$n';
-    String _formatDate(DateTime date) =>
-        '${date.year}-${_twoDigits(date.month)}-${_twoDigits(date.day)}';
-
-    final startDate = DateTime(1990, 01, 1);
-    final endDate = DateTime.now().toUtc();
-
-    final queryBuilder = StringBuffer();
-
-    queryBuilder.write(Uri.encodeFull(query));
-    queryBuilder.write('/from_${_formatDate(startDate)}');
-    queryBuilder.write('/to_${_formatDate(endDate)}');
+    final queryBuilder = StringBuffer(Uri.encodeFull(query));
 
     switch (sorting) {
       case Sorting.relevance:
