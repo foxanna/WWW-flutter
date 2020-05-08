@@ -36,6 +36,7 @@ String _cardinal(int count,
 
 class Translations_uk extends Translations {
   const Translations_uk();
+  String get appDeveloperName => "Анна Домашич";
   String get appNameFull => "Інтелектуальне казино Сова";
   String get dialogCloseButton => "закрити";
   String get downloadAppVia => "Завантажуйте додаток з";
@@ -93,6 +94,8 @@ class Translations_uk extends Translations {
           as i69n.I69nMessageBundle)[key.substring(index + 1)];
     }
     switch (key) {
+      case 'appDeveloperName':
+        return appDeveloperName;
       case 'appNameFull':
         return appNameFull;
       case 'dialogCloseButton':
