@@ -4,9 +4,10 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/common/scroll_controller_bound_fab.dart';
 import 'package:what_when_where/ui/latest_tournaments/app_bar.dart';
-import 'package:what_when_where/ui/latest_tournaments/refresh_indicator.dart';
 import 'package:what_when_where/ui/latest_tournaments/page_content.dart';
+import 'package:what_when_where/ui/latest_tournaments/refresh_indicator.dart';
 
 class LatestTournamentsPage extends StatefulWidget {
   static const String routeName = 'latest_tournaments';
@@ -37,6 +38,9 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
           ],
         ),
         onRefresh: _loadMoreIfRequested,
+      ),
+      floatingActionButton: ScrollControllerBoundFloatingActionButton(
+        scrollController: _scrollController,
       ),
     );
   }
