@@ -40,7 +40,7 @@ class SearchReducer {
 
   static SearchState _loading(
           SearchState state, LoadingSearchSystemAction action) =>
-      action.parameters == state.parameters
+      action.parameters == state?.parameters
           ? state.parameters.nextPage > 0
               ? SearchState.loadingWithData(
                   parameters: state.parameters,
@@ -53,7 +53,7 @@ class SearchReducer {
 
   static SearchState _failed(
           SearchState state, FailedSearchSystemAction action) =>
-      action.parameters == state.parameters
+      action.parameters == state?.parameters
           ? state.parameters.nextPage > 0
               ? SearchState.errorWithData(
                   parameters: state.parameters,
@@ -68,7 +68,7 @@ class SearchReducer {
 
   static SearchState _completed(
           SearchState state, CompletedSearchSystemAction action) =>
-      action.parameters == state.parameters
+      action.parameters == state?.parameters
           ? SearchState.data(
               parameters: state.parameters.copyWith(nextPage: action.nextPage),
               data: [...state.dataOrEmpty, ...action.data],
