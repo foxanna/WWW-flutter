@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/common/app_theme.dart';
+import 'package:what_when_where/common/text_scale.dart';
 import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/db_chgk_info/models/question_info.dart';
@@ -12,20 +13,19 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
-import 'package:what_when_where/redux/misc/actions.dart';
+import 'package:what_when_where/redux/email/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
-import 'package:what_when_where/resources/fonts.dart';
 import 'package:what_when_where/services/analytics.dart';
 
 import '../../ioc/container.dart';
-import '../../ioc/initializer.dart';
 import '../../mocks.dart';
 
 void main() {
@@ -47,140 +47,147 @@ void main() {
   });
 
   group('actions to analytics', () {
-    final analyticsTest = (dynamic action, String name) {
+    final execute = (ReduxAction action, String name) {
       store.dispatch(action);
       verify(analyticsServiceMock.logEvent(name: name)).called(1);
     };
 
     test(
       '$StartTimerUserAction',
-      () => analyticsTest(const UserActionTimer.start(), 'start_timer'),
+      () => execute(const UserActionTimer.start(), 'start_timer'),
     );
 
     test(
       '$StopTimerUserAction',
-      () => analyticsTest(const UserActionTimer.stop(), 'pause_timer'),
+      () => execute(const UserActionTimer.stop(), 'pause_timer'),
     );
 
     test(
       '$ChangeTypeTimerUserAction',
       () {
         furtherInteractionAllowed = true;
-        TimerType.values.forEach((type) => analyticsTest(
-            UserActionTimer.changeType(type: type), 'timer_type_set'));
+        TimerType.values.forEach((type) =>
+            execute(UserActionTimer.changeType(type: type), 'timer_type_set'));
       },
     );
 
     test(
       '$ShowAnswerQuestionsUserAction',
-      () => analyticsTest(
-          const UserActionQuestions.showAnswer(question: Question()),
+      () => execute(const UserActionQuestions.showAnswer(question: Question()),
           'show_answer'),
     );
 
     test(
       '$HideAnswerQuestionsUserAction',
-      () => analyticsTest(
-          const UserActionQuestions.hideAnswer(question: Question()),
+      () => execute(const UserActionQuestions.hideAnswer(question: Question()),
           'hide_answer'),
     );
 
     test(
       '$QuestionSharingUserAction',
-      () => analyticsTest(
-          const UserActionSharing.question(
-              info: QuestionInfo(), questionText: ''),
+      () => execute(
+          UserActionSharing.question(
+            context: null,
+            info: const QuestionInfo(),
+            questionText: '',
+          ),
           'share_question'),
     );
 
     test(
       '$TourSharingUserAction',
-      () => analyticsTest(
-          const UserActionSharing.tour(info: TourInfo()), 'share_tour'),
+      () => execute(
+          UserActionSharing.tour(
+            context: null,
+            info: const TourInfo(),
+          ),
+          'share_tour'),
     );
 
     test(
       '$TournamentSharingUserAction',
-      () => analyticsTest(
-          const UserActionSharing.tournament(info: TournamentInfo()),
+      () => execute(
+          UserActionSharing.tournament(
+            context: null,
+            info: const TournamentInfo(),
+          ),
           'share_tournament'),
     );
 
     test(
       '$QuestionBrowseUserAction',
-      () => analyticsTest(const UserActionBrowse.question(info: QuestionInfo()),
+      () => execute(const UserActionBrowse.question(info: QuestionInfo()),
           'browse_question'),
     );
 
     test(
       '$TourBrowseUserAction',
-      () => analyticsTest(
-          const UserActionBrowse.tour(info: TourInfo()), 'browse_tour'),
+      () =>
+          execute(const UserActionBrowse.tour(info: TourInfo()), 'browse_tour'),
     );
 
     test(
       '$TournamentBrowseUserAction',
-      () => analyticsTest(
-          const UserActionBrowse.tournament(info: TournamentInfo()),
+      () => execute(const UserActionBrowse.tournament(info: TournamentInfo()),
           'browse_tournament'),
     );
 
     test(
       '$ImageNavigationUserAction',
-      () => analyticsTest(
+      () => execute(
           const UserActionNavigation.image(imageUrl: 'test'), 'open_image'),
     );
 
     test(
       '$TourInfoDialogUserAction',
-      () => analyticsTest(
+      () => execute(
           const UserActionDialog.tourInfo(info: TourInfo()), 'open_tour_info'),
     );
 
     test(
       '$TournamentInfoDialogUserAction',
-      () => analyticsTest(
+      () => execute(
           const UserActionDialog.tournamentInfo(info: TournamentInfo()),
           'open_tournament_info'),
     );
 
     test(
       '$OpenSettingsPage',
-      () => analyticsTest(const OpenSettingsPage(), 'settings'),
+      () => execute(const OpenSettingsPage(), 'settings'),
     );
 
     test(
       '$OpenTournamentUserAction',
-      () => analyticsTest(
-          const UserActionTournament.open(info: TournamentInfo()),
+      () => execute(const UserActionTournament.open(info: TournamentInfo()),
           'tournament'),
     );
 
     test(
       '$OpenSearchUserAction()',
-      () => analyticsTest(const UserActionSearch.open(), 'search'),
+      () => execute(const UserActionSearch.open(), 'search'),
     );
 
     test(
       '$OpenRandomQuestionsUserAction',
-      () => analyticsTest(const UserActionQuestions.openRandom(), 'random'),
+      () => execute(const UserActionQuestions.openRandom(), 'random'),
     );
 
     test(
       '$OpenTournamentsTreeUserAction',
-      () => analyticsTest(
+      () => execute(
           const UserActionTournamentsTree.open(info: TournamentsTreeInfo()),
           'tree'),
     );
 
     test(
-      '$EmailDevelopers',
-      () => analyticsTest(const EmailDevelopers(), 'email_developers'),
+      '$ToDevelopersEmailUserAction',
+      () => execute(
+          UserActionEmail.toDevelopers(context: null), 'email_developers'),
     );
 
     test(
       '$DatabaseBrowseUserAction',
-      () => analyticsTest(const UserActionBrowse.database(), 'browse_database'),
+      () => execute(const UserActionBrowse.database(), 'browse_database'),
     );
   });
 
@@ -199,8 +206,8 @@ void main() {
       analyticsVerify(name, parameterName, parameterValue);
     };
 
-    test('$SettingsRead', () {
-      store.dispatch(const SettingsRead(
+    test('$ReadySettingsSystemAction', () {
+      store.dispatch(const SystemActionSettings.ready(
         appTheme: AppTheme.dark,
         textScale: TextScale.medium,
         notifyLongTimerExpiration: false,
@@ -214,33 +221,33 @@ void main() {
     });
 
     test(
-        '$ChangeTheme',
+        '$ChangeThemeSettingsUserAction',
         () => AppTheme.values.forEach((theme) => analyticsTest(
-            ChangeTheme(appTheme: theme),
+            UserActionSettings.changeTheme(appTheme: theme),
             'theme',
             'value',
             theme.toString().split('.').last)));
 
     test(
-        '$ChangeTextScale',
+        '$ChangeTextScaleSettingsUserAction',
         () => TextScale.values.forEach((textScale) => analyticsTest(
-            ChangeTextScale(textScale: textScale),
+            UserActionSettings.changeTextScale(textScale: textScale),
             'textScale',
             'value',
             textScale.toString().split('.').last)));
 
     test(
-        '$ChangeNotifyShortTimerExpiration',
+        '$ChangeNotifyShortTimerExpirationSettingsUserAction',
         () => [false, true].forEach((setting) => analyticsTest(
-            ChangeNotifyShortTimerExpiration(newValue: setting),
+            UserActionSettings.changeNotifyShortTimerExpiration(value: setting),
             'timer_notifications',
             'short_timer',
             setting.toString())));
 
     test(
-        '$ChangeNotifyLongTimerExpiration',
+        '$ChangeNotifyLongTimerExpirationSettingsUserAction',
         () => [false, true].forEach((setting) => analyticsTest(
-            ChangeNotifyLongTimerExpiration(newValue: setting),
+            UserActionSettings.changeNotifyLongTimerExpiration(value: setting),
             'timer_notifications',
             'long_timer',
             setting.toString())));
