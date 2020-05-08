@@ -92,7 +92,10 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<QuestionsMiddleware>(
       () => QuestionsMiddleware(loader: g<IRandomQuestionsLoader>()));
   g.registerFactory<RatingMiddleware>(() => RatingMiddleware(
-      preferences: g<IPreferences>(), ratingService: g<IRatingService>()));
+        preferences: g<IPreferences>(),
+        ratingService: g<IRatingService>(),
+        crashService: g<ICrashService>(),
+      ));
   g.registerFactory<SearchMiddleware>(
       () => SearchMiddleware(loader: g<ISearchLoader>()));
   g.registerFactory<ServicesMiddleware>(() => ServicesMiddleware(
