@@ -1,3 +1,6 @@
+import 'package:dio/dio.dart';
+import 'package:what_when_where/db_chgk_info/cache/tour_cache.dart';
+import 'package:what_when_where/db_chgk_info/cache/tournament_cache.dart';
 import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
@@ -54,4 +57,15 @@ void mockLoaders(ITestContainer container) {
       TournamentDetailsLoaderMock>(() => TournamentDetailsLoaderMock());
   container.replaceLazySingleton<ITournamentsTreeLoader,
       TournamentsTreeLoaderMock>(() => TournamentsTreeLoaderMock());
+}
+
+void mockDio(ITestContainer container) {
+  container.replaceLazySingleton<Dio, DioMock>(() => DioMock());
+}
+
+void mockCache(ITestContainer container) {
+  container
+      .replaceLazySingleton<ITourCache, TourCacheMock>(() => TourCacheMock());
+  container.replaceLazySingleton<ITournamentCache, TournamentCacheMock>(
+      () => TournamentCacheMock());
 }

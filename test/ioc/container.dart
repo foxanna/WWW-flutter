@@ -9,6 +9,8 @@ final _getIt = GetIt.instance;
 ITestContainer configureTestIocContainer({
   bool mockLoaders = false,
   bool mockServices = false,
+  bool mockDio = false,
+  bool mockCache = false,
 }) {
   _getIt.reset();
 
@@ -26,6 +28,14 @@ ITestContainer configureTestIocContainer({
 
   if (mockServices) {
     configuration.mockServices(container);
+  }
+
+  if (mockDio) {
+    configuration.mockDio(container);
+  }
+
+  if (mockCache) {
+    configuration.mockCache(container);
   }
 
   return container;
