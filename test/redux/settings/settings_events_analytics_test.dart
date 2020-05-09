@@ -1,13 +1,62 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
+import 'package:redux/src/store.dart';
 import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/common/text_scale.dart';
+import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/redux/initialization/actions.dart';
+import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 
-import '../analytics_helper.dart';
+import '../../ioc/container.dart';
+import '../../mocks.dart';
 
 void main() {
+  ITestContainer testIoc;
+  Store<AppState> store;
+
+  setUp(() async {
+    testIoc = configureTestIocContainer(
+      mockServices: true,
+      mockLoaders: true,
+    );
+
+    final preferencesMock = testIoc<PreferencesMock>();
+    when(preferencesMock.getBool(any, defaultValue: anyNamed('defaultValue')))
+        .thenAnswer((c) => Future.value(
+            c.namedArguments[const Symbol('defaultValue')] as bool));
+    when(preferencesMock.getInt(any, defaultValue: anyNamed('defaultValue')))
+        .thenAnswer((c) => Future.value(
+            c.namedArguments[const Symbol('defaultValue')] as int));
+
+    store = testIoc<WWWStore>().store;
+    store.dispatch(const InitializationAction.init());
+
+    final analyticsServiceMock = testIoc<AnalyticsServiceMock>();
+    await untilCalled(analyticsServiceMock.logEvent(
+        name: anyNamed('name'), parameters: anyNamed('parameters')));
+  });
+
   group('$UserActionSettings', () {
+    final executeAnalyticsTest = (
+      ReduxAction action, {
+      String expectedName,
+      Map<String, dynamic> expectedParameters,
+    }) async {
+      // arrange
+      final analyticsServiceMock = testIoc<AnalyticsServiceMock>();
+      clearInteractions(analyticsServiceMock);
+
+      // act
+      store.dispatch(action);
+
+      // assert
+      verify(analyticsServiceMock.logEvent(
+              name: expectedName, parameters: expectedParameters))
+          .called(1);
+    };
+
     test(
       '$OpenSettingsUserAction',
       () => executeAnalyticsTest(const UserActionSettings.open(),
@@ -16,13 +65,12 @@ void main() {
 
     test(
         '$ChangeThemeSettingsUserAction',
-        () => AppTheme.values.forEach((theme) => executeAnalyticsTest(
-            UserActionSettings.changeTheme(appTheme: theme),
-            expectedName: 'theme',
-            expectedParameters: <String, String>{
-              'value': theme.toString().split('.').last
-            },
-            initializationAction: const InitializationAction.init())));
+        () => AppTheme.values.map((theme) => executeAnalyticsTest(
+                UserActionSettings.changeTheme(appTheme: theme),
+                expectedName: 'theme',
+                expectedParameters: <String, String>{
+                  'value': theme.toString().split('.').last
+                })));
 
     test(
         '$ChangeTextScaleSettingsUserAction',
@@ -50,17 +98,29 @@ void main() {
                 String>{'long_timer': setting.toString()})));
   });
 
-//    test('$ReadySettingsSystemAction', () {
-//      store.dispatch(const SystemActionSettings.ready(
-//        appTheme: AppTheme.dark,
-//        textScale: TextScale.medium,
-//        notifyLongTimerExpiration: false,
-//        notifyShortTimerExpiration: true,
-//      ));
-//
-//      analyticsVerify('theme', 'value', 'dark');
-//      analyticsVerify('textScale', 'value', 'medium');
-//      analyticsVerify('timer_notifications', 'short_timer', 'true');
-//      analyticsVerify('timer_notifications', 'long_timer', 'false');
-//    });
+  group('$SystemActionSettings', () {
+    test('$ReadySettingsSystemAction', () async {
+      // arrange
+      final analyticsServiceMock = testIoc<AnalyticsServiceMock>();
+
+      // act
+
+      // assert
+      verify(analyticsServiceMock.logEvent(
+          name: 'theme',
+          parameters: <String, String>{'value': 'none'})).called(1);
+
+      verify(analyticsServiceMock.logEvent(
+          name: 'textScale',
+          parameters: <String, String>{'value': 'normal'})).called(1);
+
+      verify(analyticsServiceMock.logEvent(
+          name: 'timer_notifications',
+          parameters: <String, String>{'short_timer': 'true'})).called(1);
+
+      verify(analyticsServiceMock.logEvent(
+          name: 'timer_notifications',
+          parameters: <String, String>{'long_timer': 'true'})).called(1);
+    });
+  });
 }
