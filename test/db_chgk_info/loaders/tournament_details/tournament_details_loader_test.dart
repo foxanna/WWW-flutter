@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/http/http_client.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 
+import '../../../ioc/container.dart';
 import '../../../mocks.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
@@ -18,23 +18,16 @@ void main() {
     }) async {
       // arrange
       final tournamentId = expectedTournament.id;
-
-      final dioMock = DioMock();
-      when(dioMock.get<String>('/tour/$tournamentId/xml'))
-          .thenAnswer((_) => Future.value(Response(data: apiResponse)));
-
-      final tournamentCache = TournamentCacheMock();
-      when(tournamentCache.contains(any)).thenReturn(false);
-
-      final tourCache = TourCacheMock();
-
-      final loader = TournamentDetailsLoader(
-        httpClient: HttpClient(
-          dio: dioMock,
-        ),
-        tournamentCache: tournamentCache,
-        tourCache: tourCache,
+      final testIoc = configureTestIocContainer(
+        mockDio: true,
+        mockCache: true,
       );
+
+      when(testIoc<DioMock>().get<String>('/tour/$tournamentId/xml'))
+          .thenAnswer((_) => Future.value(Response(data: apiResponse)));
+      when(testIoc<TournamentCacheMock>().contains(any)).thenReturn(false);
+
+      final loader = testIoc<ITournamentDetailsLoader>();
 
       // act
       final tournament = await loader.get(tournamentId);

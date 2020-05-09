@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/http/http_client.dart';
 import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/question.dart';
 
+import '../../../ioc/container.dart';
 import '../../../mocks.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
@@ -17,15 +17,12 @@ void main() {
       List<Question> expectedQuestions,
     }) async {
       // arrange
-      final dioMock = DioMock();
-      when(dioMock.get<String>('/xml/random'))
+      final testIoc = configureTestIocContainer(mockDio: true);
+
+      when(testIoc<DioMock>().get<String>('/xml/random'))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
 
-      final loader = RandomQuestionsLoader(
-        httpClient: HttpClient(
-          dio: dioMock,
-        ),
-      );
+      final loader = testIoc<IRandomQuestionsLoader>();
 
       // act
       final questions = await loader.get();

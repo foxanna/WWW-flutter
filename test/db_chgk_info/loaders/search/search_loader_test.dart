@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/http/http_client.dart';
 import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/search/sorting.dart';
 
+import '../../../ioc/container.dart';
 import '../../../mocks.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
@@ -22,15 +22,12 @@ void main() {
       List<Tournament> expectedResult,
     }) async {
       // arrange
-      final dioMock = DioMock();
-      when(dioMock.get<String>(expectedUri?.toString() ?? any))
+      final testIoc = configureTestIocContainer(mockDio: true);
+
+      when(testIoc<DioMock>().get<String>(expectedUri?.toString() ?? any))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
 
-      final loader = SearchLoader(
-        httpClient: HttpClient(
-          dio: dioMock,
-        ),
-      );
+      final loader = testIoc<ISearchLoader>();
 
       // act
       final results = await loader.searchTournaments(

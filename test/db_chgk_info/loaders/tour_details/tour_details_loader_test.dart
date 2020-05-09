@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/http/http_client.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 
+import '../../../ioc/container.dart';
 import '../../../mocks.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
@@ -18,20 +18,16 @@ void main() {
     }) async {
       // arrange
       final tourId = expectedTour.id;
-
-      final dioMock = DioMock();
-      when(dioMock.get<String>('/tour/$tourId/xml'))
-          .thenAnswer((_) => Future.value(Response(data: apiResponse)));
-
-      final tourCache = TourCacheMock();
-      when(tourCache.contains(any)).thenReturn(false);
-
-      final loader = TourDetailsLoader(
-        httpClient: HttpClient(
-          dio: dioMock,
-        ),
-        tourCache: tourCache,
+      final testIoc = configureTestIocContainer(
+        mockDio: true,
+        mockCache: true,
       );
+
+      when(testIoc<DioMock>().get<String>('/tour/$tourId/xml'))
+          .thenAnswer((_) => Future.value(Response(data: apiResponse)));
+      when(testIoc<TourCacheMock>().contains(any)).thenReturn(false);
+
+      final loader = testIoc<ITourDetailsLoader>();
 
       // act
       final tour = await loader.get(tourId);
