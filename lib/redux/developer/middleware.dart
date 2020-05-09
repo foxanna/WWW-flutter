@@ -1,7 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/developer/actions.dart';
 import 'package:what_when_where/services/url_launcher.dart';

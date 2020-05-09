@@ -1,7 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/question.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';

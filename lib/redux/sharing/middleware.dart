@@ -1,8 +1,6 @@
-import 'package:flutter/widgets.dart';
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/localization/translations/translations.i69n.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
