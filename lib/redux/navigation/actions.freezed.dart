@@ -314,6 +314,10 @@ class _$SystemActionNavigationTearOff {
   LatestNavigationSystemAction latest() {
     return const LatestNavigationSystemAction();
   }
+
+  SettingsNavigationSystemAction settings() {
+    return const SettingsNavigationSystemAction();
+  }
 }
 
 // ignore: unused_element
@@ -327,6 +331,7 @@ mixin _$SystemActionNavigation {
     @required Result questions(),
     @required Result search(),
     @required Result latest(),
+    @required Result settings(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -335,6 +340,7 @@ mixin _$SystemActionNavigation {
     Result questions(),
     Result search(),
     Result latest(),
+    Result settings(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -344,6 +350,7 @@ mixin _$SystemActionNavigation {
     @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
+    @required Result settings(SettingsNavigationSystemAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -352,6 +359,7 @@ mixin _$SystemActionNavigation {
     Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
+    Result settings(SettingsNavigationSystemAction value),
     @required Result orElse(),
   });
 }
@@ -425,12 +433,14 @@ class _$TournamentNavigationSystemAction
     @required Result questions(),
     @required Result search(),
     @required Result latest(),
+    @required Result settings(),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return tournament();
   }
 
@@ -442,6 +452,7 @@ class _$TournamentNavigationSystemAction
     Result questions(),
     Result search(),
     Result latest(),
+    Result settings(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -459,12 +470,14 @@ class _$TournamentNavigationSystemAction
     @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
+    @required Result settings(SettingsNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return tournament(this);
   }
 
@@ -476,6 +489,7 @@ class _$TournamentNavigationSystemAction
     Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
+    Result settings(SettingsNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -580,12 +594,14 @@ class _$TreeNavigationSystemAction
     @required Result questions(),
     @required Result search(),
     @required Result latest(),
+    @required Result settings(),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return tree(info);
   }
 
@@ -597,6 +613,7 @@ class _$TreeNavigationSystemAction
     Result questions(),
     Result search(),
     Result latest(),
+    Result settings(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -614,12 +631,14 @@ class _$TreeNavigationSystemAction
     @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
+    @required Result settings(SettingsNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return tree(this);
   }
 
@@ -631,6 +650,7 @@ class _$TreeNavigationSystemAction
     Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
+    Result settings(SettingsNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -702,12 +722,14 @@ class _$QuestionsNavigationSystemAction
     @required Result questions(),
     @required Result search(),
     @required Result latest(),
+    @required Result settings(),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return questions();
   }
 
@@ -719,6 +741,7 @@ class _$QuestionsNavigationSystemAction
     Result questions(),
     Result search(),
     Result latest(),
+    Result settings(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -736,12 +759,14 @@ class _$QuestionsNavigationSystemAction
     @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
+    @required Result settings(SettingsNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return questions(this);
   }
 
@@ -753,6 +778,7 @@ class _$QuestionsNavigationSystemAction
     Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
+    Result settings(SettingsNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -822,12 +848,14 @@ class _$SearchNavigationSystemAction
     @required Result questions(),
     @required Result search(),
     @required Result latest(),
+    @required Result settings(),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return search();
   }
 
@@ -839,6 +867,7 @@ class _$SearchNavigationSystemAction
     Result questions(),
     Result search(),
     Result latest(),
+    Result settings(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -856,12 +885,14 @@ class _$SearchNavigationSystemAction
     @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
+    @required Result settings(SettingsNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return search(this);
   }
 
@@ -873,6 +904,7 @@ class _$SearchNavigationSystemAction
     Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
+    Result settings(SettingsNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -940,12 +972,14 @@ class _$LatestNavigationSystemAction
     @required Result questions(),
     @required Result search(),
     @required Result latest(),
+    @required Result settings(),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return latest();
   }
 
@@ -957,6 +991,7 @@ class _$LatestNavigationSystemAction
     Result questions(),
     Result search(),
     Result latest(),
+    Result settings(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -974,12 +1009,14 @@ class _$LatestNavigationSystemAction
     @required Result questions(QuestionsNavigationSystemAction value),
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
+    @required Result settings(SettingsNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
     assert(questions != null);
     assert(search != null);
     assert(latest != null);
+    assert(settings != null);
     return latest(this);
   }
 
@@ -991,6 +1028,7 @@ class _$LatestNavigationSystemAction
     Result questions(QuestionsNavigationSystemAction value),
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
+    Result settings(SettingsNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1005,76 +1043,128 @@ abstract class LatestNavigationSystemAction implements SystemActionNavigation {
   const factory LatestNavigationSystemAction() = _$LatestNavigationSystemAction;
 }
 
-class _$OpenSettingsPageTearOff {
-  const _$OpenSettingsPageTearOff();
-
-  _OpenSettingsPage call() {
-    return const _OpenSettingsPage();
-  }
+abstract class $SettingsNavigationSystemActionCopyWith<$Res> {
+  factory $SettingsNavigationSystemActionCopyWith(
+          SettingsNavigationSystemAction value,
+          $Res Function(SettingsNavigationSystemAction) then) =
+      _$SettingsNavigationSystemActionCopyWithImpl<$Res>;
 }
 
-// ignore: unused_element
-const $OpenSettingsPage = _$OpenSettingsPageTearOff();
-
-mixin _$OpenSettingsPage {}
-
-abstract class $OpenSettingsPageCopyWith<$Res> {
-  factory $OpenSettingsPageCopyWith(
-          OpenSettingsPage value, $Res Function(OpenSettingsPage) then) =
-      _$OpenSettingsPageCopyWithImpl<$Res>;
-}
-
-class _$OpenSettingsPageCopyWithImpl<$Res>
-    implements $OpenSettingsPageCopyWith<$Res> {
-  _$OpenSettingsPageCopyWithImpl(this._value, this._then);
-
-  final OpenSettingsPage _value;
-  // ignore: unused_field
-  final $Res Function(OpenSettingsPage) _then;
-}
-
-abstract class _$OpenSettingsPageCopyWith<$Res> {
-  factory _$OpenSettingsPageCopyWith(
-          _OpenSettingsPage value, $Res Function(_OpenSettingsPage) then) =
-      __$OpenSettingsPageCopyWithImpl<$Res>;
-}
-
-class __$OpenSettingsPageCopyWithImpl<$Res>
-    extends _$OpenSettingsPageCopyWithImpl<$Res>
-    implements _$OpenSettingsPageCopyWith<$Res> {
-  __$OpenSettingsPageCopyWithImpl(
-      _OpenSettingsPage _value, $Res Function(_OpenSettingsPage) _then)
-      : super(_value, (v) => _then(v as _OpenSettingsPage));
+class _$SettingsNavigationSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    implements $SettingsNavigationSystemActionCopyWith<$Res> {
+  _$SettingsNavigationSystemActionCopyWithImpl(
+      SettingsNavigationSystemAction _value,
+      $Res Function(SettingsNavigationSystemAction) _then)
+      : super(_value, (v) => _then(v as SettingsNavigationSystemAction));
 
   @override
-  _OpenSettingsPage get _value => super._value as _OpenSettingsPage;
+  SettingsNavigationSystemAction get _value =>
+      super._value as SettingsNavigationSystemAction;
 }
 
-class _$_OpenSettingsPage
+class _$SettingsNavigationSystemAction
     with DiagnosticableTreeMixin
-    implements _OpenSettingsPage {
-  const _$_OpenSettingsPage();
+    implements SettingsNavigationSystemAction {
+  const _$SettingsNavigationSystemAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OpenSettingsPage()';
+    return 'SystemActionNavigation.settings()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OpenSettingsPage'));
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionNavigation.settings'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _OpenSettingsPage);
+    return identical(this, other) || (other is SettingsNavigationSystemAction);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tournament(),
+    @required Result tree(TournamentsTreeInfo info),
+    @required Result questions(),
+    @required Result search(),
+    @required Result latest(),
+    @required Result settings(),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(questions != null);
+    assert(search != null);
+    assert(latest != null);
+    assert(settings != null);
+    return settings();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tournament(),
+    Result tree(TournamentsTreeInfo info),
+    Result questions(),
+    Result search(),
+    Result latest(),
+    Result settings(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (settings != null) {
+      return settings();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tournament(TournamentNavigationSystemAction value),
+    @required Result tree(TreeNavigationSystemAction value),
+    @required Result questions(QuestionsNavigationSystemAction value),
+    @required Result search(SearchNavigationSystemAction value),
+    @required Result latest(LatestNavigationSystemAction value),
+    @required Result settings(SettingsNavigationSystemAction value),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(questions != null);
+    assert(search != null);
+    assert(latest != null);
+    assert(settings != null);
+    return settings(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tournament(TournamentNavigationSystemAction value),
+    Result tree(TreeNavigationSystemAction value),
+    Result questions(QuestionsNavigationSystemAction value),
+    Result search(SearchNavigationSystemAction value),
+    Result latest(LatestNavigationSystemAction value),
+    Result settings(SettingsNavigationSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (settings != null) {
+      return settings(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _OpenSettingsPage implements OpenSettingsPage {
-  const factory _OpenSettingsPage() = _$_OpenSettingsPage;
+abstract class SettingsNavigationSystemAction
+    implements SystemActionNavigation {
+  const factory SettingsNavigationSystemAction() =
+      _$SettingsNavigationSystemAction;
 }

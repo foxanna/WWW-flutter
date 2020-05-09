@@ -35,11 +35,7 @@ abstract class SystemActionNavigation
   const factory SystemActionNavigation.search() = SearchNavigationSystemAction;
 
   const factory SystemActionNavigation.latest() = LatestNavigationSystemAction;
-}
 
-@freezed
-abstract class OpenSettingsPage
-    with _$OpenSettingsPage
-    implements NavigationAction {
-  const factory OpenSettingsPage() = _OpenSettingsPage;
+  const factory SystemActionNavigation.settings() =
+      SettingsNavigationSystemAction;
 }

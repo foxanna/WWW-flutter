@@ -12,6 +12,8 @@ abstract class SettingsAction implements ReduxAction {}
 abstract class UserActionSettings
     with _$UserActionSettings
     implements SettingsAction {
+  const factory UserActionSettings.open() = OpenSettingsUserAction;
+
   const factory UserActionSettings.changeTheme({
     @required AppTheme appTheme,
   }) = ChangeThemeSettingsUserAction;

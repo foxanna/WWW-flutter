@@ -31,7 +31,7 @@ class NavigationMiddleware {
         TypedMiddleware<AppState, QuestionsNavigationSystemAction>(_questions),
         TypedMiddleware<AppState, AboutNavigationUserAction>(_about),
         TypedMiddleware<AppState, SearchNavigationSystemAction>(_search),
-        TypedMiddleware<AppState, OpenSettingsPage>(_openSettingsPage),
+        TypedMiddleware<AppState, SettingsNavigationSystemAction>(_settings),
         TypedMiddleware<AppState, TreeNavigationSystemAction>(_tree),
         TypedMiddleware<AppState, LatestNavigationSystemAction>(_latest),
       ];
@@ -86,8 +86,8 @@ class NavigationMiddleware {
     );
   }
 
-  void _openSettingsPage(
-      Store<AppState> store, OpenSettingsPage action, NextDispatcher next) {
+  void _settings(Store<AppState> store, SettingsNavigationSystemAction action,
+      NextDispatcher next) {
     next(action);
 
     _navigationService.navigateToPage(

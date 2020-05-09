@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 class _$UserActionSettingsTearOff {
   const _$UserActionSettingsTearOff();
 
+  OpenSettingsUserAction open() {
+    return const OpenSettingsUserAction();
+  }
+
   ChangeThemeSettingsUserAction changeTheme({@required AppTheme appTheme}) {
     return ChangeThemeSettingsUserAction(
       appTheme: appTheme,
@@ -46,6 +50,7 @@ const $UserActionSettings = _$UserActionSettingsTearOff();
 mixin _$UserActionSettings {
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
     @required Result changeTheme(AppTheme appTheme),
     @required Result changeTextScale(TextScale textScale),
     @required Result changeNotifyShortTimerExpiration(bool value),
@@ -53,6 +58,7 @@ mixin _$UserActionSettings {
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
     Result changeTheme(AppTheme appTheme),
     Result changeTextScale(TextScale textScale),
     Result changeNotifyShortTimerExpiration(bool value),
@@ -61,6 +67,7 @@ mixin _$UserActionSettings {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenSettingsUserAction value),
     @required Result changeTheme(ChangeThemeSettingsUserAction value),
     @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     @required
@@ -72,6 +79,7 @@ mixin _$UserActionSettings {
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenSettingsUserAction value),
     Result changeTheme(ChangeThemeSettingsUserAction value),
     Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     Result changeNotifyShortTimerExpiration(
@@ -95,6 +103,126 @@ class _$UserActionSettingsCopyWithImpl<$Res>
   final UserActionSettings _value;
   // ignore: unused_field
   final $Res Function(UserActionSettings) _then;
+}
+
+abstract class $OpenSettingsUserActionCopyWith<$Res> {
+  factory $OpenSettingsUserActionCopyWith(OpenSettingsUserAction value,
+          $Res Function(OpenSettingsUserAction) then) =
+      _$OpenSettingsUserActionCopyWithImpl<$Res>;
+}
+
+class _$OpenSettingsUserActionCopyWithImpl<$Res>
+    extends _$UserActionSettingsCopyWithImpl<$Res>
+    implements $OpenSettingsUserActionCopyWith<$Res> {
+  _$OpenSettingsUserActionCopyWithImpl(OpenSettingsUserAction _value,
+      $Res Function(OpenSettingsUserAction) _then)
+      : super(_value, (v) => _then(v as OpenSettingsUserAction));
+
+  @override
+  OpenSettingsUserAction get _value => super._value as OpenSettingsUserAction;
+}
+
+class _$OpenSettingsUserAction
+    with DiagnosticableTreeMixin
+    implements OpenSettingsUserAction {
+  const _$OpenSettingsUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionSettings.open()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'UserActionSettings.open'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is OpenSettingsUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(),
+    @required Result changeTheme(AppTheme appTheme),
+    @required Result changeTextScale(TextScale textScale),
+    @required Result changeNotifyShortTimerExpiration(bool value),
+    @required Result changeNotifyLongTimerExpiration(bool value),
+  }) {
+    assert(open != null);
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return open();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(),
+    Result changeTheme(AppTheme appTheme),
+    Result changeTextScale(TextScale textScale),
+    Result changeNotifyShortTimerExpiration(bool value),
+    Result changeNotifyLongTimerExpiration(bool value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (open != null) {
+      return open();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenSettingsUserAction value),
+    @required Result changeTheme(ChangeThemeSettingsUserAction value),
+    @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    @required
+        Result changeNotifyShortTimerExpiration(
+            ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    @required
+        Result changeNotifyLongTimerExpiration(
+            ChangeNotifyLongTimerExpirationSettingsUserAction value),
+  }) {
+    assert(open != null);
+    assert(changeTheme != null);
+    assert(changeTextScale != null);
+    assert(changeNotifyShortTimerExpiration != null);
+    assert(changeNotifyLongTimerExpiration != null);
+    return open(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenSettingsUserAction value),
+    Result changeTheme(ChangeThemeSettingsUserAction value),
+    Result changeTextScale(ChangeTextScaleSettingsUserAction value),
+    Result changeNotifyShortTimerExpiration(
+        ChangeNotifyShortTimerExpirationSettingsUserAction value),
+    Result changeNotifyLongTimerExpiration(
+        ChangeNotifyLongTimerExpirationSettingsUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (open != null) {
+      return open(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OpenSettingsUserAction implements UserActionSettings {
+  const factory OpenSettingsUserAction() = _$OpenSettingsUserAction;
 }
 
 abstract class $ChangeThemeSettingsUserActionCopyWith<$Res> {
@@ -170,11 +298,13 @@ class _$ChangeThemeSettingsUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
     @required Result changeTheme(AppTheme appTheme),
     @required Result changeTextScale(TextScale textScale),
     @required Result changeNotifyShortTimerExpiration(bool value),
     @required Result changeNotifyLongTimerExpiration(bool value),
   }) {
+    assert(open != null);
     assert(changeTheme != null);
     assert(changeTextScale != null);
     assert(changeNotifyShortTimerExpiration != null);
@@ -185,6 +315,7 @@ class _$ChangeThemeSettingsUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
     Result changeTheme(AppTheme appTheme),
     Result changeTextScale(TextScale textScale),
     Result changeNotifyShortTimerExpiration(bool value),
@@ -201,6 +332,7 @@ class _$ChangeThemeSettingsUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenSettingsUserAction value),
     @required Result changeTheme(ChangeThemeSettingsUserAction value),
     @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     @required
@@ -210,6 +342,7 @@ class _$ChangeThemeSettingsUserAction
         Result changeNotifyLongTimerExpiration(
             ChangeNotifyLongTimerExpirationSettingsUserAction value),
   }) {
+    assert(open != null);
     assert(changeTheme != null);
     assert(changeTextScale != null);
     assert(changeNotifyShortTimerExpiration != null);
@@ -220,6 +353,7 @@ class _$ChangeThemeSettingsUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenSettingsUserAction value),
     Result changeTheme(ChangeThemeSettingsUserAction value),
     Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     Result changeNotifyShortTimerExpiration(
@@ -319,11 +453,13 @@ class _$ChangeTextScaleSettingsUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
     @required Result changeTheme(AppTheme appTheme),
     @required Result changeTextScale(TextScale textScale),
     @required Result changeNotifyShortTimerExpiration(bool value),
     @required Result changeNotifyLongTimerExpiration(bool value),
   }) {
+    assert(open != null);
     assert(changeTheme != null);
     assert(changeTextScale != null);
     assert(changeNotifyShortTimerExpiration != null);
@@ -334,6 +470,7 @@ class _$ChangeTextScaleSettingsUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
     Result changeTheme(AppTheme appTheme),
     Result changeTextScale(TextScale textScale),
     Result changeNotifyShortTimerExpiration(bool value),
@@ -350,6 +487,7 @@ class _$ChangeTextScaleSettingsUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenSettingsUserAction value),
     @required Result changeTheme(ChangeThemeSettingsUserAction value),
     @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     @required
@@ -359,6 +497,7 @@ class _$ChangeTextScaleSettingsUserAction
         Result changeNotifyLongTimerExpiration(
             ChangeNotifyLongTimerExpirationSettingsUserAction value),
   }) {
+    assert(open != null);
     assert(changeTheme != null);
     assert(changeTextScale != null);
     assert(changeNotifyShortTimerExpiration != null);
@@ -369,6 +508,7 @@ class _$ChangeTextScaleSettingsUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenSettingsUserAction value),
     Result changeTheme(ChangeThemeSettingsUserAction value),
     Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     Result changeNotifyShortTimerExpiration(
@@ -477,11 +617,13 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
     @required Result changeTheme(AppTheme appTheme),
     @required Result changeTextScale(TextScale textScale),
     @required Result changeNotifyShortTimerExpiration(bool value),
     @required Result changeNotifyLongTimerExpiration(bool value),
   }) {
+    assert(open != null);
     assert(changeTheme != null);
     assert(changeTextScale != null);
     assert(changeNotifyShortTimerExpiration != null);
@@ -492,6 +634,7 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
     Result changeTheme(AppTheme appTheme),
     Result changeTextScale(TextScale textScale),
     Result changeNotifyShortTimerExpiration(bool value),
@@ -508,6 +651,7 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenSettingsUserAction value),
     @required Result changeTheme(ChangeThemeSettingsUserAction value),
     @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     @required
@@ -517,6 +661,7 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
         Result changeNotifyLongTimerExpiration(
             ChangeNotifyLongTimerExpirationSettingsUserAction value),
   }) {
+    assert(open != null);
     assert(changeTheme != null);
     assert(changeTextScale != null);
     assert(changeNotifyShortTimerExpiration != null);
@@ -527,6 +672,7 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenSettingsUserAction value),
     Result changeTheme(ChangeThemeSettingsUserAction value),
     Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     Result changeNotifyShortTimerExpiration(
@@ -637,11 +783,13 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result open(),
     @required Result changeTheme(AppTheme appTheme),
     @required Result changeTextScale(TextScale textScale),
     @required Result changeNotifyShortTimerExpiration(bool value),
     @required Result changeNotifyLongTimerExpiration(bool value),
   }) {
+    assert(open != null);
     assert(changeTheme != null);
     assert(changeTextScale != null);
     assert(changeNotifyShortTimerExpiration != null);
@@ -652,6 +800,7 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result open(),
     Result changeTheme(AppTheme appTheme),
     Result changeTextScale(TextScale textScale),
     Result changeNotifyShortTimerExpiration(bool value),
@@ -668,6 +817,7 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result open(OpenSettingsUserAction value),
     @required Result changeTheme(ChangeThemeSettingsUserAction value),
     @required Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     @required
@@ -677,6 +827,7 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
         Result changeNotifyLongTimerExpiration(
             ChangeNotifyLongTimerExpirationSettingsUserAction value),
   }) {
+    assert(open != null);
     assert(changeTheme != null);
     assert(changeTextScale != null);
     assert(changeNotifyShortTimerExpiration != null);
@@ -687,6 +838,7 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result open(OpenSettingsUserAction value),
     Result changeTheme(ChangeThemeSettingsUserAction value),
     Result changeTextScale(ChangeTextScaleSettingsUserAction value),
     Result changeNotifyShortTimerExpiration(

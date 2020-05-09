@@ -4,6 +4,7 @@ import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/common/text_scale.dart';
 import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/services/preferences.dart';
 
@@ -26,6 +27,7 @@ class SettingsMiddleware {
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, InitInitializationAction>(_init),
+        TypedMiddleware<AppState, OpenSettingsUserAction>(_open),
         TypedMiddleware<AppState, ChangeThemeSettingsUserAction>(_changeTheme),
         TypedMiddleware<AppState, ChangeTextScaleSettingsUserAction>(
             _changeTextScale),
@@ -60,6 +62,13 @@ class SettingsMiddleware {
       notifyShortTimerExpiration: notifyShortTimerExpiration,
       notifyLongTimerExpiration: notifyLongTimerExpiration,
     ));
+  }
+
+  void _open(Store<AppState> store, OpenSettingsUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const SystemActionNavigation.settings());
   }
 
   Future<void> _changeTheme(Store<AppState> store,
