@@ -11,7 +11,7 @@ final Function executeAnalyticsTest = (
   String expectedName,
   Map<String, dynamic> expectedParameters,
 }) {
-  // Arrange
+  // arrange
   final testIoc = configureTestIocContainer(
     mockServices: true,
     mockLoaders: true,
@@ -20,11 +20,11 @@ final Function executeAnalyticsTest = (
   final store = testIoc<WWWStore>().store;
   final analyticsServiceMock = testIoc<AnalyticsServiceMock>();
 
-  // Act
+  // act
   store.dispatch(initializationAction);
   store.dispatch(action);
 
-  // Assert
+  // assert
   verify(analyticsServiceMock.logEvent(
           name: expectedName, parameters: expectedParameters))
       .called(1);
