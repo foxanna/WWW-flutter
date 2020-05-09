@@ -67,7 +67,7 @@ class Translations_uk extends Translations {
   String get tooltipPauseTimer => "зупинити таймер";
   String get tooltipRandomQuestions => "випадкові питання";
   String get tooltipRetry => "повторити";
-  String get tooltipSorting => "впорядкувати";
+  String get tooltipSorting => "сортування";
   String get tooltipSortingByDate => "за датою";
   String get tooltipSortingByRelevance => "за релевантністю";
   String get tooltipStartTimer => "запустити таймер";

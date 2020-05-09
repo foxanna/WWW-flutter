@@ -66,7 +66,7 @@ class Translations implements i69n.I69nMessageBundle {
   String get tooltipPauseTimer => "pause timer";
   String get tooltipRandomQuestions => "random questions";
   String get tooltipRetry => "retry";
-  String get tooltipSorting => "";
+  String get tooltipSorting => "sorting";
   String get tooltipSortingByDate => "by date";
   String get tooltipSortingByRelevance => "by relevance";
   String get tooltipStartTimer => "start timer";
