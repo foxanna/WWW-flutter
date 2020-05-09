@@ -8,7 +8,7 @@ import 'package:what_when_where/db_chgk_info/question_parser/sections/section_te
 const tourInfo1 = TourInfo(
   id: '70679',
   title: r'''Разминка''',
-  questionsCount: '0',
+  questionsCount: '2',
   url: r'''https://db.chgk.info/tour/70679''',
   createdAt: '2020-04-21',
   tournamentInfo: TournamentInfo(
