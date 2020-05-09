@@ -32,17 +32,17 @@ class SettingsReducer {
 
   static SettingsState _changeTheme(
           SettingsState state, ChangeThemeSettingsUserAction action) =>
-      state.copyWith(appTheme: action.appTheme);
+      state?.copyWith(appTheme: action.appTheme);
 
   static SettingsState _changeTextScale(
           SettingsState state, ChangeTextScaleSettingsUserAction action) =>
-      state.copyWith(textScale: action.textScale);
+      state?.copyWith(textScale: action.textScale);
 
   static SettingsState _changeNotifyShortTimerExpiration(SettingsState state,
           ChangeNotifyShortTimerExpirationSettingsUserAction action) =>
-      state.copyWith(notifyShortTimerExpiration: action.value);
+      state?.copyWith(notifyShortTimerExpiration: action.value);
 
   static SettingsState _changeNotifyLongTimerExpiration(SettingsState state,
           ChangeNotifyLongTimerExpirationSettingsUserAction action) =>
-      state.copyWith(notifyLongTimerExpiration: action.value);
+      state?.copyWith(notifyLongTimerExpiration: action.value);
 }
