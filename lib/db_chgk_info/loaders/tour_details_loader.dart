@@ -33,7 +33,7 @@ class TourDetailsLoader implements ITourDetailsLoader {
 
     final map = await _httpClient.get(Uri(path: '/tour/$id/xml'));
     final tourDto = TourDto.fromJson(map['tournament'] as Map<String, dynamic>);
-    final tournamentInfo = _tournamentsCache.get(tourDto.parentId).info;
+    final tournamentInfo = _tournamentsCache.get(tourDto.parentId)?.info;
     final tour = Tour.fromDto(tourDto,
         tournamentInfo: tournamentInfo ?? const TournamentInfo());
     _toursCache.save(tour);
