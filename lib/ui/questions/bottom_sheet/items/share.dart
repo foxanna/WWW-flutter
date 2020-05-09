@@ -10,24 +10,28 @@ class QuestionsShareBottomSheetItem extends StatelessWidget {
   const QuestionsShareBottomSheetItem({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => StoreConnector<AppState, Question>(
-        distinct: true,
-        converter: (store) =>
-            store.state.questionsState.currentQuestionOrNull?.question,
-        builder: (context, question) => ListTile(
-          enabled: question != null,
-          leading: const Icon(Icons.share),
-          title: Text(WWWLocalizations.of(context).menuShare),
-          onTap: () {
-            Navigator.pop(context);
+  Widget build(BuildContext context) {
+    final translations = WWWLocalizations.of(context);
 
-            StoreProvider.of<AppState>(context)
-                .dispatch(UserActionSharing.question(
-              context: context,
-              info: question.info,
-              questionText: question.display,
-            ));
-          },
-        ),
-      );
+    return StoreConnector<AppState, Question>(
+      distinct: true,
+      converter: (store) =>
+          store.state.questionsState.currentQuestionOrNull?.question,
+      builder: (context, question) => ListTile(
+        enabled: question != null,
+        leading: const Icon(Icons.share),
+        title: Text(translations.menuShare),
+        onTap: () {
+          Navigator.pop(context);
+
+          StoreProvider.of<AppState>(context)
+              .dispatch(UserActionSharing.question(
+            translations: translations,
+            info: question.info,
+            questionText: question.display,
+          ));
+        },
+      ),
+    );
+  }
 }

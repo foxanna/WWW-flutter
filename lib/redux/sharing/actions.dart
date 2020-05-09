@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/db_chgk_info/models/question_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
+import 'package:what_when_where/localization/translations/translations.i69n.dart';
 import 'package:what_when_where/redux/redux_action.dart';
 
 part 'actions.freezed.dart';
@@ -15,18 +16,18 @@ abstract class UserActionSharing
     with _$UserActionSharing
     implements SharingAction {
   const factory UserActionSharing.question({
-    @required BuildContext context,
+    @required Translations translations,
     @required QuestionInfo info,
     @required String questionText,
   }) = QuestionSharingUserAction;
 
   const factory UserActionSharing.tour({
-    @required BuildContext context,
+    @required Translations translations,
     @required TourInfo info,
   }) = TourSharingUserAction;
 
   const factory UserActionSharing.tournament({
-    @required BuildContext context,
+    @required Translations translations,
     @required TournamentInfo info,
   }) = TournamentSharingUserAction;
 }

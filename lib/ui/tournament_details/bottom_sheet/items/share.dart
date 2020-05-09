@@ -10,22 +10,25 @@ class TournamentDetailsShareTournamentBottomSheetItem extends StatelessWidget {
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) =>
-      StoreConnector<AppState, TournamentState>(
-        distinct: true,
-        converter: (store) => store.state.tournamentState,
-        builder: (context, state) => ListTile(
-          leading: const Icon(Icons.share),
-          title: Text(WWWLocalizations.of(context).menuShare),
-          onTap: () {
-            Navigator.pop(context);
+  Widget build(BuildContext context) {
+    final translations = WWWLocalizations.of(context);
 
-            StoreProvider.of<AppState>(context)
-                .dispatch(UserActionSharing.tournament(
-              context: context,
-              info: state.info,
-            ));
-          },
-        ),
-      );
+    return StoreConnector<AppState, TournamentState>(
+      distinct: true,
+      converter: (store) => store.state.tournamentState,
+      builder: (context, state) => ListTile(
+        leading: const Icon(Icons.share),
+        title: Text(translations.menuShare),
+        onTap: () {
+          Navigator.pop(context);
+
+          StoreProvider.of<AppState>(context)
+              .dispatch(UserActionSharing.tournament(
+            translations: translations,
+            info: state.info,
+          ));
+        },
+      ),
+    );
+  }
 }
