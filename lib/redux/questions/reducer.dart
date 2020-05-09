@@ -44,7 +44,7 @@ class QuestionsReducer {
       QuestionsState state, ShowAnswerQuestionsUserAction action) {
     final newState = QuestionState(question: action.question, showAnswer: true);
 
-    return state.maybeMap(
+    return state?.maybeMap(
       loadingWithData: (value) => value.copyWith(
         questions: _newQuestions(value.questions, newState),
       ),
@@ -63,7 +63,7 @@ class QuestionsReducer {
     final newState =
         QuestionState(question: action.question, showAnswer: false);
 
-    return state.maybeMap(
+    return state?.maybeMap(
       loadingWithData: (value) => value.copyWith(
         questions: _newQuestions(value.questions, newState),
       ),
@@ -79,7 +79,7 @@ class QuestionsReducer {
 
   static QuestionsState _select(
           QuestionsState state, SelectQuestionsUserAction action) =>
-      state.maybeMap(
+      state?.maybeMap(
         loadingWithData: (value) => value.copyWith(
           currentQuestionIndex: action.questionIndex,
         ),
