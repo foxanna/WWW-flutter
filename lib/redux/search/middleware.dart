@@ -85,6 +85,10 @@ class SearchMiddleware {
           sorting: parameters.sorting,
           page: parameters.nextPage);
 
+      if (data == null) {
+        throw Exception();
+      }
+
       store.dispatch(SystemActionSearch.completed(
         parameters: parameters,
         data: data,

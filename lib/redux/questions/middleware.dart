@@ -70,8 +70,11 @@ class QuestionsMiddleware {
 
       final data = await _loader.get();
 
-      store.dispatch(SystemActionQuestions.completed(
-          questions: data ?? const Iterable<Question>.empty()));
+      if (data == null) {
+        throw Exception();
+      }
+
+      store.dispatch(SystemActionQuestions.completed(questions: data));
     } on Exception catch (e) {
       store.dispatch(SystemActionQuestions.failed(exception: e));
     }

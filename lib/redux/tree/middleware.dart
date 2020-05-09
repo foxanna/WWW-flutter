@@ -39,9 +39,13 @@ class TournamentsTreeMiddleware {
     try {
       store.dispatch(SystemActionTournamentsTree.loading(info: action.info));
 
-      final tree = await _loader.get(id: action.info.id);
+      final data = await _loader.get(id: action.info.id);
 
-      store.dispatch(SystemActionTournamentsTree.completed(tree: tree));
+      if (data == null) {
+        throw Exception();
+      }
+
+      store.dispatch(SystemActionTournamentsTree.completed(tree: data));
     } on Exception catch (e) {
       store.dispatch(
           SystemActionTournamentsTree.failed(info: action.info, exception: e));

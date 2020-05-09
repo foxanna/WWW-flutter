@@ -52,6 +52,10 @@ class TournamentMiddleware {
 
       final data = await _loader.get(action.info.id ?? action.info.id2);
 
+      if (data == null) {
+        throw Exception();
+      }
+
       store.dispatch(SystemActionTournament.completed(tournament: data));
     } on Exception catch (e) {
       store.dispatch(

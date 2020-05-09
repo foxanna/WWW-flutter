@@ -47,6 +47,10 @@ class ToursMiddleware {
 
       final data = await _loader.get(action.info.id);
 
+      if (data == null) {
+        throw Exception();
+      }
+
       store.dispatch(SystemActionTours.completed(tour: data));
     } on Exception catch (e) {
       store.dispatch(SystemActionTours.failed(info: action.info, exception: e));
