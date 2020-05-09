@@ -7,6 +7,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
+import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class SearchMiddleware {
@@ -64,6 +65,7 @@ class SearchMiddleware {
     next(action);
 
     final state = store.state.searchState;
+
     if (state is LoadingFirstPageSearchState ||
         state is LoadingWithDataSearchState ||
         (state is DataSearchState && !state.canLoadMore)) {
@@ -85,9 +87,7 @@ class SearchMiddleware {
           sorting: parameters.sorting,
           page: parameters.nextPage);
 
-      if (data == null) {
-        throw Exception();
-      }
+      throwIfDataIsNull(data);
 
       store.dispatch(SystemActionSearch.completed(
         parameters: parameters,

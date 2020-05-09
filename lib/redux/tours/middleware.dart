@@ -4,6 +4,7 @@ import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/redux/tours/state.dart';
+import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class ToursMiddleware {
@@ -34,11 +35,11 @@ class ToursMiddleware {
       NextDispatcher next) async {
     next(action);
 
-    final tourState = store.state.toursState.tours.firstWhere(
+    final state = store.state.toursState.tours.firstWhere(
         (state) => state.info.id == action.info.id,
         orElse: () => null);
 
-    if (tourState == null || tourState is LoadingTourState) {
+    if (state == null || state is LoadingTourState) {
       return;
     }
 
@@ -47,9 +48,7 @@ class ToursMiddleware {
 
       final data = await _loader.get(action.info.id);
 
-      if (data == null) {
-        throw Exception();
-      }
+      throwIfDataIsNull(data);
 
       store.dispatch(SystemActionTours.completed(tour: data));
     } on Exception catch (e) {

@@ -6,6 +6,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/redux/tree/state.dart';
+import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class TournamentsTreeMiddleware {
@@ -31,6 +32,7 @@ class TournamentsTreeMiddleware {
     next(action);
 
     final state = store.state.tournamentsTreeState.states[action.info.id];
+
     if (state is LoadingTournamentsSubTreeState ||
         state is DataTournamentsSubTreeState) {
       return;
@@ -41,9 +43,7 @@ class TournamentsTreeMiddleware {
 
       final data = await _loader.get(id: action.info.id);
 
-      if (data == null) {
-        throw Exception();
-      }
+      throwIfDataIsNull(data);
 
       store.dispatch(SystemActionTournamentsTree.completed(tree: data));
     } on Exception catch (e) {

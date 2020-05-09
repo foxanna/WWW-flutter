@@ -5,6 +5,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class LatestTournamentsMiddleware {
@@ -37,15 +38,19 @@ class LatestTournamentsMiddleware {
       NextDispatcher next) async {
     next(action);
 
+    final state = store.state.latestTournamentsState;
+
+    if (state is RefreshingLatestTournamentsState) {
+      return;
+    }
+
     try {
       const int page = 0;
       store.dispatch(const SystemActionLatest.refreshing());
 
       final data = await _loader.get(page: page);
 
-      if (data == null) {
-        throw Exception();
-      }
+      throwIfDataIsNull(data);
 
       store.dispatch(SystemActionLatest.completed(
         data: data,
@@ -61,6 +66,7 @@ class LatestTournamentsMiddleware {
     next(action);
 
     final state = store.state.latestTournamentsState;
+
     if (state is LoadingFirstPageLatestTournamentsState ||
         state is LoadingWithDataLatestTournamentsState ||
         state is RefreshingLatestTournamentsState) {
@@ -72,6 +78,9 @@ class LatestTournamentsMiddleware {
       store.dispatch(const SystemActionLatest.loading());
 
       final data = await _loader.get(page: page);
+
+      throwIfDataIsNull(data);
+
       store.dispatch(SystemActionLatest.completed(
         data: data,
         nexPage: page + 1,

@@ -74,7 +74,7 @@ class SettingsMiddleware {
   Future<void> _changeTheme(Store<AppState> store,
       ChangeThemeSettingsUserAction action, NextDispatcher next) async {
     final themeHasChanged =
-        action.appTheme != store.state.settingsState?.appTheme;
+        action.appTheme != store.state.settingsState.appTheme;
 
     next(action);
 
@@ -88,7 +88,7 @@ class SettingsMiddleware {
   Future<void> _changeTextScale(Store<AppState> store,
       ChangeTextScaleSettingsUserAction action, NextDispatcher next) async {
     final textScaleHasChanged =
-        action.textScale != store.state.settingsState?.textScale;
+        action.textScale != store.state.settingsState.textScale;
 
     next(action);
 
@@ -102,7 +102,7 @@ class SettingsMiddleware {
       ChangeNotifyShortTimerExpirationSettingsUserAction action,
       NextDispatcher next) async {
     final settingChanged =
-        action.value != store.state.settingsState?.notifyShortTimerExpiration;
+        action.value != store.state.settingsState.notifyShortTimerExpiration;
 
     next(action);
 
@@ -116,7 +116,7 @@ class SettingsMiddleware {
       ChangeNotifyLongTimerExpirationSettingsUserAction action,
       NextDispatcher next) async {
     final settingChanged =
-        action.value != store.state.settingsState?.notifyLongTimerExpiration;
+        action.value != store.state.settingsState.notifyLongTimerExpiration;
 
     next(action);
 

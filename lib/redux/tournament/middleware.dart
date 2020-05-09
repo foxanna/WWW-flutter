@@ -6,6 +6,7 @@ import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/redux/tournament/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
+import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class TournamentMiddleware {
@@ -39,11 +40,11 @@ class TournamentMiddleware {
       NextDispatcher next) async {
     next(action);
 
-    final tournamentState = store.state.tournamentState;
+    final state = store.state.tournamentState;
 
-    if (tournamentState is LoadingTournamentState &&
-        (tournamentState.info.id == action.info.id ||
-            tournamentState.info.id2 == action.info.id2)) {
+    if (state is LoadingTournamentState &&
+        (state.info.id == action.info.id ||
+            state.info.id2 == action.info.id2)) {
       return;
     }
 
@@ -52,9 +53,7 @@ class TournamentMiddleware {
 
       final data = await _loader.get(action.info.id ?? action.info.id2);
 
-      if (data == null) {
-        throw Exception();
-      }
+      throwIfDataIsNull(data);
 
       store.dispatch(SystemActionTournament.completed(tournament: data));
     } on Exception catch (e) {

@@ -25,22 +25,22 @@ class TimerReducer {
 
   static TimerState _updateTime(
           TimerState state, UpdateTimeTimerSystemAction action) =>
-      state.copyWith(
+      state?.copyWith(
         secondsLeft: action.newValue,
       );
 
   static TimerState _updateIsRunning(
           TimerState state, UpdateIsRunningTimerSystemAction action) =>
-      state.copyWith(
+      state?.copyWith(
         isRunning: action.newValue,
       );
 
   static TimerState _reset(TimerState state, ResetTimerUserAction action) =>
-      TimerState.initial(timerType: state.timerType);
+      state != null ? TimerState.initial(timerType: state.timerType) : state;
 
   static TimerState _changeType(
           TimerState state, ChangeTypeTimerUserAction action) =>
-      state.copyWith(
+      state?.copyWith(
         timerType: action.type,
       );
 }

@@ -6,6 +6,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
+import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class QuestionsMiddleware {
@@ -60,6 +61,7 @@ class QuestionsMiddleware {
     next(action);
 
     final state = store.state.questionsState;
+
     if (state is LoadingFirstPageQuestionsState ||
         state is LoadingWithDataQuestionsState) {
       return;
@@ -70,9 +72,7 @@ class QuestionsMiddleware {
 
       final data = await _loader.get();
 
-      if (data == null) {
-        throw Exception();
-      }
+      throwIfDataIsNull(data);
 
       store.dispatch(SystemActionQuestions.completed(questions: data));
     } on Exception catch (e) {
