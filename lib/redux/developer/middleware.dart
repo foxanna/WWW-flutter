@@ -28,8 +28,8 @@ class DeveloperMiddleware {
       NextDispatcher next) {
     next(action);
 
-    _urlLauncher.sendEmail(Constants.developerEmail,
-        WWWLocalizations.of(action.context).appNameFull);
+    _urlLauncher.sendEmail(
+        Constants.developerEmail, action.translations.appNameFull);
   }
 
   void _visitWebsite(Store<AppState> store,

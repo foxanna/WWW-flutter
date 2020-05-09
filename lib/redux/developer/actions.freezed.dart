@@ -12,9 +12,9 @@ T _$identity<T>(T value) => value;
 class _$UserActionDeveloperTearOff {
   const _$UserActionDeveloperTearOff();
 
-  EmailDeveloperUserAction email({@required BuildContext context}) {
+  EmailDeveloperUserAction email({@required Translations translations}) {
     return EmailDeveloperUserAction(
-      context: context,
+      translations: translations,
     );
   }
 
@@ -29,12 +29,12 @@ const $UserActionDeveloper = _$UserActionDeveloperTearOff();
 mixin _$UserActionDeveloper {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result email(BuildContext context),
+    @required Result email(Translations translations),
     @required Result visitWebsite(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result email(BuildContext context),
+    Result email(Translations translations),
     Result visitWebsite(),
     @required Result orElse(),
   });
@@ -70,7 +70,7 @@ abstract class $EmailDeveloperUserActionCopyWith<$Res> {
   factory $EmailDeveloperUserActionCopyWith(EmailDeveloperUserAction value,
           $Res Function(EmailDeveloperUserAction) then) =
       _$EmailDeveloperUserActionCopyWithImpl<$Res>;
-  $Res call({BuildContext context});
+  $Res call({Translations translations});
 }
 
 class _$EmailDeveloperUserActionCopyWithImpl<$Res>
@@ -86,10 +86,12 @@ class _$EmailDeveloperUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object context = freezed,
+    Object translations = freezed,
   }) {
     return _then(EmailDeveloperUserAction(
-      context: context == freezed ? _value.context : context as BuildContext,
+      translations: translations == freezed
+          ? _value.translations
+          : translations as Translations,
     ));
   }
 }
@@ -97,15 +99,15 @@ class _$EmailDeveloperUserActionCopyWithImpl<$Res>
 class _$EmailDeveloperUserAction
     with DiagnosticableTreeMixin
     implements EmailDeveloperUserAction {
-  const _$EmailDeveloperUserAction({@required this.context})
-      : assert(context != null);
+  const _$EmailDeveloperUserAction({@required this.translations})
+      : assert(translations != null);
 
   @override
-  final BuildContext context;
+  final Translations translations;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionDeveloper.email(context: $context)';
+    return 'UserActionDeveloper.email(translations: $translations)';
   }
 
   @override
@@ -113,20 +115,21 @@ class _$EmailDeveloperUserAction
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'UserActionDeveloper.email'))
-      ..add(DiagnosticsProperty('context', context));
+      ..add(DiagnosticsProperty('translations', translations));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is EmailDeveloperUserAction &&
-            (identical(other.context, context) ||
-                const DeepCollectionEquality().equals(other.context, context)));
+            (identical(other.translations, translations) ||
+                const DeepCollectionEquality()
+                    .equals(other.translations, translations)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(translations);
 
   @override
   $EmailDeveloperUserActionCopyWith<EmailDeveloperUserAction> get copyWith =>
@@ -136,24 +139,24 @@ class _$EmailDeveloperUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result email(BuildContext context),
+    @required Result email(Translations translations),
     @required Result visitWebsite(),
   }) {
     assert(email != null);
     assert(visitWebsite != null);
-    return email(context);
+    return email(translations);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result email(BuildContext context),
+    Result email(Translations translations),
     Result visitWebsite(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (email != null) {
-      return email(context);
+      return email(translations);
     }
     return orElse();
   }
@@ -185,10 +188,10 @@ class _$EmailDeveloperUserAction
 }
 
 abstract class EmailDeveloperUserAction implements UserActionDeveloper {
-  const factory EmailDeveloperUserAction({@required BuildContext context}) =
-      _$EmailDeveloperUserAction;
+  const factory EmailDeveloperUserAction(
+      {@required Translations translations}) = _$EmailDeveloperUserAction;
 
-  BuildContext get context;
+  Translations get translations;
   $EmailDeveloperUserActionCopyWith<EmailDeveloperUserAction> get copyWith;
 }
 
@@ -240,7 +243,7 @@ class _$VisitWebsiteDeveloperUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result email(BuildContext context),
+    @required Result email(Translations translations),
     @required Result visitWebsite(),
   }) {
     assert(email != null);
@@ -251,7 +254,7 @@ class _$VisitWebsiteDeveloperUserAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result email(BuildContext context),
+    Result email(Translations translations),
     Result visitWebsite(),
     @required Result orElse(),
   }) {

@@ -145,8 +145,9 @@ class AboutRoutePage extends StatelessWidget {
       StoreProvider.of<AppState>(context)
           .dispatch(const UserActionBrowse.database());
 
-  void _sendEmail(BuildContext context) => StoreProvider.of<AppState>(context)
-      .dispatch(UserActionDeveloper.email(context: context));
+  void _sendEmail(BuildContext context) =>
+      StoreProvider.of<AppState>(context).dispatch(UserActionDeveloper.email(
+          translations: WWWLocalizations.of(context)));
 
   void _visitWebsite(BuildContext context) =>
       StoreProvider.of<AppState>(context)
