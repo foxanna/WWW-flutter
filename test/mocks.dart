@@ -9,7 +9,6 @@ import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
 import 'package:what_when_where/services/analytics.dart';
-import 'package:what_when_where/services/browsing.dart';
 import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/dialogs.dart';
 import 'package:what_when_where/services/navigation.dart';
@@ -20,11 +19,11 @@ import 'package:what_when_where/services/sound.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/services/vibrating.dart';
 
+// services
+
 class AnalyticsServiceMock extends Mock implements IAnalyticsService {}
 
 class SharingServiceMock extends Mock implements ISharingService {}
-
-class BrowsingServiceMock extends Mock implements IBrowsingService {}
 
 class NavigationServiceMock extends Mock implements INavigationService {}
 
@@ -44,6 +43,8 @@ class CrashServiceMock extends Mock implements ICrashService {}
 
 class RatingServiceMock extends Mock implements IRatingService {}
 
+// loaders
+
 class LatestTournamentsLoaderMock extends Mock
     implements ILatestTournamentsLoader {}
 
@@ -60,8 +61,12 @@ class TournamentDetailsLoaderMock extends Mock
 class TournamentsTreeLoaderMock extends Mock implements ITournamentsTreeLoader {
 }
 
+// cache
+
 class TourCacheMock extends Mock implements ITourCache {}
 
 class TournamentCacheMock extends Mock implements ITournamentCache {}
+
+// networking
 
 class DioMock extends Mock implements Dio {}

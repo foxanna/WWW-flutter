@@ -1,28 +1,58 @@
-import 'package:dioc/dioc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:what_when_where/ioc/container.dart';
+import 'package:what_when_where/ioc/container.iconfig.dart';
 
-class WWWTestContainer implements IContainer {
-  final Container _container = Container();
+import 'configuration.dart' as configuration;
 
-  @override
-  T call<T>() => _container.has<T>() ? _container<T>() : null;
+final _getIt = GetIt.instance;
 
-  @override
-  void registerMultiInstance<T>(ICreator<T> creator) {
-    if (_container.has<T>()) {
-      _container.unregister<T>();
-    }
+ITestContainer configureTestIocContainer({
+  bool mockLoaders = false,
+  bool mockServices = false,
+}) {
+  _getIt.reset();
 
-    _container.register((c) => creator(this), defaultMode: InjectMode.create);
+  $initGetIt(_getIt);
+
+  final container = WWWTestContainer();
+
+  container
+      .replaceLazySingleton<ITestContainer, WWWTestContainer>(() => container);
+  container.replaceLazySingleton<IContainer, WWWTestContainer>(() => container);
+
+  if (mockLoaders) {
+    configuration.mockLoaders(container);
   }
 
-  @override
-  void registerSingleton<T>(ICreator<T> creator) {
-    if (_container.has<T>()) {
-      _container.unregister<T>();
-    }
+  if (mockServices) {
+    configuration.mockServices(container);
+  }
 
-    _container.register((c) => creator(this),
-        defaultMode: InjectMode.singleton);
+  return container;
+}
+
+abstract class ITestContainer implements IContainer {
+  void replaceLazySingleton<TAbstraction, TImplementation extends TAbstraction>(
+      FactoryFunc<TImplementation> factory);
+}
+
+class WWWTestContainer implements ITestContainer {
+  final GetIt _container = GetIt.instance;
+
+  @override
+  T call<T>() => _container.isRegistered<T>() ? _container<T>() : null;
+
+  @override
+  void replaceLazySingleton<TAbstraction, TImplementation extends TAbstraction>(
+      FactoryFunc<TImplementation> factory) {
+    if (_container.isRegistered<TAbstraction>()) {
+      _container.unregister<TAbstraction>();
+    }
+    if (_container.isRegistered<TImplementation>()) {
+      _container.unregister<TImplementation>();
+    }
+    _container.registerLazySingleton<TImplementation>(() => factory());
+    _container.registerLazySingleton<TAbstraction>(
+        () => _container.get<TImplementation>());
   }
 }
