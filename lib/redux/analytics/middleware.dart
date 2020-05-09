@@ -20,35 +20,36 @@ import 'package:what_when_where/services/analytics.dart';
 
 final _analyticsEventNames = {
   // timer
-  StartTimerUserAction: 'start_timer',
-  StopTimerUserAction: 'pause_timer',
-  ChangeTypeTimerUserAction: 'timer_type_set',
+  '$StartTimerUserAction': 'start_timer',
+  '$StopTimerUserAction': 'pause_timer',
+  '$ChangeTypeTimerUserAction': 'timer_type_set',
   // answer
-  ShowAnswerQuestionsUserAction: 'show_answer',
-  HideAnswerQuestionsUserAction: 'hide_answer',
+  '$ShowAnswerQuestionsUserAction': 'show_answer',
+  '$HideAnswerQuestionsUserAction': 'hide_answer',
   // sharing
-  QuestionSharingUserAction: 'share_question',
-  TourSharingUserAction: 'share_tour',
-  TournamentSharingUserAction: 'share_tournament',
+  '$QuestionSharingUserAction': 'share_question',
+  '$TourSharingUserAction': 'share_tour',
+  '$TournamentSharingUserAction': 'share_tournament',
   // browsing
-  QuestionBrowseUserAction: 'browse_question',
-  TourBrowseUserAction: 'browse_tour',
-  TournamentBrowseUserAction: 'browse_tournament',
-  DatabaseBrowseUserAction: 'browse_database',
+  '$QuestionBrowseUserAction': 'browse_question',
+  '$TourBrowseUserAction': 'browse_tour',
+  '$TournamentBrowseUserAction': 'browse_tournament',
+  '$DatabaseBrowseUserAction': 'browse_database',
   // navigation
-  ImageNavigationUserAction: 'open_image',
-  TourInfoDialogUserAction: 'open_tour_info',
-  TournamentInfoDialogUserAction: 'open_tournament_info',
-  OpenSettingsPage: 'settings',
-  OpenTournamentUserAction: 'tournament',
-  OpenSearchUserAction: 'search',
-  OpenRandomQuestionsUserAction: 'random',
-  OpenTournamentsTreeUserAction: 'tree',
+  '$ImageNavigationUserAction': 'open_image',
+  '$AboutNavigationUserAction': 'about',
+  '$TourInfoDialogUserAction': 'open_tour_info',
+  '$TournamentInfoDialogUserAction': 'open_tournament_info',
+  '$OpenSettingsPage': 'settings',
+  '$OpenTournamentUserAction': 'tournament',
+  '$OpenSearchUserAction': 'search',
+  '$OpenRandomQuestionsUserAction': 'random',
+  '$OpenTournamentsTreeUserAction': 'tree',
   // developer
-  EmailDeveloperUserAction: 'email_developers',
-  VisitWebsiteDeveloperUserAction: 'visit_developers_website',
+  '$EmailDeveloperUserAction': 'email_developers',
+  '$VisitWebsiteDeveloperUserAction': 'visit_developers_website',
   // misc
-  NeverAskRatingUserAction: 'rate_never',
+  '$NeverAskRatingUserAction': 'rate_never',
 };
 
 @injectable
@@ -56,6 +57,7 @@ class AnalyticsMiddleware {
   final IAnalyticsService _analyticsService;
 
   List<Middleware<AppState>> _middleware;
+
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
 
@@ -76,6 +78,7 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, TourBrowseUserAction>(_logAction),
         TypedMiddleware<AppState, QuestionBrowseUserAction>(_logAction),
         TypedMiddleware<AppState, ImageNavigationUserAction>(_logAction),
+        TypedMiddleware<AppState, AboutNavigationUserAction>(_logAction),
         TypedMiddleware<AppState, TourInfoDialogUserAction>(_logAction),
         TypedMiddleware<AppState, TournamentInfoDialogUserAction>(_logAction),
         TypedMiddleware<AppState, EmailDeveloperUserAction>(_logAction),
@@ -98,6 +101,7 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState,
                 ChangeNotifyLongTimerExpirationSettingsUserAction>(
             _logNotifyLongTimerExpiration),
+        // rating
         TypedMiddleware<AppState, RateRatingUserAction>(_logRating),
       ];
 
@@ -105,7 +109,10 @@ class AnalyticsMiddleware {
       Store<AppState> store, ReduxAction action, NextDispatcher next) {
     next(action);
 
-    _analyticsService.logEvent(name: _analyticsEventNames[action.runtimeType]);
+    final actionType =
+        action.runtimeType.toString().replaceAll(r'$', '').replaceAll('_', '');
+
+    _analyticsService.logEvent(name: _analyticsEventNames[actionType]);
   }
 
   void _logSettings(Store<AppState> store, ReadySettingsSystemAction action,
@@ -187,7 +194,7 @@ class AnalyticsMiddleware {
     _analyticsService.logEvent(
       name: 'rate',
       parameters: <String, String>{
-        'value': action.rating.toString(),
+        'rating': action.rating.toString(),
       },
     );
   }
