@@ -37,7 +37,7 @@ class Translations implements i69n.I69nMessageBundle {
   const Translations();
   String get appDeveloper => "Application developer";
   String get appDeveloperName => "Anna Domashych";
-  String get appNameFull => "Intellectual casino Sova";
+  String get appNameFull => "Sova\nWhat? Where? When?";
   String get dialogCloseButton => "close";
   String get downloadAppVia => "Download the application from";
   String get emptySearchResults => "No search results";

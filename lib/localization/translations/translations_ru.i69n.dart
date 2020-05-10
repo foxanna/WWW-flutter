@@ -38,7 +38,7 @@ class Translations_ru extends Translations {
   const Translations_ru();
   String get appDeveloper => "Разработчик приложения";
   String get appDeveloperName => "Анна Домашич";
-  String get appNameFull => "Интеллектуальное казино Сова";
+  String get appNameFull => "Сова\nЧто? Где? Когда?";
   String get dialogCloseButton => "закрыть";
   String get downloadAppVia => "Загружайте приложение из";
   String get emptySearchResults => "Ничего не найдено";

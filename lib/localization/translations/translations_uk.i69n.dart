@@ -38,7 +38,7 @@ class Translations_uk extends Translations {
   const Translations_uk();
   String get appDeveloper => "Розробник додатку";
   String get appDeveloperName => "Анна Домашич";
-  String get appNameFull => "Інтелектуальне казино Сова";
+  String get appNameFull => "Сова\nЩо? Де? Коли?";
   String get dialogCloseButton => "закрити";
   String get downloadAppVia => "Завантажуйте додаток з";
   String get emptySearchResults => "Нічого не знайдено";
