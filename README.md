@@ -1,9 +1,30 @@
 # WWW-flutter
 
-This repository contains source code of the "Интеллектуальное казино Сова – Что? Где? Когда?" mobile application.
-Published on Play Market https://play.google.com/store/apps/details?id=chgk.droid
+This repository contains source code of the "Sova – What? Where? When?" mobile application - 
+an application for fans of the popular show "What? Where? When?”.  
 
-## License
+[![Play Market](https://lh3.googleusercontent.com/cjsqrWQKJQp9RFO7-hJ9AfpKzbUb_Y84vXfjlP0iRHBvladwAfXih984olktDhPnFqyZ0nu9A5jvFwOEQPXzv7hr3ce3QVsLN8kQ2Ao=s0)](https://play.google.com/store/apps/details?id=chgk.droid)
+
+## Screenshots  📷
+![light](screenshots/light.png) 
+
+![dark](screenshots/dark.png)
+
+## Features  ✨
+
+* Regular questions database updates;
+* Built-in one-minute timer to find an answer;
+* Shorter timer for blitz and doublet questions;
+* Tournaments search;
+* Random questions;
+* Tournaments tree;
+* Dark and light modes.
+
+## Author  👩‍💻
+
+Created with [Flutter](https://flutter.dev/) by [Anna Domashych](https://foxanna.github.io/)
+
+## License  ⚖️
 Protected by "Doom Source Licence". 
 
 You can use the software, but have no ownership thereof. Portions of the source may be used to develop new software; this is referred to as 'Educational Use'. Otherwise, you may not make any commercial gain from it. You can't distribute the source or software. You can't rent or sell the software. The copyright holders may not be held liable for anything & retain all copyright.
