@@ -78,65 +78,57 @@ class AboutRoutePage extends StatelessWidget {
           textAlign: TextAlign.center,
           style: styleConfiguration.titleStyle,
         ),
+        SizedBox(height: styleConfiguration.contentPadding.top),
+        RichText(
+          textAlign: TextAlign.center,
+          textScaleFactor: MediaQuery.of(context).textScaleFactor,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: '${translations.appDeveloper}\n',
+                style: styleConfiguration.textStyle,
+              ),
+              TextSpan(
+                text: translations.appDeveloperName,
+                style: styleConfiguration.textStyle.copyWith(
+                  color: styleConfiguration.accentColor,
+                  decoration: TextDecoration.underline,
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () => _visitWebsite(context),
+              ),
+            ],
+          ),
+        ),
         IconButton(
           icon: const Icon(Icons.email),
           tooltip: translations.tooltipEmailDeveloper,
           color: styleConfiguration.accentColor,
           onPressed: () => _sendEmail(context),
         ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: styleConfiguration.contentPadding.top / 2,
-          ),
-          child: RichText(
-            textAlign: TextAlign.center,
-            textScaleFactor: MediaQuery.of(context).textScaleFactor,
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: '${translations.appDeveloper}\n',
-                  style: styleConfiguration.textStyle,
+        SizedBox(height: styleConfiguration.contentPadding.top / 2),
+        RichText(
+          textAlign: TextAlign.center,
+          textScaleFactor: MediaQuery.of(context).textScaleFactor,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: '${translations.questionsDatabasePrefix}\n',
+                style: styleConfiguration.textStyle,
+              ),
+              TextSpan(
+                text: translations.questionsDatabaseName,
+                style: styleConfiguration.textStyle.copyWith(
+                  color: styleConfiguration.accentColor,
+                  decoration: TextDecoration.underline,
                 ),
-                TextSpan(
-                  text: translations.appDeveloperName,
-                  style: styleConfiguration.textStyle.copyWith(
-                    color: styleConfiguration.accentColor,
-                    decoration: TextDecoration.underline,
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () => _visitWebsite(context),
-                ),
-              ],
-            ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () => _openDatabaseInBrowser(context),
+              ),
+            ],
           ),
         ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: styleConfiguration.contentPadding.top,
-            bottom: styleConfiguration.contentPadding.bottom,
-          ),
-          child: RichText(
-            textAlign: TextAlign.center,
-            textScaleFactor: MediaQuery.of(context).textScaleFactor,
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: '${translations.questionsDatabasePrefix}\n',
-                  style: styleConfiguration.textStyle,
-                ),
-                TextSpan(
-                  text: translations.questionsDatabaseName,
-                  style: styleConfiguration.textStyle.copyWith(
-                    color: styleConfiguration.accentColor,
-                    decoration: TextDecoration.underline,
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () => _openDatabaseInBrowser(context),
-                ),
-              ],
-            ),
-          ),
-        ),
+        SizedBox(height: styleConfiguration.contentPadding.bottom),
       ],
     );
   }
