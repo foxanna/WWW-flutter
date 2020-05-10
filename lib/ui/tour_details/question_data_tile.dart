@@ -24,6 +24,7 @@ class TourDetailsQuestionDataTile extends StatelessWidget {
         style: styleConfiguration.questionTextStyle,
       ),
       onTap: onTap,
+      heroTag: '${question.info.id}',
     );
   }
 }

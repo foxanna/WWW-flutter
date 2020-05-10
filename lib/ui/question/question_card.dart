@@ -14,9 +14,13 @@ import 'package:what_when_where/ui/question/show_answer_button.dart';
 @immutable
 class QuestionCard extends StatefulWidget {
   final QuestionState questionState;
+  final bool isInitialQuestion;
 
-  const QuestionCard({Key key, @required this.questionState})
-      : assert(questionState != null),
+  const QuestionCard({
+    Key key,
+    @required this.questionState,
+    this.isInitialQuestion,
+  })  : assert(questionState != null),
         super(key: key);
 
   @override
@@ -39,6 +43,7 @@ class _QuestionCardState extends State<QuestionCard> {
   Widget build(BuildContext context) {
     final styleConfiguration =
         StyleConfiguration.of(context).questionStyleConfiguration;
+    final cardTheme = Theme.of(context).cardTheme;
 
     return Card(
       margin: styleConfiguration.questionCardMargin,
@@ -53,7 +58,14 @@ class _QuestionCardState extends State<QuestionCard> {
           children: [
             QuestionNumber(number: widget.questionState.question.info.number),
             const QuestionsCardSeparator(),
-            QuestionText(question: widget.questionState.question),
+            if (widget.isInitialQuestion)
+              Hero(
+                transitionOnUserGestures: true,
+                tag: '${widget.questionState.question.info.id}',
+                child: QuestionText(question: widget.questionState.question),
+              )
+            else
+              QuestionText(question: widget.questionState.question),
             Stack(
               key: _buttonStackKey,
               children: [

@@ -39,7 +39,10 @@ class QuestionsCards extends StatelessWidget {
             ? footer
             : (_isStubIndex(index)
                 ? StubQuestionCard(index: index)
-                : QuestionCard(questionState: questions[index])),
+                : QuestionCard(
+                    questionState: questions[index],
+                    isInitialQuestion: index == this.initialPage,
+                  )),
       ),
       itemCount: _itemsCount(),
       onPageChanged: onPageChanged,
