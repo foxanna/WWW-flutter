@@ -8,13 +8,7 @@ const _supportedLocales = ['en', 'ru', 'uk'];
 class WWWLocalizations {
   final Translations translations;
 
-  WWWLocalizations(this.translations);
-
-  static const LocalizationsDelegate<WWWLocalizations> delegate =
-      _WWWLocalizationsDelegate();
-
-  static final List<Locale> supportedLocales =
-      _supportedLocales.map((x) => Locale(x)).toList();
+  const WWWLocalizations(this.translations);
 
   static final _translations = <String, Translations Function()>{
     'en': () => const Translations(),
@@ -22,11 +16,14 @@ class WWWLocalizations {
     'uk': () => const Translations_uk(),
   };
 
-  static Future<WWWLocalizations> load(Locale locale) async {
-    final languageCode = locale.languageCode;
-    final translation = _translations[languageCode]?.call();
-    return WWWLocalizations(translation);
-  }
+  static const LocalizationsDelegate<WWWLocalizations> delegate =
+      _WWWLocalizationsDelegate();
+
+  static final List<Locale> supportedLocales =
+      _supportedLocales.map((x) => Locale(x)).toList();
+
+  static Future<WWWLocalizations> load(Locale locale) =>
+      Future.value(WWWLocalizations(_translations[locale.languageCode]()));
 
   static Translations of(BuildContext context) =>
       Localizations.of<WWWLocalizations>(context, WWWLocalizations)
