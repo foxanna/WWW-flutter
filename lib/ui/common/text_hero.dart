@@ -4,18 +4,31 @@ import 'package:flutter/material.dart';
 class TextHeroFrom extends StatelessWidget {
   final String tag;
   final TextStyle startTextStyle;
-  final TextStyle endTextStyle;
   final String text;
 
   final TextStyleTween _tween;
 
   TextHeroFrom({
     Key key,
+    String tag,
+    TextStyle startTextStyle,
+    TextStyle endTextStyle,
+    String text,
+  }) : this._(
+          key: key,
+          tag: tag,
+          startTextStyle: startTextStyle,
+          text: text,
+          tween: TextStyleTween(begin: startTextStyle, end: endTextStyle),
+        );
+
+  const TextHeroFrom._({
+    Key key,
     this.tag,
     this.startTextStyle,
-    this.endTextStyle,
     this.text,
-  })  : _tween = TextStyleTween(begin: startTextStyle, end: endTextStyle),
+    TextStyleTween tween,
+  })  : this._tween = tween,
         super(key: key);
 
   @override

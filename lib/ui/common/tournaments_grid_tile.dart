@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
 import 'package:what_when_where/localization/localizations.dart';
+import 'package:what_when_where/localization/translations/translations.i69n.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
@@ -11,40 +12,115 @@ import 'package:what_when_where/ui/common/text_hero.dart';
 class TournamentsGridTile extends StatelessWidget {
   final TournamentInfo tournamentInfo;
 
-  const TournamentsGridTile({
+  final String _backgroundHeroTag;
+  final String _titleHeroTag;
+
+  TournamentsGridTile({
     Key key,
-    @required this.tournamentInfo,
-  }) : super(key: key);
+    @required TournamentInfo tournamentInfo,
+  }) : this._(
+          key: key,
+          tournamentInfo: tournamentInfo,
+          backgroundHeroTag: '${tournamentInfo.id2}bg',
+          titleHeroTag: '${tournamentInfo.id2}ttl',
+        );
+
+  const TournamentsGridTile._({
+    Key key,
+    this.tournamentInfo,
+    String backgroundHeroTag,
+    String titleHeroTag,
+  })  : this._backgroundHeroTag = backgroundHeroTag,
+        this._titleHeroTag = titleHeroTag,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) => Stack(
         children: [
-          _buildBackground(context),
-          _buildContent(context),
+          _TournamentsGridTileBackground(
+            backgroundHeroTag: _backgroundHeroTag,
+          ),
+          _TournamentsGridTileContent(
+            titleHeroTag: _titleHeroTag,
+            title: tournamentInfo.title ?? '',
+            subhead:
+                _buildSubheadText(WWWLocalizations.of(context), tournamentInfo),
+            onTap: () => _openTournamentDetails(context),
+          ),
         ],
       );
 
-  Positioned _buildBackground(BuildContext context) {
+  static String _buildSubheadText(
+      Translations translations, TournamentInfo tournamentInfo) {
+    final sb = StringBuffer();
+
+    if (tournamentInfo.playedAt?.isNotEmpty ?? false) {
+      sb.write(translations.tournamentPlayedAt);
+      sb.write(' ');
+      sb.write(tournamentInfo.playedAt);
+    }
+    if (tournamentInfo.createdAt?.isNotEmpty ?? false) {
+      if (sb.isNotEmpty) {
+        sb.writeln();
+      }
+
+      sb.write(translations.tournamentAddedAt);
+      sb.write(' ');
+      sb.write(tournamentInfo.createdAt);
+    }
+
+    return sb.toString();
+  }
+
+  void _openTournamentDetails(BuildContext context) =>
+      StoreProvider.of<AppState>(context)
+          .dispatch(UserActionTournament.open(info: tournamentInfo));
+}
+
+class _TournamentsGridTileBackground extends StatelessWidget {
+  const _TournamentsGridTileBackground({
+    Key key,
+    @required this.backgroundHeroTag,
+  }) : super(key: key);
+
+  final String backgroundHeroTag;
+
+  @override
+  Widget build(BuildContext context) {
     final styleConfiguration =
         StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
     final cardTheme = CardTheme.of(context);
 
     return Positioned.fill(
       child: ShapeHeroFrom(
-        tag: '${tournamentInfo.id2}bg',
+        tag: backgroundHeroTag,
         begin: cardTheme.shape,
         end: styleConfiguration.shape,
         child: Container(color: cardTheme.color),
       ),
     );
   }
+}
 
-  Widget _buildContent(BuildContext context) {
+class _TournamentsGridTileContent extends StatelessWidget {
+  const _TournamentsGridTileContent({
+    Key key,
+    this.titleHeroTag,
+    this.title,
+    this.onTap,
+    this.subhead,
+  }) : super(key: key);
+
+  final String titleHeroTag;
+  final String title;
+  final String subhead;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
     final styleConfiguration = StyleConfiguration.of(context);
     final gridStyleConfiguration =
         styleConfiguration.tournamentsGridStyleConfiguration;
-
-    final _subheadText = _buildSubheadText(context, tournamentInfo);
 
     return Card(
       child: InkWell(
@@ -55,40 +131,27 @@ class TournamentsGridTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               TextHeroFrom(
-                tag: '${tournamentInfo.id2}ttl',
+                tag: titleHeroTag,
                 startTextStyle: gridStyleConfiguration.gridTileTitleTextStyle,
                 endTextStyle: styleConfiguration
                     .tournamentDetailsStyleConfiguration
                     .tournamentTitleTextStyle,
-                text: tournamentInfo.title ?? '',
+                text: title,
               ),
-              if (_subheadText.isNotEmpty)
+              if (subhead.isNotEmpty)
                 SizedBox(
                   height: gridStyleConfiguration.tileContentSpacing,
                 ),
-              if (_subheadText.isNotEmpty)
+              if (subhead.isNotEmpty)
                 Text(
-                  _subheadText,
+                  subhead,
                   style: gridStyleConfiguration.gridTileSecondLineTextStyle,
                 ),
             ],
           ),
         ),
-        onTap: () => _openTournamentDetails(context),
+        onTap: onTap,
       ),
     );
   }
-
-  static String _buildSubheadText(
-          BuildContext context, TournamentInfo tournamentInfo) =>
-      [
-        if (tournamentInfo.playedAt?.isNotEmpty ?? false)
-          '${WWWLocalizations.of(context).tournamentPlayedAt} ${tournamentInfo.playedAt}',
-        if (tournamentInfo.createdAt?.isNotEmpty ?? false)
-          '${WWWLocalizations.of(context).tournamentAddedAt} ${tournamentInfo.createdAt}',
-      ].join('\n');
-
-  void _openTournamentDetails(BuildContext context) =>
-      StoreProvider.of<AppState>(context)
-          .dispatch(UserActionTournament.open(info: tournamentInfo));
 }

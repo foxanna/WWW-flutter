@@ -3,28 +3,44 @@ import 'package:shimmer/shimmer.dart';
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class TextStub extends StatelessWidget {
-  final TextStyle textStyle;
-  final Color color;
-  final Color highlightColor;
+  final Color _stubColor;
+  final Color _shimmerBaseColor;
+  final Color _shimmerHighlightColor;
+  final double _fontSize;
 
   TextStub({
     Key key,
-    this.textStyle,
-  })  : this.color = textStyle.color,
-        this.highlightColor =
-            ThemeData.estimateBrightnessForColor(textStyle.color) ==
-                    Brightness.dark
-                ? Colors.white
-                : Colors.black38,
+    TextStyle textStyle,
+  }) : this._(
+          key: key,
+          fontSize: textStyle.fontSize,
+          shimmerBaseColor: textStyle.color,
+          stubColor: textStyle.color.withOpacity(0.1),
+          shimmerHighlightColor:
+              ThemeData.estimateBrightnessForColor(textStyle.color) ==
+                      Brightness.dark
+                  ? Colors.white
+                  : Colors.black38,
+        );
+
+  const TextStub._({
+    Key key,
+    double fontSize,
+    Color shimmerBaseColor,
+    Color shimmerHighlightColor,
+    Color stubColor,
+  })  : this._fontSize = fontSize,
+        this._shimmerBaseColor = shimmerBaseColor,
+        this._shimmerHighlightColor = shimmerHighlightColor,
+        this._stubColor = stubColor,
         super(key: key);
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (context, constraints) {
-          final height = (textStyle.fontSize *
-                  MediaQuery.of(context).textScaleFactor *
-                  1.15)
-              .roundToDouble();
+          final height =
+              (_fontSize * MediaQuery.of(context).textScaleFactor * 1.15)
+                  .roundToDouble();
 
           final child = !constraints.hasBoundedHeight
               ? _buildSingleLineStub(Size(constraints.maxWidth, height))
@@ -35,8 +51,8 @@ class TextStub extends StatelessWidget {
 
           return Shimmer.fromColors(
             child: child,
-            baseColor: textStyle.color,
-            highlightColor: highlightColor,
+            baseColor: _shimmerBaseColor,
+            highlightColor: _shimmerHighlightColor,
           );
         },
       );
@@ -47,7 +63,7 @@ class TextStub extends StatelessWidget {
         child: Center(
           child: Container(
             height: size.height / 1.15,
-            color: textStyle.color.withOpacity(0.1),
+            color: _stubColor,
           ),
         ),
       );

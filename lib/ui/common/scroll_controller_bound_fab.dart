@@ -52,6 +52,9 @@ class _ScrollControllerBoundFloatingActionButtonState
       );
 
   void _scrollListener() {
-    setState(() => _visible = widget.scrollController.offset > 150);
+    final shouldBeVisible = widget.scrollController.offset > 150;
+    if (_visible != shouldBeVisible) {
+      setState(() => _visible = shouldBeVisible);
+    }
   }
 }
