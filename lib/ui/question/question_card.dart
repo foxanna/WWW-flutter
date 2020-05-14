@@ -43,7 +43,6 @@ class _QuestionCardState extends State<QuestionCard> {
   Widget build(BuildContext context) {
     final styleConfiguration =
         StyleConfiguration.of(context).questionStyleConfiguration;
-    final cardTheme = Theme.of(context).cardTheme;
 
     return Card(
       margin: styleConfiguration.questionCardMargin,
