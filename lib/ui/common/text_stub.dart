@@ -47,17 +47,7 @@ class TextStub extends StatelessWidget {
         child: Center(
           child: Container(
             height: size.height / 1.15,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                stops: [0.7, 1.0],
-                colors: [
-                  textStyle.color.withOpacity(0.2),
-                  textStyle.color.withOpacity(0.0),
-                ],
-              ),
-            ),
+            color: textStyle.color.withOpacity(0.1),
           ),
         ),
       );
