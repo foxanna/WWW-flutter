@@ -3,6 +3,9 @@ include: package:extra_pedantic/analysis_options.yaml
 analyzer:
   exclude:
     - lib/**/*.g.dart
+    - lib/**/*.freezed.dart
+    - lib/**/*.i69n.dart
+    - lib/**/*.iconfig.dart
   strong-mode:
     implicit-casts: false
     implicit-dynamic: true
