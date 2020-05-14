@@ -6,6 +6,7 @@ import 'package:what_when_where/db_chgk_info/models/dto_models/tour_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/tournament_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tour.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/db_chgk_info/parsers/xml2json_parser.dart';
 
 abstract class ITournamentDetailsLoader {
   Future<Tournament> get(String id);
@@ -15,14 +16,17 @@ abstract class ITournamentDetailsLoader {
 @RegisterAs(ITournamentDetailsLoader)
 class TournamentDetailsLoader implements ITournamentDetailsLoader {
   final IHttpClient _httpClient;
+  final IXmlToJsonParser _parser;
   final ITournamentCache _tournamentsCache;
   final ITourCache _toursCache;
 
   TournamentDetailsLoader({
     IHttpClient httpClient,
+    IXmlToJsonParser parser,
     ITournamentCache tournamentCache,
     ITourCache tourCache,
   })  : _httpClient = httpClient,
+        _parser = parser,
         _tournamentsCache = tournamentCache,
         _toursCache = tourCache;
 
@@ -32,14 +36,22 @@ class TournamentDetailsLoader implements ITournamentDetailsLoader {
       return _tournamentsCache.get(id);
     }
 
-    var map = await _httpClient.get(Uri(path: '/tour/$id/xml'));
-    map = map['tournament'] as Map<String, dynamic>;
+    final data = await _httpClient.get(Uri(path: '/tour/$id/xml'));
+    final result = _parse(data);
+
+    _tournamentsCache.save(result);
+
+    return result;
+  }
+
+  Tournament _parse(String data) {
+    final json = _parser.toJson(data);
+    final map = json['tournament'] as Map<String, dynamic>;
 
     _handleTourlessTournament(map);
 
     final tournamentDto = TournamentDto.fromJson(map);
     final tournament = Tournament.fromDto(tournamentDto);
-    _tournamentsCache.save(tournament);
     return tournament;
   }
 

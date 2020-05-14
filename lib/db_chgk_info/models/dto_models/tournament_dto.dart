@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:html/dom.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/json_converters/tours_list_converter.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/tour_dto.dart';
 
@@ -24,19 +23,4 @@ abstract class TournamentDto with _$TournamentDto {
 
   factory TournamentDto.fromJson(Map<String, dynamic> json) =>
       _$TournamentDtoFromJson(json);
-
-  factory TournamentDto.fromLatestHtml(Element element) => TournamentDto(
-        title: element.children[0].nodes.first.firstChild.text,
-        textId:
-            element.children[0].nodes.first.attributes['href'].split('/').last,
-        playedAt: element.children[0].nodes.last.text.trim().split(',').first,
-        createdAt: element.children[1].firstChild.text,
-      );
-
-  factory TournamentDto.fromSearchHtml(Node tournamentNode, Node dateNode) =>
-      TournamentDto(
-        textId: tournamentNode.attributes['href'].split('/').last,
-        title: tournamentNode.firstChild.text,
-        playedAt: dateNode.text,
-      );
 }
