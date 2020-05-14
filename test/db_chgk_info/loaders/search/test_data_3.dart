@@ -8,6 +8,7 @@ const expectedSearchTournaments3 = [
       id2: 'mgp11415.7',
       title: r'''4.1. "Venceremos"''',
       url: r'''https://db.chgk.info/tour/mgp11415.7''',
+      toursCount: '0',
       playedAt: '2015-02-28',
     ),
   ),
