@@ -5,18 +5,18 @@ import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
 import 'package:what_when_where/db_chgk_info/parsers/xml2json_parser.dart';
 import 'package:what_when_where/services/background.dart';
 
-abstract class ITournamentsTreeRepository {
+abstract class ITournamentsTreeProvider {
   Future<TournamentsTree> get({String id});
 }
 
 @lazySingleton
-@RegisterAs(ITournamentsTreeRepository)
-class TournamentsTreeRepository implements ITournamentsTreeRepository {
+@RegisterAs(ITournamentsTreeProvider)
+class TournamentsTreeProvider implements ITournamentsTreeProvider {
   final ITournamentsTreeLoader _loader;
   final IXmlToJsonParser _parser;
   final IBackgroundRunnerService _backgroundService;
 
-  TournamentsTreeRepository({
+  TournamentsTreeProvider({
     ITournamentsTreeLoader loader,
     IXmlToJsonParser parser,
     IBackgroundRunnerService backgroundService,

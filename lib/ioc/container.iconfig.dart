@@ -16,15 +16,15 @@ import 'package:what_when_where/services/dialogs.dart';
 import 'package:what_when_where/db_chgk_info/http/http_client.dart';
 import 'package:what_when_where/db_chgk_info/parsers/latest2json_parser.dart';
 import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
-import 'package:what_when_where/db_chgk_info/repositories/latest_tournaments_repository.dart';
+import 'package:what_when_where/data_providers/latest_tournaments_provider.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/rating.dart';
 import 'package:what_when_where/db_chgk_info/parsers/search2json_parser.dart';
 import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/sound.dart';
-import 'package:what_when_where/db_chgk_info/cache/tour_cache.dart';
-import 'package:what_when_where/db_chgk_info/cache/tournament_cache.dart';
+import 'package:what_when_where/data_providers/cache/tour_cache.dart';
+import 'package:what_when_where/data_providers/cache/tournament_cache.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/services/vibrating.dart';
 import 'package:what_when_where/db_chgk_info/parsers/xml2json_parser.dart';
@@ -43,15 +43,15 @@ import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:what_when_where/redux/developer/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
 import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
-import 'package:what_when_where/db_chgk_info/repositories/random_questions_repository.dart';
+import 'package:what_when_where/data_providers/random_questions_provider.dart';
 import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
-import 'package:what_when_where/db_chgk_info/repositories/search_repository.dart';
+import 'package:what_when_where/data_providers/search_provider.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
-import 'package:what_when_where/db_chgk_info/repositories/tour_details_repository.dart';
+import 'package:what_when_where/data_providers/tour_details_provider.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
-import 'package:what_when_where/db_chgk_info/repositories/tournament_details_repository.dart';
+import 'package:what_when_where/data_providers/tournament_details_provider.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
-import 'package:what_when_where/db_chgk_info/repositories/tournaments_tree_repository.dart';
+import 'package:what_when_where/data_providers/tournaments_tree_provider.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
 import 'package:what_when_where/redux/search/middleware.dart';
 import 'package:what_when_where/redux/tournament/middleware.dart';
@@ -78,8 +78,8 @@ void $initGetIt(GetIt g, {String environment}) {
             parser: g<ILatestToJsonParser>(),
             backgroundService: g<IBackgroundRunnerService>(),
           ));
-  g.registerLazySingleton<ILatestTournamentsRepository>(() =>
-      LatestTournamentsRepository(
+  g.registerLazySingleton<ILatestTournamentsProvider>(() =>
+      LatestTournamentsProvider(
           loader: g<ILatestTournamentsLoader>(),
           backgroundService: g<IBackgroundRunnerService>()));
   g.registerLazySingleton<INavigationService>(
@@ -96,8 +96,7 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<IXmlToJsonParser>(() => XmlToJsonParser());
   g.registerFactory<InitializationMiddleware>(() => InitializationMiddleware());
   g.registerFactory<LatestTournamentsMiddleware>(() =>
-      LatestTournamentsMiddleware(
-          repository: g<ILatestTournamentsRepository>()));
+      LatestTournamentsMiddleware(provider: g<ILatestTournamentsProvider>()));
   g.registerFactory<LogsMiddleware>(() => LogsMiddleware());
   g.registerFactory<NavigationMiddleware>(
       () => NavigationMiddleware(navigationService: g<INavigationService>()));
@@ -133,8 +132,8 @@ void $initGetIt(GetIt g, {String environment}) {
         parser: g<IXmlToJsonParser>(),
         backgroundService: g<IBackgroundRunnerService>(),
       ));
-  g.registerLazySingleton<IRandomQuestionsRepository>(
-      () => RandomQuestionsRepository(
+  g.registerLazySingleton<IRandomQuestionsProvider>(
+      () => RandomQuestionsProvider(
             loader: g<IRandomQuestionsLoader>(),
             parser: g<IXmlToJsonParser>(),
             backgroundService: g<IBackgroundRunnerService>(),
@@ -144,7 +143,7 @@ void $initGetIt(GetIt g, {String environment}) {
         parser: g<ISearchToJsonParser>(),
         backgroundService: g<IBackgroundRunnerService>(),
       ));
-  g.registerLazySingleton<ISearchRepository>(() => SearchRepository(
+  g.registerLazySingleton<ISearchProvider>(() => SearchProvider(
       loader: g<ISearchLoader>(),
       backgroundService: g<IBackgroundRunnerService>()));
   g.registerLazySingleton<ITourDetailsLoader>(() => TourDetailsLoader(
@@ -152,7 +151,7 @@ void $initGetIt(GetIt g, {String environment}) {
         parser: g<IXmlToJsonParser>(),
         backgroundService: g<IBackgroundRunnerService>(),
       ));
-  g.registerLazySingleton<ITourDetailsRepository>(() => TourDetailsRepository(
+  g.registerLazySingleton<ITourDetailsProvider>(() => TourDetailsProvider(
         loader: g<ITourDetailsLoader>(),
         tournamentCache: g<ITournamentCache>(),
         tourCache: g<ITourCache>(),
@@ -164,8 +163,8 @@ void $initGetIt(GetIt g, {String environment}) {
             parser: g<IXmlToJsonParser>(),
             backgroundService: g<IBackgroundRunnerService>(),
           ));
-  g.registerLazySingleton<ITournamentDetailsRepository>(
-      () => TournamentDetailsRepository(
+  g.registerLazySingleton<ITournamentDetailsProvider>(
+      () => TournamentDetailsProvider(
             loader: g<ITournamentDetailsLoader>(),
             tournamentCache: g<ITournamentCache>(),
             tourCache: g<ITourCache>(),
@@ -176,22 +175,22 @@ void $initGetIt(GetIt g, {String environment}) {
         parser: g<IXmlToJsonParser>(),
         backgroundService: g<IBackgroundRunnerService>(),
       ));
-  g.registerLazySingleton<ITournamentsTreeRepository>(
-      () => TournamentsTreeRepository(
+  g.registerLazySingleton<ITournamentsTreeProvider>(
+      () => TournamentsTreeProvider(
             loader: g<ITournamentsTreeLoader>(),
             parser: g<IXmlToJsonParser>(),
             backgroundService: g<IBackgroundRunnerService>(),
           ));
   g.registerFactory<QuestionsMiddleware>(
-      () => QuestionsMiddleware(repository: g<IRandomQuestionsRepository>()));
+      () => QuestionsMiddleware(provider: g<IRandomQuestionsProvider>()));
   g.registerFactory<SearchMiddleware>(
-      () => SearchMiddleware(repository: g<ISearchRepository>()));
-  g.registerFactory<TournamentMiddleware>(() =>
-      TournamentMiddleware(repository: g<ITournamentDetailsRepository>()));
-  g.registerFactory<TournamentsTreeMiddleware>(() =>
-      TournamentsTreeMiddleware(repository: g<ITournamentsTreeRepository>()));
+      () => SearchMiddleware(provider: g<ISearchProvider>()));
+  g.registerFactory<TournamentMiddleware>(
+      () => TournamentMiddleware(provider: g<ITournamentDetailsProvider>()));
+  g.registerFactory<TournamentsTreeMiddleware>(
+      () => TournamentsTreeMiddleware(provider: g<ITournamentsTreeProvider>()));
   g.registerFactory<ToursMiddleware>(
-      () => ToursMiddleware(repository: g<ITourDetailsRepository>()));
+      () => ToursMiddleware(provider: g<ITourDetailsProvider>()));
   g.registerFactory<WWWStore>(
       () => WWWStore(appMiddleware: g<AppMiddleware>()));
 }

@@ -1,24 +1,24 @@
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/db_chgk_info/cache/tour_cache.dart';
-import 'package:what_when_where/db_chgk_info/cache/tournament_cache.dart';
+import 'package:what_when_where/data_providers/cache/tour_cache.dart';
+import 'package:what_when_where/data_providers/cache/tournament_cache.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/tournament_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/services/background.dart';
 
-abstract class ITournamentDetailsRepository {
+abstract class ITournamentDetailsProvider {
   Future<Tournament> get(String id);
 }
 
 @lazySingleton
-@RegisterAs(ITournamentDetailsRepository)
-class TournamentDetailsRepository implements ITournamentDetailsRepository {
+@RegisterAs(ITournamentDetailsProvider)
+class TournamentDetailsProvider implements ITournamentDetailsProvider {
   final ITournamentDetailsLoader _loader;
   final ITournamentCache _tournamentsCache;
   final ITourCache _toursCache;
   final IBackgroundRunnerService _backgroundService;
 
-  TournamentDetailsRepository({
+  TournamentDetailsProvider({
     ITournamentDetailsLoader loader,
     ITournamentCache tournamentCache,
     ITourCache tourCache,

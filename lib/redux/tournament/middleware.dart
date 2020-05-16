@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/db_chgk_info/repositories/tournament_details_repository.dart';
+import 'package:what_when_where/data_providers/tournament_details_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
@@ -10,15 +10,15 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class TournamentMiddleware {
-  final ITournamentDetailsRepository _repository;
+  final ITournamentDetailsProvider _provider;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
 
   TournamentMiddleware({
-    ITournamentDetailsRepository repository,
-  }) : _repository = repository;
+    ITournamentDetailsProvider provider,
+  }) : _provider = provider;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentUserAction>(_open),
@@ -51,7 +51,7 @@ class TournamentMiddleware {
     try {
       store.dispatch(SystemActionTournament.loading(info: action.info));
 
-      final data = await _repository.get(action.info.id ?? action.info.id2);
+      final data = await _provider.get(action.info.id ?? action.info.id2);
 
       throwIfDataIsNull(data);
 

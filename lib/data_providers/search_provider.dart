@@ -2,11 +2,10 @@ import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/search_tournaments_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/parsers/search2json_parser.dart';
 import 'package:what_when_where/db_chgk_info/search/sorting.dart';
 import 'package:what_when_where/services/background.dart';
 
-abstract class ISearchRepository {
+abstract class ISearchProvider {
   Future<Iterable<Tournament>> get({
     String query,
     Sorting sorting,
@@ -15,12 +14,12 @@ abstract class ISearchRepository {
 }
 
 @lazySingleton
-@RegisterAs(ISearchRepository)
-class SearchRepository implements ISearchRepository {
+@RegisterAs(ISearchProvider)
+class SearchProvider implements ISearchProvider {
   final ISearchLoader _loader;
   final IBackgroundRunnerService _backgroundService;
 
-  const SearchRepository({
+  const SearchProvider({
     ISearchLoader loader,
     IBackgroundRunnerService backgroundService,
   })  : _loader = loader,

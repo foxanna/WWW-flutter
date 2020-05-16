@@ -2,20 +2,19 @@ import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/latest_tournaments_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/parsers/latest2json_parser.dart';
 import 'package:what_when_where/services/background.dart';
 
-abstract class ILatestTournamentsRepository {
+abstract class ILatestTournamentsProvider {
   Future<Iterable<Tournament>> get({int page = 0});
 }
 
 @lazySingleton
-@RegisterAs(ILatestTournamentsRepository)
-class LatestTournamentsRepository implements ILatestTournamentsRepository {
+@RegisterAs(ILatestTournamentsProvider)
+class LatestTournamentsProvider implements ILatestTournamentsProvider {
   final ILatestTournamentsLoader _loader;
   final IBackgroundRunnerService _backgroundService;
 
-  const LatestTournamentsRepository({
+  const LatestTournamentsProvider({
     ILatestTournamentsLoader loader,
     IBackgroundRunnerService backgroundService,
   })  : _loader = loader,

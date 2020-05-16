@@ -6,18 +6,18 @@ import 'package:what_when_where/db_chgk_info/models/random_questions.dart';
 import 'package:what_when_where/db_chgk_info/parsers/xml2json_parser.dart';
 import 'package:what_when_where/services/background.dart';
 
-abstract class IRandomQuestionsRepository {
+abstract class IRandomQuestionsProvider {
   Future<Iterable<Question>> get();
 }
 
 @lazySingleton
-@RegisterAs(IRandomQuestionsRepository)
-class RandomQuestionsRepository implements IRandomQuestionsRepository {
+@RegisterAs(IRandomQuestionsProvider)
+class RandomQuestionsProvider implements IRandomQuestionsProvider {
   final IRandomQuestionsLoader _loader;
   final IXmlToJsonParser _parser;
   final IBackgroundRunnerService _backgroundService;
 
-  const RandomQuestionsRepository({
+  const RandomQuestionsProvider({
     IRandomQuestionsLoader loader,
     IXmlToJsonParser parser,
     IBackgroundRunnerService backgroundService,

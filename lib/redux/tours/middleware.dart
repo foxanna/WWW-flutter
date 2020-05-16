@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/db_chgk_info/repositories/tour_details_repository.dart';
+import 'package:what_when_where/data_providers/tour_details_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/redux/tours/state.dart';
@@ -8,15 +8,15 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class ToursMiddleware {
-  final ITourDetailsRepository _repository;
+  final ITourDetailsProvider _provider;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
 
   ToursMiddleware({
-    ITourDetailsRepository repository,
-  }) : _repository = repository;
+    ITourDetailsProvider provider,
+  }) : _provider = provider;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, InitToursSystemAction>(_initTours),
@@ -46,7 +46,7 @@ class ToursMiddleware {
     try {
       store.dispatch(SystemActionTours.loading(info: action.info));
 
-      final data = await _repository.get(action.info.id);
+      final data = await _provider.get(action.info.id);
 
       throwIfDataIsNull(data);
 
