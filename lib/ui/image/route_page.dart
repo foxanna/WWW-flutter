@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
@@ -32,7 +33,7 @@ class ImageRoutePage extends StatelessWidget {
             tag: _url,
             transitionOnUserGestures: true,
           ),
-          imageProvider: NetworkImage(_url),
+          imageProvider: CachedNetworkImageProvider(_url),
           minScale: PhotoViewComputedScale.contained,
         ),
       ),

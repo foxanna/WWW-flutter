@@ -1,7 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-import 'package:transparent_image/transparent_image.dart';
 import 'package:what_when_where/common/text_sections_theme_data.dart';
 import 'package:what_when_where/data/models/question_sections/question_section.dart';
 import 'package:what_when_where/data/models/question_sections/section_audio.dart';
@@ -139,24 +139,21 @@ class QuestionSections extends StatelessWidget {
 
   Widget _buildImageSection(
           BuildContext context, ImageSection section, double imageHeight) =>
-      Stack(
-        alignment: Alignment.center,
-        children: [
-          const WWWProgressIndicator(),
-          GestureDetector(
-            child: Hero(
-              tag: section.value,
-              transitionOnUserGestures: true,
-              child: FadeInImage.memoryNetwork(
-                height: imageHeight,
-                fit: BoxFit.scaleDown,
-                placeholder: kTransparentImage,
-                image: section.value,
-              ),
+      GestureDetector(
+        child: Hero(
+          tag: section.value,
+          transitionOnUserGestures: true,
+          child: SizedBox(
+            height: imageHeight,
+            child: CachedNetworkImage(
+              imageUrl: section.value,
+              height: imageHeight,
+              fit: BoxFit.scaleDown,
+              placeholder: (context, url) => const WWWProgressIndicator(),
             ),
-            onTap: () => _openImagePage(context, section.value),
           ),
-        ],
+        ),
+        onTap: () => _openImagePage(context, section.value),
       );
 
   Widget _buildAudioSection(
