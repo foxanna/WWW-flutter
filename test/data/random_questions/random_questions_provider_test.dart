@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:what_when_where/api/models/question.dart';
-import 'package:what_when_where/data_providers/random_questions_provider.dart';
+import 'package:what_when_where/data/random_questions_provider.dart';
 
 import '../../ioc/container.dart';
 import '../../mocks.dart';

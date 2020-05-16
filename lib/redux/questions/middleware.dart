@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/data_providers/random_questions_provider.dart';
+import 'package:what_when_where/data/random_questions_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';

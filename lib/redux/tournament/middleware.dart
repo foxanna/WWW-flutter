@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/data_providers/tournament_details_provider.dart';
+import 'package:what_when_where/data/tournament_details_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';

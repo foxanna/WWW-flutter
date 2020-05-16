@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/data_providers/cache/tour_cache.dart';
-import 'package:what_when_where/data_providers/cache/tournament_cache.dart';
+import 'package:what_when_where/data/cache/tour_cache.dart';
+import 'package:what_when_where/data/cache/tournament_cache.dart';
 import 'package:what_when_where/api/loaders/tour_details_loader.dart';
 import 'package:what_when_where/api/models/dto_models/tour_dto.dart';
 import 'package:what_when_where/api/models/tour.dart';

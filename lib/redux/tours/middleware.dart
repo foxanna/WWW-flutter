@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/data_providers/tour_details_provider.dart';
+import 'package:what_when_where/data/tour_details_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/redux/tours/state.dart';

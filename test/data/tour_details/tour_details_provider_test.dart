@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:what_when_where/api/models/tour.dart';
-import 'package:what_when_where/data_providers/tour_details_provider.dart';
+import 'package:what_when_where/data/tour_details_provider.dart';
 
 import '../../ioc/container.dart';
 import '../../mocks.dart';

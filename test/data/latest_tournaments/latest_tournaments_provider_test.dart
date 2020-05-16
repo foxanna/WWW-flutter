@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/data_providers/latest_tournaments_provider.dart';
+import 'package:what_when_where/data/latest_tournaments_provider.dart';
 
 import '../../ioc/container.dart';
 import '../../mocks.dart';
