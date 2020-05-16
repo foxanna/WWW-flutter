@@ -12,6 +12,7 @@ class QuestionParserHelper {
     RegExp(r'\[ведущему:[\s]*[\s\S]*?\]', caseSensitive: false),
     RegExp(r'\[чтецу:[\s]*[\s\S]*?\]', caseSensitive: false),
     RegExp(r'\[Примечание ведущему:[\s]*[\s\S]*?\]', caseSensitive: false),
+    RegExp(r'\[Указание ведущему:[\s]*[\s\S]*?\]', caseSensitive: false),
   ];
 
   static final _audioMatchers = [
