@@ -43,6 +43,7 @@ class _QuestionCardState extends State<QuestionCard> {
   Widget build(BuildContext context) {
     final styleConfiguration =
         StyleConfiguration.of(context).questionStyleConfiguration;
+    final cardColor = Theme.of(context).cardColor;
 
     return Card(
       margin: styleConfiguration.questionCardMargin,
@@ -57,14 +58,26 @@ class _QuestionCardState extends State<QuestionCard> {
           children: [
             QuestionNumber(number: widget.questionState.question.info.number),
             const QuestionsCardSeparator(),
-            if (widget.isInitialQuestion)
-              Hero(
-                transitionOnUserGestures: true,
-                tag: '${widget.questionState.question.info.id}',
-                child: QuestionText(question: widget.questionState.question),
-              )
-            else
-              QuestionText(question: widget.questionState.question),
+            Stack(
+              children: [
+                QuestionText(question: widget.questionState.question),
+                if (widget.isInitialQuestion)
+                  Positioned.fill(
+                    child: Hero(
+                      transitionOnUserGestures: true,
+                      tag: '${widget.questionState.question.info.id}',
+                      child: Container(
+                        color: Colors.transparent,
+                      ),
+                      placeholderBuilder: (context, size, child) => Container(
+                        color: cardColor,
+                        height: size.height,
+                        width: size.width,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
             Stack(
               key: _buttonStackKey,
               children: [

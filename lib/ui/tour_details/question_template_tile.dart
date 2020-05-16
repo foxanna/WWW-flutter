@@ -18,54 +18,55 @@ class TourDetailsQuestionTemplateTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final styleConfiguration =
         StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
+    final cardTheme = Theme.of(context).cardTheme;
+
+    final cardContent = Container(
+      width: styleConfiguration.questionsCardSize.width,
+      height: styleConfiguration.questionsCardSize.height,
+      decoration: ShapeDecoration(
+        shape: cardTheme.shape,
+//        color: Colors.pink,
+        color: cardTheme.color,
+      ),
+      foregroundDecoration: ShapeDecoration(
+        shape: cardTheme.shape,
+        gradient: LinearGradient(
+          stops: [0.8, 1.0],
+          colors: [
+            Theme.of(context).cardColor.withOpacity(0.0),
+            Theme.of(context).cardColor
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+      child: Padding(
+        padding: (Dimensions.defaultPadding * 2).copyWith(bottom: 0.0),
+        child: child,
+      ),
+    );
 
     final card = Card(
       child: InkWell(
         onTap: onTap,
-        child: Stack(
-          children: [
-            Padding(
-              padding: (Dimensions.defaultPadding * 2).copyWith(bottom: 0.0),
-              child: child,
-            ),
-            Positioned.fill(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    stops: [0.8, 1.0],
-                    colors: [
-                      Theme.of(context).cardColor.withOpacity(0.0),
-                      Theme.of(context).cardColor
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                ),
-              ),
-            )
-          ],
-        ),
+        child: cardContent,
       ),
     );
 
-    return SizedBox(
-      width: styleConfiguration.questionsCardSize.width,
-      height: styleConfiguration.questionsCardSize.height,
-      child: heroTag != null
-          ? Hero(
-              transitionOnUserGestures: true,
-              tag: heroTag,
-              child: card,
-              flightShuttleBuilder: (
-                flightContext,
-                animation,
-                flightDirection,
-                fromHeroContext,
-                toHeroContext,
-              ) =>
-                  card,
-            )
-          : card,
-    );
+    return heroTag != null
+        ? Hero(
+            transitionOnUserGestures: true,
+            tag: heroTag,
+            child: card,
+            flightShuttleBuilder: (
+              flightContext,
+              animation,
+              flightDirection,
+              fromHeroContext,
+              toHeroContext,
+            ) =>
+                cardContent,
+          )
+        : card;
   }
 }
