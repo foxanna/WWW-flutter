@@ -347,7 +347,7 @@ class QuestionStyleConfiguration {
       questionCardTitleTextStyle:
           theme.textTheme.headline5.copyWith(color: theme.accentColor),
       questionCardDividerColor: theme.accentColor,
-      questionCardDividerHeight: 56.0,
+      questionCardDividerHeight: 64.0,
       showAnswerButtonColor: theme.accentColor,
       showAnswerButtonHeight: 56.0,
       showAnswerButtonElevation: 4.0,

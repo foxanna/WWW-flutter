@@ -69,12 +69,15 @@ class _QuestionCardState extends State<QuestionCard> {
               key: _buttonStackKey,
               children: [
                 const QuestionsCardSeparator(),
-                Positioned(
+                Positioned.fill(
                   right: styleConfiguration.questionCardPadding.right,
-                  child: ShowAnswerButton(
-                    show: widget.questionState.showAnswer,
-                    question: widget.questionState.question,
-                    onAnswerShown: _onAnswerShown,
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: ShowAnswerButton(
+                      show: widget.questionState.showAnswer,
+                      question: widget.questionState.question,
+                      onAnswerShown: _onAnswerShown,
+                    ),
                   ),
                 ),
               ],
