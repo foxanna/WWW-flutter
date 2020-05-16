@@ -1,7 +1,7 @@
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
-import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
-import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
+import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/api/models/tournament_info.dart';
+import 'package:what_when_where/api/models/tournaments_tree.dart';
+import 'package:what_when_where/api/models/tournaments_tree_info.dart';
 
 const expectedTournamentsTree1 = TournamentsTree(
   id: '0',

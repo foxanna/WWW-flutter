@@ -1,7 +1,7 @@
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
+import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/api/models/tour.dart';
+import 'package:what_when_where/api/models/tour_info.dart';
+import 'package:what_when_where/api/models/tournament_info.dart';
 
 const tournamentInfo1 = TournamentInfo(
   id: '70684',

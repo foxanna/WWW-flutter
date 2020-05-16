@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
+import 'package:what_when_where/api/models/tour.dart';
+import 'package:what_when_where/data_providers/tour_details_provider.dart';
 
-import '../../../ioc/container.dart';
-import '../../../mocks.dart';
+import '../../ioc/container.dart';
+import '../../mocks.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
 import 'test_data_3.dart';
@@ -27,10 +27,10 @@ void main() {
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
       when(testIoc<TourCacheMock>().contains(any)).thenReturn(false);
 
-      final loader = testIoc<ITourDetailsLoader>();
+      final provider = testIoc<ITourDetailsProvider>();
 
       // act
-      final tour = await loader.get(tourId);
+      final tour = await provider.get(tourId);
 
       // assert
       expect(tour, expectedTour);

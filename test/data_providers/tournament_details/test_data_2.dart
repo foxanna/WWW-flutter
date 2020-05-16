@@ -1,10 +1,10 @@
-import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/db_chgk_info/models/question_info.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
-import 'package:what_when_where/db_chgk_info/question_parser/sections/section_text.dart';
+import 'package:what_when_where/api/models/question.dart';
+import 'package:what_when_where/api/models/question_info.dart';
+import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/api/models/tour.dart';
+import 'package:what_when_where/api/models/tour_info.dart';
+import 'package:what_when_where/api/models/tournament_info.dart';
+import 'package:what_when_where/api/question_parser/sections/section_text.dart';
 
 const tournamentInfo2 = TournamentInfo(
   id: '70656',

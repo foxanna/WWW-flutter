@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/cache/tour_cache.dart';
-import 'package:what_when_where/db_chgk_info/cache/tournament_cache.dart';
-import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
+import 'package:what_when_where/data_providers/cache/tour_cache.dart';
+import 'package:what_when_where/data_providers/cache/tournament_cache.dart';
+import 'package:what_when_where/data_providers/latest_tournaments_provider.dart';
+import 'package:what_when_where/data_providers/random_questions_provider.dart';
+import 'package:what_when_where/data_providers/search_provider.dart';
+import 'package:what_when_where/data_providers/tour_details_provider.dart';
+import 'package:what_when_where/data_providers/tournament_details_provider.dart';
+import 'package:what_when_where/data_providers/tournaments_tree_provider.dart';
 import 'package:what_when_where/services/analytics.dart';
 import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/dialogs.dart';
@@ -43,23 +43,23 @@ class CrashServiceMock extends Mock implements ICrashService {}
 
 class RatingServiceMock extends Mock implements IRatingService {}
 
-// loaders
+// providers
 
-class LatestTournamentsLoaderMock extends Mock
-    implements ILatestTournamentsLoader {}
+class LatestTournamentsProviderMock extends Mock
+    implements ILatestTournamentsProvider {}
 
-class RandomQuestionsLoaderMock extends Mock implements IRandomQuestionsLoader {
-}
+class RandomQuestionsProviderMock extends Mock
+    implements IRandomQuestionsProvider {}
 
-class SearchLoaderMock extends Mock implements ISearchLoader {}
+class SearchProviderMock extends Mock implements ISearchProvider {}
 
-class TourDetailsLoaderMock extends Mock implements ITourDetailsLoader {}
+class TourDetailsProviderMock extends Mock implements ITourDetailsProvider {}
 
-class TournamentDetailsLoaderMock extends Mock
-    implements ITournamentDetailsLoader {}
+class TournamentDetailsProviderMock extends Mock
+    implements ITournamentDetailsProvider {}
 
-class TournamentsTreeLoaderMock extends Mock implements ITournamentsTreeLoader {
-}
+class TournamentsTreeProviderMock extends Mock
+    implements ITournamentsTreeProvider {}
 
 // cache
 

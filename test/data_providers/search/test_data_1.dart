@@ -1,4 +1,4 @@
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/api/models/tournament.dart';
 
 const expectedSearchTournaments1 = <Tournament>[];
 

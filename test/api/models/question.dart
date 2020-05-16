@@ -1,16 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/db_chgk_info/models/dto_models/question_dto.dart';
-import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/db_chgk_info/models/question_info.dart';
-import 'package:what_when_where/db_chgk_info/models/tour_info.dart';
-import 'package:what_when_where/db_chgk_info/models/question_section.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
-import 'package:what_when_where/db_chgk_info/question_parser/sections/section_audio.dart';
-import 'package:what_when_where/db_chgk_info/question_parser/sections/section_giveaway.dart';
-import 'package:what_when_where/db_chgk_info/question_parser/sections/section_image.dart';
-import 'package:what_when_where/db_chgk_info/question_parser/sections/section_speaker_note.dart';
-import 'package:what_when_where/db_chgk_info/question_parser/sections/section_text.dart';
+import 'package:what_when_where/api/models/dto_models/question_dto.dart';
+import 'package:what_when_where/api/models/question.dart';
+import 'package:what_when_where/api/models/question_info.dart';
+import 'package:what_when_where/api/models/tour_info.dart';
+import 'package:what_when_where/api/models/question_section.dart';
+import 'package:what_when_where/api/models/tournament_info.dart';
+import 'package:what_when_where/api/question_parser/sections/section_audio.dart';
+import 'package:what_when_where/api/question_parser/sections/section_giveaway.dart';
+import 'package:what_when_where/api/question_parser/sections/section_image.dart';
+import 'package:what_when_where/api/question_parser/sections/section_speaker_note.dart';
+import 'package:what_when_where/api/question_parser/sections/section_text.dart';
 
 void main() {
   final execute = ({

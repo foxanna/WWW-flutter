@@ -19,7 +19,7 @@ void main() {
   setUp(() async {
     testIoc = configureTestIocContainer(
       mockServices: true,
-      mockLoaders: true,
+      mockProviders: true,
     );
 
     final preferencesMock = testIoc<PreferencesMock>();

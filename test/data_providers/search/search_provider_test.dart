@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/search/sorting.dart';
+import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/api/search/sorting.dart';
+import 'package:what_when_where/data_providers/search_provider.dart';
 
-import '../../../ioc/container.dart';
-import '../../../mocks.dart';
+import '../../ioc/container.dart';
+import '../../mocks.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
 import 'test_data_3.dart';
@@ -27,11 +27,11 @@ void main() {
       when(testIoc<DioMock>().get<String>(expectedUri?.toString() ?? any))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
 
-      final loader = testIoc<ISearchLoader>();
+      final provider = testIoc<ISearchProvider>();
 
       // act
-      final results = await loader.searchTournaments(
-          query: query, sorting: sorting, page: page);
+      final results =
+          await provider.get(query: query, sorting: sorting, page: page);
 
       // assert
       expect(results.toList(), expectedResult);

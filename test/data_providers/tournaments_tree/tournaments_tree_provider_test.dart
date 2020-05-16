@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
+import 'package:what_when_where/data_providers/tournaments_tree_provider.dart';
 
-import '../../../ioc/container.dart';
-import '../../../mocks.dart';
+import '../../ioc/container.dart';
+import '../../mocks.dart';
 import 'test_data_1.dart';
 
 void main() {
@@ -16,10 +16,10 @@ void main() {
       when(testIoc<DioMock>().get<String>('/tour/0/xml')).thenAnswer(
           (_) => Future.value(Response(data: tournamentsTreeApiResponse1)));
 
-      final loader = testIoc<ITournamentsTreeLoader>();
+      final provider = testIoc<ITournamentsTreeProvider>();
 
       // act
-      final tournamentsTree = await loader.get(id: '0');
+      final tournamentsTree = await provider.get(id: '0');
 
       // assert
       expect(tournamentsTree, expectedTournamentsTree1);

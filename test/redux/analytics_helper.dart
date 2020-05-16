@@ -14,7 +14,7 @@ final Function executeAnalyticsTest = (
   // arrange
   final testIoc = configureTestIocContainer(
     mockServices: true,
-    mockLoaders: true,
+    mockProviders: true,
   );
 
   final store = testIoc<WWWStore>().store;

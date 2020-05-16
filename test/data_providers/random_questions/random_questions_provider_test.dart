@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/api/models/question.dart';
+import 'package:what_when_where/data_providers/random_questions_provider.dart';
 
-import '../../../ioc/container.dart';
-import '../../../mocks.dart';
+import '../../ioc/container.dart';
+import '../../mocks.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
 import 'test_data_3.dart';
@@ -22,10 +22,10 @@ void main() {
       when(testIoc<DioMock>().get<String>('/xml/random'))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
 
-      final loader = testIoc<IRandomQuestionsLoader>();
+      final provider = testIoc<IRandomQuestionsProvider>();
 
       // act
-      final questions = await loader.get();
+      final questions = await provider.get();
 
       // assert
       expect(questions, expectedQuestions);

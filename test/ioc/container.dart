@@ -7,7 +7,7 @@ import 'configuration.dart' as configuration;
 final _getIt = GetIt.instance;
 
 ITestContainer configureTestIocContainer({
-  bool mockLoaders = false,
+  bool mockProviders = false,
   bool mockServices = false,
   bool mockDio = false,
   bool mockCache = false,
@@ -22,8 +22,10 @@ ITestContainer configureTestIocContainer({
       .replaceLazySingleton<ITestContainer, WWWTestContainer>(() => container);
   container.replaceLazySingleton<IContainer, WWWTestContainer>(() => container);
 
-  if (mockLoaders) {
-    configuration.mockLoaders(container);
+  configuration.mockBackgroundService(container);
+
+  if (mockProviders) {
+    configuration.mockProviders(container);
   }
 
   if (mockServices) {

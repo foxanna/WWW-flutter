@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
+import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/data_providers/tournament_details_provider.dart';
 
-import '../../../ioc/container.dart';
-import '../../../mocks.dart';
+import '../../ioc/container.dart';
+import '../../mocks.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
 import 'test_data_3.dart';
@@ -27,10 +27,10 @@ void main() {
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
       when(testIoc<TournamentCacheMock>().contains(any)).thenReturn(false);
 
-      final loader = testIoc<ITournamentDetailsLoader>();
+      final provider = testIoc<ITournamentDetailsProvider>();
 
       // act
-      final tournament = await loader.get(tournamentId);
+      final tournament = await provider.get(tournamentId);
 
       // assert
       expect(tournament, expectedTournament);
