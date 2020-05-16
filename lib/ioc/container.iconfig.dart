@@ -9,6 +9,7 @@ import 'package:what_when_where/ioc/injectable_module.dart';
 import 'package:flutter/src/widgets/navigator.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:what_when_where/services/analytics.dart';
+import 'package:what_when_where/services/background.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/dialogs.dart';
@@ -58,6 +59,8 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<Dio>(() => registerModule.dio);
   g.registerLazySingleton<GlobalKey<NavigatorState>>(() => registerModule.key);
   g.registerLazySingleton<IAnalyticsService>(() => AnalyticsService());
+  g.registerLazySingleton<IBackgroundRunnerService>(
+      () => BackgroundRunnerService());
   g.registerLazySingleton<IContainer>(() => WWWContainer());
   g.registerLazySingleton<ICrashService>(() => CrashService());
   g.registerLazySingleton<IDialogService>(() => DialogService());
