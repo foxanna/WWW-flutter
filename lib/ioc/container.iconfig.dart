@@ -183,15 +183,15 @@ void $initGetIt(GetIt g, {String environment}) {
             backgroundService: g<IBackgroundRunnerService>(),
           ));
   g.registerFactory<QuestionsMiddleware>(
-      () => QuestionsMiddleware(loader: g<IRandomQuestionsLoader>()));
+      () => QuestionsMiddleware(repository: g<IRandomQuestionsRepository>()));
   g.registerFactory<SearchMiddleware>(
-      () => SearchMiddleware(loader: g<ISearchLoader>()));
-  g.registerFactory<TournamentMiddleware>(
-      () => TournamentMiddleware(loader: g<ITournamentDetailsLoader>()));
-  g.registerFactory<TournamentsTreeMiddleware>(
-      () => TournamentsTreeMiddleware(loader: g<ITournamentsTreeLoader>()));
+      () => SearchMiddleware(repository: g<ISearchRepository>()));
+  g.registerFactory<TournamentMiddleware>(() =>
+      TournamentMiddleware(repository: g<ITournamentDetailsRepository>()));
+  g.registerFactory<TournamentsTreeMiddleware>(() =>
+      TournamentsTreeMiddleware(repository: g<ITournamentsTreeRepository>()));
   g.registerFactory<ToursMiddleware>(
-      () => ToursMiddleware(loader: g<ITourDetailsLoader>()));
+      () => ToursMiddleware(repository: g<ITourDetailsRepository>()));
   g.registerFactory<WWWStore>(
       () => WWWStore(appMiddleware: g<AppMiddleware>()));
 }

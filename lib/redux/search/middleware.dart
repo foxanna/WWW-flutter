@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
+import 'package:what_when_where/db_chgk_info/repositories/search_repository.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/search/actions.dart';
@@ -11,15 +11,15 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class SearchMiddleware {
-  final ISearchLoader _loader;
+  final ISearchRepository _repository;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
 
   SearchMiddleware({
-    ISearchLoader loader,
-  }) : _loader = loader;
+    ISearchRepository repository,
+  }) : _repository = repository;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenSearchUserAction>(_open),
@@ -82,7 +82,7 @@ class SearchMiddleware {
         parameters: parameters,
       ));
 
-      final data = await _loader.searchTournaments(
+      final data = await _repository.get(
           query: parameters.query,
           sorting: parameters.sorting,
           page: parameters.nextPage);

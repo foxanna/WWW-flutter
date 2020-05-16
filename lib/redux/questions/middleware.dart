@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
+import 'package:what_when_where/db_chgk_info/repositories/random_questions_repository.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
@@ -9,7 +9,7 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class QuestionsMiddleware {
-  final IRandomQuestionsLoader _loader;
+  final IRandomQuestionsRepository _repository;
 
   List<Middleware<AppState>> _middleware;
 
@@ -17,8 +17,8 @@ class QuestionsMiddleware {
       _middleware ?? (_middleware = _createMiddleware());
 
   QuestionsMiddleware({
-    IRandomQuestionsLoader loader,
-  }) : _loader = loader;
+    IRandomQuestionsRepository repository,
+  }) : _repository = repository;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenQuestionsUserAction>(_open),
@@ -69,7 +69,7 @@ class QuestionsMiddleware {
     try {
       store.dispatch(const SystemActionQuestions.loading());
 
-      final data = await _loader.get();
+      final data = await _repository.get();
 
       throwIfDataIsNull(data);
 
