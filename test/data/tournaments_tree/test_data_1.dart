@@ -1,7 +1,7 @@
-import 'package:what_when_where/api/models/tournament.dart';
-import 'package:what_when_where/api/models/tournament_info.dart';
-import 'package:what_when_where/api/models/tournaments_tree.dart';
-import 'package:what_when_where/api/models/tournaments_tree_info.dart';
+import 'package:what_when_where/data/models/tournament.dart';
+import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournaments_tree.dart';
+import 'package:what_when_where/data/models/tournaments_tree_info.dart';
 
 const expectedTournamentsTree1 = TournamentsTree(
   id: '0',

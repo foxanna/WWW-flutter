@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:what_when_where/api/models/question_dto.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/api/models/dto_models/question_dto.dart';
-import 'package:what_when_where/api/models/question_info.dart';
-import 'package:what_when_where/api/models/question_section.dart';
-import 'package:what_when_where/api/models/tour_info.dart';
-import 'package:what_when_where/api/question_parser/question_parser.dart';
+import 'package:what_when_where/data/models/question_info.dart';
+import 'package:what_when_where/data/models/question_sections/question_section.dart';
+import 'package:what_when_where/data/models/tour_info.dart';
+import 'package:what_when_where/data/parsers/question_parser/question_parser.dart';
 import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 part 'question.freezed.dart';

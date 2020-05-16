@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/api/models/tour.dart';
+import 'package:what_when_where/data/models/tour.dart';
 
 abstract class ITourCache {
   bool contains(String id);

@@ -1,16 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/api/models/dto_models/question_dto.dart';
-import 'package:what_when_where/api/models/question.dart';
-import 'package:what_when_where/api/models/question_info.dart';
-import 'package:what_when_where/api/models/tour_info.dart';
-import 'package:what_when_where/api/models/question_section.dart';
-import 'package:what_when_where/api/models/tournament_info.dart';
-import 'package:what_when_where/api/question_parser/sections/section_audio.dart';
-import 'package:what_when_where/api/question_parser/sections/section_giveaway.dart';
-import 'package:what_when_where/api/question_parser/sections/section_image.dart';
-import 'package:what_when_where/api/question_parser/sections/section_speaker_note.dart';
-import 'package:what_when_where/api/question_parser/sections/section_text.dart';
+import 'package:what_when_where/api/models/question_dto.dart';
+import 'package:what_when_where/data/models/question.dart';
+import 'package:what_when_where/data/models/question_info.dart';
+import 'package:what_when_where/data/models/question_sections/question_section.dart';
+import 'package:what_when_where/data/models/tour_info.dart';
+import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/question_sections/section_audio.dart';
+import 'package:what_when_where/data/models/question_sections/section_giveaway.dart';
+import 'package:what_when_where/data/models/question_sections/section_image.dart';
+import 'package:what_when_where/data/models/question_sections/section_speaker_note.dart';
+import 'package:what_when_where/data/models/question_sections/section_text.dart';
 
 void main() {
   final execute = ({

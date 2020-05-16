@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/api/models/dto_models/tournament_dto.dart';
-import 'package:what_when_where/api/models/dto_models/tournaments_tree_dto.dart';
+import 'package:what_when_where/api/models/tournament_dto.dart';
+import 'package:what_when_where/api/models/tournaments_tree_dto.dart';
 
 class TournamentsTreeConverter implements JsonConverter<List<dynamic>, Object> {
   const TournamentsTreeConverter();

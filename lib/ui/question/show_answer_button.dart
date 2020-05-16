@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/api/models/question.dart';
+import 'package:what_when_where/data/models/question.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';

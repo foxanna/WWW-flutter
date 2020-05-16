@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/api/models/dto_models/question_dto.dart';
+import 'package:what_when_where/api/models/question_dto.dart';
 
 class QuestionsListConverter
     implements JsonConverter<List<QuestionDto>, Object> {

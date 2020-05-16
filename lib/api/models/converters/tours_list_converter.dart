@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/api/models/dto_models/tour_dto.dart';
+import 'package:what_when_where/api/models/tour_dto.dart';
 
 class ToursListConverter implements JsonConverter<List<TourDto>, Object> {
   const ToursListConverter();

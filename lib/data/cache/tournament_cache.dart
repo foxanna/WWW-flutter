@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/data/models/tournament.dart';
 
 abstract class ITournamentCache {
   bool contains(String id);

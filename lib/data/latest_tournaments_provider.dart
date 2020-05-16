@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/api/loaders/latest_tournaments_loader.dart';
-import 'package:what_when_where/api/models/dto_models/latest_tournaments_dto.dart';
-import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/api/models/latest_tournaments_dto.dart';
+import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ILatestTournamentsProvider {

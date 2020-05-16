@@ -132,12 +132,10 @@ void $initGetIt(GetIt g, {String environment}) {
         parser: g<IXmlToJsonParser>(),
         backgroundService: g<IBackgroundRunnerService>(),
       ));
-  g.registerLazySingleton<IRandomQuestionsProvider>(
-      () => RandomQuestionsProvider(
-            loader: g<IRandomQuestionsLoader>(),
-            parser: g<IXmlToJsonParser>(),
-            backgroundService: g<IBackgroundRunnerService>(),
-          ));
+  g.registerLazySingleton<IRandomQuestionsProvider>(() =>
+      RandomQuestionsProvider(
+          loader: g<IRandomQuestionsLoader>(),
+          backgroundService: g<IBackgroundRunnerService>()));
   g.registerLazySingleton<ISearchLoader>(() => SearchLoader(
         httpClient: g<IHttpClient>(),
         parser: g<ISearchToJsonParser>(),
@@ -175,12 +173,10 @@ void $initGetIt(GetIt g, {String environment}) {
         parser: g<IXmlToJsonParser>(),
         backgroundService: g<IBackgroundRunnerService>(),
       ));
-  g.registerLazySingleton<ITournamentsTreeProvider>(
-      () => TournamentsTreeProvider(
-            loader: g<ITournamentsTreeLoader>(),
-            parser: g<IXmlToJsonParser>(),
-            backgroundService: g<IBackgroundRunnerService>(),
-          ));
+  g.registerLazySingleton<ITournamentsTreeProvider>(() =>
+      TournamentsTreeProvider(
+          loader: g<ITournamentsTreeLoader>(),
+          backgroundService: g<IBackgroundRunnerService>()));
   g.registerFactory<QuestionsMiddleware>(
       () => QuestionsMiddleware(provider: g<IRandomQuestionsProvider>()));
   g.registerFactory<SearchMiddleware>(

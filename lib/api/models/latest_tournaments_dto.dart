@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/api/models/dto_models/tournament_dto.dart';
+import 'package:what_when_where/api/models/tournament_dto.dart';
 
 part 'latest_tournaments_dto.freezed.dart';
 part 'latest_tournaments_dto.g.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/api/models/tour_info.dart';
+import 'package:what_when_where/data/models/tour_info.dart';
 import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 

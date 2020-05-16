@@ -1,4 +1,4 @@
-import 'package:what_when_where/api/models/question.dart';
+import 'package:what_when_where/data/models/question.dart';
 
 const expectedRandomQuestions3 = <Question>[];
 

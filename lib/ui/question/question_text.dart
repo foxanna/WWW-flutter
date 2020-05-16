@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/common/text_sections_theme_data.dart';
-import 'package:what_when_where/api/models/question.dart';
+import 'package:what_when_where/data/models/question.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/question/question_sections.dart';
 

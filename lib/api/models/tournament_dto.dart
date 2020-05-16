@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/api/models/dto_models/json_converters/tours_list_converter.dart';
-import 'package:what_when_where/api/models/dto_models/tour_dto.dart';
+import 'package:what_when_where/api/models/converters/tours_list_converter.dart';
+import 'package:what_when_where/api/models/tour_dto.dart';
 
 part 'tournament_dto.freezed.dart';
 part 'tournament_dto.g.dart';

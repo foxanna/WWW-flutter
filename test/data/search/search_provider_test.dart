@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/api/search/sorting.dart';
 import 'package:what_when_where/data/search_provider.dart';
 

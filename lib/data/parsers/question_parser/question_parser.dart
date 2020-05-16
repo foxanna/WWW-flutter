@@ -1,11 +1,11 @@
-import 'package:what_when_where/api/models/question_section.dart';
-import 'package:what_when_where/api/question_parser/question_parser_helper.dart';
-import 'package:what_when_where/api/question_parser/question_section_type.dart';
-import 'package:what_when_where/api/question_parser/sections/section_audio.dart';
-import 'package:what_when_where/api/question_parser/sections/section_giveaway.dart';
-import 'package:what_when_where/api/question_parser/sections/section_image.dart';
-import 'package:what_when_where/api/question_parser/sections/section_speaker_note.dart';
-import 'package:what_when_where/api/question_parser/sections/section_text.dart';
+import 'package:what_when_where/data/models/question_sections/question_section.dart';
+import 'package:what_when_where/data/models/question_sections/section_audio.dart';
+import 'package:what_when_where/data/models/question_sections/section_giveaway.dart';
+import 'package:what_when_where/data/models/question_sections/section_image.dart';
+import 'package:what_when_where/data/models/question_sections/section_speaker_note.dart';
+import 'package:what_when_where/data/models/question_sections/section_text.dart';
+import 'package:what_when_where/data/parsers/question_parser/question_parser_helper.dart';
+import 'package:what_when_where/data/parsers/question_parser/question_section_type.dart';
 import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 class QuestionParser {

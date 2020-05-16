@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:what_when_where/api/models/tournament.dart';
-import 'package:what_when_where/api/models/tournaments_tree.dart';
+import 'package:what_when_where/data/models/tournament.dart';
+import 'package:what_when_where/data/models/tournaments_tree.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/tournaments_grid_tile.dart';
 import 'package:what_when_where/ui/tree/subtree_tile.dart';

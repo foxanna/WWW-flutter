@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/api/loaders/search_loader.dart';
-import 'package:what_when_where/api/models/dto_models/search_tournaments_dto.dart';
-import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/api/models/search_tournaments_dto.dart';
+import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/api/search/sorting.dart';
 import 'package:what_when_where/services/background.dart';
 

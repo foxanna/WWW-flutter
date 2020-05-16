@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/api/models/dto_models/random_questions_dto.dart';
-import 'package:what_when_where/api/models/question.dart';
+import 'package:what_when_where/api/models/random_questions_dto.dart';
+import 'package:what_when_where/data/models/question.dart';
 
 part 'random_questions.freezed.dart';
 

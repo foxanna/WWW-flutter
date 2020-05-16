@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/api/models/dto_models/tournament_dto.dart';
-import 'package:what_when_where/api/models/dto_models/tournaments_tree_dto.dart';
-import 'package:what_when_where/api/models/tournament.dart';
-import 'package:what_when_where/api/models/tournaments_tree_info.dart';
+import 'package:what_when_where/api/models/tournament_dto.dart';
+import 'package:what_when_where/api/models/tournaments_tree_dto.dart';
+import 'package:what_when_where/data/models/tournament.dart';
+import 'package:what_when_where/data/models/tournaments_tree_info.dart';
 import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 part 'tournaments_tree.freezed.dart';

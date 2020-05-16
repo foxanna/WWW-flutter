@@ -1,5 +1,5 @@
 import 'package:redux/redux.dart';
-import 'package:what_when_where/api/models/tournaments_tree.dart';
+import 'package:what_when_where/data/models/tournaments_tree.dart';
 import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/redux/tree/state.dart';

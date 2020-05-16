@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/api/models/dto_models/json_converters/questions_list_converter.dart';
-import 'package:what_when_where/api/models/dto_models/question_dto.dart';
+import 'package:what_when_where/api/models/converters/questions_list_converter.dart';
+import 'package:what_when_where/api/models/question_dto.dart';
 
 part 'tour_dto.freezed.dart';
 part 'tour_dto.g.dart';

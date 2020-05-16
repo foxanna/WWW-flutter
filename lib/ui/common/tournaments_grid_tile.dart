@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/api/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournament_info.dart';
 import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/localization/translations/translations.i69n.dart';
 import 'package:what_when_where/redux/app/state.dart';

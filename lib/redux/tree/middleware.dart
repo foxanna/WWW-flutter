@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/data/tournaments_tree_provider.dart';
-import 'package:what_when_where/api/models/tournaments_tree_info.dart';
+import 'package:what_when_where/data/models/tournaments_tree_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/tree/actions.dart';

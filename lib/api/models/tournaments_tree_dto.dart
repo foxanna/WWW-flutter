@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/api/models/dto_models/json_converters/tournaments_tree_converter.dart';
+import 'package:what_when_where/api/models/converters/tournaments_tree_converter.dart';
 
 part 'tournaments_tree_dto.freezed.dart';
 part 'tournaments_tree_dto.g.dart';

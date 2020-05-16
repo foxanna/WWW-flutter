@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/api/http/http_client.dart';
-import 'package:what_when_where/api/models/dto_models/tournaments_tree_dto.dart';
+import 'package:what_when_where/api/models/tournaments_tree_dto.dart';
 import 'package:what_when_where/api/parsers/xml2json_parser.dart';
 import 'package:what_when_where/services/background.dart';
 

@@ -1,4 +1,4 @@
-import 'package:what_when_where/api/models/question_section.dart';
+import 'package:what_when_where/data/models/question_sections/question_section.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

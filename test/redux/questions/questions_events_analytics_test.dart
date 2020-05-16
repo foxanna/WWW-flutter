@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:what_when_where/api/models/question.dart';
+import 'package:what_when_where/data/models/question.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 
 import '../analytics_helper.dart';

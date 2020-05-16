@@ -1,10 +1,10 @@
-import 'package:what_when_where/api/models/question.dart';
-import 'package:what_when_where/api/models/question_info.dart';
-import 'package:what_when_where/api/models/tournament.dart';
-import 'package:what_when_where/api/models/tour.dart';
-import 'package:what_when_where/api/models/tour_info.dart';
-import 'package:what_when_where/api/models/tournament_info.dart';
-import 'package:what_when_where/api/question_parser/sections/section_text.dart';
+import 'package:what_when_where/data/models/question.dart';
+import 'package:what_when_where/data/models/question_info.dart';
+import 'package:what_when_where/data/models/question_sections/section_text.dart';
+import 'package:what_when_where/data/models/tournament.dart';
+import 'package:what_when_where/data/models/tour.dart';
+import 'package:what_when_where/data/models/tour_info.dart';
+import 'package:what_when_where/data/models/tournament_info.dart';
 
 const tournamentInfo2 = TournamentInfo(
   id: '70656',

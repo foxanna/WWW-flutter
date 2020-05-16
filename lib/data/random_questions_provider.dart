@@ -1,9 +1,8 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/api/loaders/random_questions_loader.dart';
-import 'package:what_when_where/api/models/dto_models/random_questions_dto.dart';
-import 'package:what_when_where/api/models/question.dart';
-import 'package:what_when_where/api/models/random_questions.dart';
-import 'package:what_when_where/api/parsers/xml2json_parser.dart';
+import 'package:what_when_where/api/models/random_questions_dto.dart';
+import 'package:what_when_where/data/models/question.dart';
+import 'package:what_when_where/data/models/random_questions.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class IRandomQuestionsProvider {
@@ -14,15 +13,12 @@ abstract class IRandomQuestionsProvider {
 @RegisterAs(IRandomQuestionsProvider)
 class RandomQuestionsProvider implements IRandomQuestionsProvider {
   final IRandomQuestionsLoader _loader;
-  final IXmlToJsonParser _parser;
   final IBackgroundRunnerService _backgroundService;
 
   const RandomQuestionsProvider({
     IRandomQuestionsLoader loader,
-    IXmlToJsonParser parser,
     IBackgroundRunnerService backgroundService,
   })  : _loader = loader,
-        _parser = parser,
         _backgroundService = backgroundService;
 
   @override

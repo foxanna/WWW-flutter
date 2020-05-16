@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/api/models/tour_info.dart';
+import 'package:what_when_where/data/models/tour_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
