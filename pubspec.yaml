@@ -15,6 +15,7 @@ dependencies:
   audioplayers: ^0.15.1
   auto_size_text: ^2.1.0
   app_review: ^1.1.0+1
+  cached_network_image: ^2.2.0+1
   dartx: ^0.4.1
   dio: ^3.0.9
   firebase_analytics: ^5.0.11
@@ -39,7 +40,6 @@ dependencies:
   share: ^0.6.4+2
   shared_preferences: ^0.5.7+2
   shimmer: ^1.1.1
-  transparent_image: ^1.0.0
   url_launcher: ^5.4.7
   xml2json: ^4.2.0
 
