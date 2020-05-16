@@ -1,10 +1,10 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/data_providers/cache/tour_cache.dart';
 import 'package:what_when_where/data_providers/cache/tournament_cache.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/dto_models/tour_dto.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament_info.dart';
+import 'package:what_when_where/api/loaders/tour_details_loader.dart';
+import 'package:what_when_where/api/models/dto_models/tour_dto.dart';
+import 'package:what_when_where/api/models/tour.dart';
+import 'package:what_when_where/api/models/tournament_info.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ITourDetailsProvider {

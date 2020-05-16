@@ -1,4 +1,4 @@
-import 'package:what_when_where/db_chgk_info/models/question.dart';
+import 'package:what_when_where/api/models/question.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/db_chgk_info/http/http_client.dart';
+import 'package:what_when_where/api/http/http_client.dart';
 
 @registerModule
 abstract class RegisterModule {

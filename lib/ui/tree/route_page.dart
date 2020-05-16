@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
+import 'package:what_when_where/api/models/tournaments_tree_info.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/tree/app_bar.dart';
 import 'package:what_when_where/ui/tree/page_content.dart';

@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/dto_models/tournaments_tree_dto.dart';
-import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
-import 'package:what_when_where/db_chgk_info/parsers/xml2json_parser.dart';
+import 'package:what_when_where/api/loaders/tournaments_tree_loader.dart';
+import 'package:what_when_where/api/models/dto_models/tournaments_tree_dto.dart';
+import 'package:what_when_where/api/models/tournaments_tree.dart';
+import 'package:what_when_where/api/parsers/xml2json_parser.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ITournamentsTreeProvider {

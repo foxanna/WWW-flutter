@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/dto_models/search_tournaments_dto.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/search/sorting.dart';
+import 'package:what_when_where/api/loaders/search_loader.dart';
+import 'package:what_when_where/api/models/dto_models/search_tournaments_dto.dart';
+import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/api/search/sorting.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ISearchProvider {

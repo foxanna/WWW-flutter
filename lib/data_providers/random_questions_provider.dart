@@ -1,9 +1,9 @@
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
-import 'package:what_when_where/db_chgk_info/models/dto_models/random_questions_dto.dart';
-import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/db_chgk_info/models/random_questions.dart';
-import 'package:what_when_where/db_chgk_info/parsers/xml2json_parser.dart';
+import 'package:what_when_where/api/loaders/random_questions_loader.dart';
+import 'package:what_when_where/api/models/dto_models/random_questions_dto.dart';
+import 'package:what_when_where/api/models/question.dart';
+import 'package:what_when_where/api/models/random_questions.dart';
+import 'package:what_when_where/api/parsers/xml2json_parser.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class IRandomQuestionsProvider {

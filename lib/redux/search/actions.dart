@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
-import 'package:what_when_where/db_chgk_info/search/sorting.dart';
+import 'package:what_when_where/api/models/tournament.dart';
+import 'package:what_when_where/api/search/sorting.dart';
 import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/search/state.dart';
 

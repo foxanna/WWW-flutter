@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
-import 'package:what_when_where/db_chgk_info/models/tournaments_tree.dart';
-import 'package:what_when_where/db_chgk_info/models/tournaments_tree_info.dart';
+import 'package:what_when_where/api/models/tournaments_tree.dart';
+import 'package:what_when_where/api/models/tournaments_tree_info.dart';
 
 part 'state.freezed.dart';
 
