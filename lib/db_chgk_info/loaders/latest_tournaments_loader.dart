@@ -1,13 +1,11 @@
-import 'dart:developer';
-
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/http/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/latest_tournaments_dto.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/parsers/latest2json_parser.dart';
+import 'package:what_when_where/services/background.dart';
 
 abstract class ILatestTournamentsLoader {
-  Future<Iterable<Tournament>> get({int page = 0});
+  Future<LatestTournamentsDto> get(int page);
 }
 
 @lazySingleton
@@ -15,28 +13,31 @@ abstract class ILatestTournamentsLoader {
 class LatestTournamentsLoader implements ILatestTournamentsLoader {
   final IHttpClient _httpClient;
   final ILatestToJsonParser _parser;
+  final IBackgroundRunnerService _backgroundService;
 
   const LatestTournamentsLoader({
     IHttpClient httpClient,
     ILatestToJsonParser parser,
+    IBackgroundRunnerService backgroundService,
   })  : _httpClient = httpClient,
-        _parser = parser;
+        _parser = parser,
+        _backgroundService = backgroundService;
 
   @override
-  Future<Iterable<Tournament>> get({int page = 0}) async {
-    final queryParameters = {'page': page.toString()};
+  Future<LatestTournamentsDto> get(int page) async {
     final data = await _httpClient
-        .get(Uri(path: '/last', queryParameters: queryParameters));
-    final result = _parse(data);
-    return result;
+        .get(Uri(path: '/last', queryParameters: {'page': page.toString()}));
+    final dto = await _backgroundService
+        .run<LatestTournamentsDto, List<dynamic>>(
+            _parseLatestTournamentsDto, [data, _parser]);
+    return dto;
   }
+}
 
-  Iterable<Tournament> _parse(String data) {
-    final json = _parser.toJson(data);
-    final latestTournamentsDto = LatestTournamentsDto.fromJson(json);
-    final tournaments = latestTournamentsDto.tournaments
-        .map((dto) => Tournament.fromDto(dto))
-        .toList();
-    return tournaments;
-  }
+LatestTournamentsDto _parseLatestTournamentsDto(List<dynamic> args) {
+  final data = args[0] as String;
+  final parser = args[1] as ILatestToJsonParser;
+
+  final json = parser.toJson(data);
+  return LatestTournamentsDto.fromJson(json);
 }

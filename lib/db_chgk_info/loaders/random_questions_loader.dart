@@ -1,12 +1,11 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/http/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/random_questions_dto.dart';
-import 'package:what_when_where/db_chgk_info/models/question.dart';
-import 'package:what_when_where/db_chgk_info/models/random_questions.dart';
 import 'package:what_when_where/db_chgk_info/parsers/xml2json_parser.dart';
+import 'package:what_when_where/services/background.dart';
 
 abstract class IRandomQuestionsLoader {
-  Future<Iterable<Question>> get();
+  Future<RandomQuestionsDto> get();
 }
 
 @lazySingleton
@@ -14,25 +13,29 @@ abstract class IRandomQuestionsLoader {
 class RandomQuestionsLoader implements IRandomQuestionsLoader {
   final IHttpClient _httpClient;
   final IXmlToJsonParser _parser;
+  final IBackgroundRunnerService _backgroundService;
 
   const RandomQuestionsLoader({
     IHttpClient httpClient,
     IXmlToJsonParser parser,
+    IBackgroundRunnerService backgroundService,
   })  : _httpClient = httpClient,
-        _parser = parser;
+        _parser = parser,
+        _backgroundService = backgroundService;
 
   @override
-  Future<Iterable<Question>> get() async {
+  Future<RandomQuestionsDto> get() async {
     final data = await _httpClient.get(Uri(path: '/xml/random'));
-    final result = _parse(data);
-    return result;
+    final dto = await _backgroundService.run<RandomQuestionsDto, List<dynamic>>(
+        _parseRandomQuestionsDto, [data, _parser]);
+    return dto;
   }
+}
 
-  Iterable<Question> _parse(String data) {
-    final json = _parser.toJson(data);
-    final randomQuestionsDto =
-        RandomQuestionsDto.fromJson(json['search'] as Map<String, dynamic>);
-    final randomQuestions = RandomQuestions.fromDto(randomQuestionsDto);
-    return randomQuestions.questions;
-  }
+RandomQuestionsDto _parseRandomQuestionsDto(List<dynamic> args) {
+  final data = args[0] as String;
+  final parser = args[1] as IXmlToJsonParser;
+
+  final json = parser.toJson(data);
+  return RandomQuestionsDto.fromJson(json['search'] as Map<String, dynamic>);
 }

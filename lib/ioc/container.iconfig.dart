@@ -16,6 +16,7 @@ import 'package:what_when_where/services/dialogs.dart';
 import 'package:what_when_where/db_chgk_info/http/http_client.dart';
 import 'package:what_when_where/db_chgk_info/parsers/latest2json_parser.dart';
 import 'package:what_when_where/db_chgk_info/loaders/latest_tournaments_loader.dart';
+import 'package:what_when_where/db_chgk_info/repositories/latest_tournaments_repository.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/rating.dart';
@@ -42,10 +43,15 @@ import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:what_when_where/redux/developer/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
 import 'package:what_when_where/db_chgk_info/loaders/random_questions_loader.dart';
+import 'package:what_when_where/db_chgk_info/repositories/random_questions_repository.dart';
 import 'package:what_when_where/db_chgk_info/loaders/search_loader.dart';
+import 'package:what_when_where/db_chgk_info/repositories/search_repository.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tour_details_loader.dart';
+import 'package:what_when_where/db_chgk_info/repositories/tour_details_repository.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournament_details_loader.dart';
+import 'package:what_when_where/db_chgk_info/repositories/tournament_details_repository.dart';
 import 'package:what_when_where/db_chgk_info/loaders/tournaments_tree_loader.dart';
+import 'package:what_when_where/db_chgk_info/repositories/tournaments_tree_repository.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
 import 'package:what_when_where/redux/search/middleware.dart';
 import 'package:what_when_where/redux/tournament/middleware.dart';
@@ -66,9 +72,16 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<IDialogService>(() => DialogService());
   g.registerLazySingleton<IHttpClient>(() => HttpClient(dio: g<Dio>()));
   g.registerLazySingleton<ILatestToJsonParser>(() => LatestToJsonParser());
-  g.registerLazySingleton<ILatestTournamentsLoader>(() =>
-      LatestTournamentsLoader(
-          httpClient: g<IHttpClient>(), parser: g<ILatestToJsonParser>()));
+  g.registerLazySingleton<ILatestTournamentsLoader>(
+      () => LatestTournamentsLoader(
+            httpClient: g<IHttpClient>(),
+            parser: g<ILatestToJsonParser>(),
+            backgroundService: g<IBackgroundRunnerService>(),
+          ));
+  g.registerLazySingleton<ILatestTournamentsRepository>(() =>
+      LatestTournamentsRepository(
+          loader: g<ILatestTournamentsLoader>(),
+          backgroundService: g<IBackgroundRunnerService>()));
   g.registerLazySingleton<INavigationService>(
       () => NavigationService(key: g<GlobalKey<NavigatorState>>()));
   g.registerLazySingleton<IPreferences>(() => Preferences());
@@ -82,8 +95,9 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<IVibratingService>(() => VibratingService());
   g.registerLazySingleton<IXmlToJsonParser>(() => XmlToJsonParser());
   g.registerFactory<InitializationMiddleware>(() => InitializationMiddleware());
-  g.registerFactory<LatestTournamentsMiddleware>(
-      () => LatestTournamentsMiddleware(loader: g<ILatestTournamentsLoader>()));
+  g.registerFactory<LatestTournamentsMiddleware>(() =>
+      LatestTournamentsMiddleware(
+          repository: g<ILatestTournamentsRepository>()));
   g.registerFactory<LogsMiddleware>(() => LogsMiddleware());
   g.registerFactory<NavigationMiddleware>(
       () => NavigationMiddleware(navigationService: g<INavigationService>()));
@@ -93,7 +107,10 @@ void $initGetIt(GetIt g, {String environment}) {
         crashService: g<ICrashService>(),
       ));
   g.registerFactory<ServicesMiddleware>(() => ServicesMiddleware(
-      crashService: g<ICrashService>(), soundService: g<ISoundService>()));
+        crashService: g<ICrashService>(),
+        soundService: g<ISoundService>(),
+        backgroundService: g<IBackgroundRunnerService>(),
+      ));
   g.registerFactory<SettingsMiddleware>(
       () => SettingsMiddleware(preferences: g<IPreferences>()));
   g.registerFactory<ShareMiddleware>(
@@ -112,24 +129,59 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<DialogMiddleware>(
       () => DialogMiddleware(dialogService: g<IDialogService>()));
   g.registerLazySingleton<IRandomQuestionsLoader>(() => RandomQuestionsLoader(
-      httpClient: g<IHttpClient>(), parser: g<IXmlToJsonParser>()));
+        httpClient: g<IHttpClient>(),
+        parser: g<IXmlToJsonParser>(),
+        backgroundService: g<IBackgroundRunnerService>(),
+      ));
+  g.registerLazySingleton<IRandomQuestionsRepository>(
+      () => RandomQuestionsRepository(
+            loader: g<IRandomQuestionsLoader>(),
+            parser: g<IXmlToJsonParser>(),
+            backgroundService: g<IBackgroundRunnerService>(),
+          ));
   g.registerLazySingleton<ISearchLoader>(() => SearchLoader(
-      httpClient: g<IHttpClient>(), parser: g<ISearchToJsonParser>()));
+        httpClient: g<IHttpClient>(),
+        parser: g<ISearchToJsonParser>(),
+        backgroundService: g<IBackgroundRunnerService>(),
+      ));
+  g.registerLazySingleton<ISearchRepository>(() => SearchRepository(
+      loader: g<ISearchLoader>(),
+      backgroundService: g<IBackgroundRunnerService>()));
   g.registerLazySingleton<ITourDetailsLoader>(() => TourDetailsLoader(
         httpClient: g<IHttpClient>(),
         parser: g<IXmlToJsonParser>(),
+        backgroundService: g<IBackgroundRunnerService>(),
+      ));
+  g.registerLazySingleton<ITourDetailsRepository>(() => TourDetailsRepository(
+        loader: g<ITourDetailsLoader>(),
         tournamentCache: g<ITournamentCache>(),
         tourCache: g<ITourCache>(),
+        backgroundService: g<IBackgroundRunnerService>(),
       ));
   g.registerLazySingleton<ITournamentDetailsLoader>(
       () => TournamentDetailsLoader(
             httpClient: g<IHttpClient>(),
             parser: g<IXmlToJsonParser>(),
+            backgroundService: g<IBackgroundRunnerService>(),
+          ));
+  g.registerLazySingleton<ITournamentDetailsRepository>(
+      () => TournamentDetailsRepository(
+            loader: g<ITournamentDetailsLoader>(),
             tournamentCache: g<ITournamentCache>(),
             tourCache: g<ITourCache>(),
+            backgroundService: g<IBackgroundRunnerService>(),
           ));
   g.registerLazySingleton<ITournamentsTreeLoader>(() => TournamentsTreeLoader(
-      httpClient: g<IHttpClient>(), parser: g<IXmlToJsonParser>()));
+        httpClient: g<IHttpClient>(),
+        parser: g<IXmlToJsonParser>(),
+        backgroundService: g<IBackgroundRunnerService>(),
+      ));
+  g.registerLazySingleton<ITournamentsTreeRepository>(
+      () => TournamentsTreeRepository(
+            loader: g<ITournamentsTreeLoader>(),
+            parser: g<IXmlToJsonParser>(),
+            backgroundService: g<IBackgroundRunnerService>(),
+          ));
   g.registerFactory<QuestionsMiddleware>(
       () => QuestionsMiddleware(loader: g<IRandomQuestionsLoader>()));
   g.registerFactory<SearchMiddleware>(

@@ -1,15 +1,11 @@
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/db_chgk_info/cache/tour_cache.dart';
-import 'package:what_when_where/db_chgk_info/cache/tournament_cache.dart';
 import 'package:what_when_where/db_chgk_info/http/http_client.dart';
-import 'package:what_when_where/db_chgk_info/models/dto_models/tour_dto.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/tournament_dto.dart';
-import 'package:what_when_where/db_chgk_info/models/tour.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/parsers/xml2json_parser.dart';
+import 'package:what_when_where/services/background.dart';
 
 abstract class ITournamentDetailsLoader {
-  Future<Tournament> get(String id);
+  Future<TournamentDto> get(String id);
 }
 
 @lazySingleton
@@ -17,54 +13,41 @@ abstract class ITournamentDetailsLoader {
 class TournamentDetailsLoader implements ITournamentDetailsLoader {
   final IHttpClient _httpClient;
   final IXmlToJsonParser _parser;
-  final ITournamentCache _tournamentsCache;
-  final ITourCache _toursCache;
+  final IBackgroundRunnerService _backgroundService;
 
   TournamentDetailsLoader({
     IHttpClient httpClient,
     IXmlToJsonParser parser,
-    ITournamentCache tournamentCache,
-    ITourCache tourCache,
+    IBackgroundRunnerService backgroundService,
   })  : _httpClient = httpClient,
         _parser = parser,
-        _tournamentsCache = tournamentCache,
-        _toursCache = tourCache;
+        _backgroundService = backgroundService;
 
   @override
-  Future<Tournament> get(String id) async {
-    if (_tournamentsCache.contains(id)) {
-      return _tournamentsCache.get(id);
-    }
-
+  Future<TournamentDto> get(String id) async {
     final data = await _httpClient.get(Uri(path: '/tour/$id/xml'));
-    final result = _parse(data);
-
-    _tournamentsCache.save(result);
-
-    return result;
+    final dto = await _backgroundService.run<TournamentDto, List<dynamic>>(
+        _parseTournamentDto, [data, _parser]);
+    return dto;
   }
+}
 
-  Tournament _parse(String data) {
-    final json = _parser.toJson(data);
-    final map = json['tournament'] as Map<String, dynamic>;
+TournamentDto _parseTournamentDto(List<dynamic> args) {
+  final data = args[0] as String;
+  final parser = args[1] as IXmlToJsonParser;
 
-    _handleTourlessTournament(map);
+  final json = parser.toJson(data);
+  final tournamentJson = json['tournament'] as Map<String, dynamic>;
 
-    final tournamentDto = TournamentDto.fromJson(map);
-    final tournament = Tournament.fromDto(tournamentDto);
-    return tournament;
-  }
+  _handleTourlessTournament(tournamentJson);
 
-  void _handleTourlessTournament(Map<String, dynamic> map) {
-    if (!map.containsKey('tour') && map.containsKey('question')) {
-      final tourMap = Map<String, dynamic>.from(map);
-      tourMap['ParentId'] = map['Id'];
+  return TournamentDto.fromJson(tournamentJson);
+}
 
-      final tourDto = TourDto.fromJson(tourMap);
-      final tour = Tour.fromDto(tourDto);
-      _toursCache.save(tour);
-
-      map['tour'] = tourMap;
-    }
+void _handleTourlessTournament(Map<String, dynamic> map) {
+  if (!map.containsKey('tour') && map.containsKey('question')) {
+    final tourMap = Map<String, dynamic>.from(map);
+    tourMap['ParentId'] = map['Id'];
+    map['tour'] = tourMap;
   }
 }

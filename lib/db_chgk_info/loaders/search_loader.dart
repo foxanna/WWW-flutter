@@ -1,12 +1,12 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/db_chgk_info/http/http_client.dart';
 import 'package:what_when_where/db_chgk_info/models/dto_models/search_tournaments_dto.dart';
-import 'package:what_when_where/db_chgk_info/models/tournament.dart';
 import 'package:what_when_where/db_chgk_info/parsers/search2json_parser.dart';
 import 'package:what_when_where/db_chgk_info/search/sorting.dart';
+import 'package:what_when_where/services/background.dart';
 
 abstract class ISearchLoader {
-  Future<Iterable<Tournament>> searchTournaments({
+  Future<SearchTournamentsDto> get({
     String query,
     Sorting sorting,
     int page,
@@ -18,15 +18,18 @@ abstract class ISearchLoader {
 class SearchLoader implements ISearchLoader {
   final IHttpClient _httpClient;
   final ISearchToJsonParser _parser;
+  final IBackgroundRunnerService _backgroundService;
 
   const SearchLoader({
     IHttpClient httpClient,
     ISearchToJsonParser parser,
+    IBackgroundRunnerService backgroundService,
   })  : _httpClient = httpClient,
-        _parser = parser;
+        _parser = parser,
+        _backgroundService = backgroundService;
 
   @override
-  Future<Iterable<Tournament>> searchTournaments({
+  Future<SearchTournamentsDto> get({
     String query,
     Sorting sorting,
     int page,
@@ -34,17 +37,10 @@ class SearchLoader implements ISearchLoader {
     final data = await _httpClient.get(Uri(
         path: '/search/tours/${_toQuery(query, sorting)}',
         queryParameters: {'page': page.toString()}));
-
-    final result = _parse(data);
-    return result;
-  }
-
-  Iterable<Tournament> _parse(String data) {
-    final json = _parser.toJson(data);
-    final searchDto = SearchTournamentsDto.fromJson(json);
-    final tournaments =
-        searchDto.tournaments.map((dto) => Tournament.fromDto(dto)).toList();
-    return tournaments;
+    final dto = await _backgroundService
+        .run<SearchTournamentsDto, List<dynamic>>(
+            _parseSearchTournamentsDto, [data, _parser]);
+    return dto;
   }
 
   String _toQuery(String query, Sorting sorting) {
@@ -61,4 +57,12 @@ class SearchLoader implements ISearchLoader {
 
     return queryBuilder.toString();
   }
+}
+
+SearchTournamentsDto _parseSearchTournamentsDto(List<dynamic> args) {
+  final data = args[0] as String;
+  final parser = args[1] as ISearchToJsonParser;
+
+  final json = parser.toJson(data);
+  return SearchTournamentsDto.fromJson(json);
 }
