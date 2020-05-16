@@ -20,6 +20,13 @@ an application for fans of the popular show "What? Where? When?”.
 * Tournaments tree;
 * Dark and light modes.
 
+## Future plans 🔮
+
+* Release iOS version;
+* Adaptive layout for phones and tablets;
+* Bookmark tournaments, save bookmarked tournaments for offline use;
+* Visually differentiate between viewed and new tournaments.
+
 ## Author  👩‍💻
 
 Created with [Flutter](https://flutter.dev/) by [Anna Domashych](https://foxanna.github.io/)
