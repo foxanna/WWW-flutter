@@ -2,7 +2,6 @@ import 'package:injectable/injectable.dart';
 import 'package:what_when_where/api/loaders/latest_tournaments_loader.dart';
 import 'package:what_when_where/api/models/latest_tournaments_dto.dart';
 import 'package:what_when_where/data/models/tournament.dart';
-import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/data/status/tournament_status.dart';
 import 'package:what_when_where/services/background.dart';
 

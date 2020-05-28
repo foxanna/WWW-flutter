@@ -18,7 +18,7 @@ class TourDetailsProvider implements ITourDetailsProvider {
   final ITourCache _toursCache;
   final IBackgroundRunnerService _backgroundService;
 
-  TourDetailsProvider({
+  const TourDetailsProvider({
     ITourDetailsLoader loader,
     ITournamentCache tournamentCache,
     ITourCache tourCache,

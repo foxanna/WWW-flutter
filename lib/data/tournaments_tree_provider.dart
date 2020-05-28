@@ -16,7 +16,7 @@ class TournamentsTreeProvider implements ITournamentsTreeProvider {
   final IBackgroundRunnerService _backgroundService;
   final ITournamentStatusService _statusService;
 
-  TournamentsTreeProvider({
+  const TournamentsTreeProvider({
     ITournamentsTreeLoader loader,
     IBackgroundRunnerService backgroundService,
     ITournamentStatusService statusService,
