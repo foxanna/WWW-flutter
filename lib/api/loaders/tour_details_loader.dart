@@ -10,8 +10,7 @@ abstract class ITourDetailsLoader {
   Future<TourDto> get(String id);
 }
 
-@lazySingleton
-@RegisterAs(ITourDetailsLoader)
+@LazySingleton(as: ITourDetailsLoader)
 class TourDetailsLoader implements ITourDetailsLoader {
   final IHttpClient _httpClient;
   final IXmlToJsonParser _parser;

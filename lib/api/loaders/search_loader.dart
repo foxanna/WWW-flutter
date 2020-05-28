@@ -13,8 +13,7 @@ abstract class ISearchLoader {
   });
 }
 
-@lazySingleton
-@RegisterAs(ISearchLoader)
+@LazySingleton(as: ISearchLoader)
 class SearchLoader implements ISearchLoader {
   final IHttpClient _httpClient;
   final ISearchToJsonParser _parser;

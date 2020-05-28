@@ -7,8 +7,7 @@ abstract class ISearchToJsonParser {
   Map<String, dynamic> toJson(String data);
 }
 
-@lazySingleton
-@RegisterAs(ISearchToJsonParser)
+@LazySingleton(as: ISearchToJsonParser)
 class SearchToJsonParser implements ISearchToJsonParser {
   @override
   Map<String, dynamic> toJson(String html) {

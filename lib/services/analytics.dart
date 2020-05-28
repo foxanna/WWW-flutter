@@ -11,8 +11,7 @@ abstract class IAnalyticsService {
   void logEvent({@required String name, Map<String, dynamic> parameters});
 }
 
-@lazySingleton
-@RegisterAs(IAnalyticsService)
+@LazySingleton(as: IAnalyticsService)
 class AnalyticsService implements IAnalyticsService {
   final FirebaseAnalytics _analytics = FirebaseAnalytics();
 

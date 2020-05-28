@@ -9,8 +9,7 @@ abstract class IXmlToJsonParser {
   Map<String, dynamic> toJson(String data);
 }
 
-@lazySingleton
-@RegisterAs(IXmlToJsonParser)
+@LazySingleton(as: IXmlToJsonParser)
 class XmlToJsonParser implements IXmlToJsonParser {
   @override
   Map<String, dynamic> toJson(String xml) {

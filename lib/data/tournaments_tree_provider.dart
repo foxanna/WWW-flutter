@@ -8,8 +8,7 @@ abstract class ITournamentsTreeProvider {
   Future<TournamentsTree> get({String id});
 }
 
-@lazySingleton
-@RegisterAs(ITournamentsTreeProvider)
+@LazySingleton(as: ITournamentsTreeProvider)
 class TournamentsTreeProvider implements ITournamentsTreeProvider {
   final ITournamentsTreeLoader _loader;
   final IBackgroundRunnerService _backgroundService;

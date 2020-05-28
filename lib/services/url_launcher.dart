@@ -7,8 +7,7 @@ abstract class IUrlLauncher {
   Future<void> sendEmail(String to, String subject);
 }
 
-@lazySingleton
-@RegisterAs(IUrlLauncher)
+@LazySingleton(as: IUrlLauncher)
 class UrlLauncher implements IUrlLauncher {
   @override
   Future<void> launchURL(String url) async {

@@ -9,8 +9,7 @@ abstract class IPreferences {
   Future<void> setBool(String key, bool value);
 }
 
-@lazySingleton
-@RegisterAs(IPreferences)
+@LazySingleton(as: IPreferences)
 class Preferences implements IPreferences {
   @override
   Future<int> getInt(String key, {int defaultValue = 0}) async {

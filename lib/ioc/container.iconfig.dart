@@ -4,8 +4,8 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-import 'package:dio/dio.dart';
 import 'package:what_when_where/ioc/injectable_module.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/src/widgets/navigator.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:what_when_where/services/analytics.dart';

@@ -5,8 +5,7 @@ abstract class ISharingService {
   void share(String text);
 }
 
-@lazySingleton
-@RegisterAs(ISharingService)
+@LazySingleton(as: ISharingService)
 class SharingService implements ISharingService {
   @override
   void share(String text) {

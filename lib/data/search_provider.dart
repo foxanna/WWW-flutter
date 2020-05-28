@@ -13,8 +13,7 @@ abstract class ISearchProvider {
   });
 }
 
-@lazySingleton
-@RegisterAs(ISearchProvider)
+@LazySingleton(as: ISearchProvider)
 class SearchProvider implements ISearchProvider {
   final ISearchLoader _loader;
   final IBackgroundRunnerService _backgroundService;

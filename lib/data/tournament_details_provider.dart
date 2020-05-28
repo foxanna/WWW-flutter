@@ -10,8 +10,7 @@ abstract class ITournamentDetailsProvider {
   Future<Tournament> get(String id);
 }
 
-@lazySingleton
-@RegisterAs(ITournamentDetailsProvider)
+@LazySingleton(as: ITournamentDetailsProvider)
 class TournamentDetailsProvider implements ITournamentDetailsProvider {
   final ITournamentDetailsLoader _loader;
   final ITournamentCache _tournamentsCache;

@@ -8,8 +8,7 @@ abstract class ICrashService {
   void recordException(Exception exception, {StackTrace stackTrace});
 }
 
-@lazySingleton
-@RegisterAs(ICrashService)
+@LazySingleton(as: ICrashService)
 class CrashService implements ICrashService {
   @override
   void init() {

@@ -12,8 +12,7 @@ abstract class ISoundService {
   void playSound();
 }
 
-@lazySingleton
-@RegisterAs(ISoundService)
+@LazySingleton(as: ISoundService)
 class SoundService implements ISoundService {
   static const _timerAssetName = 'timer.mp3';
 

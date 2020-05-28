@@ -9,8 +9,7 @@ abstract class ITournamentCache {
   Tournament get(String id);
 }
 
-@lazySingleton
-@RegisterAs(ITournamentCache)
+@LazySingleton(as: ITournamentCache)
 class TournamentCache implements ITournamentCache {
   final _cacheById = <String, Tournament>{};
   final _cacheByTextId = <String, Tournament>{};

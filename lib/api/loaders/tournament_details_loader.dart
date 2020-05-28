@@ -8,8 +8,7 @@ abstract class ITournamentDetailsLoader {
   Future<TournamentDto> get(String id);
 }
 
-@lazySingleton
-@RegisterAs(ITournamentDetailsLoader)
+@LazySingleton(as: ITournamentDetailsLoader)
 class TournamentDetailsLoader implements ITournamentDetailsLoader {
   final IHttpClient _httpClient;
   final IXmlToJsonParser _parser;

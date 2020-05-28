@@ -5,8 +5,7 @@ abstract class IRatingService {
   Future<void> rateApp();
 }
 
-@lazySingleton
-@RegisterAs(IRatingService)
+@LazySingleton(as: IRatingService)
 class RatingService implements IRatingService {
   @override
   Future<void> rateApp() async {

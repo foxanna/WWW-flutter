@@ -8,8 +8,7 @@ abstract class IRandomQuestionsLoader {
   Future<RandomQuestionsDto> get();
 }
 
-@lazySingleton
-@RegisterAs(IRandomQuestionsLoader)
+@LazySingleton(as: IRandomQuestionsLoader)
 class RandomQuestionsLoader implements IRandomQuestionsLoader {
   final IHttpClient _httpClient;
   final IXmlToJsonParser _parser;

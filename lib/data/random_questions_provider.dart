@@ -9,8 +9,7 @@ abstract class IRandomQuestionsProvider {
   Future<Iterable<Question>> get();
 }
 
-@lazySingleton
-@RegisterAs(IRandomQuestionsProvider)
+@LazySingleton(as: IRandomQuestionsProvider)
 class RandomQuestionsProvider implements IRandomQuestionsProvider {
   final IRandomQuestionsLoader _loader;
   final IBackgroundRunnerService _backgroundService;

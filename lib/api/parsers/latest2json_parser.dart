@@ -7,8 +7,7 @@ abstract class ILatestToJsonParser {
   Map<String, dynamic> toJson(String data);
 }
 
-@lazySingleton
-@RegisterAs(ILatestToJsonParser)
+@LazySingleton(as: ILatestToJsonParser)
 class LatestToJsonParser implements ILatestToJsonParser {
   @override
   Map<String, dynamic> toJson(String html) {

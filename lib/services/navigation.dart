@@ -13,8 +13,7 @@ abstract class INavigationService {
   });
 }
 
-@lazySingleton
-@RegisterAs(INavigationService)
+@LazySingleton(as: INavigationService)
 class NavigationService implements INavigationService {
   final GlobalKey<NavigatorState> _key;
 

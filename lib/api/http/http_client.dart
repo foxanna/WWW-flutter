@@ -14,8 +14,7 @@ abstract class IHttpClient {
   Future<String> get(Uri uri, {CancelToken cancelToken});
 }
 
-@lazySingleton
-@RegisterAs(IHttpClient)
+@LazySingleton(as: IHttpClient)
 class HttpClient implements IHttpClient {
   final Dio _dio;
 

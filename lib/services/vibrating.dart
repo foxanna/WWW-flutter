@@ -5,8 +5,7 @@ abstract class IVibratingService {
   Future<void> vibrate();
 }
 
-@lazySingleton
-@RegisterAs(IVibratingService)
+@LazySingleton(as: IVibratingService)
 class VibratingService implements IVibratingService {
   @override
   Future<void> vibrate() async {

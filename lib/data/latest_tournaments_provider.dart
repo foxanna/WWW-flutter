@@ -8,8 +8,7 @@ abstract class ILatestTournamentsProvider {
   Future<Iterable<Tournament>> get({int page = 0});
 }
 
-@lazySingleton
-@RegisterAs(ILatestTournamentsProvider)
+@LazySingleton(as: ILatestTournamentsProvider)
 class LatestTournamentsProvider implements ILatestTournamentsProvider {
   final ILatestTournamentsLoader _loader;
   final IBackgroundRunnerService _backgroundService;

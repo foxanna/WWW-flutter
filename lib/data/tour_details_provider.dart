@@ -11,8 +11,7 @@ abstract class ITourDetailsProvider {
   Future<Tour> get(String id);
 }
 
-@lazySingleton
-@RegisterAs(ITourDetailsProvider)
+@LazySingleton(as: ITourDetailsProvider)
 class TourDetailsProvider implements ITourDetailsProvider {
   final ITourDetailsLoader _loader;
   final ITournamentCache _tournamentsCache;

@@ -10,8 +10,7 @@ abstract class IDialogHelper {
       Future<T> Function<T>(WidgetBuilder builder) presenter);
 }
 
-@lazySingleton
-@RegisterAs(IDialogService)
+@LazySingleton(as: IDialogService)
 class DialogService implements IDialogService, IDialogHelper {
   Future<T> Function<T>(WidgetBuilder builder) _presenter;
 

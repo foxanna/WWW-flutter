@@ -19,8 +19,7 @@ abstract class IContainer {
   T call<T>();
 }
 
-@lazySingleton
-@RegisterAs(IContainer)
+@LazySingleton(as: IContainer)
 class WWWContainer implements IContainer {
   @override
   T call<T>() => _getIt<T>();

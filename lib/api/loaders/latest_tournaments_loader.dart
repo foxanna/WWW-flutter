@@ -8,8 +8,7 @@ abstract class ILatestTournamentsLoader {
   Future<LatestTournamentsDto> get(int page);
 }
 
-@lazySingleton
-@RegisterAs(ILatestTournamentsLoader)
+@LazySingleton(as: ILatestTournamentsLoader)
 class LatestTournamentsLoader implements ILatestTournamentsLoader {
   final IHttpClient _httpClient;
   final ILatestToJsonParser _parser;

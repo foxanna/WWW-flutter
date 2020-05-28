@@ -9,8 +9,7 @@ abstract class IBackgroundRunnerService {
   Future<R> run<R, P>(FutureOr<R> Function(P argument) function, P argument);
 }
 
-@lazySingleton
-@RegisterAs(IBackgroundRunnerService)
+@LazySingleton(as: IBackgroundRunnerService)
 class BackgroundRunnerService implements IBackgroundRunnerService {
   IsolateRunner _runner;
 

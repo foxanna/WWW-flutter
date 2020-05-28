@@ -9,8 +9,7 @@ abstract class ITourCache {
   Tour get(String id);
 }
 
-@lazySingleton
-@RegisterAs(ITourCache)
+@LazySingleton(as: ITourCache)
 class TourCache implements ITourCache {
   final _cache = <String, Tour>{};
 
