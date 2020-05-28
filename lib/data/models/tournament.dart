@@ -4,6 +4,7 @@ import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/api/models/tournament_dto.dart';
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 part 'tournament.freezed.dart';
@@ -14,6 +15,7 @@ abstract class Tournament with _$Tournament {
     String id,
     String id2,
     @Default(TournamentInfo()) TournamentInfo info,
+    @Default(TournamentStatus()) TournamentStatus status,
     @Default(<Tour>[]) List<Tour> tours,
   }) = _Tournament;
 

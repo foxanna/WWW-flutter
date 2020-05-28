@@ -16,11 +16,13 @@ class _$TournamentTearOff {
       {String id,
       String id2,
       TournamentInfo info = const TournamentInfo(),
+      TournamentStatus status = const TournamentStatus(),
       List<Tour> tours = const <Tour>[]}) {
     return _Tournament(
       id: id,
       id2: id2,
       info: info,
+      status: status,
       tours: tours,
     );
   }
@@ -33,6 +35,7 @@ mixin _$Tournament {
   String get id;
   String get id2;
   TournamentInfo get info;
+  TournamentStatus get status;
   List<Tour> get tours;
 
   $TournamentCopyWith<Tournament> get copyWith;
@@ -42,9 +45,15 @@ abstract class $TournamentCopyWith<$Res> {
   factory $TournamentCopyWith(
           Tournament value, $Res Function(Tournament) then) =
       _$TournamentCopyWithImpl<$Res>;
-  $Res call({String id, String id2, TournamentInfo info, List<Tour> tours});
+  $Res call(
+      {String id,
+      String id2,
+      TournamentInfo info,
+      TournamentStatus status,
+      List<Tour> tours});
 
   $TournamentInfoCopyWith<$Res> get info;
+  $TournamentStatusCopyWith<$Res> get status;
 }
 
 class _$TournamentCopyWithImpl<$Res> implements $TournamentCopyWith<$Res> {
@@ -59,12 +68,14 @@ class _$TournamentCopyWithImpl<$Res> implements $TournamentCopyWith<$Res> {
     Object id = freezed,
     Object id2 = freezed,
     Object info = freezed,
+    Object status = freezed,
     Object tours = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       id2: id2 == freezed ? _value.id2 : id2 as String,
       info: info == freezed ? _value.info : info as TournamentInfo,
+      status: status == freezed ? _value.status : status as TournamentStatus,
       tours: tours == freezed ? _value.tours : tours as List<Tour>,
     ));
   }
@@ -78,6 +89,16 @@ class _$TournamentCopyWithImpl<$Res> implements $TournamentCopyWith<$Res> {
       return _then(_value.copyWith(info: value));
     });
   }
+
+  @override
+  $TournamentStatusCopyWith<$Res> get status {
+    if (_value.status == null) {
+      return null;
+    }
+    return $TournamentStatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value));
+    });
+  }
 }
 
 abstract class _$TournamentCopyWith<$Res> implements $TournamentCopyWith<$Res> {
@@ -85,10 +106,17 @@ abstract class _$TournamentCopyWith<$Res> implements $TournamentCopyWith<$Res> {
           _Tournament value, $Res Function(_Tournament) then) =
       __$TournamentCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String id2, TournamentInfo info, List<Tour> tours});
+  $Res call(
+      {String id,
+      String id2,
+      TournamentInfo info,
+      TournamentStatus status,
+      List<Tour> tours});
 
   @override
   $TournamentInfoCopyWith<$Res> get info;
+  @override
+  $TournamentStatusCopyWith<$Res> get status;
 }
 
 class __$TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
@@ -105,12 +133,14 @@ class __$TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
     Object id = freezed,
     Object id2 = freezed,
     Object info = freezed,
+    Object status = freezed,
     Object tours = freezed,
   }) {
     return _then(_Tournament(
       id: id == freezed ? _value.id : id as String,
       id2: id2 == freezed ? _value.id2 : id2 as String,
       info: info == freezed ? _value.info : info as TournamentInfo,
+      status: status == freezed ? _value.status : status as TournamentStatus,
       tours: tours == freezed ? _value.tours : tours as List<Tour>,
     ));
   }
@@ -121,8 +151,10 @@ class _$_Tournament with DiagnosticableTreeMixin implements _Tournament {
       {this.id,
       this.id2,
       this.info = const TournamentInfo(),
+      this.status = const TournamentStatus(),
       this.tours = const <Tour>[]})
       : assert(info != null),
+        assert(status != null),
         assert(tours != null);
 
   @override
@@ -132,13 +164,16 @@ class _$_Tournament with DiagnosticableTreeMixin implements _Tournament {
   @JsonKey(defaultValue: const TournamentInfo())
   @override
   final TournamentInfo info;
+  @JsonKey(defaultValue: const TournamentStatus())
+  @override
+  final TournamentStatus status;
   @JsonKey(defaultValue: const <Tour>[])
   @override
   final List<Tour> tours;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Tournament(id: $id, id2: $id2, info: $info, tours: $tours)';
+    return 'Tournament(id: $id, id2: $id2, info: $info, status: $status, tours: $tours)';
   }
 
   @override
@@ -149,6 +184,7 @@ class _$_Tournament with DiagnosticableTreeMixin implements _Tournament {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('id2', id2))
       ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('status', status))
       ..add(DiagnosticsProperty('tours', tours));
   }
 
@@ -162,6 +198,8 @@ class _$_Tournament with DiagnosticableTreeMixin implements _Tournament {
                 const DeepCollectionEquality().equals(other.id2, id2)) &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.tours, tours) ||
                 const DeepCollectionEquality().equals(other.tours, tours)));
   }
@@ -172,6 +210,7 @@ class _$_Tournament with DiagnosticableTreeMixin implements _Tournament {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(id2) ^
       const DeepCollectionEquality().hash(info) ^
+      const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(tours);
 
   @override
@@ -184,6 +223,7 @@ abstract class _Tournament implements Tournament {
       {String id,
       String id2,
       TournamentInfo info,
+      TournamentStatus status,
       List<Tour> tours}) = _$_Tournament;
 
   @override
@@ -192,6 +232,8 @@ abstract class _Tournament implements Tournament {
   String get id2;
   @override
   TournamentInfo get info;
+  @override
+  TournamentStatus get status;
   @override
   List<Tour> get tours;
   @override
