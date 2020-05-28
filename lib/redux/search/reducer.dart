@@ -1,7 +1,10 @@
+import 'package:dartx/dartx.dart';
 import 'package:redux/redux.dart';
+import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/redux/redux_action.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
+import 'package:what_when_where/redux/tournament/actions.dart';
 
 class SearchReducer {
   static final Reducer<SearchState> _reducer = combineReducers<SearchState>([
@@ -13,6 +16,7 @@ class SearchReducer {
     TypedReducer<SearchState, LoadingSearchSystemAction>(_loading),
     TypedReducer<SearchState, FailedSearchSystemAction>(_failed),
     TypedReducer<SearchState, CompletedSearchSystemAction>(_completed),
+    TypedReducer<SearchState, ReadTournamentSystemAction>(_read),
   ]);
 
   static SearchState reduce(SearchState state, ReduxAction action) =>
@@ -75,4 +79,29 @@ class SearchReducer {
               canLoadMore: action.canLoadMore,
             )
           : state;
+
+  static SearchState _read(
+      SearchState state, ReadTournamentSystemAction action) {
+    if (state == null) {
+      return state;
+    }
+
+    final index = state.dataOrEmpty.indexWhere((x) =>
+        (action.info.id.isNotNullOrEmpty && x.id == action.info.id) ||
+        (action.info.id2.isNotNullOrEmpty && x.id2 == action.info.id2));
+
+    if (index < 0) {
+      return state;
+    }
+
+    final newData = List<Tournament>.from(state.dataOrEmpty, growable: false);
+    newData[index] = newData[index].copyWith.status(isNew: false);
+
+    return state.maybeMap(
+      data: (value) => value.copyWith(data: newData),
+      loadingWithData: (value) => value.copyWith(data: newData),
+      errorWithData: (value) => value.copyWith(data: newData),
+      orElse: () => state,
+    );
+  }
 }

@@ -45,7 +45,6 @@ import 'package:what_when_where/redux/dialogs/middleware.dart';
 import 'package:what_when_where/api/loaders/random_questions_loader.dart';
 import 'package:what_when_where/data/random_questions_provider.dart';
 import 'package:what_when_where/api/loaders/search_loader.dart';
-import 'package:what_when_where/data/search_provider.dart';
 import 'package:what_when_where/api/loaders/tour_details_loader.dart';
 import 'package:what_when_where/data/tour_details_provider.dart';
 import 'package:what_when_where/api/loaders/tournament_details_loader.dart';
@@ -54,13 +53,14 @@ import 'package:what_when_where/data/status/tournament_status.dart';
 import 'package:what_when_where/api/loaders/tournaments_tree_loader.dart';
 import 'package:what_when_where/data/tournaments_tree_provider.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
-import 'package:what_when_where/redux/search/middleware.dart';
 import 'package:what_when_where/redux/tournament/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/app/store.dart';
 import 'package:what_when_where/data/latest_tournaments_provider.dart';
+import 'package:what_when_where/data/search_provider.dart';
 import 'package:what_when_where/redux/latest/middleware.dart';
+import 'package:what_when_where/redux/search/middleware.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
@@ -144,9 +144,6 @@ void $initGetIt(GetIt g, {String environment}) {
         parser: g<ISearchToJsonParser>(),
         backgroundService: g<IBackgroundRunnerService>(),
       ));
-  g.registerLazySingleton<ISearchProvider>(() => SearchProvider(
-      loader: g<ISearchLoader>(),
-      backgroundService: g<IBackgroundRunnerService>()));
   g.registerLazySingleton<ITourDetailsLoader>(() => TourDetailsLoader(
         httpClient: g<IHttpClient>(),
         parser: g<IXmlToJsonParser>(),
@@ -184,8 +181,6 @@ void $initGetIt(GetIt g, {String environment}) {
           backgroundService: g<IBackgroundRunnerService>()));
   g.registerFactory<QuestionsMiddleware>(
       () => QuestionsMiddleware(provider: g<IRandomQuestionsProvider>()));
-  g.registerFactory<SearchMiddleware>(
-      () => SearchMiddleware(provider: g<ISearchProvider>()));
   g.registerFactory<TournamentMiddleware>(() => TournamentMiddleware(
       provider: g<ITournamentDetailsProvider>(),
       historyService: g<ITournamentsHistoryService>()));
@@ -201,8 +196,15 @@ void $initGetIt(GetIt g, {String environment}) {
             backgroundService: g<IBackgroundRunnerService>(),
             statusService: g<ITournamentStatusService>(),
           ));
+  g.registerLazySingleton<ISearchProvider>(() => SearchProvider(
+        loader: g<ISearchLoader>(),
+        backgroundService: g<IBackgroundRunnerService>(),
+        statusService: g<ITournamentStatusService>(),
+      ));
   g.registerFactory<LatestTournamentsMiddleware>(() =>
       LatestTournamentsMiddleware(provider: g<ILatestTournamentsProvider>()));
+  g.registerFactory<SearchMiddleware>(
+      () => SearchMiddleware(provider: g<ISearchProvider>()));
 }
 
 class _$RegisterModule extends RegisterModule {}

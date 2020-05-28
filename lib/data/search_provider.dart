@@ -3,6 +3,7 @@ import 'package:what_when_where/api/loaders/search_loader.dart';
 import 'package:what_when_where/api/models/search_tournaments_dto.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/api/search/sorting.dart';
+import 'package:what_when_where/data/status/tournament_status.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ISearchProvider {
@@ -17,12 +18,15 @@ abstract class ISearchProvider {
 class SearchProvider implements ISearchProvider {
   final ISearchLoader _loader;
   final IBackgroundRunnerService _backgroundService;
+  final ITournamentStatusService _statusService;
 
   const SearchProvider({
     ISearchLoader loader,
     IBackgroundRunnerService backgroundService,
+    ITournamentStatusService statusService,
   })  : _loader = loader,
-        _backgroundService = backgroundService;
+        _backgroundService = backgroundService,
+        _statusService = statusService;
 
   @override
   Future<Iterable<Tournament>> get({
@@ -34,7 +38,8 @@ class SearchProvider implements ISearchProvider {
     final result = await _backgroundService
         .run<Iterable<Tournament>, List<dynamic>>(
             _tournamentsFromSearchTournamentsDto, [dto]);
-    return result;
+    final actualResult = await _statusService.actualizeAll(result);
+    return actualResult.toList();
   }
 }
 
