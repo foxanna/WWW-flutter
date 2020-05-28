@@ -63,7 +63,7 @@ class Themes {
       cardTheme: CardTheme(
         margin: EdgeInsets.zero,
         clipBehavior: Clip.hardEdge,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(Dimensions.mediumComponentsCornerRadiusValue),
           ),
@@ -72,7 +72,7 @@ class Themes {
         color: theme.cardColor,
       ),
       cardColor: theme.cardColor,
-      bottomSheetTheme: BottomSheetThemeData(
+      bottomSheetTheme: const BottomSheetThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(Dimensions.largeComponentsCornerRadiusValue),
@@ -92,7 +92,7 @@ class Themes {
           color: theme.accentColor,
         ),
         contentTextStyle: textTheme.caption,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(Dimensions.mediumComponentsCornerRadiusValue),
           ),
