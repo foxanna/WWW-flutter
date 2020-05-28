@@ -204,7 +204,7 @@ class TournamentsGridStyleConfiguration {
     return TournamentsGridStyleConfiguration._(
       gridTileTitleTextStyle: theme.textTheme.subtitle1,
       gridTileSecondLineTextStyle: theme.textTheme.caption,
-      tileContentPadding: Dimensions.defaultListTilePadding,
+      tileContentPadding: Dimensions.defaultPadding * 2,
       gridSpacing: 16.0,
       columnsCount: 2,
       tileContentSpacing: Dimensions.defaultSpacing * 2,
