@@ -26,6 +26,7 @@ import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/sound.dart';
 import 'package:what_when_where/data/cache/tour_cache.dart';
 import 'package:what_when_where/data/cache/tournament_cache.dart';
+import 'package:what_when_where/data/history/tournaments_history.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/services/vibrating.dart';
 import 'package:what_when_where/api/parsers/xml2json_parser.dart';
@@ -93,6 +94,10 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<ISoundService>(() => SoundService());
   g.registerLazySingleton<ITourCache>(() => TourCache());
   g.registerLazySingleton<ITournamentCache>(() => TournamentCache());
+  g.registerLazySingleton<ITournamentsHistoryService>(() =>
+      TournamentsHistoryService(
+          localStorage: g<ILocalStorageService>(),
+          crashService: g<ICrashService>()));
   g.registerLazySingleton<IUrlLauncher>(() => UrlLauncher());
   g.registerLazySingleton<IVibratingService>(() => VibratingService());
   g.registerLazySingleton<IXmlToJsonParser>(() => XmlToJsonParser());
