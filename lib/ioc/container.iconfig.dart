@@ -17,6 +17,7 @@ import 'package:what_when_where/api/http/http_client.dart';
 import 'package:what_when_where/api/parsers/latest2json_parser.dart';
 import 'package:what_when_where/api/loaders/latest_tournaments_loader.dart';
 import 'package:what_when_where/data/latest_tournaments_provider.dart';
+import 'package:what_when_where/services/storage.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/rating.dart';
@@ -82,6 +83,7 @@ void $initGetIt(GetIt g, {String environment}) {
       LatestTournamentsProvider(
           loader: g<ILatestTournamentsLoader>(),
           backgroundService: g<IBackgroundRunnerService>()));
+  g.registerLazySingleton<ILocalStorageService>(() => LocalStorageService());
   g.registerLazySingleton<INavigationService>(
       () => NavigationService(key: g<GlobalKey<NavigatorState>>()));
   g.registerLazySingleton<IPreferences>(() => Preferences());
