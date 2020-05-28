@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/localization/translations/translations.i69n.dart';
 import 'package:what_when_where/redux/app/state.dart';
@@ -11,6 +14,7 @@ import 'package:what_when_where/ui/common/text_hero.dart';
 
 class TournamentsGridTile extends StatelessWidget {
   final TournamentInfo tournamentInfo;
+  final TournamentStatus tournamentStatus;
 
   final String _backgroundHeroTag;
   final String _titleHeroTag;
@@ -18,16 +22,19 @@ class TournamentsGridTile extends StatelessWidget {
   TournamentsGridTile({
     Key key,
     @required TournamentInfo tournamentInfo,
+    TournamentStatus tournamentStatus,
   }) : this._(
           key: key,
           tournamentInfo: tournamentInfo,
           backgroundHeroTag: '${tournamentInfo.id2}bg',
           titleHeroTag: '${tournamentInfo.id2}ttl',
+          tournamentStatus: tournamentStatus ?? const TournamentStatus(),
         );
 
   const TournamentsGridTile._({
     Key key,
     this.tournamentInfo,
+    this.tournamentStatus,
     String backgroundHeroTag,
     String titleHeroTag,
   })  : this._backgroundHeroTag = backgroundHeroTag,
@@ -45,6 +52,8 @@ class TournamentsGridTile extends StatelessWidget {
             title: tournamentInfo.title ?? '',
             subhead:
                 _buildSubheadText(WWWLocalizations.of(context), tournamentInfo),
+            isNew: tournamentStatus.isNew,
+            isBookmarked: tournamentStatus.isBookmarked,
             onTap: () => _openTournamentDetails(context),
           ),
         ],
@@ -109,11 +118,15 @@ class _TournamentsGridTileContent extends StatelessWidget {
     this.title,
     this.onTap,
     this.subhead,
+    this.isNew,
+    this.isBookmarked,
   }) : super(key: key);
 
   final String titleHeroTag;
   final String title;
   final String subhead;
+  final bool isNew;
+  final bool isBookmarked;
   final VoidCallback onTap;
 
   @override
@@ -121,34 +134,79 @@ class _TournamentsGridTileContent extends StatelessWidget {
     final styleConfiguration = StyleConfiguration.of(context);
     final gridStyleConfiguration =
         styleConfiguration.tournamentsGridStyleConfiguration;
+    final cardTheme = CardTheme.of(context);
 
     return Card(
       child: InkWell(
-        child: Padding(
-          padding: gridStyleConfiguration.tileContentPadding,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              TextHeroFrom(
-                tag: titleHeroTag,
-                startTextStyle: gridStyleConfiguration.gridTileTitleTextStyle,
-                endTextStyle: styleConfiguration
-                    .tournamentDetailsStyleConfiguration
-                    .tournamentTitleTextStyle,
-                text: title,
+        child: Stack(
+          children: [
+            Padding(
+              padding: gridStyleConfiguration.tileContentPadding,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  TextHeroFrom(
+                    tag: titleHeroTag,
+                    startTextStyle:
+                        gridStyleConfiguration.gridTileTitleTextStyle,
+                    endTextStyle: styleConfiguration
+                        .tournamentDetailsStyleConfiguration
+                        .tournamentTitleTextStyle,
+                    text: title,
+                  ),
+                  if (subhead.isNotEmpty)
+                    SizedBox(
+                      height: gridStyleConfiguration.tileContentSpacing,
+                    ),
+                  if (subhead.isNotEmpty)
+                    Text(
+                      subhead,
+                      style: gridStyleConfiguration.gridTileSecondLineTextStyle,
+                    ),
+                ],
               ),
-              if (subhead.isNotEmpty)
-                SizedBox(
-                  height: gridStyleConfiguration.tileContentSpacing,
+            ),
+            if (isNew)
+              Positioned(
+                right: max(gridStyleConfiguration.tileContentPadding.right,
+                    gridStyleConfiguration.tileContentPadding.bottom),
+                bottom: max(gridStyleConfiguration.tileContentPadding.right,
+                    gridStyleConfiguration.tileContentPadding.bottom),
+                child: Container(
+                  width:
+                      gridStyleConfiguration.newTournamentIndicatorRadius * 2,
+                  height:
+                      gridStyleConfiguration.newTournamentIndicatorRadius * 2,
+                  foregroundDecoration: BoxDecoration(
+                    color: gridStyleConfiguration.newTournamentIndicatorColor,
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: cardTheme.color,
+                        spreadRadius: gridStyleConfiguration
+                                .newTournamentIndicatorRadius *
+                            3,
+                        blurRadius: gridStyleConfiguration
+                                .newTournamentIndicatorRadius *
+                            2,
+                      )
+                    ],
+                  ),
                 ),
-              if (subhead.isNotEmpty)
-                Text(
-                  subhead,
-                  style: gridStyleConfiguration.gridTileSecondLineTextStyle,
+              ),
+            if (isBookmarked)
+              Positioned(
+                top: -4.0,
+                right: gridStyleConfiguration.tileContentPadding.right / 2,
+                child: Icon(
+                  Icons.bookmark,
+                  color:
+                      gridStyleConfiguration.bookmarkedTournamentIndicatorColor,
+                  size: gridStyleConfiguration.bookmarkedTournamentIconSize,
                 ),
-            ],
-          ),
+              ),
+          ],
         ),
         onTap: onTap,
       ),
