@@ -205,11 +205,15 @@ class TournamentsGridStyleConfiguration {
       gridTileTitleTextStyle: theme.textTheme.subtitle1,
       gridTileSecondLineTextStyle: theme.textTheme.caption,
       tileContentPadding: Dimensions.defaultPadding * 2,
-      gridSpacing: 16.0,
+      gridSpacing: Dimensions.defaultSpacing * 2,
       columnsCount: 2,
       tileContentSpacing: Dimensions.defaultSpacing * 2,
-      gridPadding: const EdgeInsets.all(16.0) +
+      gridPadding: Dimensions.defaultPadding * 2 +
           EdgeInsets.only(left: padding.left, right: padding.right),
+      newTournamentIndicatorColor: theme.accentColor,
+      newTournamentIndicatorRadius: 4.0,
+      bookmarkedTournamentIndicatorColor: theme.accentColor,
+      bookmarkedTournamentIconSize: 32.0,
     );
   }
 
@@ -221,6 +225,10 @@ class TournamentsGridStyleConfiguration {
     this.tileContentPadding,
     this.gridTileTitleTextStyle,
     this.gridTileSecondLineTextStyle,
+    this.newTournamentIndicatorColor,
+    this.newTournamentIndicatorRadius,
+    this.bookmarkedTournamentIndicatorColor,
+    this.bookmarkedTournamentIconSize,
   });
 
   final TextStyle gridTileTitleTextStyle;
@@ -230,6 +238,10 @@ class TournamentsGridStyleConfiguration {
   final int columnsCount;
   final EdgeInsets tileContentPadding;
   final EdgeInsets gridPadding;
+  final Color newTournamentIndicatorColor;
+  final Color bookmarkedTournamentIndicatorColor;
+  final double newTournamentIndicatorRadius;
+  final double bookmarkedTournamentIconSize;
 }
 
 class LatestTournamentsStyleConfiguration {
