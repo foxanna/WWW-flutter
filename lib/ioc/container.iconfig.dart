@@ -116,6 +116,7 @@ void $initGetIt(GetIt g, {String environment}) {
         crashService: g<ICrashService>(),
         soundService: g<ISoundService>(),
         backgroundService: g<IBackgroundRunnerService>(),
+        localStorageService: g<ILocalStorageService>(),
       ));
   g.registerFactory<SettingsMiddleware>(
       () => SettingsMiddleware(preferences: g<IPreferences>()));

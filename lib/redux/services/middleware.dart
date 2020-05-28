@@ -5,6 +5,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/services/actions.dart';
 import 'package:what_when_where/services/background.dart';
 import 'package:what_when_where/services/crashes.dart';
+import 'package:what_when_where/services/storage.dart';
 import 'package:what_when_where/services/sound.dart';
 import 'package:what_when_where/utils/logger.dart';
 
@@ -13,6 +14,7 @@ class ServicesMiddleware {
   final ICrashService _crashService;
   final ISoundService _soundService;
   final IBackgroundRunnerService _backgroundService;
+  final ILocalStorageService _localStorageService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
@@ -22,9 +24,11 @@ class ServicesMiddleware {
     ICrashService crashService,
     ISoundService soundService,
     IBackgroundRunnerService backgroundService,
+    ILocalStorageService localStorageService,
   })  : _crashService = crashService,
         _soundService = soundService,
-        _backgroundService = backgroundService;
+        _backgroundService = backgroundService,
+        _localStorageService = localStorageService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, InitInitializationAction>(_init),
@@ -38,6 +42,7 @@ class ServicesMiddleware {
       _crashService.init();
       await _soundService.init();
       await _backgroundService.init();
+      await _localStorageService.init();
 
       store.dispatch(const SystemActionServices.ready());
     } catch (error) {
