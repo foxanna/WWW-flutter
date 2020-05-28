@@ -2,6 +2,8 @@ import 'package:injectable/injectable.dart';
 import 'package:what_when_where/api/loaders/latest_tournaments_loader.dart';
 import 'package:what_when_where/api/models/latest_tournaments_dto.dart';
 import 'package:what_when_where/data/models/tournament.dart';
+import 'package:what_when_where/data/models/tournament_status.dart';
+import 'package:what_when_where/data/status/tournament_status.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ILatestTournamentsProvider {
@@ -12,12 +14,15 @@ abstract class ILatestTournamentsProvider {
 class LatestTournamentsProvider implements ILatestTournamentsProvider {
   final ILatestTournamentsLoader _loader;
   final IBackgroundRunnerService _backgroundService;
+  final ITournamentStatusService _statusService;
 
   const LatestTournamentsProvider({
     ILatestTournamentsLoader loader,
     IBackgroundRunnerService backgroundService,
+    ITournamentStatusService statusService,
   })  : _loader = loader,
-        _backgroundService = backgroundService;
+        _backgroundService = backgroundService,
+        _statusService = statusService;
 
   @override
   Future<Iterable<Tournament>> get({int page = 0}) async {
@@ -25,7 +30,8 @@ class LatestTournamentsProvider implements ILatestTournamentsProvider {
     final result = await _backgroundService
         .run<Iterable<Tournament>, List<dynamic>>(
             _tournamentsFromLatestTournamentsDto, [dto]);
-    return result;
+    final actualResult = await _statusService.actualizeAll(result);
+    return actualResult.toList();
   }
 }
 

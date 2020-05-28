@@ -16,7 +16,6 @@ import 'package:what_when_where/services/dialogs.dart';
 import 'package:what_when_where/api/http/http_client.dart';
 import 'package:what_when_where/api/parsers/latest2json_parser.dart';
 import 'package:what_when_where/api/loaders/latest_tournaments_loader.dart';
-import 'package:what_when_where/data/latest_tournaments_provider.dart';
 import 'package:what_when_where/services/storage.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/services/preferences.dart';
@@ -60,6 +59,7 @@ import 'package:what_when_where/redux/tournament/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/app/store.dart';
+import 'package:what_when_where/data/latest_tournaments_provider.dart';
 import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:get_it/get_it.dart';
 
@@ -81,10 +81,6 @@ void $initGetIt(GetIt g, {String environment}) {
             parser: g<ILatestToJsonParser>(),
             backgroundService: g<IBackgroundRunnerService>(),
           ));
-  g.registerLazySingleton<ILatestTournamentsProvider>(() =>
-      LatestTournamentsProvider(
-          loader: g<ILatestTournamentsLoader>(),
-          backgroundService: g<IBackgroundRunnerService>()));
   g.registerLazySingleton<ILocalStorageService>(() => LocalStorageService());
   g.registerLazySingleton<INavigationService>(
       () => NavigationService(key: g<GlobalKey<NavigatorState>>()));
@@ -199,6 +195,12 @@ void $initGetIt(GetIt g, {String environment}) {
       () => ToursMiddleware(provider: g<ITourDetailsProvider>()));
   g.registerFactory<WWWStore>(
       () => WWWStore(appMiddleware: g<AppMiddleware>()));
+  g.registerLazySingleton<ILatestTournamentsProvider>(
+      () => LatestTournamentsProvider(
+            loader: g<ILatestTournamentsLoader>(),
+            backgroundService: g<IBackgroundRunnerService>(),
+            statusService: g<ITournamentStatusService>(),
+          ));
   g.registerFactory<LatestTournamentsMiddleware>(() =>
       LatestTournamentsMiddleware(provider: g<ILatestTournamentsProvider>()));
 }
