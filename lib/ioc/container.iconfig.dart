@@ -26,7 +26,7 @@ import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/sound.dart';
 import 'package:what_when_where/data/cache/tour_cache.dart';
 import 'package:what_when_where/data/cache/tournament_cache.dart';
-import 'package:what_when_where/data/history/tournaments_history.dart';
+import 'package:what_when_where/data/status/tournaments_history.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/services/vibrating.dart';
 import 'package:what_when_where/api/parsers/xml2json_parser.dart';
@@ -52,6 +52,7 @@ import 'package:what_when_where/api/loaders/tour_details_loader.dart';
 import 'package:what_when_where/data/tour_details_provider.dart';
 import 'package:what_when_where/api/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/data/tournament_details_provider.dart';
+import 'package:what_when_where/data/status/tournament_status.dart';
 import 'package:what_when_where/api/loaders/tournaments_tree_loader.dart';
 import 'package:what_when_where/data/tournaments_tree_provider.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
@@ -176,6 +177,8 @@ void $initGetIt(GetIt g, {String environment}) {
             tourCache: g<ITourCache>(),
             backgroundService: g<IBackgroundRunnerService>(),
           ));
+  g.registerLazySingleton<ITournamentStatusService>(() =>
+      TournamentStatusService(historyService: g<ITournamentsHistoryService>()));
   g.registerLazySingleton<ITournamentsTreeLoader>(() => TournamentsTreeLoader(
         httpClient: g<IHttpClient>(),
         parser: g<IXmlToJsonParser>(),
