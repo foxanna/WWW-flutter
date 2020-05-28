@@ -175,10 +175,12 @@ void $initGetIt(GetIt g, {String environment}) {
         parser: g<IXmlToJsonParser>(),
         backgroundService: g<IBackgroundRunnerService>(),
       ));
-  g.registerLazySingleton<ITournamentsTreeProvider>(() =>
-      TournamentsTreeProvider(
-          loader: g<ITournamentsTreeLoader>(),
-          backgroundService: g<IBackgroundRunnerService>()));
+  g.registerLazySingleton<ITournamentsTreeProvider>(
+      () => TournamentsTreeProvider(
+            loader: g<ITournamentsTreeLoader>(),
+            backgroundService: g<IBackgroundRunnerService>(),
+            statusService: g<ITournamentStatusService>(),
+          ));
   g.registerFactory<QuestionsMiddleware>(
       () => QuestionsMiddleware(provider: g<IRandomQuestionsProvider>()));
   g.registerFactory<TournamentMiddleware>(() => TournamentMiddleware(
