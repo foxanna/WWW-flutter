@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
+import 'package:what_when_where/data/history/tournaments_history.dart';
 import 'package:what_when_where/data/tournament_details_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
@@ -11,6 +12,7 @@ import 'package:what_when_where/redux/utils.dart';
 @injectable
 class TournamentMiddleware {
   final ITournamentDetailsProvider _provider;
+  final ITournamentsHistoryService _historyService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
@@ -18,13 +20,16 @@ class TournamentMiddleware {
 
   TournamentMiddleware({
     ITournamentDetailsProvider provider,
-  }) : _provider = provider;
+    ITournamentsHistoryService historyService,
+  })  : _provider = provider,
+        _historyService = historyService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentUserAction>(_open),
         TypedMiddleware<AppState, LoadTournamentUserAction>(_load),
         TypedMiddleware<AppState, CompletedTournamentSystemAction>(_completed),
         TypedMiddleware<AppState, CloseTournamentUserAction>(_close),
+        TypedMiddleware<AppState, ReadTournamentSystemAction>(_read),
       ];
 
   void _open(Store<AppState> store, OpenTournamentUserAction action,
@@ -32,6 +37,7 @@ class TournamentMiddleware {
     next(action);
 
     store.dispatch(const SystemActionNavigation.tournament());
+    store.dispatch(SystemActionTournament.read(info: action.info));
     store.dispatch(SystemActionTournament.init(info: action.info));
     store.dispatch(UserActionTournament.load(info: action.info));
   }
@@ -66,7 +72,7 @@ class TournamentMiddleware {
       NextDispatcher next) {
     next(action);
 
-    final currentTournamentInfo = store.state.tournamentState.info;
+    final currentTournamentInfo = store.state.tournamentState?.info;
     if (currentTournamentInfo == action.tournament.info) {
       store.dispatch(SystemActionTours.init(
           tours: action.tournament.tours.map((x) => x.info).toList()));
@@ -79,5 +85,12 @@ class TournamentMiddleware {
 
     store.dispatch(const SystemActionTournament.deInit());
     store.dispatch(const SystemActionTours.deInit());
+  }
+
+  Future<void> _read(Store<AppState> store, ReadTournamentSystemAction action,
+      NextDispatcher next) async {
+    next(action);
+
+    await _historyService.markAsRead(action.info);
   }
 }

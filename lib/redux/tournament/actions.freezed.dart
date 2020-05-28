@@ -499,6 +499,12 @@ class _$SystemActionTournamentTearOff {
       tournament: tournament,
     );
   }
+
+  ReadTournamentSystemAction read({@required TournamentInfo info}) {
+    return ReadTournamentSystemAction(
+      info: info,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -512,6 +518,7 @@ mixin _$SystemActionTournament {
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
+    @required Result read(TournamentInfo info),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -520,6 +527,7 @@ mixin _$SystemActionTournament {
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
+    Result read(TournamentInfo info),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -529,6 +537,7 @@ mixin _$SystemActionTournament {
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
+    @required Result read(ReadTournamentSystemAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -537,6 +546,7 @@ mixin _$SystemActionTournament {
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
+    Result read(ReadTournamentSystemAction value),
     @required Result orElse(),
   });
 }
@@ -644,12 +654,14 @@ class _$InitTournamentSystemAction
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
+    @required Result read(TournamentInfo info),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return init(info);
   }
 
@@ -661,6 +673,7 @@ class _$InitTournamentSystemAction
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
+    Result read(TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -678,12 +691,14 @@ class _$InitTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
+    @required Result read(ReadTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return init(this);
   }
 
@@ -695,6 +710,7 @@ class _$InitTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
+    Result read(ReadTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -766,12 +782,14 @@ class _$DeInitTournamentSystemAction
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
+    @required Result read(TournamentInfo info),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return deInit();
   }
 
@@ -783,6 +801,7 @@ class _$DeInitTournamentSystemAction
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
+    Result read(TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -800,12 +819,14 @@ class _$DeInitTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
+    @required Result read(ReadTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return deInit(this);
   }
 
@@ -817,6 +838,7 @@ class _$DeInitTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
+    Result read(ReadTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -920,12 +942,14 @@ class _$LoadingTournamentSystemAction
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
+    @required Result read(TournamentInfo info),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return loading(info);
   }
 
@@ -937,6 +961,7 @@ class _$LoadingTournamentSystemAction
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
+    Result read(TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -954,12 +979,14 @@ class _$LoadingTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
+    @required Result read(ReadTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return loading(this);
   }
 
@@ -971,6 +998,7 @@ class _$LoadingTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
+    Result read(ReadTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1092,12 +1120,14 @@ class _$FailedTournamentSystemAction
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
+    @required Result read(TournamentInfo info),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return failed(info, exception);
   }
 
@@ -1109,6 +1139,7 @@ class _$FailedTournamentSystemAction
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
+    Result read(TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1126,12 +1157,14 @@ class _$FailedTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
+    @required Result read(ReadTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return failed(this);
   }
 
@@ -1143,6 +1176,7 @@ class _$FailedTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
+    Result read(ReadTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1255,12 +1289,14 @@ class _$CompletedTournamentSystemAction
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
+    @required Result read(TournamentInfo info),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return completed(tournament);
   }
 
@@ -1272,6 +1308,7 @@ class _$CompletedTournamentSystemAction
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
+    Result read(TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1289,12 +1326,14 @@ class _$CompletedTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
+    @required Result read(ReadTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
+    assert(read != null);
     return completed(this);
   }
 
@@ -1306,6 +1345,7 @@ class _$CompletedTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
+    Result read(ReadTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1324,4 +1364,167 @@ abstract class CompletedTournamentSystemAction
   Tournament get tournament;
   $CompletedTournamentSystemActionCopyWith<CompletedTournamentSystemAction>
       get copyWith;
+}
+
+abstract class $ReadTournamentSystemActionCopyWith<$Res> {
+  factory $ReadTournamentSystemActionCopyWith(ReadTournamentSystemAction value,
+          $Res Function(ReadTournamentSystemAction) then) =
+      _$ReadTournamentSystemActionCopyWithImpl<$Res>;
+  $Res call({TournamentInfo info});
+
+  $TournamentInfoCopyWith<$Res> get info;
+}
+
+class _$ReadTournamentSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    implements $ReadTournamentSystemActionCopyWith<$Res> {
+  _$ReadTournamentSystemActionCopyWithImpl(ReadTournamentSystemAction _value,
+      $Res Function(ReadTournamentSystemAction) _then)
+      : super(_value, (v) => _then(v as ReadTournamentSystemAction));
+
+  @override
+  ReadTournamentSystemAction get _value =>
+      super._value as ReadTournamentSystemAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(ReadTournamentSystemAction(
+      info: info == freezed ? _value.info : info as TournamentInfo,
+    ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$ReadTournamentSystemAction
+    with DiagnosticableTreeMixin
+    implements ReadTournamentSystemAction {
+  const _$ReadTournamentSystemAction({@required this.info})
+      : assert(info != null);
+
+  @override
+  final TournamentInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTournament.read(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTournament.read'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ReadTournamentSystemAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $ReadTournamentSystemActionCopyWith<ReadTournamentSystemAction>
+      get copyWith =>
+          _$ReadTournamentSystemActionCopyWithImpl<ReadTournamentSystemAction>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(TournamentInfo info),
+    @required Result deInit(),
+    @required Result loading(TournamentInfo info),
+    @required Result failed(TournamentInfo info, Exception exception),
+    @required Result completed(Tournament tournament),
+    @required Result read(TournamentInfo info),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    assert(read != null);
+    return read(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(TournamentInfo info),
+    Result deInit(),
+    Result loading(TournamentInfo info),
+    Result failed(TournamentInfo info, Exception exception),
+    Result completed(Tournament tournament),
+    Result read(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (read != null) {
+      return read(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentSystemAction value),
+    @required Result deInit(DeInitTournamentSystemAction value),
+    @required Result loading(LoadingTournamentSystemAction value),
+    @required Result failed(FailedTournamentSystemAction value),
+    @required Result completed(CompletedTournamentSystemAction value),
+    @required Result read(ReadTournamentSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    assert(read != null);
+    return read(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentSystemAction value),
+    Result deInit(DeInitTournamentSystemAction value),
+    Result loading(LoadingTournamentSystemAction value),
+    Result failed(FailedTournamentSystemAction value),
+    Result completed(CompletedTournamentSystemAction value),
+    Result read(ReadTournamentSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (read != null) {
+      return read(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReadTournamentSystemAction implements SystemActionTournament {
+  const factory ReadTournamentSystemAction({@required TournamentInfo info}) =
+      _$ReadTournamentSystemAction;
+
+  TournamentInfo get info;
+  $ReadTournamentSystemActionCopyWith<ReadTournamentSystemAction> get copyWith;
 }

@@ -45,4 +45,8 @@ abstract class SystemActionTournament
   const factory SystemActionTournament.completed({
     @required Tournament tournament,
   }) = CompletedTournamentSystemAction;
+
+  const factory SystemActionTournament.read({
+    @required TournamentInfo info,
+  }) = ReadTournamentSystemAction;
 }
