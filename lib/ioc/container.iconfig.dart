@@ -31,7 +31,6 @@ import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/services/vibrating.dart';
 import 'package:what_when_where/api/parsers/xml2json_parser.dart';
 import 'package:what_when_where/redux/initialization/middleware.dart';
-import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:what_when_where/redux/logs/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/rating/middleware.dart';
@@ -61,6 +60,7 @@ import 'package:what_when_where/redux/tournament/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/app/store.dart';
+import 'package:what_when_where/redux/latest/middleware.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
@@ -103,8 +103,6 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<IVibratingService>(() => VibratingService());
   g.registerLazySingleton<IXmlToJsonParser>(() => XmlToJsonParser());
   g.registerFactory<InitializationMiddleware>(() => InitializationMiddleware());
-  g.registerFactory<LatestTournamentsMiddleware>(() =>
-      LatestTournamentsMiddleware(provider: g<ILatestTournamentsProvider>()));
   g.registerFactory<LogsMiddleware>(() => LogsMiddleware());
   g.registerFactory<NavigationMiddleware>(
       () => NavigationMiddleware(navigationService: g<INavigationService>()));
@@ -192,14 +190,17 @@ void $initGetIt(GetIt g, {String environment}) {
       () => QuestionsMiddleware(provider: g<IRandomQuestionsProvider>()));
   g.registerFactory<SearchMiddleware>(
       () => SearchMiddleware(provider: g<ISearchProvider>()));
-  g.registerFactory<TournamentMiddleware>(
-      () => TournamentMiddleware(provider: g<ITournamentDetailsProvider>()));
+  g.registerFactory<TournamentMiddleware>(() => TournamentMiddleware(
+      provider: g<ITournamentDetailsProvider>(),
+      historyService: g<ITournamentsHistoryService>()));
   g.registerFactory<TournamentsTreeMiddleware>(
       () => TournamentsTreeMiddleware(provider: g<ITournamentsTreeProvider>()));
   g.registerFactory<ToursMiddleware>(
       () => ToursMiddleware(provider: g<ITourDetailsProvider>()));
   g.registerFactory<WWWStore>(
       () => WWWStore(appMiddleware: g<AppMiddleware>()));
+  g.registerFactory<LatestTournamentsMiddleware>(() =>
+      LatestTournamentsMiddleware(provider: g<ILatestTournamentsProvider>()));
 }
 
 class _$RegisterModule extends RegisterModule {}
