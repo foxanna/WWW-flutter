@@ -2,6 +2,7 @@ import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/models/tour_info.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournament_status.dart';
 
 const tournamentInfo1 = TournamentInfo(
   id: '70684',
@@ -74,6 +75,9 @@ const expectedTournamentDetails1 = Tournament(
       ),
     ),
   ],
+  status: TournamentStatus(
+    isNew: true,
+  ),
 );
 
 const tournamentDetailsApiResponse1 = '''

@@ -1,5 +1,6 @@
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournament_status.dart';
 
 const expectedSearchTournaments3 = [
   Tournament(
@@ -10,6 +11,9 @@ const expectedSearchTournaments3 = [
       url: r'''https://db.chgk.info/tour/mgp11415.7''',
       toursCount: '0',
       playedAt: '2015-02-28',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
 ];

@@ -1,6 +1,7 @@
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournament_status.dart';
 
 const expectedTournamentDetails3 = Tournament(
   id: '14352',
@@ -14,6 +15,9 @@ const expectedTournamentDetails3 = Tournament(
     url: r'''https://db.chgk.info/tour/14352''',
   ),
   tours: <Tour>[],
+  status: TournamentStatus(
+    isNew: true,
+  ),
 );
 
 const tournamentDetailsApiResponse3 = '''

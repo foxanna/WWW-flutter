@@ -1,5 +1,6 @@
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/data/models/tournaments_tree.dart';
 import 'package:what_when_where/data/models/tournaments_tree_info.dart';
 
@@ -57,6 +58,9 @@ const expectedTournamentsTree1 = TournamentsTree(
         questionsCount: '0',
         toursCount: '0',
       ),
+      status: TournamentStatus(
+        isNew: true,
+      ),
     ),
     Tournament(
       id: '70471',
@@ -73,6 +77,9 @@ const expectedTournamentsTree1 = TournamentsTree(
         questionsCount: '0',
         toursCount: '0',
       ),
+      status: TournamentStatus(
+        isNew: true,
+      ),
     ),
     Tournament(
       id: '70582',
@@ -86,6 +93,9 @@ const expectedTournamentsTree1 = TournamentsTree(
         playedAt: '2020-03-13',
         questionsCount: '0',
         toursCount: '0',
+      ),
+      status: TournamentStatus(
+        isNew: true,
       ),
     ),
   ],

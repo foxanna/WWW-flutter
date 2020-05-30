@@ -1,5 +1,6 @@
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournament_status.dart';
 
 const expectedLatestTournaments1 = [
   Tournament(
@@ -12,6 +13,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/thanos19.5_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'azov19_u',
@@ -23,6 +27,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/azov19_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'azov20_u',
@@ -33,6 +40,9 @@ const expectedLatestTournaments1 = [
       playedAt: '2020-01-17',
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/azov20_u''',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -46,6 +56,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/dmitrybuts_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'sls2018v_u',
@@ -56,6 +69,9 @@ const expectedLatestTournaments1 = [
       playedAt: '2019-03-12',
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/sls2018v_u''',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -68,6 +84,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/sls2018vi_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'sls2018iii_u',
@@ -78,6 +97,9 @@ const expectedLatestTournaments1 = [
       playedAt: '2018-12-25',
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/sls2018iii_u''',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -90,6 +112,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/sls2018ii_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'gostdvor19_u',
@@ -100,6 +125,9 @@ const expectedLatestTournaments1 = [
       playedAt: '2019-12-07',
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/gostdvor19_u''',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -112,6 +140,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/iqpfosto16_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'iqpfoso16_u',
@@ -122,6 +153,9 @@ const expectedLatestTournaments1 = [
       playedAt: '10.02.2020 - 10.03.2016',
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/iqpfoso16_u''',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -134,6 +168,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/askcup2_19_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'pudali19_u',
@@ -144,6 +181,9 @@ const expectedLatestTournaments1 = [
       playedAt: '2019-07-13',
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/pudali19_u''',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -156,6 +196,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/okr2019_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'element19_u',
@@ -166,6 +209,9 @@ const expectedLatestTournaments1 = [
       playedAt: '2019-10-01',
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/element19_u''',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -178,6 +224,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/sls2018i_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'schoolig19-3_u',
@@ -188,6 +237,9 @@ const expectedLatestTournaments1 = [
       playedAt: '2019-12-15',
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/schoolig19-3_u''',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -200,6 +252,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/ligavuz19-5_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'prost_19_u',
@@ -211,6 +266,9 @@ const expectedLatestTournaments1 = [
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/prost_19_u''',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'document_u',
@@ -221,6 +279,9 @@ const expectedLatestTournaments1 = [
       playedAt: '13.03.2020 - 18.03.2020',
       toursCount: '0',
       url: r'''https://db.chgk.info/tour/document_u''',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
 ];

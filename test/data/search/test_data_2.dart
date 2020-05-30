@@ -1,5 +1,6 @@
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
+import 'package:what_when_where/data/models/tournament_status.dart';
 
 const expectedSearchTournaments2 = [
   Tournament(
@@ -11,6 +12,9 @@ const expectedSearchTournaments2 = [
       toursCount: '0',
       playedAt: '2003-01-01',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'mgp11516.7',
@@ -20,6 +24,9 @@ const expectedSearchTournaments2 = [
       url: r'''https://db.chgk.info/tour/mgp11516.7''',
       toursCount: '0',
       playedAt: '2016-02-27',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -31,6 +38,9 @@ const expectedSearchTournaments2 = [
       toursCount: '0',
       playedAt: '2015-02-28',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'ichb07.5',
@@ -40,6 +50,9 @@ const expectedSearchTournaments2 = [
       url: r'''https://db.chgk.info/tour/ichb07.5''',
       toursCount: '0',
       playedAt: '2008-06-02',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -52,6 +65,9 @@ const expectedSearchTournaments2 = [
       toursCount: '0',
       playedAt: '2018-06-22',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'zel1516.8',
@@ -61,6 +77,9 @@ const expectedSearchTournaments2 = [
       url: r'''https://db.chgk.info/tour/zel1516.8''',
       toursCount: '0',
       playedAt: '2016-04-03',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
   Tournament(
@@ -72,6 +91,9 @@ const expectedSearchTournaments2 = [
       toursCount: '0',
       playedAt: '2018-05-19',
     ),
+    status: TournamentStatus(
+      isNew: true,
+    ),
   ),
   Tournament(
     id2: 'octava18-4_u',
@@ -81,6 +103,9 @@ const expectedSearchTournaments2 = [
       url: r'''https://db.chgk.info/tour/octava18-4_u''',
       toursCount: '0',
       playedAt: '2018-12-18',
+    ),
+    status: TournamentStatus(
+      isNew: true,
     ),
   ),
 ];
