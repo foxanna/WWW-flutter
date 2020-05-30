@@ -23,6 +23,7 @@ ITestContainer configureTestIocContainer({
   container.replaceLazySingleton<IContainer, WWWTestContainer>(() => container);
 
   configuration.mockBackgroundService(container);
+  configuration.mockLocalStorageService(container);
 
   if (mockProviders) {
     configuration.mockProviders(container);

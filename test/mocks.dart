@@ -16,6 +16,7 @@ import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/rating.dart';
 import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/sound.dart';
+import 'package:what_when_where/services/storage.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/services/vibrating.dart';
 
@@ -70,3 +71,7 @@ class TournamentCacheMock extends Mock implements ITournamentCache {}
 // networking
 
 class DioMock extends Mock implements Dio {}
+
+// local storage
+
+class LocalStorageServiceMock extends Mock implements LocalStorageService {}
