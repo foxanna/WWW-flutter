@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:mockito/mockito.dart';
+import 'package:what_when_where/data/cache/tournaments_tree_cache.dart';
 import 'package:what_when_where/data/cache/tours_cache.dart';
 import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/data/latest_tournaments_provider.dart';
@@ -67,6 +68,8 @@ class TournamentsTreeProviderMock extends Mock
 class ToursCacheMock extends Mock implements IToursCache {}
 
 class TournamentsCacheMock extends Mock implements ITournamentsCache {}
+
+class TournamentsTreeCacheMock extends Mock implements ITournamentsTreeCache {}
 
 // networking
 
