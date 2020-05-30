@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/data/models/tour.dart';
 
-abstract class ITourCache {
+abstract class IToursCache {
   bool contains(String id);
 
   void save(Tour tour);
@@ -9,8 +9,8 @@ abstract class ITourCache {
   Tour get(String id);
 }
 
-@LazySingleton(as: ITourCache)
-class TourCache implements ITourCache {
+@LazySingleton(as: IToursCache)
+class ToursCache implements IToursCache {
   final _cache = <String, Tour>{};
 
   @override

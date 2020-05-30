@@ -23,9 +23,9 @@ import 'package:what_when_where/services/rating.dart';
 import 'package:what_when_where/api/parsers/search2json_parser.dart';
 import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/sound.dart';
-import 'package:what_when_where/data/cache/tour_cache.dart';
-import 'package:what_when_where/data/cache/tournament_cache.dart';
+import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/data/status/tournaments_history.dart';
+import 'package:what_when_where/data/cache/tours_cache.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/services/vibrating.dart';
 import 'package:what_when_where/api/parsers/xml2json_parser.dart';
@@ -89,12 +89,12 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<ISearchToJsonParser>(() => SearchToJsonParser());
   g.registerLazySingleton<ISharingService>(() => SharingService());
   g.registerLazySingleton<ISoundService>(() => SoundService());
-  g.registerLazySingleton<ITourCache>(() => TourCache());
-  g.registerLazySingleton<ITournamentCache>(() => TournamentCache());
+  g.registerLazySingleton<ITournamentsCache>(() => TournamentsCache());
   g.registerLazySingleton<ITournamentsHistoryService>(() =>
       TournamentsHistoryService(
           localStorage: g<ILocalStorageService>(),
           crashService: g<ICrashService>()));
+  g.registerLazySingleton<IToursCache>(() => ToursCache());
   g.registerLazySingleton<IUrlLauncher>(() => UrlLauncher());
   g.registerLazySingleton<IVibratingService>(() => VibratingService());
   g.registerLazySingleton<IXmlToJsonParser>(() => XmlToJsonParser());
@@ -151,8 +151,8 @@ void $initGetIt(GetIt g, {String environment}) {
       ));
   g.registerLazySingleton<ITourDetailsProvider>(() => TourDetailsProvider(
         loader: g<ITourDetailsLoader>(),
-        tournamentCache: g<ITournamentCache>(),
-        tourCache: g<ITourCache>(),
+        tournamentsCache: g<ITournamentsCache>(),
+        tourCache: g<IToursCache>(),
         backgroundService: g<IBackgroundRunnerService>(),
       ));
   g.registerLazySingleton<ITournamentDetailsLoader>(
@@ -196,8 +196,8 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<ITournamentDetailsProvider>(
       () => TournamentDetailsProvider(
             loader: g<ITournamentDetailsLoader>(),
-            tournamentCache: g<ITournamentCache>(),
-            tourCache: g<ITourCache>(),
+            tournamentsCache: g<ITournamentsCache>(),
+            toursCache: g<IToursCache>(),
             backgroundService: g<IBackgroundRunnerService>(),
             statusService: g<ITournamentStatusService>(),
           ));

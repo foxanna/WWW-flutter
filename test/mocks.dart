@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:mockito/mockito.dart';
-import 'package:what_when_where/data/cache/tour_cache.dart';
-import 'package:what_when_where/data/cache/tournament_cache.dart';
+import 'package:what_when_where/data/cache/tours_cache.dart';
+import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/data/latest_tournaments_provider.dart';
 import 'package:what_when_where/data/random_questions_provider.dart';
 import 'package:what_when_where/data/search_provider.dart';
@@ -64,9 +64,9 @@ class TournamentsTreeProviderMock extends Mock
 
 // cache
 
-class TourCacheMock extends Mock implements ITourCache {}
+class ToursCacheMock extends Mock implements IToursCache {}
 
-class TournamentCacheMock extends Mock implements ITournamentCache {}
+class TournamentsCacheMock extends Mock implements ITournamentsCache {}
 
 // networking
 

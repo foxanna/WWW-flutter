@@ -25,7 +25,7 @@ void main() {
 
       when(testIoc<DioMock>().get<String>('/tour/$tournamentId/xml'))
           .thenAnswer((_) => Future.value(Response(data: apiResponse)));
-      when(testIoc<TournamentCacheMock>().contains(any)).thenReturn(false);
+      when(testIoc<TournamentsCacheMock>().contains(any)).thenReturn(false);
 
       final provider = testIoc<ITournamentDetailsProvider>();
 

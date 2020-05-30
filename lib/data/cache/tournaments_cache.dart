@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 
-abstract class ITournamentCache {
+abstract class ITournamentsCache {
   bool contains(String id);
 
   void save(Tournament tournament);
@@ -9,8 +9,8 @@ abstract class ITournamentCache {
   Tournament get(String id);
 }
 
-@LazySingleton(as: ITournamentCache)
-class TournamentCache implements ITournamentCache {
+@LazySingleton(as: ITournamentsCache)
+class TournamentsCache implements ITournamentsCache {
   final _cacheById = <String, Tournament>{};
   final _cacheByTextId = <String, Tournament>{};
 

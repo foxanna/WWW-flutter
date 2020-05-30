@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/data/cache/tour_cache.dart';
-import 'package:what_when_where/data/cache/tournament_cache.dart';
+import 'package:what_when_where/data/cache/tours_cache.dart';
+import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/api/loaders/tour_details_loader.dart';
 import 'package:what_when_where/api/models/tour_dto.dart';
 import 'package:what_when_where/data/models/tour.dart';
@@ -14,17 +14,17 @@ abstract class ITourDetailsProvider {
 @LazySingleton(as: ITourDetailsProvider)
 class TourDetailsProvider implements ITourDetailsProvider {
   final ITourDetailsLoader _loader;
-  final ITournamentCache _tournamentsCache;
-  final ITourCache _toursCache;
+  final ITournamentsCache _tournamentsCache;
+  final IToursCache _toursCache;
   final IBackgroundRunnerService _backgroundService;
 
   const TourDetailsProvider({
     ITourDetailsLoader loader,
-    ITournamentCache tournamentCache,
-    ITourCache tourCache,
+    ITournamentsCache tournamentsCache,
+    IToursCache tourCache,
     IBackgroundRunnerService backgroundService,
   })  : _loader = loader,
-        _tournamentsCache = tournamentCache,
+        _tournamentsCache = tournamentsCache,
         _toursCache = tourCache,
         _backgroundService = backgroundService;
 

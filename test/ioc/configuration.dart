@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:what_when_where/data/cache/tour_cache.dart';
-import 'package:what_when_where/data/cache/tournament_cache.dart';
+import 'package:what_when_where/data/cache/tours_cache.dart';
+import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/data/latest_tournaments_provider.dart';
 import 'package:what_when_where/data/random_questions_provider.dart';
 import 'package:what_when_where/data/search_provider.dart';
@@ -77,8 +77,8 @@ void mockDio(ITestContainer container) {
 }
 
 void mockCache(ITestContainer container) {
-  container
-      .replaceLazySingleton<ITourCache, TourCacheMock>(() => TourCacheMock());
-  container.replaceLazySingleton<ITournamentCache, TournamentCacheMock>(
-      () => TournamentCacheMock());
+  container.replaceLazySingleton<IToursCache, ToursCacheMock>(
+      () => ToursCacheMock());
+  container.replaceLazySingleton<ITournamentsCache, TournamentsCacheMock>(
+      () => TournamentsCacheMock());
 }
