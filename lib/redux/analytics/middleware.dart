@@ -44,7 +44,6 @@ final _analyticsEventNames = {
   '$OpenTournamentUserAction': 'tournament',
   '$OpenSearchUserAction': 'search',
   '$OpenRandomQuestionsUserAction': 'random',
-  '$OpenTournamentsTreeUserAction': 'tree',
   // developer
   '$EmailDeveloperUserAction': 'email_developers',
   '$VisitWebsiteDeveloperUserAction': 'visit_developers_website',
@@ -101,8 +100,9 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState,
                 ChangeNotifyLongTimerExpirationSettingsUserAction>(
             _logNotifyLongTimerExpiration),
-        // rating
+        // misc
         TypedMiddleware<AppState, RateRatingUserAction>(_logRating),
+        TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_logTree),
       ];
 
   void _logAction(
@@ -197,5 +197,14 @@ class AnalyticsMiddleware {
         'rating': action.rating.toString(),
       },
     );
+  }
+
+  void _logTree(
+      Store<AppState> store, OpenTournamentsTreeUserAction action, next) {
+    next(action);
+
+    if (action.info == null) {
+      _analyticsService.logEvent(name: 'tree');
+    }
   }
 }
