@@ -23,6 +23,12 @@ class _$UserActionTournamentsTreeTearOff {
       info: info,
     );
   }
+
+  CloseTournamentsTreeUserAction close({TournamentsTreeInfo info}) {
+    return CloseTournamentsTreeUserAction(
+      info: info,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -35,22 +41,26 @@ mixin _$UserActionTournamentsTree {
   Result when<Result extends Object>({
     @required Result open(TournamentsTreeInfo info),
     @required Result load(TournamentsTreeInfo info),
+    @required Result close(TournamentsTreeInfo info),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result open(TournamentsTreeInfo info),
     Result load(TournamentsTreeInfo info),
+    Result close(TournamentsTreeInfo info),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result open(OpenTournamentsTreeUserAction value),
     @required Result load(LoadTournamentsTreeUserAction value),
+    @required Result close(CloseTournamentsTreeUserAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result open(OpenTournamentsTreeUserAction value),
     Result load(LoadTournamentsTreeUserAction value),
+    Result close(CloseTournamentsTreeUserAction value),
     @required Result orElse(),
   });
 
@@ -172,9 +182,11 @@ class _$OpenTournamentsTreeUserAction
   Result when<Result extends Object>({
     @required Result open(TournamentsTreeInfo info),
     @required Result load(TournamentsTreeInfo info),
+    @required Result close(TournamentsTreeInfo info),
   }) {
     assert(open != null);
     assert(load != null);
+    assert(close != null);
     return open(info);
   }
 
@@ -183,6 +195,7 @@ class _$OpenTournamentsTreeUserAction
   Result maybeWhen<Result extends Object>({
     Result open(TournamentsTreeInfo info),
     Result load(TournamentsTreeInfo info),
+    Result close(TournamentsTreeInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -197,9 +210,11 @@ class _$OpenTournamentsTreeUserAction
   Result map<Result extends Object>({
     @required Result open(OpenTournamentsTreeUserAction value),
     @required Result load(LoadTournamentsTreeUserAction value),
+    @required Result close(CloseTournamentsTreeUserAction value),
   }) {
     assert(open != null);
     assert(load != null);
+    assert(close != null);
     return open(this);
   }
 
@@ -208,6 +223,7 @@ class _$OpenTournamentsTreeUserAction
   Result maybeMap<Result extends Object>({
     Result open(OpenTournamentsTreeUserAction value),
     Result load(LoadTournamentsTreeUserAction value),
+    Result close(CloseTournamentsTreeUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -309,9 +325,11 @@ class _$LoadTournamentsTreeUserAction
   Result when<Result extends Object>({
     @required Result open(TournamentsTreeInfo info),
     @required Result load(TournamentsTreeInfo info),
+    @required Result close(TournamentsTreeInfo info),
   }) {
     assert(open != null);
     assert(load != null);
+    assert(close != null);
     return load(info);
   }
 
@@ -320,6 +338,7 @@ class _$LoadTournamentsTreeUserAction
   Result maybeWhen<Result extends Object>({
     Result open(TournamentsTreeInfo info),
     Result load(TournamentsTreeInfo info),
+    Result close(TournamentsTreeInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -334,9 +353,11 @@ class _$LoadTournamentsTreeUserAction
   Result map<Result extends Object>({
     @required Result open(OpenTournamentsTreeUserAction value),
     @required Result load(LoadTournamentsTreeUserAction value),
+    @required Result close(CloseTournamentsTreeUserAction value),
   }) {
     assert(open != null);
     assert(load != null);
+    assert(close != null);
     return load(this);
   }
 
@@ -345,6 +366,7 @@ class _$LoadTournamentsTreeUserAction
   Result maybeMap<Result extends Object>({
     Result open(OpenTournamentsTreeUserAction value),
     Result load(LoadTournamentsTreeUserAction value),
+    Result close(CloseTournamentsTreeUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -367,12 +389,169 @@ abstract class LoadTournamentsTreeUserAction
       get copyWith;
 }
 
+abstract class $CloseTournamentsTreeUserActionCopyWith<$Res>
+    implements $UserActionTournamentsTreeCopyWith<$Res> {
+  factory $CloseTournamentsTreeUserActionCopyWith(
+          CloseTournamentsTreeUserAction value,
+          $Res Function(CloseTournamentsTreeUserAction) then) =
+      _$CloseTournamentsTreeUserActionCopyWithImpl<$Res>;
+  @override
+  $Res call({TournamentsTreeInfo info});
+
+  @override
+  $TournamentsTreeInfoCopyWith<$Res> get info;
+}
+
+class _$CloseTournamentsTreeUserActionCopyWithImpl<$Res>
+    extends _$UserActionTournamentsTreeCopyWithImpl<$Res>
+    implements $CloseTournamentsTreeUserActionCopyWith<$Res> {
+  _$CloseTournamentsTreeUserActionCopyWithImpl(
+      CloseTournamentsTreeUserAction _value,
+      $Res Function(CloseTournamentsTreeUserAction) _then)
+      : super(_value, (v) => _then(v as CloseTournamentsTreeUserAction));
+
+  @override
+  CloseTournamentsTreeUserAction get _value =>
+      super._value as CloseTournamentsTreeUserAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(CloseTournamentsTreeUserAction(
+      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
+    ));
+  }
+}
+
+class _$CloseTournamentsTreeUserAction
+    with DiagnosticableTreeMixin
+    implements CloseTournamentsTreeUserAction {
+  const _$CloseTournamentsTreeUserAction({this.info});
+
+  @override
+  final TournamentsTreeInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionTournamentsTree.close(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserActionTournamentsTree.close'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CloseTournamentsTreeUserAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $CloseTournamentsTreeUserActionCopyWith<CloseTournamentsTreeUserAction>
+      get copyWith => _$CloseTournamentsTreeUserActionCopyWithImpl<
+          CloseTournamentsTreeUserAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(TournamentsTreeInfo info),
+    @required Result load(TournamentsTreeInfo info),
+    @required Result close(TournamentsTreeInfo info),
+  }) {
+    assert(open != null);
+    assert(load != null);
+    assert(close != null);
+    return close(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(TournamentsTreeInfo info),
+    Result load(TournamentsTreeInfo info),
+    Result close(TournamentsTreeInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (close != null) {
+      return close(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenTournamentsTreeUserAction value),
+    @required Result load(LoadTournamentsTreeUserAction value),
+    @required Result close(CloseTournamentsTreeUserAction value),
+  }) {
+    assert(open != null);
+    assert(load != null);
+    assert(close != null);
+    return close(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenTournamentsTreeUserAction value),
+    Result load(LoadTournamentsTreeUserAction value),
+    Result close(CloseTournamentsTreeUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (close != null) {
+      return close(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloseTournamentsTreeUserAction
+    implements UserActionTournamentsTree {
+  const factory CloseTournamentsTreeUserAction({TournamentsTreeInfo info}) =
+      _$CloseTournamentsTreeUserAction;
+
+  @override
+  TournamentsTreeInfo get info;
+  @override
+  $CloseTournamentsTreeUserActionCopyWith<CloseTournamentsTreeUserAction>
+      get copyWith;
+}
+
 class _$SystemActionTournamentsTreeTearOff {
   const _$SystemActionTournamentsTreeTearOff();
+
+  InitTournamentsTreeSystemAction init() {
+    return const InitTournamentsTreeSystemAction();
+  }
+
+  DeInitTournamentsTreeSystemAction deInit() {
+    return const DeInitTournamentsTreeSystemAction();
+  }
 
   InitSubTreeTournamentsTreeSystemAction initSubTree(
       {@required TournamentsTreeInfo info}) {
     return InitSubTreeTournamentsTreeSystemAction(
+      info: info,
+    );
+  }
+
+  DeInitSubTreeTournamentsTreeSystemAction deInitSubTree(
+      {@required TournamentsTreeInfo info}) {
+    return DeInitSubTreeTournamentsTreeSystemAction(
       info: info,
     );
   }
@@ -406,14 +585,20 @@ const $SystemActionTournamentsTree = _$SystemActionTournamentsTreeTearOff();
 mixin _$SystemActionTournamentsTree {
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result initSubTree(TournamentsTreeInfo info),
+    @required Result deInitSubTree(TournamentsTreeInfo info),
     @required Result loading(TournamentsTreeInfo info),
     @required Result failed(TournamentsTreeInfo info, Exception exception),
     @required Result completed(TournamentsTree tree),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result initSubTree(TournamentsTreeInfo info),
+    Result deInitSubTree(TournamentsTreeInfo info),
     Result loading(TournamentsTreeInfo info),
     Result failed(TournamentsTreeInfo info, Exception exception),
     Result completed(TournamentsTree tree),
@@ -421,14 +606,21 @@ mixin _$SystemActionTournamentsTree {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTournamentsTreeSystemAction value),
+    @required Result deInit(DeInitTournamentsTreeSystemAction value),
     @required Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    @required
+        Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     @required Result loading(LoadingTournamentsTreeSystemAction value),
     @required Result failed(FailedTournamentsTreeSystemAction value),
     @required Result completed(CompletedTournamentsTreeSystemAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTournamentsTreeSystemAction value),
+    Result deInit(DeInitTournamentsTreeSystemAction value),
     Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     Result loading(LoadingTournamentsTreeSystemAction value),
     Result failed(FailedTournamentsTreeSystemAction value),
     Result completed(CompletedTournamentsTreeSystemAction value),
@@ -450,6 +642,273 @@ class _$SystemActionTournamentsTreeCopyWithImpl<$Res>
   final SystemActionTournamentsTree _value;
   // ignore: unused_field
   final $Res Function(SystemActionTournamentsTree) _then;
+}
+
+abstract class $InitTournamentsTreeSystemActionCopyWith<$Res> {
+  factory $InitTournamentsTreeSystemActionCopyWith(
+          InitTournamentsTreeSystemAction value,
+          $Res Function(InitTournamentsTreeSystemAction) then) =
+      _$InitTournamentsTreeSystemActionCopyWithImpl<$Res>;
+}
+
+class _$InitTournamentsTreeSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentsTreeCopyWithImpl<$Res>
+    implements $InitTournamentsTreeSystemActionCopyWith<$Res> {
+  _$InitTournamentsTreeSystemActionCopyWithImpl(
+      InitTournamentsTreeSystemAction _value,
+      $Res Function(InitTournamentsTreeSystemAction) _then)
+      : super(_value, (v) => _then(v as InitTournamentsTreeSystemAction));
+
+  @override
+  InitTournamentsTreeSystemAction get _value =>
+      super._value as InitTournamentsTreeSystemAction;
+}
+
+class _$InitTournamentsTreeSystemAction
+    with DiagnosticableTreeMixin
+    implements InitTournamentsTreeSystemAction {
+  const _$InitTournamentsTreeSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTournamentsTree.init()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTournamentsTree.init'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InitTournamentsTreeSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result initSubTree(TournamentsTreeInfo info),
+    @required Result deInitSubTree(TournamentsTreeInfo info),
+    @required Result loading(TournamentsTreeInfo info),
+    @required Result failed(TournamentsTreeInfo info, Exception exception),
+    @required Result completed(TournamentsTree tree),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(initSubTree != null);
+    assert(deInitSubTree != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result initSubTree(TournamentsTreeInfo info),
+    Result deInitSubTree(TournamentsTreeInfo info),
+    Result loading(TournamentsTreeInfo info),
+    Result failed(TournamentsTreeInfo info, Exception exception),
+    Result completed(TournamentsTree tree),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentsTreeSystemAction value),
+    @required Result deInit(DeInitTournamentsTreeSystemAction value),
+    @required Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    @required
+        Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
+    @required Result loading(LoadingTournamentsTreeSystemAction value),
+    @required Result failed(FailedTournamentsTreeSystemAction value),
+    @required Result completed(CompletedTournamentsTreeSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(initSubTree != null);
+    assert(deInitSubTree != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentsTreeSystemAction value),
+    Result deInit(DeInitTournamentsTreeSystemAction value),
+    Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
+    Result loading(LoadingTournamentsTreeSystemAction value),
+    Result failed(FailedTournamentsTreeSystemAction value),
+    Result completed(CompletedTournamentsTreeSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitTournamentsTreeSystemAction
+    implements SystemActionTournamentsTree {
+  const factory InitTournamentsTreeSystemAction() =
+      _$InitTournamentsTreeSystemAction;
+}
+
+abstract class $DeInitTournamentsTreeSystemActionCopyWith<$Res> {
+  factory $DeInitTournamentsTreeSystemActionCopyWith(
+          DeInitTournamentsTreeSystemAction value,
+          $Res Function(DeInitTournamentsTreeSystemAction) then) =
+      _$DeInitTournamentsTreeSystemActionCopyWithImpl<$Res>;
+}
+
+class _$DeInitTournamentsTreeSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentsTreeCopyWithImpl<$Res>
+    implements $DeInitTournamentsTreeSystemActionCopyWith<$Res> {
+  _$DeInitTournamentsTreeSystemActionCopyWithImpl(
+      DeInitTournamentsTreeSystemAction _value,
+      $Res Function(DeInitTournamentsTreeSystemAction) _then)
+      : super(_value, (v) => _then(v as DeInitTournamentsTreeSystemAction));
+
+  @override
+  DeInitTournamentsTreeSystemAction get _value =>
+      super._value as DeInitTournamentsTreeSystemAction;
+}
+
+class _$DeInitTournamentsTreeSystemAction
+    with DiagnosticableTreeMixin
+    implements DeInitTournamentsTreeSystemAction {
+  const _$DeInitTournamentsTreeSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTournamentsTree.deInit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTournamentsTree.deInit'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DeInitTournamentsTreeSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result initSubTree(TournamentsTreeInfo info),
+    @required Result deInitSubTree(TournamentsTreeInfo info),
+    @required Result loading(TournamentsTreeInfo info),
+    @required Result failed(TournamentsTreeInfo info, Exception exception),
+    @required Result completed(TournamentsTree tree),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(initSubTree != null);
+    assert(deInitSubTree != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result initSubTree(TournamentsTreeInfo info),
+    Result deInitSubTree(TournamentsTreeInfo info),
+    Result loading(TournamentsTreeInfo info),
+    Result failed(TournamentsTreeInfo info, Exception exception),
+    Result completed(TournamentsTree tree),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentsTreeSystemAction value),
+    @required Result deInit(DeInitTournamentsTreeSystemAction value),
+    @required Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    @required
+        Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
+    @required Result loading(LoadingTournamentsTreeSystemAction value),
+    @required Result failed(FailedTournamentsTreeSystemAction value),
+    @required Result completed(CompletedTournamentsTreeSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(initSubTree != null);
+    assert(deInitSubTree != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentsTreeSystemAction value),
+    Result deInit(DeInitTournamentsTreeSystemAction value),
+    Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
+    Result loading(LoadingTournamentsTreeSystemAction value),
+    Result failed(FailedTournamentsTreeSystemAction value),
+    Result completed(CompletedTournamentsTreeSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeInitTournamentsTreeSystemAction
+    implements SystemActionTournamentsTree {
+  const factory DeInitTournamentsTreeSystemAction() =
+      _$DeInitTournamentsTreeSystemAction;
 }
 
 abstract class $InitSubTreeTournamentsTreeSystemActionCopyWith<$Res> {
@@ -539,12 +998,18 @@ class _$InitSubTreeTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result initSubTree(TournamentsTreeInfo info),
+    @required Result deInitSubTree(TournamentsTreeInfo info),
     @required Result loading(TournamentsTreeInfo info),
     @required Result failed(TournamentsTreeInfo info, Exception exception),
     @required Result completed(TournamentsTree tree),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(initSubTree != null);
+    assert(deInitSubTree != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
@@ -554,7 +1019,10 @@ class _$InitSubTreeTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result initSubTree(TournamentsTreeInfo info),
+    Result deInitSubTree(TournamentsTreeInfo info),
     Result loading(TournamentsTreeInfo info),
     Result failed(TournamentsTreeInfo info, Exception exception),
     Result completed(TournamentsTree tree),
@@ -570,12 +1038,19 @@ class _$InitSubTreeTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTournamentsTreeSystemAction value),
+    @required Result deInit(DeInitTournamentsTreeSystemAction value),
     @required Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    @required
+        Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     @required Result loading(LoadingTournamentsTreeSystemAction value),
     @required Result failed(FailedTournamentsTreeSystemAction value),
     @required Result completed(CompletedTournamentsTreeSystemAction value),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(initSubTree != null);
+    assert(deInitSubTree != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
@@ -585,7 +1060,10 @@ class _$InitSubTreeTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTournamentsTreeSystemAction value),
+    Result deInit(DeInitTournamentsTreeSystemAction value),
     Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     Result loading(LoadingTournamentsTreeSystemAction value),
     Result failed(FailedTournamentsTreeSystemAction value),
     Result completed(CompletedTournamentsTreeSystemAction value),
@@ -608,6 +1086,183 @@ abstract class InitSubTreeTournamentsTreeSystemAction
   TournamentsTreeInfo get info;
   $InitSubTreeTournamentsTreeSystemActionCopyWith<
       InitSubTreeTournamentsTreeSystemAction> get copyWith;
+}
+
+abstract class $DeInitSubTreeTournamentsTreeSystemActionCopyWith<$Res> {
+  factory $DeInitSubTreeTournamentsTreeSystemActionCopyWith(
+          DeInitSubTreeTournamentsTreeSystemAction value,
+          $Res Function(DeInitSubTreeTournamentsTreeSystemAction) then) =
+      _$DeInitSubTreeTournamentsTreeSystemActionCopyWithImpl<$Res>;
+  $Res call({TournamentsTreeInfo info});
+
+  $TournamentsTreeInfoCopyWith<$Res> get info;
+}
+
+class _$DeInitSubTreeTournamentsTreeSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentsTreeCopyWithImpl<$Res>
+    implements $DeInitSubTreeTournamentsTreeSystemActionCopyWith<$Res> {
+  _$DeInitSubTreeTournamentsTreeSystemActionCopyWithImpl(
+      DeInitSubTreeTournamentsTreeSystemAction _value,
+      $Res Function(DeInitSubTreeTournamentsTreeSystemAction) _then)
+      : super(_value,
+            (v) => _then(v as DeInitSubTreeTournamentsTreeSystemAction));
+
+  @override
+  DeInitSubTreeTournamentsTreeSystemAction get _value =>
+      super._value as DeInitSubTreeTournamentsTreeSystemAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(DeInitSubTreeTournamentsTreeSystemAction(
+      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
+    ));
+  }
+
+  @override
+  $TournamentsTreeInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentsTreeInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$DeInitSubTreeTournamentsTreeSystemAction
+    with DiagnosticableTreeMixin
+    implements DeInitSubTreeTournamentsTreeSystemAction {
+  const _$DeInitSubTreeTournamentsTreeSystemAction({@required this.info})
+      : assert(info != null);
+
+  @override
+  final TournamentsTreeInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTournamentsTree.deInitSubTree(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SystemActionTournamentsTree.deInitSubTree'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DeInitSubTreeTournamentsTreeSystemAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $DeInitSubTreeTournamentsTreeSystemActionCopyWith<
+          DeInitSubTreeTournamentsTreeSystemAction>
+      get copyWith => _$DeInitSubTreeTournamentsTreeSystemActionCopyWithImpl<
+          DeInitSubTreeTournamentsTreeSystemAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+    @required Result initSubTree(TournamentsTreeInfo info),
+    @required Result deInitSubTree(TournamentsTreeInfo info),
+    @required Result loading(TournamentsTreeInfo info),
+    @required Result failed(TournamentsTreeInfo info, Exception exception),
+    @required Result completed(TournamentsTree tree),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(initSubTree != null);
+    assert(deInitSubTree != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInitSubTree(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    Result initSubTree(TournamentsTreeInfo info),
+    Result deInitSubTree(TournamentsTreeInfo info),
+    Result loading(TournamentsTreeInfo info),
+    Result failed(TournamentsTreeInfo info, Exception exception),
+    Result completed(TournamentsTree tree),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInitSubTree != null) {
+      return deInitSubTree(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentsTreeSystemAction value),
+    @required Result deInit(DeInitTournamentsTreeSystemAction value),
+    @required Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    @required
+        Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
+    @required Result loading(LoadingTournamentsTreeSystemAction value),
+    @required Result failed(FailedTournamentsTreeSystemAction value),
+    @required Result completed(CompletedTournamentsTreeSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(initSubTree != null);
+    assert(deInitSubTree != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    return deInitSubTree(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentsTreeSystemAction value),
+    Result deInit(DeInitTournamentsTreeSystemAction value),
+    Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
+    Result loading(LoadingTournamentsTreeSystemAction value),
+    Result failed(FailedTournamentsTreeSystemAction value),
+    Result completed(CompletedTournamentsTreeSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInitSubTree != null) {
+      return deInitSubTree(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeInitSubTreeTournamentsTreeSystemAction
+    implements SystemActionTournamentsTree {
+  const factory DeInitSubTreeTournamentsTreeSystemAction(
+          {@required TournamentsTreeInfo info}) =
+      _$DeInitSubTreeTournamentsTreeSystemAction;
+
+  TournamentsTreeInfo get info;
+  $DeInitSubTreeTournamentsTreeSystemActionCopyWith<
+      DeInitSubTreeTournamentsTreeSystemAction> get copyWith;
 }
 
 abstract class $LoadingTournamentsTreeSystemActionCopyWith<$Res> {
@@ -695,12 +1350,18 @@ class _$LoadingTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result initSubTree(TournamentsTreeInfo info),
+    @required Result deInitSubTree(TournamentsTreeInfo info),
     @required Result loading(TournamentsTreeInfo info),
     @required Result failed(TournamentsTreeInfo info, Exception exception),
     @required Result completed(TournamentsTree tree),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(initSubTree != null);
+    assert(deInitSubTree != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
@@ -710,7 +1371,10 @@ class _$LoadingTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result initSubTree(TournamentsTreeInfo info),
+    Result deInitSubTree(TournamentsTreeInfo info),
     Result loading(TournamentsTreeInfo info),
     Result failed(TournamentsTreeInfo info, Exception exception),
     Result completed(TournamentsTree tree),
@@ -726,12 +1390,19 @@ class _$LoadingTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTournamentsTreeSystemAction value),
+    @required Result deInit(DeInitTournamentsTreeSystemAction value),
     @required Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    @required
+        Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     @required Result loading(LoadingTournamentsTreeSystemAction value),
     @required Result failed(FailedTournamentsTreeSystemAction value),
     @required Result completed(CompletedTournamentsTreeSystemAction value),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(initSubTree != null);
+    assert(deInitSubTree != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
@@ -741,7 +1412,10 @@ class _$LoadingTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTournamentsTreeSystemAction value),
+    Result deInit(DeInitTournamentsTreeSystemAction value),
     Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     Result loading(LoadingTournamentsTreeSystemAction value),
     Result failed(FailedTournamentsTreeSystemAction value),
     Result completed(CompletedTournamentsTreeSystemAction value),
@@ -863,12 +1537,18 @@ class _$FailedTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result initSubTree(TournamentsTreeInfo info),
+    @required Result deInitSubTree(TournamentsTreeInfo info),
     @required Result loading(TournamentsTreeInfo info),
     @required Result failed(TournamentsTreeInfo info, Exception exception),
     @required Result completed(TournamentsTree tree),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(initSubTree != null);
+    assert(deInitSubTree != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
@@ -878,7 +1558,10 @@ class _$FailedTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result initSubTree(TournamentsTreeInfo info),
+    Result deInitSubTree(TournamentsTreeInfo info),
     Result loading(TournamentsTreeInfo info),
     Result failed(TournamentsTreeInfo info, Exception exception),
     Result completed(TournamentsTree tree),
@@ -894,12 +1577,19 @@ class _$FailedTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTournamentsTreeSystemAction value),
+    @required Result deInit(DeInitTournamentsTreeSystemAction value),
     @required Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    @required
+        Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     @required Result loading(LoadingTournamentsTreeSystemAction value),
     @required Result failed(FailedTournamentsTreeSystemAction value),
     @required Result completed(CompletedTournamentsTreeSystemAction value),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(initSubTree != null);
+    assert(deInitSubTree != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
@@ -909,7 +1599,10 @@ class _$FailedTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTournamentsTreeSystemAction value),
+    Result deInit(DeInitTournamentsTreeSystemAction value),
     Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     Result loading(LoadingTournamentsTreeSystemAction value),
     Result failed(FailedTournamentsTreeSystemAction value),
     Result completed(CompletedTournamentsTreeSystemAction value),
@@ -1021,12 +1714,18 @@ class _$CompletedTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
     @required Result initSubTree(TournamentsTreeInfo info),
+    @required Result deInitSubTree(TournamentsTreeInfo info),
     @required Result loading(TournamentsTreeInfo info),
     @required Result failed(TournamentsTreeInfo info, Exception exception),
     @required Result completed(TournamentsTree tree),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(initSubTree != null);
+    assert(deInitSubTree != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
@@ -1036,7 +1735,10 @@ class _$CompletedTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
     Result initSubTree(TournamentsTreeInfo info),
+    Result deInitSubTree(TournamentsTreeInfo info),
     Result loading(TournamentsTreeInfo info),
     Result failed(TournamentsTreeInfo info, Exception exception),
     Result completed(TournamentsTree tree),
@@ -1052,12 +1754,19 @@ class _$CompletedTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result init(InitTournamentsTreeSystemAction value),
+    @required Result deInit(DeInitTournamentsTreeSystemAction value),
     @required Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    @required
+        Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     @required Result loading(LoadingTournamentsTreeSystemAction value),
     @required Result failed(FailedTournamentsTreeSystemAction value),
     @required Result completed(CompletedTournamentsTreeSystemAction value),
   }) {
+    assert(init != null);
+    assert(deInit != null);
     assert(initSubTree != null);
+    assert(deInitSubTree != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
@@ -1067,7 +1776,10 @@ class _$CompletedTournamentsTreeSystemAction
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result init(InitTournamentsTreeSystemAction value),
+    Result deInit(DeInitTournamentsTreeSystemAction value),
     Result initSubTree(InitSubTreeTournamentsTreeSystemAction value),
+    Result deInitSubTree(DeInitSubTreeTournamentsTreeSystemAction value),
     Result loading(LoadingTournamentsTreeSystemAction value),
     Result failed(FailedTournamentsTreeSystemAction value),
     Result completed(CompletedTournamentsTreeSystemAction value),

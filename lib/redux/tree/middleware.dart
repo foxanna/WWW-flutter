@@ -22,10 +22,38 @@ class TournamentsTreeMiddleware {
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_open),
+        TypedMiddleware<AppState, CloseTournamentsTreeUserAction>(_close),
         TypedMiddleware<AppState, InitSubTreeTournamentsTreeSystemAction>(
             _initSubTree),
         TypedMiddleware<AppState, LoadTournamentsTreeUserAction>(_load),
       ];
+
+  void _open(Store<AppState> store, OpenTournamentsTreeUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    final info = action.info ?? const TournamentsTreeInfo(id: '0');
+
+    store.dispatch(SystemActionNavigation.tree(info: info));
+
+    if (info.id == '0') {
+      store.dispatch(const SystemActionTournamentsTree.init());
+    }
+
+    store.dispatch(SystemActionTournamentsTree.initSubTree(info: info));
+  }
+
+  void _close(Store<AppState> store, CloseTournamentsTreeUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    store
+        .dispatch(SystemActionTournamentsTree.deInitSubTree(info: action.info));
+
+    if (action.info.id == '0') {
+      store.dispatch(const SystemActionTournamentsTree.deInit());
+    }
+  }
 
   Future<void> _load(Store<AppState> store,
       LoadTournamentsTreeUserAction action, NextDispatcher next) async {
@@ -56,15 +84,6 @@ class TournamentsTreeMiddleware {
       store.dispatch(
           SystemActionTournamentsTree.failed(info: action.info, exception: e));
     }
-  }
-
-  void _open(Store<AppState> store, OpenTournamentsTreeUserAction action,
-      NextDispatcher next) {
-    next(action);
-
-    final info = action.info ?? const TournamentsTreeInfo(id: '0');
-    store.dispatch(SystemActionNavigation.tree(info: info));
-    store.dispatch(SystemActionTournamentsTree.initSubTree(info: info));
   }
 
   void _initSubTree(Store<AppState> store,

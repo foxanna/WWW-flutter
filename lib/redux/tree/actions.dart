@@ -19,15 +19,29 @@ abstract class UserActionTournamentsTree
   const factory UserActionTournamentsTree.load({
     @required TournamentsTreeInfo info,
   }) = LoadTournamentsTreeUserAction;
+
+  const factory UserActionTournamentsTree.close({
+    TournamentsTreeInfo info,
+  }) = CloseTournamentsTreeUserAction;
 }
 
 @freezed
 abstract class SystemActionTournamentsTree
     with _$SystemActionTournamentsTree
     implements TournamentsTreeAction {
+  const factory SystemActionTournamentsTree.init() =
+      InitTournamentsTreeSystemAction;
+
+  const factory SystemActionTournamentsTree.deInit() =
+      DeInitTournamentsTreeSystemAction;
+
   const factory SystemActionTournamentsTree.initSubTree({
     @required TournamentsTreeInfo info,
   }) = InitSubTreeTournamentsTreeSystemAction;
+
+  const factory SystemActionTournamentsTree.deInitSubTree({
+    @required TournamentsTreeInfo info,
+  }) = DeInitSubTreeTournamentsTreeSystemAction;
 
   const factory SystemActionTournamentsTree.loading({
     @required TournamentsTreeInfo info,

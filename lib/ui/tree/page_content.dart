@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/data/models/tournaments_tree_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/redux/tree/state.dart';
 import 'package:what_when_where/ui/common/empty_sliver.dart';
 import 'package:what_when_where/ui/tree/data_page.dart';
@@ -41,5 +42,7 @@ class TournamentsTreePageContent extends StatelessWidget {
 
           return const EmptySliver();
         },
+        onDispose: (store) =>
+            store.dispatch(UserActionTournamentsTree.close(info: info)),
       );
 }

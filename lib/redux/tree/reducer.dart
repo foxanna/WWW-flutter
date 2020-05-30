@@ -11,8 +11,13 @@ import 'package:what_when_where/redux/tree/state.dart';
 class TournamentsTreeReducer {
   static final Reducer<TournamentsTreeState> _reducer =
       combineReducers<TournamentsTreeState>([
+    TypedReducer<TournamentsTreeState, InitTournamentsTreeSystemAction>(_init),
+    TypedReducer<TournamentsTreeState, DeInitTournamentsTreeSystemAction>(
+        _deInit),
     TypedReducer<TournamentsTreeState, InitSubTreeTournamentsTreeSystemAction>(
         _initSubTree),
+    TypedReducer<TournamentsTreeState,
+        DeInitSubTreeTournamentsTreeSystemAction>(_deInitSubTree),
     TypedReducer<TournamentsTreeState, CompletedTournamentsTreeSystemAction>(
         _completed),
     TypedReducer<TournamentsTreeState, LoadingTournamentsTreeSystemAction>(
@@ -25,6 +30,14 @@ class TournamentsTreeReducer {
   static TournamentsTreeState reduce(
           TournamentsTreeState state, ReduxAction action) =>
       _reducer(state, action);
+
+  static TournamentsTreeState _init(
+          TournamentsTreeState state, InitTournamentsTreeSystemAction action) =>
+      const TournamentsTreeState();
+
+  static TournamentsTreeState _deInit(TournamentsTreeState state,
+          DeInitTournamentsTreeSystemAction action) =>
+      null;
 
   static TournamentsTreeState _completed(TournamentsTreeState state,
           CompletedTournamentsTreeSystemAction action) =>
@@ -51,11 +64,24 @@ class TournamentsTreeReducer {
 
   static TournamentsTreeState _initSubTree(TournamentsTreeState state,
       InitSubTreeTournamentsTreeSystemAction action) {
-    final existingState = state ?? const TournamentsTreeState();
-    final newStates =
-        Map<String, TournamentsSubTreeState>.from(existingState.states);
-    newStates[action.info.id] = newStates[action.info.id] ??
+    if (state == null) {
+      return state;
+    }
+
+    final newStates = Map<String, TournamentsSubTreeState>.from(state.states);
+    newStates[action.info.id] =
         TournamentsSubTreeState.initial(info: action.info);
+    return TournamentsTreeState(states: newStates);
+  }
+
+  static TournamentsTreeState _deInitSubTree(TournamentsTreeState state,
+      DeInitSubTreeTournamentsTreeSystemAction action) {
+    if (state == null) {
+      return state;
+    }
+
+    final newStates = Map<String, TournamentsSubTreeState>.from(state.states);
+    newStates.remove(action.info.id);
     return TournamentsTreeState(states: newStates);
   }
 
