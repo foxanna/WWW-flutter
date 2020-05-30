@@ -25,9 +25,9 @@ abstract class UserActionTournamentsTree
 abstract class SystemActionTournamentsTree
     with _$SystemActionTournamentsTree
     implements TournamentsTreeAction {
-  const factory SystemActionTournamentsTree.setSubTree({
+  const factory SystemActionTournamentsTree.initSubTree({
     @required TournamentsTreeInfo info,
-  }) = SetSubTreeTournamentsTreeSystemAction;
+  }) = InitSubTreeTournamentsTreeSystemAction;
 
   const factory SystemActionTournamentsTree.loading({
     @required TournamentsTreeInfo info,

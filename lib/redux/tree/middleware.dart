@@ -22,8 +22,8 @@ class TournamentsTreeMiddleware {
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_open),
-        TypedMiddleware<AppState, SetSubTreeTournamentsTreeSystemAction>(
-            _setSubTree),
+        TypedMiddleware<AppState, InitSubTreeTournamentsTreeSystemAction>(
+            _initSubTree),
         TypedMiddleware<AppState, LoadTournamentsTreeUserAction>(_load),
       ];
 
@@ -64,11 +64,11 @@ class TournamentsTreeMiddleware {
 
     final info = action.info ?? const TournamentsTreeInfo(id: '0');
     store.dispatch(SystemActionNavigation.tree(info: info));
-    store.dispatch(SystemActionTournamentsTree.setSubTree(info: info));
+    store.dispatch(SystemActionTournamentsTree.initSubTree(info: info));
   }
 
-  void _setSubTree(Store<AppState> store,
-      SetSubTreeTournamentsTreeSystemAction action, NextDispatcher next) {
+  void _initSubTree(Store<AppState> store,
+      InitSubTreeTournamentsTreeSystemAction action, NextDispatcher next) {
     next(action);
 
     final treeState = store.state.tournamentsTreeState;

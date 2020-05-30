@@ -39,7 +39,7 @@ class LatestTournamentsReducer {
   static LatestTournamentsState _loading(
           LatestTournamentsState state, LoadingLatestSystemAction action) =>
       state != null
-          ? state.nextPageOrZero != 0
+          ? state.nextPageOrZero > 0
               ? LatestTournamentsState.loadingWithData(
                   data: state.dataOrEmpty,
                   nextPage: state.nextPageOrZero,
@@ -50,7 +50,7 @@ class LatestTournamentsReducer {
   static LatestTournamentsState _completed(
           LatestTournamentsState state, CompletedLatestSystemAction action) =>
       state != null
-          ? state.nextPageOrZero != 0
+          ? state.nextPageOrZero > 0
               ? LatestTournamentsState.data(
                   nextPage: action.nexPage,
                   data: [...state.dataOrEmpty, ...action.data],
@@ -64,7 +64,7 @@ class LatestTournamentsReducer {
   static LatestTournamentsState _failed(
           LatestTournamentsState state, FailedLatestSystemAction action) =>
       state != null
-          ? state.nextPageOrZero != 0
+          ? state.nextPageOrZero > 0
               ? LatestTournamentsState.errorWithData(
                   data: state.dataOrEmpty,
                   nextPage: state.nextPageOrZero,
@@ -80,9 +80,11 @@ class LatestTournamentsReducer {
       return state;
     }
 
-    final index = state.dataOrEmpty.indexWhere((x) =>
-        (action.info.id.isNotNullOrEmpty && x.id == action.info.id) ||
-        (action.info.id2.isNotNullOrEmpty && x.id2 == action.info.id2));
+    final isTheOne = (Tournament tournament) =>
+        (action.info.id.isNotNullOrEmpty && tournament.id == action.info.id) ||
+        (action.info.id2.isNotNullOrEmpty && tournament.id2 == action.info.id2);
+
+    final index = state.dataOrEmpty.indexWhere((x) => isTheOne(x));
 
     if (index < 0) {
       return state;

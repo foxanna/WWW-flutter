@@ -89,9 +89,11 @@ class SearchReducer {
       return state;
     }
 
-    final index = state.dataOrEmpty.indexWhere((x) =>
-        (action.info.id.isNotNullOrEmpty && x.id == action.info.id) ||
-        (action.info.id2.isNotNullOrEmpty && x.id2 == action.info.id2));
+    final isTheOne = (Tournament tournament) =>
+        (action.info.id.isNotNullOrEmpty && tournament.id == action.info.id) ||
+        (action.info.id2.isNotNullOrEmpty && tournament.id2 == action.info.id2);
+
+    final index = state.dataOrEmpty.indexWhere((x) => isTheOne(x));
 
     if (index < 0) {
       return state;

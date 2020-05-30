@@ -11,8 +11,8 @@ import 'package:what_when_where/redux/tree/state.dart';
 class TournamentsTreeReducer {
   static final Reducer<TournamentsTreeState> _reducer =
       combineReducers<TournamentsTreeState>([
-    TypedReducer<TournamentsTreeState, SetSubTreeTournamentsTreeSystemAction>(
-        _setSubTree),
+    TypedReducer<TournamentsTreeState, InitSubTreeTournamentsTreeSystemAction>(
+        _initSubTree),
     TypedReducer<TournamentsTreeState, CompletedTournamentsTreeSystemAction>(
         _completed),
     TypedReducer<TournamentsTreeState, LoadingTournamentsTreeSystemAction>(
@@ -49,8 +49,8 @@ class TournamentsTreeReducer {
             exception: action.exception,
           ));
 
-  static TournamentsTreeState _setSubTree(TournamentsTreeState state,
-      SetSubTreeTournamentsTreeSystemAction action) {
+  static TournamentsTreeState _initSubTree(TournamentsTreeState state,
+      InitSubTreeTournamentsTreeSystemAction action) {
     final existingState = state ?? const TournamentsTreeState();
     final newStates =
         Map<String, TournamentsSubTreeState>.from(existingState.states);
