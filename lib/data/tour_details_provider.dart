@@ -30,10 +30,15 @@ class TourDetailsProvider implements ITourDetailsProvider {
 
   @override
   Future<Tour> get(String id) async {
-    if (_toursCache.contains(id)) {
-      return _toursCache.get(id);
-    }
+    final tour = await _getCached(id) ?? await _loadAndCache(id);
+    return tour;
+  }
 
+  Future<Tour> _getCached(String id) => _toursCache.contains(id)
+      ? Future.value(_toursCache.get(id))
+      : Future.value(null);
+
+  Future<Tour> _loadAndCache(String id) async {
     final dto = await _loader.get(id);
 
     final tournamentInfo =
