@@ -66,21 +66,23 @@ class SearchMiddleware {
 
     final state = store.state.searchState;
 
+    if (state == null) {
+      return;
+    }
+
     if (state is LoadingFirstPageSearchState ||
         state is LoadingWithDataSearchState ||
         (state is DataSearchState && !state.canLoadMore)) {
       return;
     }
 
-    final parameters = store.state.searchState.parameters;
+    final parameters = state.parameters;
     if (parameters.query.isEmpty) {
       return;
     }
 
     try {
-      store.dispatch(SystemActionSearch.loading(
-        parameters: parameters,
-      ));
+      store.dispatch(SystemActionSearch.loading(parameters: parameters));
 
       final data = await _provider.get(
           query: parameters.query,

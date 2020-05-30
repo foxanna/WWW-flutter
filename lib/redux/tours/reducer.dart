@@ -35,10 +35,14 @@ class ToursReducer {
           TourState.error(info: action.info, exception: action.exception));
 
   static ToursState _replaceTour(ToursState state, TourState tour) {
-    final tourIndex = state?.tours
-        ?.indexWhere((tourState) => tourState.info.id == tour.info.id);
+    if (state == null) {
+      return state;
+    }
 
-    if (tourIndex == null || tourIndex == -1) {
+    final tourIndex = state.tours
+        .indexWhere((tourState) => tourState.info.id == tour.info.id);
+
+    if (tourIndex < 0) {
       return state;
     }
 

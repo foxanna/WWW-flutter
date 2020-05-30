@@ -48,6 +48,10 @@ class TournamentMiddleware {
 
     final state = store.state.tournamentState;
 
+    if (state == null) {
+      return;
+    }
+
     if (state is LoadingTournamentState &&
         (state.info.id == action.info.id ||
             state.info.id2 == action.info.id2)) {
@@ -72,8 +76,13 @@ class TournamentMiddleware {
       NextDispatcher next) {
     next(action);
 
-    final currentTournamentInfo = store.state.tournamentState?.info;
-    if (currentTournamentInfo == action.tournament.info) {
+    final state = store.state.tournamentState;
+
+    if (state == null) {
+      return;
+    }
+
+    if (state.info == action.tournament.info) {
       store.dispatch(SystemActionTours.init(
           tours: action.tournament.tours.map((x) => x.info).toList()));
     }

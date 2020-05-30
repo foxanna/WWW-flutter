@@ -61,11 +61,16 @@ class _TimerTickingMiddleware {
       Store<AppState> store, StartTimerUserAction action, NextDispatcher next) {
     next(action);
 
-    final timerState = store.state.timerState;
+    final state = store.state.timerState;
+
+    if (state == null) {
+      return;
+    }
+
     final initialTime = Duration(
-        seconds: (timerState.secondsLeft <= 0)
-            ? Timers.getSeconds(timerState.timerType)
-            : timerState.secondsLeft);
+        seconds: (state.secondsLeft <= 0)
+            ? Timers.getSeconds(state.timerType)
+            : state.secondsLeft);
 
     _onTimerReset();
     _timer.start(callback: (duration) {
@@ -86,6 +91,12 @@ class _TimerTickingMiddleware {
       Store<AppState> store, StopTimerUserAction action, NextDispatcher next) {
     next(action);
 
+    final state = store.state.timerState;
+
+    if (state == null) {
+      return;
+    }
+
     _onTimerStop(store);
   }
 
@@ -97,6 +108,12 @@ class _TimerTickingMiddleware {
   void _resetTimer(
       Store<AppState> store, ResetTimerUserAction action, NextDispatcher next) {
     next(action);
+
+    final state = store.state.timerState;
+
+    if (state == null) {
+      return;
+    }
 
     _onTimerReset();
   }
@@ -115,6 +132,12 @@ class _TimerTickingMiddleware {
       UpdateTimeTimerSystemAction action, NextDispatcher next) {
     next(action);
 
+    final state = store.state.timerState;
+
+    if (state == null) {
+      return;
+    }
+
     if (action.newValue == 0) {
       _onTimerStop(store);
     }
@@ -123,6 +146,12 @@ class _TimerTickingMiddleware {
   void _changeType(Store<AppState> store, ChangeTypeTimerUserAction action,
       NextDispatcher next) {
     next(action);
+
+    final state = store.state.timerState;
+
+    if (state == null) {
+      return;
+    }
 
     store.dispatch(const UserActionTimer.reset());
   }
@@ -142,14 +171,20 @@ class _TimerConnectingMiddleware {
       UpdateTimeTimerSystemAction action, NextDispatcher next) {
     next(action);
 
-    final isTimerLong = store.state.timerState.timerType == TimerType.normal;
-    final settings = store.state.settingsState;
+    final timerState = store.state.timerState;
+    final settingsState = store.state.settingsState;
+
+    if (timerState == null || settingsState == null) {
+      return;
+    }
+
+    final isTimerLong = timerState.timerType == TimerType.normal;
     final timerExpired = action.newValue == 0;
     final timerIsExpiring = action.newValue == 10;
     final shouldNotify = timerExpired ||
         (timerIsExpiring &&
-            ((isTimerLong && settings.notifyLongTimerExpiration) ||
-                (!isTimerLong && settings.notifyShortTimerExpiration)));
+            ((isTimerLong && settingsState.notifyLongTimerExpiration) ||
+                (!isTimerLong && settingsState.notifyShortTimerExpiration)));
 
     if (shouldNotify) {
       store.dispatch(const SystemActionTimer.notify());

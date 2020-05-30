@@ -25,9 +25,9 @@ class InitializationReducer {
 
   static InitializationState _settingsReady(
           InitializationState state, ReadySettingsSystemAction action) =>
-      state.copyWith(settingsReady: true);
+      state?.copyWith(settingsReady: true) ?? state;
 
   static InitializationState _servicesReady(
           InitializationState state, ReadyServicesSystemAction action) =>
-      state.copyWith(servicesReady: true);
+      state?.copyWith(servicesReady: true) ?? state;
 }

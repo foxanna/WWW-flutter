@@ -32,10 +32,13 @@ class InitializationMiddleware {
   }
 
   Future<void> _checkState(Store<AppState> store) async {
-    final initializationState = store.state.initializationState;
+    final state = store.state.initializationState;
 
-    if (initializationState.servicesReady &&
-        initializationState.settingsReady) {
+    if (state == null) {
+      return;
+    }
+
+    if (state.servicesReady && state.settingsReady) {
       await Future<void>.delayed(SplashScreen.animationDuration);
 
       store.dispatch(const SystemActionLatest.open());

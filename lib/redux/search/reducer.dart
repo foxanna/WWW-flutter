@@ -24,11 +24,11 @@ class SearchReducer {
 
   static SearchState _updateText(
           SearchState state, UpdateTextSearchUserAction action) =>
-      state.copyWith.parameters(query: action.query);
+      state?.copyWith?.parameters(query: action.query);
 
   static SearchState _updateSorting(
           SearchState state, UpdateSortingSearchUserAction action) =>
-      state.copyWith.parameters(sorting: action.sorting);
+      state?.copyWith?.parameters(sorting: action.sorting);
 
   static SearchState _initSearch(
           SearchState state, InitSearchSystemAction action) =>
@@ -40,11 +40,14 @@ class SearchReducer {
 
   static SearchState _clearResults(
           SearchState state, ClearResultsSearchSystemAction action) =>
-      SearchState.initial(parameters: state.parameters.copyWith(nextPage: 0));
+      state != null
+          ? SearchState.initial(
+              parameters: state.parameters.copyWith(nextPage: 0))
+          : state;
 
   static SearchState _loading(
           SearchState state, LoadingSearchSystemAction action) =>
-      action.parameters == state?.parameters
+      state != null && action.parameters == state.parameters
           ? state.parameters.nextPage > 0
               ? SearchState.loadingWithData(
                   parameters: state.parameters,
@@ -57,7 +60,7 @@ class SearchReducer {
 
   static SearchState _failed(
           SearchState state, FailedSearchSystemAction action) =>
-      action.parameters == state?.parameters
+      state != null && action.parameters == state.parameters
           ? state.parameters.nextPage > 0
               ? SearchState.errorWithData(
                   parameters: state.parameters,
@@ -72,7 +75,7 @@ class SearchReducer {
 
   static SearchState _completed(
           SearchState state, CompletedSearchSystemAction action) =>
-      action.parameters == state?.parameters
+      state != null && action.parameters == state.parameters
           ? SearchState.data(
               parameters: state.parameters.copyWith(nextPage: action.nextPage),
               data: [...state.dataOrEmpty, ...action.data],

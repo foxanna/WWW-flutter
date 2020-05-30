@@ -40,6 +40,10 @@ class LatestTournamentsMiddleware {
 
     final state = store.state.latestTournamentsState;
 
+    if (state == null) {
+      return;
+    }
+
     if (state is RefreshingLatestTournamentsState) {
       return;
     }
@@ -66,6 +70,10 @@ class LatestTournamentsMiddleware {
     next(action);
 
     final state = store.state.latestTournamentsState;
+
+    if (state == null) {
+      return;
+    }
 
     if (state is LoadingFirstPageLatestTournamentsState ||
         state is LoadingWithDataLatestTournamentsState ||

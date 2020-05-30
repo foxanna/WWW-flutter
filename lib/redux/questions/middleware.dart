@@ -61,6 +61,10 @@ class QuestionsMiddleware {
 
     final state = store.state.questionsState;
 
+    if (state == null) {
+      return;
+    }
+
     if (state is LoadingFirstPageQuestionsState ||
         state is LoadingWithDataQuestionsState) {
       return;
@@ -84,6 +88,10 @@ class QuestionsMiddleware {
     next(action);
 
     final state = store.state.questionsState;
+
+    if (state == null) {
+      return;
+    }
 
     if (state is DataQuestionsState &&
         state.canLoadMore &&

@@ -31,7 +31,13 @@ class TournamentsTreeMiddleware {
       LoadTournamentsTreeUserAction action, NextDispatcher next) async {
     next(action);
 
-    final state = store.state.tournamentsTreeState.states[action.info.id];
+    final treeState = store.state.tournamentsTreeState;
+
+    if (treeState == null) {
+      return;
+    }
+
+    final state = treeState.states[action.info.id];
 
     if (state is LoadingTournamentsSubTreeState ||
         state is DataTournamentsSubTreeState) {
@@ -64,6 +70,12 @@ class TournamentsTreeMiddleware {
   void _setSubTree(Store<AppState> store,
       SetSubTreeTournamentsTreeSystemAction action, NextDispatcher next) {
     next(action);
+
+    final treeState = store.state.tournamentsTreeState;
+
+    if (treeState == null) {
+      return;
+    }
 
     store.dispatch(UserActionTournamentsTree.load(info: action.info));
   }

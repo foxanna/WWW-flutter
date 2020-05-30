@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
+import 'package:dartx/dartx.dart';
 import 'package:what_when_where/data/tour_details_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
@@ -35,9 +36,14 @@ class ToursMiddleware {
       NextDispatcher next) async {
     next(action);
 
-    final state = store.state.toursState.tours.firstWhere(
-        (state) => state.info.id == action.info.id,
-        orElse: () => null);
+    final toursState = store.state.toursState;
+
+    if (toursState == null) {
+      return;
+    }
+
+    final state =
+        toursState.tours.firstOrNullWhere((x) => x.info.id == action.info.id);
 
     if (state == null || state is LoadingTourState) {
       return;
