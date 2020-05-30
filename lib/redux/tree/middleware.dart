@@ -10,6 +10,8 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class TournamentsTreeMiddleware {
+  static const _rootId = '0';
+
   final ITournamentsTreeProvider _provider;
 
   List<Middleware<AppState>> _middleware;
@@ -32,11 +34,11 @@ class TournamentsTreeMiddleware {
       NextDispatcher next) {
     next(action);
 
-    final info = action.info ?? const TournamentsTreeInfo(id: '0');
+    final info = action.info ?? const TournamentsTreeInfo(id: _rootId);
 
     store.dispatch(SystemActionNavigation.tree(info: info));
 
-    if (info.id == '0') {
+    if (info.id == _rootId) {
       store.dispatch(const SystemActionTournamentsTree.init());
     }
 
@@ -50,7 +52,7 @@ class TournamentsTreeMiddleware {
     store
         .dispatch(SystemActionTournamentsTree.deInitSubTree(info: action.info));
 
-    if (action.info.id == '0') {
+    if (action.info.id == _rootId) {
       store.dispatch(const SystemActionTournamentsTree.deInit());
     }
   }
