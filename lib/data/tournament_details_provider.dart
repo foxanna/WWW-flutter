@@ -34,8 +34,8 @@ class TournamentDetailsProvider implements ITournamentDetailsProvider {
   @override
   Future<Tournament> get(String id) async {
     final tournament = await _getCached(id) ?? await _loadAndCache(id);
-    final status = await _statusService.actualize(tournament.info);
-    return tournament.copyWith(status: status);
+    final actualizedTournament = await _statusService.actualize(tournament);
+    return actualizedTournament;
   }
 
   Future<Tournament> _getCached(String id) => _tournamentsCache.contains(id)

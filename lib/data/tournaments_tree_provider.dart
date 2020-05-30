@@ -31,8 +31,8 @@ class TournamentsTreeProvider implements ITournamentsTreeProvider {
         _modelFromTournamentsTreeDto, [dto]);
     final actualChildren = await Future.wait(result.children.map((x) async {
       if (x is Tournament) {
-        final status = await _statusService.actualize(x.info);
-        return x.copyWith(status: status);
+        final actualizedTournament = await _statusService.actualize(x);
+        return actualizedTournament;
       } else {
         return x;
       }

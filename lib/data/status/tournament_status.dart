@@ -1,11 +1,9 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/data/models/tournament.dart';
-import 'package:what_when_where/data/models/tournament_info.dart';
-import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/data/status/tournaments_history.dart';
 
 abstract class ITournamentStatusService {
-  Future<TournamentStatus> actualize(TournamentInfo info);
+  Future<Tournament> actualize(Tournament tournament);
 
   Future<Iterable<Tournament>> actualizeAll(Iterable<Tournament> tournaments);
 }
@@ -19,15 +17,12 @@ class TournamentStatusService implements ITournamentStatusService {
   }) : _historyService = historyService;
 
   @override
-  Future<TournamentStatus> actualize(TournamentInfo info) async {
-    final isRead = await _historyService.wasRead(info);
-    return TournamentStatus(isNew: !isRead);
+  Future<Tournament> actualize(Tournament tournament) async {
+    final wasRead = await _historyService.wasRead(tournament.info);
+    return tournament.copyWith.status(isNew: !wasRead);
   }
 
   @override
   Future<Iterable<Tournament>> actualizeAll(Iterable<Tournament> tournaments) =>
-      Future.wait(tournaments.map((x) async {
-        final status = await actualize(x.info);
-        return x.copyWith(status: status);
-      }));
+      Future.wait(tournaments.map((x) => actualize(x)));
 }
