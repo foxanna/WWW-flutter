@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/data/cache/tours_cache.dart';
 import 'package:what_when_where/data/cache/tournaments_cache.dart';
@@ -38,9 +40,9 @@ class TournamentDetailsProvider implements ITournamentDetailsProvider {
     return actualizedTournament;
   }
 
-  Future<Tournament> _getCached(String id) => _tournamentsCache.contains(id)
+  FutureOr<Tournament> _getCached(String id) => _tournamentsCache.contains(id)
       ? Future.value(_tournamentsCache.get(id))
-      : Future.value(null);
+      : null;
 
   Future<Tournament> _loadAndCache(String id) async {
     final dto = await _loader.get(id);
