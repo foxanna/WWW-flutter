@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:mockito/mockito.dart';
+import 'package:what_when_where/data/models/tournament.dart';
 
 import '../ioc/container.dart';
 import '../mocks.dart';
@@ -22,11 +23,15 @@ void setupToursCacheMock(
 
 void setupTournamentsCacheMock(
   ITestContainer testIoc, {
-  String tournamentsId,
+  String tournamentId,
   bool contains,
-}) =>
-    when(testIoc<TournamentsCacheMock>().contains(tournamentsId ?? any))
+  Tournament tournament,
+}) {
+  when(testIoc<TournamentsCacheMock>().contains(tournamentId ?? any))
         .thenReturn(contains);
+  when(testIoc<TournamentsCacheMock>().get(tournamentId ?? any))
+      .thenReturn(tournament);
+}
 
 void setupTournamentsTreeCacheMock(
   ITestContainer testIoc, {
