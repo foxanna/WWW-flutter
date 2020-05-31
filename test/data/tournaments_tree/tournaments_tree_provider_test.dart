@@ -1,10 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:what_when_where/data/tournaments_tree_provider.dart';
 
 import '../../ioc/container.dart';
-import '../../mocks.dart';
+import '../../mock_utils/mock_setup.dart';
 import 'test_data_1.dart';
 
 void main() {
@@ -13,8 +11,8 @@ void main() {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
 
-      when(testIoc<DioMock>().get<String>('/tour/0/xml')).thenAnswer(
-          (_) => Future.value(Response(data: tournamentsTreeApiResponse1)));
+      setupDioMock(testIoc,
+          url: '/tour/0/xml', apiResponse: tournamentsTreeApiResponse1);
 
       final provider = testIoc<ITournamentsTreeProvider>();
 

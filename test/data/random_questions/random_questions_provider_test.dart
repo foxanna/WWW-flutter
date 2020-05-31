@@ -1,11 +1,9 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:what_when_where/data/models/question.dart';
 import 'package:what_when_where/data/random_questions_provider.dart';
 
 import '../../ioc/container.dart';
-import '../../mocks.dart';
+import '../../mock_utils/mock_setup.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
 import 'test_data_3.dart';
@@ -19,8 +17,7 @@ void main() {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
 
-      when(testIoc<DioMock>().get<String>('/xml/random'))
-          .thenAnswer((_) => Future.value(Response(data: apiResponse)));
+      setupDioMock(testIoc, url: '/xml/random', apiResponse: apiResponse);
 
       final provider = testIoc<IRandomQuestionsProvider>();
 

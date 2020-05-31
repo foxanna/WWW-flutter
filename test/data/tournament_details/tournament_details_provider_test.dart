@@ -1,11 +1,9 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/tournament_details_provider.dart';
 
 import '../../ioc/container.dart';
-import '../../mocks.dart';
+import '../../mock_utils/mock_setup.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
 import 'test_data_3.dart';
@@ -23,9 +21,10 @@ void main() {
         mockCache: true,
       );
 
-      when(testIoc<DioMock>().get<String>('/tour/$tournamentId/xml'))
-          .thenAnswer((_) => Future.value(Response(data: apiResponse)));
-      when(testIoc<TournamentsCacheMock>().contains(any)).thenReturn(false);
+      setupDioMock(testIoc,
+          url: '/tour/$tournamentId/xml', apiResponse: apiResponse);
+      setupTournamentsCacheMock(testIoc,
+          tournamentsId: tournamentId, contains: false);
 
       final provider = testIoc<ITournamentDetailsProvider>();
 

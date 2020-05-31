@@ -1,11 +1,9 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/tour_details_provider.dart';
 
 import '../../ioc/container.dart';
-import '../../mocks.dart';
+import '../../mock_utils/mock_setup.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
 import 'test_data_3.dart';
@@ -23,9 +21,8 @@ void main() {
         mockCache: true,
       );
 
-      when(testIoc<DioMock>().get<String>('/tour/$tourId/xml'))
-          .thenAnswer((_) => Future.value(Response(data: apiResponse)));
-      when(testIoc<ToursCacheMock>().contains(any)).thenReturn(false);
+      setupDioMock(testIoc, url: '/tour/$tourId/xml', apiResponse: apiResponse);
+      setupToursCacheMock(testIoc, tourId: tourId, contains: false);
 
       final provider = testIoc<ITourDetailsProvider>();
 

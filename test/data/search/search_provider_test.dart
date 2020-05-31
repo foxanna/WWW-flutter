@@ -1,14 +1,11 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
-import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/api/search/sorting.dart';
+import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/data/search_provider.dart';
-import 'package:what_when_where/services/storage.dart';
 
 import '../../ioc/container.dart';
-import '../../mocks.dart';
+import '../../mock_utils/mock_setup.dart';
 import 'test_data_1.dart';
 import 'test_data_2.dart';
 import 'test_data_3.dart';
@@ -27,8 +24,8 @@ void main() {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
 
-      when(testIoc<DioMock>().get<String>(expectedUri?.toString() ?? any))
-          .thenAnswer((_) => Future.value(Response(data: apiResponse)));
+      setupDioMock(testIoc,
+          url: expectedUri?.toString(), apiResponse: apiResponse);
 
       final provider = testIoc<ISearchProvider>();
 
@@ -92,10 +89,8 @@ void main() {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
 
-      when(testIoc<DioMock>().get<String>(any))
-          .thenAnswer((_) => Future.value(Response(data: apiResponse)));
-      when(testIoc<ILocalStorageService>().containsKey('history', any))
-          .thenAnswer((_) => Future.value(tournamentsAreRead));
+      setupDioMock(testIoc, apiResponse: apiResponse);
+      setupHistoryServiceMock(testIoc, isRead: tournamentsAreRead);
 
       final provider = testIoc<ISearchProvider>();
 
