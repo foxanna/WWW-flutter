@@ -63,14 +63,6 @@ class TournamentDetailsProviderMock extends Mock
 class TournamentsTreeProviderMock extends Mock
     implements ITournamentsTreeProvider {}
 
-// cache
-
-class ToursCacheMock extends Mock implements IToursCache {}
-
-class TournamentsCacheMock extends Mock implements ITournamentsCache {}
-
-class TournamentsTreeCacheMock extends Mock implements ITournamentsTreeCache {}
-
 // networking
 
 class DioMock extends Mock implements Dio {}

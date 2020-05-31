@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/data/tournament_details_provider.dart';
@@ -17,13 +18,9 @@ void main() {
     }) async {
       // arrange
       final id = expectedTournament.id;
-      final testIoc = configureTestIocContainer(
-        mockDio: true,
-        mockCache: true,
-      );
+      final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
-      setupTournamentsCacheMock(testIoc, tournamentId: id, contains: false);
 
       final provider = testIoc<ITournamentDetailsProvider>();
 
@@ -64,19 +61,14 @@ void main() {
       Tournament expectedTournament,
     }) async {
       // arrange
-      final id = expectedTournament.id;
-      final testIoc = configureTestIocContainer(
-        mockDio: true,
-        mockCache: true,
-      );
+      final testIoc = configureTestIocContainer(mockDio: true);
 
-      setupTournamentsCacheMock(testIoc,
-          tournamentId: id, contains: true, tournament: expectedTournament);
+      testIoc<ITournamentsCache>().save(expectedTournament);
 
       final provider = testIoc<ITournamentDetailsProvider>();
 
       // act
-      final tournament = await provider.get(id);
+      final tournament = await provider.get(expectedTournament.id);
 
       // assert
       expect(tournament, expectedTournament);
@@ -98,25 +90,21 @@ void main() {
       bool tournamentIsRead,
     }) async {
       // arrange
-      final tournamentId = expectedTournament.id;
-      final testIoc = configureTestIocContainer(
-        mockDio: true,
-        mockCache: true,
-      );
+      final id = expectedTournament.id;
+      final testIoc = configureTestIocContainer(mockDio: true);
 
-      setupDioMock(testIoc,
-          url: '/tour/$tournamentId/xml', apiResponse: apiResponse);
-      setupTournamentsCacheMock(testIoc,
-          tournamentId: tournamentId,
-          contains: tournamentIsCached,
-          tournament: expectedTournament);
+      setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
       setupHistoryServiceMock(testIoc,
-          tournamentId: tournamentId, isRead: tournamentIsRead);
+          tournamentId: id, isRead: tournamentIsRead);
+
+      if (tournamentIsCached) {
+        testIoc<ITournamentsCache>().save(expectedTournament);
+      }
 
       final provider = testIoc<ITournamentDetailsProvider>();
 
       // act
-      final tournament = await provider.get(tournamentId);
+      final tournament = await provider.get(id);
 
       // assert
       expect(tournament, expectedTournament);

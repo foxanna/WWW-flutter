@@ -10,7 +10,6 @@ ITestContainer configureTestIocContainer({
   bool mockProviders = false,
   bool mockServices = false,
   bool mockDio = false,
-  bool mockCache = false,
 }) {
   _getIt.reset();
 
@@ -35,10 +34,6 @@ ITestContainer configureTestIocContainer({
 
   if (mockDio) {
     configuration.mockDio(container);
-  }
-
-  if (mockCache) {
-    configuration.mockCache(container);
   }
 
   return container;

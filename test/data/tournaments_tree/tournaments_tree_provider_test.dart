@@ -16,13 +16,9 @@ void main() {
     }) async {
       // arrange
       final id = expectedResult.id;
-      final testIoc = configureTestIocContainer(
-        mockDio: true,
-        mockCache: true,
-      );
+      final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
-      setupTournamentsTreeCacheMock(testIoc, subTreeId: id, contains: false);
 
       final provider = testIoc<ITournamentsTreeProvider>();
 
@@ -49,13 +45,9 @@ void main() {
     }) async {
       // arrange
       final id = expectedResult.id;
-      final testIoc = configureTestIocContainer(
-        mockDio: true,
-        mockCache: true,
-      );
+      final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
-      setupTournamentsTreeCacheMock(testIoc, subTreeId: id, contains: false);
       setupHistoryServiceMock(testIoc, isRead: tournamentsAreRead);
 
       final provider = testIoc<ITournamentsTreeProvider>();

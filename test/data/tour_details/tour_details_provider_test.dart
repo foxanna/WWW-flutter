@@ -16,13 +16,9 @@ void main() {
     }) async {
       // arrange
       final tourId = expectedTour.id;
-      final testIoc = configureTestIocContainer(
-        mockDio: true,
-        mockCache: true,
-      );
+      final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/tour/$tourId/xml', apiResponse: apiResponse);
-      setupToursCacheMock(testIoc, tourId: tourId, contains: false);
 
       final provider = testIoc<ITourDetailsProvider>();
 
