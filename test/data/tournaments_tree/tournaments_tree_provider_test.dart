@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:what_when_where/data/cache/tournaments_tree_cache.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/data/models/tournaments_tree.dart';
@@ -37,10 +38,36 @@ void main() {
             ));
   });
 
+  group('Uses cached value if any', () {
+    final execute = ({
+      TournamentsTree expectedResult,
+    }) async {
+      // arrange
+      final testIoc = configureTestIocContainer(mockDio: true);
+
+      testIoc<ITournamentsTreeCache>().save(expectedResult);
+
+      final provider = testIoc<ITournamentsTreeProvider>();
+
+      // act
+      final tournamentsTree = await provider.get(id: expectedResult.id);
+
+      // assert
+      expect(tournamentsTree, expectedResult);
+    };
+
+    test(
+        'Tournaments tree root',
+        () => execute(
+              expectedResult: expectedTournamentsTree1,
+            ));
+  });
+
   group('Actualizes tournaments status', () {
     final execute = ({
       String apiResponse,
       TournamentsTree expectedResult,
+      bool treeIsCached,
       bool tournamentsAreRead,
     }) async {
       // arrange
@@ -49,6 +76,10 @@ void main() {
 
       setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
       setupHistoryServiceMock(testIoc, isRead: tournamentsAreRead);
+
+      if (treeIsCached) {
+        testIoc<ITournamentsTreeCache>().save(expectedResult);
+      }
 
       final provider = testIoc<ITournamentsTreeProvider>();
 
@@ -60,7 +91,7 @@ void main() {
     };
 
     test(
-        'All tournaments are new',
+        'All tournaments are new, not cached',
         () => execute(
               apiResponse: tournamentsTreeApiResponse1,
               expectedResult: expectedTournamentsTree1.copyWith(
@@ -72,10 +103,11 @@ void main() {
                           : x)
                       .toList()),
               tournamentsAreRead: false,
+              treeIsCached: false,
             ));
 
     test(
-        'All tournaments were read',
+        'All tournaments were read, not cached',
         () => execute(
               apiResponse: tournamentsTreeApiResponse1,
               expectedResult: expectedTournamentsTree1.copyWith(
@@ -87,6 +119,39 @@ void main() {
                           : x)
                       .toList()),
               tournamentsAreRead: true,
+              treeIsCached: false,
+            ));
+
+    test(
+        'All tournaments are new, cached',
+        () => execute(
+              apiResponse: tournamentsTreeApiResponse1,
+              expectedResult: expectedTournamentsTree1.copyWith(
+                  children: expectedTournamentsTree1.children
+                      .map((x) => x is Tournament
+                          ? x.copyWith(
+                              status: const TournamentStatus(isNew: true),
+                            )
+                          : x)
+                      .toList()),
+              tournamentsAreRead: false,
+              treeIsCached: true,
+            ));
+
+    test(
+        'All tournaments were read, cached',
+        () => execute(
+              apiResponse: tournamentsTreeApiResponse1,
+              expectedResult: expectedTournamentsTree1.copyWith(
+                  children: expectedTournamentsTree1.children
+                      .map((x) => x is Tournament
+                          ? x.copyWith(
+                              status: const TournamentStatus(isNew: false),
+                            )
+                          : x)
+                      .toList()),
+              tournamentsAreRead: true,
+              treeIsCached: true,
             ));
   });
 }
