@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:what_when_where/data/cache/tours_cache.dart';
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/tour_details_provider.dart';
 
@@ -9,21 +10,21 @@ import 'test_data_2.dart';
 import 'test_data_3.dart';
 
 void main() {
-  group('Loads and parses tour details', () {
+  group('Loads and parses tour details when cache is empty', () {
     final execute = ({
       String apiResponse,
       Tour expectedTour,
     }) async {
       // arrange
-      final tourId = expectedTour.id;
+      final id = expectedTour.id;
       final testIoc = configureTestIocContainer(mockDio: true);
 
-      setupDioMock(testIoc, url: '/tour/$tourId/xml', apiResponse: apiResponse);
+      setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
 
       final provider = testIoc<ITourDetailsProvider>();
 
       // act
-      final tour = await provider.get(tourId);
+      final tour = await provider.get(id);
 
       // assert
       expect(tour, expectedTour);
@@ -50,6 +51,32 @@ void main() {
       () => execute(
         apiResponse: tourDetailsApiResponse3,
         expectedTour: expectedTourDetails3,
+      ),
+    );
+  });
+
+  group('Uses cached value if any', () {
+    final execute = ({
+      Tour expectedTour,
+    }) async {
+      // arrange
+      final testIoc = configureTestIocContainer(mockDio: true);
+
+      testIoc<IToursCache>().save(expectedTour);
+
+      final provider = testIoc<ITourDetailsProvider>();
+
+      // act
+      final tour = await provider.get(expectedTour.id);
+
+      // assert
+      expect(tour, expectedTour);
+    };
+
+    test(
+      'Ordinary tour',
+      () => execute(
+        expectedTour: expectedTourDetails1,
       ),
     );
   });
