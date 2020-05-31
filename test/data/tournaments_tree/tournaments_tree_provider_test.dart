@@ -15,14 +15,19 @@ void main() {
       TournamentsTree expectedResult,
     }) async {
       // arrange
-      final testIoc = configureTestIocContainer(mockDio: true);
+      final id = expectedResult.id;
+      final testIoc = configureTestIocContainer(
+        mockDio: true,
+        mockCache: true,
+      );
 
-      setupDioMock(testIoc, url: '/tour/0/xml', apiResponse: apiResponse);
+      setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
+      setupTournamentsTreeCacheMock(testIoc, subTreeId: id, contains: false);
 
       final provider = testIoc<ITournamentsTreeProvider>();
 
       // act
-      final tournamentsTree = await provider.get(id: '0');
+      final tournamentsTree = await provider.get(id: id);
 
       // assert
       expect(tournamentsTree, expectedResult);
@@ -43,15 +48,20 @@ void main() {
       bool tournamentsAreRead,
     }) async {
       // arrange
-      final testIoc = configureTestIocContainer(mockDio: true);
+      final id = expectedResult.id;
+      final testIoc = configureTestIocContainer(
+        mockDio: true,
+        mockCache: true,
+      );
 
-      setupDioMock(testIoc, apiResponse: apiResponse);
+      setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
+      setupTournamentsTreeCacheMock(testIoc, subTreeId: id, contains: false);
       setupHistoryServiceMock(testIoc, isRead: tournamentsAreRead);
 
       final provider = testIoc<ITournamentsTreeProvider>();
 
       // act
-      final tournamentsTree = await provider.get(id: '0');
+      final tournamentsTree = await provider.get(id: id);
 
       // assert
       expect(tournamentsTree, expectedResult);

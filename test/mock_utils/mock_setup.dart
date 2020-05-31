@@ -28,6 +28,14 @@ void setupTournamentsCacheMock(
     when(testIoc<TournamentsCacheMock>().contains(tournamentsId ?? any))
         .thenReturn(contains);
 
+void setupTournamentsTreeCacheMock(
+  ITestContainer testIoc, {
+  String subTreeId,
+  bool contains,
+}) =>
+    when(testIoc<TournamentsTreeCacheMock>().contains(subTreeId ?? any))
+        .thenReturn(contains);
+
 void setupHistoryServiceMock(
   ITestContainer testIoc, {
   String tournamentId,
