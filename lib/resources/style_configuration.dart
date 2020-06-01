@@ -155,6 +155,7 @@ class TournamentDetailsStyleConfiguration {
       ),
       tourQuestionsSpacing: 16.0,
       bookmarkedMarkerColor: theme.accentColor,
+      bookmarkedMarkerWidth: 24.0,
     );
   }
 
@@ -177,6 +178,7 @@ class TournamentDetailsStyleConfiguration {
     this.actionBarIconTheme,
     this.scaffoldBackground,
     this.bookmarkedMarkerColor,
+    this.bookmarkedMarkerWidth,
   });
 
   final Color scaffoldBackground;
@@ -197,6 +199,7 @@ class TournamentDetailsStyleConfiguration {
   final int stubToursCount;
   final int stubQuestionsCount;
   final Color bookmarkedMarkerColor;
+  final double bookmarkedMarkerWidth;
 }
 
 class TournamentsGridStyleConfiguration {
@@ -216,7 +219,7 @@ class TournamentsGridStyleConfiguration {
       newTournamentIndicatorColor: theme.accentColor,
       newTournamentIndicatorRadius: 4.0,
       bookmarkedTournamentIndicatorColor: theme.accentColor,
-      bookmarkedTournamentIconSize: 32.0,
+      bookmarkedTournamentIconSize: const Size(16.0, 20.0),
     );
   }
 
@@ -244,7 +247,7 @@ class TournamentsGridStyleConfiguration {
   final Color newTournamentIndicatorColor;
   final Color bookmarkedTournamentIndicatorColor;
   final double newTournamentIndicatorRadius;
-  final double bookmarkedTournamentIconSize;
+  final Size bookmarkedTournamentIconSize;
 }
 
 class LatestTournamentsStyleConfiguration {

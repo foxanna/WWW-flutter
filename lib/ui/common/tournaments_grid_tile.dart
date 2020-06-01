@@ -9,6 +9,7 @@ import 'package:what_when_where/localization/translations/translations.i69n.dart
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/common/bookmarked_marker.dart';
 import 'package:what_when_where/ui/common/shape_hero.dart';
 import 'package:what_when_where/ui/common/text_hero.dart';
 
@@ -199,10 +200,8 @@ class _TournamentsGridTileContent extends StatelessWidget {
               ),
             if (isBookmarked)
               Positioned(
-                top: -4.0,
-                right: gridStyleConfiguration.tileContentPadding.right / 2,
-                child: Icon(
-                  Icons.bookmark,
+                right: gridStyleConfiguration.tileContentPadding.right,
+                child: BookmarkedMarker(
                   color:
                       gridStyleConfiguration.bookmarkedTournamentIndicatorColor,
                   size: gridStyleConfiguration.bookmarkedTournamentIconSize,

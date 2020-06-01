@@ -65,7 +65,8 @@ class TournamentDetailsAppBar extends StatelessWidget {
                         duration: const Duration(milliseconds: 150),
                         child: BookmarkedMarker(
                           color: styleConfiguration.bookmarkedMarkerColor,
-                          height: mediaQuery.padding.top + kToolbarHeight / 2,
+                          size: Size(styleConfiguration.bookmarkedMarkerWidth,
+                              mediaQuery.padding.top + kToolbarHeight / 2),
                         ),
                       ),
                     ),
