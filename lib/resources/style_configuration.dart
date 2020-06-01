@@ -154,6 +154,7 @@ class TournamentDetailsStyleConfiguration {
         bottom: Dimensions.defaultPadding.bottom * 2 + padding.bottom,
       ),
       tourQuestionsSpacing: 16.0,
+      bookmarkedMarkerColor: theme.accentColor,
     );
   }
 
@@ -175,6 +176,7 @@ class TournamentDetailsStyleConfiguration {
     this.actionBarBackgroundColor,
     this.actionBarIconTheme,
     this.scaffoldBackground,
+    this.bookmarkedMarkerColor,
   });
 
   final Color scaffoldBackground;
@@ -194,6 +196,7 @@ class TournamentDetailsStyleConfiguration {
   final TextStyle questionTextStyle;
   final int stubToursCount;
   final int stubQuestionsCount;
+  final Color bookmarkedMarkerColor;
 }
 
 class TournamentsGridStyleConfiguration {

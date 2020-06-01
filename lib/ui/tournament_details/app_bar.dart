@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/tournament/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/common/bookmarked_marker.dart';
 import 'package:what_when_where/ui/common/shape_hero.dart';
 import 'package:what_when_where/ui/common/text_hero.dart';
 import 'package:what_when_where/ui/tournament_details/app_bar_buttons/more.dart';
@@ -48,12 +49,27 @@ class TournamentDetailsAppBar extends StatelessWidget {
               maxExtent: expectedAppBarHeight,
               minExtent: 0.0,
               child: FlexibleSpaceBar(
-                background: ShapeHeroTo(
-                  tag: '${state.info.id2}bg',
-                  child: Container(
-                    color: styleConfiguration.actionBarBackgroundColor,
-                  ),
-                  value: styleConfiguration.shape,
+                background: Stack(
+                  children: [
+                    ShapeHeroTo(
+                      tag: '${state.info.id2}bg',
+                      child: Container(
+                        color: styleConfiguration.actionBarBackgroundColor,
+                      ),
+                      value: styleConfiguration.shape,
+                    ),
+                    Positioned(
+                      right: mediaQuery.padding.right + kToolbarHeight,
+                      child: AnimatedOpacity(
+                        opacity: state.status.isBookmarked ? 1 : 0,
+                        duration: const Duration(milliseconds: 150),
+                        child: BookmarkedMarker(
+                          color: styleConfiguration.bookmarkedMarkerColor,
+                          height: mediaQuery.padding.top + kToolbarHeight / 2,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
