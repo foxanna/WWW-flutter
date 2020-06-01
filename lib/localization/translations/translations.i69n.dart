@@ -48,6 +48,8 @@ class Translations implements i69n.I69nMessageBundle {
   String get menuBrowse => "Open in browser";
   String get menuSettings => "Settings";
   String get menuShare => "Share";
+  String get menuTournamentsSearch => "Tournaments search";
+  String get menuTournamentsTree => "Tournaments tree";
   String get noAudioSupport => "Audio files are not supported";
   String get ratingDialogTitle => "Rate the application";
   String get ratingDialogLaterButton => "later";
@@ -70,8 +72,6 @@ class Translations implements i69n.I69nMessageBundle {
   String get tooltipSortingByDate => "by date";
   String get tooltipSortingByRelevance => "by relevance";
   String get tooltipStartTimer => "start timer";
-  String get tooltipTournamentsSearch => "tournaments search";
-  String get tooltipTournamentsTree => "tournaments tree";
   String get tournamentAboutTour => "About tour";
   String get tournamentAboutTournament => "About tournament";
   String get tournamentAddedAt => "added at";
@@ -118,6 +118,10 @@ class Translations implements i69n.I69nMessageBundle {
         return menuSettings;
       case 'menuShare':
         return menuShare;
+      case 'menuTournamentsSearch':
+        return menuTournamentsSearch;
+      case 'menuTournamentsTree':
+        return menuTournamentsTree;
       case 'noAudioSupport':
         return noAudioSupport;
       case 'ratingDialogTitle':
@@ -160,10 +164,6 @@ class Translations implements i69n.I69nMessageBundle {
         return tooltipSortingByRelevance;
       case 'tooltipStartTimer':
         return tooltipStartTimer;
-      case 'tooltipTournamentsSearch':
-        return tooltipTournamentsSearch;
-      case 'tooltipTournamentsTree':
-        return tooltipTournamentsTree;
       case 'tournamentAboutTour':
         return tournamentAboutTour;
       case 'tournamentAboutTournament':

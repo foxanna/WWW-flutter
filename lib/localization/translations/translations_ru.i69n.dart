@@ -49,6 +49,8 @@ class Translations_ru extends Translations {
   String get menuBrowse => "Открыть в браузере";
   String get menuSettings => "Настройки";
   String get menuShare => "Поделиться";
+  String get menuTournamentsSearch => "Поиск турниров";
+  String get menuTournamentsTree => "Дерево турниров";
   String get noAudioSupport => "Аудио файлы не поддерживаются";
   String get ratingDialogTitle => "Оцените приложение";
   String get ratingDialogLaterButton => "позже";
@@ -71,8 +73,6 @@ class Translations_ru extends Translations {
   String get tooltipSortingByDate => "по дате";
   String get tooltipSortingByRelevance => "по релевантности";
   String get tooltipStartTimer => "запустить таймер";
-  String get tooltipTournamentsSearch => "поиск турниров";
-  String get tooltipTournamentsTree => "дерево турниров";
   String get tournamentAboutTour => "О туре";
   String get tournamentAboutTournament => "О турнире";
   String get tournamentAddedAt => "добавлено";
@@ -119,6 +119,10 @@ class Translations_ru extends Translations {
         return menuSettings;
       case 'menuShare':
         return menuShare;
+      case 'menuTournamentsSearch':
+        return menuTournamentsSearch;
+      case 'menuTournamentsTree':
+        return menuTournamentsTree;
       case 'noAudioSupport':
         return noAudioSupport;
       case 'ratingDialogTitle':
@@ -161,10 +165,6 @@ class Translations_ru extends Translations {
         return tooltipSortingByRelevance;
       case 'tooltipStartTimer':
         return tooltipStartTimer;
-      case 'tooltipTournamentsSearch':
-        return tooltipTournamentsSearch;
-      case 'tooltipTournamentsTree':
-        return tooltipTournamentsTree;
       case 'tournamentAboutTour':
         return tournamentAboutTour;
       case 'tournamentAboutTournament':

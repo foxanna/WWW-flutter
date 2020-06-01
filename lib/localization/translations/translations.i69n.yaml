@@ -10,6 +10,8 @@ menuAbout: About application
 menuBrowse: Open in browser
 menuSettings: Settings
 menuShare: Share
+menuTournamentsSearch: Tournaments search
+menuTournamentsTree: Tournaments tree
 noAudioSupport: Audio files are not supported
 ratingDialogTitle: Rate the application
 ratingDialogLaterButton: later
@@ -31,8 +33,6 @@ tooltipSorting: sorting
 tooltipSortingByDate: by date
 tooltipSortingByRelevance: by relevance
 tooltipStartTimer: start timer
-tooltipTournamentsSearch: tournaments search
-tooltipTournamentsTree: tournaments tree
 tournamentAboutTour: About tour
 tournamentAboutTournament: About tournament
 tournamentAddedAt: added at

@@ -49,6 +49,8 @@ class Translations_uk extends Translations {
   String get menuBrowse => "Відкрити у браузері";
   String get menuSettings => "Налаштування";
   String get menuShare => "Поділитися";
+  String get menuTournamentsSearch => "Пошук турнірів";
+  String get menuTournamentsTree => "Дерево турнірів";
   String get noAudioSupport => "Аудіо файли не підтримуються";
   String get ratingDialogTitle => "Оцініть додаток";
   String get ratingDialogLaterButton => "пізніше";
@@ -78,8 +80,6 @@ class Translations_uk extends Translations {
   String get tournamentAddedAt => "додано";
   String get tournamentPlayedAt => "відіграно";
   String get tournamentToursCount => "турів";
-  String get tournamentsSearchFieldHint => "Пошук турнірів";
-  String get tournamentsTreeRootTitle => "Дерево турнірів";
   String get tournamentQuestionsCount => "питань";
   String get questionAcceptableAnswer => "Залік";
   String get questionAnswer => "Відповідь";
@@ -119,6 +119,10 @@ class Translations_uk extends Translations {
         return menuSettings;
       case 'menuShare':
         return menuShare;
+      case 'menuTournamentsSearch':
+        return menuTournamentsSearch;
+      case 'menuTournamentsTree':
+        return menuTournamentsTree;
       case 'noAudioSupport':
         return noAudioSupport;
       case 'ratingDialogTitle':
@@ -175,10 +179,6 @@ class Translations_uk extends Translations {
         return tournamentPlayedAt;
       case 'tournamentToursCount':
         return tournamentToursCount;
-      case 'tournamentsSearchFieldHint':
-        return tournamentsSearchFieldHint;
-      case 'tournamentsTreeRootTitle':
-        return tournamentsTreeRootTitle;
       case 'tournamentQuestionsCount':
         return tournamentQuestionsCount;
       case 'questionAcceptableAnswer':

@@ -10,6 +10,8 @@ menuAbout: Про додаток
 menuBrowse: Відкрити у браузері
 menuSettings: Налаштування
 menuShare: Поділитися
+menuTournamentsSearch: Пошук турнірів
+menuTournamentsTree: Дерево турнірів
 noAudioSupport: Аудіо файли не підтримуються
 ratingDialogTitle: Оцініть додаток
 ratingDialogLaterButton: пізніше
@@ -38,8 +40,6 @@ tournamentAboutTournament: Про турнір
 tournamentAddedAt: додано
 tournamentPlayedAt: відіграно
 tournamentToursCount: турів
-tournamentsSearchFieldHint: Пошук турнірів
-tournamentsTreeRootTitle: Дерево турнірів
 tournamentQuestionsCount: питань
 questionAcceptableAnswer: Залік
 questionAnswer: Відповідь
