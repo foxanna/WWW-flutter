@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
+import 'package:what_when_where/data/status/tournaments_bookmarks.dart';
 import 'package:what_when_where/data/status/tournaments_history.dart';
 import 'package:what_when_where/data/tournament_details_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
@@ -13,6 +14,7 @@ import 'package:what_when_where/redux/utils.dart';
 class TournamentMiddleware {
   final ITournamentDetailsProvider _provider;
   final ITournamentsHistoryService _historyService;
+  final ITournamentsBookmarksService _tournamentsBookmarksService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
@@ -21,8 +23,10 @@ class TournamentMiddleware {
   TournamentMiddleware({
     ITournamentDetailsProvider provider,
     ITournamentsHistoryService historyService,
+    ITournamentsBookmarksService tournamentsBookmarksService,
   })  : _provider = provider,
-        _historyService = historyService;
+        _historyService = historyService,
+        _tournamentsBookmarksService = tournamentsBookmarksService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentUserAction>(_open),
@@ -30,6 +34,10 @@ class TournamentMiddleware {
         TypedMiddleware<AppState, CompletedTournamentSystemAction>(_completed),
         TypedMiddleware<AppState, CloseTournamentUserAction>(_close),
         TypedMiddleware<AppState, MarkAsReadTournamentSystemAction>(_read),
+        TypedMiddleware<AppState, AddToBookmarksTournamentUserAction>(
+            _addToBookmarks),
+        TypedMiddleware<AppState, RemoveFromBookmarksTournamentUserAction>(
+            _removeFromBookmarks),
       ];
 
   void _open(Store<AppState> store, OpenTournamentUserAction action,
@@ -111,5 +119,43 @@ class TournamentMiddleware {
         info: action.info, status: state.status.copyWith(isNew: false)));
 
     await _historyService.markAsRead(action.info);
+  }
+
+  Future<void> _addToBookmarks(Store<AppState> store,
+      AddToBookmarksTournamentUserAction action, NextDispatcher next) async {
+    next(action);
+
+    final state = store.state.tournamentState;
+
+    if (state == null) {
+      return;
+    }
+
+    store.dispatch(SystemActionTournament.statusChanged(
+      info: action.info,
+      status: state.status.copyWith(isBookmarked: true),
+    ));
+
+    await _tournamentsBookmarksService.addToBookmarks(action.info);
+  }
+
+  Future<void> _removeFromBookmarks(
+      Store<AppState> store,
+      RemoveFromBookmarksTournamentUserAction action,
+      NextDispatcher next) async {
+    next(action);
+
+    final state = store.state.tournamentState;
+
+    if (state == null) {
+      return;
+    }
+
+    store.dispatch(SystemActionTournament.statusChanged(
+      info: action.info,
+      status: state.status.copyWith(isBookmarked: false),
+    ));
+
+    await _tournamentsBookmarksService.removeFromBookmarks(action.info);
   }
 }

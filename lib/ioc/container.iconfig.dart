@@ -218,8 +218,10 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<SearchMiddleware>(
       () => SearchMiddleware(provider: g<ISearchProvider>()));
   g.registerFactory<TournamentMiddleware>(() => TournamentMiddleware(
-      provider: g<ITournamentDetailsProvider>(),
-      historyService: g<ITournamentsHistoryService>()));
+        provider: g<ITournamentDetailsProvider>(),
+        historyService: g<ITournamentsHistoryService>(),
+        tournamentsBookmarksService: g<ITournamentsBookmarksService>(),
+      ));
 }
 
 class _$RegisterModule extends RegisterModule {}
