@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:what_when_where/data/models/tournaments_tree_info.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
-import 'package:what_when_where/ui/tree/app_bar.dart';
-import 'package:what_when_where/ui/tree/page_content.dart';
+import 'package:what_when_where/ui/bookmarks/bookmarks_page_app_bar.dart';
 
 class BookmarksRoutePage extends StatelessWidget {
   static const String routeName = 'bookmarks';
@@ -17,7 +15,7 @@ class BookmarksRoutePage extends StatelessWidget {
         body: const CustomScrollView(
           physics: BouncingScrollPhysics(),
           slivers: [
-            SliverAppBar(),
+            BookmarksPageAppBar(),
           ],
         ),
       );
