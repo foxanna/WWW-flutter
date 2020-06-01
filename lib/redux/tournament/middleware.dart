@@ -38,7 +38,8 @@ class TournamentMiddleware {
 
     store.dispatch(const SystemActionNavigation.tournament());
     store.dispatch(SystemActionTournament.read(info: action.info));
-    store.dispatch(SystemActionTournament.init(info: action.info));
+    store.dispatch(
+        SystemActionTournament.init(info: action.info, status: action.status));
     store.dispatch(UserActionTournament.load(info: action.info));
   }
 

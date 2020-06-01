@@ -18,7 +18,7 @@ class TournamentReducer {
 
   static TournamentState _init(
           TournamentState state, InitTournamentSystemAction action) =>
-      TournamentState.initial(info: action.info);
+      TournamentState.initial(info: action.info, status: action.status);
 
   static TournamentState _deInit(
           TournamentState state, DeInitTournamentSystemAction action) =>
@@ -26,7 +26,12 @@ class TournamentReducer {
 
   static TournamentState _loading(
           TournamentState state, LoadingTournamentSystemAction action) =>
-      state != null ? TournamentState.loading(info: action.info) : state;
+      state != null
+          ? TournamentState.loading(
+              info: action.info,
+              status: state.status,
+            )
+          : state;
 
   static TournamentState _completed(
           TournamentState state, CompletedTournamentSystemAction action) =>
@@ -35,6 +40,7 @@ class TournamentReducer {
                   action.tournament.info.id2 == state.info.id2)
           ? TournamentState.data(
               info: action.tournament.info,
+              status: state.status,
               tournament: action.tournament,
             )
           : state;
@@ -46,6 +52,7 @@ class TournamentReducer {
                   action.info.id2 == state.info.id2)
           ? TournamentState.error(
               info: action.info,
+              status: state.status,
               exception: action.exception,
             )
           : state;
