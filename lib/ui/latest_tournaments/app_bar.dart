@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/latest_tournaments/app_bar_buttons/bookmarks.dart';
 import 'package:what_when_where/ui/latest_tournaments/app_bar_buttons/more.dart';
 import 'package:what_when_where/ui/latest_tournaments/app_bar_buttons/random.dart';
 
@@ -33,6 +34,7 @@ class LatestTournamentsAppBar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: const [
+              LatestTournamentsAppBarBookmarksButton(),
               LatestTournamentsAppBarRandomButton(),
               LatestTournamentsAppBarMoreButton()
             ],
