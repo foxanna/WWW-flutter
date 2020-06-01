@@ -38,4 +38,7 @@ abstract class SystemActionNavigation
 
   const factory SystemActionNavigation.settings() =
       SettingsNavigationSystemAction;
+
+  const factory SystemActionNavigation.bookmarks() =
+      BookmarksNavigationSystemAction;
 }

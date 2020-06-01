@@ -4,6 +4,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/services/navigation.dart';
 import 'package:what_when_where/ui/about/route_page.dart';
+import 'package:what_when_where/ui/bookmarks/route_page.dart';
 import 'package:what_when_where/ui/image/route_page.dart';
 import 'package:what_when_where/ui/latest_tournaments/route_page.dart';
 import 'package:what_when_where/ui/questions/route_page.dart';
@@ -34,6 +35,7 @@ class NavigationMiddleware {
         TypedMiddleware<AppState, SettingsNavigationSystemAction>(_settings),
         TypedMiddleware<AppState, TreeNavigationSystemAction>(_tree),
         TypedMiddleware<AppState, LatestNavigationSystemAction>(_latest),
+        TypedMiddleware<AppState, BookmarksNavigationSystemAction>(_bookmarks),
       ];
 
   void _image(Store<AppState> store, ImageNavigationUserAction action,
@@ -115,6 +117,16 @@ class NavigationMiddleware {
     _navigationService.replacePage(
       routeName: LatestTournamentsPage.routeName,
       builder: (context) => const LatestTournamentsPage(),
+    );
+  }
+
+  void _bookmarks(Store<AppState> store, BookmarksNavigationSystemAction action,
+      NextDispatcher next) {
+    next(action);
+
+    _navigationService.navigateToPage(
+      routeName: BookmarksRoutePage.routeName,
+      builder: (context) => const BookmarksRoutePage(),
     );
   }
 }

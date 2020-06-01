@@ -318,6 +318,10 @@ class _$SystemActionNavigationTearOff {
   SettingsNavigationSystemAction settings() {
     return const SettingsNavigationSystemAction();
   }
+
+  BookmarksNavigationSystemAction bookmarks() {
+    return const BookmarksNavigationSystemAction();
+  }
 }
 
 // ignore: unused_element
@@ -332,6 +336,7 @@ mixin _$SystemActionNavigation {
     @required Result search(),
     @required Result latest(),
     @required Result settings(),
+    @required Result bookmarks(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -341,6 +346,7 @@ mixin _$SystemActionNavigation {
     Result search(),
     Result latest(),
     Result settings(),
+    Result bookmarks(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -351,6 +357,7 @@ mixin _$SystemActionNavigation {
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
     @required Result settings(SettingsNavigationSystemAction value),
+    @required Result bookmarks(BookmarksNavigationSystemAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -360,6 +367,7 @@ mixin _$SystemActionNavigation {
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
     Result settings(SettingsNavigationSystemAction value),
+    Result bookmarks(BookmarksNavigationSystemAction value),
     @required Result orElse(),
   });
 }
@@ -434,6 +442,7 @@ class _$TournamentNavigationSystemAction
     @required Result search(),
     @required Result latest(),
     @required Result settings(),
+    @required Result bookmarks(),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -441,6 +450,7 @@ class _$TournamentNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return tournament();
   }
 
@@ -453,6 +463,7 @@ class _$TournamentNavigationSystemAction
     Result search(),
     Result latest(),
     Result settings(),
+    Result bookmarks(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -471,6 +482,7 @@ class _$TournamentNavigationSystemAction
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
     @required Result settings(SettingsNavigationSystemAction value),
+    @required Result bookmarks(BookmarksNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -478,6 +490,7 @@ class _$TournamentNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return tournament(this);
   }
 
@@ -490,6 +503,7 @@ class _$TournamentNavigationSystemAction
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
     Result settings(SettingsNavigationSystemAction value),
+    Result bookmarks(BookmarksNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -595,6 +609,7 @@ class _$TreeNavigationSystemAction
     @required Result search(),
     @required Result latest(),
     @required Result settings(),
+    @required Result bookmarks(),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -602,6 +617,7 @@ class _$TreeNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return tree(info);
   }
 
@@ -614,6 +630,7 @@ class _$TreeNavigationSystemAction
     Result search(),
     Result latest(),
     Result settings(),
+    Result bookmarks(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -632,6 +649,7 @@ class _$TreeNavigationSystemAction
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
     @required Result settings(SettingsNavigationSystemAction value),
+    @required Result bookmarks(BookmarksNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -639,6 +657,7 @@ class _$TreeNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return tree(this);
   }
 
@@ -651,6 +670,7 @@ class _$TreeNavigationSystemAction
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
     Result settings(SettingsNavigationSystemAction value),
+    Result bookmarks(BookmarksNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -723,6 +743,7 @@ class _$QuestionsNavigationSystemAction
     @required Result search(),
     @required Result latest(),
     @required Result settings(),
+    @required Result bookmarks(),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -730,6 +751,7 @@ class _$QuestionsNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return questions();
   }
 
@@ -742,6 +764,7 @@ class _$QuestionsNavigationSystemAction
     Result search(),
     Result latest(),
     Result settings(),
+    Result bookmarks(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -760,6 +783,7 @@ class _$QuestionsNavigationSystemAction
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
     @required Result settings(SettingsNavigationSystemAction value),
+    @required Result bookmarks(BookmarksNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -767,6 +791,7 @@ class _$QuestionsNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return questions(this);
   }
 
@@ -779,6 +804,7 @@ class _$QuestionsNavigationSystemAction
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
     Result settings(SettingsNavigationSystemAction value),
+    Result bookmarks(BookmarksNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -849,6 +875,7 @@ class _$SearchNavigationSystemAction
     @required Result search(),
     @required Result latest(),
     @required Result settings(),
+    @required Result bookmarks(),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -856,6 +883,7 @@ class _$SearchNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return search();
   }
 
@@ -868,6 +896,7 @@ class _$SearchNavigationSystemAction
     Result search(),
     Result latest(),
     Result settings(),
+    Result bookmarks(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -886,6 +915,7 @@ class _$SearchNavigationSystemAction
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
     @required Result settings(SettingsNavigationSystemAction value),
+    @required Result bookmarks(BookmarksNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -893,6 +923,7 @@ class _$SearchNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return search(this);
   }
 
@@ -905,6 +936,7 @@ class _$SearchNavigationSystemAction
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
     Result settings(SettingsNavigationSystemAction value),
+    Result bookmarks(BookmarksNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -973,6 +1005,7 @@ class _$LatestNavigationSystemAction
     @required Result search(),
     @required Result latest(),
     @required Result settings(),
+    @required Result bookmarks(),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -980,6 +1013,7 @@ class _$LatestNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return latest();
   }
 
@@ -992,6 +1026,7 @@ class _$LatestNavigationSystemAction
     Result search(),
     Result latest(),
     Result settings(),
+    Result bookmarks(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1010,6 +1045,7 @@ class _$LatestNavigationSystemAction
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
     @required Result settings(SettingsNavigationSystemAction value),
+    @required Result bookmarks(BookmarksNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -1017,6 +1053,7 @@ class _$LatestNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return latest(this);
   }
 
@@ -1029,6 +1066,7 @@ class _$LatestNavigationSystemAction
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
     Result settings(SettingsNavigationSystemAction value),
+    Result bookmarks(BookmarksNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1097,6 +1135,7 @@ class _$SettingsNavigationSystemAction
     @required Result search(),
     @required Result latest(),
     @required Result settings(),
+    @required Result bookmarks(),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -1104,6 +1143,7 @@ class _$SettingsNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return settings();
   }
 
@@ -1116,6 +1156,7 @@ class _$SettingsNavigationSystemAction
     Result search(),
     Result latest(),
     Result settings(),
+    Result bookmarks(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1134,6 +1175,7 @@ class _$SettingsNavigationSystemAction
     @required Result search(SearchNavigationSystemAction value),
     @required Result latest(LatestNavigationSystemAction value),
     @required Result settings(SettingsNavigationSystemAction value),
+    @required Result bookmarks(BookmarksNavigationSystemAction value),
   }) {
     assert(tournament != null);
     assert(tree != null);
@@ -1141,6 +1183,7 @@ class _$SettingsNavigationSystemAction
     assert(search != null);
     assert(latest != null);
     assert(settings != null);
+    assert(bookmarks != null);
     return settings(this);
   }
 
@@ -1153,6 +1196,7 @@ class _$SettingsNavigationSystemAction
     Result search(SearchNavigationSystemAction value),
     Result latest(LatestNavigationSystemAction value),
     Result settings(SettingsNavigationSystemAction value),
+    Result bookmarks(BookmarksNavigationSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1167,4 +1211,136 @@ abstract class SettingsNavigationSystemAction
     implements SystemActionNavigation {
   const factory SettingsNavigationSystemAction() =
       _$SettingsNavigationSystemAction;
+}
+
+abstract class $BookmarksNavigationSystemActionCopyWith<$Res> {
+  factory $BookmarksNavigationSystemActionCopyWith(
+          BookmarksNavigationSystemAction value,
+          $Res Function(BookmarksNavigationSystemAction) then) =
+      _$BookmarksNavigationSystemActionCopyWithImpl<$Res>;
+}
+
+class _$BookmarksNavigationSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    implements $BookmarksNavigationSystemActionCopyWith<$Res> {
+  _$BookmarksNavigationSystemActionCopyWithImpl(
+      BookmarksNavigationSystemAction _value,
+      $Res Function(BookmarksNavigationSystemAction) _then)
+      : super(_value, (v) => _then(v as BookmarksNavigationSystemAction));
+
+  @override
+  BookmarksNavigationSystemAction get _value =>
+      super._value as BookmarksNavigationSystemAction;
+}
+
+class _$BookmarksNavigationSystemAction
+    with DiagnosticableTreeMixin
+    implements BookmarksNavigationSystemAction {
+  const _$BookmarksNavigationSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionNavigation.bookmarks()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionNavigation.bookmarks'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is BookmarksNavigationSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result tournament(),
+    @required Result tree(TournamentsTreeInfo info),
+    @required Result questions(),
+    @required Result search(),
+    @required Result latest(),
+    @required Result settings(),
+    @required Result bookmarks(),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(questions != null);
+    assert(search != null);
+    assert(latest != null);
+    assert(settings != null);
+    assert(bookmarks != null);
+    return bookmarks();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result tournament(),
+    Result tree(TournamentsTreeInfo info),
+    Result questions(),
+    Result search(),
+    Result latest(),
+    Result settings(),
+    Result bookmarks(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarks != null) {
+      return bookmarks();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result tournament(TournamentNavigationSystemAction value),
+    @required Result tree(TreeNavigationSystemAction value),
+    @required Result questions(QuestionsNavigationSystemAction value),
+    @required Result search(SearchNavigationSystemAction value),
+    @required Result latest(LatestNavigationSystemAction value),
+    @required Result settings(SettingsNavigationSystemAction value),
+    @required Result bookmarks(BookmarksNavigationSystemAction value),
+  }) {
+    assert(tournament != null);
+    assert(tree != null);
+    assert(questions != null);
+    assert(search != null);
+    assert(latest != null);
+    assert(settings != null);
+    assert(bookmarks != null);
+    return bookmarks(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result tournament(TournamentNavigationSystemAction value),
+    Result tree(TreeNavigationSystemAction value),
+    Result questions(QuestionsNavigationSystemAction value),
+    Result search(SearchNavigationSystemAction value),
+    Result latest(LatestNavigationSystemAction value),
+    Result settings(SettingsNavigationSystemAction value),
+    Result bookmarks(BookmarksNavigationSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarks != null) {
+      return bookmarks(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarksNavigationSystemAction
+    implements SystemActionNavigation {
+  const factory BookmarksNavigationSystemAction() =
+      _$BookmarksNavigationSystemAction;
 }
