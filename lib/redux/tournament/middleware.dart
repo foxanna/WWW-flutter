@@ -29,7 +29,7 @@ class TournamentMiddleware {
         TypedMiddleware<AppState, LoadTournamentUserAction>(_load),
         TypedMiddleware<AppState, CompletedTournamentSystemAction>(_completed),
         TypedMiddleware<AppState, CloseTournamentUserAction>(_close),
-        TypedMiddleware<AppState, ReadTournamentSystemAction>(_read),
+        TypedMiddleware<AppState, MarkAsReadTournamentSystemAction>(_read),
       ];
 
   void _open(Store<AppState> store, OpenTournamentUserAction action,
@@ -37,9 +37,9 @@ class TournamentMiddleware {
     next(action);
 
     store.dispatch(const SystemActionNavigation.tournament());
-    store.dispatch(SystemActionTournament.read(info: action.info));
     store.dispatch(
         SystemActionTournament.init(info: action.info, status: action.status));
+    store.dispatch(SystemActionTournament.markAsRead(info: action.info));
     store.dispatch(UserActionTournament.load(info: action.info));
   }
 
@@ -97,9 +97,18 @@ class TournamentMiddleware {
     store.dispatch(const SystemActionTours.deInit());
   }
 
-  Future<void> _read(Store<AppState> store, ReadTournamentSystemAction action,
-      NextDispatcher next) async {
+  Future<void> _read(Store<AppState> store,
+      MarkAsReadTournamentSystemAction action, NextDispatcher next) async {
     next(action);
+
+    final state = store.state.tournamentState;
+
+    if (state == null) {
+      return;
+    }
+
+    store.dispatch(SystemActionTournament.statusChanged(
+        info: action.info, status: state.status.copyWith(isNew: false)));
 
     await _historyService.markAsRead(action.info);
   }

@@ -17,7 +17,8 @@ class LatestTournamentsReducer {
     TypedReducer<LatestTournamentsState, CompletedLatestSystemAction>(
         _completed),
     TypedReducer<LatestTournamentsState, FailedLatestSystemAction>(_failed),
-    TypedReducer<LatestTournamentsState, ReadTournamentSystemAction>(_read),
+    TypedReducer<LatestTournamentsState, StatusChangedTournamentSystemAction>(
+        _statusChanged),
   ]);
 
   static LatestTournamentsState reduce(
@@ -74,8 +75,8 @@ class LatestTournamentsReducer {
                   exception: action.exception)
           : state;
 
-  static LatestTournamentsState _read(
-      LatestTournamentsState state, ReadTournamentSystemAction action) {
+  static LatestTournamentsState _statusChanged(LatestTournamentsState state,
+      StatusChangedTournamentSystemAction action) {
     if (state == null) {
       return state;
     }
@@ -91,7 +92,7 @@ class LatestTournamentsReducer {
     }
 
     final newData = List<Tournament>.from(state.dataOrEmpty, growable: false);
-    newData[index] = newData[index].copyWith.status(isNew: false);
+    newData[index] = newData[index].copyWith(status: action.status);
 
     return state.maybeMap(
       data: (value) => value.copyWith(data: newData),

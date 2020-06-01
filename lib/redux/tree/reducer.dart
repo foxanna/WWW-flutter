@@ -24,7 +24,8 @@ class TournamentsTreeReducer {
         _loading),
     TypedReducer<TournamentsTreeState, FailedTournamentsTreeSystemAction>(
         _failed),
-    TypedReducer<TournamentsTreeState, ReadTournamentSystemAction>(_read),
+    TypedReducer<TournamentsTreeState, StatusChangedTournamentSystemAction>(
+        _statusChanged),
   ]);
 
   static TournamentsTreeState reduce(
@@ -104,8 +105,8 @@ class TournamentsTreeReducer {
     return TournamentsTreeState(states: newStates);
   }
 
-  static TournamentsTreeState _read(
-      TournamentsTreeState state, ReadTournamentSystemAction action) {
+  static TournamentsTreeState _statusChanged(
+      TournamentsTreeState state, StatusChangedTournamentSystemAction action) {
     if (state == null) {
       return state;
     }
@@ -138,8 +139,7 @@ class TournamentsTreeReducer {
     final newChildren = List<dynamic>.from(parentValue.tree.children);
     newChildren[tournamentIndexInParent] =
         (newChildren[tournamentIndexInParent] as Tournament)
-            .copyWith
-            .status(isNew: false);
+            .copyWith(status: action.status);
     final newParentValue = parentValue.copyWith.tree(children: newChildren);
     final newStates = Map<String, TournamentsSubTreeState>.from(state.states);
     newStates[tournamentParent.key] = newParentValue;

@@ -16,7 +16,8 @@ class SearchReducer {
     TypedReducer<SearchState, LoadingSearchSystemAction>(_loading),
     TypedReducer<SearchState, FailedSearchSystemAction>(_failed),
     TypedReducer<SearchState, CompletedSearchSystemAction>(_completed),
-    TypedReducer<SearchState, ReadTournamentSystemAction>(_read),
+    TypedReducer<SearchState, StatusChangedTournamentSystemAction>(
+        _statusChanged),
   ]);
 
   static SearchState reduce(SearchState state, ReduxAction action) =>
@@ -83,8 +84,8 @@ class SearchReducer {
             )
           : state;
 
-  static SearchState _read(
-      SearchState state, ReadTournamentSystemAction action) {
+  static SearchState _statusChanged(
+      SearchState state, StatusChangedTournamentSystemAction action) {
     if (state == null) {
       return state;
     }
@@ -100,7 +101,7 @@ class SearchReducer {
     }
 
     final newData = List<Tournament>.from(state.dataOrEmpty, growable: false);
-    newData[index] = newData[index].copyWith.status(isNew: false);
+    newData[index] = newData[index].copyWith(status: action.status);
 
     return state.maybeMap(
       data: (value) => value.copyWith(data: newData),

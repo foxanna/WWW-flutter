@@ -12,9 +12,11 @@ T _$identity<T>(T value) => value;
 class _$UserActionTournamentTearOff {
   const _$UserActionTournamentTearOff();
 
-  OpenTournamentUserAction open({@required TournamentInfo info}) {
+  OpenTournamentUserAction open(
+      {@required TournamentInfo info, @required TournamentStatus status}) {
     return OpenTournamentUserAction(
       info: info,
+      status: status,
     );
   }
 
@@ -27,6 +29,20 @@ class _$UserActionTournamentTearOff {
       info: info,
     );
   }
+
+  AddToBookmarksTournamentUserAction addToBookmarks(
+      {@required TournamentInfo info}) {
+    return AddToBookmarksTournamentUserAction(
+      info: info,
+    );
+  }
+
+  RemoveFromBookmarksTournamentUserAction removeFromBookmarks(
+      {@required TournamentInfo info}) {
+    return RemoveFromBookmarksTournamentUserAction(
+      info: info,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -35,15 +51,19 @@ const $UserActionTournament = _$UserActionTournamentTearOff();
 mixin _$UserActionTournament {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result open(TournamentInfo info),
+    @required Result open(TournamentInfo info, TournamentStatus status),
     @required Result close(),
     @required Result load(TournamentInfo info),
+    @required Result addToBookmarks(TournamentInfo info),
+    @required Result removeFromBookmarks(TournamentInfo info),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result open(TournamentInfo info),
+    Result open(TournamentInfo info, TournamentStatus status),
     Result close(),
     Result load(TournamentInfo info),
+    Result addToBookmarks(TournamentInfo info),
+    Result removeFromBookmarks(TournamentInfo info),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -51,12 +71,18 @@ mixin _$UserActionTournament {
     @required Result open(OpenTournamentUserAction value),
     @required Result close(CloseTournamentUserAction value),
     @required Result load(LoadTournamentUserAction value),
+    @required Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    @required
+        Result removeFromBookmarks(
+            RemoveFromBookmarksTournamentUserAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result open(OpenTournamentUserAction value),
     Result close(CloseTournamentUserAction value),
     Result load(LoadTournamentUserAction value),
+    Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    Result removeFromBookmarks(RemoveFromBookmarksTournamentUserAction value),
     @required Result orElse(),
   });
 }
@@ -80,9 +106,10 @@ abstract class $OpenTournamentUserActionCopyWith<$Res> {
   factory $OpenTournamentUserActionCopyWith(OpenTournamentUserAction value,
           $Res Function(OpenTournamentUserAction) then) =
       _$OpenTournamentUserActionCopyWithImpl<$Res>;
-  $Res call({TournamentInfo info});
+  $Res call({TournamentInfo info, TournamentStatus status});
 
   $TournamentInfoCopyWith<$Res> get info;
+  $TournamentStatusCopyWith<$Res> get status;
 }
 
 class _$OpenTournamentUserActionCopyWithImpl<$Res>
@@ -99,9 +126,11 @@ class _$OpenTournamentUserActionCopyWithImpl<$Res>
   @override
   $Res call({
     Object info = freezed,
+    Object status = freezed,
   }) {
     return _then(OpenTournamentUserAction(
       info: info == freezed ? _value.info : info as TournamentInfo,
+      status: status == freezed ? _value.status : status as TournamentStatus,
     ));
   }
 
@@ -114,20 +143,33 @@ class _$OpenTournamentUserActionCopyWithImpl<$Res>
       return _then(_value.copyWith(info: value));
     });
   }
+
+  @override
+  $TournamentStatusCopyWith<$Res> get status {
+    if (_value.status == null) {
+      return null;
+    }
+    return $TournamentStatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value));
+    });
+  }
 }
 
 class _$OpenTournamentUserAction
     with DiagnosticableTreeMixin
     implements OpenTournamentUserAction {
-  const _$OpenTournamentUserAction({@required this.info})
-      : assert(info != null);
+  const _$OpenTournamentUserAction({@required this.info, @required this.status})
+      : assert(info != null),
+        assert(status != null);
 
   @override
   final TournamentInfo info;
+  @override
+  final TournamentStatus status;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserActionTournament.open(info: $info)';
+    return 'UserActionTournament.open(info: $info, status: $status)';
   }
 
   @override
@@ -135,7 +177,8 @@ class _$OpenTournamentUserAction
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'UserActionTournament.open'))
-      ..add(DiagnosticsProperty('info', info));
+      ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('status', status));
   }
 
   @override
@@ -143,12 +186,16 @@ class _$OpenTournamentUserAction
     return identical(this, other) ||
         (other is OpenTournamentUserAction &&
             (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
+                const DeepCollectionEquality().equals(other.info, info)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(info) ^
+      const DeepCollectionEquality().hash(status);
 
   @override
   $OpenTournamentUserActionCopyWith<OpenTournamentUserAction> get copyWith =>
@@ -158,27 +205,33 @@ class _$OpenTournamentUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result open(TournamentInfo info),
+    @required Result open(TournamentInfo info, TournamentStatus status),
     @required Result close(),
     @required Result load(TournamentInfo info),
+    @required Result addToBookmarks(TournamentInfo info),
+    @required Result removeFromBookmarks(TournamentInfo info),
   }) {
     assert(open != null);
     assert(close != null);
     assert(load != null);
-    return open(info);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
+    return open(info, status);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result open(TournamentInfo info),
+    Result open(TournamentInfo info, TournamentStatus status),
     Result close(),
     Result load(TournamentInfo info),
+    Result addToBookmarks(TournamentInfo info),
+    Result removeFromBookmarks(TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (open != null) {
-      return open(info);
+      return open(info, status);
     }
     return orElse();
   }
@@ -189,10 +242,16 @@ class _$OpenTournamentUserAction
     @required Result open(OpenTournamentUserAction value),
     @required Result close(CloseTournamentUserAction value),
     @required Result load(LoadTournamentUserAction value),
+    @required Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    @required
+        Result removeFromBookmarks(
+            RemoveFromBookmarksTournamentUserAction value),
   }) {
     assert(open != null);
     assert(close != null);
     assert(load != null);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
     return open(this);
   }
 
@@ -202,6 +261,8 @@ class _$OpenTournamentUserAction
     Result open(OpenTournamentUserAction value),
     Result close(CloseTournamentUserAction value),
     Result load(LoadTournamentUserAction value),
+    Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    Result removeFromBookmarks(RemoveFromBookmarksTournamentUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -213,10 +274,12 @@ class _$OpenTournamentUserAction
 }
 
 abstract class OpenTournamentUserAction implements UserActionTournament {
-  const factory OpenTournamentUserAction({@required TournamentInfo info}) =
-      _$OpenTournamentUserAction;
+  const factory OpenTournamentUserAction(
+      {@required TournamentInfo info,
+      @required TournamentStatus status}) = _$OpenTournamentUserAction;
 
   TournamentInfo get info;
+  TournamentStatus get status;
   $OpenTournamentUserActionCopyWith<OpenTournamentUserAction> get copyWith;
 }
 
@@ -265,22 +328,28 @@ class _$CloseTournamentUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result open(TournamentInfo info),
+    @required Result open(TournamentInfo info, TournamentStatus status),
     @required Result close(),
     @required Result load(TournamentInfo info),
+    @required Result addToBookmarks(TournamentInfo info),
+    @required Result removeFromBookmarks(TournamentInfo info),
   }) {
     assert(open != null);
     assert(close != null);
     assert(load != null);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
     return close();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result open(TournamentInfo info),
+    Result open(TournamentInfo info, TournamentStatus status),
     Result close(),
     Result load(TournamentInfo info),
+    Result addToBookmarks(TournamentInfo info),
+    Result removeFromBookmarks(TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -296,10 +365,16 @@ class _$CloseTournamentUserAction
     @required Result open(OpenTournamentUserAction value),
     @required Result close(CloseTournamentUserAction value),
     @required Result load(LoadTournamentUserAction value),
+    @required Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    @required
+        Result removeFromBookmarks(
+            RemoveFromBookmarksTournamentUserAction value),
   }) {
     assert(open != null);
     assert(close != null);
     assert(load != null);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
     return close(this);
   }
 
@@ -309,6 +384,8 @@ class _$CloseTournamentUserAction
     Result open(OpenTournamentUserAction value),
     Result close(CloseTournamentUserAction value),
     Result load(LoadTournamentUserAction value),
+    Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    Result removeFromBookmarks(RemoveFromBookmarksTournamentUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -405,22 +482,28 @@ class _$LoadTournamentUserAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result open(TournamentInfo info),
+    @required Result open(TournamentInfo info, TournamentStatus status),
     @required Result close(),
     @required Result load(TournamentInfo info),
+    @required Result addToBookmarks(TournamentInfo info),
+    @required Result removeFromBookmarks(TournamentInfo info),
   }) {
     assert(open != null);
     assert(close != null);
     assert(load != null);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
     return load(info);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result open(TournamentInfo info),
+    Result open(TournamentInfo info, TournamentStatus status),
     Result close(),
     Result load(TournamentInfo info),
+    Result addToBookmarks(TournamentInfo info),
+    Result removeFromBookmarks(TournamentInfo info),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -436,10 +519,16 @@ class _$LoadTournamentUserAction
     @required Result open(OpenTournamentUserAction value),
     @required Result close(CloseTournamentUserAction value),
     @required Result load(LoadTournamentUserAction value),
+    @required Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    @required
+        Result removeFromBookmarks(
+            RemoveFromBookmarksTournamentUserAction value),
   }) {
     assert(open != null);
     assert(close != null);
     assert(load != null);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
     return load(this);
   }
 
@@ -449,6 +538,8 @@ class _$LoadTournamentUserAction
     Result open(OpenTournamentUserAction value),
     Result close(CloseTournamentUserAction value),
     Result load(LoadTournamentUserAction value),
+    Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    Result removeFromBookmarks(RemoveFromBookmarksTournamentUserAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -467,12 +558,343 @@ abstract class LoadTournamentUserAction implements UserActionTournament {
   $LoadTournamentUserActionCopyWith<LoadTournamentUserAction> get copyWith;
 }
 
+abstract class $AddToBookmarksTournamentUserActionCopyWith<$Res> {
+  factory $AddToBookmarksTournamentUserActionCopyWith(
+          AddToBookmarksTournamentUserAction value,
+          $Res Function(AddToBookmarksTournamentUserAction) then) =
+      _$AddToBookmarksTournamentUserActionCopyWithImpl<$Res>;
+  $Res call({TournamentInfo info});
+
+  $TournamentInfoCopyWith<$Res> get info;
+}
+
+class _$AddToBookmarksTournamentUserActionCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res>
+    implements $AddToBookmarksTournamentUserActionCopyWith<$Res> {
+  _$AddToBookmarksTournamentUserActionCopyWithImpl(
+      AddToBookmarksTournamentUserAction _value,
+      $Res Function(AddToBookmarksTournamentUserAction) _then)
+      : super(_value, (v) => _then(v as AddToBookmarksTournamentUserAction));
+
+  @override
+  AddToBookmarksTournamentUserAction get _value =>
+      super._value as AddToBookmarksTournamentUserAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(AddToBookmarksTournamentUserAction(
+      info: info == freezed ? _value.info : info as TournamentInfo,
+    ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$AddToBookmarksTournamentUserAction
+    with DiagnosticableTreeMixin
+    implements AddToBookmarksTournamentUserAction {
+  const _$AddToBookmarksTournamentUserAction({@required this.info})
+      : assert(info != null);
+
+  @override
+  final TournamentInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionTournament.addToBookmarks(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserActionTournament.addToBookmarks'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is AddToBookmarksTournamentUserAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $AddToBookmarksTournamentUserActionCopyWith<
+          AddToBookmarksTournamentUserAction>
+      get copyWith => _$AddToBookmarksTournamentUserActionCopyWithImpl<
+          AddToBookmarksTournamentUserAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(TournamentInfo info, TournamentStatus status),
+    @required Result close(),
+    @required Result load(TournamentInfo info),
+    @required Result addToBookmarks(TournamentInfo info),
+    @required Result removeFromBookmarks(TournamentInfo info),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
+    return addToBookmarks(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(TournamentInfo info, TournamentStatus status),
+    Result close(),
+    Result load(TournamentInfo info),
+    Result addToBookmarks(TournamentInfo info),
+    Result removeFromBookmarks(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (addToBookmarks != null) {
+      return addToBookmarks(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenTournamentUserAction value),
+    @required Result close(CloseTournamentUserAction value),
+    @required Result load(LoadTournamentUserAction value),
+    @required Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    @required
+        Result removeFromBookmarks(
+            RemoveFromBookmarksTournamentUserAction value),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
+    return addToBookmarks(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenTournamentUserAction value),
+    Result close(CloseTournamentUserAction value),
+    Result load(LoadTournamentUserAction value),
+    Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    Result removeFromBookmarks(RemoveFromBookmarksTournamentUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (addToBookmarks != null) {
+      return addToBookmarks(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddToBookmarksTournamentUserAction
+    implements UserActionTournament {
+  const factory AddToBookmarksTournamentUserAction(
+      {@required TournamentInfo info}) = _$AddToBookmarksTournamentUserAction;
+
+  TournamentInfo get info;
+  $AddToBookmarksTournamentUserActionCopyWith<
+      AddToBookmarksTournamentUserAction> get copyWith;
+}
+
+abstract class $RemoveFromBookmarksTournamentUserActionCopyWith<$Res> {
+  factory $RemoveFromBookmarksTournamentUserActionCopyWith(
+          RemoveFromBookmarksTournamentUserAction value,
+          $Res Function(RemoveFromBookmarksTournamentUserAction) then) =
+      _$RemoveFromBookmarksTournamentUserActionCopyWithImpl<$Res>;
+  $Res call({TournamentInfo info});
+
+  $TournamentInfoCopyWith<$Res> get info;
+}
+
+class _$RemoveFromBookmarksTournamentUserActionCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res>
+    implements $RemoveFromBookmarksTournamentUserActionCopyWith<$Res> {
+  _$RemoveFromBookmarksTournamentUserActionCopyWithImpl(
+      RemoveFromBookmarksTournamentUserAction _value,
+      $Res Function(RemoveFromBookmarksTournamentUserAction) _then)
+      : super(
+            _value, (v) => _then(v as RemoveFromBookmarksTournamentUserAction));
+
+  @override
+  RemoveFromBookmarksTournamentUserAction get _value =>
+      super._value as RemoveFromBookmarksTournamentUserAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+  }) {
+    return _then(RemoveFromBookmarksTournamentUserAction(
+      info: info == freezed ? _value.info : info as TournamentInfo,
+    ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+}
+
+class _$RemoveFromBookmarksTournamentUserAction
+    with DiagnosticableTreeMixin
+    implements RemoveFromBookmarksTournamentUserAction {
+  const _$RemoveFromBookmarksTournamentUserAction({@required this.info})
+      : assert(info != null);
+
+  @override
+  final TournamentInfo info;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionTournament.removeFromBookmarks(info: $info)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'UserActionTournament.removeFromBookmarks'))
+      ..add(DiagnosticsProperty('info', info));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is RemoveFromBookmarksTournamentUserAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+
+  @override
+  $RemoveFromBookmarksTournamentUserActionCopyWith<
+          RemoveFromBookmarksTournamentUserAction>
+      get copyWith => _$RemoveFromBookmarksTournamentUserActionCopyWithImpl<
+          RemoveFromBookmarksTournamentUserAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result open(TournamentInfo info, TournamentStatus status),
+    @required Result close(),
+    @required Result load(TournamentInfo info),
+    @required Result addToBookmarks(TournamentInfo info),
+    @required Result removeFromBookmarks(TournamentInfo info),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
+    return removeFromBookmarks(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result open(TournamentInfo info, TournamentStatus status),
+    Result close(),
+    Result load(TournamentInfo info),
+    Result addToBookmarks(TournamentInfo info),
+    Result removeFromBookmarks(TournamentInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (removeFromBookmarks != null) {
+      return removeFromBookmarks(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result open(OpenTournamentUserAction value),
+    @required Result close(CloseTournamentUserAction value),
+    @required Result load(LoadTournamentUserAction value),
+    @required Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    @required
+        Result removeFromBookmarks(
+            RemoveFromBookmarksTournamentUserAction value),
+  }) {
+    assert(open != null);
+    assert(close != null);
+    assert(load != null);
+    assert(addToBookmarks != null);
+    assert(removeFromBookmarks != null);
+    return removeFromBookmarks(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result open(OpenTournamentUserAction value),
+    Result close(CloseTournamentUserAction value),
+    Result load(LoadTournamentUserAction value),
+    Result addToBookmarks(AddToBookmarksTournamentUserAction value),
+    Result removeFromBookmarks(RemoveFromBookmarksTournamentUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (removeFromBookmarks != null) {
+      return removeFromBookmarks(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveFromBookmarksTournamentUserAction
+    implements UserActionTournament {
+  const factory RemoveFromBookmarksTournamentUserAction(
+          {@required TournamentInfo info}) =
+      _$RemoveFromBookmarksTournamentUserAction;
+
+  TournamentInfo get info;
+  $RemoveFromBookmarksTournamentUserActionCopyWith<
+      RemoveFromBookmarksTournamentUserAction> get copyWith;
+}
+
 class _$SystemActionTournamentTearOff {
   const _$SystemActionTournamentTearOff();
 
-  InitTournamentSystemAction init({@required TournamentInfo info}) {
+  InitTournamentSystemAction init(
+      {@required TournamentInfo info, @required TournamentStatus status}) {
     return InitTournamentSystemAction(
       info: info,
+      status: status,
     );
   }
 
@@ -500,9 +922,17 @@ class _$SystemActionTournamentTearOff {
     );
   }
 
-  ReadTournamentSystemAction read({@required TournamentInfo info}) {
-    return ReadTournamentSystemAction(
+  MarkAsReadTournamentSystemAction markAsRead({@required TournamentInfo info}) {
+    return MarkAsReadTournamentSystemAction(
       info: info,
+    );
+  }
+
+  StatusChangedTournamentSystemAction statusChanged(
+      {@required TournamentInfo info, @required TournamentStatus status}) {
+    return StatusChangedTournamentSystemAction(
+      info: info,
+      status: status,
     );
   }
 }
@@ -513,21 +943,24 @@ const $SystemActionTournament = _$SystemActionTournamentTearOff();
 mixin _$SystemActionTournament {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(TournamentInfo info),
+    @required Result init(TournamentInfo info, TournamentStatus status),
     @required Result deInit(),
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
-    @required Result read(TournamentInfo info),
+    @required Result markAsRead(TournamentInfo info),
+    @required
+        Result statusChanged(TournamentInfo info, TournamentStatus status),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(TournamentInfo info),
+    Result init(TournamentInfo info, TournamentStatus status),
     Result deInit(),
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
-    Result read(TournamentInfo info),
+    Result markAsRead(TournamentInfo info),
+    Result statusChanged(TournamentInfo info, TournamentStatus status),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -537,7 +970,8 @@ mixin _$SystemActionTournament {
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
-    @required Result read(ReadTournamentSystemAction value),
+    @required Result markAsRead(MarkAsReadTournamentSystemAction value),
+    @required Result statusChanged(StatusChangedTournamentSystemAction value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -546,7 +980,8 @@ mixin _$SystemActionTournament {
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
-    Result read(ReadTournamentSystemAction value),
+    Result markAsRead(MarkAsReadTournamentSystemAction value),
+    Result statusChanged(StatusChangedTournamentSystemAction value),
     @required Result orElse(),
   });
 }
@@ -570,9 +1005,10 @@ abstract class $InitTournamentSystemActionCopyWith<$Res> {
   factory $InitTournamentSystemActionCopyWith(InitTournamentSystemAction value,
           $Res Function(InitTournamentSystemAction) then) =
       _$InitTournamentSystemActionCopyWithImpl<$Res>;
-  $Res call({TournamentInfo info});
+  $Res call({TournamentInfo info, TournamentStatus status});
 
   $TournamentInfoCopyWith<$Res> get info;
+  $TournamentStatusCopyWith<$Res> get status;
 }
 
 class _$InitTournamentSystemActionCopyWithImpl<$Res>
@@ -589,9 +1025,11 @@ class _$InitTournamentSystemActionCopyWithImpl<$Res>
   @override
   $Res call({
     Object info = freezed,
+    Object status = freezed,
   }) {
     return _then(InitTournamentSystemAction(
       info: info == freezed ? _value.info : info as TournamentInfo,
+      status: status == freezed ? _value.status : status as TournamentStatus,
     ));
   }
 
@@ -604,20 +1042,34 @@ class _$InitTournamentSystemActionCopyWithImpl<$Res>
       return _then(_value.copyWith(info: value));
     });
   }
+
+  @override
+  $TournamentStatusCopyWith<$Res> get status {
+    if (_value.status == null) {
+      return null;
+    }
+    return $TournamentStatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value));
+    });
+  }
 }
 
 class _$InitTournamentSystemAction
     with DiagnosticableTreeMixin
     implements InitTournamentSystemAction {
-  const _$InitTournamentSystemAction({@required this.info})
-      : assert(info != null);
+  const _$InitTournamentSystemAction(
+      {@required this.info, @required this.status})
+      : assert(info != null),
+        assert(status != null);
 
   @override
   final TournamentInfo info;
+  @override
+  final TournamentStatus status;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SystemActionTournament.init(info: $info)';
+    return 'SystemActionTournament.init(info: $info, status: $status)';
   }
 
   @override
@@ -625,7 +1077,8 @@ class _$InitTournamentSystemAction
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'SystemActionTournament.init'))
-      ..add(DiagnosticsProperty('info', info));
+      ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('status', status));
   }
 
   @override
@@ -633,12 +1086,16 @@ class _$InitTournamentSystemAction
     return identical(this, other) ||
         (other is InitTournamentSystemAction &&
             (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
+                const DeepCollectionEquality().equals(other.info, info)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(info) ^
+      const DeepCollectionEquality().hash(status);
 
   @override
   $InitTournamentSystemActionCopyWith<InitTournamentSystemAction>
@@ -649,36 +1106,40 @@ class _$InitTournamentSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(TournamentInfo info),
+    @required Result init(TournamentInfo info, TournamentStatus status),
     @required Result deInit(),
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
-    @required Result read(TournamentInfo info),
+    @required Result markAsRead(TournamentInfo info),
+    @required
+        Result statusChanged(TournamentInfo info, TournamentStatus status),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
-    return init(info);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
+    return init(info, status);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(TournamentInfo info),
+    Result init(TournamentInfo info, TournamentStatus status),
     Result deInit(),
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
-    Result read(TournamentInfo info),
+    Result markAsRead(TournamentInfo info),
+    Result statusChanged(TournamentInfo info, TournamentStatus status),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (init != null) {
-      return init(info);
+      return init(info, status);
     }
     return orElse();
   }
@@ -691,14 +1152,16 @@ class _$InitTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
-    @required Result read(ReadTournamentSystemAction value),
+    @required Result markAsRead(MarkAsReadTournamentSystemAction value),
+    @required Result statusChanged(StatusChangedTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
     return init(this);
   }
 
@@ -710,7 +1173,8 @@ class _$InitTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
-    Result read(ReadTournamentSystemAction value),
+    Result markAsRead(MarkAsReadTournamentSystemAction value),
+    Result statusChanged(StatusChangedTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -722,10 +1186,12 @@ class _$InitTournamentSystemAction
 }
 
 abstract class InitTournamentSystemAction implements SystemActionTournament {
-  const factory InitTournamentSystemAction({@required TournamentInfo info}) =
-      _$InitTournamentSystemAction;
+  const factory InitTournamentSystemAction(
+      {@required TournamentInfo info,
+      @required TournamentStatus status}) = _$InitTournamentSystemAction;
 
   TournamentInfo get info;
+  TournamentStatus get status;
   $InitTournamentSystemActionCopyWith<InitTournamentSystemAction> get copyWith;
 }
 
@@ -777,31 +1243,35 @@ class _$DeInitTournamentSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(TournamentInfo info),
+    @required Result init(TournamentInfo info, TournamentStatus status),
     @required Result deInit(),
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
-    @required Result read(TournamentInfo info),
+    @required Result markAsRead(TournamentInfo info),
+    @required
+        Result statusChanged(TournamentInfo info, TournamentStatus status),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
     return deInit();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(TournamentInfo info),
+    Result init(TournamentInfo info, TournamentStatus status),
     Result deInit(),
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
-    Result read(TournamentInfo info),
+    Result markAsRead(TournamentInfo info),
+    Result statusChanged(TournamentInfo info, TournamentStatus status),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -819,14 +1289,16 @@ class _$DeInitTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
-    @required Result read(ReadTournamentSystemAction value),
+    @required Result markAsRead(MarkAsReadTournamentSystemAction value),
+    @required Result statusChanged(StatusChangedTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
     return deInit(this);
   }
 
@@ -838,7 +1310,8 @@ class _$DeInitTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
-    Result read(ReadTournamentSystemAction value),
+    Result markAsRead(MarkAsReadTournamentSystemAction value),
+    Result statusChanged(StatusChangedTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -937,31 +1410,35 @@ class _$LoadingTournamentSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(TournamentInfo info),
+    @required Result init(TournamentInfo info, TournamentStatus status),
     @required Result deInit(),
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
-    @required Result read(TournamentInfo info),
+    @required Result markAsRead(TournamentInfo info),
+    @required
+        Result statusChanged(TournamentInfo info, TournamentStatus status),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
     return loading(info);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(TournamentInfo info),
+    Result init(TournamentInfo info, TournamentStatus status),
     Result deInit(),
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
-    Result read(TournamentInfo info),
+    Result markAsRead(TournamentInfo info),
+    Result statusChanged(TournamentInfo info, TournamentStatus status),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -979,14 +1456,16 @@ class _$LoadingTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
-    @required Result read(ReadTournamentSystemAction value),
+    @required Result markAsRead(MarkAsReadTournamentSystemAction value),
+    @required Result statusChanged(StatusChangedTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
     return loading(this);
   }
 
@@ -998,7 +1477,8 @@ class _$LoadingTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
-    Result read(ReadTournamentSystemAction value),
+    Result markAsRead(MarkAsReadTournamentSystemAction value),
+    Result statusChanged(StatusChangedTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1115,31 +1595,35 @@ class _$FailedTournamentSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(TournamentInfo info),
+    @required Result init(TournamentInfo info, TournamentStatus status),
     @required Result deInit(),
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
-    @required Result read(TournamentInfo info),
+    @required Result markAsRead(TournamentInfo info),
+    @required
+        Result statusChanged(TournamentInfo info, TournamentStatus status),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
     return failed(info, exception);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(TournamentInfo info),
+    Result init(TournamentInfo info, TournamentStatus status),
     Result deInit(),
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
-    Result read(TournamentInfo info),
+    Result markAsRead(TournamentInfo info),
+    Result statusChanged(TournamentInfo info, TournamentStatus status),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1157,14 +1641,16 @@ class _$FailedTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
-    @required Result read(ReadTournamentSystemAction value),
+    @required Result markAsRead(MarkAsReadTournamentSystemAction value),
+    @required Result statusChanged(StatusChangedTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
     return failed(this);
   }
 
@@ -1176,7 +1662,8 @@ class _$FailedTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
-    Result read(ReadTournamentSystemAction value),
+    Result markAsRead(MarkAsReadTournamentSystemAction value),
+    Result statusChanged(StatusChangedTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1284,31 +1771,35 @@ class _$CompletedTournamentSystemAction
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(TournamentInfo info),
+    @required Result init(TournamentInfo info, TournamentStatus status),
     @required Result deInit(),
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
-    @required Result read(TournamentInfo info),
+    @required Result markAsRead(TournamentInfo info),
+    @required
+        Result statusChanged(TournamentInfo info, TournamentStatus status),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
     return completed(tournament);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(TournamentInfo info),
+    Result init(TournamentInfo info, TournamentStatus status),
     Result deInit(),
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
-    Result read(TournamentInfo info),
+    Result markAsRead(TournamentInfo info),
+    Result statusChanged(TournamentInfo info, TournamentStatus status),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1326,14 +1817,16 @@ class _$CompletedTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
-    @required Result read(ReadTournamentSystemAction value),
+    @required Result markAsRead(MarkAsReadTournamentSystemAction value),
+    @required Result statusChanged(StatusChangedTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
     return completed(this);
   }
 
@@ -1345,7 +1838,8 @@ class _$CompletedTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
-    Result read(ReadTournamentSystemAction value),
+    Result markAsRead(MarkAsReadTournamentSystemAction value),
+    Result statusChanged(StatusChangedTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1366,31 +1860,33 @@ abstract class CompletedTournamentSystemAction
       get copyWith;
 }
 
-abstract class $ReadTournamentSystemActionCopyWith<$Res> {
-  factory $ReadTournamentSystemActionCopyWith(ReadTournamentSystemAction value,
-          $Res Function(ReadTournamentSystemAction) then) =
-      _$ReadTournamentSystemActionCopyWithImpl<$Res>;
+abstract class $MarkAsReadTournamentSystemActionCopyWith<$Res> {
+  factory $MarkAsReadTournamentSystemActionCopyWith(
+          MarkAsReadTournamentSystemAction value,
+          $Res Function(MarkAsReadTournamentSystemAction) then) =
+      _$MarkAsReadTournamentSystemActionCopyWithImpl<$Res>;
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
 }
 
-class _$ReadTournamentSystemActionCopyWithImpl<$Res>
+class _$MarkAsReadTournamentSystemActionCopyWithImpl<$Res>
     extends _$SystemActionTournamentCopyWithImpl<$Res>
-    implements $ReadTournamentSystemActionCopyWith<$Res> {
-  _$ReadTournamentSystemActionCopyWithImpl(ReadTournamentSystemAction _value,
-      $Res Function(ReadTournamentSystemAction) _then)
-      : super(_value, (v) => _then(v as ReadTournamentSystemAction));
+    implements $MarkAsReadTournamentSystemActionCopyWith<$Res> {
+  _$MarkAsReadTournamentSystemActionCopyWithImpl(
+      MarkAsReadTournamentSystemAction _value,
+      $Res Function(MarkAsReadTournamentSystemAction) _then)
+      : super(_value, (v) => _then(v as MarkAsReadTournamentSystemAction));
 
   @override
-  ReadTournamentSystemAction get _value =>
-      super._value as ReadTournamentSystemAction;
+  MarkAsReadTournamentSystemAction get _value =>
+      super._value as MarkAsReadTournamentSystemAction;
 
   @override
   $Res call({
     Object info = freezed,
   }) {
-    return _then(ReadTournamentSystemAction(
+    return _then(MarkAsReadTournamentSystemAction(
       info: info == freezed ? _value.info : info as TournamentInfo,
     ));
   }
@@ -1406,10 +1902,10 @@ class _$ReadTournamentSystemActionCopyWithImpl<$Res>
   }
 }
 
-class _$ReadTournamentSystemAction
+class _$MarkAsReadTournamentSystemAction
     with DiagnosticableTreeMixin
-    implements ReadTournamentSystemAction {
-  const _$ReadTournamentSystemAction({@required this.info})
+    implements MarkAsReadTournamentSystemAction {
+  const _$MarkAsReadTournamentSystemAction({@required this.info})
       : assert(info != null);
 
   @override
@@ -1417,21 +1913,21 @@ class _$ReadTournamentSystemAction
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SystemActionTournament.read(info: $info)';
+    return 'SystemActionTournament.markAsRead(info: $info)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SystemActionTournament.read'))
+      ..add(DiagnosticsProperty('type', 'SystemActionTournament.markAsRead'))
       ..add(DiagnosticsProperty('info', info));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ReadTournamentSystemAction &&
+        (other is MarkAsReadTournamentSystemAction &&
             (identical(other.info, info) ||
                 const DeepCollectionEquality().equals(other.info, info)));
   }
@@ -1441,44 +1937,47 @@ class _$ReadTournamentSystemAction
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
   @override
-  $ReadTournamentSystemActionCopyWith<ReadTournamentSystemAction>
-      get copyWith =>
-          _$ReadTournamentSystemActionCopyWithImpl<ReadTournamentSystemAction>(
-              this, _$identity);
+  $MarkAsReadTournamentSystemActionCopyWith<MarkAsReadTournamentSystemAction>
+      get copyWith => _$MarkAsReadTournamentSystemActionCopyWithImpl<
+          MarkAsReadTournamentSystemAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result init(TournamentInfo info),
+    @required Result init(TournamentInfo info, TournamentStatus status),
     @required Result deInit(),
     @required Result loading(TournamentInfo info),
     @required Result failed(TournamentInfo info, Exception exception),
     @required Result completed(Tournament tournament),
-    @required Result read(TournamentInfo info),
+    @required Result markAsRead(TournamentInfo info),
+    @required
+        Result statusChanged(TournamentInfo info, TournamentStatus status),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
-    return read(info);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
+    return markAsRead(info);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result init(TournamentInfo info),
+    Result init(TournamentInfo info, TournamentStatus status),
     Result deInit(),
     Result loading(TournamentInfo info),
     Result failed(TournamentInfo info, Exception exception),
     Result completed(Tournament tournament),
-    Result read(TournamentInfo info),
+    Result markAsRead(TournamentInfo info),
+    Result statusChanged(TournamentInfo info, TournamentStatus status),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (read != null) {
-      return read(info);
+    if (markAsRead != null) {
+      return markAsRead(info);
     }
     return orElse();
   }
@@ -1491,15 +1990,17 @@ class _$ReadTournamentSystemAction
     @required Result loading(LoadingTournamentSystemAction value),
     @required Result failed(FailedTournamentSystemAction value),
     @required Result completed(CompletedTournamentSystemAction value),
-    @required Result read(ReadTournamentSystemAction value),
+    @required Result markAsRead(MarkAsReadTournamentSystemAction value),
+    @required Result statusChanged(StatusChangedTournamentSystemAction value),
   }) {
     assert(init != null);
     assert(deInit != null);
     assert(loading != null);
     assert(failed != null);
     assert(completed != null);
-    assert(read != null);
-    return read(this);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
+    return markAsRead(this);
   }
 
   @override
@@ -1510,21 +2011,222 @@ class _$ReadTournamentSystemAction
     Result loading(LoadingTournamentSystemAction value),
     Result failed(FailedTournamentSystemAction value),
     Result completed(CompletedTournamentSystemAction value),
-    Result read(ReadTournamentSystemAction value),
+    Result markAsRead(MarkAsReadTournamentSystemAction value),
+    Result statusChanged(StatusChangedTournamentSystemAction value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (read != null) {
-      return read(this);
+    if (markAsRead != null) {
+      return markAsRead(this);
     }
     return orElse();
   }
 }
 
-abstract class ReadTournamentSystemAction implements SystemActionTournament {
-  const factory ReadTournamentSystemAction({@required TournamentInfo info}) =
-      _$ReadTournamentSystemAction;
+abstract class MarkAsReadTournamentSystemAction
+    implements SystemActionTournament {
+  const factory MarkAsReadTournamentSystemAction(
+      {@required TournamentInfo info}) = _$MarkAsReadTournamentSystemAction;
 
   TournamentInfo get info;
-  $ReadTournamentSystemActionCopyWith<ReadTournamentSystemAction> get copyWith;
+  $MarkAsReadTournamentSystemActionCopyWith<MarkAsReadTournamentSystemAction>
+      get copyWith;
+}
+
+abstract class $StatusChangedTournamentSystemActionCopyWith<$Res> {
+  factory $StatusChangedTournamentSystemActionCopyWith(
+          StatusChangedTournamentSystemAction value,
+          $Res Function(StatusChangedTournamentSystemAction) then) =
+      _$StatusChangedTournamentSystemActionCopyWithImpl<$Res>;
+  $Res call({TournamentInfo info, TournamentStatus status});
+
+  $TournamentInfoCopyWith<$Res> get info;
+  $TournamentStatusCopyWith<$Res> get status;
+}
+
+class _$StatusChangedTournamentSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    implements $StatusChangedTournamentSystemActionCopyWith<$Res> {
+  _$StatusChangedTournamentSystemActionCopyWithImpl(
+      StatusChangedTournamentSystemAction _value,
+      $Res Function(StatusChangedTournamentSystemAction) _then)
+      : super(_value, (v) => _then(v as StatusChangedTournamentSystemAction));
+
+  @override
+  StatusChangedTournamentSystemAction get _value =>
+      super._value as StatusChangedTournamentSystemAction;
+
+  @override
+  $Res call({
+    Object info = freezed,
+    Object status = freezed,
+  }) {
+    return _then(StatusChangedTournamentSystemAction(
+      info: info == freezed ? _value.info : info as TournamentInfo,
+      status: status == freezed ? _value.status : status as TournamentStatus,
+    ));
+  }
+
+  @override
+  $TournamentInfoCopyWith<$Res> get info {
+    if (_value.info == null) {
+      return null;
+    }
+    return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
+    });
+  }
+
+  @override
+  $TournamentStatusCopyWith<$Res> get status {
+    if (_value.status == null) {
+      return null;
+    }
+    return $TournamentStatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value));
+    });
+  }
+}
+
+class _$StatusChangedTournamentSystemAction
+    with DiagnosticableTreeMixin
+    implements StatusChangedTournamentSystemAction {
+  const _$StatusChangedTournamentSystemAction(
+      {@required this.info, @required this.status})
+      : assert(info != null),
+        assert(status != null);
+
+  @override
+  final TournamentInfo info;
+  @override
+  final TournamentStatus status;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionTournament.statusChanged(info: $info, status: $status)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionTournament.statusChanged'))
+      ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('status', status));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StatusChangedTournamentSystemAction &&
+            (identical(other.info, info) ||
+                const DeepCollectionEquality().equals(other.info, info)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(info) ^
+      const DeepCollectionEquality().hash(status);
+
+  @override
+  $StatusChangedTournamentSystemActionCopyWith<
+          StatusChangedTournamentSystemAction>
+      get copyWith => _$StatusChangedTournamentSystemActionCopyWithImpl<
+          StatusChangedTournamentSystemAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(TournamentInfo info, TournamentStatus status),
+    @required Result deInit(),
+    @required Result loading(TournamentInfo info),
+    @required Result failed(TournamentInfo info, Exception exception),
+    @required Result completed(Tournament tournament),
+    @required Result markAsRead(TournamentInfo info),
+    @required
+        Result statusChanged(TournamentInfo info, TournamentStatus status),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
+    return statusChanged(info, status);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(TournamentInfo info, TournamentStatus status),
+    Result deInit(),
+    Result loading(TournamentInfo info),
+    Result failed(TournamentInfo info, Exception exception),
+    Result completed(Tournament tournament),
+    Result markAsRead(TournamentInfo info),
+    Result statusChanged(TournamentInfo info, TournamentStatus status),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (statusChanged != null) {
+      return statusChanged(info, status);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitTournamentSystemAction value),
+    @required Result deInit(DeInitTournamentSystemAction value),
+    @required Result loading(LoadingTournamentSystemAction value),
+    @required Result failed(FailedTournamentSystemAction value),
+    @required Result completed(CompletedTournamentSystemAction value),
+    @required Result markAsRead(MarkAsReadTournamentSystemAction value),
+    @required Result statusChanged(StatusChangedTournamentSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    assert(loading != null);
+    assert(failed != null);
+    assert(completed != null);
+    assert(markAsRead != null);
+    assert(statusChanged != null);
+    return statusChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitTournamentSystemAction value),
+    Result deInit(DeInitTournamentSystemAction value),
+    Result loading(LoadingTournamentSystemAction value),
+    Result failed(FailedTournamentSystemAction value),
+    Result completed(CompletedTournamentSystemAction value),
+    Result markAsRead(MarkAsReadTournamentSystemAction value),
+    Result statusChanged(StatusChangedTournamentSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (statusChanged != null) {
+      return statusChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StatusChangedTournamentSystemAction
+    implements SystemActionTournament {
+  const factory StatusChangedTournamentSystemAction(
+          {@required TournamentInfo info, @required TournamentStatus status}) =
+      _$StatusChangedTournamentSystemAction;
+
+  TournamentInfo get info;
+  TournamentStatus get status;
+  $StatusChangedTournamentSystemActionCopyWith<
+      StatusChangedTournamentSystemAction> get copyWith;
 }

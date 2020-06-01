@@ -23,6 +23,14 @@ abstract class UserActionTournament
   const factory UserActionTournament.load({
     @required TournamentInfo info,
   }) = LoadTournamentUserAction;
+
+  const factory UserActionTournament.addToBookmarks({
+    @required TournamentInfo info,
+  }) = AddToBookmarksTournamentUserAction;
+
+  const factory UserActionTournament.removeFromBookmarks({
+    @required TournamentInfo info,
+  }) = RemoveFromBookmarksTournamentUserAction;
 }
 
 @freezed
@@ -49,7 +57,12 @@ abstract class SystemActionTournament
     @required Tournament tournament,
   }) = CompletedTournamentSystemAction;
 
-  const factory SystemActionTournament.read({
+  const factory SystemActionTournament.markAsRead({
     @required TournamentInfo info,
-  }) = ReadTournamentSystemAction;
+  }) = MarkAsReadTournamentSystemAction;
+
+  const factory SystemActionTournament.statusChanged({
+    @required TournamentInfo info,
+    @required TournamentStatus status,
+  }) = StatusChangedTournamentSystemAction;
 }
