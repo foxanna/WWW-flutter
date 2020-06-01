@@ -3,6 +3,7 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/redux/analytics/middleware.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/bookmarks/middleware.dart';
 import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:what_when_where/redux/developer/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
@@ -52,5 +53,6 @@ class AppMiddleware {
         ..._container<QuestionsMiddleware>().middleware,
         ..._container<TournamentsTreeMiddleware>().middleware,
         ..._container<RatingMiddleware>().middleware,
+        ..._container<BookmarksMiddleware>().middleware,
       ];
 }

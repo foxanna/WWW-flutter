@@ -4,6 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+import 'package:what_when_where/redux/bookmarks/middleware.dart';
 import 'package:what_when_where/ioc/injectable_module.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/src/widgets/navigator.dart';
@@ -66,6 +67,7 @@ import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
   final registerModule = _$RegisterModule();
+  g.registerFactory<BookmarksMiddleware>(() => BookmarksMiddleware());
   g.registerLazySingleton<Dio>(() => registerModule.dio);
   g.registerLazySingleton<GlobalKey<NavigatorState>>(() => registerModule.key);
   g.registerLazySingleton<IAnalyticsService>(() => AnalyticsService());
