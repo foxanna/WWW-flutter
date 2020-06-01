@@ -15,6 +15,7 @@ class TournamentDetailsAboutTournamentBottomSheetItem extends StatelessWidget {
         distinct: true,
         converter: (store) => store.state.tournamentState,
         builder: (context, state) => ListTile(
+          enabled: state is DataTournamentState,
           leading: const Icon(Icons.info_outline),
           title: Text(WWWLocalizations.of(context).tournamentAboutTournament),
           onTap: () {
