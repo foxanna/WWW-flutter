@@ -47,6 +47,8 @@ class Translations_uk extends Translations {
   String get errorMessageNoInternet =>
       "База питань тимчасово не доступна\nПеревірте інтернет з'єднання або спробуйте пізніше";
   String get menuAbout => "Про додаток";
+  String get menuBookmarksAdd => "Додати у закладки";
+  String get menuBookmarksRemove => "Видалити з закладок";
   String get menuBrowse => "Відкрити у браузері";
   String get menuSettings => "Налаштування";
   String get menuShare => "Поділитися";
@@ -117,6 +119,10 @@ class Translations_uk extends Translations {
         return errorMessageNoInternet;
       case 'menuAbout':
         return menuAbout;
+      case 'menuBookmarksAdd':
+        return menuBookmarksAdd;
+      case 'menuBookmarksRemove':
+        return menuBookmarksRemove;
       case 'menuBrowse':
         return menuBrowse;
       case 'menuSettings':

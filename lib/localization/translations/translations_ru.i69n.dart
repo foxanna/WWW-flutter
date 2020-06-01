@@ -47,6 +47,8 @@ class Translations_ru extends Translations {
   String get errorMessageNoInternet =>
       "База вопросов временно не доступна\nПроверьте интернет соединение или попробуйте позже";
   String get menuAbout => "О приложении";
+  String get menuBookmarksAdd => "Добавить в закладки";
+  String get menuBookmarksRemove => "Удалить из закладок";
   String get menuBrowse => "Открыть в браузере";
   String get menuSettings => "Настройки";
   String get menuShare => "Поделиться";
@@ -117,6 +119,10 @@ class Translations_ru extends Translations {
         return errorMessageNoInternet;
       case 'menuAbout':
         return menuAbout;
+      case 'menuBookmarksAdd':
+        return menuBookmarksAdd;
+      case 'menuBookmarksRemove':
+        return menuBookmarksRemove;
       case 'menuBrowse':
         return menuBrowse;
       case 'menuSettings':

@@ -8,6 +8,8 @@ emptySearchResults: No search results
 errorMessageGeneric: Something went wrong :(
 errorMessageNoInternet: "Questions database is temporary unavailable\nCheck your internet connection or try later"
 menuAbout: About application
+menuBookmarksAdd: Add to bookmarks
+menuBookmarksRemove: Remove from bookmarks
 menuBrowse: Open in browser
 menuSettings: Settings
 menuShare: Share

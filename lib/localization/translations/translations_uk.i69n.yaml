@@ -8,6 +8,8 @@ emptySearchResults: Нічого не знайдено
 errorMessageGeneric: Щось пішло не так :(
 errorMessageNoInternet: "База питань тимчасово не доступна\nПеревірте інтернет з'єднання або спробуйте пізніше"
 menuAbout: Про додаток
+menuBookmarksAdd: Додати у закладки
+menuBookmarksRemove: Видалити з закладок
 menuBrowse: Відкрити у браузері
 menuSettings: Налаштування
 menuShare: Поділитися

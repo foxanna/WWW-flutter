@@ -46,6 +46,8 @@ class Translations implements i69n.I69nMessageBundle {
   String get errorMessageNoInternet =>
       "Questions database is temporary unavailable\nCheck your internet connection or try later";
   String get menuAbout => "About application";
+  String get menuBookmarksAdd => "Add to bookmarks";
+  String get menuBookmarksRemove => "Remove from bookmarks";
   String get menuBrowse => "Open in browser";
   String get menuSettings => "Settings";
   String get menuShare => "Share";
@@ -116,6 +118,10 @@ class Translations implements i69n.I69nMessageBundle {
         return errorMessageNoInternet;
       case 'menuAbout':
         return menuAbout;
+      case 'menuBookmarksAdd':
+        return menuBookmarksAdd;
+      case 'menuBookmarksRemove':
+        return menuBookmarksRemove;
       case 'menuBrowse':
         return menuBrowse;
       case 'menuSettings':
