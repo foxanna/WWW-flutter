@@ -3,6 +3,7 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/common/text_scale.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/bookmarks/actions.dart';
 import 'package:what_when_where/redux/browsing/actions.dart';
 import 'package:what_when_where/redux/developer/actions.dart';
 import 'package:what_when_where/redux/dialogs/actions.dart';
@@ -44,6 +45,7 @@ final _analyticsEventNames = {
   '$OpenTournamentUserAction': 'tournament',
   '$OpenSearchUserAction': 'search',
   '$OpenRandomQuestionsUserAction': 'random',
+  '$OpenBookmarksUserAction': 'bookmarks',
   // developer
   '$EmailDeveloperUserAction': 'email_developers',
   '$VisitWebsiteDeveloperUserAction': 'visit_developers_website',
@@ -89,6 +91,7 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, OpenRandomQuestionsUserAction>(_logAction),
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_logAction),
         TypedMiddleware<AppState, NeverAskRatingUserAction>(_logAction),
+        TypedMiddleware<AppState, OpenBookmarksUserAction>(_logAction),
         // settings
         TypedMiddleware<AppState, ReadySettingsSystemAction>(_logSettings),
         TypedMiddleware<AppState, ChangeThemeSettingsUserAction>(_logTheme),
