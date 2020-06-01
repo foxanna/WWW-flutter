@@ -1,6 +1,7 @@
 appDeveloper: Разработчик приложения
 appDeveloperName: Анна Домашич
 appNameFull: "Сова\nЧто? Где? Когда?"
+bookmarksPageTitle: Ваши закладки
 dialogCloseButton: закрыть
 downloadAppVia: Загружайте приложение из
 emptySearchResults: Ничего не найдено
@@ -25,9 +26,10 @@ settingsTimerNotifications: Предупредительный сигнал та
 settingsTimerNotificationsForLongTimer: для обычных вопросов
 settingsTimerNotificationsForShortTimer: для вопросов дуплет и блиц
 sharedVia: Отправлено из приложения
+tooltipBookmarks: закладки
 tooltipEmailDeveloper: написать автору
 tooltipPauseTimer: остановить таймер
-tooltipRandomQuestions: случайный вопросы
+tooltipRandomQuestions: случайные вопросы
 tooltipRetry: повторить
 tooltipSorting: сортировка
 tooltipSortingByDate: по дате

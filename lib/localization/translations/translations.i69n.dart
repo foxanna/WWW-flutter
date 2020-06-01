@@ -38,6 +38,7 @@ class Translations implements i69n.I69nMessageBundle {
   String get appDeveloper => "Application developer";
   String get appDeveloperName => "Anna Domashych";
   String get appNameFull => "Sova\nWhat? Where? When?";
+  String get bookmarksPageTitle => "Your bookmarks";
   String get dialogCloseButton => "close";
   String get downloadAppVia => "Download the application from";
   String get emptySearchResults => "No search results";
@@ -64,6 +65,7 @@ class Translations implements i69n.I69nMessageBundle {
   String get settingsTimerNotificationsForShortTimer =>
       "for blitz and doublet questions";
   String get sharedVia => "Shared from application";
+  String get tooltipBookmarks => "bookmarks";
   String get tooltipEmailDeveloper => "email author";
   String get tooltipPauseTimer => "pause timer";
   String get tooltipRandomQuestions => "random questions";
@@ -100,6 +102,8 @@ class Translations implements i69n.I69nMessageBundle {
         return appDeveloperName;
       case 'appNameFull':
         return appNameFull;
+      case 'bookmarksPageTitle':
+        return bookmarksPageTitle;
       case 'dialogCloseButton':
         return dialogCloseButton;
       case 'downloadAppVia':
@@ -148,6 +152,8 @@ class Translations implements i69n.I69nMessageBundle {
         return settingsTimerNotificationsForShortTimer;
       case 'sharedVia':
         return sharedVia;
+      case 'tooltipBookmarks':
+        return tooltipBookmarks;
       case 'tooltipEmailDeveloper':
         return tooltipEmailDeveloper;
       case 'tooltipPauseTimer':

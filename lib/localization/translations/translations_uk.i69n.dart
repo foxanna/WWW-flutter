@@ -39,6 +39,7 @@ class Translations_uk extends Translations {
   String get appDeveloper => "Розробник додатку";
   String get appDeveloperName => "Анна Домашич";
   String get appNameFull => "Сова\nЩо? Де? Коли?";
+  String get bookmarksPageTitle => "Ващі закладки";
   String get dialogCloseButton => "закрити";
   String get downloadAppVia => "Завантажуйте додаток з";
   String get emptySearchResults => "Нічого не знайдено";
@@ -65,6 +66,7 @@ class Translations_uk extends Translations {
   String get settingsTimerNotificationsForShortTimer =>
       "для питань дуплет та бліц";
   String get sharedVia => "Відправлено з додатку";
+  String get tooltipBookmarks => "закладки";
   String get tooltipEmailDeveloper => "написати автору";
   String get tooltipPauseTimer => "зупинити таймер";
   String get tooltipRandomQuestions => "випадкові питання";
@@ -101,6 +103,8 @@ class Translations_uk extends Translations {
         return appDeveloperName;
       case 'appNameFull':
         return appNameFull;
+      case 'bookmarksPageTitle':
+        return bookmarksPageTitle;
       case 'dialogCloseButton':
         return dialogCloseButton;
       case 'downloadAppVia':
@@ -149,6 +153,8 @@ class Translations_uk extends Translations {
         return settingsTimerNotificationsForShortTimer;
       case 'sharedVia':
         return sharedVia;
+      case 'tooltipBookmarks':
+        return tooltipBookmarks;
       case 'tooltipEmailDeveloper':
         return tooltipEmailDeveloper;
       case 'tooltipPauseTimer':

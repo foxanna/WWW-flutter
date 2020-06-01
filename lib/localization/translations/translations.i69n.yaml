@@ -1,6 +1,7 @@
 appDeveloper: Application developer
 appDeveloperName: Anna Domashych
 appNameFull: "Sova\nWhat? Where? When?"
+bookmarksPageTitle: Your bookmarks
 dialogCloseButton: close
 downloadAppVia: Download the application from
 emptySearchResults: No search results
@@ -25,6 +26,7 @@ settingsTimerNotifications: Timer expiration notifications
 settingsTimerNotificationsForLongTimer: for ordinary questions
 settingsTimerNotificationsForShortTimer: for blitz and doublet questions
 sharedVia: Shared from application
+tooltipBookmarks: bookmarks
 tooltipEmailDeveloper: email author
 tooltipPauseTimer: pause timer
 tooltipRandomQuestions: random questions
