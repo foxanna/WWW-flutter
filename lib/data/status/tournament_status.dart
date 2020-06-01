@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/data/models/tournament.dart';
+import 'package:what_when_where/data/status/tournaments_bookmarks.dart';
 import 'package:what_when_where/data/status/tournaments_history.dart';
 
 abstract class ITournamentStatusService {
@@ -11,15 +12,23 @@ abstract class ITournamentStatusService {
 @LazySingleton(as: ITournamentStatusService)
 class TournamentStatusService implements ITournamentStatusService {
   final ITournamentsHistoryService _historyService;
+  final ITournamentsBookmarksService _bookmarksService;
 
   const TournamentStatusService({
     ITournamentsHistoryService historyService,
-  }) : _historyService = historyService;
+    ITournamentsBookmarksService bookmarksService,
+  })  : _historyService = historyService,
+        _bookmarksService = bookmarksService;
 
   @override
   Future<Tournament> actualize(Tournament tournament) async {
     final wasRead = await _historyService.wasRead(tournament.info);
-    return tournament.copyWith.status(isNew: !wasRead);
+    final isBookmarked = await _bookmarksService.isBookmarked(tournament.info);
+
+    return tournament.copyWith.status(
+      isNew: !wasRead,
+      isBookmarked: isBookmarked,
+    );
   }
 
   @override

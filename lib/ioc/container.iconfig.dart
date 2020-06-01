@@ -24,6 +24,7 @@ import 'package:what_when_where/services/rating.dart';
 import 'package:what_when_where/api/parsers/search2json_parser.dart';
 import 'package:what_when_where/services/sharing.dart';
 import 'package:what_when_where/services/sound.dart';
+import 'package:what_when_where/data/status/tournaments_bookmarks.dart';
 import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/data/status/tournaments_history.dart';
 import 'package:what_when_where/data/cache/tournaments_tree_cache.dart';
@@ -92,6 +93,10 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<ISearchToJsonParser>(() => SearchToJsonParser());
   g.registerLazySingleton<ISharingService>(() => SharingService());
   g.registerLazySingleton<ISoundService>(() => SoundService());
+  g.registerLazySingleton<ITournamentsBookmarksService>(() =>
+      TournamentsBookmarksService(
+          localStorage: g<ILocalStorageService>(),
+          crashService: g<ICrashService>()));
   g.registerLazySingleton<ITournamentsCache>(() => TournamentsCache());
   g.registerLazySingleton<ITournamentsHistoryService>(() =>
       TournamentsHistoryService(
@@ -166,7 +171,9 @@ void $initGetIt(GetIt g, {String environment}) {
             backgroundService: g<IBackgroundRunnerService>(),
           ));
   g.registerLazySingleton<ITournamentStatusService>(() =>
-      TournamentStatusService(historyService: g<ITournamentsHistoryService>()));
+      TournamentStatusService(
+          historyService: g<ITournamentsHistoryService>(),
+          bookmarksService: g<ITournamentsBookmarksService>()));
   g.registerLazySingleton<ITournamentsTreeLoader>(() => TournamentsTreeLoader(
         httpClient: g<IHttpClient>(),
         parser: g<IXmlToJsonParser>(),

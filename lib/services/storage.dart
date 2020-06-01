@@ -9,6 +9,8 @@ abstract class ILocalStorageService {
 
   Future<void> put<T>(String tableName, String key, T value);
 
+  Future<void> remove<T>(String tableName, String key);
+
   Future<bool> containsKey(String tableName, String key);
 }
 
@@ -27,6 +29,12 @@ class LocalStorageService implements ILocalStorageService {
   Future<void> put<T>(String tableName, String key, T value) async {
     final box = await Hive.openBox(tableName);
     await box.put(key, value);
+  }
+
+  @override
+  Future<void> remove<T>(String tableName, String key) async {
+    final box = await Hive.openBox(tableName);
+    await box.delete(key);
   }
 
   @override
