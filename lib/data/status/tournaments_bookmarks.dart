@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dartx/dartx.dart';
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
@@ -5,6 +7,8 @@ import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/storage.dart';
 
 abstract class ITournamentsBookmarksService {
+  Future<Iterable<String>> getAll();
+
   Future<bool> isBookmarked(TournamentInfo info);
 
   Future<void> addToBookmarks(TournamentInfo info);
@@ -65,6 +69,16 @@ class TournamentsBookmarksService implements ITournamentsBookmarksService {
       }
     } on Exception catch (e, s) {
       _crashService.recordException(e, stackTrace: s);
+    }
+  }
+
+  @override
+  Future<Iterable<String>> getAll() async {
+    try {
+      return await _localStorage.getAllValues<String>(_tableName);
+    } on Exception catch (e, s) {
+      _crashService.recordException(e, stackTrace: s);
+      return const Iterable<String>.empty();
     }
   }
 }
