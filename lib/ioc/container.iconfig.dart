@@ -27,6 +27,7 @@ import 'package:what_when_where/services/sound.dart';
 import 'package:what_when_where/data/status/tournaments_bookmarks.dart';
 import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/data/status/tournaments_history.dart';
+import 'package:what_when_where/data/cache/tournaments_permanent_cache.dart';
 import 'package:what_when_where/data/cache/tournaments_tree_cache.dart';
 import 'package:what_when_where/data/cache/tours_cache.dart';
 import 'package:what_when_where/services/url_launcher.dart';
@@ -100,6 +101,10 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<ITournamentsCache>(() => TournamentsCache());
   g.registerLazySingleton<ITournamentsHistoryService>(() =>
       TournamentsHistoryService(
+          localStorage: g<ILocalStorageService>(),
+          crashService: g<ICrashService>()));
+  g.registerLazySingleton<ITournamentsPermanentCache>(() =>
+      TournamentsPermanentCache(
           localStorage: g<ILocalStorageService>(),
           crashService: g<ICrashService>()));
   g.registerLazySingleton<ITournamentsTreeCache>(() => TournamentsTreeCache());
