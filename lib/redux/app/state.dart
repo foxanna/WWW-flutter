@@ -1,3 +1,4 @@
+import 'package:what_when_where/redux/bookmarks/state.dart';
 import 'package:what_when_where/redux/initialization/state.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/redux/questions/state.dart';
@@ -25,5 +26,6 @@ abstract class AppState with _$AppState {
     SettingsState settingsState,
     TournamentsTreeState tournamentsTreeState,
     InitializationState initializationState,
+    BookmarksState bookmarksState,
   }) = _AppState;
 }

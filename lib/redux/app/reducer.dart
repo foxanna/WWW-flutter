@@ -1,5 +1,6 @@
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/bookmarks/reducer.dart';
 import 'package:what_when_where/redux/initialization/reducer.dart';
 import 'package:what_when_where/redux/latest/reducer.dart';
 import 'package:what_when_where/redux/questions/reducer.dart';
@@ -29,5 +30,6 @@ class AppReducer {
             TournamentsTreeReducer.reduce(state.tournamentsTreeState, action),
         initializationState:
             InitializationReducer.reduce(state.initializationState, action),
+        bookmarksState: BookmarksReducer.reduce(state.bookmarksState, action),
       );
 }

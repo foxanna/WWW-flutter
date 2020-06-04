@@ -21,7 +21,8 @@ class _$AppStateTearOff {
       SearchState searchState,
       SettingsState settingsState,
       TournamentsTreeState tournamentsTreeState,
-      InitializationState initializationState}) {
+      InitializationState initializationState,
+      BookmarksState bookmarksState}) {
     return _AppState(
       timerState: timerState,
       questionsState: questionsState,
@@ -32,6 +33,7 @@ class _$AppStateTearOff {
       settingsState: settingsState,
       tournamentsTreeState: tournamentsTreeState,
       initializationState: initializationState,
+      bookmarksState: bookmarksState,
     );
   }
 }
@@ -49,6 +51,7 @@ mixin _$AppState {
   SettingsState get settingsState;
   TournamentsTreeState get tournamentsTreeState;
   InitializationState get initializationState;
+  BookmarksState get bookmarksState;
 
   $AppStateCopyWith<AppState> get copyWith;
 }
@@ -65,7 +68,8 @@ abstract class $AppStateCopyWith<$Res> {
       SearchState searchState,
       SettingsState settingsState,
       TournamentsTreeState tournamentsTreeState,
-      InitializationState initializationState});
+      InitializationState initializationState,
+      BookmarksState bookmarksState});
 
   $TimerStateCopyWith<$Res> get timerState;
   $QuestionsStateCopyWith<$Res> get questionsState;
@@ -76,6 +80,7 @@ abstract class $AppStateCopyWith<$Res> {
   $SettingsStateCopyWith<$Res> get settingsState;
   $TournamentsTreeStateCopyWith<$Res> get tournamentsTreeState;
   $InitializationStateCopyWith<$Res> get initializationState;
+  $BookmarksStateCopyWith<$Res> get bookmarksState;
 }
 
 class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
@@ -96,6 +101,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
     Object settingsState = freezed,
     Object tournamentsTreeState = freezed,
     Object initializationState = freezed,
+    Object bookmarksState = freezed,
   }) {
     return _then(_value.copyWith(
       timerState:
@@ -123,6 +129,9 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       initializationState: initializationState == freezed
           ? _value.initializationState
           : initializationState as InitializationState,
+      bookmarksState: bookmarksState == freezed
+          ? _value.bookmarksState
+          : bookmarksState as BookmarksState,
     ));
   }
 
@@ -218,6 +227,16 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       return _then(_value.copyWith(initializationState: value));
     });
   }
+
+  @override
+  $BookmarksStateCopyWith<$Res> get bookmarksState {
+    if (_value.bookmarksState == null) {
+      return null;
+    }
+    return $BookmarksStateCopyWith<$Res>(_value.bookmarksState, (value) {
+      return _then(_value.copyWith(bookmarksState: value));
+    });
+  }
 }
 
 abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
@@ -233,7 +252,8 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
       SearchState searchState,
       SettingsState settingsState,
       TournamentsTreeState tournamentsTreeState,
-      InitializationState initializationState});
+      InitializationState initializationState,
+      BookmarksState bookmarksState});
 
   @override
   $TimerStateCopyWith<$Res> get timerState;
@@ -253,6 +273,8 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $TournamentsTreeStateCopyWith<$Res> get tournamentsTreeState;
   @override
   $InitializationStateCopyWith<$Res> get initializationState;
+  @override
+  $BookmarksStateCopyWith<$Res> get bookmarksState;
 }
 
 class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
@@ -274,6 +296,7 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
     Object settingsState = freezed,
     Object tournamentsTreeState = freezed,
     Object initializationState = freezed,
+    Object bookmarksState = freezed,
   }) {
     return _then(_AppState(
       timerState:
@@ -301,6 +324,9 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
       initializationState: initializationState == freezed
           ? _value.initializationState
           : initializationState as InitializationState,
+      bookmarksState: bookmarksState == freezed
+          ? _value.bookmarksState
+          : bookmarksState as BookmarksState,
     ));
   }
 }
@@ -315,7 +341,8 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
       this.searchState,
       this.settingsState,
       this.tournamentsTreeState,
-      this.initializationState});
+      this.initializationState,
+      this.bookmarksState});
 
   @override
   final TimerState timerState;
@@ -335,10 +362,12 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
   final TournamentsTreeState tournamentsTreeState;
   @override
   final InitializationState initializationState;
+  @override
+  final BookmarksState bookmarksState;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AppState(timerState: $timerState, questionsState: $questionsState, toursState: $toursState, tournamentState: $tournamentState, latestTournamentsState: $latestTournamentsState, searchState: $searchState, settingsState: $settingsState, tournamentsTreeState: $tournamentsTreeState, initializationState: $initializationState)';
+    return 'AppState(timerState: $timerState, questionsState: $questionsState, toursState: $toursState, tournamentState: $tournamentState, latestTournamentsState: $latestTournamentsState, searchState: $searchState, settingsState: $settingsState, tournamentsTreeState: $tournamentsTreeState, initializationState: $initializationState, bookmarksState: $bookmarksState)';
   }
 
   @override
@@ -355,7 +384,8 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
       ..add(DiagnosticsProperty('searchState', searchState))
       ..add(DiagnosticsProperty('settingsState', settingsState))
       ..add(DiagnosticsProperty('tournamentsTreeState', tournamentsTreeState))
-      ..add(DiagnosticsProperty('initializationState', initializationState));
+      ..add(DiagnosticsProperty('initializationState', initializationState))
+      ..add(DiagnosticsProperty('bookmarksState', bookmarksState));
   }
 
   @override
@@ -388,7 +418,10 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
                     other.tournamentsTreeState, tournamentsTreeState)) &&
             (identical(other.initializationState, initializationState) ||
                 const DeepCollectionEquality()
-                    .equals(other.initializationState, initializationState)));
+                    .equals(other.initializationState, initializationState)) &&
+            (identical(other.bookmarksState, bookmarksState) ||
+                const DeepCollectionEquality()
+                    .equals(other.bookmarksState, bookmarksState)));
   }
 
   @override
@@ -402,7 +435,8 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
       const DeepCollectionEquality().hash(searchState) ^
       const DeepCollectionEquality().hash(settingsState) ^
       const DeepCollectionEquality().hash(tournamentsTreeState) ^
-      const DeepCollectionEquality().hash(initializationState);
+      const DeepCollectionEquality().hash(initializationState) ^
+      const DeepCollectionEquality().hash(bookmarksState);
 
   @override
   _$AppStateCopyWith<_AppState> get copyWith =>
@@ -419,7 +453,8 @@ abstract class _AppState implements AppState {
       SearchState searchState,
       SettingsState settingsState,
       TournamentsTreeState tournamentsTreeState,
-      InitializationState initializationState}) = _$_AppState;
+      InitializationState initializationState,
+      BookmarksState bookmarksState}) = _$_AppState;
 
   @override
   TimerState get timerState;
@@ -439,6 +474,8 @@ abstract class _AppState implements AppState {
   TournamentsTreeState get tournamentsTreeState;
   @override
   InitializationState get initializationState;
+  @override
+  BookmarksState get bookmarksState;
   @override
   _$AppStateCopyWith<_AppState> get copyWith;
 }

@@ -21,5 +21,6 @@ class BookmarksMiddleware {
     next(action);
 
     store.dispatch(const SystemActionNavigation.bookmarks());
+    store.dispatch(const SystemActionBookmarks.init());
   }
 }

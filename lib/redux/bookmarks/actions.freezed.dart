@@ -86,15 +86,42 @@ abstract class OpenBookmarksUserAction implements UserActionBookmarks {
 class _$SystemActionBookmarksTearOff {
   const _$SystemActionBookmarksTearOff();
 
-  DummyBookmarksSystemAction dummy() {
-    return const DummyBookmarksSystemAction();
+  InitBookmarksSystemAction init() {
+    return const InitBookmarksSystemAction();
+  }
+
+  DeInitBookmarksSystemAction deInit() {
+    return const DeInitBookmarksSystemAction();
   }
 }
 
 // ignore: unused_element
 const $SystemActionBookmarks = _$SystemActionBookmarksTearOff();
 
-mixin _$SystemActionBookmarks {}
+mixin _$SystemActionBookmarks {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitBookmarksSystemAction value),
+    @required Result deInit(DeInitBookmarksSystemAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitBookmarksSystemAction value),
+    Result deInit(DeInitBookmarksSystemAction value),
+    @required Result orElse(),
+  });
+}
 
 abstract class $SystemActionBookmarksCopyWith<$Res> {
   factory $SystemActionBookmarksCopyWith(SystemActionBookmarks value,
@@ -111,49 +138,198 @@ class _$SystemActionBookmarksCopyWithImpl<$Res>
   final $Res Function(SystemActionBookmarks) _then;
 }
 
-abstract class $DummyBookmarksSystemActionCopyWith<$Res> {
-  factory $DummyBookmarksSystemActionCopyWith(DummyBookmarksSystemAction value,
-          $Res Function(DummyBookmarksSystemAction) then) =
-      _$DummyBookmarksSystemActionCopyWithImpl<$Res>;
+abstract class $InitBookmarksSystemActionCopyWith<$Res> {
+  factory $InitBookmarksSystemActionCopyWith(InitBookmarksSystemAction value,
+          $Res Function(InitBookmarksSystemAction) then) =
+      _$InitBookmarksSystemActionCopyWithImpl<$Res>;
 }
 
-class _$DummyBookmarksSystemActionCopyWithImpl<$Res>
+class _$InitBookmarksSystemActionCopyWithImpl<$Res>
     extends _$SystemActionBookmarksCopyWithImpl<$Res>
-    implements $DummyBookmarksSystemActionCopyWith<$Res> {
-  _$DummyBookmarksSystemActionCopyWithImpl(DummyBookmarksSystemAction _value,
-      $Res Function(DummyBookmarksSystemAction) _then)
-      : super(_value, (v) => _then(v as DummyBookmarksSystemAction));
+    implements $InitBookmarksSystemActionCopyWith<$Res> {
+  _$InitBookmarksSystemActionCopyWithImpl(InitBookmarksSystemAction _value,
+      $Res Function(InitBookmarksSystemAction) _then)
+      : super(_value, (v) => _then(v as InitBookmarksSystemAction));
 
   @override
-  DummyBookmarksSystemAction get _value =>
-      super._value as DummyBookmarksSystemAction;
+  InitBookmarksSystemAction get _value =>
+      super._value as InitBookmarksSystemAction;
 }
 
-class _$DummyBookmarksSystemAction
+class _$InitBookmarksSystemAction
     with DiagnosticableTreeMixin
-    implements DummyBookmarksSystemAction {
-  const _$DummyBookmarksSystemAction();
+    implements InitBookmarksSystemAction {
+  const _$InitBookmarksSystemAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SystemActionBookmarks.dummy()';
+    return 'SystemActionBookmarks.init()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SystemActionBookmarks.dummy'));
+    properties..add(DiagnosticsProperty('type', 'SystemActionBookmarks.init'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DummyBookmarksSystemAction);
+    return identical(this, other) || (other is InitBookmarksSystemAction);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitBookmarksSystemAction value),
+    @required Result deInit(DeInitBookmarksSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitBookmarksSystemAction value),
+    Result deInit(DeInitBookmarksSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class DummyBookmarksSystemAction implements SystemActionBookmarks {
-  const factory DummyBookmarksSystemAction() = _$DummyBookmarksSystemAction;
+abstract class InitBookmarksSystemAction implements SystemActionBookmarks {
+  const factory InitBookmarksSystemAction() = _$InitBookmarksSystemAction;
+}
+
+abstract class $DeInitBookmarksSystemActionCopyWith<$Res> {
+  factory $DeInitBookmarksSystemActionCopyWith(
+          DeInitBookmarksSystemAction value,
+          $Res Function(DeInitBookmarksSystemAction) then) =
+      _$DeInitBookmarksSystemActionCopyWithImpl<$Res>;
+}
+
+class _$DeInitBookmarksSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionBookmarksCopyWithImpl<$Res>
+    implements $DeInitBookmarksSystemActionCopyWith<$Res> {
+  _$DeInitBookmarksSystemActionCopyWithImpl(DeInitBookmarksSystemAction _value,
+      $Res Function(DeInitBookmarksSystemAction) _then)
+      : super(_value, (v) => _then(v as DeInitBookmarksSystemAction));
+
+  @override
+  DeInitBookmarksSystemAction get _value =>
+      super._value as DeInitBookmarksSystemAction;
+}
+
+class _$DeInitBookmarksSystemAction
+    with DiagnosticableTreeMixin
+    implements DeInitBookmarksSystemAction {
+  const _$DeInitBookmarksSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionBookmarks.deInit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SystemActionBookmarks.deInit'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is DeInitBookmarksSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+    @required Result deInit(),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    Result deInit(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitBookmarksSystemAction value),
+    @required Result deInit(DeInitBookmarksSystemAction value),
+  }) {
+    assert(init != null);
+    assert(deInit != null);
+    return deInit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitBookmarksSystemAction value),
+    Result deInit(DeInitBookmarksSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deInit != null) {
+      return deInit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeInitBookmarksSystemAction implements SystemActionBookmarks {
+  const factory DeInitBookmarksSystemAction() = _$DeInitBookmarksSystemAction;
 }

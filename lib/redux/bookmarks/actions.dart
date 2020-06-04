@@ -17,5 +17,7 @@ abstract class UserActionBookmarks
 abstract class SystemActionBookmarks
     with _$SystemActionBookmarks
     implements BookmarksAction {
-  const factory SystemActionBookmarks.dummy() = DummyBookmarksSystemAction;
+  const factory SystemActionBookmarks.init() = InitBookmarksSystemAction;
+
+  const factory SystemActionBookmarks.deInit() = DeInitBookmarksSystemAction;
 }
