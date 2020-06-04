@@ -16,9 +16,9 @@ class _$BookmarksStateTearOff {
     return const InitialBookmarksState();
   }
 
-  DataBookmarksState data({@required List<Tournament> tournaments}) {
+  DataBookmarksState data({@required List<Tournament> data}) {
     return DataBookmarksState(
-      tournaments: tournaments,
+      data: data,
     );
   }
 
@@ -40,14 +40,14 @@ mixin _$BookmarksState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result data(List<Tournament> tournaments),
+    @required Result data(List<Tournament> data),
     @required Result loading(),
     @required Result error(Exception exception),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result data(List<Tournament> tournaments),
+    Result data(List<Tournament> data),
     Result loading(),
     Result error(Exception exception),
     @required Result orElse(),
@@ -129,7 +129,7 @@ class _$InitialBookmarksState
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result data(List<Tournament> tournaments),
+    @required Result data(List<Tournament> data),
     @required Result loading(),
     @required Result error(Exception exception),
   }) {
@@ -144,7 +144,7 @@ class _$InitialBookmarksState
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result data(List<Tournament> tournaments),
+    Result data(List<Tournament> data),
     Result loading(),
     Result error(Exception exception),
     @required Result orElse(),
@@ -196,7 +196,7 @@ abstract class $DataBookmarksStateCopyWith<$Res> {
   factory $DataBookmarksStateCopyWith(
           DataBookmarksState value, $Res Function(DataBookmarksState) then) =
       _$DataBookmarksStateCopyWithImpl<$Res>;
-  $Res call({List<Tournament> tournaments});
+  $Res call({List<Tournament> data});
 }
 
 class _$DataBookmarksStateCopyWithImpl<$Res>
@@ -211,12 +211,10 @@ class _$DataBookmarksStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournaments = freezed,
+    Object data = freezed,
   }) {
     return _then(DataBookmarksState(
-      tournaments: tournaments == freezed
-          ? _value.tournaments
-          : tournaments as List<Tournament>,
+      data: data == freezed ? _value.data : data as List<Tournament>,
     ));
   }
 }
@@ -224,15 +222,14 @@ class _$DataBookmarksStateCopyWithImpl<$Res>
 class _$DataBookmarksState
     with DiagnosticableTreeMixin
     implements DataBookmarksState {
-  const _$DataBookmarksState({@required this.tournaments})
-      : assert(tournaments != null);
+  const _$DataBookmarksState({@required this.data}) : assert(data != null);
 
   @override
-  final List<Tournament> tournaments;
+  final List<Tournament> data;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BookmarksState.data(tournaments: $tournaments)';
+    return 'BookmarksState.data(data: $data)';
   }
 
   @override
@@ -240,21 +237,20 @@ class _$DataBookmarksState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'BookmarksState.data'))
-      ..add(DiagnosticsProperty('tournaments', tournaments));
+      ..add(DiagnosticsProperty('data', data));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is DataBookmarksState &&
-            (identical(other.tournaments, tournaments) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournaments, tournaments)));
+            (identical(other.data, data) ||
+                const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournaments);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @override
   $DataBookmarksStateCopyWith<DataBookmarksState> get copyWith =>
@@ -264,7 +260,7 @@ class _$DataBookmarksState
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result data(List<Tournament> tournaments),
+    @required Result data(List<Tournament> data),
     @required Result loading(),
     @required Result error(Exception exception),
   }) {
@@ -272,21 +268,21 @@ class _$DataBookmarksState
     assert(data != null);
     assert(loading != null);
     assert(error != null);
-    return data(tournaments);
+    return data(this.data);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result data(List<Tournament> tournaments),
+    Result data(List<Tournament> data),
     Result loading(),
     Result error(Exception exception),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (data != null) {
-      return data(tournaments);
+      return data(this.data);
     }
     return orElse();
   }
@@ -324,10 +320,10 @@ class _$DataBookmarksState
 }
 
 abstract class DataBookmarksState implements BookmarksState {
-  const factory DataBookmarksState({@required List<Tournament> tournaments}) =
+  const factory DataBookmarksState({@required List<Tournament> data}) =
       _$DataBookmarksState;
 
-  List<Tournament> get tournaments;
+  List<Tournament> get data;
   $DataBookmarksStateCopyWith<DataBookmarksState> get copyWith;
 }
 
@@ -376,7 +372,7 @@ class _$LoadingBookmarksState
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result data(List<Tournament> tournaments),
+    @required Result data(List<Tournament> data),
     @required Result loading(),
     @required Result error(Exception exception),
   }) {
@@ -391,7 +387,7 @@ class _$LoadingBookmarksState
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result data(List<Tournament> tournaments),
+    Result data(List<Tournament> data),
     Result loading(),
     Result error(Exception exception),
     @required Result orElse(),
@@ -510,7 +506,7 @@ class _$ErrorBookmarksState
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result data(List<Tournament> tournaments),
+    @required Result data(List<Tournament> data),
     @required Result loading(),
     @required Result error(Exception exception),
   }) {
@@ -525,7 +521,7 @@ class _$ErrorBookmarksState
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result data(List<Tournament> tournaments),
+    Result data(List<Tournament> data),
     Result loading(),
     Result error(Exception exception),
     @required Result orElse(),

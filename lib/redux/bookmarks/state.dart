@@ -9,7 +9,7 @@ abstract class BookmarksState with _$BookmarksState {
   const factory BookmarksState.initial() = InitialBookmarksState;
 
   const factory BookmarksState.data({
-    @required List<Tournament> tournaments,
+    @required List<Tournament> data,
   }) = DataBookmarksState;
 
   const factory BookmarksState.loading() = LoadingBookmarksState;
@@ -17,4 +17,13 @@ abstract class BookmarksState with _$BookmarksState {
   const factory BookmarksState.error({
     @required Exception exception,
   }) = ErrorBookmarksState;
+}
+
+extension BookmarksStateX on BookmarksState {
+  List<Tournament> get dataOrEmpty => this.dataOrNull ?? <Tournament>[];
+
+  List<Tournament> get dataOrNull => this.maybeMap(
+        data: (value) => value.data,
+        orElse: () => null,
+      );
 }
