@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/bookmarks/app_bar.dart';
+import 'package:what_when_where/ui/bookmarks/page_content.dart';
 
 class BookmarksRoutePage extends StatelessWidget {
   static const String routeName = 'bookmarks';
@@ -16,6 +17,7 @@ class BookmarksRoutePage extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           slivers: [
             BookmarksPageAppBar(),
+            BookmarksPageContent(),
           ],
         ),
       );
