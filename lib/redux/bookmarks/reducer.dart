@@ -13,6 +13,9 @@ class BookmarksReducer {
     TypedReducer<BookmarksState, DeInitBookmarksSystemAction>(_deInit),
     TypedReducer<BookmarksState, StatusChangedTournamentSystemAction>(
         _statusChanged),
+    TypedReducer<BookmarksState, CompletedBookmarksSystemAction>(_completed),
+    TypedReducer<BookmarksState, LoadingBookmarksSystemAction>(_loading),
+    TypedReducer<BookmarksState, FailedBookmarksSystemAction>(_failed),
   ]);
 
   static BookmarksState reduce(BookmarksState state, ReduxAction action) =>
@@ -54,4 +57,16 @@ class BookmarksReducer {
       orElse: () => state,
     );
   }
+
+  static BookmarksState _completed(
+          BookmarksState state, CompletedBookmarksSystemAction action) =>
+      state != null ? BookmarksState.data(data: action.tournaments) : state;
+
+  static BookmarksState _loading(
+          BookmarksState state, LoadingBookmarksSystemAction action) =>
+      state != null ? const BookmarksState.loading() : state;
+
+  static BookmarksState _failed(
+          BookmarksState state, FailedBookmarksSystemAction action) =>
+      state != null ? BookmarksState.error(exception: action.exception) : state;
 }
