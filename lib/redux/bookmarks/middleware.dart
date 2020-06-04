@@ -14,6 +14,7 @@ class BookmarksMiddleware {
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenBookmarksUserAction>(_open),
+        TypedMiddleware<AppState, CloseBookmarksUserAction>(_close),
       ];
 
   void _open(Store<AppState> store, OpenBookmarksUserAction action,
@@ -22,5 +23,12 @@ class BookmarksMiddleware {
 
     store.dispatch(const SystemActionNavigation.bookmarks());
     store.dispatch(const SystemActionBookmarks.init());
+  }
+
+  void _close(Store<AppState> store, CloseBookmarksUserAction action,
+      NextDispatcher next) {
+    next(action);
+
+    store.dispatch(const SystemActionBookmarks.deInit());
   }
 }
