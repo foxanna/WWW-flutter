@@ -233,6 +233,7 @@ void $initGetIt(GetIt g, {String environment}) {
         provider: g<ITournamentDetailsProvider>(),
         historyService: g<ITournamentsHistoryService>(),
         tournamentsBookmarksService: g<ITournamentsBookmarksService>(),
+        tournamentsPermanentCache: g<ITournamentsPermanentCache>(),
       ));
 }
 

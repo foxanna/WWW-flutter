@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:dartx/dartx.dart';
+import 'package:what_when_where/data/cache/tournaments_permanent_cache.dart';
 import 'package:what_when_where/data/status/tournaments_bookmarks.dart';
 import 'package:what_when_where/data/status/tournaments_history.dart';
 import 'package:what_when_where/data/tournament_details_provider.dart';
@@ -17,6 +18,7 @@ class TournamentMiddleware {
   final ITournamentDetailsProvider _provider;
   final ITournamentsHistoryService _historyService;
   final ITournamentsBookmarksService _tournamentsBookmarksService;
+  final ITournamentsPermanentCache _tournamentsPermanentCache;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
@@ -26,9 +28,11 @@ class TournamentMiddleware {
     ITournamentDetailsProvider provider,
     ITournamentsHistoryService historyService,
     ITournamentsBookmarksService tournamentsBookmarksService,
+    ITournamentsPermanentCache tournamentsPermanentCache,
   })  : _provider = provider,
         _historyService = historyService,
-        _tournamentsBookmarksService = tournamentsBookmarksService;
+        _tournamentsBookmarksService = tournamentsBookmarksService,
+        _tournamentsPermanentCache = tournamentsPermanentCache;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentUserAction>(_open),
@@ -140,6 +144,7 @@ class TournamentMiddleware {
         status: state.status.copyWith(isBookmarked: true),
       ));
 
+      await _tournamentsPermanentCache.save(state.tournament);
       await _tournamentsBookmarksService.addToBookmarks(state.info);
     }
   }
@@ -161,6 +166,7 @@ class TournamentMiddleware {
       status: state.status.copyWith(isBookmarked: false),
     ));
 
+    await _tournamentsPermanentCache.delete(state.info);
     await _tournamentsBookmarksService.removeFromBookmarks(state.info);
   }
 
