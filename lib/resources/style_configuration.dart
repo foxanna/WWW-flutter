@@ -23,6 +23,8 @@ class StyleConfiguration {
         aboutStyleConfiguration: AboutStyleConfiguration(context: context),
         imageStyleConfiguration: ImageStyleConfiguration(context: context),
         searchStyleConfiguration: SearchStyleConfiguration(context: context),
+        bookmarksStyleConfiguration:
+            BookmarksStyleConfiguration(context: context),
       );
 
   const StyleConfiguration._({
@@ -36,6 +38,7 @@ class StyleConfiguration {
     this.aboutStyleConfiguration,
     this.imageStyleConfiguration,
     this.searchStyleConfiguration,
+    this.bookmarksStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
@@ -48,6 +51,7 @@ class StyleConfiguration {
   final AboutStyleConfiguration aboutStyleConfiguration;
   final ImageStyleConfiguration imageStyleConfiguration;
   final SearchStyleConfiguration searchStyleConfiguration;
+  final BookmarksStyleConfiguration bookmarksStyleConfiguration;
 
   static StyleConfiguration of(BuildContext context) {
     final styleConfigurationInheritedWidget =
@@ -520,6 +524,31 @@ class SearchStyleConfiguration {
   final double appBarElevation;
   final TextStyle searchFieldTextStyle;
   final TextStyle noResultsTextStyle;
+  final int stubTournamentsCount;
+  final Color errorColor;
+}
+
+class BookmarksStyleConfiguration {
+  factory BookmarksStyleConfiguration({@required BuildContext context}) {
+    final theme = Theme.of(context);
+
+    return BookmarksStyleConfiguration._(
+      scaffoldBackground: theme.primaryColor,
+      errorColor: theme.primaryIconTheme.color,
+      appBarIconTheme: theme.primaryIconTheme,
+      stubTournamentsCount: 20,
+    );
+  }
+
+  const BookmarksStyleConfiguration._({
+    this.scaffoldBackground,
+    this.appBarIconTheme,
+    this.stubTournamentsCount,
+    this.errorColor,
+  });
+
+  final Color scaffoldBackground;
+  final IconThemeData appBarIconTheme;
   final int stubTournamentsCount;
   final Color errorColor;
 }
