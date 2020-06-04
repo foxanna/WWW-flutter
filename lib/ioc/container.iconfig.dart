@@ -37,7 +37,6 @@ import 'package:what_when_where/redux/initialization/middleware.dart';
 import 'package:what_when_where/redux/logs/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/rating/middleware.dart';
-import 'package:what_when_where/redux/services/middleware.dart';
 import 'package:what_when_where/redux/settings/middleware.dart';
 import 'package:what_when_where/redux/sharing/middleware.dart';
 import 'package:what_when_where/redux/timer/middleware.dart';
@@ -46,6 +45,7 @@ import 'package:what_when_where/redux/app/middleware.dart';
 import 'package:what_when_where/redux/browsing/middleware.dart';
 import 'package:what_when_where/redux/developer/middleware.dart';
 import 'package:what_when_where/redux/dialogs/middleware.dart';
+import 'package:what_when_where/data/cache/cache_synchronizer.dart';
 import 'package:what_when_where/api/loaders/random_questions_loader.dart';
 import 'package:what_when_where/data/random_questions_provider.dart';
 import 'package:what_when_where/api/loaders/search_loader.dart';
@@ -56,6 +56,7 @@ import 'package:what_when_where/data/status/tournament_status.dart';
 import 'package:what_when_where/api/loaders/tournaments_tree_loader.dart';
 import 'package:what_when_where/data/tournaments_tree_provider.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
+import 'package:what_when_where/redux/services/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
 import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/app/store.dart';
@@ -121,12 +122,6 @@ void $initGetIt(GetIt g, {String environment}) {
         ratingService: g<IRatingService>(),
         crashService: g<ICrashService>(),
       ));
-  g.registerFactory<ServicesMiddleware>(() => ServicesMiddleware(
-        crashService: g<ICrashService>(),
-        soundService: g<ISoundService>(),
-        backgroundService: g<IBackgroundRunnerService>(),
-        localStorageService: g<ILocalStorageService>(),
-      ));
   g.registerFactory<SettingsMiddleware>(
       () => SettingsMiddleware(preferences: g<IPreferences>()));
   g.registerFactory<ShareMiddleware>(
@@ -144,6 +139,11 @@ void $initGetIt(GetIt g, {String environment}) {
       () => DeveloperMiddleware(urlLauncher: g<IUrlLauncher>()));
   g.registerFactory<DialogMiddleware>(
       () => DialogMiddleware(dialogService: g<IDialogService>()));
+  g.registerLazySingleton<ICacheSynchronizer>(() => CacheSynchronizer(
+        tournamentsPermanentCache: g<ITournamentsPermanentCache>(),
+        tournamentsCache: g<ITournamentsCache>(),
+        toursCache: g<IToursCache>(),
+      ));
   g.registerLazySingleton<IRandomQuestionsLoader>(() => RandomQuestionsLoader(
         httpClient: g<IHttpClient>(),
         parser: g<IXmlToJsonParser>(),
@@ -193,6 +193,13 @@ void $initGetIt(GetIt g, {String environment}) {
           ));
   g.registerFactory<QuestionsMiddleware>(
       () => QuestionsMiddleware(provider: g<IRandomQuestionsProvider>()));
+  g.registerFactory<ServicesMiddleware>(() => ServicesMiddleware(
+        crashService: g<ICrashService>(),
+        soundService: g<ISoundService>(),
+        backgroundService: g<IBackgroundRunnerService>(),
+        localStorageService: g<ILocalStorageService>(),
+        cacheSynchronizer: g<ICacheSynchronizer>(),
+      ));
   g.registerFactory<TournamentsTreeMiddleware>(
       () => TournamentsTreeMiddleware(provider: g<ITournamentsTreeProvider>()));
   g.registerFactory<ToursMiddleware>(

@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
+import 'package:what_when_where/data/cache/cache_synchronizer.dart';
 import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/services/actions.dart';
@@ -15,6 +16,7 @@ class ServicesMiddleware {
   final ISoundService _soundService;
   final IBackgroundRunnerService _backgroundService;
   final ILocalStorageService _localStorageService;
+  final ICacheSynchronizer _cacheSynchronizer;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
@@ -25,10 +27,12 @@ class ServicesMiddleware {
     ISoundService soundService,
     IBackgroundRunnerService backgroundService,
     ILocalStorageService localStorageService,
+    ICacheSynchronizer cacheSynchronizer,
   })  : _crashService = crashService,
         _soundService = soundService,
         _backgroundService = backgroundService,
-        _localStorageService = localStorageService;
+        _localStorageService = localStorageService,
+        _cacheSynchronizer = cacheSynchronizer;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, InitInitializationAction>(_init),
@@ -43,6 +47,7 @@ class ServicesMiddleware {
       await _soundService.init();
       await _backgroundService.init();
       await _localStorageService.init();
+      await _cacheSynchronizer.init();
 
       store.dispatch(const SystemActionServices.ready());
     } catch (error) {
