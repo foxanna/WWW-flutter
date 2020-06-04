@@ -25,13 +25,11 @@ abstract class UserActionTournament
     @required TournamentInfo info,
   }) = LoadTournamentUserAction;
 
-  const factory UserActionTournament.addToBookmarks({
-    @required TournamentInfo info,
-  }) = AddToBookmarksTournamentUserAction;
+  const factory UserActionTournament.addToBookmarks() =
+      AddToBookmarksTournamentUserAction;
 
-  const factory UserActionTournament.removeFromBookmarks({
-    @required TournamentInfo info,
-  }) = RemoveFromBookmarksTournamentUserAction;
+  const factory UserActionTournament.removeFromBookmarks() =
+      RemoveFromBookmarksTournamentUserAction;
 }
 
 @freezed

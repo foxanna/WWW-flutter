@@ -134,12 +134,14 @@ class TournamentMiddleware {
       return;
     }
 
-    store.dispatch(SystemActionTournament.statusChanged(
-      info: action.info,
-      status: state.status.copyWith(isBookmarked: true),
-    ));
+    if (state is DataTournamentState && state.toursLoaded) {
+      store.dispatch(SystemActionTournament.statusChanged(
+        info: state.info,
+        status: state.status.copyWith(isBookmarked: true),
+      ));
 
-    await _tournamentsBookmarksService.addToBookmarks(action.info);
+      await _tournamentsBookmarksService.addToBookmarks(state.info);
+    }
   }
 
   Future<void> _removeFromBookmarks(
@@ -155,11 +157,11 @@ class TournamentMiddleware {
     }
 
     store.dispatch(SystemActionTournament.statusChanged(
-      info: action.info,
+      info: state.info,
       status: state.status.copyWith(isBookmarked: false),
     ));
 
-    await _tournamentsBookmarksService.removeFromBookmarks(action.info);
+    await _tournamentsBookmarksService.removeFromBookmarks(state.info);
   }
 
   void _tourCompleted(Store<AppState> store, CompletedToursSystemAction action,

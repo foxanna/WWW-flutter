@@ -24,19 +24,18 @@ class TournamentDetailsBookmarkTournamentBottomSheetItem
                   Navigator.pop(context);
 
                   StoreProvider.of<AppState>(context).dispatch(
-                      UserActionTournament.removeFromBookmarks(
-                          info: state.info));
+                      const UserActionTournament.removeFromBookmarks());
                 },
               )
             : ListTile(
-                enabled: state is DataTournamentState,
+                enabled: state is DataTournamentState && state.toursLoaded,
                 leading: const Icon(Icons.bookmark_border),
                 title: Text(WWWLocalizations.of(context).menuBookmarksAdd),
                 onTap: () {
                   Navigator.pop(context);
 
-                  StoreProvider.of<AppState>(context).dispatch(
-                      UserActionTournament.addToBookmarks(info: state.info));
+                  StoreProvider.of<AppState>(context)
+                      .dispatch(const UserActionTournament.addToBookmarks());
                 },
               ),
       );
