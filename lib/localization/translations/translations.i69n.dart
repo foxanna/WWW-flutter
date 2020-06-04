@@ -39,6 +39,8 @@ class Translations implements i69n.I69nMessageBundle {
   String get appDeveloperName => "Anna Domashych";
   String get appNameFull => "Sova\nWhat? Where? When?";
   String get bookmarksPageTitle => "Your bookmarks";
+  String get bookmarksEmptyMessage =>
+      "There is nothing here yet\nAdd some tournaments to your bookmarks first";
   String get dialogCloseButton => "close";
   String get downloadAppVia => "Download the application from";
   String get emptySearchResults => "No search results";
@@ -106,6 +108,8 @@ class Translations implements i69n.I69nMessageBundle {
         return appNameFull;
       case 'bookmarksPageTitle':
         return bookmarksPageTitle;
+      case 'bookmarksEmptyMessage':
+        return bookmarksEmptyMessage;
       case 'dialogCloseButton':
         return dialogCloseButton;
       case 'downloadAppVia':

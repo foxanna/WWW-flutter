@@ -2,6 +2,7 @@ appDeveloper: Розробник додатку
 appDeveloperName: Анна Домашич
 appNameFull: "Сова\nЩо? Де? Коли?"
 bookmarksPageTitle: Ващі закладки
+bookmarksEmptyMessage: "Тут поки що порожньо\nСпочатку додайте декілька турнірів до своїх закладок"
 dialogCloseButton: закрити
 downloadAppVia: Завантажуйте додаток з
 emptySearchResults: Нічого не знайдено
