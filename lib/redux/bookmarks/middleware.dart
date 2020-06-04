@@ -1,12 +1,8 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/data/latest_tournaments_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/bookmarks/actions.dart';
-import 'package:what_when_where/redux/latest/actions.dart';
-import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
-import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class BookmarksMiddleware {
