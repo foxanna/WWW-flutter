@@ -40,7 +40,8 @@ class TournamentsPermanentCache implements ITournamentsPermanentCache {
   @override
   Future<void> save(Tournament tournament) async {
     try {
-      await _localStorage.put(_tableName, tournament.info.id, tournament);
+      print(tournament);
+      //await _localStorage.put(_tableName, tournament.info.id, tournament);
     } on Exception catch (e, s) {
       _crashService.recordException(e, stackTrace: s);
     }
@@ -49,7 +50,8 @@ class TournamentsPermanentCache implements ITournamentsPermanentCache {
   @override
   Future<void> delete(TournamentInfo info) async {
     try {
-      await _localStorage.remove(_tableName, info.id);
+      print(info);
+      //await _localStorage.remove(_tableName, info.id);
     } on Exception catch (e, s) {
       _crashService.recordException(e, stackTrace: s);
     }
