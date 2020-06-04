@@ -13,7 +13,7 @@ abstract class ILocalStorageService {
 
   Future<void> remove<T>(String tableName, String key);
 
-  Future<bool> containsKey(String tableName, String key);
+  Future<bool> containsKey<T>(String tableName, String key);
 }
 
 @LazySingleton(as: ILocalStorageService)
@@ -35,19 +35,19 @@ class LocalStorageService implements ILocalStorageService {
 
   @override
   Future<void> put<T>(String tableName, String key, T value) async {
-    final box = await Hive.openBox(tableName);
+    final box = await Hive.openBox<T>(tableName);
     await box.put(key, value);
   }
 
   @override
   Future<void> remove<T>(String tableName, String key) async {
-    final box = await Hive.openBox(tableName);
+    final box = await Hive.openBox<T>(tableName);
     await box.delete(key);
   }
 
   @override
-  Future<bool> containsKey(String tableName, String key) async {
-    final box = await Hive.openBox(tableName);
+  Future<bool> containsKey<T>(String tableName, String key) async {
+    final box = await Hive.openBox<T>(tableName);
     return box.containsKey(key);
   }
 }

@@ -33,9 +33,9 @@ class TournamentsBookmarksService implements ITournamentsBookmarksService {
   Future<bool> isBookmarked(TournamentInfo info) async {
     try {
       final isBookmarked = (info.id.isNotNullOrEmpty &&
-              await _localStorage.containsKey(_tableName, info.id)) ||
+              await _localStorage.containsKey<String>(_tableName, info.id)) ||
           (info.id2.isNotNullOrEmpty &&
-              await _localStorage.containsKey(_tableName, info.id2));
+              await _localStorage.containsKey<String>(_tableName, info.id2));
 
       return isBookmarked;
     } on Exception catch (e, s) {
@@ -48,10 +48,10 @@ class TournamentsBookmarksService implements ITournamentsBookmarksService {
   Future<void> addToBookmarks(TournamentInfo info) async {
     try {
       if (info.id.isNotNullOrEmpty) {
-        await _localStorage.put(_tableName, info.id, info.id);
+        await _localStorage.put<String>(_tableName, info.id, info.id);
       }
       if (info.id2.isNotNullOrEmpty) {
-        await _localStorage.put(_tableName, info.id2, info.id2);
+        await _localStorage.put<String>(_tableName, info.id2, info.id2);
       }
     } on Exception catch (e, s) {
       _crashService.recordException(e, stackTrace: s);
@@ -62,10 +62,10 @@ class TournamentsBookmarksService implements ITournamentsBookmarksService {
   Future<void> removeFromBookmarks(TournamentInfo info) async {
     try {
       if (info.id.isNotNullOrEmpty) {
-        await _localStorage.remove(_tableName, info.id);
+        await _localStorage.remove<String>(_tableName, info.id);
       }
       if (info.id2.isNotNullOrEmpty) {
-        await _localStorage.remove(_tableName, info.id2);
+        await _localStorage.remove<String>(_tableName, info.id2);
       }
     } on Exception catch (e, s) {
       _crashService.recordException(e, stackTrace: s);
