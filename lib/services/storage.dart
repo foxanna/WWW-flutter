@@ -1,6 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
+import 'package:what_when_where/data/hive/adapters_registry.dart';
 
 abstract class ILocalStorageService {
   Future<void> init();
@@ -19,7 +20,10 @@ abstract class ILocalStorageService {
 @LazySingleton(as: ILocalStorageService)
 class LocalStorageService implements ILocalStorageService {
   @override
-  Future<void> init() => Hive.initFlutter();
+  Future<void> init() async {
+    await Hive.initFlutter();
+    hiveRegisterAdapters();
+  }
 
   @override
   Future<T> get<T>(String tableName, String key) async {
