@@ -1,22 +1,30 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive/hive.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/api/models/tournament_dto.dart';
+import 'package:what_when_where/data/hive/constants.dart';
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
 import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 part 'tournament.freezed.dart';
+part 'tournament.g.dart';
 
 @freezed
+@HiveType(typeId: hiveTournamentTypeId)
 abstract class Tournament with _$Tournament {
   const factory Tournament({
-    String id,
-    String id2,
-    @Default(TournamentInfo()) TournamentInfo info,
-    @Default(TournamentStatus()) TournamentStatus status,
-    @Default(<Tour>[]) List<Tour> tours,
+    @HiveField(hiveTournamentIdFieldId) String id,
+    @HiveField(hiveTournamentId2FieldId) String id2,
+    @HiveField(hiveTournamentInfoFieldId)
+    @Default(TournamentInfo())
+        TournamentInfo info,
+    @HiveField(hiveTournamentStatusFieldId)
+    @Default(TournamentStatus())
+        TournamentStatus status,
+    @HiveField(hiveTournamentToursFieldId) @Default(<Tour>[]) List<Tour> tours,
   }) = _Tournament;
 
   factory Tournament.fromDto(TournamentDto dto) {

@@ -12,7 +12,11 @@ T _$identity<T>(T value) => value;
 class _$TournamentStatusTearOff {
   const _$TournamentStatusTearOff();
 
-  _TournamentStatus call({bool isNew = false, bool isBookmarked = false}) {
+  _TournamentStatus call(
+      {@HiveField(hiveTournamentStatusIsNewFieldId)
+          bool isNew = false,
+      @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
+          bool isBookmarked = false}) {
     return _TournamentStatus(
       isNew: isNew,
       isBookmarked: isBookmarked,
@@ -24,7 +28,9 @@ class _$TournamentStatusTearOff {
 const $TournamentStatus = _$TournamentStatusTearOff();
 
 mixin _$TournamentStatus {
+  @HiveField(hiveTournamentStatusIsNewFieldId)
   bool get isNew;
+  @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
   bool get isBookmarked;
 
   $TournamentStatusCopyWith<TournamentStatus> get copyWith;
@@ -34,7 +40,9 @@ abstract class $TournamentStatusCopyWith<$Res> {
   factory $TournamentStatusCopyWith(
           TournamentStatus value, $Res Function(TournamentStatus) then) =
       _$TournamentStatusCopyWithImpl<$Res>;
-  $Res call({bool isNew, bool isBookmarked});
+  $Res call(
+      {@HiveField(hiveTournamentStatusIsNewFieldId) bool isNew,
+      @HiveField(hiveTournamentStatusIsBookmarkedFieldId) bool isBookmarked});
 }
 
 class _$TournamentStatusCopyWithImpl<$Res>
@@ -64,7 +72,9 @@ abstract class _$TournamentStatusCopyWith<$Res>
           _TournamentStatus value, $Res Function(_TournamentStatus) then) =
       __$TournamentStatusCopyWithImpl<$Res>;
   @override
-  $Res call({bool isNew, bool isBookmarked});
+  $Res call(
+      {@HiveField(hiveTournamentStatusIsNewFieldId) bool isNew,
+      @HiveField(hiveTournamentStatusIsBookmarkedFieldId) bool isBookmarked});
 }
 
 class __$TournamentStatusCopyWithImpl<$Res>
@@ -93,15 +103,21 @@ class __$TournamentStatusCopyWithImpl<$Res>
 class _$_TournamentStatus
     with DiagnosticableTreeMixin
     implements _TournamentStatus {
-  const _$_TournamentStatus({this.isNew = false, this.isBookmarked = false})
+  const _$_TournamentStatus(
+      {@HiveField(hiveTournamentStatusIsNewFieldId)
+          this.isNew = false,
+      @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
+          this.isBookmarked = false})
       : assert(isNew != null),
         assert(isBookmarked != null);
 
   @JsonKey(defaultValue: false)
   @override
+  @HiveField(hiveTournamentStatusIsNewFieldId)
   final bool isNew;
   @JsonKey(defaultValue: false)
   @override
+  @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
   final bool isBookmarked;
 
   @override
@@ -141,12 +157,17 @@ class _$_TournamentStatus
 }
 
 abstract class _TournamentStatus implements TournamentStatus {
-  const factory _TournamentStatus({bool isNew, bool isBookmarked}) =
-      _$_TournamentStatus;
+  const factory _TournamentStatus(
+      {@HiveField(hiveTournamentStatusIsNewFieldId)
+          bool isNew,
+      @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
+          bool isBookmarked}) = _$_TournamentStatus;
 
   @override
+  @HiveField(hiveTournamentStatusIsNewFieldId)
   bool get isNew;
   @override
+  @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
   bool get isBookmarked;
   @override
   _$TournamentStatusCopyWith<_TournamentStatus> get copyWith;

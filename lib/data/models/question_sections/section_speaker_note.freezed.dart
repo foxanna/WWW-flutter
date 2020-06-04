@@ -12,7 +12,8 @@ T _$identity<T>(T value) => value;
 class _$SpeakerNoteSectionTearOff {
   const _$SpeakerNoteSectionTearOff();
 
-  _SpeakerNoteSection fromValue({@required String value}) {
+  _SpeakerNoteSection call(
+      {@required @HiveField(hiveSpeakerNoteSectionValueFieldId) String value}) {
     return _SpeakerNoteSection(
       value: value,
     );
@@ -23,6 +24,7 @@ class _$SpeakerNoteSectionTearOff {
 const $SpeakerNoteSection = _$SpeakerNoteSectionTearOff();
 
 mixin _$SpeakerNoteSection {
+  @HiveField(hiveSpeakerNoteSectionValueFieldId)
   String get value;
 
   $SpeakerNoteSectionCopyWith<SpeakerNoteSection> get copyWith;
@@ -32,7 +34,7 @@ abstract class $SpeakerNoteSectionCopyWith<$Res> {
   factory $SpeakerNoteSectionCopyWith(
           SpeakerNoteSection value, $Res Function(SpeakerNoteSection) then) =
       _$SpeakerNoteSectionCopyWithImpl<$Res>;
-  $Res call({String value});
+  $Res call({@HiveField(hiveSpeakerNoteSectionValueFieldId) String value});
 }
 
 class _$SpeakerNoteSectionCopyWithImpl<$Res>
@@ -59,7 +61,7 @@ abstract class _$SpeakerNoteSectionCopyWith<$Res>
           _SpeakerNoteSection value, $Res Function(_SpeakerNoteSection) then) =
       __$SpeakerNoteSectionCopyWithImpl<$Res>;
   @override
-  $Res call({String value});
+  $Res call({@HiveField(hiveSpeakerNoteSectionValueFieldId) String value});
 }
 
 class __$SpeakerNoteSectionCopyWithImpl<$Res>
@@ -85,21 +87,24 @@ class __$SpeakerNoteSectionCopyWithImpl<$Res>
 class _$_SpeakerNoteSection
     with DiagnosticableTreeMixin
     implements _SpeakerNoteSection {
-  const _$_SpeakerNoteSection({@required this.value}) : assert(value != null);
+  const _$_SpeakerNoteSection(
+      {@required @HiveField(hiveSpeakerNoteSectionValueFieldId) this.value})
+      : assert(value != null);
 
   @override
+  @HiveField(hiveSpeakerNoteSectionValueFieldId)
   final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SpeakerNoteSection.fromValue(value: $value)';
+    return 'SpeakerNoteSection(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SpeakerNoteSection.fromValue'))
+      ..add(DiagnosticsProperty('type', 'SpeakerNoteSection'))
       ..add(DiagnosticsProperty('value', value));
   }
 
@@ -121,10 +126,13 @@ class _$_SpeakerNoteSection
 }
 
 abstract class _SpeakerNoteSection implements SpeakerNoteSection {
-  const factory _SpeakerNoteSection({@required String value}) =
-      _$_SpeakerNoteSection;
+  const factory _SpeakerNoteSection(
+      {@required
+      @HiveField(hiveSpeakerNoteSectionValueFieldId)
+          String value}) = _$_SpeakerNoteSection;
 
   @override
+  @HiveField(hiveSpeakerNoteSectionValueFieldId)
   String get value;
   @override
   _$SpeakerNoteSectionCopyWith<_SpeakerNoteSection> get copyWith;

@@ -13,9 +13,12 @@ class _$TourTearOff {
   const _$TourTearOff();
 
   _Tour call(
-      {String id,
-      TourInfo info = const TourInfo(),
-      List<Question> questions = const <Question>[]}) {
+      {@HiveField(hiveTourIdFieldId)
+          String id,
+      @HiveField(hiveTourInfoFieldId)
+          TourInfo info = const TourInfo(),
+      @HiveField(hiveTourQuestionsFieldId)
+          List<Question> questions = const <Question>[]}) {
     return _Tour(
       id: id,
       info: info,
@@ -28,8 +31,11 @@ class _$TourTearOff {
 const $Tour = _$TourTearOff();
 
 mixin _$Tour {
+  @HiveField(hiveTourIdFieldId)
   String get id;
+  @HiveField(hiveTourInfoFieldId)
   TourInfo get info;
+  @HiveField(hiveTourQuestionsFieldId)
   List<Question> get questions;
 
   $TourCopyWith<Tour> get copyWith;
@@ -38,7 +44,10 @@ mixin _$Tour {
 abstract class $TourCopyWith<$Res> {
   factory $TourCopyWith(Tour value, $Res Function(Tour) then) =
       _$TourCopyWithImpl<$Res>;
-  $Res call({String id, TourInfo info, List<Question> questions});
+  $Res call(
+      {@HiveField(hiveTourIdFieldId) String id,
+      @HiveField(hiveTourInfoFieldId) TourInfo info,
+      @HiveField(hiveTourQuestionsFieldId) List<Question> questions});
 
   $TourInfoCopyWith<$Res> get info;
 }
@@ -79,7 +88,10 @@ abstract class _$TourCopyWith<$Res> implements $TourCopyWith<$Res> {
   factory _$TourCopyWith(_Tour value, $Res Function(_Tour) then) =
       __$TourCopyWithImpl<$Res>;
   @override
-  $Res call({String id, TourInfo info, List<Question> questions});
+  $Res call(
+      {@HiveField(hiveTourIdFieldId) String id,
+      @HiveField(hiveTourInfoFieldId) TourInfo info,
+      @HiveField(hiveTourQuestionsFieldId) List<Question> questions});
 
   @override
   $TourInfoCopyWith<$Res> get info;
@@ -110,19 +122,22 @@ class __$TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res>
 
 class _$_Tour with DiagnosticableTreeMixin implements _Tour {
   const _$_Tour(
-      {this.id,
-      this.info = const TourInfo(),
-      this.questions = const <Question>[]})
+      {@HiveField(hiveTourIdFieldId) this.id,
+      @HiveField(hiveTourInfoFieldId) this.info = const TourInfo(),
+      @HiveField(hiveTourQuestionsFieldId) this.questions = const <Question>[]})
       : assert(info != null),
         assert(questions != null);
 
   @override
+  @HiveField(hiveTourIdFieldId)
   final String id;
   @JsonKey(defaultValue: const TourInfo())
   @override
+  @HiveField(hiveTourInfoFieldId)
   final TourInfo info;
   @JsonKey(defaultValue: const <Question>[])
   @override
+  @HiveField(hiveTourQuestionsFieldId)
   final List<Question> questions;
 
   @override
@@ -166,14 +181,19 @@ class _$_Tour with DiagnosticableTreeMixin implements _Tour {
 }
 
 abstract class _Tour implements Tour {
-  const factory _Tour({String id, TourInfo info, List<Question> questions}) =
-      _$_Tour;
+  const factory _Tour(
+      {@HiveField(hiveTourIdFieldId) String id,
+      @HiveField(hiveTourInfoFieldId) TourInfo info,
+      @HiveField(hiveTourQuestionsFieldId) List<Question> questions}) = _$_Tour;
 
   @override
+  @HiveField(hiveTourIdFieldId)
   String get id;
   @override
+  @HiveField(hiveTourInfoFieldId)
   TourInfo get info;
   @override
+  @HiveField(hiveTourQuestionsFieldId)
   List<Question> get questions;
   @override
   _$TourCopyWith<_Tour> get copyWith;

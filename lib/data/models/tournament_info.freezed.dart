@@ -13,16 +13,16 @@ class _$TournamentInfoTearOff {
   const _$TournamentInfoTearOff();
 
   _TournamentInfo call(
-      {String id,
-      String id2,
-      String title,
-      String questionsCount,
-      String toursCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt}) {
+      {@HiveField(hiveTournamentInfoIdFieldId) String id,
+      @HiveField(hiveTournamentInfoId2FieldId) String id2,
+      @HiveField(hiveTournamentInfoTitleFieldId) String title,
+      @HiveField(hiveTournamentInfoQuestionsCountFieldId) String questionsCount,
+      @HiveField(hiveTournamentInfoToursCountFieldId) String toursCount,
+      @HiveField(hiveTournamentInfoDescriptionFieldId) String description,
+      @HiveField(hiveTournamentInfoUrlFieldId) String url,
+      @HiveField(hiveTournamentInfoEditorsFieldId) String editors,
+      @HiveField(hiveTournamentInfoCreatedAtFieldId) String createdAt,
+      @HiveField(hiveTournamentInfoPlayedAtFieldId) String playedAt}) {
     return _TournamentInfo(
       id: id,
       id2: id2,
@@ -42,15 +42,25 @@ class _$TournamentInfoTearOff {
 const $TournamentInfo = _$TournamentInfoTearOff();
 
 mixin _$TournamentInfo {
+  @HiveField(hiveTournamentInfoIdFieldId)
   String get id;
+  @HiveField(hiveTournamentInfoId2FieldId)
   String get id2;
+  @HiveField(hiveTournamentInfoTitleFieldId)
   String get title;
+  @HiveField(hiveTournamentInfoQuestionsCountFieldId)
   String get questionsCount;
+  @HiveField(hiveTournamentInfoToursCountFieldId)
   String get toursCount;
+  @HiveField(hiveTournamentInfoDescriptionFieldId)
   String get description;
+  @HiveField(hiveTournamentInfoUrlFieldId)
   String get url;
+  @HiveField(hiveTournamentInfoEditorsFieldId)
   String get editors;
+  @HiveField(hiveTournamentInfoCreatedAtFieldId)
   String get createdAt;
+  @HiveField(hiveTournamentInfoPlayedAtFieldId)
   String get playedAt;
 
   $TournamentInfoCopyWith<TournamentInfo> get copyWith;
@@ -61,16 +71,16 @@ abstract class $TournamentInfoCopyWith<$Res> {
           TournamentInfo value, $Res Function(TournamentInfo) then) =
       _$TournamentInfoCopyWithImpl<$Res>;
   $Res call(
-      {String id,
-      String id2,
-      String title,
-      String questionsCount,
-      String toursCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt});
+      {@HiveField(hiveTournamentInfoIdFieldId) String id,
+      @HiveField(hiveTournamentInfoId2FieldId) String id2,
+      @HiveField(hiveTournamentInfoTitleFieldId) String title,
+      @HiveField(hiveTournamentInfoQuestionsCountFieldId) String questionsCount,
+      @HiveField(hiveTournamentInfoToursCountFieldId) String toursCount,
+      @HiveField(hiveTournamentInfoDescriptionFieldId) String description,
+      @HiveField(hiveTournamentInfoUrlFieldId) String url,
+      @HiveField(hiveTournamentInfoEditorsFieldId) String editors,
+      @HiveField(hiveTournamentInfoCreatedAtFieldId) String createdAt,
+      @HiveField(hiveTournamentInfoPlayedAtFieldId) String playedAt});
 }
 
 class _$TournamentInfoCopyWithImpl<$Res>
@@ -120,16 +130,16 @@ abstract class _$TournamentInfoCopyWith<$Res>
       __$TournamentInfoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
-      String id2,
-      String title,
-      String questionsCount,
-      String toursCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt});
+      {@HiveField(hiveTournamentInfoIdFieldId) String id,
+      @HiveField(hiveTournamentInfoId2FieldId) String id2,
+      @HiveField(hiveTournamentInfoTitleFieldId) String title,
+      @HiveField(hiveTournamentInfoQuestionsCountFieldId) String questionsCount,
+      @HiveField(hiveTournamentInfoToursCountFieldId) String toursCount,
+      @HiveField(hiveTournamentInfoDescriptionFieldId) String description,
+      @HiveField(hiveTournamentInfoUrlFieldId) String url,
+      @HiveField(hiveTournamentInfoEditorsFieldId) String editors,
+      @HiveField(hiveTournamentInfoCreatedAtFieldId) String createdAt,
+      @HiveField(hiveTournamentInfoPlayedAtFieldId) String playedAt});
 }
 
 class __$TournamentInfoCopyWithImpl<$Res>
@@ -178,36 +188,46 @@ class _$_TournamentInfo
     with DiagnosticableTreeMixin
     implements _TournamentInfo {
   const _$_TournamentInfo(
-      {this.id,
-      this.id2,
-      this.title,
-      this.questionsCount,
-      this.toursCount,
-      this.description,
-      this.url,
-      this.editors,
-      this.createdAt,
-      this.playedAt});
+      {@HiveField(hiveTournamentInfoIdFieldId) this.id,
+      @HiveField(hiveTournamentInfoId2FieldId) this.id2,
+      @HiveField(hiveTournamentInfoTitleFieldId) this.title,
+      @HiveField(hiveTournamentInfoQuestionsCountFieldId) this.questionsCount,
+      @HiveField(hiveTournamentInfoToursCountFieldId) this.toursCount,
+      @HiveField(hiveTournamentInfoDescriptionFieldId) this.description,
+      @HiveField(hiveTournamentInfoUrlFieldId) this.url,
+      @HiveField(hiveTournamentInfoEditorsFieldId) this.editors,
+      @HiveField(hiveTournamentInfoCreatedAtFieldId) this.createdAt,
+      @HiveField(hiveTournamentInfoPlayedAtFieldId) this.playedAt});
 
   @override
+  @HiveField(hiveTournamentInfoIdFieldId)
   final String id;
   @override
+  @HiveField(hiveTournamentInfoId2FieldId)
   final String id2;
   @override
+  @HiveField(hiveTournamentInfoTitleFieldId)
   final String title;
   @override
+  @HiveField(hiveTournamentInfoQuestionsCountFieldId)
   final String questionsCount;
   @override
+  @HiveField(hiveTournamentInfoToursCountFieldId)
   final String toursCount;
   @override
+  @HiveField(hiveTournamentInfoDescriptionFieldId)
   final String description;
   @override
+  @HiveField(hiveTournamentInfoUrlFieldId)
   final String url;
   @override
+  @HiveField(hiveTournamentInfoEditorsFieldId)
   final String editors;
   @override
+  @HiveField(hiveTournamentInfoCreatedAtFieldId)
   final String createdAt;
   @override
+  @HiveField(hiveTournamentInfoPlayedAtFieldId)
   final String playedAt;
 
   @override
@@ -285,36 +305,56 @@ class _$_TournamentInfo
 
 abstract class _TournamentInfo implements TournamentInfo {
   const factory _TournamentInfo(
-      {String id,
-      String id2,
-      String title,
-      String questionsCount,
-      String toursCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt}) = _$_TournamentInfo;
+      {@HiveField(hiveTournamentInfoIdFieldId)
+          String id,
+      @HiveField(hiveTournamentInfoId2FieldId)
+          String id2,
+      @HiveField(hiveTournamentInfoTitleFieldId)
+          String title,
+      @HiveField(hiveTournamentInfoQuestionsCountFieldId)
+          String questionsCount,
+      @HiveField(hiveTournamentInfoToursCountFieldId)
+          String toursCount,
+      @HiveField(hiveTournamentInfoDescriptionFieldId)
+          String description,
+      @HiveField(hiveTournamentInfoUrlFieldId)
+          String url,
+      @HiveField(hiveTournamentInfoEditorsFieldId)
+          String editors,
+      @HiveField(hiveTournamentInfoCreatedAtFieldId)
+          String createdAt,
+      @HiveField(hiveTournamentInfoPlayedAtFieldId)
+          String playedAt}) = _$_TournamentInfo;
 
   @override
+  @HiveField(hiveTournamentInfoIdFieldId)
   String get id;
   @override
+  @HiveField(hiveTournamentInfoId2FieldId)
   String get id2;
   @override
+  @HiveField(hiveTournamentInfoTitleFieldId)
   String get title;
   @override
+  @HiveField(hiveTournamentInfoQuestionsCountFieldId)
   String get questionsCount;
   @override
+  @HiveField(hiveTournamentInfoToursCountFieldId)
   String get toursCount;
   @override
+  @HiveField(hiveTournamentInfoDescriptionFieldId)
   String get description;
   @override
+  @HiveField(hiveTournamentInfoUrlFieldId)
   String get url;
   @override
+  @HiveField(hiveTournamentInfoEditorsFieldId)
   String get editors;
   @override
+  @HiveField(hiveTournamentInfoCreatedAtFieldId)
   String get createdAt;
   @override
+  @HiveField(hiveTournamentInfoPlayedAtFieldId)
   String get playedAt;
   @override
   _$TournamentInfoCopyWith<_TournamentInfo> get copyWith;

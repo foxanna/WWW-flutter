@@ -13,11 +13,16 @@ class _$TournamentTearOff {
   const _$TournamentTearOff();
 
   _Tournament call(
-      {String id,
-      String id2,
-      TournamentInfo info = const TournamentInfo(),
-      TournamentStatus status = const TournamentStatus(),
-      List<Tour> tours = const <Tour>[]}) {
+      {@HiveField(hiveTournamentIdFieldId)
+          String id,
+      @HiveField(hiveTournamentId2FieldId)
+          String id2,
+      @HiveField(hiveTournamentInfoFieldId)
+          TournamentInfo info = const TournamentInfo(),
+      @HiveField(hiveTournamentStatusFieldId)
+          TournamentStatus status = const TournamentStatus(),
+      @HiveField(hiveTournamentToursFieldId)
+          List<Tour> tours = const <Tour>[]}) {
     return _Tournament(
       id: id,
       id2: id2,
@@ -32,10 +37,15 @@ class _$TournamentTearOff {
 const $Tournament = _$TournamentTearOff();
 
 mixin _$Tournament {
+  @HiveField(hiveTournamentIdFieldId)
   String get id;
+  @HiveField(hiveTournamentId2FieldId)
   String get id2;
+  @HiveField(hiveTournamentInfoFieldId)
   TournamentInfo get info;
+  @HiveField(hiveTournamentStatusFieldId)
   TournamentStatus get status;
+  @HiveField(hiveTournamentToursFieldId)
   List<Tour> get tours;
 
   $TournamentCopyWith<Tournament> get copyWith;
@@ -46,11 +56,11 @@ abstract class $TournamentCopyWith<$Res> {
           Tournament value, $Res Function(Tournament) then) =
       _$TournamentCopyWithImpl<$Res>;
   $Res call(
-      {String id,
-      String id2,
-      TournamentInfo info,
-      TournamentStatus status,
-      List<Tour> tours});
+      {@HiveField(hiveTournamentIdFieldId) String id,
+      @HiveField(hiveTournamentId2FieldId) String id2,
+      @HiveField(hiveTournamentInfoFieldId) TournamentInfo info,
+      @HiveField(hiveTournamentStatusFieldId) TournamentStatus status,
+      @HiveField(hiveTournamentToursFieldId) List<Tour> tours});
 
   $TournamentInfoCopyWith<$Res> get info;
   $TournamentStatusCopyWith<$Res> get status;
@@ -107,11 +117,11 @@ abstract class _$TournamentCopyWith<$Res> implements $TournamentCopyWith<$Res> {
       __$TournamentCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
-      String id2,
-      TournamentInfo info,
-      TournamentStatus status,
-      List<Tour> tours});
+      {@HiveField(hiveTournamentIdFieldId) String id,
+      @HiveField(hiveTournamentId2FieldId) String id2,
+      @HiveField(hiveTournamentInfoFieldId) TournamentInfo info,
+      @HiveField(hiveTournamentStatusFieldId) TournamentStatus status,
+      @HiveField(hiveTournamentToursFieldId) List<Tour> tours});
 
   @override
   $TournamentInfoCopyWith<$Res> get info;
@@ -148,27 +158,37 @@ class __$TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
 
 class _$_Tournament with DiagnosticableTreeMixin implements _Tournament {
   const _$_Tournament(
-      {this.id,
-      this.id2,
-      this.info = const TournamentInfo(),
-      this.status = const TournamentStatus(),
-      this.tours = const <Tour>[]})
+      {@HiveField(hiveTournamentIdFieldId)
+          this.id,
+      @HiveField(hiveTournamentId2FieldId)
+          this.id2,
+      @HiveField(hiveTournamentInfoFieldId)
+          this.info = const TournamentInfo(),
+      @HiveField(hiveTournamentStatusFieldId)
+          this.status = const TournamentStatus(),
+      @HiveField(hiveTournamentToursFieldId)
+          this.tours = const <Tour>[]})
       : assert(info != null),
         assert(status != null),
         assert(tours != null);
 
   @override
+  @HiveField(hiveTournamentIdFieldId)
   final String id;
   @override
+  @HiveField(hiveTournamentId2FieldId)
   final String id2;
   @JsonKey(defaultValue: const TournamentInfo())
   @override
+  @HiveField(hiveTournamentInfoFieldId)
   final TournamentInfo info;
   @JsonKey(defaultValue: const TournamentStatus())
   @override
+  @HiveField(hiveTournamentStatusFieldId)
   final TournamentStatus status;
   @JsonKey(defaultValue: const <Tour>[])
   @override
+  @HiveField(hiveTournamentToursFieldId)
   final List<Tour> tours;
 
   @override
@@ -220,21 +240,26 @@ class _$_Tournament with DiagnosticableTreeMixin implements _Tournament {
 
 abstract class _Tournament implements Tournament {
   const factory _Tournament(
-      {String id,
-      String id2,
-      TournamentInfo info,
-      TournamentStatus status,
-      List<Tour> tours}) = _$_Tournament;
+      {@HiveField(hiveTournamentIdFieldId) String id,
+      @HiveField(hiveTournamentId2FieldId) String id2,
+      @HiveField(hiveTournamentInfoFieldId) TournamentInfo info,
+      @HiveField(hiveTournamentStatusFieldId) TournamentStatus status,
+      @HiveField(hiveTournamentToursFieldId) List<Tour> tours}) = _$_Tournament;
 
   @override
+  @HiveField(hiveTournamentIdFieldId)
   String get id;
   @override
+  @HiveField(hiveTournamentId2FieldId)
   String get id2;
   @override
+  @HiveField(hiveTournamentInfoFieldId)
   TournamentInfo get info;
   @override
+  @HiveField(hiveTournamentStatusFieldId)
   TournamentStatus get status;
   @override
+  @HiveField(hiveTournamentToursFieldId)
   List<Tour> get tours;
   @override
   _$TournamentCopyWith<_Tournament> get copyWith;

@@ -13,10 +13,14 @@ class _$QuestionInfoTearOff {
   const _$QuestionInfoTearOff();
 
   _QuestionInfo call(
-      {String id,
-      String number,
-      String url,
-      TourInfo tourInfo = const TourInfo()}) {
+      {@HiveField(hiveQuestionInfoIdFieldId)
+          String id,
+      @HiveField(hiveQuestionInfoNumberFieldId)
+          String number,
+      @HiveField(hiveQuestionInfoUrlFieldId)
+          String url,
+      @HiveField(hiveQuestionInfoTourInfoFieldId)
+          TourInfo tourInfo = const TourInfo()}) {
     return _QuestionInfo(
       id: id,
       number: number,
@@ -30,9 +34,13 @@ class _$QuestionInfoTearOff {
 const $QuestionInfo = _$QuestionInfoTearOff();
 
 mixin _$QuestionInfo {
+  @HiveField(hiveQuestionInfoIdFieldId)
   String get id;
+  @HiveField(hiveQuestionInfoNumberFieldId)
   String get number;
+  @HiveField(hiveQuestionInfoUrlFieldId)
   String get url;
+  @HiveField(hiveQuestionInfoTourInfoFieldId)
   TourInfo get tourInfo;
 
   $QuestionInfoCopyWith<QuestionInfo> get copyWith;
@@ -42,7 +50,11 @@ abstract class $QuestionInfoCopyWith<$Res> {
   factory $QuestionInfoCopyWith(
           QuestionInfo value, $Res Function(QuestionInfo) then) =
       _$QuestionInfoCopyWithImpl<$Res>;
-  $Res call({String id, String number, String url, TourInfo tourInfo});
+  $Res call(
+      {@HiveField(hiveQuestionInfoIdFieldId) String id,
+      @HiveField(hiveQuestionInfoNumberFieldId) String number,
+      @HiveField(hiveQuestionInfoUrlFieldId) String url,
+      @HiveField(hiveQuestionInfoTourInfoFieldId) TourInfo tourInfo});
 
   $TourInfoCopyWith<$Res> get tourInfo;
 }
@@ -86,7 +98,11 @@ abstract class _$QuestionInfoCopyWith<$Res>
           _QuestionInfo value, $Res Function(_QuestionInfo) then) =
       __$QuestionInfoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String number, String url, TourInfo tourInfo});
+  $Res call(
+      {@HiveField(hiveQuestionInfoIdFieldId) String id,
+      @HiveField(hiveQuestionInfoNumberFieldId) String number,
+      @HiveField(hiveQuestionInfoUrlFieldId) String url,
+      @HiveField(hiveQuestionInfoTourInfoFieldId) TourInfo tourInfo});
 
   @override
   $TourInfoCopyWith<$Res> get tourInfo;
@@ -119,17 +135,28 @@ class __$QuestionInfoCopyWithImpl<$Res> extends _$QuestionInfoCopyWithImpl<$Res>
 
 class _$_QuestionInfo with DiagnosticableTreeMixin implements _QuestionInfo {
   const _$_QuestionInfo(
-      {this.id, this.number, this.url, this.tourInfo = const TourInfo()})
+      {@HiveField(hiveQuestionInfoIdFieldId)
+          this.id,
+      @HiveField(hiveQuestionInfoNumberFieldId)
+          this.number,
+      @HiveField(hiveQuestionInfoUrlFieldId)
+          this.url,
+      @HiveField(hiveQuestionInfoTourInfoFieldId)
+          this.tourInfo = const TourInfo()})
       : assert(tourInfo != null);
 
   @override
+  @HiveField(hiveQuestionInfoIdFieldId)
   final String id;
   @override
+  @HiveField(hiveQuestionInfoNumberFieldId)
   final String number;
   @override
+  @HiveField(hiveQuestionInfoUrlFieldId)
   final String url;
   @JsonKey(defaultValue: const TourInfo())
   @override
+  @HiveField(hiveQuestionInfoTourInfoFieldId)
   final TourInfo tourInfo;
 
   @override
@@ -178,18 +205,23 @@ class _$_QuestionInfo with DiagnosticableTreeMixin implements _QuestionInfo {
 
 abstract class _QuestionInfo implements QuestionInfo {
   const factory _QuestionInfo(
-      {String id,
-      String number,
-      String url,
-      TourInfo tourInfo}) = _$_QuestionInfo;
+          {@HiveField(hiveQuestionInfoIdFieldId) String id,
+          @HiveField(hiveQuestionInfoNumberFieldId) String number,
+          @HiveField(hiveQuestionInfoUrlFieldId) String url,
+          @HiveField(hiveQuestionInfoTourInfoFieldId) TourInfo tourInfo}) =
+      _$_QuestionInfo;
 
   @override
+  @HiveField(hiveQuestionInfoIdFieldId)
   String get id;
   @override
+  @HiveField(hiveQuestionInfoNumberFieldId)
   String get number;
   @override
+  @HiveField(hiveQuestionInfoUrlFieldId)
   String get url;
   @override
+  @HiveField(hiveQuestionInfoTourInfoFieldId)
   TourInfo get tourInfo;
   @override
   _$QuestionInfoCopyWith<_QuestionInfo> get copyWith;

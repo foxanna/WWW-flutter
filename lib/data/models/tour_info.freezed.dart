@@ -13,15 +13,24 @@ class _$TourInfoTearOff {
   const _$TourInfoTearOff();
 
   _TourInfo call(
-      {String id,
-      String title,
-      String questionsCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt,
-      TournamentInfo tournamentInfo = const TournamentInfo()}) {
+      {@HiveField(hiveTourInfoIdFieldId)
+          String id,
+      @HiveField(hiveTourInfoTitleFieldId)
+          String title,
+      @HiveField(hiveTourInfoQuestionsCountFieldId)
+          String questionsCount,
+      @HiveField(hiveTourInfoDescriptionFieldId)
+          String description,
+      @HiveField(hiveTourInfoUrlFieldId)
+          String url,
+      @HiveField(hiveTourInfoEditorsFieldId)
+          String editors,
+      @HiveField(hiveTourInfoCreatedAtFieldId)
+          String createdAt,
+      @HiveField(hiveTourInfoPlayedAtFieldId)
+          String playedAt,
+      @HiveField(hiveTourInfoTournamentInfoFieldId)
+          TournamentInfo tournamentInfo = const TournamentInfo()}) {
     return _TourInfo(
       id: id,
       title: title,
@@ -40,14 +49,23 @@ class _$TourInfoTearOff {
 const $TourInfo = _$TourInfoTearOff();
 
 mixin _$TourInfo {
+  @HiveField(hiveTourInfoIdFieldId)
   String get id;
+  @HiveField(hiveTourInfoTitleFieldId)
   String get title;
+  @HiveField(hiveTourInfoQuestionsCountFieldId)
   String get questionsCount;
+  @HiveField(hiveTourInfoDescriptionFieldId)
   String get description;
+  @HiveField(hiveTourInfoUrlFieldId)
   String get url;
+  @HiveField(hiveTourInfoEditorsFieldId)
   String get editors;
+  @HiveField(hiveTourInfoCreatedAtFieldId)
   String get createdAt;
+  @HiveField(hiveTourInfoPlayedAtFieldId)
   String get playedAt;
+  @HiveField(hiveTourInfoTournamentInfoFieldId)
   TournamentInfo get tournamentInfo;
 
   $TourInfoCopyWith<TourInfo> get copyWith;
@@ -57,15 +75,24 @@ abstract class $TourInfoCopyWith<$Res> {
   factory $TourInfoCopyWith(TourInfo value, $Res Function(TourInfo) then) =
       _$TourInfoCopyWithImpl<$Res>;
   $Res call(
-      {String id,
-      String title,
-      String questionsCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt,
-      TournamentInfo tournamentInfo});
+      {@HiveField(hiveTourInfoIdFieldId)
+          String id,
+      @HiveField(hiveTourInfoTitleFieldId)
+          String title,
+      @HiveField(hiveTourInfoQuestionsCountFieldId)
+          String questionsCount,
+      @HiveField(hiveTourInfoDescriptionFieldId)
+          String description,
+      @HiveField(hiveTourInfoUrlFieldId)
+          String url,
+      @HiveField(hiveTourInfoEditorsFieldId)
+          String editors,
+      @HiveField(hiveTourInfoCreatedAtFieldId)
+          String createdAt,
+      @HiveField(hiveTourInfoPlayedAtFieldId)
+          String playedAt,
+      @HiveField(hiveTourInfoTournamentInfoFieldId)
+          TournamentInfo tournamentInfo});
 
   $TournamentInfoCopyWith<$Res> get tournamentInfo;
 }
@@ -123,15 +150,24 @@ abstract class _$TourInfoCopyWith<$Res> implements $TourInfoCopyWith<$Res> {
       __$TourInfoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
-      String title,
-      String questionsCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt,
-      TournamentInfo tournamentInfo});
+      {@HiveField(hiveTourInfoIdFieldId)
+          String id,
+      @HiveField(hiveTourInfoTitleFieldId)
+          String title,
+      @HiveField(hiveTourInfoQuestionsCountFieldId)
+          String questionsCount,
+      @HiveField(hiveTourInfoDescriptionFieldId)
+          String description,
+      @HiveField(hiveTourInfoUrlFieldId)
+          String url,
+      @HiveField(hiveTourInfoEditorsFieldId)
+          String editors,
+      @HiveField(hiveTourInfoCreatedAtFieldId)
+          String createdAt,
+      @HiveField(hiveTourInfoPlayedAtFieldId)
+          String playedAt,
+      @HiveField(hiveTourInfoTournamentInfoFieldId)
+          TournamentInfo tournamentInfo});
 
   @override
   $TournamentInfoCopyWith<$Res> get tournamentInfo;
@@ -178,35 +214,53 @@ class __$TourInfoCopyWithImpl<$Res> extends _$TourInfoCopyWithImpl<$Res>
 
 class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
   const _$_TourInfo(
-      {this.id,
-      this.title,
-      this.questionsCount,
-      this.description,
-      this.url,
-      this.editors,
-      this.createdAt,
-      this.playedAt,
-      this.tournamentInfo = const TournamentInfo()})
+      {@HiveField(hiveTourInfoIdFieldId)
+          this.id,
+      @HiveField(hiveTourInfoTitleFieldId)
+          this.title,
+      @HiveField(hiveTourInfoQuestionsCountFieldId)
+          this.questionsCount,
+      @HiveField(hiveTourInfoDescriptionFieldId)
+          this.description,
+      @HiveField(hiveTourInfoUrlFieldId)
+          this.url,
+      @HiveField(hiveTourInfoEditorsFieldId)
+          this.editors,
+      @HiveField(hiveTourInfoCreatedAtFieldId)
+          this.createdAt,
+      @HiveField(hiveTourInfoPlayedAtFieldId)
+          this.playedAt,
+      @HiveField(hiveTourInfoTournamentInfoFieldId)
+          this.tournamentInfo = const TournamentInfo()})
       : assert(tournamentInfo != null);
 
   @override
+  @HiveField(hiveTourInfoIdFieldId)
   final String id;
   @override
+  @HiveField(hiveTourInfoTitleFieldId)
   final String title;
   @override
+  @HiveField(hiveTourInfoQuestionsCountFieldId)
   final String questionsCount;
   @override
+  @HiveField(hiveTourInfoDescriptionFieldId)
   final String description;
   @override
+  @HiveField(hiveTourInfoUrlFieldId)
   final String url;
   @override
+  @HiveField(hiveTourInfoEditorsFieldId)
   final String editors;
   @override
+  @HiveField(hiveTourInfoCreatedAtFieldId)
   final String createdAt;
   @override
+  @HiveField(hiveTourInfoPlayedAtFieldId)
   final String playedAt;
   @JsonKey(defaultValue: const TournamentInfo())
   @override
+  @HiveField(hiveTourInfoTournamentInfoFieldId)
   final TournamentInfo tournamentInfo;
 
   @override
@@ -280,33 +334,51 @@ class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
 
 abstract class _TourInfo implements TourInfo {
   const factory _TourInfo(
-      {String id,
-      String title,
-      String questionsCount,
-      String description,
-      String url,
-      String editors,
-      String createdAt,
-      String playedAt,
-      TournamentInfo tournamentInfo}) = _$_TourInfo;
+      {@HiveField(hiveTourInfoIdFieldId)
+          String id,
+      @HiveField(hiveTourInfoTitleFieldId)
+          String title,
+      @HiveField(hiveTourInfoQuestionsCountFieldId)
+          String questionsCount,
+      @HiveField(hiveTourInfoDescriptionFieldId)
+          String description,
+      @HiveField(hiveTourInfoUrlFieldId)
+          String url,
+      @HiveField(hiveTourInfoEditorsFieldId)
+          String editors,
+      @HiveField(hiveTourInfoCreatedAtFieldId)
+          String createdAt,
+      @HiveField(hiveTourInfoPlayedAtFieldId)
+          String playedAt,
+      @HiveField(hiveTourInfoTournamentInfoFieldId)
+          TournamentInfo tournamentInfo}) = _$_TourInfo;
 
   @override
+  @HiveField(hiveTourInfoIdFieldId)
   String get id;
   @override
+  @HiveField(hiveTourInfoTitleFieldId)
   String get title;
   @override
+  @HiveField(hiveTourInfoQuestionsCountFieldId)
   String get questionsCount;
   @override
+  @HiveField(hiveTourInfoDescriptionFieldId)
   String get description;
   @override
+  @HiveField(hiveTourInfoUrlFieldId)
   String get url;
   @override
+  @HiveField(hiveTourInfoEditorsFieldId)
   String get editors;
   @override
+  @HiveField(hiveTourInfoCreatedAtFieldId)
   String get createdAt;
   @override
+  @HiveField(hiveTourInfoPlayedAtFieldId)
   String get playedAt;
   @override
+  @HiveField(hiveTourInfoTournamentInfoFieldId)
   TournamentInfo get tournamentInfo;
   @override
   _$TourInfoCopyWith<_TourInfo> get copyWith;

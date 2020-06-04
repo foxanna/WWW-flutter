@@ -12,7 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ImageSectionTearOff {
   const _$ImageSectionTearOff();
 
-  _ImageSection fromValue({@required String value}) {
+  _ImageSection call(
+      {@required @HiveField(hiveImageSectionValueFieldId) String value}) {
     return _ImageSection(
       value: value,
     );
@@ -23,6 +24,7 @@ class _$ImageSectionTearOff {
 const $ImageSection = _$ImageSectionTearOff();
 
 mixin _$ImageSection {
+  @HiveField(hiveImageSectionValueFieldId)
   String get value;
 
   $ImageSectionCopyWith<ImageSection> get copyWith;
@@ -32,7 +34,7 @@ abstract class $ImageSectionCopyWith<$Res> {
   factory $ImageSectionCopyWith(
           ImageSection value, $Res Function(ImageSection) then) =
       _$ImageSectionCopyWithImpl<$Res>;
-  $Res call({String value});
+  $Res call({@HiveField(hiveImageSectionValueFieldId) String value});
 }
 
 class _$ImageSectionCopyWithImpl<$Res> implements $ImageSectionCopyWith<$Res> {
@@ -58,7 +60,7 @@ abstract class _$ImageSectionCopyWith<$Res>
           _ImageSection value, $Res Function(_ImageSection) then) =
       __$ImageSectionCopyWithImpl<$Res>;
   @override
-  $Res call({String value});
+  $Res call({@HiveField(hiveImageSectionValueFieldId) String value});
 }
 
 class __$ImageSectionCopyWithImpl<$Res> extends _$ImageSectionCopyWithImpl<$Res>
@@ -81,21 +83,24 @@ class __$ImageSectionCopyWithImpl<$Res> extends _$ImageSectionCopyWithImpl<$Res>
 }
 
 class _$_ImageSection with DiagnosticableTreeMixin implements _ImageSection {
-  const _$_ImageSection({@required this.value}) : assert(value != null);
+  const _$_ImageSection(
+      {@required @HiveField(hiveImageSectionValueFieldId) this.value})
+      : assert(value != null);
 
   @override
+  @HiveField(hiveImageSectionValueFieldId)
   final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ImageSection.fromValue(value: $value)';
+    return 'ImageSection(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ImageSection.fromValue'))
+      ..add(DiagnosticsProperty('type', 'ImageSection'))
       ..add(DiagnosticsProperty('value', value));
   }
 
@@ -117,9 +122,12 @@ class _$_ImageSection with DiagnosticableTreeMixin implements _ImageSection {
 }
 
 abstract class _ImageSection implements ImageSection {
-  const factory _ImageSection({@required String value}) = _$_ImageSection;
+  const factory _ImageSection(
+          {@required @HiveField(hiveImageSectionValueFieldId) String value}) =
+      _$_ImageSection;
 
   @override
+  @HiveField(hiveImageSectionValueFieldId)
   String get value;
   @override
   _$ImageSectionCopyWith<_ImageSection> get copyWith;

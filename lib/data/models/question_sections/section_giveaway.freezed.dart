@@ -12,7 +12,8 @@ T _$identity<T>(T value) => value;
 class _$GiveAwaySectionTearOff {
   const _$GiveAwaySectionTearOff();
 
-  _GiveAwaySection fromValue({@required String value}) {
+  _GiveAwaySection call(
+      {@required @HiveField(hiveGiveAwaySectionValueFieldId) String value}) {
     return _GiveAwaySection(
       value: value,
     );
@@ -23,6 +24,7 @@ class _$GiveAwaySectionTearOff {
 const $GiveAwaySection = _$GiveAwaySectionTearOff();
 
 mixin _$GiveAwaySection {
+  @HiveField(hiveGiveAwaySectionValueFieldId)
   String get value;
 
   $GiveAwaySectionCopyWith<GiveAwaySection> get copyWith;
@@ -32,7 +34,7 @@ abstract class $GiveAwaySectionCopyWith<$Res> {
   factory $GiveAwaySectionCopyWith(
           GiveAwaySection value, $Res Function(GiveAwaySection) then) =
       _$GiveAwaySectionCopyWithImpl<$Res>;
-  $Res call({String value});
+  $Res call({@HiveField(hiveGiveAwaySectionValueFieldId) String value});
 }
 
 class _$GiveAwaySectionCopyWithImpl<$Res>
@@ -59,7 +61,7 @@ abstract class _$GiveAwaySectionCopyWith<$Res>
           _GiveAwaySection value, $Res Function(_GiveAwaySection) then) =
       __$GiveAwaySectionCopyWithImpl<$Res>;
   @override
-  $Res call({String value});
+  $Res call({@HiveField(hiveGiveAwaySectionValueFieldId) String value});
 }
 
 class __$GiveAwaySectionCopyWithImpl<$Res>
@@ -85,21 +87,24 @@ class __$GiveAwaySectionCopyWithImpl<$Res>
 class _$_GiveAwaySection
     with DiagnosticableTreeMixin
     implements _GiveAwaySection {
-  const _$_GiveAwaySection({@required this.value}) : assert(value != null);
+  const _$_GiveAwaySection(
+      {@required @HiveField(hiveGiveAwaySectionValueFieldId) this.value})
+      : assert(value != null);
 
   @override
+  @HiveField(hiveGiveAwaySectionValueFieldId)
   final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GiveAwaySection.fromValue(value: $value)';
+    return 'GiveAwaySection(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'GiveAwaySection.fromValue'))
+      ..add(DiagnosticsProperty('type', 'GiveAwaySection'))
       ..add(DiagnosticsProperty('value', value));
   }
 
@@ -121,9 +126,13 @@ class _$_GiveAwaySection
 }
 
 abstract class _GiveAwaySection implements GiveAwaySection {
-  const factory _GiveAwaySection({@required String value}) = _$_GiveAwaySection;
+  const factory _GiveAwaySection(
+      {@required
+      @HiveField(hiveGiveAwaySectionValueFieldId)
+          String value}) = _$_GiveAwaySection;
 
   @override
+  @HiveField(hiveGiveAwaySectionValueFieldId)
   String get value;
   @override
   _$GiveAwaySectionCopyWith<_GiveAwaySection> get copyWith;

@@ -13,15 +13,24 @@ class _$QuestionTearOff {
   const _$QuestionTearOff();
 
   _Question call(
-      {String id,
-      String display,
-      List<QuestionSection> question,
-      List<QuestionSection> answer,
-      List<QuestionSection> passCriteria,
-      List<QuestionSection> comments,
-      String authors,
-      String sources,
-      QuestionInfo info = const QuestionInfo()}) {
+      {@HiveField(hiveQuestionIdFieldId)
+          String id,
+      @HiveField(hiveQuestionDisplayFieldId)
+          String display,
+      @HiveField(hiveQuestionQuestionFieldId)
+          List<QuestionSection> question,
+      @HiveField(hiveQuestionAnswerFieldId)
+          List<QuestionSection> answer,
+      @HiveField(hiveQuestionPassCriteriaFieldId)
+          List<QuestionSection> passCriteria,
+      @HiveField(hiveQuestionCommentsFieldId)
+          List<QuestionSection> comments,
+      @HiveField(hiveQuestionAuthorsFieldId)
+          String authors,
+      @HiveField(hiveQuestionSourcesFieldId)
+          String sources,
+      @HiveField(hiveQuestionInfoFieldId)
+          QuestionInfo info = const QuestionInfo()}) {
     return _Question(
       id: id,
       display: display,
@@ -40,14 +49,23 @@ class _$QuestionTearOff {
 const $Question = _$QuestionTearOff();
 
 mixin _$Question {
+  @HiveField(hiveQuestionIdFieldId)
   String get id;
+  @HiveField(hiveQuestionDisplayFieldId)
   String get display;
+  @HiveField(hiveQuestionQuestionFieldId)
   List<QuestionSection> get question;
+  @HiveField(hiveQuestionAnswerFieldId)
   List<QuestionSection> get answer;
+  @HiveField(hiveQuestionPassCriteriaFieldId)
   List<QuestionSection> get passCriteria;
+  @HiveField(hiveQuestionCommentsFieldId)
   List<QuestionSection> get comments;
+  @HiveField(hiveQuestionAuthorsFieldId)
   String get authors;
+  @HiveField(hiveQuestionSourcesFieldId)
   String get sources;
+  @HiveField(hiveQuestionInfoFieldId)
   QuestionInfo get info;
 
   $QuestionCopyWith<Question> get copyWith;
@@ -57,15 +75,24 @@ abstract class $QuestionCopyWith<$Res> {
   factory $QuestionCopyWith(Question value, $Res Function(Question) then) =
       _$QuestionCopyWithImpl<$Res>;
   $Res call(
-      {String id,
-      String display,
-      List<QuestionSection> question,
-      List<QuestionSection> answer,
-      List<QuestionSection> passCriteria,
-      List<QuestionSection> comments,
-      String authors,
-      String sources,
-      QuestionInfo info});
+      {@HiveField(hiveQuestionIdFieldId)
+          String id,
+      @HiveField(hiveQuestionDisplayFieldId)
+          String display,
+      @HiveField(hiveQuestionQuestionFieldId)
+          List<QuestionSection> question,
+      @HiveField(hiveQuestionAnswerFieldId)
+          List<QuestionSection> answer,
+      @HiveField(hiveQuestionPassCriteriaFieldId)
+          List<QuestionSection> passCriteria,
+      @HiveField(hiveQuestionCommentsFieldId)
+          List<QuestionSection> comments,
+      @HiveField(hiveQuestionAuthorsFieldId)
+          String authors,
+      @HiveField(hiveQuestionSourcesFieldId)
+          String sources,
+      @HiveField(hiveQuestionInfoFieldId)
+          QuestionInfo info});
 
   $QuestionInfoCopyWith<$Res> get info;
 }
@@ -125,15 +152,24 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       __$QuestionCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
-      String display,
-      List<QuestionSection> question,
-      List<QuestionSection> answer,
-      List<QuestionSection> passCriteria,
-      List<QuestionSection> comments,
-      String authors,
-      String sources,
-      QuestionInfo info});
+      {@HiveField(hiveQuestionIdFieldId)
+          String id,
+      @HiveField(hiveQuestionDisplayFieldId)
+          String display,
+      @HiveField(hiveQuestionQuestionFieldId)
+          List<QuestionSection> question,
+      @HiveField(hiveQuestionAnswerFieldId)
+          List<QuestionSection> answer,
+      @HiveField(hiveQuestionPassCriteriaFieldId)
+          List<QuestionSection> passCriteria,
+      @HiveField(hiveQuestionCommentsFieldId)
+          List<QuestionSection> comments,
+      @HiveField(hiveQuestionAuthorsFieldId)
+          String authors,
+      @HiveField(hiveQuestionSourcesFieldId)
+          String sources,
+      @HiveField(hiveQuestionInfoFieldId)
+          QuestionInfo info});
 
   @override
   $QuestionInfoCopyWith<$Res> get info;
@@ -182,35 +218,44 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
 
 class _$_Question with DiagnosticableTreeMixin implements _Question {
   const _$_Question(
-      {this.id,
-      this.display,
-      this.question,
-      this.answer,
-      this.passCriteria,
-      this.comments,
-      this.authors,
-      this.sources,
-      this.info = const QuestionInfo()})
+      {@HiveField(hiveQuestionIdFieldId) this.id,
+      @HiveField(hiveQuestionDisplayFieldId) this.display,
+      @HiveField(hiveQuestionQuestionFieldId) this.question,
+      @HiveField(hiveQuestionAnswerFieldId) this.answer,
+      @HiveField(hiveQuestionPassCriteriaFieldId) this.passCriteria,
+      @HiveField(hiveQuestionCommentsFieldId) this.comments,
+      @HiveField(hiveQuestionAuthorsFieldId) this.authors,
+      @HiveField(hiveQuestionSourcesFieldId) this.sources,
+      @HiveField(hiveQuestionInfoFieldId) this.info = const QuestionInfo()})
       : assert(info != null);
 
   @override
+  @HiveField(hiveQuestionIdFieldId)
   final String id;
   @override
+  @HiveField(hiveQuestionDisplayFieldId)
   final String display;
   @override
+  @HiveField(hiveQuestionQuestionFieldId)
   final List<QuestionSection> question;
   @override
+  @HiveField(hiveQuestionAnswerFieldId)
   final List<QuestionSection> answer;
   @override
+  @HiveField(hiveQuestionPassCriteriaFieldId)
   final List<QuestionSection> passCriteria;
   @override
+  @HiveField(hiveQuestionCommentsFieldId)
   final List<QuestionSection> comments;
   @override
+  @HiveField(hiveQuestionAuthorsFieldId)
   final String authors;
   @override
+  @HiveField(hiveQuestionSourcesFieldId)
   final String sources;
   @JsonKey(defaultValue: const QuestionInfo())
   @override
+  @HiveField(hiveQuestionInfoFieldId)
   final QuestionInfo info;
 
   @override
@@ -284,33 +329,51 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
 
 abstract class _Question implements Question {
   const factory _Question(
-      {String id,
-      String display,
-      List<QuestionSection> question,
-      List<QuestionSection> answer,
-      List<QuestionSection> passCriteria,
-      List<QuestionSection> comments,
-      String authors,
-      String sources,
-      QuestionInfo info}) = _$_Question;
+      {@HiveField(hiveQuestionIdFieldId)
+          String id,
+      @HiveField(hiveQuestionDisplayFieldId)
+          String display,
+      @HiveField(hiveQuestionQuestionFieldId)
+          List<QuestionSection> question,
+      @HiveField(hiveQuestionAnswerFieldId)
+          List<QuestionSection> answer,
+      @HiveField(hiveQuestionPassCriteriaFieldId)
+          List<QuestionSection> passCriteria,
+      @HiveField(hiveQuestionCommentsFieldId)
+          List<QuestionSection> comments,
+      @HiveField(hiveQuestionAuthorsFieldId)
+          String authors,
+      @HiveField(hiveQuestionSourcesFieldId)
+          String sources,
+      @HiveField(hiveQuestionInfoFieldId)
+          QuestionInfo info}) = _$_Question;
 
   @override
+  @HiveField(hiveQuestionIdFieldId)
   String get id;
   @override
+  @HiveField(hiveQuestionDisplayFieldId)
   String get display;
   @override
+  @HiveField(hiveQuestionQuestionFieldId)
   List<QuestionSection> get question;
   @override
+  @HiveField(hiveQuestionAnswerFieldId)
   List<QuestionSection> get answer;
   @override
+  @HiveField(hiveQuestionPassCriteriaFieldId)
   List<QuestionSection> get passCriteria;
   @override
+  @HiveField(hiveQuestionCommentsFieldId)
   List<QuestionSection> get comments;
   @override
+  @HiveField(hiveQuestionAuthorsFieldId)
   String get authors;
   @override
+  @HiveField(hiveQuestionSourcesFieldId)
   String get sources;
   @override
+  @HiveField(hiveQuestionInfoFieldId)
   QuestionInfo get info;
   @override
   _$QuestionCopyWith<_Question> get copyWith;

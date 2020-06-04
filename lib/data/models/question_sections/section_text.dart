@@ -1,13 +1,19 @@
+import 'package:hive/hive.dart';
+import 'package:what_when_where/data/hive/constants.dart';
 import 'package:what_when_where/data/models/question_sections/question_section.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'section_text.freezed.dart';
+part 'section_text.g.dart';
 
 @freezed
+@HiveType(typeId: hiveTextSectionTypeId)
 abstract class TextSection with _$TextSection implements QuestionSection {
-  const factory TextSection.fromValue({String value}) = _TextSection;
+  const factory TextSection({
+    @HiveField(hiveTextSectionValueFieldId) @required String value,
+  }) = _TextSection;
 
   factory TextSection.fromString({@required String string}) =>
-      TextSection.fromValue(value: string.trim());
+      TextSection(value: string.trim());
 }

@@ -12,7 +12,8 @@ T _$identity<T>(T value) => value;
 class _$AudioSectionTearOff {
   const _$AudioSectionTearOff();
 
-  _AudioSection fromValue({@required String value}) {
+  _AudioSection call(
+      {@required @HiveField(hiveAudioSectionValueFieldId) String value}) {
     return _AudioSection(
       value: value,
     );
@@ -23,6 +24,7 @@ class _$AudioSectionTearOff {
 const $AudioSection = _$AudioSectionTearOff();
 
 mixin _$AudioSection {
+  @HiveField(hiveAudioSectionValueFieldId)
   String get value;
 
   $AudioSectionCopyWith<AudioSection> get copyWith;
@@ -32,7 +34,7 @@ abstract class $AudioSectionCopyWith<$Res> {
   factory $AudioSectionCopyWith(
           AudioSection value, $Res Function(AudioSection) then) =
       _$AudioSectionCopyWithImpl<$Res>;
-  $Res call({String value});
+  $Res call({@HiveField(hiveAudioSectionValueFieldId) String value});
 }
 
 class _$AudioSectionCopyWithImpl<$Res> implements $AudioSectionCopyWith<$Res> {
@@ -58,7 +60,7 @@ abstract class _$AudioSectionCopyWith<$Res>
           _AudioSection value, $Res Function(_AudioSection) then) =
       __$AudioSectionCopyWithImpl<$Res>;
   @override
-  $Res call({String value});
+  $Res call({@HiveField(hiveAudioSectionValueFieldId) String value});
 }
 
 class __$AudioSectionCopyWithImpl<$Res> extends _$AudioSectionCopyWithImpl<$Res>
@@ -81,21 +83,24 @@ class __$AudioSectionCopyWithImpl<$Res> extends _$AudioSectionCopyWithImpl<$Res>
 }
 
 class _$_AudioSection with DiagnosticableTreeMixin implements _AudioSection {
-  const _$_AudioSection({@required this.value}) : assert(value != null);
+  const _$_AudioSection(
+      {@required @HiveField(hiveAudioSectionValueFieldId) this.value})
+      : assert(value != null);
 
   @override
+  @HiveField(hiveAudioSectionValueFieldId)
   final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AudioSection.fromValue(value: $value)';
+    return 'AudioSection(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'AudioSection.fromValue'))
+      ..add(DiagnosticsProperty('type', 'AudioSection'))
       ..add(DiagnosticsProperty('value', value));
   }
 
@@ -117,9 +122,12 @@ class _$_AudioSection with DiagnosticableTreeMixin implements _AudioSection {
 }
 
 abstract class _AudioSection implements AudioSection {
-  const factory _AudioSection({@required String value}) = _$_AudioSection;
+  const factory _AudioSection(
+          {@required @HiveField(hiveAudioSectionValueFieldId) String value}) =
+      _$_AudioSection;
 
   @override
+  @HiveField(hiveAudioSectionValueFieldId)
   String get value;
   @override
   _$AudioSectionCopyWith<_AudioSection> get copyWith;

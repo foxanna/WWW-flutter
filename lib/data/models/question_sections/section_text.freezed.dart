@@ -12,7 +12,8 @@ T _$identity<T>(T value) => value;
 class _$TextSectionTearOff {
   const _$TextSectionTearOff();
 
-  _TextSection fromValue({String value}) {
+  _TextSection call(
+      {@required @HiveField(hiveTextSectionValueFieldId) String value}) {
     return _TextSection(
       value: value,
     );
@@ -23,6 +24,7 @@ class _$TextSectionTearOff {
 const $TextSection = _$TextSectionTearOff();
 
 mixin _$TextSection {
+  @HiveField(hiveTextSectionValueFieldId)
   String get value;
 
   $TextSectionCopyWith<TextSection> get copyWith;
@@ -32,7 +34,7 @@ abstract class $TextSectionCopyWith<$Res> {
   factory $TextSectionCopyWith(
           TextSection value, $Res Function(TextSection) then) =
       _$TextSectionCopyWithImpl<$Res>;
-  $Res call({String value});
+  $Res call({@HiveField(hiveTextSectionValueFieldId) String value});
 }
 
 class _$TextSectionCopyWithImpl<$Res> implements $TextSectionCopyWith<$Res> {
@@ -58,7 +60,7 @@ abstract class _$TextSectionCopyWith<$Res>
           _TextSection value, $Res Function(_TextSection) then) =
       __$TextSectionCopyWithImpl<$Res>;
   @override
-  $Res call({String value});
+  $Res call({@HiveField(hiveTextSectionValueFieldId) String value});
 }
 
 class __$TextSectionCopyWithImpl<$Res> extends _$TextSectionCopyWithImpl<$Res>
@@ -81,21 +83,24 @@ class __$TextSectionCopyWithImpl<$Res> extends _$TextSectionCopyWithImpl<$Res>
 }
 
 class _$_TextSection with DiagnosticableTreeMixin implements _TextSection {
-  const _$_TextSection({this.value});
+  const _$_TextSection(
+      {@required @HiveField(hiveTextSectionValueFieldId) this.value})
+      : assert(value != null);
 
   @override
+  @HiveField(hiveTextSectionValueFieldId)
   final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TextSection.fromValue(value: $value)';
+    return 'TextSection(value: $value)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'TextSection.fromValue'))
+      ..add(DiagnosticsProperty('type', 'TextSection'))
       ..add(DiagnosticsProperty('value', value));
   }
 
@@ -117,9 +122,12 @@ class _$_TextSection with DiagnosticableTreeMixin implements _TextSection {
 }
 
 abstract class _TextSection implements TextSection {
-  const factory _TextSection({String value}) = _$_TextSection;
+  const factory _TextSection(
+          {@required @HiveField(hiveTextSectionValueFieldId) String value}) =
+      _$_TextSection;
 
   @override
+  @HiveField(hiveTextSectionValueFieldId)
   String get value;
   @override
   _$TextSectionCopyWith<_TextSection> get copyWith;
