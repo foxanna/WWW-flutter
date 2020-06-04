@@ -48,10 +48,10 @@ const expectedTournamentDetails2 = Tournament(
         Question(
           id: '1197982',
           display: 'ZZZZZ',
-          question: [TextSection.fromValue(value: 'ZZZZZ')],
-          answer: [TextSection.fromValue(value: 'xxxxx')],
-          comments: [TextSection.fromValue(value: 'YYYYY')],
-          passCriteria: [TextSection.fromValue(value: 'uuuuu')],
+          question: [TextSection(value: 'ZZZZZ')],
+          answer: [TextSection(value: 'xxxxx')],
+          comments: [TextSection(value: 'YYYYY')],
+          passCriteria: [TextSection(value: 'uuuuu')],
           authors: r'''Сергей Терентьев (Санкт-Петербург)''',
           sources: r'''https://lenta.ru/articles/2018/10/04/30swomen/''',
           info: QuestionInfo(
@@ -64,10 +64,10 @@ const expectedTournamentDetails2 = Tournament(
         Question(
           id: '1197983',
           display: 'ZZZZZ',
-          question: [TextSection.fromValue(value: 'ZZZZZ')],
-          answer: [TextSection.fromValue(value: 'xxxxx')],
-          comments: [TextSection.fromValue(value: 'YYYYY')],
-          passCriteria: [TextSection.fromValue(value: 'uuuuu')],
+          question: [TextSection(value: 'ZZZZZ')],
+          answer: [TextSection(value: 'xxxxx')],
+          comments: [TextSection(value: 'YYYYY')],
+          passCriteria: [TextSection(value: 'uuuuu')],
           authors: r'''Сергей Лобачёв (Нижний Новгород)''',
           sources:
               r'''1. https://www.youtube.com // https://goo.gl/MHFCBm 2. https://ru.wikipedia.org/wiki/Космический_мусор''',

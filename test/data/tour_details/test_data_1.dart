@@ -23,10 +23,10 @@ const expectedTourDetails1 = Tour(
     Question(
       id: '1198228',
       display: 'ZZZZZ',
-      question: [TextSection.fromValue(value: 'ZZZZZ')],
-      answer: [TextSection.fromValue(value: 'xxxxx')],
-      comments: [TextSection.fromValue(value: 'YYYYY')],
-      passCriteria: [TextSection.fromValue(value: 'uuuuu')],
+      question: [TextSection(value: 'ZZZZZ')],
+      answer: [TextSection(value: 'xxxxx')],
+      comments: [TextSection(value: 'YYYYY')],
+      passCriteria: [TextSection(value: 'uuuuu')],
       authors: r'''Константин Науменко (Киев)''',
       sources:
           r'''1. https://www.canal3.md/ru/bystrota-ruk-i-nikakogo-moshennichestv_6100.html''',
@@ -40,10 +40,10 @@ const expectedTourDetails1 = Tour(
     Question(
       id: '1198229',
       display: 'ZZZZZ',
-      question: [TextSection.fromValue(value: 'ZZZZZ')],
-      answer: [TextSection.fromValue(value: 'xxxxx')],
-      comments: [TextSection.fromValue(value: 'YYYYY')],
-      passCriteria: [TextSection.fromValue(value: 'uuuuu')],
+      question: [TextSection(value: 'ZZZZZ')],
+      answer: [TextSection(value: 'xxxxx')],
+      comments: [TextSection(value: 'YYYYY')],
+      passCriteria: [TextSection(value: 'uuuuu')],
       authors: r'''Константин Науменко (Киев)''',
       sources: r'''https://www.sports.ru/tribuna/blogs/podcasts/2694615.html''',
       info: QuestionInfo(

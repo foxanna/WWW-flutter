@@ -8,9 +8,9 @@ const expectedRandomQuestions1 = [
   Question(
     id: '872756',
     display: 'ZZZZZ',
-    question: [TextSection.fromValue(value: 'ZZZZZ')],
-    answer: [TextSection.fromValue(value: 'xxxxx')],
-    comments: [TextSection.fromValue(value: 'YYYYY')],
+    question: [TextSection(value: 'ZZZZZ')],
+    answer: [TextSection(value: 'xxxxx')],
+    comments: [TextSection(value: 'YYYYY')],
     authors: r'''Дмитрий Соловьев (Саранск)''',
     sources:
         r'''М. Шово. Повседневная жизнь Египта во времена Клеопатры. - М.: Молодая гвардия, Палимпсест, 2004. - С. 40.''',
@@ -32,8 +32,8 @@ const expectedRandomQuestions1 = [
   Question(
     id: '925260',
     display: 'ZZZZZ',
-    question: [TextSection.fromValue(value: 'ZZZZZ')],
-    answer: [TextSection.fromValue(value: 'xxxxx')],
+    question: [TextSection(value: 'ZZZZZ')],
+    answer: [TextSection(value: 'xxxxx')],
     authors: r'''Андрей Бойко (Малая Виска)''',
     sources: r'''Мультфильм "Кунг-фу Панда - 2".''',
     info: QuestionInfo(

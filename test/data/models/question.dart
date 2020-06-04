@@ -43,7 +43,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
+            AudioSection(value: '$audioDbUrl$oldFormatAudioValue'),
           ],
         ),
       ),
@@ -56,7 +56,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            AudioSection.fromValue(value: newFormatAudioValue),
+            AudioSection(value: newFormatAudioValue),
           ],
         ),
       ),
@@ -69,8 +69,8 @@ void main() {
         expectedQuestion: const Question(
           display: 'text',
           question: <QuestionSection>[
-            AudioSection.fromValue(value: newFormatAudioValue),
-            TextSection.fromValue(value: 'text'),
+            AudioSection(value: newFormatAudioValue),
+            TextSection(value: 'text'),
           ],
         ),
       ),
@@ -83,9 +83,9 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1 text2',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            AudioSection.fromValue(value: newFormatAudioValue),
-            TextSection.fromValue(value: 'text2'),
+            TextSection(value: 'text1'),
+            AudioSection(value: newFormatAudioValue),
+            TextSection(value: 'text2'),
           ],
         ),
       ),
@@ -98,8 +98,8 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1',
           question: <QuestionSection>[
-            AudioSection.fromValue(value: newFormatAudioValue),
-            TextSection.fromValue(value: 'text1'),
+            AudioSection(value: newFormatAudioValue),
+            TextSection(value: 'text1'),
           ],
         ),
       ),
@@ -115,12 +115,12 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1 text2 text3',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
-            TextSection.fromValue(value: 'text2'),
-            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
-            TextSection.fromValue(value: 'text3'),
-            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
+            TextSection(value: 'text1'),
+            AudioSection(value: '$audioDbUrl$oldFormatAudioValue'),
+            TextSection(value: 'text2'),
+            AudioSection(value: '$audioDbUrl$oldFormatAudioValue'),
+            TextSection(value: 'text3'),
+            AudioSection(value: '$audioDbUrl$oldFormatAudioValue'),
           ],
         ),
       ),
@@ -136,12 +136,12 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1 text2 text3',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            AudioSection.fromValue(value: newFormatAudioValue),
-            TextSection.fromValue(value: 'text2'),
-            AudioSection.fromValue(value: newFormatAudioValue),
-            TextSection.fromValue(value: 'text3'),
-            AudioSection.fromValue(value: newFormatAudioValue),
+            TextSection(value: 'text1'),
+            AudioSection(value: newFormatAudioValue),
+            TextSection(value: 'text2'),
+            AudioSection(value: newFormatAudioValue),
+            TextSection(value: 'text3'),
+            AudioSection(value: newFormatAudioValue),
           ],
         ),
       ),
@@ -154,9 +154,9 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1text2',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            AudioSection.fromValue(value: '$audioDbUrl$oldFormatAudioValue'),
-            TextSection.fromValue(value: 'text2'),
+            TextSection(value: 'text1'),
+            AudioSection(value: '$audioDbUrl$oldFormatAudioValue'),
+            TextSection(value: 'text2'),
           ],
         ),
       ),
@@ -169,9 +169,9 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1text2',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            AudioSection.fromValue(value: newFormatAudioValue),
-            TextSection.fromValue(value: 'text2'),
+            TextSection(value: 'text1'),
+            AudioSection(value: newFormatAudioValue),
+            TextSection(value: 'text2'),
           ],
         ),
       ),
@@ -183,7 +183,7 @@ void main() {
         dto: const QuestionDto(answer: newFormatAudio),
         expectedQuestion: const Question(
           answer: <QuestionSection>[
-            AudioSection.fromValue(value: newFormatAudioValue),
+            AudioSection(value: newFormatAudioValue),
           ],
         ),
       ),
@@ -195,7 +195,7 @@ void main() {
         dto: const QuestionDto(passCriteria: newFormatAudio),
         expectedQuestion: const Question(
           passCriteria: <QuestionSection>[
-            AudioSection.fromValue(value: newFormatAudioValue),
+            AudioSection(value: newFormatAudioValue),
           ],
         ),
       ),
@@ -207,7 +207,7 @@ void main() {
         dto: const QuestionDto(comments: newFormatAudio),
         expectedQuestion: const Question(
           comments: <QuestionSection>[
-            AudioSection.fromValue(value: newFormatAudioValue),
+            AudioSection(value: newFormatAudioValue),
           ],
         ),
       ),
@@ -230,7 +230,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
+            ImageSection(value: '$imageDbUrl$oldFormatImageValue'),
           ],
         ),
       ),
@@ -243,7 +243,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            ImageSection.fromValue(value: newFormatImageValue),
+            ImageSection(value: newFormatImageValue),
           ],
         ),
       ),
@@ -256,8 +256,8 @@ void main() {
         expectedQuestion: const Question(
           display: 'text',
           question: <QuestionSection>[
-            ImageSection.fromValue(value: newFormatImageValue),
-            TextSection.fromValue(value: 'text'),
+            ImageSection(value: newFormatImageValue),
+            TextSection(value: 'text'),
           ],
         ),
       ),
@@ -270,9 +270,9 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1 text2',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            ImageSection.fromValue(value: newFormatImageValue),
-            TextSection.fromValue(value: 'text2'),
+            TextSection(value: 'text1'),
+            ImageSection(value: newFormatImageValue),
+            TextSection(value: 'text2'),
           ],
         ),
       ),
@@ -285,8 +285,8 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1',
           question: <QuestionSection>[
-            ImageSection.fromValue(value: newFormatImageValue),
-            TextSection.fromValue(value: 'text1'),
+            ImageSection(value: newFormatImageValue),
+            TextSection(value: 'text1'),
           ],
         ),
       ),
@@ -302,12 +302,12 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1 text2 text3',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
-            TextSection.fromValue(value: 'text2'),
-            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
-            TextSection.fromValue(value: 'text3'),
-            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
+            TextSection(value: 'text1'),
+            ImageSection(value: '$imageDbUrl$oldFormatImageValue'),
+            TextSection(value: 'text2'),
+            ImageSection(value: '$imageDbUrl$oldFormatImageValue'),
+            TextSection(value: 'text3'),
+            ImageSection(value: '$imageDbUrl$oldFormatImageValue'),
           ],
         ),
       ),
@@ -323,12 +323,12 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1 text2 text3',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            ImageSection.fromValue(value: newFormatImageValue),
-            TextSection.fromValue(value: 'text2'),
-            ImageSection.fromValue(value: newFormatImageValue),
-            TextSection.fromValue(value: 'text3'),
-            ImageSection.fromValue(value: newFormatImageValue),
+            TextSection(value: 'text1'),
+            ImageSection(value: newFormatImageValue),
+            TextSection(value: 'text2'),
+            ImageSection(value: newFormatImageValue),
+            TextSection(value: 'text3'),
+            ImageSection(value: newFormatImageValue),
           ],
         ),
       ),
@@ -341,9 +341,9 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1text2',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            ImageSection.fromValue(value: '$imageDbUrl$oldFormatImageValue'),
-            TextSection.fromValue(value: 'text2'),
+            TextSection(value: 'text1'),
+            ImageSection(value: '$imageDbUrl$oldFormatImageValue'),
+            TextSection(value: 'text2'),
           ],
         ),
       ),
@@ -356,9 +356,9 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1text2',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            ImageSection.fromValue(value: newFormatImageValue),
-            TextSection.fromValue(value: 'text2'),
+            TextSection(value: 'text1'),
+            ImageSection(value: newFormatImageValue),
+            TextSection(value: 'text2'),
           ],
         ),
       ),
@@ -370,7 +370,7 @@ void main() {
         dto: const QuestionDto(answer: newFormatImage),
         expectedQuestion: const Question(
           answer: <QuestionSection>[
-            ImageSection.fromValue(value: newFormatImageValue),
+            ImageSection(value: newFormatImageValue),
           ],
         ),
       ),
@@ -382,7 +382,7 @@ void main() {
         dto: const QuestionDto(passCriteria: newFormatImage),
         expectedQuestion: const Question(
           passCriteria: <QuestionSection>[
-            ImageSection.fromValue(value: newFormatImageValue),
+            ImageSection(value: newFormatImageValue),
           ],
         ),
       ),
@@ -394,7 +394,7 @@ void main() {
         dto: const QuestionDto(comments: newFormatImage),
         expectedQuestion: const Question(
           comments: <QuestionSection>[
-            ImageSection.fromValue(value: newFormatImageValue),
+            ImageSection(value: newFormatImageValue),
           ],
         ),
       ),
@@ -413,7 +413,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: giveAwayValue),
+            GiveAwaySection(value: giveAwayValue),
           ],
         ),
       ),
@@ -426,7 +426,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: giveAwayValue),
+            GiveAwaySection(value: giveAwayValue),
           ],
         ),
       ),
@@ -440,7 +440,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: giveAwayValue),
+            GiveAwaySection(value: giveAwayValue),
           ],
         ),
       ),
@@ -454,7 +454,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: giveAwayValue),
+            GiveAwaySection(value: giveAwayValue),
           ],
         ),
       ),
@@ -468,7 +468,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: giveAwayValue),
+            GiveAwaySection(value: giveAwayValue),
           ],
         ),
       ),
@@ -482,7 +482,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: '$giveAwayValue\n$giveAwayValue'),
+            GiveAwaySection(value: '$giveAwayValue\n$giveAwayValue'),
           ],
         ),
       ),
@@ -496,7 +496,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: '$giveAwayValue\n$giveAwayValue'),
+            GiveAwaySection(value: '$giveAwayValue\n$giveAwayValue'),
           ],
         ),
       ),
@@ -509,7 +509,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: '$giveAwayValue.'),
+            GiveAwaySection(value: '$giveAwayValue.'),
           ],
         ),
       ),
@@ -522,7 +522,7 @@ void main() {
         expectedQuestion: const Question(
           display: '',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: '$giveAwayValue.'),
+            GiveAwaySection(value: '$giveAwayValue.'),
           ],
         ),
       ),
@@ -535,8 +535,8 @@ void main() {
         expectedQuestion: const Question(
           display: 'text',
           question: <QuestionSection>[
-            GiveAwaySection.fromValue(value: giveAwayValue),
-            TextSection.fromValue(value: 'text'),
+            GiveAwaySection(value: giveAwayValue),
+            TextSection(value: 'text'),
           ],
         ),
       ),
@@ -550,9 +550,9 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1 text2',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            GiveAwaySection.fromValue(value: giveAwayValue),
-            TextSection.fromValue(value: 'text2'),
+            TextSection(value: 'text1'),
+            GiveAwaySection(value: giveAwayValue),
+            TextSection(value: 'text2'),
           ],
         ),
       ),
@@ -565,8 +565,8 @@ void main() {
         expectedQuestion: const Question(
           display: 'text',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text'),
-            GiveAwaySection.fromValue(value: giveAwayValue),
+            TextSection(value: 'text'),
+            GiveAwaySection(value: giveAwayValue),
           ],
         ),
       ),
@@ -583,13 +583,13 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1 text2 text3 text4',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            GiveAwaySection.fromValue(value: '${giveAwayValue}1'),
-            TextSection.fromValue(value: 'text2'),
-            GiveAwaySection.fromValue(value: '${giveAwayValue}2'),
-            TextSection.fromValue(value: 'text3'),
-            GiveAwaySection.fromValue(value: '${giveAwayValue}3'),
-            TextSection.fromValue(value: 'text4'),
+            TextSection(value: 'text1'),
+            GiveAwaySection(value: '${giveAwayValue}1'),
+            TextSection(value: 'text2'),
+            GiveAwaySection(value: '${giveAwayValue}2'),
+            TextSection(value: 'text3'),
+            GiveAwaySection(value: '${giveAwayValue}3'),
+            TextSection(value: 'text4'),
           ],
         ),
       ),
@@ -606,13 +606,13 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1 text2 text3 text4',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            GiveAwaySection.fromValue(value: '${giveAwayValue}1'),
-            TextSection.fromValue(value: 'text2'),
-            GiveAwaySection.fromValue(value: '${giveAwayValue}2'),
-            TextSection.fromValue(value: 'text3'),
-            GiveAwaySection.fromValue(value: '${giveAwayValue}3'),
-            TextSection.fromValue(value: 'text4'),
+            TextSection(value: 'text1'),
+            GiveAwaySection(value: '${giveAwayValue}1'),
+            TextSection(value: 'text2'),
+            GiveAwaySection(value: '${giveAwayValue}2'),
+            TextSection(value: 'text3'),
+            GiveAwaySection(value: '${giveAwayValue}3'),
+            TextSection(value: 'text4'),
           ],
         ),
       ),
@@ -626,9 +626,9 @@ void main() {
         expectedQuestion: const Question(
           display: 'text1text2',
           question: <QuestionSection>[
-            TextSection.fromValue(value: 'text1'),
-            GiveAwaySection.fromValue(value: giveAwayValue),
-            TextSection.fromValue(value: 'text2'),
+            TextSection(value: 'text1'),
+            GiveAwaySection(value: giveAwayValue),
+            TextSection(value: 'text2'),
           ],
         ),
       ),
@@ -640,7 +640,7 @@ void main() {
         dto: QuestionDto(answer: newFormatGiveAway(giveAwayValue)),
         expectedQuestion: const Question(
           answer: <QuestionSection>[
-            GiveAwaySection.fromValue(value: giveAwayValue),
+            GiveAwaySection(value: giveAwayValue),
           ],
         ),
       ),
@@ -652,7 +652,7 @@ void main() {
         dto: QuestionDto(passCriteria: newFormatGiveAway(giveAwayValue)),
         expectedQuestion: const Question(
           passCriteria: <QuestionSection>[
-            GiveAwaySection.fromValue(value: giveAwayValue),
+            GiveAwaySection(value: giveAwayValue),
           ],
         ),
       ),
@@ -664,7 +664,7 @@ void main() {
         dto: QuestionDto(comments: newFormatGiveAway(giveAwayValue)),
         expectedQuestion: const Question(
           comments: <QuestionSection>[
-            GiveAwaySection.fromValue(value: giveAwayValue),
+            GiveAwaySection(value: giveAwayValue),
           ],
         ),
       ),
@@ -694,8 +694,7 @@ void main() {
                 expectedQuestion: Question(
                   display: '',
                   question: <QuestionSection>[
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
                   ],
                 ),
               ),
@@ -712,7 +711,7 @@ void main() {
                 expectedQuestion: Question(
                   display: '',
                   question: <QuestionSection>[
-                    SpeakerNoteSection.fromValue(
+                    SpeakerNoteSection(
                         value: '$prefix$speakerNoteValue.$speakerNoteValue.'),
                   ],
                 ),
@@ -730,7 +729,7 @@ void main() {
                 expectedQuestion: Question(
                   display: '',
                   question: <QuestionSection>[
-                    SpeakerNoteSection.fromValue(
+                    SpeakerNoteSection(
                         value: '$prefix$speakerNoteValue\n$speakerNoteValue'),
                   ],
                 ),
@@ -748,9 +747,8 @@ void main() {
                 expectedQuestion: Question(
                   display: 'text',
                   question: <QuestionSection>[
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
-                    const TextSection.fromValue(value: 'text'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
+                    const TextSection(value: 'text'),
                   ],
                 ),
               ),
@@ -767,10 +765,9 @@ void main() {
                 expectedQuestion: Question(
                   display: 'text1 text2',
                   question: <QuestionSection>[
-                    const TextSection.fromValue(value: 'text1'),
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
-                    const TextSection.fromValue(value: 'text2'),
+                    const TextSection(value: 'text1'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
+                    const TextSection(value: 'text2'),
                   ],
                 ),
               ),
@@ -787,9 +784,8 @@ void main() {
                 expectedQuestion: Question(
                   display: 'text',
                   question: <QuestionSection>[
-                    const TextSection.fromValue(value: 'text'),
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
+                    const TextSection(value: 'text'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
                   ],
                 ),
               ),
@@ -809,16 +805,13 @@ void main() {
                 expectedQuestion: Question(
                   display: 'text1 text2 text3 text4',
                   question: <QuestionSection>[
-                    const TextSection.fromValue(value: 'text1'),
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
-                    const TextSection.fromValue(value: 'text2'),
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
-                    const TextSection.fromValue(value: 'text3'),
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
-                    const TextSection.fromValue(value: 'text4'),
+                    const TextSection(value: 'text1'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
+                    const TextSection(value: 'text2'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
+                    const TextSection(value: 'text3'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
+                    const TextSection(value: 'text4'),
                   ],
                 ),
               ),
@@ -835,10 +828,9 @@ void main() {
                 expectedQuestion: Question(
                   display: 'text1text2',
                   question: <QuestionSection>[
-                    const TextSection.fromValue(value: 'text1'),
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
-                    const TextSection.fromValue(value: 'text2'),
+                    const TextSection(value: 'text1'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
+                    const TextSection(value: 'text2'),
                   ],
                 ),
               ),
@@ -853,8 +845,7 @@ void main() {
                 ),
                 expectedQuestion: Question(
                   answer: <QuestionSection>[
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
                   ],
                 ),
               ),
@@ -869,8 +860,7 @@ void main() {
                 ),
                 expectedQuestion: Question(
                   passCriteria: <QuestionSection>[
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
                   ],
                 ),
               ),
@@ -885,8 +875,7 @@ void main() {
                 ),
                 expectedQuestion: Question(
                   comments: <QuestionSection>[
-                    SpeakerNoteSection.fromValue(
-                        value: '$prefix$speakerNoteValue'),
+                    SpeakerNoteSection(value: '$prefix$speakerNoteValue'),
                   ],
                 ),
               ),
@@ -927,28 +916,28 @@ void main() {
                 display:
                     'text1 text2 text3 text4 text5 text6 text7 text8 text9 text0',
                 question: <QuestionSection>[
-                  TextSection.fromValue(value: 'text1'),
-                  AudioSection.fromValue(
+                  TextSection(value: 'text1'),
+                  AudioSection(
                       value: '${Constants.databaseUrl}/sounds/db/audio1'),
-                  TextSection.fromValue(value: 'text2'),
-                  AudioSection.fromValue(value: 'https://test.com/audio2'),
-                  TextSection.fromValue(value: 'text3'),
-                  ImageSection.fromValue(
+                  TextSection(value: 'text2'),
+                  AudioSection(value: 'https://test.com/audio2'),
+                  TextSection(value: 'text3'),
+                  ImageSection(
                       value: '${Constants.databaseUrl}/images/db/image1'),
-                  TextSection.fromValue(value: 'text4'),
-                  ImageSection.fromValue(value: 'https://test.com/image2'),
-                  TextSection.fromValue(value: 'text5'),
-                  GiveAwaySection.fromValue(value: 'giveaway1'),
-                  TextSection.fromValue(value: 'text6'),
-                  GiveAwaySection.fromValue(value: 'giveaway2'),
-                  TextSection.fromValue(value: 'text7'),
-                  SpeakerNoteSection.fromValue(value: 'Ведущему: speakerNote1'),
-                  TextSection.fromValue(value: 'text8'),
-                  SpeakerNoteSection.fromValue(value: 'Чтецу: speakerNote2'),
-                  TextSection.fromValue(value: 'text9'),
-                  SpeakerNoteSection.fromValue(
+                  TextSection(value: 'text4'),
+                  ImageSection(value: 'https://test.com/image2'),
+                  TextSection(value: 'text5'),
+                  GiveAwaySection(value: 'giveaway1'),
+                  TextSection(value: 'text6'),
+                  GiveAwaySection(value: 'giveaway2'),
+                  TextSection(value: 'text7'),
+                  SpeakerNoteSection(value: 'Ведущему: speakerNote1'),
+                  TextSection(value: 'text8'),
+                  SpeakerNoteSection(value: 'Чтецу: speakerNote2'),
+                  TextSection(value: 'text9'),
+                  SpeakerNoteSection(
                       value: 'Примечание ведущему: speakerNote3'),
-                  TextSection.fromValue(value: 'text0'),
+                  TextSection(value: 'text0'),
                 ],
               ),
             ));

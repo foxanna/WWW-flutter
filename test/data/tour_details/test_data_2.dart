@@ -23,10 +23,10 @@ const expectedTourDetails2 = Tour(
     Question(
       id: '1198351',
       display: 'ZZZZZ',
-      question: [TextSection.fromValue(value: 'ZZZZZ')],
-      answer: [TextSection.fromValue(value: 'xxxxx')],
-      comments: [TextSection.fromValue(value: 'YYYYY')],
-      passCriteria: [TextSection.fromValue(value: 'uuuuu')],
+      question: [TextSection(value: 'ZZZZZ')],
+      answer: [TextSection(value: 'xxxxx')],
+      comments: [TextSection(value: 'YYYYY')],
+      passCriteria: [TextSection(value: 'uuuuu')],
       authors: r'''Живой Трибунал.''',
       sources: r'''1. https://en.wikipedia.org/wiki/Post-credits_scene''',
       info: QuestionInfo(

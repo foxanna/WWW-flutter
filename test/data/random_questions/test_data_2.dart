@@ -8,9 +8,9 @@ const expectedRandomQuestions2 = [
   Question(
     id: '939869',
     display: 'ZZZZZ',
-    question: [TextSection.fromValue(value: 'ZZZZZ')],
-    answer: [TextSection.fromValue(value: 'xxxxx')],
-    comments: [TextSection.fromValue(value: 'YYYYY')],
+    question: [TextSection(value: 'ZZZZZ')],
+    answer: [TextSection(value: 'xxxxx')],
+    comments: [TextSection(value: 'YYYYY')],
     authors: r'''Дмитрий Башук (Харьков)''',
     sources: r'''"Телескоп", 2014, N 22.''',
     info: QuestionInfo(
