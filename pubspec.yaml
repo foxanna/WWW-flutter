@@ -50,6 +50,11 @@ dev_dependencies:
     sdk: flutter
   build_runner:
   freezed: ^0.10.9
+  hive_generator:
+    git:
+      url: git@github.com:hivedb/hive.git
+      path: hive_generator
+      ref: e90a7d940cc904eb335f35d59cca251cb810ae2d
   injectable_generator: ^0.4.0
   mockito: ^4.1.1
   extra_pedantic: ^1.2.0
