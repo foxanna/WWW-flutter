@@ -11,7 +11,7 @@ class BookmarksRoutePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: StyleConfiguration.of(context)
-            .tournamentsTreeStyleConfiguration
+            .bookmarksStyleConfiguration
             .scaffoldBackground,
         body: const CustomScrollView(
           physics: BouncingScrollPhysics(),
