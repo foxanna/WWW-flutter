@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
+import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/scroll_controller_bound_fab.dart';
 import 'package:what_when_where/ui/search/page_content.dart';
 import 'package:what_when_where/ui/search/app_bar/app_bar.dart';
@@ -18,6 +19,9 @@ class SearchRoutePageState extends State<SearchRoutePage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        backgroundColor: StyleConfiguration.of(context)
+            .searchStyleConfiguration
+            .scaffoldBackground,
         body: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           controller: _scrollController,

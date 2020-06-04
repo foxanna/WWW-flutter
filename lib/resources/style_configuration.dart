@@ -492,7 +492,7 @@ class SearchStyleConfiguration {
     final theme = Theme.of(context);
 
     return SearchStyleConfiguration._(
-      scaffoldBackground: Colors.black,
+      scaffoldBackground: theme.scaffoldBackgroundColor,
       appBarIconTheme: theme.iconTheme,
       appBarBackground: theme.canvasColor,
       appBarElevation: 4.0,
