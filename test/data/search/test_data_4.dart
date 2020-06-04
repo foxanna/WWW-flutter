@@ -1,6 +1,5 @@
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
-import 'package:what_when_where/data/models/tournament_status.dart';
 
 const expectedSearchTournaments4 = [
   Tournament(

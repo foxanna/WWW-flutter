@@ -202,8 +202,8 @@ class AnalyticsMiddleware {
     );
   }
 
-  void _logTree(
-      Store<AppState> store, OpenTournamentsTreeUserAction action, next) {
+  void _logTree(Store<AppState> store, OpenTournamentsTreeUserAction action,
+      NextDispatcher next) {
     next(action);
 
     if (action.info == null) {

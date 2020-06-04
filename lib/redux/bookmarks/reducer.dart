@@ -2,8 +2,6 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/bookmarks/actions.dart';
 import 'package:what_when_where/redux/bookmarks/state.dart';
 import 'package:what_when_where/redux/redux_action.dart';
-import 'package:what_when_where/redux/tours/actions.dart';
-import 'package:what_when_where/redux/tours/state.dart';
 
 class BookmarksReducer {
   static final Reducer<BookmarksState> _reducer =

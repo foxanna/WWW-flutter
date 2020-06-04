@@ -2,7 +2,6 @@ import 'package:what_when_where/api/models/latest_tournaments_dto.dart';
 import 'package:what_when_where/api/models/tournament_dto.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
-import 'package:what_when_where/data/models/tournament_status.dart';
 
 const latestTournamentsDto2 = LatestTournamentsDto(
   tournaments: [
