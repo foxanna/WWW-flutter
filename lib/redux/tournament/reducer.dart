@@ -15,6 +15,8 @@ class TournamentReducer {
     TypedReducer<TournamentState, FailedTournamentSystemAction>(_failed),
     TypedReducer<TournamentState, StatusChangedTournamentSystemAction>(
         _statusChanged),
+    TypedReducer<TournamentState, AllToursCompletedTournamentSystemAction>(
+        _allToursLoaded),
   ]);
 
   static TournamentState reduce(TournamentState state, ReduxAction action) =>
@@ -44,6 +46,7 @@ class TournamentReducer {
               info: action.tournament.info,
               status: state.status,
               tournament: action.tournament,
+              toursLoaded: false,
             )
           : state;
 
@@ -61,6 +64,17 @@ class TournamentReducer {
           TournamentState state, StatusChangedTournamentSystemAction action) =>
       state != null && _isTheOne(state, action.info)
           ? state.copyWith(status: action.status)
+          : state;
+
+  static TournamentState _allToursLoaded(TournamentState state,
+          AllToursCompletedTournamentSystemAction action) =>
+      state != null &&
+              state is DataTournamentState &&
+              _isTheOne(state, action.info)
+          ? state.copyWith(
+              toursLoaded: true,
+              tournament: state.tournament.copyWith(tours: action.tours),
+            )
           : state;
 
   static bool _isTheOne(TournamentState state, TournamentInfo info) =>

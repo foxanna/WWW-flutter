@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
 import 'package:what_when_where/data/models/tournament_status.dart';
@@ -65,4 +66,9 @@ abstract class SystemActionTournament
     @required TournamentInfo info,
     @required TournamentStatus status,
   }) = StatusChangedTournamentSystemAction;
+
+  const factory SystemActionTournament.allToursCompleted({
+    @required TournamentInfo info,
+    @required List<Tour> tours,
+  }) = AllToursCompletedTournamentSystemAction;
 }

@@ -23,11 +23,13 @@ class _$TournamentStateTearOff {
   DataTournamentState data(
       {@required TournamentInfo info,
       @required TournamentStatus status,
-      @required Tournament tournament}) {
+      @required Tournament tournament,
+      @required bool toursLoaded}) {
     return DataTournamentState(
       info: info,
       status: status,
       tournament: tournament,
+      toursLoaded: toursLoaded,
     );
   }
 
@@ -63,7 +65,7 @@ mixin _$TournamentState {
     @required Result initial(TournamentInfo info, TournamentStatus status),
     @required
         Result data(TournamentInfo info, TournamentStatus status,
-            Tournament tournament),
+            Tournament tournament, bool toursLoaded),
     @required Result loading(TournamentInfo info, TournamentStatus status),
     @required
         Result error(
@@ -72,8 +74,8 @@ mixin _$TournamentState {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(TournamentInfo info, TournamentStatus status),
-    Result data(
-        TournamentInfo info, TournamentStatus status, Tournament tournament),
+    Result data(TournamentInfo info, TournamentStatus status,
+        Tournament tournament, bool toursLoaded),
     Result loading(TournamentInfo info, TournamentStatus status),
     Result error(
         TournamentInfo info, TournamentStatus status, Exception exception),
@@ -237,7 +239,7 @@ class _$InitialTournamentState
     @required Result initial(TournamentInfo info, TournamentStatus status),
     @required
         Result data(TournamentInfo info, TournamentStatus status,
-            Tournament tournament),
+            Tournament tournament, bool toursLoaded),
     @required Result loading(TournamentInfo info, TournamentStatus status),
     @required
         Result error(
@@ -254,8 +256,8 @@ class _$InitialTournamentState
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(TournamentInfo info, TournamentStatus status),
-    Result data(
-        TournamentInfo info, TournamentStatus status, Tournament tournament),
+    Result data(TournamentInfo info, TournamentStatus status,
+        Tournament tournament, bool toursLoaded),
     Result loading(TournamentInfo info, TournamentStatus status),
     Result error(
         TournamentInfo info, TournamentStatus status, Exception exception),
@@ -320,7 +322,10 @@ abstract class $DataTournamentStateCopyWith<$Res>
       _$DataTournamentStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {TournamentInfo info, TournamentStatus status, Tournament tournament});
+      {TournamentInfo info,
+      TournamentStatus status,
+      Tournament tournament,
+      bool toursLoaded});
 
   @override
   $TournamentInfoCopyWith<$Res> get info;
@@ -344,12 +349,15 @@ class _$DataTournamentStateCopyWithImpl<$Res>
     Object info = freezed,
     Object status = freezed,
     Object tournament = freezed,
+    Object toursLoaded = freezed,
   }) {
     return _then(DataTournamentState(
       info: info == freezed ? _value.info : info as TournamentInfo,
       status: status == freezed ? _value.status : status as TournamentStatus,
       tournament:
           tournament == freezed ? _value.tournament : tournament as Tournament,
+      toursLoaded:
+          toursLoaded == freezed ? _value.toursLoaded : toursLoaded as bool,
     ));
   }
 
@@ -368,10 +376,14 @@ class _$DataTournamentState
     with DiagnosticableTreeMixin
     implements DataTournamentState {
   const _$DataTournamentState(
-      {@required this.info, @required this.status, @required this.tournament})
+      {@required this.info,
+      @required this.status,
+      @required this.tournament,
+      @required this.toursLoaded})
       : assert(info != null),
         assert(status != null),
-        assert(tournament != null);
+        assert(tournament != null),
+        assert(toursLoaded != null);
 
   @override
   final TournamentInfo info;
@@ -379,10 +391,12 @@ class _$DataTournamentState
   final TournamentStatus status;
   @override
   final Tournament tournament;
+  @override
+  final bool toursLoaded;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TournamentState.data(info: $info, status: $status, tournament: $tournament)';
+    return 'TournamentState.data(info: $info, status: $status, tournament: $tournament, toursLoaded: $toursLoaded)';
   }
 
   @override
@@ -392,7 +406,8 @@ class _$DataTournamentState
       ..add(DiagnosticsProperty('type', 'TournamentState.data'))
       ..add(DiagnosticsProperty('info', info))
       ..add(DiagnosticsProperty('status', status))
-      ..add(DiagnosticsProperty('tournament', tournament));
+      ..add(DiagnosticsProperty('tournament', tournament))
+      ..add(DiagnosticsProperty('toursLoaded', toursLoaded));
   }
 
   @override
@@ -405,7 +420,10 @@ class _$DataTournamentState
                 const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.tournament, tournament) ||
                 const DeepCollectionEquality()
-                    .equals(other.tournament, tournament)));
+                    .equals(other.tournament, tournament)) &&
+            (identical(other.toursLoaded, toursLoaded) ||
+                const DeepCollectionEquality()
+                    .equals(other.toursLoaded, toursLoaded)));
   }
 
   @override
@@ -413,7 +431,8 @@ class _$DataTournamentState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(info) ^
       const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(tournament);
+      const DeepCollectionEquality().hash(tournament) ^
+      const DeepCollectionEquality().hash(toursLoaded);
 
   @override
   $DataTournamentStateCopyWith<DataTournamentState> get copyWith =>
@@ -425,7 +444,7 @@ class _$DataTournamentState
     @required Result initial(TournamentInfo info, TournamentStatus status),
     @required
         Result data(TournamentInfo info, TournamentStatus status,
-            Tournament tournament),
+            Tournament tournament, bool toursLoaded),
     @required Result loading(TournamentInfo info, TournamentStatus status),
     @required
         Result error(
@@ -435,15 +454,15 @@ class _$DataTournamentState
     assert(data != null);
     assert(loading != null);
     assert(error != null);
-    return data(info, status, tournament);
+    return data(info, status, tournament, toursLoaded);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(TournamentInfo info, TournamentStatus status),
-    Result data(
-        TournamentInfo info, TournamentStatus status, Tournament tournament),
+    Result data(TournamentInfo info, TournamentStatus status,
+        Tournament tournament, bool toursLoaded),
     Result loading(TournamentInfo info, TournamentStatus status),
     Result error(
         TournamentInfo info, TournamentStatus status, Exception exception),
@@ -451,7 +470,7 @@ class _$DataTournamentState
   }) {
     assert(orElse != null);
     if (data != null) {
-      return data(info, status, tournament);
+      return data(info, status, tournament, toursLoaded);
     }
     return orElse();
   }
@@ -492,13 +511,15 @@ abstract class DataTournamentState implements TournamentState {
   const factory DataTournamentState(
       {@required TournamentInfo info,
       @required TournamentStatus status,
-      @required Tournament tournament}) = _$DataTournamentState;
+      @required Tournament tournament,
+      @required bool toursLoaded}) = _$DataTournamentState;
 
   @override
   TournamentInfo get info;
   @override
   TournamentStatus get status;
   Tournament get tournament;
+  bool get toursLoaded;
   @override
   $DataTournamentStateCopyWith<DataTournamentState> get copyWith;
 }
@@ -592,7 +613,7 @@ class _$LoadingTournamentState
     @required Result initial(TournamentInfo info, TournamentStatus status),
     @required
         Result data(TournamentInfo info, TournamentStatus status,
-            Tournament tournament),
+            Tournament tournament, bool toursLoaded),
     @required Result loading(TournamentInfo info, TournamentStatus status),
     @required
         Result error(
@@ -609,8 +630,8 @@ class _$LoadingTournamentState
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(TournamentInfo info, TournamentStatus status),
-    Result data(
-        TournamentInfo info, TournamentStatus status, Tournament tournament),
+    Result data(TournamentInfo info, TournamentStatus status,
+        Tournament tournament, bool toursLoaded),
     Result loading(TournamentInfo info, TournamentStatus status),
     Result error(
         TournamentInfo info, TournamentStatus status, Exception exception),
@@ -770,7 +791,7 @@ class _$ErrorTournamentState
     @required Result initial(TournamentInfo info, TournamentStatus status),
     @required
         Result data(TournamentInfo info, TournamentStatus status,
-            Tournament tournament),
+            Tournament tournament, bool toursLoaded),
     @required Result loading(TournamentInfo info, TournamentStatus status),
     @required
         Result error(
@@ -787,8 +808,8 @@ class _$ErrorTournamentState
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(TournamentInfo info, TournamentStatus status),
-    Result data(
-        TournamentInfo info, TournamentStatus status, Tournament tournament),
+    Result data(TournamentInfo info, TournamentStatus status,
+        Tournament tournament, bool toursLoaded),
     Result loading(TournamentInfo info, TournamentStatus status),
     Result error(
         TournamentInfo info, TournamentStatus status, Exception exception),

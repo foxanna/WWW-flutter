@@ -17,6 +17,7 @@ abstract class TournamentState with _$TournamentState {
     @required TournamentInfo info,
     @required TournamentStatus status,
     @required Tournament tournament,
+    @required bool toursLoaded,
   }) = DataTournamentState;
 
   const factory TournamentState.loading({

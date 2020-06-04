@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
+import 'package:dartx/dartx.dart';
 import 'package:what_when_where/data/status/tournaments_bookmarks.dart';
 import 'package:what_when_where/data/status/tournaments_history.dart';
 import 'package:what_when_where/data/tournament_details_provider.dart';
@@ -8,6 +9,7 @@ import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/redux/tournament/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
+import 'package:what_when_where/redux/tours/state.dart';
 import 'package:what_when_where/redux/utils.dart';
 
 @injectable
@@ -38,6 +40,7 @@ class TournamentMiddleware {
             _addToBookmarks),
         TypedMiddleware<AppState, RemoveFromBookmarksTournamentUserAction>(
             _removeFromBookmarks),
+        TypedMiddleware<AppState, CompletedToursSystemAction>(_tourCompleted),
       ];
 
   void _open(Store<AppState> store, OpenTournamentUserAction action,
@@ -157,5 +160,31 @@ class TournamentMiddleware {
     ));
 
     await _tournamentsBookmarksService.removeFromBookmarks(action.info);
+  }
+
+  void _tourCompleted(Store<AppState> store, CompletedToursSystemAction action,
+      NextDispatcher next) {
+    next(action);
+
+    final toursState = store.state.toursState;
+
+    if (toursState == null) {
+      return;
+    }
+
+    if (toursState.tours.every((x) => x is DataTourState)) {
+      final completedTours = toursState.tours.whereType<DataTourState>();
+      final distinct = completedTours
+          .map((x) => x.tour.info.tournamentInfo)
+          .distinct()
+          .toList();
+
+      if (distinct.length == 1) {
+        store.dispatch(SystemActionTournament.allToursCompleted(
+          info: distinct.single,
+          tours: completedTours.map((x) => x.tour).toList(),
+        ));
+      }
+    }
   }
 }
