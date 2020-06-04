@@ -14,7 +14,7 @@ class LogsMiddleware {
       ];
 
   void _log(Store<AppState> store, dynamic action, NextDispatcher next) {
-    log(action);
+    log(action.runtimeType);
 
     next(action);
   }
