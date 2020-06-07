@@ -39,9 +39,11 @@ class Translations_ru extends Translations {
   String get appDeveloper => "Разработчик приложения";
   String get appDeveloperName => "Анна Домашич";
   String get appNameFull => "Сова\nЧто? Где? Когда?";
-  String get bookmarksPageTitle => "Ваши закладки";
   String get bookmarksEmptyMessage =>
       "Здесь пока пусто\nСперва добавьте несколько турниров в свои закладки";
+  String get bookmarksInvitationWhileOffline =>
+      "Тем временем можете играть турниры из закладок офлайн";
+  String get bookmarksPageTitle => "Ваши закладки";
   String get dialogCloseButton => "закрыть";
   String get downloadAppVia => "Загружайте приложение из";
   String get emptySearchResults => "Ничего не найдено";
@@ -107,10 +109,12 @@ class Translations_ru extends Translations {
         return appDeveloperName;
       case 'appNameFull':
         return appNameFull;
-      case 'bookmarksPageTitle':
-        return bookmarksPageTitle;
       case 'bookmarksEmptyMessage':
         return bookmarksEmptyMessage;
+      case 'bookmarksInvitationWhileOffline':
+        return bookmarksInvitationWhileOffline;
+      case 'bookmarksPageTitle':
+        return bookmarksPageTitle;
       case 'dialogCloseButton':
         return dialogCloseButton;
       case 'downloadAppVia':

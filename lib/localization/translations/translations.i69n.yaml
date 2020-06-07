@@ -1,8 +1,9 @@
 appDeveloper: Application developer
 appDeveloperName: Anna Domashych
 appNameFull: "Sova\nWhat? Where? When?"
-bookmarksPageTitle: Your bookmarks
 bookmarksEmptyMessage: "There is nothing here yet\nAdd some tournaments to your bookmarks first"
+bookmarksInvitationWhileOffline: Meanwhile, you can play your bookmarked tournaments offline
+bookmarksPageTitle: Your bookmarks
 dialogCloseButton: close
 downloadAppVia: Download the application from
 emptySearchResults: No search results

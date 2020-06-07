@@ -39,9 +39,11 @@ class Translations_uk extends Translations {
   String get appDeveloper => "Розробник додатку";
   String get appDeveloperName => "Анна Домашич";
   String get appNameFull => "Сова\nЩо? Де? Коли?";
-  String get bookmarksPageTitle => "Ващі закладки";
   String get bookmarksEmptyMessage =>
       "Тут поки що порожньо\nСпочатку додайте декілька турнірів до своїх закладок";
+  String get bookmarksInvitationWhileOffline =>
+      "Тим часом можете грати турніри з закладок офлайн";
+  String get bookmarksPageTitle => "Ваші закладки";
   String get dialogCloseButton => "закрити";
   String get downloadAppVia => "Завантажуйте додаток з";
   String get emptySearchResults => "Нічого не знайдено";
@@ -107,10 +109,12 @@ class Translations_uk extends Translations {
         return appDeveloperName;
       case 'appNameFull':
         return appNameFull;
-      case 'bookmarksPageTitle':
-        return bookmarksPageTitle;
       case 'bookmarksEmptyMessage':
         return bookmarksEmptyMessage;
+      case 'bookmarksInvitationWhileOffline':
+        return bookmarksInvitationWhileOffline;
+      case 'bookmarksPageTitle':
+        return bookmarksPageTitle;
       case 'dialogCloseButton':
         return dialogCloseButton;
       case 'downloadAppVia':
