@@ -170,8 +170,9 @@ class _TournamentsGridTileContent extends StatelessWidget {
                 ],
               ),
             ),
-            if (isNew)
-              Positioned(
+            Visibility(
+              visible: isNew,
+              child: Positioned(
                 right: max(gridStyleConfiguration.tileContentPadding.right,
                     gridStyleConfiguration.tileContentPadding.bottom),
                 bottom: max(gridStyleConfiguration.tileContentPadding.right,
@@ -198,8 +199,10 @@ class _TournamentsGridTileContent extends StatelessWidget {
                   ),
                 ),
               ),
-            if (isBookmarked)
-              Positioned(
+            ),
+            Visibility(
+              visible: isBookmarked,
+              child: Positioned(
                 right: gridStyleConfiguration.tileContentPadding.right,
                 child: BookmarkedMarker(
                   color:
@@ -207,6 +210,7 @@ class _TournamentsGridTileContent extends StatelessWidget {
                   size: gridStyleConfiguration.bookmarkedTournamentIconSize,
                 ),
               ),
+            ),
           ],
         ),
         onTap: onTap,
