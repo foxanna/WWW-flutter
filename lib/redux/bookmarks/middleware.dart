@@ -63,7 +63,8 @@ class BookmarksMiddleware {
     try {
       store.dispatch(const SystemActionBookmarks.loading());
 
-      final ids = await _bookmarksService.getAll();
+      final ids =
+          await _bookmarksService.getAll() ?? const Iterable<String>.empty();
       final data =
           await Future.wait(ids.map((x) => _tournamentDetailsProvider.get(x)));
 
