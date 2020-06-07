@@ -42,11 +42,6 @@ class TournamentsPermanentCache implements ITournamentsPermanentCache {
     try {
       await _localStorage.put<Tournament>(
           _tableName, tournament.info.id, tournament);
-      final check =
-          await _localStorage.get<Tournament>(_tableName, tournament.info.id);
-      if (check != tournament) {
-        throw Exception('Failed to save tournament correctly');
-      }
     } on Exception catch (e, s) {
       _crashService.recordException(e, stackTrace: s);
     }
