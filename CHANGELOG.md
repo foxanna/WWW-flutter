@@ -1,4 +1,4 @@
-## v2.2.1 - 7 June 2020
+## v2.2.2 - 7 June 2020
 
 New features:
 * Tournaments bookmarks;

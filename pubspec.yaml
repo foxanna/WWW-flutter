@@ -1,7 +1,7 @@
 name: what_when_where
 description: What? When? Where?
 
-version: 2.2.1+20201
+version: 2.2.2+20202
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
