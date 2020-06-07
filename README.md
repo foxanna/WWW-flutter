@@ -13,19 +13,20 @@ an application for fans of the popular show "What? Where? When?”.
 ## Features  ✨
 
 * Regular questions database updates;
+* Unread tournaments highlighting;
+* Bookmarking favorite tournaments;
 * Built-in one-minute timer to find an answer;
 * Shorter timer for blitz and doublet questions;
 * Tournaments search;
 * Random questions;
 * Tournaments tree;
-* Dark and light modes.
+* Offline access to bookmarked tournaments;
+* Dark and light UI themes.
 
 ## Future plans 🔮
 
 * Release iOS version;
-* Adaptive layout for phones and tablets;
-* Bookmark tournaments, save bookmarked tournaments for offline use;
-* Visually differentiate between viewed and new tournaments.
+* Adaptive layout for phones and tablets.
 
 ## Author  👩‍💻
 
