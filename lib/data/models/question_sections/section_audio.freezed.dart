@@ -82,6 +82,7 @@ class __$AudioSectionCopyWithImpl<$Res> extends _$AudioSectionCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveAudioSectionTypeId)
 class _$_AudioSection with DiagnosticableTreeMixin implements _AudioSection {
   const _$_AudioSection(
       {@required @HiveField(hiveAudioSectionValueFieldId) this.value})

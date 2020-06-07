@@ -8,10 +8,10 @@ part 'section_giveaway.freezed.dart';
 part 'section_giveaway.g.dart';
 
 @freezed
-@HiveType(typeId: hiveGiveAwaySectionTypeId)
 abstract class GiveAwaySection
     with _$GiveAwaySection
     implements QuestionSection {
+  @HiveType(typeId: hiveGiveAwaySectionTypeId)
   const factory GiveAwaySection({
     @HiveField(hiveGiveAwaySectionValueFieldId) @required String value,
   }) = _GiveAwaySection;
@@ -27,4 +27,7 @@ abstract class GiveAwaySection
                           caseSensitive: false),
                       '')
                   .trim());
+
+  static TypeAdapter<GiveAwaySection> createHiveAdapter() =>
+      _$_GiveAwaySectionAdapter();
 }

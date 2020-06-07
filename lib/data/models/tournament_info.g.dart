@@ -6,21 +6,32 @@ part of 'tournament_info.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TournamentInfoAdapter extends TypeAdapter<TournamentInfo> {
+class _$_TournamentInfoAdapter extends TypeAdapter<_$_TournamentInfo> {
   @override
   final typeId = 1;
 
   @override
-  TournamentInfo read(BinaryReader reader) {
+  _$_TournamentInfo read(BinaryReader reader) {
     var numOfFields = reader.readByte();
     var fields = <int, dynamic>{
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return TournamentInfo();
+    return _$_TournamentInfo(
+      id: fields[0] as String,
+      id2: fields[1] as String,
+      title: fields[2] as String,
+      questionsCount: fields[3] as String,
+      toursCount: fields[4] as String,
+      description: fields[5] as String,
+      url: fields[6] as String,
+      editors: fields[7] as String,
+      createdAt: fields[8] as String,
+      playedAt: fields[9] as String,
+    );
   }
 
   @override
-  void write(BinaryWriter writer, TournamentInfo obj) {
+  void write(BinaryWriter writer, _$_TournamentInfo obj) {
     writer
       ..writeByte(10)
       ..writeByte(0)
@@ -51,7 +62,7 @@ class TournamentInfoAdapter extends TypeAdapter<TournamentInfo> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TournamentInfoAdapter &&
+      other is _$_TournamentInfoAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

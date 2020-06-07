@@ -7,12 +7,15 @@ part 'tournament_status.freezed.dart';
 part 'tournament_status.g.dart';
 
 @freezed
-@HiveType(typeId: hiveTournamentStatusTypeId)
 abstract class TournamentStatus with _$TournamentStatus {
+  @HiveType(typeId: hiveTournamentStatusTypeId)
   const factory TournamentStatus({
     @HiveField(hiveTournamentStatusIsNewFieldId) @Default(false) bool isNew,
     @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
     @Default(false)
         bool isBookmarked,
   }) = _TournamentStatus;
+
+  static TypeAdapter<TournamentStatus> createHiveAdapter() =>
+      _$_TournamentStatusAdapter();
 }

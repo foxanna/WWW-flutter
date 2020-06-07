@@ -6,21 +6,26 @@ part of 'question_info.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class QuestionInfoAdapter extends TypeAdapter<QuestionInfo> {
+class _$_QuestionInfoAdapter extends TypeAdapter<_$_QuestionInfo> {
   @override
   final typeId = 6;
 
   @override
-  QuestionInfo read(BinaryReader reader) {
+  _$_QuestionInfo read(BinaryReader reader) {
     var numOfFields = reader.readByte();
     var fields = <int, dynamic>{
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return QuestionInfo();
+    return _$_QuestionInfo(
+      id: fields[0] as String,
+      number: fields[1] as String,
+      url: fields[2] as String,
+      tourInfo: fields[3] as TourInfo,
+    );
   }
 
   @override
-  void write(BinaryWriter writer, QuestionInfo obj) {
+  void write(BinaryWriter writer, _$_QuestionInfo obj) {
     writer
       ..writeByte(4)
       ..writeByte(0)
@@ -39,7 +44,7 @@ class QuestionInfoAdapter extends TypeAdapter<QuestionInfo> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is QuestionInfoAdapter &&
+      other is _$_QuestionInfoAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

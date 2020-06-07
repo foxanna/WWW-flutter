@@ -156,6 +156,7 @@ class __$TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveTournamentTypeId)
 class _$_Tournament with DiagnosticableTreeMixin implements _Tournament {
   const _$_Tournament(
       {@HiveField(hiveTournamentIdFieldId)

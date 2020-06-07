@@ -6,21 +6,25 @@ part of 'tour.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TourAdapter extends TypeAdapter<Tour> {
+class _$_TourAdapter extends TypeAdapter<_$_Tour> {
   @override
   final typeId = 3;
 
   @override
-  Tour read(BinaryReader reader) {
+  _$_Tour read(BinaryReader reader) {
     var numOfFields = reader.readByte();
     var fields = <int, dynamic>{
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Tour();
+    return _$_Tour(
+      id: fields[0] as String,
+      info: fields[1] as TourInfo,
+      questions: (fields[2] as List)?.cast<Question>(),
+    );
   }
 
   @override
-  void write(BinaryWriter writer, Tour obj) {
+  void write(BinaryWriter writer, _$_Tour obj) {
     writer
       ..writeByte(3)
       ..writeByte(0)
@@ -37,7 +41,7 @@ class TourAdapter extends TypeAdapter<Tour> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TourAdapter &&
+      other is _$_TourAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

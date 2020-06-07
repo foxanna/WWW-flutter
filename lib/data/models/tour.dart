@@ -13,8 +13,8 @@ part 'tour.freezed.dart';
 part 'tour.g.dart';
 
 @freezed
-@HiveType(typeId: hiveTourTypeId)
 abstract class Tour with _$Tour {
+  @HiveType(typeId: hiveTourTypeId)
   const factory Tour({
     @HiveField(hiveTourIdFieldId) String id,
     @HiveField(hiveTourInfoFieldId) @Default(TourInfo()) TourInfo info,
@@ -49,4 +49,6 @@ abstract class Tour with _$Tour {
           <Question>[],
     );
   }
+
+  static TypeAdapter<Tour> createHiveAdapter() => _$_TourAdapter();
 }

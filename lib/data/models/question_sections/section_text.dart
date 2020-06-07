@@ -8,12 +8,15 @@ part 'section_text.freezed.dart';
 part 'section_text.g.dart';
 
 @freezed
-@HiveType(typeId: hiveTextSectionTypeId)
 abstract class TextSection with _$TextSection implements QuestionSection {
+  @HiveType(typeId: hiveTextSectionTypeId)
   const factory TextSection({
     @HiveField(hiveTextSectionValueFieldId) @required String value,
   }) = _TextSection;
 
   factory TextSection.fromString({@required String string}) =>
       TextSection(value: string.trim());
+
+  static TypeAdapter<TextSection> createHiveAdapter() =>
+      _$_TextSectionAdapter();
 }

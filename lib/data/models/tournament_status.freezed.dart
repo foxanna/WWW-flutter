@@ -100,6 +100,7 @@ class __$TournamentStatusCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveTournamentStatusTypeId)
 class _$_TournamentStatus
     with DiagnosticableTreeMixin
     implements _TournamentStatus {

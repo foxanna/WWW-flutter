@@ -14,8 +14,8 @@ part 'question.freezed.dart';
 part 'question.g.dart';
 
 @freezed
-@HiveType(typeId: hiveQuestionTypeId)
 abstract class Question with _$Question {
+  @HiveType(typeId: hiveQuestionTypeId)
   const factory Question({
     @HiveField(hiveQuestionIdFieldId) String id,
     @HiveField(hiveQuestionDisplayFieldId) String display,
@@ -61,4 +61,6 @@ abstract class Question with _$Question {
               ),
         ),
       );
+
+  static TypeAdapter<Question> createHiveAdapter() => _$_QuestionAdapter();
 }

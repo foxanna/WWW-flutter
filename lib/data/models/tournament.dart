@@ -13,8 +13,8 @@ part 'tournament.freezed.dart';
 part 'tournament.g.dart';
 
 @freezed
-@HiveType(typeId: hiveTournamentTypeId)
 abstract class Tournament with _$Tournament {
+  @HiveType(typeId: hiveTournamentTypeId)
   const factory Tournament({
     @HiveField(hiveTournamentIdFieldId) String id,
     @HiveField(hiveTournamentId2FieldId) String id2,
@@ -53,4 +53,6 @@ abstract class Tournament with _$Tournament {
           <Tour>[],
     );
   }
+
+  static TypeAdapter<Tournament> createHiveAdapter() => _$_TournamentAdapter();
 }

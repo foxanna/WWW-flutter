@@ -82,6 +82,7 @@ class __$ImageSectionCopyWithImpl<$Res> extends _$ImageSectionCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveImageSectionTypeId)
 class _$_ImageSection with DiagnosticableTreeMixin implements _ImageSection {
   const _$_ImageSection(
       {@required @HiveField(hiveImageSectionValueFieldId) this.value})

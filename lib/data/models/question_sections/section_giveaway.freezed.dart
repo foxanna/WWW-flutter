@@ -84,6 +84,7 @@ class __$GiveAwaySectionCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveGiveAwaySectionTypeId)
 class _$_GiveAwaySection
     with DiagnosticableTreeMixin
     implements _GiveAwaySection {

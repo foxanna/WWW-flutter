@@ -133,6 +133,7 @@ class __$QuestionInfoCopyWithImpl<$Res> extends _$QuestionInfoCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveQuestionInfoTypeId)
 class _$_QuestionInfo with DiagnosticableTreeMixin implements _QuestionInfo {
   const _$_QuestionInfo(
       {@HiveField(hiveQuestionInfoIdFieldId)

@@ -184,6 +184,7 @@ class __$TournamentInfoCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveTournamentInfoTypeId)
 class _$_TournamentInfo
     with DiagnosticableTreeMixin
     implements _TournamentInfo {

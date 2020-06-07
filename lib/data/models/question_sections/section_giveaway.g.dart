@@ -6,21 +6,23 @@ part of 'section_giveaway.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class GiveAwaySectionAdapter extends TypeAdapter<GiveAwaySection> {
+class _$_GiveAwaySectionAdapter extends TypeAdapter<_$_GiveAwaySection> {
   @override
   final typeId = 8;
 
   @override
-  GiveAwaySection read(BinaryReader reader) {
+  _$_GiveAwaySection read(BinaryReader reader) {
     var numOfFields = reader.readByte();
     var fields = <int, dynamic>{
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return GiveAwaySection();
+    return _$_GiveAwaySection(
+      value: fields[0] as String,
+    );
   }
 
   @override
-  void write(BinaryWriter writer, GiveAwaySection obj) {
+  void write(BinaryWriter writer, _$_GiveAwaySection obj) {
     writer
       ..writeByte(1)
       ..writeByte(0)
@@ -33,7 +35,7 @@ class GiveAwaySectionAdapter extends TypeAdapter<GiveAwaySection> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is GiveAwaySectionAdapter &&
+      other is _$_GiveAwaySectionAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

@@ -9,8 +9,8 @@ part 'section_image.freezed.dart';
 part 'section_image.g.dart';
 
 @freezed
-@HiveType(typeId: hiveImageSectionTypeId)
 abstract class ImageSection with _$ImageSection implements QuestionSection {
+  @HiveType(typeId: hiveImageSectionTypeId)
   const factory ImageSection({
     @HiveField(hiveImageSectionValueFieldId) @required String value,
   }) = _ImageSection;
@@ -23,4 +23,7 @@ abstract class ImageSection with _$ImageSection implements QuestionSection {
             ? value
             : '${Constants.databaseUrl}/images/db/$value');
   }
+
+  static TypeAdapter<ImageSection> createHiveAdapter() =>
+      _$_ImageSectionAdapter();
 }

@@ -6,21 +6,24 @@ part of 'tournament_status.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TournamentStatusAdapter extends TypeAdapter<TournamentStatus> {
+class _$_TournamentStatusAdapter extends TypeAdapter<_$_TournamentStatus> {
   @override
   final typeId = 2;
 
   @override
-  TournamentStatus read(BinaryReader reader) {
+  _$_TournamentStatus read(BinaryReader reader) {
     var numOfFields = reader.readByte();
     var fields = <int, dynamic>{
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return TournamentStatus();
+    return _$_TournamentStatus(
+      isNew: fields[0] as bool,
+      isBookmarked: fields[1] as bool,
+    );
   }
 
   @override
-  void write(BinaryWriter writer, TournamentStatus obj) {
+  void write(BinaryWriter writer, _$_TournamentStatus obj) {
     writer
       ..writeByte(2)
       ..writeByte(0)
@@ -35,7 +38,7 @@ class TournamentStatusAdapter extends TypeAdapter<TournamentStatus> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TournamentStatusAdapter &&
+      other is _$_TournamentStatusAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

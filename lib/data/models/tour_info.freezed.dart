@@ -212,6 +212,7 @@ class __$TourInfoCopyWithImpl<$Res> extends _$TourInfoCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveTourInfoTypeId)
 class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
   const _$_TourInfo(
       {@HiveField(hiveTourInfoIdFieldId)

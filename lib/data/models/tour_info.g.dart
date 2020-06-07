@@ -6,21 +6,31 @@ part of 'tour_info.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TourInfoAdapter extends TypeAdapter<TourInfo> {
+class _$_TourInfoAdapter extends TypeAdapter<_$_TourInfo> {
   @override
   final typeId = 4;
 
   @override
-  TourInfo read(BinaryReader reader) {
+  _$_TourInfo read(BinaryReader reader) {
     var numOfFields = reader.readByte();
     var fields = <int, dynamic>{
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return TourInfo();
+    return _$_TourInfo(
+      id: fields[0] as String,
+      title: fields[1] as String,
+      questionsCount: fields[2] as String,
+      description: fields[3] as String,
+      url: fields[4] as String,
+      editors: fields[5] as String,
+      createdAt: fields[6] as String,
+      playedAt: fields[7] as String,
+      tournamentInfo: fields[8] as TournamentInfo,
+    );
   }
 
   @override
-  void write(BinaryWriter writer, TourInfo obj) {
+  void write(BinaryWriter writer, _$_TourInfo obj) {
     writer
       ..writeByte(9)
       ..writeByte(0)
@@ -49,7 +59,7 @@ class TourInfoAdapter extends TypeAdapter<TourInfo> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TourInfoAdapter &&
+      other is _$_TourInfoAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

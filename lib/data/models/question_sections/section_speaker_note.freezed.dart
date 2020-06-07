@@ -84,6 +84,7 @@ class __$SpeakerNoteSectionCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveSpeakerNoteSectionTypeId)
 class _$_SpeakerNoteSection
     with DiagnosticableTreeMixin
     implements _SpeakerNoteSection {

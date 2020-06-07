@@ -6,21 +6,23 @@ part of 'section_speaker_note.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class SpeakerNoteSectionAdapter extends TypeAdapter<SpeakerNoteSection> {
+class _$_SpeakerNoteSectionAdapter extends TypeAdapter<_$_SpeakerNoteSection> {
   @override
   final typeId = 10;
 
   @override
-  SpeakerNoteSection read(BinaryReader reader) {
+  _$_SpeakerNoteSection read(BinaryReader reader) {
     var numOfFields = reader.readByte();
     var fields = <int, dynamic>{
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return SpeakerNoteSection();
+    return _$_SpeakerNoteSection(
+      value: fields[0] as String,
+    );
   }
 
   @override
-  void write(BinaryWriter writer, SpeakerNoteSection obj) {
+  void write(BinaryWriter writer, _$_SpeakerNoteSection obj) {
     writer
       ..writeByte(1)
       ..writeByte(0)
@@ -33,7 +35,7 @@ class SpeakerNoteSectionAdapter extends TypeAdapter<SpeakerNoteSection> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SpeakerNoteSectionAdapter &&
+      other is _$_SpeakerNoteSectionAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

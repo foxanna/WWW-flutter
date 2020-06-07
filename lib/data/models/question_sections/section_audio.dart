@@ -9,8 +9,8 @@ part 'section_audio.freezed.dart';
 part 'section_audio.g.dart';
 
 @freezed
-@HiveType(typeId: hiveAudioSectionTypeId)
 abstract class AudioSection with _$AudioSection implements QuestionSection {
+  @HiveType(typeId: hiveAudioSectionTypeId)
   const factory AudioSection({
     @HiveField(hiveAudioSectionValueFieldId) @required String value,
   }) = _AudioSection;
@@ -23,4 +23,7 @@ abstract class AudioSection with _$AudioSection implements QuestionSection {
             ? value
             : '${Constants.databaseUrl}/sounds/db/$value');
   }
+
+  static TypeAdapter<AudioSection> createHiveAdapter() =>
+      _$_AudioSectionAdapter();
 }

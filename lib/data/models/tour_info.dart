@@ -8,8 +8,8 @@ part 'tour_info.freezed.dart';
 part 'tour_info.g.dart';
 
 @freezed
-@HiveType(typeId: hiveTourInfoTypeId)
 abstract class TourInfo with _$TourInfo {
+  @HiveType(typeId: hiveTourInfoTypeId)
   const factory TourInfo({
     @HiveField(hiveTourInfoIdFieldId) String id,
     @HiveField(hiveTourInfoTitleFieldId) String title,
@@ -23,4 +23,6 @@ abstract class TourInfo with _$TourInfo {
     @Default(TournamentInfo())
         TournamentInfo tournamentInfo,
   }) = _TourInfo;
+
+  static TypeAdapter<TourInfo> createHiveAdapter() => _$_TourInfoAdapter();
 }

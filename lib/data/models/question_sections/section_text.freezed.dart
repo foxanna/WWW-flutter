@@ -82,6 +82,7 @@ class __$TextSectionCopyWithImpl<$Res> extends _$TextSectionCopyWithImpl<$Res>
   }
 }
 
+@HiveType(typeId: hiveTextSectionTypeId)
 class _$_TextSection with DiagnosticableTreeMixin implements _TextSection {
   const _$_TextSection(
       {@required @HiveField(hiveTextSectionValueFieldId) this.value})

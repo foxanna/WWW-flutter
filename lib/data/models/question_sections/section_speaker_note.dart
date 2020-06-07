@@ -8,10 +8,10 @@ part 'section_speaker_note.freezed.dart';
 part 'section_speaker_note.g.dart';
 
 @freezed
-@HiveType(typeId: hiveSpeakerNoteSectionTypeId)
 abstract class SpeakerNoteSection
     with _$SpeakerNoteSection
     implements QuestionSection {
+  @HiveType(typeId: hiveSpeakerNoteSectionTypeId)
   const factory SpeakerNoteSection({
     @HiveField(hiveSpeakerNoteSectionValueFieldId) @required String value,
   }) = _SpeakerNoteSection;
@@ -19,4 +19,7 @@ abstract class SpeakerNoteSection
   factory SpeakerNoteSection.fromString({@required String string}) =>
       SpeakerNoteSection(
           value: string.trim().replaceAll(RegExp(r'(^\[|\]$)'), '').trim());
+
+  static TypeAdapter<SpeakerNoteSection> createHiveAdapter() =>
+      _$_SpeakerNoteSectionAdapter();
 }
