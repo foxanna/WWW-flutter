@@ -51,6 +51,9 @@ final _analyticsEventNames = {
   '$VisitWebsiteDeveloperUserAction': 'visit_developers_website',
   // misc
   '$NeverAskRatingUserAction': 'rate_never',
+  // bookmarks
+  '$AddToBookmarksTournamentUserAction': 'bookmarks_add',
+  '$RemoveFromBookmarksTournamentUserAction': 'bookmarks_remove',
 };
 
 @injectable
@@ -92,6 +95,10 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_logAction),
         TypedMiddleware<AppState, NeverAskRatingUserAction>(_logAction),
         TypedMiddleware<AppState, OpenBookmarksUserAction>(_logAction),
+        TypedMiddleware<AppState, AddToBookmarksTournamentUserAction>(
+            _logAction),
+        TypedMiddleware<AppState, RemoveFromBookmarksTournamentUserAction>(
+            _logAction),
         // settings
         TypedMiddleware<AppState, ReadySettingsSystemAction>(_logSettings),
         TypedMiddleware<AppState, ChangeThemeSettingsUserAction>(_logTheme),

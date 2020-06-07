@@ -16,5 +16,18 @@ void main() {
           ),
           expectedName: 'tournament'),
     );
+
+    test(
+      '$AddToBookmarksTournamentUserAction',
+      () => executeAnalyticsTest(const UserActionTournament.addToBookmarks(),
+          expectedName: 'bookmarks_add'),
+    );
+
+    test(
+      '$RemoveFromBookmarksTournamentUserAction',
+      () => executeAnalyticsTest(
+          const UserActionTournament.removeFromBookmarks(),
+          expectedName: 'bookmarks_remove'),
+    );
   });
 }
