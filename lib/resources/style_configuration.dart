@@ -267,6 +267,10 @@ class LatestTournamentsStyleConfiguration {
       appBarBottomHeight: kToolbarHeight,
       appBarIconTheme: theme.primaryIconTheme,
       stubTournamentsCount: 20,
+      bookmarksInvitationTextStyle: theme.textTheme.caption.copyWith(
+        color: theme.primaryIconTheme.color.withOpacity(0.54),
+        fontStyle: FontStyle.italic,
+      ),
     );
   }
 
@@ -278,6 +282,7 @@ class LatestTournamentsStyleConfiguration {
     this.scaffoldBackground,
     this.errorColor,
     this.stubTournamentsCount,
+    this.bookmarksInvitationTextStyle,
   });
 
   final Color scaffoldBackground;
@@ -287,6 +292,7 @@ class LatestTournamentsStyleConfiguration {
   final double appBarLogoHeight;
   final double appBarBottomHeight;
   final int stubTournamentsCount;
+  final TextStyle bookmarksInvitationTextStyle;
 }
 
 class BottomSheetStyleConfiguration {
