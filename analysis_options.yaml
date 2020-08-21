@@ -1,16 +1,25 @@
-include: package:extra_pedantic/analysis_options.yaml
+include: package:extra_pedantic/analysis_options_flutter.yaml
 
 analyzer:
   exclude:
     - lib/**/*.g.dart
     - lib/**/*.freezed.dart
     - lib/**/*.i69n.dart
-    - lib/**/*.iconfig.dart
-  errors:
-    # treat missing required parameters as a warning (not a hint)
-    missing_required_param: warning
-    # treat missing returns as a warning (not a hint)
-    missing_return: warning
-    todo: ignore
-    always_put_required_named_parameters_first: ignore
-    close_sinks: ignore
+    - lib/**/*.config.dart
+
+linter:
+  rules:
+    - always_put_control_body_on_new_line
+    - avoid_equals_and_hash_code_on_mutable_classes
+    - avoid_field_initializers_in_const_classes
+    - avoid_renaming_method_parameters
+#    - avoid_types_on_closure_parameters
+    - avoid_unnecessary_containers
+    - camel_case_types
+    - omit_local_variable_types
+    - prefer_const_literals_to_create_immutables
+    - prefer_constructors_over_static_methods
+    - prefer_expression_function_bodies
+    - sort_constructors_first
+    - unnecessary_new
+    - use_key_in_widget_constructors
