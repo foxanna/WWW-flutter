@@ -17,7 +17,7 @@ dependencies:
   app_review: ^1.1.2
   cached_network_image: ^2.2.0+1
   dartx: ^0.4.1
-  dio: ^3.0.9
+  dio: ^3.0.10
   firebase_analytics: ^5.0.14
   firebase_crashlytics: ^0.1.3+3
   flutter_rating_bar: ^3.0.1+1
@@ -26,7 +26,7 @@ dependencies:
   flutter_staggered_grid_view:
     git:
       url: https://github.com/BertrandBev/flutter_staggered_grid_view.git
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.18.0
   flutter_vibrate: ^1.0.0
   flutter_widget_from_html_core: ^0.3.3+4
   freezed_annotation: ^0.11.0+1
