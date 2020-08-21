@@ -12,16 +12,6 @@ import 'package:what_when_where/utils/logger.dart';
 
 @injectable
 class ServicesMiddleware {
-  final ICrashService _crashService;
-  final ISoundService _soundService;
-  final IBackgroundRunnerService _backgroundService;
-  final ILocalStorageService _localStorageService;
-  final ICacheSynchronizer _cacheSynchronizer;
-
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
-
   ServicesMiddleware({
     ICrashService crashService,
     ISoundService soundService,
@@ -33,6 +23,16 @@ class ServicesMiddleware {
         _backgroundService = backgroundService,
         _localStorageService = localStorageService,
         _cacheSynchronizer = cacheSynchronizer;
+
+  final ICrashService _crashService;
+  final ISoundService _soundService;
+  final IBackgroundRunnerService _backgroundService;
+  final ILocalStorageService _localStorageService;
+  final ICacheSynchronizer _cacheSynchronizer;
+
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, InitInitializationAction>(_init),

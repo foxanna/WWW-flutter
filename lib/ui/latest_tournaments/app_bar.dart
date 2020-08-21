@@ -29,6 +29,9 @@ class LatestTournamentsAppBar extends StatelessWidget {
         centerTitle: false,
       ),
       bottom: PreferredSize(
+        preferredSize: Size.fromHeight(
+          styleConfiguration.appBarBottomHeight,
+        ),
         child: IconTheme.merge(
           data: styleConfiguration.appBarIconTheme,
           child: Row(
@@ -39,9 +42,6 @@ class LatestTournamentsAppBar extends StatelessWidget {
               LatestTournamentsAppBarMoreButton()
             ],
           ),
-        ),
-        preferredSize: Size.fromHeight(
-          styleConfiguration.appBarBottomHeight,
         ),
       ),
     );

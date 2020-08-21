@@ -15,11 +15,6 @@ abstract class ITournamentsTreeProvider {
 
 @LazySingleton(as: ITournamentsTreeProvider)
 class TournamentsTreeProvider implements ITournamentsTreeProvider {
-  final ITournamentsTreeLoader _loader;
-  final IBackgroundRunnerService _backgroundService;
-  final ITournamentStatusService _statusService;
-  final ITournamentsTreeCache _cache;
-
   const TournamentsTreeProvider({
     ITournamentsTreeLoader loader,
     IBackgroundRunnerService backgroundService,
@@ -29,6 +24,11 @@ class TournamentsTreeProvider implements ITournamentsTreeProvider {
         _cache = cache,
         _backgroundService = backgroundService,
         _statusService = statusService;
+
+  final ITournamentsTreeLoader _loader;
+  final IBackgroundRunnerService _backgroundService;
+  final ITournamentStatusService _statusService;
+  final ITournamentsTreeCache _cache;
 
   @override
   Future<TournamentsTree> get({String id}) async {

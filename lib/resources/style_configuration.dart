@@ -141,7 +141,7 @@ class TournamentDetailsStyleConfiguration {
       ),
       cornerRadius: radius,
       elevation: theme.cardTheme.elevation,
-      tourColorGenerator: (int index) {
+      tourColorGenerator: (index) {
         const patternLength = (toursColorsCount - 1) * 2;
         final multiplier = (index ~/ (toursColorsCount - 1)).isEven
             ? index % patternLength

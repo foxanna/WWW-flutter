@@ -10,10 +10,6 @@ abstract class IRandomQuestionsLoader {
 
 @LazySingleton(as: IRandomQuestionsLoader)
 class RandomQuestionsLoader implements IRandomQuestionsLoader {
-  final IHttpClient _httpClient;
-  final IXmlToJsonParser _parser;
-  final IBackgroundRunnerService _backgroundService;
-
   const RandomQuestionsLoader({
     IHttpClient httpClient,
     IXmlToJsonParser parser,
@@ -21,6 +17,10 @@ class RandomQuestionsLoader implements IRandomQuestionsLoader {
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;
+
+  final IHttpClient _httpClient;
+  final IXmlToJsonParser _parser;
+  final IBackgroundRunnerService _backgroundService;
 
   @override
   Future<RandomQuestionsDto> get() async {

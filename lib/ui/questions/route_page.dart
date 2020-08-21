@@ -5,6 +5,8 @@ import 'package:what_when_where/ui/questions/app_bar/buttons/timer.dart';
 import 'package:what_when_where/ui/questions/page_content.dart';
 
 class QuestionsRoutePage extends StatelessWidget {
+  const QuestionsRoutePage({Key key}) : super(key: key);
+
   static const String routeName = 'questions';
   static const String randomQuestionsRouteName = 'random_questions';
 
@@ -19,9 +21,9 @@ class QuestionsRoutePage extends StatelessWidget {
         iconTheme: styleConfiguration.appBarIconTheme,
         elevation: styleConfiguration.appBarElevation,
       ),
-      floatingActionButton: QuestionsBottomAppBarTimerButton(),
+      floatingActionButton: const QuestionsBottomAppBarTimerButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: QuestionsBottomAppBar(),
+      bottomNavigationBar: const QuestionsBottomAppBar(),
       body: const Padding(
         padding: EdgeInsets.only(bottom: kToolbarHeight),
         child: QuestionsPageContent(),

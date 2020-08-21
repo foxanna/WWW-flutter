@@ -11,14 +11,14 @@ abstract class IRandomQuestionsProvider {
 
 @LazySingleton(as: IRandomQuestionsProvider)
 class RandomQuestionsProvider implements IRandomQuestionsProvider {
-  final IRandomQuestionsLoader _loader;
-  final IBackgroundRunnerService _backgroundService;
-
   const RandomQuestionsProvider({
     IRandomQuestionsLoader loader,
     IBackgroundRunnerService backgroundService,
   })  : _loader = loader,
         _backgroundService = backgroundService;
+
+  final IRandomQuestionsLoader _loader;
+  final IBackgroundRunnerService _backgroundService;
 
   @override
   Future<Iterable<Question>> get() async {

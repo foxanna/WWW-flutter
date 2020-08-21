@@ -7,13 +7,13 @@ class SortingController extends ValueNotifier<Sorting> {
 }
 
 class SearchAppBarSortingButton extends StatelessWidget {
-  final SortingController _sortingController;
-
   SearchAppBarSortingButton({
     Key key,
     SortingController controller,
   })  : _sortingController = controller ?? SortingController(),
         super(key: key);
+
+  final SortingController _sortingController;
 
   @override
   Widget build(BuildContext context) {

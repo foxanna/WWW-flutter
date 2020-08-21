@@ -48,7 +48,7 @@ class _AnimatedScaleState extends ImplicitlyAnimatedWidgetState<AnimatedScale> {
   @override
   Widget build(BuildContext context) => ScaleTransition(
         scale: _scaleAnimation,
-        child: widget.child,
         alignment: widget.alignment,
+        child: widget.child,
       );
 }

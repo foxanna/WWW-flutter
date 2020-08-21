@@ -18,16 +18,16 @@ abstract class ITournamentsBookmarksService {
 
 @LazySingleton(as: ITournamentsBookmarksService)
 class TournamentsBookmarksService implements ITournamentsBookmarksService {
-  static const _tableName = 'bookmarks';
-
-  final ILocalStorageService _localStorage;
-  final ICrashService _crashService;
-
   const TournamentsBookmarksService({
     ILocalStorageService localStorage,
     ICrashService crashService,
   })  : _localStorage = localStorage,
         _crashService = crashService;
+
+  final ILocalStorageService _localStorage;
+  final ICrashService _crashService;
+
+  static const _tableName = 'bookmarks';
 
   @override
   Future<bool> isBookmarked(TournamentInfo info) async {

@@ -26,14 +26,6 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
 
   PublishSubject<String> _queryDebouncer;
 
-  _SearchPageAppBarState() {
-    _queryDebouncer = PublishSubject<String>()
-      ..stream
-          .debounceTime(const Duration(seconds: 1))
-          .distinct()
-          .listen((query) => _search());
-  }
-
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, SearchParameters>(
@@ -113,12 +105,18 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
   void initState() {
     super.initState();
 
+    _queryDebouncer = PublishSubject<String>()
+      ..stream
+          .debounceTime(const Duration(seconds: 1))
+          .distinct()
+          .listen((query) => _search());
     _focusNode = FocusNode();
   }
 
   @override
   void dispose() {
     _focusNode.dispose();
+    _queryDebouncer.close();
 
     super.dispose();
   }

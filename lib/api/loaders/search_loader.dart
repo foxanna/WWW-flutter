@@ -15,10 +15,6 @@ abstract class ISearchLoader {
 
 @LazySingleton(as: ISearchLoader)
 class SearchLoader implements ISearchLoader {
-  final IHttpClient _httpClient;
-  final ISearchToJsonParser _parser;
-  final IBackgroundRunnerService _backgroundService;
-
   const SearchLoader({
     IHttpClient httpClient,
     ISearchToJsonParser parser,
@@ -26,6 +22,10 @@ class SearchLoader implements ISearchLoader {
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;
+
+  final IHttpClient _httpClient;
+  final ISearchToJsonParser _parser;
+  final IBackgroundRunnerService _backgroundService;
 
   @override
   Future<SearchTournamentsDto> get({

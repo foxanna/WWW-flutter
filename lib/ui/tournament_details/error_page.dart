@@ -5,12 +5,12 @@ import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 
 class TournamentDetailsErrorPage extends StatelessWidget {
-  final Exception exception;
-
   const TournamentDetailsErrorPage({
     Key key,
     this.exception,
   }) : super(key: key);
+
+  final Exception exception;
 
   @override
   Widget build(BuildContext context) => SliverFillRemaining(

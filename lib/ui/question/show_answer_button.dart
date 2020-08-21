@@ -7,16 +7,16 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/solid_icon_button.dart';
 
 class ShowAnswerButton extends StatelessWidget {
-  final bool show;
-  final Question question;
-  final Function onAnswerShown;
-
   const ShowAnswerButton({
     Key key,
     this.show,
     this.question,
     this.onAnswerShown,
   }) : super(key: key);
+
+  final bool show;
+  final Question question;
+  final Function onAnswerShown;
 
   @override
   Widget build(BuildContext context) => _ShowAnswerButton(
@@ -36,14 +36,14 @@ class ShowAnswerButton extends StatelessWidget {
 }
 
 class _ShowAnswerButton extends StatelessWidget {
-  final IconData icon;
-  final VoidCallback onPressed;
-
   const _ShowAnswerButton({
     Key key,
     this.icon,
     this.onPressed,
   }) : super(key: key);
+
+  final IconData icon;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {

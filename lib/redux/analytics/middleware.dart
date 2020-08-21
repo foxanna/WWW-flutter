@@ -58,16 +58,15 @@ final _analyticsEventNames = {
 
 @injectable
 class AnalyticsMiddleware {
-  final IAnalyticsService _analyticsService;
-
-  List<Middleware<AppState>> _middleware;
-
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
-
   AnalyticsMiddleware({
     IAnalyticsService analyticsService,
   }) : _analyticsService = analyticsService;
+
+  final IAnalyticsService _analyticsService;
+
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, StartTimerUserAction>(_logAction),

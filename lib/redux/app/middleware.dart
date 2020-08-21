@@ -24,15 +24,15 @@ import 'package:what_when_where/redux/tree/middleware.dart';
 
 @injectable
 class AppMiddleware {
+  AppMiddleware({
+    IContainer container,
+  }) : _container = container;
+
   final IContainer _container;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  AppMiddleware({
-    IContainer container,
-  }) : _container = container;
 
   List<Middleware<AppState>> _createMiddleware() => [
         ..._container<LogsMiddleware>().middleware,

@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/ui/common/animated_scale.dart';
 
 class AnimatedFab extends StatelessWidget {
-  final bool visible;
-  final VoidCallback onPressed;
-  final Widget child;
-
   const AnimatedFab({
     Key key,
     this.visible,
     this.onPressed,
     this.child,
   }) : super(key: key);
+
+  final bool visible;
+  final VoidCallback onPressed;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) => AnimatedScale(
@@ -23,8 +23,8 @@ class AnimatedFab extends StatelessWidget {
           child: Visibility(
             visible: visible,
             child: FloatingActionButton(
-              child: child,
               onPressed: onPressed,
+              child: child,
             ),
           ),
         ),

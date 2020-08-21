@@ -26,10 +26,10 @@ class _FadeInState extends State<FadeIn> {
 
   @override
   Widget build(BuildContext context) => AnimatedOpacity(
-        child: widget.child,
         curve: widget.curve,
         duration: widget.duration,
         opacity: _opacity,
+        child: widget.child,
       );
 
   @override

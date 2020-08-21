@@ -9,11 +9,11 @@ import 'package:what_when_where/data/parsers/question_parser/question_section_ty
 import 'package:what_when_where/utils/extensions/string_extensions.dart';
 
 class QuestionParser {
-  static final _instance = QuestionParser._();
-
   factory QuestionParser() => _instance;
 
   QuestionParser._();
+
+  static final _instance = QuestionParser._();
 
   static List<QuestionSection> split(String originalText) =>
       originalText?.isEmpty ?? true

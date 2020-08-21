@@ -9,15 +9,15 @@ import 'package:what_when_where/ui/tournament_details/about_dialog.dart';
 
 @injectable
 class DialogMiddleware {
+  DialogMiddleware({
+    IDialogService dialogService,
+  }) : _dialogService = dialogService;
+
   final IDialogService _dialogService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  DialogMiddleware({
-    IDialogService dialogService,
-  }) : _dialogService = dialogService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, TourInfoDialogUserAction>(_tourInfo),

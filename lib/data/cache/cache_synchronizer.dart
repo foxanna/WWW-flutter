@@ -9,10 +9,6 @@ abstract class ICacheSynchronizer {
 
 @LazySingleton(as: ICacheSynchronizer)
 class CacheSynchronizer implements ICacheSynchronizer {
-  final ITournamentsPermanentCache _tournamentsPermanentCache;
-  final ITournamentsCache _tournamentsCache;
-  final IToursCache _toursCache;
-
   const CacheSynchronizer({
     ITournamentsPermanentCache tournamentsPermanentCache,
     ITournamentsCache tournamentsCache,
@@ -20,6 +16,10 @@ class CacheSynchronizer implements ICacheSynchronizer {
   })  : _tournamentsPermanentCache = tournamentsPermanentCache,
         _tournamentsCache = tournamentsCache,
         _toursCache = toursCache;
+
+  final ITournamentsPermanentCache _tournamentsPermanentCache;
+  final ITournamentsCache _tournamentsCache;
+  final IToursCache _toursCache;
 
   @override
   Future<void> init() async {

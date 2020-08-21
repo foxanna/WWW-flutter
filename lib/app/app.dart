@@ -29,7 +29,7 @@ class WWWApp extends StatelessWidget {
           themeMode: settings?.appTheme?.toThemeMode(),
           navigatorKey: ioc<GlobalKey<NavigatorState>>(),
           navigatorObservers: [ioc<IAnalyticsService>().observer()],
-          localizationsDelegates: [
+          localizationsDelegates: const [
             WWWLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,

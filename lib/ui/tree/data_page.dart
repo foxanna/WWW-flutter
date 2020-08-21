@@ -7,12 +7,12 @@ import 'package:what_when_where/ui/common/tournaments_grid_tile.dart';
 import 'package:what_when_where/ui/tree/subtree_tile.dart';
 
 class TournamentsTreeDataPage extends StatelessWidget {
-  final List<dynamic> tournamentsTree;
-
   const TournamentsTreeDataPage({
     Key key,
     @required this.tournamentsTree,
   }) : super(key: key);
+
+  final List<dynamic> tournamentsTree;
 
   @override
   Widget build(BuildContext context) {

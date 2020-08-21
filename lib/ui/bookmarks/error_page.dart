@@ -6,12 +6,12 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 
 class BookmarksErrorPage extends StatelessWidget {
-  final Exception exception;
-
   const BookmarksErrorPage({
     Key key,
     this.exception,
   }) : super(key: key);
+
+  final Exception exception;
 
   @override
   Widget build(BuildContext context) => SliverFillRemaining(

@@ -6,14 +6,14 @@ import 'package:what_when_where/ui/tree/app_bar.dart';
 import 'package:what_when_where/ui/tree/page_content.dart';
 
 class TournamentsTreeRoutePage extends StatefulWidget {
-  static const String routeName = 'tree';
-
-  final TournamentsTreeInfo info;
-
   const TournamentsTreeRoutePage({
     Key key,
     @required this.info,
   }) : super(key: key);
+
+  static const String routeName = 'tree';
+
+  final TournamentsTreeInfo info;
 
   @override
   _TournamentsTreeRoutePageState createState() =>

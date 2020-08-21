@@ -7,15 +7,15 @@ import 'package:what_when_where/services/url_launcher.dart';
 
 @injectable
 class DeveloperMiddleware {
+  DeveloperMiddleware({
+    IUrlLauncher urlLauncher,
+  }) : _urlLauncher = urlLauncher;
+
   final IUrlLauncher _urlLauncher;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  DeveloperMiddleware({
-    IUrlLauncher urlLauncher,
-  }) : _urlLauncher = urlLauncher;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, EmailDeveloperUserAction>(_email),

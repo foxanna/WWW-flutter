@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class ModalBottomSheetContainer extends StatelessWidget {
-  final List<Widget> children;
-
   const ModalBottomSheetContainer({
     Key key,
     this.children,
   }) : super(key: key);
+
+  final List<Widget> children;
 
   @override
   Widget build(BuildContext context) {

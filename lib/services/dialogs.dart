@@ -19,7 +19,7 @@ class DialogService implements IDialogService, IDialogHelper {
     assert(_presenter != null);
     assert(builder != null);
 
-    final T result = await _presenter<T>(builder);
+    final result = await _presenter<T>(builder);
     return result;
   }
 

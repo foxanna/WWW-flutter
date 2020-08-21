@@ -3,9 +3,9 @@ import 'package:what_when_where/ioc/ioc.dart';
 import 'package:what_when_where/services/dialogs.dart';
 
 class DialogPresenter extends StatefulWidget {
-  final Widget child;
-
   const DialogPresenter({Key key, @required this.child}) : super(key: key);
+
+  final Widget child;
 
   @override
   _DialogPresenterState createState() => _DialogPresenterState();

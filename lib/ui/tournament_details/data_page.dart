@@ -6,6 +6,8 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/tour_details/route_tile.dart';
 
 class TournamentDetailsDataPage extends StatelessWidget {
+  const TournamentDetailsDataPage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) =>
       StoreConnector<AppState, List<TourState>>(

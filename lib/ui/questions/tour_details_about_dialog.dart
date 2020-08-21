@@ -4,12 +4,12 @@ import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 
 class TourDetailsAboutDialog extends StatelessWidget {
-  final TourInfo info;
-
   const TourDetailsAboutDialog({
     Key key,
     @required this.info,
   }) : super(key: key);
+
+  final TourInfo info;
 
   @override
   Widget build(BuildContext context) {

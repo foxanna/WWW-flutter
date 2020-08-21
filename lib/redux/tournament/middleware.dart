@@ -15,15 +15,6 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class TournamentMiddleware {
-  final ITournamentDetailsProvider _provider;
-  final ITournamentsHistoryService _historyService;
-  final ITournamentsBookmarksService _tournamentsBookmarksService;
-  final ITournamentsPermanentCache _tournamentsPermanentCache;
-
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
-
   TournamentMiddleware({
     ITournamentDetailsProvider provider,
     ITournamentsHistoryService historyService,
@@ -33,6 +24,15 @@ class TournamentMiddleware {
         _historyService = historyService,
         _tournamentsBookmarksService = tournamentsBookmarksService,
         _tournamentsPermanentCache = tournamentsPermanentCache;
+
+  final ITournamentDetailsProvider _provider;
+  final ITournamentsHistoryService _historyService;
+  final ITournamentsBookmarksService _tournamentsBookmarksService;
+  final ITournamentsPermanentCache _tournamentsPermanentCache;
+
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentUserAction>(_open),

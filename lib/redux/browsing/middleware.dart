@@ -7,16 +7,15 @@ import 'package:what_when_where/services/url_launcher.dart';
 
 @injectable
 class BrowseMiddleware {
-  final IUrlLauncher _urlLauncher;
-
-  List<Middleware<AppState>> _middleware;
-
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
-
   BrowseMiddleware({
     IUrlLauncher urlLauncher,
   }) : _urlLauncher = urlLauncher;
+
+  final IUrlLauncher _urlLauncher;
+
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, DatabaseBrowseUserAction>(_database),

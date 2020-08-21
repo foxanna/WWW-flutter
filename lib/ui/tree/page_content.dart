@@ -10,12 +10,12 @@ import 'package:what_when_where/ui/tree/error_page.dart';
 import 'package:what_when_where/ui/tree/loading_page.dart';
 
 class TournamentsTreePageContent extends StatelessWidget {
-  final TournamentsTreeInfo info;
-
   const TournamentsTreePageContent({
     Key key,
     this.info,
   }) : super(key: key);
+
+  final TournamentsTreeInfo info;
 
   @override
   Widget build(BuildContext context) =>

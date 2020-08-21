@@ -11,18 +11,18 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class BookmarksMiddleware {
+  BookmarksMiddleware({
+    ITournamentDetailsProvider tournamentDetailsProvider,
+    ITournamentsBookmarksService bookmarksService,
+  })  : _tournamentDetailsProvider = tournamentDetailsProvider,
+        _bookmarksService = bookmarksService;
+
   final ITournamentDetailsProvider _tournamentDetailsProvider;
   final ITournamentsBookmarksService _bookmarksService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  BookmarksMiddleware({
-    ITournamentDetailsProvider tournamentDetailsProvider,
-    ITournamentsBookmarksService bookmarksService,
-  })  : _tournamentDetailsProvider = tournamentDetailsProvider,
-        _bookmarksService = bookmarksService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenBookmarksUserAction>(_open),

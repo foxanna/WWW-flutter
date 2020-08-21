@@ -6,9 +6,9 @@ import 'package:what_when_where/localization/translations/translations_uk.i69n.d
 const _supportedLocales = ['en', 'ru', 'uk'];
 
 class WWWLocalizations {
-  final Translations translations;
-
   const WWWLocalizations(this.translations);
+
+  final Translations translations;
 
   static final _translations = <String, Translations Function()>{
     'en': () => const Translations(),

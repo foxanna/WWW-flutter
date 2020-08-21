@@ -15,15 +15,15 @@ import 'package:what_when_where/ui/tree/route_page.dart';
 
 @injectable
 class NavigationMiddleware {
+  NavigationMiddleware({
+    INavigationService navigationService,
+  }) : _navigationService = navigationService;
+
   final INavigationService _navigationService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  NavigationMiddleware({
-    INavigationService navigationService,
-  }) : _navigationService = navigationService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, ImageNavigationUserAction>(_image),
@@ -64,7 +64,7 @@ class NavigationMiddleware {
 
     _navigationService.navigateToPage(
       routeName: QuestionsRoutePage.routeName,
-      builder: (context) => QuestionsRoutePage(),
+      builder: (context) => const QuestionsRoutePage(),
     );
   }
 
@@ -74,7 +74,7 @@ class NavigationMiddleware {
 
     _navigationService.navigateToPage(
       routeName: AboutRoutePage.routeName,
-      builder: (context) => AboutRoutePage(),
+      builder: (context) => const AboutRoutePage(),
     );
   }
 
@@ -84,7 +84,7 @@ class NavigationMiddleware {
 
     _navigationService.navigateToPage(
       routeName: SearchRoutePage.routeName,
-      builder: (context) => SearchRoutePage(),
+      builder: (context) => const SearchRoutePage(),
     );
   }
 
@@ -94,7 +94,7 @@ class NavigationMiddleware {
 
     _navigationService.navigateToPage(
       routeName: SettingsRoutePage.routeName,
-      builder: (context) => SettingsRoutePage(),
+      builder: (context) => const SettingsRoutePage(),
     );
   }
 

@@ -10,10 +10,6 @@ abstract class ITournamentsTreeLoader {
 
 @LazySingleton(as: ITournamentsTreeLoader)
 class TournamentsTreeLoader implements ITournamentsTreeLoader {
-  final IHttpClient _httpClient;
-  final IXmlToJsonParser _parser;
-  final IBackgroundRunnerService _backgroundService;
-
   TournamentsTreeLoader({
     IHttpClient httpClient,
     IXmlToJsonParser parser,
@@ -21,6 +17,10 @@ class TournamentsTreeLoader implements ITournamentsTreeLoader {
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;
+
+  final IHttpClient _httpClient;
+  final IXmlToJsonParser _parser;
+  final IBackgroundRunnerService _backgroundService;
 
   @override
   Future<TournamentsTreeDto> get(String id) async {

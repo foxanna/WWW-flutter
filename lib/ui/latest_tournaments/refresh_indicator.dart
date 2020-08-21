@@ -7,14 +7,14 @@ import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 
 class LatestTournamentsRefreshIndicator extends StatefulWidget {
-  final Function onRefresh;
-  final Widget child;
-
   const LatestTournamentsRefreshIndicator({
     Key key,
     this.child,
     this.onRefresh,
   }) : super(key: key);
+
+  final Function onRefresh;
+  final Widget child;
 
   @override
   _LatestTournamentsRefreshIndicatorState createState() =>

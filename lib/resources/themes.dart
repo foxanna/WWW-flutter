@@ -27,7 +27,7 @@ class Themes {
   }
 
   static ThemeData createLightAppTheme() {
-    final ThemeData base = ThemeData(
+    final base = ThemeData(
       brightness: Brightness.light,
       primaryColor: Colors.teal[900],
       accentColor: Colors.teal[400],
@@ -41,7 +41,7 @@ class Themes {
   }
 
   static ThemeData createDarkAppTheme() {
-    final ThemeData base = ThemeData(
+    final base = ThemeData(
       brightness: Brightness.dark,
       accentColor: Colors.teal[400],
       colorScheme: ColorScheme.fromSwatch(

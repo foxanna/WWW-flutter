@@ -15,15 +15,15 @@ const _notifyLongTimerExpirationKey = 'notify_long_timer';
 
 @injectable
 class SettingsMiddleware {
+  SettingsMiddleware({
+    IPreferences preferences,
+  }) : _preferences = preferences;
+
   final IPreferences _preferences;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  SettingsMiddleware({
-    IPreferences preferences,
-  }) : _preferences = preferences;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, InitInitializationAction>(_init),

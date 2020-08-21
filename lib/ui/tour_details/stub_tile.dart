@@ -6,14 +6,14 @@ import 'package:what_when_where/ui/tour_details/question_loading_tile.dart';
 import 'package:what_when_where/ui/tour_details/template_tile.dart';
 
 class TourDetailsStubTile extends StatelessWidget {
-  final Color foregroundColor;
-  final Color backgroundColor;
-
   const TourDetailsStubTile({
     Key key,
     this.foregroundColor,
     this.backgroundColor,
   }) : super(key: key);
+
+  final Color foregroundColor;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {

@@ -5,6 +5,8 @@ import 'package:what_when_where/ui/settings/text_scale_settings.dart';
 import 'package:what_when_where/ui/settings/theme_settings.dart';
 
 class SettingsRoutePage extends StatelessWidget {
+  const SettingsRoutePage({Key key}) : super(key: key);
+
   static const String routeName = 'settings';
 
   @override

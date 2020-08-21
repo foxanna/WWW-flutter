@@ -6,12 +6,12 @@ import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
-  final TournamentsTreeInfo info;
-
   const TournamentsTreeTournamentSubtreeTile({
     Key key,
     @required this.info,
   }) : super(key: key);
+
+  final TournamentsTreeInfo info;
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +46,11 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
           ),
           child: Card(
             child: InkWell(
+              onTap: () => _openTournamentDetails(context),
               child: Padding(
                 padding: styleConfiguration.tileContentPadding,
                 child: _buildContent(context, styleConfiguration),
               ),
-              onTap: () => _openTournamentDetails(context),
             ),
           ),
         ),

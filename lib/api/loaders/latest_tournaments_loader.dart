@@ -10,10 +10,6 @@ abstract class ILatestTournamentsLoader {
 
 @LazySingleton(as: ILatestTournamentsLoader)
 class LatestTournamentsLoader implements ILatestTournamentsLoader {
-  final IHttpClient _httpClient;
-  final ILatestToJsonParser _parser;
-  final IBackgroundRunnerService _backgroundService;
-
   const LatestTournamentsLoader({
     IHttpClient httpClient,
     ILatestToJsonParser parser,
@@ -21,6 +17,10 @@ class LatestTournamentsLoader implements ILatestTournamentsLoader {
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;
+
+  final IHttpClient _httpClient;
+  final ILatestToJsonParser _parser;
+  final IBackgroundRunnerService _backgroundService;
 
   @override
   Future<LatestTournamentsDto> get(int page) async {

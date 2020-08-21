@@ -8,6 +8,8 @@ import 'package:what_when_where/ui/search/page_content.dart';
 import 'package:what_when_where/ui/search/app_bar/app_bar.dart';
 
 class SearchRoutePage extends StatefulWidget {
+  const SearchRoutePage({Key key}) : super(key: key);
+
   static const String routeName = 'search';
 
   @override

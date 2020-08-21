@@ -2,12 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class TextHeroFrom extends StatelessWidget {
-  final String tag;
-  final TextStyle startTextStyle;
-  final String text;
-
-  final TextStyleTween _tween;
-
   TextHeroFrom({
     Key key,
     String tag,
@@ -31,6 +25,12 @@ class TextHeroFrom extends StatelessWidget {
   })  : this._tween = tween,
         super(key: key);
 
+  final String tag;
+  final TextStyle startTextStyle;
+  final String text;
+
+  final TextStyleTween _tween;
+
   @override
   Widget build(BuildContext context) => Hero(
         tag: tag,
@@ -39,13 +39,13 @@ class TextHeroFrom extends StatelessWidget {
             (flightContext, animation, direction, fromContext, toContext) =>
                 AnimatedBuilder(
           animation: animation,
+          builder: (context, child) => DefaultTextStyle(
+            style: _tween.lerp(animation.value),
+            child: child,
+          ),
           child: AutoSizeText(
             text,
             stepGranularity: 0.2,
-          ),
-          builder: (context, child) => DefaultTextStyle(
-            child: child,
-            style: _tween.lerp(animation.value),
           ),
         ),
         child: Text(
@@ -56,16 +56,16 @@ class TextHeroFrom extends StatelessWidget {
 }
 
 class TextHeroTo extends StatelessWidget {
-  final String tag;
-  final String text;
-  final TextStyle style;
-
   const TextHeroTo({
     Key key,
     this.tag,
     this.text,
     this.style,
   }) : super(key: key);
+
+  final String tag;
+  final String text;
+  final TextStyle style;
 
   @override
   Widget build(BuildContext context) {

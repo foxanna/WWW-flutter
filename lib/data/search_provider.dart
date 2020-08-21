@@ -16,10 +16,6 @@ abstract class ISearchProvider {
 
 @LazySingleton(as: ISearchProvider)
 class SearchProvider implements ISearchProvider {
-  final ISearchLoader _loader;
-  final IBackgroundRunnerService _backgroundService;
-  final ITournamentStatusService _statusService;
-
   const SearchProvider({
     ISearchLoader loader,
     IBackgroundRunnerService backgroundService,
@@ -27,6 +23,10 @@ class SearchProvider implements ISearchProvider {
   })  : _loader = loader,
         _backgroundService = backgroundService,
         _statusService = statusService;
+
+  final ISearchLoader _loader;
+  final IBackgroundRunnerService _backgroundService;
+  final ITournamentStatusService _statusService;
 
   @override
   Future<Iterable<Tournament>> get({

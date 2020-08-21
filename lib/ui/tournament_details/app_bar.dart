@@ -53,10 +53,10 @@ class TournamentDetailsAppBar extends StatelessWidget {
                   children: [
                     ShapeHeroTo(
                       tag: '${state.info.id2}bg',
+                      value: styleConfiguration.shape,
                       child: Container(
                         color: styleConfiguration.actionBarBackgroundColor,
                       ),
-                      value: styleConfiguration.shape,
                     ),
                     Positioned(
                       right: mediaQuery.padding.right + kToolbarHeight,
@@ -77,6 +77,7 @@ class TournamentDetailsAppBar extends StatelessWidget {
             expandedHeight: expectedAppBarHeight + 0.001,
             actions: const [TournamentDetailsAppBarMoreButton()],
             bottom: PreferredSize(
+              preferredSize: Size.fromHeight(appBarBottomHeight),
               child: Container(
                 width: double.infinity,
                 child: Padding(
@@ -88,7 +89,6 @@ class TournamentDetailsAppBar extends StatelessWidget {
                   ),
                 ),
               ),
-              preferredSize: Size.fromHeight(appBarBottomHeight),
             ),
           );
         },

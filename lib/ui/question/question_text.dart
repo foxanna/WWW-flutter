@@ -5,12 +5,12 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/question/question_sections.dart';
 
 class QuestionText extends StatelessWidget {
-  final Question question;
-
   const QuestionText({
     Key key,
     this.question,
   }) : super(key: key);
+
+  final Question question;
 
   @override
   Widget build(BuildContext context) => QuestionTextSectionsTheme(

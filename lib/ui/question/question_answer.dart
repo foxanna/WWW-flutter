@@ -7,14 +7,14 @@ import 'package:what_when_where/ui/common/text_with_links.dart';
 import 'package:what_when_where/ui/question/question_sections.dart';
 
 class QuestionAnswer extends StatelessWidget {
-  final bool show;
-  final Question question;
-
   const QuestionAnswer({
     Key key,
     this.show,
     this.question,
   }) : super(key: key);
+
+  final bool show;
+  final Question question;
 
   @override
   Widget build(BuildContext context) =>
@@ -22,9 +22,9 @@ class QuestionAnswer extends StatelessWidget {
 }
 
 class _QuestionAnswer extends StatelessWidget {
-  final Question question;
-
   const _QuestionAnswer({Key key, this.question}) : super(key: key);
+
+  final Question question;
 
   @override
   Widget build(BuildContext context) => Column(

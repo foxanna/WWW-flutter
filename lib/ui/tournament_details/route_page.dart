@@ -5,9 +5,9 @@ import 'package:what_when_where/ui/tournament_details/page_content.dart';
 
 @immutable
 class TournamentDetailsRoutePage extends StatelessWidget {
-  static const String routeName = 'tournament';
-
   const TournamentDetailsRoutePage({Key key}) : super(key: key);
+
+  static const String routeName = 'tournament';
 
   @override
   Widget build(BuildContext context) {

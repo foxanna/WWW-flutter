@@ -13,15 +13,15 @@ import 'package:what_when_where/ui/question/show_answer_button.dart';
 
 @immutable
 class QuestionCard extends StatefulWidget {
-  final QuestionState questionState;
-  final bool isInitialQuestion;
-
   const QuestionCard({
     Key key,
     @required this.questionState,
     this.isInitialQuestion,
   })  : assert(questionState != null),
         super(key: key);
+
+  final QuestionState questionState;
+  final bool isInitialQuestion;
 
   @override
   _QuestionCardState createState() => _QuestionCardState();
@@ -66,13 +66,13 @@ class _QuestionCardState extends State<QuestionCard> {
                     child: Hero(
                       transitionOnUserGestures: true,
                       tag: '${widget.questionState.question.info.id}',
-                      child: Container(
-                        color: Colors.transparent,
-                      ),
                       placeholderBuilder: (context, size, child) => Container(
                         color: cardColor,
                         height: size.height,
                         width: size.width,
+                      ),
+                      child: Container(
+                        color: Colors.transparent,
                       ),
                     ),
                   ),

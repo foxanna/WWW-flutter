@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/ui/common/animated_fab.dart';
 
 class ScrollControllerBoundFloatingActionButton extends StatefulWidget {
-  final ScrollController scrollController;
-
   const ScrollControllerBoundFloatingActionButton({
     Key key,
     this.scrollController,
   }) : super(key: key);
+
+  final ScrollController scrollController;
 
   @override
   _ScrollControllerBoundFloatingActionButtonState createState() =>
@@ -44,11 +44,11 @@ class _ScrollControllerBoundFloatingActionButtonState
 
   @override
   Widget build(BuildContext context) => AnimatedFab(
-        child: const Icon(Icons.arrow_upward),
         onPressed: () => widget.scrollController.animateTo(0,
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeInCubic),
         visible: _visible,
+        child: const Icon(Icons.arrow_upward),
       );
 
   void _scrollListener() {

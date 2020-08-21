@@ -3,14 +3,6 @@ import 'package:flutter/rendering.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class TourDetailsTemplateTile extends StatelessWidget {
-  final Color foregroundColor;
-  final Color backgroundColor;
-  final int questionsCount;
-
-  final WidgetBuilder titleBuilder;
-  final WidgetBuilder childBuilder;
-  final IndexedWidgetBuilder questionBuilder;
-
   const TourDetailsTemplateTile({
     Key key,
     this.foregroundColor,
@@ -21,6 +13,13 @@ class TourDetailsTemplateTile extends StatelessWidget {
     this.childBuilder,
   })  : assert(questionBuilder == null || childBuilder == null),
         super(key: key);
+
+  final Color foregroundColor;
+  final Color backgroundColor;
+  final int questionsCount;
+  final WidgetBuilder titleBuilder;
+  final WidgetBuilder childBuilder;
+  final IndexedWidgetBuilder questionBuilder;
 
   @override
   Widget build(BuildContext context) => Stack(

@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
 class SolidIconButton extends MaterialButton {
-  final Icon icon;
-  final Color fillColor;
-  final Size buttonSize;
-  final Color borderColor;
-  final double borderWidth;
-
   const SolidIconButton({
     Key key,
     @required VoidCallback onPressed,
@@ -30,6 +24,12 @@ class SolidIconButton extends MaterialButton {
           clipBehavior: Clip.none,
           materialTapTargetSize: materialTapTargetSize,
         );
+
+  final Icon icon;
+  final Color fillColor;
+  final Size buttonSize;
+  final Color borderColor;
+  final double borderWidth;
 
   @override
   Widget build(BuildContext context) => RawMaterialButton(

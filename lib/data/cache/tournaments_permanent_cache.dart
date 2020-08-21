@@ -16,16 +16,16 @@ abstract class ITournamentsPermanentCache {
 
 @LazySingleton(as: ITournamentsPermanentCache)
 class TournamentsPermanentCache implements ITournamentsPermanentCache {
-  static const _tableName = 'tournaments';
-
-  final ILocalStorageService _localStorage;
-  final ICrashService _crashService;
-
   const TournamentsPermanentCache({
     ILocalStorageService localStorage,
     ICrashService crashService,
   })  : _localStorage = localStorage,
         _crashService = crashService;
+
+  final ILocalStorageService _localStorage;
+  final ICrashService _crashService;
+
+  static const _tableName = 'tournaments';
 
   @override
   Future<Iterable<Tournament>> getAll() async {

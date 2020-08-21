@@ -3,11 +3,6 @@ import 'package:shimmer/shimmer.dart';
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class TextStub extends StatelessWidget {
-  final Color _stubColor;
-  final Color _shimmerBaseColor;
-  final Color _shimmerHighlightColor;
-  final double _fontSize;
-
   TextStub({
     Key key,
     TextStyle textStyle,
@@ -35,6 +30,11 @@ class TextStub extends StatelessWidget {
         this._stubColor = stubColor,
         super(key: key);
 
+  final Color _stubColor;
+  final Color _shimmerBaseColor;
+  final Color _shimmerHighlightColor;
+  final double _fontSize;
+
   @override
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (context, constraints) {
@@ -50,9 +50,9 @@ class TextStub extends StatelessWidget {
                 );
 
           return Shimmer.fromColors(
-            child: child,
             baseColor: _shimmerBaseColor,
             highlightColor: _shimmerHighlightColor,
+            child: child,
           );
         },
       );

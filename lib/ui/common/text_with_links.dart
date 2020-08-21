@@ -5,18 +5,6 @@ import 'package:what_when_where/services/url_launcher.dart';
 import 'package:what_when_where/utils/uri_detector.dart';
 
 class TextWithLinks extends StatelessWidget {
-  final String text;
-  final TextStyle textStyle;
-  final TextStyle linkStyle;
-  final TextAlign textAlign;
-  final TextDirection textDirection;
-  final Locale locale;
-  final bool softWrap;
-  final TextOverflow overflow;
-  final double textScaleFactor;
-  final int maxLines;
-  final String semanticsLabel;
-
   const TextWithLinks(
     this.text, {
     Key key,
@@ -31,6 +19,18 @@ class TextWithLinks extends StatelessWidget {
     this.locale,
     this.semanticsLabel,
   }) : super(key: key);
+
+  final String text;
+  final TextStyle textStyle;
+  final TextStyle linkStyle;
+  final TextAlign textAlign;
+  final TextDirection textDirection;
+  final Locale locale;
+  final bool softWrap;
+  final TextOverflow overflow;
+  final double textScaleFactor;
+  final int maxLines;
+  final String semanticsLabel;
 
   @override
   Widget build(BuildContext context) => Semantics(

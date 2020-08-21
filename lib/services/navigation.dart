@@ -15,11 +15,11 @@ abstract class INavigationService {
 
 @LazySingleton(as: INavigationService)
 class NavigationService implements INavigationService {
-  final GlobalKey<NavigatorState> _key;
-
   NavigationService({
     GlobalKey<NavigatorState> key,
   }) : _key = key;
+
+  final GlobalKey<NavigatorState> _key;
 
   @override
   void navigateToPage({

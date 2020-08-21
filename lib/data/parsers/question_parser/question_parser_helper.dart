@@ -2,11 +2,11 @@ import 'package:what_when_where/data/parsers/question_parser/question_section_ty
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class QuestionParserHelper {
-  static final _instance = QuestionParserHelper._();
-
   factory QuestionParserHelper() => _instance;
 
   QuestionParserHelper._();
+
+  static final _instance = QuestionParserHelper._();
 
   static final _speakerNotesMatchers = [
     RegExp(r'\[ведущему:[\s]*[\s\S]*?\]', caseSensitive: false),

@@ -11,18 +11,18 @@ const int _timerFrequency = 200;
 
 @injectable
 class TimerMiddleware {
+  TimerMiddleware({
+    ISoundService soundService,
+    IVibratingService vibratingService,
+  })  : _soundService = soundService,
+        _vibratingService = vibratingService;
+
   final ISoundService _soundService;
   final IVibratingService _vibratingService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  TimerMiddleware({
-    ISoundService soundService,
-    IVibratingService vibratingService,
-  })  : _soundService = soundService,
-        _vibratingService = vibratingService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         ..._TimerConnectingMiddleware().middleware,
@@ -193,15 +193,15 @@ class _TimerConnectingMiddleware {
 }
 
 class _TimerVibratingMiddleware {
+  _TimerVibratingMiddleware({
+    IVibratingService vibratingService,
+  }) : _vibratingService = vibratingService;
+
   final IVibratingService _vibratingService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  _TimerVibratingMiddleware({
-    IVibratingService vibratingService,
-  }) : _vibratingService = vibratingService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, NotifyTimerSystemAction>(_vibrate),
@@ -216,15 +216,15 @@ class _TimerVibratingMiddleware {
 }
 
 class _TimerSoundMiddleware {
+  _TimerSoundMiddleware({
+    ISoundService soundService,
+  }) : _soundService = soundService;
+
   final ISoundService _soundService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  _TimerSoundMiddleware({
-    ISoundService soundService,
-  }) : _soundService = soundService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, NotifyTimerSystemAction>(_sound),

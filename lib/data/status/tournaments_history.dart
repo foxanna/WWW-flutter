@@ -12,16 +12,16 @@ abstract class ITournamentsHistoryService {
 
 @LazySingleton(as: ITournamentsHistoryService)
 class TournamentsHistoryService implements ITournamentsHistoryService {
-  static const _tableName = 'history';
-
-  final ILocalStorageService _localStorage;
-  final ICrashService _crashService;
-
   const TournamentsHistoryService({
     ILocalStorageService localStorage,
     ICrashService crashService,
   })  : _localStorage = localStorage,
         _crashService = crashService;
+
+  final ILocalStorageService _localStorage;
+  final ICrashService _crashService;
+
+  static const _tableName = 'history';
 
   @override
   Future<bool> wasRead(TournamentInfo info) async {

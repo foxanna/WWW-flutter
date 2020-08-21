@@ -10,10 +10,6 @@ abstract class ITournamentDetailsLoader {
 
 @LazySingleton(as: ITournamentDetailsLoader)
 class TournamentDetailsLoader implements ITournamentDetailsLoader {
-  final IHttpClient _httpClient;
-  final IXmlToJsonParser _parser;
-  final IBackgroundRunnerService _backgroundService;
-
   TournamentDetailsLoader({
     IHttpClient httpClient,
     IXmlToJsonParser parser,
@@ -21,6 +17,10 @@ class TournamentDetailsLoader implements ITournamentDetailsLoader {
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;
+
+  final IHttpClient _httpClient;
+  final IXmlToJsonParser _parser;
+  final IBackgroundRunnerService _backgroundService;
 
   @override
   Future<TournamentDto> get(String id) async {

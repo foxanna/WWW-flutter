@@ -8,17 +8,17 @@ import 'package:what_when_where/ui/tour_details/error_tile.dart';
 import 'package:what_when_where/ui/tour_details/loading_tile.dart';
 
 class TourDetailsRouteTile extends StatelessWidget {
-  final String tourId;
-
-  final Color foregroundColor;
-  final Color backgroundColor;
-
   const TourDetailsRouteTile({
     Key key,
     this.tourId,
     this.foregroundColor,
     this.backgroundColor,
   }) : super(key: key);
+
+  final String tourId;
+
+  final Color foregroundColor;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) => StoreConnector<AppState, TourState>(

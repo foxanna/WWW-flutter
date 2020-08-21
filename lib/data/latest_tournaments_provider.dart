@@ -11,10 +11,6 @@ abstract class ILatestTournamentsProvider {
 
 @LazySingleton(as: ILatestTournamentsProvider)
 class LatestTournamentsProvider implements ILatestTournamentsProvider {
-  final ILatestTournamentsLoader _loader;
-  final IBackgroundRunnerService _backgroundService;
-  final ITournamentStatusService _statusService;
-
   const LatestTournamentsProvider({
     ILatestTournamentsLoader loader,
     IBackgroundRunnerService backgroundService,
@@ -22,6 +18,10 @@ class LatestTournamentsProvider implements ILatestTournamentsProvider {
   })  : _loader = loader,
         _backgroundService = backgroundService,
         _statusService = statusService;
+
+  final ILatestTournamentsLoader _loader;
+  final IBackgroundRunnerService _backgroundService;
+  final ITournamentStatusService _statusService;
 
   @override
   Future<Iterable<Tournament>> get({int page = 0}) async {

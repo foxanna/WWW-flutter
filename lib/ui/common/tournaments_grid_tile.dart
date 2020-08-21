@@ -14,12 +14,6 @@ import 'package:what_when_where/ui/common/shape_hero.dart';
 import 'package:what_when_where/ui/common/text_hero.dart';
 
 class TournamentsGridTile extends StatelessWidget {
-  final TournamentInfo tournamentInfo;
-  final TournamentStatus tournamentStatus;
-
-  final String _backgroundHeroTag;
-  final String _titleHeroTag;
-
   TournamentsGridTile({
     Key key,
     @required TournamentInfo tournamentInfo,
@@ -41,6 +35,12 @@ class TournamentsGridTile extends StatelessWidget {
   })  : this._backgroundHeroTag = backgroundHeroTag,
         this._titleHeroTag = titleHeroTag,
         super(key: key);
+
+  final TournamentInfo tournamentInfo;
+  final TournamentStatus tournamentStatus;
+
+  final String _backgroundHeroTag;
+  final String _titleHeroTag;
 
   @override
   Widget build(BuildContext context) => Stack(
@@ -141,6 +141,7 @@ class _TournamentsGridTileContent extends StatelessWidget {
 
     return Card(
       child: InkWell(
+        onTap: onTap,
         child: Stack(
           children: [
             Padding(
@@ -213,7 +214,6 @@ class _TournamentsGridTileContent extends StatelessWidget {
             ),
           ],
         ),
-        onTap: onTap,
       ),
     );
   }

@@ -6,14 +6,14 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 
 class LatestTournamentsErrorMessage extends StatelessWidget {
-  final bool dense;
-  final Exception exception;
-
   const LatestTournamentsErrorMessage({
     Key key,
     this.dense = false,
     this.exception,
   }) : super(key: key);
+
+  final bool dense;
+  final Exception exception;
 
   @override
   Widget build(BuildContext context) {

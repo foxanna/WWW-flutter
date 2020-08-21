@@ -26,7 +26,7 @@ class TournamentDetailsPageContent extends StatelessWidget {
           }
 
           if (state is DataTournamentState) {
-            return TournamentDetailsDataPage();
+            return const TournamentDetailsDataPage();
           }
 
           return const EmptySliver();

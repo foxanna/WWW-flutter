@@ -10,17 +10,17 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class TournamentsTreeMiddleware {
-  static const _rootId = '0';
+  TournamentsTreeMiddleware({
+    ITournamentsTreeProvider provider,
+  }) : _provider = provider;
 
   final ITournamentsTreeProvider _provider;
+
+  static const _rootId = '0';
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  TournamentsTreeMiddleware({
-    ITournamentsTreeProvider provider,
-  }) : _provider = provider;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_open),

@@ -5,6 +5,8 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
 
 class QuestionsBottomAppBarTimerButton extends StatelessWidget {
+  const QuestionsBottomAppBarTimerButton({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final translations = WWWLocalizations.of(context);
@@ -13,17 +15,15 @@ class QuestionsBottomAppBarTimerButton extends StatelessWidget {
       distinct: true,
       converter: (store) => store.state.timerState.isRunning,
       builder: (context, isRunning) => FloatingActionButton(
-        child: Icon(
-          isRunning ? Icons.timer_off : Icons.timer,
-        ),
         tooltip: isRunning
             ? translations.tooltipPauseTimer
             : translations.tooltipStartTimer,
-        onPressed: () {
-          StoreProvider.of<AppState>(context).dispatch(isRunning
-              ? const UserActionTimer.stop()
-              : const UserActionTimer.start());
-        },
+        onPressed: () => StoreProvider.of<AppState>(context).dispatch(isRunning
+            ? const UserActionTimer.stop()
+            : const UserActionTimer.start()),
+        child: Icon(
+          isRunning ? Icons.timer_off : Icons.timer,
+        ),
       ),
     );
   }

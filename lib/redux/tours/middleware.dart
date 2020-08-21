@@ -9,15 +9,15 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class ToursMiddleware {
+  ToursMiddleware({
+    ITourDetailsProvider provider,
+  }) : _provider = provider;
+
   final ITourDetailsProvider _provider;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  ToursMiddleware({
-    ITourDetailsProvider provider,
-  }) : _provider = provider;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, InitToursSystemAction>(_initTours),

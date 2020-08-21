@@ -11,15 +11,15 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class SearchMiddleware {
+  SearchMiddleware({
+    ISearchProvider provider,
+  }) : _provider = provider;
+
   final ISearchProvider _provider;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  SearchMiddleware({
-    ISearchProvider provider,
-  }) : _provider = provider;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenSearchUserAction>(_open),

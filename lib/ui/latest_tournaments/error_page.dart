@@ -5,12 +5,12 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/latest_tournaments/error_message.dart';
 
 class LatestTournamentsErrorPage extends StatelessWidget {
-  final Exception exception;
-
   const LatestTournamentsErrorPage({
     Key key,
     this.exception,
   }) : super(key: key);
+
+  final Exception exception;
 
   @override
   Widget build(BuildContext context) => SliverFillRemaining(

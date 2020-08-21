@@ -9,16 +9,16 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class QuestionsMiddleware {
+  QuestionsMiddleware({
+    IRandomQuestionsProvider provider,
+  }) : _provider = provider;
+
   final IRandomQuestionsProvider _provider;
 
   List<Middleware<AppState>> _middleware;
 
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  QuestionsMiddleware({
-    IRandomQuestionsProvider provider,
-  }) : _provider = provider;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenQuestionsUserAction>(_open),

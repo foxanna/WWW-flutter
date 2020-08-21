@@ -4,12 +4,12 @@ import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/ui/common/info_dialog.dart';
 
 class TournamentDetailsAboutDialog extends StatelessWidget {
-  final TournamentInfo tournamentInfo;
-
   const TournamentDetailsAboutDialog({
     Key key,
     @required this.tournamentInfo,
   }) : super(key: key);
+
+  final TournamentInfo tournamentInfo;
 
   @override
   Widget build(BuildContext context) {

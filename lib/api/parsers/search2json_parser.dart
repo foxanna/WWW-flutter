@@ -36,11 +36,11 @@ class SearchToJsonParser implements ISearchToJsonParser {
     final iterator = nodes.iterator;
 
     while (iterator.moveNext()) {
-      final Node tournamentNode = iterator.current.nodes[1];
+      final tournamentNode = iterator.current.nodes[1];
       if (!iterator.moveNext()) {
         return;
       }
-      final Node dateNode = iterator.current.nodes[1].nodes[2];
+      final dateNode = iterator.current.nodes[1].nodes[2];
       yield <String, dynamic>{
         'TextId': tournamentNode.attributes['href'].split('/').last,
         'Title': tournamentNode.firstChild.text,

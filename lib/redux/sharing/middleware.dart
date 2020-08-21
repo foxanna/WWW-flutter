@@ -8,15 +8,15 @@ import 'package:what_when_where/services/sharing.dart';
 
 @injectable
 class ShareMiddleware {
+  ShareMiddleware({
+    ISharingService sharingService,
+  }) : _sharingService = sharingService;
+
   final ISharingService _sharingService;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  ShareMiddleware({
-    ISharingService sharingService,
-  }) : _sharingService = sharingService;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, QuestionSharingUserAction>(_question),

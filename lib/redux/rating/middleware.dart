@@ -14,15 +14,6 @@ const int _maxOpenedTournamentsCount = 10;
 
 @injectable
 class RatingMiddleware {
-  final IPreferences _preferencesService;
-  final IRatingService _ratingService;
-  final ICrashService _crashService;
-
-  List<Middleware<AppState>> _middleware;
-
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
-
   RatingMiddleware({
     IPreferences preferences,
     IRatingService ratingService,
@@ -30,6 +21,14 @@ class RatingMiddleware {
   })  : _preferencesService = preferences,
         _ratingService = ratingService,
         _crashService = crashService;
+
+  final IPreferences _preferencesService;
+  final IRatingService _ratingService;
+  final ICrashService _crashService;
+
+  List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware =>
+      _middleware ?? (_middleware = _createMiddleware());
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, CloseTournamentUserAction>(

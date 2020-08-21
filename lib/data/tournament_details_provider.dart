@@ -15,12 +15,6 @@ abstract class ITournamentDetailsProvider {
 
 @LazySingleton(as: ITournamentDetailsProvider)
 class TournamentDetailsProvider implements ITournamentDetailsProvider {
-  final ITournamentDetailsLoader _loader;
-  final ITournamentsCache _tournamentsCache;
-  final IToursCache _toursCache;
-  final IBackgroundRunnerService _backgroundService;
-  final ITournamentStatusService _statusService;
-
   const TournamentDetailsProvider({
     ITournamentDetailsLoader loader,
     ITournamentsCache tournamentsCache,
@@ -32,6 +26,12 @@ class TournamentDetailsProvider implements ITournamentDetailsProvider {
         _toursCache = toursCache,
         _backgroundService = backgroundService,
         _statusService = statusService;
+
+  final ITournamentDetailsLoader _loader;
+  final ITournamentsCache _tournamentsCache;
+  final IToursCache _toursCache;
+  final IBackgroundRunnerService _backgroundService;
+  final ITournamentStatusService _statusService;
 
   @override
   Future<Tournament> get(String id) async {

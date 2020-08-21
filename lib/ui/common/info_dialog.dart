@@ -5,10 +5,10 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
 
 class InfoDialog extends StatelessWidget {
+  const InfoDialog({Key key, this.title, this.content}) : super(key: key);
+
   final String title;
   final String content;
-
-  const InfoDialog({Key key, this.title, this.content}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

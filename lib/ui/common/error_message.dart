@@ -4,11 +4,6 @@ import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 
 class ErrorMessage extends StatelessWidget {
-  final Function _retryFunction;
-  final Color color;
-  final Exception exception;
-  final bool dense;
-
   const ErrorMessage({
     Key key,
     Function retryFunction,
@@ -18,6 +13,11 @@ class ErrorMessage extends StatelessWidget {
   })  : this._retryFunction = retryFunction,
         assert(dense != null),
         super(key: key);
+
+  final Function _retryFunction;
+  final Color color;
+  final Exception exception;
+  final bool dense;
 
   @override
   Widget build(BuildContext context) {

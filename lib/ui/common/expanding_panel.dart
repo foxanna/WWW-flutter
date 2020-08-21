@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ExpandingPanel extends StatefulWidget {
-  final Widget header;
-  final Widget body;
-  final Duration animationDuration;
-
   const ExpandingPanel({
     Key key,
     this.header,
     this.body,
     this.animationDuration = kThemeAnimationDuration,
   }) : super(key: key);
+
+  final Widget header;
+  final Widget body;
+  final Duration animationDuration;
 
   @override
   _ExpandingPanelState createState() => _ExpandingPanelState();

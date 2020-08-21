@@ -6,16 +6,16 @@ import 'package:what_when_where/ui/common/tournaments_grid_stub_tile.dart';
 import 'package:what_when_where/ui/common/tournaments_grid_tile.dart';
 
 class TournamentsGrid extends StatelessWidget {
-  final List<Tournament> tournaments;
-  final WidgetBuilder footerBuilder;
-  final int stubTournamentsCount;
-
   const TournamentsGrid({
     Key key,
     this.tournaments,
     this.footerBuilder,
     this.stubTournamentsCount = 0,
   }) : super(key: key);
+
+  final List<Tournament> tournaments;
+  final WidgetBuilder footerBuilder;
+  final int stubTournamentsCount;
 
   @override
   Widget build(BuildContext context) {

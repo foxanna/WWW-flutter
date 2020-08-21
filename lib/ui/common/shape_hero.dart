@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ShapeHeroFrom extends StatelessWidget {
-  final String tag;
-  final ShapeBorder begin;
-  final ShapeBorder end;
-  final Widget child;
-
-  final ShapeBorderTween _tween;
-
   ShapeHeroFrom({
     Key key,
     this.tag = '',
@@ -17,6 +10,13 @@ class ShapeHeroFrom extends StatelessWidget {
   })  : _tween = ShapeBorderTween(begin: begin, end: end),
         super(key: key);
 
+  final String tag;
+  final ShapeBorder begin;
+  final ShapeBorder end;
+  final Widget child;
+
+  final ShapeBorderTween _tween;
+
   @override
   Widget build(BuildContext context) => Hero(
         tag: tag,
@@ -25,13 +25,13 @@ class ShapeHeroFrom extends StatelessWidget {
             (flightContext, animation, direction, fromContext, toContext) =>
                 AnimatedBuilder(
           animation: animation,
-          child: child,
           builder: (context, child) => ClipPath(
             clipper: ShapeBorderClipper(
               shape: _tween.lerp(animation.value),
             ),
             child: child,
           ),
+          child: child,
         ),
         child: ClipPath(
           clipper: ShapeBorderClipper(
@@ -43,16 +43,16 @@ class ShapeHeroFrom extends StatelessWidget {
 }
 
 class ShapeHeroTo extends StatelessWidget {
-  final String tag;
-  final ShapeBorder value;
-  final Widget child;
-
   const ShapeHeroTo({
     Key key,
     this.tag,
     this.value,
     this.child,
   }) : super(key: key);
+
+  final String tag;
+  final ShapeBorder value;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) => Hero(

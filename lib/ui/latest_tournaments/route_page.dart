@@ -10,9 +10,9 @@ import 'package:what_when_where/ui/latest_tournaments/page_content.dart';
 import 'package:what_when_where/ui/latest_tournaments/refresh_indicator.dart';
 
 class LatestTournamentsPage extends StatefulWidget {
-  static const String routeName = 'latest_tournaments';
-
   const LatestTournamentsPage({Key key}) : super(key: key);
+
+  static const String routeName = 'latest_tournaments';
 
   @override
   _LatestTournamentsPageState createState() => _LatestTournamentsPageState();
@@ -27,6 +27,7 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
             .latestTournamentsStyleConfiguration
             .scaffoldBackground,
         body: LatestTournamentsRefreshIndicator(
+          onRefresh: _loadMoreIfRequested,
           child: CustomScrollView(
             controller: _scrollController,
             physics: const BouncingScrollPhysics(),
@@ -35,7 +36,6 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
               LatestTournamentsPageContent(),
             ],
           ),
-          onRefresh: _loadMoreIfRequested,
         ),
         floatingActionButton: ScrollControllerBoundFloatingActionButton(
           scrollController: _scrollController,

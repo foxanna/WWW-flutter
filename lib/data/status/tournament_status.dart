@@ -11,14 +11,14 @@ abstract class ITournamentStatusService {
 
 @LazySingleton(as: ITournamentStatusService)
 class TournamentStatusService implements ITournamentStatusService {
-  final ITournamentsHistoryService _historyService;
-  final ITournamentsBookmarksService _bookmarksService;
-
   const TournamentStatusService({
     ITournamentsHistoryService historyService,
     ITournamentsBookmarksService bookmarksService,
   })  : _historyService = historyService,
         _bookmarksService = bookmarksService;
+
+  final ITournamentsHistoryService _historyService;
+  final ITournamentsBookmarksService _bookmarksService;
 
   @override
   Future<Tournament> actualize(Tournament tournament) async {

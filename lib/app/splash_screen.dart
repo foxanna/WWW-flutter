@@ -7,10 +7,10 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/fade_in.dart';
 
 class SplashScreen extends StatelessWidget {
+  const SplashScreen({Key key}) : super(key: key);
+
   static const animationDuration = Duration(milliseconds: 600);
   static const _curve = Curves.easeOut;
-
-  const SplashScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => StoreConnector<AppState, SettingsState>(

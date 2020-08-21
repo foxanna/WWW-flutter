@@ -16,11 +16,11 @@ abstract class IHttpClient {
 
 @LazySingleton(as: IHttpClient)
 class HttpClient implements IHttpClient {
-  final Dio _dio;
-
   const HttpClient({
     Dio dio,
   }) : _dio = dio;
+
+  final Dio _dio;
 
   @override
   Future<String> get(Uri uri, {CancelToken cancelToken}) async {

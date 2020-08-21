@@ -9,15 +9,15 @@ import 'package:what_when_where/redux/utils.dart';
 
 @injectable
 class LatestTournamentsMiddleware {
+  LatestTournamentsMiddleware({
+    ILatestTournamentsProvider provider,
+  }) : _provider = provider;
+
   final ILatestTournamentsProvider _provider;
 
   List<Middleware<AppState>> _middleware;
   Iterable<Middleware<AppState>> get middleware =>
       _middleware ?? (_middleware = _createMiddleware());
-
-  LatestTournamentsMiddleware({
-    ILatestTournamentsProvider provider,
-  }) : _provider = provider;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenLatestSystemAction>(_open),
@@ -49,7 +49,7 @@ class LatestTournamentsMiddleware {
     }
 
     try {
-      const int page = 0;
+      const page = 0;
       store.dispatch(const SystemActionLatest.refreshing());
 
       final data = await _provider.get(page: page);

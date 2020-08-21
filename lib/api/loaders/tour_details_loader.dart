@@ -12,10 +12,6 @@ abstract class ITourDetailsLoader {
 
 @LazySingleton(as: ITourDetailsLoader)
 class TourDetailsLoader implements ITourDetailsLoader {
-  final IHttpClient _httpClient;
-  final IXmlToJsonParser _parser;
-  final IBackgroundRunnerService _backgroundService;
-
   TourDetailsLoader({
     IHttpClient httpClient,
     IXmlToJsonParser parser,
@@ -23,6 +19,10 @@ class TourDetailsLoader implements ITourDetailsLoader {
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;
+
+  final IHttpClient _httpClient;
+  final IXmlToJsonParser _parser;
+  final IBackgroundRunnerService _backgroundService;
 
   @override
   Future<TourDto> get(String id) async {

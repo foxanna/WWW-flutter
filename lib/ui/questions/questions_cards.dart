@@ -5,12 +5,6 @@ import 'package:what_when_where/ui/question/question_card.dart';
 import 'package:what_when_where/ui/question/question_card_stub.dart';
 
 class QuestionsCards extends StatelessWidget {
-  final int initialPage;
-  final List<QuestionState> questions;
-  final ValueChanged<int> onPageChanged;
-  final int stubQuestionsCount;
-  final Widget footer;
-
   const QuestionsCards({
     Key key,
     this.initialPage = 0,
@@ -20,6 +14,12 @@ class QuestionsCards extends StatelessWidget {
     this.footer,
   })  : assert(stubQuestionsCount != null),
         super(key: key);
+
+  final int initialPage;
+  final List<QuestionState> questions;
+  final ValueChanged<int> onPageChanged;
+  final int stubQuestionsCount;
+  final Widget footer;
 
   @override
   Widget build(BuildContext context) {

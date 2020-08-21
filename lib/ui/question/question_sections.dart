@@ -16,8 +16,6 @@ import 'package:what_when_where/ui/common/progress_indicator.dart';
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class QuestionSections extends StatelessWidget {
-  final List<QuestionSection> _sections;
-
   factory QuestionSections({
     Key key,
     List<QuestionSection> sections,
@@ -55,6 +53,8 @@ class QuestionSections extends StatelessWidget {
     this._sections, {
     Key key,
   }) : super(key: key);
+
+  final List<QuestionSection> _sections;
 
   @override
   Widget build(BuildContext context) {
@@ -140,6 +140,7 @@ class QuestionSections extends StatelessWidget {
   Widget _buildImageSection(
           BuildContext context, ImageSection section, double imageHeight) =>
       GestureDetector(
+        onTap: () => _openImagePage(context, section.value),
         child: Hero(
           tag: section.value,
           transitionOnUserGestures: true,
@@ -153,7 +154,6 @@ class QuestionSections extends StatelessWidget {
             ),
           ),
         ),
-        onTap: () => _openImagePage(context, section.value),
       );
 
   Widget _buildAudioSection(
