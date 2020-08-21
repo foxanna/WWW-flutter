@@ -31,7 +31,10 @@ class Themes {
       brightness: Brightness.light,
       primaryColor: Colors.teal[900],
       accentColor: Colors.teal[400],
-      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
+      colorScheme: ColorScheme.fromSwatch(
+        primarySwatch: Colors.teal,
+        brightness: Brightness.light,
+      ),
     );
 
     return _customize(base);
@@ -41,7 +44,10 @@ class Themes {
     final ThemeData base = ThemeData(
       brightness: Brightness.dark,
       accentColor: Colors.teal[400],
-      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
+      colorScheme: ColorScheme.fromSwatch(
+        primarySwatch: Colors.teal,
+        brightness: Brightness.dark,
+      ),
     );
 
     return _customize(base);
