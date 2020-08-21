@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/ioc/container.iconfig.dart';
+import 'package:what_when_where/ioc/container.config.dart';
 import 'package:what_when_where/services/dialogs.dart';
 
 final _getIt = GetIt.instance;

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:what_when_where/data/models/tournaments_tree_info.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/bookmarks/actions.dart';
-import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/error_message.dart';
 
