@@ -29,7 +29,7 @@ dependencies:
   flutter_svg: ^0.17.4
   flutter_vibrate: ^1.0.0
   flutter_widget_from_html_core: ^0.3.3+4
-  freezed_annotation: ^0.7.1
+  freezed_annotation: ^0.11.0+1
   get_it: ^4.0.2
   hive: ^1.4.1+1
   hive_flutter: ^0.3.0+2
@@ -38,8 +38,8 @@ dependencies:
   i69n: ^1.1.0
   injectable: ^0.4.0+1
   isolate: ^2.0.3
-  json_serializable: ^3.3.0
-  path_provider: ^1.6.9
+  json_serializable: ^3.4.0
+  path_provider: ^1.6.11
   photo_view: ^0.9.2
   rxdart: ^0.24.1
   share: ^0.6.4+3
@@ -52,7 +52,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner:
-  freezed: ^0.10.9
+  freezed: ^0.11.5
   hive_generator:
     git:
       url: git@github.com:hivedb/hive.git
