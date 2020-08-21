@@ -64,6 +64,7 @@ dev_dependencies:
 
 dependency_overrides:
   path: 1.6.4
+  analyzer: '0.39.14'
 
 flutter:
   uses-material-design: true
