@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,10 +12,12 @@ T _$identity<T>(T value) => value;
 class _$UserActionLatestTearOff {
   const _$UserActionLatestTearOff();
 
+// ignore: unused_element
   RefreshLatestUserAction refresh() {
     return const RefreshLatestUserAction();
   }
 
+// ignore: unused_element
   LoadLatestUserAction load() {
     return const LoadLatestUserAction();
   }
@@ -259,26 +261,32 @@ abstract class LoadLatestUserAction implements UserActionLatest {
 class _$SystemActionLatestTearOff {
   const _$SystemActionLatestTearOff();
 
+// ignore: unused_element
   OpenLatestSystemAction open() {
     return const OpenLatestSystemAction();
   }
 
+// ignore: unused_element
   InitLatestSystemAction init() {
     return const InitLatestSystemAction();
   }
 
+// ignore: unused_element
   DeInitLatestSystemAction deInit() {
     return const DeInitLatestSystemAction();
   }
 
+// ignore: unused_element
   LoadingLatestSystemAction loading() {
     return const LoadingLatestSystemAction();
   }
 
+// ignore: unused_element
   RefreshingLatestSystemAction refreshing() {
     return const RefreshingLatestSystemAction();
   }
 
+// ignore: unused_element
   CompletedLatestSystemAction completed(
       {@required Iterable<Tournament> data, @required int nexPage}) {
     return CompletedLatestSystemAction(
@@ -287,6 +295,7 @@ class _$SystemActionLatestTearOff {
     );
   }
 
+// ignore: unused_element
   FailedLatestSystemAction failed({@required Exception exception}) {
     return FailedLatestSystemAction(
       exception: exception,

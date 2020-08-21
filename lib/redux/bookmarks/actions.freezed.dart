@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,14 +12,17 @@ T _$identity<T>(T value) => value;
 class _$UserActionBookmarksTearOff {
   const _$UserActionBookmarksTearOff();
 
+// ignore: unused_element
   OpenBookmarksUserAction open() {
     return const OpenBookmarksUserAction();
   }
 
+// ignore: unused_element
   CloseBookmarksUserAction close() {
     return const CloseBookmarksUserAction();
   }
 
+// ignore: unused_element
   LoadBookmarksUserAction load() {
     return const LoadBookmarksUserAction();
   }
@@ -382,24 +385,29 @@ abstract class LoadBookmarksUserAction implements UserActionBookmarks {
 class _$SystemActionBookmarksTearOff {
   const _$SystemActionBookmarksTearOff();
 
+// ignore: unused_element
   InitBookmarksSystemAction init() {
     return const InitBookmarksSystemAction();
   }
 
+// ignore: unused_element
   DeInitBookmarksSystemAction deInit() {
     return const DeInitBookmarksSystemAction();
   }
 
+// ignore: unused_element
   LoadingBookmarksSystemAction loading() {
     return const LoadingBookmarksSystemAction();
   }
 
+// ignore: unused_element
   FailedBookmarksSystemAction failed({@required Exception exception}) {
     return FailedBookmarksSystemAction(
       exception: exception,
     );
   }
 
+// ignore: unused_element
   CompletedBookmarksSystemAction completed(
       {@required List<Tournament> tournaments}) {
     return CompletedBookmarksSystemAction(

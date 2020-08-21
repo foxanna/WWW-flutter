@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,12 +12,14 @@ T _$identity<T>(T value) => value;
 class _$UserActionDialogTearOff {
   const _$UserActionDialogTearOff();
 
+// ignore: unused_element
   TourInfoDialogUserAction tourInfo({@required TourInfo info}) {
     return TourInfoDialogUserAction(
       info: info,
     );
   }
 
+// ignore: unused_element
   TournamentInfoDialogUserAction tournamentInfo(
       {@required TournamentInfo info}) {
     return TournamentInfoDialogUserAction(
@@ -351,6 +353,7 @@ abstract class TournamentInfoDialogUserAction implements UserActionDialog {
 class _$SystemActionDialogTearOff {
   const _$SystemActionDialogTearOff();
 
+// ignore: unused_element
   RatingDialogSystemAction rating() {
     return const RatingDialogSystemAction();
   }
@@ -359,7 +362,26 @@ class _$SystemActionDialogTearOff {
 // ignore: unused_element
 const $SystemActionDialog = _$SystemActionDialogTearOff();
 
-mixin _$SystemActionDialog {}
+mixin _$SystemActionDialog {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result rating(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result rating(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result rating(RatingDialogSystemAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result rating(RatingDialogSystemAction value),
+    @required Result orElse(),
+  });
+}
 
 abstract class $SystemActionDialogCopyWith<$Res> {
   factory $SystemActionDialogCopyWith(
@@ -417,6 +439,50 @@ class _$RatingDialogSystemAction
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result rating(),
+  }) {
+    assert(rating != null);
+    return rating();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result rating(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (rating != null) {
+      return rating();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result rating(RatingDialogSystemAction value),
+  }) {
+    assert(rating != null);
+    return rating(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result rating(RatingDialogSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (rating != null) {
+      return rating(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class RatingDialogSystemAction implements SystemActionDialog {

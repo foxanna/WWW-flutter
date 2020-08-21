@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'state.dart';
 
@@ -12,14 +12,17 @@ T _$identity<T>(T value) => value;
 class _$QuestionsStateTearOff {
   const _$QuestionsStateTearOff();
 
+// ignore: unused_element
   InitialQuestionsState initial() {
     return const InitialQuestionsState();
   }
 
+// ignore: unused_element
   LoadingFirstPageQuestionsState loadingFirstPage() {
     return const LoadingFirstPageQuestionsState();
   }
 
+// ignore: unused_element
   LoadingWithDataQuestionsState loadingWithData(
       {@required List<QuestionState> questions,
       @required int currentQuestionIndex}) {
@@ -29,12 +32,14 @@ class _$QuestionsStateTearOff {
     );
   }
 
+// ignore: unused_element
   ErrorFirstPageQuestionsState errorFirstPage({@required Exception exception}) {
     return ErrorFirstPageQuestionsState(
       exception: exception,
     );
   }
 
+// ignore: unused_element
   ErrorWithDataQuestionsState errorWithData(
       {@required List<QuestionState> questions,
       @required int currentQuestionIndex,
@@ -46,6 +51,7 @@ class _$QuestionsStateTearOff {
     );
   }
 
+// ignore: unused_element
   DataQuestionsState data(
       {@required List<QuestionState> questions,
       @required int currentQuestionIndex,
@@ -1130,6 +1136,7 @@ abstract class DataQuestionsState implements QuestionsState {
 class _$QuestionStateTearOff {
   const _$QuestionStateTearOff();
 
+// ignore: unused_element
   _QuestionState call({@required Question question, bool showAnswer = false}) {
     return _QuestionState(
       question: question,

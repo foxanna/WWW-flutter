@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'tour_dto.dart';
 
@@ -15,6 +15,7 @@ TourDto _$TourDtoFromJson(Map<String, dynamic> json) {
 class _$TourDtoTearOff {
   const _$TourDtoTearOff();
 
+// ignore: unused_element
   _TourDto call(
       {@JsonKey(name: 'Id')
           String id,

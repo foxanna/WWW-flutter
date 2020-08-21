@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'state.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$TournamentsTreeStateTearOff {
   const _$TournamentsTreeStateTearOff();
 
+// ignore: unused_element
   _TournamentsTreeState call(
       {Map<String, TournamentsSubTreeState> states =
           const <String, TournamentsSubTreeState>{}}) {
@@ -143,12 +144,14 @@ abstract class _TournamentsTreeState implements TournamentsTreeState {
 class _$TournamentsSubTreeStateTearOff {
   const _$TournamentsSubTreeStateTearOff();
 
+// ignore: unused_element
   InitialTournamentsSubTreeState initial({@required TournamentsTreeInfo info}) {
     return InitialTournamentsSubTreeState(
       info: info,
     );
   }
 
+// ignore: unused_element
   DataTournamentsSubTreeState data(
       {@required TournamentsTreeInfo info, @required TournamentsTree tree}) {
     return DataTournamentsSubTreeState(
@@ -157,12 +160,14 @@ class _$TournamentsSubTreeStateTearOff {
     );
   }
 
+// ignore: unused_element
   LoadingTournamentsSubTreeState loading({@required TournamentsTreeInfo info}) {
     return LoadingTournamentsSubTreeState(
       info: info,
     );
   }
 
+// ignore: unused_element
   ErrorTournamentsSubTreeState error(
       {@required TournamentsTreeInfo info, @required Exception exception}) {
     return ErrorTournamentsSubTreeState(

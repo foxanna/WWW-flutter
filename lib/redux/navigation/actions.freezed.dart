@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,12 +12,14 @@ T _$identity<T>(T value) => value;
 class _$UserActionNavigationTearOff {
   const _$UserActionNavigationTearOff();
 
+// ignore: unused_element
   ImageNavigationUserAction image({@required String imageUrl}) {
     return ImageNavigationUserAction(
       imageUrl: imageUrl,
     );
   }
 
+// ignore: unused_element
   AboutNavigationUserAction about() {
     return const AboutNavigationUserAction();
   }
@@ -293,32 +295,39 @@ abstract class AboutNavigationUserAction implements UserActionNavigation {
 class _$SystemActionNavigationTearOff {
   const _$SystemActionNavigationTearOff();
 
+// ignore: unused_element
   TournamentNavigationSystemAction tournament() {
     return const TournamentNavigationSystemAction();
   }
 
+// ignore: unused_element
   TreeNavigationSystemAction tree({@required TournamentsTreeInfo info}) {
     return TreeNavigationSystemAction(
       info: info,
     );
   }
 
+// ignore: unused_element
   QuestionsNavigationSystemAction questions() {
     return const QuestionsNavigationSystemAction();
   }
 
+// ignore: unused_element
   SearchNavigationSystemAction search() {
     return const SearchNavigationSystemAction();
   }
 
+// ignore: unused_element
   LatestNavigationSystemAction latest() {
     return const LatestNavigationSystemAction();
   }
 
+// ignore: unused_element
   SettingsNavigationSystemAction settings() {
     return const SettingsNavigationSystemAction();
   }
 
+// ignore: unused_element
   BookmarksNavigationSystemAction bookmarks() {
     return const BookmarksNavigationSystemAction();
   }

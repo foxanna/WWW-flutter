@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,18 +12,21 @@ T _$identity<T>(T value) => value;
 class _$UserActionTournamentsTreeTearOff {
   const _$UserActionTournamentsTreeTearOff();
 
+// ignore: unused_element
   OpenTournamentsTreeUserAction open({TournamentsTreeInfo info}) {
     return OpenTournamentsTreeUserAction(
       info: info,
     );
   }
 
+// ignore: unused_element
   LoadTournamentsTreeUserAction load({@required TournamentsTreeInfo info}) {
     return LoadTournamentsTreeUserAction(
       info: info,
     );
   }
 
+// ignore: unused_element
   CloseTournamentsTreeUserAction close({TournamentsTreeInfo info}) {
     return CloseTournamentsTreeUserAction(
       info: info,
@@ -534,14 +537,17 @@ abstract class CloseTournamentsTreeUserAction
 class _$SystemActionTournamentsTreeTearOff {
   const _$SystemActionTournamentsTreeTearOff();
 
+// ignore: unused_element
   InitTournamentsTreeSystemAction init() {
     return const InitTournamentsTreeSystemAction();
   }
 
+// ignore: unused_element
   DeInitTournamentsTreeSystemAction deInit() {
     return const DeInitTournamentsTreeSystemAction();
   }
 
+// ignore: unused_element
   InitSubTreeTournamentsTreeSystemAction initSubTree(
       {@required TournamentsTreeInfo info}) {
     return InitSubTreeTournamentsTreeSystemAction(
@@ -549,6 +555,7 @@ class _$SystemActionTournamentsTreeTearOff {
     );
   }
 
+// ignore: unused_element
   DeInitSubTreeTournamentsTreeSystemAction deInitSubTree(
       {@required TournamentsTreeInfo info}) {
     return DeInitSubTreeTournamentsTreeSystemAction(
@@ -556,6 +563,7 @@ class _$SystemActionTournamentsTreeTearOff {
     );
   }
 
+// ignore: unused_element
   LoadingTournamentsTreeSystemAction loading(
       {@required TournamentsTreeInfo info}) {
     return LoadingTournamentsTreeSystemAction(
@@ -563,6 +571,7 @@ class _$SystemActionTournamentsTreeTearOff {
     );
   }
 
+// ignore: unused_element
   FailedTournamentsTreeSystemAction failed(
       {@required TournamentsTreeInfo info, @required Exception exception}) {
     return FailedTournamentsTreeSystemAction(
@@ -571,6 +580,7 @@ class _$SystemActionTournamentsTreeTearOff {
     );
   }
 
+// ignore: unused_element
   CompletedTournamentsTreeSystemAction completed(
       {@required TournamentsTree tree}) {
     return CompletedTournamentsTreeSystemAction(

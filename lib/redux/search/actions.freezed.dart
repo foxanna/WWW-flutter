@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,24 +12,29 @@ T _$identity<T>(T value) => value;
 class _$UserActionSearchTearOff {
   const _$UserActionSearchTearOff();
 
+// ignore: unused_element
   OpenSearchUserAction open() {
     return const OpenSearchUserAction();
   }
 
+// ignore: unused_element
   ExecuteSearchUserAction execute() {
     return const ExecuteSearchUserAction();
   }
 
+// ignore: unused_element
   CloseSearchUserAction close() {
     return const CloseSearchUserAction();
   }
 
+// ignore: unused_element
   UpdateTextSearchUserAction updateText({@required String query}) {
     return UpdateTextSearchUserAction(
       query: query,
     );
   }
 
+// ignore: unused_element
   UpdateSortingSearchUserAction updateSorting({@required Sorting sorting}) {
     return UpdateSortingSearchUserAction(
       sorting: sorting,
@@ -729,24 +734,29 @@ abstract class UpdateSortingSearchUserAction implements UserActionSearch {
 class _$SystemActionSearchTearOff {
   const _$SystemActionSearchTearOff();
 
+// ignore: unused_element
   InitSearchSystemAction init() {
     return const InitSearchSystemAction();
   }
 
+// ignore: unused_element
   DeInitSearchSystemAction deInit() {
     return const DeInitSearchSystemAction();
   }
 
+// ignore: unused_element
   ClearResultsSearchSystemAction clearResults() {
     return const ClearResultsSearchSystemAction();
   }
 
+// ignore: unused_element
   LoadingSearchSystemAction loading({@required SearchParameters parameters}) {
     return LoadingSearchSystemAction(
       parameters: parameters,
     );
   }
 
+// ignore: unused_element
   FailedSearchSystemAction failed(
       {@required SearchParameters parameters, @required Exception exception}) {
     return FailedSearchSystemAction(
@@ -755,6 +765,7 @@ class _$SystemActionSearchTearOff {
     );
   }
 
+// ignore: unused_element
   CompletedSearchSystemAction completed(
       {@required SearchParameters parameters,
       @required Iterable<Tournament> data,

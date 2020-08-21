@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,26 +12,32 @@ T _$identity<T>(T value) => value;
 class _$UserActionTimerTearOff {
   const _$UserActionTimerTearOff();
 
+// ignore: unused_element
   InitTimerUserAction init() {
     return const InitTimerUserAction();
   }
 
+// ignore: unused_element
   DeInitTimerUserAction deInit() {
     return const DeInitTimerUserAction();
   }
 
+// ignore: unused_element
   StartTimerUserAction start() {
     return const StartTimerUserAction();
   }
 
+// ignore: unused_element
   StopTimerUserAction stop() {
     return const StopTimerUserAction();
   }
 
+// ignore: unused_element
   ResetTimerUserAction reset() {
     return const ResetTimerUserAction();
   }
 
+// ignore: unused_element
   ChangeTypeTimerUserAction changeType({@required TimerType type}) {
     return ChangeTypeTimerUserAction(
       type: type,
@@ -851,16 +857,19 @@ abstract class ChangeTypeTimerUserAction implements UserActionTimer {
 class _$SystemActionTimerTearOff {
   const _$SystemActionTimerTearOff();
 
+// ignore: unused_element
   NotifyTimerSystemAction notify() {
     return const NotifyTimerSystemAction();
   }
 
+// ignore: unused_element
   UpdateTimeTimerSystemAction updateTime({@required int newValue}) {
     return UpdateTimeTimerSystemAction(
       newValue: newValue,
     );
   }
 
+// ignore: unused_element
   UpdateIsRunningTimerSystemAction isRunning({@required bool newValue}) {
     return UpdateIsRunningTimerSystemAction(
       newValue: newValue,

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$UserActionQuestionsTearOff {
   const _$UserActionQuestionsTearOff();
 
+// ignore: unused_element
   OpenQuestionsUserAction open(
       {@required List<Question> questions, @required int index}) {
     return OpenQuestionsUserAction(
@@ -20,30 +21,36 @@ class _$UserActionQuestionsTearOff {
     );
   }
 
+// ignore: unused_element
   OpenRandomQuestionsUserAction openRandom() {
     return const OpenRandomQuestionsUserAction();
   }
 
+// ignore: unused_element
   CloseQuestionsUserAction close() {
     return const CloseQuestionsUserAction();
   }
 
+// ignore: unused_element
   ShowAnswerQuestionsUserAction showAnswer({@required Question question}) {
     return ShowAnswerQuestionsUserAction(
       question: question,
     );
   }
 
+// ignore: unused_element
   HideAnswerQuestionsUserAction hideAnswer({@required Question question}) {
     return HideAnswerQuestionsUserAction(
       question: question,
     );
   }
 
+// ignore: unused_element
   LoadRandomQuestionsUserAction loadRandom() {
     return const LoadRandomQuestionsUserAction();
   }
 
+// ignore: unused_element
   SelectQuestionsUserAction select({@required int questionIndex}) {
     return SelectQuestionsUserAction(
       questionIndex: questionIndex,
@@ -1179,6 +1186,7 @@ abstract class SelectQuestionsUserAction implements UserActionQuestions {
 class _$SystemActionQuestionsTearOff {
   const _$SystemActionQuestionsTearOff();
 
+// ignore: unused_element
   InitQuestionsSystemAction init(
       {@required List<Question> questions, @required int index}) {
     return InitQuestionsSystemAction(
@@ -1187,24 +1195,29 @@ class _$SystemActionQuestionsTearOff {
     );
   }
 
+// ignore: unused_element
   InitRandomQuestionsSystemAction initRandom() {
     return const InitRandomQuestionsSystemAction();
   }
 
+// ignore: unused_element
   DeInitQuestionsSystemAction deInit() {
     return const DeInitQuestionsSystemAction();
   }
 
+// ignore: unused_element
   LoadingQuestionsSystemAction loading() {
     return const LoadingQuestionsSystemAction();
   }
 
+// ignore: unused_element
   FailedQuestionsSystemAction failed({@required Exception exception}) {
     return FailedQuestionsSystemAction(
       exception: exception,
     );
   }
 
+// ignore: unused_element
   CompletedQuestionsSystemAction completed(
       {@required Iterable<Question> questions}) {
     return CompletedQuestionsSystemAction(

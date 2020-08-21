@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,16 +12,19 @@ T _$identity<T>(T value) => value;
 class _$UserActionSettingsTearOff {
   const _$UserActionSettingsTearOff();
 
+// ignore: unused_element
   OpenSettingsUserAction open() {
     return const OpenSettingsUserAction();
   }
 
+// ignore: unused_element
   ChangeThemeSettingsUserAction changeTheme({@required AppTheme appTheme}) {
     return ChangeThemeSettingsUserAction(
       appTheme: appTheme,
     );
   }
 
+// ignore: unused_element
   ChangeTextScaleSettingsUserAction changeTextScale(
       {@required TextScale textScale}) {
     return ChangeTextScaleSettingsUserAction(
@@ -29,6 +32,7 @@ class _$UserActionSettingsTearOff {
     );
   }
 
+// ignore: unused_element
   ChangeNotifyShortTimerExpirationSettingsUserAction
       changeNotifyShortTimerExpiration({@required bool value}) {
     return ChangeNotifyShortTimerExpirationSettingsUserAction(
@@ -36,6 +40,7 @@ class _$UserActionSettingsTearOff {
     );
   }
 
+// ignore: unused_element
   ChangeNotifyLongTimerExpirationSettingsUserAction
       changeNotifyLongTimerExpiration({@required bool value}) {
     return ChangeNotifyLongTimerExpirationSettingsUserAction(
@@ -869,6 +874,7 @@ abstract class ChangeNotifyLongTimerExpirationSettingsUserAction
 class _$SystemActionSettingsTearOff {
   const _$SystemActionSettingsTearOff();
 
+// ignore: unused_element
   ReadySettingsSystemAction ready(
       {AppTheme appTheme,
       TextScale textScale,
@@ -891,6 +897,28 @@ mixin _$SystemActionSettings {
   TextScale get textScale;
   bool get notifyShortTimerExpiration;
   bool get notifyLongTimerExpiration;
+
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result ready(AppTheme appTheme, TextScale textScale,
+            bool notifyShortTimerExpiration, bool notifyLongTimerExpiration),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result ready(AppTheme appTheme, TextScale textScale,
+        bool notifyShortTimerExpiration, bool notifyLongTimerExpiration),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result ready(ReadySettingsSystemAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result ready(ReadySettingsSystemAction value),
+    @required Result orElse(),
+  });
 
   $SystemActionSettingsCopyWith<SystemActionSettings> get copyWith;
 }
@@ -1050,6 +1078,55 @@ class _$ReadySettingsSystemAction
   $ReadySettingsSystemActionCopyWith<ReadySettingsSystemAction> get copyWith =>
       _$ReadySettingsSystemActionCopyWithImpl<ReadySettingsSystemAction>(
           this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result ready(AppTheme appTheme, TextScale textScale,
+            bool notifyShortTimerExpiration, bool notifyLongTimerExpiration),
+  }) {
+    assert(ready != null);
+    return ready(appTheme, textScale, notifyShortTimerExpiration,
+        notifyLongTimerExpiration);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result ready(AppTheme appTheme, TextScale textScale,
+        bool notifyShortTimerExpiration, bool notifyLongTimerExpiration),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (ready != null) {
+      return ready(appTheme, textScale, notifyShortTimerExpiration,
+          notifyLongTimerExpiration);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result ready(ReadySettingsSystemAction value),
+  }) {
+    assert(ready != null);
+    return ready(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result ready(ReadySettingsSystemAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (ready != null) {
+      return ready(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class ReadySettingsSystemAction implements SystemActionSettings {

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'state.dart';
 
@@ -12,14 +12,17 @@ T _$identity<T>(T value) => value;
 class _$LatestTournamentsStateTearOff {
   const _$LatestTournamentsStateTearOff();
 
+// ignore: unused_element
   InitialLatestTournamentsState initial() {
     return const InitialLatestTournamentsState();
   }
 
+// ignore: unused_element
   LoadingFirstPageLatestTournamentsState loadingFirstPage() {
     return const LoadingFirstPageLatestTournamentsState();
   }
 
+// ignore: unused_element
   LoadingWithDataLatestTournamentsState loadingWithData(
       {@required List<Tournament> data, @required int nextPage}) {
     return LoadingWithDataLatestTournamentsState(
@@ -28,6 +31,7 @@ class _$LatestTournamentsStateTearOff {
     );
   }
 
+// ignore: unused_element
   ErrorFirstPageLatestTournamentsState errorFirstPage(
       {@required Exception exception}) {
     return ErrorFirstPageLatestTournamentsState(
@@ -35,6 +39,7 @@ class _$LatestTournamentsStateTearOff {
     );
   }
 
+// ignore: unused_element
   ErrorWithDataLatestTournamentsState errorWithData(
       {@required List<Tournament> data,
       @required Exception exception,
@@ -46,6 +51,7 @@ class _$LatestTournamentsStateTearOff {
     );
   }
 
+// ignore: unused_element
   RefreshingLatestTournamentsState refreshing(
       {@required List<Tournament> data}) {
     return RefreshingLatestTournamentsState(
@@ -53,6 +59,7 @@ class _$LatestTournamentsStateTearOff {
     );
   }
 
+// ignore: unused_element
   DataLatestTournamentsState data(
       {@required int nextPage, @required List<Tournament> data}) {
     return DataLatestTournamentsState(

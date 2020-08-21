@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$UserActionToursTearOff {
   const _$UserActionToursTearOff();
 
+// ignore: unused_element
   LoadToursUserAction load({@required TourInfo info}) {
     return LoadToursUserAction(
       info: info,
@@ -24,6 +25,25 @@ const $UserActionTours = _$UserActionToursTearOff();
 
 mixin _$UserActionTours {
   TourInfo get info;
+
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(TourInfo info),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(TourInfo info),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(LoadToursUserAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(LoadToursUserAction value),
+    @required Result orElse(),
+  });
 
   $UserActionToursCopyWith<UserActionTours> get copyWith;
 }
@@ -133,6 +153,50 @@ class _$LoadToursUserAction
   @override
   $LoadToursUserActionCopyWith<LoadToursUserAction> get copyWith =>
       _$LoadToursUserActionCopyWithImpl<LoadToursUserAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(TourInfo info),
+  }) {
+    assert(load != null);
+    return load(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(TourInfo info),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (load != null) {
+      return load(info);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(LoadToursUserAction value),
+  }) {
+    assert(load != null);
+    return load(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(LoadToursUserAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (load != null) {
+      return load(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class LoadToursUserAction implements UserActionTours {
@@ -148,22 +212,26 @@ abstract class LoadToursUserAction implements UserActionTours {
 class _$SystemActionToursTearOff {
   const _$SystemActionToursTearOff();
 
+// ignore: unused_element
   InitToursSystemAction init({@required List<TourInfo> tours}) {
     return InitToursSystemAction(
       tours: tours,
     );
   }
 
+// ignore: unused_element
   DeInitToursSystemAction deInit() {
     return const DeInitToursSystemAction();
   }
 
+// ignore: unused_element
   LoadingToursSystemAction loading({@required TourInfo info}) {
     return LoadingToursSystemAction(
       info: info,
     );
   }
 
+// ignore: unused_element
   FailedToursSystemAction failed(
       {@required TourInfo info, @required Exception exception}) {
     return FailedToursSystemAction(
@@ -172,6 +240,7 @@ class _$SystemActionToursTearOff {
     );
   }
 
+// ignore: unused_element
   CompletedToursSystemAction completed({@required Tour tour}) {
     return CompletedToursSystemAction(
       tour: tour,

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'state.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$TournamentStateTearOff {
   const _$TournamentStateTearOff();
 
+// ignore: unused_element
   InitialTournamentState initial(
       {@required TournamentInfo info, @required TournamentStatus status}) {
     return InitialTournamentState(
@@ -20,6 +21,7 @@ class _$TournamentStateTearOff {
     );
   }
 
+// ignore: unused_element
   DataTournamentState data(
       {@required TournamentInfo info,
       @required TournamentStatus status,
@@ -33,6 +35,7 @@ class _$TournamentStateTearOff {
     );
   }
 
+// ignore: unused_element
   LoadingTournamentState loading(
       {@required TournamentInfo info, @required TournamentStatus status}) {
     return LoadingTournamentState(
@@ -41,6 +44,7 @@ class _$TournamentStateTearOff {
     );
   }
 
+// ignore: unused_element
   ErrorTournamentState error(
       {@required TournamentInfo info,
       @required TournamentStatus status,

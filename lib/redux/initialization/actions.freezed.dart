@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$InitializationActionTearOff {
   const _$InitializationActionTearOff();
 
+// ignore: unused_element
   InitInitializationAction init() {
     return const InitInitializationAction();
   }
@@ -20,7 +21,26 @@ class _$InitializationActionTearOff {
 // ignore: unused_element
 const $InitializationAction = _$InitializationActionTearOff();
 
-mixin _$InitializationAction {}
+mixin _$InitializationAction {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitInitializationAction value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitInitializationAction value),
+    @required Result orElse(),
+  });
+}
 
 abstract class $InitializationActionCopyWith<$Res> {
   factory $InitializationActionCopyWith(InitializationAction value,
@@ -78,6 +98,50 @@ class _$InitInitializationAction
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result init(),
+  }) {
+    assert(init != null);
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result init(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result init(InitInitializationAction value),
+  }) {
+    assert(init != null);
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result init(InitInitializationAction value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class InitInitializationAction implements InitializationAction {

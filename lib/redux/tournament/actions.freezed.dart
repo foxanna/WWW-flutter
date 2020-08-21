@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'actions.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$UserActionTournamentTearOff {
   const _$UserActionTournamentTearOff();
 
+// ignore: unused_element
   OpenTournamentUserAction open(
       {@required TournamentInfo info, @required TournamentStatus status}) {
     return OpenTournamentUserAction(
@@ -20,20 +21,24 @@ class _$UserActionTournamentTearOff {
     );
   }
 
+// ignore: unused_element
   CloseTournamentUserAction close() {
     return const CloseTournamentUserAction();
   }
 
+// ignore: unused_element
   LoadTournamentUserAction load({@required TournamentInfo info}) {
     return LoadTournamentUserAction(
       info: info,
     );
   }
 
+// ignore: unused_element
   AddToBookmarksTournamentUserAction addToBookmarks() {
     return const AddToBookmarksTournamentUserAction();
   }
 
+// ignore: unused_element
   RemoveFromBookmarksTournamentUserAction removeFromBookmarks() {
     return const RemoveFromBookmarksTournamentUserAction();
   }
@@ -803,6 +808,7 @@ abstract class RemoveFromBookmarksTournamentUserAction
 class _$SystemActionTournamentTearOff {
   const _$SystemActionTournamentTearOff();
 
+// ignore: unused_element
   InitTournamentSystemAction init(
       {@required TournamentInfo info, @required TournamentStatus status}) {
     return InitTournamentSystemAction(
@@ -811,16 +817,19 @@ class _$SystemActionTournamentTearOff {
     );
   }
 
+// ignore: unused_element
   DeInitTournamentSystemAction deInit() {
     return const DeInitTournamentSystemAction();
   }
 
+// ignore: unused_element
   LoadingTournamentSystemAction loading({@required TournamentInfo info}) {
     return LoadingTournamentSystemAction(
       info: info,
     );
   }
 
+// ignore: unused_element
   FailedTournamentSystemAction failed(
       {@required TournamentInfo info, @required Exception exception}) {
     return FailedTournamentSystemAction(
@@ -829,18 +838,21 @@ class _$SystemActionTournamentTearOff {
     );
   }
 
+// ignore: unused_element
   CompletedTournamentSystemAction completed({@required Tournament tournament}) {
     return CompletedTournamentSystemAction(
       tournament: tournament,
     );
   }
 
+// ignore: unused_element
   MarkAsReadTournamentSystemAction markAsRead({@required TournamentInfo info}) {
     return MarkAsReadTournamentSystemAction(
       info: info,
     );
   }
 
+// ignore: unused_element
   StatusChangedTournamentSystemAction statusChanged(
       {@required TournamentInfo info, @required TournamentStatus status}) {
     return StatusChangedTournamentSystemAction(
@@ -849,6 +861,7 @@ class _$SystemActionTournamentTearOff {
     );
   }
 
+// ignore: unused_element
   AllToursCompletedTournamentSystemAction allToursCompleted(
       {@required TournamentInfo info, @required List<Tour> tours}) {
     return AllToursCompletedTournamentSystemAction(
