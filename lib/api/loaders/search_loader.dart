@@ -35,10 +35,10 @@ class SearchLoader implements ISearchLoader {
   }) async {
     final data = await _httpClient.get(Uri(
         path: '/search/tours/${_toQuery(query, sorting)}',
-        queryParameters: {'page': page.toString()}));
+        queryParameters: <String, dynamic>{'page': page.toString()}));
     final dto = await _backgroundService
         .run<SearchTournamentsDto, List<dynamic>>(
-            _parseSearchTournamentsDto, [data, _parser]);
+            _parseSearchTournamentsDto, <dynamic>[data, _parser]);
     return dto;
   }
 

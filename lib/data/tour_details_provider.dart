@@ -46,7 +46,7 @@ class TourDetailsProvider implements ITourDetailsProvider {
         _tournamentsCache.get(dto.parentId)?.info ?? const TournamentInfo();
 
     final result = await _backgroundService
-        .run<Tour, List<dynamic>>(_tourFromDto, [dto, tournamentInfo]);
+        .run<Tour, List<dynamic>>(_tourFromDto, <dynamic>[dto, tournamentInfo]);
 
     _toursCache.save(result);
 

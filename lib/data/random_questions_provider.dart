@@ -25,7 +25,7 @@ class RandomQuestionsProvider implements IRandomQuestionsProvider {
     final dto = await _loader.get();
     final result = await _backgroundService
         .run<Iterable<Question>, List<dynamic>>(
-            _questionsFromRandomQuestionsDto, [dto]);
+            _questionsFromRandomQuestionsDto, <dynamic>[dto]);
     return result;
   }
 }

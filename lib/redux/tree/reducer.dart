@@ -121,7 +121,7 @@ class TournamentsTreeReducer {
         final value = x.value;
         if (value is DataTournamentsSubTreeState) {
           tournamentIndexInParent = value.tree.children
-              .indexWhere((x) => x is Tournament && isTheOne(x));
+              .indexWhere((dynamic x) => x is Tournament && isTheOne(x));
 
           return tournamentIndexInParent >= 0;
         } else {

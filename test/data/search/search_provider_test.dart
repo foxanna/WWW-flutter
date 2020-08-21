@@ -45,7 +45,7 @@ void main() {
               page: 0,
               expectedUri: Uri(
                   path: '/search/tours/test1/sort_rel',
-                  queryParameters: {'page': '0'}),
+                  queryParameters: <String, dynamic>{'page': '0'}),
               apiResponse: searchTournamentsApiResponse1,
               expectedResult: expectedSearchTournaments1,
             ));
@@ -58,7 +58,7 @@ void main() {
               page: 1,
               expectedUri: Uri(
                   path: '/search/tours/test2/sort_date',
-                  queryParameters: {'page': '1'}),
+                  queryParameters: <String, dynamic>{'page': '1'}),
               apiResponse: searchTournamentsApiResponse1,
               expectedResult: expectedSearchTournaments1,
             ));

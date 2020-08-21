@@ -37,7 +37,7 @@ class SearchProvider implements ISearchProvider {
     final dto = await _loader.get(query: query, sorting: sorting, page: page);
     final result = await _backgroundService
         .run<Iterable<Tournament>, List<dynamic>>(
-            _tournamentsFromSearchTournamentsDto, [dto]);
+            _tournamentsFromSearchTournamentsDto, <dynamic>[dto]);
     final actualResult = await _statusService.actualizeAll(result);
     return actualResult.toList();
   }

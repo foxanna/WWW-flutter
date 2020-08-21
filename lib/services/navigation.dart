@@ -38,7 +38,7 @@ class NavigationService implements INavigationService {
     String routeName,
     @required WidgetBuilder builder,
   }) {
-    _key.currentState.pushReplacement(
+    _key.currentState.pushReplacement<dynamic, dynamic>(
       PageRouteBuilder<dynamic>(
         settings: RouteSettings(name: routeName),
         pageBuilder: (context, animation, secondaryAnimation) =>

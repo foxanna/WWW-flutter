@@ -26,7 +26,7 @@ class TournamentDetailsLoader implements ITournamentDetailsLoader {
   Future<TournamentDto> get(String id) async {
     final data = await _httpClient.get(Uri(path: '/tour/$id/xml'));
     final dto = await _backgroundService.run<TournamentDto, List<dynamic>>(
-        _parseTournamentDto, [data, _parser]);
+        _parseTournamentDto, <dynamic>[data, _parser]);
     return dto;
   }
 }

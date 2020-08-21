@@ -18,5 +18,5 @@ void setupHistoryServiceMock(
   bool isRead,
 }) =>
     when(testIoc<LocalStorageServiceMock>()
-            .containsKey('history', tournamentId ?? any))
+            .containsKey<String>('history', tournamentId ?? any))
         .thenAnswer((_) => Future.value(isRead));

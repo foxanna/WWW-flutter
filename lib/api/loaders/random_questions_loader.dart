@@ -26,7 +26,7 @@ class RandomQuestionsLoader implements IRandomQuestionsLoader {
   Future<RandomQuestionsDto> get() async {
     final data = await _httpClient.get(Uri(path: '/xml/random'));
     final dto = await _backgroundService.run<RandomQuestionsDto, List<dynamic>>(
-        _parseRandomQuestionsDto, [data, _parser]);
+        _parseRandomQuestionsDto, <dynamic>[data, _parser]);
     return dto;
   }
 }

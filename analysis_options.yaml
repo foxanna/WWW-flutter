@@ -6,9 +6,6 @@ analyzer:
     - lib/**/*.freezed.dart
     - lib/**/*.i69n.dart
     - lib/**/*.iconfig.dart
-  strong-mode:
-    implicit-casts: false
-    implicit-dynamic: true
   errors:
     # treat missing required parameters as a warning (not a hint)
     missing_required_param: warning

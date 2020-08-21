@@ -9,7 +9,7 @@ const expectedTournamentsTree1 = TournamentsTree(
   info: TournamentsTreeInfo(
     id: '0',
   ),
-  children: [
+  children: <dynamic>[
     TournamentsTree(
       id: '1',
       info: TournamentsTreeInfo(

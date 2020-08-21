@@ -28,7 +28,7 @@ class TourDetailsLoader implements ITourDetailsLoader {
   Future<TourDto> get(String id) async {
     final data = await _httpClient.get(Uri(path: '/tour/$id/xml'));
     final dto = await _backgroundService
-        .run<TourDto, List<dynamic>>(_parseTourDto, [data, _parser]);
+        .run<TourDto, List<dynamic>>(_parseTourDto, <dynamic>[data, _parser]);
     return dto;
   }
 }

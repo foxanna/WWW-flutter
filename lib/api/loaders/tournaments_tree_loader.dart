@@ -26,7 +26,7 @@ class TournamentsTreeLoader implements ITournamentsTreeLoader {
   Future<TournamentsTreeDto> get(String id) async {
     final data = await _httpClient.get(Uri(path: '/tour/${id ?? ''}/xml'));
     final dto = await _backgroundService.run<TournamentsTreeDto, List<dynamic>>(
-        _parseTournamentsTreeDto, [data, _parser]);
+        _parseTournamentsTreeDto, <dynamic>[data, _parser]);
     return dto;
   }
 }

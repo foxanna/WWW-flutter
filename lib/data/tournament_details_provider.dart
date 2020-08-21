@@ -48,7 +48,7 @@ class TournamentDetailsProvider implements ITournamentDetailsProvider {
     final dto = await _loader.get(id);
 
     final result = await _backgroundService
-        .run<Tournament, List<dynamic>>(_tournamentFromDto, [dto]);
+        .run<Tournament, List<dynamic>>(_tournamentFromDto, <dynamic>[dto]);
 
     _tournamentsCache.save(result);
 

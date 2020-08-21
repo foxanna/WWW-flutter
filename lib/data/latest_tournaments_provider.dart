@@ -28,7 +28,7 @@ class LatestTournamentsProvider implements ILatestTournamentsProvider {
     final dto = await _loader.get(page);
     final result = await _backgroundService
         .run<Iterable<Tournament>, List<dynamic>>(
-            _tournamentsFromLatestTournamentsDto, [dto]);
+            _tournamentsFromLatestTournamentsDto, <dynamic>[dto]);
     final actualResult = await _statusService.actualizeAll(result);
     return actualResult.toList();
   }

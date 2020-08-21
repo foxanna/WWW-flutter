@@ -33,8 +33,10 @@ class TournamentsTreeProvider implements ITournamentsTreeProvider {
   @override
   Future<TournamentsTree> get({String id}) async {
     final tree = await _getCached(id) ?? await _loadAndCache(id);
-    final actualizedChildren = await Future.wait(tree.children.map((x) =>
-        x is Tournament ? _statusService.actualize(x) : Future.value(x)));
+    final actualizedChildren = await Future.wait<dynamic>(tree.children.map(
+        (dynamic x) => x is Tournament
+            ? _statusService.actualize(x)
+            : Future<dynamic>.value(x)));
     final actualizedTree = tree.copyWith(children: actualizedChildren);
     return actualizedTree;
   }
@@ -45,7 +47,7 @@ class TournamentsTreeProvider implements ITournamentsTreeProvider {
   Future<TournamentsTree> _loadAndCache(String id) async {
     final dto = await _loader.get(id);
     final result = await _backgroundService.run<TournamentsTree, List<dynamic>>(
-        _modelFromTournamentsTreeDto, [dto]);
+        _modelFromTournamentsTreeDto, <dynamic>[dto]);
     _cache.save(result);
     return result;
   }

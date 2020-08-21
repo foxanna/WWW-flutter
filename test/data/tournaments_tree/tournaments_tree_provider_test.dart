@@ -96,7 +96,7 @@ void main() {
               apiResponse: tournamentsTreeApiResponse1,
               expectedResult: expectedTournamentsTree1.copyWith(
                   children: expectedTournamentsTree1.children
-                      .map((x) => x is Tournament
+                      .map<dynamic>((dynamic x) => x is Tournament
                           ? x.copyWith(
                               status: const TournamentStatus(isNew: true),
                             )
@@ -112,7 +112,7 @@ void main() {
               apiResponse: tournamentsTreeApiResponse1,
               expectedResult: expectedTournamentsTree1.copyWith(
                   children: expectedTournamentsTree1.children
-                      .map((x) => x is Tournament
+                      .map<dynamic>((dynamic x) => x is Tournament
                           ? x.copyWith(
                               status: const TournamentStatus(isNew: false),
                             )
@@ -128,7 +128,7 @@ void main() {
               apiResponse: tournamentsTreeApiResponse1,
               expectedResult: expectedTournamentsTree1.copyWith(
                   children: expectedTournamentsTree1.children
-                      .map((x) => x is Tournament
+                      .map<dynamic>((dynamic x) => x is Tournament
                           ? x.copyWith(
                               status: const TournamentStatus(isNew: true),
                             )
@@ -144,7 +144,7 @@ void main() {
               apiResponse: tournamentsTreeApiResponse1,
               expectedResult: expectedTournamentsTree1.copyWith(
                   children: expectedTournamentsTree1.children
-                      .map((x) => x is Tournament
+                      .map<dynamic>((dynamic x) => x is Tournament
                           ? x.copyWith(
                               status: const TournamentStatus(isNew: false),
                             )

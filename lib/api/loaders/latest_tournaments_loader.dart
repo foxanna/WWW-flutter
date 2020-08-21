@@ -24,11 +24,12 @@ class LatestTournamentsLoader implements ILatestTournamentsLoader {
 
   @override
   Future<LatestTournamentsDto> get(int page) async {
-    final data = await _httpClient
-        .get(Uri(path: '/last', queryParameters: {'page': page.toString()}));
+    final data = await _httpClient.get(Uri(
+        path: '/last',
+        queryParameters: <String, dynamic>{'page': page.toString()}));
     final dto = await _backgroundService
         .run<LatestTournamentsDto, List<dynamic>>(
-            _parseLatestTournamentsDto, [data, _parser]);
+            _parseLatestTournamentsDto, <dynamic>[data, _parser]);
     return dto;
   }
 }

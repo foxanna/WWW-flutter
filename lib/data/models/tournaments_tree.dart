@@ -24,7 +24,7 @@ abstract class TournamentsTree with _$TournamentsTree {
           childrenCount: dto.childrenCount,
         ),
         children: dto.children
-                ?.map((x) => x is TournamentsTreeDto
+                ?.map((dynamic x) => x is TournamentsTreeDto
                     ? TournamentsTree.fromDto(x)
                     : x is TournamentDto ? Tournament.fromDto(x) : null)
                 ?.where((x) => x != null)

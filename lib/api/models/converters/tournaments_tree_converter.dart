@@ -14,7 +14,7 @@ class TournamentsTreeConverter implements JsonConverter<List<dynamic>, Object> {
     }
 
     if (json is Map<String, dynamic>) {
-      return [_getTreeItem(json)];
+      return <dynamic>[_getTreeItem(json)];
     }
 
     return <dynamic>[];
