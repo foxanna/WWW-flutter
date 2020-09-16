@@ -2,10 +2,10 @@ include: package:extra_pedantic/analysis_options_flutter.yaml
 
 analyzer:
   exclude:
-    - lib/**/*.g.dart
-    - lib/**/*.freezed.dart
-    - lib/**/*.i69n.dart
-    - lib/**/*.config.dart
+    - lib/**.g.dart
+    - lib/**.freezed.dart
+    - lib/**.i69n.dart
+    - lib/**.config.dart
 
 linter:
   rules:
