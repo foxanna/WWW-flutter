@@ -17,17 +17,17 @@ abstract class IHttpClient {
 @LazySingleton(as: IHttpClient)
 class HttpClient implements IHttpClient {
   const HttpClient({
-    Dio dio,
+    required Dio dio,
   }) : _dio = dio;
 
   final Dio _dio;
 
   @override
-  Future<String> get(Uri uri, {CancelToken cancelToken}) async {
+  Future<String> get(Uri uri, {CancelToken? cancelToken}) async {
     try {
       final response =
           await _dio.get<String>(uri.toString(), cancelToken: cancelToken);
-      return response?.data;
+      return response.data ?? '';
     } on DioError catch (e, s) {
       log('$e: $s');
       throw NetworkException(message: e.toString());

@@ -9,7 +9,7 @@ Dio createDioInstance() {
     ),
   );
   if (_logHttpCommunication) {
-    dio.interceptors?.add(LoggerInterceptor(_logHttpResponseContent));
+    dio.interceptors.add(LoggerInterceptor(_logHttpResponseContent));
   }
   return dio;
 }
