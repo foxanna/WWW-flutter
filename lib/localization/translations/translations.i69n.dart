@@ -6,30 +6,30 @@ String get _languageCode => 'en';
 String get _localeName => 'en';
 
 String _plural(int count,
-        {String zero,
-        String one,
-        String two,
-        String few,
-        String many,
-        String other}) =>
+        {String? zero,
+        String? one,
+        String? two,
+        String? few,
+        String? many,
+        String? other}) =>
     i69n.plural(count, _languageCode,
         zero: zero, one: one, two: two, few: few, many: many, other: other);
 String _ordinal(int count,
-        {String zero,
-        String one,
-        String two,
-        String few,
-        String many,
-        String other}) =>
+        {String? zero,
+        String? one,
+        String? two,
+        String? few,
+        String? many,
+        String? other}) =>
     i69n.ordinal(count, _languageCode,
         zero: zero, one: one, two: two, few: few, many: many, other: other);
 String _cardinal(int count,
-        {String zero,
-        String one,
-        String two,
-        String few,
-        String many,
-        String other}) =>
+        {String? zero,
+        String? one,
+        String? two,
+        String? few,
+        String? many,
+        String? other}) =>
     i69n.cardinal(count, _languageCode,
         zero: zero, one: one, two: two, few: few, many: many, other: other);
 

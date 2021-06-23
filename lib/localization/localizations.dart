@@ -3,31 +3,33 @@ import 'package:what_when_where/localization/translations/translations.i69n.dart
 import 'package:what_when_where/localization/translations/translations_ru.i69n.dart';
 import 'package:what_when_where/localization/translations/translations_uk.i69n.dart';
 
-const _supportedLocales = ['en', 'ru', 'uk'];
+const _fallbackTranslations = Translations();
+
+final _translations = <String, Translations Function()>{
+  'en': () => const Translations(),
+  'ru': () => const Translations_ru(),
+  'uk': () => const Translations_uk(),
+};
 
 class WWWLocalizations {
   const WWWLocalizations(this.translations);
 
   final Translations translations;
 
-  static final _translations = <String, Translations Function()>{
-    'en': () => const Translations(),
-    'ru': () => const Translations_ru(),
-    'uk': () => const Translations_uk(),
-  };
-
   static const LocalizationsDelegate<WWWLocalizations> delegate =
       _WWWLocalizationsDelegate();
 
   static final List<Locale> supportedLocales =
-      _supportedLocales.map((x) => Locale(x)).toList();
+      _translations.keys.map((x) => Locale(x)).toList();
 
   static Future<WWWLocalizations> load(Locale locale) =>
-      Future.value(WWWLocalizations(_translations[locale.languageCode]()));
+      Future.value(WWWLocalizations(
+          _translations[locale.languageCode]?.call() ?? _fallbackTranslations));
 
   static Translations of(BuildContext context) =>
       Localizations.of<WWWLocalizations>(context, WWWLocalizations)
-          .translations;
+          ?.translations ??
+      _fallbackTranslations;
 }
 
 class _WWWLocalizationsDelegate
@@ -36,7 +38,7 @@ class _WWWLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) =>
-      _supportedLocales.contains(locale.languageCode);
+      _translations.containsKey(locale.languageCode);
 
   @override
   Future<WWWLocalizations> load(Locale locale) => WWWLocalizations.load(locale);
