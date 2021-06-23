@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'tour_info.dart';
 
@@ -9,27 +9,30 @@ part of 'tour_info.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$TourInfoTearOff {
   const _$TourInfoTearOff();
 
-// ignore: unused_element
   _TourInfo call(
       {@HiveField(hiveTourInfoIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveTourInfoTitleFieldId)
-          String title,
+          String? title,
       @HiveField(hiveTourInfoQuestionsCountFieldId)
-          String questionsCount,
+          String? questionsCount,
       @HiveField(hiveTourInfoDescriptionFieldId)
-          String description,
+          String? description,
       @HiveField(hiveTourInfoUrlFieldId)
-          String url,
+          String? url,
       @HiveField(hiveTourInfoEditorsFieldId)
-          String editors,
+          String? editors,
       @HiveField(hiveTourInfoCreatedAtFieldId)
-          String createdAt,
+          String? createdAt,
       @HiveField(hiveTourInfoPlayedAtFieldId)
-          String playedAt,
+          String? playedAt,
       @HiveField(hiveTourInfoTournamentInfoFieldId)
           TournamentInfo tournamentInfo = const TournamentInfo()}) {
     return _TourInfo(
@@ -46,58 +49,63 @@ class _$TourInfoTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $TourInfo = _$TourInfoTearOff();
 
+/// @nodoc
 mixin _$TourInfo {
   @HiveField(hiveTourInfoIdFieldId)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @HiveField(hiveTourInfoTitleFieldId)
-  String get title;
+  String? get title => throw _privateConstructorUsedError;
   @HiveField(hiveTourInfoQuestionsCountFieldId)
-  String get questionsCount;
+  String? get questionsCount => throw _privateConstructorUsedError;
   @HiveField(hiveTourInfoDescriptionFieldId)
-  String get description;
+  String? get description => throw _privateConstructorUsedError;
   @HiveField(hiveTourInfoUrlFieldId)
-  String get url;
+  String? get url => throw _privateConstructorUsedError;
   @HiveField(hiveTourInfoEditorsFieldId)
-  String get editors;
+  String? get editors => throw _privateConstructorUsedError;
   @HiveField(hiveTourInfoCreatedAtFieldId)
-  String get createdAt;
+  String? get createdAt => throw _privateConstructorUsedError;
   @HiveField(hiveTourInfoPlayedAtFieldId)
-  String get playedAt;
+  String? get playedAt => throw _privateConstructorUsedError;
   @HiveField(hiveTourInfoTournamentInfoFieldId)
-  TournamentInfo get tournamentInfo;
+  TournamentInfo get tournamentInfo => throw _privateConstructorUsedError;
 
-  $TourInfoCopyWith<TourInfo> get copyWith;
+  @JsonKey(ignore: true)
+  $TourInfoCopyWith<TourInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TourInfoCopyWith<$Res> {
   factory $TourInfoCopyWith(TourInfo value, $Res Function(TourInfo) then) =
       _$TourInfoCopyWithImpl<$Res>;
   $Res call(
       {@HiveField(hiveTourInfoIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveTourInfoTitleFieldId)
-          String title,
+          String? title,
       @HiveField(hiveTourInfoQuestionsCountFieldId)
-          String questionsCount,
+          String? questionsCount,
       @HiveField(hiveTourInfoDescriptionFieldId)
-          String description,
+          String? description,
       @HiveField(hiveTourInfoUrlFieldId)
-          String url,
+          String? url,
       @HiveField(hiveTourInfoEditorsFieldId)
-          String editors,
+          String? editors,
       @HiveField(hiveTourInfoCreatedAtFieldId)
-          String createdAt,
+          String? createdAt,
       @HiveField(hiveTourInfoPlayedAtFieldId)
-          String playedAt,
+          String? playedAt,
       @HiveField(hiveTourInfoTournamentInfoFieldId)
           TournamentInfo tournamentInfo});
 
   $TournamentInfoCopyWith<$Res> get tournamentInfo;
 }
 
+/// @nodoc
 class _$TourInfoCopyWithImpl<$Res> implements $TourInfoCopyWith<$Res> {
   _$TourInfoCopyWithImpl(this._value, this._then);
 
@@ -107,66 +115,86 @@ class _$TourInfoCopyWithImpl<$Res> implements $TourInfoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object questionsCount = freezed,
-    Object description = freezed,
-    Object url = freezed,
-    Object editors = freezed,
-    Object createdAt = freezed,
-    Object playedAt = freezed,
-    Object tournamentInfo = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? questionsCount = freezed,
+    Object? description = freezed,
+    Object? url = freezed,
+    Object? editors = freezed,
+    Object? createdAt = freezed,
+    Object? playedAt = freezed,
+    Object? tournamentInfo = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
       questionsCount: questionsCount == freezed
           ? _value.questionsCount
-          : questionsCount as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      url: url == freezed ? _value.url : url as String,
-      editors: editors == freezed ? _value.editors : editors as String,
-      createdAt: createdAt == freezed ? _value.createdAt : createdAt as String,
-      playedAt: playedAt == freezed ? _value.playedAt : playedAt as String,
+          : questionsCount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      editors: editors == freezed
+          ? _value.editors
+          : editors // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      playedAt: playedAt == freezed
+          ? _value.playedAt
+          : playedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
       tournamentInfo: tournamentInfo == freezed
           ? _value.tournamentInfo
-          : tournamentInfo as TournamentInfo,
+          : tournamentInfo // ignore: cast_nullable_to_non_nullable
+              as TournamentInfo,
     ));
   }
 
   @override
   $TournamentInfoCopyWith<$Res> get tournamentInfo {
-    if (_value.tournamentInfo == null) {
-      return null;
-    }
     return $TournamentInfoCopyWith<$Res>(_value.tournamentInfo, (value) {
       return _then(_value.copyWith(tournamentInfo: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$TourInfoCopyWith<$Res> implements $TourInfoCopyWith<$Res> {
   factory _$TourInfoCopyWith(_TourInfo value, $Res Function(_TourInfo) then) =
       __$TourInfoCopyWithImpl<$Res>;
   @override
   $Res call(
       {@HiveField(hiveTourInfoIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveTourInfoTitleFieldId)
-          String title,
+          String? title,
       @HiveField(hiveTourInfoQuestionsCountFieldId)
-          String questionsCount,
+          String? questionsCount,
       @HiveField(hiveTourInfoDescriptionFieldId)
-          String description,
+          String? description,
       @HiveField(hiveTourInfoUrlFieldId)
-          String url,
+          String? url,
       @HiveField(hiveTourInfoEditorsFieldId)
-          String editors,
+          String? editors,
       @HiveField(hiveTourInfoCreatedAtFieldId)
-          String createdAt,
+          String? createdAt,
       @HiveField(hiveTourInfoPlayedAtFieldId)
-          String playedAt,
+          String? playedAt,
       @HiveField(hiveTourInfoTournamentInfoFieldId)
           TournamentInfo tournamentInfo});
 
@@ -174,6 +202,7 @@ abstract class _$TourInfoCopyWith<$Res> implements $TourInfoCopyWith<$Res> {
   $TournamentInfoCopyWith<$Res> get tournamentInfo;
 }
 
+/// @nodoc
 class __$TourInfoCopyWithImpl<$Res> extends _$TourInfoCopyWithImpl<$Res>
     implements _$TourInfoCopyWith<$Res> {
   __$TourInfoCopyWithImpl(_TourInfo _value, $Res Function(_TourInfo) _then)
@@ -184,37 +213,61 @@ class __$TourInfoCopyWithImpl<$Res> extends _$TourInfoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object questionsCount = freezed,
-    Object description = freezed,
-    Object url = freezed,
-    Object editors = freezed,
-    Object createdAt = freezed,
-    Object playedAt = freezed,
-    Object tournamentInfo = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? questionsCount = freezed,
+    Object? description = freezed,
+    Object? url = freezed,
+    Object? editors = freezed,
+    Object? createdAt = freezed,
+    Object? playedAt = freezed,
+    Object? tournamentInfo = freezed,
   }) {
     return _then(_TourInfo(
-      id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
       questionsCount: questionsCount == freezed
           ? _value.questionsCount
-          : questionsCount as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      url: url == freezed ? _value.url : url as String,
-      editors: editors == freezed ? _value.editors : editors as String,
-      createdAt: createdAt == freezed ? _value.createdAt : createdAt as String,
-      playedAt: playedAt == freezed ? _value.playedAt : playedAt as String,
+          : questionsCount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      editors: editors == freezed
+          ? _value.editors
+          : editors // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      playedAt: playedAt == freezed
+          ? _value.playedAt
+          : playedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
       tournamentInfo: tournamentInfo == freezed
           ? _value.tournamentInfo
-          : tournamentInfo as TournamentInfo,
+          : tournamentInfo // ignore: cast_nullable_to_non_nullable
+              as TournamentInfo,
     ));
   }
 }
 
+/// @nodoc
+
 @HiveType(typeId: hiveTourInfoTypeId)
-class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
+class _$_TourInfo implements _TourInfo {
   const _$_TourInfo(
       {@HiveField(hiveTourInfoIdFieldId)
           this.id,
@@ -233,57 +286,40 @@ class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
       @HiveField(hiveTourInfoPlayedAtFieldId)
           this.playedAt,
       @HiveField(hiveTourInfoTournamentInfoFieldId)
-          this.tournamentInfo = const TournamentInfo()})
-      : assert(tournamentInfo != null);
+          this.tournamentInfo = const TournamentInfo()});
 
   @override
   @HiveField(hiveTourInfoIdFieldId)
-  final String id;
+  final String? id;
   @override
   @HiveField(hiveTourInfoTitleFieldId)
-  final String title;
+  final String? title;
   @override
   @HiveField(hiveTourInfoQuestionsCountFieldId)
-  final String questionsCount;
+  final String? questionsCount;
   @override
   @HiveField(hiveTourInfoDescriptionFieldId)
-  final String description;
+  final String? description;
   @override
   @HiveField(hiveTourInfoUrlFieldId)
-  final String url;
+  final String? url;
   @override
   @HiveField(hiveTourInfoEditorsFieldId)
-  final String editors;
+  final String? editors;
   @override
   @HiveField(hiveTourInfoCreatedAtFieldId)
-  final String createdAt;
+  final String? createdAt;
   @override
   @HiveField(hiveTourInfoPlayedAtFieldId)
-  final String playedAt;
+  final String? playedAt;
   @JsonKey(defaultValue: const TournamentInfo())
   @override
   @HiveField(hiveTourInfoTournamentInfoFieldId)
   final TournamentInfo tournamentInfo;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TourInfo(id: $id, title: $title, questionsCount: $questionsCount, description: $description, url: $url, editors: $editors, createdAt: $createdAt, playedAt: $playedAt, tournamentInfo: $tournamentInfo)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TourInfo'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('questionsCount', questionsCount))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('url', url))
-      ..add(DiagnosticsProperty('editors', editors))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('playedAt', playedAt))
-      ..add(DiagnosticsProperty('tournamentInfo', tournamentInfo));
   }
 
   @override
@@ -329,6 +365,7 @@ class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
       const DeepCollectionEquality().hash(playedAt) ^
       const DeepCollectionEquality().hash(tournamentInfo);
 
+  @JsonKey(ignore: true)
   @override
   _$TourInfoCopyWith<_TourInfo> get copyWith =>
       __$TourInfoCopyWithImpl<_TourInfo>(this, _$identity);
@@ -337,51 +374,53 @@ class _$_TourInfo with DiagnosticableTreeMixin implements _TourInfo {
 abstract class _TourInfo implements TourInfo {
   const factory _TourInfo(
       {@HiveField(hiveTourInfoIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveTourInfoTitleFieldId)
-          String title,
+          String? title,
       @HiveField(hiveTourInfoQuestionsCountFieldId)
-          String questionsCount,
+          String? questionsCount,
       @HiveField(hiveTourInfoDescriptionFieldId)
-          String description,
+          String? description,
       @HiveField(hiveTourInfoUrlFieldId)
-          String url,
+          String? url,
       @HiveField(hiveTourInfoEditorsFieldId)
-          String editors,
+          String? editors,
       @HiveField(hiveTourInfoCreatedAtFieldId)
-          String createdAt,
+          String? createdAt,
       @HiveField(hiveTourInfoPlayedAtFieldId)
-          String playedAt,
+          String? playedAt,
       @HiveField(hiveTourInfoTournamentInfoFieldId)
           TournamentInfo tournamentInfo}) = _$_TourInfo;
 
   @override
   @HiveField(hiveTourInfoIdFieldId)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourInfoTitleFieldId)
-  String get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourInfoQuestionsCountFieldId)
-  String get questionsCount;
+  String? get questionsCount => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourInfoDescriptionFieldId)
-  String get description;
+  String? get description => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourInfoUrlFieldId)
-  String get url;
+  String? get url => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourInfoEditorsFieldId)
-  String get editors;
+  String? get editors => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourInfoCreatedAtFieldId)
-  String get createdAt;
+  String? get createdAt => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourInfoPlayedAtFieldId)
-  String get playedAt;
+  String? get playedAt => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourInfoTournamentInfoFieldId)
-  TournamentInfo get tournamentInfo;
+  TournamentInfo get tournamentInfo => throw _privateConstructorUsedError;
   @override
-  _$TourInfoCopyWith<_TourInfo> get copyWith;
+  @JsonKey(ignore: true)
+  _$TourInfoCopyWith<_TourInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'section_audio.dart';
 
@@ -9,28 +9,35 @@ part of 'section_audio.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$AudioSectionTearOff {
   const _$AudioSectionTearOff();
 
-// ignore: unused_element
   _AudioSection call(
-      {@required @HiveField(hiveAudioSectionValueFieldId) String value}) {
+      {@HiveField(hiveAudioSectionValueFieldId) required String value}) {
     return _AudioSection(
       value: value,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $AudioSection = _$AudioSectionTearOff();
 
+/// @nodoc
 mixin _$AudioSection {
   @HiveField(hiveAudioSectionValueFieldId)
-  String get value;
+  String get value => throw _privateConstructorUsedError;
 
-  $AudioSectionCopyWith<AudioSection> get copyWith;
+  @JsonKey(ignore: true)
+  $AudioSectionCopyWith<AudioSection> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $AudioSectionCopyWith<$Res> {
   factory $AudioSectionCopyWith(
           AudioSection value, $Res Function(AudioSection) then) =
@@ -38,6 +45,7 @@ abstract class $AudioSectionCopyWith<$Res> {
   $Res call({@HiveField(hiveAudioSectionValueFieldId) String value});
 }
 
+/// @nodoc
 class _$AudioSectionCopyWithImpl<$Res> implements $AudioSectionCopyWith<$Res> {
   _$AudioSectionCopyWithImpl(this._value, this._then);
 
@@ -47,14 +55,18 @@ class _$AudioSectionCopyWithImpl<$Res> implements $AudioSectionCopyWith<$Res> {
 
   @override
   $Res call({
-    Object value = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      value: value == freezed ? _value.value : value as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$AudioSectionCopyWith<$Res>
     implements $AudioSectionCopyWith<$Res> {
   factory _$AudioSectionCopyWith(
@@ -64,6 +76,7 @@ abstract class _$AudioSectionCopyWith<$Res>
   $Res call({@HiveField(hiveAudioSectionValueFieldId) String value});
 }
 
+/// @nodoc
 class __$AudioSectionCopyWithImpl<$Res> extends _$AudioSectionCopyWithImpl<$Res>
     implements _$AudioSectionCopyWith<$Res> {
   __$AudioSectionCopyWithImpl(
@@ -75,35 +88,31 @@ class __$AudioSectionCopyWithImpl<$Res> extends _$AudioSectionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object value = freezed,
+    Object? value = freezed,
   }) {
     return _then(_AudioSection(
-      value: value == freezed ? _value.value : value as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 @HiveType(typeId: hiveAudioSectionTypeId)
-class _$_AudioSection with DiagnosticableTreeMixin implements _AudioSection {
+class _$_AudioSection implements _AudioSection {
   const _$_AudioSection(
-      {@required @HiveField(hiveAudioSectionValueFieldId) this.value})
-      : assert(value != null);
+      {@HiveField(hiveAudioSectionValueFieldId) required this.value});
 
   @override
   @HiveField(hiveAudioSectionValueFieldId)
   final String value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AudioSection(value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AudioSection'))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override
@@ -118,6 +127,7 @@ class _$_AudioSection with DiagnosticableTreeMixin implements _AudioSection {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
+  @JsonKey(ignore: true)
   @override
   _$AudioSectionCopyWith<_AudioSection> get copyWith =>
       __$AudioSectionCopyWithImpl<_AudioSection>(this, _$identity);
@@ -125,12 +135,14 @@ class _$_AudioSection with DiagnosticableTreeMixin implements _AudioSection {
 
 abstract class _AudioSection implements AudioSection {
   const factory _AudioSection(
-          {@required @HiveField(hiveAudioSectionValueFieldId) String value}) =
+          {@HiveField(hiveAudioSectionValueFieldId) required String value}) =
       _$_AudioSection;
 
   @override
   @HiveField(hiveAudioSectionValueFieldId)
-  String get value;
+  String get value => throw _privateConstructorUsedError;
   @override
-  _$AudioSectionCopyWith<_AudioSection> get copyWith;
+  @JsonKey(ignore: true)
+  _$AudioSectionCopyWith<_AudioSection> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'question.dart';
 
@@ -9,27 +9,30 @@ part of 'question.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$QuestionTearOff {
   const _$QuestionTearOff();
 
-// ignore: unused_element
   _Question call(
       {@HiveField(hiveQuestionIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveQuestionDisplayFieldId)
-          String display,
+          String? display,
       @HiveField(hiveQuestionQuestionFieldId)
-          List<QuestionSection> question,
+          List<QuestionSection> question = const <QuestionSection>[],
       @HiveField(hiveQuestionAnswerFieldId)
-          List<QuestionSection> answer,
+          List<QuestionSection> answer = const <QuestionSection>[],
       @HiveField(hiveQuestionPassCriteriaFieldId)
-          List<QuestionSection> passCriteria,
+          List<QuestionSection> passCriteria = const <QuestionSection>[],
       @HiveField(hiveQuestionCommentsFieldId)
-          List<QuestionSection> comments,
+          dynamic comments = const <QuestionSection>[],
       @HiveField(hiveQuestionAuthorsFieldId)
-          String authors,
+          String? authors,
       @HiveField(hiveQuestionSourcesFieldId)
-          String sources,
+          String? sources,
       @HiveField(hiveQuestionInfoFieldId)
           QuestionInfo info = const QuestionInfo()}) {
     return _Question(
@@ -46,40 +49,44 @@ class _$QuestionTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $Question = _$QuestionTearOff();
 
+/// @nodoc
 mixin _$Question {
   @HiveField(hiveQuestionIdFieldId)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionDisplayFieldId)
-  String get display;
+  String? get display => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionQuestionFieldId)
-  List<QuestionSection> get question;
+  List<QuestionSection> get question => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionAnswerFieldId)
-  List<QuestionSection> get answer;
+  List<QuestionSection> get answer => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionPassCriteriaFieldId)
-  List<QuestionSection> get passCriteria;
+  List<QuestionSection> get passCriteria => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionCommentsFieldId)
-  List<QuestionSection> get comments;
+  dynamic get comments => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionAuthorsFieldId)
-  String get authors;
+  String? get authors => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionSourcesFieldId)
-  String get sources;
+  String? get sources => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionInfoFieldId)
-  QuestionInfo get info;
+  QuestionInfo get info => throw _privateConstructorUsedError;
 
-  $QuestionCopyWith<Question> get copyWith;
+  @JsonKey(ignore: true)
+  $QuestionCopyWith<Question> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $QuestionCopyWith<$Res> {
   factory $QuestionCopyWith(Question value, $Res Function(Question) then) =
       _$QuestionCopyWithImpl<$Res>;
   $Res call(
       {@HiveField(hiveQuestionIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveQuestionDisplayFieldId)
-          String display,
+          String? display,
       @HiveField(hiveQuestionQuestionFieldId)
           List<QuestionSection> question,
       @HiveField(hiveQuestionAnswerFieldId)
@@ -87,17 +94,18 @@ abstract class $QuestionCopyWith<$Res> {
       @HiveField(hiveQuestionPassCriteriaFieldId)
           List<QuestionSection> passCriteria,
       @HiveField(hiveQuestionCommentsFieldId)
-          List<QuestionSection> comments,
+          dynamic comments,
       @HiveField(hiveQuestionAuthorsFieldId)
-          String authors,
+          String? authors,
       @HiveField(hiveQuestionSourcesFieldId)
-          String sources,
+          String? sources,
       @HiveField(hiveQuestionInfoFieldId)
           QuestionInfo info});
 
   $QuestionInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
   _$QuestionCopyWithImpl(this._value, this._then);
 
@@ -107,56 +115,74 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object display = freezed,
-    Object question = freezed,
-    Object answer = freezed,
-    Object passCriteria = freezed,
-    Object comments = freezed,
-    Object authors = freezed,
-    Object sources = freezed,
-    Object info = freezed,
+    Object? id = freezed,
+    Object? display = freezed,
+    Object? question = freezed,
+    Object? answer = freezed,
+    Object? passCriteria = freezed,
+    Object? comments = freezed,
+    Object? authors = freezed,
+    Object? sources = freezed,
+    Object? info = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      display: display == freezed ? _value.display : display as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      display: display == freezed
+          ? _value.display
+          : display // ignore: cast_nullable_to_non_nullable
+              as String?,
       question: question == freezed
           ? _value.question
-          : question as List<QuestionSection>,
-      answer:
-          answer == freezed ? _value.answer : answer as List<QuestionSection>,
+          : question // ignore: cast_nullable_to_non_nullable
+              as List<QuestionSection>,
+      answer: answer == freezed
+          ? _value.answer
+          : answer // ignore: cast_nullable_to_non_nullable
+              as List<QuestionSection>,
       passCriteria: passCriteria == freezed
           ? _value.passCriteria
-          : passCriteria as List<QuestionSection>,
+          : passCriteria // ignore: cast_nullable_to_non_nullable
+              as List<QuestionSection>,
       comments: comments == freezed
           ? _value.comments
-          : comments as List<QuestionSection>,
-      authors: authors == freezed ? _value.authors : authors as String,
-      sources: sources == freezed ? _value.sources : sources as String,
-      info: info == freezed ? _value.info : info as QuestionInfo,
+          : comments // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      authors: authors == freezed
+          ? _value.authors
+          : authors // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as String?,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as QuestionInfo,
     ));
   }
 
   @override
   $QuestionInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $QuestionInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
   factory _$QuestionCopyWith(_Question value, $Res Function(_Question) then) =
       __$QuestionCopyWithImpl<$Res>;
   @override
   $Res call(
       {@HiveField(hiveQuestionIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveQuestionDisplayFieldId)
-          String display,
+          String? display,
       @HiveField(hiveQuestionQuestionFieldId)
           List<QuestionSection> question,
       @HiveField(hiveQuestionAnswerFieldId)
@@ -164,11 +190,11 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       @HiveField(hiveQuestionPassCriteriaFieldId)
           List<QuestionSection> passCriteria,
       @HiveField(hiveQuestionCommentsFieldId)
-          List<QuestionSection> comments,
+          dynamic comments,
       @HiveField(hiveQuestionAuthorsFieldId)
-          String authors,
+          String? authors,
       @HiveField(hiveQuestionSourcesFieldId)
-          String sources,
+          String? sources,
       @HiveField(hiveQuestionInfoFieldId)
           QuestionInfo info});
 
@@ -176,6 +202,7 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
   $QuestionInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
     implements _$QuestionCopyWith<$Res> {
   __$QuestionCopyWithImpl(_Question _value, $Res Function(_Question) _then)
@@ -186,99 +213,114 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object display = freezed,
-    Object question = freezed,
-    Object answer = freezed,
-    Object passCriteria = freezed,
-    Object comments = freezed,
-    Object authors = freezed,
-    Object sources = freezed,
-    Object info = freezed,
+    Object? id = freezed,
+    Object? display = freezed,
+    Object? question = freezed,
+    Object? answer = freezed,
+    Object? passCriteria = freezed,
+    Object? comments = freezed,
+    Object? authors = freezed,
+    Object? sources = freezed,
+    Object? info = freezed,
   }) {
     return _then(_Question(
-      id: id == freezed ? _value.id : id as String,
-      display: display == freezed ? _value.display : display as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      display: display == freezed
+          ? _value.display
+          : display // ignore: cast_nullable_to_non_nullable
+              as String?,
       question: question == freezed
           ? _value.question
-          : question as List<QuestionSection>,
-      answer:
-          answer == freezed ? _value.answer : answer as List<QuestionSection>,
+          : question // ignore: cast_nullable_to_non_nullable
+              as List<QuestionSection>,
+      answer: answer == freezed
+          ? _value.answer
+          : answer // ignore: cast_nullable_to_non_nullable
+              as List<QuestionSection>,
       passCriteria: passCriteria == freezed
           ? _value.passCriteria
-          : passCriteria as List<QuestionSection>,
-      comments: comments == freezed
-          ? _value.comments
-          : comments as List<QuestionSection>,
-      authors: authors == freezed ? _value.authors : authors as String,
-      sources: sources == freezed ? _value.sources : sources as String,
-      info: info == freezed ? _value.info : info as QuestionInfo,
+          : passCriteria // ignore: cast_nullable_to_non_nullable
+              as List<QuestionSection>,
+      comments: comments == freezed ? _value.comments : comments,
+      authors: authors == freezed
+          ? _value.authors
+          : authors // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as String?,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as QuestionInfo,
     ));
   }
 }
 
+/// @nodoc
+
 @HiveType(typeId: hiveQuestionTypeId)
-class _$_Question with DiagnosticableTreeMixin implements _Question {
+class _$_Question implements _Question {
   const _$_Question(
-      {@HiveField(hiveQuestionIdFieldId) this.id,
-      @HiveField(hiveQuestionDisplayFieldId) this.display,
-      @HiveField(hiveQuestionQuestionFieldId) this.question,
-      @HiveField(hiveQuestionAnswerFieldId) this.answer,
-      @HiveField(hiveQuestionPassCriteriaFieldId) this.passCriteria,
-      @HiveField(hiveQuestionCommentsFieldId) this.comments,
-      @HiveField(hiveQuestionAuthorsFieldId) this.authors,
-      @HiveField(hiveQuestionSourcesFieldId) this.sources,
-      @HiveField(hiveQuestionInfoFieldId) this.info = const QuestionInfo()})
-      : assert(info != null);
+      {@HiveField(hiveQuestionIdFieldId)
+          this.id,
+      @HiveField(hiveQuestionDisplayFieldId)
+          this.display,
+      @HiveField(hiveQuestionQuestionFieldId)
+          this.question = const <QuestionSection>[],
+      @HiveField(hiveQuestionAnswerFieldId)
+          this.answer = const <QuestionSection>[],
+      @HiveField(hiveQuestionPassCriteriaFieldId)
+          this.passCriteria = const <QuestionSection>[],
+      @HiveField(hiveQuestionCommentsFieldId)
+          this.comments = const <QuestionSection>[],
+      @HiveField(hiveQuestionAuthorsFieldId)
+          this.authors,
+      @HiveField(hiveQuestionSourcesFieldId)
+          this.sources,
+      @HiveField(hiveQuestionInfoFieldId)
+          this.info = const QuestionInfo()});
 
   @override
   @HiveField(hiveQuestionIdFieldId)
-  final String id;
+  final String? id;
   @override
   @HiveField(hiveQuestionDisplayFieldId)
-  final String display;
+  final String? display;
+  @JsonKey(defaultValue: const <QuestionSection>[])
   @override
   @HiveField(hiveQuestionQuestionFieldId)
   final List<QuestionSection> question;
+  @JsonKey(defaultValue: const <QuestionSection>[])
   @override
   @HiveField(hiveQuestionAnswerFieldId)
   final List<QuestionSection> answer;
+  @JsonKey(defaultValue: const <QuestionSection>[])
   @override
   @HiveField(hiveQuestionPassCriteriaFieldId)
   final List<QuestionSection> passCriteria;
+  @JsonKey(defaultValue: const <QuestionSection>[])
   @override
   @HiveField(hiveQuestionCommentsFieldId)
-  final List<QuestionSection> comments;
+  final dynamic comments;
   @override
   @HiveField(hiveQuestionAuthorsFieldId)
-  final String authors;
+  final String? authors;
   @override
   @HiveField(hiveQuestionSourcesFieldId)
-  final String sources;
+  final String? sources;
   @JsonKey(defaultValue: const QuestionInfo())
   @override
   @HiveField(hiveQuestionInfoFieldId)
   final QuestionInfo info;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Question(id: $id, display: $display, question: $question, answer: $answer, passCriteria: $passCriteria, comments: $comments, authors: $authors, sources: $sources, info: $info)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Question'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('display', display))
-      ..add(DiagnosticsProperty('question', question))
-      ..add(DiagnosticsProperty('answer', answer))
-      ..add(DiagnosticsProperty('passCriteria', passCriteria))
-      ..add(DiagnosticsProperty('comments', comments))
-      ..add(DiagnosticsProperty('authors', authors))
-      ..add(DiagnosticsProperty('sources', sources))
-      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
@@ -324,6 +366,7 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
       const DeepCollectionEquality().hash(sources) ^
       const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   _$QuestionCopyWith<_Question> get copyWith =>
       __$QuestionCopyWithImpl<_Question>(this, _$identity);
@@ -332,9 +375,9 @@ class _$_Question with DiagnosticableTreeMixin implements _Question {
 abstract class _Question implements Question {
   const factory _Question(
       {@HiveField(hiveQuestionIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveQuestionDisplayFieldId)
-          String display,
+          String? display,
       @HiveField(hiveQuestionQuestionFieldId)
           List<QuestionSection> question,
       @HiveField(hiveQuestionAnswerFieldId)
@@ -342,41 +385,43 @@ abstract class _Question implements Question {
       @HiveField(hiveQuestionPassCriteriaFieldId)
           List<QuestionSection> passCriteria,
       @HiveField(hiveQuestionCommentsFieldId)
-          List<QuestionSection> comments,
+          dynamic comments,
       @HiveField(hiveQuestionAuthorsFieldId)
-          String authors,
+          String? authors,
       @HiveField(hiveQuestionSourcesFieldId)
-          String sources,
+          String? sources,
       @HiveField(hiveQuestionInfoFieldId)
           QuestionInfo info}) = _$_Question;
 
   @override
   @HiveField(hiveQuestionIdFieldId)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionDisplayFieldId)
-  String get display;
+  String? get display => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionQuestionFieldId)
-  List<QuestionSection> get question;
+  List<QuestionSection> get question => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionAnswerFieldId)
-  List<QuestionSection> get answer;
+  List<QuestionSection> get answer => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionPassCriteriaFieldId)
-  List<QuestionSection> get passCriteria;
+  List<QuestionSection> get passCriteria => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionCommentsFieldId)
-  List<QuestionSection> get comments;
+  dynamic get comments => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionAuthorsFieldId)
-  String get authors;
+  String? get authors => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionSourcesFieldId)
-  String get sources;
+  String? get sources => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionInfoFieldId)
-  QuestionInfo get info;
+  QuestionInfo get info => throw _privateConstructorUsedError;
   @override
-  _$QuestionCopyWith<_Question> get copyWith;
+  @JsonKey(ignore: true)
+  _$QuestionCopyWith<_Question> get copyWith =>
+      throw _privateConstructorUsedError;
 }

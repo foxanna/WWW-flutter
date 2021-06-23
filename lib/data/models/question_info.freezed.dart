@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'question_info.dart';
 
@@ -9,17 +9,20 @@ part of 'question_info.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$QuestionInfoTearOff {
   const _$QuestionInfoTearOff();
 
-// ignore: unused_element
   _QuestionInfo call(
       {@HiveField(hiveQuestionInfoIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveQuestionInfoNumberFieldId)
-          String number,
+          String? number,
       @HiveField(hiveQuestionInfoUrlFieldId)
-          String url,
+          String? url,
       @HiveField(hiveQuestionInfoTourInfoFieldId)
           TourInfo tourInfo = const TourInfo()}) {
     return _QuestionInfo(
@@ -31,35 +34,40 @@ class _$QuestionInfoTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $QuestionInfo = _$QuestionInfoTearOff();
 
+/// @nodoc
 mixin _$QuestionInfo {
   @HiveField(hiveQuestionInfoIdFieldId)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionInfoNumberFieldId)
-  String get number;
+  String? get number => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionInfoUrlFieldId)
-  String get url;
+  String? get url => throw _privateConstructorUsedError;
   @HiveField(hiveQuestionInfoTourInfoFieldId)
-  TourInfo get tourInfo;
+  TourInfo get tourInfo => throw _privateConstructorUsedError;
 
-  $QuestionInfoCopyWith<QuestionInfo> get copyWith;
+  @JsonKey(ignore: true)
+  $QuestionInfoCopyWith<QuestionInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $QuestionInfoCopyWith<$Res> {
   factory $QuestionInfoCopyWith(
           QuestionInfo value, $Res Function(QuestionInfo) then) =
       _$QuestionInfoCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(hiveQuestionInfoIdFieldId) String id,
-      @HiveField(hiveQuestionInfoNumberFieldId) String number,
-      @HiveField(hiveQuestionInfoUrlFieldId) String url,
+      {@HiveField(hiveQuestionInfoIdFieldId) String? id,
+      @HiveField(hiveQuestionInfoNumberFieldId) String? number,
+      @HiveField(hiveQuestionInfoUrlFieldId) String? url,
       @HiveField(hiveQuestionInfoTourInfoFieldId) TourInfo tourInfo});
 
   $TourInfoCopyWith<$Res> get tourInfo;
 }
 
+/// @nodoc
 class _$QuestionInfoCopyWithImpl<$Res> implements $QuestionInfoCopyWith<$Res> {
   _$QuestionInfoCopyWithImpl(this._value, this._then);
 
@@ -69,30 +77,40 @@ class _$QuestionInfoCopyWithImpl<$Res> implements $QuestionInfoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object number = freezed,
-    Object url = freezed,
-    Object tourInfo = freezed,
+    Object? id = freezed,
+    Object? number = freezed,
+    Object? url = freezed,
+    Object? tourInfo = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      number: number == freezed ? _value.number : number as String,
-      url: url == freezed ? _value.url : url as String,
-      tourInfo: tourInfo == freezed ? _value.tourInfo : tourInfo as TourInfo,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tourInfo: tourInfo == freezed
+          ? _value.tourInfo
+          : tourInfo // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
     ));
   }
 
   @override
   $TourInfoCopyWith<$Res> get tourInfo {
-    if (_value.tourInfo == null) {
-      return null;
-    }
     return $TourInfoCopyWith<$Res>(_value.tourInfo, (value) {
       return _then(_value.copyWith(tourInfo: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$QuestionInfoCopyWith<$Res>
     implements $QuestionInfoCopyWith<$Res> {
   factory _$QuestionInfoCopyWith(
@@ -100,15 +118,16 @@ abstract class _$QuestionInfoCopyWith<$Res>
       __$QuestionInfoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(hiveQuestionInfoIdFieldId) String id,
-      @HiveField(hiveQuestionInfoNumberFieldId) String number,
-      @HiveField(hiveQuestionInfoUrlFieldId) String url,
+      {@HiveField(hiveQuestionInfoIdFieldId) String? id,
+      @HiveField(hiveQuestionInfoNumberFieldId) String? number,
+      @HiveField(hiveQuestionInfoUrlFieldId) String? url,
       @HiveField(hiveQuestionInfoTourInfoFieldId) TourInfo tourInfo});
 
   @override
   $TourInfoCopyWith<$Res> get tourInfo;
 }
 
+/// @nodoc
 class __$QuestionInfoCopyWithImpl<$Res> extends _$QuestionInfoCopyWithImpl<$Res>
     implements _$QuestionInfoCopyWith<$Res> {
   __$QuestionInfoCopyWithImpl(
@@ -120,22 +139,36 @@ class __$QuestionInfoCopyWithImpl<$Res> extends _$QuestionInfoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object number = freezed,
-    Object url = freezed,
-    Object tourInfo = freezed,
+    Object? id = freezed,
+    Object? number = freezed,
+    Object? url = freezed,
+    Object? tourInfo = freezed,
   }) {
     return _then(_QuestionInfo(
-      id: id == freezed ? _value.id : id as String,
-      number: number == freezed ? _value.number : number as String,
-      url: url == freezed ? _value.url : url as String,
-      tourInfo: tourInfo == freezed ? _value.tourInfo : tourInfo as TourInfo,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tourInfo: tourInfo == freezed
+          ? _value.tourInfo
+          : tourInfo // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
     ));
   }
 }
 
+/// @nodoc
+
 @HiveType(typeId: hiveQuestionInfoTypeId)
-class _$_QuestionInfo with DiagnosticableTreeMixin implements _QuestionInfo {
+class _$_QuestionInfo implements _QuestionInfo {
   const _$_QuestionInfo(
       {@HiveField(hiveQuestionInfoIdFieldId)
           this.id,
@@ -144,37 +177,25 @@ class _$_QuestionInfo with DiagnosticableTreeMixin implements _QuestionInfo {
       @HiveField(hiveQuestionInfoUrlFieldId)
           this.url,
       @HiveField(hiveQuestionInfoTourInfoFieldId)
-          this.tourInfo = const TourInfo()})
-      : assert(tourInfo != null);
+          this.tourInfo = const TourInfo()});
 
   @override
   @HiveField(hiveQuestionInfoIdFieldId)
-  final String id;
+  final String? id;
   @override
   @HiveField(hiveQuestionInfoNumberFieldId)
-  final String number;
+  final String? number;
   @override
   @HiveField(hiveQuestionInfoUrlFieldId)
-  final String url;
+  final String? url;
   @JsonKey(defaultValue: const TourInfo())
   @override
   @HiveField(hiveQuestionInfoTourInfoFieldId)
   final TourInfo tourInfo;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'QuestionInfo(id: $id, number: $number, url: $url, tourInfo: $tourInfo)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'QuestionInfo'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('number', number))
-      ..add(DiagnosticsProperty('url', url))
-      ..add(DiagnosticsProperty('tourInfo', tourInfo));
   }
 
   @override
@@ -200,6 +221,7 @@ class _$_QuestionInfo with DiagnosticableTreeMixin implements _QuestionInfo {
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(tourInfo);
 
+  @JsonKey(ignore: true)
   @override
   _$QuestionInfoCopyWith<_QuestionInfo> get copyWith =>
       __$QuestionInfoCopyWithImpl<_QuestionInfo>(this, _$identity);
@@ -207,24 +229,26 @@ class _$_QuestionInfo with DiagnosticableTreeMixin implements _QuestionInfo {
 
 abstract class _QuestionInfo implements QuestionInfo {
   const factory _QuestionInfo(
-          {@HiveField(hiveQuestionInfoIdFieldId) String id,
-          @HiveField(hiveQuestionInfoNumberFieldId) String number,
-          @HiveField(hiveQuestionInfoUrlFieldId) String url,
+          {@HiveField(hiveQuestionInfoIdFieldId) String? id,
+          @HiveField(hiveQuestionInfoNumberFieldId) String? number,
+          @HiveField(hiveQuestionInfoUrlFieldId) String? url,
           @HiveField(hiveQuestionInfoTourInfoFieldId) TourInfo tourInfo}) =
       _$_QuestionInfo;
 
   @override
   @HiveField(hiveQuestionInfoIdFieldId)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionInfoNumberFieldId)
-  String get number;
+  String? get number => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionInfoUrlFieldId)
-  String get url;
+  String? get url => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveQuestionInfoTourInfoFieldId)
-  TourInfo get tourInfo;
+  TourInfo get tourInfo => throw _privateConstructorUsedError;
   @override
-  _$QuestionInfoCopyWith<_QuestionInfo> get copyWith;
+  @JsonKey(ignore: true)
+  _$QuestionInfoCopyWith<_QuestionInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }

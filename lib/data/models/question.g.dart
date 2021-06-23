@@ -6,25 +6,25 @@ part of 'question.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class _$_QuestionAdapter extends TypeAdapter<_$_Question> {
+class QuestionAdapter extends TypeAdapter<_$_Question> {
   @override
-  final typeId = 5;
+  final int typeId = 5;
 
   @override
   _$_Question read(BinaryReader reader) {
-    var numOfFields = reader.readByte();
-    var fields = <int, dynamic>{
-      for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return _$_Question(
-      id: fields[0] as String,
-      display: fields[1] as String,
-      question: (fields[2] as List)?.cast<QuestionSection>(),
-      answer: (fields[3] as List)?.cast<QuestionSection>(),
-      passCriteria: (fields[4] as List)?.cast<QuestionSection>(),
-      comments: (fields[5] as List)?.cast<QuestionSection>(),
-      authors: fields[6] as String,
-      sources: fields[7] as String,
+      id: fields[0] as String?,
+      display: fields[1] as String?,
+      question: (fields[2] as List).cast<QuestionSection>(),
+      answer: (fields[3] as List).cast<QuestionSection>(),
+      passCriteria: (fields[4] as List).cast<QuestionSection>(),
+      comments: fields[5] as dynamic,
+      authors: fields[6] as String?,
+      sources: fields[7] as String?,
       info: fields[8] as QuestionInfo,
     );
   }
@@ -59,7 +59,7 @@ class _$_QuestionAdapter extends TypeAdapter<_$_Question> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is _$_QuestionAdapter &&
+      other is QuestionAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

@@ -9,11 +9,9 @@ part of 'latest_tournaments_dto.dart';
 _$_LatestTournamentsDto _$_$_LatestTournamentsDtoFromJson(
     Map<String, dynamic> json) {
   return _$_LatestTournamentsDto(
-    tournaments: (json['latest'] as List)
-        ?.map((e) => e == null
-            ? null
-            : TournamentDto.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    tournaments: (json['latest'] as List<dynamic>?)
+        ?.map((e) => TournamentDto.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 

@@ -9,9 +9,9 @@ part of 'tournaments_tree_dto.dart';
 _$_TournamentsTreeDto _$_$_TournamentsTreeDtoFromJson(
     Map<String, dynamic> json) {
   return _$_TournamentsTreeDto(
-    id: json['Id'] as String,
-    title: json['Title'] as String,
-    childrenCount: json['ChildrenNum'] as String,
+    id: json['Id'] as String?,
+    title: json['Title'] as String?,
+    childrenCount: json['ChildrenNum'] as String?,
     children: const TournamentsTreeConverter().fromJson(json['tour']),
   );
 }

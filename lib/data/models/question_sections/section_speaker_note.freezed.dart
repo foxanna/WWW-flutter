@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'section_speaker_note.dart';
 
@@ -9,28 +9,35 @@ part of 'section_speaker_note.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$SpeakerNoteSectionTearOff {
   const _$SpeakerNoteSectionTearOff();
 
-// ignore: unused_element
   _SpeakerNoteSection call(
-      {@required @HiveField(hiveSpeakerNoteSectionValueFieldId) String value}) {
+      {@HiveField(hiveSpeakerNoteSectionValueFieldId) required String value}) {
     return _SpeakerNoteSection(
       value: value,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SpeakerNoteSection = _$SpeakerNoteSectionTearOff();
 
+/// @nodoc
 mixin _$SpeakerNoteSection {
   @HiveField(hiveSpeakerNoteSectionValueFieldId)
-  String get value;
+  String get value => throw _privateConstructorUsedError;
 
-  $SpeakerNoteSectionCopyWith<SpeakerNoteSection> get copyWith;
+  @JsonKey(ignore: true)
+  $SpeakerNoteSectionCopyWith<SpeakerNoteSection> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SpeakerNoteSectionCopyWith<$Res> {
   factory $SpeakerNoteSectionCopyWith(
           SpeakerNoteSection value, $Res Function(SpeakerNoteSection) then) =
@@ -38,6 +45,7 @@ abstract class $SpeakerNoteSectionCopyWith<$Res> {
   $Res call({@HiveField(hiveSpeakerNoteSectionValueFieldId) String value});
 }
 
+/// @nodoc
 class _$SpeakerNoteSectionCopyWithImpl<$Res>
     implements $SpeakerNoteSectionCopyWith<$Res> {
   _$SpeakerNoteSectionCopyWithImpl(this._value, this._then);
@@ -48,14 +56,18 @@ class _$SpeakerNoteSectionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object value = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      value: value == freezed ? _value.value : value as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$SpeakerNoteSectionCopyWith<$Res>
     implements $SpeakerNoteSectionCopyWith<$Res> {
   factory _$SpeakerNoteSectionCopyWith(
@@ -65,6 +77,7 @@ abstract class _$SpeakerNoteSectionCopyWith<$Res>
   $Res call({@HiveField(hiveSpeakerNoteSectionValueFieldId) String value});
 }
 
+/// @nodoc
 class __$SpeakerNoteSectionCopyWithImpl<$Res>
     extends _$SpeakerNoteSectionCopyWithImpl<$Res>
     implements _$SpeakerNoteSectionCopyWith<$Res> {
@@ -77,37 +90,31 @@ class __$SpeakerNoteSectionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object value = freezed,
+    Object? value = freezed,
   }) {
     return _then(_SpeakerNoteSection(
-      value: value == freezed ? _value.value : value as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 @HiveType(typeId: hiveSpeakerNoteSectionTypeId)
-class _$_SpeakerNoteSection
-    with DiagnosticableTreeMixin
-    implements _SpeakerNoteSection {
+class _$_SpeakerNoteSection implements _SpeakerNoteSection {
   const _$_SpeakerNoteSection(
-      {@required @HiveField(hiveSpeakerNoteSectionValueFieldId) this.value})
-      : assert(value != null);
+      {@HiveField(hiveSpeakerNoteSectionValueFieldId) required this.value});
 
   @override
   @HiveField(hiveSpeakerNoteSectionValueFieldId)
   final String value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SpeakerNoteSection(value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SpeakerNoteSection'))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override
@@ -122,6 +129,7 @@ class _$_SpeakerNoteSection
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
+  @JsonKey(ignore: true)
   @override
   _$SpeakerNoteSectionCopyWith<_SpeakerNoteSection> get copyWith =>
       __$SpeakerNoteSectionCopyWithImpl<_SpeakerNoteSection>(this, _$identity);
@@ -129,13 +137,14 @@ class _$_SpeakerNoteSection
 
 abstract class _SpeakerNoteSection implements SpeakerNoteSection {
   const factory _SpeakerNoteSection(
-      {@required
-      @HiveField(hiveSpeakerNoteSectionValueFieldId)
-          String value}) = _$_SpeakerNoteSection;
+      {@HiveField(hiveSpeakerNoteSectionValueFieldId)
+          required String value}) = _$_SpeakerNoteSection;
 
   @override
   @HiveField(hiveSpeakerNoteSectionValueFieldId)
-  String get value;
+  String get value => throw _privateConstructorUsedError;
   @override
-  _$SpeakerNoteSectionCopyWith<_SpeakerNoteSection> get copyWith;
+  @JsonKey(ignore: true)
+  _$SpeakerNoteSectionCopyWith<_SpeakerNoteSection> get copyWith =>
+      throw _privateConstructorUsedError;
 }

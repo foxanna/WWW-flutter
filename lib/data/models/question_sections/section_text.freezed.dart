@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'section_text.dart';
 
@@ -9,28 +9,35 @@ part of 'section_text.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$TextSectionTearOff {
   const _$TextSectionTearOff();
 
-// ignore: unused_element
   _TextSection call(
-      {@required @HiveField(hiveTextSectionValueFieldId) String value}) {
+      {@HiveField(hiveTextSectionValueFieldId) required String value}) {
     return _TextSection(
       value: value,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $TextSection = _$TextSectionTearOff();
 
+/// @nodoc
 mixin _$TextSection {
   @HiveField(hiveTextSectionValueFieldId)
-  String get value;
+  String get value => throw _privateConstructorUsedError;
 
-  $TextSectionCopyWith<TextSection> get copyWith;
+  @JsonKey(ignore: true)
+  $TextSectionCopyWith<TextSection> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TextSectionCopyWith<$Res> {
   factory $TextSectionCopyWith(
           TextSection value, $Res Function(TextSection) then) =
@@ -38,6 +45,7 @@ abstract class $TextSectionCopyWith<$Res> {
   $Res call({@HiveField(hiveTextSectionValueFieldId) String value});
 }
 
+/// @nodoc
 class _$TextSectionCopyWithImpl<$Res> implements $TextSectionCopyWith<$Res> {
   _$TextSectionCopyWithImpl(this._value, this._then);
 
@@ -47,14 +55,18 @@ class _$TextSectionCopyWithImpl<$Res> implements $TextSectionCopyWith<$Res> {
 
   @override
   $Res call({
-    Object value = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      value: value == freezed ? _value.value : value as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$TextSectionCopyWith<$Res>
     implements $TextSectionCopyWith<$Res> {
   factory _$TextSectionCopyWith(
@@ -64,6 +76,7 @@ abstract class _$TextSectionCopyWith<$Res>
   $Res call({@HiveField(hiveTextSectionValueFieldId) String value});
 }
 
+/// @nodoc
 class __$TextSectionCopyWithImpl<$Res> extends _$TextSectionCopyWithImpl<$Res>
     implements _$TextSectionCopyWith<$Res> {
   __$TextSectionCopyWithImpl(
@@ -75,35 +88,31 @@ class __$TextSectionCopyWithImpl<$Res> extends _$TextSectionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object value = freezed,
+    Object? value = freezed,
   }) {
     return _then(_TextSection(
-      value: value == freezed ? _value.value : value as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 @HiveType(typeId: hiveTextSectionTypeId)
-class _$_TextSection with DiagnosticableTreeMixin implements _TextSection {
+class _$_TextSection implements _TextSection {
   const _$_TextSection(
-      {@required @HiveField(hiveTextSectionValueFieldId) this.value})
-      : assert(value != null);
+      {@HiveField(hiveTextSectionValueFieldId) required this.value});
 
   @override
   @HiveField(hiveTextSectionValueFieldId)
   final String value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TextSection(value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TextSection'))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override
@@ -118,6 +127,7 @@ class _$_TextSection with DiagnosticableTreeMixin implements _TextSection {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
+  @JsonKey(ignore: true)
   @override
   _$TextSectionCopyWith<_TextSection> get copyWith =>
       __$TextSectionCopyWithImpl<_TextSection>(this, _$identity);
@@ -125,12 +135,14 @@ class _$_TextSection with DiagnosticableTreeMixin implements _TextSection {
 
 abstract class _TextSection implements TextSection {
   const factory _TextSection(
-          {@required @HiveField(hiveTextSectionValueFieldId) String value}) =
+          {@HiveField(hiveTextSectionValueFieldId) required String value}) =
       _$_TextSection;
 
   @override
   @HiveField(hiveTextSectionValueFieldId)
-  String get value;
+  String get value => throw _privateConstructorUsedError;
   @override
-  _$TextSectionCopyWith<_TextSection> get copyWith;
+  @JsonKey(ignore: true)
+  _$TextSectionCopyWith<_TextSection> get copyWith =>
+      throw _privateConstructorUsedError;
 }

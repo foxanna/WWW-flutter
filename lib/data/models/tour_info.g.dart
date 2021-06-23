@@ -6,25 +6,25 @@ part of 'tour_info.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class _$_TourInfoAdapter extends TypeAdapter<_$_TourInfo> {
+class TourInfoAdapter extends TypeAdapter<_$_TourInfo> {
   @override
-  final typeId = 4;
+  final int typeId = 4;
 
   @override
   _$_TourInfo read(BinaryReader reader) {
-    var numOfFields = reader.readByte();
-    var fields = <int, dynamic>{
-      for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return _$_TourInfo(
-      id: fields[0] as String,
-      title: fields[1] as String,
-      questionsCount: fields[2] as String,
-      description: fields[3] as String,
-      url: fields[4] as String,
-      editors: fields[5] as String,
-      createdAt: fields[6] as String,
-      playedAt: fields[7] as String,
+      id: fields[0] as String?,
+      title: fields[1] as String?,
+      questionsCount: fields[2] as String?,
+      description: fields[3] as String?,
+      url: fields[4] as String?,
+      editors: fields[5] as String?,
+      createdAt: fields[6] as String?,
+      playedAt: fields[7] as String?,
       tournamentInfo: fields[8] as TournamentInfo,
     );
   }
@@ -59,7 +59,7 @@ class _$_TourInfoAdapter extends TypeAdapter<_$_TourInfo> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is _$_TourInfoAdapter &&
+      other is TourInfoAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

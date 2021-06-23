@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'tournaments_tree_dto.dart';
 
@@ -8,24 +8,28 @@ part of 'tournaments_tree_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 TournamentsTreeDto _$TournamentsTreeDtoFromJson(Map<String, dynamic> json) {
   return _TournamentsTreeDto.fromJson(json);
 }
 
+/// @nodoc
 class _$TournamentsTreeDtoTearOff {
   const _$TournamentsTreeDtoTearOff();
 
-// ignore: unused_element
   _TournamentsTreeDto call(
       {@JsonKey(name: 'Id')
-          String id,
+          String? id,
       @JsonKey(name: 'Title')
-          String title,
+          String? title,
       @JsonKey(name: 'ChildrenNum')
-          String childrenCount,
+          String? childrenCount,
       @JsonKey(name: 'tour')
       @TournamentsTreeConverter()
-          List<dynamic> children}) {
+          List<dynamic>? children}) {
     return _TournamentsTreeDto(
       id: id,
       title: title,
@@ -33,42 +37,51 @@ class _$TournamentsTreeDtoTearOff {
       children: children,
     );
   }
+
+  TournamentsTreeDto fromJson(Map<String, Object> json) {
+    return TournamentsTreeDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $TournamentsTreeDto = _$TournamentsTreeDtoTearOff();
 
+/// @nodoc
 mixin _$TournamentsTreeDto {
   @JsonKey(name: 'Id')
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'Title')
-  String get title;
+  String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'ChildrenNum')
-  String get childrenCount;
+  String? get childrenCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'tour')
   @TournamentsTreeConverter()
-  List<dynamic> get children;
+  List<dynamic>? get children => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $TournamentsTreeDtoCopyWith<TournamentsTreeDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TournamentsTreeDtoCopyWith<TournamentsTreeDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TournamentsTreeDtoCopyWith<$Res> {
   factory $TournamentsTreeDtoCopyWith(
           TournamentsTreeDto value, $Res Function(TournamentsTreeDto) then) =
       _$TournamentsTreeDtoCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'Id')
-          String id,
+          String? id,
       @JsonKey(name: 'Title')
-          String title,
+          String? title,
       @JsonKey(name: 'ChildrenNum')
-          String childrenCount,
+          String? childrenCount,
       @JsonKey(name: 'tour')
       @TournamentsTreeConverter()
-          List<dynamic> children});
+          List<dynamic>? children});
 }
 
+/// @nodoc
 class _$TournamentsTreeDtoCopyWithImpl<$Res>
     implements $TournamentsTreeDtoCopyWith<$Res> {
   _$TournamentsTreeDtoCopyWithImpl(this._value, this._then);
@@ -79,23 +92,33 @@ class _$TournamentsTreeDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object childrenCount = freezed,
-    Object children = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? childrenCount = freezed,
+    Object? children = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
       childrenCount: childrenCount == freezed
           ? _value.childrenCount
-          : childrenCount as String,
-      children:
-          children == freezed ? _value.children : children as List<dynamic>,
+          : childrenCount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      children: children == freezed
+          ? _value.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$TournamentsTreeDtoCopyWith<$Res>
     implements $TournamentsTreeDtoCopyWith<$Res> {
   factory _$TournamentsTreeDtoCopyWith(
@@ -104,16 +127,17 @@ abstract class _$TournamentsTreeDtoCopyWith<$Res>
   @override
   $Res call(
       {@JsonKey(name: 'Id')
-          String id,
+          String? id,
       @JsonKey(name: 'Title')
-          String title,
+          String? title,
       @JsonKey(name: 'ChildrenNum')
-          String childrenCount,
+          String? childrenCount,
       @JsonKey(name: 'tour')
       @TournamentsTreeConverter()
-          List<dynamic> children});
+          List<dynamic>? children});
 }
 
+/// @nodoc
 class __$TournamentsTreeDtoCopyWithImpl<$Res>
     extends _$TournamentsTreeDtoCopyWithImpl<$Res>
     implements _$TournamentsTreeDtoCopyWith<$Res> {
@@ -126,27 +150,35 @@ class __$TournamentsTreeDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object childrenCount = freezed,
-    Object children = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? childrenCount = freezed,
+    Object? children = freezed,
   }) {
     return _then(_TournamentsTreeDto(
-      id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
       childrenCount: childrenCount == freezed
           ? _value.childrenCount
-          : childrenCount as String,
-      children:
-          children == freezed ? _value.children : children as List<dynamic>,
+          : childrenCount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      children: children == freezed
+          ? _value.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
-class _$_TournamentsTreeDto
-    with DiagnosticableTreeMixin
-    implements _TournamentsTreeDto {
+class _$_TournamentsTreeDto implements _TournamentsTreeDto {
   const _$_TournamentsTreeDto(
       {@JsonKey(name: 'Id') this.id,
       @JsonKey(name: 'Title') this.title,
@@ -158,32 +190,21 @@ class _$_TournamentsTreeDto
 
   @override
   @JsonKey(name: 'Id')
-  final String id;
+  final String? id;
   @override
   @JsonKey(name: 'Title')
-  final String title;
+  final String? title;
   @override
   @JsonKey(name: 'ChildrenNum')
-  final String childrenCount;
+  final String? childrenCount;
   @override
   @JsonKey(name: 'tour')
   @TournamentsTreeConverter()
-  final List<dynamic> children;
+  final List<dynamic>? children;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TournamentsTreeDto(id: $id, title: $title, childrenCount: $childrenCount, children: $children)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TournamentsTreeDto'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('childrenCount', childrenCount))
-      ..add(DiagnosticsProperty('children', children));
   }
 
   @override
@@ -210,6 +231,7 @@ class _$_TournamentsTreeDto
       const DeepCollectionEquality().hash(childrenCount) ^
       const DeepCollectionEquality().hash(children);
 
+  @JsonKey(ignore: true)
   @override
   _$TournamentsTreeDtoCopyWith<_TournamentsTreeDto> get copyWith =>
       __$TournamentsTreeDtoCopyWithImpl<_TournamentsTreeDto>(this, _$identity);
@@ -223,31 +245,33 @@ class _$_TournamentsTreeDto
 abstract class _TournamentsTreeDto implements TournamentsTreeDto {
   const factory _TournamentsTreeDto(
       {@JsonKey(name: 'Id')
-          String id,
+          String? id,
       @JsonKey(name: 'Title')
-          String title,
+          String? title,
       @JsonKey(name: 'ChildrenNum')
-          String childrenCount,
+          String? childrenCount,
       @JsonKey(name: 'tour')
       @TournamentsTreeConverter()
-          List<dynamic> children}) = _$_TournamentsTreeDto;
+          List<dynamic>? children}) = _$_TournamentsTreeDto;
 
   factory _TournamentsTreeDto.fromJson(Map<String, dynamic> json) =
       _$_TournamentsTreeDto.fromJson;
 
   @override
   @JsonKey(name: 'Id')
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Title')
-  String get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'ChildrenNum')
-  String get childrenCount;
+  String? get childrenCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'tour')
   @TournamentsTreeConverter()
-  List<dynamic> get children;
+  List<dynamic>? get children => throw _privateConstructorUsedError;
   @override
-  _$TournamentsTreeDtoCopyWith<_TournamentsTreeDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$TournamentsTreeDtoCopyWith<_TournamentsTreeDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

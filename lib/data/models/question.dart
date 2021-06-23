@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:what_when_where/api/models/question_dto.dart';
@@ -14,18 +13,25 @@ part 'question.freezed.dart';
 part 'question.g.dart';
 
 @freezed
-abstract class Question with _$Question {
+class Question with _$Question {
   @HiveType(typeId: hiveQuestionTypeId)
   const factory Question({
-    @HiveField(hiveQuestionIdFieldId) String id,
-    @HiveField(hiveQuestionDisplayFieldId) String display,
-    @HiveField(hiveQuestionQuestionFieldId) List<QuestionSection> question,
-    @HiveField(hiveQuestionAnswerFieldId) List<QuestionSection> answer,
+    @HiveField(hiveQuestionIdFieldId) String? id,
+    @HiveField(hiveQuestionDisplayFieldId) String? display,
+    @HiveField(hiveQuestionQuestionFieldId)
+    @Default(<QuestionSection>[])
+        List<QuestionSection> question,
+    @HiveField(hiveQuestionAnswerFieldId)
+    @Default(<QuestionSection>[])
+        List<QuestionSection> answer,
     @HiveField(hiveQuestionPassCriteriaFieldId)
+    @Default(<QuestionSection>[])
         List<QuestionSection> passCriteria,
-    @HiveField(hiveQuestionCommentsFieldId) List<QuestionSection> comments,
-    @HiveField(hiveQuestionAuthorsFieldId) String authors,
-    @HiveField(hiveQuestionSourcesFieldId) String sources,
+    @HiveField(hiveQuestionCommentsFieldId)
+    @Default(<QuestionSection>[])
+        comments,
+    @HiveField(hiveQuestionAuthorsFieldId) String? authors,
+    @HiveField(hiveQuestionSourcesFieldId) String? sources,
     @HiveField(hiveQuestionInfoFieldId)
     @Default(QuestionInfo())
         QuestionInfo info,
@@ -40,8 +46,8 @@ abstract class Question with _$Question {
         answer: QuestionParser.split(dto.answer),
         passCriteria: QuestionParser.split(dto.passCriteria),
         comments: QuestionParser.split(dto.comments),
-        authors: dto.authors.normalizeToSingleLine(),
-        sources: dto.sources.normalizeToMultiLine(),
+        authors: dto.authors?.normalizeToSingleLine(),
+        sources: dto.sources?.normalizeToMultiLine(),
         info: QuestionInfo(
           id: dto.questionId,
           number: dto.number,
@@ -51,16 +57,14 @@ abstract class Question with _$Question {
           tourInfo: tourInfo
               .copyWith(
                 id: tourInfo.id ?? dto.tourId,
-                title: tourInfo.title ?? dto.tourTitle.removeTrailingDot(),
+                title: tourInfo.title ?? dto.tourTitle?.removeTrailingDot(),
               )
               .copyWith
               .tournamentInfo(
-                id: tourInfo.tournamentInfo?.id ?? dto.tournamentId,
-                title: tourInfo.tournamentInfo?.title ??
-                    dto.tournamentTitle.removeTrailingDot(),
+                id: tourInfo.tournamentInfo.id ?? dto.tournamentId,
+                title: tourInfo.tournamentInfo.title ??
+                    dto.tournamentTitle?.removeTrailingDot(),
               ),
         ),
       );
-
-  static TypeAdapter<Question> createHiveAdapter() => _$_QuestionAdapter();
 }

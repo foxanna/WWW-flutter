@@ -6,15 +6,15 @@ part of 'section_audio.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class _$_AudioSectionAdapter extends TypeAdapter<_$_AudioSection> {
+class AudioSectionAdapter extends TypeAdapter<_$_AudioSection> {
   @override
-  final typeId = 7;
+  final int typeId = 7;
 
   @override
   _$_AudioSection read(BinaryReader reader) {
-    var numOfFields = reader.readByte();
-    var fields = <int, dynamic>{
-      for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return _$_AudioSection(
       value: fields[0] as String,
@@ -35,7 +35,7 @@ class _$_AudioSectionAdapter extends TypeAdapter<_$_AudioSection> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is _$_AudioSectionAdapter &&
+      other is AudioSectionAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

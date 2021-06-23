@@ -6,15 +6,15 @@ part of 'section_image.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class _$_ImageSectionAdapter extends TypeAdapter<_$_ImageSection> {
+class ImageSectionAdapter extends TypeAdapter<_$_ImageSection> {
   @override
-  final typeId = 9;
+  final int typeId = 9;
 
   @override
   _$_ImageSection read(BinaryReader reader) {
-    var numOfFields = reader.readByte();
-    var fields = <int, dynamic>{
-      for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return _$_ImageSection(
       value: fields[0] as String,
@@ -35,7 +35,7 @@ class _$_ImageSectionAdapter extends TypeAdapter<_$_ImageSection> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is _$_ImageSectionAdapter &&
+      other is ImageSectionAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

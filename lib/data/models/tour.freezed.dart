@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'tour.dart';
 
@@ -9,13 +9,16 @@ part of 'tour.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$TourTearOff {
   const _$TourTearOff();
 
-// ignore: unused_element
   _Tour call(
       {@HiveField(hiveTourIdFieldId)
-          String id,
+          String? id,
       @HiveField(hiveTourInfoFieldId)
           TourInfo info = const TourInfo(),
       @HiveField(hiveTourQuestionsFieldId)
@@ -28,31 +31,35 @@ class _$TourTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $Tour = _$TourTearOff();
 
+/// @nodoc
 mixin _$Tour {
   @HiveField(hiveTourIdFieldId)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @HiveField(hiveTourInfoFieldId)
-  TourInfo get info;
+  TourInfo get info => throw _privateConstructorUsedError;
   @HiveField(hiveTourQuestionsFieldId)
-  List<Question> get questions;
+  List<Question> get questions => throw _privateConstructorUsedError;
 
-  $TourCopyWith<Tour> get copyWith;
+  @JsonKey(ignore: true)
+  $TourCopyWith<Tour> get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TourCopyWith<$Res> {
   factory $TourCopyWith(Tour value, $Res Function(Tour) then) =
       _$TourCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(hiveTourIdFieldId) String id,
+      {@HiveField(hiveTourIdFieldId) String? id,
       @HiveField(hiveTourInfoFieldId) TourInfo info,
       @HiveField(hiveTourQuestionsFieldId) List<Question> questions});
 
   $TourInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$TourCopyWithImpl<$Res> implements $TourCopyWith<$Res> {
   _$TourCopyWithImpl(this._value, this._then);
 
@@ -62,35 +69,41 @@ class _$TourCopyWithImpl<$Res> implements $TourCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object info = freezed,
-    Object questions = freezed,
+    Object? id = freezed,
+    Object? info = freezed,
+    Object? questions = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      info: info == freezed ? _value.info : info as TourInfo,
-      questions:
-          questions == freezed ? _value.questions : questions as List<Question>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
+      questions: questions == freezed
+          ? _value.questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Question>,
     ));
   }
 
   @override
   $TourInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$TourCopyWith<$Res> implements $TourCopyWith<$Res> {
   factory _$TourCopyWith(_Tour value, $Res Function(_Tour) then) =
       __$TourCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(hiveTourIdFieldId) String id,
+      {@HiveField(hiveTourIdFieldId) String? id,
       @HiveField(hiveTourInfoFieldId) TourInfo info,
       @HiveField(hiveTourQuestionsFieldId) List<Question> questions});
 
@@ -98,6 +111,7 @@ abstract class _$TourCopyWith<$Res> implements $TourCopyWith<$Res> {
   $TourInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class __$TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res>
     implements _$TourCopyWith<$Res> {
   __$TourCopyWithImpl(_Tour _value, $Res Function(_Tour) _then)
@@ -108,31 +122,42 @@ class __$TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object info = freezed,
-    Object questions = freezed,
+    Object? id = freezed,
+    Object? info = freezed,
+    Object? questions = freezed,
   }) {
     return _then(_Tour(
-      id: id == freezed ? _value.id : id as String,
-      info: info == freezed ? _value.info : info as TourInfo,
-      questions:
-          questions == freezed ? _value.questions : questions as List<Question>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
+      questions: questions == freezed
+          ? _value.questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Question>,
     ));
   }
 }
 
+/// @nodoc
+
 @HiveType(typeId: hiveTourTypeId)
-class _$_Tour with DiagnosticableTreeMixin implements _Tour {
+class _$_Tour implements _Tour {
   const _$_Tour(
-      {@HiveField(hiveTourIdFieldId) this.id,
-      @HiveField(hiveTourInfoFieldId) this.info = const TourInfo(),
-      @HiveField(hiveTourQuestionsFieldId) this.questions = const <Question>[]})
-      : assert(info != null),
-        assert(questions != null);
+      {@HiveField(hiveTourIdFieldId)
+          this.id,
+      @HiveField(hiveTourInfoFieldId)
+          this.info = const TourInfo(),
+      @HiveField(hiveTourQuestionsFieldId)
+          this.questions = const <Question>[]});
 
   @override
   @HiveField(hiveTourIdFieldId)
-  final String id;
+  final String? id;
   @JsonKey(defaultValue: const TourInfo())
   @override
   @HiveField(hiveTourInfoFieldId)
@@ -143,18 +168,8 @@ class _$_Tour with DiagnosticableTreeMixin implements _Tour {
   final List<Question> questions;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Tour(id: $id, info: $info, questions: $questions)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Tour'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('info', info))
-      ..add(DiagnosticsProperty('questions', questions));
   }
 
   @override
@@ -177,6 +192,7 @@ class _$_Tour with DiagnosticableTreeMixin implements _Tour {
       const DeepCollectionEquality().hash(info) ^
       const DeepCollectionEquality().hash(questions);
 
+  @JsonKey(ignore: true)
   @override
   _$TourCopyWith<_Tour> get copyWith =>
       __$TourCopyWithImpl<_Tour>(this, _$identity);
@@ -184,19 +200,20 @@ class _$_Tour with DiagnosticableTreeMixin implements _Tour {
 
 abstract class _Tour implements Tour {
   const factory _Tour(
-      {@HiveField(hiveTourIdFieldId) String id,
+      {@HiveField(hiveTourIdFieldId) String? id,
       @HiveField(hiveTourInfoFieldId) TourInfo info,
       @HiveField(hiveTourQuestionsFieldId) List<Question> questions}) = _$_Tour;
 
   @override
   @HiveField(hiveTourIdFieldId)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourInfoFieldId)
-  TourInfo get info;
+  TourInfo get info => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTourQuestionsFieldId)
-  List<Question> get questions;
+  List<Question> get questions => throw _privateConstructorUsedError;
   @override
-  _$TourCopyWith<_Tour> get copyWith;
+  @JsonKey(ignore: true)
+  _$TourCopyWith<_Tour> get copyWith => throw _privateConstructorUsedError;
 }

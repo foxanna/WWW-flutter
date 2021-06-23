@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'question_dto.dart';
 
@@ -8,28 +8,32 @@ part of 'question_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 QuestionDto _$QuestionDtoFromJson(Map<String, dynamic> json) {
   return _QuestionDto.fromJson(json);
 }
 
+/// @nodoc
 class _$QuestionDtoTearOff {
   const _$QuestionDtoTearOff();
 
-// ignore: unused_element
   _QuestionDto call(
-      {@JsonKey(name: 'QuestionId') String questionId,
-      @JsonKey(name: 'Question') String question,
-      @JsonKey(name: 'Number') String number,
-      @JsonKey(name: 'Answer') String answer,
-      @JsonKey(name: 'Authors') String authors,
-      @JsonKey(name: 'PassCriteria') String passCriteria,
-      @JsonKey(name: 'Comments') String comments,
-      @JsonKey(name: 'Sources') String sources,
-      @JsonKey(name: 'ParentId') String parentId,
-      @JsonKey(name: 'tourId') String tourId,
-      @JsonKey(name: 'tournamentId') String tournamentId,
-      @JsonKey(name: 'tourTitle') String tourTitle,
-      @JsonKey(name: 'tournamentTitle') String tournamentTitle}) {
+      {@JsonKey(name: 'QuestionId') String? questionId,
+      @JsonKey(name: 'Question') String? question,
+      @JsonKey(name: 'Number') String? number,
+      @JsonKey(name: 'Answer') String? answer,
+      @JsonKey(name: 'Authors') String? authors,
+      @JsonKey(name: 'PassCriteria') String? passCriteria,
+      @JsonKey(name: 'Comments') String? comments,
+      @JsonKey(name: 'Sources') String? sources,
+      @JsonKey(name: 'ParentId') String? parentId,
+      @JsonKey(name: 'tourId') String? tourId,
+      @JsonKey(name: 'tournamentId') String? tournamentId,
+      @JsonKey(name: 'tourTitle') String? tourTitle,
+      @JsonKey(name: 'tournamentTitle') String? tournamentTitle}) {
     return _QuestionDto(
       questionId: questionId,
       question: question,
@@ -46,63 +50,72 @@ class _$QuestionDtoTearOff {
       tournamentTitle: tournamentTitle,
     );
   }
+
+  QuestionDto fromJson(Map<String, Object> json) {
+    return QuestionDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $QuestionDto = _$QuestionDtoTearOff();
 
+/// @nodoc
 mixin _$QuestionDto {
   @JsonKey(name: 'QuestionId')
-  String get questionId;
+  String? get questionId => throw _privateConstructorUsedError;
   @JsonKey(name: 'Question')
-  String get question;
+  String? get question => throw _privateConstructorUsedError;
   @JsonKey(name: 'Number')
-  String get number;
+  String? get number => throw _privateConstructorUsedError;
   @JsonKey(name: 'Answer')
-  String get answer;
+  String? get answer => throw _privateConstructorUsedError;
   @JsonKey(name: 'Authors')
-  String get authors;
+  String? get authors => throw _privateConstructorUsedError;
   @JsonKey(name: 'PassCriteria')
-  String get passCriteria;
+  String? get passCriteria => throw _privateConstructorUsedError;
   @JsonKey(name: 'Comments')
-  String get comments;
+  String? get comments => throw _privateConstructorUsedError;
   @JsonKey(name: 'Sources')
-  String get sources;
+  String? get sources => throw _privateConstructorUsedError;
   @JsonKey(name: 'ParentId')
-  String get parentId;
+  String? get parentId => throw _privateConstructorUsedError;
   @JsonKey(name: 'tourId')
-  String get tourId;
+  String? get tourId => throw _privateConstructorUsedError;
   @JsonKey(name: 'tournamentId')
-  String get tournamentId;
+  String? get tournamentId => throw _privateConstructorUsedError;
   @JsonKey(name: 'tourTitle')
-  String get tourTitle;
+  String? get tourTitle => throw _privateConstructorUsedError;
   @JsonKey(name: 'tournamentTitle')
-  String get tournamentTitle;
+  String? get tournamentTitle => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $QuestionDtoCopyWith<QuestionDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $QuestionDtoCopyWith<QuestionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $QuestionDtoCopyWith<$Res> {
   factory $QuestionDtoCopyWith(
           QuestionDto value, $Res Function(QuestionDto) then) =
       _$QuestionDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'QuestionId') String questionId,
-      @JsonKey(name: 'Question') String question,
-      @JsonKey(name: 'Number') String number,
-      @JsonKey(name: 'Answer') String answer,
-      @JsonKey(name: 'Authors') String authors,
-      @JsonKey(name: 'PassCriteria') String passCriteria,
-      @JsonKey(name: 'Comments') String comments,
-      @JsonKey(name: 'Sources') String sources,
-      @JsonKey(name: 'ParentId') String parentId,
-      @JsonKey(name: 'tourId') String tourId,
-      @JsonKey(name: 'tournamentId') String tournamentId,
-      @JsonKey(name: 'tourTitle') String tourTitle,
-      @JsonKey(name: 'tournamentTitle') String tournamentTitle});
+      {@JsonKey(name: 'QuestionId') String? questionId,
+      @JsonKey(name: 'Question') String? question,
+      @JsonKey(name: 'Number') String? number,
+      @JsonKey(name: 'Answer') String? answer,
+      @JsonKey(name: 'Authors') String? authors,
+      @JsonKey(name: 'PassCriteria') String? passCriteria,
+      @JsonKey(name: 'Comments') String? comments,
+      @JsonKey(name: 'Sources') String? sources,
+      @JsonKey(name: 'ParentId') String? parentId,
+      @JsonKey(name: 'tourId') String? tourId,
+      @JsonKey(name: 'tournamentId') String? tournamentId,
+      @JsonKey(name: 'tourTitle') String? tourTitle,
+      @JsonKey(name: 'tournamentTitle') String? tournamentTitle});
 }
 
+/// @nodoc
 class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
   _$QuestionDtoCopyWithImpl(this._value, this._then);
 
@@ -112,45 +125,78 @@ class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object questionId = freezed,
-    Object question = freezed,
-    Object number = freezed,
-    Object answer = freezed,
-    Object authors = freezed,
-    Object passCriteria = freezed,
-    Object comments = freezed,
-    Object sources = freezed,
-    Object parentId = freezed,
-    Object tourId = freezed,
-    Object tournamentId = freezed,
-    Object tourTitle = freezed,
-    Object tournamentTitle = freezed,
+    Object? questionId = freezed,
+    Object? question = freezed,
+    Object? number = freezed,
+    Object? answer = freezed,
+    Object? authors = freezed,
+    Object? passCriteria = freezed,
+    Object? comments = freezed,
+    Object? sources = freezed,
+    Object? parentId = freezed,
+    Object? tourId = freezed,
+    Object? tournamentId = freezed,
+    Object? tourTitle = freezed,
+    Object? tournamentTitle = freezed,
   }) {
     return _then(_value.copyWith(
-      questionId:
-          questionId == freezed ? _value.questionId : questionId as String,
-      question: question == freezed ? _value.question : question as String,
-      number: number == freezed ? _value.number : number as String,
-      answer: answer == freezed ? _value.answer : answer as String,
-      authors: authors == freezed ? _value.authors : authors as String,
+      questionId: questionId == freezed
+          ? _value.questionId
+          : questionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      question: question == freezed
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as String?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String?,
+      answer: answer == freezed
+          ? _value.answer
+          : answer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authors: authors == freezed
+          ? _value.authors
+          : authors // ignore: cast_nullable_to_non_nullable
+              as String?,
       passCriteria: passCriteria == freezed
           ? _value.passCriteria
-          : passCriteria as String,
-      comments: comments == freezed ? _value.comments : comments as String,
-      sources: sources == freezed ? _value.sources : sources as String,
-      parentId: parentId == freezed ? _value.parentId : parentId as String,
-      tourId: tourId == freezed ? _value.tourId : tourId as String,
+          : passCriteria // ignore: cast_nullable_to_non_nullable
+              as String?,
+      comments: comments == freezed
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentId: parentId == freezed
+          ? _value.parentId
+          : parentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tourId: tourId == freezed
+          ? _value.tourId
+          : tourId // ignore: cast_nullable_to_non_nullable
+              as String?,
       tournamentId: tournamentId == freezed
           ? _value.tournamentId
-          : tournamentId as String,
-      tourTitle: tourTitle == freezed ? _value.tourTitle : tourTitle as String,
+          : tournamentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tourTitle: tourTitle == freezed
+          ? _value.tourTitle
+          : tourTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
       tournamentTitle: tournamentTitle == freezed
           ? _value.tournamentTitle
-          : tournamentTitle as String,
+          : tournamentTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$QuestionDtoCopyWith<$Res>
     implements $QuestionDtoCopyWith<$Res> {
   factory _$QuestionDtoCopyWith(
@@ -158,21 +204,22 @@ abstract class _$QuestionDtoCopyWith<$Res>
       __$QuestionDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'QuestionId') String questionId,
-      @JsonKey(name: 'Question') String question,
-      @JsonKey(name: 'Number') String number,
-      @JsonKey(name: 'Answer') String answer,
-      @JsonKey(name: 'Authors') String authors,
-      @JsonKey(name: 'PassCriteria') String passCriteria,
-      @JsonKey(name: 'Comments') String comments,
-      @JsonKey(name: 'Sources') String sources,
-      @JsonKey(name: 'ParentId') String parentId,
-      @JsonKey(name: 'tourId') String tourId,
-      @JsonKey(name: 'tournamentId') String tournamentId,
-      @JsonKey(name: 'tourTitle') String tourTitle,
-      @JsonKey(name: 'tournamentTitle') String tournamentTitle});
+      {@JsonKey(name: 'QuestionId') String? questionId,
+      @JsonKey(name: 'Question') String? question,
+      @JsonKey(name: 'Number') String? number,
+      @JsonKey(name: 'Answer') String? answer,
+      @JsonKey(name: 'Authors') String? authors,
+      @JsonKey(name: 'PassCriteria') String? passCriteria,
+      @JsonKey(name: 'Comments') String? comments,
+      @JsonKey(name: 'Sources') String? sources,
+      @JsonKey(name: 'ParentId') String? parentId,
+      @JsonKey(name: 'tourId') String? tourId,
+      @JsonKey(name: 'tournamentId') String? tournamentId,
+      @JsonKey(name: 'tourTitle') String? tourTitle,
+      @JsonKey(name: 'tournamentTitle') String? tournamentTitle});
 }
 
+/// @nodoc
 class __$QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
     implements _$QuestionDtoCopyWith<$Res> {
   __$QuestionDtoCopyWithImpl(
@@ -184,47 +231,80 @@ class __$QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object questionId = freezed,
-    Object question = freezed,
-    Object number = freezed,
-    Object answer = freezed,
-    Object authors = freezed,
-    Object passCriteria = freezed,
-    Object comments = freezed,
-    Object sources = freezed,
-    Object parentId = freezed,
-    Object tourId = freezed,
-    Object tournamentId = freezed,
-    Object tourTitle = freezed,
-    Object tournamentTitle = freezed,
+    Object? questionId = freezed,
+    Object? question = freezed,
+    Object? number = freezed,
+    Object? answer = freezed,
+    Object? authors = freezed,
+    Object? passCriteria = freezed,
+    Object? comments = freezed,
+    Object? sources = freezed,
+    Object? parentId = freezed,
+    Object? tourId = freezed,
+    Object? tournamentId = freezed,
+    Object? tourTitle = freezed,
+    Object? tournamentTitle = freezed,
   }) {
     return _then(_QuestionDto(
-      questionId:
-          questionId == freezed ? _value.questionId : questionId as String,
-      question: question == freezed ? _value.question : question as String,
-      number: number == freezed ? _value.number : number as String,
-      answer: answer == freezed ? _value.answer : answer as String,
-      authors: authors == freezed ? _value.authors : authors as String,
+      questionId: questionId == freezed
+          ? _value.questionId
+          : questionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      question: question == freezed
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as String?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String?,
+      answer: answer == freezed
+          ? _value.answer
+          : answer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authors: authors == freezed
+          ? _value.authors
+          : authors // ignore: cast_nullable_to_non_nullable
+              as String?,
       passCriteria: passCriteria == freezed
           ? _value.passCriteria
-          : passCriteria as String,
-      comments: comments == freezed ? _value.comments : comments as String,
-      sources: sources == freezed ? _value.sources : sources as String,
-      parentId: parentId == freezed ? _value.parentId : parentId as String,
-      tourId: tourId == freezed ? _value.tourId : tourId as String,
+          : passCriteria // ignore: cast_nullable_to_non_nullable
+              as String?,
+      comments: comments == freezed
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentId: parentId == freezed
+          ? _value.parentId
+          : parentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tourId: tourId == freezed
+          ? _value.tourId
+          : tourId // ignore: cast_nullable_to_non_nullable
+              as String?,
       tournamentId: tournamentId == freezed
           ? _value.tournamentId
-          : tournamentId as String,
-      tourTitle: tourTitle == freezed ? _value.tourTitle : tourTitle as String,
+          : tournamentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tourTitle: tourTitle == freezed
+          ? _value.tourTitle
+          : tourTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
       tournamentTitle: tournamentTitle == freezed
           ? _value.tournamentTitle
-          : tournamentTitle as String,
+          : tournamentTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
-class _$_QuestionDto with DiagnosticableTreeMixin implements _QuestionDto {
+class _$_QuestionDto implements _QuestionDto {
   const _$_QuestionDto(
       {@JsonKey(name: 'QuestionId') this.questionId,
       @JsonKey(name: 'Question') this.question,
@@ -245,67 +325,47 @@ class _$_QuestionDto with DiagnosticableTreeMixin implements _QuestionDto {
 
   @override
   @JsonKey(name: 'QuestionId')
-  final String questionId;
+  final String? questionId;
   @override
   @JsonKey(name: 'Question')
-  final String question;
+  final String? question;
   @override
   @JsonKey(name: 'Number')
-  final String number;
+  final String? number;
   @override
   @JsonKey(name: 'Answer')
-  final String answer;
+  final String? answer;
   @override
   @JsonKey(name: 'Authors')
-  final String authors;
+  final String? authors;
   @override
   @JsonKey(name: 'PassCriteria')
-  final String passCriteria;
+  final String? passCriteria;
   @override
   @JsonKey(name: 'Comments')
-  final String comments;
+  final String? comments;
   @override
   @JsonKey(name: 'Sources')
-  final String sources;
+  final String? sources;
   @override
   @JsonKey(name: 'ParentId')
-  final String parentId;
+  final String? parentId;
   @override
   @JsonKey(name: 'tourId')
-  final String tourId;
+  final String? tourId;
   @override
   @JsonKey(name: 'tournamentId')
-  final String tournamentId;
+  final String? tournamentId;
   @override
   @JsonKey(name: 'tourTitle')
-  final String tourTitle;
+  final String? tourTitle;
   @override
   @JsonKey(name: 'tournamentTitle')
-  final String tournamentTitle;
+  final String? tournamentTitle;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'QuestionDto(questionId: $questionId, question: $question, number: $number, answer: $answer, authors: $authors, passCriteria: $passCriteria, comments: $comments, sources: $sources, parentId: $parentId, tourId: $tourId, tournamentId: $tournamentId, tourTitle: $tourTitle, tournamentTitle: $tournamentTitle)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'QuestionDto'))
-      ..add(DiagnosticsProperty('questionId', questionId))
-      ..add(DiagnosticsProperty('question', question))
-      ..add(DiagnosticsProperty('number', number))
-      ..add(DiagnosticsProperty('answer', answer))
-      ..add(DiagnosticsProperty('authors', authors))
-      ..add(DiagnosticsProperty('passCriteria', passCriteria))
-      ..add(DiagnosticsProperty('comments', comments))
-      ..add(DiagnosticsProperty('sources', sources))
-      ..add(DiagnosticsProperty('parentId', parentId))
-      ..add(DiagnosticsProperty('tourId', tourId))
-      ..add(DiagnosticsProperty('tournamentId', tournamentId))
-      ..add(DiagnosticsProperty('tourTitle', tourTitle))
-      ..add(DiagnosticsProperty('tournamentTitle', tournamentTitle));
   }
 
   @override
@@ -367,6 +427,7 @@ class _$_QuestionDto with DiagnosticableTreeMixin implements _QuestionDto {
       const DeepCollectionEquality().hash(tourTitle) ^
       const DeepCollectionEquality().hash(tournamentTitle);
 
+  @JsonKey(ignore: true)
   @override
   _$QuestionDtoCopyWith<_QuestionDto> get copyWith =>
       __$QuestionDtoCopyWithImpl<_QuestionDto>(this, _$identity);
@@ -379,19 +440,19 @@ class _$_QuestionDto with DiagnosticableTreeMixin implements _QuestionDto {
 
 abstract class _QuestionDto implements QuestionDto {
   const factory _QuestionDto(
-          {@JsonKey(name: 'QuestionId') String questionId,
-          @JsonKey(name: 'Question') String question,
-          @JsonKey(name: 'Number') String number,
-          @JsonKey(name: 'Answer') String answer,
-          @JsonKey(name: 'Authors') String authors,
-          @JsonKey(name: 'PassCriteria') String passCriteria,
-          @JsonKey(name: 'Comments') String comments,
-          @JsonKey(name: 'Sources') String sources,
-          @JsonKey(name: 'ParentId') String parentId,
-          @JsonKey(name: 'tourId') String tourId,
-          @JsonKey(name: 'tournamentId') String tournamentId,
-          @JsonKey(name: 'tourTitle') String tourTitle,
-          @JsonKey(name: 'tournamentTitle') String tournamentTitle}) =
+          {@JsonKey(name: 'QuestionId') String? questionId,
+          @JsonKey(name: 'Question') String? question,
+          @JsonKey(name: 'Number') String? number,
+          @JsonKey(name: 'Answer') String? answer,
+          @JsonKey(name: 'Authors') String? authors,
+          @JsonKey(name: 'PassCriteria') String? passCriteria,
+          @JsonKey(name: 'Comments') String? comments,
+          @JsonKey(name: 'Sources') String? sources,
+          @JsonKey(name: 'ParentId') String? parentId,
+          @JsonKey(name: 'tourId') String? tourId,
+          @JsonKey(name: 'tournamentId') String? tournamentId,
+          @JsonKey(name: 'tourTitle') String? tourTitle,
+          @JsonKey(name: 'tournamentTitle') String? tournamentTitle}) =
       _$_QuestionDto;
 
   factory _QuestionDto.fromJson(Map<String, dynamic> json) =
@@ -399,43 +460,45 @@ abstract class _QuestionDto implements QuestionDto {
 
   @override
   @JsonKey(name: 'QuestionId')
-  String get questionId;
+  String? get questionId => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Question')
-  String get question;
+  String? get question => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Number')
-  String get number;
+  String? get number => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Answer')
-  String get answer;
+  String? get answer => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Authors')
-  String get authors;
+  String? get authors => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'PassCriteria')
-  String get passCriteria;
+  String? get passCriteria => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Comments')
-  String get comments;
+  String? get comments => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Sources')
-  String get sources;
+  String? get sources => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'ParentId')
-  String get parentId;
+  String? get parentId => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'tourId')
-  String get tourId;
+  String? get tourId => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'tournamentId')
-  String get tournamentId;
+  String? get tournamentId => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'tourTitle')
-  String get tourTitle;
+  String? get tourTitle => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'tournamentTitle')
-  String get tournamentTitle;
+  String? get tournamentTitle => throw _privateConstructorUsedError;
   @override
-  _$QuestionDtoCopyWith<_QuestionDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$QuestionDtoCopyWith<_QuestionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

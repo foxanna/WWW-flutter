@@ -1,8 +1,8 @@
-import 'package:flutter/foundation.dart';
+import 'package:dartx/dartx.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
-import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/api/models/tournament_dto.dart';
+import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/data/hive/constants.dart';
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
@@ -13,11 +13,11 @@ part 'tournament.freezed.dart';
 part 'tournament.g.dart';
 
 @freezed
-abstract class Tournament with _$Tournament {
+class Tournament with _$Tournament {
   @HiveType(typeId: hiveTournamentTypeId)
   const factory Tournament({
-    @HiveField(hiveTournamentIdFieldId) String id,
-    @HiveField(hiveTournamentId2FieldId) String id2,
+    @HiveField(hiveTournamentIdFieldId) String? id,
+    @HiveField(hiveTournamentId2FieldId) String? id2,
     @HiveField(hiveTournamentInfoFieldId)
     @Default(TournamentInfo())
         TournamentInfo info,
@@ -31,16 +31,16 @@ abstract class Tournament with _$Tournament {
     final info = TournamentInfo(
       id: dto.id,
       id2: dto.textId,
-      title: dto.title.normalizeToSingleLine().removeTrailingDot(),
+      title: dto.title?.normalizeToSingleLine().removeTrailingDot(),
       questionsCount: dto.questionsCount,
-      description: dto.description.normalizeToSingleLine(),
+      description: dto.description?.normalizeToSingleLine(),
       url: (dto.id ?? dto.textId) != null
           ? '${Constants.databaseUrl}/tour/${dto.id ?? dto.textId}'
           : null,
-      editors: dto.editors.normalizeToSingleLine(),
-      createdAt: dto.createdAt.normalizeToSingleLine(),
-      playedAt: dto.playedAt.normalizeToSingleLine(),
-      toursCount: dto.tours?.length?.toString(),
+      editors: dto.editors?.normalizeToSingleLine(),
+      createdAt: dto.createdAt?.normalizeToSingleLine(),
+      playedAt: dto.playedAt?.normalizeToSingleLine(),
+      toursCount: dto.tours?.length.toString(),
     );
 
     return Tournament(
@@ -49,10 +49,14 @@ abstract class Tournament with _$Tournament {
       info: info,
       tours: dto.tours
               ?.map((dto) => Tour.fromDto(dto, tournamentInfo: info))
-              ?.toList() ??
+              .toList() ??
           <Tour>[],
     );
   }
+}
 
-  static TypeAdapter<Tournament> createHiveAdapter() => _$_TournamentAdapter();
+extension TournamentX on Tournament {
+  bool isTheOne(TournamentInfo info) =>
+      (info.id.isNotNullOrEmpty && this.id == info.id) ||
+      (info.id2.isNotNullOrEmpty && this.id2 == info.id2);
 }

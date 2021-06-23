@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'tournaments_tree.dart';
 
@@ -9,12 +9,15 @@ part of 'tournaments_tree.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$TournamentsTreeTearOff {
   const _$TournamentsTreeTearOff();
 
-// ignore: unused_element
   _TournamentsTree call(
-      {String id,
+      {String? id,
       List<dynamic> children = const <dynamic>[],
       TournamentsTreeInfo info = const TournamentsTreeInfo()}) {
     return _TournamentsTree(
@@ -25,26 +28,31 @@ class _$TournamentsTreeTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $TournamentsTree = _$TournamentsTreeTearOff();
 
+/// @nodoc
 mixin _$TournamentsTree {
-  String get id;
-  List<dynamic> get children;
-  TournamentsTreeInfo get info;
+  String? get id => throw _privateConstructorUsedError;
+  List<dynamic> get children => throw _privateConstructorUsedError;
+  TournamentsTreeInfo get info => throw _privateConstructorUsedError;
 
-  $TournamentsTreeCopyWith<TournamentsTree> get copyWith;
+  @JsonKey(ignore: true)
+  $TournamentsTreeCopyWith<TournamentsTree> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TournamentsTreeCopyWith<$Res> {
   factory $TournamentsTreeCopyWith(
           TournamentsTree value, $Res Function(TournamentsTree) then) =
       _$TournamentsTreeCopyWithImpl<$Res>;
-  $Res call({String id, List<dynamic> children, TournamentsTreeInfo info});
+  $Res call({String? id, List<dynamic> children, TournamentsTreeInfo info});
 
   $TournamentsTreeInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$TournamentsTreeCopyWithImpl<$Res>
     implements $TournamentsTreeCopyWith<$Res> {
   _$TournamentsTreeCopyWithImpl(this._value, this._then);
@@ -55,41 +63,48 @@ class _$TournamentsTreeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object children = freezed,
-    Object info = freezed,
+    Object? id = freezed,
+    Object? children = freezed,
+    Object? info = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      children:
-          children == freezed ? _value.children : children as List<dynamic>,
-      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      children: children == freezed
+          ? _value.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TournamentsTreeInfo,
     ));
   }
 
   @override
   $TournamentsTreeInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TournamentsTreeInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$TournamentsTreeCopyWith<$Res>
     implements $TournamentsTreeCopyWith<$Res> {
   factory _$TournamentsTreeCopyWith(
           _TournamentsTree value, $Res Function(_TournamentsTree) then) =
       __$TournamentsTreeCopyWithImpl<$Res>;
   @override
-  $Res call({String id, List<dynamic> children, TournamentsTreeInfo info});
+  $Res call({String? id, List<dynamic> children, TournamentsTreeInfo info});
 
   @override
   $TournamentsTreeInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class __$TournamentsTreeCopyWithImpl<$Res>
     extends _$TournamentsTreeCopyWithImpl<$Res>
     implements _$TournamentsTreeCopyWith<$Res> {
@@ -102,31 +117,37 @@ class __$TournamentsTreeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object children = freezed,
-    Object info = freezed,
+    Object? id = freezed,
+    Object? children = freezed,
+    Object? info = freezed,
   }) {
     return _then(_TournamentsTree(
-      id: id == freezed ? _value.id : id as String,
-      children:
-          children == freezed ? _value.children : children as List<dynamic>,
-      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      children: children == freezed
+          ? _value.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TournamentsTreeInfo,
     ));
   }
 }
 
-class _$_TournamentsTree
-    with DiagnosticableTreeMixin
-    implements _TournamentsTree {
+/// @nodoc
+
+class _$_TournamentsTree implements _TournamentsTree {
   const _$_TournamentsTree(
       {this.id,
       this.children = const <dynamic>[],
-      this.info = const TournamentsTreeInfo()})
-      : assert(children != null),
-        assert(info != null);
+      this.info = const TournamentsTreeInfo()});
 
   @override
-  final String id;
+  final String? id;
   @JsonKey(defaultValue: const <dynamic>[])
   @override
   final List<dynamic> children;
@@ -135,18 +156,8 @@ class _$_TournamentsTree
   final TournamentsTreeInfo info;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TournamentsTree(id: $id, children: $children, info: $info)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TournamentsTree'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('children', children))
-      ..add(DiagnosticsProperty('info', info));
   }
 
   @override
@@ -169,6 +180,7 @@ class _$_TournamentsTree
       const DeepCollectionEquality().hash(children) ^
       const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   _$TournamentsTreeCopyWith<_TournamentsTree> get copyWith =>
       __$TournamentsTreeCopyWithImpl<_TournamentsTree>(this, _$identity);
@@ -176,16 +188,18 @@ class _$_TournamentsTree
 
 abstract class _TournamentsTree implements TournamentsTree {
   const factory _TournamentsTree(
-      {String id,
+      {String? id,
       List<dynamic> children,
       TournamentsTreeInfo info}) = _$_TournamentsTree;
 
   @override
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  List<dynamic> get children;
+  List<dynamic> get children => throw _privateConstructorUsedError;
   @override
-  TournamentsTreeInfo get info;
+  TournamentsTreeInfo get info => throw _privateConstructorUsedError;
   @override
-  _$TournamentsTreeCopyWith<_TournamentsTree> get copyWith;
+  @JsonKey(ignore: true)
+  _$TournamentsTreeCopyWith<_TournamentsTree> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'section_giveaway.dart';
 
@@ -9,28 +9,35 @@ part of 'section_giveaway.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$GiveAwaySectionTearOff {
   const _$GiveAwaySectionTearOff();
 
-// ignore: unused_element
   _GiveAwaySection call(
-      {@required @HiveField(hiveGiveAwaySectionValueFieldId) String value}) {
+      {@HiveField(hiveGiveAwaySectionValueFieldId) required String value}) {
     return _GiveAwaySection(
       value: value,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $GiveAwaySection = _$GiveAwaySectionTearOff();
 
+/// @nodoc
 mixin _$GiveAwaySection {
   @HiveField(hiveGiveAwaySectionValueFieldId)
-  String get value;
+  String get value => throw _privateConstructorUsedError;
 
-  $GiveAwaySectionCopyWith<GiveAwaySection> get copyWith;
+  @JsonKey(ignore: true)
+  $GiveAwaySectionCopyWith<GiveAwaySection> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $GiveAwaySectionCopyWith<$Res> {
   factory $GiveAwaySectionCopyWith(
           GiveAwaySection value, $Res Function(GiveAwaySection) then) =
@@ -38,6 +45,7 @@ abstract class $GiveAwaySectionCopyWith<$Res> {
   $Res call({@HiveField(hiveGiveAwaySectionValueFieldId) String value});
 }
 
+/// @nodoc
 class _$GiveAwaySectionCopyWithImpl<$Res>
     implements $GiveAwaySectionCopyWith<$Res> {
   _$GiveAwaySectionCopyWithImpl(this._value, this._then);
@@ -48,14 +56,18 @@ class _$GiveAwaySectionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object value = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      value: value == freezed ? _value.value : value as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$GiveAwaySectionCopyWith<$Res>
     implements $GiveAwaySectionCopyWith<$Res> {
   factory _$GiveAwaySectionCopyWith(
@@ -65,6 +77,7 @@ abstract class _$GiveAwaySectionCopyWith<$Res>
   $Res call({@HiveField(hiveGiveAwaySectionValueFieldId) String value});
 }
 
+/// @nodoc
 class __$GiveAwaySectionCopyWithImpl<$Res>
     extends _$GiveAwaySectionCopyWithImpl<$Res>
     implements _$GiveAwaySectionCopyWith<$Res> {
@@ -77,37 +90,31 @@ class __$GiveAwaySectionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object value = freezed,
+    Object? value = freezed,
   }) {
     return _then(_GiveAwaySection(
-      value: value == freezed ? _value.value : value as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 @HiveType(typeId: hiveGiveAwaySectionTypeId)
-class _$_GiveAwaySection
-    with DiagnosticableTreeMixin
-    implements _GiveAwaySection {
+class _$_GiveAwaySection implements _GiveAwaySection {
   const _$_GiveAwaySection(
-      {@required @HiveField(hiveGiveAwaySectionValueFieldId) this.value})
-      : assert(value != null);
+      {@HiveField(hiveGiveAwaySectionValueFieldId) required this.value});
 
   @override
   @HiveField(hiveGiveAwaySectionValueFieldId)
   final String value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'GiveAwaySection(value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'GiveAwaySection'))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override
@@ -122,6 +129,7 @@ class _$_GiveAwaySection
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
+  @JsonKey(ignore: true)
   @override
   _$GiveAwaySectionCopyWith<_GiveAwaySection> get copyWith =>
       __$GiveAwaySectionCopyWithImpl<_GiveAwaySection>(this, _$identity);
@@ -129,13 +137,14 @@ class _$_GiveAwaySection
 
 abstract class _GiveAwaySection implements GiveAwaySection {
   const factory _GiveAwaySection(
-      {@required
-      @HiveField(hiveGiveAwaySectionValueFieldId)
-          String value}) = _$_GiveAwaySection;
+          {@HiveField(hiveGiveAwaySectionValueFieldId) required String value}) =
+      _$_GiveAwaySection;
 
   @override
   @HiveField(hiveGiveAwaySectionValueFieldId)
-  String get value;
+  String get value => throw _privateConstructorUsedError;
   @override
-  _$GiveAwaySectionCopyWith<_GiveAwaySection> get copyWith;
+  @JsonKey(ignore: true)
+  _$GiveAwaySectionCopyWith<_GiveAwaySection> get copyWith =>
+      throw _privateConstructorUsedError;
 }

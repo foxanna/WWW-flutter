@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'tour_dto.dart';
 
@@ -8,38 +8,42 @@ part of 'tour_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 TourDto _$TourDtoFromJson(Map<String, dynamic> json) {
   return _TourDto.fromJson(json);
 }
 
+/// @nodoc
 class _$TourDtoTearOff {
   const _$TourDtoTearOff();
 
-// ignore: unused_element
   _TourDto call(
       {@JsonKey(name: 'Id')
-          String id,
+          String? id,
       @JsonKey(name: 'ParentId')
-          String parentId,
+          String? parentId,
       @JsonKey(name: 'Title')
-          String title,
+          String? title,
       @JsonKey(name: 'Number')
-          String number,
+          String? number,
       @JsonKey(name: 'QuestionsNum')
-          String questionsCount,
+          String? questionsCount,
       @JsonKey(name: 'tournamentTitle')
-          String tournamentTitle,
+          String? tournamentTitle,
       @JsonKey(name: 'Info')
-          String description,
+          String? description,
       @JsonKey(name: 'Editors')
-          String editors,
+          String? editors,
       @JsonKey(name: 'CreatedAt')
-          String createdAt,
+          String? createdAt,
       @JsonKey(name: 'PlayedAt')
-          String playedAt,
+          String? playedAt,
       @JsonKey(name: 'question')
       @QuestionsListConverter()
-          List<QuestionDto> questions}) {
+          List<QuestionDto>? questions}) {
     return _TourDto(
       id: id,
       parentId: parentId,
@@ -54,69 +58,77 @@ class _$TourDtoTearOff {
       questions: questions,
     );
   }
+
+  TourDto fromJson(Map<String, Object> json) {
+    return TourDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $TourDto = _$TourDtoTearOff();
 
+/// @nodoc
 mixin _$TourDto {
   @JsonKey(name: 'Id')
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'ParentId')
-  String get parentId;
+  String? get parentId => throw _privateConstructorUsedError;
   @JsonKey(name: 'Title')
-  String get title;
+  String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'Number')
-  String get number;
+  String? get number => throw _privateConstructorUsedError;
   @JsonKey(name: 'QuestionsNum')
-  String get questionsCount;
+  String? get questionsCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'tournamentTitle')
-  String get tournamentTitle;
+  String? get tournamentTitle => throw _privateConstructorUsedError;
   @JsonKey(name: 'Info')
-  String get description;
+  String? get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'Editors')
-  String get editors;
+  String? get editors => throw _privateConstructorUsedError;
   @JsonKey(name: 'CreatedAt')
-  String get createdAt;
+  String? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'PlayedAt')
-  String get playedAt;
+  String? get playedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'question')
   @QuestionsListConverter()
-  List<QuestionDto> get questions;
+  List<QuestionDto>? get questions => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $TourDtoCopyWith<TourDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TourDtoCopyWith<TourDto> get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TourDtoCopyWith<$Res> {
   factory $TourDtoCopyWith(TourDto value, $Res Function(TourDto) then) =
       _$TourDtoCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'Id')
-          String id,
+          String? id,
       @JsonKey(name: 'ParentId')
-          String parentId,
+          String? parentId,
       @JsonKey(name: 'Title')
-          String title,
+          String? title,
       @JsonKey(name: 'Number')
-          String number,
+          String? number,
       @JsonKey(name: 'QuestionsNum')
-          String questionsCount,
+          String? questionsCount,
       @JsonKey(name: 'tournamentTitle')
-          String tournamentTitle,
+          String? tournamentTitle,
       @JsonKey(name: 'Info')
-          String description,
+          String? description,
       @JsonKey(name: 'Editors')
-          String editors,
+          String? editors,
       @JsonKey(name: 'CreatedAt')
-          String createdAt,
+          String? createdAt,
       @JsonKey(name: 'PlayedAt')
-          String playedAt,
+          String? playedAt,
       @JsonKey(name: 'question')
       @QuestionsListConverter()
-          List<QuestionDto> questions});
+          List<QuestionDto>? questions});
 }
 
+/// @nodoc
 class _$TourDtoCopyWithImpl<$Res> implements $TourDtoCopyWith<$Res> {
   _$TourDtoCopyWithImpl(this._value, this._then);
 
@@ -126,71 +138,99 @@ class _$TourDtoCopyWithImpl<$Res> implements $TourDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object parentId = freezed,
-    Object title = freezed,
-    Object number = freezed,
-    Object questionsCount = freezed,
-    Object tournamentTitle = freezed,
-    Object description = freezed,
-    Object editors = freezed,
-    Object createdAt = freezed,
-    Object playedAt = freezed,
-    Object questions = freezed,
+    Object? id = freezed,
+    Object? parentId = freezed,
+    Object? title = freezed,
+    Object? number = freezed,
+    Object? questionsCount = freezed,
+    Object? tournamentTitle = freezed,
+    Object? description = freezed,
+    Object? editors = freezed,
+    Object? createdAt = freezed,
+    Object? playedAt = freezed,
+    Object? questions = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      parentId: parentId == freezed ? _value.parentId : parentId as String,
-      title: title == freezed ? _value.title : title as String,
-      number: number == freezed ? _value.number : number as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentId: parentId == freezed
+          ? _value.parentId
+          : parentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String?,
       questionsCount: questionsCount == freezed
           ? _value.questionsCount
-          : questionsCount as String,
+          : questionsCount // ignore: cast_nullable_to_non_nullable
+              as String?,
       tournamentTitle: tournamentTitle == freezed
           ? _value.tournamentTitle
-          : tournamentTitle as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      editors: editors == freezed ? _value.editors : editors as String,
-      createdAt: createdAt == freezed ? _value.createdAt : createdAt as String,
-      playedAt: playedAt == freezed ? _value.playedAt : playedAt as String,
+          : tournamentTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      editors: editors == freezed
+          ? _value.editors
+          : editors // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      playedAt: playedAt == freezed
+          ? _value.playedAt
+          : playedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
       questions: questions == freezed
           ? _value.questions
-          : questions as List<QuestionDto>,
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<QuestionDto>?,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$TourDtoCopyWith<$Res> implements $TourDtoCopyWith<$Res> {
   factory _$TourDtoCopyWith(_TourDto value, $Res Function(_TourDto) then) =
       __$TourDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Id')
-          String id,
+          String? id,
       @JsonKey(name: 'ParentId')
-          String parentId,
+          String? parentId,
       @JsonKey(name: 'Title')
-          String title,
+          String? title,
       @JsonKey(name: 'Number')
-          String number,
+          String? number,
       @JsonKey(name: 'QuestionsNum')
-          String questionsCount,
+          String? questionsCount,
       @JsonKey(name: 'tournamentTitle')
-          String tournamentTitle,
+          String? tournamentTitle,
       @JsonKey(name: 'Info')
-          String description,
+          String? description,
       @JsonKey(name: 'Editors')
-          String editors,
+          String? editors,
       @JsonKey(name: 'CreatedAt')
-          String createdAt,
+          String? createdAt,
       @JsonKey(name: 'PlayedAt')
-          String playedAt,
+          String? playedAt,
       @JsonKey(name: 'question')
       @QuestionsListConverter()
-          List<QuestionDto> questions});
+          List<QuestionDto>? questions});
 }
 
+/// @nodoc
 class __$TourDtoCopyWithImpl<$Res> extends _$TourDtoCopyWithImpl<$Res>
     implements _$TourDtoCopyWith<$Res> {
   __$TourDtoCopyWithImpl(_TourDto _value, $Res Function(_TourDto) _then)
@@ -201,43 +241,70 @@ class __$TourDtoCopyWithImpl<$Res> extends _$TourDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object parentId = freezed,
-    Object title = freezed,
-    Object number = freezed,
-    Object questionsCount = freezed,
-    Object tournamentTitle = freezed,
-    Object description = freezed,
-    Object editors = freezed,
-    Object createdAt = freezed,
-    Object playedAt = freezed,
-    Object questions = freezed,
+    Object? id = freezed,
+    Object? parentId = freezed,
+    Object? title = freezed,
+    Object? number = freezed,
+    Object? questionsCount = freezed,
+    Object? tournamentTitle = freezed,
+    Object? description = freezed,
+    Object? editors = freezed,
+    Object? createdAt = freezed,
+    Object? playedAt = freezed,
+    Object? questions = freezed,
   }) {
     return _then(_TourDto(
-      id: id == freezed ? _value.id : id as String,
-      parentId: parentId == freezed ? _value.parentId : parentId as String,
-      title: title == freezed ? _value.title : title as String,
-      number: number == freezed ? _value.number : number as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentId: parentId == freezed
+          ? _value.parentId
+          : parentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String?,
       questionsCount: questionsCount == freezed
           ? _value.questionsCount
-          : questionsCount as String,
+          : questionsCount // ignore: cast_nullable_to_non_nullable
+              as String?,
       tournamentTitle: tournamentTitle == freezed
           ? _value.tournamentTitle
-          : tournamentTitle as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      editors: editors == freezed ? _value.editors : editors as String,
-      createdAt: createdAt == freezed ? _value.createdAt : createdAt as String,
-      playedAt: playedAt == freezed ? _value.playedAt : playedAt as String,
+          : tournamentTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      editors: editors == freezed
+          ? _value.editors
+          : editors // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      playedAt: playedAt == freezed
+          ? _value.playedAt
+          : playedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
       questions: questions == freezed
           ? _value.questions
-          : questions as List<QuestionDto>,
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<QuestionDto>?,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
-class _$_TourDto with DiagnosticableTreeMixin implements _TourDto {
+class _$_TourDto implements _TourDto {
   const _$_TourDto(
       {@JsonKey(name: 'Id') this.id,
       @JsonKey(name: 'ParentId') this.parentId,
@@ -256,60 +323,42 @@ class _$_TourDto with DiagnosticableTreeMixin implements _TourDto {
 
   @override
   @JsonKey(name: 'Id')
-  final String id;
+  final String? id;
   @override
   @JsonKey(name: 'ParentId')
-  final String parentId;
+  final String? parentId;
   @override
   @JsonKey(name: 'Title')
-  final String title;
+  final String? title;
   @override
   @JsonKey(name: 'Number')
-  final String number;
+  final String? number;
   @override
   @JsonKey(name: 'QuestionsNum')
-  final String questionsCount;
+  final String? questionsCount;
   @override
   @JsonKey(name: 'tournamentTitle')
-  final String tournamentTitle;
+  final String? tournamentTitle;
   @override
   @JsonKey(name: 'Info')
-  final String description;
+  final String? description;
   @override
   @JsonKey(name: 'Editors')
-  final String editors;
+  final String? editors;
   @override
   @JsonKey(name: 'CreatedAt')
-  final String createdAt;
+  final String? createdAt;
   @override
   @JsonKey(name: 'PlayedAt')
-  final String playedAt;
+  final String? playedAt;
   @override
   @JsonKey(name: 'question')
   @QuestionsListConverter()
-  final List<QuestionDto> questions;
+  final List<QuestionDto>? questions;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TourDto(id: $id, parentId: $parentId, title: $title, number: $number, questionsCount: $questionsCount, tournamentTitle: $tournamentTitle, description: $description, editors: $editors, createdAt: $createdAt, playedAt: $playedAt, questions: $questions)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TourDto'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('parentId', parentId))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('number', number))
-      ..add(DiagnosticsProperty('questionsCount', questionsCount))
-      ..add(DiagnosticsProperty('tournamentTitle', tournamentTitle))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('editors', editors))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('playedAt', playedAt))
-      ..add(DiagnosticsProperty('questions', questions));
   }
 
   @override
@@ -363,6 +412,7 @@ class _$_TourDto with DiagnosticableTreeMixin implements _TourDto {
       const DeepCollectionEquality().hash(playedAt) ^
       const DeepCollectionEquality().hash(questions);
 
+  @JsonKey(ignore: true)
   @override
   _$TourDtoCopyWith<_TourDto> get copyWith =>
       __$TourDtoCopyWithImpl<_TourDto>(this, _$identity);
@@ -376,65 +426,67 @@ class _$_TourDto with DiagnosticableTreeMixin implements _TourDto {
 abstract class _TourDto implements TourDto {
   const factory _TourDto(
       {@JsonKey(name: 'Id')
-          String id,
+          String? id,
       @JsonKey(name: 'ParentId')
-          String parentId,
+          String? parentId,
       @JsonKey(name: 'Title')
-          String title,
+          String? title,
       @JsonKey(name: 'Number')
-          String number,
+          String? number,
       @JsonKey(name: 'QuestionsNum')
-          String questionsCount,
+          String? questionsCount,
       @JsonKey(name: 'tournamentTitle')
-          String tournamentTitle,
+          String? tournamentTitle,
       @JsonKey(name: 'Info')
-          String description,
+          String? description,
       @JsonKey(name: 'Editors')
-          String editors,
+          String? editors,
       @JsonKey(name: 'CreatedAt')
-          String createdAt,
+          String? createdAt,
       @JsonKey(name: 'PlayedAt')
-          String playedAt,
+          String? playedAt,
       @JsonKey(name: 'question')
       @QuestionsListConverter()
-          List<QuestionDto> questions}) = _$_TourDto;
+          List<QuestionDto>? questions}) = _$_TourDto;
 
   factory _TourDto.fromJson(Map<String, dynamic> json) = _$_TourDto.fromJson;
 
   @override
   @JsonKey(name: 'Id')
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'ParentId')
-  String get parentId;
+  String? get parentId => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Title')
-  String get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Number')
-  String get number;
+  String? get number => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'QuestionsNum')
-  String get questionsCount;
+  String? get questionsCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'tournamentTitle')
-  String get tournamentTitle;
+  String? get tournamentTitle => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Info')
-  String get description;
+  String? get description => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Editors')
-  String get editors;
+  String? get editors => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'CreatedAt')
-  String get createdAt;
+  String? get createdAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'PlayedAt')
-  String get playedAt;
+  String? get playedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'question')
   @QuestionsListConverter()
-  List<QuestionDto> get questions;
+  List<QuestionDto>? get questions => throw _privateConstructorUsedError;
   @override
-  _$TourDtoCopyWith<_TourDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$TourDtoCopyWith<_TourDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

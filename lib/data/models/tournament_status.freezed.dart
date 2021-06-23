@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'tournament_status.dart';
 
@@ -9,10 +9,13 @@ part of 'tournament_status.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$TournamentStatusTearOff {
   const _$TournamentStatusTearOff();
 
-// ignore: unused_element
   _TournamentStatus call(
       {@HiveField(hiveTournamentStatusIsNewFieldId)
           bool isNew = false,
@@ -25,18 +28,22 @@ class _$TournamentStatusTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $TournamentStatus = _$TournamentStatusTearOff();
 
+/// @nodoc
 mixin _$TournamentStatus {
   @HiveField(hiveTournamentStatusIsNewFieldId)
-  bool get isNew;
+  bool get isNew => throw _privateConstructorUsedError;
   @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
-  bool get isBookmarked;
+  bool get isBookmarked => throw _privateConstructorUsedError;
 
-  $TournamentStatusCopyWith<TournamentStatus> get copyWith;
+  @JsonKey(ignore: true)
+  $TournamentStatusCopyWith<TournamentStatus> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TournamentStatusCopyWith<$Res> {
   factory $TournamentStatusCopyWith(
           TournamentStatus value, $Res Function(TournamentStatus) then) =
@@ -46,6 +53,7 @@ abstract class $TournamentStatusCopyWith<$Res> {
       @HiveField(hiveTournamentStatusIsBookmarkedFieldId) bool isBookmarked});
 }
 
+/// @nodoc
 class _$TournamentStatusCopyWithImpl<$Res>
     implements $TournamentStatusCopyWith<$Res> {
   _$TournamentStatusCopyWithImpl(this._value, this._then);
@@ -56,17 +64,23 @@ class _$TournamentStatusCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isNew = freezed,
-    Object isBookmarked = freezed,
+    Object? isNew = freezed,
+    Object? isBookmarked = freezed,
   }) {
     return _then(_value.copyWith(
-      isNew: isNew == freezed ? _value.isNew : isNew as bool,
-      isBookmarked:
-          isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
+      isNew: isNew == freezed
+          ? _value.isNew
+          : isNew // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isBookmarked: isBookmarked == freezed
+          ? _value.isBookmarked
+          : isBookmarked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$TournamentStatusCopyWith<$Res>
     implements $TournamentStatusCopyWith<$Res> {
   factory _$TournamentStatusCopyWith(
@@ -78,6 +92,7 @@ abstract class _$TournamentStatusCopyWith<$Res>
       @HiveField(hiveTournamentStatusIsBookmarkedFieldId) bool isBookmarked});
 }
 
+/// @nodoc
 class __$TournamentStatusCopyWithImpl<$Res>
     extends _$TournamentStatusCopyWithImpl<$Res>
     implements _$TournamentStatusCopyWith<$Res> {
@@ -90,28 +105,31 @@ class __$TournamentStatusCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isNew = freezed,
-    Object isBookmarked = freezed,
+    Object? isNew = freezed,
+    Object? isBookmarked = freezed,
   }) {
     return _then(_TournamentStatus(
-      isNew: isNew == freezed ? _value.isNew : isNew as bool,
-      isBookmarked:
-          isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
+      isNew: isNew == freezed
+          ? _value.isNew
+          : isNew // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isBookmarked: isBookmarked == freezed
+          ? _value.isBookmarked
+          : isBookmarked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
+
 @HiveType(typeId: hiveTournamentStatusTypeId)
-class _$_TournamentStatus
-    with DiagnosticableTreeMixin
-    implements _TournamentStatus {
+class _$_TournamentStatus implements _TournamentStatus {
   const _$_TournamentStatus(
       {@HiveField(hiveTournamentStatusIsNewFieldId)
           this.isNew = false,
       @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
-          this.isBookmarked = false})
-      : assert(isNew != null),
-        assert(isBookmarked != null);
+          this.isBookmarked = false});
 
   @JsonKey(defaultValue: false)
   @override
@@ -123,17 +141,8 @@ class _$_TournamentStatus
   final bool isBookmarked;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TournamentStatus(isNew: $isNew, isBookmarked: $isBookmarked)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TournamentStatus'))
-      ..add(DiagnosticsProperty('isNew', isNew))
-      ..add(DiagnosticsProperty('isBookmarked', isBookmarked));
   }
 
   @override
@@ -153,6 +162,7 @@ class _$_TournamentStatus
       const DeepCollectionEquality().hash(isNew) ^
       const DeepCollectionEquality().hash(isBookmarked);
 
+  @JsonKey(ignore: true)
   @override
   _$TournamentStatusCopyWith<_TournamentStatus> get copyWith =>
       __$TournamentStatusCopyWithImpl<_TournamentStatus>(this, _$identity);
@@ -167,10 +177,12 @@ abstract class _TournamentStatus implements TournamentStatus {
 
   @override
   @HiveField(hiveTournamentStatusIsNewFieldId)
-  bool get isNew;
+  bool get isNew => throw _privateConstructorUsedError;
   @override
   @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
-  bool get isBookmarked;
+  bool get isBookmarked => throw _privateConstructorUsedError;
   @override
-  _$TournamentStatusCopyWith<_TournamentStatus> get copyWith;
+  @JsonKey(ignore: true)
+  _$TournamentStatusCopyWith<_TournamentStatus> get copyWith =>
+      throw _privateConstructorUsedError;
 }

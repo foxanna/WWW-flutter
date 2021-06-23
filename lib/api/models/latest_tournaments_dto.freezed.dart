@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'latest_tournaments_dto.dart';
 
@@ -8,40 +8,53 @@ part of 'latest_tournaments_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 LatestTournamentsDto _$LatestTournamentsDtoFromJson(Map<String, dynamic> json) {
   return _LatestTournamentsDto.fromJson(json);
 }
 
+/// @nodoc
 class _$LatestTournamentsDtoTearOff {
   const _$LatestTournamentsDtoTearOff();
 
-// ignore: unused_element
   _LatestTournamentsDto call(
-      {@JsonKey(name: 'latest') List<TournamentDto> tournaments}) {
+      {@JsonKey(name: 'latest') List<TournamentDto>? tournaments}) {
     return _LatestTournamentsDto(
       tournaments: tournaments,
     );
   }
+
+  LatestTournamentsDto fromJson(Map<String, Object> json) {
+    return LatestTournamentsDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $LatestTournamentsDto = _$LatestTournamentsDtoTearOff();
 
+/// @nodoc
 mixin _$LatestTournamentsDto {
   @JsonKey(name: 'latest')
-  List<TournamentDto> get tournaments;
+  List<TournamentDto>? get tournaments => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $LatestTournamentsDtoCopyWith<LatestTournamentsDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LatestTournamentsDtoCopyWith<LatestTournamentsDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $LatestTournamentsDtoCopyWith<$Res> {
   factory $LatestTournamentsDtoCopyWith(LatestTournamentsDto value,
           $Res Function(LatestTournamentsDto) then) =
       _$LatestTournamentsDtoCopyWithImpl<$Res>;
-  $Res call({@JsonKey(name: 'latest') List<TournamentDto> tournaments});
+  $Res call({@JsonKey(name: 'latest') List<TournamentDto>? tournaments});
 }
 
+/// @nodoc
 class _$LatestTournamentsDtoCopyWithImpl<$Res>
     implements $LatestTournamentsDtoCopyWith<$Res> {
   _$LatestTournamentsDtoCopyWithImpl(this._value, this._then);
@@ -52,25 +65,28 @@ class _$LatestTournamentsDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournaments = freezed,
+    Object? tournaments = freezed,
   }) {
     return _then(_value.copyWith(
       tournaments: tournaments == freezed
           ? _value.tournaments
-          : tournaments as List<TournamentDto>,
+          : tournaments // ignore: cast_nullable_to_non_nullable
+              as List<TournamentDto>?,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$LatestTournamentsDtoCopyWith<$Res>
     implements $LatestTournamentsDtoCopyWith<$Res> {
   factory _$LatestTournamentsDtoCopyWith(_LatestTournamentsDto value,
           $Res Function(_LatestTournamentsDto) then) =
       __$LatestTournamentsDtoCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(name: 'latest') List<TournamentDto> tournaments});
+  $Res call({@JsonKey(name: 'latest') List<TournamentDto>? tournaments});
 }
 
+/// @nodoc
 class __$LatestTournamentsDtoCopyWithImpl<$Res>
     extends _$LatestTournamentsDtoCopyWithImpl<$Res>
     implements _$LatestTournamentsDtoCopyWith<$Res> {
@@ -83,20 +99,20 @@ class __$LatestTournamentsDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournaments = freezed,
+    Object? tournaments = freezed,
   }) {
     return _then(_LatestTournamentsDto(
       tournaments: tournaments == freezed
           ? _value.tournaments
-          : tournaments as List<TournamentDto>,
+          : tournaments // ignore: cast_nullable_to_non_nullable
+              as List<TournamentDto>?,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
-class _$_LatestTournamentsDto
-    with DiagnosticableTreeMixin
-    implements _LatestTournamentsDto {
+class _$_LatestTournamentsDto implements _LatestTournamentsDto {
   const _$_LatestTournamentsDto({@JsonKey(name: 'latest') this.tournaments});
 
   factory _$_LatestTournamentsDto.fromJson(Map<String, dynamic> json) =>
@@ -104,19 +120,11 @@ class _$_LatestTournamentsDto
 
   @override
   @JsonKey(name: 'latest')
-  final List<TournamentDto> tournaments;
+  final List<TournamentDto>? tournaments;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'LatestTournamentsDto(tournaments: $tournaments)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'LatestTournamentsDto'))
-      ..add(DiagnosticsProperty('tournaments', tournaments));
   }
 
   @override
@@ -132,6 +140,7 @@ class _$_LatestTournamentsDto
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournaments);
 
+  @JsonKey(ignore: true)
   @override
   _$LatestTournamentsDtoCopyWith<_LatestTournamentsDto> get copyWith =>
       __$LatestTournamentsDtoCopyWithImpl<_LatestTournamentsDto>(
@@ -145,7 +154,7 @@ class _$_LatestTournamentsDto
 
 abstract class _LatestTournamentsDto implements LatestTournamentsDto {
   const factory _LatestTournamentsDto(
-          {@JsonKey(name: 'latest') List<TournamentDto> tournaments}) =
+          {@JsonKey(name: 'latest') List<TournamentDto>? tournaments}) =
       _$_LatestTournamentsDto;
 
   factory _LatestTournamentsDto.fromJson(Map<String, dynamic> json) =
@@ -153,7 +162,9 @@ abstract class _LatestTournamentsDto implements LatestTournamentsDto {
 
   @override
   @JsonKey(name: 'latest')
-  List<TournamentDto> get tournaments;
+  List<TournamentDto>? get tournaments => throw _privateConstructorUsedError;
   @override
-  _$LatestTournamentsDtoCopyWith<_LatestTournamentsDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$LatestTournamentsDtoCopyWith<_LatestTournamentsDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

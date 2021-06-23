@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:what_when_where/data/hive/constants.dart';
@@ -8,17 +7,14 @@ part 'question_info.freezed.dart';
 part 'question_info.g.dart';
 
 @freezed
-abstract class QuestionInfo with _$QuestionInfo {
+class QuestionInfo with _$QuestionInfo {
   @HiveType(typeId: hiveQuestionInfoTypeId)
   const factory QuestionInfo({
-    @HiveField(hiveQuestionInfoIdFieldId) String id,
-    @HiveField(hiveQuestionInfoNumberFieldId) String number,
-    @HiveField(hiveQuestionInfoUrlFieldId) String url,
+    @HiveField(hiveQuestionInfoIdFieldId) String? id,
+    @HiveField(hiveQuestionInfoNumberFieldId) String? number,
+    @HiveField(hiveQuestionInfoUrlFieldId) String? url,
     @HiveField(hiveQuestionInfoTourInfoFieldId)
     @Default(TourInfo())
         TourInfo tourInfo,
   }) = _QuestionInfo;
-
-  static TypeAdapter<QuestionInfo> createHiveAdapter() =>
-      _$_QuestionInfoAdapter();
 }

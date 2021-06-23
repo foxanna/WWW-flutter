@@ -6,15 +6,15 @@ part of 'section_text.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class _$_TextSectionAdapter extends TypeAdapter<_$_TextSection> {
+class TextSectionAdapter extends TypeAdapter<_$_TextSection> {
   @override
-  final typeId = 11;
+  final int typeId = 11;
 
   @override
   _$_TextSection read(BinaryReader reader) {
-    var numOfFields = reader.readByte();
-    var fields = <int, dynamic>{
-      for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return _$_TextSection(
       value: fields[0] as String,
@@ -35,7 +35,7 @@ class _$_TextSectionAdapter extends TypeAdapter<_$_TextSection> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is _$_TextSectionAdapter &&
+      other is TextSectionAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
