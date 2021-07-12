@@ -1,22 +1,31 @@
 part of http_client;
 
-class LoggerInterceptor extends InterceptorsWrapper {
-  LoggerInterceptor(bool logResponseData)
-      : super(
-          onRequest: (options, _) => _logOptions(options),
-          onResponse: (response, _) => _logResponse(response, logResponseData),
-          onError: (DioError error, _) => _logError(error),
-        );
+class LoggerInterceptor extends Interceptor {
+  LoggerInterceptor(this.logResponseData);
 
-  static void _logOptions(RequestOptions options) =>
-      log('${options.method} ${options.baseUrl}${options.path}');
+  final bool logResponseData;
 
-  static void _logResponse(Response<dynamic> response, bool logResponseData) {
+  @override
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    log('${options.method} ${options.baseUrl}${options.path}');
+
+    super.onRequest(options, handler);
+  }
+
+  @override
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
     log('${response.requestOptions.method} ${response.statusCode} ${response.requestOptions.baseUrl}${response.requestOptions.path}');
     if (logResponseData) {
       log(response.data);
     }
+
+    super.onResponse(response, handler);
   }
 
-  static void _logError(DioError error) => log(error.message);
+  @override
+  void onError(DioError error, ErrorInterceptorHandler handler) {
+    log(error.message);
+
+    super.onError(error, handler);
+  }
 }

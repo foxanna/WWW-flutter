@@ -1,6 +1,7 @@
 library http_client;
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/common/network_exception.dart';
 import 'package:what_when_where/constants.dart';
@@ -34,9 +35,7 @@ class HttpClient implements IHttpClient {
     } on Exception catch (e, s) {
       log('$e: $s');
       rethrow;
-    }
-    // ignore: avoid_catching_errors
-    on Error catch (e, s) {
+    } on Error catch (e, s) {
       log('$e: $s');
       throw Exception(e.toString());
     }
