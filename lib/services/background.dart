@@ -11,7 +11,7 @@ abstract class IBackgroundRunnerService {
 
 @LazySingleton(as: IBackgroundRunnerService)
 class BackgroundRunnerService implements IBackgroundRunnerService {
-  IsolateRunner _runner;
+  late final IsolateRunner _runner;
 
   @override
   Future<void> init() async {

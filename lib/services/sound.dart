@@ -18,7 +18,7 @@ class SoundService implements ISoundService {
 
   final _audioPlugin = AudioPlayer();
 
-  String _mp3Uri;
+  late String _mp3Uri;
 
   @override
   Future<void> init() async {
