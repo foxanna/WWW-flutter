@@ -4,7 +4,7 @@ import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/utils/style_configurator.dart';
 
 class StyleConfiguration {
-  factory StyleConfiguration({@required BuildContext context}) =>
+  factory StyleConfiguration({required BuildContext context}) =>
       StyleConfiguration._(
         tournamentDetailsStyleConfiguration:
             TournamentDetailsStyleConfiguration(context: context),
@@ -28,17 +28,17 @@ class StyleConfiguration {
       );
 
   const StyleConfiguration._({
-    this.tournamentDetailsStyleConfiguration,
-    this.tournamentsGridStyleConfiguration,
-    this.latestTournamentsStyleConfiguration,
-    this.bottomSheetStyleConfiguration,
-    this.alertDialogStyleConfiguration,
-    this.questionStyleConfiguration,
-    this.tournamentsTreeStyleConfiguration,
-    this.aboutStyleConfiguration,
-    this.imageStyleConfiguration,
-    this.searchStyleConfiguration,
-    this.bookmarksStyleConfiguration,
+    required this.tournamentDetailsStyleConfiguration,
+    required this.tournamentsGridStyleConfiguration,
+    required this.latestTournamentsStyleConfiguration,
+    required this.bottomSheetStyleConfiguration,
+    required this.alertDialogStyleConfiguration,
+    required this.questionStyleConfiguration,
+    required this.tournamentsTreeStyleConfiguration,
+    required this.aboutStyleConfiguration,
+    required this.imageStyleConfiguration,
+    required this.searchStyleConfiguration,
+    required this.bookmarksStyleConfiguration,
   });
 
   final TournamentDetailsStyleConfiguration tournamentDetailsStyleConfiguration;
@@ -57,12 +57,12 @@ class StyleConfiguration {
     final styleConfigurationInheritedWidget =
         context.dependOnInheritedWidgetOfExactType<
             StyleConfigurationInheritedWidget>();
-    return styleConfigurationInheritedWidget.styleConfiguration;
+    return styleConfigurationInheritedWidget!.styleConfiguration;
   }
 }
 
 class AboutStyleConfiguration {
-  factory AboutStyleConfiguration({@required BuildContext context}) {
+  factory AboutStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
 
     return AboutStyleConfiguration._(
@@ -72,22 +72,22 @@ class AboutStyleConfiguration {
       appBarElevation: 0.0,
       contentPadding: const EdgeInsets.all(40.0),
       accentColor: theme.accentColor,
-      titleStyle: theme.textTheme.headline5.copyWith(
+      titleStyle: theme.textTheme.headline5!.copyWith(
         color: theme.accentColor,
       ),
-      textStyle: theme.textTheme.caption,
+      textStyle: theme.textTheme.caption!,
     );
   }
 
   const AboutStyleConfiguration._({
-    this.scaffoldBackground,
-    this.appBarBackgroundColor,
-    this.appBarIconTheme,
-    this.appBarElevation,
-    this.contentPadding,
-    this.accentColor,
-    this.titleStyle,
-    this.textStyle,
+    required this.scaffoldBackground,
+    required this.appBarBackgroundColor,
+    required this.appBarIconTheme,
+    required this.appBarElevation,
+    required this.contentPadding,
+    required this.accentColor,
+    required this.titleStyle,
+    required this.textStyle,
   });
 
   final Color scaffoldBackground;
@@ -101,8 +101,7 @@ class AboutStyleConfiguration {
 }
 
 class TournamentDetailsStyleConfiguration {
-  factory TournamentDetailsStyleConfiguration(
-      {@required BuildContext context}) {
+  factory TournamentDetailsStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
     final padding = MediaQuery.of(context).padding;
     const radiusValue = Dimensions.largeComponentsCornerRadiusValue;
@@ -118,8 +117,8 @@ class TournamentDetailsStyleConfiguration {
             .toColor());
 
     return TournamentDetailsStyleConfiguration._(
-      tournamentTitleTextStyle: theme.textTheme.headline5,
-      tourTitleTextStyle: theme.accentTextTheme.headline6,
+      tournamentTitleTextStyle: theme.textTheme.headline5!,
+      tourTitleTextStyle: theme.accentTextTheme.headline6!,
       actionBarBackgroundColor: theme.cardColor,
       actionBarIconTheme: theme.iconTheme,
       scaffoldBackground: firstTourColor,
@@ -129,8 +128,8 @@ class TournamentDetailsStyleConfiguration {
         right: kMinInteractiveDimension,
       ),
       tourContentPadding: EdgeInsets.only(
-        bottom: radiusValue * 1.5 + theme.cardTheme.elevation * 2,
-        top: radiusValue - theme.cardTheme.elevation,
+        bottom: radiusValue * 1.5 + theme.cardTheme.elevation! * 2,
+        top: radiusValue - theme.cardTheme.elevation!,
         left: kMinInteractiveDimension + padding.left,
         right: kMinInteractiveDimension + padding.right,
       ),
@@ -140,21 +139,21 @@ class TournamentDetailsStyleConfiguration {
         ),
       ),
       cornerRadius: radius,
-      elevation: theme.cardTheme.elevation,
+      elevation: theme.cardTheme.elevation!,
       tourColorGenerator: (index) {
         const patternLength = (toursColorsCount - 1) * 2;
         final multiplier = (index ~/ (toursColorsCount - 1)).isEven
             ? index % patternLength
             : (patternLength - index % patternLength);
-        final color = tourColorTween.lerp(multiplier / (toursColorsCount - 1));
+        final color = tourColorTween.lerp(multiplier / (toursColorsCount - 1))!;
         return color;
       },
       questionsCardSize: const Size(150, 200),
-      questionTextStyle: theme.textTheme.subtitle1,
+      questionTextStyle: theme.textTheme.subtitle1!,
       stubToursCount: 3,
       stubQuestionsCount: 12,
       toursListPadding: EdgeInsets.only(
-        top: theme.cardTheme.elevation * 2,
+        top: theme.cardTheme.elevation! * 2,
         bottom: Dimensions.defaultPadding.bottom * 2 + padding.bottom,
       ),
       tourQuestionsSpacing: 16.0,
@@ -164,25 +163,25 @@ class TournamentDetailsStyleConfiguration {
   }
 
   const TournamentDetailsStyleConfiguration._({
-    this.tourQuestionsSpacing,
-    this.stubQuestionsCount,
-    this.toursListPadding,
-    this.stubToursCount,
-    this.questionTextStyle,
-    this.questionsCardSize,
-    this.tourTitleTextStyle,
-    this.tourContentPadding,
-    this.tourColorGenerator,
-    this.elevation,
-    this.cornerRadius,
-    this.shape,
-    this.tournamentTitlePadding,
-    this.tournamentTitleTextStyle,
-    this.actionBarBackgroundColor,
-    this.actionBarIconTheme,
-    this.scaffoldBackground,
-    this.bookmarkedMarkerColor,
-    this.bookmarkedMarkerWidth,
+    required this.tourQuestionsSpacing,
+    required this.stubQuestionsCount,
+    required this.toursListPadding,
+    required this.stubToursCount,
+    required this.questionTextStyle,
+    required this.questionsCardSize,
+    required this.tourTitleTextStyle,
+    required this.tourContentPadding,
+    required this.tourColorGenerator,
+    required this.elevation,
+    required this.cornerRadius,
+    required this.shape,
+    required this.tournamentTitlePadding,
+    required this.tournamentTitleTextStyle,
+    required this.actionBarBackgroundColor,
+    required this.actionBarIconTheme,
+    required this.scaffoldBackground,
+    required this.bookmarkedMarkerColor,
+    required this.bookmarkedMarkerWidth,
   });
 
   final Color scaffoldBackground;
@@ -207,13 +206,13 @@ class TournamentDetailsStyleConfiguration {
 }
 
 class TournamentsGridStyleConfiguration {
-  factory TournamentsGridStyleConfiguration({@required BuildContext context}) {
+  factory TournamentsGridStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
     final padding = MediaQuery.of(context).padding;
 
     return TournamentsGridStyleConfiguration._(
-      gridTileTitleTextStyle: theme.textTheme.subtitle1,
-      gridTileSecondLineTextStyle: theme.textTheme.caption,
+      gridTileTitleTextStyle: theme.textTheme.subtitle1!,
+      gridTileSecondLineTextStyle: theme.textTheme.caption!,
       tileContentPadding: Dimensions.defaultPadding * 2,
       gridSpacing: Dimensions.defaultSpacing * 2,
       columnsCount: 2,
@@ -228,17 +227,17 @@ class TournamentsGridStyleConfiguration {
   }
 
   const TournamentsGridStyleConfiguration._({
-    this.gridPadding,
-    this.tileContentSpacing,
-    this.columnsCount,
-    this.gridSpacing,
-    this.tileContentPadding,
-    this.gridTileTitleTextStyle,
-    this.gridTileSecondLineTextStyle,
-    this.newTournamentIndicatorColor,
-    this.newTournamentIndicatorRadius,
-    this.bookmarkedTournamentIndicatorColor,
-    this.bookmarkedTournamentIconSize,
+    required this.gridPadding,
+    required this.tileContentSpacing,
+    required this.columnsCount,
+    required this.gridSpacing,
+    required this.tileContentPadding,
+    required this.gridTileTitleTextStyle,
+    required this.gridTileSecondLineTextStyle,
+    required this.newTournamentIndicatorColor,
+    required this.newTournamentIndicatorRadius,
+    required this.bookmarkedTournamentIndicatorColor,
+    required this.bookmarkedTournamentIconSize,
   });
 
   final TextStyle gridTileTitleTextStyle;
@@ -255,34 +254,33 @@ class TournamentsGridStyleConfiguration {
 }
 
 class LatestTournamentsStyleConfiguration {
-  factory LatestTournamentsStyleConfiguration(
-      {@required BuildContext context}) {
+  factory LatestTournamentsStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
 
     return LatestTournamentsStyleConfiguration._(
       scaffoldBackground: theme.primaryColor,
-      errorColor: theme.primaryIconTheme.color,
+      errorColor: theme.primaryIconTheme.color!,
       appBarHeight: 200.0,
       appBarLogoHeight: 80.0,
       appBarBottomHeight: kToolbarHeight,
       appBarIconTheme: theme.primaryIconTheme,
       stubTournamentsCount: 20,
-      bookmarksInvitationTextStyle: theme.textTheme.caption.copyWith(
-        color: theme.primaryIconTheme.color.withOpacity(0.54),
+      bookmarksInvitationTextStyle: theme.textTheme.caption!.copyWith(
+        color: theme.primaryIconTheme.color!.withOpacity(0.54),
         fontStyle: FontStyle.italic,
       ),
     );
   }
 
   const LatestTournamentsStyleConfiguration._({
-    this.appBarIconTheme,
-    this.appBarHeight,
-    this.appBarLogoHeight,
-    this.appBarBottomHeight,
-    this.scaffoldBackground,
-    this.errorColor,
-    this.stubTournamentsCount,
-    this.bookmarksInvitationTextStyle,
+    required this.appBarIconTheme,
+    required this.appBarHeight,
+    required this.appBarLogoHeight,
+    required this.appBarBottomHeight,
+    required this.scaffoldBackground,
+    required this.errorColor,
+    required this.stubTournamentsCount,
+    required this.bookmarksInvitationTextStyle,
   });
 
   final Color scaffoldBackground;
@@ -296,7 +294,7 @@ class LatestTournamentsStyleConfiguration {
 }
 
 class BottomSheetStyleConfiguration {
-  factory BottomSheetStyleConfiguration({@required BuildContext context}) {
+  factory BottomSheetStyleConfiguration({required BuildContext context}) {
     final padding = MediaQuery.of(context).padding;
 
     return BottomSheetStyleConfiguration._(
@@ -310,14 +308,14 @@ class BottomSheetStyleConfiguration {
   }
 
   const BottomSheetStyleConfiguration._({
-    this.contentPadding,
+    required this.contentPadding,
   });
 
   final EdgeInsets contentPadding;
 }
 
 class AlertDialogStyleConfiguration {
-  factory AlertDialogStyleConfiguration({@required BuildContext context}) {
+  factory AlertDialogStyleConfiguration({required BuildContext context}) {
     // ignore: unused_local_variable
     final theme = Theme.of(context);
 
@@ -330,30 +328,30 @@ class AlertDialogStyleConfiguration {
   }
 
   const AlertDialogStyleConfiguration._({
-    this.contentPadding,
+    required this.contentPadding,
   });
 
   final EdgeInsets contentPadding;
 }
 
 class QuestionStyleConfiguration {
-  factory QuestionStyleConfiguration({@required BuildContext context}) {
+  factory QuestionStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
 
-    final questionTextStyle = theme.textTheme.headline5.copyWith(
-      fontSize: theme.textTheme.headline6.fontSize - 2,
+    final questionTextStyle = theme.textTheme.headline5!.copyWith(
+      fontSize: theme.textTheme.headline6!.fontSize! - 2,
     );
 
     final questionTextSectionsThemeData = QuestionTextSectionsThemeData(
       textStyle: questionTextStyle,
       speakerNotesTextStyle: questionTextStyle.copyWith(
         fontStyle: FontStyle.italic,
-        color: theme.textTheme.caption.color,
+        color: theme.textTheme.caption!.color,
       ),
       giveAwayTextStyle: questionTextStyle.copyWith(
         fontWeight: FontWeight.w500,
       ),
-      unsupportedSectionTextStyle: theme.textTheme.caption.copyWith(
+      unsupportedSectionTextStyle: theme.textTheme.caption!.copyWith(
         fontStyle: FontStyle.italic,
       ),
       sectionsSpacing: 16.0,
@@ -366,14 +364,14 @@ class QuestionStyleConfiguration {
       appBarIconTheme: theme.iconTheme,
       bottomAppBarIconTheme: theme.primaryIconTheme,
       bottomAppBarNotchMargin: 8.0,
-      bottomAppBarTextStyle: theme.primaryTextTheme.headline6,
+      bottomAppBarTextStyle: theme.primaryTextTheme.headline6!,
       questionCardMargin: const EdgeInsets.all(12.0),
       questionCardPadding: const EdgeInsets.symmetric(
         vertical: 32,
         horizontal: 24,
       ),
       questionCardTitleTextStyle:
-          theme.textTheme.headline5.copyWith(color: theme.accentColor),
+          theme.textTheme.headline5!.copyWith(color: theme.accentColor),
       questionCardDividerColor: theme.accentColor,
       questionCardDividerHeight: 64.0,
       showAnswerButtonColor: theme.accentColor,
@@ -393,36 +391,36 @@ class QuestionStyleConfiguration {
         textStyle: theme.textTheme.bodyText2,
         speakerNotesTextStyle:
             questionTextSectionsThemeData.speakerNotesTextStyle.copyWith(
-          fontSize: theme.textTheme.bodyText2.fontSize,
+          fontSize: theme.textTheme.bodyText2!.fontSize,
         ),
       ),
       stubQuestionsCount: 24,
       cardsViewPortFraction: 0.85,
-      errorColor: theme.textTheme.bodyText2.color,
+      errorColor: theme.textTheme.bodyText2!.color!,
     );
   }
 
   const QuestionStyleConfiguration._({
-    this.appBarIconTheme,
-    this.appBarElevation,
-    this.appBarBackgroundColor,
-    this.bottomAppBarIconTheme,
-    this.bottomAppBarNotchMargin,
-    this.bottomAppBarTextStyle,
-    this.questionCardMargin,
-    this.questionCardPadding,
-    this.questionCardTitleTextStyle,
-    this.questionCardDividerColor,
-    this.questionCardDividerHeight,
-    this.showAnswerButtonColor,
-    this.showAnswerButtonHeight,
-    this.showAnswerButtonElevation,
-    this.questionCardQuestionSectionsThemeData,
-    this.questionCardAnswerSectionsThemeData,
-    this.questionCardCommentSectionsThemeData,
-    this.stubQuestionsCount,
-    this.cardsViewPortFraction,
-    this.errorColor,
+    required this.appBarIconTheme,
+    required this.appBarElevation,
+    required this.appBarBackgroundColor,
+    required this.bottomAppBarIconTheme,
+    required this.bottomAppBarNotchMargin,
+    required this.bottomAppBarTextStyle,
+    required this.questionCardMargin,
+    required this.questionCardPadding,
+    required this.questionCardTitleTextStyle,
+    required this.questionCardDividerColor,
+    required this.questionCardDividerHeight,
+    required this.showAnswerButtonColor,
+    required this.showAnswerButtonHeight,
+    required this.showAnswerButtonElevation,
+    required this.questionCardQuestionSectionsThemeData,
+    required this.questionCardAnswerSectionsThemeData,
+    required this.questionCardCommentSectionsThemeData,
+    required this.stubQuestionsCount,
+    required this.cardsViewPortFraction,
+    required this.errorColor,
   });
 
   final IconThemeData appBarIconTheme;
@@ -448,22 +446,22 @@ class QuestionStyleConfiguration {
 }
 
 class TournamentsTreeStyleConfiguration {
-  factory TournamentsTreeStyleConfiguration({@required BuildContext context}) {
+  factory TournamentsTreeStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
 
     return TournamentsTreeStyleConfiguration._(
       scaffoldBackground: theme.primaryColor,
-      errorColor: theme.primaryIconTheme.color,
+      errorColor: theme.primaryIconTheme.color!,
       appBarIconTheme: theme.primaryIconTheme,
       stubTournamentsCount: 80,
     );
   }
 
   const TournamentsTreeStyleConfiguration._({
-    this.scaffoldBackground,
-    this.errorColor,
-    this.appBarIconTheme,
-    this.stubTournamentsCount,
+    required this.scaffoldBackground,
+    required this.errorColor,
+    required this.appBarIconTheme,
+    required this.stubTournamentsCount,
   });
 
   final Color scaffoldBackground;
@@ -473,7 +471,7 @@ class TournamentsTreeStyleConfiguration {
 }
 
 class ImageStyleConfiguration {
-  factory ImageStyleConfiguration({@required BuildContext context}) {
+  factory ImageStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
 
     return ImageStyleConfiguration._(
@@ -485,10 +483,10 @@ class ImageStyleConfiguration {
   }
 
   const ImageStyleConfiguration._({
-    this.scaffoldBackground,
-    this.appBarIconTheme,
-    this.appBarBackground,
-    this.appBarElevation,
+    required this.scaffoldBackground,
+    required this.appBarIconTheme,
+    required this.appBarBackground,
+    required this.appBarElevation,
   });
 
   final Color scaffoldBackground;
@@ -498,7 +496,7 @@ class ImageStyleConfiguration {
 }
 
 class SearchStyleConfiguration {
-  factory SearchStyleConfiguration({@required BuildContext context}) {
+  factory SearchStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
 
     return SearchStyleConfiguration._(
@@ -506,22 +504,22 @@ class SearchStyleConfiguration {
       appBarIconTheme: theme.iconTheme,
       appBarBackground: theme.canvasColor,
       appBarElevation: 4.0,
-      searchFieldTextStyle: theme.textTheme.headline6,
-      noResultsTextStyle: theme.textTheme.subtitle1,
+      searchFieldTextStyle: theme.textTheme.headline6!,
+      noResultsTextStyle: theme.textTheme.subtitle1!,
       stubTournamentsCount: 20,
-      errorColor: theme.iconTheme.color,
+      errorColor: theme.iconTheme.color!,
     );
   }
 
   const SearchStyleConfiguration._({
-    this.scaffoldBackground,
-    this.appBarIconTheme,
-    this.appBarBackground,
-    this.appBarElevation,
-    this.searchFieldTextStyle,
-    this.noResultsTextStyle,
-    this.stubTournamentsCount,
-    this.errorColor,
+    required this.scaffoldBackground,
+    required this.appBarIconTheme,
+    required this.appBarBackground,
+    required this.appBarElevation,
+    required this.searchFieldTextStyle,
+    required this.noResultsTextStyle,
+    required this.stubTournamentsCount,
+    required this.errorColor,
   });
 
   final Color scaffoldBackground;
@@ -535,22 +533,22 @@ class SearchStyleConfiguration {
 }
 
 class BookmarksStyleConfiguration {
-  factory BookmarksStyleConfiguration({@required BuildContext context}) {
+  factory BookmarksStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
 
     return BookmarksStyleConfiguration._(
       scaffoldBackground: theme.primaryColor,
-      errorColor: theme.primaryIconTheme.color,
+      errorColor: theme.primaryIconTheme.color!,
       appBarIconTheme: theme.primaryIconTheme,
       stubTournamentsCount: 20,
     );
   }
 
   const BookmarksStyleConfiguration._({
-    this.scaffoldBackground,
-    this.appBarIconTheme,
-    this.stubTournamentsCount,
-    this.errorColor,
+    required this.scaffoldBackground,
+    required this.appBarIconTheme,
+    required this.stubTournamentsCount,
+    required this.errorColor,
   });
 
   final Color scaffoldBackground;

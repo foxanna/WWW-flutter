@@ -4,6 +4,8 @@ import 'package:what_when_where/resources/dimensions.dart';
 class Themes {
   Themes._();
 
+  static final defaultScaffoldColor = Colors.teal[900];
+
   static ThemeData get(BuildContext context, ThemeMode themeMode) {
     final finalThemeModel =
         themeMode != ThemeMode.system ? themeMode : _platformThemeMode(context);
@@ -58,8 +60,8 @@ class Themes {
     final theme = ThemeData.localize(
         base, typography.geometryThemeFor(ScriptCategory.englishLike));
     final textTheme = theme.textTheme.copyWith(
-      caption: theme.textTheme.caption.copyWith(
-        fontSize: theme.textTheme.bodyText2.fontSize,
+      caption: theme.textTheme.caption!.copyWith(
+        fontSize: theme.textTheme.bodyText2!.fontSize,
       ),
     );
 
@@ -94,7 +96,7 @@ class Themes {
       ),
       bottomAppBarColor: theme.primaryColor,
       dialogTheme: DialogTheme(
-        titleTextStyle: textTheme.headline6.copyWith(
+        titleTextStyle: textTheme.headline6!.copyWith(
           color: theme.accentColor,
         ),
         contentTextStyle: textTheme.caption,
