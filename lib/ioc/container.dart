@@ -16,11 +16,11 @@ IContainer configureIocContainer() {
 }
 
 abstract class IContainer {
-  T call<T>();
+  T call<T extends Object>();
 }
 
 @LazySingleton(as: IContainer)
 class WWWContainer implements IContainer {
   @override
-  T call<T>() => _getIt<T>();
+  T call<T extends Object>() => _getIt<T>();
 }
