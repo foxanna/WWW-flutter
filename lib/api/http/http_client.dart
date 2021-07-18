@@ -1,15 +1,7 @@
-library http_client;
-
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/common/network_exception.dart';
-import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/utils/logger.dart';
-
-part 'dio.dart';
-part 'http_client_logger.dart';
-part 'http_settings.dart';
+import 'package:what_when_where/services/crashes.dart';
 
 abstract class IHttpClient {
   Future<String> get(Uri uri, {CancelToken cancelToken});
@@ -19,9 +11,12 @@ abstract class IHttpClient {
 class HttpClient implements IHttpClient {
   const HttpClient({
     required Dio dio,
-  }) : _dio = dio;
+    required ICrashService crashService,
+  })  : _dio = dio,
+        _crashService = crashService;
 
   final Dio _dio;
+  final ICrashService _crashService;
 
   @override
   Future<String> get(Uri uri, {CancelToken? cancelToken}) async {
@@ -30,13 +25,13 @@ class HttpClient implements IHttpClient {
           await _dio.get<String>(uri.toString(), cancelToken: cancelToken);
       return response.data ?? '';
     } on DioError catch (e, s) {
-      log('$e: $s');
+      await _crashService.logException(e, stackTrace: s);
       throw NetworkException(message: e.toString());
     } on Exception catch (e, s) {
-      log('$e: $s');
+      await _crashService.logException(e, stackTrace: s);
       rethrow;
     } on Error catch (e, s) {
-      log('$e: $s');
+      await _crashService.logError(e, stackTrace: s);
       throw Exception(e.toString());
     }
   }
