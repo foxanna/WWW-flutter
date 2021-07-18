@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 const _maxLogSize = 512;
 
 void log(Object object) {
-  if (!kReleaseMode && object != null) {
+  if (!kReleaseMode) {
     final data = _split(object.toString(), _maxLogSize);
     data.forEach(debugPrint);
   }

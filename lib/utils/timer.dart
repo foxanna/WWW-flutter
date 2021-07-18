@@ -1,19 +1,17 @@
 import 'dart:async';
 
 class WWWTimer {
-  WWWTimer({this.updateFrequency = 1000})
-      : assert(updateFrequency != null),
-        assert(updateFrequency > 0);
+  WWWTimer({this.updateFrequency = 1000}) : assert(updateFrequency > 0);
 
   final int updateFrequency;
 
   bool get isRunning => _stopwatch.isRunning;
 
   final _stopwatch = Stopwatch();
-  Timer _timer;
-  void Function(Duration duration) _callback;
+  late Timer _timer;
+  void Function(Duration duration)? _callback;
 
-  void start({void Function(Duration duration) callback}) {
+  void start({void Function(Duration duration)? callback}) {
     _callback = callback;
 
     if (isRunning) {
@@ -47,9 +45,5 @@ class WWWTimer {
     }
   }
 
-  void _updateTime() {
-    if (_callback != null) {
-      _callback(_stopwatch.elapsed);
-    }
-  }
+  void _updateTime() => _callback?.call(_stopwatch.elapsed);
 }

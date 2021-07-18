@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class StyleConfigurator extends StatelessWidget {
-  const StyleConfigurator({Key key, this.child}) : super(key: key);
+  const StyleConfigurator({Key? key, required this.child}) : super(key: key);
 
   final Widget child;
 
@@ -15,9 +15,9 @@ class StyleConfigurator extends StatelessWidget {
 
 class StyleConfigurationInheritedWidget extends InheritedWidget {
   const StyleConfigurationInheritedWidget({
-    Key key,
-    Widget child,
-    this.styleConfiguration,
+    Key? key,
+    required Widget child,
+    required this.styleConfiguration,
   }) : super(
           key: key,
           child: child,

@@ -74,7 +74,7 @@ class UriDetector {
   static Iterable<dynamic> split(String originalText) sync* {
     var text = originalText;
 
-    if (text == null || text.isEmpty) {
+    if (text.isEmpty) {
       return;
     }
 
