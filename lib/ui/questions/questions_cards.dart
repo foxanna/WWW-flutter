@@ -6,20 +6,19 @@ import 'package:what_when_where/ui/question/question_card_stub.dart';
 
 class QuestionsCards extends StatelessWidget {
   const QuestionsCards({
-    Key key,
+    Key? key,
     this.initialPage = 0,
     this.questions,
     this.onPageChanged,
     this.stubQuestionsCount = 0,
     this.footer,
-  })  : assert(stubQuestionsCount != null),
-        super(key: key);
+  }) : super(key: key);
 
   final int initialPage;
-  final List<QuestionState> questions;
-  final ValueChanged<int> onPageChanged;
+  final List<QuestionState>? questions;
+  final ValueChanged<int>? onPageChanged;
   final int stubQuestionsCount;
-  final Widget footer;
+  final Widget? footer;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,7 @@ class QuestionsCards extends StatelessWidget {
             : (_isStubIndex(index)
                 ? StubQuestionCard(index: index)
                 : QuestionCard(
-                    questionState: questions[index],
+                    questionState: questions![index],
                     isInitialQuestion: index == this.initialPage,
                   )),
       ),

@@ -6,7 +6,7 @@ import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/resources/custom_icons.dart';
 
 class LatestTournamentsSettingsBottomSheetItem extends StatelessWidget {
-  const LatestTournamentsSettingsBottomSheetItem({Key key}) : super(key: key);
+  const LatestTournamentsSettingsBottomSheetItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => ListTile(

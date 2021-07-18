@@ -5,8 +5,8 @@ import 'package:what_when_where/ui/common/info_dialog.dart';
 
 class TournamentDetailsAboutDialog extends StatelessWidget {
   const TournamentDetailsAboutDialog({
-    Key key,
-    @required this.tournamentInfo,
+    Key? key,
+    required this.tournamentInfo,
   }) : super(key: key);
 
   final TournamentInfo tournamentInfo;
@@ -35,11 +35,11 @@ class TournamentDetailsAboutDialog extends StatelessWidget {
     };
 
     if (info.editors != null) {
-      addToResult(info.editors);
+      addToResult(info.editors!);
     }
 
     if (info.description != null) {
-      addToResult(info.description);
+      addToResult(info.description!);
     }
 
     final toursAndQuestions = _buildToursAndQuestionsText(context, info);

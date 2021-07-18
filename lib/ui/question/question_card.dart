@@ -14,11 +14,10 @@ import 'package:what_when_where/ui/question/show_answer_button.dart';
 @immutable
 class QuestionCard extends StatefulWidget {
   const QuestionCard({
-    Key key,
-    @required this.questionState,
-    this.isInitialQuestion,
-  })  : assert(questionState != null),
-        super(key: key);
+    Key? key,
+    required this.questionState,
+    required this.isInitialQuestion,
+  })  : super(key: key);
 
   final QuestionState questionState;
   final bool isInitialQuestion;
@@ -31,7 +30,7 @@ class _QuestionCardState extends State<QuestionCard> {
   final _buttonStackKey = GlobalKey();
   final _listViewKey = GlobalKey();
 
-  ScrollController _scrollController;
+  late final ScrollController _scrollController;
 
   @override
   void initState() {
@@ -106,12 +105,12 @@ class _QuestionCardState extends State<QuestionCard> {
   }
 
   void _onAnswerShown() =>
-      WidgetsBinding.instance.addPostFrameCallback((d) => _scrollToAnswer());
+      WidgetsBinding.instance!.addPostFrameCallback((d) => _scrollToAnswer());
 
   void _scrollToAnswer() {
-    final parent = _listViewKey?.currentContext?.findRenderObject();
+    final parent = _listViewKey.currentContext?.findRenderObject();
     final box =
-        _buttonStackKey?.currentContext?.findRenderObject() as RenderBox;
+        _buttonStackKey.currentContext?.findRenderObject() as RenderBox?;
 
     if (parent == null || box == null) {
       return;

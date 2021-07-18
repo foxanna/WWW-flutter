@@ -3,11 +3,11 @@ import 'package:what_when_where/ui/search/error_message.dart';
 
 class SearchErrorPage extends StatelessWidget {
   const SearchErrorPage({
-    Key key,
+    Key? key,
     this.exception,
   }) : super(key: key);
 
-  final Exception exception;
+  final Exception? exception;
 
   @override
   Widget build(BuildContext context) => SliverFillRemaining(

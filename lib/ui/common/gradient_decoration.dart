@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 @immutable
 class GradientDecoration extends BoxDecoration {
-  factory GradientDecoration({@required Color color}) {
+  factory GradientDecoration({required Color color}) {
     final gradientEnd = color;
     final gradientStart = color.withAlpha(0);
     const gradientSize = 0.05;
@@ -14,5 +14,6 @@ class GradientDecoration extends BoxDecoration {
     return GradientDecoration._(gradient: gradient);
   }
 
-  const GradientDecoration._({Gradient gradient}) : super(gradient: gradient);
+  const GradientDecoration._({required Gradient gradient})
+      : super(gradient: gradient);
 }

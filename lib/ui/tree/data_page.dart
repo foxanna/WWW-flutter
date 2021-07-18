@@ -8,8 +8,8 @@ import 'package:what_when_where/ui/tree/subtree_tile.dart';
 
 class TournamentsTreeDataPage extends StatelessWidget {
   const TournamentsTreeDataPage({
-    Key key,
-    @required this.tournamentsTree,
+    Key? key,
+    required this.tournamentsTree,
   }) : super(key: key);
 
   final List<dynamic> tournamentsTree;

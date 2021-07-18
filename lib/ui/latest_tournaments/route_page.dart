@@ -10,7 +10,7 @@ import 'package:what_when_where/ui/latest_tournaments/page_content.dart';
 import 'package:what_when_where/ui/latest_tournaments/refresh_indicator.dart';
 
 class LatestTournamentsPage extends StatefulWidget {
-  const LatestTournamentsPage({Key key}) : super(key: key);
+  const LatestTournamentsPage({Key? key}) : super(key: key);
 
   static const String routeName = 'latest_tournaments';
 
@@ -65,11 +65,6 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
     }
   }
 
-  void _loadMore() {
-    final store = StoreProvider.of<AppState>(context);
-
-    if (store.state.latestTournamentsState is DataLatestTournamentsState) {
-      store.dispatch(const UserActionLatest.load());
-    }
-  }
+  void _loadMore() => StoreProvider.of<AppState>(context)
+      .dispatch(UserActionLatest.scrolledCloseToTheEnd());
 }

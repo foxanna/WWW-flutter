@@ -10,12 +10,15 @@ import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 
 class TextScaleSettings extends StatelessWidget {
-  const TextScaleSettings({Key key}) : super(key: key);
+  const TextScaleSettings({Key? key, required this.textScale})
+      : super(key: key);
+
+  final TextScale textScale;
 
   @override
   Widget build(BuildContext context) => Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
+        children: [
           Expanded(
             child: Padding(
               padding:
@@ -27,10 +30,11 @@ class TextScaleSettings extends StatelessWidget {
               ),
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Padding(
-              padding: EdgeInsets.only(left: Dimensions.defaultSpacing * 2),
-              child: _TextScalePicker(),
+              padding:
+                  const EdgeInsets.only(left: Dimensions.defaultSpacing * 2),
+              child: _TextScalePicker(textScale: textScale),
             ),
           ),
         ],
@@ -38,7 +42,9 @@ class TextScaleSettings extends StatelessWidget {
 }
 
 class _TextScalePicker extends StatefulWidget {
-  const _TextScalePicker({Key key}) : super(key: key);
+  const _TextScalePicker({Key? key, required this.textScale}) : super(key: key);
+
+  final TextScale textScale;
 
   @override
   _TextScalePickerState createState() => _TextScalePickerState();
@@ -56,21 +62,16 @@ class _TextScalePickerState extends State<_TextScalePicker> {
             style: Theme.of(context).textTheme.bodyText2,
             textScaleFactor: TextScale.values.first.toDouble(),
           ),
-          StoreConnector<AppState, TextScale>(
-            distinct: true,
-            converter: (store) => store.state.settingsState.textScale,
-            builder: (context, scale) => ConstrainedBox(
-              constraints:
-                  const BoxConstraints.tightFor(width: 120, height: 32),
-              child: Slider(
-                activeColor: Theme.of(context).accentColor,
-                inactiveColor: Theme.of(context).dividerColor,
-                min: 0.0,
-                max: (TextScale.values.length - 1).toDouble(),
-                divisions: TextScale.values.length - 1,
-                value: scale.index.toDouble(),
-                onChanged: (value) => _onTextScaleChanged(value.round()),
-              ),
+          ConstrainedBox(
+            constraints: const BoxConstraints.tightFor(width: 120, height: 32),
+            child: Slider(
+              activeColor: Theme.of(context).accentColor,
+              inactiveColor: Theme.of(context).dividerColor,
+              min: 0.0,
+              max: (TextScale.values.length - 1).toDouble(),
+              divisions: TextScale.values.length - 1,
+              value: widget.textScale.index.toDouble(),
+              onChanged: (value) => _onTextScaleChanged(value.round()),
             ),
           ),
           Text(

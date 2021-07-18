@@ -9,27 +9,31 @@ import 'package:what_when_where/ui/questions/error_page.dart';
 import 'package:what_when_where/ui/questions/questions_cards.dart';
 
 class QuestionsDataPage extends StatelessWidget {
-  const QuestionsDataPage({Key key}) : super(key: key);
+  const QuestionsDataPage({
+    Key? key,
+    this.questions,
+    this.currentQuestionIndex = 0,
+    this.exception,
+    this.isLoading = false,
+  }) : super(key: key);
+
+  final List<QuestionState>? questions;
+  final int currentQuestionIndex;
+  final Exception? exception;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
     final styleConfiguration =
         StyleConfiguration.of(context).questionStyleConfiguration;
 
-    return StoreConnector<AppState, QuestionsState>(
-      distinct: true,
-      converter: (store) => store.state.questionsState,
-      builder: (context, state) => QuestionsCards(
-        initialPage: state.currentQuestionIndexOrZero,
-        questions: state.questionsOrEmpty,
-        footer: state is ErrorWithDataQuestionsState
-            ? QuestionsErrorPage(exception: state.exception)
-            : null,
-        stubQuestionsCount: state is LoadingWithDataQuestionsState
-            ? styleConfiguration.stubQuestionsCount
-            : 0,
-        onPageChanged: (index) => _onPageChanged(context, index),
-      ),
+    return QuestionsCards(
+      initialPage: currentQuestionIndex,
+      questions: questions,
+      footer:
+          exception != null ? QuestionsErrorPage(exception: exception) : null,
+      stubQuestionsCount: isLoading ? styleConfiguration.stubQuestionsCount : 0,
+      onPageChanged: (index) => _onPageChanged(context, index),
     );
   }
 

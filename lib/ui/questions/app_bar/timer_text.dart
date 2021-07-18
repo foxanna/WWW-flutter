@@ -1,14 +1,17 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/common/timer_type.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/timer/actions.dart';
+import 'package:what_when_where/redux/timer/state.dart';
 import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/common/store_connector.dart';
 import 'package:what_when_where/utils/duration_formatter.dart';
 
 class QuestionsBottomAppBarTimerText extends StatelessWidget {
-  const QuestionsBottomAppBarTimerText({Key key}) : super(key: key);
+  const QuestionsBottomAppBarTimerText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +50,8 @@ class QuestionsBottomAppBarTimerText extends StatelessWidget {
 }
 
 class _TimerOptionsDropdownButton extends StatelessWidget {
+  const _TimerOptionsDropdownButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => DropdownButtonHideUnderline(
         child: ButtonTheme(
@@ -62,7 +67,7 @@ class _TimerOptionsDropdownButton extends StatelessWidget {
                   ),
                 )
                 .toList(),
-            onChanged: (newType) => _onTypeChanged(context, newType),
+            onChanged: (newType) => _onTypeChanged(context, newType!),
           ),
         ),
       );
@@ -73,12 +78,14 @@ class _TimerOptionsDropdownButton extends StatelessWidget {
 }
 
 class _TimerValue extends StatelessWidget {
+  const _TimerValue({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context) => StoreConnector<AppState, int>(
-        distinct: true,
-        converter: (store) => store.state.timerState.secondsLeft,
-        builder: (context, seconds) => Text(
-          DurationFormatter.formatSeconds(seconds),
+  Widget build(BuildContext context) => WWWStoreConnector<Option<TimerState>>(
+        converter: (state) => state.timerState,
+        builder: (context, state) => state.fold(
+          () => Text(''),
+          (state) => Text(DurationFormatter.formatSeconds(state.secondsLeft)),
         ),
       );
 }

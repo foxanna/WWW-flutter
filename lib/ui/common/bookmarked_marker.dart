@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class BookmarkedMarker extends StatelessWidget {
   const BookmarkedMarker({
-    Key key,
-    this.size,
-    this.color,
+    Key? key,
+    required this.size,
+    required this.color,
   }) : super(key: key);
 
   final Size size;
@@ -18,7 +18,7 @@ class BookmarkedMarker extends StatelessWidget {
 }
 
 class BookmarkedMarkerPainter extends CustomPainter {
-  const BookmarkedMarkerPainter({this.color});
+  const BookmarkedMarkerPainter({required this.color});
 
   final Color color;
 

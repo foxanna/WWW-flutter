@@ -6,7 +6,7 @@ import 'package:what_when_where/ui/tournament_details/bottom_sheet/items/browse.
 import 'package:what_when_where/ui/tournament_details/bottom_sheet/items/share.dart';
 
 class TournamentDetailsBottomSheet extends StatelessWidget {
-  const TournamentDetailsBottomSheet({Key key}) : super(key: key);
+  const TournamentDetailsBottomSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => const ModalBottomSheetContainer(

@@ -7,8 +7,8 @@ import 'package:what_when_where/resources/style_configuration.dart';
 
 class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
   const TournamentsTreeTournamentSubtreeTile({
-    Key key,
-    @required this.info,
+    Key? key,
+    required this.info,
   }) : super(key: key);
 
   final TournamentsTreeInfo info;
@@ -18,14 +18,15 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
     final styleConfiguration =
         StyleConfiguration.of(context).tournamentsGridStyleConfiguration;
     final cardTheme = CardTheme.of(context);
+    final elevation = cardTheme.elevation!;
 
     return Stack(
       children: [
         Positioned.fill(
           child: Padding(
             padding: EdgeInsets.only(
-              top: cardTheme.elevation * 2,
-              left: cardTheme.elevation,
+              top: elevation * 2,
+              left: elevation,
             ),
             child: const Card(),
           ),
@@ -33,16 +34,16 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
         Positioned.fill(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: cardTheme.elevation / 2,
-              vertical: cardTheme.elevation,
+              horizontal: elevation / 2,
+              vertical: elevation,
             ),
             child: const Card(),
           ),
         ),
         Padding(
           padding: EdgeInsets.only(
-            bottom: cardTheme.elevation * 2,
-            right: cardTheme.elevation,
+            bottom: elevation * 2,
+            right: elevation,
           ),
           child: Card(
             child: InkWell(
@@ -64,15 +65,17 @@ class TournamentsTreeTournamentSubtreeTile extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              info.title,
+              info.title ?? '',
               style: styleConfiguration.gridTileTitleTextStyle,
             ),
           ),
-          SizedBox(width: styleConfiguration.tileContentSpacing),
-          Text(
-            info.childrenCount,
-            style: styleConfiguration.gridTileSecondLineTextStyle,
-          ),
+          if (info.childrenCount != null) ...[
+            SizedBox(width: styleConfiguration.tileContentSpacing),
+            Text(
+              info.childrenCount!,
+              style: styleConfiguration.gridTileSecondLineTextStyle,
+            ),
+          ],
         ],
       );
 

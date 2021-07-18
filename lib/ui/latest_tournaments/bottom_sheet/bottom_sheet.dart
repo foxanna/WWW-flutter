@@ -6,7 +6,7 @@ import 'package:what_when_where/ui/latest_tournaments/bottom_sheet/items/setting
 import 'package:what_when_where/ui/latest_tournaments/bottom_sheet/items/tree.dart';
 
 class LatestTournamentsBottomSheet extends StatelessWidget {
-  const LatestTournamentsBottomSheet({Key key}) : super(key: key);
+  const LatestTournamentsBottomSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => const ModalBottomSheetContainer(

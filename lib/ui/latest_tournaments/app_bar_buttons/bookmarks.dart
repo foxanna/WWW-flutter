@@ -6,7 +6,7 @@ import 'package:what_when_where/redux/bookmarks/actions.dart';
 import 'package:what_when_where/resources/custom_icons.dart';
 
 class LatestTournamentsAppBarBookmarksButton extends StatelessWidget {
-  const LatestTournamentsAppBarBookmarksButton({Key key}) : super(key: key);
+  const LatestTournamentsAppBarBookmarksButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => IconButton(

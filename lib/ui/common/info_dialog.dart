@@ -5,9 +5,13 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/gradient_decoration.dart';
 
 class InfoDialog extends StatelessWidget {
-  const InfoDialog({Key key, this.title, this.content}) : super(key: key);
+  const InfoDialog({
+    Key? key,
+    this.title,
+    required this.content,
+  }) : super(key: key);
 
-  final String title;
+  final String? title;
   final String content;
 
   @override
@@ -29,7 +33,7 @@ class InfoDialog extends StatelessWidget {
         ),
       ),
       actions: [
-        FlatButton(
+        TextButton(
           onPressed: () => Navigator.of(context).pop(),
           child: Text(translations.dialogCloseButton),
         ),

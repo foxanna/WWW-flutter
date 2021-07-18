@@ -8,15 +8,15 @@ import 'package:what_when_where/ui/common/solid_icon_button.dart';
 
 class ShowAnswerButton extends StatelessWidget {
   const ShowAnswerButton({
-    Key key,
-    this.show,
-    this.question,
+    Key? key,
+    required this.show,
+    required this.question,
     this.onAnswerShown,
   }) : super(key: key);
 
   final bool show;
   final Question question;
-  final Function onAnswerShown;
+  final Function? onAnswerShown;
 
   @override
   Widget build(BuildContext context) => _ShowAnswerButton(
@@ -28,8 +28,8 @@ class ShowAnswerButton extends StatelessWidget {
                 : UserActionQuestions.showAnswer(question: question),
           );
 
-          if (!show && onAnswerShown != null) {
-            onAnswerShown();
+          if (!show) {
+            onAnswerShown?.call();
           }
         },
       );
@@ -37,13 +37,13 @@ class ShowAnswerButton extends StatelessWidget {
 
 class _ShowAnswerButton extends StatelessWidget {
   const _ShowAnswerButton({
-    Key key,
-    this.icon,
+    Key? key,
+    required this.icon,
     this.onPressed,
   }) : super(key: key);
 
   final IconData icon;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class _ShowAnswerButton extends StatelessWidget {
       elevation: styleConfiguration.showAnswerButtonElevation,
       fillColor: theme.cardColor,
       borderColor: styleConfiguration.showAnswerButtonColor,
-      borderWidth: theme.dividerTheme.thickness,
+      borderWidth: theme.dividerTheme.thickness!,
       buttonSize: Size.square(styleConfiguration.showAnswerButtonHeight),
     );
   }

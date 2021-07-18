@@ -6,8 +6,8 @@ import 'package:what_when_where/ui/question/question_sections.dart';
 
 class QuestionText extends StatelessWidget {
   const QuestionText({
-    Key key,
-    this.question,
+    Key? key,
+    required this.question,
   }) : super(key: key);
 
   final Question question;

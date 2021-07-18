@@ -3,20 +3,18 @@ import 'package:flutter/material.dart';
 
 class AnimatedScale extends ImplicitlyAnimatedWidget {
   const AnimatedScale({
-    Key key,
-    this.child,
-    @required this.scale,
+    Key? key,
+    required this.child,
+    required this.scale,
     Curve curve = Curves.linear,
-    @required Duration duration,
-    VoidCallback onEnd,
+    required Duration duration,
+    VoidCallback? onEnd,
     this.alignment = Alignment.center,
-  })  : assert(scale != null && scale >= 0.0 && scale <= 1.0),
+  })  : assert(scale >= 0.0 && scale <= 1.0),
         super(key: key, curve: curve, duration: duration, onEnd: onEnd);
 
   final Widget child;
-
   final double scale;
-
   final Alignment alignment;
 
   @override
@@ -30,8 +28,8 @@ class AnimatedScale extends ImplicitlyAnimatedWidget {
 }
 
 class _AnimatedScaleState extends ImplicitlyAnimatedWidgetState<AnimatedScale> {
-  Tween<double> _scale;
-  Animation<double> _scaleAnimation;
+  Tween<double>? _scale;
+  Animation<double>? _scaleAnimation;
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
@@ -42,12 +40,12 @@ class _AnimatedScaleState extends ImplicitlyAnimatedWidgetState<AnimatedScale> {
 
   @override
   void didUpdateTweens() {
-    _scaleAnimation = animation.drive(_scale);
+    _scaleAnimation = animation.drive(_scale!);
   }
 
   @override
   Widget build(BuildContext context) => ScaleTransition(
-        scale: _scaleAnimation,
+        scale: _scaleAnimation!,
         alignment: widget.alignment,
         child: widget.child,
       );

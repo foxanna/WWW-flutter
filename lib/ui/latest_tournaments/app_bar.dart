@@ -6,7 +6,7 @@ import 'package:what_when_where/ui/latest_tournaments/app_bar_buttons/more.dart'
 import 'package:what_when_where/ui/latest_tournaments/app_bar_buttons/random.dart';
 
 class LatestTournamentsAppBar extends StatelessWidget {
-  const LatestTournamentsAppBar({Key key}) : super(key: key);
+  const LatestTournamentsAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

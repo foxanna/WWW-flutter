@@ -15,9 +15,9 @@ import 'package:what_when_where/ui/common/text_hero.dart';
 
 class TournamentsGridTile extends StatelessWidget {
   TournamentsGridTile({
-    Key key,
-    @required TournamentInfo tournamentInfo,
-    TournamentStatus tournamentStatus,
+    Key? key,
+    required TournamentInfo tournamentInfo,
+    TournamentStatus? tournamentStatus,
   }) : this._(
           key: key,
           tournamentInfo: tournamentInfo,
@@ -27,11 +27,11 @@ class TournamentsGridTile extends StatelessWidget {
         );
 
   const TournamentsGridTile._({
-    Key key,
-    this.tournamentInfo,
-    this.tournamentStatus,
-    String backgroundHeroTag,
-    String titleHeroTag,
+    Key? key,
+    required this.tournamentInfo,
+    required this.tournamentStatus,
+    required String backgroundHeroTag,
+    required String titleHeroTag,
   })  : this._backgroundHeroTag = backgroundHeroTag,
         this._titleHeroTag = titleHeroTag,
         super(key: key);
@@ -51,8 +51,7 @@ class TournamentsGridTile extends StatelessWidget {
           _TournamentsGridTileContent(
             titleHeroTag: _titleHeroTag,
             title: tournamentInfo.title ?? '',
-            subhead:
-                _buildSubheadText(WWWLocalizations.of(context), tournamentInfo),
+            subhead: _buildSubheadText(WWWLocalizations.of(context), tournamentInfo),
             isNew: tournamentStatus.isNew,
             isBookmarked: tournamentStatus.isBookmarked,
             onTap: () => _openTournamentDetails(context),
@@ -60,8 +59,7 @@ class TournamentsGridTile extends StatelessWidget {
         ],
       );
 
-  static String _buildSubheadText(
-      Translations translations, TournamentInfo tournamentInfo) {
+  static String _buildSubheadText(Translations translations, TournamentInfo tournamentInfo) {
     final sb = StringBuffer();
 
     if (tournamentInfo.playedAt?.isNotEmpty ?? false) {
@@ -91,22 +89,21 @@ class TournamentsGridTile extends StatelessWidget {
 
 class _TournamentsGridTileBackground extends StatelessWidget {
   const _TournamentsGridTileBackground({
-    Key key,
-    @required this.backgroundHeroTag,
+    Key? key,
+    required this.backgroundHeroTag,
   }) : super(key: key);
 
   final String backgroundHeroTag;
 
   @override
   Widget build(BuildContext context) {
-    final styleConfiguration =
-        StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
+    final styleConfiguration = StyleConfiguration.of(context).tournamentDetailsStyleConfiguration;
     final cardTheme = CardTheme.of(context);
 
     return Positioned.fill(
       child: ShapeHeroFrom(
         tag: backgroundHeroTag,
-        begin: cardTheme.shape,
+        begin: cardTheme.shape!,
         end: styleConfiguration.shape,
         child: Container(color: cardTheme.color),
       ),
@@ -116,13 +113,13 @@ class _TournamentsGridTileBackground extends StatelessWidget {
 
 class _TournamentsGridTileContent extends StatelessWidget {
   const _TournamentsGridTileContent({
-    Key key,
-    this.titleHeroTag,
-    this.title,
-    this.onTap,
-    this.subhead,
-    this.isNew,
-    this.isBookmarked,
+    Key? key,
+    required this.titleHeroTag,
+    required this.title,
+    required this.onTap,
+    required this.subhead,
+    required this.isNew,
+    required this.isBookmarked,
   }) : super(key: key);
 
   final String titleHeroTag;
@@ -135,8 +132,7 @@ class _TournamentsGridTileContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final styleConfiguration = StyleConfiguration.of(context);
-    final gridStyleConfiguration =
-        styleConfiguration.tournamentsGridStyleConfiguration;
+    final gridStyleConfiguration = styleConfiguration.tournamentsGridStyleConfiguration;
     final cardTheme = CardTheme.of(context);
 
     return Card(
@@ -152,11 +148,8 @@ class _TournamentsGridTileContent extends StatelessWidget {
                 children: [
                   TextHeroFrom(
                     tag: titleHeroTag,
-                    startTextStyle:
-                        gridStyleConfiguration.gridTileTitleTextStyle,
-                    endTextStyle: styleConfiguration
-                        .tournamentDetailsStyleConfiguration
-                        .tournamentTitleTextStyle,
+                    startTextStyle: gridStyleConfiguration.gridTileTitleTextStyle,
+                    endTextStyle: styleConfiguration.tournamentDetailsStyleConfiguration.tournamentTitleTextStyle,
                     text: title,
                   ),
                   if (subhead.isNotEmpty)
@@ -174,27 +167,21 @@ class _TournamentsGridTileContent extends StatelessWidget {
             Visibility(
               visible: isNew,
               child: Positioned(
-                right: max(gridStyleConfiguration.tileContentPadding.right,
-                    gridStyleConfiguration.tileContentPadding.bottom),
-                bottom: max(gridStyleConfiguration.tileContentPadding.right,
-                    gridStyleConfiguration.tileContentPadding.bottom),
+                right: max(
+                    gridStyleConfiguration.tileContentPadding.right, gridStyleConfiguration.tileContentPadding.bottom),
+                bottom: max(
+                    gridStyleConfiguration.tileContentPadding.right, gridStyleConfiguration.tileContentPadding.bottom),
                 child: Container(
-                  width:
-                      gridStyleConfiguration.newTournamentIndicatorRadius * 2,
-                  height:
-                      gridStyleConfiguration.newTournamentIndicatorRadius * 2,
+                  width: gridStyleConfiguration.newTournamentIndicatorRadius * 2,
+                  height: gridStyleConfiguration.newTournamentIndicatorRadius * 2,
                   foregroundDecoration: BoxDecoration(
                     color: gridStyleConfiguration.newTournamentIndicatorColor,
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: cardTheme.color,
-                        spreadRadius: gridStyleConfiguration
-                                .newTournamentIndicatorRadius *
-                            3,
-                        blurRadius: gridStyleConfiguration
-                                .newTournamentIndicatorRadius *
-                            2,
+                        color: cardTheme.color!,
+                        spreadRadius: gridStyleConfiguration.newTournamentIndicatorRadius * 3,
+                        blurRadius: gridStyleConfiguration.newTournamentIndicatorRadius * 2,
                       )
                     ],
                   ),
@@ -206,8 +193,7 @@ class _TournamentsGridTileContent extends StatelessWidget {
               child: Positioned(
                 right: gridStyleConfiguration.tileContentPadding.right,
                 child: BookmarkedMarker(
-                  color:
-                      gridStyleConfiguration.bookmarkedTournamentIndicatorColor,
+                  color: gridStyleConfiguration.bookmarkedTournamentIndicatorColor,
                   size: gridStyleConfiguration.bookmarkedTournamentIconSize,
                 ),
               ),

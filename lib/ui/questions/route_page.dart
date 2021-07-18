@@ -5,7 +5,7 @@ import 'package:what_when_where/ui/questions/app_bar/buttons/timer.dart';
 import 'package:what_when_where/ui/questions/page_content.dart';
 
 class QuestionsRoutePage extends StatelessWidget {
-  const QuestionsRoutePage({Key key}) : super(key: key);
+  const QuestionsRoutePage({Key? key}) : super(key: key);
 
   static const String routeName = 'questions';
   static const String randomQuestionsRouteName = 'random_questions';

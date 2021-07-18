@@ -7,11 +7,11 @@ import 'package:what_when_where/ui/common/error_message.dart';
 
 class QuestionsErrorPage extends StatelessWidget {
   const QuestionsErrorPage({
-    Key key,
+    Key? key,
     this.exception,
   }) : super(key: key);
 
-  final Exception exception;
+  final Exception? exception;
 
   @override
   Widget build(BuildContext context) => ErrorMessage(

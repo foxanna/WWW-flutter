@@ -3,14 +3,12 @@ import 'package:flutter/scheduler.dart';
 
 class FadeIn extends StatefulWidget {
   const FadeIn({
-    Key key,
-    this.child,
+    Key? key,
+    required this.child,
     this.duration = Duration.zero,
     this.curve = Curves.linear,
     this.initialOpacity = 0.0,
-  })  : assert(duration != null),
-        assert(curve != null),
-        super(key: key);
+  }) : super(key: key);
 
   final Widget child;
   final Duration duration;
@@ -22,13 +20,13 @@ class FadeIn extends StatefulWidget {
 }
 
 class _FadeInState extends State<FadeIn> {
-  double _opacity;
+  double? _opacity;
 
   @override
   Widget build(BuildContext context) => AnimatedOpacity(
         curve: widget.curve,
         duration: widget.duration,
-        opacity: _opacity,
+        opacity: _opacity!,
         child: widget.child,
       );
 
@@ -38,10 +36,7 @@ class _FadeInState extends State<FadeIn> {
 
     _opacity = widget.initialOpacity;
 
-    SchedulerBinding.instance.addPostFrameCallback((_) {
-      setState(() {
-        _opacity = 1;
-      });
-    });
+    SchedulerBinding.instance!
+        .addPostFrameCallback((_) => setState(() => _opacity = 1));
   }
 }

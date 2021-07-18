@@ -4,15 +4,15 @@ import 'package:what_when_where/resources/style_configuration.dart';
 
 class TourDetailsQuestionTemplateTile extends StatelessWidget {
   const TourDetailsQuestionTemplateTile({
-    Key key,
+    Key? key,
     this.onTap,
-    this.child,
+    required this.child,
     this.heroTag,
   }) : super(key: key);
 
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
   final Widget child;
-  final String heroTag;
+  final String? heroTag;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +24,11 @@ class TourDetailsQuestionTemplateTile extends StatelessWidget {
       width: styleConfiguration.questionsCardSize.width,
       height: styleConfiguration.questionsCardSize.height,
       decoration: ShapeDecoration(
-        shape: cardTheme.shape,
-//        color: Colors.pink,
+        shape: cardTheme.shape!,
         color: cardTheme.color,
       ),
       foregroundDecoration: ShapeDecoration(
-        shape: cardTheme.shape,
+        shape: cardTheme.shape!,
         gradient: LinearGradient(
           stops: const [0.8, 1.0],
           colors: [
@@ -56,7 +55,7 @@ class TourDetailsQuestionTemplateTile extends StatelessWidget {
     return heroTag != null
         ? Hero(
             transitionOnUserGestures: true,
-            tag: heroTag,
+            tag: heroTag!,
             flightShuttleBuilder: (
               flightContext,
               animation,

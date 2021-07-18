@@ -7,13 +7,13 @@ import 'package:what_when_where/ui/common/error_message.dart';
 
 class SearchErrorMessage extends StatelessWidget {
   const SearchErrorMessage({
-    Key key,
+    Key? key,
     this.dense = false,
     this.exception,
   }) : super(key: key);
 
   final bool dense;
-  final Exception exception;
+  final Exception? exception;
 
   @override
   Widget build(BuildContext context) {

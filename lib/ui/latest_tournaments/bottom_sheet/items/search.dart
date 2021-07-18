@@ -5,7 +5,7 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 
 class LatestTournamentsSearchBottomSheetItem extends StatelessWidget {
-  const LatestTournamentsSearchBottomSheetItem({Key key}) : super(key: key);
+  const LatestTournamentsSearchBottomSheetItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => ListTile(

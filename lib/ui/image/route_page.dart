@@ -5,8 +5,8 @@ import 'package:what_when_where/resources/style_configuration.dart';
 
 class ImageRoutePage extends StatelessWidget {
   const ImageRoutePage({
-    Key key,
-    String url,
+    Key? key,
+    required String url,
   })  : _url = url,
         super(key: key);
 

@@ -9,7 +9,7 @@ import 'package:what_when_where/redux/developer/actions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class AboutRoutePage extends StatelessWidget {
-  const AboutRoutePage({Key key}) : super(key: key);
+  const AboutRoutePage({Key? key}) : super(key: key);
 
   static const String routeName = 'about';
 

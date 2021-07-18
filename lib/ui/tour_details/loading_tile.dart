@@ -7,16 +7,16 @@ import 'package:what_when_where/ui/tour_details/template_tile.dart';
 
 class TourDetailsLoadingTile extends StatelessWidget {
   const TourDetailsLoadingTile({
-    Key key,
-    this.tourInfo,
+    Key? key,
+    required this.tourInfo,
     this.foregroundColor,
     this.backgroundColor,
   }) : super(key: key);
 
   final TourInfo tourInfo;
 
-  final Color foregroundColor;
-  final Color backgroundColor;
+  final Color? foregroundColor;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,8 @@ class TourDetailsLoadingTile extends StatelessWidget {
   int _questionsCount(int or) {
     var count = 0;
 
-    if (tourInfo.questionsCount?.isNotEmpty ?? false) {
-      count = int.tryParse(tourInfo.questionsCount) ?? count;
+    if (tourInfo.questionsCount != null) {
+      count = int.tryParse(tourInfo.questionsCount!) ?? count;
     }
 
     return count > 0 ? count : or;

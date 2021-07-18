@@ -4,7 +4,7 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/tour_details/stub_tile.dart';
 
 class TournamentDetailsLoadingPage extends StatelessWidget {
-  const TournamentDetailsLoadingPage({Key key}) : super(key: key);
+  const TournamentDetailsLoadingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

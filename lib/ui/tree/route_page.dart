@@ -7,8 +7,8 @@ import 'package:what_when_where/ui/tree/page_content.dart';
 
 class TournamentsTreeRoutePage extends StatefulWidget {
   const TournamentsTreeRoutePage({
-    Key key,
-    @required this.info,
+    Key? key,
+    required this.info,
   }) : super(key: key);
 
   static const String routeName = 'tree';

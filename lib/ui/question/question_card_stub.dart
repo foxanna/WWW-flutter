@@ -5,9 +5,10 @@ import 'package:what_when_where/ui/question/question_number.dart';
 import 'package:what_when_where/ui/question/separator.dart';
 
 class StubQuestionCard extends StatelessWidget {
-  const StubQuestionCard({Key key, @required this.index})
-      : assert(index != null),
-        super(key: key);
+  const StubQuestionCard({
+    Key? key,
+    required this.index,
+  }) : super(key: key);
 
   final int index;
 

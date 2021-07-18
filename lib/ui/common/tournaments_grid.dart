@@ -7,20 +7,19 @@ import 'package:what_when_where/ui/common/tournaments_grid_tile.dart';
 
 class TournamentsGrid extends StatelessWidget {
   const TournamentsGrid({
-    Key key,
+    Key? key,
     this.tournaments,
     this.footerBuilder,
     this.stubTournamentsCount = 0,
   }) : super(key: key);
 
-  final List<Tournament> tournaments;
-  final WidgetBuilder footerBuilder;
+  final List<Tournament>? tournaments;
+  final WidgetBuilder? footerBuilder;
   final int stubTournamentsCount;
 
   @override
   Widget build(BuildContext context) {
-    final styleConfiguration =
-        StyleConfiguration.of(context).tournamentsGridStyleConfiguration;
+    final styleConfiguration = StyleConfiguration.of(context).tournamentsGridStyleConfiguration;
 
     return SliverPadding(
       sliver: SliverStaggeredGrid.countBuilder(
@@ -28,17 +27,16 @@ class TournamentsGrid extends StatelessWidget {
         mainAxisSpacing: styleConfiguration.gridSpacing,
         crossAxisSpacing: styleConfiguration.gridSpacing,
         itemBuilder: (context, index) => (_isFooterIndex(index))
-            ? footerBuilder(context)
+            ? footerBuilder!(context)
             : (_isStubTournamentIndex(index)
                 ? const TournamentsGridStubTile()
                 : TournamentsGridTile(
-                    tournamentInfo: tournaments[index].info,
-                    tournamentStatus: tournaments[index].status,
+                    tournamentInfo: tournaments![index].info,
+                    tournamentStatus: tournaments![index].status,
                   )),
         itemCount: _itemsCount(),
-        staggeredTileBuilder: (index) => (_isFooterIndex(index))
-            ? StaggeredTile.fit(styleConfiguration.columnsCount)
-            : const StaggeredTile.fit(1),
+        staggeredTileBuilder: (index) =>
+            (_isFooterIndex(index)) ? StaggeredTile.fit(styleConfiguration.columnsCount) : const StaggeredTile.fit(1),
       ),
       padding: styleConfiguration.gridPadding,
     );
@@ -46,16 +44,10 @@ class TournamentsGrid extends StatelessWidget {
 
   bool _hasFooter() => footerBuilder != null;
 
-  bool _isFooterIndex(int index) =>
-      _hasFooter() &&
-      index >= (tournaments?.length ?? 0) + stubTournamentsCount;
+  bool _isFooterIndex(int index) => _hasFooter() && index >= (tournaments?.length ?? 0) + stubTournamentsCount;
 
   bool _isStubTournamentIndex(int index) =>
-      index >= (tournaments?.length ?? 0) &&
-      index < (tournaments?.length ?? 0) + stubTournamentsCount;
+      index >= (tournaments?.length ?? 0) && index < (tournaments?.length ?? 0) + stubTournamentsCount;
 
-  int _itemsCount() =>
-      (tournaments?.length ?? 0) +
-      stubTournamentsCount +
-      (_hasFooter() ? 1 : 0);
+  int _itemsCount() => (tournaments?.length ?? 0) + stubTournamentsCount + (_hasFooter() ? 1 : 0);
 }

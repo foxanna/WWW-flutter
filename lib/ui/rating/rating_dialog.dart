@@ -9,7 +9,7 @@ import 'package:what_when_where/resources/dimensions.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class RatingDialog extends StatelessWidget {
-  const RatingDialog({Key key}) : super(key: key);
+  const RatingDialog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class RatingDialog extends StatelessWidget {
         ),
       ),
       actions: [
-        FlatButton(
+        TextButton(
           onPressed: () {
             Navigator.of(context).pop();
 
@@ -69,7 +69,7 @@ class RatingDialog extends StatelessWidget {
           },
           child: Text(translations.ratingDialogNeverButton),
         ),
-        FlatButton(
+        TextButton(
           onPressed: () => Navigator.of(context).pop(),
           child: Text(translations.ratingDialogLaterButton),
         ),

@@ -5,8 +5,8 @@ import 'package:what_when_where/ui/common/info_dialog.dart';
 
 class TourDetailsAboutDialog extends StatelessWidget {
   const TourDetailsAboutDialog({
-    Key key,
-    @required this.info,
+    Key? key,
+    required this.info,
   }) : super(key: key);
 
   final TourInfo info;
@@ -55,11 +55,11 @@ class TourDetailsAboutDialog extends StatelessWidget {
     };
 
     if (info.editors != null) {
-      addToResult(info.editors);
+      addToResult(info.editors!);
     }
 
     if (info.description != null) {
-      addToResult(info.description);
+      addToResult(info.description!);
     }
 
     if (info.questionsCount != null) {

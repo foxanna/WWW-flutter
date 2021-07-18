@@ -7,8 +7,8 @@ import 'package:what_when_where/ui/common/error_message.dart';
 
 class BookmarksErrorPage extends StatelessWidget {
   const BookmarksErrorPage({
-    Key key,
-    this.exception,
+    Key? key,
+    required this.exception,
   }) : super(key: key);
 
   final Exception exception;

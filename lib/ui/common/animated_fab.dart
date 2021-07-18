@@ -3,14 +3,14 @@ import 'package:what_when_where/ui/common/animated_scale.dart';
 
 class AnimatedFab extends StatelessWidget {
   const AnimatedFab({
-    Key key,
-    this.visible,
+    Key? key,
+    required this.visible,
     this.onPressed,
-    this.child,
+    required this.child,
   }) : super(key: key);
 
   final bool visible;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Widget child;
 
   @override

@@ -4,7 +4,7 @@ import 'package:what_when_where/ui/questions/app_bar/buttons/more.dart';
 import 'package:what_when_where/ui/questions/app_bar/timer_text.dart';
 
 class QuestionsBottomAppBar extends StatelessWidget {
-  const QuestionsBottomAppBar({Key key}) : super(key: key);
+  const QuestionsBottomAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

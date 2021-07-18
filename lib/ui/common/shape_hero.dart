@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class ShapeHeroFrom extends StatelessWidget {
   ShapeHeroFrom({
-    Key key,
+    Key? key,
     this.tag = '',
-    this.begin,
-    this.end,
-    this.child,
+    required this.begin,
+    required this.end,
+    required this.child,
   })  : _tween = ShapeBorderTween(begin: begin, end: end),
         super(key: key);
 
@@ -27,7 +27,7 @@ class ShapeHeroFrom extends StatelessWidget {
           animation: animation,
           builder: (context, child) => ClipPath(
             clipper: ShapeBorderClipper(
-              shape: _tween.lerp(animation.value),
+              shape: _tween.lerp(animation.value)!,
             ),
             child: child,
           ),
@@ -44,10 +44,10 @@ class ShapeHeroFrom extends StatelessWidget {
 
 class ShapeHeroTo extends StatelessWidget {
   const ShapeHeroTo({
-    Key key,
-    this.tag,
-    this.value,
-    this.child,
+    Key? key,
+    required this.tag,
+    required this.value,
+    required this.child,
   }) : super(key: key);
 
   final String tag;

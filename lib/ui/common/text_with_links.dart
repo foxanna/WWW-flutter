@@ -7,9 +7,9 @@ import 'package:what_when_where/utils/uri_detector.dart';
 class TextWithLinks extends StatelessWidget {
   const TextWithLinks(
     this.text, {
-    Key key,
-    @required this.textStyle,
-    @required this.linkStyle,
+    Key? key,
+    required this.textStyle,
+    required this.linkStyle,
     this.textAlign = TextAlign.start,
     this.textDirection,
     this.softWrap = true,
@@ -24,13 +24,13 @@ class TextWithLinks extends StatelessWidget {
   final TextStyle textStyle;
   final TextStyle linkStyle;
   final TextAlign textAlign;
-  final TextDirection textDirection;
-  final Locale locale;
+  final TextDirection? textDirection;
+  final Locale? locale;
   final bool softWrap;
   final TextOverflow overflow;
-  final double textScaleFactor;
-  final int maxLines;
-  final String semanticsLabel;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
 
   @override
   Widget build(BuildContext context) => Semantics(

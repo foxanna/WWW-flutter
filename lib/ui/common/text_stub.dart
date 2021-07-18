@@ -4,26 +4,26 @@ import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class TextStub extends StatelessWidget {
   TextStub({
-    Key key,
-    TextStyle textStyle,
+    Key? key,
+    required TextStyle textStyle,
   }) : this._(
           key: key,
-          fontSize: textStyle.fontSize,
-          shimmerBaseColor: textStyle.color,
-          stubColor: textStyle.color.withOpacity(0.1),
+          fontSize: textStyle.fontSize!,
+          shimmerBaseColor: textStyle.color!,
+          stubColor: textStyle.color!.withOpacity(0.1),
           shimmerHighlightColor:
-              ThemeData.estimateBrightnessForColor(textStyle.color) ==
+              ThemeData.estimateBrightnessForColor(textStyle.color!) ==
                       Brightness.dark
                   ? Colors.white
                   : Colors.black38,
         );
 
   const TextStub._({
-    Key key,
-    double fontSize,
-    Color shimmerBaseColor,
-    Color shimmerHighlightColor,
-    Color stubColor,
+    Key? key,
+    required double fontSize,
+    required Color shimmerBaseColor,
+    required Color shimmerHighlightColor,
+    required Color stubColor,
   })  : this._fontSize = fontSize,
         this._shimmerBaseColor = shimmerBaseColor,
         this._shimmerHighlightColor = shimmerHighlightColor,

@@ -4,7 +4,7 @@ import 'package:what_when_where/ui/common/text_stub.dart';
 import 'package:what_when_where/ui/tour_details/question_template_tile.dart';
 
 class TourDetailsQuestionLoadingTile extends StatelessWidget {
-  const TourDetailsQuestionLoadingTile({Key key}) : super(key: key);
+  const TourDetailsQuestionLoadingTile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

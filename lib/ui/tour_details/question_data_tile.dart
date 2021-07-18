@@ -5,13 +5,13 @@ import 'package:what_when_where/ui/tour_details/question_template_tile.dart';
 
 class TourDetailsQuestionDataTile extends StatelessWidget {
   const TourDetailsQuestionDataTile({
-    Key key,
-    @required this.question,
+    Key? key,
+    required this.question,
     this.onTap,
   }) : super(key: key);
 
   final Question question;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

@@ -6,11 +6,11 @@ import 'package:what_when_where/ui/common/error_message.dart';
 
 class TournamentDetailsErrorPage extends StatelessWidget {
   const TournamentDetailsErrorPage({
-    Key key,
+    Key? key,
     this.exception,
   }) : super(key: key);
 
-  final Exception exception;
+  final Exception? exception;
 
   @override
   Widget build(BuildContext context) => SliverFillRemaining(
@@ -18,14 +18,14 @@ class TournamentDetailsErrorPage extends StatelessWidget {
         child: ErrorMessage(
           exception: exception,
           retryFunction: () => _loadTournament(context),
-          color: Theme.of(context).primaryTextTheme.bodyText2.color,
+          color: Theme.of(context).primaryTextTheme.bodyText2!.color,
         ),
       );
 
   void _loadTournament(BuildContext context) {
     final store = StoreProvider.of<AppState>(context);
 
-    store.dispatch(
-        UserActionTournament.load(info: store.state.tournamentState.info));
+    store.state.tournamentState.forEach(
+        (state) => store.dispatch(UserActionTournament.load(info: state.info)));
   }
 }

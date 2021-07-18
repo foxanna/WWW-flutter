@@ -3,14 +3,15 @@ import 'package:what_when_where/api/search/sorting.dart';
 import 'package:what_when_where/localization/localizations.dart';
 
 class SortingController extends ValueNotifier<Sorting> {
-  SortingController({Sorting value}) : super(value);
+  SortingController({required Sorting value}) : super(value);
 }
 
 class SearchAppBarSortingButton extends StatelessWidget {
   SearchAppBarSortingButton({
-    Key key,
-    SortingController controller,
-  })  : _sortingController = controller ?? SortingController(),
+    Key? key,
+    SortingController? controller,
+  })  : _sortingController =
+            controller ?? SortingController(value: Sorting.date),
         super(key: key);
 
   final SortingController _sortingController;
@@ -31,7 +32,7 @@ class SearchAppBarSortingButton extends StatelessWidget {
       itemBuilder: (context) => Sorting.values
           .map((x) => PopupMenuItem<Sorting>(
                 value: x,
-                child: Text(sortOptionsTranslations[x]),
+                child: Text(sortOptionsTranslations[x]!),
               ))
           .toList(),
       onSelected: (s) => _sortingController.value = s,

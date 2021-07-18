@@ -8,12 +8,12 @@ import 'package:what_when_where/ui/common/error_message.dart';
 
 class TournamentsTreeErrorPage extends StatelessWidget {
   const TournamentsTreeErrorPage({
-    Key key,
+    Key? key,
     this.exception,
-    this.tournamentsTreeInfo,
+    required this.tournamentsTreeInfo,
   }) : super(key: key);
 
-  final Exception exception;
+  final Exception? exception;
   final TournamentsTreeInfo tournamentsTreeInfo;
 
   @override

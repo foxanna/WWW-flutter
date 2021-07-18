@@ -8,9 +8,9 @@ import 'package:what_when_where/ui/question/question_sections.dart';
 
 class QuestionAnswer extends StatelessWidget {
   const QuestionAnswer({
-    Key key,
-    this.show,
-    this.question,
+    Key? key,
+    required this.show,
+    required this.question,
   }) : super(key: key);
 
   final bool show;
@@ -22,7 +22,10 @@ class QuestionAnswer extends StatelessWidget {
 }
 
 class _QuestionAnswer extends StatelessWidget {
-  const _QuestionAnswer({Key key, this.question}) : super(key: key);
+  const _QuestionAnswer({
+    Key? key,
+    required this.question,
+  }) : super(key: key);
 
   final Question question;
 
@@ -37,7 +40,7 @@ class _QuestionAnswer extends StatelessWidget {
         StyleConfiguration.of(context).questionStyleConfiguration;
     final translations = WWWLocalizations.of(context);
 
-    if (question.answer?.isNotEmpty ?? false) {
+    if (question.answer.isNotEmpty) {
       yield QuestionTextSectionsTheme(
         data: StyleConfiguration.of(context)
             .questionStyleConfiguration
@@ -50,7 +53,7 @@ class _QuestionAnswer extends StatelessWidget {
       );
     }
 
-    if (question.passCriteria?.isNotEmpty ?? false) {
+    if (question.passCriteria.isNotEmpty) {
       yield SizedBox(
         height: styleConfiguration
             .questionCardAnswerSectionsThemeData.sectionsSpacing,

@@ -3,7 +3,7 @@ import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/text_stub.dart';
 
 class TournamentsGridStubTile extends StatelessWidget {
-  const TournamentsGridStubTile({Key key}) : super(key: key);
+  const TournamentsGridStubTile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

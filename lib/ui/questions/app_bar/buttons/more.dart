@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/ui/questions/bottom_sheet/bottom_sheet.dart';
 
 class QuestionsBottomAppBarMoreButton extends StatelessWidget {
-  const QuestionsBottomAppBarMoreButton({Key key}) : super(key: key);
+  const QuestionsBottomAppBarMoreButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => IconButton(

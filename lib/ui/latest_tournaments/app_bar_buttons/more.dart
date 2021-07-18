@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:what_when_where/ui/latest_tournaments/bottom_sheet/bottom_sheet.dart';
 
 class LatestTournamentsAppBarMoreButton extends StatelessWidget {
-  const LatestTournamentsAppBarMoreButton({Key key}) : super(key: key);
+  const LatestTournamentsAppBarMoreButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => IconButton(

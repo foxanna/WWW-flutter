@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -8,53 +9,58 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/search/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
+import 'package:what_when_where/ui/common/store_connector.dart';
+import 'package:what_when_where/ui/common/unexpected_state_widget.dart';
 import 'package:what_when_where/ui/search/app_bar/buttons/sorting.dart';
 
 class SearchPageAppBar extends StatefulWidget {
   const SearchPageAppBar({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _SearchPageAppBarState();
+  _SearchPageAppBarState createState() => _SearchPageAppBarState();
 }
 
 class _SearchPageAppBarState extends State<SearchPageAppBar> {
-  FocusNode _focusNode;
-  TextEditingController _queryController;
-  SortingController _sortingController;
+  late final FocusNode _focusNode;
+  late final TextEditingController _queryController;
+  late final SortingController _sortingController;
 
-  PublishSubject<String> _queryDebouncer;
+  late final PublishSubject<String> _queryDebouncer;
 
   @override
   Widget build(BuildContext context) =>
-      StoreConnector<AppState, SearchParameters>(
-        distinct: true,
-        converter: (store) => store.state.searchState.parameters,
-        builder: (context, state) {
-          final styleConfiguration =
-              StyleConfiguration.of(context).searchStyleConfiguration;
+      WWWStoreConnector<dartz.Option<SearchParameters>>(
+        converter: (state) =>
+            state.searchState.map((state) => state.parameters),
+        builder: (context, parameters) => parameters.fold(
+          () => UnexpectedStateSliver(),
+          (parameters) {
+            final styleConfiguration =
+                StyleConfiguration.of(context).searchStyleConfiguration;
 
-          return SliverAppBar(
-            floating: true,
-            forceElevated: true,
-            snap: true,
-            centerTitle: false,
-            iconTheme: styleConfiguration.appBarIconTheme,
-            backgroundColor: styleConfiguration.appBarBackground,
-            elevation: styleConfiguration.appBarElevation,
-            leading: _buildBackButton(context),
-            title: _buildSearchField(context, styleConfiguration),
-            actions: [
-              if (state.query.isNotEmpty)
-                IconButton(
-                  icon: const Icon(Icons.clear),
-                  onPressed: () => _clear(),
-                ),
-              SearchAppBarSortingButton(controller: _sortingController),
-            ],
-          );
-        },
+            return SliverAppBar(
+              floating: true,
+              forceElevated: true,
+              snap: true,
+              centerTitle: false,
+              iconTheme: styleConfiguration.appBarIconTheme,
+              backgroundColor: styleConfiguration.appBarBackground,
+              elevation: styleConfiguration.appBarElevation,
+              leading: _buildBackButton(context),
+              title: _buildSearchField(context, styleConfiguration),
+              actions: [
+                if (parameters.query.isNotEmpty)
+                  IconButton(
+                    icon: const Icon(Icons.clear),
+                    onPressed: () => _clear(),
+                  ),
+                SearchAppBarSortingButton(controller: _sortingController),
+              ],
+            );
+          },
+        ),
         onInit: _onInit,
         onDispose: _onDispose,
       );
@@ -83,15 +89,16 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
         ),
       );
 
-  void _onInit(Store<AppState> store) {
-    _queryController =
-        TextEditingController(text: store.state.searchState.parameters.query);
-    _queryController.addListener(_onQueryChanged);
+  void _onInit(Store<AppState> store) =>
+      store.state.searchState.map((state) => state.parameters).forEach(
+        (parameters) {
+          _queryController = TextEditingController(text: parameters.query);
+          _queryController.addListener(_onQueryChanged);
 
-    _sortingController =
-        SortingController(value: store.state.searchState.parameters.sorting);
-    _sortingController.addListener(_onSortingChanged);
-  }
+          _sortingController = SortingController(value: parameters.sorting);
+          _sortingController.addListener(_onSortingChanged);
+        },
+      );
 
   void _onDispose(Store<AppState> store) {
     _sortingController.removeListener(_onSortingChanged);
@@ -134,18 +141,27 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
 
   void _onSortingChanged() {
     final store = StoreProvider.of<AppState>(context);
-    if (store.state.searchState.parameters.sorting !=
-        _sortingController.value) {
-      store.dispatch(
-          UserActionSearch.updateSorting(sorting: _sortingController.value));
-    }
+
+    store.state.searchState.map((state) => state.parameters).forEach(
+      (parameters) {
+        if (parameters.sorting != _sortingController.value) {
+          store.dispatch(UserActionSearch.updateSorting(
+              sorting: _sortingController.value));
+        }
+      },
+    );
   }
 
   void _onQueryChanged() {
     final store = StoreProvider.of<AppState>(context);
-    if (store.state.searchState.parameters.query != _queryController.text) {
-      store.dispatch(UserActionSearch.updateText(query: _queryController.text));
-    }
+    store.state.searchState.map((state) => state.parameters).forEach(
+      (parameters) {
+        if (parameters.query != _queryController.text) {
+          store.dispatch(
+              UserActionSearch.updateText(query: _queryController.text));
+        }
+      },
+    );
 
     _queryDebouncer.sink.add(_queryController.text);
   }

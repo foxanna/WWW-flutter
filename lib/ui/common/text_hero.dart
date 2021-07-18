@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class TextHeroFrom extends StatelessWidget {
   TextHeroFrom({
-    Key key,
-    String tag,
-    TextStyle startTextStyle,
-    TextStyle endTextStyle,
-    String text,
+    Key? key,
+    required String tag,
+    required TextStyle startTextStyle,
+    required TextStyle endTextStyle,
+    required String text,
   }) : this._(
           key: key,
           tag: tag,
@@ -17,11 +17,11 @@ class TextHeroFrom extends StatelessWidget {
         );
 
   const TextHeroFrom._({
-    Key key,
-    this.tag,
-    this.startTextStyle,
-    this.text,
-    TextStyleTween tween,
+    Key? key,
+    required this.tag,
+    required this.startTextStyle,
+    required this.text,
+    required TextStyleTween tween,
   })  : this._tween = tween,
         super(key: key);
 
@@ -41,7 +41,7 @@ class TextHeroFrom extends StatelessWidget {
           animation: animation,
           builder: (context, child) => DefaultTextStyle(
             style: _tween.lerp(animation.value),
-            child: child,
+            child: child!,
           ),
           child: AutoSizeText(
             text,
@@ -57,10 +57,10 @@ class TextHeroFrom extends StatelessWidget {
 
 class TextHeroTo extends StatelessWidget {
   const TextHeroTo({
-    Key key,
-    this.tag,
-    this.text,
-    this.style,
+    Key? key,
+    required this.tag,
+    required this.text,
+    required this.style,
   }) : super(key: key);
 
   final String tag;
@@ -76,10 +76,11 @@ class TextHeroTo extends StatelessWidget {
       createRectTween: (begin, end) => MaterialRectArcTween(
           begin: begin,
           end: Rect.fromLTWH(
-              end.left,
-              end.top,
-              (end.width + mediaQuery.textScaleFactor).ceilToDouble(),
-              (end.height + mediaQuery.textScaleFactor).ceilToDouble())),
+            end!.left,
+            end.top,
+            (end.width + mediaQuery.textScaleFactor).ceilToDouble(),
+            (end.height + mediaQuery.textScaleFactor).ceilToDouble(),
+          )),
       tag: tag,
       child: Text(text, style: style),
     );

@@ -3,7 +3,7 @@ import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 
 class BookmarksPageAppBar extends StatelessWidget {
-  const BookmarksPageAppBar({Key key}) : super(key: key);
+  const BookmarksPageAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SliverAppBar(

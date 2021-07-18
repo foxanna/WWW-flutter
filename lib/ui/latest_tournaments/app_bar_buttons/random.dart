@@ -6,7 +6,7 @@ import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/resources/custom_icons.dart';
 
 class LatestTournamentsAppBarRandomButton extends StatelessWidget {
-  const LatestTournamentsAppBarRandomButton({Key key}) : super(key: key);
+  const LatestTournamentsAppBarRandomButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => IconButton(

@@ -5,18 +5,17 @@ import 'package:what_when_where/resources/dimensions.dart';
 
 class ErrorMessage extends StatelessWidget {
   const ErrorMessage({
-    Key key,
-    Function retryFunction,
+    Key? key,
+    Function? retryFunction,
     this.color,
     this.exception,
     this.dense = false,
   })  : this._retryFunction = retryFunction,
-        assert(dense != null),
         super(key: key);
 
-  final Function _retryFunction;
-  final Color color;
-  final Exception exception;
+  final Function? _retryFunction;
+  final Color? color;
+  final Exception? exception;
   final bool dense;
 
   @override
@@ -38,7 +37,7 @@ class ErrorMessage extends StatelessWidget {
                 style: color != null
                     ? Theme.of(context)
                         .textTheme
-                        .subtitle1
+                        .subtitle1!
                         .copyWith(color: color)
                     : Theme.of(context).textTheme.subtitle1,
               ),
@@ -50,7 +49,7 @@ class ErrorMessage extends StatelessWidget {
                   color: color,
                 ),
                 tooltip: translations.tooltipRetry,
-                onPressed: () => _retryFunction(),
+                onPressed: () => _retryFunction?.call(),
               )
           ],
         ),

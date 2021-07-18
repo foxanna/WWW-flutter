@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
@@ -13,36 +14,37 @@ import 'package:what_when_where/localization/localizations.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/ui/common/progress_indicator.dart';
+import 'package:what_when_where/ui/common/unexpected_state_widget.dart';
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
 class QuestionSections extends StatelessWidget {
   factory QuestionSections({
-    Key key,
-    List<QuestionSection> sections,
-    String prefix,
-    String suffix,
+    Key? key,
+    required List<QuestionSection> sections,
+    String? prefix,
+    String? suffix,
   }) {
     final finalSection = List<QuestionSection>.from(sections);
 
-    if (prefix?.isNotEmpty ?? false) {
+    if (prefix.isNotNullOrEmpty) {
       const index = 0;
 
       if (finalSection[index] is TextSection) {
-        finalSection[index] = TextSection.fromString(
-            string: '$prefix${finalSection[index].value}');
+        finalSection[index] =
+            TextSection.fromString('$prefix${finalSection[index].value}');
       } else {
-        finalSection.insert(index, TextSection.fromString(string: prefix));
+        finalSection.insert(index, TextSection.fromString(prefix!));
       }
     }
 
-    if (suffix?.isNotEmpty ?? false) {
+    if (suffix.isNotNullOrEmpty) {
       final index = finalSection.length - 1;
 
       if (finalSection[index] is TextSection) {
-        finalSection[index] = TextSection.fromString(
-            string: '${finalSection[index].value}$suffix');
+        finalSection[index] =
+            TextSection.fromString('${finalSection[index].value}$suffix');
       } else {
-        finalSection.add(TextSection.fromString(string: suffix));
+        finalSection.add(TextSection.fromString(suffix!));
       }
     }
 
@@ -51,7 +53,7 @@ class QuestionSections extends StatelessWidget {
 
   const QuestionSections._(
     this._sections, {
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   final List<QuestionSection> _sections;
@@ -66,7 +68,6 @@ class QuestionSections extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: _sections
           .map((section) => _getChild(context, section, theme))
-          .where((widget) => widget != null)
           .mix(SizedBox(height: theme.sectionsSpacing))
           .toList(),
     );
@@ -96,14 +97,13 @@ class QuestionSections extends StatelessWidget {
       return _buildTextSection(context, section, theme.textStyle);
     }
 
-    return null;
+    return const UnexpectedStateWidget();
   }
 
   Widget _buildSpeakersNoteSection(
           BuildContext context, SpeakerNoteSection section, TextStyle style) =>
       HtmlWidget(
         section.value,
-        bodyPadding: EdgeInsets.zero,
         textStyle: style,
       );
 
@@ -119,10 +119,9 @@ class QuestionSections extends StatelessWidget {
         ),
         child: Center(
           child: Padding(
-            padding: EdgeInsets.all(style.fontSize),
+            padding: EdgeInsets.all(style.fontSize!),
             child: HtmlWidget(
               section.value,
-              bodyPadding: EdgeInsets.zero,
               textStyle: style,
             ),
           ),
@@ -133,7 +132,6 @@ class QuestionSections extends StatelessWidget {
           BuildContext context, TextSection section, TextStyle style) =>
       HtmlWidget(
         section.value,
-        bodyPadding: EdgeInsets.zero,
         textStyle: style,
       );
 

@@ -3,8 +3,8 @@ import 'package:what_when_where/resources/style_configuration.dart';
 
 class ModalBottomSheetContainer extends StatelessWidget {
   const ModalBottomSheetContainer({
-    Key key,
-    this.children,
+    Key? key,
+    required this.children,
   }) : super(key: key);
 
   final List<Widget> children;

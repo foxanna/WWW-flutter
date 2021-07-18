@@ -4,22 +4,23 @@ import 'package:what_when_where/resources/style_configuration.dart';
 
 class TourDetailsTemplateTile extends StatelessWidget {
   const TourDetailsTemplateTile({
-    Key key,
+    Key? key,
     this.foregroundColor,
     this.backgroundColor,
-    this.titleBuilder,
+    required this.titleBuilder,
     this.questionsCount,
     this.questionBuilder,
     this.childBuilder,
   })  : assert(questionBuilder == null || childBuilder == null),
+        assert((questionBuilder == null) == (questionsCount == null)),
         super(key: key);
 
-  final Color foregroundColor;
-  final Color backgroundColor;
-  final int questionsCount;
+  final Color? foregroundColor;
+  final Color? backgroundColor;
+  final int? questionsCount;
   final WidgetBuilder titleBuilder;
-  final WidgetBuilder childBuilder;
-  final IndexedWidgetBuilder questionBuilder;
+  final WidgetBuilder? childBuilder;
+  final IndexedWidgetBuilder? questionBuilder;
 
   @override
   Widget build(BuildContext context) => Stack(
@@ -95,16 +96,16 @@ class TourDetailsTemplateTile extends StatelessWidget {
                       left: styleConfiguration.tourContentPadding.left,
                       right: styleConfiguration.tourContentPadding.right,
                     ),
-                    itemCount: questionsCount,
+                    itemCount: questionsCount!,
                     physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) =>
-                        questionBuilder(context, index),
+                        questionBuilder!(context, index),
                     separatorBuilder: (context, index) => SizedBox(
                       width: styleConfiguration.tourQuestionsSpacing,
                     ),
                   )
-                : childBuilder(context),
+                : childBuilder!(context),
           )
         ],
       ),

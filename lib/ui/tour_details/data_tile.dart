@@ -10,16 +10,16 @@ import 'package:what_when_where/ui/tour_details/template_tile.dart';
 
 class TourDetailsDataTile extends StatelessWidget {
   const TourDetailsDataTile({
-    Key key,
-    this.tour,
+    Key? key,
+    required this.tour,
     this.foregroundColor,
     this.backgroundColor,
   }) : super(key: key);
 
   final Tour tour;
 
-  final Color foregroundColor;
-  final Color backgroundColor;
+  final Color? foregroundColor;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {

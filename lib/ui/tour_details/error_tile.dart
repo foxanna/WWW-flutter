@@ -10,18 +10,18 @@ import 'package:what_when_where/ui/tour_details/template_tile.dart';
 
 class TourDetailsErrorTile extends StatelessWidget {
   const TourDetailsErrorTile({
-    Key key,
-    this.tourInfo,
+    Key? key,
+    required this.tourInfo,
     this.foregroundColor,
     this.backgroundColor,
     this.exception,
   }) : super(key: key);
 
   final TourInfo tourInfo;
-  final Exception exception;
+  final Exception? exception;
 
-  final Color foregroundColor;
-  final Color backgroundColor;
+  final Color? foregroundColor;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
