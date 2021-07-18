@@ -12,8 +12,8 @@ abstract class ITournamentStatusService {
 @LazySingleton(as: ITournamentStatusService)
 class TournamentStatusService implements ITournamentStatusService {
   const TournamentStatusService({
-    ITournamentsHistoryService historyService,
-    ITournamentsBookmarksService bookmarksService,
+    required ITournamentsHistoryService historyService,
+    required ITournamentsBookmarksService bookmarksService,
   })  : _historyService = historyService,
         _bookmarksService = bookmarksService;
 

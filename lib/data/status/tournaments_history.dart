@@ -13,8 +13,8 @@ abstract class ITournamentsHistoryService {
 @LazySingleton(as: ITournamentsHistoryService)
 class TournamentsHistoryService implements ITournamentsHistoryService {
   const TournamentsHistoryService({
-    ILocalStorageService localStorage,
-    ICrashService crashService,
+    required ILocalStorageService localStorage,
+    required ICrashService crashService,
   })  : _localStorage = localStorage,
         _crashService = crashService;
 
@@ -27,13 +27,13 @@ class TournamentsHistoryService implements ITournamentsHistoryService {
   Future<bool> wasRead(TournamentInfo info) async {
     try {
       final isRead = (info.id.isNotNullOrEmpty &&
-              await _localStorage.containsKey<String>(_tableName, info.id)) ||
+              await _localStorage.containsKey<String>(_tableName, info.id!)) ||
           (info.id2.isNotNullOrEmpty &&
-              await _localStorage.containsKey<String>(_tableName, info.id2));
+              await _localStorage.containsKey<String>(_tableName, info.id2!));
 
       return isRead;
     } on Exception catch (e, s) {
-      _crashService.recordException(e, stackTrace: s);
+      await _crashService.logException(e, stackTrace: s);
       return false;
     }
   }
@@ -42,13 +42,13 @@ class TournamentsHistoryService implements ITournamentsHistoryService {
   Future<void> markAsRead(TournamentInfo info) async {
     try {
       if (info.id.isNotNullOrEmpty) {
-        await _localStorage.put<String>(_tableName, info.id, info.id);
+        await _localStorage.put<String>(_tableName, info.id!, info.id!);
       }
       if (info.id2.isNotNullOrEmpty) {
-        await _localStorage.put<String>(_tableName, info.id2, info.id2);
+        await _localStorage.put<String>(_tableName, info.id2!, info.id2!);
       }
     } on Exception catch (e, s) {
-      _crashService.recordException(e, stackTrace: s);
+      await _crashService.logException(e, stackTrace: s);
     }
   }
 }
