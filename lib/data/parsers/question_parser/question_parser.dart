@@ -15,11 +15,10 @@ class QuestionParser {
 
   static final _instance = QuestionParser._();
 
-  static List<QuestionSection> split(String originalText) =>
+  static List<QuestionSection> split(String? originalText) =>
       originalText?.isEmpty ?? true
-          ? null
-          : _split(originalText)?.toList() ??
-              [TextSection.fromString(string: originalText)];
+          ? <QuestionSection>[]
+          : _split(originalText!).toList();
 
   static Iterable<QuestionSection> _split(String originalText) sync* {
     var text = originalText;
@@ -39,19 +38,19 @@ class QuestionParser {
 
       switch (nextSectionType) {
         case QuestionSectionType.SpeakerNote:
-          yield SpeakerNoteSection.fromString(string: nextSectionText);
+          yield SpeakerNoteSection.fromString(nextSectionText);
           break;
         case QuestionSectionType.Image:
-          yield ImageSection.fromString(string: nextSectionText);
+          yield ImageSection.fromString(nextSectionText);
           break;
         case QuestionSectionType.Audio:
-          yield AudioSection.fromString(string: nextSectionText);
+          yield AudioSection.fromString(nextSectionText);
           break;
         case QuestionSectionType.GiveAway:
-          yield GiveAwaySection.fromString(string: nextSectionText);
+          yield GiveAwaySection.fromString(nextSectionText);
           break;
         case QuestionSectionType.Text:
-          yield TextSection.fromString(string: nextSectionText);
+          yield TextSection.fromString(nextSectionText);
           break;
       }
 
@@ -59,12 +58,12 @@ class QuestionParser {
     }
   }
 
-  static String trim(String originalText) {
+  static String? trim(String? originalText) {
     if (originalText?.isEmpty ?? true) {
       return null;
     }
 
-    var text = originalText;
+    var text = originalText!;
 
     text = text.normalizeToSingleLine();
     text =

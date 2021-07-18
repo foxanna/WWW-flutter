@@ -40,7 +40,7 @@ class QuestionParserHelper {
     var text = originalText;
 
     if (_matchers.containsKey(sectionType)) {
-      for (final matcher in _matchers[sectionType]) {
+      for (final matcher in _matchers[sectionType]!) {
         text = text.replaceAll(matcher, '');
       }
     }
@@ -49,13 +49,13 @@ class QuestionParserHelper {
 
   static QuestionSectionType nextSectionType(String text) =>
       _matchers.keys.firstWhere(
-          (key) => _matchers[key].any((matcher) => text.startsWith(matcher)),
+          (key) => _matchers[key]!.any((matcher) => text.startsWith(matcher)),
           orElse: () => QuestionSectionType.Text);
 
-  static String nextSectionText(
+  static String? nextSectionText(
           String text, QuestionSectionType nextSectionType) =>
       nextSectionType != QuestionSectionType.Text
-          ? _matchers[nextSectionType]
+          ? _matchers[nextSectionType]!
               .map((matcher) => matcher.stringMatch(text))
               .firstWhere(
                 (sectionText) => sectionText != null,
@@ -63,7 +63,7 @@ class QuestionParserHelper {
               )
           : text.substring(0, _nearestSectionIndex(text));
 
-  static int _nearestSectionIndex(String text) {
+  static int? _nearestSectionIndex(String text) {
     final sectionsIndexes = _matchers.values
         .expand((x) => x)
         .map((x) => text.indexOf(x))
