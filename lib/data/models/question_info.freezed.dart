@@ -17,13 +17,13 @@ class _$QuestionInfoTearOff {
   const _$QuestionInfoTearOff();
 
   _QuestionInfo call(
-      {@HiveField(hiveQuestionInfoIdFieldId)
+      {@HiveField(QuestionInfoHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveQuestionInfoNumberFieldId)
+      @HiveField(QuestionInfoHiveFieldsIds.number)
           String? number,
-      @HiveField(hiveQuestionInfoUrlFieldId)
+      @HiveField(QuestionInfoHiveFieldsIds.url)
           String? url,
-      @HiveField(hiveQuestionInfoTourInfoFieldId)
+      @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
           TourInfo tourInfo = const TourInfo()}) {
     return _QuestionInfo(
       id: id,
@@ -39,13 +39,13 @@ const $QuestionInfo = _$QuestionInfoTearOff();
 
 /// @nodoc
 mixin _$QuestionInfo {
-  @HiveField(hiveQuestionInfoIdFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionInfoNumberFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.number)
   String? get number => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionInfoUrlFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.url)
   String? get url => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionInfoTourInfoFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
   TourInfo get tourInfo => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -59,10 +59,10 @@ abstract class $QuestionInfoCopyWith<$Res> {
           QuestionInfo value, $Res Function(QuestionInfo) then) =
       _$QuestionInfoCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(hiveQuestionInfoIdFieldId) String? id,
-      @HiveField(hiveQuestionInfoNumberFieldId) String? number,
-      @HiveField(hiveQuestionInfoUrlFieldId) String? url,
-      @HiveField(hiveQuestionInfoTourInfoFieldId) TourInfo tourInfo});
+      {@HiveField(QuestionInfoHiveFieldsIds.id) String? id,
+      @HiveField(QuestionInfoHiveFieldsIds.number) String? number,
+      @HiveField(QuestionInfoHiveFieldsIds.url) String? url,
+      @HiveField(QuestionInfoHiveFieldsIds.tourInfo) TourInfo tourInfo});
 
   $TourInfoCopyWith<$Res> get tourInfo;
 }
@@ -118,10 +118,10 @@ abstract class _$QuestionInfoCopyWith<$Res>
       __$QuestionInfoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(hiveQuestionInfoIdFieldId) String? id,
-      @HiveField(hiveQuestionInfoNumberFieldId) String? number,
-      @HiveField(hiveQuestionInfoUrlFieldId) String? url,
-      @HiveField(hiveQuestionInfoTourInfoFieldId) TourInfo tourInfo});
+      {@HiveField(QuestionInfoHiveFieldsIds.id) String? id,
+      @HiveField(QuestionInfoHiveFieldsIds.number) String? number,
+      @HiveField(QuestionInfoHiveFieldsIds.url) String? url,
+      @HiveField(QuestionInfoHiveFieldsIds.tourInfo) TourInfo tourInfo});
 
   @override
   $TourInfoCopyWith<$Res> get tourInfo;
@@ -167,30 +167,30 @@ class __$QuestionInfoCopyWithImpl<$Res> extends _$QuestionInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveQuestionInfoTypeId)
+@HiveType(typeId: HiveTypesIds.hiveQuestionInfoTypeId)
 class _$_QuestionInfo implements _QuestionInfo {
   const _$_QuestionInfo(
-      {@HiveField(hiveQuestionInfoIdFieldId)
+      {@HiveField(QuestionInfoHiveFieldsIds.id)
           this.id,
-      @HiveField(hiveQuestionInfoNumberFieldId)
+      @HiveField(QuestionInfoHiveFieldsIds.number)
           this.number,
-      @HiveField(hiveQuestionInfoUrlFieldId)
+      @HiveField(QuestionInfoHiveFieldsIds.url)
           this.url,
-      @HiveField(hiveQuestionInfoTourInfoFieldId)
+      @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
           this.tourInfo = const TourInfo()});
 
   @override
-  @HiveField(hiveQuestionInfoIdFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.id)
   final String? id;
   @override
-  @HiveField(hiveQuestionInfoNumberFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.number)
   final String? number;
   @override
-  @HiveField(hiveQuestionInfoUrlFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.url)
   final String? url;
   @JsonKey(defaultValue: const TourInfo())
   @override
-  @HiveField(hiveQuestionInfoTourInfoFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
   final TourInfo tourInfo;
 
   @override
@@ -229,23 +229,23 @@ class _$_QuestionInfo implements _QuestionInfo {
 
 abstract class _QuestionInfo implements QuestionInfo {
   const factory _QuestionInfo(
-          {@HiveField(hiveQuestionInfoIdFieldId) String? id,
-          @HiveField(hiveQuestionInfoNumberFieldId) String? number,
-          @HiveField(hiveQuestionInfoUrlFieldId) String? url,
-          @HiveField(hiveQuestionInfoTourInfoFieldId) TourInfo tourInfo}) =
+          {@HiveField(QuestionInfoHiveFieldsIds.id) String? id,
+          @HiveField(QuestionInfoHiveFieldsIds.number) String? number,
+          @HiveField(QuestionInfoHiveFieldsIds.url) String? url,
+          @HiveField(QuestionInfoHiveFieldsIds.tourInfo) TourInfo tourInfo}) =
       _$_QuestionInfo;
 
   @override
-  @HiveField(hiveQuestionInfoIdFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionInfoNumberFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.number)
   String? get number => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionInfoUrlFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.url)
   String? get url => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionInfoTourInfoFieldId)
+  @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
   TourInfo get tourInfo => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

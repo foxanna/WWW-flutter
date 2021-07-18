@@ -17,7 +17,7 @@ class _$GiveAwaySectionTearOff {
   const _$GiveAwaySectionTearOff();
 
   _GiveAwaySection call(
-      {@HiveField(hiveGiveAwaySectionValueFieldId) required String value}) {
+      {@HiveField(GiveAwaySectionHiveFieldsIds.value) required String value}) {
     return _GiveAwaySection(
       value: value,
     );
@@ -29,7 +29,7 @@ const $GiveAwaySection = _$GiveAwaySectionTearOff();
 
 /// @nodoc
 mixin _$GiveAwaySection {
-  @HiveField(hiveGiveAwaySectionValueFieldId)
+  @HiveField(GiveAwaySectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -42,7 +42,7 @@ abstract class $GiveAwaySectionCopyWith<$Res> {
   factory $GiveAwaySectionCopyWith(
           GiveAwaySection value, $Res Function(GiveAwaySection) then) =
       _$GiveAwaySectionCopyWithImpl<$Res>;
-  $Res call({@HiveField(hiveGiveAwaySectionValueFieldId) String value});
+  $Res call({@HiveField(GiveAwaySectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -74,7 +74,7 @@ abstract class _$GiveAwaySectionCopyWith<$Res>
           _GiveAwaySection value, $Res Function(_GiveAwaySection) then) =
       __$GiveAwaySectionCopyWithImpl<$Res>;
   @override
-  $Res call({@HiveField(hiveGiveAwaySectionValueFieldId) String value});
+  $Res call({@HiveField(GiveAwaySectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -103,13 +103,13 @@ class __$GiveAwaySectionCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveGiveAwaySectionTypeId)
+@HiveType(typeId: HiveTypesIds.hiveGiveAwaySectionTypeId)
 class _$_GiveAwaySection implements _GiveAwaySection {
   const _$_GiveAwaySection(
-      {@HiveField(hiveGiveAwaySectionValueFieldId) required this.value});
+      {@HiveField(GiveAwaySectionHiveFieldsIds.value) required this.value});
 
   @override
-  @HiveField(hiveGiveAwaySectionValueFieldId)
+  @HiveField(GiveAwaySectionHiveFieldsIds.value)
   final String value;
 
   @override
@@ -137,11 +137,11 @@ class _$_GiveAwaySection implements _GiveAwaySection {
 
 abstract class _GiveAwaySection implements GiveAwaySection {
   const factory _GiveAwaySection(
-          {@HiveField(hiveGiveAwaySectionValueFieldId) required String value}) =
-      _$_GiveAwaySection;
+      {@HiveField(GiveAwaySectionHiveFieldsIds.value)
+          required String value}) = _$_GiveAwaySection;
 
   @override
-  @HiveField(hiveGiveAwaySectionValueFieldId)
+  @HiveField(GiveAwaySectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

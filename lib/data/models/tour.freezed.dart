@@ -17,11 +17,11 @@ class _$TourTearOff {
   const _$TourTearOff();
 
   _Tour call(
-      {@HiveField(hiveTourIdFieldId)
+      {@HiveField(TourHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveTourInfoFieldId)
+      @HiveField(TourHiveFieldsIds.info)
           TourInfo info = const TourInfo(),
-      @HiveField(hiveTourQuestionsFieldId)
+      @HiveField(TourHiveFieldsIds.questions)
           List<Question> questions = const <Question>[]}) {
     return _Tour(
       id: id,
@@ -36,11 +36,11 @@ const $Tour = _$TourTearOff();
 
 /// @nodoc
 mixin _$Tour {
-  @HiveField(hiveTourIdFieldId)
+  @HiveField(TourHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
-  @HiveField(hiveTourInfoFieldId)
+  @HiveField(TourHiveFieldsIds.info)
   TourInfo get info => throw _privateConstructorUsedError;
-  @HiveField(hiveTourQuestionsFieldId)
+  @HiveField(TourHiveFieldsIds.questions)
   List<Question> get questions => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -52,9 +52,9 @@ abstract class $TourCopyWith<$Res> {
   factory $TourCopyWith(Tour value, $Res Function(Tour) then) =
       _$TourCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(hiveTourIdFieldId) String? id,
-      @HiveField(hiveTourInfoFieldId) TourInfo info,
-      @HiveField(hiveTourQuestionsFieldId) List<Question> questions});
+      {@HiveField(TourHiveFieldsIds.id) String? id,
+      @HiveField(TourHiveFieldsIds.info) TourInfo info,
+      @HiveField(TourHiveFieldsIds.questions) List<Question> questions});
 
   $TourInfoCopyWith<$Res> get info;
 }
@@ -103,9 +103,9 @@ abstract class _$TourCopyWith<$Res> implements $TourCopyWith<$Res> {
       __$TourCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(hiveTourIdFieldId) String? id,
-      @HiveField(hiveTourInfoFieldId) TourInfo info,
-      @HiveField(hiveTourQuestionsFieldId) List<Question> questions});
+      {@HiveField(TourHiveFieldsIds.id) String? id,
+      @HiveField(TourHiveFieldsIds.info) TourInfo info,
+      @HiveField(TourHiveFieldsIds.questions) List<Question> questions});
 
   @override
   $TourInfoCopyWith<$Res> get info;
@@ -145,26 +145,26 @@ class __$TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveTourTypeId)
+@HiveType(typeId: HiveTypesIds.hiveTourTypeId)
 class _$_Tour implements _Tour {
   const _$_Tour(
-      {@HiveField(hiveTourIdFieldId)
+      {@HiveField(TourHiveFieldsIds.id)
           this.id,
-      @HiveField(hiveTourInfoFieldId)
+      @HiveField(TourHiveFieldsIds.info)
           this.info = const TourInfo(),
-      @HiveField(hiveTourQuestionsFieldId)
+      @HiveField(TourHiveFieldsIds.questions)
           this.questions = const <Question>[]});
 
   @override
-  @HiveField(hiveTourIdFieldId)
+  @HiveField(TourHiveFieldsIds.id)
   final String? id;
   @JsonKey(defaultValue: const TourInfo())
   @override
-  @HiveField(hiveTourInfoFieldId)
+  @HiveField(TourHiveFieldsIds.info)
   final TourInfo info;
   @JsonKey(defaultValue: const <Question>[])
   @override
-  @HiveField(hiveTourQuestionsFieldId)
+  @HiveField(TourHiveFieldsIds.questions)
   final List<Question> questions;
 
   @override
@@ -200,18 +200,19 @@ class _$_Tour implements _Tour {
 
 abstract class _Tour implements Tour {
   const factory _Tour(
-      {@HiveField(hiveTourIdFieldId) String? id,
-      @HiveField(hiveTourInfoFieldId) TourInfo info,
-      @HiveField(hiveTourQuestionsFieldId) List<Question> questions}) = _$_Tour;
+          {@HiveField(TourHiveFieldsIds.id) String? id,
+          @HiveField(TourHiveFieldsIds.info) TourInfo info,
+          @HiveField(TourHiveFieldsIds.questions) List<Question> questions}) =
+      _$_Tour;
 
   @override
-  @HiveField(hiveTourIdFieldId)
+  @HiveField(TourHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourInfoFieldId)
+  @HiveField(TourHiveFieldsIds.info)
   TourInfo get info => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourQuestionsFieldId)
+  @HiveField(TourHiveFieldsIds.questions)
   List<Question> get questions => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

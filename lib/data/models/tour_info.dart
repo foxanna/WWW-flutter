@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
-import 'package:what_when_where/data/hive/constants.dart';
+import 'package:what_when_where/data/hive/hive_constants.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
 
 part 'tour_info.freezed.dart';
@@ -8,17 +8,17 @@ part 'tour_info.g.dart';
 
 @freezed
 class TourInfo with _$TourInfo {
-  @HiveType(typeId: hiveTourInfoTypeId)
+  @HiveType(typeId: HiveTypesIds.hiveTourInfoTypeId)
   const factory TourInfo({
-    @HiveField(hiveTourInfoIdFieldId) String? id,
-    @HiveField(hiveTourInfoTitleFieldId) String? title,
-    @HiveField(hiveTourInfoQuestionsCountFieldId) String? questionsCount,
-    @HiveField(hiveTourInfoDescriptionFieldId) String? description,
-    @HiveField(hiveTourInfoUrlFieldId) String? url,
-    @HiveField(hiveTourInfoEditorsFieldId) String? editors,
-    @HiveField(hiveTourInfoCreatedAtFieldId) String? createdAt,
-    @HiveField(hiveTourInfoPlayedAtFieldId) String? playedAt,
-    @HiveField(hiveTourInfoTournamentInfoFieldId)
+    @HiveField(TourInfoHiveFieldsIds.id) String? id,
+    @HiveField(TourInfoHiveFieldsIds.title) String? title,
+    @HiveField(TourInfoHiveFieldsIds.questionsCount) String? questionsCount,
+    @HiveField(TourInfoHiveFieldsIds.description) String? description,
+    @HiveField(TourInfoHiveFieldsIds.url) String? url,
+    @HiveField(TourInfoHiveFieldsIds.editors) String? editors,
+    @HiveField(TourInfoHiveFieldsIds.createdAt) String? createdAt,
+    @HiveField(TourInfoHiveFieldsIds.playedAt) String? playedAt,
+    @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
     @Default(TournamentInfo())
         TournamentInfo tournamentInfo,
   }) = _TourInfo;

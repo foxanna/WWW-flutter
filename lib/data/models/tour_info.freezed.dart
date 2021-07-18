@@ -17,23 +17,23 @@ class _$TourInfoTearOff {
   const _$TourInfoTearOff();
 
   _TourInfo call(
-      {@HiveField(hiveTourInfoIdFieldId)
+      {@HiveField(TourInfoHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveTourInfoTitleFieldId)
+      @HiveField(TourInfoHiveFieldsIds.title)
           String? title,
-      @HiveField(hiveTourInfoQuestionsCountFieldId)
+      @HiveField(TourInfoHiveFieldsIds.questionsCount)
           String? questionsCount,
-      @HiveField(hiveTourInfoDescriptionFieldId)
+      @HiveField(TourInfoHiveFieldsIds.description)
           String? description,
-      @HiveField(hiveTourInfoUrlFieldId)
+      @HiveField(TourInfoHiveFieldsIds.url)
           String? url,
-      @HiveField(hiveTourInfoEditorsFieldId)
+      @HiveField(TourInfoHiveFieldsIds.editors)
           String? editors,
-      @HiveField(hiveTourInfoCreatedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.createdAt)
           String? createdAt,
-      @HiveField(hiveTourInfoPlayedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.playedAt)
           String? playedAt,
-      @HiveField(hiveTourInfoTournamentInfoFieldId)
+      @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
           TournamentInfo tournamentInfo = const TournamentInfo()}) {
     return _TourInfo(
       id: id,
@@ -54,23 +54,23 @@ const $TourInfo = _$TourInfoTearOff();
 
 /// @nodoc
 mixin _$TourInfo {
-  @HiveField(hiveTourInfoIdFieldId)
+  @HiveField(TourInfoHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
-  @HiveField(hiveTourInfoTitleFieldId)
+  @HiveField(TourInfoHiveFieldsIds.title)
   String? get title => throw _privateConstructorUsedError;
-  @HiveField(hiveTourInfoQuestionsCountFieldId)
+  @HiveField(TourInfoHiveFieldsIds.questionsCount)
   String? get questionsCount => throw _privateConstructorUsedError;
-  @HiveField(hiveTourInfoDescriptionFieldId)
+  @HiveField(TourInfoHiveFieldsIds.description)
   String? get description => throw _privateConstructorUsedError;
-  @HiveField(hiveTourInfoUrlFieldId)
+  @HiveField(TourInfoHiveFieldsIds.url)
   String? get url => throw _privateConstructorUsedError;
-  @HiveField(hiveTourInfoEditorsFieldId)
+  @HiveField(TourInfoHiveFieldsIds.editors)
   String? get editors => throw _privateConstructorUsedError;
-  @HiveField(hiveTourInfoCreatedAtFieldId)
+  @HiveField(TourInfoHiveFieldsIds.createdAt)
   String? get createdAt => throw _privateConstructorUsedError;
-  @HiveField(hiveTourInfoPlayedAtFieldId)
+  @HiveField(TourInfoHiveFieldsIds.playedAt)
   String? get playedAt => throw _privateConstructorUsedError;
-  @HiveField(hiveTourInfoTournamentInfoFieldId)
+  @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
   TournamentInfo get tournamentInfo => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -83,23 +83,23 @@ abstract class $TourInfoCopyWith<$Res> {
   factory $TourInfoCopyWith(TourInfo value, $Res Function(TourInfo) then) =
       _$TourInfoCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(hiveTourInfoIdFieldId)
+      {@HiveField(TourInfoHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveTourInfoTitleFieldId)
+      @HiveField(TourInfoHiveFieldsIds.title)
           String? title,
-      @HiveField(hiveTourInfoQuestionsCountFieldId)
+      @HiveField(TourInfoHiveFieldsIds.questionsCount)
           String? questionsCount,
-      @HiveField(hiveTourInfoDescriptionFieldId)
+      @HiveField(TourInfoHiveFieldsIds.description)
           String? description,
-      @HiveField(hiveTourInfoUrlFieldId)
+      @HiveField(TourInfoHiveFieldsIds.url)
           String? url,
-      @HiveField(hiveTourInfoEditorsFieldId)
+      @HiveField(TourInfoHiveFieldsIds.editors)
           String? editors,
-      @HiveField(hiveTourInfoCreatedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.createdAt)
           String? createdAt,
-      @HiveField(hiveTourInfoPlayedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.playedAt)
           String? playedAt,
-      @HiveField(hiveTourInfoTournamentInfoFieldId)
+      @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
           TournamentInfo tournamentInfo});
 
   $TournamentInfoCopyWith<$Res> get tournamentInfo;
@@ -179,23 +179,23 @@ abstract class _$TourInfoCopyWith<$Res> implements $TourInfoCopyWith<$Res> {
       __$TourInfoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(hiveTourInfoIdFieldId)
+      {@HiveField(TourInfoHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveTourInfoTitleFieldId)
+      @HiveField(TourInfoHiveFieldsIds.title)
           String? title,
-      @HiveField(hiveTourInfoQuestionsCountFieldId)
+      @HiveField(TourInfoHiveFieldsIds.questionsCount)
           String? questionsCount,
-      @HiveField(hiveTourInfoDescriptionFieldId)
+      @HiveField(TourInfoHiveFieldsIds.description)
           String? description,
-      @HiveField(hiveTourInfoUrlFieldId)
+      @HiveField(TourInfoHiveFieldsIds.url)
           String? url,
-      @HiveField(hiveTourInfoEditorsFieldId)
+      @HiveField(TourInfoHiveFieldsIds.editors)
           String? editors,
-      @HiveField(hiveTourInfoCreatedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.createdAt)
           String? createdAt,
-      @HiveField(hiveTourInfoPlayedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.playedAt)
           String? playedAt,
-      @HiveField(hiveTourInfoTournamentInfoFieldId)
+      @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
           TournamentInfo tournamentInfo});
 
   @override
@@ -266,55 +266,55 @@ class __$TourInfoCopyWithImpl<$Res> extends _$TourInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveTourInfoTypeId)
+@HiveType(typeId: HiveTypesIds.hiveTourInfoTypeId)
 class _$_TourInfo implements _TourInfo {
   const _$_TourInfo(
-      {@HiveField(hiveTourInfoIdFieldId)
+      {@HiveField(TourInfoHiveFieldsIds.id)
           this.id,
-      @HiveField(hiveTourInfoTitleFieldId)
+      @HiveField(TourInfoHiveFieldsIds.title)
           this.title,
-      @HiveField(hiveTourInfoQuestionsCountFieldId)
+      @HiveField(TourInfoHiveFieldsIds.questionsCount)
           this.questionsCount,
-      @HiveField(hiveTourInfoDescriptionFieldId)
+      @HiveField(TourInfoHiveFieldsIds.description)
           this.description,
-      @HiveField(hiveTourInfoUrlFieldId)
+      @HiveField(TourInfoHiveFieldsIds.url)
           this.url,
-      @HiveField(hiveTourInfoEditorsFieldId)
+      @HiveField(TourInfoHiveFieldsIds.editors)
           this.editors,
-      @HiveField(hiveTourInfoCreatedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.createdAt)
           this.createdAt,
-      @HiveField(hiveTourInfoPlayedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.playedAt)
           this.playedAt,
-      @HiveField(hiveTourInfoTournamentInfoFieldId)
+      @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
           this.tournamentInfo = const TournamentInfo()});
 
   @override
-  @HiveField(hiveTourInfoIdFieldId)
+  @HiveField(TourInfoHiveFieldsIds.id)
   final String? id;
   @override
-  @HiveField(hiveTourInfoTitleFieldId)
+  @HiveField(TourInfoHiveFieldsIds.title)
   final String? title;
   @override
-  @HiveField(hiveTourInfoQuestionsCountFieldId)
+  @HiveField(TourInfoHiveFieldsIds.questionsCount)
   final String? questionsCount;
   @override
-  @HiveField(hiveTourInfoDescriptionFieldId)
+  @HiveField(TourInfoHiveFieldsIds.description)
   final String? description;
   @override
-  @HiveField(hiveTourInfoUrlFieldId)
+  @HiveField(TourInfoHiveFieldsIds.url)
   final String? url;
   @override
-  @HiveField(hiveTourInfoEditorsFieldId)
+  @HiveField(TourInfoHiveFieldsIds.editors)
   final String? editors;
   @override
-  @HiveField(hiveTourInfoCreatedAtFieldId)
+  @HiveField(TourInfoHiveFieldsIds.createdAt)
   final String? createdAt;
   @override
-  @HiveField(hiveTourInfoPlayedAtFieldId)
+  @HiveField(TourInfoHiveFieldsIds.playedAt)
   final String? playedAt;
   @JsonKey(defaultValue: const TournamentInfo())
   @override
-  @HiveField(hiveTourInfoTournamentInfoFieldId)
+  @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
   final TournamentInfo tournamentInfo;
 
   @override
@@ -373,51 +373,51 @@ class _$_TourInfo implements _TourInfo {
 
 abstract class _TourInfo implements TourInfo {
   const factory _TourInfo(
-      {@HiveField(hiveTourInfoIdFieldId)
+      {@HiveField(TourInfoHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveTourInfoTitleFieldId)
+      @HiveField(TourInfoHiveFieldsIds.title)
           String? title,
-      @HiveField(hiveTourInfoQuestionsCountFieldId)
+      @HiveField(TourInfoHiveFieldsIds.questionsCount)
           String? questionsCount,
-      @HiveField(hiveTourInfoDescriptionFieldId)
+      @HiveField(TourInfoHiveFieldsIds.description)
           String? description,
-      @HiveField(hiveTourInfoUrlFieldId)
+      @HiveField(TourInfoHiveFieldsIds.url)
           String? url,
-      @HiveField(hiveTourInfoEditorsFieldId)
+      @HiveField(TourInfoHiveFieldsIds.editors)
           String? editors,
-      @HiveField(hiveTourInfoCreatedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.createdAt)
           String? createdAt,
-      @HiveField(hiveTourInfoPlayedAtFieldId)
+      @HiveField(TourInfoHiveFieldsIds.playedAt)
           String? playedAt,
-      @HiveField(hiveTourInfoTournamentInfoFieldId)
+      @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
           TournamentInfo tournamentInfo}) = _$_TourInfo;
 
   @override
-  @HiveField(hiveTourInfoIdFieldId)
+  @HiveField(TourInfoHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourInfoTitleFieldId)
+  @HiveField(TourInfoHiveFieldsIds.title)
   String? get title => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourInfoQuestionsCountFieldId)
+  @HiveField(TourInfoHiveFieldsIds.questionsCount)
   String? get questionsCount => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourInfoDescriptionFieldId)
+  @HiveField(TourInfoHiveFieldsIds.description)
   String? get description => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourInfoUrlFieldId)
+  @HiveField(TourInfoHiveFieldsIds.url)
   String? get url => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourInfoEditorsFieldId)
+  @HiveField(TourInfoHiveFieldsIds.editors)
   String? get editors => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourInfoCreatedAtFieldId)
+  @HiveField(TourInfoHiveFieldsIds.createdAt)
   String? get createdAt => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourInfoPlayedAtFieldId)
+  @HiveField(TourInfoHiveFieldsIds.playedAt)
   String? get playedAt => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTourInfoTournamentInfoFieldId)
+  @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
   TournamentInfo get tournamentInfo => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

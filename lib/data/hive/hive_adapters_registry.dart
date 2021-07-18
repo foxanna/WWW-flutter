@@ -13,16 +13,16 @@ import 'package:what_when_where/data/models/tournament_info.dart';
 import 'package:what_when_where/data/models/tournament_status.dart';
 
 void hiveRegisterAdapters() {
-  Hive.registerAdapter(Tournament.createHiveAdapter());
-  Hive.registerAdapter(TournamentInfo.createHiveAdapter());
-  Hive.registerAdapter(TournamentStatus.createHiveAdapter());
-  Hive.registerAdapter(Tour.createHiveAdapter());
-  Hive.registerAdapter(TourInfo.createHiveAdapter());
-  Hive.registerAdapter(Question.createHiveAdapter());
-  Hive.registerAdapter(QuestionInfo.createHiveAdapter());
-  Hive.registerAdapter(AudioSection.createHiveAdapter());
-  Hive.registerAdapter(GiveAwaySection.createHiveAdapter());
-  Hive.registerAdapter(ImageSection.createHiveAdapter());
-  Hive.registerAdapter(SpeakerNoteSection.createHiveAdapter());
-  Hive.registerAdapter(TextSection.createHiveAdapter());
+  Hive.registerAdapter(TournamentAdapter());
+  Hive.registerAdapter(TournamentInfoAdapter());
+  Hive.registerAdapter(TournamentStatusAdapter());
+  Hive.registerAdapter(TourAdapter());
+  Hive.registerAdapter(TourInfoAdapter());
+  Hive.registerAdapter(QuestionAdapter());
+  Hive.registerAdapter(QuestionInfoAdapter());
+  Hive.registerAdapter(AudioSectionAdapter());
+  Hive.registerAdapter(GiveAwaySectionAdapter());
+  Hive.registerAdapter(ImageSectionAdapter());
+  Hive.registerAdapter(SpeakerNoteSectionAdapter());
+  Hive.registerAdapter(TextSectionAdapter());
 }

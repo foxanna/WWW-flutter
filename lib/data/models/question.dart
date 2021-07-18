@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:what_when_where/api/models/question_dto.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/data/hive/constants.dart';
+import 'package:what_when_where/data/hive/hive_constants.dart';
 import 'package:what_when_where/data/models/question_info.dart';
 import 'package:what_when_where/data/models/question_sections/question_section.dart';
 import 'package:what_when_where/data/models/tour_info.dart';
@@ -14,25 +14,25 @@ part 'question.g.dart';
 
 @freezed
 class Question with _$Question {
-  @HiveType(typeId: hiveQuestionTypeId)
+  @HiveType(typeId: HiveTypesIds.hiveQuestionTypeId)
   const factory Question({
-    @HiveField(hiveQuestionIdFieldId) String? id,
-    @HiveField(hiveQuestionDisplayFieldId) String? display,
-    @HiveField(hiveQuestionQuestionFieldId)
+    @HiveField(QuestionHiveFieldsIds.id) String? id,
+    @HiveField(QuestionHiveFieldsIds.display) String? display,
+    @HiveField(QuestionHiveFieldsIds.question)
     @Default(<QuestionSection>[])
         List<QuestionSection> question,
-    @HiveField(hiveQuestionAnswerFieldId)
+    @HiveField(QuestionHiveFieldsIds.answer)
     @Default(<QuestionSection>[])
         List<QuestionSection> answer,
-    @HiveField(hiveQuestionPassCriteriaFieldId)
+    @HiveField(QuestionHiveFieldsIds.passCriteria)
     @Default(<QuestionSection>[])
         List<QuestionSection> passCriteria,
-    @HiveField(hiveQuestionCommentsFieldId)
+    @HiveField(QuestionHiveFieldsIds.comments)
     @Default(<QuestionSection>[])
         comments,
-    @HiveField(hiveQuestionAuthorsFieldId) String? authors,
-    @HiveField(hiveQuestionSourcesFieldId) String? sources,
-    @HiveField(hiveQuestionInfoFieldId)
+    @HiveField(QuestionHiveFieldsIds.authors) String? authors,
+    @HiveField(QuestionHiveFieldsIds.sources) String? sources,
+    @HiveField(QuestionHiveFieldsIds.info)
     @Default(QuestionInfo())
         QuestionInfo info,
   }) = _Question;

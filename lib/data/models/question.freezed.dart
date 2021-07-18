@@ -17,23 +17,23 @@ class _$QuestionTearOff {
   const _$QuestionTearOff();
 
   _Question call(
-      {@HiveField(hiveQuestionIdFieldId)
+      {@HiveField(QuestionHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveQuestionDisplayFieldId)
+      @HiveField(QuestionHiveFieldsIds.display)
           String? display,
-      @HiveField(hiveQuestionQuestionFieldId)
+      @HiveField(QuestionHiveFieldsIds.question)
           List<QuestionSection> question = const <QuestionSection>[],
-      @HiveField(hiveQuestionAnswerFieldId)
+      @HiveField(QuestionHiveFieldsIds.answer)
           List<QuestionSection> answer = const <QuestionSection>[],
-      @HiveField(hiveQuestionPassCriteriaFieldId)
+      @HiveField(QuestionHiveFieldsIds.passCriteria)
           List<QuestionSection> passCriteria = const <QuestionSection>[],
-      @HiveField(hiveQuestionCommentsFieldId)
+      @HiveField(QuestionHiveFieldsIds.comments)
           dynamic comments = const <QuestionSection>[],
-      @HiveField(hiveQuestionAuthorsFieldId)
+      @HiveField(QuestionHiveFieldsIds.authors)
           String? authors,
-      @HiveField(hiveQuestionSourcesFieldId)
+      @HiveField(QuestionHiveFieldsIds.sources)
           String? sources,
-      @HiveField(hiveQuestionInfoFieldId)
+      @HiveField(QuestionHiveFieldsIds.info)
           QuestionInfo info = const QuestionInfo()}) {
     return _Question(
       id: id,
@@ -54,23 +54,23 @@ const $Question = _$QuestionTearOff();
 
 /// @nodoc
 mixin _$Question {
-  @HiveField(hiveQuestionIdFieldId)
+  @HiveField(QuestionHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionDisplayFieldId)
+  @HiveField(QuestionHiveFieldsIds.display)
   String? get display => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionQuestionFieldId)
+  @HiveField(QuestionHiveFieldsIds.question)
   List<QuestionSection> get question => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionAnswerFieldId)
+  @HiveField(QuestionHiveFieldsIds.answer)
   List<QuestionSection> get answer => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionPassCriteriaFieldId)
+  @HiveField(QuestionHiveFieldsIds.passCriteria)
   List<QuestionSection> get passCriteria => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionCommentsFieldId)
+  @HiveField(QuestionHiveFieldsIds.comments)
   dynamic get comments => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionAuthorsFieldId)
+  @HiveField(QuestionHiveFieldsIds.authors)
   String? get authors => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionSourcesFieldId)
+  @HiveField(QuestionHiveFieldsIds.sources)
   String? get sources => throw _privateConstructorUsedError;
-  @HiveField(hiveQuestionInfoFieldId)
+  @HiveField(QuestionHiveFieldsIds.info)
   QuestionInfo get info => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -83,23 +83,23 @@ abstract class $QuestionCopyWith<$Res> {
   factory $QuestionCopyWith(Question value, $Res Function(Question) then) =
       _$QuestionCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(hiveQuestionIdFieldId)
+      {@HiveField(QuestionHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveQuestionDisplayFieldId)
+      @HiveField(QuestionHiveFieldsIds.display)
           String? display,
-      @HiveField(hiveQuestionQuestionFieldId)
+      @HiveField(QuestionHiveFieldsIds.question)
           List<QuestionSection> question,
-      @HiveField(hiveQuestionAnswerFieldId)
+      @HiveField(QuestionHiveFieldsIds.answer)
           List<QuestionSection> answer,
-      @HiveField(hiveQuestionPassCriteriaFieldId)
+      @HiveField(QuestionHiveFieldsIds.passCriteria)
           List<QuestionSection> passCriteria,
-      @HiveField(hiveQuestionCommentsFieldId)
+      @HiveField(QuestionHiveFieldsIds.comments)
           dynamic comments,
-      @HiveField(hiveQuestionAuthorsFieldId)
+      @HiveField(QuestionHiveFieldsIds.authors)
           String? authors,
-      @HiveField(hiveQuestionSourcesFieldId)
+      @HiveField(QuestionHiveFieldsIds.sources)
           String? sources,
-      @HiveField(hiveQuestionInfoFieldId)
+      @HiveField(QuestionHiveFieldsIds.info)
           QuestionInfo info});
 
   $QuestionInfoCopyWith<$Res> get info;
@@ -179,23 +179,23 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       __$QuestionCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(hiveQuestionIdFieldId)
+      {@HiveField(QuestionHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveQuestionDisplayFieldId)
+      @HiveField(QuestionHiveFieldsIds.display)
           String? display,
-      @HiveField(hiveQuestionQuestionFieldId)
+      @HiveField(QuestionHiveFieldsIds.question)
           List<QuestionSection> question,
-      @HiveField(hiveQuestionAnswerFieldId)
+      @HiveField(QuestionHiveFieldsIds.answer)
           List<QuestionSection> answer,
-      @HiveField(hiveQuestionPassCriteriaFieldId)
+      @HiveField(QuestionHiveFieldsIds.passCriteria)
           List<QuestionSection> passCriteria,
-      @HiveField(hiveQuestionCommentsFieldId)
+      @HiveField(QuestionHiveFieldsIds.comments)
           dynamic comments,
-      @HiveField(hiveQuestionAuthorsFieldId)
+      @HiveField(QuestionHiveFieldsIds.authors)
           String? authors,
-      @HiveField(hiveQuestionSourcesFieldId)
+      @HiveField(QuestionHiveFieldsIds.sources)
           String? sources,
-      @HiveField(hiveQuestionInfoFieldId)
+      @HiveField(QuestionHiveFieldsIds.info)
           QuestionInfo info});
 
   @override
@@ -263,59 +263,59 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveQuestionTypeId)
+@HiveType(typeId: HiveTypesIds.hiveQuestionTypeId)
 class _$_Question implements _Question {
   const _$_Question(
-      {@HiveField(hiveQuestionIdFieldId)
+      {@HiveField(QuestionHiveFieldsIds.id)
           this.id,
-      @HiveField(hiveQuestionDisplayFieldId)
+      @HiveField(QuestionHiveFieldsIds.display)
           this.display,
-      @HiveField(hiveQuestionQuestionFieldId)
+      @HiveField(QuestionHiveFieldsIds.question)
           this.question = const <QuestionSection>[],
-      @HiveField(hiveQuestionAnswerFieldId)
+      @HiveField(QuestionHiveFieldsIds.answer)
           this.answer = const <QuestionSection>[],
-      @HiveField(hiveQuestionPassCriteriaFieldId)
+      @HiveField(QuestionHiveFieldsIds.passCriteria)
           this.passCriteria = const <QuestionSection>[],
-      @HiveField(hiveQuestionCommentsFieldId)
+      @HiveField(QuestionHiveFieldsIds.comments)
           this.comments = const <QuestionSection>[],
-      @HiveField(hiveQuestionAuthorsFieldId)
+      @HiveField(QuestionHiveFieldsIds.authors)
           this.authors,
-      @HiveField(hiveQuestionSourcesFieldId)
+      @HiveField(QuestionHiveFieldsIds.sources)
           this.sources,
-      @HiveField(hiveQuestionInfoFieldId)
+      @HiveField(QuestionHiveFieldsIds.info)
           this.info = const QuestionInfo()});
 
   @override
-  @HiveField(hiveQuestionIdFieldId)
+  @HiveField(QuestionHiveFieldsIds.id)
   final String? id;
   @override
-  @HiveField(hiveQuestionDisplayFieldId)
+  @HiveField(QuestionHiveFieldsIds.display)
   final String? display;
   @JsonKey(defaultValue: const <QuestionSection>[])
   @override
-  @HiveField(hiveQuestionQuestionFieldId)
+  @HiveField(QuestionHiveFieldsIds.question)
   final List<QuestionSection> question;
   @JsonKey(defaultValue: const <QuestionSection>[])
   @override
-  @HiveField(hiveQuestionAnswerFieldId)
+  @HiveField(QuestionHiveFieldsIds.answer)
   final List<QuestionSection> answer;
   @JsonKey(defaultValue: const <QuestionSection>[])
   @override
-  @HiveField(hiveQuestionPassCriteriaFieldId)
+  @HiveField(QuestionHiveFieldsIds.passCriteria)
   final List<QuestionSection> passCriteria;
   @JsonKey(defaultValue: const <QuestionSection>[])
   @override
-  @HiveField(hiveQuestionCommentsFieldId)
+  @HiveField(QuestionHiveFieldsIds.comments)
   final dynamic comments;
   @override
-  @HiveField(hiveQuestionAuthorsFieldId)
+  @HiveField(QuestionHiveFieldsIds.authors)
   final String? authors;
   @override
-  @HiveField(hiveQuestionSourcesFieldId)
+  @HiveField(QuestionHiveFieldsIds.sources)
   final String? sources;
   @JsonKey(defaultValue: const QuestionInfo())
   @override
-  @HiveField(hiveQuestionInfoFieldId)
+  @HiveField(QuestionHiveFieldsIds.info)
   final QuestionInfo info;
 
   @override
@@ -374,51 +374,51 @@ class _$_Question implements _Question {
 
 abstract class _Question implements Question {
   const factory _Question(
-      {@HiveField(hiveQuestionIdFieldId)
+      {@HiveField(QuestionHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveQuestionDisplayFieldId)
+      @HiveField(QuestionHiveFieldsIds.display)
           String? display,
-      @HiveField(hiveQuestionQuestionFieldId)
+      @HiveField(QuestionHiveFieldsIds.question)
           List<QuestionSection> question,
-      @HiveField(hiveQuestionAnswerFieldId)
+      @HiveField(QuestionHiveFieldsIds.answer)
           List<QuestionSection> answer,
-      @HiveField(hiveQuestionPassCriteriaFieldId)
+      @HiveField(QuestionHiveFieldsIds.passCriteria)
           List<QuestionSection> passCriteria,
-      @HiveField(hiveQuestionCommentsFieldId)
+      @HiveField(QuestionHiveFieldsIds.comments)
           dynamic comments,
-      @HiveField(hiveQuestionAuthorsFieldId)
+      @HiveField(QuestionHiveFieldsIds.authors)
           String? authors,
-      @HiveField(hiveQuestionSourcesFieldId)
+      @HiveField(QuestionHiveFieldsIds.sources)
           String? sources,
-      @HiveField(hiveQuestionInfoFieldId)
+      @HiveField(QuestionHiveFieldsIds.info)
           QuestionInfo info}) = _$_Question;
 
   @override
-  @HiveField(hiveQuestionIdFieldId)
+  @HiveField(QuestionHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionDisplayFieldId)
+  @HiveField(QuestionHiveFieldsIds.display)
   String? get display => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionQuestionFieldId)
+  @HiveField(QuestionHiveFieldsIds.question)
   List<QuestionSection> get question => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionAnswerFieldId)
+  @HiveField(QuestionHiveFieldsIds.answer)
   List<QuestionSection> get answer => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionPassCriteriaFieldId)
+  @HiveField(QuestionHiveFieldsIds.passCriteria)
   List<QuestionSection> get passCriteria => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionCommentsFieldId)
+  @HiveField(QuestionHiveFieldsIds.comments)
   dynamic get comments => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionAuthorsFieldId)
+  @HiveField(QuestionHiveFieldsIds.authors)
   String? get authors => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionSourcesFieldId)
+  @HiveField(QuestionHiveFieldsIds.sources)
   String? get sources => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveQuestionInfoFieldId)
+  @HiveField(QuestionHiveFieldsIds.info)
   QuestionInfo get info => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

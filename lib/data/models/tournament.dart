@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:what_when_where/api/models/tournament_dto.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/data/hive/constants.dart';
+import 'package:what_when_where/data/hive/hive_constants.dart';
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
 import 'package:what_when_where/data/models/tournament_status.dart';
@@ -14,17 +14,19 @@ part 'tournament.g.dart';
 
 @freezed
 class Tournament with _$Tournament {
-  @HiveType(typeId: hiveTournamentTypeId)
+  @HiveType(typeId: HiveTypesIds.hiveTournamentTypeId)
   const factory Tournament({
-    @HiveField(hiveTournamentIdFieldId) String? id,
-    @HiveField(hiveTournamentId2FieldId) String? id2,
-    @HiveField(hiveTournamentInfoFieldId)
+    @HiveField(TournamentHiveFieldsIds.id) String? id,
+    @HiveField(TournamentHiveFieldsIds.id2) String? id2,
+    @HiveField(TournamentHiveFieldsIds.info)
     @Default(TournamentInfo())
         TournamentInfo info,
-    @HiveField(hiveTournamentStatusFieldId)
+    @HiveField(TournamentHiveFieldsIds.status)
     @Default(TournamentStatus())
         TournamentStatus status,
-    @HiveField(hiveTournamentToursFieldId) @Default(<Tour>[]) List<Tour> tours,
+    @HiveField(TournamentHiveFieldsIds.tours)
+    @Default(<Tour>[])
+        List<Tour> tours,
   }) = _Tournament;
 
   factory Tournament.fromDto(TournamentDto dto) {

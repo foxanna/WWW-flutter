@@ -17,7 +17,8 @@ class _$SpeakerNoteSectionTearOff {
   const _$SpeakerNoteSectionTearOff();
 
   _SpeakerNoteSection call(
-      {@HiveField(hiveSpeakerNoteSectionValueFieldId) required String value}) {
+      {@HiveField(SpeakerNoteSectionHiveFieldsIds.value)
+          required String value}) {
     return _SpeakerNoteSection(
       value: value,
     );
@@ -29,7 +30,7 @@ const $SpeakerNoteSection = _$SpeakerNoteSectionTearOff();
 
 /// @nodoc
 mixin _$SpeakerNoteSection {
-  @HiveField(hiveSpeakerNoteSectionValueFieldId)
+  @HiveField(SpeakerNoteSectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -42,7 +43,7 @@ abstract class $SpeakerNoteSectionCopyWith<$Res> {
   factory $SpeakerNoteSectionCopyWith(
           SpeakerNoteSection value, $Res Function(SpeakerNoteSection) then) =
       _$SpeakerNoteSectionCopyWithImpl<$Res>;
-  $Res call({@HiveField(hiveSpeakerNoteSectionValueFieldId) String value});
+  $Res call({@HiveField(SpeakerNoteSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -74,7 +75,7 @@ abstract class _$SpeakerNoteSectionCopyWith<$Res>
           _SpeakerNoteSection value, $Res Function(_SpeakerNoteSection) then) =
       __$SpeakerNoteSectionCopyWithImpl<$Res>;
   @override
-  $Res call({@HiveField(hiveSpeakerNoteSectionValueFieldId) String value});
+  $Res call({@HiveField(SpeakerNoteSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -103,13 +104,13 @@ class __$SpeakerNoteSectionCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveSpeakerNoteSectionTypeId)
+@HiveType(typeId: HiveTypesIds.hiveSpeakerNoteSectionTypeId)
 class _$_SpeakerNoteSection implements _SpeakerNoteSection {
   const _$_SpeakerNoteSection(
-      {@HiveField(hiveSpeakerNoteSectionValueFieldId) required this.value});
+      {@HiveField(SpeakerNoteSectionHiveFieldsIds.value) required this.value});
 
   @override
-  @HiveField(hiveSpeakerNoteSectionValueFieldId)
+  @HiveField(SpeakerNoteSectionHiveFieldsIds.value)
   final String value;
 
   @override
@@ -137,11 +138,11 @@ class _$_SpeakerNoteSection implements _SpeakerNoteSection {
 
 abstract class _SpeakerNoteSection implements SpeakerNoteSection {
   const factory _SpeakerNoteSection(
-      {@HiveField(hiveSpeakerNoteSectionValueFieldId)
+      {@HiveField(SpeakerNoteSectionHiveFieldsIds.value)
           required String value}) = _$_SpeakerNoteSection;
 
   @override
-  @HiveField(hiveSpeakerNoteSectionValueFieldId)
+  @HiveField(SpeakerNoteSectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

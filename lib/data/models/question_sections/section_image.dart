@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/data/hive/constants.dart';
+import 'package:what_when_where/data/hive/hive_constants.dart';
 import 'package:what_when_where/data/models/question_sections/question_section.dart';
 
 part 'section_image.freezed.dart';
@@ -9,9 +9,9 @@ part 'section_image.g.dart';
 
 @freezed
 class ImageSection with _$ImageSection implements QuestionSection {
-  @HiveType(typeId: hiveImageSectionTypeId)
+  @HiveType(typeId: HiveTypesIds.hiveImageSectionTypeId)
   const factory ImageSection({
-    @HiveField(hiveImageSectionValueFieldId) required String value,
+    @HiveField(ImageSectionHiveFieldsIds.value) required String value,
   }) = _ImageSection;
 
   factory ImageSection.fromString(String string) {

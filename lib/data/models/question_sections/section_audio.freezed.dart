@@ -17,7 +17,7 @@ class _$AudioSectionTearOff {
   const _$AudioSectionTearOff();
 
   _AudioSection call(
-      {@HiveField(hiveAudioSectionValueFieldId) required String value}) {
+      {@HiveField(AudioSectionHiveFieldsIds.value) required String value}) {
     return _AudioSection(
       value: value,
     );
@@ -29,7 +29,7 @@ const $AudioSection = _$AudioSectionTearOff();
 
 /// @nodoc
 mixin _$AudioSection {
-  @HiveField(hiveAudioSectionValueFieldId)
+  @HiveField(AudioSectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -42,7 +42,7 @@ abstract class $AudioSectionCopyWith<$Res> {
   factory $AudioSectionCopyWith(
           AudioSection value, $Res Function(AudioSection) then) =
       _$AudioSectionCopyWithImpl<$Res>;
-  $Res call({@HiveField(hiveAudioSectionValueFieldId) String value});
+  $Res call({@HiveField(AudioSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -73,7 +73,7 @@ abstract class _$AudioSectionCopyWith<$Res>
           _AudioSection value, $Res Function(_AudioSection) then) =
       __$AudioSectionCopyWithImpl<$Res>;
   @override
-  $Res call({@HiveField(hiveAudioSectionValueFieldId) String value});
+  $Res call({@HiveField(AudioSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -101,13 +101,13 @@ class __$AudioSectionCopyWithImpl<$Res> extends _$AudioSectionCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveAudioSectionTypeId)
+@HiveType(typeId: HiveTypesIds.hiveAudioSectionTypeId)
 class _$_AudioSection implements _AudioSection {
   const _$_AudioSection(
-      {@HiveField(hiveAudioSectionValueFieldId) required this.value});
+      {@HiveField(AudioSectionHiveFieldsIds.value) required this.value});
 
   @override
-  @HiveField(hiveAudioSectionValueFieldId)
+  @HiveField(AudioSectionHiveFieldsIds.value)
   final String value;
 
   @override
@@ -135,11 +135,11 @@ class _$_AudioSection implements _AudioSection {
 
 abstract class _AudioSection implements AudioSection {
   const factory _AudioSection(
-          {@HiveField(hiveAudioSectionValueFieldId) required String value}) =
+          {@HiveField(AudioSectionHiveFieldsIds.value) required String value}) =
       _$_AudioSection;
 
   @override
-  @HiveField(hiveAudioSectionValueFieldId)
+  @HiveField(AudioSectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

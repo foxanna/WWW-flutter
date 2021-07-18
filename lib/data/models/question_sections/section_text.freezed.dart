@@ -17,7 +17,7 @@ class _$TextSectionTearOff {
   const _$TextSectionTearOff();
 
   _TextSection call(
-      {@HiveField(hiveTextSectionValueFieldId) required String value}) {
+      {@HiveField(TextSectionHiveFieldsIds.value) required String value}) {
     return _TextSection(
       value: value,
     );
@@ -29,7 +29,7 @@ const $TextSection = _$TextSectionTearOff();
 
 /// @nodoc
 mixin _$TextSection {
-  @HiveField(hiveTextSectionValueFieldId)
+  @HiveField(TextSectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -42,7 +42,7 @@ abstract class $TextSectionCopyWith<$Res> {
   factory $TextSectionCopyWith(
           TextSection value, $Res Function(TextSection) then) =
       _$TextSectionCopyWithImpl<$Res>;
-  $Res call({@HiveField(hiveTextSectionValueFieldId) String value});
+  $Res call({@HiveField(TextSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -73,7 +73,7 @@ abstract class _$TextSectionCopyWith<$Res>
           _TextSection value, $Res Function(_TextSection) then) =
       __$TextSectionCopyWithImpl<$Res>;
   @override
-  $Res call({@HiveField(hiveTextSectionValueFieldId) String value});
+  $Res call({@HiveField(TextSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -101,13 +101,13 @@ class __$TextSectionCopyWithImpl<$Res> extends _$TextSectionCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveTextSectionTypeId)
+@HiveType(typeId: HiveTypesIds.hiveTextSectionTypeId)
 class _$_TextSection implements _TextSection {
   const _$_TextSection(
-      {@HiveField(hiveTextSectionValueFieldId) required this.value});
+      {@HiveField(TextSectionHiveFieldsIds.value) required this.value});
 
   @override
-  @HiveField(hiveTextSectionValueFieldId)
+  @HiveField(TextSectionHiveFieldsIds.value)
   final String value;
 
   @override
@@ -135,11 +135,11 @@ class _$_TextSection implements _TextSection {
 
 abstract class _TextSection implements TextSection {
   const factory _TextSection(
-          {@HiveField(hiveTextSectionValueFieldId) required String value}) =
+          {@HiveField(TextSectionHiveFieldsIds.value) required String value}) =
       _$_TextSection;
 
   @override
-  @HiveField(hiveTextSectionValueFieldId)
+  @HiveField(TextSectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

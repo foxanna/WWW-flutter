@@ -17,9 +17,9 @@ class _$TournamentStatusTearOff {
   const _$TournamentStatusTearOff();
 
   _TournamentStatus call(
-      {@HiveField(hiveTournamentStatusIsNewFieldId)
+      {@HiveField(TournamentStatusInfoHiveFieldsIds.isNew)
           bool isNew = false,
-      @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
+      @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
           bool isBookmarked = false}) {
     return _TournamentStatus(
       isNew: isNew,
@@ -33,9 +33,9 @@ const $TournamentStatus = _$TournamentStatusTearOff();
 
 /// @nodoc
 mixin _$TournamentStatus {
-  @HiveField(hiveTournamentStatusIsNewFieldId)
+  @HiveField(TournamentStatusInfoHiveFieldsIds.isNew)
   bool get isNew => throw _privateConstructorUsedError;
-  @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
+  @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
   bool get isBookmarked => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -49,8 +49,10 @@ abstract class $TournamentStatusCopyWith<$Res> {
           TournamentStatus value, $Res Function(TournamentStatus) then) =
       _$TournamentStatusCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(hiveTournamentStatusIsNewFieldId) bool isNew,
-      @HiveField(hiveTournamentStatusIsBookmarkedFieldId) bool isBookmarked});
+      {@HiveField(TournamentStatusInfoHiveFieldsIds.isNew)
+          bool isNew,
+      @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
+          bool isBookmarked});
 }
 
 /// @nodoc
@@ -88,8 +90,10 @@ abstract class _$TournamentStatusCopyWith<$Res>
       __$TournamentStatusCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(hiveTournamentStatusIsNewFieldId) bool isNew,
-      @HiveField(hiveTournamentStatusIsBookmarkedFieldId) bool isBookmarked});
+      {@HiveField(TournamentStatusInfoHiveFieldsIds.isNew)
+          bool isNew,
+      @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
+          bool isBookmarked});
 }
 
 /// @nodoc
@@ -123,21 +127,21 @@ class __$TournamentStatusCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveTournamentStatusTypeId)
+@HiveType(typeId: HiveTypesIds.hiveTournamentStatusTypeId)
 class _$_TournamentStatus implements _TournamentStatus {
   const _$_TournamentStatus(
-      {@HiveField(hiveTournamentStatusIsNewFieldId)
+      {@HiveField(TournamentStatusInfoHiveFieldsIds.isNew)
           this.isNew = false,
-      @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
+      @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
           this.isBookmarked = false});
 
   @JsonKey(defaultValue: false)
   @override
-  @HiveField(hiveTournamentStatusIsNewFieldId)
+  @HiveField(TournamentStatusInfoHiveFieldsIds.isNew)
   final bool isNew;
   @JsonKey(defaultValue: false)
   @override
-  @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
+  @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
   final bool isBookmarked;
 
   @override
@@ -170,16 +174,16 @@ class _$_TournamentStatus implements _TournamentStatus {
 
 abstract class _TournamentStatus implements TournamentStatus {
   const factory _TournamentStatus(
-      {@HiveField(hiveTournamentStatusIsNewFieldId)
+      {@HiveField(TournamentStatusInfoHiveFieldsIds.isNew)
           bool isNew,
-      @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
+      @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
           bool isBookmarked}) = _$_TournamentStatus;
 
   @override
-  @HiveField(hiveTournamentStatusIsNewFieldId)
+  @HiveField(TournamentStatusInfoHiveFieldsIds.isNew)
   bool get isNew => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTournamentStatusIsBookmarkedFieldId)
+  @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
   bool get isBookmarked => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

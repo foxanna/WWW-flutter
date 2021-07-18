@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:what_when_where/api/models/tour_dto.dart';
 import 'package:what_when_where/constants.dart';
-import 'package:what_when_where/data/hive/constants.dart';
+import 'package:what_when_where/data/hive/hive_constants.dart';
 import 'package:what_when_where/data/models/question.dart';
 import 'package:what_when_where/data/models/tour_info.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
@@ -13,11 +13,11 @@ part 'tour.g.dart';
 
 @freezed
 class Tour with _$Tour {
-  @HiveType(typeId: hiveTourTypeId)
+  @HiveType(typeId: HiveTypesIds.hiveTourTypeId)
   const factory Tour({
-    @HiveField(hiveTourIdFieldId) String? id,
-    @HiveField(hiveTourInfoFieldId) @Default(TourInfo()) TourInfo info,
-    @HiveField(hiveTourQuestionsFieldId)
+    @HiveField(TourHiveFieldsIds.id) String? id,
+    @HiveField(TourHiveFieldsIds.info) @Default(TourInfo()) TourInfo info,
+    @HiveField(TourHiveFieldsIds.questions)
     @Default(<Question>[])
         List<Question> questions,
   }) = _Tour;

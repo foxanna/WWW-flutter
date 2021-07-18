@@ -17,7 +17,7 @@ class _$ImageSectionTearOff {
   const _$ImageSectionTearOff();
 
   _ImageSection call(
-      {@HiveField(hiveImageSectionValueFieldId) required String value}) {
+      {@HiveField(ImageSectionHiveFieldsIds.value) required String value}) {
     return _ImageSection(
       value: value,
     );
@@ -29,7 +29,7 @@ const $ImageSection = _$ImageSectionTearOff();
 
 /// @nodoc
 mixin _$ImageSection {
-  @HiveField(hiveImageSectionValueFieldId)
+  @HiveField(ImageSectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -42,7 +42,7 @@ abstract class $ImageSectionCopyWith<$Res> {
   factory $ImageSectionCopyWith(
           ImageSection value, $Res Function(ImageSection) then) =
       _$ImageSectionCopyWithImpl<$Res>;
-  $Res call({@HiveField(hiveImageSectionValueFieldId) String value});
+  $Res call({@HiveField(ImageSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -73,7 +73,7 @@ abstract class _$ImageSectionCopyWith<$Res>
           _ImageSection value, $Res Function(_ImageSection) then) =
       __$ImageSectionCopyWithImpl<$Res>;
   @override
-  $Res call({@HiveField(hiveImageSectionValueFieldId) String value});
+  $Res call({@HiveField(ImageSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
@@ -101,13 +101,13 @@ class __$ImageSectionCopyWithImpl<$Res> extends _$ImageSectionCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveImageSectionTypeId)
+@HiveType(typeId: HiveTypesIds.hiveImageSectionTypeId)
 class _$_ImageSection implements _ImageSection {
   const _$_ImageSection(
-      {@HiveField(hiveImageSectionValueFieldId) required this.value});
+      {@HiveField(ImageSectionHiveFieldsIds.value) required this.value});
 
   @override
-  @HiveField(hiveImageSectionValueFieldId)
+  @HiveField(ImageSectionHiveFieldsIds.value)
   final String value;
 
   @override
@@ -135,11 +135,11 @@ class _$_ImageSection implements _ImageSection {
 
 abstract class _ImageSection implements ImageSection {
   const factory _ImageSection(
-          {@HiveField(hiveImageSectionValueFieldId) required String value}) =
+          {@HiveField(ImageSectionHiveFieldsIds.value) required String value}) =
       _$_ImageSection;
 
   @override
-  @HiveField(hiveImageSectionValueFieldId)
+  @HiveField(ImageSectionHiveFieldsIds.value)
   String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

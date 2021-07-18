@@ -17,15 +17,15 @@ class _$TournamentTearOff {
   const _$TournamentTearOff();
 
   _Tournament call(
-      {@HiveField(hiveTournamentIdFieldId)
+      {@HiveField(TournamentHiveFieldsIds.id)
           String? id,
-      @HiveField(hiveTournamentId2FieldId)
+      @HiveField(TournamentHiveFieldsIds.id2)
           String? id2,
-      @HiveField(hiveTournamentInfoFieldId)
+      @HiveField(TournamentHiveFieldsIds.info)
           TournamentInfo info = const TournamentInfo(),
-      @HiveField(hiveTournamentStatusFieldId)
+      @HiveField(TournamentHiveFieldsIds.status)
           TournamentStatus status = const TournamentStatus(),
-      @HiveField(hiveTournamentToursFieldId)
+      @HiveField(TournamentHiveFieldsIds.tours)
           List<Tour> tours = const <Tour>[]}) {
     return _Tournament(
       id: id,
@@ -42,15 +42,15 @@ const $Tournament = _$TournamentTearOff();
 
 /// @nodoc
 mixin _$Tournament {
-  @HiveField(hiveTournamentIdFieldId)
+  @HiveField(TournamentHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
-  @HiveField(hiveTournamentId2FieldId)
+  @HiveField(TournamentHiveFieldsIds.id2)
   String? get id2 => throw _privateConstructorUsedError;
-  @HiveField(hiveTournamentInfoFieldId)
+  @HiveField(TournamentHiveFieldsIds.info)
   TournamentInfo get info => throw _privateConstructorUsedError;
-  @HiveField(hiveTournamentStatusFieldId)
+  @HiveField(TournamentHiveFieldsIds.status)
   TournamentStatus get status => throw _privateConstructorUsedError;
-  @HiveField(hiveTournamentToursFieldId)
+  @HiveField(TournamentHiveFieldsIds.tours)
   List<Tour> get tours => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -64,11 +64,11 @@ abstract class $TournamentCopyWith<$Res> {
           Tournament value, $Res Function(Tournament) then) =
       _$TournamentCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(hiveTournamentIdFieldId) String? id,
-      @HiveField(hiveTournamentId2FieldId) String? id2,
-      @HiveField(hiveTournamentInfoFieldId) TournamentInfo info,
-      @HiveField(hiveTournamentStatusFieldId) TournamentStatus status,
-      @HiveField(hiveTournamentToursFieldId) List<Tour> tours});
+      {@HiveField(TournamentHiveFieldsIds.id) String? id,
+      @HiveField(TournamentHiveFieldsIds.id2) String? id2,
+      @HiveField(TournamentHiveFieldsIds.info) TournamentInfo info,
+      @HiveField(TournamentHiveFieldsIds.status) TournamentStatus status,
+      @HiveField(TournamentHiveFieldsIds.tours) List<Tour> tours});
 
   $TournamentInfoCopyWith<$Res> get info;
   $TournamentStatusCopyWith<$Res> get status;
@@ -136,11 +136,11 @@ abstract class _$TournamentCopyWith<$Res> implements $TournamentCopyWith<$Res> {
       __$TournamentCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(hiveTournamentIdFieldId) String? id,
-      @HiveField(hiveTournamentId2FieldId) String? id2,
-      @HiveField(hiveTournamentInfoFieldId) TournamentInfo info,
-      @HiveField(hiveTournamentStatusFieldId) TournamentStatus status,
-      @HiveField(hiveTournamentToursFieldId) List<Tour> tours});
+      {@HiveField(TournamentHiveFieldsIds.id) String? id,
+      @HiveField(TournamentHiveFieldsIds.id2) String? id2,
+      @HiveField(TournamentHiveFieldsIds.info) TournamentInfo info,
+      @HiveField(TournamentHiveFieldsIds.status) TournamentStatus status,
+      @HiveField(TournamentHiveFieldsIds.tours) List<Tour> tours});
 
   @override
   $TournamentInfoCopyWith<$Res> get info;
@@ -193,37 +193,37 @@ class __$TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
 
 /// @nodoc
 
-@HiveType(typeId: hiveTournamentTypeId)
+@HiveType(typeId: HiveTypesIds.hiveTournamentTypeId)
 class _$_Tournament implements _Tournament {
   const _$_Tournament(
-      {@HiveField(hiveTournamentIdFieldId)
+      {@HiveField(TournamentHiveFieldsIds.id)
           this.id,
-      @HiveField(hiveTournamentId2FieldId)
+      @HiveField(TournamentHiveFieldsIds.id2)
           this.id2,
-      @HiveField(hiveTournamentInfoFieldId)
+      @HiveField(TournamentHiveFieldsIds.info)
           this.info = const TournamentInfo(),
-      @HiveField(hiveTournamentStatusFieldId)
+      @HiveField(TournamentHiveFieldsIds.status)
           this.status = const TournamentStatus(),
-      @HiveField(hiveTournamentToursFieldId)
+      @HiveField(TournamentHiveFieldsIds.tours)
           this.tours = const <Tour>[]});
 
   @override
-  @HiveField(hiveTournamentIdFieldId)
+  @HiveField(TournamentHiveFieldsIds.id)
   final String? id;
   @override
-  @HiveField(hiveTournamentId2FieldId)
+  @HiveField(TournamentHiveFieldsIds.id2)
   final String? id2;
   @JsonKey(defaultValue: const TournamentInfo())
   @override
-  @HiveField(hiveTournamentInfoFieldId)
+  @HiveField(TournamentHiveFieldsIds.info)
   final TournamentInfo info;
   @JsonKey(defaultValue: const TournamentStatus())
   @override
-  @HiveField(hiveTournamentStatusFieldId)
+  @HiveField(TournamentHiveFieldsIds.status)
   final TournamentStatus status;
   @JsonKey(defaultValue: const <Tour>[])
   @override
-  @HiveField(hiveTournamentToursFieldId)
+  @HiveField(TournamentHiveFieldsIds.tours)
   final List<Tour> tours;
 
   @override
@@ -264,26 +264,27 @@ class _$_Tournament implements _Tournament {
 
 abstract class _Tournament implements Tournament {
   const factory _Tournament(
-      {@HiveField(hiveTournamentIdFieldId) String? id,
-      @HiveField(hiveTournamentId2FieldId) String? id2,
-      @HiveField(hiveTournamentInfoFieldId) TournamentInfo info,
-      @HiveField(hiveTournamentStatusFieldId) TournamentStatus status,
-      @HiveField(hiveTournamentToursFieldId) List<Tour> tours}) = _$_Tournament;
+          {@HiveField(TournamentHiveFieldsIds.id) String? id,
+          @HiveField(TournamentHiveFieldsIds.id2) String? id2,
+          @HiveField(TournamentHiveFieldsIds.info) TournamentInfo info,
+          @HiveField(TournamentHiveFieldsIds.status) TournamentStatus status,
+          @HiveField(TournamentHiveFieldsIds.tours) List<Tour> tours}) =
+      _$_Tournament;
 
   @override
-  @HiveField(hiveTournamentIdFieldId)
+  @HiveField(TournamentHiveFieldsIds.id)
   String? get id => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTournamentId2FieldId)
+  @HiveField(TournamentHiveFieldsIds.id2)
   String? get id2 => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTournamentInfoFieldId)
+  @HiveField(TournamentHiveFieldsIds.info)
   TournamentInfo get info => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTournamentStatusFieldId)
+  @HiveField(TournamentHiveFieldsIds.status)
   TournamentStatus get status => throw _privateConstructorUsedError;
   @override
-  @HiveField(hiveTournamentToursFieldId)
+  @HiveField(TournamentHiveFieldsIds.tours)
   List<Tour> get tours => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
