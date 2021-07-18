@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class QuestionTextSectionsThemeData {
   const QuestionTextSectionsThemeData({
-    this.textStyle,
-    this.giveAwayTextStyle,
-    this.speakerNotesTextStyle,
-    this.unsupportedSectionTextStyle,
-    this.imageHeight,
-    this.sectionsSpacing,
+    required this.textStyle,
+    required this.giveAwayTextStyle,
+    required this.speakerNotesTextStyle,
+    required this.unsupportedSectionTextStyle,
+    required this.imageHeight,
+    required this.sectionsSpacing,
   });
 
   final TextStyle textStyle;
@@ -18,12 +18,12 @@ class QuestionTextSectionsThemeData {
   final double sectionsSpacing;
 
   QuestionTextSectionsThemeData copyWith({
-    TextStyle textStyle,
-    TextStyle giveAwayTextStyle,
-    TextStyle speakerNotesTextStyle,
-    TextStyle unsupportedSectionTextStyle,
-    double imageHeight,
-    double sectionsSpacing,
+    TextStyle? textStyle,
+    TextStyle? giveAwayTextStyle,
+    TextStyle? speakerNotesTextStyle,
+    TextStyle? unsupportedSectionTextStyle,
+    double? imageHeight,
+    double? sectionsSpacing,
   }) =>
       QuestionTextSectionsThemeData(
         textStyle: textStyle ?? this.textStyle,
@@ -39,9 +39,9 @@ class QuestionTextSectionsThemeData {
 
 class QuestionTextSectionsTheme extends InheritedWidget {
   const QuestionTextSectionsTheme({
-    Key key,
-    Widget child,
-    this.data,
+    Key? key,
+    required Widget child,
+    required this.data,
   }) : super(key: key, child: child);
 
   final QuestionTextSectionsThemeData data;
@@ -50,22 +50,24 @@ class QuestionTextSectionsTheme extends InheritedWidget {
   bool updateShouldNotify(QuestionTextSectionsTheme oldWidget) =>
       data != oldWidget.data;
 
-  static QuestionTextSectionsThemeData of(BuildContext context) {
+  static QuestionTextSectionsThemeData? of(BuildContext context) {
     final inheritedWidget =
         context.dependOnInheritedWidgetOfExactType<QuestionTextSectionsTheme>();
-    return inheritedWidget.data;
+    return inheritedWidget!.data;
   }
 
   static QuestionTextSectionsThemeData fallback(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
     return QuestionTextSectionsThemeData(
-      textStyle: textTheme.bodyText2,
-      giveAwayTextStyle: textTheme.bodyText2,
-      speakerNotesTextStyle: textTheme.caption,
-      unsupportedSectionTextStyle: textTheme.caption.copyWith(
+      textStyle: textTheme.bodyText2!,
+      giveAwayTextStyle: textTheme.bodyText2!,
+      speakerNotesTextStyle: textTheme.caption!,
+      unsupportedSectionTextStyle: textTheme.caption!.copyWith(
         fontStyle: FontStyle.italic,
       ),
+      sectionsSpacing: 16.0,
+      imageHeight: 200.0,
     );
   }
 }

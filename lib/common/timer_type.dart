@@ -9,5 +9,5 @@ class Timers {
     TimerType.blitz: 20,
   };
 
-  static int getSeconds(TimerType type) => _timerTypeInSeconds[type];
+  static int getSeconds(TimerType type) => _timerTypeInSeconds[type]!;
 }

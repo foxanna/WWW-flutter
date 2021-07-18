@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 class NetworkException implements Exception {
   const NetworkException({this.message});
 
-  final String message;
+  final String? message;
 
   @override
   String toString() => '$NetworkException ${message ?? ""}';
