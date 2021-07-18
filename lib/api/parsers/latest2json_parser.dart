@@ -22,13 +22,15 @@ class LatestToJsonParser implements ILatestToJsonParser {
 
       final json = rows
           .map((element) => <String, dynamic>{
-                'Title': element.children[0].nodes.first.firstChild.text,
+                'Title': element.children[0].nodes.first.firstChild?.text,
                 'TextId': element.children[0].nodes.first.attributes['href']
-                    .split('/')
+                    ?.split('/')
                     .last,
-                'PlayedAt':
-                    element.children[0].nodes.last.text.trim().split(',').first,
-                'CreatedAt': element.children[1].firstChild.text,
+                'PlayedAt': element.children[0].nodes.last.text
+                    ?.trim()
+                    .split(',')
+                    .first,
+                'CreatedAt': element.children[1].firstChild?.text,
               })
           .toList();
 
@@ -36,9 +38,7 @@ class LatestToJsonParser implements ILatestToJsonParser {
     } on Exception catch (e, s) {
       log('$e: $s');
       rethrow;
-    }
-    // ignore: avoid_catching_errors
-    on Error catch (e, s) {
+    } on Error catch (e, s) {
       log('$e: $s');
       throw Exception(e.toString());
     }

@@ -11,9 +11,9 @@ abstract class ILatestTournamentsLoader {
 @LazySingleton(as: ILatestTournamentsLoader)
 class LatestTournamentsLoader implements ILatestTournamentsLoader {
   const LatestTournamentsLoader({
-    IHttpClient httpClient,
-    ILatestToJsonParser parser,
-    IBackgroundRunnerService backgroundService,
+    required IHttpClient httpClient,
+    required ILatestToJsonParser parser,
+    required IBackgroundRunnerService backgroundService,
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;

@@ -11,9 +11,9 @@ abstract class IRandomQuestionsLoader {
 @LazySingleton(as: IRandomQuestionsLoader)
 class RandomQuestionsLoader implements IRandomQuestionsLoader {
   const RandomQuestionsLoader({
-    IHttpClient httpClient,
-    IXmlToJsonParser parser,
-    IBackgroundRunnerService backgroundService,
+    required IHttpClient httpClient,
+    required IXmlToJsonParser parser,
+    required IBackgroundRunnerService backgroundService,
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;

@@ -22,9 +22,7 @@ class XmlToJsonParser implements IXmlToJsonParser {
     } on Exception catch (e, s) {
       log('$e: $s');
       rethrow;
-    }
-    // ignore: avoid_catching_errors
-    on Error catch (e, s) {
+    } on Error catch (e, s) {
       log('$e: $s');
       throw Exception(e.toString());
     }

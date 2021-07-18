@@ -23,9 +23,7 @@ class SearchToJsonParser implements ISearchToJsonParser {
     } on Exception catch (e, s) {
       log('$e: $s');
       rethrow;
-    }
-    // ignore: avoid_catching_errors
-    on Error catch (e, s) {
+    } on Error catch (e, s) {
       log('$e: $s');
       throw Exception(e.toString());
     }
@@ -42,8 +40,8 @@ class SearchToJsonParser implements ISearchToJsonParser {
       }
       final dateNode = iterator.current.nodes[1].nodes[2];
       yield <String, dynamic>{
-        'TextId': tournamentNode.attributes['href'].split('/').last,
-        'Title': tournamentNode.firstChild.text,
+        'TextId': tournamentNode.attributes['href']?.split('/').last,
+        'Title': tournamentNode.firstChild?.text,
         'PlayedAt': dateNode.text,
       };
     }

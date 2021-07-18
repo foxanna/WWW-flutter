@@ -7,18 +7,18 @@ import 'package:what_when_where/services/background.dart';
 
 abstract class ISearchLoader {
   Future<SearchTournamentsDto> get({
-    String query,
-    Sorting sorting,
-    int page,
+    required String query,
+    required Sorting sorting,
+    required int page,
   });
 }
 
 @LazySingleton(as: ISearchLoader)
 class SearchLoader implements ISearchLoader {
   const SearchLoader({
-    IHttpClient httpClient,
-    ISearchToJsonParser parser,
-    IBackgroundRunnerService backgroundService,
+    required IHttpClient httpClient,
+    required ISearchToJsonParser parser,
+    required IBackgroundRunnerService backgroundService,
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;
@@ -29,9 +29,9 @@ class SearchLoader implements ISearchLoader {
 
   @override
   Future<SearchTournamentsDto> get({
-    String query,
-    Sorting sorting,
-    int page,
+    required String query,
+    required Sorting sorting,
+    required int page,
   }) async {
     final data = await _httpClient.get(Uri(
         path: '/search/tours/${_toQuery(query, sorting)}',

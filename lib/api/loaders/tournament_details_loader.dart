@@ -5,15 +5,15 @@ import 'package:what_when_where/api/parsers/xml2json_parser.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ITournamentDetailsLoader {
-  Future<TournamentDto> get(String id);
+  Future<TournamentDto> get(String? id);
 }
 
 @LazySingleton(as: ITournamentDetailsLoader)
 class TournamentDetailsLoader implements ITournamentDetailsLoader {
   TournamentDetailsLoader({
-    IHttpClient httpClient,
-    IXmlToJsonParser parser,
-    IBackgroundRunnerService backgroundService,
+    required IHttpClient httpClient,
+    required IXmlToJsonParser parser,
+    required IBackgroundRunnerService backgroundService,
   })  : _httpClient = httpClient,
         _parser = parser,
         _backgroundService = backgroundService;
@@ -23,8 +23,8 @@ class TournamentDetailsLoader implements ITournamentDetailsLoader {
   final IBackgroundRunnerService _backgroundService;
 
   @override
-  Future<TournamentDto> get(String id) async {
-    final data = await _httpClient.get(Uri(path: '/tour/$id/xml'));
+  Future<TournamentDto> get(String? id) async {
+    final data = await _httpClient.get(Uri(path: '/tour/${id ?? ''}/xml'));
     final dto = await _backgroundService.run<TournamentDto, List<dynamic>>(
         _parseTournamentDto, <dynamic>[data, _parser]);
     return dto;
