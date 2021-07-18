@@ -1,48 +1,53 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/data/cache/cache_synchronizer.dart';
-import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/initialization/actions.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/services/actions.dart';
 import 'package:what_when_where/services/background.dart';
 import 'package:what_when_where/services/crashes.dart';
-import 'package:what_when_where/services/storage.dart';
+import 'package:what_when_where/services/firebase.dart';
 import 'package:what_when_where/services/sound.dart';
-import 'package:what_when_where/utils/logger.dart';
+import 'package:what_when_where/services/storage.dart';
 
 @injectable
-class ServicesMiddleware {
+class ServicesMiddleware implements IMiddleware {
   ServicesMiddleware({
-    ICrashService crashService,
-    ISoundService soundService,
-    IBackgroundRunnerService backgroundService,
-    ILocalStorageService localStorageService,
-    ICacheSynchronizer cacheSynchronizer,
-  })  : _crashService = crashService,
+    required IFirebaseWrapper firebaseInitializer,
+    required ICrashService crashService,
+    required ISoundService soundService,
+    required IBackgroundRunnerService backgroundService,
+    required ILocalStorageService localStorageService,
+    required ICacheSynchronizer cacheSynchronizer,
+  })  : _firebaseInitializer = firebaseInitializer,
+        _crashService = crashService,
         _soundService = soundService,
         _backgroundService = backgroundService,
         _localStorageService = localStorageService,
         _cacheSynchronizer = cacheSynchronizer;
 
+  final IFirebaseWrapper _firebaseInitializer;
   final ICrashService _crashService;
   final ISoundService _soundService;
   final IBackgroundRunnerService _backgroundService;
   final ILocalStorageService _localStorageService;
   final ICacheSynchronizer _cacheSynchronizer;
 
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
+  late final _middleware = _createMiddleware();
+
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, InitInitializationAction>(_init),
+        TypedMiddleware<AppState, InitInitializationAction>(_onInit),
       ];
 
-  Future<void> _init(Store<AppState> store, InitInitializationAction action,
+  Future<void> _onInit(Store<AppState> store, InitInitializationAction action,
       NextDispatcher next) async {
     next(action);
 
     try {
+      await _firebaseInitializer.init();
       _crashService.init();
       await _soundService.init();
       await _backgroundService.init();
@@ -50,8 +55,10 @@ class ServicesMiddleware {
       await _cacheSynchronizer.init();
 
       store.dispatch(const SystemActionServices.ready());
-    } catch (error) {
-      log('$ServicesMiddleware init error: $error');
+    } on Exception catch (exception) {
+      await _crashService.logException(exception);
+    } on Error catch (error) {
+      await _crashService.logError(error);
     }
   }
 }

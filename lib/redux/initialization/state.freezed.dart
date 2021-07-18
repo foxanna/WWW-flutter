@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'state.dart';
 
@@ -9,10 +9,13 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$InitializationStateTearOff {
   const _$InitializationStateTearOff();
 
-// ignore: unused_element
   _InitializationState call(
       {bool settingsReady = false, bool servicesReady = false}) {
     return _InitializationState(
@@ -22,16 +25,20 @@ class _$InitializationStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $InitializationState = _$InitializationStateTearOff();
 
+/// @nodoc
 mixin _$InitializationState {
-  bool get settingsReady;
-  bool get servicesReady;
+  bool get settingsReady => throw _privateConstructorUsedError;
+  bool get servicesReady => throw _privateConstructorUsedError;
 
-  $InitializationStateCopyWith<InitializationState> get copyWith;
+  @JsonKey(ignore: true)
+  $InitializationStateCopyWith<InitializationState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $InitializationStateCopyWith<$Res> {
   factory $InitializationStateCopyWith(
           InitializationState value, $Res Function(InitializationState) then) =
@@ -39,6 +46,7 @@ abstract class $InitializationStateCopyWith<$Res> {
   $Res call({bool settingsReady, bool servicesReady});
 }
 
+/// @nodoc
 class _$InitializationStateCopyWithImpl<$Res>
     implements $InitializationStateCopyWith<$Res> {
   _$InitializationStateCopyWithImpl(this._value, this._then);
@@ -49,20 +57,23 @@ class _$InitializationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object settingsReady = freezed,
-    Object servicesReady = freezed,
+    Object? settingsReady = freezed,
+    Object? servicesReady = freezed,
   }) {
     return _then(_value.copyWith(
       settingsReady: settingsReady == freezed
           ? _value.settingsReady
-          : settingsReady as bool,
+          : settingsReady // ignore: cast_nullable_to_non_nullable
+              as bool,
       servicesReady: servicesReady == freezed
           ? _value.servicesReady
-          : servicesReady as bool,
+          : servicesReady // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$InitializationStateCopyWith<$Res>
     implements $InitializationStateCopyWith<$Res> {
   factory _$InitializationStateCopyWith(_InitializationState value,
@@ -72,6 +83,7 @@ abstract class _$InitializationStateCopyWith<$Res>
   $Res call({bool settingsReady, bool servicesReady});
 }
 
+/// @nodoc
 class __$InitializationStateCopyWithImpl<$Res>
     extends _$InitializationStateCopyWithImpl<$Res>
     implements _$InitializationStateCopyWith<$Res> {
@@ -84,27 +96,29 @@ class __$InitializationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object settingsReady = freezed,
-    Object servicesReady = freezed,
+    Object? settingsReady = freezed,
+    Object? servicesReady = freezed,
   }) {
     return _then(_InitializationState(
       settingsReady: settingsReady == freezed
           ? _value.settingsReady
-          : settingsReady as bool,
+          : settingsReady // ignore: cast_nullable_to_non_nullable
+              as bool,
       servicesReady: servicesReady == freezed
           ? _value.servicesReady
-          : servicesReady as bool,
+          : servicesReady // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
+
+/// @nodoc
 
 class _$_InitializationState
     with DiagnosticableTreeMixin
     implements _InitializationState {
   const _$_InitializationState(
-      {this.settingsReady = false, this.servicesReady = false})
-      : assert(settingsReady != null),
-        assert(servicesReady != null);
+      {this.settingsReady = false, this.servicesReady = false});
 
   @JsonKey(defaultValue: false)
   @override
@@ -145,6 +159,7 @@ class _$_InitializationState
       const DeepCollectionEquality().hash(settingsReady) ^
       const DeepCollectionEquality().hash(servicesReady);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializationStateCopyWith<_InitializationState> get copyWith =>
       __$InitializationStateCopyWithImpl<_InitializationState>(
@@ -156,9 +171,11 @@ abstract class _InitializationState implements InitializationState {
       _$_InitializationState;
 
   @override
-  bool get settingsReady;
+  bool get settingsReady => throw _privateConstructorUsedError;
   @override
-  bool get servicesReady;
+  bool get servicesReady => throw _privateConstructorUsedError;
   @override
-  _$InitializationStateCopyWith<_InitializationState> get copyWith;
+  @JsonKey(ignore: true)
+  _$InitializationStateCopyWith<_InitializationState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

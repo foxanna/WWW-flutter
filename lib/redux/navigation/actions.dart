@@ -1,32 +1,32 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/data/models/tournaments_tree_info.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 part 'actions.freezed.dart';
 
-abstract class NavigationAction implements ReduxAction {}
+abstract class NavigationAction implements IAction {}
 
 @freezed
-abstract class UserActionNavigation
+class UserActionNavigation
     with _$UserActionNavigation
-    implements NavigationAction {
+    implements NavigationAction, IUserAction {
   const factory UserActionNavigation.image({
-    @required String imageUrl,
+    required String imageUrl,
   }) = ImageNavigationUserAction;
 
   const factory UserActionNavigation.about() = AboutNavigationUserAction;
 }
 
 @freezed
-abstract class SystemActionNavigation
+class SystemActionNavigation
     with _$SystemActionNavigation
-    implements NavigationAction {
+    implements NavigationAction, ISystemAction {
   const factory SystemActionNavigation.tournament() =
       TournamentNavigationSystemAction;
 
   const factory SystemActionNavigation.tree({
-    @required TournamentsTreeInfo info,
+    required TournamentsTreeInfo info,
   }) = TreeNavigationSystemAction;
 
   const factory SystemActionNavigation.questions() =

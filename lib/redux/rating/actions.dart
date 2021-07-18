@@ -1,17 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 part 'actions.freezed.dart';
 
-abstract class RatingAction implements ReduxAction {}
+abstract class RatingAction implements IAction {}
 
 @freezed
-abstract class UserActionRating
+class UserActionRating
     with _$UserActionRating
-    implements RatingAction {
+    implements RatingAction, IUserAction {
   const factory UserActionRating.rate({
-    @required int rating,
+    required int rating,
   }) = RateRatingUserAction;
 
   const factory UserActionRating.neverAsk() = NeverAskRatingUserAction;

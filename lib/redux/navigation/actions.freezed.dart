@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,56 +9,65 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionNavigationTearOff {
   const _$UserActionNavigationTearOff();
 
-// ignore: unused_element
-  ImageNavigationUserAction image({@required String imageUrl}) {
+  ImageNavigationUserAction image({required String imageUrl}) {
     return ImageNavigationUserAction(
       imageUrl: imageUrl,
     );
   }
 
-// ignore: unused_element
   AboutNavigationUserAction about() {
     return const AboutNavigationUserAction();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionNavigation = _$UserActionNavigationTearOff();
 
+/// @nodoc
 mixin _$UserActionNavigation {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result image(String imageUrl),
-    @required Result about(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(String imageUrl) image,
+    required TResult Function() about,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result image(String imageUrl),
-    Result about(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String imageUrl)? image,
+    TResult Function()? about,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result image(ImageNavigationUserAction value),
-    @required Result about(AboutNavigationUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImageNavigationUserAction value) image,
+    required TResult Function(AboutNavigationUserAction value) about,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result image(ImageNavigationUserAction value),
-    Result about(AboutNavigationUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImageNavigationUserAction value)? image,
+    TResult Function(AboutNavigationUserAction value)? about,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionNavigationCopyWith<$Res> {
   factory $UserActionNavigationCopyWith(UserActionNavigation value,
           $Res Function(UserActionNavigation) then) =
       _$UserActionNavigationCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionNavigationCopyWithImpl<$Res>
     implements $UserActionNavigationCopyWith<$Res> {
   _$UserActionNavigationCopyWithImpl(this._value, this._then);
@@ -68,6 +77,7 @@ class _$UserActionNavigationCopyWithImpl<$Res>
   final $Res Function(UserActionNavigation) _then;
 }
 
+/// @nodoc
 abstract class $ImageNavigationUserActionCopyWith<$Res> {
   factory $ImageNavigationUserActionCopyWith(ImageNavigationUserAction value,
           $Res Function(ImageNavigationUserAction) then) =
@@ -75,6 +85,7 @@ abstract class $ImageNavigationUserActionCopyWith<$Res> {
   $Res call({String imageUrl});
 }
 
+/// @nodoc
 class _$ImageNavigationUserActionCopyWithImpl<$Res>
     extends _$UserActionNavigationCopyWithImpl<$Res>
     implements $ImageNavigationUserActionCopyWith<$Res> {
@@ -88,19 +99,23 @@ class _$ImageNavigationUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object imageUrl = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(ImageNavigationUserAction(
-      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
+      imageUrl: imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ImageNavigationUserAction
     with DiagnosticableTreeMixin
     implements ImageNavigationUserAction {
-  const _$ImageNavigationUserAction({@required this.imageUrl})
-      : assert(imageUrl != null);
+  const _$ImageNavigationUserAction({required this.imageUrl});
 
   @override
   final String imageUrl;
@@ -131,6 +146,7 @@ class _$ImageNavigationUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageUrl);
 
+  @JsonKey(ignore: true)
   @override
   $ImageNavigationUserActionCopyWith<ImageNavigationUserAction> get copyWith =>
       _$ImageNavigationUserActionCopyWithImpl<ImageNavigationUserAction>(
@@ -138,23 +154,20 @@ class _$ImageNavigationUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result image(String imageUrl),
-    @required Result about(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String imageUrl) image,
+    required TResult Function() about,
   }) {
-    assert(image != null);
-    assert(about != null);
     return image(imageUrl);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result image(String imageUrl),
-    Result about(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String imageUrl)? image,
+    TResult Function()? about,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (image != null) {
       return image(imageUrl);
     }
@@ -163,23 +176,20 @@ class _$ImageNavigationUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result image(ImageNavigationUserAction value),
-    @required Result about(AboutNavigationUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImageNavigationUserAction value) image,
+    required TResult Function(AboutNavigationUserAction value) about,
   }) {
-    assert(image != null);
-    assert(about != null);
     return image(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result image(ImageNavigationUserAction value),
-    Result about(AboutNavigationUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImageNavigationUserAction value)? image,
+    TResult Function(AboutNavigationUserAction value)? about,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (image != null) {
       return image(this);
     }
@@ -188,19 +198,23 @@ class _$ImageNavigationUserAction
 }
 
 abstract class ImageNavigationUserAction implements UserActionNavigation {
-  const factory ImageNavigationUserAction({@required String imageUrl}) =
+  const factory ImageNavigationUserAction({required String imageUrl}) =
       _$ImageNavigationUserAction;
 
-  String get imageUrl;
-  $ImageNavigationUserActionCopyWith<ImageNavigationUserAction> get copyWith;
+  String get imageUrl => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ImageNavigationUserActionCopyWith<ImageNavigationUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $AboutNavigationUserActionCopyWith<$Res> {
   factory $AboutNavigationUserActionCopyWith(AboutNavigationUserAction value,
           $Res Function(AboutNavigationUserAction) then) =
       _$AboutNavigationUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$AboutNavigationUserActionCopyWithImpl<$Res>
     extends _$UserActionNavigationCopyWithImpl<$Res>
     implements $AboutNavigationUserActionCopyWith<$Res> {
@@ -212,6 +226,8 @@ class _$AboutNavigationUserActionCopyWithImpl<$Res>
   AboutNavigationUserAction get _value =>
       super._value as AboutNavigationUserAction;
 }
+
+/// @nodoc
 
 class _$AboutNavigationUserAction
     with DiagnosticableTreeMixin
@@ -239,23 +255,20 @@ class _$AboutNavigationUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result image(String imageUrl),
-    @required Result about(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String imageUrl) image,
+    required TResult Function() about,
   }) {
-    assert(image != null);
-    assert(about != null);
     return about();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result image(String imageUrl),
-    Result about(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String imageUrl)? image,
+    TResult Function()? about,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (about != null) {
       return about();
     }
@@ -264,23 +277,20 @@ class _$AboutNavigationUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result image(ImageNavigationUserAction value),
-    @required Result about(AboutNavigationUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImageNavigationUserAction value) image,
+    required TResult Function(AboutNavigationUserAction value) about,
   }) {
-    assert(image != null);
-    assert(about != null);
     return about(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result image(ImageNavigationUserAction value),
-    Result about(AboutNavigationUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImageNavigationUserAction value)? image,
+    TResult Function(AboutNavigationUserAction value)? about,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (about != null) {
       return about(this);
     }
@@ -292,101 +302,103 @@ abstract class AboutNavigationUserAction implements UserActionNavigation {
   const factory AboutNavigationUserAction() = _$AboutNavigationUserAction;
 }
 
+/// @nodoc
 class _$SystemActionNavigationTearOff {
   const _$SystemActionNavigationTearOff();
 
-// ignore: unused_element
   TournamentNavigationSystemAction tournament() {
     return const TournamentNavigationSystemAction();
   }
 
-// ignore: unused_element
-  TreeNavigationSystemAction tree({@required TournamentsTreeInfo info}) {
+  TreeNavigationSystemAction tree({required TournamentsTreeInfo info}) {
     return TreeNavigationSystemAction(
       info: info,
     );
   }
 
-// ignore: unused_element
   QuestionsNavigationSystemAction questions() {
     return const QuestionsNavigationSystemAction();
   }
 
-// ignore: unused_element
   SearchNavigationSystemAction search() {
     return const SearchNavigationSystemAction();
   }
 
-// ignore: unused_element
   LatestNavigationSystemAction latest() {
     return const LatestNavigationSystemAction();
   }
 
-// ignore: unused_element
   SettingsNavigationSystemAction settings() {
     return const SettingsNavigationSystemAction();
   }
 
-// ignore: unused_element
   BookmarksNavigationSystemAction bookmarks() {
     return const BookmarksNavigationSystemAction();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SystemActionNavigation = _$SystemActionNavigationTearOff();
 
+/// @nodoc
 mixin _$SystemActionNavigation {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tournament(),
-    @required Result tree(TournamentsTreeInfo info),
-    @required Result questions(),
-    @required Result search(),
-    @required Result latest(),
-    @required Result settings(),
-    @required Result bookmarks(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() tournament,
+    required TResult Function(TournamentsTreeInfo info) tree,
+    required TResult Function() questions,
+    required TResult Function() search,
+    required TResult Function() latest,
+    required TResult Function() settings,
+    required TResult Function() bookmarks,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tournament(),
-    Result tree(TournamentsTreeInfo info),
-    Result questions(),
-    Result search(),
-    Result latest(),
-    Result settings(),
-    Result bookmarks(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? tournament,
+    TResult Function(TournamentsTreeInfo info)? tree,
+    TResult Function()? questions,
+    TResult Function()? search,
+    TResult Function()? latest,
+    TResult Function()? settings,
+    TResult Function()? bookmarks,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tournament(TournamentNavigationSystemAction value),
-    @required Result tree(TreeNavigationSystemAction value),
-    @required Result questions(QuestionsNavigationSystemAction value),
-    @required Result search(SearchNavigationSystemAction value),
-    @required Result latest(LatestNavigationSystemAction value),
-    @required Result settings(SettingsNavigationSystemAction value),
-    @required Result bookmarks(BookmarksNavigationSystemAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(TournamentNavigationSystemAction value)
+        tournament,
+    required TResult Function(TreeNavigationSystemAction value) tree,
+    required TResult Function(QuestionsNavigationSystemAction value) questions,
+    required TResult Function(SearchNavigationSystemAction value) search,
+    required TResult Function(LatestNavigationSystemAction value) latest,
+    required TResult Function(SettingsNavigationSystemAction value) settings,
+    required TResult Function(BookmarksNavigationSystemAction value) bookmarks,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tournament(TournamentNavigationSystemAction value),
-    Result tree(TreeNavigationSystemAction value),
-    Result questions(QuestionsNavigationSystemAction value),
-    Result search(SearchNavigationSystemAction value),
-    Result latest(LatestNavigationSystemAction value),
-    Result settings(SettingsNavigationSystemAction value),
-    Result bookmarks(BookmarksNavigationSystemAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TournamentNavigationSystemAction value)? tournament,
+    TResult Function(TreeNavigationSystemAction value)? tree,
+    TResult Function(QuestionsNavigationSystemAction value)? questions,
+    TResult Function(SearchNavigationSystemAction value)? search,
+    TResult Function(LatestNavigationSystemAction value)? latest,
+    TResult Function(SettingsNavigationSystemAction value)? settings,
+    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SystemActionNavigationCopyWith<$Res> {
   factory $SystemActionNavigationCopyWith(SystemActionNavigation value,
           $Res Function(SystemActionNavigation) then) =
       _$SystemActionNavigationCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SystemActionNavigationCopyWithImpl<$Res>
     implements $SystemActionNavigationCopyWith<$Res> {
   _$SystemActionNavigationCopyWithImpl(this._value, this._then);
@@ -396,6 +408,7 @@ class _$SystemActionNavigationCopyWithImpl<$Res>
   final $Res Function(SystemActionNavigation) _then;
 }
 
+/// @nodoc
 abstract class $TournamentNavigationSystemActionCopyWith<$Res> {
   factory $TournamentNavigationSystemActionCopyWith(
           TournamentNavigationSystemAction value,
@@ -403,6 +416,7 @@ abstract class $TournamentNavigationSystemActionCopyWith<$Res> {
       _$TournamentNavigationSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$TournamentNavigationSystemActionCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res>
     implements $TournamentNavigationSystemActionCopyWith<$Res> {
@@ -415,6 +429,8 @@ class _$TournamentNavigationSystemActionCopyWithImpl<$Res>
   TournamentNavigationSystemAction get _value =>
       super._value as TournamentNavigationSystemAction;
 }
+
+/// @nodoc
 
 class _$TournamentNavigationSystemAction
     with DiagnosticableTreeMixin
@@ -444,38 +460,30 @@ class _$TournamentNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tournament(),
-    @required Result tree(TournamentsTreeInfo info),
-    @required Result questions(),
-    @required Result search(),
-    @required Result latest(),
-    @required Result settings(),
-    @required Result bookmarks(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() tournament,
+    required TResult Function(TournamentsTreeInfo info) tree,
+    required TResult Function() questions,
+    required TResult Function() search,
+    required TResult Function() latest,
+    required TResult Function() settings,
+    required TResult Function() bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return tournament();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tournament(),
-    Result tree(TournamentsTreeInfo info),
-    Result questions(),
-    Result search(),
-    Result latest(),
-    Result settings(),
-    Result bookmarks(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? tournament,
+    TResult Function(TournamentsTreeInfo info)? tree,
+    TResult Function()? questions,
+    TResult Function()? search,
+    TResult Function()? latest,
+    TResult Function()? settings,
+    TResult Function()? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tournament != null) {
       return tournament();
     }
@@ -484,38 +492,31 @@ class _$TournamentNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tournament(TournamentNavigationSystemAction value),
-    @required Result tree(TreeNavigationSystemAction value),
-    @required Result questions(QuestionsNavigationSystemAction value),
-    @required Result search(SearchNavigationSystemAction value),
-    @required Result latest(LatestNavigationSystemAction value),
-    @required Result settings(SettingsNavigationSystemAction value),
-    @required Result bookmarks(BookmarksNavigationSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TournamentNavigationSystemAction value)
+        tournament,
+    required TResult Function(TreeNavigationSystemAction value) tree,
+    required TResult Function(QuestionsNavigationSystemAction value) questions,
+    required TResult Function(SearchNavigationSystemAction value) search,
+    required TResult Function(LatestNavigationSystemAction value) latest,
+    required TResult Function(SettingsNavigationSystemAction value) settings,
+    required TResult Function(BookmarksNavigationSystemAction value) bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return tournament(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tournament(TournamentNavigationSystemAction value),
-    Result tree(TreeNavigationSystemAction value),
-    Result questions(QuestionsNavigationSystemAction value),
-    Result search(SearchNavigationSystemAction value),
-    Result latest(LatestNavigationSystemAction value),
-    Result settings(SettingsNavigationSystemAction value),
-    Result bookmarks(BookmarksNavigationSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TournamentNavigationSystemAction value)? tournament,
+    TResult Function(TreeNavigationSystemAction value)? tree,
+    TResult Function(QuestionsNavigationSystemAction value)? questions,
+    TResult Function(SearchNavigationSystemAction value)? search,
+    TResult Function(LatestNavigationSystemAction value)? latest,
+    TResult Function(SettingsNavigationSystemAction value)? settings,
+    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tournament != null) {
       return tournament(this);
     }
@@ -529,6 +530,7 @@ abstract class TournamentNavigationSystemAction
       _$TournamentNavigationSystemAction;
 }
 
+/// @nodoc
 abstract class $TreeNavigationSystemActionCopyWith<$Res> {
   factory $TreeNavigationSystemActionCopyWith(TreeNavigationSystemAction value,
           $Res Function(TreeNavigationSystemAction) then) =
@@ -538,6 +540,7 @@ abstract class $TreeNavigationSystemActionCopyWith<$Res> {
   $TournamentsTreeInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$TreeNavigationSystemActionCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res>
     implements $TreeNavigationSystemActionCopyWith<$Res> {
@@ -551,29 +554,30 @@ class _$TreeNavigationSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
+    Object? info = freezed,
   }) {
     return _then(TreeNavigationSystemAction(
-      info: info == freezed ? _value.info : info as TournamentsTreeInfo,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TournamentsTreeInfo,
     ));
   }
 
   @override
   $TournamentsTreeInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TournamentsTreeInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$TreeNavigationSystemAction
     with DiagnosticableTreeMixin
     implements TreeNavigationSystemAction {
-  const _$TreeNavigationSystemAction({@required this.info})
-      : assert(info != null);
+  const _$TreeNavigationSystemAction({required this.info});
 
   @override
   final TournamentsTreeInfo info;
@@ -603,6 +607,7 @@ class _$TreeNavigationSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   $TreeNavigationSystemActionCopyWith<TreeNavigationSystemAction>
       get copyWith =>
@@ -611,38 +616,30 @@ class _$TreeNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tournament(),
-    @required Result tree(TournamentsTreeInfo info),
-    @required Result questions(),
-    @required Result search(),
-    @required Result latest(),
-    @required Result settings(),
-    @required Result bookmarks(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() tournament,
+    required TResult Function(TournamentsTreeInfo info) tree,
+    required TResult Function() questions,
+    required TResult Function() search,
+    required TResult Function() latest,
+    required TResult Function() settings,
+    required TResult Function() bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return tree(info);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tournament(),
-    Result tree(TournamentsTreeInfo info),
-    Result questions(),
-    Result search(),
-    Result latest(),
-    Result settings(),
-    Result bookmarks(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? tournament,
+    TResult Function(TournamentsTreeInfo info)? tree,
+    TResult Function()? questions,
+    TResult Function()? search,
+    TResult Function()? latest,
+    TResult Function()? settings,
+    TResult Function()? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tree != null) {
       return tree(info);
     }
@@ -651,38 +648,31 @@ class _$TreeNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tournament(TournamentNavigationSystemAction value),
-    @required Result tree(TreeNavigationSystemAction value),
-    @required Result questions(QuestionsNavigationSystemAction value),
-    @required Result search(SearchNavigationSystemAction value),
-    @required Result latest(LatestNavigationSystemAction value),
-    @required Result settings(SettingsNavigationSystemAction value),
-    @required Result bookmarks(BookmarksNavigationSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TournamentNavigationSystemAction value)
+        tournament,
+    required TResult Function(TreeNavigationSystemAction value) tree,
+    required TResult Function(QuestionsNavigationSystemAction value) questions,
+    required TResult Function(SearchNavigationSystemAction value) search,
+    required TResult Function(LatestNavigationSystemAction value) latest,
+    required TResult Function(SettingsNavigationSystemAction value) settings,
+    required TResult Function(BookmarksNavigationSystemAction value) bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return tree(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tournament(TournamentNavigationSystemAction value),
-    Result tree(TreeNavigationSystemAction value),
-    Result questions(QuestionsNavigationSystemAction value),
-    Result search(SearchNavigationSystemAction value),
-    Result latest(LatestNavigationSystemAction value),
-    Result settings(SettingsNavigationSystemAction value),
-    Result bookmarks(BookmarksNavigationSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TournamentNavigationSystemAction value)? tournament,
+    TResult Function(TreeNavigationSystemAction value)? tree,
+    TResult Function(QuestionsNavigationSystemAction value)? questions,
+    TResult Function(SearchNavigationSystemAction value)? search,
+    TResult Function(LatestNavigationSystemAction value)? latest,
+    TResult Function(SettingsNavigationSystemAction value)? settings,
+    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tree != null) {
       return tree(this);
     }
@@ -692,12 +682,15 @@ class _$TreeNavigationSystemAction
 
 abstract class TreeNavigationSystemAction implements SystemActionNavigation {
   const factory TreeNavigationSystemAction(
-      {@required TournamentsTreeInfo info}) = _$TreeNavigationSystemAction;
+      {required TournamentsTreeInfo info}) = _$TreeNavigationSystemAction;
 
-  TournamentsTreeInfo get info;
-  $TreeNavigationSystemActionCopyWith<TreeNavigationSystemAction> get copyWith;
+  TournamentsTreeInfo get info => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TreeNavigationSystemActionCopyWith<TreeNavigationSystemAction>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $QuestionsNavigationSystemActionCopyWith<$Res> {
   factory $QuestionsNavigationSystemActionCopyWith(
           QuestionsNavigationSystemAction value,
@@ -705,6 +698,7 @@ abstract class $QuestionsNavigationSystemActionCopyWith<$Res> {
       _$QuestionsNavigationSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$QuestionsNavigationSystemActionCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res>
     implements $QuestionsNavigationSystemActionCopyWith<$Res> {
@@ -717,6 +711,8 @@ class _$QuestionsNavigationSystemActionCopyWithImpl<$Res>
   QuestionsNavigationSystemAction get _value =>
       super._value as QuestionsNavigationSystemAction;
 }
+
+/// @nodoc
 
 class _$QuestionsNavigationSystemAction
     with DiagnosticableTreeMixin
@@ -745,38 +741,30 @@ class _$QuestionsNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tournament(),
-    @required Result tree(TournamentsTreeInfo info),
-    @required Result questions(),
-    @required Result search(),
-    @required Result latest(),
-    @required Result settings(),
-    @required Result bookmarks(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() tournament,
+    required TResult Function(TournamentsTreeInfo info) tree,
+    required TResult Function() questions,
+    required TResult Function() search,
+    required TResult Function() latest,
+    required TResult Function() settings,
+    required TResult Function() bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return questions();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tournament(),
-    Result tree(TournamentsTreeInfo info),
-    Result questions(),
-    Result search(),
-    Result latest(),
-    Result settings(),
-    Result bookmarks(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? tournament,
+    TResult Function(TournamentsTreeInfo info)? tree,
+    TResult Function()? questions,
+    TResult Function()? search,
+    TResult Function()? latest,
+    TResult Function()? settings,
+    TResult Function()? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (questions != null) {
       return questions();
     }
@@ -785,38 +773,31 @@ class _$QuestionsNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tournament(TournamentNavigationSystemAction value),
-    @required Result tree(TreeNavigationSystemAction value),
-    @required Result questions(QuestionsNavigationSystemAction value),
-    @required Result search(SearchNavigationSystemAction value),
-    @required Result latest(LatestNavigationSystemAction value),
-    @required Result settings(SettingsNavigationSystemAction value),
-    @required Result bookmarks(BookmarksNavigationSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TournamentNavigationSystemAction value)
+        tournament,
+    required TResult Function(TreeNavigationSystemAction value) tree,
+    required TResult Function(QuestionsNavigationSystemAction value) questions,
+    required TResult Function(SearchNavigationSystemAction value) search,
+    required TResult Function(LatestNavigationSystemAction value) latest,
+    required TResult Function(SettingsNavigationSystemAction value) settings,
+    required TResult Function(BookmarksNavigationSystemAction value) bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return questions(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tournament(TournamentNavigationSystemAction value),
-    Result tree(TreeNavigationSystemAction value),
-    Result questions(QuestionsNavigationSystemAction value),
-    Result search(SearchNavigationSystemAction value),
-    Result latest(LatestNavigationSystemAction value),
-    Result settings(SettingsNavigationSystemAction value),
-    Result bookmarks(BookmarksNavigationSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TournamentNavigationSystemAction value)? tournament,
+    TResult Function(TreeNavigationSystemAction value)? tree,
+    TResult Function(QuestionsNavigationSystemAction value)? questions,
+    TResult Function(SearchNavigationSystemAction value)? search,
+    TResult Function(LatestNavigationSystemAction value)? latest,
+    TResult Function(SettingsNavigationSystemAction value)? settings,
+    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (questions != null) {
       return questions(this);
     }
@@ -830,6 +811,7 @@ abstract class QuestionsNavigationSystemAction
       _$QuestionsNavigationSystemAction;
 }
 
+/// @nodoc
 abstract class $SearchNavigationSystemActionCopyWith<$Res> {
   factory $SearchNavigationSystemActionCopyWith(
           SearchNavigationSystemAction value,
@@ -837,6 +819,7 @@ abstract class $SearchNavigationSystemActionCopyWith<$Res> {
       _$SearchNavigationSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SearchNavigationSystemActionCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res>
     implements $SearchNavigationSystemActionCopyWith<$Res> {
@@ -849,6 +832,8 @@ class _$SearchNavigationSystemActionCopyWithImpl<$Res>
   SearchNavigationSystemAction get _value =>
       super._value as SearchNavigationSystemAction;
 }
+
+/// @nodoc
 
 class _$SearchNavigationSystemAction
     with DiagnosticableTreeMixin
@@ -877,38 +862,30 @@ class _$SearchNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tournament(),
-    @required Result tree(TournamentsTreeInfo info),
-    @required Result questions(),
-    @required Result search(),
-    @required Result latest(),
-    @required Result settings(),
-    @required Result bookmarks(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() tournament,
+    required TResult Function(TournamentsTreeInfo info) tree,
+    required TResult Function() questions,
+    required TResult Function() search,
+    required TResult Function() latest,
+    required TResult Function() settings,
+    required TResult Function() bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return search();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tournament(),
-    Result tree(TournamentsTreeInfo info),
-    Result questions(),
-    Result search(),
-    Result latest(),
-    Result settings(),
-    Result bookmarks(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? tournament,
+    TResult Function(TournamentsTreeInfo info)? tree,
+    TResult Function()? questions,
+    TResult Function()? search,
+    TResult Function()? latest,
+    TResult Function()? settings,
+    TResult Function()? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (search != null) {
       return search();
     }
@@ -917,38 +894,31 @@ class _$SearchNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tournament(TournamentNavigationSystemAction value),
-    @required Result tree(TreeNavigationSystemAction value),
-    @required Result questions(QuestionsNavigationSystemAction value),
-    @required Result search(SearchNavigationSystemAction value),
-    @required Result latest(LatestNavigationSystemAction value),
-    @required Result settings(SettingsNavigationSystemAction value),
-    @required Result bookmarks(BookmarksNavigationSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TournamentNavigationSystemAction value)
+        tournament,
+    required TResult Function(TreeNavigationSystemAction value) tree,
+    required TResult Function(QuestionsNavigationSystemAction value) questions,
+    required TResult Function(SearchNavigationSystemAction value) search,
+    required TResult Function(LatestNavigationSystemAction value) latest,
+    required TResult Function(SettingsNavigationSystemAction value) settings,
+    required TResult Function(BookmarksNavigationSystemAction value) bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return search(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tournament(TournamentNavigationSystemAction value),
-    Result tree(TreeNavigationSystemAction value),
-    Result questions(QuestionsNavigationSystemAction value),
-    Result search(SearchNavigationSystemAction value),
-    Result latest(LatestNavigationSystemAction value),
-    Result settings(SettingsNavigationSystemAction value),
-    Result bookmarks(BookmarksNavigationSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TournamentNavigationSystemAction value)? tournament,
+    TResult Function(TreeNavigationSystemAction value)? tree,
+    TResult Function(QuestionsNavigationSystemAction value)? questions,
+    TResult Function(SearchNavigationSystemAction value)? search,
+    TResult Function(LatestNavigationSystemAction value)? latest,
+    TResult Function(SettingsNavigationSystemAction value)? settings,
+    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (search != null) {
       return search(this);
     }
@@ -960,6 +930,7 @@ abstract class SearchNavigationSystemAction implements SystemActionNavigation {
   const factory SearchNavigationSystemAction() = _$SearchNavigationSystemAction;
 }
 
+/// @nodoc
 abstract class $LatestNavigationSystemActionCopyWith<$Res> {
   factory $LatestNavigationSystemActionCopyWith(
           LatestNavigationSystemAction value,
@@ -967,6 +938,7 @@ abstract class $LatestNavigationSystemActionCopyWith<$Res> {
       _$LatestNavigationSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LatestNavigationSystemActionCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res>
     implements $LatestNavigationSystemActionCopyWith<$Res> {
@@ -979,6 +951,8 @@ class _$LatestNavigationSystemActionCopyWithImpl<$Res>
   LatestNavigationSystemAction get _value =>
       super._value as LatestNavigationSystemAction;
 }
+
+/// @nodoc
 
 class _$LatestNavigationSystemAction
     with DiagnosticableTreeMixin
@@ -1007,38 +981,30 @@ class _$LatestNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tournament(),
-    @required Result tree(TournamentsTreeInfo info),
-    @required Result questions(),
-    @required Result search(),
-    @required Result latest(),
-    @required Result settings(),
-    @required Result bookmarks(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() tournament,
+    required TResult Function(TournamentsTreeInfo info) tree,
+    required TResult Function() questions,
+    required TResult Function() search,
+    required TResult Function() latest,
+    required TResult Function() settings,
+    required TResult Function() bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return latest();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tournament(),
-    Result tree(TournamentsTreeInfo info),
-    Result questions(),
-    Result search(),
-    Result latest(),
-    Result settings(),
-    Result bookmarks(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? tournament,
+    TResult Function(TournamentsTreeInfo info)? tree,
+    TResult Function()? questions,
+    TResult Function()? search,
+    TResult Function()? latest,
+    TResult Function()? settings,
+    TResult Function()? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (latest != null) {
       return latest();
     }
@@ -1047,38 +1013,31 @@ class _$LatestNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tournament(TournamentNavigationSystemAction value),
-    @required Result tree(TreeNavigationSystemAction value),
-    @required Result questions(QuestionsNavigationSystemAction value),
-    @required Result search(SearchNavigationSystemAction value),
-    @required Result latest(LatestNavigationSystemAction value),
-    @required Result settings(SettingsNavigationSystemAction value),
-    @required Result bookmarks(BookmarksNavigationSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TournamentNavigationSystemAction value)
+        tournament,
+    required TResult Function(TreeNavigationSystemAction value) tree,
+    required TResult Function(QuestionsNavigationSystemAction value) questions,
+    required TResult Function(SearchNavigationSystemAction value) search,
+    required TResult Function(LatestNavigationSystemAction value) latest,
+    required TResult Function(SettingsNavigationSystemAction value) settings,
+    required TResult Function(BookmarksNavigationSystemAction value) bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return latest(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tournament(TournamentNavigationSystemAction value),
-    Result tree(TreeNavigationSystemAction value),
-    Result questions(QuestionsNavigationSystemAction value),
-    Result search(SearchNavigationSystemAction value),
-    Result latest(LatestNavigationSystemAction value),
-    Result settings(SettingsNavigationSystemAction value),
-    Result bookmarks(BookmarksNavigationSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TournamentNavigationSystemAction value)? tournament,
+    TResult Function(TreeNavigationSystemAction value)? tree,
+    TResult Function(QuestionsNavigationSystemAction value)? questions,
+    TResult Function(SearchNavigationSystemAction value)? search,
+    TResult Function(LatestNavigationSystemAction value)? latest,
+    TResult Function(SettingsNavigationSystemAction value)? settings,
+    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (latest != null) {
       return latest(this);
     }
@@ -1090,6 +1049,7 @@ abstract class LatestNavigationSystemAction implements SystemActionNavigation {
   const factory LatestNavigationSystemAction() = _$LatestNavigationSystemAction;
 }
 
+/// @nodoc
 abstract class $SettingsNavigationSystemActionCopyWith<$Res> {
   factory $SettingsNavigationSystemActionCopyWith(
           SettingsNavigationSystemAction value,
@@ -1097,6 +1057,7 @@ abstract class $SettingsNavigationSystemActionCopyWith<$Res> {
       _$SettingsNavigationSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SettingsNavigationSystemActionCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res>
     implements $SettingsNavigationSystemActionCopyWith<$Res> {
@@ -1109,6 +1070,8 @@ class _$SettingsNavigationSystemActionCopyWithImpl<$Res>
   SettingsNavigationSystemAction get _value =>
       super._value as SettingsNavigationSystemAction;
 }
+
+/// @nodoc
 
 class _$SettingsNavigationSystemAction
     with DiagnosticableTreeMixin
@@ -1137,38 +1100,30 @@ class _$SettingsNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tournament(),
-    @required Result tree(TournamentsTreeInfo info),
-    @required Result questions(),
-    @required Result search(),
-    @required Result latest(),
-    @required Result settings(),
-    @required Result bookmarks(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() tournament,
+    required TResult Function(TournamentsTreeInfo info) tree,
+    required TResult Function() questions,
+    required TResult Function() search,
+    required TResult Function() latest,
+    required TResult Function() settings,
+    required TResult Function() bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return settings();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tournament(),
-    Result tree(TournamentsTreeInfo info),
-    Result questions(),
-    Result search(),
-    Result latest(),
-    Result settings(),
-    Result bookmarks(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? tournament,
+    TResult Function(TournamentsTreeInfo info)? tree,
+    TResult Function()? questions,
+    TResult Function()? search,
+    TResult Function()? latest,
+    TResult Function()? settings,
+    TResult Function()? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (settings != null) {
       return settings();
     }
@@ -1177,38 +1132,31 @@ class _$SettingsNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tournament(TournamentNavigationSystemAction value),
-    @required Result tree(TreeNavigationSystemAction value),
-    @required Result questions(QuestionsNavigationSystemAction value),
-    @required Result search(SearchNavigationSystemAction value),
-    @required Result latest(LatestNavigationSystemAction value),
-    @required Result settings(SettingsNavigationSystemAction value),
-    @required Result bookmarks(BookmarksNavigationSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TournamentNavigationSystemAction value)
+        tournament,
+    required TResult Function(TreeNavigationSystemAction value) tree,
+    required TResult Function(QuestionsNavigationSystemAction value) questions,
+    required TResult Function(SearchNavigationSystemAction value) search,
+    required TResult Function(LatestNavigationSystemAction value) latest,
+    required TResult Function(SettingsNavigationSystemAction value) settings,
+    required TResult Function(BookmarksNavigationSystemAction value) bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return settings(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tournament(TournamentNavigationSystemAction value),
-    Result tree(TreeNavigationSystemAction value),
-    Result questions(QuestionsNavigationSystemAction value),
-    Result search(SearchNavigationSystemAction value),
-    Result latest(LatestNavigationSystemAction value),
-    Result settings(SettingsNavigationSystemAction value),
-    Result bookmarks(BookmarksNavigationSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TournamentNavigationSystemAction value)? tournament,
+    TResult Function(TreeNavigationSystemAction value)? tree,
+    TResult Function(QuestionsNavigationSystemAction value)? questions,
+    TResult Function(SearchNavigationSystemAction value)? search,
+    TResult Function(LatestNavigationSystemAction value)? latest,
+    TResult Function(SettingsNavigationSystemAction value)? settings,
+    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (settings != null) {
       return settings(this);
     }
@@ -1222,6 +1170,7 @@ abstract class SettingsNavigationSystemAction
       _$SettingsNavigationSystemAction;
 }
 
+/// @nodoc
 abstract class $BookmarksNavigationSystemActionCopyWith<$Res> {
   factory $BookmarksNavigationSystemActionCopyWith(
           BookmarksNavigationSystemAction value,
@@ -1229,6 +1178,7 @@ abstract class $BookmarksNavigationSystemActionCopyWith<$Res> {
       _$BookmarksNavigationSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$BookmarksNavigationSystemActionCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res>
     implements $BookmarksNavigationSystemActionCopyWith<$Res> {
@@ -1241,6 +1191,8 @@ class _$BookmarksNavigationSystemActionCopyWithImpl<$Res>
   BookmarksNavigationSystemAction get _value =>
       super._value as BookmarksNavigationSystemAction;
 }
+
+/// @nodoc
 
 class _$BookmarksNavigationSystemAction
     with DiagnosticableTreeMixin
@@ -1269,38 +1221,30 @@ class _$BookmarksNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tournament(),
-    @required Result tree(TournamentsTreeInfo info),
-    @required Result questions(),
-    @required Result search(),
-    @required Result latest(),
-    @required Result settings(),
-    @required Result bookmarks(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() tournament,
+    required TResult Function(TournamentsTreeInfo info) tree,
+    required TResult Function() questions,
+    required TResult Function() search,
+    required TResult Function() latest,
+    required TResult Function() settings,
+    required TResult Function() bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return bookmarks();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tournament(),
-    Result tree(TournamentsTreeInfo info),
-    Result questions(),
-    Result search(),
-    Result latest(),
-    Result settings(),
-    Result bookmarks(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? tournament,
+    TResult Function(TournamentsTreeInfo info)? tree,
+    TResult Function()? questions,
+    TResult Function()? search,
+    TResult Function()? latest,
+    TResult Function()? settings,
+    TResult Function()? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (bookmarks != null) {
       return bookmarks();
     }
@@ -1309,38 +1253,31 @@ class _$BookmarksNavigationSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tournament(TournamentNavigationSystemAction value),
-    @required Result tree(TreeNavigationSystemAction value),
-    @required Result questions(QuestionsNavigationSystemAction value),
-    @required Result search(SearchNavigationSystemAction value),
-    @required Result latest(LatestNavigationSystemAction value),
-    @required Result settings(SettingsNavigationSystemAction value),
-    @required Result bookmarks(BookmarksNavigationSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TournamentNavigationSystemAction value)
+        tournament,
+    required TResult Function(TreeNavigationSystemAction value) tree,
+    required TResult Function(QuestionsNavigationSystemAction value) questions,
+    required TResult Function(SearchNavigationSystemAction value) search,
+    required TResult Function(LatestNavigationSystemAction value) latest,
+    required TResult Function(SettingsNavigationSystemAction value) settings,
+    required TResult Function(BookmarksNavigationSystemAction value) bookmarks,
   }) {
-    assert(tournament != null);
-    assert(tree != null);
-    assert(questions != null);
-    assert(search != null);
-    assert(latest != null);
-    assert(settings != null);
-    assert(bookmarks != null);
     return bookmarks(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tournament(TournamentNavigationSystemAction value),
-    Result tree(TreeNavigationSystemAction value),
-    Result questions(QuestionsNavigationSystemAction value),
-    Result search(SearchNavigationSystemAction value),
-    Result latest(LatestNavigationSystemAction value),
-    Result settings(SettingsNavigationSystemAction value),
-    Result bookmarks(BookmarksNavigationSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TournamentNavigationSystemAction value)? tournament,
+    TResult Function(TreeNavigationSystemAction value)? tree,
+    TResult Function(QuestionsNavigationSystemAction value)? questions,
+    TResult Function(SearchNavigationSystemAction value)? search,
+    TResult Function(LatestNavigationSystemAction value)? latest,
+    TResult Function(SettingsNavigationSystemAction value)? settings,
+    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (bookmarks != null) {
       return bookmarks(this);
     }

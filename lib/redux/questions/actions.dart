@@ -1,19 +1,19 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/data/models/question.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 part 'actions.freezed.dart';
 
-abstract class QuestionsAction implements ReduxAction {}
+abstract class QuestionsAction implements IAction {}
 
 @freezed
-abstract class UserActionQuestions
+class UserActionQuestions
     with _$UserActionQuestions
-    implements QuestionsAction {
+    implements QuestionsAction, IUserAction {
   const factory UserActionQuestions.open({
-    @required List<Question> questions,
-    @required int index,
+    required List<Question> questions,
+    required int index,
   }) = OpenQuestionsUserAction;
 
   const factory UserActionQuestions.openRandom() =
@@ -22,28 +22,28 @@ abstract class UserActionQuestions
   const factory UserActionQuestions.close() = CloseQuestionsUserAction;
 
   const factory UserActionQuestions.showAnswer({
-    @required Question question,
+    required Question question,
   }) = ShowAnswerQuestionsUserAction;
 
   const factory UserActionQuestions.hideAnswer({
-    @required Question question,
+    required Question question,
   }) = HideAnswerQuestionsUserAction;
 
   const factory UserActionQuestions.loadRandom() =
       LoadRandomQuestionsUserAction;
 
   const factory UserActionQuestions.select({
-    @required int questionIndex,
+    required int questionIndex,
   }) = SelectQuestionsUserAction;
 }
 
 @freezed
-abstract class SystemActionQuestions
+class SystemActionQuestions
     with _$SystemActionQuestions
-    implements QuestionsAction {
+    implements QuestionsAction, ISystemAction {
   const factory SystemActionQuestions.init({
-    @required List<Question> questions,
-    @required int index,
+    required List<Question> questions,
+    required int index,
   }) = InitQuestionsSystemAction;
 
   const factory SystemActionQuestions.initRandom() =
@@ -54,10 +54,10 @@ abstract class SystemActionQuestions
   const factory SystemActionQuestions.loading() = LoadingQuestionsSystemAction;
 
   const factory SystemActionQuestions.failed({
-    @required Exception exception,
+    required Exception exception,
   }) = FailedQuestionsSystemAction;
 
   const factory SystemActionQuestions.completed({
-    @required Iterable<Question> questions,
+    required Iterable<Question> questions,
   }) = CompletedQuestionsSystemAction;
 }

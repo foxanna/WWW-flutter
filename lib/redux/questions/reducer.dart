@@ -1,144 +1,147 @@
+import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/utils/extensions/iterable_extensions.dart';
 
-class QuestionsReducer {
-  static final Reducer<QuestionsState> _reducer =
-      combineReducers<QuestionsState>([
-    TypedReducer<QuestionsState, InitQuestionsSystemAction>(_init),
-    TypedReducer<QuestionsState, InitRandomQuestionsSystemAction>(_initRandom),
-    TypedReducer<QuestionsState, DeInitQuestionsSystemAction>(_deInit),
-    TypedReducer<QuestionsState, SelectQuestionsUserAction>(_select),
-    TypedReducer<QuestionsState, ShowAnswerQuestionsUserAction>(_showAnswer),
-    TypedReducer<QuestionsState, HideAnswerQuestionsUserAction>(_hideAnswer),
-    TypedReducer<QuestionsState, LoadingQuestionsSystemAction>(_loading),
-    TypedReducer<QuestionsState, CompletedQuestionsSystemAction>(_completed),
-    TypedReducer<QuestionsState, FailedQuestionsSystemAction>(_failed),
-  ]);
-
-  static QuestionsState reduce(QuestionsState state, ReduxAction action) =>
+@injectable
+class QuestionsReducer implements IReducer<QuestionsState, IAction> {
+  @override
+  Option<QuestionsState> call(Option<QuestionsState> state, IAction action) =>
       _reducer(state, action);
 
-  static QuestionsState _init(
-      QuestionsState state, InitQuestionsSystemAction action) {
-    final list =
-        action.questions.map((x) => QuestionState(question: x)).toList();
+  static final _reducer = combineReducers<Option<QuestionsState>>([
+    TypedReducer<Option<QuestionsState>, InitQuestionsSystemAction>(_init),
+    TypedReducer<Option<QuestionsState>, InitRandomQuestionsSystemAction>(
+        _initRandom),
+    TypedReducer<Option<QuestionsState>, DeInitQuestionsSystemAction>(_deInit),
+    TypedReducer<Option<QuestionsState>, SelectQuestionsUserAction>(_select),
+    TypedReducer<Option<QuestionsState>, ShowAnswerQuestionsUserAction>(
+        _showAnswer),
+    TypedReducer<Option<QuestionsState>, HideAnswerQuestionsUserAction>(
+        _hideAnswer),
+    TypedReducer<Option<QuestionsState>, LoadingQuestionsSystemAction>(
+        _loading),
+    TypedReducer<Option<QuestionsState>, CompletedQuestionsSystemAction>(
+        _completed),
+    TypedReducer<Option<QuestionsState>, FailedQuestionsSystemAction>(_failed),
+  ]);
 
-    return QuestionsState.data(
-      questions: list,
-      currentQuestionIndex: action.index,
-    );
-  }
+  static Option<QuestionsState> _init(
+          Option<QuestionsState> state, InitQuestionsSystemAction action) =>
+      Some(QuestionsState.data(
+        questions:
+            action.questions.map((x) => QuestionState(question: x)).toList(),
+        currentQuestionIndex: action.index,
+      ));
 
-  static QuestionsState _initRandom(
-          QuestionsState state, InitRandomQuestionsSystemAction action) =>
-      const QuestionsState.initial();
+  static Option<QuestionsState> _initRandom(Option<QuestionsState> state,
+          InitRandomQuestionsSystemAction action) =>
+      const Some(QuestionsState.initial());
 
-  static QuestionsState _deInit(
-          QuestionsState state, DeInitQuestionsSystemAction action) =>
-      null;
+  static Option<QuestionsState> _deInit(
+          Option<QuestionsState> state, DeInitQuestionsSystemAction action) =>
+      const None();
 
-  static QuestionsState _showAnswer(
-      QuestionsState state, ShowAnswerQuestionsUserAction action) {
+  static Option<QuestionsState> _showAnswer(
+      Option<QuestionsState> state, ShowAnswerQuestionsUserAction action) {
     final newState = QuestionState(question: action.question, showAnswer: true);
 
-    return state?.maybeMap(
-      loadingWithData: (value) => value.copyWith(
-        questions: _newQuestions(value.questions, newState),
-      ),
-      errorWithData: (value) => value.copyWith(
-        questions: _newQuestions(value.questions, newState),
-      ),
-      data: (value) => value.copyWith(
-        questions: _newQuestions(value.questions, newState),
-      ),
-      orElse: () => state,
-    );
+    return state.map((state) => state.maybeMap(
+          loadingWithData: (value) => value.copyWith(
+            questions: _newQuestions(value.questions, newState),
+          ),
+          errorWithData: (value) => value.copyWith(
+            questions: _newQuestions(value.questions, newState),
+          ),
+          data: (value) => value.copyWith(
+            questions: _newQuestions(value.questions, newState),
+          ),
+          orElse: () => state,
+        ));
   }
 
-  static QuestionsState _hideAnswer(
-      QuestionsState state, HideAnswerQuestionsUserAction action) {
+  static Option<QuestionsState> _hideAnswer(
+      Option<QuestionsState> state, HideAnswerQuestionsUserAction action) {
     final newState =
         QuestionState(question: action.question, showAnswer: false);
 
-    return state?.maybeMap(
-      loadingWithData: (value) => value.copyWith(
-        questions: _newQuestions(value.questions, newState),
-      ),
-      errorWithData: (value) => value.copyWith(
-        questions: _newQuestions(value.questions, newState),
-      ),
-      data: (value) => value.copyWith(
-        questions: _newQuestions(value.questions, newState),
-      ),
-      orElse: () => state,
-    );
+    return state.map((state) => state.maybeMap(
+          loadingWithData: (value) => value.copyWith(
+            questions: _newQuestions(value.questions, newState),
+          ),
+          errorWithData: (value) => value.copyWith(
+            questions: _newQuestions(value.questions, newState),
+          ),
+          data: (value) => value.copyWith(
+            questions: _newQuestions(value.questions, newState),
+          ),
+          orElse: () => state,
+        ));
   }
 
-  static QuestionsState _select(
-          QuestionsState state, SelectQuestionsUserAction action) =>
-      state?.maybeMap(
-        loadingWithData: (value) => value.copyWith(
-          currentQuestionIndex: action.questionIndex,
-        ),
-        errorWithData: (value) => value.copyWith(
-          currentQuestionIndex: action.questionIndex,
-        ),
-        data: (value) => value.copyWith(
-          currentQuestionIndex: action.questionIndex,
-        ),
-        orElse: () => state,
-      );
+  static Option<QuestionsState> _select(
+          Option<QuestionsState> state, SelectQuestionsUserAction action) =>
+      state.map((state) => state.maybeMap(
+            loadingWithData: (value) => value.copyWith(
+              currentQuestionIndex: action.questionIndex,
+            ),
+            errorWithData: (value) => value.copyWith(
+              currentQuestionIndex: action.questionIndex,
+            ),
+            data: (value) => value.copyWith(
+              currentQuestionIndex: action.questionIndex,
+            ),
+            orElse: () => state,
+          ));
 
-  static QuestionsState _loading(
-          QuestionsState state, LoadingQuestionsSystemAction action) =>
-      state != null
-          ? state.questionsOrNull != null
-              ? LoadingWithDataQuestionsState(
-                  questions: state.questionsOrEmpty,
-                  currentQuestionIndex: state.currentQuestionIndexOrZero,
-                )
-              : const LoadingFirstPageQuestionsState()
-          : state;
+  static Option<QuestionsState> _loading(
+          Option<QuestionsState> state, LoadingQuestionsSystemAction action) =>
+      state.map((state) => state.questionsOption.fold(
+            () => const LoadingFirstPageQuestionsState(),
+            (questions) => LoadingWithDataQuestionsState(
+              questions: questions,
+              currentQuestionIndex:
+                  state.currentQuestionIndexOption.getOrElse(() => 0),
+            ),
+          ));
 
-  static QuestionsState _failed(
-          QuestionsState state, FailedQuestionsSystemAction action) =>
-      state != null
-          ? state.questionsOrNull != null
-              ? ErrorWithDataQuestionsState(
-                  questions: state.questionsOrEmpty,
-                  currentQuestionIndex: state.currentQuestionIndexOrZero,
-                  exception: action.exception,
-                )
-              : ErrorFirstPageQuestionsState(
-                  exception: action.exception,
-                )
-          : state;
+  static Option<QuestionsState> _failed(
+          Option<QuestionsState> state, FailedQuestionsSystemAction action) =>
+      state.map((state) => state.questionsOption.fold(
+            () => ErrorFirstPageQuestionsState(
+              exception: action.exception,
+            ),
+            (questions) => ErrorWithDataQuestionsState(
+              questions: questions,
+              currentQuestionIndex:
+                  state.currentQuestionIndexOption.getOrElse(() => 0),
+              exception: action.exception,
+            ),
+          ));
 
-  static QuestionsState _completed(
-      QuestionsState state, CompletedQuestionsSystemAction action) {
-    if (state == null) {
-      return state;
-    }
+  static Option<QuestionsState> _completed(Option<QuestionsState> state,
+          CompletedQuestionsSystemAction action) =>
+      state.map((state) {
+        final questions = [
+          ...state.questionsOption.getOrElse(() => []),
+          ...action.questions.map((x) => QuestionState(question: x))
+        ]
+            .asMap()
+            .map((key, value) => MapEntry(key,
+                value.copyWith.question.info(number: (key + 1).toString())))
+            .values
+            .toList();
 
-    final questions = [
-      ...state.questionsOrEmpty,
-      ...action.questions.map((x) => QuestionState(question: x))
-    ]
-        .asMap()
-        .map((key, value) => MapEntry(
-            key, value.copyWith.question.info(number: (key + 1).toString())))
-        .values
-        .toList();
-
-    return QuestionsState.data(
-      questions: questions,
-      currentQuestionIndex: state.currentQuestionIndexOrZero,
-      canLoadMore: true,
-    );
-  }
+        return QuestionsState.data(
+          questions: questions,
+          currentQuestionIndex:
+              state.currentQuestionIndexOption.getOrElse(() => 0),
+          canLoadMore: true,
+        );
+      });
 
   static List<QuestionState> _newQuestions(
       List<QuestionState> questions, QuestionState newState) {

@@ -5,29 +5,29 @@ import 'package:what_when_where/data/models/question_info.dart';
 import 'package:what_when_where/data/models/tour_info.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
 import 'package:what_when_where/localization/translations/translations.i69n.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 part 'actions.freezed.dart';
 
-abstract class SharingAction implements ReduxAction {}
+abstract class SharingAction implements IAction {}
 
 @freezed
-abstract class UserActionSharing
+class UserActionSharing
     with _$UserActionSharing
-    implements SharingAction {
+    implements SharingAction, IUserAction {
   const factory UserActionSharing.question({
-    @required Translations translations,
-    @required QuestionInfo info,
-    @required String questionText,
+    required Translations translations,
+    required QuestionInfo info,
+    String? questionText,
   }) = QuestionSharingUserAction;
 
   const factory UserActionSharing.tour({
-    @required Translations translations,
-    @required TourInfo info,
+    required Translations translations,
+    required TourInfo info,
   }) = TourSharingUserAction;
 
   const factory UserActionSharing.tournament({
-    @required Translations translations,
-    @required TournamentInfo info,
+    required Translations translations,
+    required TournamentInfo info,
   }) = TournamentSharingUserAction;
 }

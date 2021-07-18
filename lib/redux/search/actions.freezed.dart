@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,85 +9,92 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionSearchTearOff {
   const _$UserActionSearchTearOff();
 
-// ignore: unused_element
   OpenSearchUserAction open() {
     return const OpenSearchUserAction();
   }
 
-// ignore: unused_element
   ExecuteSearchUserAction execute() {
     return const ExecuteSearchUserAction();
   }
 
-// ignore: unused_element
   CloseSearchUserAction close() {
     return const CloseSearchUserAction();
   }
 
-// ignore: unused_element
-  UpdateTextSearchUserAction updateText({@required String query}) {
+  UpdateTextSearchUserAction updateText({required String query}) {
     return UpdateTextSearchUserAction(
       query: query,
     );
   }
 
-// ignore: unused_element
-  UpdateSortingSearchUserAction updateSorting({@required Sorting sorting}) {
+  UpdateSortingSearchUserAction updateSorting({required Sorting sorting}) {
     return UpdateSortingSearchUserAction(
       sorting: sorting,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionSearch = _$UserActionSearchTearOff();
 
+/// @nodoc
 mixin _$UserActionSearch {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result execute(),
-    @required Result close(),
-    @required Result updateText(String query),
-    @required Result updateSorting(Sorting sorting),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() execute,
+    required TResult Function() close,
+    required TResult Function(String query) updateText,
+    required TResult Function(Sorting sorting) updateSorting,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result execute(),
-    Result close(),
-    Result updateText(String query),
-    Result updateSorting(Sorting sorting),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenSearchUserAction value),
-    @required Result execute(ExecuteSearchUserAction value),
-    @required Result close(CloseSearchUserAction value),
-    @required Result updateText(UpdateTextSearchUserAction value),
-    @required Result updateSorting(UpdateSortingSearchUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenSearchUserAction value) open,
+    required TResult Function(ExecuteSearchUserAction value) execute,
+    required TResult Function(CloseSearchUserAction value) close,
+    required TResult Function(UpdateTextSearchUserAction value) updateText,
+    required TResult Function(UpdateSortingSearchUserAction value)
+        updateSorting,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenSearchUserAction value),
-    Result execute(ExecuteSearchUserAction value),
-    Result close(CloseSearchUserAction value),
-    Result updateText(UpdateTextSearchUserAction value),
-    Result updateSorting(UpdateSortingSearchUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionSearchCopyWith<$Res> {
   factory $UserActionSearchCopyWith(
           UserActionSearch value, $Res Function(UserActionSearch) then) =
       _$UserActionSearchCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionSearchCopyWithImpl<$Res>
     implements $UserActionSearchCopyWith<$Res> {
   _$UserActionSearchCopyWithImpl(this._value, this._then);
@@ -97,12 +104,14 @@ class _$UserActionSearchCopyWithImpl<$Res>
   final $Res Function(UserActionSearch) _then;
 }
 
+/// @nodoc
 abstract class $OpenSearchUserActionCopyWith<$Res> {
   factory $OpenSearchUserActionCopyWith(OpenSearchUserAction value,
           $Res Function(OpenSearchUserAction) then) =
       _$OpenSearchUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$OpenSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
     implements $OpenSearchUserActionCopyWith<$Res> {
@@ -113,6 +122,8 @@ class _$OpenSearchUserActionCopyWithImpl<$Res>
   @override
   OpenSearchUserAction get _value => super._value as OpenSearchUserAction;
 }
+
+/// @nodoc
 
 class _$OpenSearchUserAction
     with DiagnosticableTreeMixin
@@ -140,32 +151,26 @@ class _$OpenSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result execute(),
-    @required Result close(),
-    @required Result updateText(String query),
-    @required Result updateSorting(Sorting sorting),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() execute,
+    required TResult Function() close,
+    required TResult Function(String query) updateText,
+    required TResult Function(Sorting sorting) updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return open();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result execute(),
-    Result close(),
-    Result updateText(String query),
-    Result updateSorting(Sorting sorting),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (open != null) {
       return open();
     }
@@ -174,32 +179,27 @@ class _$OpenSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenSearchUserAction value),
-    @required Result execute(ExecuteSearchUserAction value),
-    @required Result close(CloseSearchUserAction value),
-    @required Result updateText(UpdateTextSearchUserAction value),
-    @required Result updateSorting(UpdateSortingSearchUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenSearchUserAction value) open,
+    required TResult Function(ExecuteSearchUserAction value) execute,
+    required TResult Function(CloseSearchUserAction value) close,
+    required TResult Function(UpdateTextSearchUserAction value) updateText,
+    required TResult Function(UpdateSortingSearchUserAction value)
+        updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return open(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenSearchUserAction value),
-    Result execute(ExecuteSearchUserAction value),
-    Result close(CloseSearchUserAction value),
-    Result updateText(UpdateTextSearchUserAction value),
-    Result updateSorting(UpdateSortingSearchUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (open != null) {
       return open(this);
     }
@@ -211,12 +211,14 @@ abstract class OpenSearchUserAction implements UserActionSearch {
   const factory OpenSearchUserAction() = _$OpenSearchUserAction;
 }
 
+/// @nodoc
 abstract class $ExecuteSearchUserActionCopyWith<$Res> {
   factory $ExecuteSearchUserActionCopyWith(ExecuteSearchUserAction value,
           $Res Function(ExecuteSearchUserAction) then) =
       _$ExecuteSearchUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExecuteSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
     implements $ExecuteSearchUserActionCopyWith<$Res> {
@@ -227,6 +229,8 @@ class _$ExecuteSearchUserActionCopyWithImpl<$Res>
   @override
   ExecuteSearchUserAction get _value => super._value as ExecuteSearchUserAction;
 }
+
+/// @nodoc
 
 class _$ExecuteSearchUserAction
     with DiagnosticableTreeMixin
@@ -254,32 +258,26 @@ class _$ExecuteSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result execute(),
-    @required Result close(),
-    @required Result updateText(String query),
-    @required Result updateSorting(Sorting sorting),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() execute,
+    required TResult Function() close,
+    required TResult Function(String query) updateText,
+    required TResult Function(Sorting sorting) updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return execute();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result execute(),
-    Result close(),
-    Result updateText(String query),
-    Result updateSorting(Sorting sorting),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (execute != null) {
       return execute();
     }
@@ -288,32 +286,27 @@ class _$ExecuteSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenSearchUserAction value),
-    @required Result execute(ExecuteSearchUserAction value),
-    @required Result close(CloseSearchUserAction value),
-    @required Result updateText(UpdateTextSearchUserAction value),
-    @required Result updateSorting(UpdateSortingSearchUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenSearchUserAction value) open,
+    required TResult Function(ExecuteSearchUserAction value) execute,
+    required TResult Function(CloseSearchUserAction value) close,
+    required TResult Function(UpdateTextSearchUserAction value) updateText,
+    required TResult Function(UpdateSortingSearchUserAction value)
+        updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return execute(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenSearchUserAction value),
-    Result execute(ExecuteSearchUserAction value),
-    Result close(CloseSearchUserAction value),
-    Result updateText(UpdateTextSearchUserAction value),
-    Result updateSorting(UpdateSortingSearchUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (execute != null) {
       return execute(this);
     }
@@ -325,12 +318,14 @@ abstract class ExecuteSearchUserAction implements UserActionSearch {
   const factory ExecuteSearchUserAction() = _$ExecuteSearchUserAction;
 }
 
+/// @nodoc
 abstract class $CloseSearchUserActionCopyWith<$Res> {
   factory $CloseSearchUserActionCopyWith(CloseSearchUserAction value,
           $Res Function(CloseSearchUserAction) then) =
       _$CloseSearchUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CloseSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
     implements $CloseSearchUserActionCopyWith<$Res> {
@@ -341,6 +336,8 @@ class _$CloseSearchUserActionCopyWithImpl<$Res>
   @override
   CloseSearchUserAction get _value => super._value as CloseSearchUserAction;
 }
+
+/// @nodoc
 
 class _$CloseSearchUserAction
     with DiagnosticableTreeMixin
@@ -368,32 +365,26 @@ class _$CloseSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result execute(),
-    @required Result close(),
-    @required Result updateText(String query),
-    @required Result updateSorting(Sorting sorting),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() execute,
+    required TResult Function() close,
+    required TResult Function(String query) updateText,
+    required TResult Function(Sorting sorting) updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return close();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result execute(),
-    Result close(),
-    Result updateText(String query),
-    Result updateSorting(Sorting sorting),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (close != null) {
       return close();
     }
@@ -402,32 +393,27 @@ class _$CloseSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenSearchUserAction value),
-    @required Result execute(ExecuteSearchUserAction value),
-    @required Result close(CloseSearchUserAction value),
-    @required Result updateText(UpdateTextSearchUserAction value),
-    @required Result updateSorting(UpdateSortingSearchUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenSearchUserAction value) open,
+    required TResult Function(ExecuteSearchUserAction value) execute,
+    required TResult Function(CloseSearchUserAction value) close,
+    required TResult Function(UpdateTextSearchUserAction value) updateText,
+    required TResult Function(UpdateSortingSearchUserAction value)
+        updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return close(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenSearchUserAction value),
-    Result execute(ExecuteSearchUserAction value),
-    Result close(CloseSearchUserAction value),
-    Result updateText(UpdateTextSearchUserAction value),
-    Result updateSorting(UpdateSortingSearchUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (close != null) {
       return close(this);
     }
@@ -439,6 +425,7 @@ abstract class CloseSearchUserAction implements UserActionSearch {
   const factory CloseSearchUserAction() = _$CloseSearchUserAction;
 }
 
+/// @nodoc
 abstract class $UpdateTextSearchUserActionCopyWith<$Res> {
   factory $UpdateTextSearchUserActionCopyWith(UpdateTextSearchUserAction value,
           $Res Function(UpdateTextSearchUserAction) then) =
@@ -446,6 +433,7 @@ abstract class $UpdateTextSearchUserActionCopyWith<$Res> {
   $Res call({String query});
 }
 
+/// @nodoc
 class _$UpdateTextSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
     implements $UpdateTextSearchUserActionCopyWith<$Res> {
@@ -459,19 +447,23 @@ class _$UpdateTextSearchUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object query = freezed,
+    Object? query = freezed,
   }) {
     return _then(UpdateTextSearchUserAction(
-      query: query == freezed ? _value.query : query as String,
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$UpdateTextSearchUserAction
     with DiagnosticableTreeMixin
     implements UpdateTextSearchUserAction {
-  const _$UpdateTextSearchUserAction({@required this.query})
-      : assert(query != null);
+  const _$UpdateTextSearchUserAction({required this.query});
 
   @override
   final String query;
@@ -501,6 +493,7 @@ class _$UpdateTextSearchUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
 
+  @JsonKey(ignore: true)
   @override
   $UpdateTextSearchUserActionCopyWith<UpdateTextSearchUserAction>
       get copyWith =>
@@ -509,32 +502,26 @@ class _$UpdateTextSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result execute(),
-    @required Result close(),
-    @required Result updateText(String query),
-    @required Result updateSorting(Sorting sorting),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() execute,
+    required TResult Function() close,
+    required TResult Function(String query) updateText,
+    required TResult Function(Sorting sorting) updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return updateText(query);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result execute(),
-    Result close(),
-    Result updateText(String query),
-    Result updateSorting(Sorting sorting),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (updateText != null) {
       return updateText(query);
     }
@@ -543,32 +530,27 @@ class _$UpdateTextSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenSearchUserAction value),
-    @required Result execute(ExecuteSearchUserAction value),
-    @required Result close(CloseSearchUserAction value),
-    @required Result updateText(UpdateTextSearchUserAction value),
-    @required Result updateSorting(UpdateSortingSearchUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenSearchUserAction value) open,
+    required TResult Function(ExecuteSearchUserAction value) execute,
+    required TResult Function(CloseSearchUserAction value) close,
+    required TResult Function(UpdateTextSearchUserAction value) updateText,
+    required TResult Function(UpdateSortingSearchUserAction value)
+        updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return updateText(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenSearchUserAction value),
-    Result execute(ExecuteSearchUserAction value),
-    Result close(CloseSearchUserAction value),
-    Result updateText(UpdateTextSearchUserAction value),
-    Result updateSorting(UpdateSortingSearchUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (updateText != null) {
       return updateText(this);
     }
@@ -577,13 +559,16 @@ class _$UpdateTextSearchUserAction
 }
 
 abstract class UpdateTextSearchUserAction implements UserActionSearch {
-  const factory UpdateTextSearchUserAction({@required String query}) =
+  const factory UpdateTextSearchUserAction({required String query}) =
       _$UpdateTextSearchUserAction;
 
-  String get query;
-  $UpdateTextSearchUserActionCopyWith<UpdateTextSearchUserAction> get copyWith;
+  String get query => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UpdateTextSearchUserActionCopyWith<UpdateTextSearchUserAction>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UpdateSortingSearchUserActionCopyWith<$Res> {
   factory $UpdateSortingSearchUserActionCopyWith(
           UpdateSortingSearchUserAction value,
@@ -592,6 +577,7 @@ abstract class $UpdateSortingSearchUserActionCopyWith<$Res> {
   $Res call({Sorting sorting});
 }
 
+/// @nodoc
 class _$UpdateSortingSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
     implements $UpdateSortingSearchUserActionCopyWith<$Res> {
@@ -606,19 +592,23 @@ class _$UpdateSortingSearchUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object sorting = freezed,
+    Object? sorting = freezed,
   }) {
     return _then(UpdateSortingSearchUserAction(
-      sorting: sorting == freezed ? _value.sorting : sorting as Sorting,
+      sorting: sorting == freezed
+          ? _value.sorting
+          : sorting // ignore: cast_nullable_to_non_nullable
+              as Sorting,
     ));
   }
 }
 
+/// @nodoc
+
 class _$UpdateSortingSearchUserAction
     with DiagnosticableTreeMixin
     implements UpdateSortingSearchUserAction {
-  const _$UpdateSortingSearchUserAction({@required this.sorting})
-      : assert(sorting != null);
+  const _$UpdateSortingSearchUserAction({required this.sorting});
 
   @override
   final Sorting sorting;
@@ -648,6 +638,7 @@ class _$UpdateSortingSearchUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(sorting);
 
+  @JsonKey(ignore: true)
   @override
   $UpdateSortingSearchUserActionCopyWith<UpdateSortingSearchUserAction>
       get copyWith => _$UpdateSortingSearchUserActionCopyWithImpl<
@@ -655,32 +646,26 @@ class _$UpdateSortingSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result execute(),
-    @required Result close(),
-    @required Result updateText(String query),
-    @required Result updateSorting(Sorting sorting),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() execute,
+    required TResult Function() close,
+    required TResult Function(String query) updateText,
+    required TResult Function(Sorting sorting) updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return updateSorting(sorting);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result execute(),
-    Result close(),
-    Result updateText(String query),
-    Result updateSorting(Sorting sorting),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (updateSorting != null) {
       return updateSorting(sorting);
     }
@@ -689,32 +674,27 @@ class _$UpdateSortingSearchUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenSearchUserAction value),
-    @required Result execute(ExecuteSearchUserAction value),
-    @required Result close(CloseSearchUserAction value),
-    @required Result updateText(UpdateTextSearchUserAction value),
-    @required Result updateSorting(UpdateSortingSearchUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenSearchUserAction value) open,
+    required TResult Function(ExecuteSearchUserAction value) execute,
+    required TResult Function(CloseSearchUserAction value) close,
+    required TResult Function(UpdateTextSearchUserAction value) updateText,
+    required TResult Function(UpdateSortingSearchUserAction value)
+        updateSorting,
   }) {
-    assert(open != null);
-    assert(execute != null);
-    assert(close != null);
-    assert(updateText != null);
-    assert(updateSorting != null);
     return updateSorting(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenSearchUserAction value),
-    Result execute(ExecuteSearchUserAction value),
-    Result close(CloseSearchUserAction value),
-    Result updateText(UpdateTextSearchUserAction value),
-    Result updateSorting(UpdateSortingSearchUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (updateSorting != null) {
       return updateSorting(this);
     }
@@ -723,54 +703,50 @@ class _$UpdateSortingSearchUserAction
 }
 
 abstract class UpdateSortingSearchUserAction implements UserActionSearch {
-  const factory UpdateSortingSearchUserAction({@required Sorting sorting}) =
+  const factory UpdateSortingSearchUserAction({required Sorting sorting}) =
       _$UpdateSortingSearchUserAction;
 
-  Sorting get sorting;
+  Sorting get sorting => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $UpdateSortingSearchUserActionCopyWith<UpdateSortingSearchUserAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$SystemActionSearchTearOff {
   const _$SystemActionSearchTearOff();
 
-// ignore: unused_element
   InitSearchSystemAction init() {
     return const InitSearchSystemAction();
   }
 
-// ignore: unused_element
   DeInitSearchSystemAction deInit() {
     return const DeInitSearchSystemAction();
   }
 
-// ignore: unused_element
   ClearResultsSearchSystemAction clearResults() {
     return const ClearResultsSearchSystemAction();
   }
 
-// ignore: unused_element
-  LoadingSearchSystemAction loading({@required SearchParameters parameters}) {
+  LoadingSearchSystemAction loading({required SearchParameters parameters}) {
     return LoadingSearchSystemAction(
       parameters: parameters,
     );
   }
 
-// ignore: unused_element
   FailedSearchSystemAction failed(
-      {@required SearchParameters parameters, @required Exception exception}) {
+      {required SearchParameters parameters, required Exception exception}) {
     return FailedSearchSystemAction(
       parameters: parameters,
       exception: exception,
     );
   }
 
-// ignore: unused_element
   CompletedSearchSystemAction completed(
-      {@required SearchParameters parameters,
-      @required Iterable<Tournament> data,
-      @required int nextPage,
-      @required bool canLoadMore}) {
+      {required SearchParameters parameters,
+      required Iterable<Tournament> data,
+      required int nextPage,
+      required bool canLoadMore}) {
     return CompletedSearchSystemAction(
       parameters: parameters,
       data: data,
@@ -780,59 +756,69 @@ class _$SystemActionSearchTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SystemActionSearch = _$SystemActionSearchTearOff();
 
+/// @nodoc
 mixin _$SystemActionSearch {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result clearResults(),
-    @required Result loading(SearchParameters parameters),
-    @required Result failed(SearchParameters parameters, Exception exception),
-    @required
-        Result completed(SearchParameters parameters, Iterable<Tournament> data,
-            int nextPage, bool canLoadMore),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() clearResults,
+    required TResult Function(SearchParameters parameters) loading,
+    required TResult Function(SearchParameters parameters, Exception exception)
+        failed,
+    required TResult Function(SearchParameters parameters,
+            Iterable<Tournament> data, int nextPage, bool canLoadMore)
+        completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result clearResults(),
-    Result loading(SearchParameters parameters),
-    Result failed(SearchParameters parameters, Exception exception),
-    Result completed(SearchParameters parameters, Iterable<Tournament> data,
-        int nextPage, bool canLoadMore),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitSearchSystemAction value),
-    @required Result deInit(DeInitSearchSystemAction value),
-    @required Result clearResults(ClearResultsSearchSystemAction value),
-    @required Result loading(LoadingSearchSystemAction value),
-    @required Result failed(FailedSearchSystemAction value),
-    @required Result completed(CompletedSearchSystemAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitSearchSystemAction value) init,
+    required TResult Function(DeInitSearchSystemAction value) deInit,
+    required TResult Function(ClearResultsSearchSystemAction value)
+        clearResults,
+    required TResult Function(LoadingSearchSystemAction value) loading,
+    required TResult Function(FailedSearchSystemAction value) failed,
+    required TResult Function(CompletedSearchSystemAction value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitSearchSystemAction value),
-    Result deInit(DeInitSearchSystemAction value),
-    Result clearResults(ClearResultsSearchSystemAction value),
-    Result loading(LoadingSearchSystemAction value),
-    Result failed(FailedSearchSystemAction value),
-    Result completed(CompletedSearchSystemAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SystemActionSearchCopyWith<$Res> {
   factory $SystemActionSearchCopyWith(
           SystemActionSearch value, $Res Function(SystemActionSearch) then) =
       _$SystemActionSearchCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SystemActionSearchCopyWithImpl<$Res>
     implements $SystemActionSearchCopyWith<$Res> {
   _$SystemActionSearchCopyWithImpl(this._value, this._then);
@@ -842,12 +828,14 @@ class _$SystemActionSearchCopyWithImpl<$Res>
   final $Res Function(SystemActionSearch) _then;
 }
 
+/// @nodoc
 abstract class $InitSearchSystemActionCopyWith<$Res> {
   factory $InitSearchSystemActionCopyWith(InitSearchSystemAction value,
           $Res Function(InitSearchSystemAction) then) =
       _$InitSearchSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
     implements $InitSearchSystemActionCopyWith<$Res> {
@@ -858,6 +846,8 @@ class _$InitSearchSystemActionCopyWithImpl<$Res>
   @override
   InitSearchSystemAction get _value => super._value as InitSearchSystemAction;
 }
+
+/// @nodoc
 
 class _$InitSearchSystemAction
     with DiagnosticableTreeMixin
@@ -885,38 +875,33 @@ class _$InitSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result clearResults(),
-    @required Result loading(SearchParameters parameters),
-    @required Result failed(SearchParameters parameters, Exception exception),
-    @required
-        Result completed(SearchParameters parameters, Iterable<Tournament> data,
-            int nextPage, bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() clearResults,
+    required TResult Function(SearchParameters parameters) loading,
+    required TResult Function(SearchParameters parameters, Exception exception)
+        failed,
+    required TResult Function(SearchParameters parameters,
+            Iterable<Tournament> data, int nextPage, bool canLoadMore)
+        completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return init();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result clearResults(),
-    Result loading(SearchParameters parameters),
-    Result failed(SearchParameters parameters, Exception exception),
-    Result completed(SearchParameters parameters, Iterable<Tournament> data,
-        int nextPage, bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init();
     }
@@ -925,35 +910,29 @@ class _$InitSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitSearchSystemAction value),
-    @required Result deInit(DeInitSearchSystemAction value),
-    @required Result clearResults(ClearResultsSearchSystemAction value),
-    @required Result loading(LoadingSearchSystemAction value),
-    @required Result failed(FailedSearchSystemAction value),
-    @required Result completed(CompletedSearchSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitSearchSystemAction value) init,
+    required TResult Function(DeInitSearchSystemAction value) deInit,
+    required TResult Function(ClearResultsSearchSystemAction value)
+        clearResults,
+    required TResult Function(LoadingSearchSystemAction value) loading,
+    required TResult Function(FailedSearchSystemAction value) failed,
+    required TResult Function(CompletedSearchSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return init(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitSearchSystemAction value),
-    Result deInit(DeInitSearchSystemAction value),
-    Result clearResults(ClearResultsSearchSystemAction value),
-    Result loading(LoadingSearchSystemAction value),
-    Result failed(FailedSearchSystemAction value),
-    Result completed(CompletedSearchSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(this);
     }
@@ -965,12 +944,14 @@ abstract class InitSearchSystemAction implements SystemActionSearch {
   const factory InitSearchSystemAction() = _$InitSearchSystemAction;
 }
 
+/// @nodoc
 abstract class $DeInitSearchSystemActionCopyWith<$Res> {
   factory $DeInitSearchSystemActionCopyWith(DeInitSearchSystemAction value,
           $Res Function(DeInitSearchSystemAction) then) =
       _$DeInitSearchSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$DeInitSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
     implements $DeInitSearchSystemActionCopyWith<$Res> {
@@ -982,6 +963,8 @@ class _$DeInitSearchSystemActionCopyWithImpl<$Res>
   DeInitSearchSystemAction get _value =>
       super._value as DeInitSearchSystemAction;
 }
+
+/// @nodoc
 
 class _$DeInitSearchSystemAction
     with DiagnosticableTreeMixin
@@ -1009,38 +992,33 @@ class _$DeInitSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result clearResults(),
-    @required Result loading(SearchParameters parameters),
-    @required Result failed(SearchParameters parameters, Exception exception),
-    @required
-        Result completed(SearchParameters parameters, Iterable<Tournament> data,
-            int nextPage, bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() clearResults,
+    required TResult Function(SearchParameters parameters) loading,
+    required TResult Function(SearchParameters parameters, Exception exception)
+        failed,
+    required TResult Function(SearchParameters parameters,
+            Iterable<Tournament> data, int nextPage, bool canLoadMore)
+        completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return deInit();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result clearResults(),
-    Result loading(SearchParameters parameters),
-    Result failed(SearchParameters parameters, Exception exception),
-    Result completed(SearchParameters parameters, Iterable<Tournament> data,
-        int nextPage, bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit();
     }
@@ -1049,35 +1027,29 @@ class _$DeInitSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitSearchSystemAction value),
-    @required Result deInit(DeInitSearchSystemAction value),
-    @required Result clearResults(ClearResultsSearchSystemAction value),
-    @required Result loading(LoadingSearchSystemAction value),
-    @required Result failed(FailedSearchSystemAction value),
-    @required Result completed(CompletedSearchSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitSearchSystemAction value) init,
+    required TResult Function(DeInitSearchSystemAction value) deInit,
+    required TResult Function(ClearResultsSearchSystemAction value)
+        clearResults,
+    required TResult Function(LoadingSearchSystemAction value) loading,
+    required TResult Function(FailedSearchSystemAction value) failed,
+    required TResult Function(CompletedSearchSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return deInit(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitSearchSystemAction value),
-    Result deInit(DeInitSearchSystemAction value),
-    Result clearResults(ClearResultsSearchSystemAction value),
-    Result loading(LoadingSearchSystemAction value),
-    Result failed(FailedSearchSystemAction value),
-    Result completed(CompletedSearchSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit(this);
     }
@@ -1089,6 +1061,7 @@ abstract class DeInitSearchSystemAction implements SystemActionSearch {
   const factory DeInitSearchSystemAction() = _$DeInitSearchSystemAction;
 }
 
+/// @nodoc
 abstract class $ClearResultsSearchSystemActionCopyWith<$Res> {
   factory $ClearResultsSearchSystemActionCopyWith(
           ClearResultsSearchSystemAction value,
@@ -1096,6 +1069,7 @@ abstract class $ClearResultsSearchSystemActionCopyWith<$Res> {
       _$ClearResultsSearchSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ClearResultsSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
     implements $ClearResultsSearchSystemActionCopyWith<$Res> {
@@ -1108,6 +1082,8 @@ class _$ClearResultsSearchSystemActionCopyWithImpl<$Res>
   ClearResultsSearchSystemAction get _value =>
       super._value as ClearResultsSearchSystemAction;
 }
+
+/// @nodoc
 
 class _$ClearResultsSearchSystemAction
     with DiagnosticableTreeMixin
@@ -1136,38 +1112,33 @@ class _$ClearResultsSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result clearResults(),
-    @required Result loading(SearchParameters parameters),
-    @required Result failed(SearchParameters parameters, Exception exception),
-    @required
-        Result completed(SearchParameters parameters, Iterable<Tournament> data,
-            int nextPage, bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() clearResults,
+    required TResult Function(SearchParameters parameters) loading,
+    required TResult Function(SearchParameters parameters, Exception exception)
+        failed,
+    required TResult Function(SearchParameters parameters,
+            Iterable<Tournament> data, int nextPage, bool canLoadMore)
+        completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return clearResults();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result clearResults(),
-    Result loading(SearchParameters parameters),
-    Result failed(SearchParameters parameters, Exception exception),
-    Result completed(SearchParameters parameters, Iterable<Tournament> data,
-        int nextPage, bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (clearResults != null) {
       return clearResults();
     }
@@ -1176,35 +1147,29 @@ class _$ClearResultsSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitSearchSystemAction value),
-    @required Result deInit(DeInitSearchSystemAction value),
-    @required Result clearResults(ClearResultsSearchSystemAction value),
-    @required Result loading(LoadingSearchSystemAction value),
-    @required Result failed(FailedSearchSystemAction value),
-    @required Result completed(CompletedSearchSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitSearchSystemAction value) init,
+    required TResult Function(DeInitSearchSystemAction value) deInit,
+    required TResult Function(ClearResultsSearchSystemAction value)
+        clearResults,
+    required TResult Function(LoadingSearchSystemAction value) loading,
+    required TResult Function(FailedSearchSystemAction value) failed,
+    required TResult Function(CompletedSearchSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return clearResults(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitSearchSystemAction value),
-    Result deInit(DeInitSearchSystemAction value),
-    Result clearResults(ClearResultsSearchSystemAction value),
-    Result loading(LoadingSearchSystemAction value),
-    Result failed(FailedSearchSystemAction value),
-    Result completed(CompletedSearchSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (clearResults != null) {
       return clearResults(this);
     }
@@ -1217,6 +1182,7 @@ abstract class ClearResultsSearchSystemAction implements SystemActionSearch {
       _$ClearResultsSearchSystemAction;
 }
 
+/// @nodoc
 abstract class $LoadingSearchSystemActionCopyWith<$Res> {
   factory $LoadingSearchSystemActionCopyWith(LoadingSearchSystemAction value,
           $Res Function(LoadingSearchSystemAction) then) =
@@ -1226,6 +1192,7 @@ abstract class $LoadingSearchSystemActionCopyWith<$Res> {
   $SearchParametersCopyWith<$Res> get parameters;
 }
 
+/// @nodoc
 class _$LoadingSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
     implements $LoadingSearchSystemActionCopyWith<$Res> {
@@ -1239,31 +1206,30 @@ class _$LoadingSearchSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object parameters = freezed,
+    Object? parameters = freezed,
   }) {
     return _then(LoadingSearchSystemAction(
       parameters: parameters == freezed
           ? _value.parameters
-          : parameters as SearchParameters,
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as SearchParameters,
     ));
   }
 
   @override
   $SearchParametersCopyWith<$Res> get parameters {
-    if (_value.parameters == null) {
-      return null;
-    }
     return $SearchParametersCopyWith<$Res>(_value.parameters, (value) {
       return _then(_value.copyWith(parameters: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$LoadingSearchSystemAction
     with DiagnosticableTreeMixin
     implements LoadingSearchSystemAction {
-  const _$LoadingSearchSystemAction({@required this.parameters})
-      : assert(parameters != null);
+  const _$LoadingSearchSystemAction({required this.parameters});
 
   @override
   final SearchParameters parameters;
@@ -1294,6 +1260,7 @@ class _$LoadingSearchSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(parameters);
 
+  @JsonKey(ignore: true)
   @override
   $LoadingSearchSystemActionCopyWith<LoadingSearchSystemAction> get copyWith =>
       _$LoadingSearchSystemActionCopyWithImpl<LoadingSearchSystemAction>(
@@ -1301,38 +1268,33 @@ class _$LoadingSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result clearResults(),
-    @required Result loading(SearchParameters parameters),
-    @required Result failed(SearchParameters parameters, Exception exception),
-    @required
-        Result completed(SearchParameters parameters, Iterable<Tournament> data,
-            int nextPage, bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() clearResults,
+    required TResult Function(SearchParameters parameters) loading,
+    required TResult Function(SearchParameters parameters, Exception exception)
+        failed,
+    required TResult Function(SearchParameters parameters,
+            Iterable<Tournament> data, int nextPage, bool canLoadMore)
+        completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return loading(parameters);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result clearResults(),
-    Result loading(SearchParameters parameters),
-    Result failed(SearchParameters parameters, Exception exception),
-    Result completed(SearchParameters parameters, Iterable<Tournament> data,
-        int nextPage, bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(parameters);
     }
@@ -1341,35 +1303,29 @@ class _$LoadingSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitSearchSystemAction value),
-    @required Result deInit(DeInitSearchSystemAction value),
-    @required Result clearResults(ClearResultsSearchSystemAction value),
-    @required Result loading(LoadingSearchSystemAction value),
-    @required Result failed(FailedSearchSystemAction value),
-    @required Result completed(CompletedSearchSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitSearchSystemAction value) init,
+    required TResult Function(DeInitSearchSystemAction value) deInit,
+    required TResult Function(ClearResultsSearchSystemAction value)
+        clearResults,
+    required TResult Function(LoadingSearchSystemAction value) loading,
+    required TResult Function(FailedSearchSystemAction value) failed,
+    required TResult Function(CompletedSearchSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitSearchSystemAction value),
-    Result deInit(DeInitSearchSystemAction value),
-    Result clearResults(ClearResultsSearchSystemAction value),
-    Result loading(LoadingSearchSystemAction value),
-    Result failed(FailedSearchSystemAction value),
-    Result completed(CompletedSearchSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -1379,12 +1335,15 @@ class _$LoadingSearchSystemAction
 
 abstract class LoadingSearchSystemAction implements SystemActionSearch {
   const factory LoadingSearchSystemAction(
-      {@required SearchParameters parameters}) = _$LoadingSearchSystemAction;
+      {required SearchParameters parameters}) = _$LoadingSearchSystemAction;
 
-  SearchParameters get parameters;
-  $LoadingSearchSystemActionCopyWith<LoadingSearchSystemAction> get copyWith;
+  SearchParameters get parameters => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoadingSearchSystemActionCopyWith<LoadingSearchSystemAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $FailedSearchSystemActionCopyWith<$Res> {
   factory $FailedSearchSystemActionCopyWith(FailedSearchSystemAction value,
           $Res Function(FailedSearchSystemAction) then) =
@@ -1394,6 +1353,7 @@ abstract class $FailedSearchSystemActionCopyWith<$Res> {
   $SearchParametersCopyWith<$Res> get parameters;
 }
 
+/// @nodoc
 class _$FailedSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
     implements $FailedSearchSystemActionCopyWith<$Res> {
@@ -1407,36 +1367,36 @@ class _$FailedSearchSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object parameters = freezed,
-    Object exception = freezed,
+    Object? parameters = freezed,
+    Object? exception = freezed,
   }) {
     return _then(FailedSearchSystemAction(
       parameters: parameters == freezed
           ? _value.parameters
-          : parameters as SearchParameters,
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as SearchParameters,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
     ));
   }
 
   @override
   $SearchParametersCopyWith<$Res> get parameters {
-    if (_value.parameters == null) {
-      return null;
-    }
     return $SearchParametersCopyWith<$Res>(_value.parameters, (value) {
       return _then(_value.copyWith(parameters: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$FailedSearchSystemAction
     with DiagnosticableTreeMixin
     implements FailedSearchSystemAction {
   const _$FailedSearchSystemAction(
-      {@required this.parameters, @required this.exception})
-      : assert(parameters != null),
-        assert(exception != null);
+      {required this.parameters, required this.exception});
 
   @override
   final SearchParameters parameters;
@@ -1475,6 +1435,7 @@ class _$FailedSearchSystemAction
       const DeepCollectionEquality().hash(parameters) ^
       const DeepCollectionEquality().hash(exception);
 
+  @JsonKey(ignore: true)
   @override
   $FailedSearchSystemActionCopyWith<FailedSearchSystemAction> get copyWith =>
       _$FailedSearchSystemActionCopyWithImpl<FailedSearchSystemAction>(
@@ -1482,38 +1443,33 @@ class _$FailedSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result clearResults(),
-    @required Result loading(SearchParameters parameters),
-    @required Result failed(SearchParameters parameters, Exception exception),
-    @required
-        Result completed(SearchParameters parameters, Iterable<Tournament> data,
-            int nextPage, bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() clearResults,
+    required TResult Function(SearchParameters parameters) loading,
+    required TResult Function(SearchParameters parameters, Exception exception)
+        failed,
+    required TResult Function(SearchParameters parameters,
+            Iterable<Tournament> data, int nextPage, bool canLoadMore)
+        completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return failed(parameters, exception);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result clearResults(),
-    Result loading(SearchParameters parameters),
-    Result failed(SearchParameters parameters, Exception exception),
-    Result completed(SearchParameters parameters, Iterable<Tournament> data,
-        int nextPage, bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(parameters, exception);
     }
@@ -1522,35 +1478,29 @@ class _$FailedSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitSearchSystemAction value),
-    @required Result deInit(DeInitSearchSystemAction value),
-    @required Result clearResults(ClearResultsSearchSystemAction value),
-    @required Result loading(LoadingSearchSystemAction value),
-    @required Result failed(FailedSearchSystemAction value),
-    @required Result completed(CompletedSearchSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitSearchSystemAction value) init,
+    required TResult Function(DeInitSearchSystemAction value) deInit,
+    required TResult Function(ClearResultsSearchSystemAction value)
+        clearResults,
+    required TResult Function(LoadingSearchSystemAction value) loading,
+    required TResult Function(FailedSearchSystemAction value) failed,
+    required TResult Function(CompletedSearchSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return failed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitSearchSystemAction value),
-    Result deInit(DeInitSearchSystemAction value),
-    Result clearResults(ClearResultsSearchSystemAction value),
-    Result loading(LoadingSearchSystemAction value),
-    Result failed(FailedSearchSystemAction value),
-    Result completed(CompletedSearchSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(this);
     }
@@ -1560,14 +1510,17 @@ class _$FailedSearchSystemAction
 
 abstract class FailedSearchSystemAction implements SystemActionSearch {
   const factory FailedSearchSystemAction(
-      {@required SearchParameters parameters,
-      @required Exception exception}) = _$FailedSearchSystemAction;
+      {required SearchParameters parameters,
+      required Exception exception}) = _$FailedSearchSystemAction;
 
-  SearchParameters get parameters;
-  Exception get exception;
-  $FailedSearchSystemActionCopyWith<FailedSearchSystemAction> get copyWith;
+  SearchParameters get parameters => throw _privateConstructorUsedError;
+  Exception get exception => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FailedSearchSystemActionCopyWith<FailedSearchSystemAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $CompletedSearchSystemActionCopyWith<$Res> {
   factory $CompletedSearchSystemActionCopyWith(
           CompletedSearchSystemAction value,
@@ -1582,6 +1535,7 @@ abstract class $CompletedSearchSystemActionCopyWith<$Res> {
   $SearchParametersCopyWith<$Res> get parameters;
 }
 
+/// @nodoc
 class _$CompletedSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
     implements $CompletedSearchSystemActionCopyWith<$Res> {
@@ -1595,45 +1549,49 @@ class _$CompletedSearchSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object parameters = freezed,
-    Object data = freezed,
-    Object nextPage = freezed,
-    Object canLoadMore = freezed,
+    Object? parameters = freezed,
+    Object? data = freezed,
+    Object? nextPage = freezed,
+    Object? canLoadMore = freezed,
   }) {
     return _then(CompletedSearchSystemAction(
       parameters: parameters == freezed
           ? _value.parameters
-          : parameters as SearchParameters,
-      data: data == freezed ? _value.data : data as Iterable<Tournament>,
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as int,
-      canLoadMore:
-          canLoadMore == freezed ? _value.canLoadMore : canLoadMore as bool,
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as SearchParameters,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Iterable<Tournament>,
+      nextPage: nextPage == freezed
+          ? _value.nextPage
+          : nextPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      canLoadMore: canLoadMore == freezed
+          ? _value.canLoadMore
+          : canLoadMore // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
   @override
   $SearchParametersCopyWith<$Res> get parameters {
-    if (_value.parameters == null) {
-      return null;
-    }
     return $SearchParametersCopyWith<$Res>(_value.parameters, (value) {
       return _then(_value.copyWith(parameters: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$CompletedSearchSystemAction
     with DiagnosticableTreeMixin
     implements CompletedSearchSystemAction {
   const _$CompletedSearchSystemAction(
-      {@required this.parameters,
-      @required this.data,
-      @required this.nextPage,
-      @required this.canLoadMore})
-      : assert(parameters != null),
-        assert(data != null),
-        assert(nextPage != null),
-        assert(canLoadMore != null);
+      {required this.parameters,
+      required this.data,
+      required this.nextPage,
+      required this.canLoadMore});
 
   @override
   final SearchParameters parameters;
@@ -1685,6 +1643,7 @@ class _$CompletedSearchSystemAction
       const DeepCollectionEquality().hash(nextPage) ^
       const DeepCollectionEquality().hash(canLoadMore);
 
+  @JsonKey(ignore: true)
   @override
   $CompletedSearchSystemActionCopyWith<CompletedSearchSystemAction>
       get copyWith => _$CompletedSearchSystemActionCopyWithImpl<
@@ -1692,38 +1651,33 @@ class _$CompletedSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result clearResults(),
-    @required Result loading(SearchParameters parameters),
-    @required Result failed(SearchParameters parameters, Exception exception),
-    @required
-        Result completed(SearchParameters parameters, Iterable<Tournament> data,
-            int nextPage, bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() clearResults,
+    required TResult Function(SearchParameters parameters) loading,
+    required TResult Function(SearchParameters parameters, Exception exception)
+        failed,
+    required TResult Function(SearchParameters parameters,
+            Iterable<Tournament> data, int nextPage, bool canLoadMore)
+        completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return completed(parameters, data, nextPage, canLoadMore);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result clearResults(),
-    Result loading(SearchParameters parameters),
-    Result failed(SearchParameters parameters, Exception exception),
-    Result completed(SearchParameters parameters, Iterable<Tournament> data,
-        int nextPage, bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(parameters, data, nextPage, canLoadMore);
     }
@@ -1732,35 +1686,29 @@ class _$CompletedSearchSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitSearchSystemAction value),
-    @required Result deInit(DeInitSearchSystemAction value),
-    @required Result clearResults(ClearResultsSearchSystemAction value),
-    @required Result loading(LoadingSearchSystemAction value),
-    @required Result failed(FailedSearchSystemAction value),
-    @required Result completed(CompletedSearchSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitSearchSystemAction value) init,
+    required TResult Function(DeInitSearchSystemAction value) deInit,
+    required TResult Function(ClearResultsSearchSystemAction value)
+        clearResults,
+    required TResult Function(LoadingSearchSystemAction value) loading,
+    required TResult Function(FailedSearchSystemAction value) failed,
+    required TResult Function(CompletedSearchSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(clearResults != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return completed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitSearchSystemAction value),
-    Result deInit(DeInitSearchSystemAction value),
-    Result clearResults(ClearResultsSearchSystemAction value),
-    Result loading(LoadingSearchSystemAction value),
-    Result failed(FailedSearchSystemAction value),
-    Result completed(CompletedSearchSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(this);
     }
@@ -1770,15 +1718,16 @@ class _$CompletedSearchSystemAction
 
 abstract class CompletedSearchSystemAction implements SystemActionSearch {
   const factory CompletedSearchSystemAction(
-      {@required SearchParameters parameters,
-      @required Iterable<Tournament> data,
-      @required int nextPage,
-      @required bool canLoadMore}) = _$CompletedSearchSystemAction;
+      {required SearchParameters parameters,
+      required Iterable<Tournament> data,
+      required int nextPage,
+      required bool canLoadMore}) = _$CompletedSearchSystemAction;
 
-  SearchParameters get parameters;
-  Iterable<Tournament> get data;
-  int get nextPage;
-  bool get canLoadMore;
+  SearchParameters get parameters => throw _privateConstructorUsedError;
+  Iterable<Tournament> get data => throw _privateConstructorUsedError;
+  int get nextPage => throw _privateConstructorUsedError;
+  bool get canLoadMore => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $CompletedSearchSystemActionCopyWith<CompletedSearchSystemAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }

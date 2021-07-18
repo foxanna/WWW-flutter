@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'state.dart';
 
@@ -9,15 +9,18 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$SettingsStateTearOff {
   const _$SettingsStateTearOff();
 
-// ignore: unused_element
   _SettingsState call(
-      {@required AppTheme appTheme,
-      @required TextScale textScale,
-      @required bool notifyShortTimerExpiration,
-      @required bool notifyLongTimerExpiration}) {
+      {required AppTheme appTheme,
+      required TextScale textScale,
+      required bool notifyShortTimerExpiration,
+      required bool notifyLongTimerExpiration}) {
     return _SettingsState(
       appTheme: appTheme,
       textScale: textScale,
@@ -27,18 +30,22 @@ class _$SettingsStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SettingsState = _$SettingsStateTearOff();
 
+/// @nodoc
 mixin _$SettingsState {
-  AppTheme get appTheme;
-  TextScale get textScale;
-  bool get notifyShortTimerExpiration;
-  bool get notifyLongTimerExpiration;
+  AppTheme get appTheme => throw _privateConstructorUsedError;
+  TextScale get textScale => throw _privateConstructorUsedError;
+  bool get notifyShortTimerExpiration => throw _privateConstructorUsedError;
+  bool get notifyLongTimerExpiration => throw _privateConstructorUsedError;
 
-  $SettingsStateCopyWith<SettingsState> get copyWith;
+  @JsonKey(ignore: true)
+  $SettingsStateCopyWith<SettingsState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SettingsStateCopyWith<$Res> {
   factory $SettingsStateCopyWith(
           SettingsState value, $Res Function(SettingsState) then) =
@@ -50,6 +57,7 @@ abstract class $SettingsStateCopyWith<$Res> {
       bool notifyLongTimerExpiration});
 }
 
+/// @nodoc
 class _$SettingsStateCopyWithImpl<$Res>
     implements $SettingsStateCopyWith<$Res> {
   _$SettingsStateCopyWithImpl(this._value, this._then);
@@ -60,25 +68,33 @@ class _$SettingsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object appTheme = freezed,
-    Object textScale = freezed,
-    Object notifyShortTimerExpiration = freezed,
-    Object notifyLongTimerExpiration = freezed,
+    Object? appTheme = freezed,
+    Object? textScale = freezed,
+    Object? notifyShortTimerExpiration = freezed,
+    Object? notifyLongTimerExpiration = freezed,
   }) {
     return _then(_value.copyWith(
-      appTheme: appTheme == freezed ? _value.appTheme : appTheme as AppTheme,
-      textScale:
-          textScale == freezed ? _value.textScale : textScale as TextScale,
+      appTheme: appTheme == freezed
+          ? _value.appTheme
+          : appTheme // ignore: cast_nullable_to_non_nullable
+              as AppTheme,
+      textScale: textScale == freezed
+          ? _value.textScale
+          : textScale // ignore: cast_nullable_to_non_nullable
+              as TextScale,
       notifyShortTimerExpiration: notifyShortTimerExpiration == freezed
           ? _value.notifyShortTimerExpiration
-          : notifyShortTimerExpiration as bool,
+          : notifyShortTimerExpiration // ignore: cast_nullable_to_non_nullable
+              as bool,
       notifyLongTimerExpiration: notifyLongTimerExpiration == freezed
           ? _value.notifyLongTimerExpiration
-          : notifyLongTimerExpiration as bool,
+          : notifyLongTimerExpiration // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$SettingsStateCopyWith<$Res>
     implements $SettingsStateCopyWith<$Res> {
   factory _$SettingsStateCopyWith(
@@ -92,6 +108,7 @@ abstract class _$SettingsStateCopyWith<$Res>
       bool notifyLongTimerExpiration});
 }
 
+/// @nodoc
 class __$SettingsStateCopyWithImpl<$Res>
     extends _$SettingsStateCopyWithImpl<$Res>
     implements _$SettingsStateCopyWith<$Res> {
@@ -104,35 +121,40 @@ class __$SettingsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object appTheme = freezed,
-    Object textScale = freezed,
-    Object notifyShortTimerExpiration = freezed,
-    Object notifyLongTimerExpiration = freezed,
+    Object? appTheme = freezed,
+    Object? textScale = freezed,
+    Object? notifyShortTimerExpiration = freezed,
+    Object? notifyLongTimerExpiration = freezed,
   }) {
     return _then(_SettingsState(
-      appTheme: appTheme == freezed ? _value.appTheme : appTheme as AppTheme,
-      textScale:
-          textScale == freezed ? _value.textScale : textScale as TextScale,
+      appTheme: appTheme == freezed
+          ? _value.appTheme
+          : appTheme // ignore: cast_nullable_to_non_nullable
+              as AppTheme,
+      textScale: textScale == freezed
+          ? _value.textScale
+          : textScale // ignore: cast_nullable_to_non_nullable
+              as TextScale,
       notifyShortTimerExpiration: notifyShortTimerExpiration == freezed
           ? _value.notifyShortTimerExpiration
-          : notifyShortTimerExpiration as bool,
+          : notifyShortTimerExpiration // ignore: cast_nullable_to_non_nullable
+              as bool,
       notifyLongTimerExpiration: notifyLongTimerExpiration == freezed
           ? _value.notifyLongTimerExpiration
-          : notifyLongTimerExpiration as bool,
+          : notifyLongTimerExpiration // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_SettingsState with DiagnosticableTreeMixin implements _SettingsState {
   const _$_SettingsState(
-      {@required this.appTheme,
-      @required this.textScale,
-      @required this.notifyShortTimerExpiration,
-      @required this.notifyLongTimerExpiration})
-      : assert(appTheme != null),
-        assert(textScale != null),
-        assert(notifyShortTimerExpiration != null),
-        assert(notifyLongTimerExpiration != null);
+      {required this.appTheme,
+      required this.textScale,
+      required this.notifyShortTimerExpiration,
+      required this.notifyLongTimerExpiration});
 
   @override
   final AppTheme appTheme;
@@ -191,6 +213,7 @@ class _$_SettingsState with DiagnosticableTreeMixin implements _SettingsState {
       const DeepCollectionEquality().hash(notifyShortTimerExpiration) ^
       const DeepCollectionEquality().hash(notifyLongTimerExpiration);
 
+  @JsonKey(ignore: true)
   @override
   _$SettingsStateCopyWith<_SettingsState> get copyWith =>
       __$SettingsStateCopyWithImpl<_SettingsState>(this, _$identity);
@@ -198,19 +221,21 @@ class _$_SettingsState with DiagnosticableTreeMixin implements _SettingsState {
 
 abstract class _SettingsState implements SettingsState {
   const factory _SettingsState(
-      {@required AppTheme appTheme,
-      @required TextScale textScale,
-      @required bool notifyShortTimerExpiration,
-      @required bool notifyLongTimerExpiration}) = _$_SettingsState;
+      {required AppTheme appTheme,
+      required TextScale textScale,
+      required bool notifyShortTimerExpiration,
+      required bool notifyLongTimerExpiration}) = _$_SettingsState;
 
   @override
-  AppTheme get appTheme;
+  AppTheme get appTheme => throw _privateConstructorUsedError;
   @override
-  TextScale get textScale;
+  TextScale get textScale => throw _privateConstructorUsedError;
   @override
-  bool get notifyShortTimerExpiration;
+  bool get notifyShortTimerExpiration => throw _privateConstructorUsedError;
   @override
-  bool get notifyLongTimerExpiration;
+  bool get notifyLongTimerExpiration => throw _privateConstructorUsedError;
   @override
-  _$SettingsStateCopyWith<_SettingsState> get copyWith;
+  @JsonKey(ignore: true)
+  _$SettingsStateCopyWith<_SettingsState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

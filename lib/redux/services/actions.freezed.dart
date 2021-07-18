@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,45 +9,55 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$SystemActionServicesTearOff {
   const _$SystemActionServicesTearOff();
 
-// ignore: unused_element
   ReadyServicesSystemAction ready() {
     return const ReadyServicesSystemAction();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SystemActionServices = _$SystemActionServicesTearOff();
 
+/// @nodoc
 mixin _$SystemActionServices {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result ready(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() ready,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result ready(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? ready,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result ready(ReadyServicesSystemAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(ReadyServicesSystemAction value) ready,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result ready(ReadyServicesSystemAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ReadyServicesSystemAction value)? ready,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SystemActionServicesCopyWith<$Res> {
   factory $SystemActionServicesCopyWith(SystemActionServices value,
           $Res Function(SystemActionServices) then) =
       _$SystemActionServicesCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SystemActionServicesCopyWithImpl<$Res>
     implements $SystemActionServicesCopyWith<$Res> {
   _$SystemActionServicesCopyWithImpl(this._value, this._then);
@@ -57,12 +67,14 @@ class _$SystemActionServicesCopyWithImpl<$Res>
   final $Res Function(SystemActionServices) _then;
 }
 
+/// @nodoc
 abstract class $ReadyServicesSystemActionCopyWith<$Res> {
   factory $ReadyServicesSystemActionCopyWith(ReadyServicesSystemAction value,
           $Res Function(ReadyServicesSystemAction) then) =
       _$ReadyServicesSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ReadyServicesSystemActionCopyWithImpl<$Res>
     extends _$SystemActionServicesCopyWithImpl<$Res>
     implements $ReadyServicesSystemActionCopyWith<$Res> {
@@ -74,6 +86,8 @@ class _$ReadyServicesSystemActionCopyWithImpl<$Res>
   ReadyServicesSystemAction get _value =>
       super._value as ReadyServicesSystemAction;
 }
+
+/// @nodoc
 
 class _$ReadyServicesSystemAction
     with DiagnosticableTreeMixin
@@ -101,20 +115,18 @@ class _$ReadyServicesSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result ready(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() ready,
   }) {
-    assert(ready != null);
     return ready();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result ready(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? ready,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (ready != null) {
       return ready();
     }
@@ -123,20 +135,18 @@ class _$ReadyServicesSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result ready(ReadyServicesSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(ReadyServicesSystemAction value) ready,
   }) {
-    assert(ready != null);
     return ready(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result ready(ReadyServicesSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ReadyServicesSystemAction value)? ready,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (ready != null) {
       return ready(this);
     }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,78 +9,85 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionBrowseTearOff {
   const _$UserActionBrowseTearOff();
 
-// ignore: unused_element
   DatabaseBrowseUserAction database() {
     return const DatabaseBrowseUserAction();
   }
 
-// ignore: unused_element
-  QuestionBrowseUserAction question({@required QuestionInfo info}) {
+  QuestionBrowseUserAction question({required QuestionInfo info}) {
     return QuestionBrowseUserAction(
       info: info,
     );
   }
 
-// ignore: unused_element
-  TourBrowseUserAction tour({@required TourInfo info}) {
+  TourBrowseUserAction tour({required TourInfo info}) {
     return TourBrowseUserAction(
       info: info,
     );
   }
 
-// ignore: unused_element
-  TournamentBrowseUserAction tournament({@required TournamentInfo info}) {
+  TournamentBrowseUserAction tournament({required TournamentInfo info}) {
     return TournamentBrowseUserAction(
       info: info,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionBrowse = _$UserActionBrowseTearOff();
 
+/// @nodoc
 mixin _$UserActionBrowse {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result database(),
-    @required Result question(QuestionInfo info),
-    @required Result tour(TourInfo info),
-    @required Result tournament(TournamentInfo info),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() database,
+    required TResult Function(QuestionInfo info) question,
+    required TResult Function(TourInfo info) tour,
+    required TResult Function(TournamentInfo info) tournament,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result database(),
-    Result question(QuestionInfo info),
-    Result tour(TourInfo info),
-    Result tournament(TournamentInfo info),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result database(DatabaseBrowseUserAction value),
-    @required Result question(QuestionBrowseUserAction value),
-    @required Result tour(TourBrowseUserAction value),
-    @required Result tournament(TournamentBrowseUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(DatabaseBrowseUserAction value) database,
+    required TResult Function(QuestionBrowseUserAction value) question,
+    required TResult Function(TourBrowseUserAction value) tour,
+    required TResult Function(TournamentBrowseUserAction value) tournament,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result database(DatabaseBrowseUserAction value),
-    Result question(QuestionBrowseUserAction value),
-    Result tour(TourBrowseUserAction value),
-    Result tournament(TournamentBrowseUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionBrowseCopyWith<$Res> {
   factory $UserActionBrowseCopyWith(
           UserActionBrowse value, $Res Function(UserActionBrowse) then) =
       _$UserActionBrowseCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionBrowseCopyWithImpl<$Res>
     implements $UserActionBrowseCopyWith<$Res> {
   _$UserActionBrowseCopyWithImpl(this._value, this._then);
@@ -90,12 +97,14 @@ class _$UserActionBrowseCopyWithImpl<$Res>
   final $Res Function(UserActionBrowse) _then;
 }
 
+/// @nodoc
 abstract class $DatabaseBrowseUserActionCopyWith<$Res> {
   factory $DatabaseBrowseUserActionCopyWith(DatabaseBrowseUserAction value,
           $Res Function(DatabaseBrowseUserAction) then) =
       _$DatabaseBrowseUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$DatabaseBrowseUserActionCopyWithImpl<$Res>
     extends _$UserActionBrowseCopyWithImpl<$Res>
     implements $DatabaseBrowseUserActionCopyWith<$Res> {
@@ -107,6 +116,8 @@ class _$DatabaseBrowseUserActionCopyWithImpl<$Res>
   DatabaseBrowseUserAction get _value =>
       super._value as DatabaseBrowseUserAction;
 }
+
+/// @nodoc
 
 class _$DatabaseBrowseUserAction
     with DiagnosticableTreeMixin
@@ -134,29 +145,24 @@ class _$DatabaseBrowseUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result database(),
-    @required Result question(QuestionInfo info),
-    @required Result tour(TourInfo info),
-    @required Result tournament(TournamentInfo info),
+  TResult when<TResult extends Object?>({
+    required TResult Function() database,
+    required TResult Function(QuestionInfo info) question,
+    required TResult Function(TourInfo info) tour,
+    required TResult Function(TournamentInfo info) tournament,
   }) {
-    assert(database != null);
-    assert(question != null);
-    assert(tour != null);
-    assert(tournament != null);
     return database();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result database(),
-    Result question(QuestionInfo info),
-    Result tour(TourInfo info),
-    Result tournament(TournamentInfo info),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (database != null) {
       return database();
     }
@@ -165,29 +171,24 @@ class _$DatabaseBrowseUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result database(DatabaseBrowseUserAction value),
-    @required Result question(QuestionBrowseUserAction value),
-    @required Result tour(TourBrowseUserAction value),
-    @required Result tournament(TournamentBrowseUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(DatabaseBrowseUserAction value) database,
+    required TResult Function(QuestionBrowseUserAction value) question,
+    required TResult Function(TourBrowseUserAction value) tour,
+    required TResult Function(TournamentBrowseUserAction value) tournament,
   }) {
-    assert(database != null);
-    assert(question != null);
-    assert(tour != null);
-    assert(tournament != null);
     return database(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result database(DatabaseBrowseUserAction value),
-    Result question(QuestionBrowseUserAction value),
-    Result tour(TourBrowseUserAction value),
-    Result tournament(TournamentBrowseUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (database != null) {
       return database(this);
     }
@@ -199,6 +200,7 @@ abstract class DatabaseBrowseUserAction implements UserActionBrowse {
   const factory DatabaseBrowseUserAction() = _$DatabaseBrowseUserAction;
 }
 
+/// @nodoc
 abstract class $QuestionBrowseUserActionCopyWith<$Res> {
   factory $QuestionBrowseUserActionCopyWith(QuestionBrowseUserAction value,
           $Res Function(QuestionBrowseUserAction) then) =
@@ -208,6 +210,7 @@ abstract class $QuestionBrowseUserActionCopyWith<$Res> {
   $QuestionInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$QuestionBrowseUserActionCopyWithImpl<$Res>
     extends _$UserActionBrowseCopyWithImpl<$Res>
     implements $QuestionBrowseUserActionCopyWith<$Res> {
@@ -221,29 +224,30 @@ class _$QuestionBrowseUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
+    Object? info = freezed,
   }) {
     return _then(QuestionBrowseUserAction(
-      info: info == freezed ? _value.info : info as QuestionInfo,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as QuestionInfo,
     ));
   }
 
   @override
   $QuestionInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $QuestionInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$QuestionBrowseUserAction
     with DiagnosticableTreeMixin
     implements QuestionBrowseUserAction {
-  const _$QuestionBrowseUserAction({@required this.info})
-      : assert(info != null);
+  const _$QuestionBrowseUserAction({required this.info});
 
   @override
   final QuestionInfo info;
@@ -273,6 +277,7 @@ class _$QuestionBrowseUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   $QuestionBrowseUserActionCopyWith<QuestionBrowseUserAction> get copyWith =>
       _$QuestionBrowseUserActionCopyWithImpl<QuestionBrowseUserAction>(
@@ -280,29 +285,24 @@ class _$QuestionBrowseUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result database(),
-    @required Result question(QuestionInfo info),
-    @required Result tour(TourInfo info),
-    @required Result tournament(TournamentInfo info),
+  TResult when<TResult extends Object?>({
+    required TResult Function() database,
+    required TResult Function(QuestionInfo info) question,
+    required TResult Function(TourInfo info) tour,
+    required TResult Function(TournamentInfo info) tournament,
   }) {
-    assert(database != null);
-    assert(question != null);
-    assert(tour != null);
-    assert(tournament != null);
     return question(info);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result database(),
-    Result question(QuestionInfo info),
-    Result tour(TourInfo info),
-    Result tournament(TournamentInfo info),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (question != null) {
       return question(info);
     }
@@ -311,29 +311,24 @@ class _$QuestionBrowseUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result database(DatabaseBrowseUserAction value),
-    @required Result question(QuestionBrowseUserAction value),
-    @required Result tour(TourBrowseUserAction value),
-    @required Result tournament(TournamentBrowseUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(DatabaseBrowseUserAction value) database,
+    required TResult Function(QuestionBrowseUserAction value) question,
+    required TResult Function(TourBrowseUserAction value) tour,
+    required TResult Function(TournamentBrowseUserAction value) tournament,
   }) {
-    assert(database != null);
-    assert(question != null);
-    assert(tour != null);
-    assert(tournament != null);
     return question(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result database(DatabaseBrowseUserAction value),
-    Result question(QuestionBrowseUserAction value),
-    Result tour(TourBrowseUserAction value),
-    Result tournament(TournamentBrowseUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (question != null) {
       return question(this);
     }
@@ -342,13 +337,16 @@ class _$QuestionBrowseUserAction
 }
 
 abstract class QuestionBrowseUserAction implements UserActionBrowse {
-  const factory QuestionBrowseUserAction({@required QuestionInfo info}) =
+  const factory QuestionBrowseUserAction({required QuestionInfo info}) =
       _$QuestionBrowseUserAction;
 
-  QuestionInfo get info;
-  $QuestionBrowseUserActionCopyWith<QuestionBrowseUserAction> get copyWith;
+  QuestionInfo get info => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $QuestionBrowseUserActionCopyWith<QuestionBrowseUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TourBrowseUserActionCopyWith<$Res> {
   factory $TourBrowseUserActionCopyWith(TourBrowseUserAction value,
           $Res Function(TourBrowseUserAction) then) =
@@ -358,6 +356,7 @@ abstract class $TourBrowseUserActionCopyWith<$Res> {
   $TourInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$TourBrowseUserActionCopyWithImpl<$Res>
     extends _$UserActionBrowseCopyWithImpl<$Res>
     implements $TourBrowseUserActionCopyWith<$Res> {
@@ -370,28 +369,30 @@ class _$TourBrowseUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
+    Object? info = freezed,
   }) {
     return _then(TourBrowseUserAction(
-      info: info == freezed ? _value.info : info as TourInfo,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
     ));
   }
 
   @override
   $TourInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$TourBrowseUserAction
     with DiagnosticableTreeMixin
     implements TourBrowseUserAction {
-  const _$TourBrowseUserAction({@required this.info}) : assert(info != null);
+  const _$TourBrowseUserAction({required this.info});
 
   @override
   final TourInfo info;
@@ -421,6 +422,7 @@ class _$TourBrowseUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   $TourBrowseUserActionCopyWith<TourBrowseUserAction> get copyWith =>
       _$TourBrowseUserActionCopyWithImpl<TourBrowseUserAction>(
@@ -428,29 +430,24 @@ class _$TourBrowseUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result database(),
-    @required Result question(QuestionInfo info),
-    @required Result tour(TourInfo info),
-    @required Result tournament(TournamentInfo info),
+  TResult when<TResult extends Object?>({
+    required TResult Function() database,
+    required TResult Function(QuestionInfo info) question,
+    required TResult Function(TourInfo info) tour,
+    required TResult Function(TournamentInfo info) tournament,
   }) {
-    assert(database != null);
-    assert(question != null);
-    assert(tour != null);
-    assert(tournament != null);
     return tour(info);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result database(),
-    Result question(QuestionInfo info),
-    Result tour(TourInfo info),
-    Result tournament(TournamentInfo info),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tour != null) {
       return tour(info);
     }
@@ -459,29 +456,24 @@ class _$TourBrowseUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result database(DatabaseBrowseUserAction value),
-    @required Result question(QuestionBrowseUserAction value),
-    @required Result tour(TourBrowseUserAction value),
-    @required Result tournament(TournamentBrowseUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(DatabaseBrowseUserAction value) database,
+    required TResult Function(QuestionBrowseUserAction value) question,
+    required TResult Function(TourBrowseUserAction value) tour,
+    required TResult Function(TournamentBrowseUserAction value) tournament,
   }) {
-    assert(database != null);
-    assert(question != null);
-    assert(tour != null);
-    assert(tournament != null);
     return tour(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result database(DatabaseBrowseUserAction value),
-    Result question(QuestionBrowseUserAction value),
-    Result tour(TourBrowseUserAction value),
-    Result tournament(TournamentBrowseUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tour != null) {
       return tour(this);
     }
@@ -490,13 +482,16 @@ class _$TourBrowseUserAction
 }
 
 abstract class TourBrowseUserAction implements UserActionBrowse {
-  const factory TourBrowseUserAction({@required TourInfo info}) =
+  const factory TourBrowseUserAction({required TourInfo info}) =
       _$TourBrowseUserAction;
 
-  TourInfo get info;
-  $TourBrowseUserActionCopyWith<TourBrowseUserAction> get copyWith;
+  TourInfo get info => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TourBrowseUserActionCopyWith<TourBrowseUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TournamentBrowseUserActionCopyWith<$Res> {
   factory $TournamentBrowseUserActionCopyWith(TournamentBrowseUserAction value,
           $Res Function(TournamentBrowseUserAction) then) =
@@ -506,6 +501,7 @@ abstract class $TournamentBrowseUserActionCopyWith<$Res> {
   $TournamentInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$TournamentBrowseUserActionCopyWithImpl<$Res>
     extends _$UserActionBrowseCopyWithImpl<$Res>
     implements $TournamentBrowseUserActionCopyWith<$Res> {
@@ -519,29 +515,30 @@ class _$TournamentBrowseUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
+    Object? info = freezed,
   }) {
     return _then(TournamentBrowseUserAction(
-      info: info == freezed ? _value.info : info as TournamentInfo,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TournamentInfo,
     ));
   }
 
   @override
   $TournamentInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$TournamentBrowseUserAction
     with DiagnosticableTreeMixin
     implements TournamentBrowseUserAction {
-  const _$TournamentBrowseUserAction({@required this.info})
-      : assert(info != null);
+  const _$TournamentBrowseUserAction({required this.info});
 
   @override
   final TournamentInfo info;
@@ -571,6 +568,7 @@ class _$TournamentBrowseUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   $TournamentBrowseUserActionCopyWith<TournamentBrowseUserAction>
       get copyWith =>
@@ -579,29 +577,24 @@ class _$TournamentBrowseUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result database(),
-    @required Result question(QuestionInfo info),
-    @required Result tour(TourInfo info),
-    @required Result tournament(TournamentInfo info),
+  TResult when<TResult extends Object?>({
+    required TResult Function() database,
+    required TResult Function(QuestionInfo info) question,
+    required TResult Function(TourInfo info) tour,
+    required TResult Function(TournamentInfo info) tournament,
   }) {
-    assert(database != null);
-    assert(question != null);
-    assert(tour != null);
-    assert(tournament != null);
     return tournament(info);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result database(),
-    Result question(QuestionInfo info),
-    Result tour(TourInfo info),
-    Result tournament(TournamentInfo info),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tournament != null) {
       return tournament(info);
     }
@@ -610,29 +603,24 @@ class _$TournamentBrowseUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result database(DatabaseBrowseUserAction value),
-    @required Result question(QuestionBrowseUserAction value),
-    @required Result tour(TourBrowseUserAction value),
-    @required Result tournament(TournamentBrowseUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(DatabaseBrowseUserAction value) database,
+    required TResult Function(QuestionBrowseUserAction value) question,
+    required TResult Function(TourBrowseUserAction value) tour,
+    required TResult Function(TournamentBrowseUserAction value) tournament,
   }) {
-    assert(database != null);
-    assert(question != null);
-    assert(tour != null);
-    assert(tournament != null);
     return tournament(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result database(DatabaseBrowseUserAction value),
-    Result question(QuestionBrowseUserAction value),
-    Result tour(TourBrowseUserAction value),
-    Result tournament(TournamentBrowseUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tournament != null) {
       return tournament(this);
     }
@@ -641,9 +629,11 @@ class _$TournamentBrowseUserAction
 }
 
 abstract class TournamentBrowseUserAction implements UserActionBrowse {
-  const factory TournamentBrowseUserAction({@required TournamentInfo info}) =
+  const factory TournamentBrowseUserAction({required TournamentInfo info}) =
       _$TournamentBrowseUserAction;
 
-  TournamentInfo get info;
-  $TournamentBrowseUserActionCopyWith<TournamentBrowseUserAction> get copyWith;
+  TournamentInfo get info => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TournamentBrowseUserActionCopyWith<TournamentBrowseUserAction>
+      get copyWith => throw _privateConstructorUsedError;
 }

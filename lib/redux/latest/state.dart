@@ -1,11 +1,13 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/data/models/tournament.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 part 'state.freezed.dart';
 
 @freezed
-abstract class LatestTournamentsState with _$LatestTournamentsState {
+class LatestTournamentsState with _$LatestTournamentsState implements IState {
   const factory LatestTournamentsState.initial() =
       InitialLatestTournamentsState;
 
@@ -13,45 +15,45 @@ abstract class LatestTournamentsState with _$LatestTournamentsState {
       LoadingFirstPageLatestTournamentsState;
 
   const factory LatestTournamentsState.loadingWithData({
-    @required List<Tournament> data,
-    @required int nextPage,
+    required List<Tournament> data,
+    required int nextPage,
   }) = LoadingWithDataLatestTournamentsState;
 
   const factory LatestTournamentsState.errorFirstPage({
-    @required Exception exception,
+    required Exception exception,
   }) = ErrorFirstPageLatestTournamentsState;
 
   const factory LatestTournamentsState.errorWithData({
-    @required List<Tournament> data,
-    @required Exception exception,
-    @required int nextPage,
+    required List<Tournament> data,
+    required Exception exception,
+    required int nextPage,
   }) = ErrorWithDataLatestTournamentsState;
 
   const factory LatestTournamentsState.refreshing({
-    @required List<Tournament> data,
+    required List<Tournament> data,
   }) = RefreshingLatestTournamentsState;
 
   const factory LatestTournamentsState.data({
-    @required int nextPage,
-    @required List<Tournament> data,
+    required int nextPage,
+    required List<Tournament> data,
   }) = DataLatestTournamentsState;
 }
 
 extension LatestTournamentsStateX on LatestTournamentsState {
-  List<Tournament> get dataOrEmpty => this.dataOrNull ?? <Tournament>[];
-
-  List<Tournament> get dataOrNull => this.maybeMap(
+  Option<List<Tournament>> get dataOption => optionOf(this.maybeMap(
         data: (value) => value.data,
         refreshing: (value) => value.data,
         errorWithData: (value) => value.data,
         loadingWithData: (value) => value.data,
         orElse: () => null,
-      );
+      ));
 
-  int get nextPageOrZero => this.maybeMap(
+  Option<int> get nextPageOption => optionOf(this.maybeMap(
         data: (value) => value.nextPage,
         errorWithData: (value) => value.nextPage,
         loadingWithData: (value) => value.nextPage,
-        orElse: () => 0,
-      );
+        orElse: () => null,
+      ));
+
+  List<Tournament> get dataOrEmpty => dataOption.getOrElse(() => []);
 }

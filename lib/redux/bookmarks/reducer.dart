@@ -1,72 +1,69 @@
+import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:dartx/dartx.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/redux/bookmarks/actions.dart';
 import 'package:what_when_where/redux/bookmarks/state.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 
-class BookmarksReducer {
-  static final Reducer<BookmarksState> _reducer =
-      combineReducers<BookmarksState>([
-    TypedReducer<BookmarksState, InitBookmarksSystemAction>(_init),
-    TypedReducer<BookmarksState, DeInitBookmarksSystemAction>(_deInit),
-    TypedReducer<BookmarksState, StatusChangedTournamentSystemAction>(
-        _statusChanged),
-    TypedReducer<BookmarksState, CompletedBookmarksSystemAction>(_completed),
-    TypedReducer<BookmarksState, LoadingBookmarksSystemAction>(_loading),
-    TypedReducer<BookmarksState, FailedBookmarksSystemAction>(_failed),
-  ]);
-
-  static BookmarksState reduce(BookmarksState state, ReduxAction action) =>
+@injectable
+class BookmarksReducer implements IReducer<BookmarksState, IAction> {
+  @override
+  Option<BookmarksState> call(Option<BookmarksState> state, IAction action) =>
       _reducer(state, action);
 
-  static BookmarksState _init(
-          BookmarksState state, InitBookmarksSystemAction action) =>
-      const BookmarksState.initial();
+  static final _reducer = combineReducers<Option<BookmarksState>>([
+    TypedReducer<Option<BookmarksState>, InitBookmarksSystemAction>(_init),
+    TypedReducer<Option<BookmarksState>, DeInitBookmarksSystemAction>(_deInit),
+    TypedReducer<Option<BookmarksState>, StatusChangedTournamentSystemAction>(
+        _statusChanged),
+    TypedReducer<Option<BookmarksState>, CompletedBookmarksSystemAction>(
+        _completed),
+    TypedReducer<Option<BookmarksState>, LoadingBookmarksSystemAction>(
+        _loading),
+    TypedReducer<Option<BookmarksState>, FailedBookmarksSystemAction>(_failed),
+  ]);
 
-  static BookmarksState _deInit(
-          BookmarksState state, DeInitBookmarksSystemAction action) =>
-      null;
+  static Option<BookmarksState> _init(
+          Option<BookmarksState> state, InitBookmarksSystemAction action) =>
+      const Some(BookmarksState.initial());
 
-  static BookmarksState _statusChanged(
-      BookmarksState state, StatusChangedTournamentSystemAction action) {
-    if (state == null) {
-      return state;
-    }
+  static Option<BookmarksState> _deInit(
+          Option<BookmarksState> state, DeInitBookmarksSystemAction action) =>
+      const None();
 
-    final isTheOne = (Tournament tournament) =>
-        (action.info.id.isNotNullOrEmpty && tournament.id == action.info.id) ||
-        (action.info.id2.isNotNullOrEmpty && tournament.id2 == action.info.id2);
+  static Option<BookmarksState> _statusChanged(Option<BookmarksState> state,
+          StatusChangedTournamentSystemAction action) =>
+      state.map((state) => state.dataOption.fold(() => state, (data) {
+            final index = data.indexWhere((x) => x.isTheOne(action.info));
 
-    final index = state.dataOrEmpty.indexWhere((x) => isTheOne(x));
+            if (index < 0) {
+              return state;
+            }
 
-    if (index < 0) {
-      return state;
-    }
+            final newData = [...data];
+            newData[index] = newData[index].copyWith(status: action.status);
 
-    final newData = List<Tournament>.from(state.dataOrEmpty);
-    newData[index] = newData[index].copyWith(status: action.status);
+            if (!newData[index].status.isBookmarked) {
+              newData.removeAt(index);
+            }
 
-    if (!newData[index].status.isBookmarked) {
-      newData.removeAt(index);
-    }
+            return state.maybeMap(
+              data: (value) => value.copyWith(data: newData),
+              orElse: () => state,
+            );
+          }));
 
-    return state.maybeMap(
-      data: (value) => value.copyWith(data: newData),
-      orElse: () => state,
-    );
-  }
+  static Option<BookmarksState> _completed(Option<BookmarksState> state,
+          CompletedBookmarksSystemAction action) =>
+      state.map((state) => BookmarksState.data(data: action.tournaments));
 
-  static BookmarksState _completed(
-          BookmarksState state, CompletedBookmarksSystemAction action) =>
-      state != null ? BookmarksState.data(data: action.tournaments) : state;
+  static Option<BookmarksState> _loading(
+          Option<BookmarksState> state, LoadingBookmarksSystemAction action) =>
+      state.map((state) => const BookmarksState.loading());
 
-  static BookmarksState _loading(
-          BookmarksState state, LoadingBookmarksSystemAction action) =>
-      state != null ? const BookmarksState.loading() : state;
-
-  static BookmarksState _failed(
-          BookmarksState state, FailedBookmarksSystemAction action) =>
-      state != null ? BookmarksState.error(exception: action.exception) : state;
+  static Option<BookmarksState> _failed(
+          Option<BookmarksState> state, FailedBookmarksSystemAction action) =>
+      state.map((state) => BookmarksState.error(exception: action.exception));
 }

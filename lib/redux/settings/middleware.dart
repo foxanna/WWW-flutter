@@ -2,10 +2,12 @@ import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/common/text_scale.dart';
-import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/app/state.dart';
+import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
+import 'package:what_when_where/redux/settings/state.dart';
 import 'package:what_when_where/services/preferences.dart';
 
 const _themeKey = 'theme';
@@ -14,37 +16,37 @@ const _notifyShortTimerExpirationKey = 'notify_short_timer';
 const _notifyLongTimerExpirationKey = 'notify_long_timer';
 
 @injectable
-class SettingsMiddleware {
+class SettingsMiddleware implements IMiddleware {
   SettingsMiddleware({
-    IPreferences preferences,
+    required IPreferences preferences,
   }) : _preferences = preferences;
 
   final IPreferences _preferences;
 
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
+  late final _middleware = _createMiddleware();
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, InitInitializationAction>(_init),
-        TypedMiddleware<AppState, OpenSettingsUserAction>(_open),
-        TypedMiddleware<AppState, ChangeThemeSettingsUserAction>(_changeTheme),
+        TypedMiddleware<AppState, InitInitializationAction>(_onInit),
+        TypedMiddleware<AppState, OpenSettingsUserAction>(_onOpen),
+        TypedMiddleware<AppState, ChangeThemeSettingsUserAction>(
+            _onChangeTheme),
         TypedMiddleware<AppState, ChangeTextScaleSettingsUserAction>(
-            _changeTextScale),
+            _onChangeTextScale),
         TypedMiddleware<AppState,
                 ChangeNotifyShortTimerExpirationSettingsUserAction>(
-            _changeNotifyShortTimerExpiration),
+            _onChangeNotifyShortTimerExpiration),
         TypedMiddleware<AppState,
                 ChangeNotifyLongTimerExpirationSettingsUserAction>(
-            _changeNotifyLongTimerExpiration),
+            _onChangeNotifyLongTimerExpiration),
       ];
 
-  Future<void> _init(Store<AppState> store, InitInitializationAction action,
+  Future<void> _onInit(Store<AppState> store, InitInitializationAction action,
       NextDispatcher next) async {
     next(action);
 
     final appThemeSettingsValue =
-        await _preferences.getInt(_themeKey, defaultValue: null);
+        await _preferences.getInt(_themeKey, defaultValue: -1);
     final appTheme = _appThemeFromSettings(appThemeSettingsValue);
 
     final textScaleIndex =
@@ -64,82 +66,83 @@ class SettingsMiddleware {
     ));
   }
 
-  void _open(Store<AppState> store, OpenSettingsUserAction action,
+  void _onOpen(Store<AppState> store, OpenSettingsUserAction action,
       NextDispatcher next) {
     next(action);
 
     store.dispatch(const SystemActionNavigation.settings());
   }
 
-  Future<void> _changeTheme(Store<AppState> store,
+  Future<void> _onChangeTheme(Store<AppState> store,
       ChangeThemeSettingsUserAction action, NextDispatcher next) async {
     final state = store.state.settingsState;
 
-    if (state == null) {
-      return;
-    }
-
-    final themeHasChanged = action.appTheme != state.appTheme;
-
     next(action);
 
-    final newSettingsValue = _settingsValueForAppTheme(action.appTheme);
+    await state.traverseFuture((state) => _changeTheme(state, action));
+  }
 
+  Future<void> _changeTheme(
+      SettingsState state, ChangeThemeSettingsUserAction action) async {
+    final themeHasChanged = action.appTheme != state.appTheme;
+    final newSettingsValue = _settingsValueForAppTheme(action.appTheme);
     if (themeHasChanged) {
       await _preferences.setInt(_themeKey, newSettingsValue);
     }
   }
 
-  Future<void> _changeTextScale(Store<AppState> store,
+  Future<void> _onChangeTextScale(Store<AppState> store,
       ChangeTextScaleSettingsUserAction action, NextDispatcher next) async {
     final state = store.state.settingsState;
 
-    if (state == null) {
-      return;
-    }
-
-    final textScaleHasChanged = action.textScale != state.textScale;
-
     next(action);
 
+    await state.traverseFuture((state) => _changeTextScale(state, action));
+  }
+
+  Future<void> _changeTextScale(
+      SettingsState state, ChangeTextScaleSettingsUserAction action) async {
+    final textScaleHasChanged = action.textScale != state.textScale;
     if (textScaleHasChanged) {
       await _preferences.setInt(_textScaleKey, action.textScale.index);
     }
   }
 
-  Future<void> _changeNotifyShortTimerExpiration(
+  Future<void> _onChangeNotifyShortTimerExpiration(
       Store<AppState> store,
       ChangeNotifyShortTimerExpirationSettingsUserAction action,
       NextDispatcher next) async {
     final state = store.state.settingsState;
 
-    if (state == null) {
-      return;
-    }
-
-    final settingChanged = action.value != state.notifyShortTimerExpiration;
-
     next(action);
 
+    await state.traverseFuture(
+        (state) => _changeNotifyShortTimerExpiration(state, action));
+  }
+
+  Future<void> _changeNotifyShortTimerExpiration(SettingsState state,
+      ChangeNotifyShortTimerExpirationSettingsUserAction action) async {
+    final settingChanged = action.value != state.notifyShortTimerExpiration;
     if (settingChanged) {
       await _preferences.setBool(_notifyShortTimerExpirationKey, action.value);
     }
   }
 
-  Future<void> _changeNotifyLongTimerExpiration(
+  Future<void> _onChangeNotifyLongTimerExpiration(
       Store<AppState> store,
       ChangeNotifyLongTimerExpirationSettingsUserAction action,
       NextDispatcher next) async {
     final state = store.state.settingsState;
 
-    if (state == null) {
-      return;
-    }
-
-    final settingChanged = action.value != state.notifyLongTimerExpiration;
-
     next(action);
 
+    await state.traverseFuture(
+        (state) => _changeNotifyLongTimerExpiration(state, action));
+  }
+
+  Future<void> _changeNotifyLongTimerExpiration(SettingsState state,
+      ChangeNotifyLongTimerExpirationSettingsUserAction action) async {
+    final settingChanged = action.value != state.notifyLongTimerExpiration;
     if (settingChanged) {
       await _preferences.setBool(_notifyLongTimerExpirationKey, action.value);
     }
@@ -163,8 +166,7 @@ class SettingsMiddleware {
       case AppTheme.dark:
         return 1;
       default:
-        // ignore: avoid_returning_null
-        return null;
+        return -1;
     }
   }
 }

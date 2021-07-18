@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'state.dart';
 
@@ -9,41 +9,40 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$QuestionsStateTearOff {
   const _$QuestionsStateTearOff();
 
-// ignore: unused_element
   InitialQuestionsState initial() {
     return const InitialQuestionsState();
   }
 
-// ignore: unused_element
   LoadingFirstPageQuestionsState loadingFirstPage() {
     return const LoadingFirstPageQuestionsState();
   }
 
-// ignore: unused_element
   LoadingWithDataQuestionsState loadingWithData(
-      {@required List<QuestionState> questions,
-      @required int currentQuestionIndex}) {
+      {required List<QuestionState> questions,
+      required int currentQuestionIndex}) {
     return LoadingWithDataQuestionsState(
       questions: questions,
       currentQuestionIndex: currentQuestionIndex,
     );
   }
 
-// ignore: unused_element
-  ErrorFirstPageQuestionsState errorFirstPage({@required Exception exception}) {
+  ErrorFirstPageQuestionsState errorFirstPage({required Exception exception}) {
     return ErrorFirstPageQuestionsState(
       exception: exception,
     );
   }
 
-// ignore: unused_element
   ErrorWithDataQuestionsState errorWithData(
-      {@required List<QuestionState> questions,
-      @required int currentQuestionIndex,
-      @required Exception exception}) {
+      {required List<QuestionState> questions,
+      required int currentQuestionIndex,
+      required Exception exception}) {
     return ErrorWithDataQuestionsState(
       questions: questions,
       currentQuestionIndex: currentQuestionIndex,
@@ -51,10 +50,9 @@ class _$QuestionsStateTearOff {
     );
   }
 
-// ignore: unused_element
   DataQuestionsState data(
-      {@required List<QuestionState> questions,
-      @required int currentQuestionIndex,
+      {required List<QuestionState> questions,
+      required int currentQuestionIndex,
       bool canLoadMore = false}) {
     return DataQuestionsState(
       questions: questions,
@@ -64,65 +62,77 @@ class _$QuestionsStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $QuestionsState = _$QuestionsStateTearOff();
 
+/// @nodoc
 mixin _$QuestionsState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required
-        Result loadingWithData(
-            List<QuestionState> questions, int currentQuestionIndex),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(List<QuestionState> questions,
-            int currentQuestionIndex, Exception exception),
-    @required
-        Result data(List<QuestionState> questions, int currentQuestionIndex,
-            bool canLoadMore),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(
+            List<QuestionState> questions, int currentQuestionIndex)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, Exception exception)
+        errorWithData,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, bool canLoadMore)
+        data,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(
-        List<QuestionState> questions, int currentQuestionIndex),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(List<QuestionState> questions,
-        int currentQuestionIndex, Exception exception),
-    Result data(List<QuestionState> questions, int currentQuestionIndex,
-        bool canLoadMore),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialQuestionsState value),
-    @required Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    @required Result loadingWithData(LoadingWithDataQuestionsState value),
-    @required Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    @required Result errorWithData(ErrorWithDataQuestionsState value),
-    @required Result data(DataQuestionsState value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialQuestionsState value) initial,
+    required TResult Function(LoadingFirstPageQuestionsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataQuestionsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageQuestionsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataQuestionsState value) errorWithData,
+    required TResult Function(DataQuestionsState value) data,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialQuestionsState value),
-    Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    Result loadingWithData(LoadingWithDataQuestionsState value),
-    Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    Result errorWithData(ErrorWithDataQuestionsState value),
-    Result data(DataQuestionsState value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $QuestionsStateCopyWith<$Res> {
   factory $QuestionsStateCopyWith(
           QuestionsState value, $Res Function(QuestionsState) then) =
       _$QuestionsStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$QuestionsStateCopyWithImpl<$Res>
     implements $QuestionsStateCopyWith<$Res> {
   _$QuestionsStateCopyWithImpl(this._value, this._then);
@@ -132,12 +142,14 @@ class _$QuestionsStateCopyWithImpl<$Res>
   final $Res Function(QuestionsState) _then;
 }
 
+/// @nodoc
 abstract class $InitialQuestionsStateCopyWith<$Res> {
   factory $InitialQuestionsStateCopyWith(InitialQuestionsState value,
           $Res Function(InitialQuestionsState) then) =
       _$InitialQuestionsStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitialQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
     implements $InitialQuestionsStateCopyWith<$Res> {
@@ -148,6 +160,8 @@ class _$InitialQuestionsStateCopyWithImpl<$Res>
   @override
   InitialQuestionsState get _value => super._value as InitialQuestionsState;
 }
+
+/// @nodoc
 
 class _$InitialQuestionsState
     with DiagnosticableTreeMixin
@@ -175,44 +189,39 @@ class _$InitialQuestionsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required
-        Result loadingWithData(
-            List<QuestionState> questions, int currentQuestionIndex),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(List<QuestionState> questions,
-            int currentQuestionIndex, Exception exception),
-    @required
-        Result data(List<QuestionState> questions, int currentQuestionIndex,
-            bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(
+            List<QuestionState> questions, int currentQuestionIndex)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, Exception exception)
+        errorWithData,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, bool canLoadMore)
+        data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(
-        List<QuestionState> questions, int currentQuestionIndex),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(List<QuestionState> questions,
-        int currentQuestionIndex, Exception exception),
-    Result data(List<QuestionState> questions, int currentQuestionIndex,
-        bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -221,35 +230,31 @@ class _$InitialQuestionsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialQuestionsState value),
-    @required Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    @required Result loadingWithData(LoadingWithDataQuestionsState value),
-    @required Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    @required Result errorWithData(ErrorWithDataQuestionsState value),
-    @required Result data(DataQuestionsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialQuestionsState value) initial,
+    required TResult Function(LoadingFirstPageQuestionsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataQuestionsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageQuestionsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataQuestionsState value) errorWithData,
+    required TResult Function(DataQuestionsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialQuestionsState value),
-    Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    Result loadingWithData(LoadingWithDataQuestionsState value),
-    Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    Result errorWithData(ErrorWithDataQuestionsState value),
-    Result data(DataQuestionsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -261,6 +266,7 @@ abstract class InitialQuestionsState implements QuestionsState {
   const factory InitialQuestionsState() = _$InitialQuestionsState;
 }
 
+/// @nodoc
 abstract class $LoadingFirstPageQuestionsStateCopyWith<$Res> {
   factory $LoadingFirstPageQuestionsStateCopyWith(
           LoadingFirstPageQuestionsState value,
@@ -268,6 +274,7 @@ abstract class $LoadingFirstPageQuestionsStateCopyWith<$Res> {
       _$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
     implements $LoadingFirstPageQuestionsStateCopyWith<$Res> {
@@ -280,6 +287,8 @@ class _$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>
   LoadingFirstPageQuestionsState get _value =>
       super._value as LoadingFirstPageQuestionsState;
 }
+
+/// @nodoc
 
 class _$LoadingFirstPageQuestionsState
     with DiagnosticableTreeMixin
@@ -308,44 +317,39 @@ class _$LoadingFirstPageQuestionsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required
-        Result loadingWithData(
-            List<QuestionState> questions, int currentQuestionIndex),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(List<QuestionState> questions,
-            int currentQuestionIndex, Exception exception),
-    @required
-        Result data(List<QuestionState> questions, int currentQuestionIndex,
-            bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(
+            List<QuestionState> questions, int currentQuestionIndex)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, Exception exception)
+        errorWithData,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, bool canLoadMore)
+        data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return loadingFirstPage();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(
-        List<QuestionState> questions, int currentQuestionIndex),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(List<QuestionState> questions,
-        int currentQuestionIndex, Exception exception),
-    Result data(List<QuestionState> questions, int currentQuestionIndex,
-        bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingFirstPage != null) {
       return loadingFirstPage();
     }
@@ -354,35 +358,31 @@ class _$LoadingFirstPageQuestionsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialQuestionsState value),
-    @required Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    @required Result loadingWithData(LoadingWithDataQuestionsState value),
-    @required Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    @required Result errorWithData(ErrorWithDataQuestionsState value),
-    @required Result data(DataQuestionsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialQuestionsState value) initial,
+    required TResult Function(LoadingFirstPageQuestionsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataQuestionsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageQuestionsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataQuestionsState value) errorWithData,
+    required TResult Function(DataQuestionsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return loadingFirstPage(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialQuestionsState value),
-    Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    Result loadingWithData(LoadingWithDataQuestionsState value),
-    Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    Result errorWithData(ErrorWithDataQuestionsState value),
-    Result data(DataQuestionsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingFirstPage != null) {
       return loadingFirstPage(this);
     }
@@ -395,6 +395,7 @@ abstract class LoadingFirstPageQuestionsState implements QuestionsState {
       _$LoadingFirstPageQuestionsState;
 }
 
+/// @nodoc
 abstract class $LoadingWithDataQuestionsStateCopyWith<$Res> {
   factory $LoadingWithDataQuestionsStateCopyWith(
           LoadingWithDataQuestionsState value,
@@ -403,6 +404,7 @@ abstract class $LoadingWithDataQuestionsStateCopyWith<$Res> {
   $Res call({List<QuestionState> questions, int currentQuestionIndex});
 }
 
+/// @nodoc
 class _$LoadingWithDataQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
     implements $LoadingWithDataQuestionsStateCopyWith<$Res> {
@@ -417,27 +419,29 @@ class _$LoadingWithDataQuestionsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object questions = freezed,
-    Object currentQuestionIndex = freezed,
+    Object? questions = freezed,
+    Object? currentQuestionIndex = freezed,
   }) {
     return _then(LoadingWithDataQuestionsState(
       questions: questions == freezed
           ? _value.questions
-          : questions as List<QuestionState>,
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<QuestionState>,
       currentQuestionIndex: currentQuestionIndex == freezed
           ? _value.currentQuestionIndex
-          : currentQuestionIndex as int,
+          : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
+
+/// @nodoc
 
 class _$LoadingWithDataQuestionsState
     with DiagnosticableTreeMixin
     implements LoadingWithDataQuestionsState {
   const _$LoadingWithDataQuestionsState(
-      {@required this.questions, @required this.currentQuestionIndex})
-      : assert(questions != null),
-        assert(currentQuestionIndex != null);
+      {required this.questions, required this.currentQuestionIndex});
 
   @override
   final List<QuestionState> questions;
@@ -476,6 +480,7 @@ class _$LoadingWithDataQuestionsState
       const DeepCollectionEquality().hash(questions) ^
       const DeepCollectionEquality().hash(currentQuestionIndex);
 
+  @JsonKey(ignore: true)
   @override
   $LoadingWithDataQuestionsStateCopyWith<LoadingWithDataQuestionsState>
       get copyWith => _$LoadingWithDataQuestionsStateCopyWithImpl<
@@ -483,44 +488,39 @@ class _$LoadingWithDataQuestionsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required
-        Result loadingWithData(
-            List<QuestionState> questions, int currentQuestionIndex),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(List<QuestionState> questions,
-            int currentQuestionIndex, Exception exception),
-    @required
-        Result data(List<QuestionState> questions, int currentQuestionIndex,
-            bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(
+            List<QuestionState> questions, int currentQuestionIndex)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, Exception exception)
+        errorWithData,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, bool canLoadMore)
+        data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return loadingWithData(questions, currentQuestionIndex);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(
-        List<QuestionState> questions, int currentQuestionIndex),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(List<QuestionState> questions,
-        int currentQuestionIndex, Exception exception),
-    Result data(List<QuestionState> questions, int currentQuestionIndex,
-        bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingWithData != null) {
       return loadingWithData(questions, currentQuestionIndex);
     }
@@ -529,35 +529,31 @@ class _$LoadingWithDataQuestionsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialQuestionsState value),
-    @required Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    @required Result loadingWithData(LoadingWithDataQuestionsState value),
-    @required Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    @required Result errorWithData(ErrorWithDataQuestionsState value),
-    @required Result data(DataQuestionsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialQuestionsState value) initial,
+    required TResult Function(LoadingFirstPageQuestionsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataQuestionsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageQuestionsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataQuestionsState value) errorWithData,
+    required TResult Function(DataQuestionsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return loadingWithData(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialQuestionsState value),
-    Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    Result loadingWithData(LoadingWithDataQuestionsState value),
-    Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    Result errorWithData(ErrorWithDataQuestionsState value),
-    Result data(DataQuestionsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingWithData != null) {
       return loadingWithData(this);
     }
@@ -567,15 +563,17 @@ class _$LoadingWithDataQuestionsState
 
 abstract class LoadingWithDataQuestionsState implements QuestionsState {
   const factory LoadingWithDataQuestionsState(
-      {@required List<QuestionState> questions,
-      @required int currentQuestionIndex}) = _$LoadingWithDataQuestionsState;
+      {required List<QuestionState> questions,
+      required int currentQuestionIndex}) = _$LoadingWithDataQuestionsState;
 
-  List<QuestionState> get questions;
-  int get currentQuestionIndex;
+  List<QuestionState> get questions => throw _privateConstructorUsedError;
+  int get currentQuestionIndex => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $LoadingWithDataQuestionsStateCopyWith<LoadingWithDataQuestionsState>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ErrorFirstPageQuestionsStateCopyWith<$Res> {
   factory $ErrorFirstPageQuestionsStateCopyWith(
           ErrorFirstPageQuestionsState value,
@@ -584,6 +582,7 @@ abstract class $ErrorFirstPageQuestionsStateCopyWith<$Res> {
   $Res call({Exception exception});
 }
 
+/// @nodoc
 class _$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
     implements $ErrorFirstPageQuestionsStateCopyWith<$Res> {
@@ -598,20 +597,23 @@ class _$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object exception = freezed,
+    Object? exception = freezed,
   }) {
     return _then(ErrorFirstPageQuestionsState(
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ErrorFirstPageQuestionsState
     with DiagnosticableTreeMixin
     implements ErrorFirstPageQuestionsState {
-  const _$ErrorFirstPageQuestionsState({@required this.exception})
-      : assert(exception != null);
+  const _$ErrorFirstPageQuestionsState({required this.exception});
 
   @override
   final Exception exception;
@@ -642,6 +644,7 @@ class _$ErrorFirstPageQuestionsState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
 
+  @JsonKey(ignore: true)
   @override
   $ErrorFirstPageQuestionsStateCopyWith<ErrorFirstPageQuestionsState>
       get copyWith => _$ErrorFirstPageQuestionsStateCopyWithImpl<
@@ -649,44 +652,39 @@ class _$ErrorFirstPageQuestionsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required
-        Result loadingWithData(
-            List<QuestionState> questions, int currentQuestionIndex),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(List<QuestionState> questions,
-            int currentQuestionIndex, Exception exception),
-    @required
-        Result data(List<QuestionState> questions, int currentQuestionIndex,
-            bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(
+            List<QuestionState> questions, int currentQuestionIndex)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, Exception exception)
+        errorWithData,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, bool canLoadMore)
+        data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return errorFirstPage(exception);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(
-        List<QuestionState> questions, int currentQuestionIndex),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(List<QuestionState> questions,
-        int currentQuestionIndex, Exception exception),
-    Result data(List<QuestionState> questions, int currentQuestionIndex,
-        bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (errorFirstPage != null) {
       return errorFirstPage(exception);
     }
@@ -695,35 +693,31 @@ class _$ErrorFirstPageQuestionsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialQuestionsState value),
-    @required Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    @required Result loadingWithData(LoadingWithDataQuestionsState value),
-    @required Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    @required Result errorWithData(ErrorWithDataQuestionsState value),
-    @required Result data(DataQuestionsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialQuestionsState value) initial,
+    required TResult Function(LoadingFirstPageQuestionsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataQuestionsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageQuestionsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataQuestionsState value) errorWithData,
+    required TResult Function(DataQuestionsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return errorFirstPage(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialQuestionsState value),
-    Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    Result loadingWithData(LoadingWithDataQuestionsState value),
-    Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    Result errorWithData(ErrorWithDataQuestionsState value),
-    Result data(DataQuestionsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (errorFirstPage != null) {
       return errorFirstPage(this);
     }
@@ -732,14 +726,16 @@ class _$ErrorFirstPageQuestionsState
 }
 
 abstract class ErrorFirstPageQuestionsState implements QuestionsState {
-  const factory ErrorFirstPageQuestionsState({@required Exception exception}) =
+  const factory ErrorFirstPageQuestionsState({required Exception exception}) =
       _$ErrorFirstPageQuestionsState;
 
-  Exception get exception;
+  Exception get exception => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $ErrorFirstPageQuestionsStateCopyWith<ErrorFirstPageQuestionsState>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ErrorWithDataQuestionsStateCopyWith<$Res> {
   factory $ErrorWithDataQuestionsStateCopyWith(
           ErrorWithDataQuestionsState value,
@@ -751,6 +747,7 @@ abstract class $ErrorWithDataQuestionsStateCopyWith<$Res> {
       Exception exception});
 }
 
+/// @nodoc
 class _$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
     implements $ErrorWithDataQuestionsStateCopyWith<$Res> {
@@ -764,33 +761,36 @@ class _$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object questions = freezed,
-    Object currentQuestionIndex = freezed,
-    Object exception = freezed,
+    Object? questions = freezed,
+    Object? currentQuestionIndex = freezed,
+    Object? exception = freezed,
   }) {
     return _then(ErrorWithDataQuestionsState(
       questions: questions == freezed
           ? _value.questions
-          : questions as List<QuestionState>,
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<QuestionState>,
       currentQuestionIndex: currentQuestionIndex == freezed
           ? _value.currentQuestionIndex
-          : currentQuestionIndex as int,
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
+          : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
     ));
   }
 }
+
+/// @nodoc
 
 class _$ErrorWithDataQuestionsState
     with DiagnosticableTreeMixin
     implements ErrorWithDataQuestionsState {
   const _$ErrorWithDataQuestionsState(
-      {@required this.questions,
-      @required this.currentQuestionIndex,
-      @required this.exception})
-      : assert(questions != null),
-        assert(currentQuestionIndex != null),
-        assert(exception != null);
+      {required this.questions,
+      required this.currentQuestionIndex,
+      required this.exception});
 
   @override
   final List<QuestionState> questions;
@@ -836,6 +836,7 @@ class _$ErrorWithDataQuestionsState
       const DeepCollectionEquality().hash(currentQuestionIndex) ^
       const DeepCollectionEquality().hash(exception);
 
+  @JsonKey(ignore: true)
   @override
   $ErrorWithDataQuestionsStateCopyWith<ErrorWithDataQuestionsState>
       get copyWith => _$ErrorWithDataQuestionsStateCopyWithImpl<
@@ -843,44 +844,39 @@ class _$ErrorWithDataQuestionsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required
-        Result loadingWithData(
-            List<QuestionState> questions, int currentQuestionIndex),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(List<QuestionState> questions,
-            int currentQuestionIndex, Exception exception),
-    @required
-        Result data(List<QuestionState> questions, int currentQuestionIndex,
-            bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(
+            List<QuestionState> questions, int currentQuestionIndex)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, Exception exception)
+        errorWithData,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, bool canLoadMore)
+        data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return errorWithData(questions, currentQuestionIndex, exception);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(
-        List<QuestionState> questions, int currentQuestionIndex),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(List<QuestionState> questions,
-        int currentQuestionIndex, Exception exception),
-    Result data(List<QuestionState> questions, int currentQuestionIndex,
-        bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (errorWithData != null) {
       return errorWithData(questions, currentQuestionIndex, exception);
     }
@@ -889,35 +885,31 @@ class _$ErrorWithDataQuestionsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialQuestionsState value),
-    @required Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    @required Result loadingWithData(LoadingWithDataQuestionsState value),
-    @required Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    @required Result errorWithData(ErrorWithDataQuestionsState value),
-    @required Result data(DataQuestionsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialQuestionsState value) initial,
+    required TResult Function(LoadingFirstPageQuestionsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataQuestionsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageQuestionsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataQuestionsState value) errorWithData,
+    required TResult Function(DataQuestionsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return errorWithData(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialQuestionsState value),
-    Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    Result loadingWithData(LoadingWithDataQuestionsState value),
-    Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    Result errorWithData(ErrorWithDataQuestionsState value),
-    Result data(DataQuestionsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (errorWithData != null) {
       return errorWithData(this);
     }
@@ -927,17 +919,19 @@ class _$ErrorWithDataQuestionsState
 
 abstract class ErrorWithDataQuestionsState implements QuestionsState {
   const factory ErrorWithDataQuestionsState(
-      {@required List<QuestionState> questions,
-      @required int currentQuestionIndex,
-      @required Exception exception}) = _$ErrorWithDataQuestionsState;
+      {required List<QuestionState> questions,
+      required int currentQuestionIndex,
+      required Exception exception}) = _$ErrorWithDataQuestionsState;
 
-  List<QuestionState> get questions;
-  int get currentQuestionIndex;
-  Exception get exception;
+  List<QuestionState> get questions => throw _privateConstructorUsedError;
+  int get currentQuestionIndex => throw _privateConstructorUsedError;
+  Exception get exception => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $ErrorWithDataQuestionsStateCopyWith<ErrorWithDataQuestionsState>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $DataQuestionsStateCopyWith<$Res> {
   factory $DataQuestionsStateCopyWith(
           DataQuestionsState value, $Res Function(DataQuestionsState) then) =
@@ -948,6 +942,7 @@ abstract class $DataQuestionsStateCopyWith<$Res> {
       bool canLoadMore});
 }
 
+/// @nodoc
 class _$DataQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
     implements $DataQuestionsStateCopyWith<$Res> {
@@ -960,33 +955,36 @@ class _$DataQuestionsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object questions = freezed,
-    Object currentQuestionIndex = freezed,
-    Object canLoadMore = freezed,
+    Object? questions = freezed,
+    Object? currentQuestionIndex = freezed,
+    Object? canLoadMore = freezed,
   }) {
     return _then(DataQuestionsState(
       questions: questions == freezed
           ? _value.questions
-          : questions as List<QuestionState>,
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<QuestionState>,
       currentQuestionIndex: currentQuestionIndex == freezed
           ? _value.currentQuestionIndex
-          : currentQuestionIndex as int,
-      canLoadMore:
-          canLoadMore == freezed ? _value.canLoadMore : canLoadMore as bool,
+          : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      canLoadMore: canLoadMore == freezed
+          ? _value.canLoadMore
+          : canLoadMore // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
+
+/// @nodoc
 
 class _$DataQuestionsState
     with DiagnosticableTreeMixin
     implements DataQuestionsState {
   const _$DataQuestionsState(
-      {@required this.questions,
-      @required this.currentQuestionIndex,
-      this.canLoadMore = false})
-      : assert(questions != null),
-        assert(currentQuestionIndex != null),
-        assert(canLoadMore != null);
+      {required this.questions,
+      required this.currentQuestionIndex,
+      this.canLoadMore = false});
 
   @override
   final List<QuestionState> questions;
@@ -1033,50 +1031,46 @@ class _$DataQuestionsState
       const DeepCollectionEquality().hash(currentQuestionIndex) ^
       const DeepCollectionEquality().hash(canLoadMore);
 
+  @JsonKey(ignore: true)
   @override
   $DataQuestionsStateCopyWith<DataQuestionsState> get copyWith =>
       _$DataQuestionsStateCopyWithImpl<DataQuestionsState>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required
-        Result loadingWithData(
-            List<QuestionState> questions, int currentQuestionIndex),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(List<QuestionState> questions,
-            int currentQuestionIndex, Exception exception),
-    @required
-        Result data(List<QuestionState> questions, int currentQuestionIndex,
-            bool canLoadMore),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(
+            List<QuestionState> questions, int currentQuestionIndex)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, Exception exception)
+        errorWithData,
+    required TResult Function(List<QuestionState> questions,
+            int currentQuestionIndex, bool canLoadMore)
+        data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return data(questions, currentQuestionIndex, canLoadMore);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(
-        List<QuestionState> questions, int currentQuestionIndex),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(List<QuestionState> questions,
-        int currentQuestionIndex, Exception exception),
-    Result data(List<QuestionState> questions, int currentQuestionIndex,
-        bool canLoadMore),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (data != null) {
       return data(questions, currentQuestionIndex, canLoadMore);
     }
@@ -1085,35 +1079,31 @@ class _$DataQuestionsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialQuestionsState value),
-    @required Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    @required Result loadingWithData(LoadingWithDataQuestionsState value),
-    @required Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    @required Result errorWithData(ErrorWithDataQuestionsState value),
-    @required Result data(DataQuestionsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialQuestionsState value) initial,
+    required TResult Function(LoadingFirstPageQuestionsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataQuestionsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageQuestionsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataQuestionsState value) errorWithData,
+    required TResult Function(DataQuestionsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(data != null);
     return data(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialQuestionsState value),
-    Result loadingFirstPage(LoadingFirstPageQuestionsState value),
-    Result loadingWithData(LoadingWithDataQuestionsState value),
-    Result errorFirstPage(ErrorFirstPageQuestionsState value),
-    Result errorWithData(ErrorWithDataQuestionsState value),
-    Result data(DataQuestionsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (data != null) {
       return data(this);
     }
@@ -1123,21 +1113,23 @@ class _$DataQuestionsState
 
 abstract class DataQuestionsState implements QuestionsState {
   const factory DataQuestionsState(
-      {@required List<QuestionState> questions,
-      @required int currentQuestionIndex,
+      {required List<QuestionState> questions,
+      required int currentQuestionIndex,
       bool canLoadMore}) = _$DataQuestionsState;
 
-  List<QuestionState> get questions;
-  int get currentQuestionIndex;
-  bool get canLoadMore;
-  $DataQuestionsStateCopyWith<DataQuestionsState> get copyWith;
+  List<QuestionState> get questions => throw _privateConstructorUsedError;
+  int get currentQuestionIndex => throw _privateConstructorUsedError;
+  bool get canLoadMore => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DataQuestionsStateCopyWith<DataQuestionsState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$QuestionStateTearOff {
   const _$QuestionStateTearOff();
 
-// ignore: unused_element
-  _QuestionState call({@required Question question, bool showAnswer = false}) {
+  _QuestionState call({required Question question, bool showAnswer = false}) {
     return _QuestionState(
       question: question,
       showAnswer: showAnswer,
@@ -1145,16 +1137,20 @@ class _$QuestionStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $QuestionState = _$QuestionStateTearOff();
 
+/// @nodoc
 mixin _$QuestionState {
-  Question get question;
-  bool get showAnswer;
+  Question get question => throw _privateConstructorUsedError;
+  bool get showAnswer => throw _privateConstructorUsedError;
 
-  $QuestionStateCopyWith<QuestionState> get copyWith;
+  @JsonKey(ignore: true)
+  $QuestionStateCopyWith<QuestionState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $QuestionStateCopyWith<$Res> {
   factory $QuestionStateCopyWith(
           QuestionState value, $Res Function(QuestionState) then) =
@@ -1164,6 +1160,7 @@ abstract class $QuestionStateCopyWith<$Res> {
   $QuestionCopyWith<$Res> get question;
 }
 
+/// @nodoc
 class _$QuestionStateCopyWithImpl<$Res>
     implements $QuestionStateCopyWith<$Res> {
   _$QuestionStateCopyWithImpl(this._value, this._then);
@@ -1174,27 +1171,30 @@ class _$QuestionStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object question = freezed,
-    Object showAnswer = freezed,
+    Object? question = freezed,
+    Object? showAnswer = freezed,
   }) {
     return _then(_value.copyWith(
-      question: question == freezed ? _value.question : question as Question,
-      showAnswer:
-          showAnswer == freezed ? _value.showAnswer : showAnswer as bool,
+      question: question == freezed
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as Question,
+      showAnswer: showAnswer == freezed
+          ? _value.showAnswer
+          : showAnswer // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
   @override
   $QuestionCopyWith<$Res> get question {
-    if (_value.question == null) {
-      return null;
-    }
     return $QuestionCopyWith<$Res>(_value.question, (value) {
       return _then(_value.copyWith(question: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$QuestionStateCopyWith<$Res>
     implements $QuestionStateCopyWith<$Res> {
   factory _$QuestionStateCopyWith(
@@ -1207,6 +1207,7 @@ abstract class _$QuestionStateCopyWith<$Res>
   $QuestionCopyWith<$Res> get question;
 }
 
+/// @nodoc
 class __$QuestionStateCopyWithImpl<$Res>
     extends _$QuestionStateCopyWithImpl<$Res>
     implements _$QuestionStateCopyWith<$Res> {
@@ -1219,21 +1220,26 @@ class __$QuestionStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object question = freezed,
-    Object showAnswer = freezed,
+    Object? question = freezed,
+    Object? showAnswer = freezed,
   }) {
     return _then(_QuestionState(
-      question: question == freezed ? _value.question : question as Question,
-      showAnswer:
-          showAnswer == freezed ? _value.showAnswer : showAnswer as bool,
+      question: question == freezed
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as Question,
+      showAnswer: showAnswer == freezed
+          ? _value.showAnswer
+          : showAnswer // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_QuestionState with DiagnosticableTreeMixin implements _QuestionState {
-  const _$_QuestionState({@required this.question, this.showAnswer = false})
-      : assert(question != null),
-        assert(showAnswer != null);
+  const _$_QuestionState({required this.question, this.showAnswer = false});
 
   @override
   final Question question;
@@ -1273,19 +1279,22 @@ class _$_QuestionState with DiagnosticableTreeMixin implements _QuestionState {
       const DeepCollectionEquality().hash(question) ^
       const DeepCollectionEquality().hash(showAnswer);
 
+  @JsonKey(ignore: true)
   @override
   _$QuestionStateCopyWith<_QuestionState> get copyWith =>
       __$QuestionStateCopyWithImpl<_QuestionState>(this, _$identity);
 }
 
 abstract class _QuestionState implements QuestionState {
-  const factory _QuestionState({@required Question question, bool showAnswer}) =
+  const factory _QuestionState({required Question question, bool showAnswer}) =
       _$_QuestionState;
 
   @override
-  Question get question;
+  Question get question => throw _privateConstructorUsedError;
   @override
-  bool get showAnswer;
+  bool get showAnswer => throw _privateConstructorUsedError;
   @override
-  _$QuestionStateCopyWith<_QuestionState> get copyWith;
+  @JsonKey(ignore: true)
+  _$QuestionStateCopyWith<_QuestionState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

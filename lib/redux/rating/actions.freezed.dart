@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,56 +9,65 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionRatingTearOff {
   const _$UserActionRatingTearOff();
 
-// ignore: unused_element
-  RateRatingUserAction rate({@required int rating}) {
+  RateRatingUserAction rate({required int rating}) {
     return RateRatingUserAction(
       rating: rating,
     );
   }
 
-// ignore: unused_element
   NeverAskRatingUserAction neverAsk() {
     return const NeverAskRatingUserAction();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionRating = _$UserActionRatingTearOff();
 
+/// @nodoc
 mixin _$UserActionRating {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result rate(int rating),
-    @required Result neverAsk(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(int rating) rate,
+    required TResult Function() neverAsk,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result rate(int rating),
-    Result neverAsk(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int rating)? rate,
+    TResult Function()? neverAsk,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result rate(RateRatingUserAction value),
-    @required Result neverAsk(NeverAskRatingUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(RateRatingUserAction value) rate,
+    required TResult Function(NeverAskRatingUserAction value) neverAsk,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result rate(RateRatingUserAction value),
-    Result neverAsk(NeverAskRatingUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RateRatingUserAction value)? rate,
+    TResult Function(NeverAskRatingUserAction value)? neverAsk,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionRatingCopyWith<$Res> {
   factory $UserActionRatingCopyWith(
           UserActionRating value, $Res Function(UserActionRating) then) =
       _$UserActionRatingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionRatingCopyWithImpl<$Res>
     implements $UserActionRatingCopyWith<$Res> {
   _$UserActionRatingCopyWithImpl(this._value, this._then);
@@ -68,6 +77,7 @@ class _$UserActionRatingCopyWithImpl<$Res>
   final $Res Function(UserActionRating) _then;
 }
 
+/// @nodoc
 abstract class $RateRatingUserActionCopyWith<$Res> {
   factory $RateRatingUserActionCopyWith(RateRatingUserAction value,
           $Res Function(RateRatingUserAction) then) =
@@ -75,6 +85,7 @@ abstract class $RateRatingUserActionCopyWith<$Res> {
   $Res call({int rating});
 }
 
+/// @nodoc
 class _$RateRatingUserActionCopyWithImpl<$Res>
     extends _$UserActionRatingCopyWithImpl<$Res>
     implements $RateRatingUserActionCopyWith<$Res> {
@@ -87,19 +98,23 @@ class _$RateRatingUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object rating = freezed,
+    Object? rating = freezed,
   }) {
     return _then(RateRatingUserAction(
-      rating: rating == freezed ? _value.rating : rating as int,
+      rating: rating == freezed
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$RateRatingUserAction
     with DiagnosticableTreeMixin
     implements RateRatingUserAction {
-  const _$RateRatingUserAction({@required this.rating})
-      : assert(rating != null);
+  const _$RateRatingUserAction({required this.rating});
 
   @override
   final int rating;
@@ -129,6 +144,7 @@ class _$RateRatingUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(rating);
 
+  @JsonKey(ignore: true)
   @override
   $RateRatingUserActionCopyWith<RateRatingUserAction> get copyWith =>
       _$RateRatingUserActionCopyWithImpl<RateRatingUserAction>(
@@ -136,23 +152,20 @@ class _$RateRatingUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result rate(int rating),
-    @required Result neverAsk(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int rating) rate,
+    required TResult Function() neverAsk,
   }) {
-    assert(rate != null);
-    assert(neverAsk != null);
     return rate(rating);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result rate(int rating),
-    Result neverAsk(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int rating)? rate,
+    TResult Function()? neverAsk,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (rate != null) {
       return rate(rating);
     }
@@ -161,23 +174,20 @@ class _$RateRatingUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result rate(RateRatingUserAction value),
-    @required Result neverAsk(NeverAskRatingUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(RateRatingUserAction value) rate,
+    required TResult Function(NeverAskRatingUserAction value) neverAsk,
   }) {
-    assert(rate != null);
-    assert(neverAsk != null);
     return rate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result rate(RateRatingUserAction value),
-    Result neverAsk(NeverAskRatingUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RateRatingUserAction value)? rate,
+    TResult Function(NeverAskRatingUserAction value)? neverAsk,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (rate != null) {
       return rate(this);
     }
@@ -186,19 +196,23 @@ class _$RateRatingUserAction
 }
 
 abstract class RateRatingUserAction implements UserActionRating {
-  const factory RateRatingUserAction({@required int rating}) =
+  const factory RateRatingUserAction({required int rating}) =
       _$RateRatingUserAction;
 
-  int get rating;
-  $RateRatingUserActionCopyWith<RateRatingUserAction> get copyWith;
+  int get rating => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RateRatingUserActionCopyWith<RateRatingUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $NeverAskRatingUserActionCopyWith<$Res> {
   factory $NeverAskRatingUserActionCopyWith(NeverAskRatingUserAction value,
           $Res Function(NeverAskRatingUserAction) then) =
       _$NeverAskRatingUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$NeverAskRatingUserActionCopyWithImpl<$Res>
     extends _$UserActionRatingCopyWithImpl<$Res>
     implements $NeverAskRatingUserActionCopyWith<$Res> {
@@ -210,6 +224,8 @@ class _$NeverAskRatingUserActionCopyWithImpl<$Res>
   NeverAskRatingUserAction get _value =>
       super._value as NeverAskRatingUserAction;
 }
+
+/// @nodoc
 
 class _$NeverAskRatingUserAction
     with DiagnosticableTreeMixin
@@ -237,23 +253,20 @@ class _$NeverAskRatingUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result rate(int rating),
-    @required Result neverAsk(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int rating) rate,
+    required TResult Function() neverAsk,
   }) {
-    assert(rate != null);
-    assert(neverAsk != null);
     return neverAsk();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result rate(int rating),
-    Result neverAsk(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int rating)? rate,
+    TResult Function()? neverAsk,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (neverAsk != null) {
       return neverAsk();
     }
@@ -262,23 +275,20 @@ class _$NeverAskRatingUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result rate(RateRatingUserAction value),
-    @required Result neverAsk(NeverAskRatingUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(RateRatingUserAction value) rate,
+    required TResult Function(NeverAskRatingUserAction value) neverAsk,
   }) {
-    assert(rate != null);
-    assert(neverAsk != null);
     return neverAsk(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result rate(RateRatingUserAction value),
-    Result neverAsk(NeverAskRatingUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RateRatingUserAction value)? rate,
+    TResult Function(NeverAskRatingUserAction value)? neverAsk,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (neverAsk != null) {
       return neverAsk(this);
     }

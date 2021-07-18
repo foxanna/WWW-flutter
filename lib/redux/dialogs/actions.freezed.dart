@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,59 +9,69 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionDialogTearOff {
   const _$UserActionDialogTearOff();
 
-// ignore: unused_element
-  TourInfoDialogUserAction tourInfo({@required TourInfo info}) {
+  TourInfoDialogUserAction tourInfo({required TourInfo info}) {
     return TourInfoDialogUserAction(
       info: info,
     );
   }
 
-// ignore: unused_element
   TournamentInfoDialogUserAction tournamentInfo(
-      {@required TournamentInfo info}) {
+      {required TournamentInfo info}) {
     return TournamentInfoDialogUserAction(
       info: info,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionDialog = _$UserActionDialogTearOff();
 
+/// @nodoc
 mixin _$UserActionDialog {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tourInfo(TourInfo info),
-    @required Result tournamentInfo(TournamentInfo info),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(TourInfo info) tourInfo,
+    required TResult Function(TournamentInfo info) tournamentInfo,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tourInfo(TourInfo info),
-    Result tournamentInfo(TournamentInfo info),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(TourInfo info)? tourInfo,
+    TResult Function(TournamentInfo info)? tournamentInfo,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tourInfo(TourInfoDialogUserAction value),
-    @required Result tournamentInfo(TournamentInfoDialogUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(TourInfoDialogUserAction value) tourInfo,
+    required TResult Function(TournamentInfoDialogUserAction value)
+        tournamentInfo,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tourInfo(TourInfoDialogUserAction value),
-    Result tournamentInfo(TournamentInfoDialogUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TourInfoDialogUserAction value)? tourInfo,
+    TResult Function(TournamentInfoDialogUserAction value)? tournamentInfo,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionDialogCopyWith<$Res> {
   factory $UserActionDialogCopyWith(
           UserActionDialog value, $Res Function(UserActionDialog) then) =
       _$UserActionDialogCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionDialogCopyWithImpl<$Res>
     implements $UserActionDialogCopyWith<$Res> {
   _$UserActionDialogCopyWithImpl(this._value, this._then);
@@ -71,6 +81,7 @@ class _$UserActionDialogCopyWithImpl<$Res>
   final $Res Function(UserActionDialog) _then;
 }
 
+/// @nodoc
 abstract class $TourInfoDialogUserActionCopyWith<$Res> {
   factory $TourInfoDialogUserActionCopyWith(TourInfoDialogUserAction value,
           $Res Function(TourInfoDialogUserAction) then) =
@@ -80,6 +91,7 @@ abstract class $TourInfoDialogUserActionCopyWith<$Res> {
   $TourInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$TourInfoDialogUserActionCopyWithImpl<$Res>
     extends _$UserActionDialogCopyWithImpl<$Res>
     implements $TourInfoDialogUserActionCopyWith<$Res> {
@@ -93,29 +105,30 @@ class _$TourInfoDialogUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
+    Object? info = freezed,
   }) {
     return _then(TourInfoDialogUserAction(
-      info: info == freezed ? _value.info : info as TourInfo,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
     ));
   }
 
   @override
   $TourInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$TourInfoDialogUserAction
     with DiagnosticableTreeMixin
     implements TourInfoDialogUserAction {
-  const _$TourInfoDialogUserAction({@required this.info})
-      : assert(info != null);
+  const _$TourInfoDialogUserAction({required this.info});
 
   @override
   final TourInfo info;
@@ -145,6 +158,7 @@ class _$TourInfoDialogUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   $TourInfoDialogUserActionCopyWith<TourInfoDialogUserAction> get copyWith =>
       _$TourInfoDialogUserActionCopyWithImpl<TourInfoDialogUserAction>(
@@ -152,23 +166,20 @@ class _$TourInfoDialogUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tourInfo(TourInfo info),
-    @required Result tournamentInfo(TournamentInfo info),
+  TResult when<TResult extends Object?>({
+    required TResult Function(TourInfo info) tourInfo,
+    required TResult Function(TournamentInfo info) tournamentInfo,
   }) {
-    assert(tourInfo != null);
-    assert(tournamentInfo != null);
     return tourInfo(info);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tourInfo(TourInfo info),
-    Result tournamentInfo(TournamentInfo info),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(TourInfo info)? tourInfo,
+    TResult Function(TournamentInfo info)? tournamentInfo,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tourInfo != null) {
       return tourInfo(info);
     }
@@ -177,23 +188,21 @@ class _$TourInfoDialogUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tourInfo(TourInfoDialogUserAction value),
-    @required Result tournamentInfo(TournamentInfoDialogUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TourInfoDialogUserAction value) tourInfo,
+    required TResult Function(TournamentInfoDialogUserAction value)
+        tournamentInfo,
   }) {
-    assert(tourInfo != null);
-    assert(tournamentInfo != null);
     return tourInfo(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tourInfo(TourInfoDialogUserAction value),
-    Result tournamentInfo(TournamentInfoDialogUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TourInfoDialogUserAction value)? tourInfo,
+    TResult Function(TournamentInfoDialogUserAction value)? tournamentInfo,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tourInfo != null) {
       return tourInfo(this);
     }
@@ -202,13 +211,16 @@ class _$TourInfoDialogUserAction
 }
 
 abstract class TourInfoDialogUserAction implements UserActionDialog {
-  const factory TourInfoDialogUserAction({@required TourInfo info}) =
+  const factory TourInfoDialogUserAction({required TourInfo info}) =
       _$TourInfoDialogUserAction;
 
-  TourInfo get info;
-  $TourInfoDialogUserActionCopyWith<TourInfoDialogUserAction> get copyWith;
+  TourInfo get info => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TourInfoDialogUserActionCopyWith<TourInfoDialogUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TournamentInfoDialogUserActionCopyWith<$Res> {
   factory $TournamentInfoDialogUserActionCopyWith(
           TournamentInfoDialogUserAction value,
@@ -219,6 +231,7 @@ abstract class $TournamentInfoDialogUserActionCopyWith<$Res> {
   $TournamentInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$TournamentInfoDialogUserActionCopyWithImpl<$Res>
     extends _$UserActionDialogCopyWithImpl<$Res>
     implements $TournamentInfoDialogUserActionCopyWith<$Res> {
@@ -233,29 +246,30 @@ class _$TournamentInfoDialogUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
+    Object? info = freezed,
   }) {
     return _then(TournamentInfoDialogUserAction(
-      info: info == freezed ? _value.info : info as TournamentInfo,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TournamentInfo,
     ));
   }
 
   @override
   $TournamentInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$TournamentInfoDialogUserAction
     with DiagnosticableTreeMixin
     implements TournamentInfoDialogUserAction {
-  const _$TournamentInfoDialogUserAction({@required this.info})
-      : assert(info != null);
+  const _$TournamentInfoDialogUserAction({required this.info});
 
   @override
   final TournamentInfo info;
@@ -285,6 +299,7 @@ class _$TournamentInfoDialogUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   $TournamentInfoDialogUserActionCopyWith<TournamentInfoDialogUserAction>
       get copyWith => _$TournamentInfoDialogUserActionCopyWithImpl<
@@ -292,23 +307,20 @@ class _$TournamentInfoDialogUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result tourInfo(TourInfo info),
-    @required Result tournamentInfo(TournamentInfo info),
+  TResult when<TResult extends Object?>({
+    required TResult Function(TourInfo info) tourInfo,
+    required TResult Function(TournamentInfo info) tournamentInfo,
   }) {
-    assert(tourInfo != null);
-    assert(tournamentInfo != null);
     return tournamentInfo(info);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result tourInfo(TourInfo info),
-    Result tournamentInfo(TournamentInfo info),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(TourInfo info)? tourInfo,
+    TResult Function(TournamentInfo info)? tournamentInfo,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tournamentInfo != null) {
       return tournamentInfo(info);
     }
@@ -317,23 +329,21 @@ class _$TournamentInfoDialogUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result tourInfo(TourInfoDialogUserAction value),
-    @required Result tournamentInfo(TournamentInfoDialogUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TourInfoDialogUserAction value) tourInfo,
+    required TResult Function(TournamentInfoDialogUserAction value)
+        tournamentInfo,
   }) {
-    assert(tourInfo != null);
-    assert(tournamentInfo != null);
     return tournamentInfo(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result tourInfo(TourInfoDialogUserAction value),
-    Result tournamentInfo(TournamentInfoDialogUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TourInfoDialogUserAction value)? tourInfo,
+    TResult Function(TournamentInfoDialogUserAction value)? tournamentInfo,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tournamentInfo != null) {
       return tournamentInfo(this);
     }
@@ -342,53 +352,61 @@ class _$TournamentInfoDialogUserAction
 }
 
 abstract class TournamentInfoDialogUserAction implements UserActionDialog {
-  const factory TournamentInfoDialogUserAction(
-      {@required TournamentInfo info}) = _$TournamentInfoDialogUserAction;
+  const factory TournamentInfoDialogUserAction({required TournamentInfo info}) =
+      _$TournamentInfoDialogUserAction;
 
-  TournamentInfo get info;
+  TournamentInfo get info => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $TournamentInfoDialogUserActionCopyWith<TournamentInfoDialogUserAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$SystemActionDialogTearOff {
   const _$SystemActionDialogTearOff();
 
-// ignore: unused_element
   RatingDialogSystemAction rating() {
     return const RatingDialogSystemAction();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SystemActionDialog = _$SystemActionDialogTearOff();
 
+/// @nodoc
 mixin _$SystemActionDialog {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result rating(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() rating,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result rating(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? rating,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result rating(RatingDialogSystemAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(RatingDialogSystemAction value) rating,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result rating(RatingDialogSystemAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RatingDialogSystemAction value)? rating,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SystemActionDialogCopyWith<$Res> {
   factory $SystemActionDialogCopyWith(
           SystemActionDialog value, $Res Function(SystemActionDialog) then) =
       _$SystemActionDialogCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SystemActionDialogCopyWithImpl<$Res>
     implements $SystemActionDialogCopyWith<$Res> {
   _$SystemActionDialogCopyWithImpl(this._value, this._then);
@@ -398,12 +416,14 @@ class _$SystemActionDialogCopyWithImpl<$Res>
   final $Res Function(SystemActionDialog) _then;
 }
 
+/// @nodoc
 abstract class $RatingDialogSystemActionCopyWith<$Res> {
   factory $RatingDialogSystemActionCopyWith(RatingDialogSystemAction value,
           $Res Function(RatingDialogSystemAction) then) =
       _$RatingDialogSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$RatingDialogSystemActionCopyWithImpl<$Res>
     extends _$SystemActionDialogCopyWithImpl<$Res>
     implements $RatingDialogSystemActionCopyWith<$Res> {
@@ -415,6 +435,8 @@ class _$RatingDialogSystemActionCopyWithImpl<$Res>
   RatingDialogSystemAction get _value =>
       super._value as RatingDialogSystemAction;
 }
+
+/// @nodoc
 
 class _$RatingDialogSystemAction
     with DiagnosticableTreeMixin
@@ -442,20 +464,18 @@ class _$RatingDialogSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result rating(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() rating,
   }) {
-    assert(rating != null);
     return rating();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result rating(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? rating,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (rating != null) {
       return rating();
     }
@@ -464,20 +484,18 @@ class _$RatingDialogSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result rating(RatingDialogSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(RatingDialogSystemAction value) rating,
   }) {
-    assert(rating != null);
     return rating(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result rating(RatingDialogSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RatingDialogSystemAction value)? rating,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (rating != null) {
       return rating(this);
     }

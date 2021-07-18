@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,45 +9,56 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionToursTearOff {
   const _$UserActionToursTearOff();
 
-// ignore: unused_element
-  LoadToursUserAction load({@required TourInfo info}) {
+  LoadToursUserAction load({required TourInfo info}) {
     return LoadToursUserAction(
       info: info,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionTours = _$UserActionToursTearOff();
 
+/// @nodoc
 mixin _$UserActionTours {
-  TourInfo get info;
+  TourInfo get info => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(TourInfo info),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(TourInfo info) load,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(TourInfo info),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(TourInfo info)? load,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(LoadToursUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadToursUserAction value) load,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(LoadToursUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadToursUserAction value)? load,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
-  $UserActionToursCopyWith<UserActionTours> get copyWith;
+  @JsonKey(ignore: true)
+  $UserActionToursCopyWith<UserActionTours> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionToursCopyWith<$Res> {
   factory $UserActionToursCopyWith(
           UserActionTours value, $Res Function(UserActionTours) then) =
@@ -57,6 +68,7 @@ abstract class $UserActionToursCopyWith<$Res> {
   $TourInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$UserActionToursCopyWithImpl<$Res>
     implements $UserActionToursCopyWith<$Res> {
   _$UserActionToursCopyWithImpl(this._value, this._then);
@@ -67,24 +79,25 @@ class _$UserActionToursCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
+    Object? info = freezed,
   }) {
     return _then(_value.copyWith(
-      info: info == freezed ? _value.info : info as TourInfo,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
     ));
   }
 
   @override
   $TourInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
 abstract class $LoadToursUserActionCopyWith<$Res>
     implements $UserActionToursCopyWith<$Res> {
   factory $LoadToursUserActionCopyWith(
@@ -97,6 +110,7 @@ abstract class $LoadToursUserActionCopyWith<$Res>
   $TourInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$LoadToursUserActionCopyWithImpl<$Res>
     extends _$UserActionToursCopyWithImpl<$Res>
     implements $LoadToursUserActionCopyWith<$Res> {
@@ -109,18 +123,23 @@ class _$LoadToursUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
+    Object? info = freezed,
   }) {
     return _then(LoadToursUserAction(
-      info: info == freezed ? _value.info : info as TourInfo,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
     ));
   }
 }
 
+/// @nodoc
+
 class _$LoadToursUserAction
     with DiagnosticableTreeMixin
     implements LoadToursUserAction {
-  const _$LoadToursUserAction({@required this.info}) : assert(info != null);
+  const _$LoadToursUserAction({required this.info});
 
   @override
   final TourInfo info;
@@ -150,26 +169,25 @@ class _$LoadToursUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   $LoadToursUserActionCopyWith<LoadToursUserAction> get copyWith =>
       _$LoadToursUserActionCopyWithImpl<LoadToursUserAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(TourInfo info),
+  TResult when<TResult extends Object?>({
+    required TResult Function(TourInfo info) load,
   }) {
-    assert(load != null);
     return load(info);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(TourInfo info),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(TourInfo info)? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load(info);
     }
@@ -178,20 +196,18 @@ class _$LoadToursUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(LoadToursUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadToursUserAction value) load,
   }) {
-    assert(load != null);
     return load(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(LoadToursUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadToursUserAction value)? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load(this);
     }
@@ -200,100 +216,105 @@ class _$LoadToursUserAction
 }
 
 abstract class LoadToursUserAction implements UserActionTours {
-  const factory LoadToursUserAction({@required TourInfo info}) =
+  const factory LoadToursUserAction({required TourInfo info}) =
       _$LoadToursUserAction;
 
   @override
-  TourInfo get info;
+  TourInfo get info => throw _privateConstructorUsedError;
   @override
-  $LoadToursUserActionCopyWith<LoadToursUserAction> get copyWith;
+  @JsonKey(ignore: true)
+  $LoadToursUserActionCopyWith<LoadToursUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$SystemActionToursTearOff {
   const _$SystemActionToursTearOff();
 
-// ignore: unused_element
-  InitToursSystemAction init({@required List<TourInfo> tours}) {
+  InitToursSystemAction init({required List<TourInfo> tours}) {
     return InitToursSystemAction(
       tours: tours,
     );
   }
 
-// ignore: unused_element
   DeInitToursSystemAction deInit() {
     return const DeInitToursSystemAction();
   }
 
-// ignore: unused_element
-  LoadingToursSystemAction loading({@required TourInfo info}) {
+  LoadingToursSystemAction loading({required TourInfo info}) {
     return LoadingToursSystemAction(
       info: info,
     );
   }
 
-// ignore: unused_element
   FailedToursSystemAction failed(
-      {@required TourInfo info, @required Exception exception}) {
+      {required TourInfo info, required Exception exception}) {
     return FailedToursSystemAction(
       info: info,
       exception: exception,
     );
   }
 
-// ignore: unused_element
-  CompletedToursSystemAction completed({@required Tour tour}) {
+  CompletedToursSystemAction completed({required Tour tour}) {
     return CompletedToursSystemAction(
       tour: tour,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SystemActionTours = _$SystemActionToursTearOff();
 
+/// @nodoc
 mixin _$SystemActionTours {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<TourInfo> tours),
-    @required Result deInit(),
-    @required Result loading(TourInfo info),
-    @required Result failed(TourInfo info, Exception exception),
-    @required Result completed(Tour tour),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<TourInfo> tours) init,
+    required TResult Function() deInit,
+    required TResult Function(TourInfo info) loading,
+    required TResult Function(TourInfo info, Exception exception) failed,
+    required TResult Function(Tour tour) completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<TourInfo> tours),
-    Result deInit(),
-    Result loading(TourInfo info),
-    Result failed(TourInfo info, Exception exception),
-    Result completed(Tour tour),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitToursSystemAction value),
-    @required Result deInit(DeInitToursSystemAction value),
-    @required Result loading(LoadingToursSystemAction value),
-    @required Result failed(FailedToursSystemAction value),
-    @required Result completed(CompletedToursSystemAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitToursSystemAction value) init,
+    required TResult Function(DeInitToursSystemAction value) deInit,
+    required TResult Function(LoadingToursSystemAction value) loading,
+    required TResult Function(FailedToursSystemAction value) failed,
+    required TResult Function(CompletedToursSystemAction value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitToursSystemAction value),
-    Result deInit(DeInitToursSystemAction value),
-    Result loading(LoadingToursSystemAction value),
-    Result failed(FailedToursSystemAction value),
-    Result completed(CompletedToursSystemAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SystemActionToursCopyWith<$Res> {
   factory $SystemActionToursCopyWith(
           SystemActionTours value, $Res Function(SystemActionTours) then) =
       _$SystemActionToursCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SystemActionToursCopyWithImpl<$Res>
     implements $SystemActionToursCopyWith<$Res> {
   _$SystemActionToursCopyWithImpl(this._value, this._then);
@@ -303,6 +324,7 @@ class _$SystemActionToursCopyWithImpl<$Res>
   final $Res Function(SystemActionTours) _then;
 }
 
+/// @nodoc
 abstract class $InitToursSystemActionCopyWith<$Res> {
   factory $InitToursSystemActionCopyWith(InitToursSystemAction value,
           $Res Function(InitToursSystemAction) then) =
@@ -310,6 +332,7 @@ abstract class $InitToursSystemActionCopyWith<$Res> {
   $Res call({List<TourInfo> tours});
 }
 
+/// @nodoc
 class _$InitToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
     implements $InitToursSystemActionCopyWith<$Res> {
@@ -322,18 +345,23 @@ class _$InitToursSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tours = freezed,
+    Object? tours = freezed,
   }) {
     return _then(InitToursSystemAction(
-      tours: tours == freezed ? _value.tours : tours as List<TourInfo>,
+      tours: tours == freezed
+          ? _value.tours
+          : tours // ignore: cast_nullable_to_non_nullable
+              as List<TourInfo>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$InitToursSystemAction
     with DiagnosticableTreeMixin
     implements InitToursSystemAction {
-  const _$InitToursSystemAction({@required this.tours}) : assert(tours != null);
+  const _$InitToursSystemAction({required this.tours});
 
   @override
   final List<TourInfo> tours;
@@ -363,6 +391,7 @@ class _$InitToursSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tours);
 
+  @JsonKey(ignore: true)
   @override
   $InitToursSystemActionCopyWith<InitToursSystemAction> get copyWith =>
       _$InitToursSystemActionCopyWithImpl<InitToursSystemAction>(
@@ -370,32 +399,26 @@ class _$InitToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<TourInfo> tours),
-    @required Result deInit(),
-    @required Result loading(TourInfo info),
-    @required Result failed(TourInfo info, Exception exception),
-    @required Result completed(Tour tour),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<TourInfo> tours) init,
+    required TResult Function() deInit,
+    required TResult Function(TourInfo info) loading,
+    required TResult Function(TourInfo info, Exception exception) failed,
+    required TResult Function(Tour tour) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return init(tours);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<TourInfo> tours),
-    Result deInit(),
-    Result loading(TourInfo info),
-    Result failed(TourInfo info, Exception exception),
-    Result completed(Tour tour),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(tours);
     }
@@ -404,32 +427,26 @@ class _$InitToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitToursSystemAction value),
-    @required Result deInit(DeInitToursSystemAction value),
-    @required Result loading(LoadingToursSystemAction value),
-    @required Result failed(FailedToursSystemAction value),
-    @required Result completed(CompletedToursSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitToursSystemAction value) init,
+    required TResult Function(DeInitToursSystemAction value) deInit,
+    required TResult Function(LoadingToursSystemAction value) loading,
+    required TResult Function(FailedToursSystemAction value) failed,
+    required TResult Function(CompletedToursSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return init(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitToursSystemAction value),
-    Result deInit(DeInitToursSystemAction value),
-    Result loading(LoadingToursSystemAction value),
-    Result failed(FailedToursSystemAction value),
-    Result completed(CompletedToursSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(this);
     }
@@ -438,19 +455,23 @@ class _$InitToursSystemAction
 }
 
 abstract class InitToursSystemAction implements SystemActionTours {
-  const factory InitToursSystemAction({@required List<TourInfo> tours}) =
+  const factory InitToursSystemAction({required List<TourInfo> tours}) =
       _$InitToursSystemAction;
 
-  List<TourInfo> get tours;
-  $InitToursSystemActionCopyWith<InitToursSystemAction> get copyWith;
+  List<TourInfo> get tours => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InitToursSystemActionCopyWith<InitToursSystemAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $DeInitToursSystemActionCopyWith<$Res> {
   factory $DeInitToursSystemActionCopyWith(DeInitToursSystemAction value,
           $Res Function(DeInitToursSystemAction) then) =
       _$DeInitToursSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$DeInitToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
     implements $DeInitToursSystemActionCopyWith<$Res> {
@@ -461,6 +482,8 @@ class _$DeInitToursSystemActionCopyWithImpl<$Res>
   @override
   DeInitToursSystemAction get _value => super._value as DeInitToursSystemAction;
 }
+
+/// @nodoc
 
 class _$DeInitToursSystemAction
     with DiagnosticableTreeMixin
@@ -488,32 +511,26 @@ class _$DeInitToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<TourInfo> tours),
-    @required Result deInit(),
-    @required Result loading(TourInfo info),
-    @required Result failed(TourInfo info, Exception exception),
-    @required Result completed(Tour tour),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<TourInfo> tours) init,
+    required TResult Function() deInit,
+    required TResult Function(TourInfo info) loading,
+    required TResult Function(TourInfo info, Exception exception) failed,
+    required TResult Function(Tour tour) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return deInit();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<TourInfo> tours),
-    Result deInit(),
-    Result loading(TourInfo info),
-    Result failed(TourInfo info, Exception exception),
-    Result completed(Tour tour),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit();
     }
@@ -522,32 +539,26 @@ class _$DeInitToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitToursSystemAction value),
-    @required Result deInit(DeInitToursSystemAction value),
-    @required Result loading(LoadingToursSystemAction value),
-    @required Result failed(FailedToursSystemAction value),
-    @required Result completed(CompletedToursSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitToursSystemAction value) init,
+    required TResult Function(DeInitToursSystemAction value) deInit,
+    required TResult Function(LoadingToursSystemAction value) loading,
+    required TResult Function(FailedToursSystemAction value) failed,
+    required TResult Function(CompletedToursSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return deInit(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitToursSystemAction value),
-    Result deInit(DeInitToursSystemAction value),
-    Result loading(LoadingToursSystemAction value),
-    Result failed(FailedToursSystemAction value),
-    Result completed(CompletedToursSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit(this);
     }
@@ -559,6 +570,7 @@ abstract class DeInitToursSystemAction implements SystemActionTours {
   const factory DeInitToursSystemAction() = _$DeInitToursSystemAction;
 }
 
+/// @nodoc
 abstract class $LoadingToursSystemActionCopyWith<$Res> {
   factory $LoadingToursSystemActionCopyWith(LoadingToursSystemAction value,
           $Res Function(LoadingToursSystemAction) then) =
@@ -568,6 +580,7 @@ abstract class $LoadingToursSystemActionCopyWith<$Res> {
   $TourInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$LoadingToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
     implements $LoadingToursSystemActionCopyWith<$Res> {
@@ -581,29 +594,30 @@ class _$LoadingToursSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
+    Object? info = freezed,
   }) {
     return _then(LoadingToursSystemAction(
-      info: info == freezed ? _value.info : info as TourInfo,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
     ));
   }
 
   @override
   $TourInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$LoadingToursSystemAction
     with DiagnosticableTreeMixin
     implements LoadingToursSystemAction {
-  const _$LoadingToursSystemAction({@required this.info})
-      : assert(info != null);
+  const _$LoadingToursSystemAction({required this.info});
 
   @override
   final TourInfo info;
@@ -633,6 +647,7 @@ class _$LoadingToursSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   $LoadingToursSystemActionCopyWith<LoadingToursSystemAction> get copyWith =>
       _$LoadingToursSystemActionCopyWithImpl<LoadingToursSystemAction>(
@@ -640,32 +655,26 @@ class _$LoadingToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<TourInfo> tours),
-    @required Result deInit(),
-    @required Result loading(TourInfo info),
-    @required Result failed(TourInfo info, Exception exception),
-    @required Result completed(Tour tour),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<TourInfo> tours) init,
+    required TResult Function() deInit,
+    required TResult Function(TourInfo info) loading,
+    required TResult Function(TourInfo info, Exception exception) failed,
+    required TResult Function(Tour tour) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return loading(info);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<TourInfo> tours),
-    Result deInit(),
-    Result loading(TourInfo info),
-    Result failed(TourInfo info, Exception exception),
-    Result completed(Tour tour),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(info);
     }
@@ -674,32 +683,26 @@ class _$LoadingToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitToursSystemAction value),
-    @required Result deInit(DeInitToursSystemAction value),
-    @required Result loading(LoadingToursSystemAction value),
-    @required Result failed(FailedToursSystemAction value),
-    @required Result completed(CompletedToursSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitToursSystemAction value) init,
+    required TResult Function(DeInitToursSystemAction value) deInit,
+    required TResult Function(LoadingToursSystemAction value) loading,
+    required TResult Function(FailedToursSystemAction value) failed,
+    required TResult Function(CompletedToursSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitToursSystemAction value),
-    Result deInit(DeInitToursSystemAction value),
-    Result loading(LoadingToursSystemAction value),
-    Result failed(FailedToursSystemAction value),
-    Result completed(CompletedToursSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -708,13 +711,16 @@ class _$LoadingToursSystemAction
 }
 
 abstract class LoadingToursSystemAction implements SystemActionTours {
-  const factory LoadingToursSystemAction({@required TourInfo info}) =
+  const factory LoadingToursSystemAction({required TourInfo info}) =
       _$LoadingToursSystemAction;
 
-  TourInfo get info;
-  $LoadingToursSystemActionCopyWith<LoadingToursSystemAction> get copyWith;
+  TourInfo get info => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoadingToursSystemActionCopyWith<LoadingToursSystemAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $FailedToursSystemActionCopyWith<$Res> {
   factory $FailedToursSystemActionCopyWith(FailedToursSystemAction value,
           $Res Function(FailedToursSystemAction) then) =
@@ -724,6 +730,7 @@ abstract class $FailedToursSystemActionCopyWith<$Res> {
   $TourInfoCopyWith<$Res> get info;
 }
 
+/// @nodoc
 class _$FailedToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
     implements $FailedToursSystemActionCopyWith<$Res> {
@@ -736,34 +743,36 @@ class _$FailedToursSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object info = freezed,
-    Object exception = freezed,
+    Object? info = freezed,
+    Object? exception = freezed,
   }) {
     return _then(FailedToursSystemAction(
-      info: info == freezed ? _value.info : info as TourInfo,
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as TourInfo,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
     ));
   }
 
   @override
   $TourInfoCopyWith<$Res> get info {
-    if (_value.info == null) {
-      return null;
-    }
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$FailedToursSystemAction
     with DiagnosticableTreeMixin
     implements FailedToursSystemAction {
   const _$FailedToursSystemAction(
-      {@required this.info, @required this.exception})
-      : assert(info != null),
-        assert(exception != null);
+      {required this.info, required this.exception});
 
   @override
   final TourInfo info;
@@ -801,6 +810,7 @@ class _$FailedToursSystemAction
       const DeepCollectionEquality().hash(info) ^
       const DeepCollectionEquality().hash(exception);
 
+  @JsonKey(ignore: true)
   @override
   $FailedToursSystemActionCopyWith<FailedToursSystemAction> get copyWith =>
       _$FailedToursSystemActionCopyWithImpl<FailedToursSystemAction>(
@@ -808,32 +818,26 @@ class _$FailedToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<TourInfo> tours),
-    @required Result deInit(),
-    @required Result loading(TourInfo info),
-    @required Result failed(TourInfo info, Exception exception),
-    @required Result completed(Tour tour),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<TourInfo> tours) init,
+    required TResult Function() deInit,
+    required TResult Function(TourInfo info) loading,
+    required TResult Function(TourInfo info, Exception exception) failed,
+    required TResult Function(Tour tour) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return failed(info, exception);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<TourInfo> tours),
-    Result deInit(),
-    Result loading(TourInfo info),
-    Result failed(TourInfo info, Exception exception),
-    Result completed(Tour tour),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(info, exception);
     }
@@ -842,32 +846,26 @@ class _$FailedToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitToursSystemAction value),
-    @required Result deInit(DeInitToursSystemAction value),
-    @required Result loading(LoadingToursSystemAction value),
-    @required Result failed(FailedToursSystemAction value),
-    @required Result completed(CompletedToursSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitToursSystemAction value) init,
+    required TResult Function(DeInitToursSystemAction value) deInit,
+    required TResult Function(LoadingToursSystemAction value) loading,
+    required TResult Function(FailedToursSystemAction value) failed,
+    required TResult Function(CompletedToursSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return failed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitToursSystemAction value),
-    Result deInit(DeInitToursSystemAction value),
-    Result loading(LoadingToursSystemAction value),
-    Result failed(FailedToursSystemAction value),
-    Result completed(CompletedToursSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(this);
     }
@@ -877,14 +875,17 @@ class _$FailedToursSystemAction
 
 abstract class FailedToursSystemAction implements SystemActionTours {
   const factory FailedToursSystemAction(
-      {@required TourInfo info,
-      @required Exception exception}) = _$FailedToursSystemAction;
+      {required TourInfo info,
+      required Exception exception}) = _$FailedToursSystemAction;
 
-  TourInfo get info;
-  Exception get exception;
-  $FailedToursSystemActionCopyWith<FailedToursSystemAction> get copyWith;
+  TourInfo get info => throw _privateConstructorUsedError;
+  Exception get exception => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FailedToursSystemActionCopyWith<FailedToursSystemAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $CompletedToursSystemActionCopyWith<$Res> {
   factory $CompletedToursSystemActionCopyWith(CompletedToursSystemAction value,
           $Res Function(CompletedToursSystemAction) then) =
@@ -894,6 +895,7 @@ abstract class $CompletedToursSystemActionCopyWith<$Res> {
   $TourCopyWith<$Res> get tour;
 }
 
+/// @nodoc
 class _$CompletedToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
     implements $CompletedToursSystemActionCopyWith<$Res> {
@@ -907,29 +909,30 @@ class _$CompletedToursSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tour = freezed,
+    Object? tour = freezed,
   }) {
     return _then(CompletedToursSystemAction(
-      tour: tour == freezed ? _value.tour : tour as Tour,
+      tour: tour == freezed
+          ? _value.tour
+          : tour // ignore: cast_nullable_to_non_nullable
+              as Tour,
     ));
   }
 
   @override
   $TourCopyWith<$Res> get tour {
-    if (_value.tour == null) {
-      return null;
-    }
     return $TourCopyWith<$Res>(_value.tour, (value) {
       return _then(_value.copyWith(tour: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$CompletedToursSystemAction
     with DiagnosticableTreeMixin
     implements CompletedToursSystemAction {
-  const _$CompletedToursSystemAction({@required this.tour})
-      : assert(tour != null);
+  const _$CompletedToursSystemAction({required this.tour});
 
   @override
   final Tour tour;
@@ -959,6 +962,7 @@ class _$CompletedToursSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tour);
 
+  @JsonKey(ignore: true)
   @override
   $CompletedToursSystemActionCopyWith<CompletedToursSystemAction>
       get copyWith =>
@@ -967,32 +971,26 @@ class _$CompletedToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<TourInfo> tours),
-    @required Result deInit(),
-    @required Result loading(TourInfo info),
-    @required Result failed(TourInfo info, Exception exception),
-    @required Result completed(Tour tour),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<TourInfo> tours) init,
+    required TResult Function() deInit,
+    required TResult Function(TourInfo info) loading,
+    required TResult Function(TourInfo info, Exception exception) failed,
+    required TResult Function(Tour tour) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return completed(tour);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<TourInfo> tours),
-    Result deInit(),
-    Result loading(TourInfo info),
-    Result failed(TourInfo info, Exception exception),
-    Result completed(Tour tour),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(tour);
     }
@@ -1001,32 +999,26 @@ class _$CompletedToursSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitToursSystemAction value),
-    @required Result deInit(DeInitToursSystemAction value),
-    @required Result loading(LoadingToursSystemAction value),
-    @required Result failed(FailedToursSystemAction value),
-    @required Result completed(CompletedToursSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitToursSystemAction value) init,
+    required TResult Function(DeInitToursSystemAction value) deInit,
+    required TResult Function(LoadingToursSystemAction value) loading,
+    required TResult Function(FailedToursSystemAction value) failed,
+    required TResult Function(CompletedToursSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return completed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitToursSystemAction value),
-    Result deInit(DeInitToursSystemAction value),
-    Result loading(LoadingToursSystemAction value),
-    Result failed(FailedToursSystemAction value),
-    Result completed(CompletedToursSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(this);
     }
@@ -1035,9 +1027,11 @@ class _$CompletedToursSystemAction
 }
 
 abstract class CompletedToursSystemAction implements SystemActionTours {
-  const factory CompletedToursSystemAction({@required Tour tour}) =
+  const factory CompletedToursSystemAction({required Tour tour}) =
       _$CompletedToursSystemAction;
 
-  Tour get tour;
-  $CompletedToursSystemActionCopyWith<CompletedToursSystemAction> get copyWith;
+  Tour get tour => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CompletedToursSystemActionCopyWith<CompletedToursSystemAction>
+      get copyWith => throw _privateConstructorUsedError;
 }

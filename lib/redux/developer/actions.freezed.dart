@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,56 +9,66 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionDeveloperTearOff {
   const _$UserActionDeveloperTearOff();
 
-// ignore: unused_element
-  EmailDeveloperUserAction email({@required Translations translations}) {
+  EmailDeveloperUserAction email({required Translations translations}) {
     return EmailDeveloperUserAction(
       translations: translations,
     );
   }
 
-// ignore: unused_element
   VisitWebsiteDeveloperUserAction visitWebsite() {
     return const VisitWebsiteDeveloperUserAction();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionDeveloper = _$UserActionDeveloperTearOff();
 
+/// @nodoc
 mixin _$UserActionDeveloper {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result email(Translations translations),
-    @required Result visitWebsite(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Translations translations) email,
+    required TResult Function() visitWebsite,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result email(Translations translations),
-    Result visitWebsite(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Translations translations)? email,
+    TResult Function()? visitWebsite,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result email(EmailDeveloperUserAction value),
-    @required Result visitWebsite(VisitWebsiteDeveloperUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailDeveloperUserAction value) email,
+    required TResult Function(VisitWebsiteDeveloperUserAction value)
+        visitWebsite,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result email(EmailDeveloperUserAction value),
-    Result visitWebsite(VisitWebsiteDeveloperUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailDeveloperUserAction value)? email,
+    TResult Function(VisitWebsiteDeveloperUserAction value)? visitWebsite,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionDeveloperCopyWith<$Res> {
   factory $UserActionDeveloperCopyWith(
           UserActionDeveloper value, $Res Function(UserActionDeveloper) then) =
       _$UserActionDeveloperCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionDeveloperCopyWithImpl<$Res>
     implements $UserActionDeveloperCopyWith<$Res> {
   _$UserActionDeveloperCopyWithImpl(this._value, this._then);
@@ -68,6 +78,7 @@ class _$UserActionDeveloperCopyWithImpl<$Res>
   final $Res Function(UserActionDeveloper) _then;
 }
 
+/// @nodoc
 abstract class $EmailDeveloperUserActionCopyWith<$Res> {
   factory $EmailDeveloperUserActionCopyWith(EmailDeveloperUserAction value,
           $Res Function(EmailDeveloperUserAction) then) =
@@ -75,6 +86,7 @@ abstract class $EmailDeveloperUserActionCopyWith<$Res> {
   $Res call({Translations translations});
 }
 
+/// @nodoc
 class _$EmailDeveloperUserActionCopyWithImpl<$Res>
     extends _$UserActionDeveloperCopyWithImpl<$Res>
     implements $EmailDeveloperUserActionCopyWith<$Res> {
@@ -88,21 +100,23 @@ class _$EmailDeveloperUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object translations = freezed,
+    Object? translations = freezed,
   }) {
     return _then(EmailDeveloperUserAction(
       translations: translations == freezed
           ? _value.translations
-          : translations as Translations,
+          : translations // ignore: cast_nullable_to_non_nullable
+              as Translations,
     ));
   }
 }
 
+/// @nodoc
+
 class _$EmailDeveloperUserAction
     with DiagnosticableTreeMixin
     implements EmailDeveloperUserAction {
-  const _$EmailDeveloperUserAction({@required this.translations})
-      : assert(translations != null);
+  const _$EmailDeveloperUserAction({required this.translations});
 
   @override
   final Translations translations;
@@ -133,6 +147,7 @@ class _$EmailDeveloperUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(translations);
 
+  @JsonKey(ignore: true)
   @override
   $EmailDeveloperUserActionCopyWith<EmailDeveloperUserAction> get copyWith =>
       _$EmailDeveloperUserActionCopyWithImpl<EmailDeveloperUserAction>(
@@ -140,23 +155,20 @@ class _$EmailDeveloperUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result email(Translations translations),
-    @required Result visitWebsite(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Translations translations) email,
+    required TResult Function() visitWebsite,
   }) {
-    assert(email != null);
-    assert(visitWebsite != null);
     return email(translations);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result email(Translations translations),
-    Result visitWebsite(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Translations translations)? email,
+    TResult Function()? visitWebsite,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (email != null) {
       return email(translations);
     }
@@ -165,23 +177,21 @@ class _$EmailDeveloperUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result email(EmailDeveloperUserAction value),
-    @required Result visitWebsite(VisitWebsiteDeveloperUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailDeveloperUserAction value) email,
+    required TResult Function(VisitWebsiteDeveloperUserAction value)
+        visitWebsite,
   }) {
-    assert(email != null);
-    assert(visitWebsite != null);
     return email(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result email(EmailDeveloperUserAction value),
-    Result visitWebsite(VisitWebsiteDeveloperUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailDeveloperUserAction value)? email,
+    TResult Function(VisitWebsiteDeveloperUserAction value)? visitWebsite,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (email != null) {
       return email(this);
     }
@@ -190,13 +200,16 @@ class _$EmailDeveloperUserAction
 }
 
 abstract class EmailDeveloperUserAction implements UserActionDeveloper {
-  const factory EmailDeveloperUserAction(
-      {@required Translations translations}) = _$EmailDeveloperUserAction;
+  const factory EmailDeveloperUserAction({required Translations translations}) =
+      _$EmailDeveloperUserAction;
 
-  Translations get translations;
-  $EmailDeveloperUserActionCopyWith<EmailDeveloperUserAction> get copyWith;
+  Translations get translations => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmailDeveloperUserActionCopyWith<EmailDeveloperUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $VisitWebsiteDeveloperUserActionCopyWith<$Res> {
   factory $VisitWebsiteDeveloperUserActionCopyWith(
           VisitWebsiteDeveloperUserAction value,
@@ -204,6 +217,7 @@ abstract class $VisitWebsiteDeveloperUserActionCopyWith<$Res> {
       _$VisitWebsiteDeveloperUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$VisitWebsiteDeveloperUserActionCopyWithImpl<$Res>
     extends _$UserActionDeveloperCopyWithImpl<$Res>
     implements $VisitWebsiteDeveloperUserActionCopyWith<$Res> {
@@ -216,6 +230,8 @@ class _$VisitWebsiteDeveloperUserActionCopyWithImpl<$Res>
   VisitWebsiteDeveloperUserAction get _value =>
       super._value as VisitWebsiteDeveloperUserAction;
 }
+
+/// @nodoc
 
 class _$VisitWebsiteDeveloperUserAction
     with DiagnosticableTreeMixin
@@ -244,23 +260,20 @@ class _$VisitWebsiteDeveloperUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result email(Translations translations),
-    @required Result visitWebsite(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Translations translations) email,
+    required TResult Function() visitWebsite,
   }) {
-    assert(email != null);
-    assert(visitWebsite != null);
     return visitWebsite();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result email(Translations translations),
-    Result visitWebsite(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Translations translations)? email,
+    TResult Function()? visitWebsite,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (visitWebsite != null) {
       return visitWebsite();
     }
@@ -269,23 +282,21 @@ class _$VisitWebsiteDeveloperUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result email(EmailDeveloperUserAction value),
-    @required Result visitWebsite(VisitWebsiteDeveloperUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailDeveloperUserAction value) email,
+    required TResult Function(VisitWebsiteDeveloperUserAction value)
+        visitWebsite,
   }) {
-    assert(email != null);
-    assert(visitWebsite != null);
     return visitWebsite(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result email(EmailDeveloperUserAction value),
-    Result visitWebsite(VisitWebsiteDeveloperUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailDeveloperUserAction value)? email,
+    TResult Function(VisitWebsiteDeveloperUserAction value)? visitWebsite,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (visitWebsite != null) {
       return visitWebsite(this);
     }

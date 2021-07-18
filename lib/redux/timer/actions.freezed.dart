@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,92 +9,97 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionTimerTearOff {
   const _$UserActionTimerTearOff();
 
-// ignore: unused_element
   InitTimerUserAction init() {
     return const InitTimerUserAction();
   }
 
-// ignore: unused_element
   DeInitTimerUserAction deInit() {
     return const DeInitTimerUserAction();
   }
 
-// ignore: unused_element
   StartTimerUserAction start() {
     return const StartTimerUserAction();
   }
 
-// ignore: unused_element
   StopTimerUserAction stop() {
     return const StopTimerUserAction();
   }
 
-// ignore: unused_element
   ResetTimerUserAction reset() {
     return const ResetTimerUserAction();
   }
 
-// ignore: unused_element
-  ChangeTypeTimerUserAction changeType({@required TimerType type}) {
+  ChangeTypeTimerUserAction changeType({required TimerType type}) {
     return ChangeTypeTimerUserAction(
       type: type,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionTimer = _$UserActionTimerTearOff();
 
+/// @nodoc
 mixin _$UserActionTimer {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result start(),
-    @required Result stop(),
-    @required Result reset(),
-    @required Result changeType(TimerType type),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() start,
+    required TResult Function() stop,
+    required TResult Function() reset,
+    required TResult Function(TimerType type) changeType,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result start(),
-    Result stop(),
-    Result reset(),
-    Result changeType(TimerType type),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? start,
+    TResult Function()? stop,
+    TResult Function()? reset,
+    TResult Function(TimerType type)? changeType,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitTimerUserAction value),
-    @required Result deInit(DeInitTimerUserAction value),
-    @required Result start(StartTimerUserAction value),
-    @required Result stop(StopTimerUserAction value),
-    @required Result reset(ResetTimerUserAction value),
-    @required Result changeType(ChangeTypeTimerUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitTimerUserAction value) init,
+    required TResult Function(DeInitTimerUserAction value) deInit,
+    required TResult Function(StartTimerUserAction value) start,
+    required TResult Function(StopTimerUserAction value) stop,
+    required TResult Function(ResetTimerUserAction value) reset,
+    required TResult Function(ChangeTypeTimerUserAction value) changeType,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitTimerUserAction value),
-    Result deInit(DeInitTimerUserAction value),
-    Result start(StartTimerUserAction value),
-    Result stop(StopTimerUserAction value),
-    Result reset(ResetTimerUserAction value),
-    Result changeType(ChangeTypeTimerUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitTimerUserAction value)? init,
+    TResult Function(DeInitTimerUserAction value)? deInit,
+    TResult Function(StartTimerUserAction value)? start,
+    TResult Function(StopTimerUserAction value)? stop,
+    TResult Function(ResetTimerUserAction value)? reset,
+    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionTimerCopyWith<$Res> {
   factory $UserActionTimerCopyWith(
           UserActionTimer value, $Res Function(UserActionTimer) then) =
       _$UserActionTimerCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionTimerCopyWithImpl<$Res>
     implements $UserActionTimerCopyWith<$Res> {
   _$UserActionTimerCopyWithImpl(this._value, this._then);
@@ -104,12 +109,14 @@ class _$UserActionTimerCopyWithImpl<$Res>
   final $Res Function(UserActionTimer) _then;
 }
 
+/// @nodoc
 abstract class $InitTimerUserActionCopyWith<$Res> {
   factory $InitTimerUserActionCopyWith(
           InitTimerUserAction value, $Res Function(InitTimerUserAction) then) =
       _$InitTimerUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitTimerUserActionCopyWithImpl<$Res>
     extends _$UserActionTimerCopyWithImpl<$Res>
     implements $InitTimerUserActionCopyWith<$Res> {
@@ -120,6 +127,8 @@ class _$InitTimerUserActionCopyWithImpl<$Res>
   @override
   InitTimerUserAction get _value => super._value as InitTimerUserAction;
 }
+
+/// @nodoc
 
 class _$InitTimerUserAction
     with DiagnosticableTreeMixin
@@ -147,35 +156,28 @@ class _$InitTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result start(),
-    @required Result stop(),
-    @required Result reset(),
-    @required Result changeType(TimerType type),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() start,
+    required TResult Function() stop,
+    required TResult Function() reset,
+    required TResult Function(TimerType type) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return init();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result start(),
-    Result stop(),
-    Result reset(),
-    Result changeType(TimerType type),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? start,
+    TResult Function()? stop,
+    TResult Function()? reset,
+    TResult Function(TimerType type)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init();
     }
@@ -184,35 +186,28 @@ class _$InitTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitTimerUserAction value),
-    @required Result deInit(DeInitTimerUserAction value),
-    @required Result start(StartTimerUserAction value),
-    @required Result stop(StopTimerUserAction value),
-    @required Result reset(ResetTimerUserAction value),
-    @required Result changeType(ChangeTypeTimerUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitTimerUserAction value) init,
+    required TResult Function(DeInitTimerUserAction value) deInit,
+    required TResult Function(StartTimerUserAction value) start,
+    required TResult Function(StopTimerUserAction value) stop,
+    required TResult Function(ResetTimerUserAction value) reset,
+    required TResult Function(ChangeTypeTimerUserAction value) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return init(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitTimerUserAction value),
-    Result deInit(DeInitTimerUserAction value),
-    Result start(StartTimerUserAction value),
-    Result stop(StopTimerUserAction value),
-    Result reset(ResetTimerUserAction value),
-    Result changeType(ChangeTypeTimerUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitTimerUserAction value)? init,
+    TResult Function(DeInitTimerUserAction value)? deInit,
+    TResult Function(StartTimerUserAction value)? start,
+    TResult Function(StopTimerUserAction value)? stop,
+    TResult Function(ResetTimerUserAction value)? reset,
+    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(this);
     }
@@ -224,12 +219,14 @@ abstract class InitTimerUserAction implements UserActionTimer {
   const factory InitTimerUserAction() = _$InitTimerUserAction;
 }
 
+/// @nodoc
 abstract class $DeInitTimerUserActionCopyWith<$Res> {
   factory $DeInitTimerUserActionCopyWith(DeInitTimerUserAction value,
           $Res Function(DeInitTimerUserAction) then) =
       _$DeInitTimerUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$DeInitTimerUserActionCopyWithImpl<$Res>
     extends _$UserActionTimerCopyWithImpl<$Res>
     implements $DeInitTimerUserActionCopyWith<$Res> {
@@ -240,6 +237,8 @@ class _$DeInitTimerUserActionCopyWithImpl<$Res>
   @override
   DeInitTimerUserAction get _value => super._value as DeInitTimerUserAction;
 }
+
+/// @nodoc
 
 class _$DeInitTimerUserAction
     with DiagnosticableTreeMixin
@@ -267,35 +266,28 @@ class _$DeInitTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result start(),
-    @required Result stop(),
-    @required Result reset(),
-    @required Result changeType(TimerType type),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() start,
+    required TResult Function() stop,
+    required TResult Function() reset,
+    required TResult Function(TimerType type) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return deInit();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result start(),
-    Result stop(),
-    Result reset(),
-    Result changeType(TimerType type),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? start,
+    TResult Function()? stop,
+    TResult Function()? reset,
+    TResult Function(TimerType type)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit();
     }
@@ -304,35 +296,28 @@ class _$DeInitTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitTimerUserAction value),
-    @required Result deInit(DeInitTimerUserAction value),
-    @required Result start(StartTimerUserAction value),
-    @required Result stop(StopTimerUserAction value),
-    @required Result reset(ResetTimerUserAction value),
-    @required Result changeType(ChangeTypeTimerUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitTimerUserAction value) init,
+    required TResult Function(DeInitTimerUserAction value) deInit,
+    required TResult Function(StartTimerUserAction value) start,
+    required TResult Function(StopTimerUserAction value) stop,
+    required TResult Function(ResetTimerUserAction value) reset,
+    required TResult Function(ChangeTypeTimerUserAction value) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return deInit(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitTimerUserAction value),
-    Result deInit(DeInitTimerUserAction value),
-    Result start(StartTimerUserAction value),
-    Result stop(StopTimerUserAction value),
-    Result reset(ResetTimerUserAction value),
-    Result changeType(ChangeTypeTimerUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitTimerUserAction value)? init,
+    TResult Function(DeInitTimerUserAction value)? deInit,
+    TResult Function(StartTimerUserAction value)? start,
+    TResult Function(StopTimerUserAction value)? stop,
+    TResult Function(ResetTimerUserAction value)? reset,
+    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit(this);
     }
@@ -344,12 +329,14 @@ abstract class DeInitTimerUserAction implements UserActionTimer {
   const factory DeInitTimerUserAction() = _$DeInitTimerUserAction;
 }
 
+/// @nodoc
 abstract class $StartTimerUserActionCopyWith<$Res> {
   factory $StartTimerUserActionCopyWith(StartTimerUserAction value,
           $Res Function(StartTimerUserAction) then) =
       _$StartTimerUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$StartTimerUserActionCopyWithImpl<$Res>
     extends _$UserActionTimerCopyWithImpl<$Res>
     implements $StartTimerUserActionCopyWith<$Res> {
@@ -360,6 +347,8 @@ class _$StartTimerUserActionCopyWithImpl<$Res>
   @override
   StartTimerUserAction get _value => super._value as StartTimerUserAction;
 }
+
+/// @nodoc
 
 class _$StartTimerUserAction
     with DiagnosticableTreeMixin
@@ -387,35 +376,28 @@ class _$StartTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result start(),
-    @required Result stop(),
-    @required Result reset(),
-    @required Result changeType(TimerType type),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() start,
+    required TResult Function() stop,
+    required TResult Function() reset,
+    required TResult Function(TimerType type) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return start();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result start(),
-    Result stop(),
-    Result reset(),
-    Result changeType(TimerType type),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? start,
+    TResult Function()? stop,
+    TResult Function()? reset,
+    TResult Function(TimerType type)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (start != null) {
       return start();
     }
@@ -424,35 +406,28 @@ class _$StartTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitTimerUserAction value),
-    @required Result deInit(DeInitTimerUserAction value),
-    @required Result start(StartTimerUserAction value),
-    @required Result stop(StopTimerUserAction value),
-    @required Result reset(ResetTimerUserAction value),
-    @required Result changeType(ChangeTypeTimerUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitTimerUserAction value) init,
+    required TResult Function(DeInitTimerUserAction value) deInit,
+    required TResult Function(StartTimerUserAction value) start,
+    required TResult Function(StopTimerUserAction value) stop,
+    required TResult Function(ResetTimerUserAction value) reset,
+    required TResult Function(ChangeTypeTimerUserAction value) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return start(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitTimerUserAction value),
-    Result deInit(DeInitTimerUserAction value),
-    Result start(StartTimerUserAction value),
-    Result stop(StopTimerUserAction value),
-    Result reset(ResetTimerUserAction value),
-    Result changeType(ChangeTypeTimerUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitTimerUserAction value)? init,
+    TResult Function(DeInitTimerUserAction value)? deInit,
+    TResult Function(StartTimerUserAction value)? start,
+    TResult Function(StopTimerUserAction value)? stop,
+    TResult Function(ResetTimerUserAction value)? reset,
+    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (start != null) {
       return start(this);
     }
@@ -464,12 +439,14 @@ abstract class StartTimerUserAction implements UserActionTimer {
   const factory StartTimerUserAction() = _$StartTimerUserAction;
 }
 
+/// @nodoc
 abstract class $StopTimerUserActionCopyWith<$Res> {
   factory $StopTimerUserActionCopyWith(
           StopTimerUserAction value, $Res Function(StopTimerUserAction) then) =
       _$StopTimerUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$StopTimerUserActionCopyWithImpl<$Res>
     extends _$UserActionTimerCopyWithImpl<$Res>
     implements $StopTimerUserActionCopyWith<$Res> {
@@ -480,6 +457,8 @@ class _$StopTimerUserActionCopyWithImpl<$Res>
   @override
   StopTimerUserAction get _value => super._value as StopTimerUserAction;
 }
+
+/// @nodoc
 
 class _$StopTimerUserAction
     with DiagnosticableTreeMixin
@@ -507,35 +486,28 @@ class _$StopTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result start(),
-    @required Result stop(),
-    @required Result reset(),
-    @required Result changeType(TimerType type),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() start,
+    required TResult Function() stop,
+    required TResult Function() reset,
+    required TResult Function(TimerType type) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return stop();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result start(),
-    Result stop(),
-    Result reset(),
-    Result changeType(TimerType type),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? start,
+    TResult Function()? stop,
+    TResult Function()? reset,
+    TResult Function(TimerType type)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (stop != null) {
       return stop();
     }
@@ -544,35 +516,28 @@ class _$StopTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitTimerUserAction value),
-    @required Result deInit(DeInitTimerUserAction value),
-    @required Result start(StartTimerUserAction value),
-    @required Result stop(StopTimerUserAction value),
-    @required Result reset(ResetTimerUserAction value),
-    @required Result changeType(ChangeTypeTimerUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitTimerUserAction value) init,
+    required TResult Function(DeInitTimerUserAction value) deInit,
+    required TResult Function(StartTimerUserAction value) start,
+    required TResult Function(StopTimerUserAction value) stop,
+    required TResult Function(ResetTimerUserAction value) reset,
+    required TResult Function(ChangeTypeTimerUserAction value) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return stop(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitTimerUserAction value),
-    Result deInit(DeInitTimerUserAction value),
-    Result start(StartTimerUserAction value),
-    Result stop(StopTimerUserAction value),
-    Result reset(ResetTimerUserAction value),
-    Result changeType(ChangeTypeTimerUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitTimerUserAction value)? init,
+    TResult Function(DeInitTimerUserAction value)? deInit,
+    TResult Function(StartTimerUserAction value)? start,
+    TResult Function(StopTimerUserAction value)? stop,
+    TResult Function(ResetTimerUserAction value)? reset,
+    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (stop != null) {
       return stop(this);
     }
@@ -584,12 +549,14 @@ abstract class StopTimerUserAction implements UserActionTimer {
   const factory StopTimerUserAction() = _$StopTimerUserAction;
 }
 
+/// @nodoc
 abstract class $ResetTimerUserActionCopyWith<$Res> {
   factory $ResetTimerUserActionCopyWith(ResetTimerUserAction value,
           $Res Function(ResetTimerUserAction) then) =
       _$ResetTimerUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ResetTimerUserActionCopyWithImpl<$Res>
     extends _$UserActionTimerCopyWithImpl<$Res>
     implements $ResetTimerUserActionCopyWith<$Res> {
@@ -600,6 +567,8 @@ class _$ResetTimerUserActionCopyWithImpl<$Res>
   @override
   ResetTimerUserAction get _value => super._value as ResetTimerUserAction;
 }
+
+/// @nodoc
 
 class _$ResetTimerUserAction
     with DiagnosticableTreeMixin
@@ -627,35 +596,28 @@ class _$ResetTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result start(),
-    @required Result stop(),
-    @required Result reset(),
-    @required Result changeType(TimerType type),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() start,
+    required TResult Function() stop,
+    required TResult Function() reset,
+    required TResult Function(TimerType type) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return reset();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result start(),
-    Result stop(),
-    Result reset(),
-    Result changeType(TimerType type),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? start,
+    TResult Function()? stop,
+    TResult Function()? reset,
+    TResult Function(TimerType type)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (reset != null) {
       return reset();
     }
@@ -664,35 +626,28 @@ class _$ResetTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitTimerUserAction value),
-    @required Result deInit(DeInitTimerUserAction value),
-    @required Result start(StartTimerUserAction value),
-    @required Result stop(StopTimerUserAction value),
-    @required Result reset(ResetTimerUserAction value),
-    @required Result changeType(ChangeTypeTimerUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitTimerUserAction value) init,
+    required TResult Function(DeInitTimerUserAction value) deInit,
+    required TResult Function(StartTimerUserAction value) start,
+    required TResult Function(StopTimerUserAction value) stop,
+    required TResult Function(ResetTimerUserAction value) reset,
+    required TResult Function(ChangeTypeTimerUserAction value) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return reset(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitTimerUserAction value),
-    Result deInit(DeInitTimerUserAction value),
-    Result start(StartTimerUserAction value),
-    Result stop(StopTimerUserAction value),
-    Result reset(ResetTimerUserAction value),
-    Result changeType(ChangeTypeTimerUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitTimerUserAction value)? init,
+    TResult Function(DeInitTimerUserAction value)? deInit,
+    TResult Function(StartTimerUserAction value)? start,
+    TResult Function(StopTimerUserAction value)? stop,
+    TResult Function(ResetTimerUserAction value)? reset,
+    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (reset != null) {
       return reset(this);
     }
@@ -704,6 +659,7 @@ abstract class ResetTimerUserAction implements UserActionTimer {
   const factory ResetTimerUserAction() = _$ResetTimerUserAction;
 }
 
+/// @nodoc
 abstract class $ChangeTypeTimerUserActionCopyWith<$Res> {
   factory $ChangeTypeTimerUserActionCopyWith(ChangeTypeTimerUserAction value,
           $Res Function(ChangeTypeTimerUserAction) then) =
@@ -711,6 +667,7 @@ abstract class $ChangeTypeTimerUserActionCopyWith<$Res> {
   $Res call({TimerType type});
 }
 
+/// @nodoc
 class _$ChangeTypeTimerUserActionCopyWithImpl<$Res>
     extends _$UserActionTimerCopyWithImpl<$Res>
     implements $ChangeTypeTimerUserActionCopyWith<$Res> {
@@ -724,19 +681,23 @@ class _$ChangeTypeTimerUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object type = freezed,
+    Object? type = freezed,
   }) {
     return _then(ChangeTypeTimerUserAction(
-      type: type == freezed ? _value.type : type as TimerType,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as TimerType,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ChangeTypeTimerUserAction
     with DiagnosticableTreeMixin
     implements ChangeTypeTimerUserAction {
-  const _$ChangeTypeTimerUserAction({@required this.type})
-      : assert(type != null);
+  const _$ChangeTypeTimerUserAction({required this.type});
 
   @override
   final TimerType type;
@@ -766,6 +727,7 @@ class _$ChangeTypeTimerUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(type);
 
+  @JsonKey(ignore: true)
   @override
   $ChangeTypeTimerUserActionCopyWith<ChangeTypeTimerUserAction> get copyWith =>
       _$ChangeTypeTimerUserActionCopyWithImpl<ChangeTypeTimerUserAction>(
@@ -773,35 +735,28 @@ class _$ChangeTypeTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result start(),
-    @required Result stop(),
-    @required Result reset(),
-    @required Result changeType(TimerType type),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() start,
+    required TResult Function() stop,
+    required TResult Function() reset,
+    required TResult Function(TimerType type) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return changeType(type);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result start(),
-    Result stop(),
-    Result reset(),
-    Result changeType(TimerType type),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? start,
+    TResult Function()? stop,
+    TResult Function()? reset,
+    TResult Function(TimerType type)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeType != null) {
       return changeType(type);
     }
@@ -810,35 +765,28 @@ class _$ChangeTypeTimerUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitTimerUserAction value),
-    @required Result deInit(DeInitTimerUserAction value),
-    @required Result start(StartTimerUserAction value),
-    @required Result stop(StopTimerUserAction value),
-    @required Result reset(ResetTimerUserAction value),
-    @required Result changeType(ChangeTypeTimerUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitTimerUserAction value) init,
+    required TResult Function(DeInitTimerUserAction value) deInit,
+    required TResult Function(StartTimerUserAction value) start,
+    required TResult Function(StopTimerUserAction value) stop,
+    required TResult Function(ResetTimerUserAction value) reset,
+    required TResult Function(ChangeTypeTimerUserAction value) changeType,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(start != null);
-    assert(stop != null);
-    assert(reset != null);
-    assert(changeType != null);
     return changeType(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitTimerUserAction value),
-    Result deInit(DeInitTimerUserAction value),
-    Result start(StartTimerUserAction value),
-    Result stop(StopTimerUserAction value),
-    Result reset(ResetTimerUserAction value),
-    Result changeType(ChangeTypeTimerUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitTimerUserAction value)? init,
+    TResult Function(DeInitTimerUserAction value)? deInit,
+    TResult Function(StartTimerUserAction value)? start,
+    TResult Function(StopTimerUserAction value)? stop,
+    TResult Function(ResetTimerUserAction value)? reset,
+    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeType != null) {
       return changeType(this);
     }
@@ -847,74 +795,81 @@ class _$ChangeTypeTimerUserAction
 }
 
 abstract class ChangeTypeTimerUserAction implements UserActionTimer {
-  const factory ChangeTypeTimerUserAction({@required TimerType type}) =
+  const factory ChangeTypeTimerUserAction({required TimerType type}) =
       _$ChangeTypeTimerUserAction;
 
-  TimerType get type;
-  $ChangeTypeTimerUserActionCopyWith<ChangeTypeTimerUserAction> get copyWith;
+  TimerType get type => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ChangeTypeTimerUserActionCopyWith<ChangeTypeTimerUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$SystemActionTimerTearOff {
   const _$SystemActionTimerTearOff();
 
-// ignore: unused_element
   NotifyTimerSystemAction notify() {
     return const NotifyTimerSystemAction();
   }
 
-// ignore: unused_element
-  UpdateTimeTimerSystemAction updateTime({@required int newValue}) {
+  UpdateTimeTimerSystemAction updateTime({required int newValue}) {
     return UpdateTimeTimerSystemAction(
       newValue: newValue,
     );
   }
 
-// ignore: unused_element
-  UpdateIsRunningTimerSystemAction isRunning({@required bool newValue}) {
+  UpdateIsRunningTimerSystemAction isRunning({required bool newValue}) {
     return UpdateIsRunningTimerSystemAction(
       newValue: newValue,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SystemActionTimer = _$SystemActionTimerTearOff();
 
+/// @nodoc
 mixin _$SystemActionTimer {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result notify(),
-    @required Result updateTime(int newValue),
-    @required Result isRunning(bool newValue),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() notify,
+    required TResult Function(int newValue) updateTime,
+    required TResult Function(bool newValue) isRunning,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result notify(),
-    Result updateTime(int newValue),
-    Result isRunning(bool newValue),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notify,
+    TResult Function(int newValue)? updateTime,
+    TResult Function(bool newValue)? isRunning,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result notify(NotifyTimerSystemAction value),
-    @required Result updateTime(UpdateTimeTimerSystemAction value),
-    @required Result isRunning(UpdateIsRunningTimerSystemAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotifyTimerSystemAction value) notify,
+    required TResult Function(UpdateTimeTimerSystemAction value) updateTime,
+    required TResult Function(UpdateIsRunningTimerSystemAction value) isRunning,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result notify(NotifyTimerSystemAction value),
-    Result updateTime(UpdateTimeTimerSystemAction value),
-    Result isRunning(UpdateIsRunningTimerSystemAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotifyTimerSystemAction value)? notify,
+    TResult Function(UpdateTimeTimerSystemAction value)? updateTime,
+    TResult Function(UpdateIsRunningTimerSystemAction value)? isRunning,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SystemActionTimerCopyWith<$Res> {
   factory $SystemActionTimerCopyWith(
           SystemActionTimer value, $Res Function(SystemActionTimer) then) =
       _$SystemActionTimerCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SystemActionTimerCopyWithImpl<$Res>
     implements $SystemActionTimerCopyWith<$Res> {
   _$SystemActionTimerCopyWithImpl(this._value, this._then);
@@ -924,12 +879,14 @@ class _$SystemActionTimerCopyWithImpl<$Res>
   final $Res Function(SystemActionTimer) _then;
 }
 
+/// @nodoc
 abstract class $NotifyTimerSystemActionCopyWith<$Res> {
   factory $NotifyTimerSystemActionCopyWith(NotifyTimerSystemAction value,
           $Res Function(NotifyTimerSystemAction) then) =
       _$NotifyTimerSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$NotifyTimerSystemActionCopyWithImpl<$Res>
     extends _$SystemActionTimerCopyWithImpl<$Res>
     implements $NotifyTimerSystemActionCopyWith<$Res> {
@@ -940,6 +897,8 @@ class _$NotifyTimerSystemActionCopyWithImpl<$Res>
   @override
   NotifyTimerSystemAction get _value => super._value as NotifyTimerSystemAction;
 }
+
+/// @nodoc
 
 class _$NotifyTimerSystemAction
     with DiagnosticableTreeMixin
@@ -967,26 +926,22 @@ class _$NotifyTimerSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result notify(),
-    @required Result updateTime(int newValue),
-    @required Result isRunning(bool newValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function() notify,
+    required TResult Function(int newValue) updateTime,
+    required TResult Function(bool newValue) isRunning,
   }) {
-    assert(notify != null);
-    assert(updateTime != null);
-    assert(isRunning != null);
     return notify();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result notify(),
-    Result updateTime(int newValue),
-    Result isRunning(bool newValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notify,
+    TResult Function(int newValue)? updateTime,
+    TResult Function(bool newValue)? isRunning,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (notify != null) {
       return notify();
     }
@@ -995,26 +950,22 @@ class _$NotifyTimerSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result notify(NotifyTimerSystemAction value),
-    @required Result updateTime(UpdateTimeTimerSystemAction value),
-    @required Result isRunning(UpdateIsRunningTimerSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotifyTimerSystemAction value) notify,
+    required TResult Function(UpdateTimeTimerSystemAction value) updateTime,
+    required TResult Function(UpdateIsRunningTimerSystemAction value) isRunning,
   }) {
-    assert(notify != null);
-    assert(updateTime != null);
-    assert(isRunning != null);
     return notify(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result notify(NotifyTimerSystemAction value),
-    Result updateTime(UpdateTimeTimerSystemAction value),
-    Result isRunning(UpdateIsRunningTimerSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotifyTimerSystemAction value)? notify,
+    TResult Function(UpdateTimeTimerSystemAction value)? updateTime,
+    TResult Function(UpdateIsRunningTimerSystemAction value)? isRunning,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (notify != null) {
       return notify(this);
     }
@@ -1026,6 +977,7 @@ abstract class NotifyTimerSystemAction implements SystemActionTimer {
   const factory NotifyTimerSystemAction() = _$NotifyTimerSystemAction;
 }
 
+/// @nodoc
 abstract class $UpdateTimeTimerSystemActionCopyWith<$Res> {
   factory $UpdateTimeTimerSystemActionCopyWith(
           UpdateTimeTimerSystemAction value,
@@ -1034,6 +986,7 @@ abstract class $UpdateTimeTimerSystemActionCopyWith<$Res> {
   $Res call({int newValue});
 }
 
+/// @nodoc
 class _$UpdateTimeTimerSystemActionCopyWithImpl<$Res>
     extends _$SystemActionTimerCopyWithImpl<$Res>
     implements $UpdateTimeTimerSystemActionCopyWith<$Res> {
@@ -1047,19 +1000,23 @@ class _$UpdateTimeTimerSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object newValue = freezed,
+    Object? newValue = freezed,
   }) {
     return _then(UpdateTimeTimerSystemAction(
-      newValue: newValue == freezed ? _value.newValue : newValue as int,
+      newValue: newValue == freezed
+          ? _value.newValue
+          : newValue // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$UpdateTimeTimerSystemAction
     with DiagnosticableTreeMixin
     implements UpdateTimeTimerSystemAction {
-  const _$UpdateTimeTimerSystemAction({@required this.newValue})
-      : assert(newValue != null);
+  const _$UpdateTimeTimerSystemAction({required this.newValue});
 
   @override
   final int newValue;
@@ -1090,6 +1047,7 @@ class _$UpdateTimeTimerSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(newValue);
 
+  @JsonKey(ignore: true)
   @override
   $UpdateTimeTimerSystemActionCopyWith<UpdateTimeTimerSystemAction>
       get copyWith => _$UpdateTimeTimerSystemActionCopyWithImpl<
@@ -1097,26 +1055,22 @@ class _$UpdateTimeTimerSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result notify(),
-    @required Result updateTime(int newValue),
-    @required Result isRunning(bool newValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function() notify,
+    required TResult Function(int newValue) updateTime,
+    required TResult Function(bool newValue) isRunning,
   }) {
-    assert(notify != null);
-    assert(updateTime != null);
-    assert(isRunning != null);
     return updateTime(newValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result notify(),
-    Result updateTime(int newValue),
-    Result isRunning(bool newValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notify,
+    TResult Function(int newValue)? updateTime,
+    TResult Function(bool newValue)? isRunning,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (updateTime != null) {
       return updateTime(newValue);
     }
@@ -1125,26 +1079,22 @@ class _$UpdateTimeTimerSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result notify(NotifyTimerSystemAction value),
-    @required Result updateTime(UpdateTimeTimerSystemAction value),
-    @required Result isRunning(UpdateIsRunningTimerSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotifyTimerSystemAction value) notify,
+    required TResult Function(UpdateTimeTimerSystemAction value) updateTime,
+    required TResult Function(UpdateIsRunningTimerSystemAction value) isRunning,
   }) {
-    assert(notify != null);
-    assert(updateTime != null);
-    assert(isRunning != null);
     return updateTime(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result notify(NotifyTimerSystemAction value),
-    Result updateTime(UpdateTimeTimerSystemAction value),
-    Result isRunning(UpdateIsRunningTimerSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotifyTimerSystemAction value)? notify,
+    TResult Function(UpdateTimeTimerSystemAction value)? updateTime,
+    TResult Function(UpdateIsRunningTimerSystemAction value)? isRunning,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (updateTime != null) {
       return updateTime(this);
     }
@@ -1153,14 +1103,16 @@ class _$UpdateTimeTimerSystemAction
 }
 
 abstract class UpdateTimeTimerSystemAction implements SystemActionTimer {
-  const factory UpdateTimeTimerSystemAction({@required int newValue}) =
+  const factory UpdateTimeTimerSystemAction({required int newValue}) =
       _$UpdateTimeTimerSystemAction;
 
-  int get newValue;
+  int get newValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $UpdateTimeTimerSystemActionCopyWith<UpdateTimeTimerSystemAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UpdateIsRunningTimerSystemActionCopyWith<$Res> {
   factory $UpdateIsRunningTimerSystemActionCopyWith(
           UpdateIsRunningTimerSystemAction value,
@@ -1169,6 +1121,7 @@ abstract class $UpdateIsRunningTimerSystemActionCopyWith<$Res> {
   $Res call({bool newValue});
 }
 
+/// @nodoc
 class _$UpdateIsRunningTimerSystemActionCopyWithImpl<$Res>
     extends _$SystemActionTimerCopyWithImpl<$Res>
     implements $UpdateIsRunningTimerSystemActionCopyWith<$Res> {
@@ -1183,19 +1136,23 @@ class _$UpdateIsRunningTimerSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object newValue = freezed,
+    Object? newValue = freezed,
   }) {
     return _then(UpdateIsRunningTimerSystemAction(
-      newValue: newValue == freezed ? _value.newValue : newValue as bool,
+      newValue: newValue == freezed
+          ? _value.newValue
+          : newValue // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
+
 class _$UpdateIsRunningTimerSystemAction
     with DiagnosticableTreeMixin
     implements UpdateIsRunningTimerSystemAction {
-  const _$UpdateIsRunningTimerSystemAction({@required this.newValue})
-      : assert(newValue != null);
+  const _$UpdateIsRunningTimerSystemAction({required this.newValue});
 
   @override
   final bool newValue;
@@ -1226,6 +1183,7 @@ class _$UpdateIsRunningTimerSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(newValue);
 
+  @JsonKey(ignore: true)
   @override
   $UpdateIsRunningTimerSystemActionCopyWith<UpdateIsRunningTimerSystemAction>
       get copyWith => _$UpdateIsRunningTimerSystemActionCopyWithImpl<
@@ -1233,26 +1191,22 @@ class _$UpdateIsRunningTimerSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result notify(),
-    @required Result updateTime(int newValue),
-    @required Result isRunning(bool newValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function() notify,
+    required TResult Function(int newValue) updateTime,
+    required TResult Function(bool newValue) isRunning,
   }) {
-    assert(notify != null);
-    assert(updateTime != null);
-    assert(isRunning != null);
     return isRunning(newValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result notify(),
-    Result updateTime(int newValue),
-    Result isRunning(bool newValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notify,
+    TResult Function(int newValue)? updateTime,
+    TResult Function(bool newValue)? isRunning,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (isRunning != null) {
       return isRunning(newValue);
     }
@@ -1261,26 +1215,22 @@ class _$UpdateIsRunningTimerSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result notify(NotifyTimerSystemAction value),
-    @required Result updateTime(UpdateTimeTimerSystemAction value),
-    @required Result isRunning(UpdateIsRunningTimerSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotifyTimerSystemAction value) notify,
+    required TResult Function(UpdateTimeTimerSystemAction value) updateTime,
+    required TResult Function(UpdateIsRunningTimerSystemAction value) isRunning,
   }) {
-    assert(notify != null);
-    assert(updateTime != null);
-    assert(isRunning != null);
     return isRunning(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result notify(NotifyTimerSystemAction value),
-    Result updateTime(UpdateTimeTimerSystemAction value),
-    Result isRunning(UpdateIsRunningTimerSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotifyTimerSystemAction value)? notify,
+    TResult Function(UpdateTimeTimerSystemAction value)? updateTime,
+    TResult Function(UpdateIsRunningTimerSystemAction value)? isRunning,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (isRunning != null) {
       return isRunning(this);
     }
@@ -1289,10 +1239,11 @@ class _$UpdateIsRunningTimerSystemAction
 }
 
 abstract class UpdateIsRunningTimerSystemAction implements SystemActionTimer {
-  const factory UpdateIsRunningTimerSystemAction({@required bool newValue}) =
+  const factory UpdateIsRunningTimerSystemAction({required bool newValue}) =
       _$UpdateIsRunningTimerSystemAction;
 
-  bool get newValue;
+  bool get newValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $UpdateIsRunningTimerSystemActionCopyWith<UpdateIsRunningTimerSystemAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }

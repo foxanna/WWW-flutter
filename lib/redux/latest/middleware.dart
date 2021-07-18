@@ -5,27 +5,28 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
-import 'package:what_when_where/redux/utils.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 @injectable
-class LatestTournamentsMiddleware {
+class LatestTournamentsMiddleware implements IMiddleware {
   LatestTournamentsMiddleware({
-    ILatestTournamentsProvider provider,
+    required ILatestTournamentsProvider provider,
   }) : _provider = provider;
 
   final ILatestTournamentsProvider _provider;
 
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
+  late final _middleware = _createMiddleware();
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, OpenLatestSystemAction>(_open),
-        TypedMiddleware<AppState, RefreshLatestUserAction>(_refresh),
-        TypedMiddleware<AppState, LoadLatestUserAction>(_load),
+        TypedMiddleware<AppState, OpenLatestSystemAction>(_onOpen),
+        TypedMiddleware<AppState, RefreshLatestUserAction>(_onRefresh),
+        TypedMiddleware<AppState, LoadLatestUserAction>(_onLoad),
+        TypedMiddleware<AppState, ScrolledCloseToTheEndLatestUserAction>(
+            _onScrolled),
       ];
 
-  void _open(Store<AppState> store, OpenLatestSystemAction action,
+  void _onOpen(Store<AppState> store, OpenLatestSystemAction action,
       NextDispatcher next) {
     next(action);
 
@@ -34,16 +35,16 @@ class LatestTournamentsMiddleware {
     store.dispatch(const UserActionLatest.load());
   }
 
-  Future<void> _refresh(Store<AppState> store, RefreshLatestUserAction action,
+  Future<void> _onRefresh(Store<AppState> store, RefreshLatestUserAction action,
       NextDispatcher next) async {
     next(action);
 
-    final state = store.state.latestTournamentsState;
+    await store.state.latestTournamentsState
+        .traverseFuture((state) => _refresh(store, state));
+  }
 
-    if (state == null) {
-      return;
-    }
-
+  Future<void> _refresh(
+      Store<AppState> store, LatestTournamentsState state) async {
     if (state is RefreshingLatestTournamentsState) {
       return;
     }
@@ -54,27 +55,28 @@ class LatestTournamentsMiddleware {
 
       final data = await _provider.get(page: page);
 
-      throwIfDataIsNull(data);
-
       store.dispatch(SystemActionLatest.completed(
         data: data,
         nexPage: page + 1,
       ));
     } on Exception catch (e) {
       store.dispatch(SystemActionLatest.failed(exception: e));
+    } on Error catch (e) {
+      store.dispatch(
+          SystemActionLatest.failed(exception: Exception(e.toString())));
     }
   }
 
-  Future<void> _load(Store<AppState> store, LoadLatestUserAction action,
+  Future<void> _onLoad(Store<AppState> store, LoadLatestUserAction action,
       NextDispatcher next) async {
     next(action);
 
-    final state = store.state.latestTournamentsState;
+    await store.state.latestTournamentsState
+        .traverseFuture((state) => _load(store, state));
+  }
 
-    if (state == null) {
-      return;
-    }
-
+  Future<void> _load(
+      Store<AppState> store, LatestTournamentsState state) async {
     if (state is LoadingFirstPageLatestTournamentsState ||
         state is LoadingWithDataLatestTournamentsState ||
         state is RefreshingLatestTournamentsState) {
@@ -82,12 +84,10 @@ class LatestTournamentsMiddleware {
     }
 
     try {
-      final page = state.nextPageOrZero;
+      final page = state.nextPageOption.getOrElse(() => 0);
       store.dispatch(const SystemActionLatest.loading());
 
       final data = await _provider.get(page: page);
-
-      throwIfDataIsNull(data);
 
       store.dispatch(SystemActionLatest.completed(
         data: data,
@@ -95,6 +95,20 @@ class LatestTournamentsMiddleware {
       ));
     } on Exception catch (e) {
       store.dispatch(SystemActionLatest.failed(exception: e));
+    } on Error catch (e) {
+      store.dispatch(
+          SystemActionLatest.failed(exception: Exception(e.toString())));
     }
+  }
+
+  Future<void> _onScrolled(Store<AppState> store,
+      ScrolledCloseToTheEndLatestUserAction action, NextDispatcher next) async {
+    next(action);
+
+    store.state.latestTournamentsState.forEach((state) {
+      if (state is DataLatestTournamentsState) {
+        store.dispatch(const UserActionLatest.load());
+      }
+    });
   }
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'state.dart';
 
@@ -9,14 +9,17 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$TimerStateTearOff {
   const _$TimerStateTearOff();
 
-// ignore: unused_element
   _TimerState call(
-      {@required TimerType timerType,
-      @required int secondsLeft,
-      @required bool isRunning}) {
+      {required TimerType timerType,
+      required int secondsLeft,
+      required bool isRunning}) {
     return _TimerState(
       timerType: timerType,
       secondsLeft: secondsLeft,
@@ -25,17 +28,21 @@ class _$TimerStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $TimerState = _$TimerStateTearOff();
 
+/// @nodoc
 mixin _$TimerState {
-  TimerType get timerType;
-  int get secondsLeft;
-  bool get isRunning;
+  TimerType get timerType => throw _privateConstructorUsedError;
+  int get secondsLeft => throw _privateConstructorUsedError;
+  bool get isRunning => throw _privateConstructorUsedError;
 
-  $TimerStateCopyWith<TimerState> get copyWith;
+  @JsonKey(ignore: true)
+  $TimerStateCopyWith<TimerState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $TimerStateCopyWith<$Res> {
   factory $TimerStateCopyWith(
           TimerState value, $Res Function(TimerState) then) =
@@ -43,6 +50,7 @@ abstract class $TimerStateCopyWith<$Res> {
   $Res call({TimerType timerType, int secondsLeft, bool isRunning});
 }
 
+/// @nodoc
 class _$TimerStateCopyWithImpl<$Res> implements $TimerStateCopyWith<$Res> {
   _$TimerStateCopyWithImpl(this._value, this._then);
 
@@ -52,20 +60,28 @@ class _$TimerStateCopyWithImpl<$Res> implements $TimerStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object timerType = freezed,
-    Object secondsLeft = freezed,
-    Object isRunning = freezed,
+    Object? timerType = freezed,
+    Object? secondsLeft = freezed,
+    Object? isRunning = freezed,
   }) {
     return _then(_value.copyWith(
-      timerType:
-          timerType == freezed ? _value.timerType : timerType as TimerType,
-      secondsLeft:
-          secondsLeft == freezed ? _value.secondsLeft : secondsLeft as int,
-      isRunning: isRunning == freezed ? _value.isRunning : isRunning as bool,
+      timerType: timerType == freezed
+          ? _value.timerType
+          : timerType // ignore: cast_nullable_to_non_nullable
+              as TimerType,
+      secondsLeft: secondsLeft == freezed
+          ? _value.secondsLeft
+          : secondsLeft // ignore: cast_nullable_to_non_nullable
+              as int,
+      isRunning: isRunning == freezed
+          ? _value.isRunning
+          : isRunning // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$TimerStateCopyWith<$Res> implements $TimerStateCopyWith<$Res> {
   factory _$TimerStateCopyWith(
           _TimerState value, $Res Function(_TimerState) then) =
@@ -74,6 +90,7 @@ abstract class _$TimerStateCopyWith<$Res> implements $TimerStateCopyWith<$Res> {
   $Res call({TimerType timerType, int secondsLeft, bool isRunning});
 }
 
+/// @nodoc
 class __$TimerStateCopyWithImpl<$Res> extends _$TimerStateCopyWithImpl<$Res>
     implements _$TimerStateCopyWith<$Res> {
   __$TimerStateCopyWithImpl(
@@ -85,28 +102,34 @@ class __$TimerStateCopyWithImpl<$Res> extends _$TimerStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object timerType = freezed,
-    Object secondsLeft = freezed,
-    Object isRunning = freezed,
+    Object? timerType = freezed,
+    Object? secondsLeft = freezed,
+    Object? isRunning = freezed,
   }) {
     return _then(_TimerState(
-      timerType:
-          timerType == freezed ? _value.timerType : timerType as TimerType,
-      secondsLeft:
-          secondsLeft == freezed ? _value.secondsLeft : secondsLeft as int,
-      isRunning: isRunning == freezed ? _value.isRunning : isRunning as bool,
+      timerType: timerType == freezed
+          ? _value.timerType
+          : timerType // ignore: cast_nullable_to_non_nullable
+              as TimerType,
+      secondsLeft: secondsLeft == freezed
+          ? _value.secondsLeft
+          : secondsLeft // ignore: cast_nullable_to_non_nullable
+              as int,
+      isRunning: isRunning == freezed
+          ? _value.isRunning
+          : isRunning // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_TimerState with DiagnosticableTreeMixin implements _TimerState {
   const _$_TimerState(
-      {@required this.timerType,
-      @required this.secondsLeft,
-      @required this.isRunning})
-      : assert(timerType != null),
-        assert(secondsLeft != null),
-        assert(isRunning != null);
+      {required this.timerType,
+      required this.secondsLeft,
+      required this.isRunning});
 
   @override
   final TimerType timerType;
@@ -152,6 +175,7 @@ class _$_TimerState with DiagnosticableTreeMixin implements _TimerState {
       const DeepCollectionEquality().hash(secondsLeft) ^
       const DeepCollectionEquality().hash(isRunning);
 
+  @JsonKey(ignore: true)
   @override
   _$TimerStateCopyWith<_TimerState> get copyWith =>
       __$TimerStateCopyWithImpl<_TimerState>(this, _$identity);
@@ -159,16 +183,18 @@ class _$_TimerState with DiagnosticableTreeMixin implements _TimerState {
 
 abstract class _TimerState implements TimerState {
   const factory _TimerState(
-      {@required TimerType timerType,
-      @required int secondsLeft,
-      @required bool isRunning}) = _$_TimerState;
+      {required TimerType timerType,
+      required int secondsLeft,
+      required bool isRunning}) = _$_TimerState;
 
   @override
-  TimerType get timerType;
+  TimerType get timerType => throw _privateConstructorUsedError;
   @override
-  int get secondsLeft;
+  int get secondsLeft => throw _privateConstructorUsedError;
   @override
-  bool get isRunning;
+  bool get isRunning => throw _privateConstructorUsedError;
   @override
-  _$TimerStateCopyWith<_TimerState> get copyWith;
+  @JsonKey(ignore: true)
+  _$TimerStateCopyWith<_TimerState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

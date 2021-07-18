@@ -2,39 +2,41 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/models/tour_info.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 part 'actions.freezed.dart';
 
-abstract class ToursAction implements ReduxAction {}
+abstract class ToursAction implements IAction {}
 
 @freezed
-abstract class UserActionTours with _$UserActionTours implements ToursAction {
+class UserActionTours
+    with _$UserActionTours
+    implements ToursAction, IUserAction {
   const factory UserActionTours.load({
-    @required TourInfo info,
+    required TourInfo info,
   }) = LoadToursUserAction;
 }
 
 @freezed
-abstract class SystemActionTours
+class SystemActionTours
     with _$SystemActionTours
-    implements ToursAction {
+    implements ToursAction, ISystemAction {
   const factory SystemActionTours.init({
-    @required List<TourInfo> tours,
+    required List<TourInfo> tours,
   }) = InitToursSystemAction;
 
   const factory SystemActionTours.deInit() = DeInitToursSystemAction;
 
   const factory SystemActionTours.loading({
-    @required TourInfo info,
+    required TourInfo info,
   }) = LoadingToursSystemAction;
 
   const factory SystemActionTours.failed({
-    @required TourInfo info,
-    @required Exception exception,
+    required TourInfo info,
+    required Exception exception,
   }) = FailedToursSystemAction;
 
   const factory SystemActionTours.completed({
-    @required Tour tour,
+    required Tour tour,
   }) = CompletedToursSystemAction;
 }

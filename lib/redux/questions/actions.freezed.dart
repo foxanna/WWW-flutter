@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,109 +9,113 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionQuestionsTearOff {
   const _$UserActionQuestionsTearOff();
 
-// ignore: unused_element
   OpenQuestionsUserAction open(
-      {@required List<Question> questions, @required int index}) {
+      {required List<Question> questions, required int index}) {
     return OpenQuestionsUserAction(
       questions: questions,
       index: index,
     );
   }
 
-// ignore: unused_element
   OpenRandomQuestionsUserAction openRandom() {
     return const OpenRandomQuestionsUserAction();
   }
 
-// ignore: unused_element
   CloseQuestionsUserAction close() {
     return const CloseQuestionsUserAction();
   }
 
-// ignore: unused_element
-  ShowAnswerQuestionsUserAction showAnswer({@required Question question}) {
+  ShowAnswerQuestionsUserAction showAnswer({required Question question}) {
     return ShowAnswerQuestionsUserAction(
       question: question,
     );
   }
 
-// ignore: unused_element
-  HideAnswerQuestionsUserAction hideAnswer({@required Question question}) {
+  HideAnswerQuestionsUserAction hideAnswer({required Question question}) {
     return HideAnswerQuestionsUserAction(
       question: question,
     );
   }
 
-// ignore: unused_element
   LoadRandomQuestionsUserAction loadRandom() {
     return const LoadRandomQuestionsUserAction();
   }
 
-// ignore: unused_element
-  SelectQuestionsUserAction select({@required int questionIndex}) {
+  SelectQuestionsUserAction select({required int questionIndex}) {
     return SelectQuestionsUserAction(
       questionIndex: questionIndex,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionQuestions = _$UserActionQuestionsTearOff();
 
+/// @nodoc
 mixin _$UserActionQuestions {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(List<Question> questions, int index),
-    @required Result openRandom(),
-    @required Result close(),
-    @required Result showAnswer(Question question),
-    @required Result hideAnswer(Question question),
-    @required Result loadRandom(),
-    @required Result select(int questionIndex),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) open,
+    required TResult Function() openRandom,
+    required TResult Function() close,
+    required TResult Function(Question question) showAnswer,
+    required TResult Function(Question question) hideAnswer,
+    required TResult Function() loadRandom,
+    required TResult Function(int questionIndex) select,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(List<Question> questions, int index),
-    Result openRandom(),
-    Result close(),
-    Result showAnswer(Question question),
-    Result hideAnswer(Question question),
-    Result loadRandom(),
-    Result select(int questionIndex),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenQuestionsUserAction value),
-    @required Result openRandom(OpenRandomQuestionsUserAction value),
-    @required Result close(CloseQuestionsUserAction value),
-    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
-    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
-    @required Result loadRandom(LoadRandomQuestionsUserAction value),
-    @required Result select(SelectQuestionsUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenQuestionsUserAction value) open,
+    required TResult Function(OpenRandomQuestionsUserAction value) openRandom,
+    required TResult Function(CloseQuestionsUserAction value) close,
+    required TResult Function(ShowAnswerQuestionsUserAction value) showAnswer,
+    required TResult Function(HideAnswerQuestionsUserAction value) hideAnswer,
+    required TResult Function(LoadRandomQuestionsUserAction value) loadRandom,
+    required TResult Function(SelectQuestionsUserAction value) select,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenQuestionsUserAction value),
-    Result openRandom(OpenRandomQuestionsUserAction value),
-    Result close(CloseQuestionsUserAction value),
-    Result showAnswer(ShowAnswerQuestionsUserAction value),
-    Result hideAnswer(HideAnswerQuestionsUserAction value),
-    Result loadRandom(LoadRandomQuestionsUserAction value),
-    Result select(SelectQuestionsUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionQuestionsCopyWith<$Res> {
   factory $UserActionQuestionsCopyWith(
           UserActionQuestions value, $Res Function(UserActionQuestions) then) =
       _$UserActionQuestionsCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionQuestionsCopyWithImpl<$Res>
     implements $UserActionQuestionsCopyWith<$Res> {
   _$UserActionQuestionsCopyWithImpl(this._value, this._then);
@@ -121,6 +125,7 @@ class _$UserActionQuestionsCopyWithImpl<$Res>
   final $Res Function(UserActionQuestions) _then;
 }
 
+/// @nodoc
 abstract class $OpenQuestionsUserActionCopyWith<$Res> {
   factory $OpenQuestionsUserActionCopyWith(OpenQuestionsUserAction value,
           $Res Function(OpenQuestionsUserAction) then) =
@@ -128,6 +133,7 @@ abstract class $OpenQuestionsUserActionCopyWith<$Res> {
   $Res call({List<Question> questions, int index});
 }
 
+/// @nodoc
 class _$OpenQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
     implements $OpenQuestionsUserActionCopyWith<$Res> {
@@ -140,24 +146,29 @@ class _$OpenQuestionsUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object questions = freezed,
-    Object index = freezed,
+    Object? questions = freezed,
+    Object? index = freezed,
   }) {
     return _then(OpenQuestionsUserAction(
-      questions:
-          questions == freezed ? _value.questions : questions as List<Question>,
-      index: index == freezed ? _value.index : index as int,
+      questions: questions == freezed
+          ? _value.questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Question>,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
+
+/// @nodoc
 
 class _$OpenQuestionsUserAction
     with DiagnosticableTreeMixin
     implements OpenQuestionsUserAction {
   const _$OpenQuestionsUserAction(
-      {@required this.questions, @required this.index})
-      : assert(questions != null),
-        assert(index != null);
+      {required this.questions, required this.index});
 
   @override
   final List<Question> questions;
@@ -195,6 +206,7 @@ class _$OpenQuestionsUserAction
       const DeepCollectionEquality().hash(questions) ^
       const DeepCollectionEquality().hash(index);
 
+  @JsonKey(ignore: true)
   @override
   $OpenQuestionsUserActionCopyWith<OpenQuestionsUserAction> get copyWith =>
       _$OpenQuestionsUserActionCopyWithImpl<OpenQuestionsUserAction>(
@@ -202,38 +214,30 @@ class _$OpenQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(List<Question> questions, int index),
-    @required Result openRandom(),
-    @required Result close(),
-    @required Result showAnswer(Question question),
-    @required Result hideAnswer(Question question),
-    @required Result loadRandom(),
-    @required Result select(int questionIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) open,
+    required TResult Function() openRandom,
+    required TResult Function() close,
+    required TResult Function(Question question) showAnswer,
+    required TResult Function(Question question) hideAnswer,
+    required TResult Function() loadRandom,
+    required TResult Function(int questionIndex) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return open(questions, index);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(List<Question> questions, int index),
-    Result openRandom(),
-    Result close(),
-    Result showAnswer(Question question),
-    Result hideAnswer(Question question),
-    Result loadRandom(),
-    Result select(int questionIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (open != null) {
       return open(questions, index);
     }
@@ -242,38 +246,30 @@ class _$OpenQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenQuestionsUserAction value),
-    @required Result openRandom(OpenRandomQuestionsUserAction value),
-    @required Result close(CloseQuestionsUserAction value),
-    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
-    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
-    @required Result loadRandom(LoadRandomQuestionsUserAction value),
-    @required Result select(SelectQuestionsUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenQuestionsUserAction value) open,
+    required TResult Function(OpenRandomQuestionsUserAction value) openRandom,
+    required TResult Function(CloseQuestionsUserAction value) close,
+    required TResult Function(ShowAnswerQuestionsUserAction value) showAnswer,
+    required TResult Function(HideAnswerQuestionsUserAction value) hideAnswer,
+    required TResult Function(LoadRandomQuestionsUserAction value) loadRandom,
+    required TResult Function(SelectQuestionsUserAction value) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return open(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenQuestionsUserAction value),
-    Result openRandom(OpenRandomQuestionsUserAction value),
-    Result close(CloseQuestionsUserAction value),
-    Result showAnswer(ShowAnswerQuestionsUserAction value),
-    Result hideAnswer(HideAnswerQuestionsUserAction value),
-    Result loadRandom(LoadRandomQuestionsUserAction value),
-    Result select(SelectQuestionsUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (open != null) {
       return open(this);
     }
@@ -283,14 +279,17 @@ class _$OpenQuestionsUserAction
 
 abstract class OpenQuestionsUserAction implements UserActionQuestions {
   const factory OpenQuestionsUserAction(
-      {@required List<Question> questions,
-      @required int index}) = _$OpenQuestionsUserAction;
+      {required List<Question> questions,
+      required int index}) = _$OpenQuestionsUserAction;
 
-  List<Question> get questions;
-  int get index;
-  $OpenQuestionsUserActionCopyWith<OpenQuestionsUserAction> get copyWith;
+  List<Question> get questions => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OpenQuestionsUserActionCopyWith<OpenQuestionsUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $OpenRandomQuestionsUserActionCopyWith<$Res> {
   factory $OpenRandomQuestionsUserActionCopyWith(
           OpenRandomQuestionsUserAction value,
@@ -298,6 +297,7 @@ abstract class $OpenRandomQuestionsUserActionCopyWith<$Res> {
       _$OpenRandomQuestionsUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$OpenRandomQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
     implements $OpenRandomQuestionsUserActionCopyWith<$Res> {
@@ -310,6 +310,8 @@ class _$OpenRandomQuestionsUserActionCopyWithImpl<$Res>
   OpenRandomQuestionsUserAction get _value =>
       super._value as OpenRandomQuestionsUserAction;
 }
+
+/// @nodoc
 
 class _$OpenRandomQuestionsUserAction
     with DiagnosticableTreeMixin
@@ -338,38 +340,30 @@ class _$OpenRandomQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(List<Question> questions, int index),
-    @required Result openRandom(),
-    @required Result close(),
-    @required Result showAnswer(Question question),
-    @required Result hideAnswer(Question question),
-    @required Result loadRandom(),
-    @required Result select(int questionIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) open,
+    required TResult Function() openRandom,
+    required TResult Function() close,
+    required TResult Function(Question question) showAnswer,
+    required TResult Function(Question question) hideAnswer,
+    required TResult Function() loadRandom,
+    required TResult Function(int questionIndex) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return openRandom();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(List<Question> questions, int index),
-    Result openRandom(),
-    Result close(),
-    Result showAnswer(Question question),
-    Result hideAnswer(Question question),
-    Result loadRandom(),
-    Result select(int questionIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (openRandom != null) {
       return openRandom();
     }
@@ -378,38 +372,30 @@ class _$OpenRandomQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenQuestionsUserAction value),
-    @required Result openRandom(OpenRandomQuestionsUserAction value),
-    @required Result close(CloseQuestionsUserAction value),
-    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
-    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
-    @required Result loadRandom(LoadRandomQuestionsUserAction value),
-    @required Result select(SelectQuestionsUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenQuestionsUserAction value) open,
+    required TResult Function(OpenRandomQuestionsUserAction value) openRandom,
+    required TResult Function(CloseQuestionsUserAction value) close,
+    required TResult Function(ShowAnswerQuestionsUserAction value) showAnswer,
+    required TResult Function(HideAnswerQuestionsUserAction value) hideAnswer,
+    required TResult Function(LoadRandomQuestionsUserAction value) loadRandom,
+    required TResult Function(SelectQuestionsUserAction value) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return openRandom(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenQuestionsUserAction value),
-    Result openRandom(OpenRandomQuestionsUserAction value),
-    Result close(CloseQuestionsUserAction value),
-    Result showAnswer(ShowAnswerQuestionsUserAction value),
-    Result hideAnswer(HideAnswerQuestionsUserAction value),
-    Result loadRandom(LoadRandomQuestionsUserAction value),
-    Result select(SelectQuestionsUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (openRandom != null) {
       return openRandom(this);
     }
@@ -422,12 +408,14 @@ abstract class OpenRandomQuestionsUserAction implements UserActionQuestions {
       _$OpenRandomQuestionsUserAction;
 }
 
+/// @nodoc
 abstract class $CloseQuestionsUserActionCopyWith<$Res> {
   factory $CloseQuestionsUserActionCopyWith(CloseQuestionsUserAction value,
           $Res Function(CloseQuestionsUserAction) then) =
       _$CloseQuestionsUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CloseQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
     implements $CloseQuestionsUserActionCopyWith<$Res> {
@@ -439,6 +427,8 @@ class _$CloseQuestionsUserActionCopyWithImpl<$Res>
   CloseQuestionsUserAction get _value =>
       super._value as CloseQuestionsUserAction;
 }
+
+/// @nodoc
 
 class _$CloseQuestionsUserAction
     with DiagnosticableTreeMixin
@@ -466,38 +456,30 @@ class _$CloseQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(List<Question> questions, int index),
-    @required Result openRandom(),
-    @required Result close(),
-    @required Result showAnswer(Question question),
-    @required Result hideAnswer(Question question),
-    @required Result loadRandom(),
-    @required Result select(int questionIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) open,
+    required TResult Function() openRandom,
+    required TResult Function() close,
+    required TResult Function(Question question) showAnswer,
+    required TResult Function(Question question) hideAnswer,
+    required TResult Function() loadRandom,
+    required TResult Function(int questionIndex) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return close();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(List<Question> questions, int index),
-    Result openRandom(),
-    Result close(),
-    Result showAnswer(Question question),
-    Result hideAnswer(Question question),
-    Result loadRandom(),
-    Result select(int questionIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (close != null) {
       return close();
     }
@@ -506,38 +488,30 @@ class _$CloseQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenQuestionsUserAction value),
-    @required Result openRandom(OpenRandomQuestionsUserAction value),
-    @required Result close(CloseQuestionsUserAction value),
-    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
-    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
-    @required Result loadRandom(LoadRandomQuestionsUserAction value),
-    @required Result select(SelectQuestionsUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenQuestionsUserAction value) open,
+    required TResult Function(OpenRandomQuestionsUserAction value) openRandom,
+    required TResult Function(CloseQuestionsUserAction value) close,
+    required TResult Function(ShowAnswerQuestionsUserAction value) showAnswer,
+    required TResult Function(HideAnswerQuestionsUserAction value) hideAnswer,
+    required TResult Function(LoadRandomQuestionsUserAction value) loadRandom,
+    required TResult Function(SelectQuestionsUserAction value) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return close(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenQuestionsUserAction value),
-    Result openRandom(OpenRandomQuestionsUserAction value),
-    Result close(CloseQuestionsUserAction value),
-    Result showAnswer(ShowAnswerQuestionsUserAction value),
-    Result hideAnswer(HideAnswerQuestionsUserAction value),
-    Result loadRandom(LoadRandomQuestionsUserAction value),
-    Result select(SelectQuestionsUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (close != null) {
       return close(this);
     }
@@ -549,6 +523,7 @@ abstract class CloseQuestionsUserAction implements UserActionQuestions {
   const factory CloseQuestionsUserAction() = _$CloseQuestionsUserAction;
 }
 
+/// @nodoc
 abstract class $ShowAnswerQuestionsUserActionCopyWith<$Res> {
   factory $ShowAnswerQuestionsUserActionCopyWith(
           ShowAnswerQuestionsUserAction value,
@@ -559,6 +534,7 @@ abstract class $ShowAnswerQuestionsUserActionCopyWith<$Res> {
   $QuestionCopyWith<$Res> get question;
 }
 
+/// @nodoc
 class _$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
     implements $ShowAnswerQuestionsUserActionCopyWith<$Res> {
@@ -573,29 +549,30 @@ class _$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object question = freezed,
+    Object? question = freezed,
   }) {
     return _then(ShowAnswerQuestionsUserAction(
-      question: question == freezed ? _value.question : question as Question,
+      question: question == freezed
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as Question,
     ));
   }
 
   @override
   $QuestionCopyWith<$Res> get question {
-    if (_value.question == null) {
-      return null;
-    }
     return $QuestionCopyWith<$Res>(_value.question, (value) {
       return _then(_value.copyWith(question: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$ShowAnswerQuestionsUserAction
     with DiagnosticableTreeMixin
     implements ShowAnswerQuestionsUserAction {
-  const _$ShowAnswerQuestionsUserAction({@required this.question})
-      : assert(question != null);
+  const _$ShowAnswerQuestionsUserAction({required this.question});
 
   @override
   final Question question;
@@ -626,6 +603,7 @@ class _$ShowAnswerQuestionsUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(question);
 
+  @JsonKey(ignore: true)
   @override
   $ShowAnswerQuestionsUserActionCopyWith<ShowAnswerQuestionsUserAction>
       get copyWith => _$ShowAnswerQuestionsUserActionCopyWithImpl<
@@ -633,38 +611,30 @@ class _$ShowAnswerQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(List<Question> questions, int index),
-    @required Result openRandom(),
-    @required Result close(),
-    @required Result showAnswer(Question question),
-    @required Result hideAnswer(Question question),
-    @required Result loadRandom(),
-    @required Result select(int questionIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) open,
+    required TResult Function() openRandom,
+    required TResult Function() close,
+    required TResult Function(Question question) showAnswer,
+    required TResult Function(Question question) hideAnswer,
+    required TResult Function() loadRandom,
+    required TResult Function(int questionIndex) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return showAnswer(question);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(List<Question> questions, int index),
-    Result openRandom(),
-    Result close(),
-    Result showAnswer(Question question),
-    Result hideAnswer(Question question),
-    Result loadRandom(),
-    Result select(int questionIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (showAnswer != null) {
       return showAnswer(question);
     }
@@ -673,38 +643,30 @@ class _$ShowAnswerQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenQuestionsUserAction value),
-    @required Result openRandom(OpenRandomQuestionsUserAction value),
-    @required Result close(CloseQuestionsUserAction value),
-    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
-    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
-    @required Result loadRandom(LoadRandomQuestionsUserAction value),
-    @required Result select(SelectQuestionsUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenQuestionsUserAction value) open,
+    required TResult Function(OpenRandomQuestionsUserAction value) openRandom,
+    required TResult Function(CloseQuestionsUserAction value) close,
+    required TResult Function(ShowAnswerQuestionsUserAction value) showAnswer,
+    required TResult Function(HideAnswerQuestionsUserAction value) hideAnswer,
+    required TResult Function(LoadRandomQuestionsUserAction value) loadRandom,
+    required TResult Function(SelectQuestionsUserAction value) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return showAnswer(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenQuestionsUserAction value),
-    Result openRandom(OpenRandomQuestionsUserAction value),
-    Result close(CloseQuestionsUserAction value),
-    Result showAnswer(ShowAnswerQuestionsUserAction value),
-    Result hideAnswer(HideAnswerQuestionsUserAction value),
-    Result loadRandom(LoadRandomQuestionsUserAction value),
-    Result select(SelectQuestionsUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (showAnswer != null) {
       return showAnswer(this);
     }
@@ -713,14 +675,16 @@ class _$ShowAnswerQuestionsUserAction
 }
 
 abstract class ShowAnswerQuestionsUserAction implements UserActionQuestions {
-  const factory ShowAnswerQuestionsUserAction({@required Question question}) =
+  const factory ShowAnswerQuestionsUserAction({required Question question}) =
       _$ShowAnswerQuestionsUserAction;
 
-  Question get question;
+  Question get question => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $ShowAnswerQuestionsUserActionCopyWith<ShowAnswerQuestionsUserAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $HideAnswerQuestionsUserActionCopyWith<$Res> {
   factory $HideAnswerQuestionsUserActionCopyWith(
           HideAnswerQuestionsUserAction value,
@@ -731,6 +695,7 @@ abstract class $HideAnswerQuestionsUserActionCopyWith<$Res> {
   $QuestionCopyWith<$Res> get question;
 }
 
+/// @nodoc
 class _$HideAnswerQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
     implements $HideAnswerQuestionsUserActionCopyWith<$Res> {
@@ -745,29 +710,30 @@ class _$HideAnswerQuestionsUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object question = freezed,
+    Object? question = freezed,
   }) {
     return _then(HideAnswerQuestionsUserAction(
-      question: question == freezed ? _value.question : question as Question,
+      question: question == freezed
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as Question,
     ));
   }
 
   @override
   $QuestionCopyWith<$Res> get question {
-    if (_value.question == null) {
-      return null;
-    }
     return $QuestionCopyWith<$Res>(_value.question, (value) {
       return _then(_value.copyWith(question: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$HideAnswerQuestionsUserAction
     with DiagnosticableTreeMixin
     implements HideAnswerQuestionsUserAction {
-  const _$HideAnswerQuestionsUserAction({@required this.question})
-      : assert(question != null);
+  const _$HideAnswerQuestionsUserAction({required this.question});
 
   @override
   final Question question;
@@ -798,6 +764,7 @@ class _$HideAnswerQuestionsUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(question);
 
+  @JsonKey(ignore: true)
   @override
   $HideAnswerQuestionsUserActionCopyWith<HideAnswerQuestionsUserAction>
       get copyWith => _$HideAnswerQuestionsUserActionCopyWithImpl<
@@ -805,38 +772,30 @@ class _$HideAnswerQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(List<Question> questions, int index),
-    @required Result openRandom(),
-    @required Result close(),
-    @required Result showAnswer(Question question),
-    @required Result hideAnswer(Question question),
-    @required Result loadRandom(),
-    @required Result select(int questionIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) open,
+    required TResult Function() openRandom,
+    required TResult Function() close,
+    required TResult Function(Question question) showAnswer,
+    required TResult Function(Question question) hideAnswer,
+    required TResult Function() loadRandom,
+    required TResult Function(int questionIndex) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return hideAnswer(question);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(List<Question> questions, int index),
-    Result openRandom(),
-    Result close(),
-    Result showAnswer(Question question),
-    Result hideAnswer(Question question),
-    Result loadRandom(),
-    Result select(int questionIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (hideAnswer != null) {
       return hideAnswer(question);
     }
@@ -845,38 +804,30 @@ class _$HideAnswerQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenQuestionsUserAction value),
-    @required Result openRandom(OpenRandomQuestionsUserAction value),
-    @required Result close(CloseQuestionsUserAction value),
-    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
-    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
-    @required Result loadRandom(LoadRandomQuestionsUserAction value),
-    @required Result select(SelectQuestionsUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenQuestionsUserAction value) open,
+    required TResult Function(OpenRandomQuestionsUserAction value) openRandom,
+    required TResult Function(CloseQuestionsUserAction value) close,
+    required TResult Function(ShowAnswerQuestionsUserAction value) showAnswer,
+    required TResult Function(HideAnswerQuestionsUserAction value) hideAnswer,
+    required TResult Function(LoadRandomQuestionsUserAction value) loadRandom,
+    required TResult Function(SelectQuestionsUserAction value) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return hideAnswer(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenQuestionsUserAction value),
-    Result openRandom(OpenRandomQuestionsUserAction value),
-    Result close(CloseQuestionsUserAction value),
-    Result showAnswer(ShowAnswerQuestionsUserAction value),
-    Result hideAnswer(HideAnswerQuestionsUserAction value),
-    Result loadRandom(LoadRandomQuestionsUserAction value),
-    Result select(SelectQuestionsUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (hideAnswer != null) {
       return hideAnswer(this);
     }
@@ -885,14 +836,16 @@ class _$HideAnswerQuestionsUserAction
 }
 
 abstract class HideAnswerQuestionsUserAction implements UserActionQuestions {
-  const factory HideAnswerQuestionsUserAction({@required Question question}) =
+  const factory HideAnswerQuestionsUserAction({required Question question}) =
       _$HideAnswerQuestionsUserAction;
 
-  Question get question;
+  Question get question => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $HideAnswerQuestionsUserActionCopyWith<HideAnswerQuestionsUserAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $LoadRandomQuestionsUserActionCopyWith<$Res> {
   factory $LoadRandomQuestionsUserActionCopyWith(
           LoadRandomQuestionsUserAction value,
@@ -900,6 +853,7 @@ abstract class $LoadRandomQuestionsUserActionCopyWith<$Res> {
       _$LoadRandomQuestionsUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadRandomQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
     implements $LoadRandomQuestionsUserActionCopyWith<$Res> {
@@ -912,6 +866,8 @@ class _$LoadRandomQuestionsUserActionCopyWithImpl<$Res>
   LoadRandomQuestionsUserAction get _value =>
       super._value as LoadRandomQuestionsUserAction;
 }
+
+/// @nodoc
 
 class _$LoadRandomQuestionsUserAction
     with DiagnosticableTreeMixin
@@ -940,38 +896,30 @@ class _$LoadRandomQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(List<Question> questions, int index),
-    @required Result openRandom(),
-    @required Result close(),
-    @required Result showAnswer(Question question),
-    @required Result hideAnswer(Question question),
-    @required Result loadRandom(),
-    @required Result select(int questionIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) open,
+    required TResult Function() openRandom,
+    required TResult Function() close,
+    required TResult Function(Question question) showAnswer,
+    required TResult Function(Question question) hideAnswer,
+    required TResult Function() loadRandom,
+    required TResult Function(int questionIndex) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return loadRandom();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(List<Question> questions, int index),
-    Result openRandom(),
-    Result close(),
-    Result showAnswer(Question question),
-    Result hideAnswer(Question question),
-    Result loadRandom(),
-    Result select(int questionIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadRandom != null) {
       return loadRandom();
     }
@@ -980,38 +928,30 @@ class _$LoadRandomQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenQuestionsUserAction value),
-    @required Result openRandom(OpenRandomQuestionsUserAction value),
-    @required Result close(CloseQuestionsUserAction value),
-    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
-    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
-    @required Result loadRandom(LoadRandomQuestionsUserAction value),
-    @required Result select(SelectQuestionsUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenQuestionsUserAction value) open,
+    required TResult Function(OpenRandomQuestionsUserAction value) openRandom,
+    required TResult Function(CloseQuestionsUserAction value) close,
+    required TResult Function(ShowAnswerQuestionsUserAction value) showAnswer,
+    required TResult Function(HideAnswerQuestionsUserAction value) hideAnswer,
+    required TResult Function(LoadRandomQuestionsUserAction value) loadRandom,
+    required TResult Function(SelectQuestionsUserAction value) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return loadRandom(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenQuestionsUserAction value),
-    Result openRandom(OpenRandomQuestionsUserAction value),
-    Result close(CloseQuestionsUserAction value),
-    Result showAnswer(ShowAnswerQuestionsUserAction value),
-    Result hideAnswer(HideAnswerQuestionsUserAction value),
-    Result loadRandom(LoadRandomQuestionsUserAction value),
-    Result select(SelectQuestionsUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadRandom != null) {
       return loadRandom(this);
     }
@@ -1024,6 +964,7 @@ abstract class LoadRandomQuestionsUserAction implements UserActionQuestions {
       _$LoadRandomQuestionsUserAction;
 }
 
+/// @nodoc
 abstract class $SelectQuestionsUserActionCopyWith<$Res> {
   factory $SelectQuestionsUserActionCopyWith(SelectQuestionsUserAction value,
           $Res Function(SelectQuestionsUserAction) then) =
@@ -1031,6 +972,7 @@ abstract class $SelectQuestionsUserActionCopyWith<$Res> {
   $Res call({int questionIndex});
 }
 
+/// @nodoc
 class _$SelectQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
     implements $SelectQuestionsUserActionCopyWith<$Res> {
@@ -1044,21 +986,23 @@ class _$SelectQuestionsUserActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object questionIndex = freezed,
+    Object? questionIndex = freezed,
   }) {
     return _then(SelectQuestionsUserAction(
       questionIndex: questionIndex == freezed
           ? _value.questionIndex
-          : questionIndex as int,
+          : questionIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$SelectQuestionsUserAction
     with DiagnosticableTreeMixin
     implements SelectQuestionsUserAction {
-  const _$SelectQuestionsUserAction({@required this.questionIndex})
-      : assert(questionIndex != null);
+  const _$SelectQuestionsUserAction({required this.questionIndex});
 
   @override
   final int questionIndex;
@@ -1089,6 +1033,7 @@ class _$SelectQuestionsUserAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(questionIndex);
 
+  @JsonKey(ignore: true)
   @override
   $SelectQuestionsUserActionCopyWith<SelectQuestionsUserAction> get copyWith =>
       _$SelectQuestionsUserActionCopyWithImpl<SelectQuestionsUserAction>(
@@ -1096,38 +1041,30 @@ class _$SelectQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(List<Question> questions, int index),
-    @required Result openRandom(),
-    @required Result close(),
-    @required Result showAnswer(Question question),
-    @required Result hideAnswer(Question question),
-    @required Result loadRandom(),
-    @required Result select(int questionIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) open,
+    required TResult Function() openRandom,
+    required TResult Function() close,
+    required TResult Function(Question question) showAnswer,
+    required TResult Function(Question question) hideAnswer,
+    required TResult Function() loadRandom,
+    required TResult Function(int questionIndex) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return select(questionIndex);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(List<Question> questions, int index),
-    Result openRandom(),
-    Result close(),
-    Result showAnswer(Question question),
-    Result hideAnswer(Question question),
-    Result loadRandom(),
-    Result select(int questionIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (select != null) {
       return select(questionIndex);
     }
@@ -1136,38 +1073,30 @@ class _$SelectQuestionsUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenQuestionsUserAction value),
-    @required Result openRandom(OpenRandomQuestionsUserAction value),
-    @required Result close(CloseQuestionsUserAction value),
-    @required Result showAnswer(ShowAnswerQuestionsUserAction value),
-    @required Result hideAnswer(HideAnswerQuestionsUserAction value),
-    @required Result loadRandom(LoadRandomQuestionsUserAction value),
-    @required Result select(SelectQuestionsUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenQuestionsUserAction value) open,
+    required TResult Function(OpenRandomQuestionsUserAction value) openRandom,
+    required TResult Function(CloseQuestionsUserAction value) close,
+    required TResult Function(ShowAnswerQuestionsUserAction value) showAnswer,
+    required TResult Function(HideAnswerQuestionsUserAction value) hideAnswer,
+    required TResult Function(LoadRandomQuestionsUserAction value) loadRandom,
+    required TResult Function(SelectQuestionsUserAction value) select,
   }) {
-    assert(open != null);
-    assert(openRandom != null);
-    assert(close != null);
-    assert(showAnswer != null);
-    assert(hideAnswer != null);
-    assert(loadRandom != null);
-    assert(select != null);
     return select(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenQuestionsUserAction value),
-    Result openRandom(OpenRandomQuestionsUserAction value),
-    Result close(CloseQuestionsUserAction value),
-    Result showAnswer(ShowAnswerQuestionsUserAction value),
-    Result hideAnswer(HideAnswerQuestionsUserAction value),
-    Result loadRandom(LoadRandomQuestionsUserAction value),
-    Result select(SelectQuestionsUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (select != null) {
       return select(this);
     }
@@ -1176,106 +1105,110 @@ class _$SelectQuestionsUserAction
 }
 
 abstract class SelectQuestionsUserAction implements UserActionQuestions {
-  const factory SelectQuestionsUserAction({@required int questionIndex}) =
+  const factory SelectQuestionsUserAction({required int questionIndex}) =
       _$SelectQuestionsUserAction;
 
-  int get questionIndex;
-  $SelectQuestionsUserActionCopyWith<SelectQuestionsUserAction> get copyWith;
+  int get questionIndex => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SelectQuestionsUserActionCopyWith<SelectQuestionsUserAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$SystemActionQuestionsTearOff {
   const _$SystemActionQuestionsTearOff();
 
-// ignore: unused_element
   InitQuestionsSystemAction init(
-      {@required List<Question> questions, @required int index}) {
+      {required List<Question> questions, required int index}) {
     return InitQuestionsSystemAction(
       questions: questions,
       index: index,
     );
   }
 
-// ignore: unused_element
   InitRandomQuestionsSystemAction initRandom() {
     return const InitRandomQuestionsSystemAction();
   }
 
-// ignore: unused_element
   DeInitQuestionsSystemAction deInit() {
     return const DeInitQuestionsSystemAction();
   }
 
-// ignore: unused_element
   LoadingQuestionsSystemAction loading() {
     return const LoadingQuestionsSystemAction();
   }
 
-// ignore: unused_element
-  FailedQuestionsSystemAction failed({@required Exception exception}) {
+  FailedQuestionsSystemAction failed({required Exception exception}) {
     return FailedQuestionsSystemAction(
       exception: exception,
     );
   }
 
-// ignore: unused_element
   CompletedQuestionsSystemAction completed(
-      {@required Iterable<Question> questions}) {
+      {required Iterable<Question> questions}) {
     return CompletedQuestionsSystemAction(
       questions: questions,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SystemActionQuestions = _$SystemActionQuestionsTearOff();
 
+/// @nodoc
 mixin _$SystemActionQuestions {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<Question> questions, int index),
-    @required Result initRandom(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(Iterable<Question> questions),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) init,
+    required TResult Function() initRandom,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(Iterable<Question> questions) completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<Question> questions, int index),
-    Result initRandom(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(Iterable<Question> questions),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitQuestionsSystemAction value),
-    @required Result initRandom(InitRandomQuestionsSystemAction value),
-    @required Result deInit(DeInitQuestionsSystemAction value),
-    @required Result loading(LoadingQuestionsSystemAction value),
-    @required Result failed(FailedQuestionsSystemAction value),
-    @required Result completed(CompletedQuestionsSystemAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitQuestionsSystemAction value) init,
+    required TResult Function(InitRandomQuestionsSystemAction value) initRandom,
+    required TResult Function(DeInitQuestionsSystemAction value) deInit,
+    required TResult Function(LoadingQuestionsSystemAction value) loading,
+    required TResult Function(FailedQuestionsSystemAction value) failed,
+    required TResult Function(CompletedQuestionsSystemAction value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitQuestionsSystemAction value),
-    Result initRandom(InitRandomQuestionsSystemAction value),
-    Result deInit(DeInitQuestionsSystemAction value),
-    Result loading(LoadingQuestionsSystemAction value),
-    Result failed(FailedQuestionsSystemAction value),
-    Result completed(CompletedQuestionsSystemAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SystemActionQuestionsCopyWith<$Res> {
   factory $SystemActionQuestionsCopyWith(SystemActionQuestions value,
           $Res Function(SystemActionQuestions) then) =
       _$SystemActionQuestionsCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SystemActionQuestionsCopyWithImpl<$Res>
     implements $SystemActionQuestionsCopyWith<$Res> {
   _$SystemActionQuestionsCopyWithImpl(this._value, this._then);
@@ -1285,6 +1218,7 @@ class _$SystemActionQuestionsCopyWithImpl<$Res>
   final $Res Function(SystemActionQuestions) _then;
 }
 
+/// @nodoc
 abstract class $InitQuestionsSystemActionCopyWith<$Res> {
   factory $InitQuestionsSystemActionCopyWith(InitQuestionsSystemAction value,
           $Res Function(InitQuestionsSystemAction) then) =
@@ -1292,6 +1226,7 @@ abstract class $InitQuestionsSystemActionCopyWith<$Res> {
   $Res call({List<Question> questions, int index});
 }
 
+/// @nodoc
 class _$InitQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
     implements $InitQuestionsSystemActionCopyWith<$Res> {
@@ -1305,24 +1240,29 @@ class _$InitQuestionsSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object questions = freezed,
-    Object index = freezed,
+    Object? questions = freezed,
+    Object? index = freezed,
   }) {
     return _then(InitQuestionsSystemAction(
-      questions:
-          questions == freezed ? _value.questions : questions as List<Question>,
-      index: index == freezed ? _value.index : index as int,
+      questions: questions == freezed
+          ? _value.questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Question>,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
+
+/// @nodoc
 
 class _$InitQuestionsSystemAction
     with DiagnosticableTreeMixin
     implements InitQuestionsSystemAction {
   const _$InitQuestionsSystemAction(
-      {@required this.questions, @required this.index})
-      : assert(questions != null),
-        assert(index != null);
+      {required this.questions, required this.index});
 
   @override
   final List<Question> questions;
@@ -1360,6 +1300,7 @@ class _$InitQuestionsSystemAction
       const DeepCollectionEquality().hash(questions) ^
       const DeepCollectionEquality().hash(index);
 
+  @JsonKey(ignore: true)
   @override
   $InitQuestionsSystemActionCopyWith<InitQuestionsSystemAction> get copyWith =>
       _$InitQuestionsSystemActionCopyWithImpl<InitQuestionsSystemAction>(
@@ -1367,35 +1308,28 @@ class _$InitQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<Question> questions, int index),
-    @required Result initRandom(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(Iterable<Question> questions),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) init,
+    required TResult Function() initRandom,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(Iterable<Question> questions) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return init(questions, index);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<Question> questions, int index),
-    Result initRandom(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(Iterable<Question> questions),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(questions, index);
     }
@@ -1404,35 +1338,28 @@ class _$InitQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitQuestionsSystemAction value),
-    @required Result initRandom(InitRandomQuestionsSystemAction value),
-    @required Result deInit(DeInitQuestionsSystemAction value),
-    @required Result loading(LoadingQuestionsSystemAction value),
-    @required Result failed(FailedQuestionsSystemAction value),
-    @required Result completed(CompletedQuestionsSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitQuestionsSystemAction value) init,
+    required TResult Function(InitRandomQuestionsSystemAction value) initRandom,
+    required TResult Function(DeInitQuestionsSystemAction value) deInit,
+    required TResult Function(LoadingQuestionsSystemAction value) loading,
+    required TResult Function(FailedQuestionsSystemAction value) failed,
+    required TResult Function(CompletedQuestionsSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return init(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitQuestionsSystemAction value),
-    Result initRandom(InitRandomQuestionsSystemAction value),
-    Result deInit(DeInitQuestionsSystemAction value),
-    Result loading(LoadingQuestionsSystemAction value),
-    Result failed(FailedQuestionsSystemAction value),
-    Result completed(CompletedQuestionsSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(this);
     }
@@ -1442,14 +1369,17 @@ class _$InitQuestionsSystemAction
 
 abstract class InitQuestionsSystemAction implements SystemActionQuestions {
   const factory InitQuestionsSystemAction(
-      {@required List<Question> questions,
-      @required int index}) = _$InitQuestionsSystemAction;
+      {required List<Question> questions,
+      required int index}) = _$InitQuestionsSystemAction;
 
-  List<Question> get questions;
-  int get index;
-  $InitQuestionsSystemActionCopyWith<InitQuestionsSystemAction> get copyWith;
+  List<Question> get questions => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InitQuestionsSystemActionCopyWith<InitQuestionsSystemAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $InitRandomQuestionsSystemActionCopyWith<$Res> {
   factory $InitRandomQuestionsSystemActionCopyWith(
           InitRandomQuestionsSystemAction value,
@@ -1457,6 +1387,7 @@ abstract class $InitRandomQuestionsSystemActionCopyWith<$Res> {
       _$InitRandomQuestionsSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitRandomQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
     implements $InitRandomQuestionsSystemActionCopyWith<$Res> {
@@ -1469,6 +1400,8 @@ class _$InitRandomQuestionsSystemActionCopyWithImpl<$Res>
   InitRandomQuestionsSystemAction get _value =>
       super._value as InitRandomQuestionsSystemAction;
 }
+
+/// @nodoc
 
 class _$InitRandomQuestionsSystemAction
     with DiagnosticableTreeMixin
@@ -1497,35 +1430,28 @@ class _$InitRandomQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<Question> questions, int index),
-    @required Result initRandom(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(Iterable<Question> questions),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) init,
+    required TResult Function() initRandom,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(Iterable<Question> questions) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return initRandom();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<Question> questions, int index),
-    Result initRandom(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(Iterable<Question> questions),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initRandom != null) {
       return initRandom();
     }
@@ -1534,35 +1460,28 @@ class _$InitRandomQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitQuestionsSystemAction value),
-    @required Result initRandom(InitRandomQuestionsSystemAction value),
-    @required Result deInit(DeInitQuestionsSystemAction value),
-    @required Result loading(LoadingQuestionsSystemAction value),
-    @required Result failed(FailedQuestionsSystemAction value),
-    @required Result completed(CompletedQuestionsSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitQuestionsSystemAction value) init,
+    required TResult Function(InitRandomQuestionsSystemAction value) initRandom,
+    required TResult Function(DeInitQuestionsSystemAction value) deInit,
+    required TResult Function(LoadingQuestionsSystemAction value) loading,
+    required TResult Function(FailedQuestionsSystemAction value) failed,
+    required TResult Function(CompletedQuestionsSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return initRandom(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitQuestionsSystemAction value),
-    Result initRandom(InitRandomQuestionsSystemAction value),
-    Result deInit(DeInitQuestionsSystemAction value),
-    Result loading(LoadingQuestionsSystemAction value),
-    Result failed(FailedQuestionsSystemAction value),
-    Result completed(CompletedQuestionsSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initRandom != null) {
       return initRandom(this);
     }
@@ -1576,6 +1495,7 @@ abstract class InitRandomQuestionsSystemAction
       _$InitRandomQuestionsSystemAction;
 }
 
+/// @nodoc
 abstract class $DeInitQuestionsSystemActionCopyWith<$Res> {
   factory $DeInitQuestionsSystemActionCopyWith(
           DeInitQuestionsSystemAction value,
@@ -1583,6 +1503,7 @@ abstract class $DeInitQuestionsSystemActionCopyWith<$Res> {
       _$DeInitQuestionsSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$DeInitQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
     implements $DeInitQuestionsSystemActionCopyWith<$Res> {
@@ -1594,6 +1515,8 @@ class _$DeInitQuestionsSystemActionCopyWithImpl<$Res>
   DeInitQuestionsSystemAction get _value =>
       super._value as DeInitQuestionsSystemAction;
 }
+
+/// @nodoc
 
 class _$DeInitQuestionsSystemAction
     with DiagnosticableTreeMixin
@@ -1622,35 +1545,28 @@ class _$DeInitQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<Question> questions, int index),
-    @required Result initRandom(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(Iterable<Question> questions),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) init,
+    required TResult Function() initRandom,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(Iterable<Question> questions) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return deInit();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<Question> questions, int index),
-    Result initRandom(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(Iterable<Question> questions),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit();
     }
@@ -1659,35 +1575,28 @@ class _$DeInitQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitQuestionsSystemAction value),
-    @required Result initRandom(InitRandomQuestionsSystemAction value),
-    @required Result deInit(DeInitQuestionsSystemAction value),
-    @required Result loading(LoadingQuestionsSystemAction value),
-    @required Result failed(FailedQuestionsSystemAction value),
-    @required Result completed(CompletedQuestionsSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitQuestionsSystemAction value) init,
+    required TResult Function(InitRandomQuestionsSystemAction value) initRandom,
+    required TResult Function(DeInitQuestionsSystemAction value) deInit,
+    required TResult Function(LoadingQuestionsSystemAction value) loading,
+    required TResult Function(FailedQuestionsSystemAction value) failed,
+    required TResult Function(CompletedQuestionsSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return deInit(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitQuestionsSystemAction value),
-    Result initRandom(InitRandomQuestionsSystemAction value),
-    Result deInit(DeInitQuestionsSystemAction value),
-    Result loading(LoadingQuestionsSystemAction value),
-    Result failed(FailedQuestionsSystemAction value),
-    Result completed(CompletedQuestionsSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit(this);
     }
@@ -1699,6 +1608,7 @@ abstract class DeInitQuestionsSystemAction implements SystemActionQuestions {
   const factory DeInitQuestionsSystemAction() = _$DeInitQuestionsSystemAction;
 }
 
+/// @nodoc
 abstract class $LoadingQuestionsSystemActionCopyWith<$Res> {
   factory $LoadingQuestionsSystemActionCopyWith(
           LoadingQuestionsSystemAction value,
@@ -1706,6 +1616,7 @@ abstract class $LoadingQuestionsSystemActionCopyWith<$Res> {
       _$LoadingQuestionsSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadingQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
     implements $LoadingQuestionsSystemActionCopyWith<$Res> {
@@ -1718,6 +1629,8 @@ class _$LoadingQuestionsSystemActionCopyWithImpl<$Res>
   LoadingQuestionsSystemAction get _value =>
       super._value as LoadingQuestionsSystemAction;
 }
+
+/// @nodoc
 
 class _$LoadingQuestionsSystemAction
     with DiagnosticableTreeMixin
@@ -1746,35 +1659,28 @@ class _$LoadingQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<Question> questions, int index),
-    @required Result initRandom(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(Iterable<Question> questions),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) init,
+    required TResult Function() initRandom,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(Iterable<Question> questions) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<Question> questions, int index),
-    Result initRandom(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(Iterable<Question> questions),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -1783,35 +1689,28 @@ class _$LoadingQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitQuestionsSystemAction value),
-    @required Result initRandom(InitRandomQuestionsSystemAction value),
-    @required Result deInit(DeInitQuestionsSystemAction value),
-    @required Result loading(LoadingQuestionsSystemAction value),
-    @required Result failed(FailedQuestionsSystemAction value),
-    @required Result completed(CompletedQuestionsSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitQuestionsSystemAction value) init,
+    required TResult Function(InitRandomQuestionsSystemAction value) initRandom,
+    required TResult Function(DeInitQuestionsSystemAction value) deInit,
+    required TResult Function(LoadingQuestionsSystemAction value) loading,
+    required TResult Function(FailedQuestionsSystemAction value) failed,
+    required TResult Function(CompletedQuestionsSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitQuestionsSystemAction value),
-    Result initRandom(InitRandomQuestionsSystemAction value),
-    Result deInit(DeInitQuestionsSystemAction value),
-    Result loading(LoadingQuestionsSystemAction value),
-    Result failed(FailedQuestionsSystemAction value),
-    Result completed(CompletedQuestionsSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -1823,6 +1722,7 @@ abstract class LoadingQuestionsSystemAction implements SystemActionQuestions {
   const factory LoadingQuestionsSystemAction() = _$LoadingQuestionsSystemAction;
 }
 
+/// @nodoc
 abstract class $FailedQuestionsSystemActionCopyWith<$Res> {
   factory $FailedQuestionsSystemActionCopyWith(
           FailedQuestionsSystemAction value,
@@ -1831,6 +1731,7 @@ abstract class $FailedQuestionsSystemActionCopyWith<$Res> {
   $Res call({Exception exception});
 }
 
+/// @nodoc
 class _$FailedQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
     implements $FailedQuestionsSystemActionCopyWith<$Res> {
@@ -1844,20 +1745,23 @@ class _$FailedQuestionsSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object exception = freezed,
+    Object? exception = freezed,
   }) {
     return _then(FailedQuestionsSystemAction(
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
     ));
   }
 }
 
+/// @nodoc
+
 class _$FailedQuestionsSystemAction
     with DiagnosticableTreeMixin
     implements FailedQuestionsSystemAction {
-  const _$FailedQuestionsSystemAction({@required this.exception})
-      : assert(exception != null);
+  const _$FailedQuestionsSystemAction({required this.exception});
 
   @override
   final Exception exception;
@@ -1888,6 +1792,7 @@ class _$FailedQuestionsSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
 
+  @JsonKey(ignore: true)
   @override
   $FailedQuestionsSystemActionCopyWith<FailedQuestionsSystemAction>
       get copyWith => _$FailedQuestionsSystemActionCopyWithImpl<
@@ -1895,35 +1800,28 @@ class _$FailedQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<Question> questions, int index),
-    @required Result initRandom(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(Iterable<Question> questions),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) init,
+    required TResult Function() initRandom,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(Iterable<Question> questions) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return failed(exception);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<Question> questions, int index),
-    Result initRandom(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(Iterable<Question> questions),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(exception);
     }
@@ -1932,35 +1830,28 @@ class _$FailedQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitQuestionsSystemAction value),
-    @required Result initRandom(InitRandomQuestionsSystemAction value),
-    @required Result deInit(DeInitQuestionsSystemAction value),
-    @required Result loading(LoadingQuestionsSystemAction value),
-    @required Result failed(FailedQuestionsSystemAction value),
-    @required Result completed(CompletedQuestionsSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitQuestionsSystemAction value) init,
+    required TResult Function(InitRandomQuestionsSystemAction value) initRandom,
+    required TResult Function(DeInitQuestionsSystemAction value) deInit,
+    required TResult Function(LoadingQuestionsSystemAction value) loading,
+    required TResult Function(FailedQuestionsSystemAction value) failed,
+    required TResult Function(CompletedQuestionsSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return failed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitQuestionsSystemAction value),
-    Result initRandom(InitRandomQuestionsSystemAction value),
-    Result deInit(DeInitQuestionsSystemAction value),
-    Result loading(LoadingQuestionsSystemAction value),
-    Result failed(FailedQuestionsSystemAction value),
-    Result completed(CompletedQuestionsSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(this);
     }
@@ -1969,14 +1860,16 @@ class _$FailedQuestionsSystemAction
 }
 
 abstract class FailedQuestionsSystemAction implements SystemActionQuestions {
-  const factory FailedQuestionsSystemAction({@required Exception exception}) =
+  const factory FailedQuestionsSystemAction({required Exception exception}) =
       _$FailedQuestionsSystemAction;
 
-  Exception get exception;
+  Exception get exception => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $FailedQuestionsSystemActionCopyWith<FailedQuestionsSystemAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $CompletedQuestionsSystemActionCopyWith<$Res> {
   factory $CompletedQuestionsSystemActionCopyWith(
           CompletedQuestionsSystemAction value,
@@ -1985,6 +1878,7 @@ abstract class $CompletedQuestionsSystemActionCopyWith<$Res> {
   $Res call({Iterable<Question> questions});
 }
 
+/// @nodoc
 class _$CompletedQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
     implements $CompletedQuestionsSystemActionCopyWith<$Res> {
@@ -1999,21 +1893,23 @@ class _$CompletedQuestionsSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object questions = freezed,
+    Object? questions = freezed,
   }) {
     return _then(CompletedQuestionsSystemAction(
       questions: questions == freezed
           ? _value.questions
-          : questions as Iterable<Question>,
+          : questions // ignore: cast_nullable_to_non_nullable
+              as Iterable<Question>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$CompletedQuestionsSystemAction
     with DiagnosticableTreeMixin
     implements CompletedQuestionsSystemAction {
-  const _$CompletedQuestionsSystemAction({@required this.questions})
-      : assert(questions != null);
+  const _$CompletedQuestionsSystemAction({required this.questions});
 
   @override
   final Iterable<Question> questions;
@@ -2044,6 +1940,7 @@ class _$CompletedQuestionsSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(questions);
 
+  @JsonKey(ignore: true)
   @override
   $CompletedQuestionsSystemActionCopyWith<CompletedQuestionsSystemAction>
       get copyWith => _$CompletedQuestionsSystemActionCopyWithImpl<
@@ -2051,35 +1948,28 @@ class _$CompletedQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(List<Question> questions, int index),
-    @required Result initRandom(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(Iterable<Question> questions),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Question> questions, int index) init,
+    required TResult Function() initRandom,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(Iterable<Question> questions) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return completed(questions);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(List<Question> questions, int index),
-    Result initRandom(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(Iterable<Question> questions),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(questions);
     }
@@ -2088,35 +1978,28 @@ class _$CompletedQuestionsSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitQuestionsSystemAction value),
-    @required Result initRandom(InitRandomQuestionsSystemAction value),
-    @required Result deInit(DeInitQuestionsSystemAction value),
-    @required Result loading(LoadingQuestionsSystemAction value),
-    @required Result failed(FailedQuestionsSystemAction value),
-    @required Result completed(CompletedQuestionsSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitQuestionsSystemAction value) init,
+    required TResult Function(InitRandomQuestionsSystemAction value) initRandom,
+    required TResult Function(DeInitQuestionsSystemAction value) deInit,
+    required TResult Function(LoadingQuestionsSystemAction value) loading,
+    required TResult Function(FailedQuestionsSystemAction value) failed,
+    required TResult Function(CompletedQuestionsSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(initRandom != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return completed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitQuestionsSystemAction value),
-    Result initRandom(InitRandomQuestionsSystemAction value),
-    Result deInit(DeInitQuestionsSystemAction value),
-    Result loading(LoadingQuestionsSystemAction value),
-    Result failed(FailedQuestionsSystemAction value),
-    Result completed(CompletedQuestionsSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(this);
     }
@@ -2126,10 +2009,11 @@ class _$CompletedQuestionsSystemAction
 
 abstract class CompletedQuestionsSystemAction implements SystemActionQuestions {
   const factory CompletedQuestionsSystemAction(
-          {@required Iterable<Question> questions}) =
+          {required Iterable<Question> questions}) =
       _$CompletedQuestionsSystemAction;
 
-  Iterable<Question> get questions;
+  Iterable<Question> get questions => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $CompletedQuestionsSystemActionCopyWith<CompletedQuestionsSystemAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }

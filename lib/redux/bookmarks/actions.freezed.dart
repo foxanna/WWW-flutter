@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,63 +9,71 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionBookmarksTearOff {
   const _$UserActionBookmarksTearOff();
 
-// ignore: unused_element
   OpenBookmarksUserAction open() {
     return const OpenBookmarksUserAction();
   }
 
-// ignore: unused_element
   CloseBookmarksUserAction close() {
     return const CloseBookmarksUserAction();
   }
 
-// ignore: unused_element
   LoadBookmarksUserAction load() {
     return const LoadBookmarksUserAction();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionBookmarks = _$UserActionBookmarksTearOff();
 
+/// @nodoc
 mixin _$UserActionBookmarks {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result close(),
-    @required Result load(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() close,
+    required TResult Function() load,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result close(),
-    Result load(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? close,
+    TResult Function()? load,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenBookmarksUserAction value),
-    @required Result close(CloseBookmarksUserAction value),
-    @required Result load(LoadBookmarksUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenBookmarksUserAction value) open,
+    required TResult Function(CloseBookmarksUserAction value) close,
+    required TResult Function(LoadBookmarksUserAction value) load,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenBookmarksUserAction value),
-    Result close(CloseBookmarksUserAction value),
-    Result load(LoadBookmarksUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenBookmarksUserAction value)? open,
+    TResult Function(CloseBookmarksUserAction value)? close,
+    TResult Function(LoadBookmarksUserAction value)? load,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionBookmarksCopyWith<$Res> {
   factory $UserActionBookmarksCopyWith(
           UserActionBookmarks value, $Res Function(UserActionBookmarks) then) =
       _$UserActionBookmarksCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionBookmarksCopyWithImpl<$Res>
     implements $UserActionBookmarksCopyWith<$Res> {
   _$UserActionBookmarksCopyWithImpl(this._value, this._then);
@@ -75,12 +83,14 @@ class _$UserActionBookmarksCopyWithImpl<$Res>
   final $Res Function(UserActionBookmarks) _then;
 }
 
+/// @nodoc
 abstract class $OpenBookmarksUserActionCopyWith<$Res> {
   factory $OpenBookmarksUserActionCopyWith(OpenBookmarksUserAction value,
           $Res Function(OpenBookmarksUserAction) then) =
       _$OpenBookmarksUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$OpenBookmarksUserActionCopyWithImpl<$Res>
     extends _$UserActionBookmarksCopyWithImpl<$Res>
     implements $OpenBookmarksUserActionCopyWith<$Res> {
@@ -91,6 +101,8 @@ class _$OpenBookmarksUserActionCopyWithImpl<$Res>
   @override
   OpenBookmarksUserAction get _value => super._value as OpenBookmarksUserAction;
 }
+
+/// @nodoc
 
 class _$OpenBookmarksUserAction
     with DiagnosticableTreeMixin
@@ -118,26 +130,22 @@ class _$OpenBookmarksUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result close(),
-    @required Result load(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() close,
+    required TResult Function() load,
   }) {
-    assert(open != null);
-    assert(close != null);
-    assert(load != null);
     return open();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result close(),
-    Result load(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? close,
+    TResult Function()? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (open != null) {
       return open();
     }
@@ -146,26 +154,22 @@ class _$OpenBookmarksUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenBookmarksUserAction value),
-    @required Result close(CloseBookmarksUserAction value),
-    @required Result load(LoadBookmarksUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenBookmarksUserAction value) open,
+    required TResult Function(CloseBookmarksUserAction value) close,
+    required TResult Function(LoadBookmarksUserAction value) load,
   }) {
-    assert(open != null);
-    assert(close != null);
-    assert(load != null);
     return open(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenBookmarksUserAction value),
-    Result close(CloseBookmarksUserAction value),
-    Result load(LoadBookmarksUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenBookmarksUserAction value)? open,
+    TResult Function(CloseBookmarksUserAction value)? close,
+    TResult Function(LoadBookmarksUserAction value)? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (open != null) {
       return open(this);
     }
@@ -177,12 +181,14 @@ abstract class OpenBookmarksUserAction implements UserActionBookmarks {
   const factory OpenBookmarksUserAction() = _$OpenBookmarksUserAction;
 }
 
+/// @nodoc
 abstract class $CloseBookmarksUserActionCopyWith<$Res> {
   factory $CloseBookmarksUserActionCopyWith(CloseBookmarksUserAction value,
           $Res Function(CloseBookmarksUserAction) then) =
       _$CloseBookmarksUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CloseBookmarksUserActionCopyWithImpl<$Res>
     extends _$UserActionBookmarksCopyWithImpl<$Res>
     implements $CloseBookmarksUserActionCopyWith<$Res> {
@@ -194,6 +200,8 @@ class _$CloseBookmarksUserActionCopyWithImpl<$Res>
   CloseBookmarksUserAction get _value =>
       super._value as CloseBookmarksUserAction;
 }
+
+/// @nodoc
 
 class _$CloseBookmarksUserAction
     with DiagnosticableTreeMixin
@@ -221,26 +229,22 @@ class _$CloseBookmarksUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result close(),
-    @required Result load(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() close,
+    required TResult Function() load,
   }) {
-    assert(open != null);
-    assert(close != null);
-    assert(load != null);
     return close();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result close(),
-    Result load(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? close,
+    TResult Function()? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (close != null) {
       return close();
     }
@@ -249,26 +253,22 @@ class _$CloseBookmarksUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenBookmarksUserAction value),
-    @required Result close(CloseBookmarksUserAction value),
-    @required Result load(LoadBookmarksUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenBookmarksUserAction value) open,
+    required TResult Function(CloseBookmarksUserAction value) close,
+    required TResult Function(LoadBookmarksUserAction value) load,
   }) {
-    assert(open != null);
-    assert(close != null);
-    assert(load != null);
     return close(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenBookmarksUserAction value),
-    Result close(CloseBookmarksUserAction value),
-    Result load(LoadBookmarksUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenBookmarksUserAction value)? open,
+    TResult Function(CloseBookmarksUserAction value)? close,
+    TResult Function(LoadBookmarksUserAction value)? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (close != null) {
       return close(this);
     }
@@ -280,12 +280,14 @@ abstract class CloseBookmarksUserAction implements UserActionBookmarks {
   const factory CloseBookmarksUserAction() = _$CloseBookmarksUserAction;
 }
 
+/// @nodoc
 abstract class $LoadBookmarksUserActionCopyWith<$Res> {
   factory $LoadBookmarksUserActionCopyWith(LoadBookmarksUserAction value,
           $Res Function(LoadBookmarksUserAction) then) =
       _$LoadBookmarksUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadBookmarksUserActionCopyWithImpl<$Res>
     extends _$UserActionBookmarksCopyWithImpl<$Res>
     implements $LoadBookmarksUserActionCopyWith<$Res> {
@@ -296,6 +298,8 @@ class _$LoadBookmarksUserActionCopyWithImpl<$Res>
   @override
   LoadBookmarksUserAction get _value => super._value as LoadBookmarksUserAction;
 }
+
+/// @nodoc
 
 class _$LoadBookmarksUserAction
     with DiagnosticableTreeMixin
@@ -323,26 +327,22 @@ class _$LoadBookmarksUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result close(),
-    @required Result load(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() close,
+    required TResult Function() load,
   }) {
-    assert(open != null);
-    assert(close != null);
-    assert(load != null);
     return load();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result close(),
-    Result load(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? close,
+    TResult Function()? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load();
     }
@@ -351,26 +351,22 @@ class _$LoadBookmarksUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenBookmarksUserAction value),
-    @required Result close(CloseBookmarksUserAction value),
-    @required Result load(LoadBookmarksUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenBookmarksUserAction value) open,
+    required TResult Function(CloseBookmarksUserAction value) close,
+    required TResult Function(LoadBookmarksUserAction value) load,
   }) {
-    assert(open != null);
-    assert(close != null);
-    assert(load != null);
     return load(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenBookmarksUserAction value),
-    Result close(CloseBookmarksUserAction value),
-    Result load(LoadBookmarksUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenBookmarksUserAction value)? open,
+    TResult Function(CloseBookmarksUserAction value)? close,
+    TResult Function(LoadBookmarksUserAction value)? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load(this);
     }
@@ -382,86 +378,89 @@ abstract class LoadBookmarksUserAction implements UserActionBookmarks {
   const factory LoadBookmarksUserAction() = _$LoadBookmarksUserAction;
 }
 
+/// @nodoc
 class _$SystemActionBookmarksTearOff {
   const _$SystemActionBookmarksTearOff();
 
-// ignore: unused_element
   InitBookmarksSystemAction init() {
     return const InitBookmarksSystemAction();
   }
 
-// ignore: unused_element
   DeInitBookmarksSystemAction deInit() {
     return const DeInitBookmarksSystemAction();
   }
 
-// ignore: unused_element
   LoadingBookmarksSystemAction loading() {
     return const LoadingBookmarksSystemAction();
   }
 
-// ignore: unused_element
-  FailedBookmarksSystemAction failed({@required Exception exception}) {
+  FailedBookmarksSystemAction failed({required Exception exception}) {
     return FailedBookmarksSystemAction(
       exception: exception,
     );
   }
 
-// ignore: unused_element
   CompletedBookmarksSystemAction completed(
-      {@required List<Tournament> tournaments}) {
+      {required List<Tournament> tournaments}) {
     return CompletedBookmarksSystemAction(
       tournaments: tournaments,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SystemActionBookmarks = _$SystemActionBookmarksTearOff();
 
+/// @nodoc
 mixin _$SystemActionBookmarks {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(List<Tournament> tournaments),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(List<Tournament> tournaments) completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(List<Tournament> tournaments),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(List<Tournament> tournaments)? completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitBookmarksSystemAction value),
-    @required Result deInit(DeInitBookmarksSystemAction value),
-    @required Result loading(LoadingBookmarksSystemAction value),
-    @required Result failed(FailedBookmarksSystemAction value),
-    @required Result completed(CompletedBookmarksSystemAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitBookmarksSystemAction value) init,
+    required TResult Function(DeInitBookmarksSystemAction value) deInit,
+    required TResult Function(LoadingBookmarksSystemAction value) loading,
+    required TResult Function(FailedBookmarksSystemAction value) failed,
+    required TResult Function(CompletedBookmarksSystemAction value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitBookmarksSystemAction value),
-    Result deInit(DeInitBookmarksSystemAction value),
-    Result loading(LoadingBookmarksSystemAction value),
-    Result failed(FailedBookmarksSystemAction value),
-    Result completed(CompletedBookmarksSystemAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitBookmarksSystemAction value)? init,
+    TResult Function(DeInitBookmarksSystemAction value)? deInit,
+    TResult Function(LoadingBookmarksSystemAction value)? loading,
+    TResult Function(FailedBookmarksSystemAction value)? failed,
+    TResult Function(CompletedBookmarksSystemAction value)? completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SystemActionBookmarksCopyWith<$Res> {
   factory $SystemActionBookmarksCopyWith(SystemActionBookmarks value,
           $Res Function(SystemActionBookmarks) then) =
       _$SystemActionBookmarksCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SystemActionBookmarksCopyWithImpl<$Res>
     implements $SystemActionBookmarksCopyWith<$Res> {
   _$SystemActionBookmarksCopyWithImpl(this._value, this._then);
@@ -471,12 +470,14 @@ class _$SystemActionBookmarksCopyWithImpl<$Res>
   final $Res Function(SystemActionBookmarks) _then;
 }
 
+/// @nodoc
 abstract class $InitBookmarksSystemActionCopyWith<$Res> {
   factory $InitBookmarksSystemActionCopyWith(InitBookmarksSystemAction value,
           $Res Function(InitBookmarksSystemAction) then) =
       _$InitBookmarksSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitBookmarksSystemActionCopyWithImpl<$Res>
     extends _$SystemActionBookmarksCopyWithImpl<$Res>
     implements $InitBookmarksSystemActionCopyWith<$Res> {
@@ -488,6 +489,8 @@ class _$InitBookmarksSystemActionCopyWithImpl<$Res>
   InitBookmarksSystemAction get _value =>
       super._value as InitBookmarksSystemAction;
 }
+
+/// @nodoc
 
 class _$InitBookmarksSystemAction
     with DiagnosticableTreeMixin
@@ -515,32 +518,26 @@ class _$InitBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(List<Tournament> tournaments),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(List<Tournament> tournaments) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return init();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(List<Tournament> tournaments),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(List<Tournament> tournaments)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init();
     }
@@ -549,32 +546,26 @@ class _$InitBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitBookmarksSystemAction value),
-    @required Result deInit(DeInitBookmarksSystemAction value),
-    @required Result loading(LoadingBookmarksSystemAction value),
-    @required Result failed(FailedBookmarksSystemAction value),
-    @required Result completed(CompletedBookmarksSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitBookmarksSystemAction value) init,
+    required TResult Function(DeInitBookmarksSystemAction value) deInit,
+    required TResult Function(LoadingBookmarksSystemAction value) loading,
+    required TResult Function(FailedBookmarksSystemAction value) failed,
+    required TResult Function(CompletedBookmarksSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return init(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitBookmarksSystemAction value),
-    Result deInit(DeInitBookmarksSystemAction value),
-    Result loading(LoadingBookmarksSystemAction value),
-    Result failed(FailedBookmarksSystemAction value),
-    Result completed(CompletedBookmarksSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitBookmarksSystemAction value)? init,
+    TResult Function(DeInitBookmarksSystemAction value)? deInit,
+    TResult Function(LoadingBookmarksSystemAction value)? loading,
+    TResult Function(FailedBookmarksSystemAction value)? failed,
+    TResult Function(CompletedBookmarksSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(this);
     }
@@ -586,6 +577,7 @@ abstract class InitBookmarksSystemAction implements SystemActionBookmarks {
   const factory InitBookmarksSystemAction() = _$InitBookmarksSystemAction;
 }
 
+/// @nodoc
 abstract class $DeInitBookmarksSystemActionCopyWith<$Res> {
   factory $DeInitBookmarksSystemActionCopyWith(
           DeInitBookmarksSystemAction value,
@@ -593,6 +585,7 @@ abstract class $DeInitBookmarksSystemActionCopyWith<$Res> {
       _$DeInitBookmarksSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$DeInitBookmarksSystemActionCopyWithImpl<$Res>
     extends _$SystemActionBookmarksCopyWithImpl<$Res>
     implements $DeInitBookmarksSystemActionCopyWith<$Res> {
@@ -604,6 +597,8 @@ class _$DeInitBookmarksSystemActionCopyWithImpl<$Res>
   DeInitBookmarksSystemAction get _value =>
       super._value as DeInitBookmarksSystemAction;
 }
+
+/// @nodoc
 
 class _$DeInitBookmarksSystemAction
     with DiagnosticableTreeMixin
@@ -632,32 +627,26 @@ class _$DeInitBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(List<Tournament> tournaments),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(List<Tournament> tournaments) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return deInit();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(List<Tournament> tournaments),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(List<Tournament> tournaments)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit();
     }
@@ -666,32 +655,26 @@ class _$DeInitBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitBookmarksSystemAction value),
-    @required Result deInit(DeInitBookmarksSystemAction value),
-    @required Result loading(LoadingBookmarksSystemAction value),
-    @required Result failed(FailedBookmarksSystemAction value),
-    @required Result completed(CompletedBookmarksSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitBookmarksSystemAction value) init,
+    required TResult Function(DeInitBookmarksSystemAction value) deInit,
+    required TResult Function(LoadingBookmarksSystemAction value) loading,
+    required TResult Function(FailedBookmarksSystemAction value) failed,
+    required TResult Function(CompletedBookmarksSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return deInit(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitBookmarksSystemAction value),
-    Result deInit(DeInitBookmarksSystemAction value),
-    Result loading(LoadingBookmarksSystemAction value),
-    Result failed(FailedBookmarksSystemAction value),
-    Result completed(CompletedBookmarksSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitBookmarksSystemAction value)? init,
+    TResult Function(DeInitBookmarksSystemAction value)? deInit,
+    TResult Function(LoadingBookmarksSystemAction value)? loading,
+    TResult Function(FailedBookmarksSystemAction value)? failed,
+    TResult Function(CompletedBookmarksSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit(this);
     }
@@ -703,6 +686,7 @@ abstract class DeInitBookmarksSystemAction implements SystemActionBookmarks {
   const factory DeInitBookmarksSystemAction() = _$DeInitBookmarksSystemAction;
 }
 
+/// @nodoc
 abstract class $LoadingBookmarksSystemActionCopyWith<$Res> {
   factory $LoadingBookmarksSystemActionCopyWith(
           LoadingBookmarksSystemAction value,
@@ -710,6 +694,7 @@ abstract class $LoadingBookmarksSystemActionCopyWith<$Res> {
       _$LoadingBookmarksSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadingBookmarksSystemActionCopyWithImpl<$Res>
     extends _$SystemActionBookmarksCopyWithImpl<$Res>
     implements $LoadingBookmarksSystemActionCopyWith<$Res> {
@@ -722,6 +707,8 @@ class _$LoadingBookmarksSystemActionCopyWithImpl<$Res>
   LoadingBookmarksSystemAction get _value =>
       super._value as LoadingBookmarksSystemAction;
 }
+
+/// @nodoc
 
 class _$LoadingBookmarksSystemAction
     with DiagnosticableTreeMixin
@@ -750,32 +737,26 @@ class _$LoadingBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(List<Tournament> tournaments),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(List<Tournament> tournaments) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(List<Tournament> tournaments),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(List<Tournament> tournaments)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -784,32 +765,26 @@ class _$LoadingBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitBookmarksSystemAction value),
-    @required Result deInit(DeInitBookmarksSystemAction value),
-    @required Result loading(LoadingBookmarksSystemAction value),
-    @required Result failed(FailedBookmarksSystemAction value),
-    @required Result completed(CompletedBookmarksSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitBookmarksSystemAction value) init,
+    required TResult Function(DeInitBookmarksSystemAction value) deInit,
+    required TResult Function(LoadingBookmarksSystemAction value) loading,
+    required TResult Function(FailedBookmarksSystemAction value) failed,
+    required TResult Function(CompletedBookmarksSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitBookmarksSystemAction value),
-    Result deInit(DeInitBookmarksSystemAction value),
-    Result loading(LoadingBookmarksSystemAction value),
-    Result failed(FailedBookmarksSystemAction value),
-    Result completed(CompletedBookmarksSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitBookmarksSystemAction value)? init,
+    TResult Function(DeInitBookmarksSystemAction value)? deInit,
+    TResult Function(LoadingBookmarksSystemAction value)? loading,
+    TResult Function(FailedBookmarksSystemAction value)? failed,
+    TResult Function(CompletedBookmarksSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -821,6 +796,7 @@ abstract class LoadingBookmarksSystemAction implements SystemActionBookmarks {
   const factory LoadingBookmarksSystemAction() = _$LoadingBookmarksSystemAction;
 }
 
+/// @nodoc
 abstract class $FailedBookmarksSystemActionCopyWith<$Res> {
   factory $FailedBookmarksSystemActionCopyWith(
           FailedBookmarksSystemAction value,
@@ -829,6 +805,7 @@ abstract class $FailedBookmarksSystemActionCopyWith<$Res> {
   $Res call({Exception exception});
 }
 
+/// @nodoc
 class _$FailedBookmarksSystemActionCopyWithImpl<$Res>
     extends _$SystemActionBookmarksCopyWithImpl<$Res>
     implements $FailedBookmarksSystemActionCopyWith<$Res> {
@@ -842,20 +819,23 @@ class _$FailedBookmarksSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object exception = freezed,
+    Object? exception = freezed,
   }) {
     return _then(FailedBookmarksSystemAction(
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
     ));
   }
 }
 
+/// @nodoc
+
 class _$FailedBookmarksSystemAction
     with DiagnosticableTreeMixin
     implements FailedBookmarksSystemAction {
-  const _$FailedBookmarksSystemAction({@required this.exception})
-      : assert(exception != null);
+  const _$FailedBookmarksSystemAction({required this.exception});
 
   @override
   final Exception exception;
@@ -886,6 +866,7 @@ class _$FailedBookmarksSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
 
+  @JsonKey(ignore: true)
   @override
   $FailedBookmarksSystemActionCopyWith<FailedBookmarksSystemAction>
       get copyWith => _$FailedBookmarksSystemActionCopyWithImpl<
@@ -893,32 +874,26 @@ class _$FailedBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(List<Tournament> tournaments),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(List<Tournament> tournaments) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return failed(exception);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(List<Tournament> tournaments),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(List<Tournament> tournaments)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(exception);
     }
@@ -927,32 +902,26 @@ class _$FailedBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitBookmarksSystemAction value),
-    @required Result deInit(DeInitBookmarksSystemAction value),
-    @required Result loading(LoadingBookmarksSystemAction value),
-    @required Result failed(FailedBookmarksSystemAction value),
-    @required Result completed(CompletedBookmarksSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitBookmarksSystemAction value) init,
+    required TResult Function(DeInitBookmarksSystemAction value) deInit,
+    required TResult Function(LoadingBookmarksSystemAction value) loading,
+    required TResult Function(FailedBookmarksSystemAction value) failed,
+    required TResult Function(CompletedBookmarksSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return failed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitBookmarksSystemAction value),
-    Result deInit(DeInitBookmarksSystemAction value),
-    Result loading(LoadingBookmarksSystemAction value),
-    Result failed(FailedBookmarksSystemAction value),
-    Result completed(CompletedBookmarksSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitBookmarksSystemAction value)? init,
+    TResult Function(DeInitBookmarksSystemAction value)? deInit,
+    TResult Function(LoadingBookmarksSystemAction value)? loading,
+    TResult Function(FailedBookmarksSystemAction value)? failed,
+    TResult Function(CompletedBookmarksSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(this);
     }
@@ -961,14 +930,16 @@ class _$FailedBookmarksSystemAction
 }
 
 abstract class FailedBookmarksSystemAction implements SystemActionBookmarks {
-  const factory FailedBookmarksSystemAction({@required Exception exception}) =
+  const factory FailedBookmarksSystemAction({required Exception exception}) =
       _$FailedBookmarksSystemAction;
 
-  Exception get exception;
+  Exception get exception => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $FailedBookmarksSystemActionCopyWith<FailedBookmarksSystemAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $CompletedBookmarksSystemActionCopyWith<$Res> {
   factory $CompletedBookmarksSystemActionCopyWith(
           CompletedBookmarksSystemAction value,
@@ -977,6 +948,7 @@ abstract class $CompletedBookmarksSystemActionCopyWith<$Res> {
   $Res call({List<Tournament> tournaments});
 }
 
+/// @nodoc
 class _$CompletedBookmarksSystemActionCopyWithImpl<$Res>
     extends _$SystemActionBookmarksCopyWithImpl<$Res>
     implements $CompletedBookmarksSystemActionCopyWith<$Res> {
@@ -991,21 +963,23 @@ class _$CompletedBookmarksSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tournaments = freezed,
+    Object? tournaments = freezed,
   }) {
     return _then(CompletedBookmarksSystemAction(
       tournaments: tournaments == freezed
           ? _value.tournaments
-          : tournaments as List<Tournament>,
+          : tournaments // ignore: cast_nullable_to_non_nullable
+              as List<Tournament>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$CompletedBookmarksSystemAction
     with DiagnosticableTreeMixin
     implements CompletedBookmarksSystemAction {
-  const _$CompletedBookmarksSystemAction({@required this.tournaments})
-      : assert(tournaments != null);
+  const _$CompletedBookmarksSystemAction({required this.tournaments});
 
   @override
   final List<Tournament> tournaments;
@@ -1036,6 +1010,7 @@ class _$CompletedBookmarksSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tournaments);
 
+  @JsonKey(ignore: true)
   @override
   $CompletedBookmarksSystemActionCopyWith<CompletedBookmarksSystemAction>
       get copyWith => _$CompletedBookmarksSystemActionCopyWithImpl<
@@ -1043,32 +1018,26 @@ class _$CompletedBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result failed(Exception exception),
-    @required Result completed(List<Tournament> tournaments),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failed,
+    required TResult Function(List<Tournament> tournaments) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return completed(tournaments);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result failed(Exception exception),
-    Result completed(List<Tournament> tournaments),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(List<Tournament> tournaments)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(tournaments);
     }
@@ -1077,32 +1046,26 @@ class _$CompletedBookmarksSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitBookmarksSystemAction value),
-    @required Result deInit(DeInitBookmarksSystemAction value),
-    @required Result loading(LoadingBookmarksSystemAction value),
-    @required Result failed(FailedBookmarksSystemAction value),
-    @required Result completed(CompletedBookmarksSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitBookmarksSystemAction value) init,
+    required TResult Function(DeInitBookmarksSystemAction value) deInit,
+    required TResult Function(LoadingBookmarksSystemAction value) loading,
+    required TResult Function(FailedBookmarksSystemAction value) failed,
+    required TResult Function(CompletedBookmarksSystemAction value) completed,
   }) {
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(failed != null);
-    assert(completed != null);
     return completed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitBookmarksSystemAction value),
-    Result deInit(DeInitBookmarksSystemAction value),
-    Result loading(LoadingBookmarksSystemAction value),
-    Result failed(FailedBookmarksSystemAction value),
-    Result completed(CompletedBookmarksSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitBookmarksSystemAction value)? init,
+    TResult Function(DeInitBookmarksSystemAction value)? deInit,
+    TResult Function(LoadingBookmarksSystemAction value)? loading,
+    TResult Function(FailedBookmarksSystemAction value)? failed,
+    TResult Function(CompletedBookmarksSystemAction value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(this);
     }
@@ -1112,10 +1075,11 @@ class _$CompletedBookmarksSystemAction
 
 abstract class CompletedBookmarksSystemAction implements SystemActionBookmarks {
   const factory CompletedBookmarksSystemAction(
-          {@required List<Tournament> tournaments}) =
+          {required List<Tournament> tournaments}) =
       _$CompletedBookmarksSystemAction;
 
-  List<Tournament> get tournaments;
+  List<Tournament> get tournaments => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $CompletedBookmarksSystemActionCopyWith<CompletedBookmarksSystemAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }

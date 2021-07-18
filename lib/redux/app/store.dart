@@ -5,15 +5,13 @@ import 'package:what_when_where/redux/app/reducer.dart';
 import 'package:what_when_where/redux/app/state.dart';
 
 @injectable
-class WWWStore {
+class WWWStore extends Store<AppState> {
   WWWStore({
-    AppMiddleware appMiddleware,
-  }) : _store = Store<AppState>(
-          AppReducer.reducer,
-          initialState: const AppState(),
+    required AppMiddleware appMiddleware,
+    required AppReducer appReducer,
+  }) : super(
+          appReducer.reducer,
+          initialState: AppState.initial(),
           middleware: appMiddleware.middleware.toList(),
         );
-
-  final Store<AppState> _store;
-  Store<AppState> get store => _store;
 }

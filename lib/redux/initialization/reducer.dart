@@ -1,33 +1,38 @@
+import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:what_when_where/redux/initialization/actions.dart';
 import 'package:what_when_where/redux/initialization/state.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/services/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 
-class InitializationReducer {
-  static final Reducer<InitializationState> _reducer =
-      combineReducers<InitializationState>([
-    TypedReducer<InitializationState, InitInitializationAction>(_init),
-    TypedReducer<InitializationState, ReadySettingsSystemAction>(
+@injectable
+class InitializationReducer implements IReducer<InitializationState, IAction> {
+  @override
+  Option<InitializationState> call(
+          Option<InitializationState> state, IAction action) =>
+      _reducer(state, action);
+
+  static final _reducer = combineReducers<Option<InitializationState>>([
+    TypedReducer<Option<InitializationState>, InitInitializationAction>(_init),
+    TypedReducer<Option<InitializationState>, ReadySettingsSystemAction>(
         _settingsReady),
-    TypedReducer<InitializationState, ReadyServicesSystemAction>(
+    TypedReducer<Option<InitializationState>, ReadyServicesSystemAction>(
         _servicesReady),
   ]);
 
-  static InitializationState reduce(
-          InitializationState state, ReduxAction action) =>
-      _reducer(state, action);
+  static Option<InitializationState> _init(
+          Option<InitializationState> state, InitInitializationAction action) =>
+      const Some(InitializationState());
 
-  static InitializationState _init(
-          InitializationState state, InitInitializationAction action) =>
-      const InitializationState();
+  static Option<InitializationState> _settingsReady(
+          Option<InitializationState> state,
+          ReadySettingsSystemAction action) =>
+      state.map((state) => state.copyWith(settingsReady: true));
 
-  static InitializationState _settingsReady(
-          InitializationState state, ReadySettingsSystemAction action) =>
-      state?.copyWith(settingsReady: true) ?? state;
-
-  static InitializationState _servicesReady(
-          InitializationState state, ReadyServicesSystemAction action) =>
-      state?.copyWith(servicesReady: true) ?? state;
+  static Option<InitializationState> _servicesReady(
+          Option<InitializationState> state,
+          ReadyServicesSystemAction action) =>
+      state.map((state) => state.copyWith(servicesReady: true));
 }

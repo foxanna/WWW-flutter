@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'state.dart';
 
@@ -9,76 +9,83 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$BookmarksStateTearOff {
   const _$BookmarksStateTearOff();
 
-// ignore: unused_element
   InitialBookmarksState initial() {
     return const InitialBookmarksState();
   }
 
-// ignore: unused_element
-  DataBookmarksState data({@required List<Tournament> data}) {
+  DataBookmarksState data({required List<Tournament> data}) {
     return DataBookmarksState(
       data: data,
     );
   }
 
-// ignore: unused_element
   LoadingBookmarksState loading() {
     return const LoadingBookmarksState();
   }
 
-// ignore: unused_element
-  ErrorBookmarksState error({@required Exception exception}) {
+  ErrorBookmarksState error({required Exception exception}) {
     return ErrorBookmarksState(
       exception: exception,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $BookmarksState = _$BookmarksStateTearOff();
 
+/// @nodoc
 mixin _$BookmarksState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result data(List<Tournament> data),
-    @required Result loading(),
-    @required Result error(Exception exception),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Tournament> data) data,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result data(List<Tournament> data),
-    Result loading(),
-    Result error(Exception exception),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Tournament> data)? data,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialBookmarksState value),
-    @required Result data(DataBookmarksState value),
-    @required Result loading(LoadingBookmarksState value),
-    @required Result error(ErrorBookmarksState value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialBookmarksState value) initial,
+    required TResult Function(DataBookmarksState value) data,
+    required TResult Function(LoadingBookmarksState value) loading,
+    required TResult Function(ErrorBookmarksState value) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialBookmarksState value),
-    Result data(DataBookmarksState value),
-    Result loading(LoadingBookmarksState value),
-    Result error(ErrorBookmarksState value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialBookmarksState value)? initial,
+    TResult Function(DataBookmarksState value)? data,
+    TResult Function(LoadingBookmarksState value)? loading,
+    TResult Function(ErrorBookmarksState value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $BookmarksStateCopyWith<$Res> {
   factory $BookmarksStateCopyWith(
           BookmarksState value, $Res Function(BookmarksState) then) =
       _$BookmarksStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$BookmarksStateCopyWithImpl<$Res>
     implements $BookmarksStateCopyWith<$Res> {
   _$BookmarksStateCopyWithImpl(this._value, this._then);
@@ -88,12 +95,14 @@ class _$BookmarksStateCopyWithImpl<$Res>
   final $Res Function(BookmarksState) _then;
 }
 
+/// @nodoc
 abstract class $InitialBookmarksStateCopyWith<$Res> {
   factory $InitialBookmarksStateCopyWith(InitialBookmarksState value,
           $Res Function(InitialBookmarksState) then) =
       _$InitialBookmarksStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitialBookmarksStateCopyWithImpl<$Res>
     extends _$BookmarksStateCopyWithImpl<$Res>
     implements $InitialBookmarksStateCopyWith<$Res> {
@@ -104,6 +113,8 @@ class _$InitialBookmarksStateCopyWithImpl<$Res>
   @override
   InitialBookmarksState get _value => super._value as InitialBookmarksState;
 }
+
+/// @nodoc
 
 class _$InitialBookmarksState
     with DiagnosticableTreeMixin
@@ -131,29 +142,24 @@ class _$InitialBookmarksState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result data(List<Tournament> data),
-    @required Result loading(),
-    @required Result error(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Tournament> data) data,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) error,
   }) {
-    assert(initial != null);
-    assert(data != null);
-    assert(loading != null);
-    assert(error != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result data(List<Tournament> data),
-    Result loading(),
-    Result error(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Tournament> data)? data,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -162,29 +168,24 @@ class _$InitialBookmarksState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialBookmarksState value),
-    @required Result data(DataBookmarksState value),
-    @required Result loading(LoadingBookmarksState value),
-    @required Result error(ErrorBookmarksState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialBookmarksState value) initial,
+    required TResult Function(DataBookmarksState value) data,
+    required TResult Function(LoadingBookmarksState value) loading,
+    required TResult Function(ErrorBookmarksState value) error,
   }) {
-    assert(initial != null);
-    assert(data != null);
-    assert(loading != null);
-    assert(error != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialBookmarksState value),
-    Result data(DataBookmarksState value),
-    Result loading(LoadingBookmarksState value),
-    Result error(ErrorBookmarksState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialBookmarksState value)? initial,
+    TResult Function(DataBookmarksState value)? data,
+    TResult Function(LoadingBookmarksState value)? loading,
+    TResult Function(ErrorBookmarksState value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -196,6 +197,7 @@ abstract class InitialBookmarksState implements BookmarksState {
   const factory InitialBookmarksState() = _$InitialBookmarksState;
 }
 
+/// @nodoc
 abstract class $DataBookmarksStateCopyWith<$Res> {
   factory $DataBookmarksStateCopyWith(
           DataBookmarksState value, $Res Function(DataBookmarksState) then) =
@@ -203,6 +205,7 @@ abstract class $DataBookmarksStateCopyWith<$Res> {
   $Res call({List<Tournament> data});
 }
 
+/// @nodoc
 class _$DataBookmarksStateCopyWithImpl<$Res>
     extends _$BookmarksStateCopyWithImpl<$Res>
     implements $DataBookmarksStateCopyWith<$Res> {
@@ -215,18 +218,23 @@ class _$DataBookmarksStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
+    Object? data = freezed,
   }) {
     return _then(DataBookmarksState(
-      data: data == freezed ? _value.data : data as List<Tournament>,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Tournament>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$DataBookmarksState
     with DiagnosticableTreeMixin
     implements DataBookmarksState {
-  const _$DataBookmarksState({@required this.data}) : assert(data != null);
+  const _$DataBookmarksState({required this.data});
 
   @override
   final List<Tournament> data;
@@ -256,35 +264,31 @@ class _$DataBookmarksState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
+  @JsonKey(ignore: true)
   @override
   $DataBookmarksStateCopyWith<DataBookmarksState> get copyWith =>
       _$DataBookmarksStateCopyWithImpl<DataBookmarksState>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result data(List<Tournament> data),
-    @required Result loading(),
-    @required Result error(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Tournament> data) data,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) error,
   }) {
-    assert(initial != null);
-    assert(data != null);
-    assert(loading != null);
-    assert(error != null);
     return data(this.data);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result data(List<Tournament> data),
-    Result loading(),
-    Result error(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Tournament> data)? data,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (data != null) {
       return data(this.data);
     }
@@ -293,29 +297,24 @@ class _$DataBookmarksState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialBookmarksState value),
-    @required Result data(DataBookmarksState value),
-    @required Result loading(LoadingBookmarksState value),
-    @required Result error(ErrorBookmarksState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialBookmarksState value) initial,
+    required TResult Function(DataBookmarksState value) data,
+    required TResult Function(LoadingBookmarksState value) loading,
+    required TResult Function(ErrorBookmarksState value) error,
   }) {
-    assert(initial != null);
-    assert(data != null);
-    assert(loading != null);
-    assert(error != null);
     return data(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialBookmarksState value),
-    Result data(DataBookmarksState value),
-    Result loading(LoadingBookmarksState value),
-    Result error(ErrorBookmarksState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialBookmarksState value)? initial,
+    TResult Function(DataBookmarksState value)? data,
+    TResult Function(LoadingBookmarksState value)? loading,
+    TResult Function(ErrorBookmarksState value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (data != null) {
       return data(this);
     }
@@ -324,19 +323,23 @@ class _$DataBookmarksState
 }
 
 abstract class DataBookmarksState implements BookmarksState {
-  const factory DataBookmarksState({@required List<Tournament> data}) =
+  const factory DataBookmarksState({required List<Tournament> data}) =
       _$DataBookmarksState;
 
-  List<Tournament> get data;
-  $DataBookmarksStateCopyWith<DataBookmarksState> get copyWith;
+  List<Tournament> get data => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DataBookmarksStateCopyWith<DataBookmarksState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $LoadingBookmarksStateCopyWith<$Res> {
   factory $LoadingBookmarksStateCopyWith(LoadingBookmarksState value,
           $Res Function(LoadingBookmarksState) then) =
       _$LoadingBookmarksStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadingBookmarksStateCopyWithImpl<$Res>
     extends _$BookmarksStateCopyWithImpl<$Res>
     implements $LoadingBookmarksStateCopyWith<$Res> {
@@ -347,6 +350,8 @@ class _$LoadingBookmarksStateCopyWithImpl<$Res>
   @override
   LoadingBookmarksState get _value => super._value as LoadingBookmarksState;
 }
+
+/// @nodoc
 
 class _$LoadingBookmarksState
     with DiagnosticableTreeMixin
@@ -374,29 +379,24 @@ class _$LoadingBookmarksState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result data(List<Tournament> data),
-    @required Result loading(),
-    @required Result error(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Tournament> data) data,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) error,
   }) {
-    assert(initial != null);
-    assert(data != null);
-    assert(loading != null);
-    assert(error != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result data(List<Tournament> data),
-    Result loading(),
-    Result error(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Tournament> data)? data,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -405,29 +405,24 @@ class _$LoadingBookmarksState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialBookmarksState value),
-    @required Result data(DataBookmarksState value),
-    @required Result loading(LoadingBookmarksState value),
-    @required Result error(ErrorBookmarksState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialBookmarksState value) initial,
+    required TResult Function(DataBookmarksState value) data,
+    required TResult Function(LoadingBookmarksState value) loading,
+    required TResult Function(ErrorBookmarksState value) error,
   }) {
-    assert(initial != null);
-    assert(data != null);
-    assert(loading != null);
-    assert(error != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialBookmarksState value),
-    Result data(DataBookmarksState value),
-    Result loading(LoadingBookmarksState value),
-    Result error(ErrorBookmarksState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialBookmarksState value)? initial,
+    TResult Function(DataBookmarksState value)? data,
+    TResult Function(LoadingBookmarksState value)? loading,
+    TResult Function(ErrorBookmarksState value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -439,6 +434,7 @@ abstract class LoadingBookmarksState implements BookmarksState {
   const factory LoadingBookmarksState() = _$LoadingBookmarksState;
 }
 
+/// @nodoc
 abstract class $ErrorBookmarksStateCopyWith<$Res> {
   factory $ErrorBookmarksStateCopyWith(
           ErrorBookmarksState value, $Res Function(ErrorBookmarksState) then) =
@@ -446,6 +442,7 @@ abstract class $ErrorBookmarksStateCopyWith<$Res> {
   $Res call({Exception exception});
 }
 
+/// @nodoc
 class _$ErrorBookmarksStateCopyWithImpl<$Res>
     extends _$BookmarksStateCopyWithImpl<$Res>
     implements $ErrorBookmarksStateCopyWith<$Res> {
@@ -458,20 +455,23 @@ class _$ErrorBookmarksStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object exception = freezed,
+    Object? exception = freezed,
   }) {
     return _then(ErrorBookmarksState(
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ErrorBookmarksState
     with DiagnosticableTreeMixin
     implements ErrorBookmarksState {
-  const _$ErrorBookmarksState({@required this.exception})
-      : assert(exception != null);
+  const _$ErrorBookmarksState({required this.exception});
 
   @override
   final Exception exception;
@@ -502,35 +502,31 @@ class _$ErrorBookmarksState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
 
+  @JsonKey(ignore: true)
   @override
   $ErrorBookmarksStateCopyWith<ErrorBookmarksState> get copyWith =>
       _$ErrorBookmarksStateCopyWithImpl<ErrorBookmarksState>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result data(List<Tournament> data),
-    @required Result loading(),
-    @required Result error(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Tournament> data) data,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) error,
   }) {
-    assert(initial != null);
-    assert(data != null);
-    assert(loading != null);
-    assert(error != null);
     return error(exception);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result data(List<Tournament> data),
-    Result loading(),
-    Result error(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Tournament> data)? data,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(exception);
     }
@@ -539,29 +535,24 @@ class _$ErrorBookmarksState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialBookmarksState value),
-    @required Result data(DataBookmarksState value),
-    @required Result loading(LoadingBookmarksState value),
-    @required Result error(ErrorBookmarksState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialBookmarksState value) initial,
+    required TResult Function(DataBookmarksState value) data,
+    required TResult Function(LoadingBookmarksState value) loading,
+    required TResult Function(ErrorBookmarksState value) error,
   }) {
-    assert(initial != null);
-    assert(data != null);
-    assert(loading != null);
-    assert(error != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialBookmarksState value),
-    Result data(DataBookmarksState value),
-    Result loading(LoadingBookmarksState value),
-    Result error(ErrorBookmarksState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialBookmarksState value)? initial,
+    TResult Function(DataBookmarksState value)? data,
+    TResult Function(LoadingBookmarksState value)? loading,
+    TResult Function(ErrorBookmarksState value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -570,9 +561,11 @@ class _$ErrorBookmarksState
 }
 
 abstract class ErrorBookmarksState implements BookmarksState {
-  const factory ErrorBookmarksState({@required Exception exception}) =
+  const factory ErrorBookmarksState({required Exception exception}) =
       _$ErrorBookmarksState;
 
-  Exception get exception;
-  $ErrorBookmarksStateCopyWith<ErrorBookmarksState> get copyWith;
+  Exception get exception => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ErrorBookmarksStateCopyWith<ErrorBookmarksState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

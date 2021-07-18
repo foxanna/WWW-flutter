@@ -1,25 +1,25 @@
+import 'package:dartx/dartx.dart';
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:dartx/dartx.dart';
 import 'package:what_when_where/data/cache/tournaments_permanent_cache.dart';
 import 'package:what_when_where/data/status/tournaments_bookmarks.dart';
 import 'package:what_when_where/data/status/tournaments_history.dart';
 import 'package:what_when_where/data/tournament_details_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 import 'package:what_when_where/redux/tournament/state.dart';
 import 'package:what_when_where/redux/tours/actions.dart';
 import 'package:what_when_where/redux/tours/state.dart';
-import 'package:what_when_where/redux/utils.dart';
 
 @injectable
-class TournamentMiddleware {
+class TournamentMiddleware implements IMiddleware {
   TournamentMiddleware({
-    ITournamentDetailsProvider provider,
-    ITournamentsHistoryService historyService,
-    ITournamentsBookmarksService tournamentsBookmarksService,
-    ITournamentsPermanentCache tournamentsPermanentCache,
+    required ITournamentDetailsProvider provider,
+    required ITournamentsHistoryService historyService,
+    required ITournamentsBookmarksService tournamentsBookmarksService,
+    required ITournamentsPermanentCache tournamentsPermanentCache,
   })  : _provider = provider,
         _historyService = historyService,
         _tournamentsBookmarksService = tournamentsBookmarksService,
@@ -30,24 +30,25 @@ class TournamentMiddleware {
   final ITournamentsBookmarksService _tournamentsBookmarksService;
   final ITournamentsPermanentCache _tournamentsPermanentCache;
 
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
+  late final _middleware = _createMiddleware();
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, OpenTournamentUserAction>(_open),
-        TypedMiddleware<AppState, LoadTournamentUserAction>(_load),
-        TypedMiddleware<AppState, CompletedTournamentSystemAction>(_completed),
-        TypedMiddleware<AppState, CloseTournamentUserAction>(_close),
-        TypedMiddleware<AppState, MarkAsReadTournamentSystemAction>(_read),
+        TypedMiddleware<AppState, OpenTournamentUserAction>(_onOpen),
+        TypedMiddleware<AppState, LoadTournamentUserAction>(_onLoad),
+        TypedMiddleware<AppState, CompletedTournamentSystemAction>(
+            _onCompleted),
+        TypedMiddleware<AppState, CloseTournamentUserAction>(_onClose),
+        TypedMiddleware<AppState, MarkAsReadTournamentSystemAction>(
+            _onMarkAsRead),
         TypedMiddleware<AppState, AddToBookmarksTournamentUserAction>(
-            _addToBookmarks),
+            _onAddToBookmarks),
         TypedMiddleware<AppState, RemoveFromBookmarksTournamentUserAction>(
-            _removeFromBookmarks),
-        TypedMiddleware<AppState, CompletedToursSystemAction>(_tourCompleted),
+            _onRemoveFromBookmarks),
+        TypedMiddleware<AppState, CompletedToursSystemAction>(_onTourCompleted),
       ];
 
-  void _open(Store<AppState> store, OpenTournamentUserAction action,
+  void _onOpen(Store<AppState> store, OpenTournamentUserAction action,
       NextDispatcher next) {
     next(action);
 
@@ -58,16 +59,16 @@ class TournamentMiddleware {
     store.dispatch(UserActionTournament.load(info: action.info));
   }
 
-  Future<void> _load(Store<AppState> store, LoadTournamentUserAction action,
+  Future<void> _onLoad(Store<AppState> store, LoadTournamentUserAction action,
       NextDispatcher next) async {
     next(action);
 
-    final state = store.state.tournamentState;
+    await store.state.tournamentState
+        .traverseFuture((state) => _load(store, state, action));
+  }
 
-    if (state == null) {
-      return;
-    }
-
+  Future<void> _load(Store<AppState> store, TournamentState state,
+      LoadTournamentUserAction action) async {
     if (state is LoadingTournamentState &&
         (state.info.id == action.info.id ||
             state.info.id2 == action.info.id2)) {
@@ -77,34 +78,32 @@ class TournamentMiddleware {
     try {
       store.dispatch(SystemActionTournament.loading(info: action.info));
 
-      final data = await _provider.get(action.info.id ?? action.info.id2);
-
-      throwIfDataIsNull(data);
+      final id = (action.info.id ?? action.info.id2)!;
+      final data = await _provider.get(id);
 
       store.dispatch(SystemActionTournament.completed(tournament: data));
     } on Exception catch (e) {
       store.dispatch(
           SystemActionTournament.failed(info: action.info, exception: e));
+    } on Error catch (e) {
+      store.dispatch(SystemActionTournament.failed(
+          info: action.info, exception: Exception(e.toString())));
     }
   }
 
-  void _completed(Store<AppState> store, CompletedTournamentSystemAction action,
-      NextDispatcher next) {
+  void _onCompleted(Store<AppState> store,
+      CompletedTournamentSystemAction action, NextDispatcher next) {
     next(action);
 
-    final state = store.state.tournamentState;
-
-    if (state == null) {
-      return;
-    }
-
-    if (state.info == action.tournament.info) {
-      store.dispatch(SystemActionTours.init(
-          tours: action.tournament.tours.map((x) => x.info).toList()));
-    }
+    store.state.tournamentState.forEach((state) {
+      if (state.info == action.tournament.info) {
+        store.dispatch(SystemActionTours.init(
+            tours: action.tournament.tours.map((x) => x.info).toList()));
+      }
+    });
   }
 
-  void _close(Store<AppState> store, CloseTournamentUserAction action,
+  void _onClose(Store<AppState> store, CloseTournamentUserAction action,
       NextDispatcher next) {
     next(action);
 
@@ -112,32 +111,32 @@ class TournamentMiddleware {
     store.dispatch(const SystemActionTours.deInit());
   }
 
-  Future<void> _read(Store<AppState> store,
+  Future<void> _onMarkAsRead(Store<AppState> store,
       MarkAsReadTournamentSystemAction action, NextDispatcher next) async {
     next(action);
 
-    final state = store.state.tournamentState;
+    await store.state.tournamentState
+        .traverseFuture((state) => _markAsRead(store, state, action));
+  }
 
-    if (state == null) {
-      return;
-    }
-
+  Future<void> _markAsRead(Store<AppState> store, TournamentState state,
+      MarkAsReadTournamentSystemAction action) async {
     store.dispatch(SystemActionTournament.statusChanged(
         info: action.info, status: state.status.copyWith(isNew: false)));
 
     await _historyService.markAsRead(action.info);
   }
 
-  Future<void> _addToBookmarks(Store<AppState> store,
+  Future<void> _onAddToBookmarks(Store<AppState> store,
       AddToBookmarksTournamentUserAction action, NextDispatcher next) async {
     next(action);
 
-    final state = store.state.tournamentState;
+    await store.state.tournamentState
+        .traverseFuture((state) => _addToBookmarks(store, state));
+  }
 
-    if (state == null) {
-      return;
-    }
-
+  Future<void> _addToBookmarks(
+      Store<AppState> store, TournamentState state) async {
     if (state is DataTournamentState && state.toursLoaded) {
       store.dispatch(SystemActionTournament.statusChanged(
         info: state.info,
@@ -149,18 +148,18 @@ class TournamentMiddleware {
     }
   }
 
-  Future<void> _removeFromBookmarks(
+  Future<void> _onRemoveFromBookmarks(
       Store<AppState> store,
       RemoveFromBookmarksTournamentUserAction action,
       NextDispatcher next) async {
     next(action);
 
-    final state = store.state.tournamentState;
+    await store.state.tournamentState
+        .traverseFuture((state) => _removeFromBookmarks(store, state));
+  }
 
-    if (state == null) {
-      return;
-    }
-
+  Future<void> _removeFromBookmarks(
+      Store<AppState> store, TournamentState state) async {
     store.dispatch(SystemActionTournament.statusChanged(
       info: state.info,
       status: state.status.copyWith(isBookmarked: false),
@@ -170,16 +169,15 @@ class TournamentMiddleware {
     await _tournamentsBookmarksService.removeFromBookmarks(state.info);
   }
 
-  void _tourCompleted(Store<AppState> store, CompletedToursSystemAction action,
-      NextDispatcher next) {
+  void _onTourCompleted(Store<AppState> store,
+      CompletedToursSystemAction action, NextDispatcher next) {
     next(action);
 
-    final toursState = store.state.toursState;
+    store.state.toursState
+        .forEach((toursState) => _tourCompleted(store, toursState));
+  }
 
-    if (toursState == null) {
-      return;
-    }
-
+  void _tourCompleted(Store<AppState> store, ToursState toursState) {
     if (toursState.tours.every((x) => x is DataTourState)) {
       final completedTours = toursState.tours.whereType<DataTourState>();
       final distinct = completedTours

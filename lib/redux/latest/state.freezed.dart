@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'state.dart';
 
@@ -9,41 +9,40 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$LatestTournamentsStateTearOff {
   const _$LatestTournamentsStateTearOff();
 
-// ignore: unused_element
   InitialLatestTournamentsState initial() {
     return const InitialLatestTournamentsState();
   }
 
-// ignore: unused_element
   LoadingFirstPageLatestTournamentsState loadingFirstPage() {
     return const LoadingFirstPageLatestTournamentsState();
   }
 
-// ignore: unused_element
   LoadingWithDataLatestTournamentsState loadingWithData(
-      {@required List<Tournament> data, @required int nextPage}) {
+      {required List<Tournament> data, required int nextPage}) {
     return LoadingWithDataLatestTournamentsState(
       data: data,
       nextPage: nextPage,
     );
   }
 
-// ignore: unused_element
   ErrorFirstPageLatestTournamentsState errorFirstPage(
-      {@required Exception exception}) {
+      {required Exception exception}) {
     return ErrorFirstPageLatestTournamentsState(
       exception: exception,
     );
   }
 
-// ignore: unused_element
   ErrorWithDataLatestTournamentsState errorWithData(
-      {@required List<Tournament> data,
-      @required Exception exception,
-      @required int nextPage}) {
+      {required List<Tournament> data,
+      required Exception exception,
+      required int nextPage}) {
     return ErrorWithDataLatestTournamentsState(
       data: data,
       exception: exception,
@@ -51,17 +50,15 @@ class _$LatestTournamentsStateTearOff {
     );
   }
 
-// ignore: unused_element
   RefreshingLatestTournamentsState refreshing(
-      {@required List<Tournament> data}) {
+      {required List<Tournament> data}) {
     return RefreshingLatestTournamentsState(
       data: data,
     );
   }
 
-// ignore: unused_element
   DataLatestTournamentsState data(
-      {@required int nextPage, @required List<Tournament> data}) {
+      {required int nextPage, required List<Tournament> data}) {
     return DataLatestTournamentsState(
       nextPage: nextPage,
       data: data,
@@ -69,65 +66,79 @@ class _$LatestTournamentsStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $LatestTournamentsState = _$LatestTournamentsStateTearOff();
 
+/// @nodoc
 mixin _$LatestTournamentsState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required Result loadingWithData(List<Tournament> data, int nextPage),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(
-            List<Tournament> data, Exception exception, int nextPage),
-    @required Result refreshing(List<Tournament> data),
-    @required Result data(int nextPage, List<Tournament> data),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(List<Tournament> data, int nextPage)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(
+            List<Tournament> data, Exception exception, int nextPage)
+        errorWithData,
+    required TResult Function(List<Tournament> data) refreshing,
+    required TResult Function(int nextPage, List<Tournament> data) data,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(List<Tournament> data, int nextPage),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(
-        List<Tournament> data, Exception exception, int nextPage),
-    Result refreshing(List<Tournament> data),
-    Result data(int nextPage, List<Tournament> data),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialLatestTournamentsState value),
-    @required
-        Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    @required
-        Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    @required Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    @required Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    @required Result refreshing(RefreshingLatestTournamentsState value),
-    @required Result data(DataLatestTournamentsState value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialLatestTournamentsState value) initial,
+    required TResult Function(LoadingFirstPageLatestTournamentsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataLatestTournamentsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageLatestTournamentsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataLatestTournamentsState value)
+        errorWithData,
+    required TResult Function(RefreshingLatestTournamentsState value)
+        refreshing,
+    required TResult Function(DataLatestTournamentsState value) data,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialLatestTournamentsState value),
-    Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    Result refreshing(RefreshingLatestTournamentsState value),
-    Result data(DataLatestTournamentsState value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $LatestTournamentsStateCopyWith<$Res> {
   factory $LatestTournamentsStateCopyWith(LatestTournamentsState value,
           $Res Function(LatestTournamentsState) then) =
       _$LatestTournamentsStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LatestTournamentsStateCopyWithImpl<$Res>
     implements $LatestTournamentsStateCopyWith<$Res> {
   _$LatestTournamentsStateCopyWithImpl(this._value, this._then);
@@ -137,6 +148,7 @@ class _$LatestTournamentsStateCopyWithImpl<$Res>
   final $Res Function(LatestTournamentsState) _then;
 }
 
+/// @nodoc
 abstract class $InitialLatestTournamentsStateCopyWith<$Res> {
   factory $InitialLatestTournamentsStateCopyWith(
           InitialLatestTournamentsState value,
@@ -144,6 +156,7 @@ abstract class $InitialLatestTournamentsStateCopyWith<$Res> {
       _$InitialLatestTournamentsStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitialLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
     implements $InitialLatestTournamentsStateCopyWith<$Res> {
@@ -156,6 +169,8 @@ class _$InitialLatestTournamentsStateCopyWithImpl<$Res>
   InitialLatestTournamentsState get _value =>
       super._value as InitialLatestTournamentsState;
 }
+
+/// @nodoc
 
 class _$InitialLatestTournamentsState
     with DiagnosticableTreeMixin
@@ -184,41 +199,34 @@ class _$InitialLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required Result loadingWithData(List<Tournament> data, int nextPage),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(
-            List<Tournament> data, Exception exception, int nextPage),
-    @required Result refreshing(List<Tournament> data),
-    @required Result data(int nextPage, List<Tournament> data),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(List<Tournament> data, int nextPage)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(
+            List<Tournament> data, Exception exception, int nextPage)
+        errorWithData,
+    required TResult Function(List<Tournament> data) refreshing,
+    required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(List<Tournament> data, int nextPage),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(
-        List<Tournament> data, Exception exception, int nextPage),
-    Result refreshing(List<Tournament> data),
-    Result data(int nextPage, List<Tournament> data),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -227,40 +235,38 @@ class _$InitialLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialLatestTournamentsState value),
-    @required
-        Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    @required
-        Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    @required Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    @required Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    @required Result refreshing(RefreshingLatestTournamentsState value),
-    @required Result data(DataLatestTournamentsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialLatestTournamentsState value) initial,
+    required TResult Function(LoadingFirstPageLatestTournamentsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataLatestTournamentsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageLatestTournamentsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataLatestTournamentsState value)
+        errorWithData,
+    required TResult Function(RefreshingLatestTournamentsState value)
+        refreshing,
+    required TResult Function(DataLatestTournamentsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialLatestTournamentsState value),
-    Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    Result refreshing(RefreshingLatestTournamentsState value),
-    Result data(DataLatestTournamentsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -273,6 +279,7 @@ abstract class InitialLatestTournamentsState implements LatestTournamentsState {
       _$InitialLatestTournamentsState;
 }
 
+/// @nodoc
 abstract class $LoadingFirstPageLatestTournamentsStateCopyWith<$Res> {
   factory $LoadingFirstPageLatestTournamentsStateCopyWith(
           LoadingFirstPageLatestTournamentsState value,
@@ -280,6 +287,7 @@ abstract class $LoadingFirstPageLatestTournamentsStateCopyWith<$Res> {
       _$LoadingFirstPageLatestTournamentsStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadingFirstPageLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
     implements $LoadingFirstPageLatestTournamentsStateCopyWith<$Res> {
@@ -293,6 +301,8 @@ class _$LoadingFirstPageLatestTournamentsStateCopyWithImpl<$Res>
   LoadingFirstPageLatestTournamentsState get _value =>
       super._value as LoadingFirstPageLatestTournamentsState;
 }
+
+/// @nodoc
 
 class _$LoadingFirstPageLatestTournamentsState
     with DiagnosticableTreeMixin
@@ -323,41 +333,34 @@ class _$LoadingFirstPageLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required Result loadingWithData(List<Tournament> data, int nextPage),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(
-            List<Tournament> data, Exception exception, int nextPage),
-    @required Result refreshing(List<Tournament> data),
-    @required Result data(int nextPage, List<Tournament> data),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(List<Tournament> data, int nextPage)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(
+            List<Tournament> data, Exception exception, int nextPage)
+        errorWithData,
+    required TResult Function(List<Tournament> data) refreshing,
+    required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return loadingFirstPage();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(List<Tournament> data, int nextPage),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(
-        List<Tournament> data, Exception exception, int nextPage),
-    Result refreshing(List<Tournament> data),
-    Result data(int nextPage, List<Tournament> data),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingFirstPage != null) {
       return loadingFirstPage();
     }
@@ -366,40 +369,38 @@ class _$LoadingFirstPageLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialLatestTournamentsState value),
-    @required
-        Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    @required
-        Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    @required Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    @required Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    @required Result refreshing(RefreshingLatestTournamentsState value),
-    @required Result data(DataLatestTournamentsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialLatestTournamentsState value) initial,
+    required TResult Function(LoadingFirstPageLatestTournamentsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataLatestTournamentsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageLatestTournamentsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataLatestTournamentsState value)
+        errorWithData,
+    required TResult Function(RefreshingLatestTournamentsState value)
+        refreshing,
+    required TResult Function(DataLatestTournamentsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return loadingFirstPage(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialLatestTournamentsState value),
-    Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    Result refreshing(RefreshingLatestTournamentsState value),
-    Result data(DataLatestTournamentsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingFirstPage != null) {
       return loadingFirstPage(this);
     }
@@ -413,6 +414,7 @@ abstract class LoadingFirstPageLatestTournamentsState
       _$LoadingFirstPageLatestTournamentsState;
 }
 
+/// @nodoc
 abstract class $LoadingWithDataLatestTournamentsStateCopyWith<$Res> {
   factory $LoadingWithDataLatestTournamentsStateCopyWith(
           LoadingWithDataLatestTournamentsState value,
@@ -421,6 +423,7 @@ abstract class $LoadingWithDataLatestTournamentsStateCopyWith<$Res> {
   $Res call({List<Tournament> data, int nextPage});
 }
 
+/// @nodoc
 class _$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
     implements $LoadingWithDataLatestTournamentsStateCopyWith<$Res> {
@@ -435,23 +438,29 @@ class _$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object nextPage = freezed,
+    Object? data = freezed,
+    Object? nextPage = freezed,
   }) {
     return _then(LoadingWithDataLatestTournamentsState(
-      data: data == freezed ? _value.data : data as List<Tournament>,
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as int,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Tournament>,
+      nextPage: nextPage == freezed
+          ? _value.nextPage
+          : nextPage // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
+
+/// @nodoc
 
 class _$LoadingWithDataLatestTournamentsState
     with DiagnosticableTreeMixin
     implements LoadingWithDataLatestTournamentsState {
   const _$LoadingWithDataLatestTournamentsState(
-      {@required this.data, @required this.nextPage})
-      : assert(data != null),
-        assert(nextPage != null);
+      {required this.data, required this.nextPage});
 
   @override
   final List<Tournament> data;
@@ -490,6 +499,7 @@ class _$LoadingWithDataLatestTournamentsState
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(nextPage);
 
+  @JsonKey(ignore: true)
   @override
   $LoadingWithDataLatestTournamentsStateCopyWith<
           LoadingWithDataLatestTournamentsState>
@@ -498,41 +508,34 @@ class _$LoadingWithDataLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required Result loadingWithData(List<Tournament> data, int nextPage),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(
-            List<Tournament> data, Exception exception, int nextPage),
-    @required Result refreshing(List<Tournament> data),
-    @required Result data(int nextPage, List<Tournament> data),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(List<Tournament> data, int nextPage)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(
+            List<Tournament> data, Exception exception, int nextPage)
+        errorWithData,
+    required TResult Function(List<Tournament> data) refreshing,
+    required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return loadingWithData(this.data, nextPage);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(List<Tournament> data, int nextPage),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(
-        List<Tournament> data, Exception exception, int nextPage),
-    Result refreshing(List<Tournament> data),
-    Result data(int nextPage, List<Tournament> data),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingWithData != null) {
       return loadingWithData(this.data, nextPage);
     }
@@ -541,40 +544,38 @@ class _$LoadingWithDataLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialLatestTournamentsState value),
-    @required
-        Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    @required
-        Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    @required Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    @required Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    @required Result refreshing(RefreshingLatestTournamentsState value),
-    @required Result data(DataLatestTournamentsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialLatestTournamentsState value) initial,
+    required TResult Function(LoadingFirstPageLatestTournamentsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataLatestTournamentsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageLatestTournamentsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataLatestTournamentsState value)
+        errorWithData,
+    required TResult Function(RefreshingLatestTournamentsState value)
+        refreshing,
+    required TResult Function(DataLatestTournamentsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return loadingWithData(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialLatestTournamentsState value),
-    Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    Result refreshing(RefreshingLatestTournamentsState value),
-    Result data(DataLatestTournamentsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingWithData != null) {
       return loadingWithData(this);
     }
@@ -585,15 +586,18 @@ class _$LoadingWithDataLatestTournamentsState
 abstract class LoadingWithDataLatestTournamentsState
     implements LatestTournamentsState {
   const factory LoadingWithDataLatestTournamentsState(
-      {@required List<Tournament> data,
-      @required int nextPage}) = _$LoadingWithDataLatestTournamentsState;
+      {required List<Tournament> data,
+      required int nextPage}) = _$LoadingWithDataLatestTournamentsState;
 
-  List<Tournament> get data;
-  int get nextPage;
+  List<Tournament> get data => throw _privateConstructorUsedError;
+  int get nextPage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $LoadingWithDataLatestTournamentsStateCopyWith<
-      LoadingWithDataLatestTournamentsState> get copyWith;
+          LoadingWithDataLatestTournamentsState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ErrorFirstPageLatestTournamentsStateCopyWith<$Res> {
   factory $ErrorFirstPageLatestTournamentsStateCopyWith(
           ErrorFirstPageLatestTournamentsState value,
@@ -602,6 +606,7 @@ abstract class $ErrorFirstPageLatestTournamentsStateCopyWith<$Res> {
   $Res call({Exception exception});
 }
 
+/// @nodoc
 class _$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
     implements $ErrorFirstPageLatestTournamentsStateCopyWith<$Res> {
@@ -616,20 +621,23 @@ class _$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object exception = freezed,
+    Object? exception = freezed,
   }) {
     return _then(ErrorFirstPageLatestTournamentsState(
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ErrorFirstPageLatestTournamentsState
     with DiagnosticableTreeMixin
     implements ErrorFirstPageLatestTournamentsState {
-  const _$ErrorFirstPageLatestTournamentsState({@required this.exception})
-      : assert(exception != null);
+  const _$ErrorFirstPageLatestTournamentsState({required this.exception});
 
   @override
   final Exception exception;
@@ -661,6 +669,7 @@ class _$ErrorFirstPageLatestTournamentsState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
 
+  @JsonKey(ignore: true)
   @override
   $ErrorFirstPageLatestTournamentsStateCopyWith<
           ErrorFirstPageLatestTournamentsState>
@@ -669,41 +678,34 @@ class _$ErrorFirstPageLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required Result loadingWithData(List<Tournament> data, int nextPage),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(
-            List<Tournament> data, Exception exception, int nextPage),
-    @required Result refreshing(List<Tournament> data),
-    @required Result data(int nextPage, List<Tournament> data),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(List<Tournament> data, int nextPage)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(
+            List<Tournament> data, Exception exception, int nextPage)
+        errorWithData,
+    required TResult Function(List<Tournament> data) refreshing,
+    required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return errorFirstPage(exception);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(List<Tournament> data, int nextPage),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(
-        List<Tournament> data, Exception exception, int nextPage),
-    Result refreshing(List<Tournament> data),
-    Result data(int nextPage, List<Tournament> data),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (errorFirstPage != null) {
       return errorFirstPage(exception);
     }
@@ -712,40 +714,38 @@ class _$ErrorFirstPageLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialLatestTournamentsState value),
-    @required
-        Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    @required
-        Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    @required Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    @required Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    @required Result refreshing(RefreshingLatestTournamentsState value),
-    @required Result data(DataLatestTournamentsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialLatestTournamentsState value) initial,
+    required TResult Function(LoadingFirstPageLatestTournamentsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataLatestTournamentsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageLatestTournamentsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataLatestTournamentsState value)
+        errorWithData,
+    required TResult Function(RefreshingLatestTournamentsState value)
+        refreshing,
+    required TResult Function(DataLatestTournamentsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return errorFirstPage(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialLatestTournamentsState value),
-    Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    Result refreshing(RefreshingLatestTournamentsState value),
-    Result data(DataLatestTournamentsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (errorFirstPage != null) {
       return errorFirstPage(this);
     }
@@ -756,13 +756,16 @@ class _$ErrorFirstPageLatestTournamentsState
 abstract class ErrorFirstPageLatestTournamentsState
     implements LatestTournamentsState {
   const factory ErrorFirstPageLatestTournamentsState(
-      {@required Exception exception}) = _$ErrorFirstPageLatestTournamentsState;
+      {required Exception exception}) = _$ErrorFirstPageLatestTournamentsState;
 
-  Exception get exception;
+  Exception get exception => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $ErrorFirstPageLatestTournamentsStateCopyWith<
-      ErrorFirstPageLatestTournamentsState> get copyWith;
+          ErrorFirstPageLatestTournamentsState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ErrorWithDataLatestTournamentsStateCopyWith<$Res> {
   factory $ErrorWithDataLatestTournamentsStateCopyWith(
           ErrorWithDataLatestTournamentsState value,
@@ -771,6 +774,7 @@ abstract class $ErrorWithDataLatestTournamentsStateCopyWith<$Res> {
   $Res call({List<Tournament> data, Exception exception, int nextPage});
 }
 
+/// @nodoc
 class _$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
     implements $ErrorWithDataLatestTournamentsStateCopyWith<$Res> {
@@ -785,27 +789,34 @@ class _$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object exception = freezed,
-    Object nextPage = freezed,
+    Object? data = freezed,
+    Object? exception = freezed,
+    Object? nextPage = freezed,
   }) {
     return _then(ErrorWithDataLatestTournamentsState(
-      data: data == freezed ? _value.data : data as List<Tournament>,
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as int,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Tournament>,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
+      nextPage: nextPage == freezed
+          ? _value.nextPage
+          : nextPage // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
+
+/// @nodoc
 
 class _$ErrorWithDataLatestTournamentsState
     with DiagnosticableTreeMixin
     implements ErrorWithDataLatestTournamentsState {
   const _$ErrorWithDataLatestTournamentsState(
-      {@required this.data, @required this.exception, @required this.nextPage})
-      : assert(data != null),
-        assert(exception != null),
-        assert(nextPage != null);
+      {required this.data, required this.exception, required this.nextPage});
 
   @override
   final List<Tournament> data;
@@ -850,6 +861,7 @@ class _$ErrorWithDataLatestTournamentsState
       const DeepCollectionEquality().hash(exception) ^
       const DeepCollectionEquality().hash(nextPage);
 
+  @JsonKey(ignore: true)
   @override
   $ErrorWithDataLatestTournamentsStateCopyWith<
           ErrorWithDataLatestTournamentsState>
@@ -858,41 +870,34 @@ class _$ErrorWithDataLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required Result loadingWithData(List<Tournament> data, int nextPage),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(
-            List<Tournament> data, Exception exception, int nextPage),
-    @required Result refreshing(List<Tournament> data),
-    @required Result data(int nextPage, List<Tournament> data),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(List<Tournament> data, int nextPage)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(
+            List<Tournament> data, Exception exception, int nextPage)
+        errorWithData,
+    required TResult Function(List<Tournament> data) refreshing,
+    required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return errorWithData(this.data, exception, nextPage);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(List<Tournament> data, int nextPage),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(
-        List<Tournament> data, Exception exception, int nextPage),
-    Result refreshing(List<Tournament> data),
-    Result data(int nextPage, List<Tournament> data),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (errorWithData != null) {
       return errorWithData(this.data, exception, nextPage);
     }
@@ -901,40 +906,38 @@ class _$ErrorWithDataLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialLatestTournamentsState value),
-    @required
-        Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    @required
-        Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    @required Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    @required Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    @required Result refreshing(RefreshingLatestTournamentsState value),
-    @required Result data(DataLatestTournamentsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialLatestTournamentsState value) initial,
+    required TResult Function(LoadingFirstPageLatestTournamentsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataLatestTournamentsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageLatestTournamentsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataLatestTournamentsState value)
+        errorWithData,
+    required TResult Function(RefreshingLatestTournamentsState value)
+        refreshing,
+    required TResult Function(DataLatestTournamentsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return errorWithData(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialLatestTournamentsState value),
-    Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    Result refreshing(RefreshingLatestTournamentsState value),
-    Result data(DataLatestTournamentsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (errorWithData != null) {
       return errorWithData(this);
     }
@@ -945,17 +948,20 @@ class _$ErrorWithDataLatestTournamentsState
 abstract class ErrorWithDataLatestTournamentsState
     implements LatestTournamentsState {
   const factory ErrorWithDataLatestTournamentsState(
-      {@required List<Tournament> data,
-      @required Exception exception,
-      @required int nextPage}) = _$ErrorWithDataLatestTournamentsState;
+      {required List<Tournament> data,
+      required Exception exception,
+      required int nextPage}) = _$ErrorWithDataLatestTournamentsState;
 
-  List<Tournament> get data;
-  Exception get exception;
-  int get nextPage;
+  List<Tournament> get data => throw _privateConstructorUsedError;
+  Exception get exception => throw _privateConstructorUsedError;
+  int get nextPage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $ErrorWithDataLatestTournamentsStateCopyWith<
-      ErrorWithDataLatestTournamentsState> get copyWith;
+          ErrorWithDataLatestTournamentsState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $RefreshingLatestTournamentsStateCopyWith<$Res> {
   factory $RefreshingLatestTournamentsStateCopyWith(
           RefreshingLatestTournamentsState value,
@@ -964,6 +970,7 @@ abstract class $RefreshingLatestTournamentsStateCopyWith<$Res> {
   $Res call({List<Tournament> data});
 }
 
+/// @nodoc
 class _$RefreshingLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
     implements $RefreshingLatestTournamentsStateCopyWith<$Res> {
@@ -978,19 +985,23 @@ class _$RefreshingLatestTournamentsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
+    Object? data = freezed,
   }) {
     return _then(RefreshingLatestTournamentsState(
-      data: data == freezed ? _value.data : data as List<Tournament>,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Tournament>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$RefreshingLatestTournamentsState
     with DiagnosticableTreeMixin
     implements RefreshingLatestTournamentsState {
-  const _$RefreshingLatestTournamentsState({@required this.data})
-      : assert(data != null);
+  const _$RefreshingLatestTournamentsState({required this.data});
 
   @override
   final List<Tournament> data;
@@ -1020,6 +1031,7 @@ class _$RefreshingLatestTournamentsState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
+  @JsonKey(ignore: true)
   @override
   $RefreshingLatestTournamentsStateCopyWith<RefreshingLatestTournamentsState>
       get copyWith => _$RefreshingLatestTournamentsStateCopyWithImpl<
@@ -1027,41 +1039,34 @@ class _$RefreshingLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required Result loadingWithData(List<Tournament> data, int nextPage),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(
-            List<Tournament> data, Exception exception, int nextPage),
-    @required Result refreshing(List<Tournament> data),
-    @required Result data(int nextPage, List<Tournament> data),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(List<Tournament> data, int nextPage)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(
+            List<Tournament> data, Exception exception, int nextPage)
+        errorWithData,
+    required TResult Function(List<Tournament> data) refreshing,
+    required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return refreshing(this.data);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(List<Tournament> data, int nextPage),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(
-        List<Tournament> data, Exception exception, int nextPage),
-    Result refreshing(List<Tournament> data),
-    Result data(int nextPage, List<Tournament> data),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (refreshing != null) {
       return refreshing(this.data);
     }
@@ -1070,40 +1075,38 @@ class _$RefreshingLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialLatestTournamentsState value),
-    @required
-        Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    @required
-        Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    @required Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    @required Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    @required Result refreshing(RefreshingLatestTournamentsState value),
-    @required Result data(DataLatestTournamentsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialLatestTournamentsState value) initial,
+    required TResult Function(LoadingFirstPageLatestTournamentsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataLatestTournamentsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageLatestTournamentsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataLatestTournamentsState value)
+        errorWithData,
+    required TResult Function(RefreshingLatestTournamentsState value)
+        refreshing,
+    required TResult Function(DataLatestTournamentsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return refreshing(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialLatestTournamentsState value),
-    Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    Result refreshing(RefreshingLatestTournamentsState value),
-    Result data(DataLatestTournamentsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (refreshing != null) {
       return refreshing(this);
     }
@@ -1114,13 +1117,15 @@ class _$RefreshingLatestTournamentsState
 abstract class RefreshingLatestTournamentsState
     implements LatestTournamentsState {
   const factory RefreshingLatestTournamentsState(
-      {@required List<Tournament> data}) = _$RefreshingLatestTournamentsState;
+      {required List<Tournament> data}) = _$RefreshingLatestTournamentsState;
 
-  List<Tournament> get data;
+  List<Tournament> get data => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $RefreshingLatestTournamentsStateCopyWith<RefreshingLatestTournamentsState>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $DataLatestTournamentsStateCopyWith<$Res> {
   factory $DataLatestTournamentsStateCopyWith(DataLatestTournamentsState value,
           $Res Function(DataLatestTournamentsState) then) =
@@ -1128,6 +1133,7 @@ abstract class $DataLatestTournamentsStateCopyWith<$Res> {
   $Res call({int nextPage, List<Tournament> data});
 }
 
+/// @nodoc
 class _$DataLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
     implements $DataLatestTournamentsStateCopyWith<$Res> {
@@ -1141,23 +1147,29 @@ class _$DataLatestTournamentsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object nextPage = freezed,
-    Object data = freezed,
+    Object? nextPage = freezed,
+    Object? data = freezed,
   }) {
     return _then(DataLatestTournamentsState(
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as int,
-      data: data == freezed ? _value.data : data as List<Tournament>,
+      nextPage: nextPage == freezed
+          ? _value.nextPage
+          : nextPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Tournament>,
     ));
   }
 }
+
+/// @nodoc
 
 class _$DataLatestTournamentsState
     with DiagnosticableTreeMixin
     implements DataLatestTournamentsState {
   const _$DataLatestTournamentsState(
-      {@required this.nextPage, @required this.data})
-      : assert(nextPage != null),
-        assert(data != null);
+      {required this.nextPage, required this.data});
 
   @override
   final int nextPage;
@@ -1195,6 +1207,7 @@ class _$DataLatestTournamentsState
       const DeepCollectionEquality().hash(nextPage) ^
       const DeepCollectionEquality().hash(data);
 
+  @JsonKey(ignore: true)
   @override
   $DataLatestTournamentsStateCopyWith<DataLatestTournamentsState>
       get copyWith =>
@@ -1203,41 +1216,34 @@ class _$DataLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadingFirstPage(),
-    @required Result loadingWithData(List<Tournament> data, int nextPage),
-    @required Result errorFirstPage(Exception exception),
-    @required
-        Result errorWithData(
-            List<Tournament> data, Exception exception, int nextPage),
-    @required Result refreshing(List<Tournament> data),
-    @required Result data(int nextPage, List<Tournament> data),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingFirstPage,
+    required TResult Function(List<Tournament> data, int nextPage)
+        loadingWithData,
+    required TResult Function(Exception exception) errorFirstPage,
+    required TResult Function(
+            List<Tournament> data, Exception exception, int nextPage)
+        errorWithData,
+    required TResult Function(List<Tournament> data) refreshing,
+    required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return data(nextPage, this.data);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadingFirstPage(),
-    Result loadingWithData(List<Tournament> data, int nextPage),
-    Result errorFirstPage(Exception exception),
-    Result errorWithData(
-        List<Tournament> data, Exception exception, int nextPage),
-    Result refreshing(List<Tournament> data),
-    Result data(int nextPage, List<Tournament> data),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (data != null) {
       return data(nextPage, this.data);
     }
@@ -1246,40 +1252,38 @@ class _$DataLatestTournamentsState
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(InitialLatestTournamentsState value),
-    @required
-        Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    @required
-        Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    @required Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    @required Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    @required Result refreshing(RefreshingLatestTournamentsState value),
-    @required Result data(DataLatestTournamentsState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialLatestTournamentsState value) initial,
+    required TResult Function(LoadingFirstPageLatestTournamentsState value)
+        loadingFirstPage,
+    required TResult Function(LoadingWithDataLatestTournamentsState value)
+        loadingWithData,
+    required TResult Function(ErrorFirstPageLatestTournamentsState value)
+        errorFirstPage,
+    required TResult Function(ErrorWithDataLatestTournamentsState value)
+        errorWithData,
+    required TResult Function(RefreshingLatestTournamentsState value)
+        refreshing,
+    required TResult Function(DataLatestTournamentsState value) data,
   }) {
-    assert(initial != null);
-    assert(loadingFirstPage != null);
-    assert(loadingWithData != null);
-    assert(errorFirstPage != null);
-    assert(errorWithData != null);
-    assert(refreshing != null);
-    assert(data != null);
     return data(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(InitialLatestTournamentsState value),
-    Result loadingFirstPage(LoadingFirstPageLatestTournamentsState value),
-    Result loadingWithData(LoadingWithDataLatestTournamentsState value),
-    Result errorFirstPage(ErrorFirstPageLatestTournamentsState value),
-    Result errorWithData(ErrorWithDataLatestTournamentsState value),
-    Result refreshing(RefreshingLatestTournamentsState value),
-    Result data(DataLatestTournamentsState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (data != null) {
       return data(this);
     }
@@ -1289,10 +1293,12 @@ class _$DataLatestTournamentsState
 
 abstract class DataLatestTournamentsState implements LatestTournamentsState {
   const factory DataLatestTournamentsState(
-      {@required int nextPage,
-      @required List<Tournament> data}) = _$DataLatestTournamentsState;
+      {required int nextPage,
+      required List<Tournament> data}) = _$DataLatestTournamentsState;
 
-  int get nextPage;
-  List<Tournament> get data;
-  $DataLatestTournamentsStateCopyWith<DataLatestTournamentsState> get copyWith;
+  int get nextPage => throw _privateConstructorUsedError;
+  List<Tournament> get data => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DataLatestTournamentsStateCopyWith<DataLatestTournamentsState>
+      get copyWith => throw _privateConstructorUsedError;
 }

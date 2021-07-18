@@ -1,14 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/common/timer_type.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 part 'actions.freezed.dart';
 
-abstract class TimerAction implements ReduxAction {}
+abstract class TimerAction implements IAction {}
 
 @freezed
-abstract class UserActionTimer with _$UserActionTimer implements TimerAction {
+class UserActionTimer
+    with _$UserActionTimer
+    implements TimerAction, IUserAction {
   const factory UserActionTimer.init() = InitTimerUserAction;
 
   const factory UserActionTimer.deInit() = DeInitTimerUserAction;
@@ -20,21 +22,21 @@ abstract class UserActionTimer with _$UserActionTimer implements TimerAction {
   const factory UserActionTimer.reset() = ResetTimerUserAction;
 
   const factory UserActionTimer.changeType({
-    @required TimerType type,
+    required TimerType type,
   }) = ChangeTypeTimerUserAction;
 }
 
 @freezed
-abstract class SystemActionTimer
+class SystemActionTimer
     with _$SystemActionTimer
-    implements TimerAction {
+    implements TimerAction, ISystemAction {
   const factory SystemActionTimer.notify() = NotifyTimerSystemAction;
 
   const factory SystemActionTimer.updateTime({
-    @required int newValue,
+    required int newValue,
   }) = UpdateTimeTimerSystemAction;
 
   const factory SystemActionTimer.isRunning({
-    @required bool newValue,
+    required bool newValue,
   }) = UpdateIsRunningTimerSystemAction;
 }

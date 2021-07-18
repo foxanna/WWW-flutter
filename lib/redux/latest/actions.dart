@@ -1,25 +1,28 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/data/models/tournament.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 part 'actions.freezed.dart';
 
-abstract class LatestAction implements ReduxAction {}
+abstract class LatestAction implements IAction {}
 
 @freezed
-abstract class UserActionLatest
+class UserActionLatest
     with _$UserActionLatest
-    implements LatestAction {
+    implements LatestAction, IUserAction {
   const factory UserActionLatest.refresh() = RefreshLatestUserAction;
 
   const factory UserActionLatest.load() = LoadLatestUserAction;
+
+  const factory UserActionLatest.scrolledCloseToTheEnd() =
+      ScrolledCloseToTheEndLatestUserAction;
 }
 
 @freezed
-abstract class SystemActionLatest
+class SystemActionLatest
     with _$SystemActionLatest
-    implements LatestAction {
+    implements LatestAction, ISystemAction {
   const factory SystemActionLatest.open() = OpenLatestSystemAction;
 
   const factory SystemActionLatest.init() = InitLatestSystemAction;
@@ -31,11 +34,11 @@ abstract class SystemActionLatest
   const factory SystemActionLatest.refreshing() = RefreshingLatestSystemAction;
 
   const factory SystemActionLatest.completed({
-    @required Iterable<Tournament> data,
-    @required int nexPage,
+    required Iterable<Tournament> data,
+    required int nexPage,
   }) = CompletedLatestSystemAction;
 
   const factory SystemActionLatest.failed({
-    @required Exception exception,
+    required Exception exception,
   }) = FailedLatestSystemAction;
 }

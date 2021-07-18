@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,54 +9,73 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserActionLatestTearOff {
   const _$UserActionLatestTearOff();
 
-// ignore: unused_element
   RefreshLatestUserAction refresh() {
     return const RefreshLatestUserAction();
   }
 
-// ignore: unused_element
   LoadLatestUserAction load() {
     return const LoadLatestUserAction();
   }
+
+  ScrolledCloseToTheEndLatestUserAction scrolledCloseToTheEnd() {
+    return const ScrolledCloseToTheEndLatestUserAction();
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserActionLatest = _$UserActionLatestTearOff();
 
+/// @nodoc
 mixin _$UserActionLatest {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result refresh(),
-    @required Result load(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() refresh,
+    required TResult Function() load,
+    required TResult Function() scrolledCloseToTheEnd,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result refresh(),
-    Result load(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? refresh,
+    TResult Function()? load,
+    TResult Function()? scrolledCloseToTheEnd,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result refresh(RefreshLatestUserAction value),
-    @required Result load(LoadLatestUserAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(RefreshLatestUserAction value) refresh,
+    required TResult Function(LoadLatestUserAction value) load,
+    required TResult Function(ScrolledCloseToTheEndLatestUserAction value)
+        scrolledCloseToTheEnd,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result refresh(RefreshLatestUserAction value),
-    Result load(LoadLatestUserAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RefreshLatestUserAction value)? refresh,
+    TResult Function(LoadLatestUserAction value)? load,
+    TResult Function(ScrolledCloseToTheEndLatestUserAction value)?
+        scrolledCloseToTheEnd,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserActionLatestCopyWith<$Res> {
   factory $UserActionLatestCopyWith(
           UserActionLatest value, $Res Function(UserActionLatest) then) =
       _$UserActionLatestCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserActionLatestCopyWithImpl<$Res>
     implements $UserActionLatestCopyWith<$Res> {
   _$UserActionLatestCopyWithImpl(this._value, this._then);
@@ -66,12 +85,14 @@ class _$UserActionLatestCopyWithImpl<$Res>
   final $Res Function(UserActionLatest) _then;
 }
 
+/// @nodoc
 abstract class $RefreshLatestUserActionCopyWith<$Res> {
   factory $RefreshLatestUserActionCopyWith(RefreshLatestUserAction value,
           $Res Function(RefreshLatestUserAction) then) =
       _$RefreshLatestUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$RefreshLatestUserActionCopyWithImpl<$Res>
     extends _$UserActionLatestCopyWithImpl<$Res>
     implements $RefreshLatestUserActionCopyWith<$Res> {
@@ -82,6 +103,8 @@ class _$RefreshLatestUserActionCopyWithImpl<$Res>
   @override
   RefreshLatestUserAction get _value => super._value as RefreshLatestUserAction;
 }
+
+/// @nodoc
 
 class _$RefreshLatestUserAction
     with DiagnosticableTreeMixin
@@ -109,23 +132,22 @@ class _$RefreshLatestUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result refresh(),
-    @required Result load(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() refresh,
+    required TResult Function() load,
+    required TResult Function() scrolledCloseToTheEnd,
   }) {
-    assert(refresh != null);
-    assert(load != null);
     return refresh();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result refresh(),
-    Result load(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? refresh,
+    TResult Function()? load,
+    TResult Function()? scrolledCloseToTheEnd,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (refresh != null) {
       return refresh();
     }
@@ -134,23 +156,24 @@ class _$RefreshLatestUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result refresh(RefreshLatestUserAction value),
-    @required Result load(LoadLatestUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(RefreshLatestUserAction value) refresh,
+    required TResult Function(LoadLatestUserAction value) load,
+    required TResult Function(ScrolledCloseToTheEndLatestUserAction value)
+        scrolledCloseToTheEnd,
   }) {
-    assert(refresh != null);
-    assert(load != null);
     return refresh(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result refresh(RefreshLatestUserAction value),
-    Result load(LoadLatestUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RefreshLatestUserAction value)? refresh,
+    TResult Function(LoadLatestUserAction value)? load,
+    TResult Function(ScrolledCloseToTheEndLatestUserAction value)?
+        scrolledCloseToTheEnd,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (refresh != null) {
       return refresh(this);
     }
@@ -162,12 +185,14 @@ abstract class RefreshLatestUserAction implements UserActionLatest {
   const factory RefreshLatestUserAction() = _$RefreshLatestUserAction;
 }
 
+/// @nodoc
 abstract class $LoadLatestUserActionCopyWith<$Res> {
   factory $LoadLatestUserActionCopyWith(LoadLatestUserAction value,
           $Res Function(LoadLatestUserAction) then) =
       _$LoadLatestUserActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadLatestUserActionCopyWithImpl<$Res>
     extends _$UserActionLatestCopyWithImpl<$Res>
     implements $LoadLatestUserActionCopyWith<$Res> {
@@ -178,6 +203,8 @@ class _$LoadLatestUserActionCopyWithImpl<$Res>
   @override
   LoadLatestUserAction get _value => super._value as LoadLatestUserAction;
 }
+
+/// @nodoc
 
 class _$LoadLatestUserAction
     with DiagnosticableTreeMixin
@@ -205,23 +232,22 @@ class _$LoadLatestUserAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result refresh(),
-    @required Result load(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() refresh,
+    required TResult Function() load,
+    required TResult Function() scrolledCloseToTheEnd,
   }) {
-    assert(refresh != null);
-    assert(load != null);
     return load();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result refresh(),
-    Result load(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? refresh,
+    TResult Function()? load,
+    TResult Function()? scrolledCloseToTheEnd,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load();
     }
@@ -230,23 +256,24 @@ class _$LoadLatestUserAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result refresh(RefreshLatestUserAction value),
-    @required Result load(LoadLatestUserAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(RefreshLatestUserAction value) refresh,
+    required TResult Function(LoadLatestUserAction value) load,
+    required TResult Function(ScrolledCloseToTheEndLatestUserAction value)
+        scrolledCloseToTheEnd,
   }) {
-    assert(refresh != null);
-    assert(load != null);
     return load(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result refresh(RefreshLatestUserAction value),
-    Result load(LoadLatestUserAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RefreshLatestUserAction value)? refresh,
+    TResult Function(LoadLatestUserAction value)? load,
+    TResult Function(ScrolledCloseToTheEndLatestUserAction value)?
+        scrolledCloseToTheEnd,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load(this);
     }
@@ -258,105 +285,214 @@ abstract class LoadLatestUserAction implements UserActionLatest {
   const factory LoadLatestUserAction() = _$LoadLatestUserAction;
 }
 
+/// @nodoc
+abstract class $ScrolledCloseToTheEndLatestUserActionCopyWith<$Res> {
+  factory $ScrolledCloseToTheEndLatestUserActionCopyWith(
+          ScrolledCloseToTheEndLatestUserAction value,
+          $Res Function(ScrolledCloseToTheEndLatestUserAction) then) =
+      _$ScrolledCloseToTheEndLatestUserActionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ScrolledCloseToTheEndLatestUserActionCopyWithImpl<$Res>
+    extends _$UserActionLatestCopyWithImpl<$Res>
+    implements $ScrolledCloseToTheEndLatestUserActionCopyWith<$Res> {
+  _$ScrolledCloseToTheEndLatestUserActionCopyWithImpl(
+      ScrolledCloseToTheEndLatestUserAction _value,
+      $Res Function(ScrolledCloseToTheEndLatestUserAction) _then)
+      : super(_value, (v) => _then(v as ScrolledCloseToTheEndLatestUserAction));
+
+  @override
+  ScrolledCloseToTheEndLatestUserAction get _value =>
+      super._value as ScrolledCloseToTheEndLatestUserAction;
+}
+
+/// @nodoc
+
+class _$ScrolledCloseToTheEndLatestUserAction
+    with DiagnosticableTreeMixin
+    implements ScrolledCloseToTheEndLatestUserAction {
+  const _$ScrolledCloseToTheEndLatestUserAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserActionLatest.scrolledCloseToTheEnd()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'UserActionLatest.scrolledCloseToTheEnd'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ScrolledCloseToTheEndLatestUserAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() refresh,
+    required TResult Function() load,
+    required TResult Function() scrolledCloseToTheEnd,
+  }) {
+    return scrolledCloseToTheEnd();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? refresh,
+    TResult Function()? load,
+    TResult Function()? scrolledCloseToTheEnd,
+    required TResult orElse(),
+  }) {
+    if (scrolledCloseToTheEnd != null) {
+      return scrolledCloseToTheEnd();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RefreshLatestUserAction value) refresh,
+    required TResult Function(LoadLatestUserAction value) load,
+    required TResult Function(ScrolledCloseToTheEndLatestUserAction value)
+        scrolledCloseToTheEnd,
+  }) {
+    return scrolledCloseToTheEnd(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RefreshLatestUserAction value)? refresh,
+    TResult Function(LoadLatestUserAction value)? load,
+    TResult Function(ScrolledCloseToTheEndLatestUserAction value)?
+        scrolledCloseToTheEnd,
+    required TResult orElse(),
+  }) {
+    if (scrolledCloseToTheEnd != null) {
+      return scrolledCloseToTheEnd(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScrolledCloseToTheEndLatestUserAction
+    implements UserActionLatest {
+  const factory ScrolledCloseToTheEndLatestUserAction() =
+      _$ScrolledCloseToTheEndLatestUserAction;
+}
+
+/// @nodoc
 class _$SystemActionLatestTearOff {
   const _$SystemActionLatestTearOff();
 
-// ignore: unused_element
   OpenLatestSystemAction open() {
     return const OpenLatestSystemAction();
   }
 
-// ignore: unused_element
   InitLatestSystemAction init() {
     return const InitLatestSystemAction();
   }
 
-// ignore: unused_element
   DeInitLatestSystemAction deInit() {
     return const DeInitLatestSystemAction();
   }
 
-// ignore: unused_element
   LoadingLatestSystemAction loading() {
     return const LoadingLatestSystemAction();
   }
 
-// ignore: unused_element
   RefreshingLatestSystemAction refreshing() {
     return const RefreshingLatestSystemAction();
   }
 
-// ignore: unused_element
   CompletedLatestSystemAction completed(
-      {@required Iterable<Tournament> data, @required int nexPage}) {
+      {required Iterable<Tournament> data, required int nexPage}) {
     return CompletedLatestSystemAction(
       data: data,
       nexPage: nexPage,
     );
   }
 
-// ignore: unused_element
-  FailedLatestSystemAction failed({@required Exception exception}) {
+  FailedLatestSystemAction failed({required Exception exception}) {
     return FailedLatestSystemAction(
       exception: exception,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $SystemActionLatest = _$SystemActionLatestTearOff();
 
+/// @nodoc
 mixin _$SystemActionLatest {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result refreshing(),
-    @required Result completed(Iterable<Tournament> data, int nexPage),
-    @required Result failed(Exception exception),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function(Iterable<Tournament> data, int nexPage) completed,
+    required TResult Function(Exception exception) failed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result refreshing(),
-    Result completed(Iterable<Tournament> data, int nexPage),
-    Result failed(Exception exception),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenLatestSystemAction value),
-    @required Result init(InitLatestSystemAction value),
-    @required Result deInit(DeInitLatestSystemAction value),
-    @required Result loading(LoadingLatestSystemAction value),
-    @required Result refreshing(RefreshingLatestSystemAction value),
-    @required Result completed(CompletedLatestSystemAction value),
-    @required Result failed(FailedLatestSystemAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenLatestSystemAction value) open,
+    required TResult Function(InitLatestSystemAction value) init,
+    required TResult Function(DeInitLatestSystemAction value) deInit,
+    required TResult Function(LoadingLatestSystemAction value) loading,
+    required TResult Function(RefreshingLatestSystemAction value) refreshing,
+    required TResult Function(CompletedLatestSystemAction value) completed,
+    required TResult Function(FailedLatestSystemAction value) failed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenLatestSystemAction value),
-    Result init(InitLatestSystemAction value),
-    Result deInit(DeInitLatestSystemAction value),
-    Result loading(LoadingLatestSystemAction value),
-    Result refreshing(RefreshingLatestSystemAction value),
-    Result completed(CompletedLatestSystemAction value),
-    Result failed(FailedLatestSystemAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $SystemActionLatestCopyWith<$Res> {
   factory $SystemActionLatestCopyWith(
           SystemActionLatest value, $Res Function(SystemActionLatest) then) =
       _$SystemActionLatestCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SystemActionLatestCopyWithImpl<$Res>
     implements $SystemActionLatestCopyWith<$Res> {
   _$SystemActionLatestCopyWithImpl(this._value, this._then);
@@ -366,12 +502,14 @@ class _$SystemActionLatestCopyWithImpl<$Res>
   final $Res Function(SystemActionLatest) _then;
 }
 
+/// @nodoc
 abstract class $OpenLatestSystemActionCopyWith<$Res> {
   factory $OpenLatestSystemActionCopyWith(OpenLatestSystemAction value,
           $Res Function(OpenLatestSystemAction) then) =
       _$OpenLatestSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$OpenLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
     implements $OpenLatestSystemActionCopyWith<$Res> {
@@ -382,6 +520,8 @@ class _$OpenLatestSystemActionCopyWithImpl<$Res>
   @override
   OpenLatestSystemAction get _value => super._value as OpenLatestSystemAction;
 }
+
+/// @nodoc
 
 class _$OpenLatestSystemAction
     with DiagnosticableTreeMixin
@@ -409,38 +549,30 @@ class _$OpenLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result refreshing(),
-    @required Result completed(Iterable<Tournament> data, int nexPage),
-    @required Result failed(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function(Iterable<Tournament> data, int nexPage) completed,
+    required TResult Function(Exception exception) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return open();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result refreshing(),
-    Result completed(Iterable<Tournament> data, int nexPage),
-    Result failed(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (open != null) {
       return open();
     }
@@ -449,38 +581,30 @@ class _$OpenLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenLatestSystemAction value),
-    @required Result init(InitLatestSystemAction value),
-    @required Result deInit(DeInitLatestSystemAction value),
-    @required Result loading(LoadingLatestSystemAction value),
-    @required Result refreshing(RefreshingLatestSystemAction value),
-    @required Result completed(CompletedLatestSystemAction value),
-    @required Result failed(FailedLatestSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenLatestSystemAction value) open,
+    required TResult Function(InitLatestSystemAction value) init,
+    required TResult Function(DeInitLatestSystemAction value) deInit,
+    required TResult Function(LoadingLatestSystemAction value) loading,
+    required TResult Function(RefreshingLatestSystemAction value) refreshing,
+    required TResult Function(CompletedLatestSystemAction value) completed,
+    required TResult Function(FailedLatestSystemAction value) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return open(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenLatestSystemAction value),
-    Result init(InitLatestSystemAction value),
-    Result deInit(DeInitLatestSystemAction value),
-    Result loading(LoadingLatestSystemAction value),
-    Result refreshing(RefreshingLatestSystemAction value),
-    Result completed(CompletedLatestSystemAction value),
-    Result failed(FailedLatestSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (open != null) {
       return open(this);
     }
@@ -492,12 +616,14 @@ abstract class OpenLatestSystemAction implements SystemActionLatest {
   const factory OpenLatestSystemAction() = _$OpenLatestSystemAction;
 }
 
+/// @nodoc
 abstract class $InitLatestSystemActionCopyWith<$Res> {
   factory $InitLatestSystemActionCopyWith(InitLatestSystemAction value,
           $Res Function(InitLatestSystemAction) then) =
       _$InitLatestSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
     implements $InitLatestSystemActionCopyWith<$Res> {
@@ -508,6 +634,8 @@ class _$InitLatestSystemActionCopyWithImpl<$Res>
   @override
   InitLatestSystemAction get _value => super._value as InitLatestSystemAction;
 }
+
+/// @nodoc
 
 class _$InitLatestSystemAction
     with DiagnosticableTreeMixin
@@ -535,38 +663,30 @@ class _$InitLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result refreshing(),
-    @required Result completed(Iterable<Tournament> data, int nexPage),
-    @required Result failed(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function(Iterable<Tournament> data, int nexPage) completed,
+    required TResult Function(Exception exception) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return init();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result refreshing(),
-    Result completed(Iterable<Tournament> data, int nexPage),
-    Result failed(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init();
     }
@@ -575,38 +695,30 @@ class _$InitLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenLatestSystemAction value),
-    @required Result init(InitLatestSystemAction value),
-    @required Result deInit(DeInitLatestSystemAction value),
-    @required Result loading(LoadingLatestSystemAction value),
-    @required Result refreshing(RefreshingLatestSystemAction value),
-    @required Result completed(CompletedLatestSystemAction value),
-    @required Result failed(FailedLatestSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenLatestSystemAction value) open,
+    required TResult Function(InitLatestSystemAction value) init,
+    required TResult Function(DeInitLatestSystemAction value) deInit,
+    required TResult Function(LoadingLatestSystemAction value) loading,
+    required TResult Function(RefreshingLatestSystemAction value) refreshing,
+    required TResult Function(CompletedLatestSystemAction value) completed,
+    required TResult Function(FailedLatestSystemAction value) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return init(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenLatestSystemAction value),
-    Result init(InitLatestSystemAction value),
-    Result deInit(DeInitLatestSystemAction value),
-    Result loading(LoadingLatestSystemAction value),
-    Result refreshing(RefreshingLatestSystemAction value),
-    Result completed(CompletedLatestSystemAction value),
-    Result failed(FailedLatestSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(this);
     }
@@ -618,12 +730,14 @@ abstract class InitLatestSystemAction implements SystemActionLatest {
   const factory InitLatestSystemAction() = _$InitLatestSystemAction;
 }
 
+/// @nodoc
 abstract class $DeInitLatestSystemActionCopyWith<$Res> {
   factory $DeInitLatestSystemActionCopyWith(DeInitLatestSystemAction value,
           $Res Function(DeInitLatestSystemAction) then) =
       _$DeInitLatestSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$DeInitLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
     implements $DeInitLatestSystemActionCopyWith<$Res> {
@@ -635,6 +749,8 @@ class _$DeInitLatestSystemActionCopyWithImpl<$Res>
   DeInitLatestSystemAction get _value =>
       super._value as DeInitLatestSystemAction;
 }
+
+/// @nodoc
 
 class _$DeInitLatestSystemAction
     with DiagnosticableTreeMixin
@@ -662,38 +778,30 @@ class _$DeInitLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result refreshing(),
-    @required Result completed(Iterable<Tournament> data, int nexPage),
-    @required Result failed(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function(Iterable<Tournament> data, int nexPage) completed,
+    required TResult Function(Exception exception) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return deInit();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result refreshing(),
-    Result completed(Iterable<Tournament> data, int nexPage),
-    Result failed(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit();
     }
@@ -702,38 +810,30 @@ class _$DeInitLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenLatestSystemAction value),
-    @required Result init(InitLatestSystemAction value),
-    @required Result deInit(DeInitLatestSystemAction value),
-    @required Result loading(LoadingLatestSystemAction value),
-    @required Result refreshing(RefreshingLatestSystemAction value),
-    @required Result completed(CompletedLatestSystemAction value),
-    @required Result failed(FailedLatestSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenLatestSystemAction value) open,
+    required TResult Function(InitLatestSystemAction value) init,
+    required TResult Function(DeInitLatestSystemAction value) deInit,
+    required TResult Function(LoadingLatestSystemAction value) loading,
+    required TResult Function(RefreshingLatestSystemAction value) refreshing,
+    required TResult Function(CompletedLatestSystemAction value) completed,
+    required TResult Function(FailedLatestSystemAction value) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return deInit(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenLatestSystemAction value),
-    Result init(InitLatestSystemAction value),
-    Result deInit(DeInitLatestSystemAction value),
-    Result loading(LoadingLatestSystemAction value),
-    Result refreshing(RefreshingLatestSystemAction value),
-    Result completed(CompletedLatestSystemAction value),
-    Result failed(FailedLatestSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deInit != null) {
       return deInit(this);
     }
@@ -745,12 +845,14 @@ abstract class DeInitLatestSystemAction implements SystemActionLatest {
   const factory DeInitLatestSystemAction() = _$DeInitLatestSystemAction;
 }
 
+/// @nodoc
 abstract class $LoadingLatestSystemActionCopyWith<$Res> {
   factory $LoadingLatestSystemActionCopyWith(LoadingLatestSystemAction value,
           $Res Function(LoadingLatestSystemAction) then) =
       _$LoadingLatestSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadingLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
     implements $LoadingLatestSystemActionCopyWith<$Res> {
@@ -762,6 +864,8 @@ class _$LoadingLatestSystemActionCopyWithImpl<$Res>
   LoadingLatestSystemAction get _value =>
       super._value as LoadingLatestSystemAction;
 }
+
+/// @nodoc
 
 class _$LoadingLatestSystemAction
     with DiagnosticableTreeMixin
@@ -789,38 +893,30 @@ class _$LoadingLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result refreshing(),
-    @required Result completed(Iterable<Tournament> data, int nexPage),
-    @required Result failed(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function(Iterable<Tournament> data, int nexPage) completed,
+    required TResult Function(Exception exception) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result refreshing(),
-    Result completed(Iterable<Tournament> data, int nexPage),
-    Result failed(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -829,38 +925,30 @@ class _$LoadingLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenLatestSystemAction value),
-    @required Result init(InitLatestSystemAction value),
-    @required Result deInit(DeInitLatestSystemAction value),
-    @required Result loading(LoadingLatestSystemAction value),
-    @required Result refreshing(RefreshingLatestSystemAction value),
-    @required Result completed(CompletedLatestSystemAction value),
-    @required Result failed(FailedLatestSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenLatestSystemAction value) open,
+    required TResult Function(InitLatestSystemAction value) init,
+    required TResult Function(DeInitLatestSystemAction value) deInit,
+    required TResult Function(LoadingLatestSystemAction value) loading,
+    required TResult Function(RefreshingLatestSystemAction value) refreshing,
+    required TResult Function(CompletedLatestSystemAction value) completed,
+    required TResult Function(FailedLatestSystemAction value) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenLatestSystemAction value),
-    Result init(InitLatestSystemAction value),
-    Result deInit(DeInitLatestSystemAction value),
-    Result loading(LoadingLatestSystemAction value),
-    Result refreshing(RefreshingLatestSystemAction value),
-    Result completed(CompletedLatestSystemAction value),
-    Result failed(FailedLatestSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -872,6 +960,7 @@ abstract class LoadingLatestSystemAction implements SystemActionLatest {
   const factory LoadingLatestSystemAction() = _$LoadingLatestSystemAction;
 }
 
+/// @nodoc
 abstract class $RefreshingLatestSystemActionCopyWith<$Res> {
   factory $RefreshingLatestSystemActionCopyWith(
           RefreshingLatestSystemAction value,
@@ -879,6 +968,7 @@ abstract class $RefreshingLatestSystemActionCopyWith<$Res> {
       _$RefreshingLatestSystemActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$RefreshingLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
     implements $RefreshingLatestSystemActionCopyWith<$Res> {
@@ -891,6 +981,8 @@ class _$RefreshingLatestSystemActionCopyWithImpl<$Res>
   RefreshingLatestSystemAction get _value =>
       super._value as RefreshingLatestSystemAction;
 }
+
+/// @nodoc
 
 class _$RefreshingLatestSystemAction
     with DiagnosticableTreeMixin
@@ -919,38 +1011,30 @@ class _$RefreshingLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result refreshing(),
-    @required Result completed(Iterable<Tournament> data, int nexPage),
-    @required Result failed(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function(Iterable<Tournament> data, int nexPage) completed,
+    required TResult Function(Exception exception) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return refreshing();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result refreshing(),
-    Result completed(Iterable<Tournament> data, int nexPage),
-    Result failed(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (refreshing != null) {
       return refreshing();
     }
@@ -959,38 +1043,30 @@ class _$RefreshingLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenLatestSystemAction value),
-    @required Result init(InitLatestSystemAction value),
-    @required Result deInit(DeInitLatestSystemAction value),
-    @required Result loading(LoadingLatestSystemAction value),
-    @required Result refreshing(RefreshingLatestSystemAction value),
-    @required Result completed(CompletedLatestSystemAction value),
-    @required Result failed(FailedLatestSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenLatestSystemAction value) open,
+    required TResult Function(InitLatestSystemAction value) init,
+    required TResult Function(DeInitLatestSystemAction value) deInit,
+    required TResult Function(LoadingLatestSystemAction value) loading,
+    required TResult Function(RefreshingLatestSystemAction value) refreshing,
+    required TResult Function(CompletedLatestSystemAction value) completed,
+    required TResult Function(FailedLatestSystemAction value) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return refreshing(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenLatestSystemAction value),
-    Result init(InitLatestSystemAction value),
-    Result deInit(DeInitLatestSystemAction value),
-    Result loading(LoadingLatestSystemAction value),
-    Result refreshing(RefreshingLatestSystemAction value),
-    Result completed(CompletedLatestSystemAction value),
-    Result failed(FailedLatestSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (refreshing != null) {
       return refreshing(this);
     }
@@ -1002,6 +1078,7 @@ abstract class RefreshingLatestSystemAction implements SystemActionLatest {
   const factory RefreshingLatestSystemAction() = _$RefreshingLatestSystemAction;
 }
 
+/// @nodoc
 abstract class $CompletedLatestSystemActionCopyWith<$Res> {
   factory $CompletedLatestSystemActionCopyWith(
           CompletedLatestSystemAction value,
@@ -1010,6 +1087,7 @@ abstract class $CompletedLatestSystemActionCopyWith<$Res> {
   $Res call({Iterable<Tournament> data, int nexPage});
 }
 
+/// @nodoc
 class _$CompletedLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
     implements $CompletedLatestSystemActionCopyWith<$Res> {
@@ -1023,23 +1101,29 @@ class _$CompletedLatestSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object nexPage = freezed,
+    Object? data = freezed,
+    Object? nexPage = freezed,
   }) {
     return _then(CompletedLatestSystemAction(
-      data: data == freezed ? _value.data : data as Iterable<Tournament>,
-      nexPage: nexPage == freezed ? _value.nexPage : nexPage as int,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Iterable<Tournament>,
+      nexPage: nexPage == freezed
+          ? _value.nexPage
+          : nexPage // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
+
+/// @nodoc
 
 class _$CompletedLatestSystemAction
     with DiagnosticableTreeMixin
     implements CompletedLatestSystemAction {
   const _$CompletedLatestSystemAction(
-      {@required this.data, @required this.nexPage})
-      : assert(data != null),
-        assert(nexPage != null);
+      {required this.data, required this.nexPage});
 
   @override
   final Iterable<Tournament> data;
@@ -1076,6 +1160,7 @@ class _$CompletedLatestSystemAction
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(nexPage);
 
+  @JsonKey(ignore: true)
   @override
   $CompletedLatestSystemActionCopyWith<CompletedLatestSystemAction>
       get copyWith => _$CompletedLatestSystemActionCopyWithImpl<
@@ -1083,38 +1168,30 @@ class _$CompletedLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result refreshing(),
-    @required Result completed(Iterable<Tournament> data, int nexPage),
-    @required Result failed(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function(Iterable<Tournament> data, int nexPage) completed,
+    required TResult Function(Exception exception) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return completed(data, nexPage);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result refreshing(),
-    Result completed(Iterable<Tournament> data, int nexPage),
-    Result failed(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(data, nexPage);
     }
@@ -1123,38 +1200,30 @@ class _$CompletedLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenLatestSystemAction value),
-    @required Result init(InitLatestSystemAction value),
-    @required Result deInit(DeInitLatestSystemAction value),
-    @required Result loading(LoadingLatestSystemAction value),
-    @required Result refreshing(RefreshingLatestSystemAction value),
-    @required Result completed(CompletedLatestSystemAction value),
-    @required Result failed(FailedLatestSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenLatestSystemAction value) open,
+    required TResult Function(InitLatestSystemAction value) init,
+    required TResult Function(DeInitLatestSystemAction value) deInit,
+    required TResult Function(LoadingLatestSystemAction value) loading,
+    required TResult Function(RefreshingLatestSystemAction value) refreshing,
+    required TResult Function(CompletedLatestSystemAction value) completed,
+    required TResult Function(FailedLatestSystemAction value) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return completed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenLatestSystemAction value),
-    Result init(InitLatestSystemAction value),
-    Result deInit(DeInitLatestSystemAction value),
-    Result loading(LoadingLatestSystemAction value),
-    Result refreshing(RefreshingLatestSystemAction value),
-    Result completed(CompletedLatestSystemAction value),
-    Result failed(FailedLatestSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(this);
     }
@@ -1164,15 +1233,17 @@ class _$CompletedLatestSystemAction
 
 abstract class CompletedLatestSystemAction implements SystemActionLatest {
   const factory CompletedLatestSystemAction(
-      {@required Iterable<Tournament> data,
-      @required int nexPage}) = _$CompletedLatestSystemAction;
+      {required Iterable<Tournament> data,
+      required int nexPage}) = _$CompletedLatestSystemAction;
 
-  Iterable<Tournament> get data;
-  int get nexPage;
+  Iterable<Tournament> get data => throw _privateConstructorUsedError;
+  int get nexPage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $CompletedLatestSystemActionCopyWith<CompletedLatestSystemAction>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $FailedLatestSystemActionCopyWith<$Res> {
   factory $FailedLatestSystemActionCopyWith(FailedLatestSystemAction value,
           $Res Function(FailedLatestSystemAction) then) =
@@ -1180,6 +1251,7 @@ abstract class $FailedLatestSystemActionCopyWith<$Res> {
   $Res call({Exception exception});
 }
 
+/// @nodoc
 class _$FailedLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
     implements $FailedLatestSystemActionCopyWith<$Res> {
@@ -1193,20 +1265,23 @@ class _$FailedLatestSystemActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object exception = freezed,
+    Object? exception = freezed,
   }) {
     return _then(FailedLatestSystemAction(
-      exception:
-          exception == freezed ? _value.exception : exception as Exception,
+      exception: exception == freezed
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
     ));
   }
 }
 
+/// @nodoc
+
 class _$FailedLatestSystemAction
     with DiagnosticableTreeMixin
     implements FailedLatestSystemAction {
-  const _$FailedLatestSystemAction({@required this.exception})
-      : assert(exception != null);
+  const _$FailedLatestSystemAction({required this.exception});
 
   @override
   final Exception exception;
@@ -1237,6 +1312,7 @@ class _$FailedLatestSystemAction
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
 
+  @JsonKey(ignore: true)
   @override
   $FailedLatestSystemActionCopyWith<FailedLatestSystemAction> get copyWith =>
       _$FailedLatestSystemActionCopyWithImpl<FailedLatestSystemAction>(
@@ -1244,38 +1320,30 @@ class _$FailedLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result open(),
-    @required Result init(),
-    @required Result deInit(),
-    @required Result loading(),
-    @required Result refreshing(),
-    @required Result completed(Iterable<Tournament> data, int nexPage),
-    @required Result failed(Exception exception),
+  TResult when<TResult extends Object?>({
+    required TResult Function() open,
+    required TResult Function() init,
+    required TResult Function() deInit,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function(Iterable<Tournament> data, int nexPage) completed,
+    required TResult Function(Exception exception) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return failed(exception);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result open(),
-    Result init(),
-    Result deInit(),
-    Result loading(),
-    Result refreshing(),
-    Result completed(Iterable<Tournament> data, int nexPage),
-    Result failed(Exception exception),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(exception);
     }
@@ -1284,38 +1352,30 @@ class _$FailedLatestSystemAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result open(OpenLatestSystemAction value),
-    @required Result init(InitLatestSystemAction value),
-    @required Result deInit(DeInitLatestSystemAction value),
-    @required Result loading(LoadingLatestSystemAction value),
-    @required Result refreshing(RefreshingLatestSystemAction value),
-    @required Result completed(CompletedLatestSystemAction value),
-    @required Result failed(FailedLatestSystemAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenLatestSystemAction value) open,
+    required TResult Function(InitLatestSystemAction value) init,
+    required TResult Function(DeInitLatestSystemAction value) deInit,
+    required TResult Function(LoadingLatestSystemAction value) loading,
+    required TResult Function(RefreshingLatestSystemAction value) refreshing,
+    required TResult Function(CompletedLatestSystemAction value) completed,
+    required TResult Function(FailedLatestSystemAction value) failed,
   }) {
-    assert(open != null);
-    assert(init != null);
-    assert(deInit != null);
-    assert(loading != null);
-    assert(refreshing != null);
-    assert(completed != null);
-    assert(failed != null);
     return failed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result open(OpenLatestSystemAction value),
-    Result init(InitLatestSystemAction value),
-    Result deInit(DeInitLatestSystemAction value),
-    Result loading(LoadingLatestSystemAction value),
-    Result refreshing(RefreshingLatestSystemAction value),
-    Result completed(CompletedLatestSystemAction value),
-    Result failed(FailedLatestSystemAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failed != null) {
       return failed(this);
     }
@@ -1324,9 +1384,11 @@ class _$FailedLatestSystemAction
 }
 
 abstract class FailedLatestSystemAction implements SystemActionLatest {
-  const factory FailedLatestSystemAction({@required Exception exception}) =
+  const factory FailedLatestSystemAction({required Exception exception}) =
       _$FailedLatestSystemAction;
 
-  Exception get exception;
-  $FailedLatestSystemActionCopyWith<FailedLatestSystemAction> get copyWith;
+  Exception get exception => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FailedLatestSystemActionCopyWith<FailedLatestSystemAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }

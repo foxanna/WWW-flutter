@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'state.dart';
 
@@ -9,21 +9,24 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$AppStateTearOff {
   const _$AppStateTearOff();
 
-// ignore: unused_element
   _AppState call(
-      {TimerState timerState,
-      QuestionsState questionsState,
-      ToursState toursState,
-      TournamentState tournamentState,
-      LatestTournamentsState latestTournamentsState,
-      SearchState searchState,
-      SettingsState settingsState,
-      TournamentsTreeState tournamentsTreeState,
-      InitializationState initializationState,
-      BookmarksState bookmarksState}) {
+      {required Option<TimerState> timerState,
+      required Option<QuestionsState> questionsState,
+      required Option<ToursState> toursState,
+      required Option<TournamentState> tournamentState,
+      required Option<LatestTournamentsState> latestTournamentsState,
+      required Option<SearchState> searchState,
+      required Option<SettingsState> settingsState,
+      required Option<TournamentsTreeState> tournamentsTreeState,
+      required Option<InitializationState> initializationState,
+      required Option<BookmarksState> bookmarksState}) {
     return _AppState(
       timerState: timerState,
       questionsState: questionsState,
@@ -39,51 +42,51 @@ class _$AppStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $AppState = _$AppStateTearOff();
 
+/// @nodoc
 mixin _$AppState {
-  TimerState get timerState;
-  QuestionsState get questionsState;
-  ToursState get toursState;
-  TournamentState get tournamentState;
-  LatestTournamentsState get latestTournamentsState;
-  SearchState get searchState;
-  SettingsState get settingsState;
-  TournamentsTreeState get tournamentsTreeState;
-  InitializationState get initializationState;
-  BookmarksState get bookmarksState;
+  Option<TimerState> get timerState => throw _privateConstructorUsedError;
+  Option<QuestionsState> get questionsState =>
+      throw _privateConstructorUsedError;
+  Option<ToursState> get toursState => throw _privateConstructorUsedError;
+  Option<TournamentState> get tournamentState =>
+      throw _privateConstructorUsedError;
+  Option<LatestTournamentsState> get latestTournamentsState =>
+      throw _privateConstructorUsedError;
+  Option<SearchState> get searchState => throw _privateConstructorUsedError;
+  Option<SettingsState> get settingsState => throw _privateConstructorUsedError;
+  Option<TournamentsTreeState> get tournamentsTreeState =>
+      throw _privateConstructorUsedError;
+  Option<InitializationState> get initializationState =>
+      throw _privateConstructorUsedError;
+  Option<BookmarksState> get bookmarksState =>
+      throw _privateConstructorUsedError;
 
-  $AppStateCopyWith<AppState> get copyWith;
+  @JsonKey(ignore: true)
+  $AppStateCopyWith<AppState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res>;
   $Res call(
-      {TimerState timerState,
-      QuestionsState questionsState,
-      ToursState toursState,
-      TournamentState tournamentState,
-      LatestTournamentsState latestTournamentsState,
-      SearchState searchState,
-      SettingsState settingsState,
-      TournamentsTreeState tournamentsTreeState,
-      InitializationState initializationState,
-      BookmarksState bookmarksState});
-
-  $TimerStateCopyWith<$Res> get timerState;
-  $QuestionsStateCopyWith<$Res> get questionsState;
-  $ToursStateCopyWith<$Res> get toursState;
-  $TournamentStateCopyWith<$Res> get tournamentState;
-  $LatestTournamentsStateCopyWith<$Res> get latestTournamentsState;
-  $SearchStateCopyWith<$Res> get searchState;
-  $SettingsStateCopyWith<$Res> get settingsState;
-  $TournamentsTreeStateCopyWith<$Res> get tournamentsTreeState;
-  $InitializationStateCopyWith<$Res> get initializationState;
-  $BookmarksStateCopyWith<$Res> get bookmarksState;
+      {Option<TimerState> timerState,
+      Option<QuestionsState> questionsState,
+      Option<ToursState> toursState,
+      Option<TournamentState> tournamentState,
+      Option<LatestTournamentsState> latestTournamentsState,
+      Option<SearchState> searchState,
+      Option<SettingsState> settingsState,
+      Option<TournamentsTreeState> tournamentsTreeState,
+      Option<InitializationState> initializationState,
+      Option<BookmarksState> bookmarksState});
 }
 
+/// @nodoc
 class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
@@ -93,191 +96,81 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object timerState = freezed,
-    Object questionsState = freezed,
-    Object toursState = freezed,
-    Object tournamentState = freezed,
-    Object latestTournamentsState = freezed,
-    Object searchState = freezed,
-    Object settingsState = freezed,
-    Object tournamentsTreeState = freezed,
-    Object initializationState = freezed,
-    Object bookmarksState = freezed,
+    Object? timerState = freezed,
+    Object? questionsState = freezed,
+    Object? toursState = freezed,
+    Object? tournamentState = freezed,
+    Object? latestTournamentsState = freezed,
+    Object? searchState = freezed,
+    Object? settingsState = freezed,
+    Object? tournamentsTreeState = freezed,
+    Object? initializationState = freezed,
+    Object? bookmarksState = freezed,
   }) {
     return _then(_value.copyWith(
-      timerState:
-          timerState == freezed ? _value.timerState : timerState as TimerState,
+      timerState: timerState == freezed
+          ? _value.timerState
+          : timerState // ignore: cast_nullable_to_non_nullable
+              as Option<TimerState>,
       questionsState: questionsState == freezed
           ? _value.questionsState
-          : questionsState as QuestionsState,
-      toursState:
-          toursState == freezed ? _value.toursState : toursState as ToursState,
+          : questionsState // ignore: cast_nullable_to_non_nullable
+              as Option<QuestionsState>,
+      toursState: toursState == freezed
+          ? _value.toursState
+          : toursState // ignore: cast_nullable_to_non_nullable
+              as Option<ToursState>,
       tournamentState: tournamentState == freezed
           ? _value.tournamentState
-          : tournamentState as TournamentState,
+          : tournamentState // ignore: cast_nullable_to_non_nullable
+              as Option<TournamentState>,
       latestTournamentsState: latestTournamentsState == freezed
           ? _value.latestTournamentsState
-          : latestTournamentsState as LatestTournamentsState,
+          : latestTournamentsState // ignore: cast_nullable_to_non_nullable
+              as Option<LatestTournamentsState>,
       searchState: searchState == freezed
           ? _value.searchState
-          : searchState as SearchState,
+          : searchState // ignore: cast_nullable_to_non_nullable
+              as Option<SearchState>,
       settingsState: settingsState == freezed
           ? _value.settingsState
-          : settingsState as SettingsState,
+          : settingsState // ignore: cast_nullable_to_non_nullable
+              as Option<SettingsState>,
       tournamentsTreeState: tournamentsTreeState == freezed
           ? _value.tournamentsTreeState
-          : tournamentsTreeState as TournamentsTreeState,
+          : tournamentsTreeState // ignore: cast_nullable_to_non_nullable
+              as Option<TournamentsTreeState>,
       initializationState: initializationState == freezed
           ? _value.initializationState
-          : initializationState as InitializationState,
+          : initializationState // ignore: cast_nullable_to_non_nullable
+              as Option<InitializationState>,
       bookmarksState: bookmarksState == freezed
           ? _value.bookmarksState
-          : bookmarksState as BookmarksState,
+          : bookmarksState // ignore: cast_nullable_to_non_nullable
+              as Option<BookmarksState>,
     ));
-  }
-
-  @override
-  $TimerStateCopyWith<$Res> get timerState {
-    if (_value.timerState == null) {
-      return null;
-    }
-    return $TimerStateCopyWith<$Res>(_value.timerState, (value) {
-      return _then(_value.copyWith(timerState: value));
-    });
-  }
-
-  @override
-  $QuestionsStateCopyWith<$Res> get questionsState {
-    if (_value.questionsState == null) {
-      return null;
-    }
-    return $QuestionsStateCopyWith<$Res>(_value.questionsState, (value) {
-      return _then(_value.copyWith(questionsState: value));
-    });
-  }
-
-  @override
-  $ToursStateCopyWith<$Res> get toursState {
-    if (_value.toursState == null) {
-      return null;
-    }
-    return $ToursStateCopyWith<$Res>(_value.toursState, (value) {
-      return _then(_value.copyWith(toursState: value));
-    });
-  }
-
-  @override
-  $TournamentStateCopyWith<$Res> get tournamentState {
-    if (_value.tournamentState == null) {
-      return null;
-    }
-    return $TournamentStateCopyWith<$Res>(_value.tournamentState, (value) {
-      return _then(_value.copyWith(tournamentState: value));
-    });
-  }
-
-  @override
-  $LatestTournamentsStateCopyWith<$Res> get latestTournamentsState {
-    if (_value.latestTournamentsState == null) {
-      return null;
-    }
-    return $LatestTournamentsStateCopyWith<$Res>(_value.latestTournamentsState,
-        (value) {
-      return _then(_value.copyWith(latestTournamentsState: value));
-    });
-  }
-
-  @override
-  $SearchStateCopyWith<$Res> get searchState {
-    if (_value.searchState == null) {
-      return null;
-    }
-    return $SearchStateCopyWith<$Res>(_value.searchState, (value) {
-      return _then(_value.copyWith(searchState: value));
-    });
-  }
-
-  @override
-  $SettingsStateCopyWith<$Res> get settingsState {
-    if (_value.settingsState == null) {
-      return null;
-    }
-    return $SettingsStateCopyWith<$Res>(_value.settingsState, (value) {
-      return _then(_value.copyWith(settingsState: value));
-    });
-  }
-
-  @override
-  $TournamentsTreeStateCopyWith<$Res> get tournamentsTreeState {
-    if (_value.tournamentsTreeState == null) {
-      return null;
-    }
-    return $TournamentsTreeStateCopyWith<$Res>(_value.tournamentsTreeState,
-        (value) {
-      return _then(_value.copyWith(tournamentsTreeState: value));
-    });
-  }
-
-  @override
-  $InitializationStateCopyWith<$Res> get initializationState {
-    if (_value.initializationState == null) {
-      return null;
-    }
-    return $InitializationStateCopyWith<$Res>(_value.initializationState,
-        (value) {
-      return _then(_value.copyWith(initializationState: value));
-    });
-  }
-
-  @override
-  $BookmarksStateCopyWith<$Res> get bookmarksState {
-    if (_value.bookmarksState == null) {
-      return null;
-    }
-    return $BookmarksStateCopyWith<$Res>(_value.bookmarksState, (value) {
-      return _then(_value.copyWith(bookmarksState: value));
-    });
   }
 }
 
+/// @nodoc
 abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$AppStateCopyWith(_AppState value, $Res Function(_AppState) then) =
       __$AppStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {TimerState timerState,
-      QuestionsState questionsState,
-      ToursState toursState,
-      TournamentState tournamentState,
-      LatestTournamentsState latestTournamentsState,
-      SearchState searchState,
-      SettingsState settingsState,
-      TournamentsTreeState tournamentsTreeState,
-      InitializationState initializationState,
-      BookmarksState bookmarksState});
-
-  @override
-  $TimerStateCopyWith<$Res> get timerState;
-  @override
-  $QuestionsStateCopyWith<$Res> get questionsState;
-  @override
-  $ToursStateCopyWith<$Res> get toursState;
-  @override
-  $TournamentStateCopyWith<$Res> get tournamentState;
-  @override
-  $LatestTournamentsStateCopyWith<$Res> get latestTournamentsState;
-  @override
-  $SearchStateCopyWith<$Res> get searchState;
-  @override
-  $SettingsStateCopyWith<$Res> get settingsState;
-  @override
-  $TournamentsTreeStateCopyWith<$Res> get tournamentsTreeState;
-  @override
-  $InitializationStateCopyWith<$Res> get initializationState;
-  @override
-  $BookmarksStateCopyWith<$Res> get bookmarksState;
+      {Option<TimerState> timerState,
+      Option<QuestionsState> questionsState,
+      Option<ToursState> toursState,
+      Option<TournamentState> tournamentState,
+      Option<LatestTournamentsState> latestTournamentsState,
+      Option<SearchState> searchState,
+      Option<SettingsState> settingsState,
+      Option<TournamentsTreeState> tournamentsTreeState,
+      Option<InitializationState> initializationState,
+      Option<BookmarksState> bookmarksState});
 }
 
+/// @nodoc
 class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
     implements _$AppStateCopyWith<$Res> {
   __$AppStateCopyWithImpl(_AppState _value, $Res Function(_AppState) _then)
@@ -288,83 +181,97 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object timerState = freezed,
-    Object questionsState = freezed,
-    Object toursState = freezed,
-    Object tournamentState = freezed,
-    Object latestTournamentsState = freezed,
-    Object searchState = freezed,
-    Object settingsState = freezed,
-    Object tournamentsTreeState = freezed,
-    Object initializationState = freezed,
-    Object bookmarksState = freezed,
+    Object? timerState = freezed,
+    Object? questionsState = freezed,
+    Object? toursState = freezed,
+    Object? tournamentState = freezed,
+    Object? latestTournamentsState = freezed,
+    Object? searchState = freezed,
+    Object? settingsState = freezed,
+    Object? tournamentsTreeState = freezed,
+    Object? initializationState = freezed,
+    Object? bookmarksState = freezed,
   }) {
     return _then(_AppState(
-      timerState:
-          timerState == freezed ? _value.timerState : timerState as TimerState,
+      timerState: timerState == freezed
+          ? _value.timerState
+          : timerState // ignore: cast_nullable_to_non_nullable
+              as Option<TimerState>,
       questionsState: questionsState == freezed
           ? _value.questionsState
-          : questionsState as QuestionsState,
-      toursState:
-          toursState == freezed ? _value.toursState : toursState as ToursState,
+          : questionsState // ignore: cast_nullable_to_non_nullable
+              as Option<QuestionsState>,
+      toursState: toursState == freezed
+          ? _value.toursState
+          : toursState // ignore: cast_nullable_to_non_nullable
+              as Option<ToursState>,
       tournamentState: tournamentState == freezed
           ? _value.tournamentState
-          : tournamentState as TournamentState,
+          : tournamentState // ignore: cast_nullable_to_non_nullable
+              as Option<TournamentState>,
       latestTournamentsState: latestTournamentsState == freezed
           ? _value.latestTournamentsState
-          : latestTournamentsState as LatestTournamentsState,
+          : latestTournamentsState // ignore: cast_nullable_to_non_nullable
+              as Option<LatestTournamentsState>,
       searchState: searchState == freezed
           ? _value.searchState
-          : searchState as SearchState,
+          : searchState // ignore: cast_nullable_to_non_nullable
+              as Option<SearchState>,
       settingsState: settingsState == freezed
           ? _value.settingsState
-          : settingsState as SettingsState,
+          : settingsState // ignore: cast_nullable_to_non_nullable
+              as Option<SettingsState>,
       tournamentsTreeState: tournamentsTreeState == freezed
           ? _value.tournamentsTreeState
-          : tournamentsTreeState as TournamentsTreeState,
+          : tournamentsTreeState // ignore: cast_nullable_to_non_nullable
+              as Option<TournamentsTreeState>,
       initializationState: initializationState == freezed
           ? _value.initializationState
-          : initializationState as InitializationState,
+          : initializationState // ignore: cast_nullable_to_non_nullable
+              as Option<InitializationState>,
       bookmarksState: bookmarksState == freezed
           ? _value.bookmarksState
-          : bookmarksState as BookmarksState,
+          : bookmarksState // ignore: cast_nullable_to_non_nullable
+              as Option<BookmarksState>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_AppState with DiagnosticableTreeMixin implements _AppState {
   const _$_AppState(
-      {this.timerState,
-      this.questionsState,
-      this.toursState,
-      this.tournamentState,
-      this.latestTournamentsState,
-      this.searchState,
-      this.settingsState,
-      this.tournamentsTreeState,
-      this.initializationState,
-      this.bookmarksState});
+      {required this.timerState,
+      required this.questionsState,
+      required this.toursState,
+      required this.tournamentState,
+      required this.latestTournamentsState,
+      required this.searchState,
+      required this.settingsState,
+      required this.tournamentsTreeState,
+      required this.initializationState,
+      required this.bookmarksState});
 
   @override
-  final TimerState timerState;
+  final Option<TimerState> timerState;
   @override
-  final QuestionsState questionsState;
+  final Option<QuestionsState> questionsState;
   @override
-  final ToursState toursState;
+  final Option<ToursState> toursState;
   @override
-  final TournamentState tournamentState;
+  final Option<TournamentState> tournamentState;
   @override
-  final LatestTournamentsState latestTournamentsState;
+  final Option<LatestTournamentsState> latestTournamentsState;
   @override
-  final SearchState searchState;
+  final Option<SearchState> searchState;
   @override
-  final SettingsState settingsState;
+  final Option<SettingsState> settingsState;
   @override
-  final TournamentsTreeState tournamentsTreeState;
+  final Option<TournamentsTreeState> tournamentsTreeState;
   @override
-  final InitializationState initializationState;
+  final Option<InitializationState> initializationState;
   @override
-  final BookmarksState bookmarksState;
+  final Option<BookmarksState> bookmarksState;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -439,6 +346,7 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
       const DeepCollectionEquality().hash(initializationState) ^
       const DeepCollectionEquality().hash(bookmarksState);
 
+  @JsonKey(ignore: true)
   @override
   _$AppStateCopyWith<_AppState> get copyWith =>
       __$AppStateCopyWithImpl<_AppState>(this, _$identity);
@@ -446,37 +354,45 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
 
 abstract class _AppState implements AppState {
   const factory _AppState(
-      {TimerState timerState,
-      QuestionsState questionsState,
-      ToursState toursState,
-      TournamentState tournamentState,
-      LatestTournamentsState latestTournamentsState,
-      SearchState searchState,
-      SettingsState settingsState,
-      TournamentsTreeState tournamentsTreeState,
-      InitializationState initializationState,
-      BookmarksState bookmarksState}) = _$_AppState;
+      {required Option<TimerState> timerState,
+      required Option<QuestionsState> questionsState,
+      required Option<ToursState> toursState,
+      required Option<TournamentState> tournamentState,
+      required Option<LatestTournamentsState> latestTournamentsState,
+      required Option<SearchState> searchState,
+      required Option<SettingsState> settingsState,
+      required Option<TournamentsTreeState> tournamentsTreeState,
+      required Option<InitializationState> initializationState,
+      required Option<BookmarksState> bookmarksState}) = _$_AppState;
 
   @override
-  TimerState get timerState;
+  Option<TimerState> get timerState => throw _privateConstructorUsedError;
   @override
-  QuestionsState get questionsState;
+  Option<QuestionsState> get questionsState =>
+      throw _privateConstructorUsedError;
   @override
-  ToursState get toursState;
+  Option<ToursState> get toursState => throw _privateConstructorUsedError;
   @override
-  TournamentState get tournamentState;
+  Option<TournamentState> get tournamentState =>
+      throw _privateConstructorUsedError;
   @override
-  LatestTournamentsState get latestTournamentsState;
+  Option<LatestTournamentsState> get latestTournamentsState =>
+      throw _privateConstructorUsedError;
   @override
-  SearchState get searchState;
+  Option<SearchState> get searchState => throw _privateConstructorUsedError;
   @override
-  SettingsState get settingsState;
+  Option<SettingsState> get settingsState => throw _privateConstructorUsedError;
   @override
-  TournamentsTreeState get tournamentsTreeState;
+  Option<TournamentsTreeState> get tournamentsTreeState =>
+      throw _privateConstructorUsedError;
   @override
-  InitializationState get initializationState;
+  Option<InitializationState> get initializationState =>
+      throw _privateConstructorUsedError;
   @override
-  BookmarksState get bookmarksState;
+  Option<BookmarksState> get bookmarksState =>
+      throw _privateConstructorUsedError;
   @override
-  _$AppStateCopyWith<_AppState> get copyWith;
+  @JsonKey(ignore: true)
+  _$AppStateCopyWith<_AppState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

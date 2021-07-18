@@ -1,36 +1,35 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:what_when_where/data/tournaments_tree_provider.dart';
 import 'package:what_when_where/data/models/tournaments_tree_info.dart';
+import 'package:what_when_where/data/tournaments_tree_provider.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/tree/actions.dart';
 import 'package:what_when_where/redux/tree/state.dart';
-import 'package:what_when_where/redux/utils.dart';
 
 @injectable
-class TournamentsTreeMiddleware {
+class TournamentsTreeMiddleware implements IMiddleware {
   TournamentsTreeMiddleware({
-    ITournamentsTreeProvider provider,
+    required ITournamentsTreeProvider provider,
   }) : _provider = provider;
 
   final ITournamentsTreeProvider _provider;
 
   static const _rootId = '0';
 
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
+  late final _middleware = _createMiddleware();
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_open),
-        TypedMiddleware<AppState, CloseTournamentsTreeUserAction>(_close),
+        TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_onOpen),
+        TypedMiddleware<AppState, CloseTournamentsTreeUserAction>(_onClose),
         TypedMiddleware<AppState, InitSubTreeTournamentsTreeSystemAction>(
-            _initSubTree),
-        TypedMiddleware<AppState, LoadTournamentsTreeUserAction>(_load),
+            _onInitSubTree),
+        TypedMiddleware<AppState, LoadTournamentsTreeUserAction>(_onLoad),
       ];
 
-  void _open(Store<AppState> store, OpenTournamentsTreeUserAction action,
+  void _onOpen(Store<AppState> store, OpenTournamentsTreeUserAction action,
       NextDispatcher next) {
     next(action);
 
@@ -45,7 +44,7 @@ class TournamentsTreeMiddleware {
     store.dispatch(SystemActionTournamentsTree.initSubTree(info: info));
   }
 
-  void _close(Store<AppState> store, CloseTournamentsTreeUserAction action,
+  void _onClose(Store<AppState> store, CloseTournamentsTreeUserAction action,
       NextDispatcher next) {
     next(action);
 
@@ -57,16 +56,16 @@ class TournamentsTreeMiddleware {
     }
   }
 
-  Future<void> _load(Store<AppState> store,
+  Future<void> _onLoad(Store<AppState> store,
       LoadTournamentsTreeUserAction action, NextDispatcher next) async {
     next(action);
 
-    final treeState = store.state.tournamentsTreeState;
+    await store.state.tournamentsTreeState
+        .traverseFuture((treeState) => _load(store, treeState, action));
+  }
 
-    if (treeState == null) {
-      return;
-    }
-
+  Future<void> _load(Store<AppState> store, TournamentsTreeState treeState,
+      LoadTournamentsTreeUserAction action) async {
     final state = treeState.states[action.info.id];
 
     if (state is LoadingTournamentsSubTreeState ||
@@ -77,27 +76,23 @@ class TournamentsTreeMiddleware {
     try {
       store.dispatch(SystemActionTournamentsTree.loading(info: action.info));
 
-      final data = await _provider.get(id: action.info.id);
-
-      throwIfDataIsNull(data);
+      final data = await _provider.get(action.info.id!);
 
       store.dispatch(SystemActionTournamentsTree.completed(tree: data));
     } on Exception catch (e) {
       store.dispatch(
           SystemActionTournamentsTree.failed(info: action.info, exception: e));
+    } on Error catch (e) {
+      store.dispatch(SystemActionTournamentsTree.failed(
+          info: action.info, exception: Exception(e.toString())));
     }
   }
 
-  void _initSubTree(Store<AppState> store,
+  void _onInitSubTree(Store<AppState> store,
       InitSubTreeTournamentsTreeSystemAction action, NextDispatcher next) {
     next(action);
 
-    final treeState = store.state.tournamentsTreeState;
-
-    if (treeState == null) {
-      return;
-    }
-
-    store.dispatch(UserActionTournamentsTree.load(info: action.info));
+    store.state.tournamentsTreeState.forEach((_) =>
+        store.dispatch(UserActionTournamentsTree.load(info: action.info)));
   }
 }

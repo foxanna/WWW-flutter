@@ -13,6 +13,7 @@ import 'package:what_when_where/redux/logs/middleware.dart';
 import 'package:what_when_where/redux/navigation/middleware.dart';
 import 'package:what_when_where/redux/questions/middleware.dart';
 import 'package:what_when_where/redux/rating/middleware.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/search/middleware.dart';
 import 'package:what_when_where/redux/services/middleware.dart';
 import 'package:what_when_where/redux/settings/middleware.dart';
@@ -23,36 +24,31 @@ import 'package:what_when_where/redux/tours/middleware.dart';
 import 'package:what_when_where/redux/tree/middleware.dart';
 
 @injectable
-class AppMiddleware {
+class AppMiddleware implements IMiddleware {
   AppMiddleware({
-    IContainer container,
-  }) : _container = container;
+    required IContainer container,
+  }) : _middleware = [
+          ...container<LogsMiddleware>().middleware,
+          ...container<InitializationMiddleware>().middleware,
+          ...container<ServicesMiddleware>().middleware,
+          ...container<AnalyticsMiddleware>().middleware,
+          ...container<TimerMiddleware>().middleware,
+          ...container<ShareMiddleware>().middleware,
+          ...container<BrowseMiddleware>().middleware,
+          ...container<NavigationMiddleware>().middleware,
+          ...container<DialogMiddleware>().middleware,
+          ...container<ToursMiddleware>().middleware,
+          ...container<TournamentMiddleware>().middleware,
+          ...container<LatestTournamentsMiddleware>().middleware,
+          ...container<DeveloperMiddleware>().middleware,
+          ...container<SearchMiddleware>().middleware,
+          ...container<SettingsMiddleware>().middleware,
+          ...container<QuestionsMiddleware>().middleware,
+          ...container<TournamentsTreeMiddleware>().middleware,
+          ...container<RatingMiddleware>().middleware,
+          ...container<BookmarksMiddleware>().middleware,
+        ];
 
-  final IContainer _container;
-
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
-
-  List<Middleware<AppState>> _createMiddleware() => [
-        ..._container<LogsMiddleware>().middleware,
-        ..._container<InitializationMiddleware>().middleware,
-        ..._container<ServicesMiddleware>().middleware,
-        ..._container<AnalyticsMiddleware>().middleware,
-        ..._container<TimerMiddleware>().middleware,
-        ..._container<ShareMiddleware>().middleware,
-        ..._container<BrowseMiddleware>().middleware,
-        ..._container<NavigationMiddleware>().middleware,
-        ..._container<DialogMiddleware>().middleware,
-        ..._container<ToursMiddleware>().middleware,
-        ..._container<TournamentMiddleware>().middleware,
-        ..._container<LatestTournamentsMiddleware>().middleware,
-        ..._container<DeveloperMiddleware>().middleware,
-        ..._container<SearchMiddleware>().middleware,
-        ..._container<SettingsMiddleware>().middleware,
-        ..._container<QuestionsMiddleware>().middleware,
-        ..._container<TournamentsTreeMiddleware>().middleware,
-        ..._container<RatingMiddleware>().middleware,
-        ..._container<BookmarksMiddleware>().middleware,
-      ];
+  final List<Middleware<AppState>> _middleware;
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 }

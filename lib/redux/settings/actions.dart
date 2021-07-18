@@ -2,43 +2,43 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:what_when_where/common/app_theme.dart';
 import 'package:what_when_where/common/text_scale.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 part 'actions.freezed.dart';
 
-abstract class SettingsAction implements ReduxAction {}
+abstract class SettingsAction implements IAction {}
 
 @freezed
-abstract class UserActionSettings
+class UserActionSettings
     with _$UserActionSettings
-    implements SettingsAction {
+    implements SettingsAction, IUserAction {
   const factory UserActionSettings.open() = OpenSettingsUserAction;
 
   const factory UserActionSettings.changeTheme({
-    @required AppTheme appTheme,
+    required AppTheme appTheme,
   }) = ChangeThemeSettingsUserAction;
 
   const factory UserActionSettings.changeTextScale({
-    @required TextScale textScale,
+    required TextScale textScale,
   }) = ChangeTextScaleSettingsUserAction;
 
   const factory UserActionSettings.changeNotifyShortTimerExpiration({
-    @required bool value,
+    required bool value,
   }) = ChangeNotifyShortTimerExpirationSettingsUserAction;
 
   const factory UserActionSettings.changeNotifyLongTimerExpiration({
-    @required bool value,
+    required bool value,
   }) = ChangeNotifyLongTimerExpirationSettingsUserAction;
 }
 
 @freezed
-abstract class SystemActionSettings
+class SystemActionSettings
     with _$SystemActionSettings
-    implements SettingsAction {
+    implements SettingsAction, ISystemAction {
   const factory SystemActionSettings.ready({
-    AppTheme appTheme,
-    TextScale textScale,
-    bool notifyShortTimerExpiration,
-    bool notifyLongTimerExpiration,
+    required AppTheme appTheme,
+    required TextScale textScale,
+    required bool notifyShortTimerExpiration,
+    required bool notifyLongTimerExpiration,
   }) = ReadySettingsSystemAction;
 }

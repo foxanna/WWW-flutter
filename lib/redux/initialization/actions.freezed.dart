@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'actions.dart';
 
@@ -9,45 +9,55 @@ part of 'actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$InitializationActionTearOff {
   const _$InitializationActionTearOff();
 
-// ignore: unused_element
   InitInitializationAction init() {
     return const InitInitializationAction();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $InitializationAction = _$InitializationActionTearOff();
 
+/// @nodoc
 mixin _$InitializationAction {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitInitializationAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitInitializationAction value) init,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitInitializationAction value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitInitializationAction value)? init,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $InitializationActionCopyWith<$Res> {
   factory $InitializationActionCopyWith(InitializationAction value,
           $Res Function(InitializationAction) then) =
       _$InitializationActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitializationActionCopyWithImpl<$Res>
     implements $InitializationActionCopyWith<$Res> {
   _$InitializationActionCopyWithImpl(this._value, this._then);
@@ -57,12 +67,14 @@ class _$InitializationActionCopyWithImpl<$Res>
   final $Res Function(InitializationAction) _then;
 }
 
+/// @nodoc
 abstract class $InitInitializationActionCopyWith<$Res> {
   factory $InitInitializationActionCopyWith(InitInitializationAction value,
           $Res Function(InitInitializationAction) then) =
       _$InitInitializationActionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitInitializationActionCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res>
     implements $InitInitializationActionCopyWith<$Res> {
@@ -74,6 +86,8 @@ class _$InitInitializationActionCopyWithImpl<$Res>
   InitInitializationAction get _value =>
       super._value as InitInitializationAction;
 }
+
+/// @nodoc
 
 class _$InitInitializationAction
     with DiagnosticableTreeMixin
@@ -101,20 +115,18 @@ class _$InitInitializationAction
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
   }) {
-    assert(init != null);
     return init();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init();
     }
@@ -123,20 +135,18 @@ class _$InitInitializationAction
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitInitializationAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitInitializationAction value) init,
   }) {
-    assert(init != null);
     return init(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitInitializationAction value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitInitializationAction value)? init,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(this);
     }

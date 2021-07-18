@@ -10,7 +10,7 @@ import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/rating/actions.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/search/actions.dart';
 import 'package:what_when_where/redux/settings/actions.dart';
 import 'package:what_when_where/redux/sharing/actions.dart';
@@ -57,16 +57,15 @@ final _analyticsEventNames = {
 };
 
 @injectable
-class AnalyticsMiddleware {
+class AnalyticsMiddleware implements IMiddleware {
   AnalyticsMiddleware({
-    IAnalyticsService analyticsService,
+    required IAnalyticsService analyticsService,
   }) : _analyticsService = analyticsService;
 
   final IAnalyticsService _analyticsService;
 
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
+  late final _middleware = _createMiddleware();
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, StartTimerUserAction>(_logAction),
@@ -114,64 +113,66 @@ class AnalyticsMiddleware {
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_logTree),
       ];
 
-  void _logAction(
-      Store<AppState> store, ReduxAction action, NextDispatcher next) {
+  Future<void> _logAction(
+      Store<AppState> store, IAction action, NextDispatcher next) async {
     next(action);
 
     final actionType =
         action.runtimeType.toString().replaceAll(r'$', '').replaceAll('_', '');
 
-    _analyticsService.logEvent(name: _analyticsEventNames[actionType]);
+    await _analyticsService.logEvent(name: _analyticsEventNames[actionType]!);
   }
 
-  void _logSettings(Store<AppState> store, ReadySettingsSystemAction action,
-      NextDispatcher next) {
+  Future<void> _logSettings(Store<AppState> store,
+      ReadySettingsSystemAction action, NextDispatcher next) async {
     next(action);
 
-    _logThemeValue(action.appTheme);
-    _logTextScaleValue(action.textScale);
-    _logNotifyShortTimerExpirationValue(action.notifyShortTimerExpiration);
-    _logNotifyLongTimerExpirationValue(action.notifyLongTimerExpiration);
+    await _logThemeValue(action.appTheme);
+    await _logTextScaleValue(action.textScale);
+    await _logNotifyShortTimerExpirationValue(
+        action.notifyShortTimerExpiration);
+    await _logNotifyLongTimerExpirationValue(action.notifyLongTimerExpiration);
   }
 
-  void _logTheme(Store<AppState> store, ChangeThemeSettingsUserAction action,
-      NextDispatcher next) {
+  Future<void> _logTheme(Store<AppState> store,
+      ChangeThemeSettingsUserAction action, NextDispatcher next) async {
     next(action);
 
-    _logThemeValue(action.appTheme);
+    await _logThemeValue(action.appTheme);
   }
 
-  void _logThemeValue(AppTheme appTheme) => _analyticsService.logEvent(
+  Future<void> _logThemeValue(AppTheme appTheme) => _analyticsService.logEvent(
         name: 'theme',
         parameters: <String, String>{
           'value': appTheme.toString().split('.').last
         },
       );
 
-  void _logTextScale(Store<AppState> store,
-      ChangeTextScaleSettingsUserAction action, NextDispatcher next) {
+  Future<void> _logTextScale(Store<AppState> store,
+      ChangeTextScaleSettingsUserAction action, NextDispatcher next) async {
     next(action);
 
-    _logTextScaleValue(action.textScale);
+    await _logTextScaleValue(action.textScale);
   }
 
-  void _logTextScaleValue(TextScale textScale) => _analyticsService.logEvent(
+  Future<void> _logTextScaleValue(TextScale textScale) =>
+      _analyticsService.logEvent(
         name: 'textScale',
         parameters: <String, String>{
           'value': textScale.toString().split('.').last
         },
       );
 
-  void _logNotifyShortTimerExpiration(
+  Future<void> _logNotifyShortTimerExpiration(
       Store<AppState> store,
       ChangeNotifyShortTimerExpirationSettingsUserAction action,
-      NextDispatcher next) {
+      NextDispatcher next) async {
     next(action);
 
-    _logNotifyShortTimerExpirationValue(action.value);
+    await _logNotifyShortTimerExpirationValue(action.value);
   }
 
-  void _logNotifyShortTimerExpirationValue(bool value) =>
+  Future<void> _logNotifyShortTimerExpirationValue(bool value) =>
       _analyticsService.logEvent(
         name: 'timer_notifications',
         parameters: <String, String>{
@@ -179,16 +180,16 @@ class AnalyticsMiddleware {
         },
       );
 
-  void _logNotifyLongTimerExpiration(
+  Future<void> _logNotifyLongTimerExpiration(
       Store<AppState> store,
       ChangeNotifyLongTimerExpirationSettingsUserAction action,
-      NextDispatcher next) {
+      NextDispatcher next) async {
     next(action);
 
-    _logNotifyLongTimerExpirationValue(action.value);
+    await _logNotifyLongTimerExpirationValue(action.value);
   }
 
-  void _logNotifyLongTimerExpirationValue(bool value) =>
+  Future<void> _logNotifyLongTimerExpirationValue(bool value) =>
       _analyticsService.logEvent(
         name: 'timer_notifications',
         parameters: <String, String>{
@@ -196,11 +197,11 @@ class AnalyticsMiddleware {
         },
       );
 
-  void _logRating(
-      Store<AppState> store, RateRatingUserAction action, NextDispatcher next) {
+  Future<void> _logRating(Store<AppState> store, RateRatingUserAction action,
+      NextDispatcher next) async {
     next(action);
 
-    _analyticsService.logEvent(
+    await _analyticsService.logEvent(
       name: 'rate',
       parameters: <String, String>{
         'rating': action.rating.toString(),
@@ -208,12 +209,12 @@ class AnalyticsMiddleware {
     );
   }
 
-  void _logTree(Store<AppState> store, OpenTournamentsTreeUserAction action,
-      NextDispatcher next) {
+  Future<void> _logTree(Store<AppState> store,
+      OpenTournamentsTreeUserAction action, NextDispatcher next) async {
     next(action);
 
     if (action.info == null) {
-      _analyticsService.logEvent(name: 'tree');
+      await _analyticsService.logEvent(name: 'tree');
     }
   }
 }

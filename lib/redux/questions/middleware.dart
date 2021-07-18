@@ -5,30 +5,29 @@ import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/navigation/actions.dart';
 import 'package:what_when_where/redux/questions/actions.dart';
 import 'package:what_when_where/redux/questions/state.dart';
-import 'package:what_when_where/redux/utils.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 @injectable
-class QuestionsMiddleware {
+class QuestionsMiddleware implements IMiddleware {
   QuestionsMiddleware({
-    IRandomQuestionsProvider provider,
+    required IRandomQuestionsProvider provider,
   }) : _provider = provider;
 
   final IRandomQuestionsProvider _provider;
 
-  List<Middleware<AppState>> _middleware;
+  late final _middleware = _createMiddleware();
 
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, OpenQuestionsUserAction>(_open),
-        TypedMiddleware<AppState, OpenRandomQuestionsUserAction>(_openRandom),
-        TypedMiddleware<AppState, CloseQuestionsUserAction>(_close),
-        TypedMiddleware<AppState, LoadRandomQuestionsUserAction>(_loadRandom),
-        TypedMiddleware<AppState, SelectQuestionsUserAction>(_select),
+        TypedMiddleware<AppState, OpenQuestionsUserAction>(_onOpen),
+        TypedMiddleware<AppState, OpenRandomQuestionsUserAction>(_onOpenRandom),
+        TypedMiddleware<AppState, CloseQuestionsUserAction>(_onClose),
+        TypedMiddleware<AppState, LoadRandomQuestionsUserAction>(_onLoadRandom),
+        TypedMiddleware<AppState, SelectQuestionsUserAction>(_onSelect),
       ];
 
-  void _open(Store<AppState> store, OpenQuestionsUserAction action,
+  void _onOpen(Store<AppState> store, OpenQuestionsUserAction action,
       NextDispatcher next) {
     next(action);
 
@@ -39,8 +38,8 @@ class QuestionsMiddleware {
     ));
   }
 
-  void _openRandom(Store<AppState> store, OpenRandomQuestionsUserAction action,
-      NextDispatcher next) {
+  void _onOpenRandom(Store<AppState> store,
+      OpenRandomQuestionsUserAction action, NextDispatcher next) {
     next(action);
 
     store.dispatch(const SystemActionNavigation.questions());
@@ -48,23 +47,22 @@ class QuestionsMiddleware {
     store.dispatch(const UserActionQuestions.loadRandom());
   }
 
-  void _close(Store<AppState> store, CloseQuestionsUserAction action,
+  void _onClose(Store<AppState> store, CloseQuestionsUserAction action,
       NextDispatcher next) {
     next(action);
 
     store.dispatch(const SystemActionQuestions.deInit());
   }
 
-  Future<void> _loadRandom(Store<AppState> store,
+  Future<void> _onLoadRandom(Store<AppState> store,
       LoadRandomQuestionsUserAction action, NextDispatcher next) async {
     next(action);
 
-    final state = store.state.questionsState;
+    await store.state.questionsState
+        .traverseFuture((state) => _loadRandom(store, state));
+  }
 
-    if (state == null) {
-      return;
-    }
-
+  Future<void> _loadRandom(Store<AppState> store, QuestionsState state) async {
     if (state is LoadingFirstPageQuestionsState ||
         state is LoadingWithDataQuestionsState) {
       return;
@@ -75,28 +73,25 @@ class QuestionsMiddleware {
 
       final data = await _provider.get();
 
-      throwIfDataIsNull(data);
-
       store.dispatch(SystemActionQuestions.completed(questions: data));
     } on Exception catch (e) {
       store.dispatch(SystemActionQuestions.failed(exception: e));
+    } on Error catch (e) {
+      store.dispatch(
+          SystemActionQuestions.failed(exception: Exception(e.toString())));
     }
   }
 
-  Future<void> _select(Store<AppState> store, SelectQuestionsUserAction action,
-      NextDispatcher next) async {
+  void _onSelect(Store<AppState> store, SelectQuestionsUserAction action,
+      NextDispatcher next) {
     next(action);
 
-    final state = store.state.questionsState;
-
-    if (state == null) {
-      return;
-    }
-
-    if (state is DataQuestionsState &&
-        state.canLoadMore &&
-        state.questions.length - state.currentQuestionIndex < 5) {
-      store.dispatch(const UserActionQuestions.loadRandom());
-    }
+    store.state.questionsState.forEach((state) {
+      if (state is DataQuestionsState &&
+          state.canLoadMore &&
+          state.questions.length - state.currentQuestionIndex < 5) {
+        store.dispatch(const UserActionQuestions.loadRandom());
+      }
+    });
   }
 }

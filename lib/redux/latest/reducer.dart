@@ -1,104 +1,108 @@
+import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:dartx/dartx.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
 import 'package:what_when_where/redux/latest/state.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
 
-class LatestTournamentsReducer {
-  static final Reducer<LatestTournamentsState> _reducer =
-      combineReducers<LatestTournamentsState>([
-    TypedReducer<LatestTournamentsState, InitLatestSystemAction>(_init),
-    TypedReducer<LatestTournamentsState, DeInitLatestSystemAction>(_deInit),
-    TypedReducer<LatestTournamentsState, RefreshingLatestSystemAction>(
-        _refreshing),
-    TypedReducer<LatestTournamentsState, LoadingLatestSystemAction>(_loading),
-    TypedReducer<LatestTournamentsState, CompletedLatestSystemAction>(
-        _completed),
-    TypedReducer<LatestTournamentsState, FailedLatestSystemAction>(_failed),
-    TypedReducer<LatestTournamentsState, StatusChangedTournamentSystemAction>(
-        _statusChanged),
-  ]);
-
-  static LatestTournamentsState reduce(
-          LatestTournamentsState state, ReduxAction action) =>
+@injectable
+class LatestTournamentsReducer
+    implements IReducer<LatestTournamentsState, IAction> {
+  @override
+  Option<LatestTournamentsState> call(
+          Option<LatestTournamentsState> state, IAction action) =>
       _reducer(state, action);
 
-  static LatestTournamentsState _init(
-          LatestTournamentsState state, InitLatestSystemAction action) =>
-      const LatestTournamentsState.initial();
+  static final _reducer = combineReducers<Option<LatestTournamentsState>>([
+    TypedReducer<Option<LatestTournamentsState>, InitLatestSystemAction>(_init),
+    TypedReducer<Option<LatestTournamentsState>, DeInitLatestSystemAction>(
+        _deInit),
+    TypedReducer<Option<LatestTournamentsState>, RefreshingLatestSystemAction>(
+        _refreshing),
+    TypedReducer<Option<LatestTournamentsState>, LoadingLatestSystemAction>(
+        _loading),
+    TypedReducer<Option<LatestTournamentsState>, CompletedLatestSystemAction>(
+        _completed),
+    TypedReducer<Option<LatestTournamentsState>, FailedLatestSystemAction>(
+        _failed),
+    TypedReducer<Option<LatestTournamentsState>,
+        StatusChangedTournamentSystemAction>(_statusChanged),
+  ]);
 
-  static LatestTournamentsState _deInit(
-          LatestTournamentsState state, DeInitLatestSystemAction action) =>
-      null;
+  static Option<LatestTournamentsState> _init(
+          Option<LatestTournamentsState> state,
+          InitLatestSystemAction action) =>
+      const Some(LatestTournamentsState.initial());
 
-  static LatestTournamentsState _refreshing(
-          LatestTournamentsState state, RefreshingLatestSystemAction action) =>
-      LatestTournamentsState.refreshing(data: state.dataOrEmpty);
+  static Option<LatestTournamentsState> _deInit(
+          Option<LatestTournamentsState> state,
+          DeInitLatestSystemAction action) =>
+      const None();
 
-  static LatestTournamentsState _loading(
-          LatestTournamentsState state, LoadingLatestSystemAction action) =>
-      state != null
-          ? state.nextPageOrZero > 0
-              ? LatestTournamentsState.loadingWithData(
-                  data: state.dataOrEmpty,
-                  nextPage: state.nextPageOrZero,
-                )
-              : const LatestTournamentsState.loadingFirstPage()
-          : state;
+  static Option<LatestTournamentsState> _refreshing(
+          Option<LatestTournamentsState> state,
+          RefreshingLatestSystemAction action) =>
+      state.map((state) =>
+          LatestTournamentsState.refreshing(data: state.dataOrEmpty));
 
-  static LatestTournamentsState _completed(
-          LatestTournamentsState state, CompletedLatestSystemAction action) =>
-      state != null
-          ? state.nextPageOrZero > 0
-              ? LatestTournamentsState.data(
-                  nextPage: action.nexPage,
-                  data: [...state.dataOrEmpty, ...action.data],
-                )
-              : LatestTournamentsState.data(
-                  nextPage: action.nexPage,
-                  data: [...action.data],
-                )
-          : state;
+  static Option<LatestTournamentsState> _loading(
+          Option<LatestTournamentsState> state,
+          LoadingLatestSystemAction action) =>
+      state.map((state) => state.nextPageOption.fold(
+            () => const LatestTournamentsState.loadingFirstPage(),
+            (nextPage) => LatestTournamentsState.loadingWithData(
+              data: state.dataOrEmpty,
+              nextPage: nextPage,
+            ),
+          ));
 
-  static LatestTournamentsState _failed(
-          LatestTournamentsState state, FailedLatestSystemAction action) =>
-      state != null
-          ? state.nextPageOrZero > 0
-              ? LatestTournamentsState.errorWithData(
-                  data: state.dataOrEmpty,
-                  nextPage: state.nextPageOrZero,
-                  exception: action.exception,
-                )
-              : LatestTournamentsState.errorFirstPage(
-                  exception: action.exception)
-          : state;
+  static Option<LatestTournamentsState> _completed(
+          Option<LatestTournamentsState> state,
+          CompletedLatestSystemAction action) =>
+      state.map((state) => state.nextPageOption.fold(
+            () => LatestTournamentsState.data(
+              nextPage: action.nexPage,
+              data: [...action.data],
+            ),
+            (nextPage) => LatestTournamentsState.data(
+              nextPage: action.nexPage,
+              data: [...state.dataOrEmpty, ...action.data],
+            ),
+          ));
 
-  static LatestTournamentsState _statusChanged(LatestTournamentsState state,
-      StatusChangedTournamentSystemAction action) {
-    if (state == null) {
-      return state;
-    }
+  static Option<LatestTournamentsState> _failed(
+          Option<LatestTournamentsState> state,
+          FailedLatestSystemAction action) =>
+      state.map((state) => state.nextPageOption.fold(
+            () => LatestTournamentsState.errorFirstPage(
+                exception: action.exception),
+            (nextPage) => LatestTournamentsState.errorWithData(
+              data: state.dataOrEmpty,
+              nextPage: nextPage,
+              exception: action.exception,
+            ),
+          ));
 
-    final isTheOne = (Tournament tournament) =>
-        (action.info.id.isNotNullOrEmpty && tournament.id == action.info.id) ||
-        (action.info.id2.isNotNullOrEmpty && tournament.id2 == action.info.id2);
+  static Option<LatestTournamentsState> _statusChanged(
+          Option<LatestTournamentsState> state,
+          StatusChangedTournamentSystemAction action) =>
+      state.map((state) => state.dataOption.fold(() => state, (data) {
+            final index = data.indexWhere((x) => x.isTheOne(action.info));
 
-    final index = state.dataOrEmpty.indexWhere((x) => isTheOne(x));
+            if (index < 0) {
+              return state;
+            }
 
-    if (index < 0) {
-      return state;
-    }
+            final newData = [...data];
+            newData[index] = newData[index].copyWith(status: action.status);
 
-    final newData = List<Tournament>.from(state.dataOrEmpty, growable: false);
-    newData[index] = newData[index].copyWith(status: action.status);
-
-    return state.maybeMap(
-      data: (value) => value.copyWith(data: newData),
-      loadingWithData: (value) => value.copyWith(data: newData),
-      errorWithData: (value) => value.copyWith(data: newData),
-      orElse: () => state,
-    );
-  }
+            return state.maybeMap(
+              data: (value) => value.copyWith(data: newData),
+              loadingWithData: (value) => value.copyWith(data: newData),
+              errorWithData: (value) => value.copyWith(data: newData),
+              orElse: () => state,
+            );
+          }));
 }

@@ -3,27 +3,27 @@ import 'package:redux/redux.dart';
 import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/developer/actions.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/services/url_launcher.dart';
 
 @injectable
-class DeveloperMiddleware {
+class DeveloperMiddleware implements IMiddleware {
   DeveloperMiddleware({
-    IUrlLauncher urlLauncher,
+    required IUrlLauncher urlLauncher,
   }) : _urlLauncher = urlLauncher;
 
   final IUrlLauncher _urlLauncher;
 
-  List<Middleware<AppState>> _middleware;
-  Iterable<Middleware<AppState>> get middleware =>
-      _middleware ?? (_middleware = _createMiddleware());
+  late final _middleware = _createMiddleware();
+  Iterable<Middleware<AppState>> get middleware => _middleware;
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, EmailDeveloperUserAction>(_email),
+        TypedMiddleware<AppState, EmailDeveloperUserAction>(_onEmail),
         TypedMiddleware<AppState, VisitWebsiteDeveloperUserAction>(
-            _visitWebsite),
+            _onVisitWebsite),
       ];
 
-  void _email(Store<AppState> store, EmailDeveloperUserAction action,
+  void _onEmail(Store<AppState> store, EmailDeveloperUserAction action,
       NextDispatcher next) {
     next(action);
 
@@ -31,7 +31,7 @@ class DeveloperMiddleware {
         Constants.developerEmail, action.translations.appNameFull);
   }
 
-  void _visitWebsite(Store<AppState> store,
+  void _onVisitWebsite(Store<AppState> store,
       VisitWebsiteDeveloperUserAction action, NextDispatcher next) {
     next(action);
 
