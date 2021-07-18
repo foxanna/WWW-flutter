@@ -2,8 +2,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/services/config/config_parameters.dart';
-import 'package:what_when_where/services/crashes.dart';
+import 'package:what_when_where/services/config/firebase_config_parameters.dart';
 import 'package:what_when_where/utils/logger.dart';
 
 abstract class IFirebaseWrapper {
@@ -16,9 +15,9 @@ abstract class IFirebaseWrapper {
 @LazySingleton(as: IFirebaseWrapper)
 class FirebaseWrapper implements IFirebaseWrapper {
   FirebaseWrapper({
-    @Named(ConfigParameters.enableFirebaseCrashlytics)
+    @Named(FirebaseConfigParameters.enableCrashlytics)
         required bool crashlyticsEnabled,
-    @Named(ConfigParameters.enableFirebaseAnalytics)
+    @Named(FirebaseConfigParameters.enableAnalytics)
         required bool analyticsEnabled,
   })  : _crashlyticsEnabled = crashlyticsEnabled,
         _analyticsEnabled = analyticsEnabled;
