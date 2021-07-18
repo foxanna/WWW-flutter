@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/data/cache/tours_cache.dart';
-import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/api/loaders/tour_details_loader.dart';
 import 'package:what_when_where/api/models/tour_dto.dart';
+import 'package:what_when_where/data/cache/tournaments_cache.dart';
+import 'package:what_when_where/data/cache/tours_cache.dart';
 import 'package:what_when_where/data/models/tour.dart';
 import 'package:what_when_where/data/models/tournament_info.dart';
 import 'package:what_when_where/services/background.dart';
@@ -16,10 +16,10 @@ abstract class ITourDetailsProvider {
 @LazySingleton(as: ITourDetailsProvider)
 class TourDetailsProvider implements ITourDetailsProvider {
   const TourDetailsProvider({
-    ITourDetailsLoader loader,
-    ITournamentsCache tournamentsCache,
-    IToursCache tourCache,
-    IBackgroundRunnerService backgroundService,
+    required ITourDetailsLoader loader,
+    required ITournamentsCache tournamentsCache,
+    required IToursCache tourCache,
+    required IBackgroundRunnerService backgroundService,
   })  : _loader = loader,
         _tournamentsCache = tournamentsCache,
         _toursCache = tourCache,
@@ -32,18 +32,20 @@ class TourDetailsProvider implements ITourDetailsProvider {
 
   @override
   Future<Tour> get(String id) async {
-    final tour = await _getCached(id) ?? await _loadAndCache(id);
+    final tour = _getCached(id) ?? await _loadAndCache(id);
     return tour;
   }
 
-  FutureOr<Tour> _getCached(String id) =>
-      _toursCache.contains(id) ? Future.value(_toursCache.get(id)) : null;
+  Tour? _getCached(String id) =>
+      _toursCache.contains(id) ? _toursCache.get(id) : null;
 
   Future<Tour> _loadAndCache(String id) async {
     final dto = await _loader.get(id);
 
-    final tournamentInfo =
-        _tournamentsCache.get(dto.parentId)?.info ?? const TournamentInfo();
+    final tournamentInfo = (dto.parentId != null
+            ? _tournamentsCache.get(dto.parentId!)?.info
+            : null) ??
+        const TournamentInfo();
 
     final result = await _backgroundService
         .run<Tour, List<dynamic>>(_tourFromDto, <dynamic>[dto, tournamentInfo]);

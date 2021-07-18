@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:injectable/injectable.dart';
-import 'package:what_when_where/data/cache/tours_cache.dart';
-import 'package:what_when_where/data/cache/tournaments_cache.dart';
 import 'package:what_when_where/api/loaders/tournament_details_loader.dart';
 import 'package:what_when_where/api/models/tournament_dto.dart';
+import 'package:what_when_where/data/cache/tournaments_cache.dart';
+import 'package:what_when_where/data/cache/tours_cache.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/status/tournament_status.dart';
 import 'package:what_when_where/services/background.dart';
@@ -16,11 +16,11 @@ abstract class ITournamentDetailsProvider {
 @LazySingleton(as: ITournamentDetailsProvider)
 class TournamentDetailsProvider implements ITournamentDetailsProvider {
   const TournamentDetailsProvider({
-    ITournamentDetailsLoader loader,
-    ITournamentsCache tournamentsCache,
-    IToursCache toursCache,
-    IBackgroundRunnerService backgroundService,
-    ITournamentStatusService statusService,
+    required ITournamentDetailsLoader loader,
+    required ITournamentsCache tournamentsCache,
+    required IToursCache toursCache,
+    required IBackgroundRunnerService backgroundService,
+    required ITournamentStatusService statusService,
   })  : _loader = loader,
         _tournamentsCache = tournamentsCache,
         _toursCache = toursCache,
@@ -35,14 +35,13 @@ class TournamentDetailsProvider implements ITournamentDetailsProvider {
 
   @override
   Future<Tournament> get(String id) async {
-    final tournament = await _getCached(id) ?? await _loadAndCache(id);
+    final tournament = _getCached(id) ?? await _loadAndCache(id);
     final actualizedTournament = await _statusService.actualize(tournament);
     return actualizedTournament;
   }
 
-  FutureOr<Tournament> _getCached(String id) => _tournamentsCache.contains(id)
-      ? Future.value(_tournamentsCache.get(id))
-      : null;
+  Tournament? _getCached(String id) =>
+      _tournamentsCache.contains(id) ? _tournamentsCache.get(id) : null;
 
   Future<Tournament> _loadAndCache(String id) async {
     final dto = await _loader.get(id);

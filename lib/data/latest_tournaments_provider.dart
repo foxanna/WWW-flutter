@@ -12,9 +12,9 @@ abstract class ILatestTournamentsProvider {
 @LazySingleton(as: ILatestTournamentsProvider)
 class LatestTournamentsProvider implements ILatestTournamentsProvider {
   const LatestTournamentsProvider({
-    ILatestTournamentsLoader loader,
-    IBackgroundRunnerService backgroundService,
-    ITournamentStatusService statusService,
+    required ILatestTournamentsLoader loader,
+    required IBackgroundRunnerService backgroundService,
+    required ITournamentStatusService statusService,
   })  : _loader = loader,
         _backgroundService = backgroundService,
         _statusService = statusService;
@@ -37,5 +37,5 @@ class LatestTournamentsProvider implements ILatestTournamentsProvider {
 Iterable<Tournament> _tournamentsFromLatestTournamentsDto(List<dynamic> args) {
   final dto = args[0] as LatestTournamentsDto;
 
-  return dto.tournaments.map((dto) => Tournament.fromDto(dto)).toList();
+  return dto.tournaments?.map((dto) => Tournament.fromDto(dto)).toList() ?? [];
 }

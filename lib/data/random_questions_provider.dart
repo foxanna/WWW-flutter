@@ -12,8 +12,8 @@ abstract class IRandomQuestionsProvider {
 @LazySingleton(as: IRandomQuestionsProvider)
 class RandomQuestionsProvider implements IRandomQuestionsProvider {
   const RandomQuestionsProvider({
-    IRandomQuestionsLoader loader,
-    IBackgroundRunnerService backgroundService,
+    required IRandomQuestionsLoader loader,
+    required IBackgroundRunnerService backgroundService,
   })  : _loader = loader,
         _backgroundService = backgroundService;
 

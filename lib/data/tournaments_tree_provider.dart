@@ -10,16 +10,16 @@ import 'package:what_when_where/data/status/tournament_status.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ITournamentsTreeProvider {
-  Future<TournamentsTree> get({String id});
+  Future<TournamentsTree> get(String id);
 }
 
 @LazySingleton(as: ITournamentsTreeProvider)
 class TournamentsTreeProvider implements ITournamentsTreeProvider {
   const TournamentsTreeProvider({
-    ITournamentsTreeLoader loader,
-    IBackgroundRunnerService backgroundService,
-    ITournamentStatusService statusService,
-    ITournamentsTreeCache cache,
+    required ITournamentsTreeLoader loader,
+    required IBackgroundRunnerService backgroundService,
+    required ITournamentStatusService statusService,
+    required ITournamentsTreeCache cache,
   })  : _loader = loader,
         _cache = cache,
         _backgroundService = backgroundService,
@@ -31,8 +31,8 @@ class TournamentsTreeProvider implements ITournamentsTreeProvider {
   final ITournamentsTreeCache _cache;
 
   @override
-  Future<TournamentsTree> get({String id}) async {
-    final tree = await _getCached(id) ?? await _loadAndCache(id);
+  Future<TournamentsTree> get(String id) async {
+    final tree = _getCached(id) ?? await _loadAndCache(id);
     final actualizedChildren = await Future.wait<dynamic>(tree.children.map(
         (dynamic x) => x is Tournament
             ? _statusService.actualize(x)
@@ -41,8 +41,8 @@ class TournamentsTreeProvider implements ITournamentsTreeProvider {
     return actualizedTree;
   }
 
-  FutureOr<TournamentsTree> _getCached(String id) =>
-      _cache.contains(id) ? Future.value(_cache.get(id)) : null;
+  TournamentsTree? _getCached(String id) =>
+      _cache.contains(id) ? _cache.get(id) : null;
 
   Future<TournamentsTree> _loadAndCache(String id) async {
     final dto = await _loader.get(id);

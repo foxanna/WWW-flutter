@@ -1,25 +1,25 @@
 import 'package:injectable/injectable.dart';
 import 'package:what_when_where/api/loaders/search_loader.dart';
 import 'package:what_when_where/api/models/search_tournaments_dto.dart';
-import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/api/search/sorting.dart';
+import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/status/tournament_status.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ISearchProvider {
   Future<Iterable<Tournament>> get({
-    String query,
-    Sorting sorting,
-    int page,
+    required String query,
+    required Sorting sorting,
+    required int page,
   });
 }
 
 @LazySingleton(as: ISearchProvider)
 class SearchProvider implements ISearchProvider {
   const SearchProvider({
-    ISearchLoader loader,
-    IBackgroundRunnerService backgroundService,
-    ITournamentStatusService statusService,
+    required ISearchLoader loader,
+    required IBackgroundRunnerService backgroundService,
+    required ITournamentStatusService statusService,
   })  : _loader = loader,
         _backgroundService = backgroundService,
         _statusService = statusService;
@@ -30,9 +30,9 @@ class SearchProvider implements ISearchProvider {
 
   @override
   Future<Iterable<Tournament>> get({
-    String query,
-    Sorting sorting,
-    int page,
+    required String query,
+    required Sorting sorting,
+    required int page,
   }) async {
     final dto = await _loader.get(query: query, sorting: sorting, page: page);
     final result = await _backgroundService
@@ -46,5 +46,5 @@ class SearchProvider implements ISearchProvider {
 Iterable<Tournament> _tournamentsFromSearchTournamentsDto(List<dynamic> args) {
   final dto = args[0] as SearchTournamentsDto;
 
-  return dto.tournaments.map((dto) => Tournament.fromDto(dto)).toList();
+  return dto.tournaments?.map((dto) => Tournament.fromDto(dto)).toList() ?? [];
 }
