@@ -10,9 +10,9 @@ abstract class ICacheSynchronizer {
 @LazySingleton(as: ICacheSynchronizer)
 class CacheSynchronizer implements ICacheSynchronizer {
   const CacheSynchronizer({
-    ITournamentsPermanentCache tournamentsPermanentCache,
-    ITournamentsCache tournamentsCache,
-    IToursCache toursCache,
+    required ITournamentsPermanentCache tournamentsPermanentCache,
+    required ITournamentsCache tournamentsCache,
+    required IToursCache toursCache,
   })  : _tournamentsPermanentCache = tournamentsPermanentCache,
         _tournamentsCache = tournamentsCache,
         _toursCache = toursCache;

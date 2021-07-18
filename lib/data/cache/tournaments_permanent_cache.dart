@@ -17,8 +17,8 @@ abstract class ITournamentsPermanentCache {
 @LazySingleton(as: ITournamentsPermanentCache)
 class TournamentsPermanentCache implements ITournamentsPermanentCache {
   const TournamentsPermanentCache({
-    ILocalStorageService localStorage,
-    ICrashService crashService,
+    required ILocalStorageService localStorage,
+    required ICrashService crashService,
   })  : _localStorage = localStorage,
         _crashService = crashService;
 
@@ -32,7 +32,10 @@ class TournamentsPermanentCache implements ITournamentsPermanentCache {
     try {
       return await _localStorage.getAllValues<Tournament>(_tableName);
     } on Exception catch (e, s) {
-      _crashService.recordException(e, stackTrace: s);
+      await _crashService.logException(e, stackTrace: s);
+      return const Iterable<Tournament>.empty();
+    } on Error catch (e, s) {
+      await _crashService.logError(e, stackTrace: s);
       return const Iterable<Tournament>.empty();
     }
   }
@@ -41,19 +44,22 @@ class TournamentsPermanentCache implements ITournamentsPermanentCache {
   Future<void> save(Tournament tournament) async {
     try {
       await _localStorage.put<Tournament>(
-          _tableName, tournament.info.id, tournament);
+          _tableName, tournament.info.id!, tournament);
     } on Exception catch (e, s) {
-      _crashService.recordException(e, stackTrace: s);
+      await _crashService.logException(e, stackTrace: s);
+    } on Error catch (e, s) {
+      await _crashService.logError(e, stackTrace: s);
     }
   }
 
   @override
   Future<void> delete(TournamentInfo info) async {
     try {
-      await _localStorage.remove<Tournament>(_tableName, info.id);
+      await _localStorage.remove<Tournament>(_tableName, info.id!);
     } on Exception catch (e, s) {
-      print(e);
-      _crashService.recordException(e, stackTrace: s);
+      await _crashService.logException(e, stackTrace: s);
+    } on Error catch (e, s) {
+      await _crashService.logError(e, stackTrace: s);
     }
   }
 }

@@ -7,7 +7,7 @@ import 'package:what_when_where/api/parsers/xml2json_parser.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ITourDetailsLoader {
-  Future<TourDto> get(String? id);
+  Future<TourDto> get(String id);
 }
 
 @LazySingleton(as: ITourDetailsLoader)
@@ -25,8 +25,8 @@ class TourDetailsLoader implements ITourDetailsLoader {
   final IBackgroundRunnerService _backgroundService;
 
   @override
-  Future<TourDto> get(String? id) async {
-    final data = await _httpClient.get(Uri(path: '/tour/${id ?? ''}/xml'));
+  Future<TourDto> get(String id) async {
+    final data = await _httpClient.get(Uri(path: '/tour/${id}/xml'));
     final dto = await _backgroundService
         .run<TourDto, List<dynamic>>(_parseTourDto, <dynamic>[data, _parser]);
     return dto;

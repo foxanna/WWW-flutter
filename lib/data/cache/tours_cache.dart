@@ -6,7 +6,7 @@ abstract class IToursCache {
 
   void save(Tour tour);
 
-  Tour get(String id);
+  Tour? get(String id);
 }
 
 @LazySingleton(as: IToursCache)
@@ -17,8 +17,12 @@ class ToursCache implements IToursCache {
   bool contains(String id) => _cache.containsKey(id);
 
   @override
-  void save(Tour tour) => _cache[tour.id] = tour;
+  void save(Tour tour) {
+    if (tour.id != null) {
+      _cache[tour.id!] = tour;
+    }
+  }
 
   @override
-  Tour get(String id) => _cache[id];
+  Tour? get(String id) => _cache[id];
 }

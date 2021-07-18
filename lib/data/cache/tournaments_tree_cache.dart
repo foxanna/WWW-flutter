@@ -6,7 +6,7 @@ abstract class ITournamentsTreeCache {
 
   void save(TournamentsTree tour);
 
-  TournamentsTree get(String id);
+  TournamentsTree? get(String id);
 }
 
 @LazySingleton(as: ITournamentsTreeCache)
@@ -17,8 +17,12 @@ class TournamentsTreeCache implements ITournamentsTreeCache {
   bool contains(String id) => _cache.containsKey(id);
 
   @override
-  void save(TournamentsTree tree) => _cache[tree.id] = tree;
+  void save(TournamentsTree tree) {
+    if (tree.id != null) {
+      _cache[tree.id!] = tree;
+    }
+  }
 
   @override
-  TournamentsTree get(String id) => _cache[id];
+  TournamentsTree? get(String id) => _cache[id];
 }

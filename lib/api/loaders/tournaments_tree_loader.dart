@@ -5,7 +5,7 @@ import 'package:what_when_where/api/parsers/xml2json_parser.dart';
 import 'package:what_when_where/services/background.dart';
 
 abstract class ITournamentsTreeLoader {
-  Future<TournamentsTreeDto> get(String? id);
+  Future<TournamentsTreeDto> get(String id);
 }
 
 @LazySingleton(as: ITournamentsTreeLoader)
@@ -23,8 +23,8 @@ class TournamentsTreeLoader implements ITournamentsTreeLoader {
   final IBackgroundRunnerService _backgroundService;
 
   @override
-  Future<TournamentsTreeDto> get(String? id) async {
-    final data = await _httpClient.get(Uri(path: '/tour/${id ?? ''}/xml'));
+  Future<TournamentsTreeDto> get(String id) async {
+    final data = await _httpClient.get(Uri(path: '/tour/${id}/xml'));
     final dto = await _backgroundService.run<TournamentsTreeDto, List<dynamic>>(
         _parseTournamentsTreeDto, <dynamic>[data, _parser]);
     return dto;
