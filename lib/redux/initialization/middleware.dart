@@ -8,8 +8,9 @@ import 'package:what_when_where/redux/settings/actions.dart';
 
 @injectable
 class InitializationMiddleware implements IMiddleware {
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, ReadyServicesSystemAction>(_onServicesReady),

@@ -36,6 +36,7 @@ class CrashService implements ICrashService {
 
     try {
       await _wrapper.crashlytics.recordError(exception, stackTrace);
+      // ignore: empty_catches
     } on Exception {} on Error {}
   }
 }

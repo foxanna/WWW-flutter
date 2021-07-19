@@ -15,6 +15,7 @@ class BrowseMiddleware implements IMiddleware {
   final IUrlLauncher _urlLauncher;
 
   late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
 
   List<Middleware<AppState>> _createMiddleware() => [

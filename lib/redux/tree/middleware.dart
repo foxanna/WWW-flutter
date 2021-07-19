@@ -18,8 +18,9 @@ class TournamentsTreeMiddleware implements IMiddleware {
 
   static const _rootId = '0';
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_onOpen),

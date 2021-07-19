@@ -35,7 +35,7 @@ class _SearchPageAppBarState extends State<SearchPageAppBar> {
         converter: (state) =>
             state.searchState.map((state) => state.parameters),
         builder: (context, parameters) => parameters.fold(
-          () => UnexpectedStateSliver(),
+          () => const UnexpectedStateSliver(),
           (parameters) {
             final styleConfiguration =
                 StyleConfiguration.of(context).searchStyleConfiguration;

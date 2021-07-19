@@ -50,5 +50,6 @@ class AppMiddleware implements IMiddleware {
         ];
 
   final List<Middleware<AppState>> _middleware;
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
 }

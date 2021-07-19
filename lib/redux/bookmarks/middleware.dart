@@ -20,8 +20,9 @@ class BookmarksMiddleware implements IMiddleware {
   final ITournamentDetailsProvider _tournamentDetailsProvider;
   final ITournamentsBookmarksService _bookmarksService;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenBookmarksUserAction>(_onOpen),

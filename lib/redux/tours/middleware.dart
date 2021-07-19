@@ -15,8 +15,9 @@ class ToursMiddleware implements IMiddleware {
 
   final ITourDetailsProvider _provider;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, InitToursSystemAction>(_onInitTours),

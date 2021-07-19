@@ -25,6 +25,7 @@ class FirebaseWrapper implements IFirebaseWrapper {
   final bool _crashlyticsEnabled;
   final bool _analyticsEnabled;
 
+  @override
   Future<void> init() async {
     try {
       await Firebase.initializeApp();

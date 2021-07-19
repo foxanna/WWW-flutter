@@ -14,8 +14,9 @@ class DeveloperMiddleware implements IMiddleware {
 
   final IUrlLauncher _urlLauncher;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, EmailDeveloperUserAction>(_onEmail),

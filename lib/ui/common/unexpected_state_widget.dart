@@ -6,7 +6,7 @@ class UnexpectedStateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Center(
           child: Text(WWWLocalizations.of(context).errorMessageGeneric,
               textAlign: TextAlign.center,

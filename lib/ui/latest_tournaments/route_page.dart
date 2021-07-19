@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:what_when_where/redux/app/state.dart';
 import 'package:what_when_where/redux/latest/actions.dart';
-import 'package:what_when_where/redux/latest/state.dart';
 import 'package:what_when_where/resources/style_configuration.dart';
 import 'package:what_when_where/ui/common/scroll_controller_bound_fab.dart';
 import 'package:what_when_where/ui/latest_tournaments/app_bar.dart';
@@ -66,5 +65,5 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
   }
 
   void _loadMore() => StoreProvider.of<AppState>(context)
-      .dispatch(UserActionLatest.scrolledCloseToTheEnd());
+      .dispatch(const UserActionLatest.scrolledCloseToTheEnd());
 }

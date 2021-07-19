@@ -27,8 +27,9 @@ class RatingMiddleware implements IMiddleware {
   final IRatingService _ratingService;
   final ICrashService _crashService;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, CloseTournamentUserAction>(

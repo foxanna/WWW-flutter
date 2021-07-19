@@ -30,8 +30,9 @@ class TournamentMiddleware implements IMiddleware {
   final ITournamentsBookmarksService _tournamentsBookmarksService;
   final ITournamentsPermanentCache _tournamentsPermanentCache;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, OpenTournamentUserAction>(_onOpen),

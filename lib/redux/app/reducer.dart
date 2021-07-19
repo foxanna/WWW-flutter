@@ -12,6 +12,7 @@ import 'package:what_when_where/redux/timer/reducer.dart';
 import 'package:what_when_where/redux/tournament/reducer.dart';
 import 'package:what_when_where/redux/tours/reducer.dart';
 import 'package:what_when_where/redux/tree/reducer.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 @injectable
 class AppReducer {
@@ -39,7 +40,10 @@ class AppReducer {
   final InitializationReducer _initializationReducer;
   final BookmarksReducer _bookmarksReducer;
 
-  Reducer<AppState> get reducer => (state, action) => AppState(
+  Reducer<AppState> get reducer =>
+      (state, dynamic action) => _reduce(state, action as IAction);
+
+  AppState _reduce(AppState state, IAction action) => AppState(
         timerState: _timerReducer(state.timerState, action),
         latestTournamentsState:
             _latestTournamentsReducer(state.latestTournamentsState, action),

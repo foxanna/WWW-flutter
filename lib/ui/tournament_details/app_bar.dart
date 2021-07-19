@@ -18,7 +18,7 @@ class TournamentDetailsAppBar extends StatelessWidget {
       WWWStoreConnector<Option<TournamentState>>(
         converter: (state) => state.tournamentState,
         builder: (context, state) => state.fold(
-          () => UnexpectedStateSliver(),
+          () => const UnexpectedStateSliver(),
           (state) => _TournamentDetailsAppBar(state: state),
         ),
       );

@@ -23,8 +23,9 @@ class TimerMiddleware implements IMiddleware {
   final ISoundService _soundService;
   final IVibratingService _vibratingService;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         ..._TimerConnectingMiddleware().middleware,
@@ -38,8 +39,9 @@ class TimerMiddleware implements IMiddleware {
 class _TimerTickingMiddleware implements IMiddleware {
   final _timer = WWWTimer(updateFrequency: _timerFrequency);
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, DeInitTimerUserAction>(_onDeInit),
@@ -136,8 +138,9 @@ class _TimerTickingMiddleware implements IMiddleware {
 }
 
 class _TimerConnectingMiddleware implements IMiddleware {
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, UpdateTimeTimerSystemAction>(
@@ -176,8 +179,9 @@ class _TimerVibratingMiddleware implements IMiddleware {
 
   final IVibratingService _vibratingService;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, NotifyTimerSystemAction>(_onVibrate),
@@ -198,8 +202,9 @@ class _TimerSoundMiddleware implements IMiddleware {
 
   final ISoundService _soundService;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, NotifyTimerSystemAction>(_onSound),

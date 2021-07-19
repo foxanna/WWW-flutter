@@ -64,8 +64,9 @@ class AnalyticsMiddleware implements IMiddleware {
 
   final IAnalyticsService _analyticsService;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, StartTimerUserAction>(_logAction),

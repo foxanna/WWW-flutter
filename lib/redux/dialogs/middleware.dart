@@ -16,8 +16,9 @@ class DialogMiddleware implements IMiddleware {
 
   final IDialogService _dialogService;
 
-  late final _middleware = _createMiddleware();
+  @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, TourInfoDialogUserAction>(_onTourInfo),

@@ -47,7 +47,7 @@ class _QuestionAnswer extends StatelessWidget {
             .questionCardAnswerSectionsThemeData,
         child: QuestionSections(
           prefix: '${translations.questionAnswer}: ',
-          suffix: question.comments?.isNotEmpty ?? false ? '*' : '',
+          suffix: question.comments.isNotEmpty ? '*' : '',
           sections: question.answer,
         ),
       );
@@ -70,7 +70,7 @@ class _QuestionAnswer extends StatelessWidget {
       );
     }
 
-    if (question.comments?.isNotEmpty ?? false) {
+    if (question.comments.isNotEmpty) {
       yield SizedBox(
         height: styleConfiguration
             .questionCardAnswerSectionsThemeData.sectionsSpacing,

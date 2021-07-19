@@ -21,7 +21,7 @@ class QuestionsBottomAppBarTimerText extends StatelessWidget {
 
     return Stack(
       children: [
-        Positioned.fill(child: _TimerOptionsDropdownButton()),
+        const Positioned.fill(child: _TimerOptionsDropdownButton()),
         IgnorePointer(
           child: Container(
             color: bottomAppBarTheme.color,
@@ -33,7 +33,7 @@ class QuestionsBottomAppBarTimerText extends StatelessWidget {
                 children: [
                   DefaultTextStyle(
                     style: styleConfiguration.bottomAppBarTextStyle,
-                    child: _TimerValue(),
+                    child: const _TimerValue(),
                   ),
                   Icon(
                     Icons.arrow_drop_up,
@@ -84,7 +84,7 @@ class _TimerValue extends StatelessWidget {
   Widget build(BuildContext context) => WWWStoreConnector<Option<TimerState>>(
         converter: (state) => state.timerState,
         builder: (context, state) => state.fold(
-          () => Text(''),
+          () => const Text(''),
           (state) => Text(DurationFormatter.formatSeconds(state.secondsLeft)),
         ),
       );
