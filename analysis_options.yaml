@@ -9,17 +9,18 @@ analyzer:
 
 linter:
   rules:
-    - always_put_control_body_on_new_line
-    - avoid_equals_and_hash_code_on_mutable_classes
-    - avoid_field_initializers_in_const_classes
-    - avoid_renaming_method_parameters
-#    - avoid_types_on_closure_parameters
-    - avoid_unnecessary_containers
-    - camel_case_types
-    - omit_local_variable_types
-    - prefer_const_literals_to_create_immutables
-    - prefer_constructors_over_static_methods
-    - prefer_expression_function_bodies
-    - sort_constructors_first
-    - unnecessary_new
-    - use_key_in_widget_constructors
+    always_put_control_body_on_new_line: true
+    avoid_equals_and_hash_code_on_mutable_classes: true
+    avoid_field_initializers_in_const_classes: true
+    avoid_renaming_method_parameters: true
+    avoid_unnecessary_containers: true
+    camel_case_types: true
+    omit_local_variable_types: true
+    prefer_const_literals_to_create_immutables: true
+    prefer_constructors_over_static_methods: true
+    prefer_expression_function_bodies: true
+    sort_constructors_first: true
+    unnecessary_new: true
+    use_key_in_widget_constructors: true
+
+    avoid_catching_errors: false
