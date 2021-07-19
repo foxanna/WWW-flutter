@@ -9,7 +9,6 @@ const expectedSearchTournaments2 = [
       id2: 'ichb04.8',
       title: r'''8 тур, "Тормоза" и "Exception"''',
       url: r'''https://db.chgk.info/tour/ichb04.8''',
-      toursCount: '0',
       playedAt: '2003-01-01',
     ),
     status: TournamentStatus(
@@ -22,7 +21,6 @@ const expectedSearchTournaments2 = [
       id2: 'mgp11516.7',
       title: r'''4.2. "Venceremos"''',
       url: r'''https://db.chgk.info/tour/mgp11516.7''',
-      toursCount: '0',
       playedAt: '2016-02-27',
     ),
     status: TournamentStatus(
@@ -35,7 +33,6 @@ const expectedSearchTournaments2 = [
       id2: 'mgp11415.7',
       title: r'''4.1. "Venceremos"''',
       url: r'''https://db.chgk.info/tour/mgp11415.7''',
-      toursCount: '0',
       playedAt: '2015-02-28',
     ),
     status: TournamentStatus(
@@ -48,7 +45,6 @@ const expectedSearchTournaments2 = [
       id2: 'ichb07.5',
       title: r'''5-й тур. "Северные Пингвины" и "Exception"''',
       url: r'''https://db.chgk.info/tour/ichb07.5''',
-      toursCount: '0',
       playedAt: '2008-06-02',
     ),
     status: TournamentStatus(
@@ -62,7 +58,6 @@ const expectedSearchTournaments2 = [
       title:
           r'''Синхронный турнир "PostModern Talking, Vol. 1: Brother Louis-Ferdinand Celine"''',
       url: r'''https://db.chgk.info/tour/pmt18''',
-      toursCount: '0',
       playedAt: '2018-06-22',
     ),
     status: TournamentStatus(
@@ -75,7 +70,6 @@ const expectedSearchTournaments2 = [
       id2: 'zel1516.8',
       title: r'''8 тур. "Venceremos"''',
       url: r'''https://db.chgk.info/tour/zel1516.8''',
-      toursCount: '0',
       playedAt: '2016-04-03',
     ),
     status: TournamentStatus(
@@ -88,7 +82,6 @@ const expectedSearchTournaments2 = [
       id2: 'mgp11718.13',
       title: r'''7.1. "Venceremos"''',
       url: r'''https://db.chgk.info/tour/mgp11718.13''',
-      toursCount: '0',
       playedAt: '2018-05-19',
     ),
     status: TournamentStatus(
@@ -101,7 +94,6 @@ const expectedSearchTournaments2 = [
       id2: 'octava18-4_u',
       title: r'''Синхронный турнир «Четвёртая октава: Ace of Base»''',
       url: r'''https://db.chgk.info/tour/octava18-4_u''',
-      toursCount: '0',
       playedAt: '2018-12-18',
     ),
     status: TournamentStatus(

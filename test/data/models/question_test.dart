@@ -1,21 +1,21 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/api/models/question_dto.dart';
+import 'package:what_when_where/constants.dart';
 import 'package:what_when_where/data/models/question.dart';
 import 'package:what_when_where/data/models/question_info.dart';
 import 'package:what_when_where/data/models/question_sections/question_section.dart';
-import 'package:what_when_where/data/models/tour_info.dart';
-import 'package:what_when_where/data/models/tournament_info.dart';
 import 'package:what_when_where/data/models/question_sections/section_audio.dart';
 import 'package:what_when_where/data/models/question_sections/section_giveaway.dart';
 import 'package:what_when_where/data/models/question_sections/section_image.dart';
 import 'package:what_when_where/data/models/question_sections/section_speaker_note.dart';
 import 'package:what_when_where/data/models/question_sections/section_text.dart';
+import 'package:what_when_where/data/models/tour_info.dart';
+import 'package:what_when_where/data/models/tournament_info.dart';
 
 void main() {
   final execute = ({
-    QuestionDto dto,
-    Question expectedQuestion,
+    required QuestionDto dto,
+    required Question expectedQuestion,
     TourInfo tourInfo = const TourInfo(),
   }) {
     // arrange
@@ -885,7 +885,7 @@ void main() {
   group('Question.id and Question.info.id tests', () {
     test(
         'copies id from dto',
-        () => <String>['0', null, '142', 'q43r34'].forEach(
+        () => <String?>['0', null, '142', 'q43r34'].forEach(
               (id) => execute(
                 dto: QuestionDto(questionId: id),
                 expectedQuestion: Question(
@@ -976,7 +976,7 @@ void main() {
   group('Question.info.number tests', () {
     test(
         'copies number from dto',
-        () => <String>['0', null, '142', 'q43r34'].forEach(
+        () => <String?>['0', null, '142', 'q43r34'].forEach(
               (number) => execute(
                 dto: QuestionDto(number: number),
                 expectedQuestion: Question(
@@ -989,10 +989,10 @@ void main() {
   group('Question.info.url tests', () {
     test(
         'composes url from dto number and parentId',
-        () => <List<String>>[
-              <String>[null, 'number', null],
-              <String>['parentId', null, null],
-              <String>[
+        () => <List<String?>>[
+              <String?>[null, 'number', null],
+              <String?>['parentId', null, null],
+              <String?>[
                 'parentId',
                 'number',
                 '${Constants.databaseUrl}/question/parentId/number'

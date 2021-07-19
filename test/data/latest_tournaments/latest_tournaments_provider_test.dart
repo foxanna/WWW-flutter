@@ -11,13 +11,15 @@ import 'test_data_2.dart';
 void main() {
   group('Loads and parses latest tournaments', () {
     final execute = ({
-      String apiResponse,
-      Iterable<Tournament> expectedTournaments,
+      required String apiResponse,
+      required Iterable<Tournament> expectedTournaments,
     }) async {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/last?page=0', apiResponse: apiResponse);
+      setupHistoryLocalStorageServiceMock(testIoc);
+      setupBookmarksLocalStorageServiceMock(testIoc);
 
       final provider = testIoc<ILatestTournamentsProvider>();
 
@@ -39,15 +41,16 @@ void main() {
 
   group('Actualizes tournaments status', () {
     final execute = ({
-      String apiResponse,
-      Iterable<Tournament> expectedTournaments,
-      bool tournamentsAreRead,
+      required String apiResponse,
+      required Iterable<Tournament> expectedTournaments,
+      required bool tournamentsAreRead,
     }) async {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/last?page=0', apiResponse: apiResponse);
-      setupHistoryServiceMock(testIoc, isRead: tournamentsAreRead);
+      setupHistoryLocalStorageServiceMock(testIoc, isRead: tournamentsAreRead);
+      setupBookmarksLocalStorageServiceMock(testIoc);
 
       final provider = testIoc<ILatestTournamentsProvider>();
 

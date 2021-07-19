@@ -12,19 +12,21 @@ import 'test_data_1.dart';
 void main() {
   group('Loads and parses tournaments tree', () {
     final execute = ({
-      String apiResponse,
-      TournamentsTree expectedResult,
+      required String apiResponse,
+      required TournamentsTree expectedResult,
     }) async {
       // arrange
       final id = expectedResult.id;
       final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
+      setupHistoryLocalStorageServiceMock(testIoc);
+      setupBookmarksLocalStorageServiceMock(testIoc);
 
       final provider = testIoc<ITournamentsTreeProvider>();
 
       // act
-      final tournamentsTree = await provider.get(id: id);
+      final tournamentsTree = await provider.get(id!);
 
       // assert
       expect(tournamentsTree, expectedResult);
@@ -40,17 +42,19 @@ void main() {
 
   group('Uses cached value if any', () {
     final execute = ({
-      TournamentsTree expectedResult,
+      required TournamentsTree expectedResult,
     }) async {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
+      setupHistoryLocalStorageServiceMock(testIoc);
+      setupBookmarksLocalStorageServiceMock(testIoc);
 
       testIoc<ITournamentsTreeCache>().save(expectedResult);
 
       final provider = testIoc<ITournamentsTreeProvider>();
 
       // act
-      final tournamentsTree = await provider.get(id: expectedResult.id);
+      final tournamentsTree = await provider.get(expectedResult.id!);
 
       // assert
       expect(tournamentsTree, expectedResult);
@@ -65,17 +69,18 @@ void main() {
 
   group('Actualizes tournaments status', () {
     final execute = ({
-      String apiResponse,
-      TournamentsTree expectedResult,
-      bool treeIsCached,
-      bool tournamentsAreRead,
+      required String apiResponse,
+      required TournamentsTree expectedResult,
+      required bool treeIsCached,
+      required bool tournamentsAreRead,
     }) async {
       // arrange
       final id = expectedResult.id;
       final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
-      setupHistoryServiceMock(testIoc, isRead: tournamentsAreRead);
+      setupHistoryLocalStorageServiceMock(testIoc, isRead: tournamentsAreRead);
+      setupBookmarksLocalStorageServiceMock(testIoc);
 
       if (treeIsCached) {
         testIoc<ITournamentsTreeCache>().save(expectedResult);
@@ -84,7 +89,7 @@ void main() {
       final provider = testIoc<ITournamentsTreeProvider>();
 
       // act
-      final tournamentsTree = await provider.get(id: id);
+      final tournamentsTree = await provider.get(id!);
 
       // assert
       expect(tournamentsTree, expectedResult);

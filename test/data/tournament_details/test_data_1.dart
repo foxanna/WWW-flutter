@@ -27,7 +27,6 @@ const expectedTournamentDetails1 = Tournament(
       info: TourInfo(
         id: '70685',
         title: r'''Тур 1''',
-        questionsCount: '0',
         url: r'''https://db.chgk.info/tour/70685''',
         editors:
             r'''Александр Рожде́ствин (Самара) и Владимир Сушко́в (Саранск)''',
@@ -40,7 +39,6 @@ const expectedTournamentDetails1 = Tournament(
       info: TourInfo(
         id: '70686',
         title: r'''Тур 2''',
-        questionsCount: '0',
         description:
             r'''Редакторы вопросов 13-18 — Александр Рождествин (Самара) и Владимир Сушков (Саранск). Редакторы вопросов 19-24 — Николай Коврижных (Киров) и Антон Саксонов (Санкт-Петербург).''',
         url: r'''https://db.chgk.info/tour/70686''',
@@ -55,7 +53,6 @@ const expectedTournamentDetails1 = Tournament(
       info: TourInfo(
         id: '70687',
         title: r'''Тур 3''',
-        questionsCount: '0',
         url: r'''https://db.chgk.info/tour/70687''',
         editors:
             r'''Николай Коврижных (Киров) и Антон Саксонов (Санкт-Петербург)''',
@@ -68,7 +65,6 @@ const expectedTournamentDetails1 = Tournament(
       info: TourInfo(
         id: '70688',
         title: r'''Сцена после титров''',
-        questionsCount: '0',
         url: r'''https://db.chgk.info/tour/70688''',
         createdAt: '2020-04-23',
         tournamentInfo: tournamentInfo1,

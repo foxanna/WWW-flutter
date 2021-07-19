@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:what_when_where/ioc/container.dart';
 import 'package:what_when_where/ioc/container.config.dart';
+import 'package:what_when_where/ioc/container.dart';
 
 import 'configuration.dart' as configuration;
 
@@ -40,7 +40,8 @@ ITestContainer configureTestIocContainer({
 }
 
 abstract class ITestContainer implements IContainer {
-  void replaceLazySingleton<TAbstraction, TImplementation extends TAbstraction>(
+  void replaceLazySingleton<TAbstraction extends Object,
+          TImplementation extends TAbstraction>(
       FactoryFunc<TImplementation> factory);
 }
 
@@ -48,10 +49,12 @@ class WWWTestContainer implements ITestContainer {
   final GetIt _container = GetIt.instance;
 
   @override
-  T call<T>() => _container.isRegistered<T>() ? _container<T>() : null;
+  T call<T extends Object>() => _container<T>();
+  // T? call<T>() => _container.isRegistered<T>() ? _container<T>() : null;
 
   @override
-  void replaceLazySingleton<TAbstraction, TImplementation extends TAbstraction>(
+  void replaceLazySingleton<TAbstraction extends Object,
+          TImplementation extends TAbstraction>(
       FactoryFunc<TImplementation> factory) {
     if (_container.isRegistered<TAbstraction>()) {
       _container.unregister<TAbstraction>();

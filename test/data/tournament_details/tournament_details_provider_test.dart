@@ -13,19 +13,21 @@ import 'test_data_3.dart';
 void main() {
   group('Loads and parses tournament details when cache is empty', () {
     final execute = ({
-      String apiResponse,
-      Tournament expectedTournament,
+      required String apiResponse,
+      required Tournament expectedTournament,
     }) async {
       // arrange
       final id = expectedTournament.id;
       final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
+      setupHistoryLocalStorageServiceMock(testIoc);
+      setupBookmarksLocalStorageServiceMock(testIoc);
 
       final provider = testIoc<ITournamentDetailsProvider>();
 
       // act
-      final tournament = await provider.get(id);
+      final tournament = await provider.get(id!);
 
       // assert
       expect(tournament, expectedTournament);
@@ -58,7 +60,7 @@ void main() {
 
   group('Uses cached value if any', () {
     final execute = ({
-      Tournament expectedTournament,
+      required Tournament expectedTournament,
     }) async {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
@@ -68,7 +70,7 @@ void main() {
       final provider = testIoc<ITournamentDetailsProvider>();
 
       // act
-      final tournament = await provider.get(expectedTournament.id);
+      final tournament = await provider.get(expectedTournament.id!);
 
       // assert
       expect(tournament, expectedTournament);
@@ -84,17 +86,17 @@ void main() {
 
   group('Actualizes tournament status', () {
     final execute = ({
-      String apiResponse,
-      Tournament expectedTournament,
-      bool tournamentIsCached,
-      bool tournamentIsRead,
+      required String apiResponse,
+      required Tournament expectedTournament,
+      required bool tournamentIsCached,
+      required bool tournamentIsRead,
     }) async {
       // arrange
       final id = expectedTournament.id;
       final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
-      setupHistoryServiceMock(testIoc,
+      setupHistoryLocalStorageServiceMock(testIoc,
           tournamentId: id, isRead: tournamentIsRead);
 
       if (tournamentIsCached) {
@@ -104,7 +106,7 @@ void main() {
       final provider = testIoc<ITournamentDetailsProvider>();
 
       // act
-      final tournament = await provider.get(id);
+      final tournament = await provider.get(id!);
 
       // assert
       expect(tournament, expectedTournament);

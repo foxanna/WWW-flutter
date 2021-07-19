@@ -12,11 +12,11 @@ import 'test_data_3.dart';
 void main() {
   group('Loads and parses tour details when cache is empty', () {
     final execute = ({
-      String apiResponse,
-      Tour expectedTour,
+      required String apiResponse,
+      required Tour expectedTour,
     }) async {
       // arrange
-      final id = expectedTour.id;
+      final id = expectedTour.id!;
       final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, url: '/tour/$id/xml', apiResponse: apiResponse);
@@ -57,7 +57,7 @@ void main() {
 
   group('Uses cached value if any', () {
     final execute = ({
-      Tour expectedTour,
+      required Tour expectedTour,
     }) async {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
@@ -67,7 +67,7 @@ void main() {
       final provider = testIoc<ITourDetailsProvider>();
 
       // act
-      final tour = await provider.get(expectedTour.id);
+      final tour = await provider.get(expectedTour.id!);
 
       // assert
       expect(tour, expectedTour);

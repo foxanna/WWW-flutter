@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:what_when_where/data/latest_tournaments_provider.dart';
 import 'package:what_when_where/data/random_questions_provider.dart';
 import 'package:what_when_where/data/search_provider.dart';

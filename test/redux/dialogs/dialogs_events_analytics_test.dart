@@ -9,7 +9,7 @@ void main() {
   group('$UserActionDialog', () {
     test(
       '$TourInfoDialogUserAction',
-      () => executeAnalyticsTest(
+      () async => await executeAnalyticsTest(
           const UserActionDialog.tourInfo(info: TourInfo()),
           expectedName: 'open_tour_info'),
     );

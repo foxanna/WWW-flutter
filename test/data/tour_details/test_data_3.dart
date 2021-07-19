@@ -8,7 +8,6 @@ const expectedTourDetails3 = Tour(
   info: TourInfo(
     id: '12324',
     title: r'''ZZZ''',
-    questionsCount: '0',
     url: r'''https://db.chgk.info/tour/12324''',
     createdAt: '2020-04-24',
     tournamentInfo: TournamentInfo(

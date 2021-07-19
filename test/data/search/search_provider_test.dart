@@ -17,15 +17,17 @@ void main() {
       String query = '',
       Sorting sorting = Sorting.relevance,
       int page = 0,
-      String apiResponse,
-      Uri expectedUri,
-      List<Tournament> expectedResult,
+      required String apiResponse,
+      Uri? expectedUri,
+      required List<Tournament> expectedResult,
     }) async {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc,
           url: expectedUri?.toString(), apiResponse: apiResponse);
+      setupHistoryLocalStorageServiceMock(testIoc);
+      setupBookmarksLocalStorageServiceMock(testIoc);
 
       final provider = testIoc<ISearchProvider>();
 
@@ -82,15 +84,16 @@ void main() {
 
   group('Actualizes tournaments status', () {
     final execute = ({
-      String apiResponse,
-      Iterable<Tournament> expectedResult,
-      bool tournamentsAreRead,
+      required String apiResponse,
+      required Iterable<Tournament> expectedResult,
+      required bool tournamentsAreRead,
     }) async {
       // arrange
       final testIoc = configureTestIocContainer(mockDio: true);
 
       setupDioMock(testIoc, apiResponse: apiResponse);
-      setupHistoryServiceMock(testIoc, isRead: tournamentsAreRead);
+      setupHistoryLocalStorageServiceMock(testIoc, isRead: tournamentsAreRead);
+      setupBookmarksLocalStorageServiceMock(testIoc);
 
       final provider = testIoc<ISearchProvider>();
 

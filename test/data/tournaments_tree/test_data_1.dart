@@ -56,7 +56,6 @@ const expectedTournamentsTree1 = TournamentsTree(
         playedAt: '2020-03-11',
         editors: r'''Александра Брутер, Максим Руссо и Иван Семушин''',
         questionsCount: '0',
-        toursCount: '0',
       ),
       status: TournamentStatus(
         isNew: true,
@@ -75,7 +74,6 @@ const expectedTournamentsTree1 = TournamentsTree(
         createdAt: '2020-03-23',
         playedAt: '2020-03-13',
         questionsCount: '0',
-        toursCount: '0',
       ),
       status: TournamentStatus(
         isNew: true,
@@ -92,7 +90,6 @@ const expectedTournamentsTree1 = TournamentsTree(
         createdAt: '2020-03-31',
         playedAt: '2020-03-13',
         questionsCount: '0',
-        toursCount: '0',
       ),
       status: TournamentStatus(
         isNew: true,

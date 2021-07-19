@@ -1,15 +1,15 @@
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:what_when_where/redux/app/store.dart';
-import 'package:what_when_where/redux/redux_action.dart';
+import 'package:what_when_where/www_redux/www_redux.dart';
 
 import '../ioc/container.dart';
 import '../mocks.dart';
 
 final Function executeAnalyticsTest = (
-  ReduxAction action, {
-  ReduxAction initializationAction,
-  String expectedName,
-  Map<String, dynamic> expectedParameters,
+  IAction action, {
+  required String expectedName,
+  IAction? initializationAction,
+  Map<String, dynamic>? expectedParameters,
 }) {
   // arrange
   final testIoc = configureTestIocContainer(
@@ -17,15 +17,16 @@ final Function executeAnalyticsTest = (
     mockProviders: true,
   );
 
-  final store = testIoc<WWWStore>().store;
+  final store = testIoc<WWWStore>();
   final analyticsServiceMock = testIoc<AnalyticsServiceMock>();
 
   // act
-  store.dispatch(initializationAction);
+  if (initializationAction != null) {
+    store.dispatch(initializationAction);
+  }
   store.dispatch(action);
 
   // assert
-  verify(analyticsServiceMock.logEvent(
-          name: expectedName, parameters: expectedParameters))
-      .called(1);
+  verify(() => analyticsServiceMock.logEvent(
+      name: expectedName, parameters: expectedParameters)).called(1);
 };
