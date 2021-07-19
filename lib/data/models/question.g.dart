@@ -22,7 +22,7 @@ class QuestionAdapter extends TypeAdapter<_$_Question> {
       question: (fields[2] as List).cast<QuestionSection>(),
       answer: (fields[3] as List).cast<QuestionSection>(),
       passCriteria: (fields[4] as List).cast<QuestionSection>(),
-      comments: fields[5] as dynamic,
+      comments: (fields[5] as List).cast<QuestionSection>(),
       authors: fields[6] as String?,
       sources: fields[7] as String?,
       info: fields[8] as QuestionInfo,

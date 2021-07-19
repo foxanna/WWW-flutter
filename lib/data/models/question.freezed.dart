@@ -28,7 +28,7 @@ class _$QuestionTearOff {
       @HiveField(QuestionHiveFieldsIds.passCriteria)
           List<QuestionSection> passCriteria = const <QuestionSection>[],
       @HiveField(QuestionHiveFieldsIds.comments)
-          dynamic comments = const <QuestionSection>[],
+          List<QuestionSection> comments = const <QuestionSection>[],
       @HiveField(QuestionHiveFieldsIds.authors)
           String? authors,
       @HiveField(QuestionHiveFieldsIds.sources)
@@ -65,7 +65,7 @@ mixin _$Question {
   @HiveField(QuestionHiveFieldsIds.passCriteria)
   List<QuestionSection> get passCriteria => throw _privateConstructorUsedError;
   @HiveField(QuestionHiveFieldsIds.comments)
-  dynamic get comments => throw _privateConstructorUsedError;
+  List<QuestionSection> get comments => throw _privateConstructorUsedError;
   @HiveField(QuestionHiveFieldsIds.authors)
   String? get authors => throw _privateConstructorUsedError;
   @HiveField(QuestionHiveFieldsIds.sources)
@@ -94,7 +94,7 @@ abstract class $QuestionCopyWith<$Res> {
       @HiveField(QuestionHiveFieldsIds.passCriteria)
           List<QuestionSection> passCriteria,
       @HiveField(QuestionHiveFieldsIds.comments)
-          dynamic comments,
+          List<QuestionSection> comments,
       @HiveField(QuestionHiveFieldsIds.authors)
           String? authors,
       @HiveField(QuestionHiveFieldsIds.sources)
@@ -149,7 +149,7 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
       comments: comments == freezed
           ? _value.comments
           : comments // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as List<QuestionSection>,
       authors: authors == freezed
           ? _value.authors
           : authors // ignore: cast_nullable_to_non_nullable
@@ -190,7 +190,7 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       @HiveField(QuestionHiveFieldsIds.passCriteria)
           List<QuestionSection> passCriteria,
       @HiveField(QuestionHiveFieldsIds.comments)
-          dynamic comments,
+          List<QuestionSection> comments,
       @HiveField(QuestionHiveFieldsIds.authors)
           String? authors,
       @HiveField(QuestionHiveFieldsIds.sources)
@@ -244,7 +244,10 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
           ? _value.passCriteria
           : passCriteria // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
-      comments: comments == freezed ? _value.comments : comments,
+      comments: comments == freezed
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as List<QuestionSection>,
       authors: authors == freezed
           ? _value.authors
           : authors // ignore: cast_nullable_to_non_nullable
@@ -306,7 +309,7 @@ class _$_Question implements _Question {
   @JsonKey(defaultValue: const <QuestionSection>[])
   @override
   @HiveField(QuestionHiveFieldsIds.comments)
-  final dynamic comments;
+  final List<QuestionSection> comments;
   @override
   @HiveField(QuestionHiveFieldsIds.authors)
   final String? authors;
@@ -385,7 +388,7 @@ abstract class _Question implements Question {
       @HiveField(QuestionHiveFieldsIds.passCriteria)
           List<QuestionSection> passCriteria,
       @HiveField(QuestionHiveFieldsIds.comments)
-          dynamic comments,
+          List<QuestionSection> comments,
       @HiveField(QuestionHiveFieldsIds.authors)
           String? authors,
       @HiveField(QuestionHiveFieldsIds.sources)
@@ -410,7 +413,7 @@ abstract class _Question implements Question {
   List<QuestionSection> get passCriteria => throw _privateConstructorUsedError;
   @override
   @HiveField(QuestionHiveFieldsIds.comments)
-  dynamic get comments => throw _privateConstructorUsedError;
+  List<QuestionSection> get comments => throw _privateConstructorUsedError;
   @override
   @HiveField(QuestionHiveFieldsIds.authors)
   String? get authors => throw _privateConstructorUsedError;

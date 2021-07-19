@@ -29,7 +29,7 @@ class Question with _$Question {
         List<QuestionSection> passCriteria,
     @HiveField(QuestionHiveFieldsIds.comments)
     @Default(<QuestionSection>[])
-        comments,
+        List<QuestionSection> comments,
     @HiveField(QuestionHiveFieldsIds.authors) String? authors,
     @HiveField(QuestionHiveFieldsIds.sources) String? sources,
     @HiveField(QuestionHiveFieldsIds.info)
