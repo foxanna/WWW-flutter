@@ -21,24 +21,25 @@ class ShareMiddleware implements IMiddleware {
   late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
-        TypedMiddleware<AppState, QuestionSharingUserAction>(_question),
-        TypedMiddleware<AppState, TourSharingUserAction>(_tour),
-        TypedMiddleware<AppState, TournamentSharingUserAction>(_tournament),
+        TypedMiddleware<AppState, QuestionSharingUserAction>(_onShareQuestion),
+        TypedMiddleware<AppState, TourSharingUserAction>(_onShareTour),
+        TypedMiddleware<AppState, TournamentSharingUserAction>(
+            _onShareTournament),
       ];
 
-  void _tournament(Store<AppState> store, TournamentSharingUserAction action,
-      NextDispatcher next) {
+  Future<void> _onShareTournament(Store<AppState> store,
+      TournamentSharingUserAction action, NextDispatcher next) async {
     next(action);
 
     final text = '${action.info.title}\n'
         '${action.info.url}'
         '${_createAppendix(action.translations)}';
 
-    _sharingService.share(text);
+    await _sharingService.share(text);
   }
 
-  void _tour(Store<AppState> store, TourSharingUserAction action,
-      NextDispatcher next) {
+  Future<void> _onShareTour(Store<AppState> store, TourSharingUserAction action,
+      NextDispatcher next) async {
     next(action);
 
     final text =
@@ -47,11 +48,11 @@ class ShareMiddleware implements IMiddleware {
         '${action.info.url}'
         '${_createAppendix(action.translations)}';
 
-    _sharingService.share(text);
+    await _sharingService.share(text);
   }
 
-  void _question(Store<AppState> store, QuestionSharingUserAction action,
-      NextDispatcher next) {
+  Future<void> _onShareQuestion(Store<AppState> store,
+      QuestionSharingUserAction action, NextDispatcher next) async {
     next(action);
 
     final questionNumber =
@@ -70,7 +71,7 @@ class ShareMiddleware implements IMiddleware {
         '${action.info.url}'
         '${_createAppendix(action.translations)}';
 
-    _sharingService.share(text);
+    await _sharingService.share(text);
   }
 
   String _createAppendix(Translations translations) {

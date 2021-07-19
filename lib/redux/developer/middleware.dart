@@ -24,18 +24,18 @@ class DeveloperMiddleware implements IMiddleware {
             _onVisitWebsite),
       ];
 
-  void _onEmail(Store<AppState> store, EmailDeveloperUserAction action,
-      NextDispatcher next) {
+  Future<void> _onEmail(Store<AppState> store, EmailDeveloperUserAction action,
+      NextDispatcher next) async {
     next(action);
 
-    _urlLauncher.sendEmail(
+    await _urlLauncher.sendEmail(
         Constants.developerEmail, action.translations.appNameFull);
   }
 
-  void _onVisitWebsite(Store<AppState> store,
-      VisitWebsiteDeveloperUserAction action, NextDispatcher next) {
+  Future<void> _onVisitWebsite(Store<AppState> store,
+      VisitWebsiteDeveloperUserAction action, NextDispatcher next) async {
     next(action);
 
-    _urlLauncher.launchURL(Constants.developerWebsite);
+    await _urlLauncher.launchURL(Constants.developerWebsite);
   }
 }

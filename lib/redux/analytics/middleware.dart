@@ -91,7 +91,6 @@ class AnalyticsMiddleware implements IMiddleware {
         TypedMiddleware<AppState, OpenSearchUserAction>(_logAction),
         TypedMiddleware<AppState, OpenSettingsUserAction>(_logAction),
         TypedMiddleware<AppState, OpenRandomQuestionsUserAction>(_logAction),
-        TypedMiddleware<AppState, OpenTournamentsTreeUserAction>(_logAction),
         TypedMiddleware<AppState, NeverAskRatingUserAction>(_logAction),
         TypedMiddleware<AppState, OpenBookmarksUserAction>(_logAction),
         TypedMiddleware<AppState, AddToBookmarksTournamentUserAction>(

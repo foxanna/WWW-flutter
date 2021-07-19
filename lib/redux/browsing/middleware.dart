@@ -14,9 +14,9 @@ class BrowseMiddleware implements IMiddleware {
 
   final IUrlLauncher _urlLauncher;
 
-  late final _middleware = _createMiddleware();
   @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
+  late final _middleware = _createMiddleware();
 
   List<Middleware<AppState>> _createMiddleware() => [
         TypedMiddleware<AppState, DatabaseBrowseUserAction>(_onDatabase),
@@ -25,37 +25,37 @@ class BrowseMiddleware implements IMiddleware {
         TypedMiddleware<AppState, TournamentBrowseUserAction>(_onTournament),
       ];
 
-  void _onTournament(Store<AppState> store, TournamentBrowseUserAction action,
-      NextDispatcher next) {
+  Future<void> _onTournament(Store<AppState> store,
+      TournamentBrowseUserAction action, NextDispatcher next) async {
     next(action);
 
-    if (action.info.url != null) {
-      _urlLauncher.launchURL(action.info.url!);
-    }
+    await _launch(action.info.url);
   }
 
-  void _onTour(
-      Store<AppState> store, TourBrowseUserAction action, NextDispatcher next) {
+  Future<void> _onTour(Store<AppState> store, TourBrowseUserAction action,
+      NextDispatcher next) async {
     next(action);
 
-    if (action.info.url != null) {
-      _urlLauncher.launchURL(action.info.url!);
-    }
+    await _launch(action.info.url);
   }
 
-  void _onQuestion(Store<AppState> store, QuestionBrowseUserAction action,
-      NextDispatcher next) {
+  Future<void> _onQuestion(Store<AppState> store,
+      QuestionBrowseUserAction action, NextDispatcher next) async {
     next(action);
 
-    if (action.info.url != null) {
-      _urlLauncher.launchURL(action.info.url!);
-    }
+    await _launch(action.info.url);
   }
 
-  void _onDatabase(Store<AppState> store, DatabaseBrowseUserAction action,
-      NextDispatcher next) {
+  Future<void> _onDatabase(Store<AppState> store,
+      DatabaseBrowseUserAction action, NextDispatcher next) async {
     next(action);
 
-    _urlLauncher.launchURL(Constants.databaseUrl);
+    await _launch(Constants.databaseUrl);
+  }
+
+  Future<void> _launch(String? url) async {
+    if (url != null) {
+      await _urlLauncher.launchURL(url);
+    }
   }
 }

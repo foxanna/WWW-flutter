@@ -5,7 +5,6 @@ import 'package:what_when_where/redux/dialogs/actions.dart';
 import 'package:what_when_where/redux/rating/actions.dart';
 import 'package:what_when_where/www_redux/www_redux.dart';
 import 'package:what_when_where/redux/tournament/actions.dart';
-import 'package:what_when_where/services/crashes.dart';
 import 'package:what_when_where/services/preferences.dart';
 import 'package:what_when_where/services/rating.dart';
 
@@ -18,14 +17,11 @@ class RatingMiddleware implements IMiddleware {
   RatingMiddleware({
     required IPreferences preferences,
     required IRatingService ratingService,
-    required ICrashService crashService,
   })  : _preferencesService = preferences,
-        _ratingService = ratingService,
-        _crashService = crashService;
+        _ratingService = ratingService;
 
   final IPreferences _preferencesService;
   final IRatingService _ratingService;
-  final ICrashService _crashService;
 
   @override
   Iterable<Middleware<AppState>> get middleware => _middleware;
@@ -65,12 +61,7 @@ class RatingMiddleware implements IMiddleware {
       NextDispatcher next) async {
     next(action);
 
-    try {
-      await _ratingService.rateApp();
-    } on Exception catch (e, s) {
-      await _crashService.logException(e, stackTrace: s);
-    }
-
+    await _ratingService.rateApp();
     await _preferencesService.setBool(_ratedKey, true);
   }
 
