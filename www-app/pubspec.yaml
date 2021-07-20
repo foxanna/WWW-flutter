@@ -49,13 +49,14 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.0.4
-  extra_pedantic: 1.2.0
   flutter_test:
     sdk: flutter
   freezed: ^0.14.2
   hive_generator: ^1.1.0
   injectable_generator: ^1.4.1
   mocktail: ^0.1.4
+  www_analysis:
+    path: www_analysis/
 
 flutter:
   uses-material-design: true
