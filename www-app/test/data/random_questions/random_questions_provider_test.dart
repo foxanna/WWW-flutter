@@ -36,20 +36,20 @@ void main() {
       ),
     );
 
-    // test(
-    //   'Single question',
-    //   () => execute(
-    //     apiResponse: randomQuestionsApiResponse2,
-    //     expectedQuestions: expectedRandomQuestions2,
-    //   ),
-    // );
-    //
-    // test(
-    //   'Empty questions',
-    //   () => execute(
-    //     apiResponse: randomQuestionsApiResponse3,
-    //     expectedQuestions: expectedRandomQuestions3,
-    //   ),
-    // );
+    test(
+      'Single question',
+      () => execute(
+        apiResponse: randomQuestionsApiResponse2,
+        expectedQuestions: expectedRandomQuestions2,
+      ),
+    );
+
+    test(
+      'Empty questions',
+      () => execute(
+        apiResponse: randomQuestionsApiResponse3,
+        expectedQuestions: expectedRandomQuestions3,
+      ),
+    );
   });
 }
