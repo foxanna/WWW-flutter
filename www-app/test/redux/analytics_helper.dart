@@ -1,5 +1,5 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:what_when_where/redux/app/store.dart';
+import 'package:what_when_where/src/redux/store.dart';
 import 'package:what_when_where/www_redux/www_redux.dart';
 
 import '../ioc/container.dart';

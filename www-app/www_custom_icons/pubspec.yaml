@@ -1,0 +1,21 @@
+name: www_custom_icons
+description: A wrapper over icons font for www_* features
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  www_analysis:
+    path: ../www_analysis
+
+flutter:
+  fonts:
+    - family: CustomIcons
+      fonts:
+        - asset: assets/CustomIcons.ttf

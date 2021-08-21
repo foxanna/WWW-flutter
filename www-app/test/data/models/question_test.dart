@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:what_when_where/api/models/question_dto.dart';
-import 'package:what_when_where/constants.dart';
+import '../../../www_constants/lib/src/constants.dart';
 import 'package:what_when_where/data/models/question.dart';
 import 'package:what_when_where/data/models/question_info.dart';
 import 'package:what_when_where/data/models/question_sections/question_section.dart';

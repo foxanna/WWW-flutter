@@ -3,7 +3,7 @@ import 'package:what_when_where/data/cache/tournaments_tree_cache.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_status.dart';
 import 'package:what_when_where/data/models/tournaments_tree.dart';
-import 'package:what_when_where/data/tournaments_tree_provider.dart';
+import 'package:www_tournaments_tree/src/tournaments_tree_provider.dart';
 
 import '../../ioc/container.dart';
 import '../../mock_utils/mock_setup.dart';

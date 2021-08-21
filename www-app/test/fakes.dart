@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:what_when_where/services/background.dart';
+import 'package:www_background_runner/www_background_runner.dart';
 
 class BackgroundRunnerServiceFake extends Fake
     implements IBackgroundRunnerService {

@@ -1,0 +1,42 @@
+name: www_tournament_tours
+description: Tournament tours list feature
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^0.14.2
+  injectable: ^1.4.1
+  www_analytics:
+    path: ../www_analytics
+  www_api:
+    path: ../www_api/
+  www_cache:
+    path: ../www_cache/
+  www_di:
+    path: ../www_di/
+  www_localization:
+    path: ../www_localization
+  www_models:
+    path: ../www_models/
+  www_redux:
+    path: ../www_redux/
+  www_redux_actions:
+    path: ../www_redux_actions/
+  www_theme:
+    path: ../www_theme
+  www_tournament_status:
+    path: ../www_tournament_status/
+  www_widgets:
+    path: ../www_widgets/
+
+dev_dependencies:
+  build_runner: ^2.1.1
+  freezed: ^0.14.2
+  injectable_generator: ^1.4.1
+  www_analysis:
+    path: ../www_analysis/

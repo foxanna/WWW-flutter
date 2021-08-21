@@ -9,51 +9,84 @@ environment:
   flutter: ">=2.2.0"
 
 dependencies:
-  app_review: ^2.1.1+1
-  audioplayers: ^0.19.0
-  auto_size_text: ^3.0.0-nullsafety.0
-  cached_network_image: ^3.0.0
-  dartx: ^0.7.1
-  dartz: ^0.10.0-nullsafety.2
-  dio: ^4.0.0
-  firebase_analytics: ^8.1.2
-  firebase_crashlytics: ^2.0.6
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
-  flutter_rating_bar: ^4.0.0
-  flutter_redux: ^0.8.2
-  flutter_staggered_grid_view: ^0.4.0
-  flutter_svg: ^0.22.0
-  flutter_widget_from_html_core: ^0.6.1+1
-  freezed_annotation: ^0.14.2
-  get_it: ^7.1.3
-  hive: ^2.0.4
-  hive_flutter: ^1.0.0
-  html: ^0.15.0
-  html_unescape: ^2.0.0
-  i69n: ^2.0.1
-  injectable: ^1.4.1
-  isolate: ^2.1.1 #discontinued
-  json_serializable: ^4.1.3
-  path_provider: ^2.0.2
-  photo_view: ^0.11.1
-  rxdart: ^0.27.1
-  share: ^2.0.4
-  shared_preferences: ^2.0.6
-  shimmer: ^2.0.0
-  url_launcher: ^6.0.6
-  vibration: ^1.7.4-nullsafety.0
-  xml2json: ^5.3.1
+  www_about:
+    path: www_about/
+  www_analytics:
+    path: www_analytics/
+  www_api:
+    path: www_api/
+  www_background_runner:
+    path: www_background_runner/
+  www_bookmarks:
+    path: www_bookmarks/
+  www_browsing:
+    path: www_browsing/
+  www_cache:
+    path: www_cache/
+  www_constants:
+    path: www_constants/
+  www_di:
+    path: www_di/
+  www_dialogs:
+    path: www_dialogs/
+  www_http:
+    path: www_http/
+  www_image_details:
+    path: www_image_details/
+  www_initialization:
+    path: www_initialization/
+  www_latest_tournaments:
+    path: www_latest_tournaments/
+  www_local_storage:
+    path: www_local_storage/
+  www_localization:
+    path: www_localization/
+  www_logger:
+    path: www_logger/
+  www_models:
+    path: www_models/
+  www_navigation:
+    path: www_navigation/
+  www_preferences:
+    path: www_preferences/
+  www_questions:
+    path: www_questions/
+  www_rating:
+    path: www_rating/
+  www_redux:
+    path: www_redux/
+  www_redux_actions:
+    path: www_redux_actions/
+  www_redux_store:
+    path: www_redux_store/
+  www_settings:
+    path: www_settings/
+  www_sharing:
+    path: www_sharing/
+  www_theme:
+    path: www_theme/
+  www_timer:
+    path: www_timer/
+  www_tournament_details:
+    path: www_tournament_details/
+  www_tournament_status:
+    path: www_tournament_status/
+  www_tournament_tours:
+    path: www_tournament_tours/
+  www_tournaments_search:
+    path: www_tournaments_search/
+  www_tournaments_tree:
+    path: www_tournaments_tree/
+  www_utils:
+    path: www_utils/
+  www_widgets:
+    path: www_widgets/
 
 dev_dependencies:
-  build_runner: ^2.0.4
   flutter_test:
     sdk: flutter
-  freezed: ^0.14.2
-  hive_generator: ^1.1.0
-  injectable_generator: ^1.4.1
   mocktail: ^0.1.4
   www_analysis:
     path: www_analysis/
@@ -62,7 +95,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-  fonts:
-    - family:  CustomIcons
-      fonts:
-        - asset: assets/CustomIcons.ttf

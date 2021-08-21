@@ -1,5 +1,5 @@
 name: www_analysis
-description: A set of code analysis rules to be used in every www_* package
+description: A set of code analysis rules for www_* packages
 publish_to: none
 
 environment:

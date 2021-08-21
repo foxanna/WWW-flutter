@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:what_when_where/api/search/sorting.dart';
 import 'package:what_when_where/data/models/tournament.dart';
 import 'package:what_when_where/data/models/tournament_status.dart';
-import 'package:what_when_where/data/search_provider.dart';
+import '../../../www_tournaments_search/lib/src/service/search_provider.dart';
 
 import '../../ioc/container.dart';
 import '../../mock_utils/mock_setup.dart';

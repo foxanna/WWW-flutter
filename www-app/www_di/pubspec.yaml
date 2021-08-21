@@ -1,0 +1,21 @@
+name: www_di
+description: Dependency inversion mechanism for www_* packages
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get_it: ^7.2.0
+  injectable: ^1.4.1
+  www_logger:
+    path: ../www_logger/
+
+dev_dependencies:
+  build_runner: ^2.1.1
+  injectable_generator: ^1.4.1
+  www_analysis:
+    path: ../www_analysis

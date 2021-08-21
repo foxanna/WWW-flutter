@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:what_when_where/ioc/container.config.dart';
-import 'package:what_when_where/ioc/container.dart';
+import 'package:what_when_where/di/di_container.dart';
 
 import 'configuration.dart' as configuration;
 
