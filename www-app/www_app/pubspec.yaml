@@ -1,0 +1,21 @@
+name: www_app
+description: What? When? Where?
+version: 2.3.0+20300
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  www_app_di:
+    path: ../www_app_di
+
+dev_dependencies:
+  www_analysis:
+    path: ../www_analysis/
+
+flutter:
+  uses-material-design: true
