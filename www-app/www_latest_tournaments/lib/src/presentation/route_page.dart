@@ -20,22 +20,25 @@ class _LatestTournamentsPageState extends State<LatestTournamentsPage> {
   final _scrollController = ScrollController();
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        backgroundColor: context
-            .styleConfig.latestTournamentsStyleConfiguration.scaffoldBackground,
-        body: LatestTournamentsRefreshIndicator(
-          onRefresh: _loadMoreIfRequested,
-          child: CustomScrollView(
-            controller: _scrollController,
-            physics: const BouncingScrollPhysics(),
-            slivers: const [
-              LatestTournamentsAppBar(),
-              LatestTournamentsPageContent(),
-            ],
+  Widget build(BuildContext context) => WWWStatusBarBrightness(
+        statusBarBrightness: Brightness.light,
+        child: Scaffold(
+          backgroundColor: context.styleConfig
+              .latestTournamentsStyleConfiguration.scaffoldBackground,
+          body: LatestTournamentsRefreshIndicator(
+            onRefresh: _loadMoreIfRequested,
+            child: CustomScrollView(
+              controller: _scrollController,
+              physics: const BouncingScrollPhysics(),
+              slivers: const [
+                LatestTournamentsAppBar(),
+                LatestTournamentsPageContent(),
+              ],
+            ),
           ),
-        ),
-        floatingActionButton: ScrollControllerBoundFloatingActionButton(
-          scrollController: _scrollController,
+          floatingActionButton: ScrollControllerBoundFloatingActionButton(
+            scrollController: _scrollController,
+          ),
         ),
       );
 

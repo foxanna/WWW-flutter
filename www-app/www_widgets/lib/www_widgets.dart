@@ -15,3 +15,4 @@ export 'package:www_widgets/src/text_stub.dart';
 export 'package:www_widgets/src/tournaments_grid.dart';
 export 'package:www_widgets/src/tournaments_grid_tile.dart';
 export 'package:www_widgets/src/unexpected_state_widget.dart';
+export 'package:www_widgets/src/status_bar_brightness.dart';

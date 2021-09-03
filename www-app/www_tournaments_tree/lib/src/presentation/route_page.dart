@@ -24,19 +24,22 @@ class _TournamentsTreeRoutePageState extends State<TournamentsTreeRoutePage> {
   final _scrollController = ScrollController();
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        backgroundColor: context
-            .styleConfig.tournamentsTreeStyleConfiguration.scaffoldBackground,
-        body: CustomScrollView(
-          controller: _scrollController,
-          physics: const BouncingScrollPhysics(),
-          slivers: [
-            TournamentsTreeAppBar(info: widget.info),
-            TournamentsTreePageContent(info: widget.info),
-          ],
-        ),
-        floatingActionButton: ScrollControllerBoundFloatingActionButton(
-          scrollController: _scrollController,
+  Widget build(BuildContext context) => WWWStatusBarBrightness(
+        statusBarBrightness: Brightness.light,
+        child: Scaffold(
+          backgroundColor: context
+              .styleConfig.tournamentsTreeStyleConfiguration.scaffoldBackground,
+          body: CustomScrollView(
+            controller: _scrollController,
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              TournamentsTreeAppBar(info: widget.info),
+              TournamentsTreePageContent(info: widget.info),
+            ],
+          ),
+          floatingActionButton: ScrollControllerBoundFloatingActionButton(
+            scrollController: _scrollController,
+          ),
         ),
       );
 
