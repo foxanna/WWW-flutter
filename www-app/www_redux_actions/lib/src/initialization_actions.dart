@@ -9,4 +9,10 @@ class InitializationAction
     with _$InitializationAction
     implements IAction, ISystemAction {
   const factory InitializationAction.init() = InitInitializationAction;
+
+  const factory InitializationAction.failed({required Exception exception}) =
+      FailedInitializationAction;
+
+  const factory InitializationAction.completed() =
+      CompletedInitializationAction;
 }

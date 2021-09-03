@@ -44,11 +44,15 @@ class InitializationMiddleware
   }
 
   void _checkState(Store<IInitializationStateHolder> store) =>
-      store.state.initializationState.forEach((state) {
-        if (state.servicesReady && state.settingsReady) {
-          store.dispatch(const SystemActionLatest.open());
-        }
-      });
+      store.state.initializationState.forEach((state) => state.maybeMap(
+            inProgress: (state) {
+              if (state.servicesReady && state.settingsReady) {
+                store.dispatch(const InitializationAction.completed());
+                store.dispatch(const SystemActionLatest.open());
+              }
+            },
+            orElse: () => null,
+          ));
 }
 
 @injectable
@@ -97,8 +101,11 @@ class ServicesMiddleware implements IMiddleware1<IState> {
       store.dispatch(const SystemActionServices.ready());
     } on Exception catch (exception) {
       await _crashService.logException(exception);
+      store.dispatch(InitializationAction.failed(exception: exception));
     } on Error catch (error) {
       await _crashService.logError(error);
+      store.dispatch(
+          InitializationAction.failed(exception: Exception(error.toString())));
     }
   }
 }

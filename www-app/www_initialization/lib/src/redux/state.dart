@@ -6,8 +6,12 @@ part 'state.freezed.dart';
 
 @freezed
 class InitializationState with _$InitializationState implements IState {
-  const factory InitializationState({
+  const factory InitializationState.completed() = _CompletedInitializationState;
+
+  const factory InitializationState.inProgress({
     @Default(false) bool settingsReady,
     @Default(false) bool servicesReady,
-  }) = _InitializationState;
+  }) = _InProgressInitializationState;
+
+  const factory InitializationState.failed() = _FailedInitializationState;
 }

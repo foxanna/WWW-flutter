@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:www_redux/www_redux.dart';
 import 'package:www_settings/www_settings.dart';
 import 'package:www_theme/www_theme.dart';
+import 'package:www_initialization/www_initialization.dart';
 import 'package:www_widgets/www_widgets.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -26,19 +27,54 @@ class SplashScreen extends StatelessWidget {
           return AnimatedTheme(
             curve: _curve,
             duration: _animationDuration,
-            data: ThemeData(scaffoldBackgroundColor: scaffoldBackground),
-            child: Scaffold(
-              body: Center(
-                child: Hero(
-                  tag: 'owl',
-                  child: FadeIn(
-                    curve: _curve,
-                    duration: _animationDuration,
-                    child: SvgPicture.asset(
-                      'assets/owl.svg',
-                      height: 200.0,
-                      color: Colors.white,
-                    ),
+            data: Theme.of(context)
+                .copyWith(scaffoldBackgroundColor: scaffoldBackground),
+            child: WWWStatusBarBrightness(
+              statusBarBrightness: Brightness.light,
+              child: Scaffold(
+                body: SafeArea(
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: Center(
+                          child: Hero(
+                            tag: 'owl',
+                            child: FadeIn(
+                              curve: _curve,
+                              duration: _animationDuration,
+                              child: SvgPicture.asset(
+                                'assets/owl.svg',
+                                height: 200.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned.fill(
+                        top: null,
+                        child: WWWStoreConnector<IInitializationStateHolder,
+                            Option<InitializationState>>(
+                          converter: (state) => state.initializationState,
+                          builder: (context, state) => state.fold(
+                            () => const SizedBox(),
+                            (state) => state.map(
+                              completed: (_) => const SizedBox(),
+                              inProgress: (_) => const Padding(
+                                padding: Dimensions.defaultPadding,
+                                child: WWWProgressIndicator(),
+                              ),
+                              failed: (state) => ErrorMessage(
+                                color: Theme.of(context)
+                                    .accentTextTheme
+                                    .bodyText1!
+                                    .color!,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
