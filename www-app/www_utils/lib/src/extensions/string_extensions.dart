@@ -18,7 +18,8 @@ extension StringX on String {
       ._replaceUnsupportedSymbols()
       ._removeParagraphs();
 
-  String _removeParagraphs() => this.replaceAll('\\n', ' ');
+  String _removeParagraphs() =>
+      this.replaceAll(r'\\n', ' ').replaceAll(r'\n', ' ');
 
   String _removeMultipleSpaces() => this.replaceAll(RegExp(r'\s{2,}'), ' ');
 
