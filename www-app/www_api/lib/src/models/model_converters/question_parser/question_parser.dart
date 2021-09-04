@@ -32,9 +32,23 @@ class QuestionParser {
         break;
       }
 
-      yield nextSectionText.toQuestionSection(nextSectionType);
+      final questionSection =
+          nextSectionText.toQuestionSection(nextSectionType);
+      yield* _unwrapGiveAwayIfNecessary(questionSection);
 
       text = text.replaceFirst(nextSectionText, '');
+    }
+  }
+
+  static Iterable<QuestionSection> _unwrapGiveAwayIfNecessary(
+      QuestionSection questionSection) sync* {
+    if (questionSection is GiveAwaySection) {
+      yield* _split(questionSection.value).map((section) =>
+          section is! TextSection
+              ? section
+              : GiveAwaySection(value: section.value));
+    } else {
+      yield questionSection;
     }
   }
 

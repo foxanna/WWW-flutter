@@ -425,7 +425,7 @@ void main() {
     );
 
     test(
-      'giveaway, question text, new format, no spase after :',
+      'giveaway, question text, new format, no space after :',
       () => execute(
         dto: const QuestionDto(
             question: '[раздаточный материал:$giveAwayValue]'),
@@ -439,7 +439,7 @@ void main() {
     );
 
     test(
-      'giveaway, question text, new format, multiple spases around',
+      'giveaway, question text, new format, multiple spaces around',
       () => execute(
         dto: const QuestionDto(
             question: '<раздатка>   $giveAwayValue   </раздатка>'),
@@ -453,7 +453,7 @@ void main() {
     );
 
     test(
-      'giveaway, question text, new format, multiple spases around',
+      'giveaway, question text, new format, multiple spaces around',
       () => execute(
         dto: const QuestionDto(
             question: '[раздаточный материал:   $giveAwayValue   ]'),
@@ -1042,6 +1042,41 @@ void main() {
         ),
         expectedQuestion: const Question(
           info: QuestionInfo(tourInfo: tourInfo),
+        ),
+      ),
+    );
+  });
+
+  group('Strange cases', () {
+    test(
+      'Giveaway contains image',
+      () => execute(
+        dto: const QuestionDto(
+            question:
+                '[Раздаточный материал: (pic: https://imgur.com/m8zexCM.png) ] text'),
+        expectedQuestion: const Question(
+          display: 'text',
+          question: <QuestionSection>[
+            ImageSection(value: 'https://imgur.com/m8zexCM.png'),
+            TextSection(value: 'text'),
+          ],
+        ),
+      ),
+    );
+
+    test(
+      'Giveaway contains image and text',
+      () => execute(
+        dto: const QuestionDto(
+            question:
+                '[Раздаточный материал: (pic: https://imgur.com/m8zexCM.png) text2] text'),
+        expectedQuestion: const Question(
+          display: 'text',
+          question: <QuestionSection>[
+            ImageSection(value: 'https://imgur.com/m8zexCM.png'),
+            GiveAwaySection(value: 'text2'),
+            TextSection(value: 'text'),
+          ],
         ),
       ),
     );
