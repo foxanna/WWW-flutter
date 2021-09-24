@@ -1,10 +1,10 @@
 import 'package:injectable/injectable.dart';
 import 'package:www_api/src/models/latest_tournaments_dto.dart';
+import 'package:www_api/src/models/model_converters/tournament_converter.dart';
 import 'package:www_api/src/parsers/latest2json_parser.dart';
 import 'package:www_background_runner/www_background_runner.dart';
 import 'package:www_http/www_http.dart';
 import 'package:www_models/www_models.dart';
-import 'package:www_api/src/models/model_converters/tournament_converter.dart';
 
 abstract class ILatestTournamentsLoader {
   Future<List<Tournament>> get(int page);

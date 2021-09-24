@@ -8,7 +8,7 @@ import 'package:www_redux_actions/www_redux_actions.dart';
 
 @injectable
 class LatestTournamentsMiddleware
-    implements IMiddleware1<ILatestTournamentsStateHolder> {
+    implements IMiddleware<ILatestTournamentsStateHolder> {
   LatestTournamentsMiddleware({
     required ILatestTournamentsProvider provider,
   }) : _provider = provider;

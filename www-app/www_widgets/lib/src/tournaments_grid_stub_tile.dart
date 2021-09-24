@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:www_widgets/src/text_stub.dart';
 import 'package:www_theme/www_theme.dart';
+import 'package:www_widgets/src/text_stub.dart';
 
 class TournamentsGridStubTile extends StatelessWidget {
   const TournamentsGridStubTile({Key? key}) : super(key: key);

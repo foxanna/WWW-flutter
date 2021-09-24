@@ -20,7 +20,7 @@ import 'package:www_tournaments_search/www_tournaments_search.dart';
 import 'package:www_tournaments_tree/www_tournaments_tree.dart';
 
 @injectable
-class AppMiddleware implements IMiddleware1<AppState> {
+class AppMiddleware implements IMiddleware<AppState> {
   AppMiddleware({
     required InitializationMiddleware initializationMiddleware,
     required LogsMiddleware logsMiddleware,

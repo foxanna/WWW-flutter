@@ -4,7 +4,7 @@ import 'package:www_logger/www_logger.dart';
 import 'package:www_redux/www_redux.dart';
 
 @injectable
-class LogsMiddleware implements IMiddleware1<IState> {
+class LogsMiddleware implements IMiddleware<IState> {
   @override
   Iterable<Middleware<IState>> get middleware => _middleware;
   late final _middleware = _createMiddleware();

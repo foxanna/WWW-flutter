@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:www_redux/www_redux.dart';
 import 'package:www_redux_actions/www_redux_actions.dart';
 import 'package:www_tournaments_search/src/presentation/data_page.dart';
 import 'package:www_tournaments_search/src/presentation/error_page.dart';
 import 'package:www_tournaments_search/src/presentation/loading_page.dart';
 import 'package:www_tournaments_search/src/redux/state.dart';
-import 'package:www_redux/www_redux.dart';
 import 'package:www_tournaments_search/src/redux/state_holder.dart';
 import 'package:www_widgets/www_widgets.dart';
 

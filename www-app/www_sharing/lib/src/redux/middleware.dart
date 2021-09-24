@@ -8,7 +8,7 @@ import 'package:www_redux_actions/www_redux_actions.dart';
 import 'package:www_sharing/src/service/sharing.dart';
 
 @injectable
-class ShareMiddleware implements IMiddleware1<IState> {
+class ShareMiddleware implements IMiddleware<IState> {
   ShareMiddleware({
     required ISharingService sharingService,
   }) : _sharingService = sharingService;

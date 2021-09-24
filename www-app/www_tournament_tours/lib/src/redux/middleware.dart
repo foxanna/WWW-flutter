@@ -8,7 +8,7 @@ import 'package:www_tournament_tours/src/redux/state_holder.dart';
 import 'package:www_tournament_tours/src/service/tour_details_provider.dart';
 
 @injectable
-class ToursMiddleware implements IMiddleware1<ITournamentToursStateHolder> {
+class ToursMiddleware implements IMiddleware<ITournamentToursStateHolder> {
   ToursMiddleware({
     required ITourDetailsProvider provider,
   }) : _provider = provider;

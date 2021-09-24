@@ -9,7 +9,7 @@ import 'package:www_tournaments_tree/src/service/tournaments_tree_provider.dart'
 
 @injectable
 class TournamentsTreeMiddleware
-    implements IMiddleware1<ITournamentsTreeStateHolder> {
+    implements IMiddleware<ITournamentsTreeStateHolder> {
   TournamentsTreeMiddleware({
     required ITournamentsTreeProvider provider,
   }) : _provider = provider;

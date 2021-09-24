@@ -13,7 +13,7 @@ const _notifyShortTimerExpirationKey = 'notify_short_timer';
 const _notifyLongTimerExpirationKey = 'notify_long_timer';
 
 @injectable
-class SettingsMiddleware implements IMiddleware1<ISettingsStateHolder> {
+class SettingsMiddleware implements IMiddleware<ISettingsStateHolder> {
   SettingsMiddleware({
     required IPreferences preferences,
   }) : _preferences = preferences;

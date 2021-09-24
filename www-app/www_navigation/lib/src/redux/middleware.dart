@@ -14,7 +14,7 @@ import 'package:www_tournaments_search/www_tournaments_search.dart';
 import 'package:www_tournaments_tree/www_tournaments_tree.dart';
 
 @injectable
-class NavigationMiddleware implements IMiddleware1<IState> {
+class NavigationMiddleware implements IMiddleware<IState> {
   NavigationMiddleware({
     required INavigationService navigationService,
   }) : _navigationService = navigationService;

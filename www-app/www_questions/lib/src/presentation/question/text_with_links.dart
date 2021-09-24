@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:www_redux/www_redux.dart';
 import 'package:www_redux_actions/www_redux_actions.dart';
 import 'package:www_utils/www_utils.dart';
-import 'package:www_redux/www_redux.dart';
 
 class TextWithLinks extends StatelessWidget {
   const TextWithLinks(

@@ -1,8 +1,8 @@
+import 'package:dartx/dartx.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:www_models/src/models/tour.dart';
 import 'package:www_models/src/models/tournament_info.dart';
 import 'package:www_models/src/models/tournament_status.dart';
-import 'package:dartx/dartx.dart';
 
 part 'tournament.freezed.dart';
 

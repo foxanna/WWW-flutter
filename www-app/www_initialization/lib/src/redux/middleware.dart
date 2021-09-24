@@ -11,7 +11,7 @@ import 'package:www_timer/www_timer.dart';
 
 @injectable
 class InitializationMiddleware
-    implements IMiddleware1<IInitializationStateHolder> {
+    implements IMiddleware<IInitializationStateHolder> {
   InitializationMiddleware(this._servicesMiddleware);
 
   final ServicesMiddleware _servicesMiddleware;
@@ -56,7 +56,7 @@ class InitializationMiddleware
 }
 
 @injectable
-class ServicesMiddleware implements IMiddleware1<IState> {
+class ServicesMiddleware implements IMiddleware<IState> {
   ServicesMiddleware({
     required IFirebaseWrapper firebaseInitializer,
     required ICrashService crashService,

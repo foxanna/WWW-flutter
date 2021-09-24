@@ -9,7 +9,7 @@ import 'package:www_redux/www_redux.dart';
 import 'package:www_redux_actions/www_redux_actions.dart';
 
 @injectable
-class QuestionsMiddleware implements IMiddleware1<IQuestionsStateHolder> {
+class QuestionsMiddleware implements IMiddleware<IQuestionsStateHolder> {
   QuestionsMiddleware({
     required IRandomQuestionsProvider provider,
     required IDialogService dialogService,

@@ -2,8 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:www_bookmarks/src/redux/state.dart';
-import 'package:www_redux/www_redux.dart';
 import 'package:www_models/www_models.dart';
+import 'package:www_redux/www_redux.dart';
 import 'package:www_redux_actions/www_redux_actions.dart';
 
 @injectable

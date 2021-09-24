@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:www_initialization/www_initialization.dart';
 import 'package:www_redux/www_redux.dart';
 import 'package:www_settings/www_settings.dart';
 import 'package:www_theme/www_theme.dart';
-import 'package:www_initialization/www_initialization.dart';
 import 'package:www_widgets/www_widgets.dart';
 
 class SplashScreen extends StatelessWidget {

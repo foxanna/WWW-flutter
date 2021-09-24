@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:www_widgets/src/animated_scale.dart';
 
 class AnimatedFab extends StatelessWidget {
   const AnimatedFab({

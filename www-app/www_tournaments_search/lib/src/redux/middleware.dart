@@ -9,7 +9,7 @@ import 'package:www_tournaments_search/src/redux/state_holder.dart';
 import 'package:www_tournaments_search/src/service/search_provider.dart';
 
 @injectable
-class SearchMiddleware implements IMiddleware1<ISearchStateHolder> {
+class SearchMiddleware implements IMiddleware<ISearchStateHolder> {
   SearchMiddleware({
     required ISearchProvider provider,
   }) : _provider = provider;

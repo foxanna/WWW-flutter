@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:www_models/www_models.dart';
 import 'package:www_localization/www_localization.dart';
+import 'package:www_models/www_models.dart';
 
 class SortingController extends ValueNotifier<Sorting> {
   SortingController({required Sorting value}) : super(value);

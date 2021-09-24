@@ -1,7 +1,7 @@
-import 'package:www_local_storage/src/hive/models/tournament.dart';
+import 'package:www_local_storage/src/hive/model_converters/tour_converter.dart';
 import 'package:www_local_storage/src/hive/model_converters/tournament_info_converter.dart';
 import 'package:www_local_storage/src/hive/model_converters/tournament_status_converter.dart';
-import 'package:www_local_storage/src/hive/model_converters/tour_converter.dart';
+import 'package:www_local_storage/src/hive/models/tournament.dart';
 import 'package:www_models/www_models.dart';
 
 extension TournamentHiveX on Tournament {

@@ -3,10 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:www_localization/www_localization.dart';
 import 'package:www_models/www_models.dart';
+import 'package:www_theme/www_theme.dart';
 import 'package:www_widgets/src/bookmarked_marker.dart';
 import 'package:www_widgets/src/shape_hero.dart';
 import 'package:www_widgets/src/text_hero.dart';
-import 'package:www_theme/www_theme.dart';
 
 class TournamentsGridTile extends StatelessWidget {
   TournamentsGridTile({

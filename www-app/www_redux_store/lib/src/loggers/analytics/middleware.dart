@@ -43,7 +43,7 @@ final _analyticsEventNames = {
 };
 
 @injectable
-class AnalyticsMiddleware implements IMiddleware1<IState> {
+class AnalyticsMiddleware implements IMiddleware<IState> {
   AnalyticsMiddleware({
     required IAnalyticsService analyticsService,
   }) : _analyticsService = analyticsService;

@@ -6,7 +6,7 @@ import 'package:www_redux/www_redux.dart';
 import 'package:www_redux_actions/www_redux_actions.dart';
 
 @injectable
-class BrowseMiddleware implements IMiddleware1<IState> {
+class BrowseMiddleware implements IMiddleware<IState> {
   BrowseMiddleware({
     required IUrlLauncher urlLauncher,
   }) : _urlLauncher = urlLauncher;

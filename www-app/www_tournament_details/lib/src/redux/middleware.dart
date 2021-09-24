@@ -15,7 +15,7 @@ import 'package:www_utils/www_utils.dart';
 
 @injectable
 class TournamentMiddleware
-    implements IMiddleware1<ITournamentDetailsStateHolder> {
+    implements IMiddleware<ITournamentDetailsStateHolder> {
   TournamentMiddleware({
     required ITournamentDetailsProvider provider,
     required ITournamentsHistoryService historyService,

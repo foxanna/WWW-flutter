@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:injectable/injectable.dart';
+import 'package:www_analytics/www_analytics.dart';
 import 'package:www_api/www_api.dart';
 import 'package:www_cache/www_cache.dart';
 import 'package:www_models/www_models.dart';
@@ -15,19 +16,22 @@ class TourDetailsProvider implements ITourDetailsProvider {
     required ITourDetailsLoader loader,
     required ITournamentsCache tournamentsCache,
     required IToursCache tourCache,
+    required ICrashWrapper crashWrapper,
   })  : _loader = loader,
         _tournamentsCache = tournamentsCache,
-        _toursCache = tourCache;
+        _toursCache = tourCache,
+        _crashWrapper = crashWrapper;
 
   final ITourDetailsLoader _loader;
   final ITournamentsCache _tournamentsCache;
   final IToursCache _toursCache;
+  final ICrashWrapper _crashWrapper;
 
   @override
-  Future<Tour> get(String id) async {
-    final tour = _getCached(id) ?? await _loadAndCache(id);
-    return tour;
-  }
+  Future<Tour> get(String id) => _crashWrapper.executeAndReport(() async {
+        final tour = _getCached(id) ?? await _loadAndCache(id);
+        return tour;
+      });
 
   Tour? _getCached(String id) =>
       _toursCache.contains(id) ? _toursCache.get(id) : null;

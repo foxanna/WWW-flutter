@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:www_questions/src/presentation/question/question_number.dart';
 import 'package:www_questions/src/presentation/question/separator.dart';
-import 'package:www_widgets/www_widgets.dart';
 import 'package:www_theme/www_theme.dart';
+import 'package:www_widgets/www_widgets.dart';
 
 class StubQuestionCard extends StatelessWidget {
   const StubQuestionCard({

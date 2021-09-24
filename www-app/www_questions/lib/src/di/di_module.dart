@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:www_questions/src/di/di_module.config.dart';
 import 'package:www_di/www_di.dart';
+import 'package:www_questions/src/di/di_module.config.dart';
 
 class WWWDIModuleQuestions extends WWWDIModule {
   const WWWDIModuleQuestions() : super(_init);

@@ -9,7 +9,7 @@ import 'package:www_tournament_details/www_tournament_details.dart';
 import 'package:www_tournament_status/www_tournament_status.dart';
 
 @injectable
-class BookmarksMiddleware implements IMiddleware1<IBookmarksStateHolder> {
+class BookmarksMiddleware implements IMiddleware<IBookmarksStateHolder> {
   BookmarksMiddleware({
     required ITournamentDetailsProvider tournamentDetailsProvider,
     required ITournamentsBookmarksService bookmarksService,

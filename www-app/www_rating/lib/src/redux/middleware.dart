@@ -12,7 +12,7 @@ const String _ratedKey = 'rated';
 const int _maxOpenedTournamentsCount = 10;
 
 @injectable
-class RatingMiddleware implements IMiddleware1<IState> {
+class RatingMiddleware implements IMiddleware<IState> {
   RatingMiddleware({
     required IPreferences preferences,
     required IRatingService ratingService,

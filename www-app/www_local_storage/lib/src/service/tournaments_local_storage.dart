@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:injectable/injectable.dart';
-import 'package:www_local_storage/src/service/local_storage.dart';
-import 'package:www_local_storage/src/hive/models/tournament.dart';
 import 'package:www_local_storage/src/hive/model_converters/tournament_converter.dart';
+import 'package:www_local_storage/src/hive/models/tournament.dart';
+import 'package:www_local_storage/src/service/local_storage.dart';
 import 'package:www_models/www_models.dart';
 
 abstract class ITournamentsLocalStorage {

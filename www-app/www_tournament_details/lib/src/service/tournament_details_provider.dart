@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:injectable/injectable.dart';
+import 'package:www_analytics/www_analytics.dart';
 import 'package:www_api/www_api.dart';
 import 'package:www_cache/www_cache.dart';
 import 'package:www_models/www_models.dart';
@@ -17,22 +18,25 @@ class TournamentDetailsProvider implements ITournamentDetailsProvider {
     required ITournamentsCache tournamentsCache,
     required IToursCache toursCache,
     required ITournamentStatusService statusService,
+    required ICrashWrapper crashWrapper,
   })  : _loader = loader,
         _tournamentsCache = tournamentsCache,
         _toursCache = toursCache,
-        _statusService = statusService;
+        _statusService = statusService,
+        _crashWrapper = crashWrapper;
 
   final ITournamentDetailsLoader _loader;
   final ITournamentsCache _tournamentsCache;
   final IToursCache _toursCache;
   final ITournamentStatusService _statusService;
+  final ICrashWrapper _crashWrapper;
 
   @override
-  Future<Tournament> get(String id) async {
-    final tournament = _getCached(id) ?? await _loadAndCache(id);
-    final actualizedTournament = await _statusService.actualize(tournament);
-    return actualizedTournament;
-  }
+  Future<Tournament> get(String id) => _crashWrapper.executeAndReport(() async {
+        final tournament = _getCached(id) ?? await _loadAndCache(id);
+        final actualizedTournament = await _statusService.actualize(tournament);
+        return actualizedTournament;
+      });
 
   Tournament? _getCached(String id) =>
       _tournamentsCache.contains(id) ? _tournamentsCache.get(id) : null;

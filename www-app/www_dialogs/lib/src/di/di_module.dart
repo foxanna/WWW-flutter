@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:www_dialogs/src/di/di_module.config.dart';
 import 'package:www_di/www_di.dart';
+import 'package:www_dialogs/src/di/di_module.config.dart';
 import 'package:www_dialogs/src/service/dialogs.dart';
 
 class WWWDIModuleDialogs extends WWWDIModule {

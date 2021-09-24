@@ -1,20 +1,20 @@
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
-import 'package:www_timer/src/service/sound.dart';
-import 'package:www_timer/src/service/vibrating.dart';
-import 'package:www_timer/src/utils/timer.dart';
 import 'package:www_models/www_models.dart';
 import 'package:www_redux/www_redux.dart';
 import 'package:www_redux_actions/www_redux_actions.dart';
 import 'package:www_settings/www_settings.dart';
 import 'package:www_timer/src/redux/state.dart';
 import 'package:www_timer/src/redux/state_holder.dart';
+import 'package:www_timer/src/service/sound.dart';
+import 'package:www_timer/src/service/vibrating.dart';
+import 'package:www_timer/src/utils/timer.dart';
 import 'package:www_utils/www_utils.dart';
 
 const int _timerFrequency = 200;
 
 @injectable
-class TimerMiddleware implements IMiddleware1<ITimerStateHolder> {
+class TimerMiddleware implements IMiddleware<ITimerStateHolder> {
   TimerMiddleware({
     required ISoundService soundService,
     required IVibratingService vibratingService,
@@ -37,7 +37,7 @@ class TimerMiddleware implements IMiddleware1<ITimerStateHolder> {
       ];
 }
 
-class _TimerTickingMiddleware implements IMiddleware1<ITimerStateHolder> {
+class _TimerTickingMiddleware implements IMiddleware<ITimerStateHolder> {
   final _timer = WWWTimer(updateFrequency: _timerFrequency);
 
   @override
@@ -139,7 +139,7 @@ class _TimerTickingMiddleware implements IMiddleware1<ITimerStateHolder> {
   }
 }
 
-class _TimerConnectingMiddleware implements IMiddleware1<ITimerStateHolder> {
+class _TimerConnectingMiddleware implements IMiddleware<ITimerStateHolder> {
   @override
   Iterable<Middleware<ITimerStateHolder>> get middleware => _middleware;
   late final _middleware = _createMiddleware();
@@ -180,7 +180,7 @@ class _TimerConnectingMiddleware implements IMiddleware1<ITimerStateHolder> {
   }
 }
 
-class _TimerVibratingMiddleware implements IMiddleware1<ITimerStateHolder> {
+class _TimerVibratingMiddleware implements IMiddleware<ITimerStateHolder> {
   _TimerVibratingMiddleware({
     required IVibratingService vibratingService,
   }) : _vibratingService = vibratingService;
@@ -204,7 +204,7 @@ class _TimerVibratingMiddleware implements IMiddleware1<ITimerStateHolder> {
   }
 }
 
-class _TimerSoundMiddleware implements IMiddleware1<ITimerStateHolder> {
+class _TimerSoundMiddleware implements IMiddleware<ITimerStateHolder> {
   _TimerSoundMiddleware({
     required ISoundService soundService,
   }) : _soundService = soundService;
