@@ -64,7 +64,7 @@ class _TextScalePickerState extends State<_TextScalePicker> {
           ConstrainedBox(
             constraints: const BoxConstraints.tightFor(width: 120, height: 32),
             child: Slider(
-              activeColor: Theme.of(context).accentColor,
+              activeColor: Theme.of(context).colorScheme.secondary,
               inactiveColor: Theme.of(context).dividerColor,
               min: 0.0,
               max: (TextScale.values.length - 1).toDouble(),

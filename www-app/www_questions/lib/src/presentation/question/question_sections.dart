@@ -104,9 +104,9 @@ class QuestionSections extends StatelessWidget {
           BuildContext context, GiveAwaySection section, TextStyle style) =>
       Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).accentColor.withAlpha(60),
+          color: Theme.of(context).colorScheme.secondary.withAlpha(60),
           border: Border.all(
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).colorScheme.secondary,
             width: 1.0,
           ),
         ),

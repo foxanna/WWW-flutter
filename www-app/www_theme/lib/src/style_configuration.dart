@@ -71,9 +71,9 @@ class AboutStyleConfiguration {
       appBarBackgroundColor: Colors.transparent,
       appBarElevation: 0.0,
       contentPadding: const EdgeInsets.all(40.0),
-      accentColor: theme.accentColor,
+      accentColor: theme.colorScheme.secondary,
       titleStyle: theme.textTheme.headline5!.copyWith(
-        color: theme.accentColor,
+        color: theme.colorScheme.secondary,
       ),
       textStyle: theme.textTheme.caption!,
     );
@@ -118,7 +118,8 @@ class TournamentDetailsStyleConfiguration {
 
     return TournamentDetailsStyleConfiguration._(
       tournamentTitleTextStyle: theme.textTheme.headline5!,
-      tourTitleTextStyle: theme.accentTextTheme.headline6!,
+      tourTitleTextStyle: theme.textTheme.headline6!
+          .copyWith(color: theme.colorScheme.onPrimary),
       actionBarBackgroundColor: theme.cardColor,
       actionBarIconTheme: theme.iconTheme,
       scaffoldBackground: firstTourColor,
@@ -157,7 +158,7 @@ class TournamentDetailsStyleConfiguration {
         bottom: Dimensions.defaultPadding.bottom * 2 + padding.bottom,
       ),
       tourQuestionsSpacing: 16.0,
-      bookmarkedMarkerColor: theme.accentColor,
+      bookmarkedMarkerColor: theme.colorScheme.secondary,
       bookmarkedMarkerWidth: 24.0,
     );
   }
@@ -219,9 +220,9 @@ class TournamentsGridStyleConfiguration {
       tileContentSpacing: Dimensions.defaultSpacing * 2,
       gridPadding: Dimensions.defaultPadding * 2 +
           EdgeInsets.only(left: padding.left, right: padding.right),
-      newTournamentIndicatorColor: theme.accentColor,
+      newTournamentIndicatorColor: theme.colorScheme.secondary,
       newTournamentIndicatorRadius: 4.0,
-      bookmarkedTournamentIndicatorColor: theme.accentColor,
+      bookmarkedTournamentIndicatorColor: theme.colorScheme.secondary,
       bookmarkedTournamentIconSize: const Size(16.0, 20.0),
     );
   }
@@ -370,18 +371,18 @@ class QuestionStyleConfiguration {
         vertical: 32,
         horizontal: 24,
       ),
-      questionCardTitleTextStyle:
-          theme.textTheme.headline5!.copyWith(color: theme.accentColor),
-      questionCardDividerColor: theme.accentColor,
+      questionCardTitleTextStyle: theme.textTheme.headline5!
+          .copyWith(color: theme.colorScheme.secondary),
+      questionCardDividerColor: theme.colorScheme.secondary,
       questionCardDividerHeight: 64.0,
-      showAnswerButtonColor: theme.accentColor,
+      showAnswerButtonColor: theme.colorScheme.secondary,
       showAnswerButtonHeight: 56.0,
       showAnswerButtonElevation: 4.0,
       questionCardQuestionSectionsThemeData: questionTextSectionsThemeData,
       questionCardAnswerSectionsThemeData:
           questionTextSectionsThemeData.copyWith(
         textStyle: questionTextSectionsThemeData.textStyle.copyWith(
-          color: theme.accentColor,
+          color: theme.colorScheme.secondary,
         ),
       ),
       questionCardCommentSectionsThemeData:

@@ -65,10 +65,8 @@ class SplashScreen extends StatelessWidget {
                                 child: WWWProgressIndicator(),
                               ),
                               failed: (state) => ErrorMessage(
-                                color: Theme.of(context)
-                                    .accentTextTheme
-                                    .bodyText1!
-                                    .color!,
+                                color:
+                                    Theme.of(context).colorScheme.onSecondary,
                               ),
                             ),
                           ),

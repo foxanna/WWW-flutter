@@ -32,9 +32,9 @@ class Themes {
     final base = ThemeData(
       brightness: Brightness.light,
       primaryColor: Colors.teal[900],
-      accentColor: Colors.teal[400],
       colorScheme: ColorScheme.fromSwatch(
         primarySwatch: Colors.teal,
+        accentColor: Colors.teal[400],
         brightness: Brightness.light,
       ),
     );
@@ -45,9 +45,9 @@ class Themes {
   static ThemeData createDarkAppTheme() {
     final base = ThemeData(
       brightness: Brightness.dark,
-      accentColor: Colors.teal[400],
       colorScheme: ColorScheme.fromSwatch(
         primarySwatch: Colors.teal,
+        accentColor: Colors.teal[400],
         brightness: Brightness.dark,
       ),
     );
@@ -97,7 +97,7 @@ class Themes {
       bottomAppBarColor: theme.primaryColor,
       dialogTheme: DialogTheme(
         titleTextStyle: textTheme.headline6!.copyWith(
-          color: theme.accentColor,
+          color: theme.colorScheme.secondary,
         ),
         contentTextStyle: textTheme.caption,
         shape: const RoundedRectangleBorder(
@@ -109,6 +109,8 @@ class Themes {
       dividerTheme: const DividerThemeData(
         thickness: 1.0,
       ),
+      toggleableActiveColor: theme.colorScheme.secondary,
+      appBarTheme: AppBarTheme(backgroundColor: theme.primaryColor),
     );
   }
 }
