@@ -3,8 +3,10 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:www_api/src/loaders/random_questions_loader.dart';
 import 'package:www_api/src/parsers/xml2json_parser.dart';
+import 'package:www_background_runner/www_background_runner.dart';
+import 'package:www_http/www_http.dart';
 import 'package:www_models/www_models.dart';
-import 'package:mocktail/mocktail.dart';
+import 'package:www_test_utils/www_test_utils.dart';
 
 import '../../mocks/fakes.dart';
 import '../../mocks/mocks.dart';
@@ -13,27 +15,38 @@ import 'test_data_2.dart';
 import 'test_data_3.dart';
 
 void main() {
-  group('Loads and parses random questions', () {
+  late IHttpClient httpClientMock;
+  late IBackgroundRunnerService backgroundRunnerServiceMock;
+  late IXmlToJsonParser parser;
+
+  final createLoader = () => RandomQuestionsLoader(
+        httpClient: httpClientMock,
+        backgroundService: backgroundRunnerServiceMock,
+        parser: parser,
+      );
+
+  setUp(() {
+    httpClientMock = MockHttpClient();
+    backgroundRunnerServiceMock = FakeBackgroundRunnerService();
+    parser = XmlToJsonParser();
+  });
+
+  group('$RandomQuestionsLoader:: loads and parses random questions', () {
     final execute = ({
       required String apiResponse,
       required List<Question> expectedQuestions,
     }) async {
       // arrange
-      final httpClientMock = MockHttpClient();
-      when(() => httpClientMock.get(Uri(path: '/xml/random')))
+      TestArrange.when(() => httpClientMock.get(Uri(path: '/xml/random')))
           .thenAnswer((_) => Future.value(apiResponse));
 
-      final loader = RandomQuestionsLoader(
-        httpClient: httpClientMock,
-        backgroundService: FakeBackgroundRunnerService(),
-        parser: XmlToJsonParser(),
-      );
+      final loader = createLoader();
 
       // act
       final questions = await loader.get();
 
       // assert
-      expect(questions, expectedQuestions);
+      TestAssert.expect(questions, expectedQuestions);
     };
 
     test(

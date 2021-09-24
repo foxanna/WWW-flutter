@@ -41,3 +41,5 @@ dev_dependencies:
   injectable_generator: ^1.4.1
   www_analysis:
     path: ../www_analysis/
+  www_test_utils:
+    path: ../www_test_utils

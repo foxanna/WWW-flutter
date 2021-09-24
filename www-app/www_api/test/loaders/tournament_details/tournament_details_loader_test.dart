@@ -1,8 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:www_api/src/loaders/tournament_details_loader.dart';
 import 'package:www_api/src/parsers/xml2json_parser.dart';
+import 'package:www_background_runner/www_background_runner.dart';
+import 'package:www_http/www_http.dart';
 import 'package:www_models/www_models.dart';
+import 'package:www_test_utils/www_test_utils.dart';
 
 import '../../mocks/fakes.dart';
 import '../../mocks/mocks.dart';
@@ -11,7 +13,23 @@ import 'test_data_2.dart';
 import 'test_data_3.dart';
 
 void main() {
-  group('Loads and parses tournament details', () {
+  late IHttpClient httpClientMock;
+  late IBackgroundRunnerService backgroundRunnerServiceMock;
+  late IXmlToJsonParser parser;
+
+  final createLoader = () => TournamentDetailsLoader(
+        httpClient: httpClientMock,
+        backgroundService: backgroundRunnerServiceMock,
+        parser: parser,
+      );
+
+  setUp(() {
+    httpClientMock = MockHttpClient();
+    backgroundRunnerServiceMock = FakeBackgroundRunnerService();
+    parser = XmlToJsonParser();
+  });
+
+  group('$TournamentDetailsLoader:: loads and parses tournament details', () {
     final execute = ({
       required String apiResponse,
       required Tournament expectedTournament,
@@ -19,21 +37,16 @@ void main() {
       // arrange
       final id = expectedTournament.id;
 
-      final httpClientMock = MockHttpClient();
-      when(() => httpClientMock.get(Uri(path: '/tour/$id/xml')))
+      TestArrange.when(() => httpClientMock.get(Uri(path: '/tour/$id/xml')))
           .thenAnswer((_) => Future.value(apiResponse));
 
-      final loader = TournamentDetailsLoader(
-        httpClient: httpClientMock,
-        backgroundService: FakeBackgroundRunnerService(),
-        parser: XmlToJsonParser(),
-      );
+      final loader = createLoader();
 
       // act
       final tournament = await loader.get(id!);
 
       // assert
-      expect(tournament, expectedTournament);
+      TestAssert.expect(tournament, expectedTournament);
     };
 
     test(

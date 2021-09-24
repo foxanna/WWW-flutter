@@ -2,7 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:www_api/src/loaders/search_loader.dart';
 import 'package:www_api/src/parsers/search2json_parser.dart';
+import 'package:www_background_runner/www_background_runner.dart';
+import 'package:www_http/www_http.dart';
 import 'package:www_models/www_models.dart';
+import 'package:www_test_utils/www_test_utils.dart';
 
 import '../../mocks/fakes.dart';
 import '../../mocks/mocks.dart';
@@ -12,7 +15,25 @@ import 'test_data_3.dart';
 import 'test_data_4.dart';
 
 void main() {
-  group('Loads and parses tournaments search', () {
+  late IHttpClient httpClientMock;
+  late IBackgroundRunnerService backgroundRunnerServiceMock;
+  late ISearchToJsonParser parser;
+
+  final createLoader = () => SearchLoader(
+        httpClient: httpClientMock,
+        backgroundService: backgroundRunnerServiceMock,
+        parser: parser,
+      );
+
+  setUp(() {
+    httpClientMock = MockHttpClient();
+    backgroundRunnerServiceMock = FakeBackgroundRunnerService();
+    parser = SearchToJsonParser();
+
+    TestArrange.registerFallbackValue(Uri());
+  });
+
+  group('$SearchLoader:: loads and parses tournaments search', () {
     final execute = ({
       String query = '',
       Sorting sorting = Sorting.relevance,
@@ -22,29 +43,22 @@ void main() {
       required List<Tournament> expectedResult,
     }) async {
       // arrange
-      registerFallbackValue(Uri());
-
-      final httpClientMock = MockHttpClient();
-      when(() => httpClientMock.get(expectedUri ?? any()))
+      TestArrange.when(() => httpClientMock.get(expectedUri ?? any()))
           .thenAnswer((_) => Future.value(apiResponse));
 
-      final loader = SearchLoader(
-        httpClient: httpClientMock,
-        backgroundService: FakeBackgroundRunnerService(),
-        parser: SearchToJsonParser(),
-      );
+      final loader = createLoader();
 
       // act
       final results =
           await loader.get(query: query, sorting: sorting, page: page);
 
       // assert
-      expect(results.toList(), expectedResult);
+      TestAssert.expect(results.toList(), expectedResult);
     };
 
     test(
         'query=test1, page=0, sorting=relevance, empty results',
-        () async => execute(
+        () => execute(
               query: 'test1',
               sorting: Sorting.relevance,
               page: 0,
