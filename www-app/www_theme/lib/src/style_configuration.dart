@@ -64,6 +64,9 @@ class StyleConfiguration {
 class AboutStyleConfiguration {
   factory AboutStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
+    final accentColor = theme.brightness == Brightness.light
+        ? theme.colorScheme.secondary
+        : Colors.white;
 
     return AboutStyleConfiguration._(
       appBarIconTheme: theme.iconTheme,
@@ -71,9 +74,9 @@ class AboutStyleConfiguration {
       appBarBackgroundColor: Colors.transparent,
       appBarElevation: 0.0,
       contentPadding: const EdgeInsets.all(40.0),
-      accentColor: theme.colorScheme.secondary,
+      accentColor: accentColor,
       titleStyle: theme.textTheme.headline5!.copyWith(
-        color: theme.colorScheme.secondary,
+        color: accentColor,
       ),
       textStyle: theme.textTheme.caption!,
     );
