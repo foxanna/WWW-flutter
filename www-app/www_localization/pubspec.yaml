@@ -1,0 +1,19 @@
+name: www_localization
+description: Localization resources for www_* packages
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  i69n: ^2.0.1
+
+dev_dependencies:
+  build_runner: ^2.1.1
+  www_analysis:
+    path: ../www_analysis/

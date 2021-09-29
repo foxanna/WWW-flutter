@@ -1,0 +1,12 @@
+name: www_analysis
+description: A set of code analysis rules for www_* packages
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  extra_pedantic: 1.2.0
+  flutter:
+    sdk: flutter

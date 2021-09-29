@@ -1,3 +1,12 @@
+## v2.3.0 - 29 September 2021
+
+New features:
+* Support images inside giveaways;
+
+Tech features:
+* Dart null-safety and Flutter 2.x migration;
+* Package-by-feature-like project structure;
+
 ## v2.2.2 - 7 June 2020
 
 New features:

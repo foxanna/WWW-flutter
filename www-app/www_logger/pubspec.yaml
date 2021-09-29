@@ -1,0 +1,15 @@
+name: www_logger
+description: Logging utility
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  www_analysis:
+    path: ../www_analysis/

@@ -1,0 +1,39 @@
+name: www_initialization
+description: App initialization
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  dartx: ^0.7.1
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^0.14.2
+  injectable: ^1.4.1
+  www_analytics:
+    path: ../www_analytics
+  www_background_runner:
+    path: ../www_background_runner
+  www_cache:
+    path: ../www_cache
+  www_di:
+    path: ../www_di
+  www_local_storage:
+    path: ../www_local_storage
+  www_redux:
+    path: ../www_redux
+  www_redux_actions:
+    path: ../www_redux_actions
+  www_timer:
+    path: ../www_timer
+
+dev_dependencies:
+  build_runner: ^2.1.1
+  flutter_test:
+    sdk: flutter
+  freezed: ^0.14.2
+  injectable_generator: ^1.4.1
+  www_analysis:
+    path: ../www_analysis

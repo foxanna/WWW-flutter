@@ -1,0 +1,33 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:www_api/src/models/tournament_dto.dart';
+import 'package:www_api/src/models/tournaments_tree_dto.dart';
+
+class TournamentsTreeConverter
+    implements JsonConverter<List<dynamic>?, Object?> {
+  const TournamentsTreeConverter();
+
+  @override
+  List<dynamic>? fromJson(Object? json) {
+    if (json is List) {
+      return List<Map<String, dynamic>>.from(json)
+          .map<dynamic>(_getTreeItem)
+          .toList();
+    }
+
+    if (json is Map<String, dynamic>) {
+      return <dynamic>[_getTreeItem(json)];
+    }
+
+    return null;
+  }
+
+  @override
+  Object? toJson(List<dynamic>? object) => object;
+
+  static dynamic _getTreeItem(Map<String, dynamic> json) =>
+      json.containsKey('Type')
+          ? json['Type'] == 'Г'
+              ? TournamentsTreeDto.fromJson(json)
+              : TournamentDto.fromJson(json)
+          : null;
+}

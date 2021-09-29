@@ -1,0 +1,65 @@
+name: www_app_di
+description: Dependency inversion container for WWW app
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  www_analytics:
+    path: ../www_analytics
+  www_api:
+    path: ../www_api
+  www_background_runner:
+    path: ../www_background_runner
+  www_bookmarks:
+    path: ../www_bookmarks
+  www_browsing:
+    path: ../www_browsing
+  www_cache:
+    path: ../www_cache
+  www_di:
+    path: ../www_di
+  www_dialogs:
+    path: ../www_dialogs
+  www_http:
+    path: ../www_http
+  www_initialization:
+    path: ../www_initialization
+  www_latest_tournaments:
+    path: ../www_latest_tournaments
+  www_local_storage:
+    path: ../www_local_storage
+  www_navigation:
+    path: ../www_navigation
+  www_preferences:
+    path: ../www_preferences
+  www_questions:
+    path: ../www_questions
+  www_rating:
+    path: ../www_rating
+  www_redux_store:
+    path: ../www_redux_store
+  www_settings:
+    path: ../www_settings
+  www_sharing:
+    path: ../www_sharing
+  www_timer:
+    path: ../www_timer
+  www_tournament_details:
+    path: ../www_tournament_details
+  www_tournament_status:
+    path: ../www_tournament_status
+  www_tournament_tours:
+    path: ../www_tournament_tours
+  www_tournaments_search:
+    path: ../www_tournaments_search
+  www_tournaments_tree:
+    path: ../www_tournaments_tree
+
+dev_dependencies:
+  www_analysis:
+    path: ../www_analysis/

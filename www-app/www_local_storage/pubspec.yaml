@@ -1,0 +1,29 @@
+name: www_local_storage
+description: A local storage for all www_* packages
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^0.14.2
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
+  injectable: ^1.4.1
+  www_analytics:
+    path: ../www_analytics
+  www_di:
+    path: ../www_di/
+  www_models:
+    path: ../www_models
+
+dev_dependencies:
+  build_runner: ^2.1.1
+  freezed: ^0.14.2
+  hive_generator: ^1.1.0
+  injectable_generator: ^1.4.1
+  www_analysis:
+    path: ../www_analysis

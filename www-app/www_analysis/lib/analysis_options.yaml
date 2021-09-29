@@ -1,0 +1,26 @@
+include: package:extra_pedantic/analysis_options_flutter.yaml
+
+analyzer:
+  exclude:
+    - lib/**.g.dart
+    - lib/**.freezed.dart
+    - lib/**.i69n.dart
+    - lib/**.config.dart
+
+linter:
+  rules:
+    always_put_control_body_on_new_line: true
+    avoid_equals_and_hash_code_on_mutable_classes: true
+    avoid_field_initializers_in_const_classes: true
+    avoid_renaming_method_parameters: true
+    avoid_unnecessary_containers: true
+    camel_case_types: true
+    omit_local_variable_types: true
+    prefer_const_literals_to_create_immutables: true
+    prefer_constructors_over_static_methods: true
+    prefer_expression_function_bodies: true
+    sort_constructors_first: true
+    unnecessary_new: true
+    use_key_in_widget_constructors: true
+
+    avoid_catching_errors: false

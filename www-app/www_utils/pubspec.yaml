@@ -1,0 +1,16 @@
+name: www_utils
+description: Misc utils
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  html_unescape: ^2.0.0
+
+dev_dependencies:
+  www_analysis:
+    path: ../www_analysis/
