@@ -66,7 +66,10 @@ class _MaterialApp extends StatelessWidget {
         darkTheme: Themes.createDarkAppTheme(),
         themeMode: themeMode,
         navigatorKey: container<GlobalKey<NavigatorState>>(),
-        navigatorObservers: [container<IAnalyticsService>().observer()],
+        navigatorObservers: [
+          container<IAnalyticsService>().observer(),
+          HeroController(),
+        ],
         localizationsDelegates: const [
           WWWLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
