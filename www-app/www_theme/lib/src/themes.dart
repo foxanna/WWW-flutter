@@ -4,8 +4,6 @@ import 'package:www_theme/src/dimensions.dart';
 class Themes {
   Themes._();
 
-  static final defaultScaffoldColor = Colors.teal[900];
-
   static ThemeData get(BuildContext context, ThemeMode themeMode) {
     final finalThemeModel =
         themeMode != ThemeMode.system ? themeMode : _platformThemeMode(context);
