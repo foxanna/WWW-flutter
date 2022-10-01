@@ -3,14 +3,14 @@ description: Base Redux abstractions
 publish_to: none
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
-  flutter: ">=2.2.0"
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: '>=3.3.3'
 
 dependencies:
-  dartz: ^0.10.0
+  dartz: ^0.10.1
   flutter:
     sdk: flutter
-  flutter_redux: ^0.8.2
+  flutter_redux: ^0.10.0
 
 dev_dependencies:
   www_analysis:

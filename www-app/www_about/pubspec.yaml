@@ -3,13 +3,13 @@ description: About the app feature
 publish_to: none
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
-  flutter: ">=2.2.0"
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: '>=3.3.3'
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^0.22.0
+  flutter_svg: ^1.1.5
   www_localization:
     path: ../www_localization
   www_redux:

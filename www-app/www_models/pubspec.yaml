@@ -3,17 +3,21 @@ description: www_* models
 publish_to: none
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
-  flutter: ">=2.2.0"
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: '>=3.3.3'
 
 dependencies:
-  dartx: ^0.7.1
+  dartx: ^1.1.0
   flutter:
     sdk: flutter
-  freezed_annotation: ^0.14.2
+  freezed_annotation: ^2.1.0
 
 dev_dependencies:
-  build_runner: ^2.1.1
-  freezed: ^0.14.2
+  build_runner: ^2.2.1
+  freezed: ^2.1.1
   www_analysis:
     path: ../www_analysis
+
+dependency_overrides:
+  analyzer: 4.7.0
+

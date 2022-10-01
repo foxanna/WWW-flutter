@@ -3,16 +3,16 @@ description: A rate-the-app feature
 publish_to: none
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
-  flutter: ">=2.2.0"
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: '>=3.3.3'
 
 dependencies:
-  app_review: ^2.1.1+1
+  app_review: ^2.1.2+1
   flutter:
     sdk: flutter
-  flutter_rating_bar: ^4.0.0
-  flutter_svg: ^0.22.0
-  injectable: ^1.4.1
+  flutter_rating_bar: ^4.0.1
+  flutter_svg: ^1.1.5
+  injectable: ^1.5.3
   www_analytics:
     path: ../www_analytics
   www_di:
@@ -31,7 +31,7 @@ dependencies:
     path: ../www_theme/
 
 dev_dependencies:
-  build_runner: ^2.1.1
-  injectable_generator: ^1.4.1
+  build_runner: ^2.2.1
+  injectable_generator: ^1.5.4
   www_analysis:
     path: ../www_analysis/

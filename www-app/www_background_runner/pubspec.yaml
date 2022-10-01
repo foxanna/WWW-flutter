@@ -3,20 +3,20 @@ description: Background runner
 publish_to: none
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
-  flutter: ">=2.2.0"
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: '>=3.3.3'
 
 dependencies:
-  dartz: ^0.10.0
+  dartz: ^0.10.1
   flutter:
     sdk: flutter
-  injectable: ^1.4.1
+  injectable: ^1.5.3
   isolate: ^2.1.1 #discontinued
   www_di:
     path: ../www_di/
 
 dev_dependencies:
-  build_runner: ^2.1.1
-  injectable_generator: ^1.4.1
+  build_runner: ^2.2.1
+  injectable_generator: ^1.5.4
   www_analysis:
     path: ../www_analysis/
