@@ -36,8 +36,8 @@ String _cardinal(int count,
 
 class Translations_uk extends Translations {
   const Translations_uk();
-  String get appDeveloper => "Розробник додатку";
-  String get appDeveloperName => "Анна Домашич";
+  String get appDeveloper => "Розробниця додатку";
+  String get appDeveloperName => "Анна Леущенко";
   String get appNameFull => "Сова\nЩо? Де? Коли?";
   String get bookmarksEmptyMessage =>
       "Тут поки що порожньо\nСпочатку додайте декілька турнірів до своїх закладок";

@@ -36,7 +36,7 @@ String _cardinal(int count,
 
 class Translations_ru extends Translations {
   const Translations_ru();
-  String get appDeveloper => "Разработчик приложения";
+  String get appDeveloper => "Разработчица приложения";
   String get appDeveloperName => "Анна Домашич";
   String get appNameFull => "Сова\nЧто? Где? Когда?";
   String get bookmarksEmptyMessage =>
