@@ -1,3 +1,4 @@
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:www_http/src/dio/dio_config/dio_config_parameters.dart';
@@ -33,6 +34,9 @@ class DioFactory {
         receiveTimeout: _receiveTimeout,
       ),
     );
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (client) => client..badCertificateCallback = (cert, host, port) => true;
+
     if (_logHttpCommunication) {
       dio.interceptors.add(_logger);
     }
