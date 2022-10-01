@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   www_app_di:
     path: ../www_app_di
+  www_widgets:
+    path: ../www_widgets
 
 dev_dependencies:
   www_analysis:

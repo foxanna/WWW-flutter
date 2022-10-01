@@ -13,6 +13,7 @@ import 'package:www_redux_actions/www_redux_actions.dart';
 import 'package:www_redux_store/www_redux_store.dart';
 import 'package:www_settings/www_settings.dart';
 import 'package:www_theme/www_theme.dart';
+import 'package:www_widgets/www_widgets.dart';
 
 class WWWApp extends StatelessWidget {
   const WWWApp({
@@ -28,20 +29,43 @@ class WWWApp extends StatelessWidget {
   Widget build(BuildContext context) => WWWStoreProvider(
         store: store,
         child: Builder(
-          builder: (context) =>
-              WWWStoreConnector<AppState, Option<SettingsState>>(
+          builder: (context) => WWWStoreConnector<AppState, bool>(
             onInit: (store) =>
-                store.dispatch(const InitializationAction.init()),
-            converter: (state) => state.settingsState,
-            builder: (context, settings) => _MaterialApp(
-              container: container,
-              themeMode: settings
-                  .map((state) => state.appTheme.toThemeMode())
-                  .fold(() => null, (themeMode) => themeMode),
-              textScaleFactor: settings
-                  .map((state) => state.textScale.toDouble())
-                  .fold(() => null, (textScaleFactor) => textScaleFactor),
-            ),
+                store.dispatch(const InitializationAction.initCore()),
+            converter: (state) => state.initializationState
+                .map((state) => state.maybeMap(
+                      completed: (_) => true,
+                      inProgress: (state) => state.coreReady,
+                      orElse: () => false,
+                    ))
+                .fold(
+                  () => false,
+                  (isCompleted) => isCompleted,
+                ),
+            builder: (context, isCompleted) => isCompleted
+                ? WWWStoreConnector<AppState, Option<SettingsState>>(
+                    onInit: (store) {
+                      store.dispatch(const InitializationAction.initServices());
+                      store.dispatch(const InitializationAction.initSettings());
+                    },
+                    converter: (state) => state.settingsState,
+                    builder: (context, settings) => _MaterialApp(
+                      container: container,
+                      themeMode: settings
+                          .map((state) => state.appTheme.toThemeMode())
+                          .fold(
+                            () => null,
+                            (themeMode) => themeMode,
+                          ),
+                      textScaleFactor: settings
+                          .map((state) => state.textScale.toDouble())
+                          .fold(
+                            () => null,
+                            (textScaleFactor) => textScaleFactor,
+                          ),
+                    ),
+                  )
+                : const WWWProgressIndicator(),
           ),
         ),
       );
