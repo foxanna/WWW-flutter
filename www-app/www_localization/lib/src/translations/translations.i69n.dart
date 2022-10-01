@@ -36,7 +36,7 @@ String _cardinal(int count,
 class Translations implements i69n.I69nMessageBundle {
   const Translations();
   String get appDeveloper => "Application developer";
-  String get appDeveloperName => "Anna Domashych";
+  String get appDeveloperName => "Anna Leushchenko";
   String get appNameFull => "Sova\nWhat? Where? When?";
   String get bookmarksEmptyMessage =>
       "There is nothing here yet\nAdd some tournaments to your bookmarks first";
