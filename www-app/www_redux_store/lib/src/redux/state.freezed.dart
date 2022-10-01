@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
 
@@ -10,40 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AppStateTearOff {
-  const _$AppStateTearOff();
-
-  _AppState call(
-      {required Option<TimerState> timerState,
-      required Option<QuestionsState> questionsState,
-      required Option<ToursState> toursState,
-      required Option<TournamentState> tournamentState,
-      required Option<LatestTournamentsState> latestTournamentsState,
-      required Option<SearchState> searchState,
-      required Option<SettingsState> settingsState,
-      required Option<TournamentsTreeState> tournamentsTreeState,
-      required Option<InitializationState> initializationState,
-      required Option<BookmarksState> bookmarksState}) {
-    return _AppState(
-      timerState: timerState,
-      questionsState: questionsState,
-      toursState: toursState,
-      tournamentState: tournamentState,
-      latestTournamentsState: latestTournamentsState,
-      searchState: searchState,
-      settingsState: settingsState,
-      tournamentsTreeState: tournamentsTreeState,
-      initializationState: initializationState,
-      bookmarksState: bookmarksState,
-    );
-  }
-}
-
-/// @nodoc
-const $AppState = _$AppStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AppState {
@@ -153,9 +122,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory _$AppStateCopyWith(_AppState value, $Res Function(_AppState) then) =
-      __$AppStateCopyWithImpl<$Res>;
+abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$$_AppStateCopyWith(
+          _$_AppState value, $Res Function(_$_AppState) then) =
+      __$$_AppStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {Option<TimerState> timerState,
@@ -171,13 +141,14 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
-    implements _$AppStateCopyWith<$Res> {
-  __$AppStateCopyWithImpl(_AppState _value, $Res Function(_AppState) _then)
-      : super(_value, (v) => _then(v as _AppState));
+class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
+    implements _$$_AppStateCopyWith<$Res> {
+  __$$_AppStateCopyWithImpl(
+      _$_AppState _value, $Res Function(_$_AppState) _then)
+      : super(_value, (v) => _then(v as _$_AppState));
 
   @override
-  _AppState get _value => super._value as _AppState;
+  _$_AppState get _value => super._value as _$_AppState;
 
   @override
   $Res call({
@@ -192,7 +163,7 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
     Object? initializationState = freezed,
     Object? bookmarksState = freezed,
   }) {
-    return _then(_AppState(
+    return _then(_$_AppState(
       timerState: timerState == freezed
           ? _value.timerState
           : timerState // ignore: cast_nullable_to_non_nullable
@@ -299,100 +270,85 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AppState &&
-            (identical(other.timerState, timerState) ||
-                const DeepCollectionEquality()
-                    .equals(other.timerState, timerState)) &&
-            (identical(other.questionsState, questionsState) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionsState, questionsState)) &&
-            (identical(other.toursState, toursState) ||
-                const DeepCollectionEquality()
-                    .equals(other.toursState, toursState)) &&
-            (identical(other.tournamentState, tournamentState) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournamentState, tournamentState)) &&
-            (identical(other.latestTournamentsState, latestTournamentsState) ||
-                const DeepCollectionEquality().equals(
-                    other.latestTournamentsState, latestTournamentsState)) &&
-            (identical(other.searchState, searchState) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchState, searchState)) &&
-            (identical(other.settingsState, settingsState) ||
-                const DeepCollectionEquality()
-                    .equals(other.settingsState, settingsState)) &&
-            (identical(other.tournamentsTreeState, tournamentsTreeState) ||
-                const DeepCollectionEquality().equals(
-                    other.tournamentsTreeState, tournamentsTreeState)) &&
-            (identical(other.initializationState, initializationState) ||
-                const DeepCollectionEquality()
-                    .equals(other.initializationState, initializationState)) &&
-            (identical(other.bookmarksState, bookmarksState) ||
-                const DeepCollectionEquality()
-                    .equals(other.bookmarksState, bookmarksState)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AppState &&
+            const DeepCollectionEquality()
+                .equals(other.timerState, timerState) &&
+            const DeepCollectionEquality()
+                .equals(other.questionsState, questionsState) &&
+            const DeepCollectionEquality()
+                .equals(other.toursState, toursState) &&
+            const DeepCollectionEquality()
+                .equals(other.tournamentState, tournamentState) &&
+            const DeepCollectionEquality()
+                .equals(other.latestTournamentsState, latestTournamentsState) &&
+            const DeepCollectionEquality()
+                .equals(other.searchState, searchState) &&
+            const DeepCollectionEquality()
+                .equals(other.settingsState, settingsState) &&
+            const DeepCollectionEquality()
+                .equals(other.tournamentsTreeState, tournamentsTreeState) &&
+            const DeepCollectionEquality()
+                .equals(other.initializationState, initializationState) &&
+            const DeepCollectionEquality()
+                .equals(other.bookmarksState, bookmarksState));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(timerState) ^
-      const DeepCollectionEquality().hash(questionsState) ^
-      const DeepCollectionEquality().hash(toursState) ^
-      const DeepCollectionEquality().hash(tournamentState) ^
-      const DeepCollectionEquality().hash(latestTournamentsState) ^
-      const DeepCollectionEquality().hash(searchState) ^
-      const DeepCollectionEquality().hash(settingsState) ^
-      const DeepCollectionEquality().hash(tournamentsTreeState) ^
-      const DeepCollectionEquality().hash(initializationState) ^
-      const DeepCollectionEquality().hash(bookmarksState);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(timerState),
+      const DeepCollectionEquality().hash(questionsState),
+      const DeepCollectionEquality().hash(toursState),
+      const DeepCollectionEquality().hash(tournamentState),
+      const DeepCollectionEquality().hash(latestTournamentsState),
+      const DeepCollectionEquality().hash(searchState),
+      const DeepCollectionEquality().hash(settingsState),
+      const DeepCollectionEquality().hash(tournamentsTreeState),
+      const DeepCollectionEquality().hash(initializationState),
+      const DeepCollectionEquality().hash(bookmarksState));
 
   @JsonKey(ignore: true)
   @override
-  _$AppStateCopyWith<_AppState> get copyWith =>
-      __$AppStateCopyWithImpl<_AppState>(this, _$identity);
+  _$$_AppStateCopyWith<_$_AppState> get copyWith =>
+      __$$_AppStateCopyWithImpl<_$_AppState>(this, _$identity);
 }
 
 abstract class _AppState implements AppState {
   const factory _AppState(
-      {required Option<TimerState> timerState,
-      required Option<QuestionsState> questionsState,
-      required Option<ToursState> toursState,
-      required Option<TournamentState> tournamentState,
-      required Option<LatestTournamentsState> latestTournamentsState,
-      required Option<SearchState> searchState,
-      required Option<SettingsState> settingsState,
-      required Option<TournamentsTreeState> tournamentsTreeState,
-      required Option<InitializationState> initializationState,
-      required Option<BookmarksState> bookmarksState}) = _$_AppState;
+      {required final Option<TimerState> timerState,
+      required final Option<QuestionsState> questionsState,
+      required final Option<ToursState> toursState,
+      required final Option<TournamentState> tournamentState,
+      required final Option<LatestTournamentsState> latestTournamentsState,
+      required final Option<SearchState> searchState,
+      required final Option<SettingsState> settingsState,
+      required final Option<TournamentsTreeState> tournamentsTreeState,
+      required final Option<InitializationState> initializationState,
+      required final Option<BookmarksState> bookmarksState}) = _$_AppState;
 
   @override
-  Option<TimerState> get timerState => throw _privateConstructorUsedError;
+  Option<TimerState> get timerState;
   @override
-  Option<QuestionsState> get questionsState =>
-      throw _privateConstructorUsedError;
+  Option<QuestionsState> get questionsState;
   @override
-  Option<ToursState> get toursState => throw _privateConstructorUsedError;
+  Option<ToursState> get toursState;
   @override
-  Option<TournamentState> get tournamentState =>
-      throw _privateConstructorUsedError;
+  Option<TournamentState> get tournamentState;
   @override
-  Option<LatestTournamentsState> get latestTournamentsState =>
-      throw _privateConstructorUsedError;
+  Option<LatestTournamentsState> get latestTournamentsState;
   @override
-  Option<SearchState> get searchState => throw _privateConstructorUsedError;
+  Option<SearchState> get searchState;
   @override
-  Option<SettingsState> get settingsState => throw _privateConstructorUsedError;
+  Option<SettingsState> get settingsState;
   @override
-  Option<TournamentsTreeState> get tournamentsTreeState =>
-      throw _privateConstructorUsedError;
+  Option<TournamentsTreeState> get tournamentsTreeState;
   @override
-  Option<InitializationState> get initializationState =>
-      throw _privateConstructorUsedError;
+  Option<InitializationState> get initializationState;
   @override
-  Option<BookmarksState> get bookmarksState =>
-      throw _privateConstructorUsedError;
+  Option<BookmarksState> get bookmarksState;
   @override
   @JsonKey(ignore: true)
-  _$AppStateCopyWith<_AppState> get copyWith =>
+  _$$_AppStateCopyWith<_$_AppState> get copyWith =>
       throw _privateConstructorUsedError;
 }

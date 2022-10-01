@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'question.dart';
 
@@ -10,38 +12,7 @@ part of 'question.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$QuestionTearOff {
-  const _$QuestionTearOff();
-
-  _Question call(
-      {String? id,
-      String? display,
-      List<QuestionSection> question = const <QuestionSection>[],
-      List<QuestionSection> answer = const <QuestionSection>[],
-      List<QuestionSection> passCriteria = const <QuestionSection>[],
-      List<QuestionSection> comments = const <QuestionSection>[],
-      String? authors,
-      String? sources,
-      QuestionInfo info = const QuestionInfo()}) {
-    return _Question(
-      id: id,
-      display: display,
-      question: question,
-      answer: answer,
-      passCriteria: passCriteria,
-      comments: comments,
-      authors: authors,
-      sources: sources,
-      info: info,
-    );
-  }
-}
-
-/// @nodoc
-const $Question = _$QuestionTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Question {
@@ -147,9 +118,10 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
-  factory _$QuestionCopyWith(_Question value, $Res Function(_Question) then) =
-      __$QuestionCopyWithImpl<$Res>;
+abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
+  factory _$$_QuestionCopyWith(
+          _$_Question value, $Res Function(_$_Question) then) =
+      __$$_QuestionCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? id,
@@ -167,13 +139,14 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
-    implements _$QuestionCopyWith<$Res> {
-  __$QuestionCopyWithImpl(_Question _value, $Res Function(_Question) _then)
-      : super(_value, (v) => _then(v as _Question));
+class __$$_QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
+    implements _$$_QuestionCopyWith<$Res> {
+  __$$_QuestionCopyWithImpl(
+      _$_Question _value, $Res Function(_$_Question) _then)
+      : super(_value, (v) => _then(v as _$_Question));
 
   @override
-  _Question get _value => super._value as _Question;
+  _$_Question get _value => super._value as _$_Question;
 
   @override
   $Res call({
@@ -187,7 +160,7 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
     Object? sources = freezed,
     Object? info = freezed,
   }) {
-    return _then(_Question(
+    return _then(_$_Question(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -197,19 +170,19 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
           : display // ignore: cast_nullable_to_non_nullable
               as String?,
       question: question == freezed
-          ? _value.question
+          ? _value._question
           : question // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
       answer: answer == freezed
-          ? _value.answer
+          ? _value._answer
           : answer // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
       passCriteria: passCriteria == freezed
-          ? _value.passCriteria
+          ? _value._passCriteria
           : passCriteria // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
       comments: comments == freezed
-          ? _value.comments
+          ? _value._comments
           : comments // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
       authors: authors == freezed
@@ -234,36 +207,60 @@ class _$_Question implements _Question {
   const _$_Question(
       {this.id,
       this.display,
-      this.question = const <QuestionSection>[],
-      this.answer = const <QuestionSection>[],
-      this.passCriteria = const <QuestionSection>[],
-      this.comments = const <QuestionSection>[],
+      final List<QuestionSection> question = const <QuestionSection>[],
+      final List<QuestionSection> answer = const <QuestionSection>[],
+      final List<QuestionSection> passCriteria = const <QuestionSection>[],
+      final List<QuestionSection> comments = const <QuestionSection>[],
       this.authors,
       this.sources,
-      this.info = const QuestionInfo()});
+      this.info = const QuestionInfo()})
+      : _question = question,
+        _answer = answer,
+        _passCriteria = passCriteria,
+        _comments = comments;
 
   @override
   final String? id;
   @override
   final String? display;
-  @JsonKey(defaultValue: const <QuestionSection>[])
+  final List<QuestionSection> _question;
   @override
-  final List<QuestionSection> question;
-  @JsonKey(defaultValue: const <QuestionSection>[])
+  @JsonKey()
+  List<QuestionSection> get question {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_question);
+  }
+
+  final List<QuestionSection> _answer;
   @override
-  final List<QuestionSection> answer;
-  @JsonKey(defaultValue: const <QuestionSection>[])
+  @JsonKey()
+  List<QuestionSection> get answer {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_answer);
+  }
+
+  final List<QuestionSection> _passCriteria;
   @override
-  final List<QuestionSection> passCriteria;
-  @JsonKey(defaultValue: const <QuestionSection>[])
+  @JsonKey()
+  List<QuestionSection> get passCriteria {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_passCriteria);
+  }
+
+  final List<QuestionSection> _comments;
   @override
-  final List<QuestionSection> comments;
+  @JsonKey()
+  List<QuestionSection> get comments {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_comments);
+  }
+
   @override
   final String? authors;
   @override
   final String? sources;
-  @JsonKey(defaultValue: const QuestionInfo())
   @override
+  @JsonKey()
   final QuestionInfo info;
 
   @override
@@ -274,84 +271,71 @@ class _$_Question implements _Question {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Question &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.display, display) ||
-                const DeepCollectionEquality()
-                    .equals(other.display, display)) &&
-            (identical(other.question, question) ||
-                const DeepCollectionEquality()
-                    .equals(other.question, question)) &&
-            (identical(other.answer, answer) ||
-                const DeepCollectionEquality().equals(other.answer, answer)) &&
-            (identical(other.passCriteria, passCriteria) ||
-                const DeepCollectionEquality()
-                    .equals(other.passCriteria, passCriteria)) &&
-            (identical(other.comments, comments) ||
-                const DeepCollectionEquality()
-                    .equals(other.comments, comments)) &&
-            (identical(other.authors, authors) ||
-                const DeepCollectionEquality()
-                    .equals(other.authors, authors)) &&
-            (identical(other.sources, sources) ||
-                const DeepCollectionEquality()
-                    .equals(other.sources, sources)) &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Question &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.display, display) &&
+            const DeepCollectionEquality().equals(other._question, _question) &&
+            const DeepCollectionEquality().equals(other._answer, _answer) &&
+            const DeepCollectionEquality()
+                .equals(other._passCriteria, _passCriteria) &&
+            const DeepCollectionEquality().equals(other._comments, _comments) &&
+            const DeepCollectionEquality().equals(other.authors, authors) &&
+            const DeepCollectionEquality().equals(other.sources, sources) &&
+            const DeepCollectionEquality().equals(other.info, info));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(display) ^
-      const DeepCollectionEquality().hash(question) ^
-      const DeepCollectionEquality().hash(answer) ^
-      const DeepCollectionEquality().hash(passCriteria) ^
-      const DeepCollectionEquality().hash(comments) ^
-      const DeepCollectionEquality().hash(authors) ^
-      const DeepCollectionEquality().hash(sources) ^
-      const DeepCollectionEquality().hash(info);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(display),
+      const DeepCollectionEquality().hash(_question),
+      const DeepCollectionEquality().hash(_answer),
+      const DeepCollectionEquality().hash(_passCriteria),
+      const DeepCollectionEquality().hash(_comments),
+      const DeepCollectionEquality().hash(authors),
+      const DeepCollectionEquality().hash(sources),
+      const DeepCollectionEquality().hash(info));
 
   @JsonKey(ignore: true)
   @override
-  _$QuestionCopyWith<_Question> get copyWith =>
-      __$QuestionCopyWithImpl<_Question>(this, _$identity);
+  _$$_QuestionCopyWith<_$_Question> get copyWith =>
+      __$$_QuestionCopyWithImpl<_$_Question>(this, _$identity);
 }
 
 abstract class _Question implements Question {
   const factory _Question(
-      {String? id,
-      String? display,
-      List<QuestionSection> question,
-      List<QuestionSection> answer,
-      List<QuestionSection> passCriteria,
-      List<QuestionSection> comments,
-      String? authors,
-      String? sources,
-      QuestionInfo info}) = _$_Question;
+      {final String? id,
+      final String? display,
+      final List<QuestionSection> question,
+      final List<QuestionSection> answer,
+      final List<QuestionSection> passCriteria,
+      final List<QuestionSection> comments,
+      final String? authors,
+      final String? sources,
+      final QuestionInfo info}) = _$_Question;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  String? get display => throw _privateConstructorUsedError;
+  String? get display;
   @override
-  List<QuestionSection> get question => throw _privateConstructorUsedError;
+  List<QuestionSection> get question;
   @override
-  List<QuestionSection> get answer => throw _privateConstructorUsedError;
+  List<QuestionSection> get answer;
   @override
-  List<QuestionSection> get passCriteria => throw _privateConstructorUsedError;
+  List<QuestionSection> get passCriteria;
   @override
-  List<QuestionSection> get comments => throw _privateConstructorUsedError;
+  List<QuestionSection> get comments;
   @override
-  String? get authors => throw _privateConstructorUsedError;
+  String? get authors;
   @override
-  String? get sources => throw _privateConstructorUsedError;
+  String? get sources;
   @override
-  QuestionInfo get info => throw _privateConstructorUsedError;
+  QuestionInfo get info;
   @override
   @JsonKey(ignore: true)
-  _$QuestionCopyWith<_Question> get copyWith =>
+  _$$_QuestionCopyWith<_$_Question> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'question_info.dart';
 
@@ -10,32 +12,7 @@ part of 'question_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$QuestionInfoHiveModelTearOff {
-  const _$QuestionInfoHiveModelTearOff();
-
-  _QuestionInfoHiveModel call(
-      {@HiveField(QuestionInfoHiveFieldsIds.id)
-          String? id,
-      @HiveField(QuestionInfoHiveFieldsIds.number)
-          String? number,
-      @HiveField(QuestionInfoHiveFieldsIds.url)
-          String? url,
-      @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
-          TourInfoHiveModel? tourInfo}) {
-    return _QuestionInfoHiveModel(
-      id: id,
-      number: number,
-      url: url,
-      tourInfo: tourInfo,
-    );
-  }
-}
-
-/// @nodoc
-const $QuestionInfoHiveModel = _$QuestionInfoHiveModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$QuestionInfoHiveModel {
@@ -120,11 +97,11 @@ class _$QuestionInfoHiveModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$QuestionInfoHiveModelCopyWith<$Res>
+abstract class _$$_QuestionInfoHiveModelCopyWith<$Res>
     implements $QuestionInfoHiveModelCopyWith<$Res> {
-  factory _$QuestionInfoHiveModelCopyWith(_QuestionInfoHiveModel value,
-          $Res Function(_QuestionInfoHiveModel) then) =
-      __$QuestionInfoHiveModelCopyWithImpl<$Res>;
+  factory _$$_QuestionInfoHiveModelCopyWith(_$_QuestionInfoHiveModel value,
+          $Res Function(_$_QuestionInfoHiveModel) then) =
+      __$$_QuestionInfoHiveModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {@HiveField(QuestionInfoHiveFieldsIds.id)
@@ -141,15 +118,16 @@ abstract class _$QuestionInfoHiveModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$QuestionInfoHiveModelCopyWithImpl<$Res>
+class __$$_QuestionInfoHiveModelCopyWithImpl<$Res>
     extends _$QuestionInfoHiveModelCopyWithImpl<$Res>
-    implements _$QuestionInfoHiveModelCopyWith<$Res> {
-  __$QuestionInfoHiveModelCopyWithImpl(_QuestionInfoHiveModel _value,
-      $Res Function(_QuestionInfoHiveModel) _then)
-      : super(_value, (v) => _then(v as _QuestionInfoHiveModel));
+    implements _$$_QuestionInfoHiveModelCopyWith<$Res> {
+  __$$_QuestionInfoHiveModelCopyWithImpl(_$_QuestionInfoHiveModel _value,
+      $Res Function(_$_QuestionInfoHiveModel) _then)
+      : super(_value, (v) => _then(v as _$_QuestionInfoHiveModel));
 
   @override
-  _QuestionInfoHiveModel get _value => super._value as _QuestionInfoHiveModel;
+  _$_QuestionInfoHiveModel get _value =>
+      super._value as _$_QuestionInfoHiveModel;
 
   @override
   $Res call({
@@ -158,7 +136,7 @@ class __$QuestionInfoHiveModelCopyWithImpl<$Res>
     Object? url = freezed,
     Object? tourInfo = freezed,
   }) {
-    return _then(_QuestionInfoHiveModel(
+    return _then(_$_QuestionInfoHiveModel(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -210,58 +188,54 @@ class _$_QuestionInfoHiveModel implements _QuestionInfoHiveModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _QuestionInfoHiveModel &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.number, number) ||
-                const DeepCollectionEquality().equals(other.number, number)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.tourInfo, tourInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.tourInfo, tourInfo)));
+        (other.runtimeType == runtimeType &&
+            other is _$_QuestionInfoHiveModel &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.number, number) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.tourInfo, tourInfo));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(number) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(tourInfo);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(number),
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(tourInfo));
 
   @JsonKey(ignore: true)
   @override
-  _$QuestionInfoHiveModelCopyWith<_QuestionInfoHiveModel> get copyWith =>
-      __$QuestionInfoHiveModelCopyWithImpl<_QuestionInfoHiveModel>(
+  _$$_QuestionInfoHiveModelCopyWith<_$_QuestionInfoHiveModel> get copyWith =>
+      __$$_QuestionInfoHiveModelCopyWithImpl<_$_QuestionInfoHiveModel>(
           this, _$identity);
 }
 
 abstract class _QuestionInfoHiveModel implements QuestionInfoHiveModel {
   const factory _QuestionInfoHiveModel(
       {@HiveField(QuestionInfoHiveFieldsIds.id)
-          String? id,
+          final String? id,
       @HiveField(QuestionInfoHiveFieldsIds.number)
-          String? number,
+          final String? number,
       @HiveField(QuestionInfoHiveFieldsIds.url)
-          String? url,
+          final String? url,
       @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
-          TourInfoHiveModel? tourInfo}) = _$_QuestionInfoHiveModel;
+          final TourInfoHiveModel? tourInfo}) = _$_QuestionInfoHiveModel;
 
   @override
   @HiveField(QuestionInfoHiveFieldsIds.id)
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @HiveField(QuestionInfoHiveFieldsIds.number)
-  String? get number => throw _privateConstructorUsedError;
+  String? get number;
   @override
   @HiveField(QuestionInfoHiveFieldsIds.url)
-  String? get url => throw _privateConstructorUsedError;
+  String? get url;
   @override
   @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
-  TourInfoHiveModel? get tourInfo => throw _privateConstructorUsedError;
+  TourInfoHiveModel? get tourInfo;
   @override
   @JsonKey(ignore: true)
-  _$QuestionInfoHiveModelCopyWith<_QuestionInfoHiveModel> get copyWith =>
+  _$$_QuestionInfoHiveModelCopyWith<_$_QuestionInfoHiveModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

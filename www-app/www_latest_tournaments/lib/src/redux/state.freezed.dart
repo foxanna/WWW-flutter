@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
 
@@ -10,64 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LatestTournamentsStateTearOff {
-  const _$LatestTournamentsStateTearOff();
-
-  InitialLatestTournamentsState initial() {
-    return const InitialLatestTournamentsState();
-  }
-
-  LoadingFirstPageLatestTournamentsState loadingFirstPage() {
-    return const LoadingFirstPageLatestTournamentsState();
-  }
-
-  LoadingWithDataLatestTournamentsState loadingWithData(
-      {required List<Tournament> data, required int nextPage}) {
-    return LoadingWithDataLatestTournamentsState(
-      data: data,
-      nextPage: nextPage,
-    );
-  }
-
-  ErrorFirstPageLatestTournamentsState errorFirstPage(
-      {required Exception exception}) {
-    return ErrorFirstPageLatestTournamentsState(
-      exception: exception,
-    );
-  }
-
-  ErrorWithDataLatestTournamentsState errorWithData(
-      {required List<Tournament> data,
-      required Exception exception,
-      required int nextPage}) {
-    return ErrorWithDataLatestTournamentsState(
-      data: data,
-      exception: exception,
-      nextPage: nextPage,
-    );
-  }
-
-  RefreshingLatestTournamentsState refreshing(
-      {required List<Tournament> data}) {
-    return RefreshingLatestTournamentsState(
-      data: data,
-    );
-  }
-
-  DataLatestTournamentsState data(
-      {required int nextPage, required List<Tournament> data}) {
-    return DataLatestTournamentsState(
-      nextPage: nextPage,
-      data: data,
-    );
-  }
-}
-
-/// @nodoc
-const $LatestTournamentsState = _$LatestTournamentsStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LatestTournamentsState {
@@ -83,6 +28,18 @@ mixin _$LatestTournamentsState {
         errorWithData,
     required TResult Function(List<Tournament> data) refreshing,
     required TResult Function(int nextPage, List<Tournament> data) data,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -112,6 +69,20 @@ mixin _$LatestTournamentsState {
     required TResult Function(RefreshingLatestTournamentsState value)
         refreshing,
     required TResult Function(DataLatestTournamentsState value) data,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -149,25 +120,25 @@ class _$LatestTournamentsStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitialLatestTournamentsStateCopyWith<$Res> {
-  factory $InitialLatestTournamentsStateCopyWith(
-          InitialLatestTournamentsState value,
-          $Res Function(InitialLatestTournamentsState) then) =
-      _$InitialLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$InitialLatestTournamentsStateCopyWith<$Res> {
+  factory _$$InitialLatestTournamentsStateCopyWith(
+          _$InitialLatestTournamentsState value,
+          $Res Function(_$InitialLatestTournamentsState) then) =
+      __$$InitialLatestTournamentsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitialLatestTournamentsStateCopyWithImpl<$Res>
+class __$$InitialLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
-    implements $InitialLatestTournamentsStateCopyWith<$Res> {
-  _$InitialLatestTournamentsStateCopyWithImpl(
-      InitialLatestTournamentsState _value,
-      $Res Function(InitialLatestTournamentsState) _then)
-      : super(_value, (v) => _then(v as InitialLatestTournamentsState));
+    implements _$$InitialLatestTournamentsStateCopyWith<$Res> {
+  __$$InitialLatestTournamentsStateCopyWithImpl(
+      _$InitialLatestTournamentsState _value,
+      $Res Function(_$InitialLatestTournamentsState) _then)
+      : super(_value, (v) => _then(v as _$InitialLatestTournamentsState));
 
   @override
-  InitialLatestTournamentsState get _value =>
-      super._value as InitialLatestTournamentsState;
+  _$InitialLatestTournamentsState get _value =>
+      super._value as _$InitialLatestTournamentsState;
 }
 
 /// @nodoc
@@ -186,12 +157,14 @@ class _$InitialLatestTournamentsState
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'LatestTournamentsState.initial'));
+        .add(DiagnosticsProperty('type', 'LatestTournamentsState.initial'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitialLatestTournamentsState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitialLatestTournamentsState);
   }
 
   @override
@@ -212,6 +185,21 @@ class _$InitialLatestTournamentsState
     required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -254,6 +242,23 @@ class _$InitialLatestTournamentsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialLatestTournamentsState value)? initial,
     TResult Function(LoadingFirstPageLatestTournamentsState value)?
@@ -280,26 +285,26 @@ abstract class InitialLatestTournamentsState implements LatestTournamentsState {
 }
 
 /// @nodoc
-abstract class $LoadingFirstPageLatestTournamentsStateCopyWith<$Res> {
-  factory $LoadingFirstPageLatestTournamentsStateCopyWith(
-          LoadingFirstPageLatestTournamentsState value,
-          $Res Function(LoadingFirstPageLatestTournamentsState) then) =
-      _$LoadingFirstPageLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$LoadingFirstPageLatestTournamentsStateCopyWith<$Res> {
+  factory _$$LoadingFirstPageLatestTournamentsStateCopyWith(
+          _$LoadingFirstPageLatestTournamentsState value,
+          $Res Function(_$LoadingFirstPageLatestTournamentsState) then) =
+      __$$LoadingFirstPageLatestTournamentsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingFirstPageLatestTournamentsStateCopyWithImpl<$Res>
+class __$$LoadingFirstPageLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
-    implements $LoadingFirstPageLatestTournamentsStateCopyWith<$Res> {
-  _$LoadingFirstPageLatestTournamentsStateCopyWithImpl(
-      LoadingFirstPageLatestTournamentsState _value,
-      $Res Function(LoadingFirstPageLatestTournamentsState) _then)
-      : super(
-            _value, (v) => _then(v as LoadingFirstPageLatestTournamentsState));
+    implements _$$LoadingFirstPageLatestTournamentsStateCopyWith<$Res> {
+  __$$LoadingFirstPageLatestTournamentsStateCopyWithImpl(
+      _$LoadingFirstPageLatestTournamentsState _value,
+      $Res Function(_$LoadingFirstPageLatestTournamentsState) _then)
+      : super(_value,
+            (v) => _then(v as _$LoadingFirstPageLatestTournamentsState));
 
   @override
-  LoadingFirstPageLatestTournamentsState get _value =>
-      super._value as LoadingFirstPageLatestTournamentsState;
+  _$LoadingFirstPageLatestTournamentsState get _value =>
+      super._value as _$LoadingFirstPageLatestTournamentsState;
 }
 
 /// @nodoc
@@ -317,15 +322,15 @@ class _$LoadingFirstPageLatestTournamentsState
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'LatestTournamentsState.loadingFirstPage'));
+    properties.add(
+        DiagnosticsProperty('type', 'LatestTournamentsState.loadingFirstPage'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadingFirstPageLatestTournamentsState);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingFirstPageLatestTournamentsState);
   }
 
   @override
@@ -346,6 +351,21 @@ class _$LoadingFirstPageLatestTournamentsState
     required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
     return loadingFirstPage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+  }) {
+    return loadingFirstPage?.call();
   }
 
   @override
@@ -388,6 +408,23 @@ class _$LoadingFirstPageLatestTournamentsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+  }) {
+    return loadingFirstPage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialLatestTournamentsState value)? initial,
     TResult Function(LoadingFirstPageLatestTournamentsState value)?
@@ -415,35 +452,36 @@ abstract class LoadingFirstPageLatestTournamentsState
 }
 
 /// @nodoc
-abstract class $LoadingWithDataLatestTournamentsStateCopyWith<$Res> {
-  factory $LoadingWithDataLatestTournamentsStateCopyWith(
-          LoadingWithDataLatestTournamentsState value,
-          $Res Function(LoadingWithDataLatestTournamentsState) then) =
-      _$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$LoadingWithDataLatestTournamentsStateCopyWith<$Res> {
+  factory _$$LoadingWithDataLatestTournamentsStateCopyWith(
+          _$LoadingWithDataLatestTournamentsState value,
+          $Res Function(_$LoadingWithDataLatestTournamentsState) then) =
+      __$$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>;
   $Res call({List<Tournament> data, int nextPage});
 }
 
 /// @nodoc
-class _$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>
+class __$$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
-    implements $LoadingWithDataLatestTournamentsStateCopyWith<$Res> {
-  _$LoadingWithDataLatestTournamentsStateCopyWithImpl(
-      LoadingWithDataLatestTournamentsState _value,
-      $Res Function(LoadingWithDataLatestTournamentsState) _then)
-      : super(_value, (v) => _then(v as LoadingWithDataLatestTournamentsState));
+    implements _$$LoadingWithDataLatestTournamentsStateCopyWith<$Res> {
+  __$$LoadingWithDataLatestTournamentsStateCopyWithImpl(
+      _$LoadingWithDataLatestTournamentsState _value,
+      $Res Function(_$LoadingWithDataLatestTournamentsState) _then)
+      : super(
+            _value, (v) => _then(v as _$LoadingWithDataLatestTournamentsState));
 
   @override
-  LoadingWithDataLatestTournamentsState get _value =>
-      super._value as LoadingWithDataLatestTournamentsState;
+  _$LoadingWithDataLatestTournamentsState get _value =>
+      super._value as _$LoadingWithDataLatestTournamentsState;
 
   @override
   $Res call({
     Object? data = freezed,
     Object? nextPage = freezed,
   }) {
-    return _then(LoadingWithDataLatestTournamentsState(
+    return _then(_$LoadingWithDataLatestTournamentsState(
       data: data == freezed
-          ? _value.data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Tournament>,
       nextPage: nextPage == freezed
@@ -460,10 +498,16 @@ class _$LoadingWithDataLatestTournamentsState
     with DiagnosticableTreeMixin
     implements LoadingWithDataLatestTournamentsState {
   const _$LoadingWithDataLatestTournamentsState(
-      {required this.data, required this.nextPage});
+      {required final List<Tournament> data, required this.nextPage})
+      : _data = data;
 
+  final List<Tournament> _data;
   @override
-  final List<Tournament> data;
+  List<Tournament> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
   @override
   final int nextPage;
 
@@ -485,26 +529,24 @@ class _$LoadingWithDataLatestTournamentsState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadingWithDataLatestTournamentsState &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.nextPage, nextPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.nextPage, nextPage)));
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingWithDataLatestTournamentsState &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.nextPage, nextPage));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(nextPage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(nextPage));
 
   @JsonKey(ignore: true)
   @override
-  $LoadingWithDataLatestTournamentsStateCopyWith<
-          LoadingWithDataLatestTournamentsState>
-      get copyWith => _$LoadingWithDataLatestTournamentsStateCopyWithImpl<
-          LoadingWithDataLatestTournamentsState>(this, _$identity);
+  _$$LoadingWithDataLatestTournamentsStateCopyWith<
+          _$LoadingWithDataLatestTournamentsState>
+      get copyWith => __$$LoadingWithDataLatestTournamentsStateCopyWithImpl<
+          _$LoadingWithDataLatestTournamentsState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -521,6 +563,21 @@ class _$LoadingWithDataLatestTournamentsState
     required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
     return loadingWithData(this.data, nextPage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+  }) {
+    return loadingWithData?.call(this.data, nextPage);
   }
 
   @override
@@ -563,6 +620,23 @@ class _$LoadingWithDataLatestTournamentsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+  }) {
+    return loadingWithData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialLatestTournamentsState value)? initial,
     TResult Function(LoadingFirstPageLatestTournamentsState value)?
@@ -586,44 +660,45 @@ class _$LoadingWithDataLatestTournamentsState
 abstract class LoadingWithDataLatestTournamentsState
     implements LatestTournamentsState {
   const factory LoadingWithDataLatestTournamentsState(
-      {required List<Tournament> data,
-      required int nextPage}) = _$LoadingWithDataLatestTournamentsState;
+      {required final List<Tournament> data,
+      required final int nextPage}) = _$LoadingWithDataLatestTournamentsState;
 
-  List<Tournament> get data => throw _privateConstructorUsedError;
-  int get nextPage => throw _privateConstructorUsedError;
+  List<Tournament> get data;
+  int get nextPage;
   @JsonKey(ignore: true)
-  $LoadingWithDataLatestTournamentsStateCopyWith<
-          LoadingWithDataLatestTournamentsState>
+  _$$LoadingWithDataLatestTournamentsStateCopyWith<
+          _$LoadingWithDataLatestTournamentsState>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ErrorFirstPageLatestTournamentsStateCopyWith<$Res> {
-  factory $ErrorFirstPageLatestTournamentsStateCopyWith(
-          ErrorFirstPageLatestTournamentsState value,
-          $Res Function(ErrorFirstPageLatestTournamentsState) then) =
-      _$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$ErrorFirstPageLatestTournamentsStateCopyWith<$Res> {
+  factory _$$ErrorFirstPageLatestTournamentsStateCopyWith(
+          _$ErrorFirstPageLatestTournamentsState value,
+          $Res Function(_$ErrorFirstPageLatestTournamentsState) then) =
+      __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>;
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class _$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>
+class __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
-    implements $ErrorFirstPageLatestTournamentsStateCopyWith<$Res> {
-  _$ErrorFirstPageLatestTournamentsStateCopyWithImpl(
-      ErrorFirstPageLatestTournamentsState _value,
-      $Res Function(ErrorFirstPageLatestTournamentsState) _then)
-      : super(_value, (v) => _then(v as ErrorFirstPageLatestTournamentsState));
+    implements _$$ErrorFirstPageLatestTournamentsStateCopyWith<$Res> {
+  __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl(
+      _$ErrorFirstPageLatestTournamentsState _value,
+      $Res Function(_$ErrorFirstPageLatestTournamentsState) _then)
+      : super(
+            _value, (v) => _then(v as _$ErrorFirstPageLatestTournamentsState));
 
   @override
-  ErrorFirstPageLatestTournamentsState get _value =>
-      super._value as ErrorFirstPageLatestTournamentsState;
+  _$ErrorFirstPageLatestTournamentsState get _value =>
+      super._value as _$ErrorFirstPageLatestTournamentsState;
 
   @override
   $Res call({
     Object? exception = freezed,
   }) {
-    return _then(ErrorFirstPageLatestTournamentsState(
+    return _then(_$ErrorFirstPageLatestTournamentsState(
       exception: exception == freezed
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -659,22 +734,21 @@ class _$ErrorFirstPageLatestTournamentsState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ErrorFirstPageLatestTournamentsState &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorFirstPageLatestTournamentsState &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $ErrorFirstPageLatestTournamentsStateCopyWith<
-          ErrorFirstPageLatestTournamentsState>
-      get copyWith => _$ErrorFirstPageLatestTournamentsStateCopyWithImpl<
-          ErrorFirstPageLatestTournamentsState>(this, _$identity);
+  _$$ErrorFirstPageLatestTournamentsStateCopyWith<
+          _$ErrorFirstPageLatestTournamentsState>
+      get copyWith => __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl<
+          _$ErrorFirstPageLatestTournamentsState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -691,6 +765,21 @@ class _$ErrorFirstPageLatestTournamentsState
     required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
     return errorFirstPage(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+  }) {
+    return errorFirstPage?.call(exception);
   }
 
   @override
@@ -733,6 +822,23 @@ class _$ErrorFirstPageLatestTournamentsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+  }) {
+    return errorFirstPage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialLatestTournamentsState value)? initial,
     TResult Function(LoadingFirstPageLatestTournamentsState value)?
@@ -756,36 +862,37 @@ class _$ErrorFirstPageLatestTournamentsState
 abstract class ErrorFirstPageLatestTournamentsState
     implements LatestTournamentsState {
   const factory ErrorFirstPageLatestTournamentsState(
-      {required Exception exception}) = _$ErrorFirstPageLatestTournamentsState;
+          {required final Exception exception}) =
+      _$ErrorFirstPageLatestTournamentsState;
 
-  Exception get exception => throw _privateConstructorUsedError;
+  Exception get exception;
   @JsonKey(ignore: true)
-  $ErrorFirstPageLatestTournamentsStateCopyWith<
-          ErrorFirstPageLatestTournamentsState>
+  _$$ErrorFirstPageLatestTournamentsStateCopyWith<
+          _$ErrorFirstPageLatestTournamentsState>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ErrorWithDataLatestTournamentsStateCopyWith<$Res> {
-  factory $ErrorWithDataLatestTournamentsStateCopyWith(
-          ErrorWithDataLatestTournamentsState value,
-          $Res Function(ErrorWithDataLatestTournamentsState) then) =
-      _$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$ErrorWithDataLatestTournamentsStateCopyWith<$Res> {
+  factory _$$ErrorWithDataLatestTournamentsStateCopyWith(
+          _$ErrorWithDataLatestTournamentsState value,
+          $Res Function(_$ErrorWithDataLatestTournamentsState) then) =
+      __$$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>;
   $Res call({List<Tournament> data, Exception exception, int nextPage});
 }
 
 /// @nodoc
-class _$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>
+class __$$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
-    implements $ErrorWithDataLatestTournamentsStateCopyWith<$Res> {
-  _$ErrorWithDataLatestTournamentsStateCopyWithImpl(
-      ErrorWithDataLatestTournamentsState _value,
-      $Res Function(ErrorWithDataLatestTournamentsState) _then)
-      : super(_value, (v) => _then(v as ErrorWithDataLatestTournamentsState));
+    implements _$$ErrorWithDataLatestTournamentsStateCopyWith<$Res> {
+  __$$ErrorWithDataLatestTournamentsStateCopyWithImpl(
+      _$ErrorWithDataLatestTournamentsState _value,
+      $Res Function(_$ErrorWithDataLatestTournamentsState) _then)
+      : super(_value, (v) => _then(v as _$ErrorWithDataLatestTournamentsState));
 
   @override
-  ErrorWithDataLatestTournamentsState get _value =>
-      super._value as ErrorWithDataLatestTournamentsState;
+  _$ErrorWithDataLatestTournamentsState get _value =>
+      super._value as _$ErrorWithDataLatestTournamentsState;
 
   @override
   $Res call({
@@ -793,9 +900,9 @@ class _$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>
     Object? exception = freezed,
     Object? nextPage = freezed,
   }) {
-    return _then(ErrorWithDataLatestTournamentsState(
+    return _then(_$ErrorWithDataLatestTournamentsState(
       data: data == freezed
-          ? _value.data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Tournament>,
       exception: exception == freezed
@@ -816,10 +923,18 @@ class _$ErrorWithDataLatestTournamentsState
     with DiagnosticableTreeMixin
     implements ErrorWithDataLatestTournamentsState {
   const _$ErrorWithDataLatestTournamentsState(
-      {required this.data, required this.exception, required this.nextPage});
+      {required final List<Tournament> data,
+      required this.exception,
+      required this.nextPage})
+      : _data = data;
 
+  final List<Tournament> _data;
   @override
-  final List<Tournament> data;
+  List<Tournament> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
   @override
   final Exception exception;
   @override
@@ -843,30 +958,26 @@ class _$ErrorWithDataLatestTournamentsState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ErrorWithDataLatestTournamentsState &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)) &&
-            (identical(other.nextPage, nextPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.nextPage, nextPage)));
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorWithDataLatestTournamentsState &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.exception, exception) &&
+            const DeepCollectionEquality().equals(other.nextPage, nextPage));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(exception) ^
-      const DeepCollectionEquality().hash(nextPage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(exception),
+      const DeepCollectionEquality().hash(nextPage));
 
   @JsonKey(ignore: true)
   @override
-  $ErrorWithDataLatestTournamentsStateCopyWith<
-          ErrorWithDataLatestTournamentsState>
-      get copyWith => _$ErrorWithDataLatestTournamentsStateCopyWithImpl<
-          ErrorWithDataLatestTournamentsState>(this, _$identity);
+  _$$ErrorWithDataLatestTournamentsStateCopyWith<
+          _$ErrorWithDataLatestTournamentsState>
+      get copyWith => __$$ErrorWithDataLatestTournamentsStateCopyWithImpl<
+          _$ErrorWithDataLatestTournamentsState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -883,6 +994,21 @@ class _$ErrorWithDataLatestTournamentsState
     required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
     return errorWithData(this.data, exception, nextPage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+  }) {
+    return errorWithData?.call(this.data, exception, nextPage);
   }
 
   @override
@@ -925,6 +1051,23 @@ class _$ErrorWithDataLatestTournamentsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+  }) {
+    return errorWithData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialLatestTournamentsState value)? initial,
     TResult Function(LoadingFirstPageLatestTournamentsState value)?
@@ -948,48 +1091,48 @@ class _$ErrorWithDataLatestTournamentsState
 abstract class ErrorWithDataLatestTournamentsState
     implements LatestTournamentsState {
   const factory ErrorWithDataLatestTournamentsState(
-      {required List<Tournament> data,
-      required Exception exception,
-      required int nextPage}) = _$ErrorWithDataLatestTournamentsState;
+      {required final List<Tournament> data,
+      required final Exception exception,
+      required final int nextPage}) = _$ErrorWithDataLatestTournamentsState;
 
-  List<Tournament> get data => throw _privateConstructorUsedError;
-  Exception get exception => throw _privateConstructorUsedError;
-  int get nextPage => throw _privateConstructorUsedError;
+  List<Tournament> get data;
+  Exception get exception;
+  int get nextPage;
   @JsonKey(ignore: true)
-  $ErrorWithDataLatestTournamentsStateCopyWith<
-          ErrorWithDataLatestTournamentsState>
+  _$$ErrorWithDataLatestTournamentsStateCopyWith<
+          _$ErrorWithDataLatestTournamentsState>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RefreshingLatestTournamentsStateCopyWith<$Res> {
-  factory $RefreshingLatestTournamentsStateCopyWith(
-          RefreshingLatestTournamentsState value,
-          $Res Function(RefreshingLatestTournamentsState) then) =
-      _$RefreshingLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$RefreshingLatestTournamentsStateCopyWith<$Res> {
+  factory _$$RefreshingLatestTournamentsStateCopyWith(
+          _$RefreshingLatestTournamentsState value,
+          $Res Function(_$RefreshingLatestTournamentsState) then) =
+      __$$RefreshingLatestTournamentsStateCopyWithImpl<$Res>;
   $Res call({List<Tournament> data});
 }
 
 /// @nodoc
-class _$RefreshingLatestTournamentsStateCopyWithImpl<$Res>
+class __$$RefreshingLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
-    implements $RefreshingLatestTournamentsStateCopyWith<$Res> {
-  _$RefreshingLatestTournamentsStateCopyWithImpl(
-      RefreshingLatestTournamentsState _value,
-      $Res Function(RefreshingLatestTournamentsState) _then)
-      : super(_value, (v) => _then(v as RefreshingLatestTournamentsState));
+    implements _$$RefreshingLatestTournamentsStateCopyWith<$Res> {
+  __$$RefreshingLatestTournamentsStateCopyWithImpl(
+      _$RefreshingLatestTournamentsState _value,
+      $Res Function(_$RefreshingLatestTournamentsState) _then)
+      : super(_value, (v) => _then(v as _$RefreshingLatestTournamentsState));
 
   @override
-  RefreshingLatestTournamentsState get _value =>
-      super._value as RefreshingLatestTournamentsState;
+  _$RefreshingLatestTournamentsState get _value =>
+      super._value as _$RefreshingLatestTournamentsState;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(RefreshingLatestTournamentsState(
+    return _then(_$RefreshingLatestTournamentsState(
       data: data == freezed
-          ? _value.data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Tournament>,
     ));
@@ -1001,10 +1144,16 @@ class _$RefreshingLatestTournamentsStateCopyWithImpl<$Res>
 class _$RefreshingLatestTournamentsState
     with DiagnosticableTreeMixin
     implements RefreshingLatestTournamentsState {
-  const _$RefreshingLatestTournamentsState({required this.data});
+  const _$RefreshingLatestTournamentsState(
+      {required final List<Tournament> data})
+      : _data = data;
 
+  final List<Tournament> _data;
   @override
-  final List<Tournament> data;
+  List<Tournament> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1022,20 +1171,21 @@ class _$RefreshingLatestTournamentsState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RefreshingLatestTournamentsState &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshingLatestTournamentsState &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
-  $RefreshingLatestTournamentsStateCopyWith<RefreshingLatestTournamentsState>
-      get copyWith => _$RefreshingLatestTournamentsStateCopyWithImpl<
-          RefreshingLatestTournamentsState>(this, _$identity);
+  _$$RefreshingLatestTournamentsStateCopyWith<
+          _$RefreshingLatestTournamentsState>
+      get copyWith => __$$RefreshingLatestTournamentsStateCopyWithImpl<
+          _$RefreshingLatestTournamentsState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1052,6 +1202,21 @@ class _$RefreshingLatestTournamentsState
     required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
     return refreshing(this.data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+  }) {
+    return refreshing?.call(this.data);
   }
 
   @override
@@ -1094,6 +1259,23 @@ class _$RefreshingLatestTournamentsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+  }) {
+    return refreshing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialLatestTournamentsState value)? initial,
     TResult Function(LoadingFirstPageLatestTournamentsState value)?
@@ -1117,46 +1299,50 @@ class _$RefreshingLatestTournamentsState
 abstract class RefreshingLatestTournamentsState
     implements LatestTournamentsState {
   const factory RefreshingLatestTournamentsState(
-      {required List<Tournament> data}) = _$RefreshingLatestTournamentsState;
+          {required final List<Tournament> data}) =
+      _$RefreshingLatestTournamentsState;
 
-  List<Tournament> get data => throw _privateConstructorUsedError;
+  List<Tournament> get data;
   @JsonKey(ignore: true)
-  $RefreshingLatestTournamentsStateCopyWith<RefreshingLatestTournamentsState>
+  _$$RefreshingLatestTournamentsStateCopyWith<
+          _$RefreshingLatestTournamentsState>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DataLatestTournamentsStateCopyWith<$Res> {
-  factory $DataLatestTournamentsStateCopyWith(DataLatestTournamentsState value,
-          $Res Function(DataLatestTournamentsState) then) =
-      _$DataLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$DataLatestTournamentsStateCopyWith<$Res> {
+  factory _$$DataLatestTournamentsStateCopyWith(
+          _$DataLatestTournamentsState value,
+          $Res Function(_$DataLatestTournamentsState) then) =
+      __$$DataLatestTournamentsStateCopyWithImpl<$Res>;
   $Res call({int nextPage, List<Tournament> data});
 }
 
 /// @nodoc
-class _$DataLatestTournamentsStateCopyWithImpl<$Res>
+class __$$DataLatestTournamentsStateCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res>
-    implements $DataLatestTournamentsStateCopyWith<$Res> {
-  _$DataLatestTournamentsStateCopyWithImpl(DataLatestTournamentsState _value,
-      $Res Function(DataLatestTournamentsState) _then)
-      : super(_value, (v) => _then(v as DataLatestTournamentsState));
+    implements _$$DataLatestTournamentsStateCopyWith<$Res> {
+  __$$DataLatestTournamentsStateCopyWithImpl(
+      _$DataLatestTournamentsState _value,
+      $Res Function(_$DataLatestTournamentsState) _then)
+      : super(_value, (v) => _then(v as _$DataLatestTournamentsState));
 
   @override
-  DataLatestTournamentsState get _value =>
-      super._value as DataLatestTournamentsState;
+  _$DataLatestTournamentsState get _value =>
+      super._value as _$DataLatestTournamentsState;
 
   @override
   $Res call({
     Object? nextPage = freezed,
     Object? data = freezed,
   }) {
-    return _then(DataLatestTournamentsState(
+    return _then(_$DataLatestTournamentsState(
       nextPage: nextPage == freezed
           ? _value.nextPage
           : nextPage // ignore: cast_nullable_to_non_nullable
               as int,
       data: data == freezed
-          ? _value.data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Tournament>,
     ));
@@ -1169,12 +1355,17 @@ class _$DataLatestTournamentsState
     with DiagnosticableTreeMixin
     implements DataLatestTournamentsState {
   const _$DataLatestTournamentsState(
-      {required this.nextPage, required this.data});
+      {required this.nextPage, required final List<Tournament> data})
+      : _data = data;
 
   @override
   final int nextPage;
+  final List<Tournament> _data;
   @override
-  final List<Tournament> data;
+  List<Tournament> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1193,26 +1384,23 @@ class _$DataLatestTournamentsState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DataLatestTournamentsState &&
-            (identical(other.nextPage, nextPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.nextPage, nextPage)) &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is _$DataLatestTournamentsState &&
+            const DeepCollectionEquality().equals(other.nextPage, nextPage) &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(nextPage) ^
-      const DeepCollectionEquality().hash(data);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(nextPage),
+      const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
-  $DataLatestTournamentsStateCopyWith<DataLatestTournamentsState>
-      get copyWith =>
-          _$DataLatestTournamentsStateCopyWithImpl<DataLatestTournamentsState>(
-              this, _$identity);
+  _$$DataLatestTournamentsStateCopyWith<_$DataLatestTournamentsState>
+      get copyWith => __$$DataLatestTournamentsStateCopyWithImpl<
+          _$DataLatestTournamentsState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1229,6 +1417,21 @@ class _$DataLatestTournamentsState
     required TResult Function(int nextPage, List<Tournament> data) data,
   }) {
     return data(nextPage, this.data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<Tournament> data, int nextPage)? loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<Tournament> data, Exception exception, int nextPage)?
+        errorWithData,
+    TResult Function(List<Tournament> data)? refreshing,
+    TResult Function(int nextPage, List<Tournament> data)? data,
+  }) {
+    return data?.call(nextPage, this.data);
   }
 
   @override
@@ -1271,6 +1474,23 @@ class _$DataLatestTournamentsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialLatestTournamentsState value)? initial,
+    TResult Function(LoadingFirstPageLatestTournamentsState value)?
+        loadingFirstPage,
+    TResult Function(LoadingWithDataLatestTournamentsState value)?
+        loadingWithData,
+    TResult Function(ErrorFirstPageLatestTournamentsState value)?
+        errorFirstPage,
+    TResult Function(ErrorWithDataLatestTournamentsState value)? errorWithData,
+    TResult Function(RefreshingLatestTournamentsState value)? refreshing,
+    TResult Function(DataLatestTournamentsState value)? data,
+  }) {
+    return data?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialLatestTournamentsState value)? initial,
     TResult Function(LoadingFirstPageLatestTournamentsState value)?
@@ -1293,12 +1513,12 @@ class _$DataLatestTournamentsState
 
 abstract class DataLatestTournamentsState implements LatestTournamentsState {
   const factory DataLatestTournamentsState(
-      {required int nextPage,
-      required List<Tournament> data}) = _$DataLatestTournamentsState;
+      {required final int nextPage,
+      required final List<Tournament> data}) = _$DataLatestTournamentsState;
 
-  int get nextPage => throw _privateConstructorUsedError;
-  List<Tournament> get data => throw _privateConstructorUsedError;
+  int get nextPage;
+  List<Tournament> get data;
   @JsonKey(ignore: true)
-  $DataLatestTournamentsStateCopyWith<DataLatestTournamentsState>
+  _$$DataLatestTournamentsStateCopyWith<_$DataLatestTournamentsState>
       get copyWith => throw _privateConstructorUsedError;
 }

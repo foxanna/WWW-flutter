@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'initialization_actions.dart';
 
@@ -10,29 +12,7 @@ part of 'initialization_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$InitializationActionTearOff {
-  const _$InitializationActionTearOff();
-
-  InitInitializationAction init() {
-    return const InitInitializationAction();
-  }
-
-  FailedInitializationAction failed({required Exception exception}) {
-    return FailedInitializationAction(
-      exception: exception,
-    );
-  }
-
-  CompletedInitializationAction completed() {
-    return const CompletedInitializationAction();
-  }
-}
-
-/// @nodoc
-const $InitializationAction = _$InitializationActionTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$InitializationAction {
@@ -41,6 +21,13 @@ mixin _$InitializationAction {
     required TResult Function() init,
     required TResult Function(Exception exception) failed,
     required TResult Function() completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(Exception exception)? failed,
+    TResult Function()? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +43,13 @@ mixin _$InitializationAction {
     required TResult Function(InitInitializationAction value) init,
     required TResult Function(FailedInitializationAction value) failed,
     required TResult Function(CompletedInitializationAction value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitInitializationAction value)? init,
+    TResult Function(FailedInitializationAction value)? failed,
+    TResult Function(CompletedInitializationAction value)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,23 +80,23 @@ class _$InitializationActionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitInitializationActionCopyWith<$Res> {
-  factory $InitInitializationActionCopyWith(InitInitializationAction value,
-          $Res Function(InitInitializationAction) then) =
-      _$InitInitializationActionCopyWithImpl<$Res>;
+abstract class _$$InitInitializationActionCopyWith<$Res> {
+  factory _$$InitInitializationActionCopyWith(_$InitInitializationAction value,
+          $Res Function(_$InitInitializationAction) then) =
+      __$$InitInitializationActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitInitializationActionCopyWithImpl<$Res>
+class __$$InitInitializationActionCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res>
-    implements $InitInitializationActionCopyWith<$Res> {
-  _$InitInitializationActionCopyWithImpl(InitInitializationAction _value,
-      $Res Function(InitInitializationAction) _then)
-      : super(_value, (v) => _then(v as InitInitializationAction));
+    implements _$$InitInitializationActionCopyWith<$Res> {
+  __$$InitInitializationActionCopyWithImpl(_$InitInitializationAction _value,
+      $Res Function(_$InitInitializationAction) _then)
+      : super(_value, (v) => _then(v as _$InitInitializationAction));
 
   @override
-  InitInitializationAction get _value =>
-      super._value as InitInitializationAction;
+  _$InitInitializationAction get _value =>
+      super._value as _$InitInitializationAction;
 }
 
 /// @nodoc
@@ -120,12 +114,14 @@ class _$InitInitializationAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'InitializationAction.init'));
+    properties.add(DiagnosticsProperty('type', 'InitializationAction.init'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitInitializationAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitInitializationAction);
   }
 
   @override
@@ -139,6 +135,16 @@ class _$InitInitializationAction
     required TResult Function() completed,
   }) {
     return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(Exception exception)? failed,
+    TResult Function()? completed,
+  }) {
+    return init?.call();
   }
 
   @override
@@ -167,6 +173,16 @@ class _$InitInitializationAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitInitializationAction value)? init,
+    TResult Function(FailedInitializationAction value)? failed,
+    TResult Function(CompletedInitializationAction value)? completed,
+  }) {
+    return init?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitInitializationAction value)? init,
     TResult Function(FailedInitializationAction value)? failed,
@@ -185,30 +201,32 @@ abstract class InitInitializationAction implements InitializationAction {
 }
 
 /// @nodoc
-abstract class $FailedInitializationActionCopyWith<$Res> {
-  factory $FailedInitializationActionCopyWith(FailedInitializationAction value,
-          $Res Function(FailedInitializationAction) then) =
-      _$FailedInitializationActionCopyWithImpl<$Res>;
+abstract class _$$FailedInitializationActionCopyWith<$Res> {
+  factory _$$FailedInitializationActionCopyWith(
+          _$FailedInitializationAction value,
+          $Res Function(_$FailedInitializationAction) then) =
+      __$$FailedInitializationActionCopyWithImpl<$Res>;
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class _$FailedInitializationActionCopyWithImpl<$Res>
+class __$$FailedInitializationActionCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res>
-    implements $FailedInitializationActionCopyWith<$Res> {
-  _$FailedInitializationActionCopyWithImpl(FailedInitializationAction _value,
-      $Res Function(FailedInitializationAction) _then)
-      : super(_value, (v) => _then(v as FailedInitializationAction));
+    implements _$$FailedInitializationActionCopyWith<$Res> {
+  __$$FailedInitializationActionCopyWithImpl(
+      _$FailedInitializationAction _value,
+      $Res Function(_$FailedInitializationAction) _then)
+      : super(_value, (v) => _then(v as _$FailedInitializationAction));
 
   @override
-  FailedInitializationAction get _value =>
-      super._value as FailedInitializationAction;
+  _$FailedInitializationAction get _value =>
+      super._value as _$FailedInitializationAction;
 
   @override
   $Res call({
     Object? exception = freezed,
   }) {
-    return _then(FailedInitializationAction(
+    return _then(_$FailedInitializationAction(
       exception: exception == freezed
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -243,22 +261,20 @@ class _$FailedInitializationAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is FailedInitializationAction &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+        (other.runtimeType == runtimeType &&
+            other is _$FailedInitializationAction &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $FailedInitializationActionCopyWith<FailedInitializationAction>
-      get copyWith =>
-          _$FailedInitializationActionCopyWithImpl<FailedInitializationAction>(
-              this, _$identity);
+  _$$FailedInitializationActionCopyWith<_$FailedInitializationAction>
+      get copyWith => __$$FailedInitializationActionCopyWithImpl<
+          _$FailedInitializationAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -268,6 +284,16 @@ class _$FailedInitializationAction
     required TResult Function() completed,
   }) {
     return failed(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(Exception exception)? failed,
+    TResult Function()? completed,
+  }) {
+    return failed?.call(exception);
   }
 
   @override
@@ -296,6 +322,16 @@ class _$FailedInitializationAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitInitializationAction value)? init,
+    TResult Function(FailedInitializationAction value)? failed,
+    TResult Function(CompletedInitializationAction value)? completed,
+  }) {
+    return failed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitInitializationAction value)? init,
     TResult Function(FailedInitializationAction value)? failed,
@@ -310,35 +346,35 @@ class _$FailedInitializationAction
 }
 
 abstract class FailedInitializationAction implements InitializationAction {
-  const factory FailedInitializationAction({required Exception exception}) =
-      _$FailedInitializationAction;
+  const factory FailedInitializationAction(
+      {required final Exception exception}) = _$FailedInitializationAction;
 
-  Exception get exception => throw _privateConstructorUsedError;
+  Exception get exception;
   @JsonKey(ignore: true)
-  $FailedInitializationActionCopyWith<FailedInitializationAction>
+  _$$FailedInitializationActionCopyWith<_$FailedInitializationAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CompletedInitializationActionCopyWith<$Res> {
-  factory $CompletedInitializationActionCopyWith(
-          CompletedInitializationAction value,
-          $Res Function(CompletedInitializationAction) then) =
-      _$CompletedInitializationActionCopyWithImpl<$Res>;
+abstract class _$$CompletedInitializationActionCopyWith<$Res> {
+  factory _$$CompletedInitializationActionCopyWith(
+          _$CompletedInitializationAction value,
+          $Res Function(_$CompletedInitializationAction) then) =
+      __$$CompletedInitializationActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CompletedInitializationActionCopyWithImpl<$Res>
+class __$$CompletedInitializationActionCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res>
-    implements $CompletedInitializationActionCopyWith<$Res> {
-  _$CompletedInitializationActionCopyWithImpl(
-      CompletedInitializationAction _value,
-      $Res Function(CompletedInitializationAction) _then)
-      : super(_value, (v) => _then(v as CompletedInitializationAction));
+    implements _$$CompletedInitializationActionCopyWith<$Res> {
+  __$$CompletedInitializationActionCopyWithImpl(
+      _$CompletedInitializationAction _value,
+      $Res Function(_$CompletedInitializationAction) _then)
+      : super(_value, (v) => _then(v as _$CompletedInitializationAction));
 
   @override
-  CompletedInitializationAction get _value =>
-      super._value as CompletedInitializationAction;
+  _$CompletedInitializationAction get _value =>
+      super._value as _$CompletedInitializationAction;
 }
 
 /// @nodoc
@@ -357,12 +393,14 @@ class _$CompletedInitializationAction
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'InitializationAction.completed'));
+        .add(DiagnosticsProperty('type', 'InitializationAction.completed'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CompletedInitializationAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompletedInitializationAction);
   }
 
   @override
@@ -376,6 +414,16 @@ class _$CompletedInitializationAction
     required TResult Function() completed,
   }) {
     return completed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(Exception exception)? failed,
+    TResult Function()? completed,
+  }) {
+    return completed?.call();
   }
 
   @override
@@ -400,6 +448,16 @@ class _$CompletedInitializationAction
     required TResult Function(CompletedInitializationAction value) completed,
   }) {
     return completed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitInitializationAction value)? init,
+    TResult Function(FailedInitializationAction value)? failed,
+    TResult Function(CompletedInitializationAction value)? completed,
+  }) {
+    return completed?.call(this);
   }
 
   @override

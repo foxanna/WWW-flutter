@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
 
@@ -10,60 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$QuestionsStateTearOff {
-  const _$QuestionsStateTearOff();
-
-  InitialQuestionsState initial() {
-    return const InitialQuestionsState();
-  }
-
-  LoadingFirstPageQuestionsState loadingFirstPage() {
-    return const LoadingFirstPageQuestionsState();
-  }
-
-  LoadingWithDataQuestionsState loadingWithData(
-      {required List<QuestionState> questions,
-      required int currentQuestionIndex}) {
-    return LoadingWithDataQuestionsState(
-      questions: questions,
-      currentQuestionIndex: currentQuestionIndex,
-    );
-  }
-
-  ErrorFirstPageQuestionsState errorFirstPage({required Exception exception}) {
-    return ErrorFirstPageQuestionsState(
-      exception: exception,
-    );
-  }
-
-  ErrorWithDataQuestionsState errorWithData(
-      {required List<QuestionState> questions,
-      required int currentQuestionIndex,
-      required Exception exception}) {
-    return ErrorWithDataQuestionsState(
-      questions: questions,
-      currentQuestionIndex: currentQuestionIndex,
-      exception: exception,
-    );
-  }
-
-  DataQuestionsState data(
-      {required List<QuestionState> questions,
-      required int currentQuestionIndex,
-      bool canLoadMore = false}) {
-    return DataQuestionsState(
-      questions: questions,
-      currentQuestionIndex: currentQuestionIndex,
-      canLoadMore: canLoadMore,
-    );
-  }
-}
-
-/// @nodoc
-const $QuestionsState = _$QuestionsStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$QuestionsState {
@@ -80,6 +29,21 @@ mixin _$QuestionsState {
         errorWithData,
     required TResult Function(List<QuestionState> questions,
             int currentQuestionIndex, bool canLoadMore)
+        data,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
         data,
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +77,16 @@ mixin _$QuestionsState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialQuestionsState value)? initial,
     TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
@@ -143,45 +117,38 @@ class _$QuestionsStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitialQuestionsStateCopyWith<$Res> {
-  factory $InitialQuestionsStateCopyWith(InitialQuestionsState value,
-          $Res Function(InitialQuestionsState) then) =
-      _$InitialQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$InitialQuestionsStateCopyWith<$Res> {
+  factory _$$InitialQuestionsStateCopyWith(_$InitialQuestionsState value,
+          $Res Function(_$InitialQuestionsState) then) =
+      __$$InitialQuestionsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitialQuestionsStateCopyWithImpl<$Res>
+class __$$InitialQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
-    implements $InitialQuestionsStateCopyWith<$Res> {
-  _$InitialQuestionsStateCopyWithImpl(
-      InitialQuestionsState _value, $Res Function(InitialQuestionsState) _then)
-      : super(_value, (v) => _then(v as InitialQuestionsState));
+    implements _$$InitialQuestionsStateCopyWith<$Res> {
+  __$$InitialQuestionsStateCopyWithImpl(_$InitialQuestionsState _value,
+      $Res Function(_$InitialQuestionsState) _then)
+      : super(_value, (v) => _then(v as _$InitialQuestionsState));
 
   @override
-  InitialQuestionsState get _value => super._value as InitialQuestionsState;
+  _$InitialQuestionsState get _value => super._value as _$InitialQuestionsState;
 }
 
 /// @nodoc
 
-class _$InitialQuestionsState
-    with DiagnosticableTreeMixin
-    implements InitialQuestionsState {
+class _$InitialQuestionsState implements InitialQuestionsState {
   const _$InitialQuestionsState();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'QuestionsState.initial()';
   }
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'QuestionsState.initial'));
-  }
-
-  @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitialQuestionsState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitialQuestionsState);
   }
 
   @override
@@ -204,6 +171,24 @@ class _$InitialQuestionsState
         data,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -246,6 +231,19 @@ class _$InitialQuestionsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialQuestionsState value)? initial,
     TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
@@ -267,49 +265,43 @@ abstract class InitialQuestionsState implements QuestionsState {
 }
 
 /// @nodoc
-abstract class $LoadingFirstPageQuestionsStateCopyWith<$Res> {
-  factory $LoadingFirstPageQuestionsStateCopyWith(
-          LoadingFirstPageQuestionsState value,
-          $Res Function(LoadingFirstPageQuestionsState) then) =
-      _$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$LoadingFirstPageQuestionsStateCopyWith<$Res> {
+  factory _$$LoadingFirstPageQuestionsStateCopyWith(
+          _$LoadingFirstPageQuestionsState value,
+          $Res Function(_$LoadingFirstPageQuestionsState) then) =
+      __$$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>
+class __$$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
-    implements $LoadingFirstPageQuestionsStateCopyWith<$Res> {
-  _$LoadingFirstPageQuestionsStateCopyWithImpl(
-      LoadingFirstPageQuestionsState _value,
-      $Res Function(LoadingFirstPageQuestionsState) _then)
-      : super(_value, (v) => _then(v as LoadingFirstPageQuestionsState));
+    implements _$$LoadingFirstPageQuestionsStateCopyWith<$Res> {
+  __$$LoadingFirstPageQuestionsStateCopyWithImpl(
+      _$LoadingFirstPageQuestionsState _value,
+      $Res Function(_$LoadingFirstPageQuestionsState) _then)
+      : super(_value, (v) => _then(v as _$LoadingFirstPageQuestionsState));
 
   @override
-  LoadingFirstPageQuestionsState get _value =>
-      super._value as LoadingFirstPageQuestionsState;
+  _$LoadingFirstPageQuestionsState get _value =>
+      super._value as _$LoadingFirstPageQuestionsState;
 }
 
 /// @nodoc
 
 class _$LoadingFirstPageQuestionsState
-    with DiagnosticableTreeMixin
     implements LoadingFirstPageQuestionsState {
   const _$LoadingFirstPageQuestionsState();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'QuestionsState.loadingFirstPage()';
   }
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'QuestionsState.loadingFirstPage'));
-  }
-
-  @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadingFirstPageQuestionsState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingFirstPageQuestionsState);
   }
 
   @override
@@ -332,6 +324,24 @@ class _$LoadingFirstPageQuestionsState
         data,
   }) {
     return loadingFirstPage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+  }) {
+    return loadingFirstPage?.call();
   }
 
   @override
@@ -374,6 +384,19 @@ class _$LoadingFirstPageQuestionsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+  }) {
+    return loadingFirstPage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialQuestionsState value)? initial,
     TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
@@ -396,35 +419,35 @@ abstract class LoadingFirstPageQuestionsState implements QuestionsState {
 }
 
 /// @nodoc
-abstract class $LoadingWithDataQuestionsStateCopyWith<$Res> {
-  factory $LoadingWithDataQuestionsStateCopyWith(
-          LoadingWithDataQuestionsState value,
-          $Res Function(LoadingWithDataQuestionsState) then) =
-      _$LoadingWithDataQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$LoadingWithDataQuestionsStateCopyWith<$Res> {
+  factory _$$LoadingWithDataQuestionsStateCopyWith(
+          _$LoadingWithDataQuestionsState value,
+          $Res Function(_$LoadingWithDataQuestionsState) then) =
+      __$$LoadingWithDataQuestionsStateCopyWithImpl<$Res>;
   $Res call({List<QuestionState> questions, int currentQuestionIndex});
 }
 
 /// @nodoc
-class _$LoadingWithDataQuestionsStateCopyWithImpl<$Res>
+class __$$LoadingWithDataQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
-    implements $LoadingWithDataQuestionsStateCopyWith<$Res> {
-  _$LoadingWithDataQuestionsStateCopyWithImpl(
-      LoadingWithDataQuestionsState _value,
-      $Res Function(LoadingWithDataQuestionsState) _then)
-      : super(_value, (v) => _then(v as LoadingWithDataQuestionsState));
+    implements _$$LoadingWithDataQuestionsStateCopyWith<$Res> {
+  __$$LoadingWithDataQuestionsStateCopyWithImpl(
+      _$LoadingWithDataQuestionsState _value,
+      $Res Function(_$LoadingWithDataQuestionsState) _then)
+      : super(_value, (v) => _then(v as _$LoadingWithDataQuestionsState));
 
   @override
-  LoadingWithDataQuestionsState get _value =>
-      super._value as LoadingWithDataQuestionsState;
+  _$LoadingWithDataQuestionsState get _value =>
+      super._value as _$LoadingWithDataQuestionsState;
 
   @override
   $Res call({
     Object? questions = freezed,
     Object? currentQuestionIndex = freezed,
   }) {
-    return _then(LoadingWithDataQuestionsState(
+    return _then(_$LoadingWithDataQuestionsState(
       questions: questions == freezed
-          ? _value.questions
+          ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionState>,
       currentQuestionIndex: currentQuestionIndex == freezed
@@ -437,54 +460,49 @@ class _$LoadingWithDataQuestionsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingWithDataQuestionsState
-    with DiagnosticableTreeMixin
-    implements LoadingWithDataQuestionsState {
+class _$LoadingWithDataQuestionsState implements LoadingWithDataQuestionsState {
   const _$LoadingWithDataQuestionsState(
-      {required this.questions, required this.currentQuestionIndex});
+      {required final List<QuestionState> questions,
+      required this.currentQuestionIndex})
+      : _questions = questions;
 
+  final List<QuestionState> _questions;
   @override
-  final List<QuestionState> questions;
+  List<QuestionState> get questions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
+
   @override
   final int currentQuestionIndex;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'QuestionsState.loadingWithData(questions: $questions, currentQuestionIndex: $currentQuestionIndex)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'QuestionsState.loadingWithData'))
-      ..add(DiagnosticsProperty('questions', questions))
-      ..add(DiagnosticsProperty('currentQuestionIndex', currentQuestionIndex));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadingWithDataQuestionsState &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)) &&
-            (identical(other.currentQuestionIndex, currentQuestionIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentQuestionIndex, currentQuestionIndex)));
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingWithDataQuestionsState &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions) &&
+            const DeepCollectionEquality()
+                .equals(other.currentQuestionIndex, currentQuestionIndex));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questions) ^
-      const DeepCollectionEquality().hash(currentQuestionIndex);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_questions),
+      const DeepCollectionEquality().hash(currentQuestionIndex));
 
   @JsonKey(ignore: true)
   @override
-  $LoadingWithDataQuestionsStateCopyWith<LoadingWithDataQuestionsState>
-      get copyWith => _$LoadingWithDataQuestionsStateCopyWithImpl<
-          LoadingWithDataQuestionsState>(this, _$identity);
+  _$$LoadingWithDataQuestionsStateCopyWith<_$LoadingWithDataQuestionsState>
+      get copyWith => __$$LoadingWithDataQuestionsStateCopyWithImpl<
+          _$LoadingWithDataQuestionsState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -503,6 +521,24 @@ class _$LoadingWithDataQuestionsState
         data,
   }) {
     return loadingWithData(questions, currentQuestionIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+  }) {
+    return loadingWithData?.call(questions, currentQuestionIndex);
   }
 
   @override
@@ -545,6 +581,19 @@ class _$LoadingWithDataQuestionsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+  }) {
+    return loadingWithData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialQuestionsState value)? initial,
     TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
@@ -563,43 +612,44 @@ class _$LoadingWithDataQuestionsState
 
 abstract class LoadingWithDataQuestionsState implements QuestionsState {
   const factory LoadingWithDataQuestionsState(
-      {required List<QuestionState> questions,
-      required int currentQuestionIndex}) = _$LoadingWithDataQuestionsState;
+          {required final List<QuestionState> questions,
+          required final int currentQuestionIndex}) =
+      _$LoadingWithDataQuestionsState;
 
-  List<QuestionState> get questions => throw _privateConstructorUsedError;
-  int get currentQuestionIndex => throw _privateConstructorUsedError;
+  List<QuestionState> get questions;
+  int get currentQuestionIndex;
   @JsonKey(ignore: true)
-  $LoadingWithDataQuestionsStateCopyWith<LoadingWithDataQuestionsState>
+  _$$LoadingWithDataQuestionsStateCopyWith<_$LoadingWithDataQuestionsState>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ErrorFirstPageQuestionsStateCopyWith<$Res> {
-  factory $ErrorFirstPageQuestionsStateCopyWith(
-          ErrorFirstPageQuestionsState value,
-          $Res Function(ErrorFirstPageQuestionsState) then) =
-      _$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$ErrorFirstPageQuestionsStateCopyWith<$Res> {
+  factory _$$ErrorFirstPageQuestionsStateCopyWith(
+          _$ErrorFirstPageQuestionsState value,
+          $Res Function(_$ErrorFirstPageQuestionsState) then) =
+      __$$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>;
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class _$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>
+class __$$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
-    implements $ErrorFirstPageQuestionsStateCopyWith<$Res> {
-  _$ErrorFirstPageQuestionsStateCopyWithImpl(
-      ErrorFirstPageQuestionsState _value,
-      $Res Function(ErrorFirstPageQuestionsState) _then)
-      : super(_value, (v) => _then(v as ErrorFirstPageQuestionsState));
+    implements _$$ErrorFirstPageQuestionsStateCopyWith<$Res> {
+  __$$ErrorFirstPageQuestionsStateCopyWithImpl(
+      _$ErrorFirstPageQuestionsState _value,
+      $Res Function(_$ErrorFirstPageQuestionsState) _then)
+      : super(_value, (v) => _then(v as _$ErrorFirstPageQuestionsState));
 
   @override
-  ErrorFirstPageQuestionsState get _value =>
-      super._value as ErrorFirstPageQuestionsState;
+  _$ErrorFirstPageQuestionsState get _value =>
+      super._value as _$ErrorFirstPageQuestionsState;
 
   @override
   $Res call({
     Object? exception = freezed,
   }) {
-    return _then(ErrorFirstPageQuestionsState(
+    return _then(_$ErrorFirstPageQuestionsState(
       exception: exception == freezed
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -610,45 +660,34 @@ class _$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorFirstPageQuestionsState
-    with DiagnosticableTreeMixin
-    implements ErrorFirstPageQuestionsState {
+class _$ErrorFirstPageQuestionsState implements ErrorFirstPageQuestionsState {
   const _$ErrorFirstPageQuestionsState({required this.exception});
 
   @override
   final Exception exception;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'QuestionsState.errorFirstPage(exception: $exception)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'QuestionsState.errorFirstPage'))
-      ..add(DiagnosticsProperty('exception', exception));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ErrorFirstPageQuestionsState &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorFirstPageQuestionsState &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $ErrorFirstPageQuestionsStateCopyWith<ErrorFirstPageQuestionsState>
-      get copyWith => _$ErrorFirstPageQuestionsStateCopyWithImpl<
-          ErrorFirstPageQuestionsState>(this, _$identity);
+  _$$ErrorFirstPageQuestionsStateCopyWith<_$ErrorFirstPageQuestionsState>
+      get copyWith => __$$ErrorFirstPageQuestionsStateCopyWithImpl<
+          _$ErrorFirstPageQuestionsState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -667,6 +706,24 @@ class _$ErrorFirstPageQuestionsState
         data,
   }) {
     return errorFirstPage(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+  }) {
+    return errorFirstPage?.call(exception);
   }
 
   @override
@@ -709,6 +766,19 @@ class _$ErrorFirstPageQuestionsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+  }) {
+    return errorFirstPage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialQuestionsState value)? initial,
     TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
@@ -726,21 +796,21 @@ class _$ErrorFirstPageQuestionsState
 }
 
 abstract class ErrorFirstPageQuestionsState implements QuestionsState {
-  const factory ErrorFirstPageQuestionsState({required Exception exception}) =
-      _$ErrorFirstPageQuestionsState;
+  const factory ErrorFirstPageQuestionsState(
+      {required final Exception exception}) = _$ErrorFirstPageQuestionsState;
 
-  Exception get exception => throw _privateConstructorUsedError;
+  Exception get exception;
   @JsonKey(ignore: true)
-  $ErrorFirstPageQuestionsStateCopyWith<ErrorFirstPageQuestionsState>
+  _$$ErrorFirstPageQuestionsStateCopyWith<_$ErrorFirstPageQuestionsState>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ErrorWithDataQuestionsStateCopyWith<$Res> {
-  factory $ErrorWithDataQuestionsStateCopyWith(
-          ErrorWithDataQuestionsState value,
-          $Res Function(ErrorWithDataQuestionsState) then) =
-      _$ErrorWithDataQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$ErrorWithDataQuestionsStateCopyWith<$Res> {
+  factory _$$ErrorWithDataQuestionsStateCopyWith(
+          _$ErrorWithDataQuestionsState value,
+          $Res Function(_$ErrorWithDataQuestionsState) then) =
+      __$$ErrorWithDataQuestionsStateCopyWithImpl<$Res>;
   $Res call(
       {List<QuestionState> questions,
       int currentQuestionIndex,
@@ -748,16 +818,17 @@ abstract class $ErrorWithDataQuestionsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
+class __$$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
-    implements $ErrorWithDataQuestionsStateCopyWith<$Res> {
-  _$ErrorWithDataQuestionsStateCopyWithImpl(ErrorWithDataQuestionsState _value,
-      $Res Function(ErrorWithDataQuestionsState) _then)
-      : super(_value, (v) => _then(v as ErrorWithDataQuestionsState));
+    implements _$$ErrorWithDataQuestionsStateCopyWith<$Res> {
+  __$$ErrorWithDataQuestionsStateCopyWithImpl(
+      _$ErrorWithDataQuestionsState _value,
+      $Res Function(_$ErrorWithDataQuestionsState) _then)
+      : super(_value, (v) => _then(v as _$ErrorWithDataQuestionsState));
 
   @override
-  ErrorWithDataQuestionsState get _value =>
-      super._value as ErrorWithDataQuestionsState;
+  _$ErrorWithDataQuestionsState get _value =>
+      super._value as _$ErrorWithDataQuestionsState;
 
   @override
   $Res call({
@@ -765,9 +836,9 @@ class _$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
     Object? currentQuestionIndex = freezed,
     Object? exception = freezed,
   }) {
-    return _then(ErrorWithDataQuestionsState(
+    return _then(_$ErrorWithDataQuestionsState(
       questions: questions == freezed
-          ? _value.questions
+          ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionState>,
       currentQuestionIndex: currentQuestionIndex == freezed
@@ -784,63 +855,54 @@ class _$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorWithDataQuestionsState
-    with DiagnosticableTreeMixin
-    implements ErrorWithDataQuestionsState {
+class _$ErrorWithDataQuestionsState implements ErrorWithDataQuestionsState {
   const _$ErrorWithDataQuestionsState(
-      {required this.questions,
+      {required final List<QuestionState> questions,
       required this.currentQuestionIndex,
-      required this.exception});
+      required this.exception})
+      : _questions = questions;
 
+  final List<QuestionState> _questions;
   @override
-  final List<QuestionState> questions;
+  List<QuestionState> get questions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
+
   @override
   final int currentQuestionIndex;
   @override
   final Exception exception;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'QuestionsState.errorWithData(questions: $questions, currentQuestionIndex: $currentQuestionIndex, exception: $exception)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'QuestionsState.errorWithData'))
-      ..add(DiagnosticsProperty('questions', questions))
-      ..add(DiagnosticsProperty('currentQuestionIndex', currentQuestionIndex))
-      ..add(DiagnosticsProperty('exception', exception));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ErrorWithDataQuestionsState &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)) &&
-            (identical(other.currentQuestionIndex, currentQuestionIndex) ||
-                const DeepCollectionEquality().equals(
-                    other.currentQuestionIndex, currentQuestionIndex)) &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorWithDataQuestionsState &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions) &&
+            const DeepCollectionEquality()
+                .equals(other.currentQuestionIndex, currentQuestionIndex) &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questions) ^
-      const DeepCollectionEquality().hash(currentQuestionIndex) ^
-      const DeepCollectionEquality().hash(exception);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_questions),
+      const DeepCollectionEquality().hash(currentQuestionIndex),
+      const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $ErrorWithDataQuestionsStateCopyWith<ErrorWithDataQuestionsState>
-      get copyWith => _$ErrorWithDataQuestionsStateCopyWithImpl<
-          ErrorWithDataQuestionsState>(this, _$identity);
+  _$$ErrorWithDataQuestionsStateCopyWith<_$ErrorWithDataQuestionsState>
+      get copyWith => __$$ErrorWithDataQuestionsStateCopyWithImpl<
+          _$ErrorWithDataQuestionsState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -859,6 +921,24 @@ class _$ErrorWithDataQuestionsState
         data,
   }) {
     return errorWithData(questions, currentQuestionIndex, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+  }) {
+    return errorWithData?.call(questions, currentQuestionIndex, exception);
   }
 
   @override
@@ -901,6 +981,19 @@ class _$ErrorWithDataQuestionsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+  }) {
+    return errorWithData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialQuestionsState value)? initial,
     TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
@@ -919,23 +1012,23 @@ class _$ErrorWithDataQuestionsState
 
 abstract class ErrorWithDataQuestionsState implements QuestionsState {
   const factory ErrorWithDataQuestionsState(
-      {required List<QuestionState> questions,
-      required int currentQuestionIndex,
-      required Exception exception}) = _$ErrorWithDataQuestionsState;
+      {required final List<QuestionState> questions,
+      required final int currentQuestionIndex,
+      required final Exception exception}) = _$ErrorWithDataQuestionsState;
 
-  List<QuestionState> get questions => throw _privateConstructorUsedError;
-  int get currentQuestionIndex => throw _privateConstructorUsedError;
-  Exception get exception => throw _privateConstructorUsedError;
+  List<QuestionState> get questions;
+  int get currentQuestionIndex;
+  Exception get exception;
   @JsonKey(ignore: true)
-  $ErrorWithDataQuestionsStateCopyWith<ErrorWithDataQuestionsState>
+  _$$ErrorWithDataQuestionsStateCopyWith<_$ErrorWithDataQuestionsState>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DataQuestionsStateCopyWith<$Res> {
-  factory $DataQuestionsStateCopyWith(
-          DataQuestionsState value, $Res Function(DataQuestionsState) then) =
-      _$DataQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$DataQuestionsStateCopyWith<$Res> {
+  factory _$$DataQuestionsStateCopyWith(_$DataQuestionsState value,
+          $Res Function(_$DataQuestionsState) then) =
+      __$$DataQuestionsStateCopyWithImpl<$Res>;
   $Res call(
       {List<QuestionState> questions,
       int currentQuestionIndex,
@@ -943,15 +1036,15 @@ abstract class $DataQuestionsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DataQuestionsStateCopyWithImpl<$Res>
+class __$$DataQuestionsStateCopyWithImpl<$Res>
     extends _$QuestionsStateCopyWithImpl<$Res>
-    implements $DataQuestionsStateCopyWith<$Res> {
-  _$DataQuestionsStateCopyWithImpl(
-      DataQuestionsState _value, $Res Function(DataQuestionsState) _then)
-      : super(_value, (v) => _then(v as DataQuestionsState));
+    implements _$$DataQuestionsStateCopyWith<$Res> {
+  __$$DataQuestionsStateCopyWithImpl(
+      _$DataQuestionsState _value, $Res Function(_$DataQuestionsState) _then)
+      : super(_value, (v) => _then(v as _$DataQuestionsState));
 
   @override
-  DataQuestionsState get _value => super._value as DataQuestionsState;
+  _$DataQuestionsState get _value => super._value as _$DataQuestionsState;
 
   @override
   $Res call({
@@ -959,9 +1052,9 @@ class _$DataQuestionsStateCopyWithImpl<$Res>
     Object? currentQuestionIndex = freezed,
     Object? canLoadMore = freezed,
   }) {
-    return _then(DataQuestionsState(
+    return _then(_$DataQuestionsState(
       questions: questions == freezed
-          ? _value.questions
+          ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionState>,
       currentQuestionIndex: currentQuestionIndex == freezed
@@ -978,63 +1071,56 @@ class _$DataQuestionsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataQuestionsState
-    with DiagnosticableTreeMixin
-    implements DataQuestionsState {
+class _$DataQuestionsState implements DataQuestionsState {
   const _$DataQuestionsState(
-      {required this.questions,
+      {required final List<QuestionState> questions,
       required this.currentQuestionIndex,
-      this.canLoadMore = false});
+      this.canLoadMore = false})
+      : _questions = questions;
 
+  final List<QuestionState> _questions;
   @override
-  final List<QuestionState> questions;
-  @override
-  final int currentQuestionIndex;
-  @JsonKey(defaultValue: false)
-  @override
-  final bool canLoadMore;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'QuestionsState.data(questions: $questions, currentQuestionIndex: $currentQuestionIndex, canLoadMore: $canLoadMore)';
+  List<QuestionState> get questions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
   }
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'QuestionsState.data'))
-      ..add(DiagnosticsProperty('questions', questions))
-      ..add(DiagnosticsProperty('currentQuestionIndex', currentQuestionIndex))
-      ..add(DiagnosticsProperty('canLoadMore', canLoadMore));
+  final int currentQuestionIndex;
+  @override
+  @JsonKey()
+  final bool canLoadMore;
+
+  @override
+  String toString() {
+    return 'QuestionsState.data(questions: $questions, currentQuestionIndex: $currentQuestionIndex, canLoadMore: $canLoadMore)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DataQuestionsState &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)) &&
-            (identical(other.currentQuestionIndex, currentQuestionIndex) ||
-                const DeepCollectionEquality().equals(
-                    other.currentQuestionIndex, currentQuestionIndex)) &&
-            (identical(other.canLoadMore, canLoadMore) ||
-                const DeepCollectionEquality()
-                    .equals(other.canLoadMore, canLoadMore)));
+        (other.runtimeType == runtimeType &&
+            other is _$DataQuestionsState &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions) &&
+            const DeepCollectionEquality()
+                .equals(other.currentQuestionIndex, currentQuestionIndex) &&
+            const DeepCollectionEquality()
+                .equals(other.canLoadMore, canLoadMore));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questions) ^
-      const DeepCollectionEquality().hash(currentQuestionIndex) ^
-      const DeepCollectionEquality().hash(canLoadMore);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_questions),
+      const DeepCollectionEquality().hash(currentQuestionIndex),
+      const DeepCollectionEquality().hash(canLoadMore));
 
   @JsonKey(ignore: true)
   @override
-  $DataQuestionsStateCopyWith<DataQuestionsState> get copyWith =>
-      _$DataQuestionsStateCopyWithImpl<DataQuestionsState>(this, _$identity);
+  _$$DataQuestionsStateCopyWith<_$DataQuestionsState> get copyWith =>
+      __$$DataQuestionsStateCopyWithImpl<_$DataQuestionsState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1053,6 +1139,24 @@ class _$DataQuestionsState
         data,
   }) {
     return data(questions, currentQuestionIndex, canLoadMore);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+        loadingWithData,
+    TResult Function(Exception exception)? errorFirstPage,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            Exception exception)?
+        errorWithData,
+    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+            bool canLoadMore)?
+        data,
+  }) {
+    return data?.call(questions, currentQuestionIndex, canLoadMore);
   }
 
   @override
@@ -1095,6 +1199,19 @@ class _$DataQuestionsState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialQuestionsState value)? initial,
+    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult Function(DataQuestionsState value)? data,
+  }) {
+    return data?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialQuestionsState value)? initial,
     TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
@@ -1113,32 +1230,17 @@ class _$DataQuestionsState
 
 abstract class DataQuestionsState implements QuestionsState {
   const factory DataQuestionsState(
-      {required List<QuestionState> questions,
-      required int currentQuestionIndex,
-      bool canLoadMore}) = _$DataQuestionsState;
+      {required final List<QuestionState> questions,
+      required final int currentQuestionIndex,
+      final bool canLoadMore}) = _$DataQuestionsState;
 
-  List<QuestionState> get questions => throw _privateConstructorUsedError;
-  int get currentQuestionIndex => throw _privateConstructorUsedError;
-  bool get canLoadMore => throw _privateConstructorUsedError;
+  List<QuestionState> get questions;
+  int get currentQuestionIndex;
+  bool get canLoadMore;
   @JsonKey(ignore: true)
-  $DataQuestionsStateCopyWith<DataQuestionsState> get copyWith =>
+  _$$DataQuestionsStateCopyWith<_$DataQuestionsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$QuestionStateTearOff {
-  const _$QuestionStateTearOff();
-
-  _QuestionState call({required Question question, bool showAnswer = false}) {
-    return _QuestionState(
-      question: question,
-      showAnswer: showAnswer,
-    );
-  }
-}
-
-/// @nodoc
-const $QuestionState = _$QuestionStateTearOff();
 
 /// @nodoc
 mixin _$QuestionState {
@@ -1195,11 +1297,11 @@ class _$QuestionStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$QuestionStateCopyWith<$Res>
+abstract class _$$_QuestionStateCopyWith<$Res>
     implements $QuestionStateCopyWith<$Res> {
-  factory _$QuestionStateCopyWith(
-          _QuestionState value, $Res Function(_QuestionState) then) =
-      __$QuestionStateCopyWithImpl<$Res>;
+  factory _$$_QuestionStateCopyWith(
+          _$_QuestionState value, $Res Function(_$_QuestionState) then) =
+      __$$_QuestionStateCopyWithImpl<$Res>;
   @override
   $Res call({Question question, bool showAnswer});
 
@@ -1208,22 +1310,22 @@ abstract class _$QuestionStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$QuestionStateCopyWithImpl<$Res>
+class __$$_QuestionStateCopyWithImpl<$Res>
     extends _$QuestionStateCopyWithImpl<$Res>
-    implements _$QuestionStateCopyWith<$Res> {
-  __$QuestionStateCopyWithImpl(
-      _QuestionState _value, $Res Function(_QuestionState) _then)
-      : super(_value, (v) => _then(v as _QuestionState));
+    implements _$$_QuestionStateCopyWith<$Res> {
+  __$$_QuestionStateCopyWithImpl(
+      _$_QuestionState _value, $Res Function(_$_QuestionState) _then)
+      : super(_value, (v) => _then(v as _$_QuestionState));
 
   @override
-  _QuestionState get _value => super._value as _QuestionState;
+  _$_QuestionState get _value => super._value as _$_QuestionState;
 
   @override
   $Res call({
     Object? question = freezed,
     Object? showAnswer = freezed,
   }) {
-    return _then(_QuestionState(
+    return _then(_$_QuestionState(
       question: question == freezed
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -1238,63 +1340,53 @@ class __$QuestionStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_QuestionState with DiagnosticableTreeMixin implements _QuestionState {
+class _$_QuestionState implements _QuestionState {
   const _$_QuestionState({required this.question, this.showAnswer = false});
 
   @override
   final Question question;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool showAnswer;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'QuestionState(question: $question, showAnswer: $showAnswer)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'QuestionState'))
-      ..add(DiagnosticsProperty('question', question))
-      ..add(DiagnosticsProperty('showAnswer', showAnswer));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _QuestionState &&
-            (identical(other.question, question) ||
-                const DeepCollectionEquality()
-                    .equals(other.question, question)) &&
-            (identical(other.showAnswer, showAnswer) ||
-                const DeepCollectionEquality()
-                    .equals(other.showAnswer, showAnswer)));
+        (other.runtimeType == runtimeType &&
+            other is _$_QuestionState &&
+            const DeepCollectionEquality().equals(other.question, question) &&
+            const DeepCollectionEquality()
+                .equals(other.showAnswer, showAnswer));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(question) ^
-      const DeepCollectionEquality().hash(showAnswer);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(question),
+      const DeepCollectionEquality().hash(showAnswer));
 
   @JsonKey(ignore: true)
   @override
-  _$QuestionStateCopyWith<_QuestionState> get copyWith =>
-      __$QuestionStateCopyWithImpl<_QuestionState>(this, _$identity);
+  _$$_QuestionStateCopyWith<_$_QuestionState> get copyWith =>
+      __$$_QuestionStateCopyWithImpl<_$_QuestionState>(this, _$identity);
 }
 
 abstract class _QuestionState implements QuestionState {
-  const factory _QuestionState({required Question question, bool showAnswer}) =
-      _$_QuestionState;
+  const factory _QuestionState(
+      {required final Question question,
+      final bool showAnswer}) = _$_QuestionState;
 
   @override
-  Question get question => throw _privateConstructorUsedError;
+  Question get question;
   @override
-  bool get showAnswer => throw _privateConstructorUsedError;
+  bool get showAnswer;
   @override
   @JsonKey(ignore: true)
-  _$QuestionStateCopyWith<_QuestionState> get copyWith =>
+  _$$_QuestionStateCopyWith<_$_QuestionState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -215,7 +215,7 @@ class Translations implements i69n.I69nMessageBundle {
       case 'questionsDatabaseName':
         return questionsDatabaseName;
       default:
-        throw Exception('Message $key doesn\'t exist in $this');
+        return key;
     }
   }
 }

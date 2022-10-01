@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'section_audio.dart';
 
@@ -10,22 +12,7 @@ part of 'section_audio.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AudioSectionHiveModelTearOff {
-  const _$AudioSectionHiveModelTearOff();
-
-  _AudioSectionHiveModel call(
-      {@HiveField(AudioSectionHiveFieldsIds.value) required String value}) {
-    return _AudioSectionHiveModel(
-      value: value,
-    );
-  }
-}
-
-/// @nodoc
-const $AudioSectionHiveModel = _$AudioSectionHiveModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AudioSectionHiveModel {
@@ -68,31 +55,32 @@ class _$AudioSectionHiveModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AudioSectionHiveModelCopyWith<$Res>
+abstract class _$$_AudioSectionHiveModelCopyWith<$Res>
     implements $AudioSectionHiveModelCopyWith<$Res> {
-  factory _$AudioSectionHiveModelCopyWith(_AudioSectionHiveModel value,
-          $Res Function(_AudioSectionHiveModel) then) =
-      __$AudioSectionHiveModelCopyWithImpl<$Res>;
+  factory _$$_AudioSectionHiveModelCopyWith(_$_AudioSectionHiveModel value,
+          $Res Function(_$_AudioSectionHiveModel) then) =
+      __$$_AudioSectionHiveModelCopyWithImpl<$Res>;
   @override
   $Res call({@HiveField(AudioSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
-class __$AudioSectionHiveModelCopyWithImpl<$Res>
+class __$$_AudioSectionHiveModelCopyWithImpl<$Res>
     extends _$AudioSectionHiveModelCopyWithImpl<$Res>
-    implements _$AudioSectionHiveModelCopyWith<$Res> {
-  __$AudioSectionHiveModelCopyWithImpl(_AudioSectionHiveModel _value,
-      $Res Function(_AudioSectionHiveModel) _then)
-      : super(_value, (v) => _then(v as _AudioSectionHiveModel));
+    implements _$$_AudioSectionHiveModelCopyWith<$Res> {
+  __$$_AudioSectionHiveModelCopyWithImpl(_$_AudioSectionHiveModel _value,
+      $Res Function(_$_AudioSectionHiveModel) _then)
+      : super(_value, (v) => _then(v as _$_AudioSectionHiveModel));
 
   @override
-  _AudioSectionHiveModel get _value => super._value as _AudioSectionHiveModel;
+  _$_AudioSectionHiveModel get _value =>
+      super._value as _$_AudioSectionHiveModel;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_AudioSectionHiveModel(
+    return _then(_$_AudioSectionHiveModel(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -120,32 +108,32 @@ class _$_AudioSectionHiveModel implements _AudioSectionHiveModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AudioSectionHiveModel &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AudioSectionHiveModel &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$AudioSectionHiveModelCopyWith<_AudioSectionHiveModel> get copyWith =>
-      __$AudioSectionHiveModelCopyWithImpl<_AudioSectionHiveModel>(
+  _$$_AudioSectionHiveModelCopyWith<_$_AudioSectionHiveModel> get copyWith =>
+      __$$_AudioSectionHiveModelCopyWithImpl<_$_AudioSectionHiveModel>(
           this, _$identity);
 }
 
 abstract class _AudioSectionHiveModel implements AudioSectionHiveModel {
   const factory _AudioSectionHiveModel(
-          {@HiveField(AudioSectionHiveFieldsIds.value) required String value}) =
-      _$_AudioSectionHiveModel;
+      {@HiveField(AudioSectionHiveFieldsIds.value)
+          required final String value}) = _$_AudioSectionHiveModel;
 
   @override
   @HiveField(AudioSectionHiveFieldsIds.value)
-  String get value => throw _privateConstructorUsedError;
+  String get value;
   @override
   @JsonKey(ignore: true)
-  _$AudioSectionHiveModelCopyWith<_AudioSectionHiveModel> get copyWith =>
+  _$$_AudioSectionHiveModelCopyWith<_$_AudioSectionHiveModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

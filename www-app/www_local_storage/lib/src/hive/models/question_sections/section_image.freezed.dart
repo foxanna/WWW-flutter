@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'section_image.dart';
 
@@ -10,22 +12,7 @@ part of 'section_image.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ImageSectionHiveModelTearOff {
-  const _$ImageSectionHiveModelTearOff();
-
-  _ImageSectionHiveModel call(
-      {@HiveField(ImageSectionHiveFieldsIds.value) required String value}) {
-    return _ImageSectionHiveModel(
-      value: value,
-    );
-  }
-}
-
-/// @nodoc
-const $ImageSectionHiveModel = _$ImageSectionHiveModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ImageSectionHiveModel {
@@ -68,31 +55,32 @@ class _$ImageSectionHiveModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ImageSectionHiveModelCopyWith<$Res>
+abstract class _$$_ImageSectionHiveModelCopyWith<$Res>
     implements $ImageSectionHiveModelCopyWith<$Res> {
-  factory _$ImageSectionHiveModelCopyWith(_ImageSectionHiveModel value,
-          $Res Function(_ImageSectionHiveModel) then) =
-      __$ImageSectionHiveModelCopyWithImpl<$Res>;
+  factory _$$_ImageSectionHiveModelCopyWith(_$_ImageSectionHiveModel value,
+          $Res Function(_$_ImageSectionHiveModel) then) =
+      __$$_ImageSectionHiveModelCopyWithImpl<$Res>;
   @override
   $Res call({@HiveField(ImageSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
-class __$ImageSectionHiveModelCopyWithImpl<$Res>
+class __$$_ImageSectionHiveModelCopyWithImpl<$Res>
     extends _$ImageSectionHiveModelCopyWithImpl<$Res>
-    implements _$ImageSectionHiveModelCopyWith<$Res> {
-  __$ImageSectionHiveModelCopyWithImpl(_ImageSectionHiveModel _value,
-      $Res Function(_ImageSectionHiveModel) _then)
-      : super(_value, (v) => _then(v as _ImageSectionHiveModel));
+    implements _$$_ImageSectionHiveModelCopyWith<$Res> {
+  __$$_ImageSectionHiveModelCopyWithImpl(_$_ImageSectionHiveModel _value,
+      $Res Function(_$_ImageSectionHiveModel) _then)
+      : super(_value, (v) => _then(v as _$_ImageSectionHiveModel));
 
   @override
-  _ImageSectionHiveModel get _value => super._value as _ImageSectionHiveModel;
+  _$_ImageSectionHiveModel get _value =>
+      super._value as _$_ImageSectionHiveModel;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_ImageSectionHiveModel(
+    return _then(_$_ImageSectionHiveModel(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -120,32 +108,32 @@ class _$_ImageSectionHiveModel implements _ImageSectionHiveModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ImageSectionHiveModel &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ImageSectionHiveModel &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$ImageSectionHiveModelCopyWith<_ImageSectionHiveModel> get copyWith =>
-      __$ImageSectionHiveModelCopyWithImpl<_ImageSectionHiveModel>(
+  _$$_ImageSectionHiveModelCopyWith<_$_ImageSectionHiveModel> get copyWith =>
+      __$$_ImageSectionHiveModelCopyWithImpl<_$_ImageSectionHiveModel>(
           this, _$identity);
 }
 
 abstract class _ImageSectionHiveModel implements ImageSectionHiveModel {
   const factory _ImageSectionHiveModel(
-          {@HiveField(ImageSectionHiveFieldsIds.value) required String value}) =
-      _$_ImageSectionHiveModel;
+      {@HiveField(ImageSectionHiveFieldsIds.value)
+          required final String value}) = _$_ImageSectionHiveModel;
 
   @override
   @HiveField(ImageSectionHiveFieldsIds.value)
-  String get value => throw _privateConstructorUsedError;
+  String get value;
   @override
   @JsonKey(ignore: true)
-  _$ImageSectionHiveModelCopyWith<_ImageSectionHiveModel> get copyWith =>
+  _$$_ImageSectionHiveModelCopyWith<_$_ImageSectionHiveModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
 
@@ -10,31 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$InitializationStateTearOff {
-  const _$InitializationStateTearOff();
-
-  _CompletedInitializationState completed() {
-    return const _CompletedInitializationState();
-  }
-
-  _InProgressInitializationState inProgress(
-      {bool settingsReady = false, bool servicesReady = false}) {
-    return _InProgressInitializationState(
-      settingsReady: settingsReady,
-      servicesReady: servicesReady,
-    );
-  }
-
-  _FailedInitializationState failed() {
-    return const _FailedInitializationState();
-  }
-}
-
-/// @nodoc
-const $InitializationState = _$InitializationStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$InitializationState {
@@ -44,6 +22,13 @@ mixin _$InitializationState {
     required TResult Function(bool settingsReady, bool servicesReady)
         inProgress,
     required TResult Function() failed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? completed,
+    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function()? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +44,13 @@ mixin _$InitializationState {
     required TResult Function(_CompletedInitializationState value) completed,
     required TResult Function(_InProgressInitializationState value) inProgress,
     required TResult Function(_FailedInitializationState value) failed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CompletedInitializationState value)? completed,
+    TResult Function(_InProgressInitializationState value)? inProgress,
+    TResult Function(_FailedInitializationState value)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,25 +81,25 @@ class _$InitializationStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CompletedInitializationStateCopyWith<$Res> {
-  factory _$CompletedInitializationStateCopyWith(
-          _CompletedInitializationState value,
-          $Res Function(_CompletedInitializationState) then) =
-      __$CompletedInitializationStateCopyWithImpl<$Res>;
+abstract class _$$_CompletedInitializationStateCopyWith<$Res> {
+  factory _$$_CompletedInitializationStateCopyWith(
+          _$_CompletedInitializationState value,
+          $Res Function(_$_CompletedInitializationState) then) =
+      __$$_CompletedInitializationStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CompletedInitializationStateCopyWithImpl<$Res>
+class __$$_CompletedInitializationStateCopyWithImpl<$Res>
     extends _$InitializationStateCopyWithImpl<$Res>
-    implements _$CompletedInitializationStateCopyWith<$Res> {
-  __$CompletedInitializationStateCopyWithImpl(
-      _CompletedInitializationState _value,
-      $Res Function(_CompletedInitializationState) _then)
-      : super(_value, (v) => _then(v as _CompletedInitializationState));
+    implements _$$_CompletedInitializationStateCopyWith<$Res> {
+  __$$_CompletedInitializationStateCopyWithImpl(
+      _$_CompletedInitializationState _value,
+      $Res Function(_$_CompletedInitializationState) _then)
+      : super(_value, (v) => _then(v as _$_CompletedInitializationState));
 
   @override
-  _CompletedInitializationState get _value =>
-      super._value as _CompletedInitializationState;
+  _$_CompletedInitializationState get _value =>
+      super._value as _$_CompletedInitializationState;
 }
 
 /// @nodoc
@@ -126,12 +118,14 @@ class _$_CompletedInitializationState
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'InitializationState.completed'));
+        .add(DiagnosticsProperty('type', 'InitializationState.completed'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CompletedInitializationState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CompletedInitializationState);
   }
 
   @override
@@ -146,6 +140,16 @@ class _$_CompletedInitializationState
     required TResult Function() failed,
   }) {
     return completed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? completed,
+    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function()? failed,
+  }) {
+    return completed?.call();
   }
 
   @override
@@ -174,6 +178,16 @@ class _$_CompletedInitializationState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CompletedInitializationState value)? completed,
+    TResult Function(_InProgressInitializationState value)? inProgress,
+    TResult Function(_FailedInitializationState value)? failed,
+  }) {
+    return completed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CompletedInitializationState value)? completed,
     TResult Function(_InProgressInitializationState value)? inProgress,
@@ -193,33 +207,33 @@ abstract class _CompletedInitializationState implements InitializationState {
 }
 
 /// @nodoc
-abstract class _$InProgressInitializationStateCopyWith<$Res> {
-  factory _$InProgressInitializationStateCopyWith(
-          _InProgressInitializationState value,
-          $Res Function(_InProgressInitializationState) then) =
-      __$InProgressInitializationStateCopyWithImpl<$Res>;
+abstract class _$$_InProgressInitializationStateCopyWith<$Res> {
+  factory _$$_InProgressInitializationStateCopyWith(
+          _$_InProgressInitializationState value,
+          $Res Function(_$_InProgressInitializationState) then) =
+      __$$_InProgressInitializationStateCopyWithImpl<$Res>;
   $Res call({bool settingsReady, bool servicesReady});
 }
 
 /// @nodoc
-class __$InProgressInitializationStateCopyWithImpl<$Res>
+class __$$_InProgressInitializationStateCopyWithImpl<$Res>
     extends _$InitializationStateCopyWithImpl<$Res>
-    implements _$InProgressInitializationStateCopyWith<$Res> {
-  __$InProgressInitializationStateCopyWithImpl(
-      _InProgressInitializationState _value,
-      $Res Function(_InProgressInitializationState) _then)
-      : super(_value, (v) => _then(v as _InProgressInitializationState));
+    implements _$$_InProgressInitializationStateCopyWith<$Res> {
+  __$$_InProgressInitializationStateCopyWithImpl(
+      _$_InProgressInitializationState _value,
+      $Res Function(_$_InProgressInitializationState) _then)
+      : super(_value, (v) => _then(v as _$_InProgressInitializationState));
 
   @override
-  _InProgressInitializationState get _value =>
-      super._value as _InProgressInitializationState;
+  _$_InProgressInitializationState get _value =>
+      super._value as _$_InProgressInitializationState;
 
   @override
   $Res call({
     Object? settingsReady = freezed,
     Object? servicesReady = freezed,
   }) {
-    return _then(_InProgressInitializationState(
+    return _then(_$_InProgressInitializationState(
       settingsReady: settingsReady == freezed
           ? _value.settingsReady
           : settingsReady // ignore: cast_nullable_to_non_nullable
@@ -240,11 +254,11 @@ class _$_InProgressInitializationState
   const _$_InProgressInitializationState(
       {this.settingsReady = false, this.servicesReady = false});
 
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool settingsReady;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool servicesReady;
 
   @override
@@ -264,26 +278,25 @@ class _$_InProgressInitializationState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _InProgressInitializationState &&
-            (identical(other.settingsReady, settingsReady) ||
-                const DeepCollectionEquality()
-                    .equals(other.settingsReady, settingsReady)) &&
-            (identical(other.servicesReady, servicesReady) ||
-                const DeepCollectionEquality()
-                    .equals(other.servicesReady, servicesReady)));
+        (other.runtimeType == runtimeType &&
+            other is _$_InProgressInitializationState &&
+            const DeepCollectionEquality()
+                .equals(other.settingsReady, settingsReady) &&
+            const DeepCollectionEquality()
+                .equals(other.servicesReady, servicesReady));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(settingsReady) ^
-      const DeepCollectionEquality().hash(servicesReady);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(settingsReady),
+      const DeepCollectionEquality().hash(servicesReady));
 
   @JsonKey(ignore: true)
   @override
-  _$InProgressInitializationStateCopyWith<_InProgressInitializationState>
-      get copyWith => __$InProgressInitializationStateCopyWithImpl<
-          _InProgressInitializationState>(this, _$identity);
+  _$$_InProgressInitializationStateCopyWith<_$_InProgressInitializationState>
+      get copyWith => __$$_InProgressInitializationStateCopyWithImpl<
+          _$_InProgressInitializationState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -294,6 +307,16 @@ class _$_InProgressInitializationState
     required TResult Function() failed,
   }) {
     return inProgress(settingsReady, servicesReady);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? completed,
+    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function()? failed,
+  }) {
+    return inProgress?.call(settingsReady, servicesReady);
   }
 
   @override
@@ -322,6 +345,16 @@ class _$_InProgressInitializationState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CompletedInitializationState value)? completed,
+    TResult Function(_InProgressInitializationState value)? inProgress,
+    TResult Function(_FailedInitializationState value)? failed,
+  }) {
+    return inProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CompletedInitializationState value)? completed,
     TResult Function(_InProgressInitializationState value)? inProgress,
@@ -337,34 +370,36 @@ class _$_InProgressInitializationState
 
 abstract class _InProgressInitializationState implements InitializationState {
   const factory _InProgressInitializationState(
-      {bool settingsReady,
-      bool servicesReady}) = _$_InProgressInitializationState;
+      {final bool settingsReady,
+      final bool servicesReady}) = _$_InProgressInitializationState;
 
-  bool get settingsReady => throw _privateConstructorUsedError;
-  bool get servicesReady => throw _privateConstructorUsedError;
+  bool get settingsReady;
+  bool get servicesReady;
   @JsonKey(ignore: true)
-  _$InProgressInitializationStateCopyWith<_InProgressInitializationState>
+  _$$_InProgressInitializationStateCopyWith<_$_InProgressInitializationState>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FailedInitializationStateCopyWith<$Res> {
-  factory _$FailedInitializationStateCopyWith(_FailedInitializationState value,
-          $Res Function(_FailedInitializationState) then) =
-      __$FailedInitializationStateCopyWithImpl<$Res>;
+abstract class _$$_FailedInitializationStateCopyWith<$Res> {
+  factory _$$_FailedInitializationStateCopyWith(
+          _$_FailedInitializationState value,
+          $Res Function(_$_FailedInitializationState) then) =
+      __$$_FailedInitializationStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FailedInitializationStateCopyWithImpl<$Res>
+class __$$_FailedInitializationStateCopyWithImpl<$Res>
     extends _$InitializationStateCopyWithImpl<$Res>
-    implements _$FailedInitializationStateCopyWith<$Res> {
-  __$FailedInitializationStateCopyWithImpl(_FailedInitializationState _value,
-      $Res Function(_FailedInitializationState) _then)
-      : super(_value, (v) => _then(v as _FailedInitializationState));
+    implements _$$_FailedInitializationStateCopyWith<$Res> {
+  __$$_FailedInitializationStateCopyWithImpl(
+      _$_FailedInitializationState _value,
+      $Res Function(_$_FailedInitializationState) _then)
+      : super(_value, (v) => _then(v as _$_FailedInitializationState));
 
   @override
-  _FailedInitializationState get _value =>
-      super._value as _FailedInitializationState;
+  _$_FailedInitializationState get _value =>
+      super._value as _$_FailedInitializationState;
 }
 
 /// @nodoc
@@ -382,12 +417,14 @@ class _$_FailedInitializationState
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'InitializationState.failed'));
+    properties.add(DiagnosticsProperty('type', 'InitializationState.failed'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FailedInitializationState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_FailedInitializationState);
   }
 
   @override
@@ -402,6 +439,16 @@ class _$_FailedInitializationState
     required TResult Function() failed,
   }) {
     return failed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? completed,
+    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function()? failed,
+  }) {
+    return failed?.call();
   }
 
   @override
@@ -426,6 +473,16 @@ class _$_FailedInitializationState
     required TResult Function(_FailedInitializationState value) failed,
   }) {
     return failed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CompletedInitializationState value)? completed,
+    TResult Function(_InProgressInitializationState value)? inProgress,
+    TResult Function(_FailedInitializationState value)? failed,
+  }) {
+    return failed?.call(this);
   }
 
   @override

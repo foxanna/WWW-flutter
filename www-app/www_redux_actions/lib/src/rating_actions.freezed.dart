@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'rating_actions.dart';
 
@@ -10,25 +12,7 @@ part of 'rating_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserActionRatingTearOff {
-  const _$UserActionRatingTearOff();
-
-  RateRatingUserAction rate({required int rating}) {
-    return RateRatingUserAction(
-      rating: rating,
-    );
-  }
-
-  NeverAskRatingUserAction neverAsk() {
-    return const NeverAskRatingUserAction();
-  }
-}
-
-/// @nodoc
-const $UserActionRating = _$UserActionRatingTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UserActionRating {
@@ -36,6 +20,12 @@ mixin _$UserActionRating {
   TResult when<TResult extends Object?>({
     required TResult Function(int rating) rate,
     required TResult Function() neverAsk,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int rating)? rate,
+    TResult Function()? neverAsk,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,6 +39,12 @@ mixin _$UserActionRating {
   TResult map<TResult extends Object?>({
     required TResult Function(RateRatingUserAction value) rate,
     required TResult Function(NeverAskRatingUserAction value) neverAsk,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RateRatingUserAction value)? rate,
+    TResult Function(NeverAskRatingUserAction value)? neverAsk,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,29 +74,29 @@ class _$UserActionRatingCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $RateRatingUserActionCopyWith<$Res> {
-  factory $RateRatingUserActionCopyWith(RateRatingUserAction value,
-          $Res Function(RateRatingUserAction) then) =
-      _$RateRatingUserActionCopyWithImpl<$Res>;
+abstract class _$$RateRatingUserActionCopyWith<$Res> {
+  factory _$$RateRatingUserActionCopyWith(_$RateRatingUserAction value,
+          $Res Function(_$RateRatingUserAction) then) =
+      __$$RateRatingUserActionCopyWithImpl<$Res>;
   $Res call({int rating});
 }
 
 /// @nodoc
-class _$RateRatingUserActionCopyWithImpl<$Res>
+class __$$RateRatingUserActionCopyWithImpl<$Res>
     extends _$UserActionRatingCopyWithImpl<$Res>
-    implements $RateRatingUserActionCopyWith<$Res> {
-  _$RateRatingUserActionCopyWithImpl(
-      RateRatingUserAction _value, $Res Function(RateRatingUserAction) _then)
-      : super(_value, (v) => _then(v as RateRatingUserAction));
+    implements _$$RateRatingUserActionCopyWith<$Res> {
+  __$$RateRatingUserActionCopyWithImpl(_$RateRatingUserAction _value,
+      $Res Function(_$RateRatingUserAction) _then)
+      : super(_value, (v) => _then(v as _$RateRatingUserAction));
 
   @override
-  RateRatingUserAction get _value => super._value as RateRatingUserAction;
+  _$RateRatingUserAction get _value => super._value as _$RateRatingUserAction;
 
   @override
   $Res call({
     Object? rating = freezed,
   }) {
-    return _then(RateRatingUserAction(
+    return _then(_$RateRatingUserAction(
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
@@ -135,19 +131,19 @@ class _$RateRatingUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RateRatingUserAction &&
-            (identical(other.rating, rating) ||
-                const DeepCollectionEquality().equals(other.rating, rating)));
+        (other.runtimeType == runtimeType &&
+            other is _$RateRatingUserAction &&
+            const DeepCollectionEquality().equals(other.rating, rating));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(rating);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(rating));
 
   @JsonKey(ignore: true)
   @override
-  $RateRatingUserActionCopyWith<RateRatingUserAction> get copyWith =>
-      _$RateRatingUserActionCopyWithImpl<RateRatingUserAction>(
+  _$$RateRatingUserActionCopyWith<_$RateRatingUserAction> get copyWith =>
+      __$$RateRatingUserActionCopyWithImpl<_$RateRatingUserAction>(
           this, _$identity);
 
   @override
@@ -157,6 +153,15 @@ class _$RateRatingUserAction
     required TResult Function() neverAsk,
   }) {
     return rate(rating);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int rating)? rate,
+    TResult Function()? neverAsk,
+  }) {
+    return rate?.call(rating);
   }
 
   @override
@@ -183,6 +188,15 @@ class _$RateRatingUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RateRatingUserAction value)? rate,
+    TResult Function(NeverAskRatingUserAction value)? neverAsk,
+  }) {
+    return rate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RateRatingUserAction value)? rate,
     TResult Function(NeverAskRatingUserAction value)? neverAsk,
@@ -196,33 +210,33 @@ class _$RateRatingUserAction
 }
 
 abstract class RateRatingUserAction implements UserActionRating {
-  const factory RateRatingUserAction({required int rating}) =
+  const factory RateRatingUserAction({required final int rating}) =
       _$RateRatingUserAction;
 
-  int get rating => throw _privateConstructorUsedError;
+  int get rating;
   @JsonKey(ignore: true)
-  $RateRatingUserActionCopyWith<RateRatingUserAction> get copyWith =>
+  _$$RateRatingUserActionCopyWith<_$RateRatingUserAction> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NeverAskRatingUserActionCopyWith<$Res> {
-  factory $NeverAskRatingUserActionCopyWith(NeverAskRatingUserAction value,
-          $Res Function(NeverAskRatingUserAction) then) =
-      _$NeverAskRatingUserActionCopyWithImpl<$Res>;
+abstract class _$$NeverAskRatingUserActionCopyWith<$Res> {
+  factory _$$NeverAskRatingUserActionCopyWith(_$NeverAskRatingUserAction value,
+          $Res Function(_$NeverAskRatingUserAction) then) =
+      __$$NeverAskRatingUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NeverAskRatingUserActionCopyWithImpl<$Res>
+class __$$NeverAskRatingUserActionCopyWithImpl<$Res>
     extends _$UserActionRatingCopyWithImpl<$Res>
-    implements $NeverAskRatingUserActionCopyWith<$Res> {
-  _$NeverAskRatingUserActionCopyWithImpl(NeverAskRatingUserAction _value,
-      $Res Function(NeverAskRatingUserAction) _then)
-      : super(_value, (v) => _then(v as NeverAskRatingUserAction));
+    implements _$$NeverAskRatingUserActionCopyWith<$Res> {
+  __$$NeverAskRatingUserActionCopyWithImpl(_$NeverAskRatingUserAction _value,
+      $Res Function(_$NeverAskRatingUserAction) _then)
+      : super(_value, (v) => _then(v as _$NeverAskRatingUserAction));
 
   @override
-  NeverAskRatingUserAction get _value =>
-      super._value as NeverAskRatingUserAction;
+  _$NeverAskRatingUserAction get _value =>
+      super._value as _$NeverAskRatingUserAction;
 }
 
 /// @nodoc
@@ -240,12 +254,14 @@ class _$NeverAskRatingUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionRating.neverAsk'));
+    properties.add(DiagnosticsProperty('type', 'UserActionRating.neverAsk'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NeverAskRatingUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NeverAskRatingUserAction);
   }
 
   @override
@@ -258,6 +274,15 @@ class _$NeverAskRatingUserAction
     required TResult Function() neverAsk,
   }) {
     return neverAsk();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int rating)? rate,
+    TResult Function()? neverAsk,
+  }) {
+    return neverAsk?.call();
   }
 
   @override
@@ -280,6 +305,15 @@ class _$NeverAskRatingUserAction
     required TResult Function(NeverAskRatingUserAction value) neverAsk,
   }) {
     return neverAsk(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RateRatingUserAction value)? rate,
+    TResult Function(NeverAskRatingUserAction value)? neverAsk,
+  }) {
+    return neverAsk?.call(this);
   }
 
   @override

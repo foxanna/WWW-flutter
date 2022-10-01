@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'browse_actions.dart';
 
@@ -10,43 +12,7 @@ part of 'browse_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserActionBrowseTearOff {
-  const _$UserActionBrowseTearOff();
-
-  DatabaseBrowseUserAction database() {
-    return const DatabaseBrowseUserAction();
-  }
-
-  QuestionBrowseUserAction question({required QuestionInfo info}) {
-    return QuestionBrowseUserAction(
-      info: info,
-    );
-  }
-
-  TourBrowseUserAction tour({required TourInfo info}) {
-    return TourBrowseUserAction(
-      info: info,
-    );
-  }
-
-  TournamentBrowseUserAction tournament({required TournamentInfo info}) {
-    return TournamentBrowseUserAction(
-      info: info,
-    );
-  }
-
-  UriBrowseUserAction uri({required String uri}) {
-    return UriBrowseUserAction(
-      uri: uri,
-    );
-  }
-}
-
-/// @nodoc
-const $UserActionBrowse = _$UserActionBrowseTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UserActionBrowse {
@@ -57,6 +23,15 @@ mixin _$UserActionBrowse {
     required TResult Function(TourInfo info) tour,
     required TResult Function(TournamentInfo info) tournament,
     required TResult Function(String uri) uri,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    TResult Function(String uri)? uri,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +51,15 @@ mixin _$UserActionBrowse {
     required TResult Function(TourBrowseUserAction value) tour,
     required TResult Function(TournamentBrowseUserAction value) tournament,
     required TResult Function(UriBrowseUserAction value) uri,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    TResult Function(UriBrowseUserAction value)? uri,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,23 +92,23 @@ class _$UserActionBrowseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $DatabaseBrowseUserActionCopyWith<$Res> {
-  factory $DatabaseBrowseUserActionCopyWith(DatabaseBrowseUserAction value,
-          $Res Function(DatabaseBrowseUserAction) then) =
-      _$DatabaseBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$DatabaseBrowseUserActionCopyWith<$Res> {
+  factory _$$DatabaseBrowseUserActionCopyWith(_$DatabaseBrowseUserAction value,
+          $Res Function(_$DatabaseBrowseUserAction) then) =
+      __$$DatabaseBrowseUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DatabaseBrowseUserActionCopyWithImpl<$Res>
+class __$$DatabaseBrowseUserActionCopyWithImpl<$Res>
     extends _$UserActionBrowseCopyWithImpl<$Res>
-    implements $DatabaseBrowseUserActionCopyWith<$Res> {
-  _$DatabaseBrowseUserActionCopyWithImpl(DatabaseBrowseUserAction _value,
-      $Res Function(DatabaseBrowseUserAction) _then)
-      : super(_value, (v) => _then(v as DatabaseBrowseUserAction));
+    implements _$$DatabaseBrowseUserActionCopyWith<$Res> {
+  __$$DatabaseBrowseUserActionCopyWithImpl(_$DatabaseBrowseUserAction _value,
+      $Res Function(_$DatabaseBrowseUserAction) _then)
+      : super(_value, (v) => _then(v as _$DatabaseBrowseUserAction));
 
   @override
-  DatabaseBrowseUserAction get _value =>
-      super._value as DatabaseBrowseUserAction;
+  _$DatabaseBrowseUserAction get _value =>
+      super._value as _$DatabaseBrowseUserAction;
 }
 
 /// @nodoc
@@ -142,12 +126,14 @@ class _$DatabaseBrowseUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionBrowse.database'));
+    properties.add(DiagnosticsProperty('type', 'UserActionBrowse.database'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DatabaseBrowseUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DatabaseBrowseUserAction);
   }
 
   @override
@@ -163,6 +149,18 @@ class _$DatabaseBrowseUserAction
     required TResult Function(String uri) uri,
   }) {
     return database();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    TResult Function(String uri)? uri,
+  }) {
+    return database?.call();
   }
 
   @override
@@ -195,6 +193,18 @@ class _$DatabaseBrowseUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    TResult Function(UriBrowseUserAction value)? uri,
+  }) {
+    return database?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DatabaseBrowseUserAction value)? database,
     TResult Function(QuestionBrowseUserAction value)? question,
@@ -215,32 +225,32 @@ abstract class DatabaseBrowseUserAction implements UserActionBrowse {
 }
 
 /// @nodoc
-abstract class $QuestionBrowseUserActionCopyWith<$Res> {
-  factory $QuestionBrowseUserActionCopyWith(QuestionBrowseUserAction value,
-          $Res Function(QuestionBrowseUserAction) then) =
-      _$QuestionBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$QuestionBrowseUserActionCopyWith<$Res> {
+  factory _$$QuestionBrowseUserActionCopyWith(_$QuestionBrowseUserAction value,
+          $Res Function(_$QuestionBrowseUserAction) then) =
+      __$$QuestionBrowseUserActionCopyWithImpl<$Res>;
   $Res call({QuestionInfo info});
 
   $QuestionInfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class _$QuestionBrowseUserActionCopyWithImpl<$Res>
+class __$$QuestionBrowseUserActionCopyWithImpl<$Res>
     extends _$UserActionBrowseCopyWithImpl<$Res>
-    implements $QuestionBrowseUserActionCopyWith<$Res> {
-  _$QuestionBrowseUserActionCopyWithImpl(QuestionBrowseUserAction _value,
-      $Res Function(QuestionBrowseUserAction) _then)
-      : super(_value, (v) => _then(v as QuestionBrowseUserAction));
+    implements _$$QuestionBrowseUserActionCopyWith<$Res> {
+  __$$QuestionBrowseUserActionCopyWithImpl(_$QuestionBrowseUserAction _value,
+      $Res Function(_$QuestionBrowseUserAction) _then)
+      : super(_value, (v) => _then(v as _$QuestionBrowseUserAction));
 
   @override
-  QuestionBrowseUserAction get _value =>
-      super._value as QuestionBrowseUserAction;
+  _$QuestionBrowseUserAction get _value =>
+      super._value as _$QuestionBrowseUserAction;
 
   @override
   $Res call({
     Object? info = freezed,
   }) {
-    return _then(QuestionBrowseUserAction(
+    return _then(_$QuestionBrowseUserAction(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -282,20 +292,21 @@ class _$QuestionBrowseUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QuestionBrowseUserAction &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
+        (other.runtimeType == runtimeType &&
+            other is _$QuestionBrowseUserAction &&
+            const DeepCollectionEquality().equals(other.info, info));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
 
   @JsonKey(ignore: true)
   @override
-  $QuestionBrowseUserActionCopyWith<QuestionBrowseUserAction> get copyWith =>
-      _$QuestionBrowseUserActionCopyWithImpl<QuestionBrowseUserAction>(
-          this, _$identity);
+  _$$QuestionBrowseUserActionCopyWith<_$QuestionBrowseUserAction>
+      get copyWith =>
+          __$$QuestionBrowseUserActionCopyWithImpl<_$QuestionBrowseUserAction>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -307,6 +318,18 @@ class _$QuestionBrowseUserAction
     required TResult Function(String uri) uri,
   }) {
     return question(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    TResult Function(String uri)? uri,
+  }) {
+    return question?.call(info);
   }
 
   @override
@@ -339,6 +362,18 @@ class _$QuestionBrowseUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    TResult Function(UriBrowseUserAction value)? uri,
+  }) {
+    return question?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DatabaseBrowseUserAction value)? database,
     TResult Function(QuestionBrowseUserAction value)? question,
@@ -355,41 +390,41 @@ class _$QuestionBrowseUserAction
 }
 
 abstract class QuestionBrowseUserAction implements UserActionBrowse {
-  const factory QuestionBrowseUserAction({required QuestionInfo info}) =
+  const factory QuestionBrowseUserAction({required final QuestionInfo info}) =
       _$QuestionBrowseUserAction;
 
-  QuestionInfo get info => throw _privateConstructorUsedError;
+  QuestionInfo get info;
   @JsonKey(ignore: true)
-  $QuestionBrowseUserActionCopyWith<QuestionBrowseUserAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$QuestionBrowseUserActionCopyWith<_$QuestionBrowseUserAction>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TourBrowseUserActionCopyWith<$Res> {
-  factory $TourBrowseUserActionCopyWith(TourBrowseUserAction value,
-          $Res Function(TourBrowseUserAction) then) =
-      _$TourBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$TourBrowseUserActionCopyWith<$Res> {
+  factory _$$TourBrowseUserActionCopyWith(_$TourBrowseUserAction value,
+          $Res Function(_$TourBrowseUserAction) then) =
+      __$$TourBrowseUserActionCopyWithImpl<$Res>;
   $Res call({TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class _$TourBrowseUserActionCopyWithImpl<$Res>
+class __$$TourBrowseUserActionCopyWithImpl<$Res>
     extends _$UserActionBrowseCopyWithImpl<$Res>
-    implements $TourBrowseUserActionCopyWith<$Res> {
-  _$TourBrowseUserActionCopyWithImpl(
-      TourBrowseUserAction _value, $Res Function(TourBrowseUserAction) _then)
-      : super(_value, (v) => _then(v as TourBrowseUserAction));
+    implements _$$TourBrowseUserActionCopyWith<$Res> {
+  __$$TourBrowseUserActionCopyWithImpl(_$TourBrowseUserAction _value,
+      $Res Function(_$TourBrowseUserAction) _then)
+      : super(_value, (v) => _then(v as _$TourBrowseUserAction));
 
   @override
-  TourBrowseUserAction get _value => super._value as TourBrowseUserAction;
+  _$TourBrowseUserAction get _value => super._value as _$TourBrowseUserAction;
 
   @override
   $Res call({
     Object? info = freezed,
   }) {
-    return _then(TourBrowseUserAction(
+    return _then(_$TourBrowseUserAction(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -431,19 +466,19 @@ class _$TourBrowseUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is TourBrowseUserAction &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
+        (other.runtimeType == runtimeType &&
+            other is _$TourBrowseUserAction &&
+            const DeepCollectionEquality().equals(other.info, info));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
 
   @JsonKey(ignore: true)
   @override
-  $TourBrowseUserActionCopyWith<TourBrowseUserAction> get copyWith =>
-      _$TourBrowseUserActionCopyWithImpl<TourBrowseUserAction>(
+  _$$TourBrowseUserActionCopyWith<_$TourBrowseUserAction> get copyWith =>
+      __$$TourBrowseUserActionCopyWithImpl<_$TourBrowseUserAction>(
           this, _$identity);
 
   @override
@@ -456,6 +491,18 @@ class _$TourBrowseUserAction
     required TResult Function(String uri) uri,
   }) {
     return tour(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    TResult Function(String uri)? uri,
+  }) {
+    return tour?.call(info);
   }
 
   @override
@@ -488,6 +535,18 @@ class _$TourBrowseUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    TResult Function(UriBrowseUserAction value)? uri,
+  }) {
+    return tour?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DatabaseBrowseUserAction value)? database,
     TResult Function(QuestionBrowseUserAction value)? question,
@@ -504,42 +563,44 @@ class _$TourBrowseUserAction
 }
 
 abstract class TourBrowseUserAction implements UserActionBrowse {
-  const factory TourBrowseUserAction({required TourInfo info}) =
+  const factory TourBrowseUserAction({required final TourInfo info}) =
       _$TourBrowseUserAction;
 
-  TourInfo get info => throw _privateConstructorUsedError;
+  TourInfo get info;
   @JsonKey(ignore: true)
-  $TourBrowseUserActionCopyWith<TourBrowseUserAction> get copyWith =>
+  _$$TourBrowseUserActionCopyWith<_$TourBrowseUserAction> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TournamentBrowseUserActionCopyWith<$Res> {
-  factory $TournamentBrowseUserActionCopyWith(TournamentBrowseUserAction value,
-          $Res Function(TournamentBrowseUserAction) then) =
-      _$TournamentBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$TournamentBrowseUserActionCopyWith<$Res> {
+  factory _$$TournamentBrowseUserActionCopyWith(
+          _$TournamentBrowseUserAction value,
+          $Res Function(_$TournamentBrowseUserAction) then) =
+      __$$TournamentBrowseUserActionCopyWithImpl<$Res>;
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class _$TournamentBrowseUserActionCopyWithImpl<$Res>
+class __$$TournamentBrowseUserActionCopyWithImpl<$Res>
     extends _$UserActionBrowseCopyWithImpl<$Res>
-    implements $TournamentBrowseUserActionCopyWith<$Res> {
-  _$TournamentBrowseUserActionCopyWithImpl(TournamentBrowseUserAction _value,
-      $Res Function(TournamentBrowseUserAction) _then)
-      : super(_value, (v) => _then(v as TournamentBrowseUserAction));
+    implements _$$TournamentBrowseUserActionCopyWith<$Res> {
+  __$$TournamentBrowseUserActionCopyWithImpl(
+      _$TournamentBrowseUserAction _value,
+      $Res Function(_$TournamentBrowseUserAction) _then)
+      : super(_value, (v) => _then(v as _$TournamentBrowseUserAction));
 
   @override
-  TournamentBrowseUserAction get _value =>
-      super._value as TournamentBrowseUserAction;
+  _$TournamentBrowseUserAction get _value =>
+      super._value as _$TournamentBrowseUserAction;
 
   @override
   $Res call({
     Object? info = freezed,
   }) {
-    return _then(TournamentBrowseUserAction(
+    return _then(_$TournamentBrowseUserAction(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -581,21 +642,20 @@ class _$TournamentBrowseUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is TournamentBrowseUserAction &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
+        (other.runtimeType == runtimeType &&
+            other is _$TournamentBrowseUserAction &&
+            const DeepCollectionEquality().equals(other.info, info));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
 
   @JsonKey(ignore: true)
   @override
-  $TournamentBrowseUserActionCopyWith<TournamentBrowseUserAction>
-      get copyWith =>
-          _$TournamentBrowseUserActionCopyWithImpl<TournamentBrowseUserAction>(
-              this, _$identity);
+  _$$TournamentBrowseUserActionCopyWith<_$TournamentBrowseUserAction>
+      get copyWith => __$$TournamentBrowseUserActionCopyWithImpl<
+          _$TournamentBrowseUserAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -607,6 +667,18 @@ class _$TournamentBrowseUserAction
     required TResult Function(String uri) uri,
   }) {
     return tournament(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    TResult Function(String uri)? uri,
+  }) {
+    return tournament?.call(info);
   }
 
   @override
@@ -639,6 +711,18 @@ class _$TournamentBrowseUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    TResult Function(UriBrowseUserAction value)? uri,
+  }) {
+    return tournament?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DatabaseBrowseUserAction value)? database,
     TResult Function(QuestionBrowseUserAction value)? question,
@@ -655,39 +739,39 @@ class _$TournamentBrowseUserAction
 }
 
 abstract class TournamentBrowseUserAction implements UserActionBrowse {
-  const factory TournamentBrowseUserAction({required TournamentInfo info}) =
-      _$TournamentBrowseUserAction;
+  const factory TournamentBrowseUserAction(
+      {required final TournamentInfo info}) = _$TournamentBrowseUserAction;
 
-  TournamentInfo get info => throw _privateConstructorUsedError;
+  TournamentInfo get info;
   @JsonKey(ignore: true)
-  $TournamentBrowseUserActionCopyWith<TournamentBrowseUserAction>
+  _$$TournamentBrowseUserActionCopyWith<_$TournamentBrowseUserAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UriBrowseUserActionCopyWith<$Res> {
-  factory $UriBrowseUserActionCopyWith(
-          UriBrowseUserAction value, $Res Function(UriBrowseUserAction) then) =
-      _$UriBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$UriBrowseUserActionCopyWith<$Res> {
+  factory _$$UriBrowseUserActionCopyWith(_$UriBrowseUserAction value,
+          $Res Function(_$UriBrowseUserAction) then) =
+      __$$UriBrowseUserActionCopyWithImpl<$Res>;
   $Res call({String uri});
 }
 
 /// @nodoc
-class _$UriBrowseUserActionCopyWithImpl<$Res>
+class __$$UriBrowseUserActionCopyWithImpl<$Res>
     extends _$UserActionBrowseCopyWithImpl<$Res>
-    implements $UriBrowseUserActionCopyWith<$Res> {
-  _$UriBrowseUserActionCopyWithImpl(
-      UriBrowseUserAction _value, $Res Function(UriBrowseUserAction) _then)
-      : super(_value, (v) => _then(v as UriBrowseUserAction));
+    implements _$$UriBrowseUserActionCopyWith<$Res> {
+  __$$UriBrowseUserActionCopyWithImpl(
+      _$UriBrowseUserAction _value, $Res Function(_$UriBrowseUserAction) _then)
+      : super(_value, (v) => _then(v as _$UriBrowseUserAction));
 
   @override
-  UriBrowseUserAction get _value => super._value as UriBrowseUserAction;
+  _$UriBrowseUserAction get _value => super._value as _$UriBrowseUserAction;
 
   @override
   $Res call({
     Object? uri = freezed,
   }) {
-    return _then(UriBrowseUserAction(
+    return _then(_$UriBrowseUserAction(
       uri: uri == freezed
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -722,19 +806,20 @@ class _$UriBrowseUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UriBrowseUserAction &&
-            (identical(other.uri, uri) ||
-                const DeepCollectionEquality().equals(other.uri, uri)));
+        (other.runtimeType == runtimeType &&
+            other is _$UriBrowseUserAction &&
+            const DeepCollectionEquality().equals(other.uri, uri));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(uri);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(uri));
 
   @JsonKey(ignore: true)
   @override
-  $UriBrowseUserActionCopyWith<UriBrowseUserAction> get copyWith =>
-      _$UriBrowseUserActionCopyWithImpl<UriBrowseUserAction>(this, _$identity);
+  _$$UriBrowseUserActionCopyWith<_$UriBrowseUserAction> get copyWith =>
+      __$$UriBrowseUserActionCopyWithImpl<_$UriBrowseUserAction>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -746,6 +831,18 @@ class _$UriBrowseUserAction
     required TResult Function(String uri) uri,
   }) {
     return uri(this.uri);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function(QuestionInfo info)? question,
+    TResult Function(TourInfo info)? tour,
+    TResult Function(TournamentInfo info)? tournament,
+    TResult Function(String uri)? uri,
+  }) {
+    return uri?.call(this.uri);
   }
 
   @override
@@ -778,6 +875,18 @@ class _$UriBrowseUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DatabaseBrowseUserAction value)? database,
+    TResult Function(QuestionBrowseUserAction value)? question,
+    TResult Function(TourBrowseUserAction value)? tour,
+    TResult Function(TournamentBrowseUserAction value)? tournament,
+    TResult Function(UriBrowseUserAction value)? uri,
+  }) {
+    return uri?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DatabaseBrowseUserAction value)? database,
     TResult Function(QuestionBrowseUserAction value)? question,
@@ -794,11 +903,11 @@ class _$UriBrowseUserAction
 }
 
 abstract class UriBrowseUserAction implements UserActionBrowse {
-  const factory UriBrowseUserAction({required String uri}) =
+  const factory UriBrowseUserAction({required final String uri}) =
       _$UriBrowseUserAction;
 
-  String get uri => throw _privateConstructorUsedError;
+  String get uri;
   @JsonKey(ignore: true)
-  $UriBrowseUserActionCopyWith<UriBrowseUserAction> get copyWith =>
+  _$$UriBrowseUserActionCopyWith<_$UriBrowseUserAction> get copyWith =>
       throw _privateConstructorUsedError;
 }

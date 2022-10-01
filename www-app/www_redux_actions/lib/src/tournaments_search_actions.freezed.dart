@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tournaments_search_actions.dart';
 
@@ -10,39 +12,7 @@ part of 'tournaments_search_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserActionSearchTearOff {
-  const _$UserActionSearchTearOff();
-
-  OpenSearchUserAction open() {
-    return const OpenSearchUserAction();
-  }
-
-  ExecuteSearchUserAction execute() {
-    return const ExecuteSearchUserAction();
-  }
-
-  CloseSearchUserAction close() {
-    return const CloseSearchUserAction();
-  }
-
-  UpdateTextSearchUserAction updateText({required String query}) {
-    return UpdateTextSearchUserAction(
-      query: query,
-    );
-  }
-
-  UpdateSortingSearchUserAction updateSorting({required Sorting sorting}) {
-    return UpdateSortingSearchUserAction(
-      sorting: sorting,
-    );
-  }
-}
-
-/// @nodoc
-const $UserActionSearch = _$UserActionSearchTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UserActionSearch {
@@ -53,6 +23,15 @@ mixin _$UserActionSearch {
     required TResult Function() close,
     required TResult Function(String query) updateText,
     required TResult Function(Sorting sorting) updateSorting,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +52,15 @@ mixin _$UserActionSearch {
     required TResult Function(UpdateTextSearchUserAction value) updateText,
     required TResult Function(UpdateSortingSearchUserAction value)
         updateSorting,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -105,22 +93,22 @@ class _$UserActionSearchCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $OpenSearchUserActionCopyWith<$Res> {
-  factory $OpenSearchUserActionCopyWith(OpenSearchUserAction value,
-          $Res Function(OpenSearchUserAction) then) =
-      _$OpenSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$OpenSearchUserActionCopyWith<$Res> {
+  factory _$$OpenSearchUserActionCopyWith(_$OpenSearchUserAction value,
+          $Res Function(_$OpenSearchUserAction) then) =
+      __$$OpenSearchUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$OpenSearchUserActionCopyWithImpl<$Res>
+class __$$OpenSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
-    implements $OpenSearchUserActionCopyWith<$Res> {
-  _$OpenSearchUserActionCopyWithImpl(
-      OpenSearchUserAction _value, $Res Function(OpenSearchUserAction) _then)
-      : super(_value, (v) => _then(v as OpenSearchUserAction));
+    implements _$$OpenSearchUserActionCopyWith<$Res> {
+  __$$OpenSearchUserActionCopyWithImpl(_$OpenSearchUserAction _value,
+      $Res Function(_$OpenSearchUserAction) _then)
+      : super(_value, (v) => _then(v as _$OpenSearchUserAction));
 
   @override
-  OpenSearchUserAction get _value => super._value as OpenSearchUserAction;
+  _$OpenSearchUserAction get _value => super._value as _$OpenSearchUserAction;
 }
 
 /// @nodoc
@@ -138,12 +126,13 @@ class _$OpenSearchUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionSearch.open'));
+    properties.add(DiagnosticsProperty('type', 'UserActionSearch.open'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is OpenSearchUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OpenSearchUserAction);
   }
 
   @override
@@ -159,6 +148,18 @@ class _$OpenSearchUserAction
     required TResult Function(Sorting sorting) updateSorting,
   }) {
     return open();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+  }) {
+    return open?.call();
   }
 
   @override
@@ -192,6 +193,18 @@ class _$OpenSearchUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+  }) {
+    return open?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSearchUserAction value)? open,
     TResult Function(ExecuteSearchUserAction value)? execute,
@@ -212,22 +225,23 @@ abstract class OpenSearchUserAction implements UserActionSearch {
 }
 
 /// @nodoc
-abstract class $ExecuteSearchUserActionCopyWith<$Res> {
-  factory $ExecuteSearchUserActionCopyWith(ExecuteSearchUserAction value,
-          $Res Function(ExecuteSearchUserAction) then) =
-      _$ExecuteSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$ExecuteSearchUserActionCopyWith<$Res> {
+  factory _$$ExecuteSearchUserActionCopyWith(_$ExecuteSearchUserAction value,
+          $Res Function(_$ExecuteSearchUserAction) then) =
+      __$$ExecuteSearchUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExecuteSearchUserActionCopyWithImpl<$Res>
+class __$$ExecuteSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
-    implements $ExecuteSearchUserActionCopyWith<$Res> {
-  _$ExecuteSearchUserActionCopyWithImpl(ExecuteSearchUserAction _value,
-      $Res Function(ExecuteSearchUserAction) _then)
-      : super(_value, (v) => _then(v as ExecuteSearchUserAction));
+    implements _$$ExecuteSearchUserActionCopyWith<$Res> {
+  __$$ExecuteSearchUserActionCopyWithImpl(_$ExecuteSearchUserAction _value,
+      $Res Function(_$ExecuteSearchUserAction) _then)
+      : super(_value, (v) => _then(v as _$ExecuteSearchUserAction));
 
   @override
-  ExecuteSearchUserAction get _value => super._value as ExecuteSearchUserAction;
+  _$ExecuteSearchUserAction get _value =>
+      super._value as _$ExecuteSearchUserAction;
 }
 
 /// @nodoc
@@ -245,12 +259,14 @@ class _$ExecuteSearchUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionSearch.execute'));
+    properties.add(DiagnosticsProperty('type', 'UserActionSearch.execute'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ExecuteSearchUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ExecuteSearchUserAction);
   }
 
   @override
@@ -266,6 +282,18 @@ class _$ExecuteSearchUserAction
     required TResult Function(Sorting sorting) updateSorting,
   }) {
     return execute();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+  }) {
+    return execute?.call();
   }
 
   @override
@@ -299,6 +327,18 @@ class _$ExecuteSearchUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+  }) {
+    return execute?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSearchUserAction value)? open,
     TResult Function(ExecuteSearchUserAction value)? execute,
@@ -319,22 +359,22 @@ abstract class ExecuteSearchUserAction implements UserActionSearch {
 }
 
 /// @nodoc
-abstract class $CloseSearchUserActionCopyWith<$Res> {
-  factory $CloseSearchUserActionCopyWith(CloseSearchUserAction value,
-          $Res Function(CloseSearchUserAction) then) =
-      _$CloseSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$CloseSearchUserActionCopyWith<$Res> {
+  factory _$$CloseSearchUserActionCopyWith(_$CloseSearchUserAction value,
+          $Res Function(_$CloseSearchUserAction) then) =
+      __$$CloseSearchUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CloseSearchUserActionCopyWithImpl<$Res>
+class __$$CloseSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
-    implements $CloseSearchUserActionCopyWith<$Res> {
-  _$CloseSearchUserActionCopyWithImpl(
-      CloseSearchUserAction _value, $Res Function(CloseSearchUserAction) _then)
-      : super(_value, (v) => _then(v as CloseSearchUserAction));
+    implements _$$CloseSearchUserActionCopyWith<$Res> {
+  __$$CloseSearchUserActionCopyWithImpl(_$CloseSearchUserAction _value,
+      $Res Function(_$CloseSearchUserAction) _then)
+      : super(_value, (v) => _then(v as _$CloseSearchUserAction));
 
   @override
-  CloseSearchUserAction get _value => super._value as CloseSearchUserAction;
+  _$CloseSearchUserAction get _value => super._value as _$CloseSearchUserAction;
 }
 
 /// @nodoc
@@ -352,12 +392,13 @@ class _$CloseSearchUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionSearch.close'));
+    properties.add(DiagnosticsProperty('type', 'UserActionSearch.close'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CloseSearchUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CloseSearchUserAction);
   }
 
   @override
@@ -373,6 +414,18 @@ class _$CloseSearchUserAction
     required TResult Function(Sorting sorting) updateSorting,
   }) {
     return close();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+  }) {
+    return close?.call();
   }
 
   @override
@@ -406,6 +459,18 @@ class _$CloseSearchUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+  }) {
+    return close?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSearchUserAction value)? open,
     TResult Function(ExecuteSearchUserAction value)? execute,
@@ -426,30 +491,32 @@ abstract class CloseSearchUserAction implements UserActionSearch {
 }
 
 /// @nodoc
-abstract class $UpdateTextSearchUserActionCopyWith<$Res> {
-  factory $UpdateTextSearchUserActionCopyWith(UpdateTextSearchUserAction value,
-          $Res Function(UpdateTextSearchUserAction) then) =
-      _$UpdateTextSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$UpdateTextSearchUserActionCopyWith<$Res> {
+  factory _$$UpdateTextSearchUserActionCopyWith(
+          _$UpdateTextSearchUserAction value,
+          $Res Function(_$UpdateTextSearchUserAction) then) =
+      __$$UpdateTextSearchUserActionCopyWithImpl<$Res>;
   $Res call({String query});
 }
 
 /// @nodoc
-class _$UpdateTextSearchUserActionCopyWithImpl<$Res>
+class __$$UpdateTextSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
-    implements $UpdateTextSearchUserActionCopyWith<$Res> {
-  _$UpdateTextSearchUserActionCopyWithImpl(UpdateTextSearchUserAction _value,
-      $Res Function(UpdateTextSearchUserAction) _then)
-      : super(_value, (v) => _then(v as UpdateTextSearchUserAction));
+    implements _$$UpdateTextSearchUserActionCopyWith<$Res> {
+  __$$UpdateTextSearchUserActionCopyWithImpl(
+      _$UpdateTextSearchUserAction _value,
+      $Res Function(_$UpdateTextSearchUserAction) _then)
+      : super(_value, (v) => _then(v as _$UpdateTextSearchUserAction));
 
   @override
-  UpdateTextSearchUserAction get _value =>
-      super._value as UpdateTextSearchUserAction;
+  _$UpdateTextSearchUserAction get _value =>
+      super._value as _$UpdateTextSearchUserAction;
 
   @override
   $Res call({
     Object? query = freezed,
   }) {
-    return _then(UpdateTextSearchUserAction(
+    return _then(_$UpdateTextSearchUserAction(
       query: query == freezed
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -484,21 +551,20 @@ class _$UpdateTextSearchUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UpdateTextSearchUserAction &&
-            (identical(other.query, query) ||
-                const DeepCollectionEquality().equals(other.query, query)));
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateTextSearchUserAction &&
+            const DeepCollectionEquality().equals(other.query, query));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(query));
 
   @JsonKey(ignore: true)
   @override
-  $UpdateTextSearchUserActionCopyWith<UpdateTextSearchUserAction>
-      get copyWith =>
-          _$UpdateTextSearchUserActionCopyWithImpl<UpdateTextSearchUserAction>(
-              this, _$identity);
+  _$$UpdateTextSearchUserActionCopyWith<_$UpdateTextSearchUserAction>
+      get copyWith => __$$UpdateTextSearchUserActionCopyWithImpl<
+          _$UpdateTextSearchUserAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -510,6 +576,18 @@ class _$UpdateTextSearchUserAction
     required TResult Function(Sorting sorting) updateSorting,
   }) {
     return updateText(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+  }) {
+    return updateText?.call(query);
   }
 
   @override
@@ -543,6 +621,18 @@ class _$UpdateTextSearchUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+  }) {
+    return updateText?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSearchUserAction value)? open,
     TResult Function(ExecuteSearchUserAction value)? execute,
@@ -559,42 +649,42 @@ class _$UpdateTextSearchUserAction
 }
 
 abstract class UpdateTextSearchUserAction implements UserActionSearch {
-  const factory UpdateTextSearchUserAction({required String query}) =
+  const factory UpdateTextSearchUserAction({required final String query}) =
       _$UpdateTextSearchUserAction;
 
-  String get query => throw _privateConstructorUsedError;
+  String get query;
   @JsonKey(ignore: true)
-  $UpdateTextSearchUserActionCopyWith<UpdateTextSearchUserAction>
+  _$$UpdateTextSearchUserActionCopyWith<_$UpdateTextSearchUserAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UpdateSortingSearchUserActionCopyWith<$Res> {
-  factory $UpdateSortingSearchUserActionCopyWith(
-          UpdateSortingSearchUserAction value,
-          $Res Function(UpdateSortingSearchUserAction) then) =
-      _$UpdateSortingSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$UpdateSortingSearchUserActionCopyWith<$Res> {
+  factory _$$UpdateSortingSearchUserActionCopyWith(
+          _$UpdateSortingSearchUserAction value,
+          $Res Function(_$UpdateSortingSearchUserAction) then) =
+      __$$UpdateSortingSearchUserActionCopyWithImpl<$Res>;
   $Res call({Sorting sorting});
 }
 
 /// @nodoc
-class _$UpdateSortingSearchUserActionCopyWithImpl<$Res>
+class __$$UpdateSortingSearchUserActionCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res>
-    implements $UpdateSortingSearchUserActionCopyWith<$Res> {
-  _$UpdateSortingSearchUserActionCopyWithImpl(
-      UpdateSortingSearchUserAction _value,
-      $Res Function(UpdateSortingSearchUserAction) _then)
-      : super(_value, (v) => _then(v as UpdateSortingSearchUserAction));
+    implements _$$UpdateSortingSearchUserActionCopyWith<$Res> {
+  __$$UpdateSortingSearchUserActionCopyWithImpl(
+      _$UpdateSortingSearchUserAction _value,
+      $Res Function(_$UpdateSortingSearchUserAction) _then)
+      : super(_value, (v) => _then(v as _$UpdateSortingSearchUserAction));
 
   @override
-  UpdateSortingSearchUserAction get _value =>
-      super._value as UpdateSortingSearchUserAction;
+  _$UpdateSortingSearchUserAction get _value =>
+      super._value as _$UpdateSortingSearchUserAction;
 
   @override
   $Res call({
     Object? sorting = freezed,
   }) {
-    return _then(UpdateSortingSearchUserAction(
+    return _then(_$UpdateSortingSearchUserAction(
       sorting: sorting == freezed
           ? _value.sorting
           : sorting // ignore: cast_nullable_to_non_nullable
@@ -629,20 +719,20 @@ class _$UpdateSortingSearchUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UpdateSortingSearchUserAction &&
-            (identical(other.sorting, sorting) ||
-                const DeepCollectionEquality().equals(other.sorting, sorting)));
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSortingSearchUserAction &&
+            const DeepCollectionEquality().equals(other.sorting, sorting));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(sorting);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(sorting));
 
   @JsonKey(ignore: true)
   @override
-  $UpdateSortingSearchUserActionCopyWith<UpdateSortingSearchUserAction>
-      get copyWith => _$UpdateSortingSearchUserActionCopyWithImpl<
-          UpdateSortingSearchUserAction>(this, _$identity);
+  _$$UpdateSortingSearchUserActionCopyWith<_$UpdateSortingSearchUserAction>
+      get copyWith => __$$UpdateSortingSearchUserActionCopyWithImpl<
+          _$UpdateSortingSearchUserAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -654,6 +744,18 @@ class _$UpdateSortingSearchUserAction
     required TResult Function(Sorting sorting) updateSorting,
   }) {
     return updateSorting(sorting);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? execute,
+    TResult Function()? close,
+    TResult Function(String query)? updateText,
+    TResult Function(Sorting sorting)? updateSorting,
+  }) {
+    return updateSorting?.call(sorting);
   }
 
   @override
@@ -687,6 +789,18 @@ class _$UpdateSortingSearchUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSearchUserAction value)? open,
+    TResult Function(ExecuteSearchUserAction value)? execute,
+    TResult Function(CloseSearchUserAction value)? close,
+    TResult Function(UpdateTextSearchUserAction value)? updateText,
+    TResult Function(UpdateSortingSearchUserAction value)? updateSorting,
+  }) {
+    return updateSorting?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSearchUserAction value)? open,
     TResult Function(ExecuteSearchUserAction value)? execute,
@@ -703,61 +817,14 @@ class _$UpdateSortingSearchUserAction
 }
 
 abstract class UpdateSortingSearchUserAction implements UserActionSearch {
-  const factory UpdateSortingSearchUserAction({required Sorting sorting}) =
-      _$UpdateSortingSearchUserAction;
+  const factory UpdateSortingSearchUserAction(
+      {required final Sorting sorting}) = _$UpdateSortingSearchUserAction;
 
-  Sorting get sorting => throw _privateConstructorUsedError;
+  Sorting get sorting;
   @JsonKey(ignore: true)
-  $UpdateSortingSearchUserActionCopyWith<UpdateSortingSearchUserAction>
+  _$$UpdateSortingSearchUserActionCopyWith<_$UpdateSortingSearchUserAction>
       get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SystemActionSearchTearOff {
-  const _$SystemActionSearchTearOff();
-
-  InitSearchSystemAction init() {
-    return const InitSearchSystemAction();
-  }
-
-  DeInitSearchSystemAction deInit() {
-    return const DeInitSearchSystemAction();
-  }
-
-  ClearResultsSearchSystemAction clearResults() {
-    return const ClearResultsSearchSystemAction();
-  }
-
-  LoadingSearchSystemAction loading({required SearchParameters parameters}) {
-    return LoadingSearchSystemAction(
-      parameters: parameters,
-    );
-  }
-
-  FailedSearchSystemAction failed(
-      {required SearchParameters parameters, required Exception exception}) {
-    return FailedSearchSystemAction(
-      parameters: parameters,
-      exception: exception,
-    );
-  }
-
-  CompletedSearchSystemAction completed(
-      {required SearchParameters parameters,
-      required Iterable<Tournament> data,
-      required int nextPage,
-      required bool canLoadMore}) {
-    return CompletedSearchSystemAction(
-      parameters: parameters,
-      data: data,
-      nextPage: nextPage,
-      canLoadMore: canLoadMore,
-    );
-  }
-}
-
-/// @nodoc
-const $SystemActionSearch = _$SystemActionSearchTearOff();
 
 /// @nodoc
 mixin _$SystemActionSearch {
@@ -771,6 +838,18 @@ mixin _$SystemActionSearch {
         failed,
     required TResult Function(SearchParameters parameters,
             Iterable<Tournament> data, int nextPage, bool canLoadMore)
+        completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
         completed,
   }) =>
       throw _privateConstructorUsedError;
@@ -796,6 +875,16 @@ mixin _$SystemActionSearch {
     required TResult Function(LoadingSearchSystemAction value) loading,
     required TResult Function(FailedSearchSystemAction value) failed,
     required TResult Function(CompletedSearchSystemAction value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -829,22 +918,23 @@ class _$SystemActionSearchCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitSearchSystemActionCopyWith<$Res> {
-  factory $InitSearchSystemActionCopyWith(InitSearchSystemAction value,
-          $Res Function(InitSearchSystemAction) then) =
-      _$InitSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitSearchSystemActionCopyWith<$Res> {
+  factory _$$InitSearchSystemActionCopyWith(_$InitSearchSystemAction value,
+          $Res Function(_$InitSearchSystemAction) then) =
+      __$$InitSearchSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitSearchSystemActionCopyWithImpl<$Res>
+class __$$InitSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
-    implements $InitSearchSystemActionCopyWith<$Res> {
-  _$InitSearchSystemActionCopyWithImpl(InitSearchSystemAction _value,
-      $Res Function(InitSearchSystemAction) _then)
-      : super(_value, (v) => _then(v as InitSearchSystemAction));
+    implements _$$InitSearchSystemActionCopyWith<$Res> {
+  __$$InitSearchSystemActionCopyWithImpl(_$InitSearchSystemAction _value,
+      $Res Function(_$InitSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as _$InitSearchSystemAction));
 
   @override
-  InitSearchSystemAction get _value => super._value as InitSearchSystemAction;
+  _$InitSearchSystemAction get _value =>
+      super._value as _$InitSearchSystemAction;
 }
 
 /// @nodoc
@@ -862,12 +952,13 @@ class _$InitSearchSystemAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SystemActionSearch.init'));
+    properties.add(DiagnosticsProperty('type', 'SystemActionSearch.init'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitSearchSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitSearchSystemAction);
   }
 
   @override
@@ -887,6 +978,21 @@ class _$InitSearchSystemAction
         completed,
   }) {
     return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+  }) {
+    return init?.call();
   }
 
   @override
@@ -924,6 +1030,19 @@ class _$InitSearchSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+  }) {
+    return init?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitSearchSystemAction value)? init,
     TResult Function(DeInitSearchSystemAction value)? deInit,
@@ -945,23 +1064,23 @@ abstract class InitSearchSystemAction implements SystemActionSearch {
 }
 
 /// @nodoc
-abstract class $DeInitSearchSystemActionCopyWith<$Res> {
-  factory $DeInitSearchSystemActionCopyWith(DeInitSearchSystemAction value,
-          $Res Function(DeInitSearchSystemAction) then) =
-      _$DeInitSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$DeInitSearchSystemActionCopyWith<$Res> {
+  factory _$$DeInitSearchSystemActionCopyWith(_$DeInitSearchSystemAction value,
+          $Res Function(_$DeInitSearchSystemAction) then) =
+      __$$DeInitSearchSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeInitSearchSystemActionCopyWithImpl<$Res>
+class __$$DeInitSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
-    implements $DeInitSearchSystemActionCopyWith<$Res> {
-  _$DeInitSearchSystemActionCopyWithImpl(DeInitSearchSystemAction _value,
-      $Res Function(DeInitSearchSystemAction) _then)
-      : super(_value, (v) => _then(v as DeInitSearchSystemAction));
+    implements _$$DeInitSearchSystemActionCopyWith<$Res> {
+  __$$DeInitSearchSystemActionCopyWithImpl(_$DeInitSearchSystemAction _value,
+      $Res Function(_$DeInitSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as _$DeInitSearchSystemAction));
 
   @override
-  DeInitSearchSystemAction get _value =>
-      super._value as DeInitSearchSystemAction;
+  _$DeInitSearchSystemAction get _value =>
+      super._value as _$DeInitSearchSystemAction;
 }
 
 /// @nodoc
@@ -979,12 +1098,14 @@ class _$DeInitSearchSystemAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SystemActionSearch.deInit'));
+    properties.add(DiagnosticsProperty('type', 'SystemActionSearch.deInit'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DeInitSearchSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeInitSearchSystemAction);
   }
 
   @override
@@ -1004,6 +1125,21 @@ class _$DeInitSearchSystemAction
         completed,
   }) {
     return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+  }) {
+    return deInit?.call();
   }
 
   @override
@@ -1041,6 +1177,19 @@ class _$DeInitSearchSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+  }) {
+    return deInit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitSearchSystemAction value)? init,
     TResult Function(DeInitSearchSystemAction value)? deInit,
@@ -1062,25 +1211,25 @@ abstract class DeInitSearchSystemAction implements SystemActionSearch {
 }
 
 /// @nodoc
-abstract class $ClearResultsSearchSystemActionCopyWith<$Res> {
-  factory $ClearResultsSearchSystemActionCopyWith(
-          ClearResultsSearchSystemAction value,
-          $Res Function(ClearResultsSearchSystemAction) then) =
-      _$ClearResultsSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$ClearResultsSearchSystemActionCopyWith<$Res> {
+  factory _$$ClearResultsSearchSystemActionCopyWith(
+          _$ClearResultsSearchSystemAction value,
+          $Res Function(_$ClearResultsSearchSystemAction) then) =
+      __$$ClearResultsSearchSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ClearResultsSearchSystemActionCopyWithImpl<$Res>
+class __$$ClearResultsSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
-    implements $ClearResultsSearchSystemActionCopyWith<$Res> {
-  _$ClearResultsSearchSystemActionCopyWithImpl(
-      ClearResultsSearchSystemAction _value,
-      $Res Function(ClearResultsSearchSystemAction) _then)
-      : super(_value, (v) => _then(v as ClearResultsSearchSystemAction));
+    implements _$$ClearResultsSearchSystemActionCopyWith<$Res> {
+  __$$ClearResultsSearchSystemActionCopyWithImpl(
+      _$ClearResultsSearchSystemAction _value,
+      $Res Function(_$ClearResultsSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as _$ClearResultsSearchSystemAction));
 
   @override
-  ClearResultsSearchSystemAction get _value =>
-      super._value as ClearResultsSearchSystemAction;
+  _$ClearResultsSearchSystemAction get _value =>
+      super._value as _$ClearResultsSearchSystemAction;
 }
 
 /// @nodoc
@@ -1099,12 +1248,14 @@ class _$ClearResultsSearchSystemAction
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SystemActionSearch.clearResults'));
+        .add(DiagnosticsProperty('type', 'SystemActionSearch.clearResults'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ClearResultsSearchSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ClearResultsSearchSystemAction);
   }
 
   @override
@@ -1124,6 +1275,21 @@ class _$ClearResultsSearchSystemAction
         completed,
   }) {
     return clearResults();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+  }) {
+    return clearResults?.call();
   }
 
   @override
@@ -1161,6 +1327,19 @@ class _$ClearResultsSearchSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+  }) {
+    return clearResults?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitSearchSystemAction value)? init,
     TResult Function(DeInitSearchSystemAction value)? deInit,
@@ -1183,32 +1362,33 @@ abstract class ClearResultsSearchSystemAction implements SystemActionSearch {
 }
 
 /// @nodoc
-abstract class $LoadingSearchSystemActionCopyWith<$Res> {
-  factory $LoadingSearchSystemActionCopyWith(LoadingSearchSystemAction value,
-          $Res Function(LoadingSearchSystemAction) then) =
-      _$LoadingSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$LoadingSearchSystemActionCopyWith<$Res> {
+  factory _$$LoadingSearchSystemActionCopyWith(
+          _$LoadingSearchSystemAction value,
+          $Res Function(_$LoadingSearchSystemAction) then) =
+      __$$LoadingSearchSystemActionCopyWithImpl<$Res>;
   $Res call({SearchParameters parameters});
 
   $SearchParametersCopyWith<$Res> get parameters;
 }
 
 /// @nodoc
-class _$LoadingSearchSystemActionCopyWithImpl<$Res>
+class __$$LoadingSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
-    implements $LoadingSearchSystemActionCopyWith<$Res> {
-  _$LoadingSearchSystemActionCopyWithImpl(LoadingSearchSystemAction _value,
-      $Res Function(LoadingSearchSystemAction) _then)
-      : super(_value, (v) => _then(v as LoadingSearchSystemAction));
+    implements _$$LoadingSearchSystemActionCopyWith<$Res> {
+  __$$LoadingSearchSystemActionCopyWithImpl(_$LoadingSearchSystemAction _value,
+      $Res Function(_$LoadingSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as _$LoadingSearchSystemAction));
 
   @override
-  LoadingSearchSystemAction get _value =>
-      super._value as LoadingSearchSystemAction;
+  _$LoadingSearchSystemAction get _value =>
+      super._value as _$LoadingSearchSystemAction;
 
   @override
   $Res call({
     Object? parameters = freezed,
   }) {
-    return _then(LoadingSearchSystemAction(
+    return _then(_$LoadingSearchSystemAction(
       parameters: parameters == freezed
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -1250,21 +1430,21 @@ class _$LoadingSearchSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadingSearchSystemAction &&
-            (identical(other.parameters, parameters) ||
-                const DeepCollectionEquality()
-                    .equals(other.parameters, parameters)));
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingSearchSystemAction &&
+            const DeepCollectionEquality()
+                .equals(other.parameters, parameters));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(parameters);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(parameters));
 
   @JsonKey(ignore: true)
   @override
-  $LoadingSearchSystemActionCopyWith<LoadingSearchSystemAction> get copyWith =>
-      _$LoadingSearchSystemActionCopyWithImpl<LoadingSearchSystemAction>(
-          this, _$identity);
+  _$$LoadingSearchSystemActionCopyWith<_$LoadingSearchSystemAction>
+      get copyWith => __$$LoadingSearchSystemActionCopyWithImpl<
+          _$LoadingSearchSystemAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1280,6 +1460,21 @@ class _$LoadingSearchSystemAction
         completed,
   }) {
     return loading(parameters);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+  }) {
+    return loading?.call(parameters);
   }
 
   @override
@@ -1317,6 +1512,19 @@ class _$LoadingSearchSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitSearchSystemAction value)? init,
     TResult Function(DeInitSearchSystemAction value)? deInit,
@@ -1335,42 +1543,43 @@ class _$LoadingSearchSystemAction
 
 abstract class LoadingSearchSystemAction implements SystemActionSearch {
   const factory LoadingSearchSystemAction(
-      {required SearchParameters parameters}) = _$LoadingSearchSystemAction;
+          {required final SearchParameters parameters}) =
+      _$LoadingSearchSystemAction;
 
-  SearchParameters get parameters => throw _privateConstructorUsedError;
+  SearchParameters get parameters;
   @JsonKey(ignore: true)
-  $LoadingSearchSystemActionCopyWith<LoadingSearchSystemAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoadingSearchSystemActionCopyWith<_$LoadingSearchSystemAction>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FailedSearchSystemActionCopyWith<$Res> {
-  factory $FailedSearchSystemActionCopyWith(FailedSearchSystemAction value,
-          $Res Function(FailedSearchSystemAction) then) =
-      _$FailedSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$FailedSearchSystemActionCopyWith<$Res> {
+  factory _$$FailedSearchSystemActionCopyWith(_$FailedSearchSystemAction value,
+          $Res Function(_$FailedSearchSystemAction) then) =
+      __$$FailedSearchSystemActionCopyWithImpl<$Res>;
   $Res call({SearchParameters parameters, Exception exception});
 
   $SearchParametersCopyWith<$Res> get parameters;
 }
 
 /// @nodoc
-class _$FailedSearchSystemActionCopyWithImpl<$Res>
+class __$$FailedSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
-    implements $FailedSearchSystemActionCopyWith<$Res> {
-  _$FailedSearchSystemActionCopyWithImpl(FailedSearchSystemAction _value,
-      $Res Function(FailedSearchSystemAction) _then)
-      : super(_value, (v) => _then(v as FailedSearchSystemAction));
+    implements _$$FailedSearchSystemActionCopyWith<$Res> {
+  __$$FailedSearchSystemActionCopyWithImpl(_$FailedSearchSystemAction _value,
+      $Res Function(_$FailedSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as _$FailedSearchSystemAction));
 
   @override
-  FailedSearchSystemAction get _value =>
-      super._value as FailedSearchSystemAction;
+  _$FailedSearchSystemAction get _value =>
+      super._value as _$FailedSearchSystemAction;
 
   @override
   $Res call({
     Object? parameters = freezed,
     Object? exception = freezed,
   }) {
-    return _then(FailedSearchSystemAction(
+    return _then(_$FailedSearchSystemAction(
       parameters: parameters == freezed
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -1420,26 +1629,25 @@ class _$FailedSearchSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is FailedSearchSystemAction &&
-            (identical(other.parameters, parameters) ||
-                const DeepCollectionEquality()
-                    .equals(other.parameters, parameters)) &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+        (other.runtimeType == runtimeType &&
+            other is _$FailedSearchSystemAction &&
+            const DeepCollectionEquality()
+                .equals(other.parameters, parameters) &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(parameters) ^
-      const DeepCollectionEquality().hash(exception);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(parameters),
+      const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $FailedSearchSystemActionCopyWith<FailedSearchSystemAction> get copyWith =>
-      _$FailedSearchSystemActionCopyWithImpl<FailedSearchSystemAction>(
-          this, _$identity);
+  _$$FailedSearchSystemActionCopyWith<_$FailedSearchSystemAction>
+      get copyWith =>
+          __$$FailedSearchSystemActionCopyWithImpl<_$FailedSearchSystemAction>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1455,6 +1663,21 @@ class _$FailedSearchSystemAction
         completed,
   }) {
     return failed(parameters, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+  }) {
+    return failed?.call(parameters, exception);
   }
 
   @override
@@ -1492,6 +1715,19 @@ class _$FailedSearchSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+  }) {
+    return failed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitSearchSystemAction value)? init,
     TResult Function(DeInitSearchSystemAction value)? deInit,
@@ -1510,22 +1746,22 @@ class _$FailedSearchSystemAction
 
 abstract class FailedSearchSystemAction implements SystemActionSearch {
   const factory FailedSearchSystemAction(
-      {required SearchParameters parameters,
-      required Exception exception}) = _$FailedSearchSystemAction;
+      {required final SearchParameters parameters,
+      required final Exception exception}) = _$FailedSearchSystemAction;
 
-  SearchParameters get parameters => throw _privateConstructorUsedError;
-  Exception get exception => throw _privateConstructorUsedError;
+  SearchParameters get parameters;
+  Exception get exception;
   @JsonKey(ignore: true)
-  $FailedSearchSystemActionCopyWith<FailedSearchSystemAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FailedSearchSystemActionCopyWith<_$FailedSearchSystemAction>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CompletedSearchSystemActionCopyWith<$Res> {
-  factory $CompletedSearchSystemActionCopyWith(
-          CompletedSearchSystemAction value,
-          $Res Function(CompletedSearchSystemAction) then) =
-      _$CompletedSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$CompletedSearchSystemActionCopyWith<$Res> {
+  factory _$$CompletedSearchSystemActionCopyWith(
+          _$CompletedSearchSystemAction value,
+          $Res Function(_$CompletedSearchSystemAction) then) =
+      __$$CompletedSearchSystemActionCopyWithImpl<$Res>;
   $Res call(
       {SearchParameters parameters,
       Iterable<Tournament> data,
@@ -1536,16 +1772,17 @@ abstract class $CompletedSearchSystemActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CompletedSearchSystemActionCopyWithImpl<$Res>
+class __$$CompletedSearchSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res>
-    implements $CompletedSearchSystemActionCopyWith<$Res> {
-  _$CompletedSearchSystemActionCopyWithImpl(CompletedSearchSystemAction _value,
-      $Res Function(CompletedSearchSystemAction) _then)
-      : super(_value, (v) => _then(v as CompletedSearchSystemAction));
+    implements _$$CompletedSearchSystemActionCopyWith<$Res> {
+  __$$CompletedSearchSystemActionCopyWithImpl(
+      _$CompletedSearchSystemAction _value,
+      $Res Function(_$CompletedSearchSystemAction) _then)
+      : super(_value, (v) => _then(v as _$CompletedSearchSystemAction));
 
   @override
-  CompletedSearchSystemAction get _value =>
-      super._value as CompletedSearchSystemAction;
+  _$CompletedSearchSystemAction get _value =>
+      super._value as _$CompletedSearchSystemAction;
 
   @override
   $Res call({
@@ -1554,7 +1791,7 @@ class _$CompletedSearchSystemActionCopyWithImpl<$Res>
     Object? nextPage = freezed,
     Object? canLoadMore = freezed,
   }) {
-    return _then(CompletedSearchSystemAction(
+    return _then(_$CompletedSearchSystemAction(
       parameters: parameters == freezed
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -1621,33 +1858,29 @@ class _$CompletedSearchSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CompletedSearchSystemAction &&
-            (identical(other.parameters, parameters) ||
-                const DeepCollectionEquality()
-                    .equals(other.parameters, parameters)) &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.nextPage, nextPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.nextPage, nextPage)) &&
-            (identical(other.canLoadMore, canLoadMore) ||
-                const DeepCollectionEquality()
-                    .equals(other.canLoadMore, canLoadMore)));
+        (other.runtimeType == runtimeType &&
+            other is _$CompletedSearchSystemAction &&
+            const DeepCollectionEquality()
+                .equals(other.parameters, parameters) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.nextPage, nextPage) &&
+            const DeepCollectionEquality()
+                .equals(other.canLoadMore, canLoadMore));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(parameters) ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(nextPage) ^
-      const DeepCollectionEquality().hash(canLoadMore);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(parameters),
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(nextPage),
+      const DeepCollectionEquality().hash(canLoadMore));
 
   @JsonKey(ignore: true)
   @override
-  $CompletedSearchSystemActionCopyWith<CompletedSearchSystemAction>
-      get copyWith => _$CompletedSearchSystemActionCopyWithImpl<
-          CompletedSearchSystemAction>(this, _$identity);
+  _$$CompletedSearchSystemActionCopyWith<_$CompletedSearchSystemAction>
+      get copyWith => __$$CompletedSearchSystemActionCopyWithImpl<
+          _$CompletedSearchSystemAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1663,6 +1896,21 @@ class _$CompletedSearchSystemAction
         completed,
   }) {
     return completed(parameters, data, nextPage, canLoadMore);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? clearResults,
+    TResult Function(SearchParameters parameters)? loading,
+    TResult Function(SearchParameters parameters, Exception exception)? failed,
+    TResult Function(SearchParameters parameters, Iterable<Tournament> data,
+            int nextPage, bool canLoadMore)?
+        completed,
+  }) {
+    return completed?.call(parameters, data, nextPage, canLoadMore);
   }
 
   @override
@@ -1700,6 +1948,19 @@ class _$CompletedSearchSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitSearchSystemAction value)? init,
+    TResult Function(DeInitSearchSystemAction value)? deInit,
+    TResult Function(ClearResultsSearchSystemAction value)? clearResults,
+    TResult Function(LoadingSearchSystemAction value)? loading,
+    TResult Function(FailedSearchSystemAction value)? failed,
+    TResult Function(CompletedSearchSystemAction value)? completed,
+  }) {
+    return completed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitSearchSystemAction value)? init,
     TResult Function(DeInitSearchSystemAction value)? deInit,
@@ -1718,16 +1979,16 @@ class _$CompletedSearchSystemAction
 
 abstract class CompletedSearchSystemAction implements SystemActionSearch {
   const factory CompletedSearchSystemAction(
-      {required SearchParameters parameters,
-      required Iterable<Tournament> data,
-      required int nextPage,
-      required bool canLoadMore}) = _$CompletedSearchSystemAction;
+      {required final SearchParameters parameters,
+      required final Iterable<Tournament> data,
+      required final int nextPage,
+      required final bool canLoadMore}) = _$CompletedSearchSystemAction;
 
-  SearchParameters get parameters => throw _privateConstructorUsedError;
-  Iterable<Tournament> get data => throw _privateConstructorUsedError;
-  int get nextPage => throw _privateConstructorUsedError;
-  bool get canLoadMore => throw _privateConstructorUsedError;
+  SearchParameters get parameters;
+  Iterable<Tournament> get data;
+  int get nextPage;
+  bool get canLoadMore;
   @JsonKey(ignore: true)
-  $CompletedSearchSystemActionCopyWith<CompletedSearchSystemAction>
+  _$$CompletedSearchSystemActionCopyWith<_$CompletedSearchSystemAction>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -37,6 +37,12 @@ class QuestionHiveModelAdapter extends TypeAdapter<_$_QuestionHiveModel> {
       ..write(obj.id)
       ..writeByte(1)
       ..write(obj.display)
+      ..writeByte(6)
+      ..write(obj.authors)
+      ..writeByte(7)
+      ..write(obj.sources)
+      ..writeByte(8)
+      ..write(obj.info)
       ..writeByte(2)
       ..write(obj.question)
       ..writeByte(3)
@@ -44,13 +50,7 @@ class QuestionHiveModelAdapter extends TypeAdapter<_$_QuestionHiveModel> {
       ..writeByte(4)
       ..write(obj.passCriteria)
       ..writeByte(5)
-      ..write(obj.comments)
-      ..writeByte(6)
-      ..write(obj.authors)
-      ..writeByte(7)
-      ..write(obj.sources)
-      ..writeByte(8)
-      ..write(obj.info);
+      ..write(obj.comments);
   }
 
   @override

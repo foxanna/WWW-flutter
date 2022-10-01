@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'random_questions.dart';
 
@@ -10,21 +12,7 @@ part of 'random_questions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RandomQuestionsTearOff {
-  const _$RandomQuestionsTearOff();
-
-  _RandomQuestions call({List<Question> questions = const <Question>[]}) {
-    return _RandomQuestions(
-      questions: questions,
-    );
-  }
-}
-
-/// @nodoc
-const $RandomQuestions = _$RandomQuestionsTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RandomQuestions {
@@ -66,33 +54,33 @@ class _$RandomQuestionsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RandomQuestionsCopyWith<$Res>
+abstract class _$$_RandomQuestionsCopyWith<$Res>
     implements $RandomQuestionsCopyWith<$Res> {
-  factory _$RandomQuestionsCopyWith(
-          _RandomQuestions value, $Res Function(_RandomQuestions) then) =
-      __$RandomQuestionsCopyWithImpl<$Res>;
+  factory _$$_RandomQuestionsCopyWith(
+          _$_RandomQuestions value, $Res Function(_$_RandomQuestions) then) =
+      __$$_RandomQuestionsCopyWithImpl<$Res>;
   @override
   $Res call({List<Question> questions});
 }
 
 /// @nodoc
-class __$RandomQuestionsCopyWithImpl<$Res>
+class __$$_RandomQuestionsCopyWithImpl<$Res>
     extends _$RandomQuestionsCopyWithImpl<$Res>
-    implements _$RandomQuestionsCopyWith<$Res> {
-  __$RandomQuestionsCopyWithImpl(
-      _RandomQuestions _value, $Res Function(_RandomQuestions) _then)
-      : super(_value, (v) => _then(v as _RandomQuestions));
+    implements _$$_RandomQuestionsCopyWith<$Res> {
+  __$$_RandomQuestionsCopyWithImpl(
+      _$_RandomQuestions _value, $Res Function(_$_RandomQuestions) _then)
+      : super(_value, (v) => _then(v as _$_RandomQuestions));
 
   @override
-  _RandomQuestions get _value => super._value as _RandomQuestions;
+  _$_RandomQuestions get _value => super._value as _$_RandomQuestions;
 
   @override
   $Res call({
     Object? questions = freezed,
   }) {
-    return _then(_RandomQuestions(
+    return _then(_$_RandomQuestions(
       questions: questions == freezed
-          ? _value.questions
+          ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<Question>,
     ));
@@ -102,11 +90,17 @@ class __$RandomQuestionsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_RandomQuestions implements _RandomQuestions {
-  const _$_RandomQuestions({this.questions = const <Question>[]});
+  const _$_RandomQuestions(
+      {final List<Question> questions = const <Question>[]})
+      : _questions = questions;
 
-  @JsonKey(defaultValue: const <Question>[])
+  final List<Question> _questions;
   @override
-  final List<Question> questions;
+  @JsonKey()
+  List<Question> get questions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
 
   @override
   String toString() {
@@ -116,30 +110,30 @@ class _$_RandomQuestions implements _RandomQuestions {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RandomQuestions &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)));
+        (other.runtimeType == runtimeType &&
+            other is _$_RandomQuestions &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questions);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
-  _$RandomQuestionsCopyWith<_RandomQuestions> get copyWith =>
-      __$RandomQuestionsCopyWithImpl<_RandomQuestions>(this, _$identity);
+  _$$_RandomQuestionsCopyWith<_$_RandomQuestions> get copyWith =>
+      __$$_RandomQuestionsCopyWithImpl<_$_RandomQuestions>(this, _$identity);
 }
 
 abstract class _RandomQuestions implements RandomQuestions {
-  const factory _RandomQuestions({List<Question> questions}) =
+  const factory _RandomQuestions({final List<Question> questions}) =
       _$_RandomQuestions;
 
   @override
-  List<Question> get questions => throw _privateConstructorUsedError;
+  List<Question> get questions;
   @override
   @JsonKey(ignore: true)
-  _$RandomQuestionsCopyWith<_RandomQuestions> get copyWith =>
+  _$$_RandomQuestionsCopyWith<_$_RandomQuestions> get copyWith =>
       throw _privateConstructorUsedError;
 }

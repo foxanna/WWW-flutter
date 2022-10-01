@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'section_text.dart';
 
@@ -10,21 +12,7 @@ part of 'section_text.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TextSectionTearOff {
-  const _$TextSectionTearOff();
-
-  _TextSection call({required String value}) {
-    return _TextSection(
-      value: value,
-    );
-  }
-}
-
-/// @nodoc
-const $TextSection = _$TextSectionTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TextSection {
@@ -65,30 +53,30 @@ class _$TextSectionCopyWithImpl<$Res> implements $TextSectionCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TextSectionCopyWith<$Res>
+abstract class _$$_TextSectionCopyWith<$Res>
     implements $TextSectionCopyWith<$Res> {
-  factory _$TextSectionCopyWith(
-          _TextSection value, $Res Function(_TextSection) then) =
-      __$TextSectionCopyWithImpl<$Res>;
+  factory _$$_TextSectionCopyWith(
+          _$_TextSection value, $Res Function(_$_TextSection) then) =
+      __$$_TextSectionCopyWithImpl<$Res>;
   @override
   $Res call({String value});
 }
 
 /// @nodoc
-class __$TextSectionCopyWithImpl<$Res> extends _$TextSectionCopyWithImpl<$Res>
-    implements _$TextSectionCopyWith<$Res> {
-  __$TextSectionCopyWithImpl(
-      _TextSection _value, $Res Function(_TextSection) _then)
-      : super(_value, (v) => _then(v as _TextSection));
+class __$$_TextSectionCopyWithImpl<$Res> extends _$TextSectionCopyWithImpl<$Res>
+    implements _$$_TextSectionCopyWith<$Res> {
+  __$$_TextSectionCopyWithImpl(
+      _$_TextSection _value, $Res Function(_$_TextSection) _then)
+      : super(_value, (v) => _then(v as _$_TextSection));
 
   @override
-  _TextSection get _value => super._value as _TextSection;
+  _$_TextSection get _value => super._value as _$_TextSection;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_TextSection(
+    return _then(_$_TextSection(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -113,28 +101,28 @@ class _$_TextSection implements _TextSection {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TextSection &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _$_TextSection &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$TextSectionCopyWith<_TextSection> get copyWith =>
-      __$TextSectionCopyWithImpl<_TextSection>(this, _$identity);
+  _$$_TextSectionCopyWith<_$_TextSection> get copyWith =>
+      __$$_TextSectionCopyWithImpl<_$_TextSection>(this, _$identity);
 }
 
 abstract class _TextSection implements TextSection {
-  const factory _TextSection({required String value}) = _$_TextSection;
+  const factory _TextSection({required final String value}) = _$_TextSection;
 
   @override
-  String get value => throw _privateConstructorUsedError;
+  String get value;
   @override
   @JsonKey(ignore: true)
-  _$TextSectionCopyWith<_TextSection> get copyWith =>
+  _$$_TextSectionCopyWith<_$_TextSection> get copyWith =>
       throw _privateConstructorUsedError;
 }

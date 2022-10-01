@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tours_actions.dart';
 
@@ -10,29 +12,19 @@ part of 'tours_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserActionToursTearOff {
-  const _$UserActionToursTearOff();
-
-  LoadToursUserAction load({required TourInfo info}) {
-    return LoadToursUserAction(
-      info: info,
-    );
-  }
-}
-
-/// @nodoc
-const $UserActionTours = _$UserActionToursTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UserActionTours {
   TourInfo get info => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TourInfo info) load,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(TourInfo info)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +36,11 @@ mixin _$UserActionTours {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadToursUserAction value) load,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoadToursUserAction value)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -98,11 +95,11 @@ class _$UserActionToursCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $LoadToursUserActionCopyWith<$Res>
+abstract class _$$LoadToursUserActionCopyWith<$Res>
     implements $UserActionToursCopyWith<$Res> {
-  factory $LoadToursUserActionCopyWith(
-          LoadToursUserAction value, $Res Function(LoadToursUserAction) then) =
-      _$LoadToursUserActionCopyWithImpl<$Res>;
+  factory _$$LoadToursUserActionCopyWith(_$LoadToursUserAction value,
+          $Res Function(_$LoadToursUserAction) then) =
+      __$$LoadToursUserActionCopyWithImpl<$Res>;
   @override
   $Res call({TourInfo info});
 
@@ -111,21 +108,21 @@ abstract class $LoadToursUserActionCopyWith<$Res>
 }
 
 /// @nodoc
-class _$LoadToursUserActionCopyWithImpl<$Res>
+class __$$LoadToursUserActionCopyWithImpl<$Res>
     extends _$UserActionToursCopyWithImpl<$Res>
-    implements $LoadToursUserActionCopyWith<$Res> {
-  _$LoadToursUserActionCopyWithImpl(
-      LoadToursUserAction _value, $Res Function(LoadToursUserAction) _then)
-      : super(_value, (v) => _then(v as LoadToursUserAction));
+    implements _$$LoadToursUserActionCopyWith<$Res> {
+  __$$LoadToursUserActionCopyWithImpl(
+      _$LoadToursUserAction _value, $Res Function(_$LoadToursUserAction) _then)
+      : super(_value, (v) => _then(v as _$LoadToursUserAction));
 
   @override
-  LoadToursUserAction get _value => super._value as LoadToursUserAction;
+  _$LoadToursUserAction get _value => super._value as _$LoadToursUserAction;
 
   @override
   $Res call({
     Object? info = freezed,
   }) {
-    return _then(LoadToursUserAction(
+    return _then(_$LoadToursUserAction(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -160,19 +157,20 @@ class _$LoadToursUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadToursUserAction &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
+        (other.runtimeType == runtimeType &&
+            other is _$LoadToursUserAction &&
+            const DeepCollectionEquality().equals(other.info, info));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
 
   @JsonKey(ignore: true)
   @override
-  $LoadToursUserActionCopyWith<LoadToursUserAction> get copyWith =>
-      _$LoadToursUserActionCopyWithImpl<LoadToursUserAction>(this, _$identity);
+  _$$LoadToursUserActionCopyWith<_$LoadToursUserAction> get copyWith =>
+      __$$LoadToursUserActionCopyWithImpl<_$LoadToursUserAction>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -180,6 +178,14 @@ class _$LoadToursUserAction
     required TResult Function(TourInfo info) load,
   }) {
     return load(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(TourInfo info)? load,
+  }) {
+    return load?.call(info);
   }
 
   @override
@@ -204,6 +210,14 @@ class _$LoadToursUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoadToursUserAction value)? load,
+  }) {
+    return load?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadToursUserAction value)? load,
     required TResult orElse(),
@@ -216,54 +230,16 @@ class _$LoadToursUserAction
 }
 
 abstract class LoadToursUserAction implements UserActionTours {
-  const factory LoadToursUserAction({required TourInfo info}) =
+  const factory LoadToursUserAction({required final TourInfo info}) =
       _$LoadToursUserAction;
 
   @override
-  TourInfo get info => throw _privateConstructorUsedError;
+  TourInfo get info;
   @override
   @JsonKey(ignore: true)
-  $LoadToursUserActionCopyWith<LoadToursUserAction> get copyWith =>
+  _$$LoadToursUserActionCopyWith<_$LoadToursUserAction> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SystemActionToursTearOff {
-  const _$SystemActionToursTearOff();
-
-  InitToursSystemAction init({required List<TourInfo> tours}) {
-    return InitToursSystemAction(
-      tours: tours,
-    );
-  }
-
-  DeInitToursSystemAction deInit() {
-    return const DeInitToursSystemAction();
-  }
-
-  LoadingToursSystemAction loading({required TourInfo info}) {
-    return LoadingToursSystemAction(
-      info: info,
-    );
-  }
-
-  FailedToursSystemAction failed(
-      {required TourInfo info, required Exception exception}) {
-    return FailedToursSystemAction(
-      info: info,
-      exception: exception,
-    );
-  }
-
-  CompletedToursSystemAction completed({required Tour tour}) {
-    return CompletedToursSystemAction(
-      tour: tour,
-    );
-  }
-}
-
-/// @nodoc
-const $SystemActionTours = _$SystemActionToursTearOff();
 
 /// @nodoc
 mixin _$SystemActionTours {
@@ -274,6 +250,15 @@ mixin _$SystemActionTours {
     required TResult Function(TourInfo info) loading,
     required TResult Function(TourInfo info, Exception exception) failed,
     required TResult Function(Tour tour) completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -293,6 +278,15 @@ mixin _$SystemActionTours {
     required TResult Function(LoadingToursSystemAction value) loading,
     required TResult Function(FailedToursSystemAction value) failed,
     required TResult Function(CompletedToursSystemAction value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -325,31 +319,31 @@ class _$SystemActionToursCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitToursSystemActionCopyWith<$Res> {
-  factory $InitToursSystemActionCopyWith(InitToursSystemAction value,
-          $Res Function(InitToursSystemAction) then) =
-      _$InitToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitToursSystemActionCopyWith<$Res> {
+  factory _$$InitToursSystemActionCopyWith(_$InitToursSystemAction value,
+          $Res Function(_$InitToursSystemAction) then) =
+      __$$InitToursSystemActionCopyWithImpl<$Res>;
   $Res call({List<TourInfo> tours});
 }
 
 /// @nodoc
-class _$InitToursSystemActionCopyWithImpl<$Res>
+class __$$InitToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
-    implements $InitToursSystemActionCopyWith<$Res> {
-  _$InitToursSystemActionCopyWithImpl(
-      InitToursSystemAction _value, $Res Function(InitToursSystemAction) _then)
-      : super(_value, (v) => _then(v as InitToursSystemAction));
+    implements _$$InitToursSystemActionCopyWith<$Res> {
+  __$$InitToursSystemActionCopyWithImpl(_$InitToursSystemAction _value,
+      $Res Function(_$InitToursSystemAction) _then)
+      : super(_value, (v) => _then(v as _$InitToursSystemAction));
 
   @override
-  InitToursSystemAction get _value => super._value as InitToursSystemAction;
+  _$InitToursSystemAction get _value => super._value as _$InitToursSystemAction;
 
   @override
   $Res call({
     Object? tours = freezed,
   }) {
-    return _then(InitToursSystemAction(
+    return _then(_$InitToursSystemAction(
       tours: tours == freezed
-          ? _value.tours
+          ? _value._tours
           : tours // ignore: cast_nullable_to_non_nullable
               as List<TourInfo>,
     ));
@@ -361,10 +355,15 @@ class _$InitToursSystemActionCopyWithImpl<$Res>
 class _$InitToursSystemAction
     with DiagnosticableTreeMixin
     implements InitToursSystemAction {
-  const _$InitToursSystemAction({required this.tours});
+  const _$InitToursSystemAction({required final List<TourInfo> tours})
+      : _tours = tours;
 
+  final List<TourInfo> _tours;
   @override
-  final List<TourInfo> tours;
+  List<TourInfo> get tours {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tours);
+  }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -382,19 +381,19 @@ class _$InitToursSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InitToursSystemAction &&
-            (identical(other.tours, tours) ||
-                const DeepCollectionEquality().equals(other.tours, tours)));
+        (other.runtimeType == runtimeType &&
+            other is _$InitToursSystemAction &&
+            const DeepCollectionEquality().equals(other._tours, _tours));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tours);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_tours));
 
   @JsonKey(ignore: true)
   @override
-  $InitToursSystemActionCopyWith<InitToursSystemAction> get copyWith =>
-      _$InitToursSystemActionCopyWithImpl<InitToursSystemAction>(
+  _$$InitToursSystemActionCopyWith<_$InitToursSystemAction> get copyWith =>
+      __$$InitToursSystemActionCopyWithImpl<_$InitToursSystemAction>(
           this, _$identity);
 
   @override
@@ -407,6 +406,18 @@ class _$InitToursSystemAction
     required TResult Function(Tour tour) completed,
   }) {
     return init(tours);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+  }) {
+    return init?.call(tours);
   }
 
   @override
@@ -439,6 +450,18 @@ class _$InitToursSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+  }) {
+    return init?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitToursSystemAction value)? init,
     TResult Function(DeInitToursSystemAction value)? deInit,
@@ -455,32 +478,33 @@ class _$InitToursSystemAction
 }
 
 abstract class InitToursSystemAction implements SystemActionTours {
-  const factory InitToursSystemAction({required List<TourInfo> tours}) =
+  const factory InitToursSystemAction({required final List<TourInfo> tours}) =
       _$InitToursSystemAction;
 
-  List<TourInfo> get tours => throw _privateConstructorUsedError;
+  List<TourInfo> get tours;
   @JsonKey(ignore: true)
-  $InitToursSystemActionCopyWith<InitToursSystemAction> get copyWith =>
+  _$$InitToursSystemActionCopyWith<_$InitToursSystemAction> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DeInitToursSystemActionCopyWith<$Res> {
-  factory $DeInitToursSystemActionCopyWith(DeInitToursSystemAction value,
-          $Res Function(DeInitToursSystemAction) then) =
-      _$DeInitToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$DeInitToursSystemActionCopyWith<$Res> {
+  factory _$$DeInitToursSystemActionCopyWith(_$DeInitToursSystemAction value,
+          $Res Function(_$DeInitToursSystemAction) then) =
+      __$$DeInitToursSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeInitToursSystemActionCopyWithImpl<$Res>
+class __$$DeInitToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
-    implements $DeInitToursSystemActionCopyWith<$Res> {
-  _$DeInitToursSystemActionCopyWithImpl(DeInitToursSystemAction _value,
-      $Res Function(DeInitToursSystemAction) _then)
-      : super(_value, (v) => _then(v as DeInitToursSystemAction));
+    implements _$$DeInitToursSystemActionCopyWith<$Res> {
+  __$$DeInitToursSystemActionCopyWithImpl(_$DeInitToursSystemAction _value,
+      $Res Function(_$DeInitToursSystemAction) _then)
+      : super(_value, (v) => _then(v as _$DeInitToursSystemAction));
 
   @override
-  DeInitToursSystemAction get _value => super._value as DeInitToursSystemAction;
+  _$DeInitToursSystemAction get _value =>
+      super._value as _$DeInitToursSystemAction;
 }
 
 /// @nodoc
@@ -498,12 +522,14 @@ class _$DeInitToursSystemAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SystemActionTours.deInit'));
+    properties.add(DiagnosticsProperty('type', 'SystemActionTours.deInit'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DeInitToursSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeInitToursSystemAction);
   }
 
   @override
@@ -519,6 +545,18 @@ class _$DeInitToursSystemAction
     required TResult Function(Tour tour) completed,
   }) {
     return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+  }) {
+    return deInit?.call();
   }
 
   @override
@@ -551,6 +589,18 @@ class _$DeInitToursSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+  }) {
+    return deInit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitToursSystemAction value)? init,
     TResult Function(DeInitToursSystemAction value)? deInit,
@@ -571,32 +621,32 @@ abstract class DeInitToursSystemAction implements SystemActionTours {
 }
 
 /// @nodoc
-abstract class $LoadingToursSystemActionCopyWith<$Res> {
-  factory $LoadingToursSystemActionCopyWith(LoadingToursSystemAction value,
-          $Res Function(LoadingToursSystemAction) then) =
-      _$LoadingToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$LoadingToursSystemActionCopyWith<$Res> {
+  factory _$$LoadingToursSystemActionCopyWith(_$LoadingToursSystemAction value,
+          $Res Function(_$LoadingToursSystemAction) then) =
+      __$$LoadingToursSystemActionCopyWithImpl<$Res>;
   $Res call({TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class _$LoadingToursSystemActionCopyWithImpl<$Res>
+class __$$LoadingToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
-    implements $LoadingToursSystemActionCopyWith<$Res> {
-  _$LoadingToursSystemActionCopyWithImpl(LoadingToursSystemAction _value,
-      $Res Function(LoadingToursSystemAction) _then)
-      : super(_value, (v) => _then(v as LoadingToursSystemAction));
+    implements _$$LoadingToursSystemActionCopyWith<$Res> {
+  __$$LoadingToursSystemActionCopyWithImpl(_$LoadingToursSystemAction _value,
+      $Res Function(_$LoadingToursSystemAction) _then)
+      : super(_value, (v) => _then(v as _$LoadingToursSystemAction));
 
   @override
-  LoadingToursSystemAction get _value =>
-      super._value as LoadingToursSystemAction;
+  _$LoadingToursSystemAction get _value =>
+      super._value as _$LoadingToursSystemAction;
 
   @override
   $Res call({
     Object? info = freezed,
   }) {
-    return _then(LoadingToursSystemAction(
+    return _then(_$LoadingToursSystemAction(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -638,20 +688,21 @@ class _$LoadingToursSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadingToursSystemAction &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingToursSystemAction &&
+            const DeepCollectionEquality().equals(other.info, info));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(info);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
 
   @JsonKey(ignore: true)
   @override
-  $LoadingToursSystemActionCopyWith<LoadingToursSystemAction> get copyWith =>
-      _$LoadingToursSystemActionCopyWithImpl<LoadingToursSystemAction>(
-          this, _$identity);
+  _$$LoadingToursSystemActionCopyWith<_$LoadingToursSystemAction>
+      get copyWith =>
+          __$$LoadingToursSystemActionCopyWithImpl<_$LoadingToursSystemAction>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -663,6 +714,18 @@ class _$LoadingToursSystemAction
     required TResult Function(Tour tour) completed,
   }) {
     return loading(info);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+  }) {
+    return loading?.call(info);
   }
 
   @override
@@ -695,6 +758,18 @@ class _$LoadingToursSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitToursSystemAction value)? init,
     TResult Function(DeInitToursSystemAction value)? deInit,
@@ -711,42 +786,43 @@ class _$LoadingToursSystemAction
 }
 
 abstract class LoadingToursSystemAction implements SystemActionTours {
-  const factory LoadingToursSystemAction({required TourInfo info}) =
+  const factory LoadingToursSystemAction({required final TourInfo info}) =
       _$LoadingToursSystemAction;
 
-  TourInfo get info => throw _privateConstructorUsedError;
+  TourInfo get info;
   @JsonKey(ignore: true)
-  $LoadingToursSystemActionCopyWith<LoadingToursSystemAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoadingToursSystemActionCopyWith<_$LoadingToursSystemAction>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FailedToursSystemActionCopyWith<$Res> {
-  factory $FailedToursSystemActionCopyWith(FailedToursSystemAction value,
-          $Res Function(FailedToursSystemAction) then) =
-      _$FailedToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$FailedToursSystemActionCopyWith<$Res> {
+  factory _$$FailedToursSystemActionCopyWith(_$FailedToursSystemAction value,
+          $Res Function(_$FailedToursSystemAction) then) =
+      __$$FailedToursSystemActionCopyWithImpl<$Res>;
   $Res call({TourInfo info, Exception exception});
 
   $TourInfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class _$FailedToursSystemActionCopyWithImpl<$Res>
+class __$$FailedToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
-    implements $FailedToursSystemActionCopyWith<$Res> {
-  _$FailedToursSystemActionCopyWithImpl(FailedToursSystemAction _value,
-      $Res Function(FailedToursSystemAction) _then)
-      : super(_value, (v) => _then(v as FailedToursSystemAction));
+    implements _$$FailedToursSystemActionCopyWith<$Res> {
+  __$$FailedToursSystemActionCopyWithImpl(_$FailedToursSystemAction _value,
+      $Res Function(_$FailedToursSystemAction) _then)
+      : super(_value, (v) => _then(v as _$FailedToursSystemAction));
 
   @override
-  FailedToursSystemAction get _value => super._value as FailedToursSystemAction;
+  _$FailedToursSystemAction get _value =>
+      super._value as _$FailedToursSystemAction;
 
   @override
   $Res call({
     Object? info = freezed,
     Object? exception = freezed,
   }) {
-    return _then(FailedToursSystemAction(
+    return _then(_$FailedToursSystemAction(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -796,24 +872,22 @@ class _$FailedToursSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is FailedToursSystemAction &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+        (other.runtimeType == runtimeType &&
+            other is _$FailedToursSystemAction &&
+            const DeepCollectionEquality().equals(other.info, info) &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(exception);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(info),
+      const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $FailedToursSystemActionCopyWith<FailedToursSystemAction> get copyWith =>
-      _$FailedToursSystemActionCopyWithImpl<FailedToursSystemAction>(
+  _$$FailedToursSystemActionCopyWith<_$FailedToursSystemAction> get copyWith =>
+      __$$FailedToursSystemActionCopyWithImpl<_$FailedToursSystemAction>(
           this, _$identity);
 
   @override
@@ -826,6 +900,18 @@ class _$FailedToursSystemAction
     required TResult Function(Tour tour) completed,
   }) {
     return failed(info, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+  }) {
+    return failed?.call(info, exception);
   }
 
   @override
@@ -858,6 +944,18 @@ class _$FailedToursSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+  }) {
+    return failed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitToursSystemAction value)? init,
     TResult Function(DeInitToursSystemAction value)? deInit,
@@ -875,43 +973,45 @@ class _$FailedToursSystemAction
 
 abstract class FailedToursSystemAction implements SystemActionTours {
   const factory FailedToursSystemAction(
-      {required TourInfo info,
-      required Exception exception}) = _$FailedToursSystemAction;
+      {required final TourInfo info,
+      required final Exception exception}) = _$FailedToursSystemAction;
 
-  TourInfo get info => throw _privateConstructorUsedError;
-  Exception get exception => throw _privateConstructorUsedError;
+  TourInfo get info;
+  Exception get exception;
   @JsonKey(ignore: true)
-  $FailedToursSystemActionCopyWith<FailedToursSystemAction> get copyWith =>
+  _$$FailedToursSystemActionCopyWith<_$FailedToursSystemAction> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CompletedToursSystemActionCopyWith<$Res> {
-  factory $CompletedToursSystemActionCopyWith(CompletedToursSystemAction value,
-          $Res Function(CompletedToursSystemAction) then) =
-      _$CompletedToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$CompletedToursSystemActionCopyWith<$Res> {
+  factory _$$CompletedToursSystemActionCopyWith(
+          _$CompletedToursSystemAction value,
+          $Res Function(_$CompletedToursSystemAction) then) =
+      __$$CompletedToursSystemActionCopyWithImpl<$Res>;
   $Res call({Tour tour});
 
   $TourCopyWith<$Res> get tour;
 }
 
 /// @nodoc
-class _$CompletedToursSystemActionCopyWithImpl<$Res>
+class __$$CompletedToursSystemActionCopyWithImpl<$Res>
     extends _$SystemActionToursCopyWithImpl<$Res>
-    implements $CompletedToursSystemActionCopyWith<$Res> {
-  _$CompletedToursSystemActionCopyWithImpl(CompletedToursSystemAction _value,
-      $Res Function(CompletedToursSystemAction) _then)
-      : super(_value, (v) => _then(v as CompletedToursSystemAction));
+    implements _$$CompletedToursSystemActionCopyWith<$Res> {
+  __$$CompletedToursSystemActionCopyWithImpl(
+      _$CompletedToursSystemAction _value,
+      $Res Function(_$CompletedToursSystemAction) _then)
+      : super(_value, (v) => _then(v as _$CompletedToursSystemAction));
 
   @override
-  CompletedToursSystemAction get _value =>
-      super._value as CompletedToursSystemAction;
+  _$CompletedToursSystemAction get _value =>
+      super._value as _$CompletedToursSystemAction;
 
   @override
   $Res call({
     Object? tour = freezed,
   }) {
-    return _then(CompletedToursSystemAction(
+    return _then(_$CompletedToursSystemAction(
       tour: tour == freezed
           ? _value.tour
           : tour // ignore: cast_nullable_to_non_nullable
@@ -953,21 +1053,20 @@ class _$CompletedToursSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CompletedToursSystemAction &&
-            (identical(other.tour, tour) ||
-                const DeepCollectionEquality().equals(other.tour, tour)));
+        (other.runtimeType == runtimeType &&
+            other is _$CompletedToursSystemAction &&
+            const DeepCollectionEquality().equals(other.tour, tour));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tour);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(tour));
 
   @JsonKey(ignore: true)
   @override
-  $CompletedToursSystemActionCopyWith<CompletedToursSystemAction>
-      get copyWith =>
-          _$CompletedToursSystemActionCopyWithImpl<CompletedToursSystemAction>(
-              this, _$identity);
+  _$$CompletedToursSystemActionCopyWith<_$CompletedToursSystemAction>
+      get copyWith => __$$CompletedToursSystemActionCopyWithImpl<
+          _$CompletedToursSystemAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -979,6 +1078,18 @@ class _$CompletedToursSystemAction
     required TResult Function(Tour tour) completed,
   }) {
     return completed(tour);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<TourInfo> tours)? init,
+    TResult Function()? deInit,
+    TResult Function(TourInfo info)? loading,
+    TResult Function(TourInfo info, Exception exception)? failed,
+    TResult Function(Tour tour)? completed,
+  }) {
+    return completed?.call(tour);
   }
 
   @override
@@ -1011,6 +1122,18 @@ class _$CompletedToursSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitToursSystemAction value)? init,
+    TResult Function(DeInitToursSystemAction value)? deInit,
+    TResult Function(LoadingToursSystemAction value)? loading,
+    TResult Function(FailedToursSystemAction value)? failed,
+    TResult Function(CompletedToursSystemAction value)? completed,
+  }) {
+    return completed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitToursSystemAction value)? init,
     TResult Function(DeInitToursSystemAction value)? deInit,
@@ -1027,11 +1150,11 @@ class _$CompletedToursSystemAction
 }
 
 abstract class CompletedToursSystemAction implements SystemActionTours {
-  const factory CompletedToursSystemAction({required Tour tour}) =
+  const factory CompletedToursSystemAction({required final Tour tour}) =
       _$CompletedToursSystemAction;
 
-  Tour get tour => throw _privateConstructorUsedError;
+  Tour get tour;
   @JsonKey(ignore: true)
-  $CompletedToursSystemActionCopyWith<CompletedToursSystemAction>
+  _$$CompletedToursSystemActionCopyWith<_$CompletedToursSystemAction>
       get copyWith => throw _privateConstructorUsedError;
 }

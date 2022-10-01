@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'question_dto.dart';
 
@@ -10,54 +12,11 @@ part of 'question_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 QuestionDto _$QuestionDtoFromJson(Map<String, dynamic> json) {
   return _QuestionDto.fromJson(json);
 }
-
-/// @nodoc
-class _$QuestionDtoTearOff {
-  const _$QuestionDtoTearOff();
-
-  _QuestionDto call(
-      {@JsonKey(name: 'QuestionId') String? questionId,
-      @JsonKey(name: 'Question') String? question,
-      @JsonKey(name: 'Number') String? number,
-      @JsonKey(name: 'Answer') String? answer,
-      @JsonKey(name: 'Authors') String? authors,
-      @JsonKey(name: 'PassCriteria') String? passCriteria,
-      @JsonKey(name: 'Comments') String? comments,
-      @JsonKey(name: 'Sources') String? sources,
-      @JsonKey(name: 'ParentId') String? parentId,
-      @JsonKey(name: 'tourId') String? tourId,
-      @JsonKey(name: 'tournamentId') String? tournamentId,
-      @JsonKey(name: 'tourTitle') String? tourTitle,
-      @JsonKey(name: 'tournamentTitle') String? tournamentTitle}) {
-    return _QuestionDto(
-      questionId: questionId,
-      question: question,
-      number: number,
-      answer: answer,
-      authors: authors,
-      passCriteria: passCriteria,
-      comments: comments,
-      sources: sources,
-      parentId: parentId,
-      tourId: tourId,
-      tournamentId: tournamentId,
-      tourTitle: tourTitle,
-      tournamentTitle: tournamentTitle,
-    );
-  }
-
-  QuestionDto fromJson(Map<String, Object> json) {
-    return QuestionDto.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $QuestionDto = _$QuestionDtoTearOff();
 
 /// @nodoc
 mixin _$QuestionDto {
@@ -197,11 +156,11 @@ class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$QuestionDtoCopyWith<$Res>
+abstract class _$$_QuestionDtoCopyWith<$Res>
     implements $QuestionDtoCopyWith<$Res> {
-  factory _$QuestionDtoCopyWith(
-          _QuestionDto value, $Res Function(_QuestionDto) then) =
-      __$QuestionDtoCopyWithImpl<$Res>;
+  factory _$$_QuestionDtoCopyWith(
+          _$_QuestionDto value, $Res Function(_$_QuestionDto) then) =
+      __$$_QuestionDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'QuestionId') String? questionId,
@@ -220,14 +179,14 @@ abstract class _$QuestionDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
-    implements _$QuestionDtoCopyWith<$Res> {
-  __$QuestionDtoCopyWithImpl(
-      _QuestionDto _value, $Res Function(_QuestionDto) _then)
-      : super(_value, (v) => _then(v as _QuestionDto));
+class __$$_QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
+    implements _$$_QuestionDtoCopyWith<$Res> {
+  __$$_QuestionDtoCopyWithImpl(
+      _$_QuestionDto _value, $Res Function(_$_QuestionDto) _then)
+      : super(_value, (v) => _then(v as _$_QuestionDto));
 
   @override
-  _QuestionDto get _value => super._value as _QuestionDto;
+  _$_QuestionDto get _value => super._value as _$_QuestionDto;
 
   @override
   $Res call({
@@ -245,7 +204,7 @@ class __$QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
     Object? tourTitle = freezed,
     Object? tournamentTitle = freezed,
   }) {
-    return _then(_QuestionDto(
+    return _then(_$_QuestionDto(
       questionId: questionId == freezed
           ? _value.questionId
           : questionId // ignore: cast_nullable_to_non_nullable
@@ -321,7 +280,7 @@ class _$_QuestionDto implements _QuestionDto {
       @JsonKey(name: 'tournamentTitle') this.tournamentTitle});
 
   factory _$_QuestionDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_QuestionDtoFromJson(json);
+      _$$_QuestionDtoFromJson(json);
 
   @override
   @JsonKey(name: 'QuestionId')
@@ -371,88 +330,73 @@ class _$_QuestionDto implements _QuestionDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _QuestionDto &&
-            (identical(other.questionId, questionId) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionId, questionId)) &&
-            (identical(other.question, question) ||
-                const DeepCollectionEquality()
-                    .equals(other.question, question)) &&
-            (identical(other.number, number) ||
-                const DeepCollectionEquality().equals(other.number, number)) &&
-            (identical(other.answer, answer) ||
-                const DeepCollectionEquality().equals(other.answer, answer)) &&
-            (identical(other.authors, authors) ||
-                const DeepCollectionEquality()
-                    .equals(other.authors, authors)) &&
-            (identical(other.passCriteria, passCriteria) ||
-                const DeepCollectionEquality()
-                    .equals(other.passCriteria, passCriteria)) &&
-            (identical(other.comments, comments) ||
-                const DeepCollectionEquality()
-                    .equals(other.comments, comments)) &&
-            (identical(other.sources, sources) ||
-                const DeepCollectionEquality()
-                    .equals(other.sources, sources)) &&
-            (identical(other.parentId, parentId) ||
-                const DeepCollectionEquality()
-                    .equals(other.parentId, parentId)) &&
-            (identical(other.tourId, tourId) ||
-                const DeepCollectionEquality().equals(other.tourId, tourId)) &&
-            (identical(other.tournamentId, tournamentId) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournamentId, tournamentId)) &&
-            (identical(other.tourTitle, tourTitle) ||
-                const DeepCollectionEquality()
-                    .equals(other.tourTitle, tourTitle)) &&
-            (identical(other.tournamentTitle, tournamentTitle) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournamentTitle, tournamentTitle)));
+        (other.runtimeType == runtimeType &&
+            other is _$_QuestionDto &&
+            const DeepCollectionEquality()
+                .equals(other.questionId, questionId) &&
+            const DeepCollectionEquality().equals(other.question, question) &&
+            const DeepCollectionEquality().equals(other.number, number) &&
+            const DeepCollectionEquality().equals(other.answer, answer) &&
+            const DeepCollectionEquality().equals(other.authors, authors) &&
+            const DeepCollectionEquality()
+                .equals(other.passCriteria, passCriteria) &&
+            const DeepCollectionEquality().equals(other.comments, comments) &&
+            const DeepCollectionEquality().equals(other.sources, sources) &&
+            const DeepCollectionEquality().equals(other.parentId, parentId) &&
+            const DeepCollectionEquality().equals(other.tourId, tourId) &&
+            const DeepCollectionEquality()
+                .equals(other.tournamentId, tournamentId) &&
+            const DeepCollectionEquality().equals(other.tourTitle, tourTitle) &&
+            const DeepCollectionEquality()
+                .equals(other.tournamentTitle, tournamentTitle));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questionId) ^
-      const DeepCollectionEquality().hash(question) ^
-      const DeepCollectionEquality().hash(number) ^
-      const DeepCollectionEquality().hash(answer) ^
-      const DeepCollectionEquality().hash(authors) ^
-      const DeepCollectionEquality().hash(passCriteria) ^
-      const DeepCollectionEquality().hash(comments) ^
-      const DeepCollectionEquality().hash(sources) ^
-      const DeepCollectionEquality().hash(parentId) ^
-      const DeepCollectionEquality().hash(tourId) ^
-      const DeepCollectionEquality().hash(tournamentId) ^
-      const DeepCollectionEquality().hash(tourTitle) ^
-      const DeepCollectionEquality().hash(tournamentTitle);
 
   @JsonKey(ignore: true)
   @override
-  _$QuestionDtoCopyWith<_QuestionDto> get copyWith =>
-      __$QuestionDtoCopyWithImpl<_QuestionDto>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(questionId),
+      const DeepCollectionEquality().hash(question),
+      const DeepCollectionEquality().hash(number),
+      const DeepCollectionEquality().hash(answer),
+      const DeepCollectionEquality().hash(authors),
+      const DeepCollectionEquality().hash(passCriteria),
+      const DeepCollectionEquality().hash(comments),
+      const DeepCollectionEquality().hash(sources),
+      const DeepCollectionEquality().hash(parentId),
+      const DeepCollectionEquality().hash(tourId),
+      const DeepCollectionEquality().hash(tournamentId),
+      const DeepCollectionEquality().hash(tourTitle),
+      const DeepCollectionEquality().hash(tournamentTitle));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_QuestionDtoCopyWith<_$_QuestionDto> get copyWith =>
+      __$$_QuestionDtoCopyWithImpl<_$_QuestionDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_QuestionDtoToJson(this);
+    return _$$_QuestionDtoToJson(
+      this,
+    );
   }
 }
 
 abstract class _QuestionDto implements QuestionDto {
   const factory _QuestionDto(
-          {@JsonKey(name: 'QuestionId') String? questionId,
-          @JsonKey(name: 'Question') String? question,
-          @JsonKey(name: 'Number') String? number,
-          @JsonKey(name: 'Answer') String? answer,
-          @JsonKey(name: 'Authors') String? authors,
-          @JsonKey(name: 'PassCriteria') String? passCriteria,
-          @JsonKey(name: 'Comments') String? comments,
-          @JsonKey(name: 'Sources') String? sources,
-          @JsonKey(name: 'ParentId') String? parentId,
-          @JsonKey(name: 'tourId') String? tourId,
-          @JsonKey(name: 'tournamentId') String? tournamentId,
-          @JsonKey(name: 'tourTitle') String? tourTitle,
-          @JsonKey(name: 'tournamentTitle') String? tournamentTitle}) =
+          {@JsonKey(name: 'QuestionId') final String? questionId,
+          @JsonKey(name: 'Question') final String? question,
+          @JsonKey(name: 'Number') final String? number,
+          @JsonKey(name: 'Answer') final String? answer,
+          @JsonKey(name: 'Authors') final String? authors,
+          @JsonKey(name: 'PassCriteria') final String? passCriteria,
+          @JsonKey(name: 'Comments') final String? comments,
+          @JsonKey(name: 'Sources') final String? sources,
+          @JsonKey(name: 'ParentId') final String? parentId,
+          @JsonKey(name: 'tourId') final String? tourId,
+          @JsonKey(name: 'tournamentId') final String? tournamentId,
+          @JsonKey(name: 'tourTitle') final String? tourTitle,
+          @JsonKey(name: 'tournamentTitle') final String? tournamentTitle}) =
       _$_QuestionDto;
 
   factory _QuestionDto.fromJson(Map<String, dynamic> json) =
@@ -460,45 +404,45 @@ abstract class _QuestionDto implements QuestionDto {
 
   @override
   @JsonKey(name: 'QuestionId')
-  String? get questionId => throw _privateConstructorUsedError;
+  String? get questionId;
   @override
   @JsonKey(name: 'Question')
-  String? get question => throw _privateConstructorUsedError;
+  String? get question;
   @override
   @JsonKey(name: 'Number')
-  String? get number => throw _privateConstructorUsedError;
+  String? get number;
   @override
   @JsonKey(name: 'Answer')
-  String? get answer => throw _privateConstructorUsedError;
+  String? get answer;
   @override
   @JsonKey(name: 'Authors')
-  String? get authors => throw _privateConstructorUsedError;
+  String? get authors;
   @override
   @JsonKey(name: 'PassCriteria')
-  String? get passCriteria => throw _privateConstructorUsedError;
+  String? get passCriteria;
   @override
   @JsonKey(name: 'Comments')
-  String? get comments => throw _privateConstructorUsedError;
+  String? get comments;
   @override
   @JsonKey(name: 'Sources')
-  String? get sources => throw _privateConstructorUsedError;
+  String? get sources;
   @override
   @JsonKey(name: 'ParentId')
-  String? get parentId => throw _privateConstructorUsedError;
+  String? get parentId;
   @override
   @JsonKey(name: 'tourId')
-  String? get tourId => throw _privateConstructorUsedError;
+  String? get tourId;
   @override
   @JsonKey(name: 'tournamentId')
-  String? get tournamentId => throw _privateConstructorUsedError;
+  String? get tournamentId;
   @override
   @JsonKey(name: 'tourTitle')
-  String? get tourTitle => throw _privateConstructorUsedError;
+  String? get tourTitle;
   @override
   @JsonKey(name: 'tournamentTitle')
-  String? get tournamentTitle => throw _privateConstructorUsedError;
+  String? get tournamentTitle;
   @override
   @JsonKey(ignore: true)
-  _$QuestionDtoCopyWith<_QuestionDto> get copyWith =>
+  _$$_QuestionDtoCopyWith<_$_QuestionDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

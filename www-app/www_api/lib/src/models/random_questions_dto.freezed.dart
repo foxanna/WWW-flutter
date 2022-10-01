@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'random_questions_dto.dart';
 
@@ -10,32 +12,11 @@ part of 'random_questions_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 RandomQuestionsDto _$RandomQuestionsDtoFromJson(Map<String, dynamic> json) {
   return _RandomQuestionsDto.fromJson(json);
 }
-
-/// @nodoc
-class _$RandomQuestionsDtoTearOff {
-  const _$RandomQuestionsDtoTearOff();
-
-  _RandomQuestionsDto call(
-      {@JsonKey(name: 'question')
-      @QuestionsListConverter()
-          List<QuestionDto>? search}) {
-    return _RandomQuestionsDto(
-      search: search,
-    );
-  }
-
-  RandomQuestionsDto fromJson(Map<String, Object> json) {
-    return RandomQuestionsDto.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RandomQuestionsDto = _$RandomQuestionsDtoTearOff();
 
 /// @nodoc
 mixin _$RandomQuestionsDto {
@@ -83,11 +64,11 @@ class _$RandomQuestionsDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RandomQuestionsDtoCopyWith<$Res>
+abstract class _$$_RandomQuestionsDtoCopyWith<$Res>
     implements $RandomQuestionsDtoCopyWith<$Res> {
-  factory _$RandomQuestionsDtoCopyWith(
-          _RandomQuestionsDto value, $Res Function(_RandomQuestionsDto) then) =
-      __$RandomQuestionsDtoCopyWithImpl<$Res>;
+  factory _$$_RandomQuestionsDtoCopyWith(_$_RandomQuestionsDto value,
+          $Res Function(_$_RandomQuestionsDto) then) =
+      __$$_RandomQuestionsDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'question')
@@ -96,23 +77,23 @@ abstract class _$RandomQuestionsDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RandomQuestionsDtoCopyWithImpl<$Res>
+class __$$_RandomQuestionsDtoCopyWithImpl<$Res>
     extends _$RandomQuestionsDtoCopyWithImpl<$Res>
-    implements _$RandomQuestionsDtoCopyWith<$Res> {
-  __$RandomQuestionsDtoCopyWithImpl(
-      _RandomQuestionsDto _value, $Res Function(_RandomQuestionsDto) _then)
-      : super(_value, (v) => _then(v as _RandomQuestionsDto));
+    implements _$$_RandomQuestionsDtoCopyWith<$Res> {
+  __$$_RandomQuestionsDtoCopyWithImpl(
+      _$_RandomQuestionsDto _value, $Res Function(_$_RandomQuestionsDto) _then)
+      : super(_value, (v) => _then(v as _$_RandomQuestionsDto));
 
   @override
-  _RandomQuestionsDto get _value => super._value as _RandomQuestionsDto;
+  _$_RandomQuestionsDto get _value => super._value as _$_RandomQuestionsDto;
 
   @override
   $Res call({
     Object? search = freezed,
   }) {
-    return _then(_RandomQuestionsDto(
+    return _then(_$_RandomQuestionsDto(
       search: search == freezed
-          ? _value.search
+          ? _value._search
           : search // ignore: cast_nullable_to_non_nullable
               as List<QuestionDto>?,
     ));
@@ -123,15 +104,24 @@ class __$RandomQuestionsDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RandomQuestionsDto implements _RandomQuestionsDto {
   const _$_RandomQuestionsDto(
-      {@JsonKey(name: 'question') @QuestionsListConverter() this.search});
+      {@JsonKey(name: 'question')
+      @QuestionsListConverter()
+          final List<QuestionDto>? search})
+      : _search = search;
 
   factory _$_RandomQuestionsDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_RandomQuestionsDtoFromJson(json);
+      _$$_RandomQuestionsDtoFromJson(json);
 
+  final List<QuestionDto>? _search;
   @override
   @JsonKey(name: 'question')
   @QuestionsListConverter()
-  final List<QuestionDto>? search;
+  List<QuestionDto>? get search {
+    final value = _search;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -141,23 +131,27 @@ class _$_RandomQuestionsDto implements _RandomQuestionsDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RandomQuestionsDto &&
-            (identical(other.search, search) ||
-                const DeepCollectionEquality().equals(other.search, search)));
+        (other.runtimeType == runtimeType &&
+            other is _$_RandomQuestionsDto &&
+            const DeepCollectionEquality().equals(other._search, _search));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(search);
 
   @JsonKey(ignore: true)
   @override
-  _$RandomQuestionsDtoCopyWith<_RandomQuestionsDto> get copyWith =>
-      __$RandomQuestionsDtoCopyWithImpl<_RandomQuestionsDto>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_search));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_RandomQuestionsDtoCopyWith<_$_RandomQuestionsDto> get copyWith =>
+      __$$_RandomQuestionsDtoCopyWithImpl<_$_RandomQuestionsDto>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_RandomQuestionsDtoToJson(this);
+    return _$$_RandomQuestionsDtoToJson(
+      this,
+    );
   }
 }
 
@@ -165,7 +159,7 @@ abstract class _RandomQuestionsDto implements RandomQuestionsDto {
   const factory _RandomQuestionsDto(
       {@JsonKey(name: 'question')
       @QuestionsListConverter()
-          List<QuestionDto>? search}) = _$_RandomQuestionsDto;
+          final List<QuestionDto>? search}) = _$_RandomQuestionsDto;
 
   factory _RandomQuestionsDto.fromJson(Map<String, dynamic> json) =
       _$_RandomQuestionsDto.fromJson;
@@ -173,9 +167,9 @@ abstract class _RandomQuestionsDto implements RandomQuestionsDto {
   @override
   @JsonKey(name: 'question')
   @QuestionsListConverter()
-  List<QuestionDto>? get search => throw _privateConstructorUsedError;
+  List<QuestionDto>? get search;
   @override
   @JsonKey(ignore: true)
-  _$RandomQuestionsDtoCopyWith<_RandomQuestionsDto> get copyWith =>
+  _$$_RandomQuestionsDtoCopyWith<_$_RandomQuestionsDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

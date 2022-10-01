@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'search_parameters.dart';
 
@@ -10,26 +12,7 @@ part of 'search_parameters.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SearchParametersTearOff {
-  const _$SearchParametersTearOff();
-
-  _SearchParameters call(
-      {String query = '',
-      Sorting sorting = Sorting.relevance,
-      int nextPage = 0}) {
-    return _SearchParameters(
-      query: query,
-      sorting: sorting,
-      nextPage: nextPage,
-    );
-  }
-}
-
-/// @nodoc
-const $SearchParameters = _$SearchParametersTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SearchParameters {
@@ -83,25 +66,25 @@ class _$SearchParametersCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SearchParametersCopyWith<$Res>
+abstract class _$$_SearchParametersCopyWith<$Res>
     implements $SearchParametersCopyWith<$Res> {
-  factory _$SearchParametersCopyWith(
-          _SearchParameters value, $Res Function(_SearchParameters) then) =
-      __$SearchParametersCopyWithImpl<$Res>;
+  factory _$$_SearchParametersCopyWith(
+          _$_SearchParameters value, $Res Function(_$_SearchParameters) then) =
+      __$$_SearchParametersCopyWithImpl<$Res>;
   @override
   $Res call({String query, Sorting sorting, int nextPage});
 }
 
 /// @nodoc
-class __$SearchParametersCopyWithImpl<$Res>
+class __$$_SearchParametersCopyWithImpl<$Res>
     extends _$SearchParametersCopyWithImpl<$Res>
-    implements _$SearchParametersCopyWith<$Res> {
-  __$SearchParametersCopyWithImpl(
-      _SearchParameters _value, $Res Function(_SearchParameters) _then)
-      : super(_value, (v) => _then(v as _SearchParameters));
+    implements _$$_SearchParametersCopyWith<$Res> {
+  __$$_SearchParametersCopyWithImpl(
+      _$_SearchParameters _value, $Res Function(_$_SearchParameters) _then)
+      : super(_value, (v) => _then(v as _$_SearchParameters));
 
   @override
-  _SearchParameters get _value => super._value as _SearchParameters;
+  _$_SearchParameters get _value => super._value as _$_SearchParameters;
 
   @override
   $Res call({
@@ -109,7 +92,7 @@ class __$SearchParametersCopyWithImpl<$Res>
     Object? sorting = freezed,
     Object? nextPage = freezed,
   }) {
-    return _then(_SearchParameters(
+    return _then(_$_SearchParameters(
       query: query == freezed
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -132,14 +115,14 @@ class _$_SearchParameters implements _SearchParameters {
   const _$_SearchParameters(
       {this.query = '', this.sorting = Sorting.relevance, this.nextPage = 0});
 
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String query;
-  @JsonKey(defaultValue: Sorting.relevance)
   @override
+  @JsonKey()
   final Sorting sorting;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int nextPage;
 
   @override
@@ -150,42 +133,40 @@ class _$_SearchParameters implements _SearchParameters {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchParameters &&
-            (identical(other.query, query) ||
-                const DeepCollectionEquality().equals(other.query, query)) &&
-            (identical(other.sorting, sorting) ||
-                const DeepCollectionEquality()
-                    .equals(other.sorting, sorting)) &&
-            (identical(other.nextPage, nextPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.nextPage, nextPage)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SearchParameters &&
+            const DeepCollectionEquality().equals(other.query, query) &&
+            const DeepCollectionEquality().equals(other.sorting, sorting) &&
+            const DeepCollectionEquality().equals(other.nextPage, nextPage));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(query) ^
-      const DeepCollectionEquality().hash(sorting) ^
-      const DeepCollectionEquality().hash(nextPage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(query),
+      const DeepCollectionEquality().hash(sorting),
+      const DeepCollectionEquality().hash(nextPage));
 
   @JsonKey(ignore: true)
   @override
-  _$SearchParametersCopyWith<_SearchParameters> get copyWith =>
-      __$SearchParametersCopyWithImpl<_SearchParameters>(this, _$identity);
+  _$$_SearchParametersCopyWith<_$_SearchParameters> get copyWith =>
+      __$$_SearchParametersCopyWithImpl<_$_SearchParameters>(this, _$identity);
 }
 
 abstract class _SearchParameters implements SearchParameters {
   const factory _SearchParameters(
-      {String query, Sorting sorting, int nextPage}) = _$_SearchParameters;
+      {final String query,
+      final Sorting sorting,
+      final int nextPage}) = _$_SearchParameters;
 
   @override
-  String get query => throw _privateConstructorUsedError;
+  String get query;
   @override
-  Sorting get sorting => throw _privateConstructorUsedError;
+  Sorting get sorting;
   @override
-  int get nextPage => throw _privateConstructorUsedError;
+  int get nextPage;
   @override
   @JsonKey(ignore: true)
-  _$SearchParametersCopyWith<_SearchParameters> get copyWith =>
+  _$$_SearchParametersCopyWith<_$_SearchParameters> get copyWith =>
       throw _privateConstructorUsedError;
 }

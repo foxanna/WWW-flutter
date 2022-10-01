@@ -4,6 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -16,24 +17,37 @@ import '../service/firebase.dart'
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
-_i1.GetIt $initGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
-  final gh = _i2.GetItHelper(get, environment, environmentFilter);
+_i1.GetIt $initGetIt(
+  _i1.GetIt get, {
+  String? environment,
+  _i2.EnvironmentFilter? environmentFilter,
+}) {
+  final gh = _i2.GetItHelper(
+    get,
+    environment,
+    environmentFilter,
+  );
   final firebaseConfigInjectableModule = _$FirebaseConfigInjectableModule();
-  gh.factory<bool>(() => firebaseConfigInjectableModule.enableAnalytics,
-      instanceName: 'enableAnalytics');
-  gh.factory<bool>(() => firebaseConfigInjectableModule.enableCrashlytics,
-      instanceName: 'enableCrashlytics');
+  gh.factory<bool>(
+    () => firebaseConfigInjectableModule.enableAnalytics,
+    instanceName: 'enableAnalytics',
+  );
+  gh.factory<bool>(
+    () => firebaseConfigInjectableModule.enableCrashlytics,
+    instanceName: 'enableCrashlytics',
+  );
   gh.lazySingleton<_i3.IFirebaseWrapper>(() => _i3.FirebaseWrapper(
-      crashlyticsEnabled: get<bool>(instanceName: 'enableCrashlytics'),
-      analyticsEnabled: get<bool>(instanceName: 'enableAnalytics')));
+        crashlyticsEnabled: get<bool>(instanceName: 'enableCrashlytics'),
+        analyticsEnabled: get<bool>(instanceName: 'enableAnalytics'),
+      ));
   gh.lazySingleton<_i4.ICrashService>(
       () => _i4.CrashService(wrapper: get<_i3.IFirebaseWrapper>()));
   gh.lazySingleton<_i5.ICrashWrapper>(
       () => _i5.CrashWrapper(crashService: get<_i4.ICrashService>()));
   gh.lazySingleton<_i6.IAnalyticsService>(() => _i6.AnalyticsService(
-      wrapper: get<_i3.IFirebaseWrapper>(),
-      crashService: get<_i4.ICrashService>()));
+        wrapper: get<_i3.IFirebaseWrapper>(),
+        crashService: get<_i4.ICrashService>(),
+      ));
   return get;
 }
 

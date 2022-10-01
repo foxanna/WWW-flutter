@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
 
@@ -10,61 +12,12 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TournamentStateTearOff {
-  const _$TournamentStateTearOff();
-
-  InitialTournamentState initial(
-      {required TournamentInfo info, required TournamentStatus status}) {
-    return InitialTournamentState(
-      info: info,
-      status: status,
-    );
-  }
-
-  DataTournamentState data(
-      {required TournamentInfo info,
-      required TournamentStatus status,
-      required Tournament tournament,
-      required bool toursLoaded}) {
-    return DataTournamentState(
-      info: info,
-      status: status,
-      tournament: tournament,
-      toursLoaded: toursLoaded,
-    );
-  }
-
-  LoadingTournamentState loading(
-      {required TournamentInfo info, required TournamentStatus status}) {
-    return LoadingTournamentState(
-      info: info,
-      status: status,
-    );
-  }
-
-  ErrorTournamentState error(
-      {required TournamentInfo info,
-      required TournamentStatus status,
-      required Exception exception}) {
-    return ErrorTournamentState(
-      info: info,
-      status: status,
-      exception: exception,
-    );
-  }
-}
-
-/// @nodoc
-const $TournamentState = _$TournamentStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TournamentState {
   TournamentInfo get info => throw _privateConstructorUsedError;
   TournamentStatus get status => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TournamentInfo info, TournamentStatus status)
@@ -76,6 +29,18 @@ mixin _$TournamentState {
         loading,
     required TResult Function(
             TournamentInfo info, TournamentStatus status, Exception exception)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult Function(TournamentInfo info, TournamentStatus status,
+            Tournament tournament, bool toursLoaded)?
+        data,
+    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult Function(
+            TournamentInfo info, TournamentStatus status, Exception exception)?
         error,
   }) =>
       throw _privateConstructorUsedError;
@@ -98,6 +63,14 @@ mixin _$TournamentState {
     required TResult Function(DataTournamentState value) data,
     required TResult Function(LoadingTournamentState value) loading,
     required TResult Function(ErrorTournamentState value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialTournamentState value)? initial,
+    TResult Function(DataTournamentState value)? data,
+    TResult Function(LoadingTournamentState value)? loading,
+    TResult Function(ErrorTournamentState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -168,11 +141,11 @@ class _$TournamentStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitialTournamentStateCopyWith<$Res>
+abstract class _$$InitialTournamentStateCopyWith<$Res>
     implements $TournamentStateCopyWith<$Res> {
-  factory $InitialTournamentStateCopyWith(InitialTournamentState value,
-          $Res Function(InitialTournamentState) then) =
-      _$InitialTournamentStateCopyWithImpl<$Res>;
+  factory _$$InitialTournamentStateCopyWith(_$InitialTournamentState value,
+          $Res Function(_$InitialTournamentState) then) =
+      __$$InitialTournamentStateCopyWithImpl<$Res>;
   @override
   $Res call({TournamentInfo info, TournamentStatus status});
 
@@ -183,22 +156,23 @@ abstract class $InitialTournamentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class _$InitialTournamentStateCopyWithImpl<$Res>
+class __$$InitialTournamentStateCopyWithImpl<$Res>
     extends _$TournamentStateCopyWithImpl<$Res>
-    implements $InitialTournamentStateCopyWith<$Res> {
-  _$InitialTournamentStateCopyWithImpl(InitialTournamentState _value,
-      $Res Function(InitialTournamentState) _then)
-      : super(_value, (v) => _then(v as InitialTournamentState));
+    implements _$$InitialTournamentStateCopyWith<$Res> {
+  __$$InitialTournamentStateCopyWithImpl(_$InitialTournamentState _value,
+      $Res Function(_$InitialTournamentState) _then)
+      : super(_value, (v) => _then(v as _$InitialTournamentState));
 
   @override
-  InitialTournamentState get _value => super._value as InitialTournamentState;
+  _$InitialTournamentState get _value =>
+      super._value as _$InitialTournamentState;
 
   @override
   $Res call({
     Object? info = freezed,
     Object? status = freezed,
   }) {
-    return _then(InitialTournamentState(
+    return _then(_$InitialTournamentState(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -240,23 +214,22 @@ class _$InitialTournamentState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InitialTournamentState &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)));
+        (other.runtimeType == runtimeType &&
+            other is _$InitialTournamentState &&
+            const DeepCollectionEquality().equals(other.info, info) &&
+            const DeepCollectionEquality().equals(other.status, status));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(status);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(info),
+      const DeepCollectionEquality().hash(status));
 
   @JsonKey(ignore: true)
   @override
-  $InitialTournamentStateCopyWith<InitialTournamentState> get copyWith =>
-      _$InitialTournamentStateCopyWithImpl<InitialTournamentState>(
+  _$$InitialTournamentStateCopyWith<_$InitialTournamentState> get copyWith =>
+      __$$InitialTournamentStateCopyWithImpl<_$InitialTournamentState>(
           this, _$identity);
 
   @override
@@ -274,6 +247,21 @@ class _$InitialTournamentState
         error,
   }) {
     return initial(info, status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult Function(TournamentInfo info, TournamentStatus status,
+            Tournament tournament, bool toursLoaded)?
+        data,
+    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult Function(
+            TournamentInfo info, TournamentStatus status, Exception exception)?
+        error,
+  }) {
+    return initial?.call(info, status);
   }
 
   @override
@@ -308,6 +296,17 @@ class _$InitialTournamentState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialTournamentState value)? initial,
+    TResult Function(DataTournamentState value)? data,
+    TResult Function(LoadingTournamentState value)? loading,
+    TResult Function(ErrorTournamentState value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialTournamentState value)? initial,
     TResult Function(DataTournamentState value)? data,
@@ -324,25 +323,25 @@ class _$InitialTournamentState
 
 abstract class InitialTournamentState implements TournamentState {
   const factory InitialTournamentState(
-      {required TournamentInfo info,
-      required TournamentStatus status}) = _$InitialTournamentState;
+      {required final TournamentInfo info,
+      required final TournamentStatus status}) = _$InitialTournamentState;
 
   @override
-  TournamentInfo get info => throw _privateConstructorUsedError;
+  TournamentInfo get info;
   @override
-  TournamentStatus get status => throw _privateConstructorUsedError;
+  TournamentStatus get status;
   @override
   @JsonKey(ignore: true)
-  $InitialTournamentStateCopyWith<InitialTournamentState> get copyWith =>
+  _$$InitialTournamentStateCopyWith<_$InitialTournamentState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DataTournamentStateCopyWith<$Res>
+abstract class _$$DataTournamentStateCopyWith<$Res>
     implements $TournamentStateCopyWith<$Res> {
-  factory $DataTournamentStateCopyWith(
-          DataTournamentState value, $Res Function(DataTournamentState) then) =
-      _$DataTournamentStateCopyWithImpl<$Res>;
+  factory _$$DataTournamentStateCopyWith(_$DataTournamentState value,
+          $Res Function(_$DataTournamentState) then) =
+      __$$DataTournamentStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {TournamentInfo info,
@@ -358,15 +357,15 @@ abstract class $DataTournamentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class _$DataTournamentStateCopyWithImpl<$Res>
+class __$$DataTournamentStateCopyWithImpl<$Res>
     extends _$TournamentStateCopyWithImpl<$Res>
-    implements $DataTournamentStateCopyWith<$Res> {
-  _$DataTournamentStateCopyWithImpl(
-      DataTournamentState _value, $Res Function(DataTournamentState) _then)
-      : super(_value, (v) => _then(v as DataTournamentState));
+    implements _$$DataTournamentStateCopyWith<$Res> {
+  __$$DataTournamentStateCopyWithImpl(
+      _$DataTournamentState _value, $Res Function(_$DataTournamentState) _then)
+      : super(_value, (v) => _then(v as _$DataTournamentState));
 
   @override
-  DataTournamentState get _value => super._value as DataTournamentState;
+  _$DataTournamentState get _value => super._value as _$DataTournamentState;
 
   @override
   $Res call({
@@ -375,7 +374,7 @@ class _$DataTournamentStateCopyWithImpl<$Res>
     Object? tournament = freezed,
     Object? toursLoaded = freezed,
   }) {
-    return _then(DataTournamentState(
+    return _then(_$DataTournamentState(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -442,31 +441,29 @@ class _$DataTournamentState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DataTournamentState &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.tournament, tournament) ||
-                const DeepCollectionEquality()
-                    .equals(other.tournament, tournament)) &&
-            (identical(other.toursLoaded, toursLoaded) ||
-                const DeepCollectionEquality()
-                    .equals(other.toursLoaded, toursLoaded)));
+        (other.runtimeType == runtimeType &&
+            other is _$DataTournamentState &&
+            const DeepCollectionEquality().equals(other.info, info) &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.tournament, tournament) &&
+            const DeepCollectionEquality()
+                .equals(other.toursLoaded, toursLoaded));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(tournament) ^
-      const DeepCollectionEquality().hash(toursLoaded);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(info),
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(tournament),
+      const DeepCollectionEquality().hash(toursLoaded));
 
   @JsonKey(ignore: true)
   @override
-  $DataTournamentStateCopyWith<DataTournamentState> get copyWith =>
-      _$DataTournamentStateCopyWithImpl<DataTournamentState>(this, _$identity);
+  _$$DataTournamentStateCopyWith<_$DataTournamentState> get copyWith =>
+      __$$DataTournamentStateCopyWithImpl<_$DataTournamentState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -483,6 +480,21 @@ class _$DataTournamentState
         error,
   }) {
     return data(info, status, tournament, toursLoaded);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult Function(TournamentInfo info, TournamentStatus status,
+            Tournament tournament, bool toursLoaded)?
+        data,
+    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult Function(
+            TournamentInfo info, TournamentStatus status, Exception exception)?
+        error,
+  }) {
+    return data?.call(info, status, tournament, toursLoaded);
   }
 
   @override
@@ -517,6 +529,17 @@ class _$DataTournamentState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialTournamentState value)? initial,
+    TResult Function(DataTournamentState value)? data,
+    TResult Function(LoadingTournamentState value)? loading,
+    TResult Function(ErrorTournamentState value)? error,
+  }) {
+    return data?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialTournamentState value)? initial,
     TResult Function(DataTournamentState value)? data,
@@ -533,29 +556,29 @@ class _$DataTournamentState
 
 abstract class DataTournamentState implements TournamentState {
   const factory DataTournamentState(
-      {required TournamentInfo info,
-      required TournamentStatus status,
-      required Tournament tournament,
-      required bool toursLoaded}) = _$DataTournamentState;
+      {required final TournamentInfo info,
+      required final TournamentStatus status,
+      required final Tournament tournament,
+      required final bool toursLoaded}) = _$DataTournamentState;
 
   @override
-  TournamentInfo get info => throw _privateConstructorUsedError;
+  TournamentInfo get info;
   @override
-  TournamentStatus get status => throw _privateConstructorUsedError;
-  Tournament get tournament => throw _privateConstructorUsedError;
-  bool get toursLoaded => throw _privateConstructorUsedError;
+  TournamentStatus get status;
+  Tournament get tournament;
+  bool get toursLoaded;
   @override
   @JsonKey(ignore: true)
-  $DataTournamentStateCopyWith<DataTournamentState> get copyWith =>
+  _$$DataTournamentStateCopyWith<_$DataTournamentState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadingTournamentStateCopyWith<$Res>
+abstract class _$$LoadingTournamentStateCopyWith<$Res>
     implements $TournamentStateCopyWith<$Res> {
-  factory $LoadingTournamentStateCopyWith(LoadingTournamentState value,
-          $Res Function(LoadingTournamentState) then) =
-      _$LoadingTournamentStateCopyWithImpl<$Res>;
+  factory _$$LoadingTournamentStateCopyWith(_$LoadingTournamentState value,
+          $Res Function(_$LoadingTournamentState) then) =
+      __$$LoadingTournamentStateCopyWithImpl<$Res>;
   @override
   $Res call({TournamentInfo info, TournamentStatus status});
 
@@ -566,22 +589,23 @@ abstract class $LoadingTournamentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class _$LoadingTournamentStateCopyWithImpl<$Res>
+class __$$LoadingTournamentStateCopyWithImpl<$Res>
     extends _$TournamentStateCopyWithImpl<$Res>
-    implements $LoadingTournamentStateCopyWith<$Res> {
-  _$LoadingTournamentStateCopyWithImpl(LoadingTournamentState _value,
-      $Res Function(LoadingTournamentState) _then)
-      : super(_value, (v) => _then(v as LoadingTournamentState));
+    implements _$$LoadingTournamentStateCopyWith<$Res> {
+  __$$LoadingTournamentStateCopyWithImpl(_$LoadingTournamentState _value,
+      $Res Function(_$LoadingTournamentState) _then)
+      : super(_value, (v) => _then(v as _$LoadingTournamentState));
 
   @override
-  LoadingTournamentState get _value => super._value as LoadingTournamentState;
+  _$LoadingTournamentState get _value =>
+      super._value as _$LoadingTournamentState;
 
   @override
   $Res call({
     Object? info = freezed,
     Object? status = freezed,
   }) {
-    return _then(LoadingTournamentState(
+    return _then(_$LoadingTournamentState(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -623,23 +647,22 @@ class _$LoadingTournamentState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadingTournamentState &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)));
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingTournamentState &&
+            const DeepCollectionEquality().equals(other.info, info) &&
+            const DeepCollectionEquality().equals(other.status, status));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(status);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(info),
+      const DeepCollectionEquality().hash(status));
 
   @JsonKey(ignore: true)
   @override
-  $LoadingTournamentStateCopyWith<LoadingTournamentState> get copyWith =>
-      _$LoadingTournamentStateCopyWithImpl<LoadingTournamentState>(
+  _$$LoadingTournamentStateCopyWith<_$LoadingTournamentState> get copyWith =>
+      __$$LoadingTournamentStateCopyWithImpl<_$LoadingTournamentState>(
           this, _$identity);
 
   @override
@@ -657,6 +680,21 @@ class _$LoadingTournamentState
         error,
   }) {
     return loading(info, status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult Function(TournamentInfo info, TournamentStatus status,
+            Tournament tournament, bool toursLoaded)?
+        data,
+    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult Function(
+            TournamentInfo info, TournamentStatus status, Exception exception)?
+        error,
+  }) {
+    return loading?.call(info, status);
   }
 
   @override
@@ -691,6 +729,17 @@ class _$LoadingTournamentState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialTournamentState value)? initial,
+    TResult Function(DataTournamentState value)? data,
+    TResult Function(LoadingTournamentState value)? loading,
+    TResult Function(ErrorTournamentState value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialTournamentState value)? initial,
     TResult Function(DataTournamentState value)? data,
@@ -707,25 +756,25 @@ class _$LoadingTournamentState
 
 abstract class LoadingTournamentState implements TournamentState {
   const factory LoadingTournamentState(
-      {required TournamentInfo info,
-      required TournamentStatus status}) = _$LoadingTournamentState;
+      {required final TournamentInfo info,
+      required final TournamentStatus status}) = _$LoadingTournamentState;
 
   @override
-  TournamentInfo get info => throw _privateConstructorUsedError;
+  TournamentInfo get info;
   @override
-  TournamentStatus get status => throw _privateConstructorUsedError;
+  TournamentStatus get status;
   @override
   @JsonKey(ignore: true)
-  $LoadingTournamentStateCopyWith<LoadingTournamentState> get copyWith =>
+  _$$LoadingTournamentStateCopyWith<_$LoadingTournamentState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ErrorTournamentStateCopyWith<$Res>
+abstract class _$$ErrorTournamentStateCopyWith<$Res>
     implements $TournamentStateCopyWith<$Res> {
-  factory $ErrorTournamentStateCopyWith(ErrorTournamentState value,
-          $Res Function(ErrorTournamentState) then) =
-      _$ErrorTournamentStateCopyWithImpl<$Res>;
+  factory _$$ErrorTournamentStateCopyWith(_$ErrorTournamentState value,
+          $Res Function(_$ErrorTournamentState) then) =
+      __$$ErrorTournamentStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {TournamentInfo info, TournamentStatus status, Exception exception});
@@ -737,15 +786,15 @@ abstract class $ErrorTournamentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class _$ErrorTournamentStateCopyWithImpl<$Res>
+class __$$ErrorTournamentStateCopyWithImpl<$Res>
     extends _$TournamentStateCopyWithImpl<$Res>
-    implements $ErrorTournamentStateCopyWith<$Res> {
-  _$ErrorTournamentStateCopyWithImpl(
-      ErrorTournamentState _value, $Res Function(ErrorTournamentState) _then)
-      : super(_value, (v) => _then(v as ErrorTournamentState));
+    implements _$$ErrorTournamentStateCopyWith<$Res> {
+  __$$ErrorTournamentStateCopyWithImpl(_$ErrorTournamentState _value,
+      $Res Function(_$ErrorTournamentState) _then)
+      : super(_value, (v) => _then(v as _$ErrorTournamentState));
 
   @override
-  ErrorTournamentState get _value => super._value as ErrorTournamentState;
+  _$ErrorTournamentState get _value => super._value as _$ErrorTournamentState;
 
   @override
   $Res call({
@@ -753,7 +802,7 @@ class _$ErrorTournamentStateCopyWithImpl<$Res>
     Object? status = freezed,
     Object? exception = freezed,
   }) {
-    return _then(ErrorTournamentState(
+    return _then(_$ErrorTournamentState(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -803,27 +852,24 @@ class _$ErrorTournamentState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ErrorTournamentState &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorTournamentState &&
+            const DeepCollectionEquality().equals(other.info, info) &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(exception);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(info),
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $ErrorTournamentStateCopyWith<ErrorTournamentState> get copyWith =>
-      _$ErrorTournamentStateCopyWithImpl<ErrorTournamentState>(
+  _$$ErrorTournamentStateCopyWith<_$ErrorTournamentState> get copyWith =>
+      __$$ErrorTournamentStateCopyWithImpl<_$ErrorTournamentState>(
           this, _$identity);
 
   @override
@@ -841,6 +887,21 @@ class _$ErrorTournamentState
         error,
   }) {
     return error(info, status, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult Function(TournamentInfo info, TournamentStatus status,
+            Tournament tournament, bool toursLoaded)?
+        data,
+    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult Function(
+            TournamentInfo info, TournamentStatus status, Exception exception)?
+        error,
+  }) {
+    return error?.call(info, status, exception);
   }
 
   @override
@@ -875,6 +936,17 @@ class _$ErrorTournamentState
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialTournamentState value)? initial,
+    TResult Function(DataTournamentState value)? data,
+    TResult Function(LoadingTournamentState value)? loading,
+    TResult Function(ErrorTournamentState value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialTournamentState value)? initial,
     TResult Function(DataTournamentState value)? data,
@@ -891,17 +963,17 @@ class _$ErrorTournamentState
 
 abstract class ErrorTournamentState implements TournamentState {
   const factory ErrorTournamentState(
-      {required TournamentInfo info,
-      required TournamentStatus status,
-      required Exception exception}) = _$ErrorTournamentState;
+      {required final TournamentInfo info,
+      required final TournamentStatus status,
+      required final Exception exception}) = _$ErrorTournamentState;
 
   @override
-  TournamentInfo get info => throw _privateConstructorUsedError;
+  TournamentInfo get info;
   @override
-  TournamentStatus get status => throw _privateConstructorUsedError;
-  Exception get exception => throw _privateConstructorUsedError;
+  TournamentStatus get status;
+  Exception get exception;
   @override
   @JsonKey(ignore: true)
-  $ErrorTournamentStateCopyWith<ErrorTournamentState> get copyWith =>
+  _$$ErrorTournamentStateCopyWith<_$ErrorTournamentState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'section_text.dart';
 
@@ -10,22 +12,7 @@ part of 'section_text.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TextSectionHiveModelTearOff {
-  const _$TextSectionHiveModelTearOff();
-
-  _TextSectionHiveModel call(
-      {@HiveField(TextSectionHiveFieldsIds.value) required String value}) {
-    return _TextSectionHiveModel(
-      value: value,
-    );
-  }
-}
-
-/// @nodoc
-const $TextSectionHiveModel = _$TextSectionHiveModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TextSectionHiveModel {
@@ -68,31 +55,31 @@ class _$TextSectionHiveModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TextSectionHiveModelCopyWith<$Res>
+abstract class _$$_TextSectionHiveModelCopyWith<$Res>
     implements $TextSectionHiveModelCopyWith<$Res> {
-  factory _$TextSectionHiveModelCopyWith(_TextSectionHiveModel value,
-          $Res Function(_TextSectionHiveModel) then) =
-      __$TextSectionHiveModelCopyWithImpl<$Res>;
+  factory _$$_TextSectionHiveModelCopyWith(_$_TextSectionHiveModel value,
+          $Res Function(_$_TextSectionHiveModel) then) =
+      __$$_TextSectionHiveModelCopyWithImpl<$Res>;
   @override
   $Res call({@HiveField(TextSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
-class __$TextSectionHiveModelCopyWithImpl<$Res>
+class __$$_TextSectionHiveModelCopyWithImpl<$Res>
     extends _$TextSectionHiveModelCopyWithImpl<$Res>
-    implements _$TextSectionHiveModelCopyWith<$Res> {
-  __$TextSectionHiveModelCopyWithImpl(
-      _TextSectionHiveModel _value, $Res Function(_TextSectionHiveModel) _then)
-      : super(_value, (v) => _then(v as _TextSectionHiveModel));
+    implements _$$_TextSectionHiveModelCopyWith<$Res> {
+  __$$_TextSectionHiveModelCopyWithImpl(_$_TextSectionHiveModel _value,
+      $Res Function(_$_TextSectionHiveModel) _then)
+      : super(_value, (v) => _then(v as _$_TextSectionHiveModel));
 
   @override
-  _TextSectionHiveModel get _value => super._value as _TextSectionHiveModel;
+  _$_TextSectionHiveModel get _value => super._value as _$_TextSectionHiveModel;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_TextSectionHiveModel(
+    return _then(_$_TextSectionHiveModel(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -120,32 +107,32 @@ class _$_TextSectionHiveModel implements _TextSectionHiveModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TextSectionHiveModel &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _$_TextSectionHiveModel &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$TextSectionHiveModelCopyWith<_TextSectionHiveModel> get copyWith =>
-      __$TextSectionHiveModelCopyWithImpl<_TextSectionHiveModel>(
+  _$$_TextSectionHiveModelCopyWith<_$_TextSectionHiveModel> get copyWith =>
+      __$$_TextSectionHiveModelCopyWithImpl<_$_TextSectionHiveModel>(
           this, _$identity);
 }
 
 abstract class _TextSectionHiveModel implements TextSectionHiveModel {
   const factory _TextSectionHiveModel(
-          {@HiveField(TextSectionHiveFieldsIds.value) required String value}) =
-      _$_TextSectionHiveModel;
+      {@HiveField(TextSectionHiveFieldsIds.value)
+          required final String value}) = _$_TextSectionHiveModel;
 
   @override
   @HiveField(TextSectionHiveFieldsIds.value)
-  String get value => throw _privateConstructorUsedError;
+  String get value;
   @override
   @JsonKey(ignore: true)
-  _$TextSectionHiveModelCopyWith<_TextSectionHiveModel> get copyWith =>
+  _$$_TextSectionHiveModelCopyWith<_$_TextSectionHiveModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

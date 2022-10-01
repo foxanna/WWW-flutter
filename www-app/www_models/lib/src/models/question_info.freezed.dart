@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'question_info.dart';
 
@@ -10,28 +12,7 @@ part of 'question_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$QuestionInfoTearOff {
-  const _$QuestionInfoTearOff();
-
-  _QuestionInfo call(
-      {String? id,
-      String? number,
-      String? url,
-      TourInfo tourInfo = const TourInfo()}) {
-    return _QuestionInfo(
-      id: id,
-      number: number,
-      url: url,
-      tourInfo: tourInfo,
-    );
-  }
-}
-
-/// @nodoc
-const $QuestionInfo = _$QuestionInfoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$QuestionInfo {
@@ -99,11 +80,11 @@ class _$QuestionInfoCopyWithImpl<$Res> implements $QuestionInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$QuestionInfoCopyWith<$Res>
+abstract class _$$_QuestionInfoCopyWith<$Res>
     implements $QuestionInfoCopyWith<$Res> {
-  factory _$QuestionInfoCopyWith(
-          _QuestionInfo value, $Res Function(_QuestionInfo) then) =
-      __$QuestionInfoCopyWithImpl<$Res>;
+  factory _$$_QuestionInfoCopyWith(
+          _$_QuestionInfo value, $Res Function(_$_QuestionInfo) then) =
+      __$$_QuestionInfoCopyWithImpl<$Res>;
   @override
   $Res call({String? id, String? number, String? url, TourInfo tourInfo});
 
@@ -112,14 +93,15 @@ abstract class _$QuestionInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$QuestionInfoCopyWithImpl<$Res> extends _$QuestionInfoCopyWithImpl<$Res>
-    implements _$QuestionInfoCopyWith<$Res> {
-  __$QuestionInfoCopyWithImpl(
-      _QuestionInfo _value, $Res Function(_QuestionInfo) _then)
-      : super(_value, (v) => _then(v as _QuestionInfo));
+class __$$_QuestionInfoCopyWithImpl<$Res>
+    extends _$QuestionInfoCopyWithImpl<$Res>
+    implements _$$_QuestionInfoCopyWith<$Res> {
+  __$$_QuestionInfoCopyWithImpl(
+      _$_QuestionInfo _value, $Res Function(_$_QuestionInfo) _then)
+      : super(_value, (v) => _then(v as _$_QuestionInfo));
 
   @override
-  _QuestionInfo get _value => super._value as _QuestionInfo;
+  _$_QuestionInfo get _value => super._value as _$_QuestionInfo;
 
   @override
   $Res call({
@@ -128,7 +110,7 @@ class __$QuestionInfoCopyWithImpl<$Res> extends _$QuestionInfoCopyWithImpl<$Res>
     Object? url = freezed,
     Object? tourInfo = freezed,
   }) {
-    return _then(_QuestionInfo(
+    return _then(_$_QuestionInfo(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -161,8 +143,8 @@ class _$_QuestionInfo implements _QuestionInfo {
   final String? number;
   @override
   final String? url;
-  @JsonKey(defaultValue: const TourInfo())
   @override
+  @JsonKey()
   final TourInfo tourInfo;
 
   @override
@@ -173,49 +155,45 @@ class _$_QuestionInfo implements _QuestionInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _QuestionInfo &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.number, number) ||
-                const DeepCollectionEquality().equals(other.number, number)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.tourInfo, tourInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.tourInfo, tourInfo)));
+        (other.runtimeType == runtimeType &&
+            other is _$_QuestionInfo &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.number, number) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.tourInfo, tourInfo));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(number) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(tourInfo);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(number),
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(tourInfo));
 
   @JsonKey(ignore: true)
   @override
-  _$QuestionInfoCopyWith<_QuestionInfo> get copyWith =>
-      __$QuestionInfoCopyWithImpl<_QuestionInfo>(this, _$identity);
+  _$$_QuestionInfoCopyWith<_$_QuestionInfo> get copyWith =>
+      __$$_QuestionInfoCopyWithImpl<_$_QuestionInfo>(this, _$identity);
 }
 
 abstract class _QuestionInfo implements QuestionInfo {
   const factory _QuestionInfo(
-      {String? id,
-      String? number,
-      String? url,
-      TourInfo tourInfo}) = _$_QuestionInfo;
+      {final String? id,
+      final String? number,
+      final String? url,
+      final TourInfo tourInfo}) = _$_QuestionInfo;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  String? get number => throw _privateConstructorUsedError;
+  String? get number;
   @override
-  String? get url => throw _privateConstructorUsedError;
+  String? get url;
   @override
-  TourInfo get tourInfo => throw _privateConstructorUsedError;
+  TourInfo get tourInfo;
   @override
   @JsonKey(ignore: true)
-  _$QuestionInfoCopyWith<_QuestionInfo> get copyWith =>
+  _$$_QuestionInfoCopyWith<_$_QuestionInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }

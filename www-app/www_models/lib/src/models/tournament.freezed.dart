@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tournament.dart';
 
@@ -10,30 +12,7 @@ part of 'tournament.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TournamentTearOff {
-  const _$TournamentTearOff();
-
-  _Tournament call(
-      {String? id,
-      String? id2,
-      TournamentInfo info = const TournamentInfo(),
-      TournamentStatus status = const TournamentStatus(),
-      List<Tour> tours = const <Tour>[]}) {
-    return _Tournament(
-      id: id,
-      id2: id2,
-      info: info,
-      status: status,
-      tours: tours,
-    );
-  }
-}
-
-/// @nodoc
-const $Tournament = _$TournamentTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Tournament {
@@ -120,10 +99,11 @@ class _$TournamentCopyWithImpl<$Res> implements $TournamentCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TournamentCopyWith<$Res> implements $TournamentCopyWith<$Res> {
-  factory _$TournamentCopyWith(
-          _Tournament value, $Res Function(_Tournament) then) =
-      __$TournamentCopyWithImpl<$Res>;
+abstract class _$$_TournamentCopyWith<$Res>
+    implements $TournamentCopyWith<$Res> {
+  factory _$$_TournamentCopyWith(
+          _$_Tournament value, $Res Function(_$_Tournament) then) =
+      __$$_TournamentCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? id,
@@ -139,14 +119,14 @@ abstract class _$TournamentCopyWith<$Res> implements $TournamentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
-    implements _$TournamentCopyWith<$Res> {
-  __$TournamentCopyWithImpl(
-      _Tournament _value, $Res Function(_Tournament) _then)
-      : super(_value, (v) => _then(v as _Tournament));
+class __$$_TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
+    implements _$$_TournamentCopyWith<$Res> {
+  __$$_TournamentCopyWithImpl(
+      _$_Tournament _value, $Res Function(_$_Tournament) _then)
+      : super(_value, (v) => _then(v as _$_Tournament));
 
   @override
-  _Tournament get _value => super._value as _Tournament;
+  _$_Tournament get _value => super._value as _$_Tournament;
 
   @override
   $Res call({
@@ -156,7 +136,7 @@ class __$TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
     Object? status = freezed,
     Object? tours = freezed,
   }) {
-    return _then(_Tournament(
+    return _then(_$_Tournament(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -174,7 +154,7 @@ class __$TournamentCopyWithImpl<$Res> extends _$TournamentCopyWithImpl<$Res>
           : status // ignore: cast_nullable_to_non_nullable
               as TournamentStatus,
       tours: tours == freezed
-          ? _value.tours
+          ? _value._tours
           : tours // ignore: cast_nullable_to_non_nullable
               as List<Tour>,
     ));
@@ -189,21 +169,26 @@ class _$_Tournament implements _Tournament {
       this.id2,
       this.info = const TournamentInfo(),
       this.status = const TournamentStatus(),
-      this.tours = const <Tour>[]});
+      final List<Tour> tours = const <Tour>[]})
+      : _tours = tours;
 
   @override
   final String? id;
   @override
   final String? id2;
-  @JsonKey(defaultValue: const TournamentInfo())
   @override
+  @JsonKey()
   final TournamentInfo info;
-  @JsonKey(defaultValue: const TournamentStatus())
   @override
+  @JsonKey()
   final TournamentStatus status;
-  @JsonKey(defaultValue: const <Tour>[])
+  final List<Tour> _tours;
   @override
-  final List<Tour> tours;
+  @JsonKey()
+  List<Tour> get tours {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tours);
+  }
 
   @override
   String toString() {
@@ -213,54 +198,50 @@ class _$_Tournament implements _Tournament {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Tournament &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.id2, id2) ||
-                const DeepCollectionEquality().equals(other.id2, id2)) &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.tours, tours) ||
-                const DeepCollectionEquality().equals(other.tours, tours)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Tournament &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.id2, id2) &&
+            const DeepCollectionEquality().equals(other.info, info) &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other._tours, _tours));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(id2) ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(tours);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(id2),
+      const DeepCollectionEquality().hash(info),
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(_tours));
 
   @JsonKey(ignore: true)
   @override
-  _$TournamentCopyWith<_Tournament> get copyWith =>
-      __$TournamentCopyWithImpl<_Tournament>(this, _$identity);
+  _$$_TournamentCopyWith<_$_Tournament> get copyWith =>
+      __$$_TournamentCopyWithImpl<_$_Tournament>(this, _$identity);
 }
 
 abstract class _Tournament implements Tournament {
   const factory _Tournament(
-      {String? id,
-      String? id2,
-      TournamentInfo info,
-      TournamentStatus status,
-      List<Tour> tours}) = _$_Tournament;
+      {final String? id,
+      final String? id2,
+      final TournamentInfo info,
+      final TournamentStatus status,
+      final List<Tour> tours}) = _$_Tournament;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  String? get id2 => throw _privateConstructorUsedError;
+  String? get id2;
   @override
-  TournamentInfo get info => throw _privateConstructorUsedError;
+  TournamentInfo get info;
   @override
-  TournamentStatus get status => throw _privateConstructorUsedError;
+  TournamentStatus get status;
   @override
-  List<Tour> get tours => throw _privateConstructorUsedError;
+  List<Tour> get tours;
   @override
   @JsonKey(ignore: true)
-  _$TournamentCopyWith<_Tournament> get copyWith =>
+  _$$_TournamentCopyWith<_$_Tournament> get copyWith =>
       throw _privateConstructorUsedError;
 }

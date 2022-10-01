@@ -4,6 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:www_analytics/www_analytics.dart' as _i4;
@@ -30,42 +31,52 @@ import '../redux/store.dart' as _i22; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
-_i1.GetIt $initGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
-  final gh = _i2.GetItHelper(get, environment, environmentFilter);
+_i1.GetIt $initGetIt(
+  _i1.GetIt get, {
+  String? environment,
+  _i2.EnvironmentFilter? environmentFilter,
+}) {
+  final gh = _i2.GetItHelper(
+    get,
+    environment,
+    environmentFilter,
+  );
   gh.factory<_i3.AnalyticsMiddleware>(() =>
       _i3.AnalyticsMiddleware(analyticsService: get<_i4.IAnalyticsService>()));
   gh.factory<_i5.AppReducer>(() => _i5.AppReducer(
-      timerReducer: get<_i6.TimerReducer>(),
-      latestTournamentsReducer: get<_i7.LatestTournamentsReducer>(),
-      tournamentReducer: get<_i8.TournamentReducer>(),
-      toursReducer: get<_i9.ToursReducer>(),
-      questionsReducer: get<_i10.QuestionsReducer>(),
-      searchReducer: get<_i11.SearchReducer>(),
-      settingsReducer: get<_i12.SettingsReducer>(),
-      tournamentsTreeReducer: get<_i13.TournamentsTreeReducer>(),
-      initializationReducer: get<_i14.InitializationReducer>(),
-      bookmarksReducer: get<_i15.BookmarksReducer>()));
+        timerReducer: get<_i6.TimerReducer>(),
+        latestTournamentsReducer: get<_i7.LatestTournamentsReducer>(),
+        tournamentReducer: get<_i8.TournamentReducer>(),
+        toursReducer: get<_i9.ToursReducer>(),
+        questionsReducer: get<_i10.QuestionsReducer>(),
+        searchReducer: get<_i11.SearchReducer>(),
+        settingsReducer: get<_i12.SettingsReducer>(),
+        tournamentsTreeReducer: get<_i13.TournamentsTreeReducer>(),
+        initializationReducer: get<_i14.InitializationReducer>(),
+        bookmarksReducer: get<_i15.BookmarksReducer>(),
+      ));
   gh.factory<_i16.LogsMiddleware>(() => _i16.LogsMiddleware());
   gh.factory<_i17.AppMiddleware>(() => _i17.AppMiddleware(
-      initializationMiddleware: get<_i14.InitializationMiddleware>(),
-      logsMiddleware: get<_i16.LogsMiddleware>(),
-      analyticsMiddleware: get<_i3.AnalyticsMiddleware>(),
-      timerMiddleware: get<_i6.TimerMiddleware>(),
-      shareMiddleware: get<_i18.ShareMiddleware>(),
-      browseMiddleware: get<_i19.BrowseMiddleware>(),
-      navigationMiddleware: get<_i20.NavigationMiddleware>(),
-      toursMiddleware: get<_i9.ToursMiddleware>(),
-      tournamentMiddleware: get<_i8.TournamentMiddleware>(),
-      latestTournamentsMiddleware: get<_i7.LatestTournamentsMiddleware>(),
-      searchMiddleware: get<_i11.SearchMiddleware>(),
-      settingsMiddleware: get<_i12.SettingsMiddleware>(),
-      questionsMiddleware: get<_i10.QuestionsMiddleware>(),
-      tournamentsTreeMiddleware: get<_i13.TournamentsTreeMiddleware>(),
-      ratingMiddleware: get<_i21.RatingMiddleware>(),
-      bookmarksMiddleware: get<_i15.BookmarksMiddleware>()));
+        initializationMiddleware: get<_i14.InitializationMiddleware>(),
+        logsMiddleware: get<_i16.LogsMiddleware>(),
+        analyticsMiddleware: get<_i3.AnalyticsMiddleware>(),
+        timerMiddleware: get<_i6.TimerMiddleware>(),
+        shareMiddleware: get<_i18.ShareMiddleware>(),
+        browseMiddleware: get<_i19.BrowseMiddleware>(),
+        navigationMiddleware: get<_i20.NavigationMiddleware>(),
+        toursMiddleware: get<_i9.ToursMiddleware>(),
+        tournamentMiddleware: get<_i8.TournamentMiddleware>(),
+        latestTournamentsMiddleware: get<_i7.LatestTournamentsMiddleware>(),
+        searchMiddleware: get<_i11.SearchMiddleware>(),
+        settingsMiddleware: get<_i12.SettingsMiddleware>(),
+        questionsMiddleware: get<_i10.QuestionsMiddleware>(),
+        tournamentsTreeMiddleware: get<_i13.TournamentsTreeMiddleware>(),
+        ratingMiddleware: get<_i21.RatingMiddleware>(),
+        bookmarksMiddleware: get<_i15.BookmarksMiddleware>(),
+      ));
   gh.factory<_i22.WWWStore>(() => _i22.WWWStore(
-      appMiddleware: get<_i17.AppMiddleware>(),
-      appReducer: get<_i5.AppReducer>()));
+        appMiddleware: get<_i17.AppMiddleware>(),
+        appReducer: get<_i5.AppReducer>(),
+      ));
   return get;
 }

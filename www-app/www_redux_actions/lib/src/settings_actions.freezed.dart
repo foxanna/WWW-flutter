@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'settings_actions.dart';
 
@@ -10,46 +12,7 @@ part of 'settings_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserActionSettingsTearOff {
-  const _$UserActionSettingsTearOff();
-
-  OpenSettingsUserAction open() {
-    return const OpenSettingsUserAction();
-  }
-
-  ChangeThemeSettingsUserAction changeTheme({required AppTheme appTheme}) {
-    return ChangeThemeSettingsUserAction(
-      appTheme: appTheme,
-    );
-  }
-
-  ChangeTextScaleSettingsUserAction changeTextScale(
-      {required TextScale textScale}) {
-    return ChangeTextScaleSettingsUserAction(
-      textScale: textScale,
-    );
-  }
-
-  ChangeNotifyShortTimerExpirationSettingsUserAction
-      changeNotifyShortTimerExpiration({required bool value}) {
-    return ChangeNotifyShortTimerExpirationSettingsUserAction(
-      value: value,
-    );
-  }
-
-  ChangeNotifyLongTimerExpirationSettingsUserAction
-      changeNotifyLongTimerExpiration({required bool value}) {
-    return ChangeNotifyLongTimerExpirationSettingsUserAction(
-      value: value,
-    );
-  }
-}
-
-/// @nodoc
-const $UserActionSettings = _$UserActionSettingsTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UserActionSettings {
@@ -60,6 +23,15 @@ mixin _$UserActionSettings {
     required TResult Function(TextScale textScale) changeTextScale,
     required TResult Function(bool value) changeNotifyShortTimerExpiration,
     required TResult Function(bool value) changeNotifyLongTimerExpiration,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function(AppTheme appTheme)? changeTheme,
+    TResult Function(TextScale textScale)? changeTextScale,
+    TResult Function(bool value)? changeNotifyShortTimerExpiration,
+    TResult Function(bool value)? changeNotifyLongTimerExpiration,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +55,17 @@ mixin _$UserActionSettings {
         changeNotifyShortTimerExpiration,
     required TResult Function(
             ChangeNotifyLongTimerExpirationSettingsUserAction value)
+        changeNotifyLongTimerExpiration,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSettingsUserAction value)? open,
+    TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
+    TResult Function(ChangeTextScaleSettingsUserAction value)? changeTextScale,
+    TResult Function(ChangeNotifyShortTimerExpirationSettingsUserAction value)?
+        changeNotifyShortTimerExpiration,
+    TResult Function(ChangeNotifyLongTimerExpirationSettingsUserAction value)?
         changeNotifyLongTimerExpiration,
   }) =>
       throw _privateConstructorUsedError;
@@ -118,22 +101,23 @@ class _$UserActionSettingsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $OpenSettingsUserActionCopyWith<$Res> {
-  factory $OpenSettingsUserActionCopyWith(OpenSettingsUserAction value,
-          $Res Function(OpenSettingsUserAction) then) =
-      _$OpenSettingsUserActionCopyWithImpl<$Res>;
+abstract class _$$OpenSettingsUserActionCopyWith<$Res> {
+  factory _$$OpenSettingsUserActionCopyWith(_$OpenSettingsUserAction value,
+          $Res Function(_$OpenSettingsUserAction) then) =
+      __$$OpenSettingsUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$OpenSettingsUserActionCopyWithImpl<$Res>
+class __$$OpenSettingsUserActionCopyWithImpl<$Res>
     extends _$UserActionSettingsCopyWithImpl<$Res>
-    implements $OpenSettingsUserActionCopyWith<$Res> {
-  _$OpenSettingsUserActionCopyWithImpl(OpenSettingsUserAction _value,
-      $Res Function(OpenSettingsUserAction) _then)
-      : super(_value, (v) => _then(v as OpenSettingsUserAction));
+    implements _$$OpenSettingsUserActionCopyWith<$Res> {
+  __$$OpenSettingsUserActionCopyWithImpl(_$OpenSettingsUserAction _value,
+      $Res Function(_$OpenSettingsUserAction) _then)
+      : super(_value, (v) => _then(v as _$OpenSettingsUserAction));
 
   @override
-  OpenSettingsUserAction get _value => super._value as OpenSettingsUserAction;
+  _$OpenSettingsUserAction get _value =>
+      super._value as _$OpenSettingsUserAction;
 }
 
 /// @nodoc
@@ -151,12 +135,13 @@ class _$OpenSettingsUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionSettings.open'));
+    properties.add(DiagnosticsProperty('type', 'UserActionSettings.open'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is OpenSettingsUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OpenSettingsUserAction);
   }
 
   @override
@@ -172,6 +157,18 @@ class _$OpenSettingsUserAction
     required TResult Function(bool value) changeNotifyLongTimerExpiration,
   }) {
     return open();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function(AppTheme appTheme)? changeTheme,
+    TResult Function(TextScale textScale)? changeTextScale,
+    TResult Function(bool value)? changeNotifyShortTimerExpiration,
+    TResult Function(bool value)? changeNotifyLongTimerExpiration,
+  }) {
+    return open?.call();
   }
 
   @override
@@ -209,6 +206,20 @@ class _$OpenSettingsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSettingsUserAction value)? open,
+    TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
+    TResult Function(ChangeTextScaleSettingsUserAction value)? changeTextScale,
+    TResult Function(ChangeNotifyShortTimerExpirationSettingsUserAction value)?
+        changeNotifyShortTimerExpiration,
+    TResult Function(ChangeNotifyLongTimerExpirationSettingsUserAction value)?
+        changeNotifyLongTimerExpiration,
+  }) {
+    return open?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSettingsUserAction value)? open,
     TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
@@ -231,32 +242,32 @@ abstract class OpenSettingsUserAction implements UserActionSettings {
 }
 
 /// @nodoc
-abstract class $ChangeThemeSettingsUserActionCopyWith<$Res> {
-  factory $ChangeThemeSettingsUserActionCopyWith(
-          ChangeThemeSettingsUserAction value,
-          $Res Function(ChangeThemeSettingsUserAction) then) =
-      _$ChangeThemeSettingsUserActionCopyWithImpl<$Res>;
+abstract class _$$ChangeThemeSettingsUserActionCopyWith<$Res> {
+  factory _$$ChangeThemeSettingsUserActionCopyWith(
+          _$ChangeThemeSettingsUserAction value,
+          $Res Function(_$ChangeThemeSettingsUserAction) then) =
+      __$$ChangeThemeSettingsUserActionCopyWithImpl<$Res>;
   $Res call({AppTheme appTheme});
 }
 
 /// @nodoc
-class _$ChangeThemeSettingsUserActionCopyWithImpl<$Res>
+class __$$ChangeThemeSettingsUserActionCopyWithImpl<$Res>
     extends _$UserActionSettingsCopyWithImpl<$Res>
-    implements $ChangeThemeSettingsUserActionCopyWith<$Res> {
-  _$ChangeThemeSettingsUserActionCopyWithImpl(
-      ChangeThemeSettingsUserAction _value,
-      $Res Function(ChangeThemeSettingsUserAction) _then)
-      : super(_value, (v) => _then(v as ChangeThemeSettingsUserAction));
+    implements _$$ChangeThemeSettingsUserActionCopyWith<$Res> {
+  __$$ChangeThemeSettingsUserActionCopyWithImpl(
+      _$ChangeThemeSettingsUserAction _value,
+      $Res Function(_$ChangeThemeSettingsUserAction) _then)
+      : super(_value, (v) => _then(v as _$ChangeThemeSettingsUserAction));
 
   @override
-  ChangeThemeSettingsUserAction get _value =>
-      super._value as ChangeThemeSettingsUserAction;
+  _$ChangeThemeSettingsUserAction get _value =>
+      super._value as _$ChangeThemeSettingsUserAction;
 
   @override
   $Res call({
     Object? appTheme = freezed,
   }) {
-    return _then(ChangeThemeSettingsUserAction(
+    return _then(_$ChangeThemeSettingsUserAction(
       appTheme: appTheme == freezed
           ? _value.appTheme
           : appTheme // ignore: cast_nullable_to_non_nullable
@@ -291,21 +302,20 @@ class _$ChangeThemeSettingsUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChangeThemeSettingsUserAction &&
-            (identical(other.appTheme, appTheme) ||
-                const DeepCollectionEquality()
-                    .equals(other.appTheme, appTheme)));
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeThemeSettingsUserAction &&
+            const DeepCollectionEquality().equals(other.appTheme, appTheme));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(appTheme);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(appTheme));
 
   @JsonKey(ignore: true)
   @override
-  $ChangeThemeSettingsUserActionCopyWith<ChangeThemeSettingsUserAction>
-      get copyWith => _$ChangeThemeSettingsUserActionCopyWithImpl<
-          ChangeThemeSettingsUserAction>(this, _$identity);
+  _$$ChangeThemeSettingsUserActionCopyWith<_$ChangeThemeSettingsUserAction>
+      get copyWith => __$$ChangeThemeSettingsUserActionCopyWithImpl<
+          _$ChangeThemeSettingsUserAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -317,6 +327,18 @@ class _$ChangeThemeSettingsUserAction
     required TResult Function(bool value) changeNotifyLongTimerExpiration,
   }) {
     return changeTheme(appTheme);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function(AppTheme appTheme)? changeTheme,
+    TResult Function(TextScale textScale)? changeTextScale,
+    TResult Function(bool value)? changeNotifyShortTimerExpiration,
+    TResult Function(bool value)? changeNotifyLongTimerExpiration,
+  }) {
+    return changeTheme?.call(appTheme);
   }
 
   @override
@@ -354,6 +376,20 @@ class _$ChangeThemeSettingsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSettingsUserAction value)? open,
+    TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
+    TResult Function(ChangeTextScaleSettingsUserAction value)? changeTextScale,
+    TResult Function(ChangeNotifyShortTimerExpirationSettingsUserAction value)?
+        changeNotifyShortTimerExpiration,
+    TResult Function(ChangeNotifyLongTimerExpirationSettingsUserAction value)?
+        changeNotifyLongTimerExpiration,
+  }) {
+    return changeTheme?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSettingsUserAction value)? open,
     TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
@@ -372,42 +408,42 @@ class _$ChangeThemeSettingsUserAction
 }
 
 abstract class ChangeThemeSettingsUserAction implements UserActionSettings {
-  const factory ChangeThemeSettingsUserAction({required AppTheme appTheme}) =
-      _$ChangeThemeSettingsUserAction;
+  const factory ChangeThemeSettingsUserAction(
+      {required final AppTheme appTheme}) = _$ChangeThemeSettingsUserAction;
 
-  AppTheme get appTheme => throw _privateConstructorUsedError;
+  AppTheme get appTheme;
   @JsonKey(ignore: true)
-  $ChangeThemeSettingsUserActionCopyWith<ChangeThemeSettingsUserAction>
+  _$$ChangeThemeSettingsUserActionCopyWith<_$ChangeThemeSettingsUserAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ChangeTextScaleSettingsUserActionCopyWith<$Res> {
-  factory $ChangeTextScaleSettingsUserActionCopyWith(
-          ChangeTextScaleSettingsUserAction value,
-          $Res Function(ChangeTextScaleSettingsUserAction) then) =
-      _$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>;
+abstract class _$$ChangeTextScaleSettingsUserActionCopyWith<$Res> {
+  factory _$$ChangeTextScaleSettingsUserActionCopyWith(
+          _$ChangeTextScaleSettingsUserAction value,
+          $Res Function(_$ChangeTextScaleSettingsUserAction) then) =
+      __$$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>;
   $Res call({TextScale textScale});
 }
 
 /// @nodoc
-class _$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>
+class __$$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>
     extends _$UserActionSettingsCopyWithImpl<$Res>
-    implements $ChangeTextScaleSettingsUserActionCopyWith<$Res> {
-  _$ChangeTextScaleSettingsUserActionCopyWithImpl(
-      ChangeTextScaleSettingsUserAction _value,
-      $Res Function(ChangeTextScaleSettingsUserAction) _then)
-      : super(_value, (v) => _then(v as ChangeTextScaleSettingsUserAction));
+    implements _$$ChangeTextScaleSettingsUserActionCopyWith<$Res> {
+  __$$ChangeTextScaleSettingsUserActionCopyWithImpl(
+      _$ChangeTextScaleSettingsUserAction _value,
+      $Res Function(_$ChangeTextScaleSettingsUserAction) _then)
+      : super(_value, (v) => _then(v as _$ChangeTextScaleSettingsUserAction));
 
   @override
-  ChangeTextScaleSettingsUserAction get _value =>
-      super._value as ChangeTextScaleSettingsUserAction;
+  _$ChangeTextScaleSettingsUserAction get _value =>
+      super._value as _$ChangeTextScaleSettingsUserAction;
 
   @override
   $Res call({
     Object? textScale = freezed,
   }) {
-    return _then(ChangeTextScaleSettingsUserAction(
+    return _then(_$ChangeTextScaleSettingsUserAction(
       textScale: textScale == freezed
           ? _value.textScale
           : textScale // ignore: cast_nullable_to_non_nullable
@@ -442,21 +478,21 @@ class _$ChangeTextScaleSettingsUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChangeTextScaleSettingsUserAction &&
-            (identical(other.textScale, textScale) ||
-                const DeepCollectionEquality()
-                    .equals(other.textScale, textScale)));
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeTextScaleSettingsUserAction &&
+            const DeepCollectionEquality().equals(other.textScale, textScale));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(textScale);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(textScale));
 
   @JsonKey(ignore: true)
   @override
-  $ChangeTextScaleSettingsUserActionCopyWith<ChangeTextScaleSettingsUserAction>
-      get copyWith => _$ChangeTextScaleSettingsUserActionCopyWithImpl<
-          ChangeTextScaleSettingsUserAction>(this, _$identity);
+  _$$ChangeTextScaleSettingsUserActionCopyWith<
+          _$ChangeTextScaleSettingsUserAction>
+      get copyWith => __$$ChangeTextScaleSettingsUserActionCopyWithImpl<
+          _$ChangeTextScaleSettingsUserAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -468,6 +504,18 @@ class _$ChangeTextScaleSettingsUserAction
     required TResult Function(bool value) changeNotifyLongTimerExpiration,
   }) {
     return changeTextScale(textScale);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function(AppTheme appTheme)? changeTheme,
+    TResult Function(TextScale textScale)? changeTextScale,
+    TResult Function(bool value)? changeNotifyShortTimerExpiration,
+    TResult Function(bool value)? changeNotifyLongTimerExpiration,
+  }) {
+    return changeTextScale?.call(textScale);
   }
 
   @override
@@ -505,6 +553,20 @@ class _$ChangeTextScaleSettingsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSettingsUserAction value)? open,
+    TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
+    TResult Function(ChangeTextScaleSettingsUserAction value)? changeTextScale,
+    TResult Function(ChangeNotifyShortTimerExpirationSettingsUserAction value)?
+        changeNotifyShortTimerExpiration,
+    TResult Function(ChangeNotifyLongTimerExpirationSettingsUserAction value)?
+        changeNotifyLongTimerExpiration,
+  }) {
+    return changeTextScale?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSettingsUserAction value)? open,
     TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
@@ -524,47 +586,49 @@ class _$ChangeTextScaleSettingsUserAction
 
 abstract class ChangeTextScaleSettingsUserAction implements UserActionSettings {
   const factory ChangeTextScaleSettingsUserAction(
-      {required TextScale textScale}) = _$ChangeTextScaleSettingsUserAction;
+          {required final TextScale textScale}) =
+      _$ChangeTextScaleSettingsUserAction;
 
-  TextScale get textScale => throw _privateConstructorUsedError;
+  TextScale get textScale;
   @JsonKey(ignore: true)
-  $ChangeTextScaleSettingsUserActionCopyWith<ChangeTextScaleSettingsUserAction>
+  _$$ChangeTextScaleSettingsUserActionCopyWith<
+          _$ChangeTextScaleSettingsUserAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
+abstract class _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
     $Res> {
-  factory $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith(
-          ChangeNotifyShortTimerExpirationSettingsUserAction value,
-          $Res Function(ChangeNotifyShortTimerExpirationSettingsUserAction)
+  factory _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith(
+          _$ChangeNotifyShortTimerExpirationSettingsUserAction value,
+          $Res Function(_$ChangeNotifyShortTimerExpirationSettingsUserAction)
               then) =
-      _$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>;
+      __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>;
   $Res call({bool value});
 }
 
 /// @nodoc
-class _$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>
+class __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>
     extends _$UserActionSettingsCopyWithImpl<$Res>
     implements
-        $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<$Res> {
-  _$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl(
-      ChangeNotifyShortTimerExpirationSettingsUserAction _value,
-      $Res Function(ChangeNotifyShortTimerExpirationSettingsUserAction) _then)
+        _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<$Res> {
+  __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl(
+      _$ChangeNotifyShortTimerExpirationSettingsUserAction _value,
+      $Res Function(_$ChangeNotifyShortTimerExpirationSettingsUserAction) _then)
       : super(
             _value,
-            (v) =>
-                _then(v as ChangeNotifyShortTimerExpirationSettingsUserAction));
+            (v) => _then(
+                v as _$ChangeNotifyShortTimerExpirationSettingsUserAction));
 
   @override
-  ChangeNotifyShortTimerExpirationSettingsUserAction get _value =>
-      super._value as ChangeNotifyShortTimerExpirationSettingsUserAction;
+  _$ChangeNotifyShortTimerExpirationSettingsUserAction get _value =>
+      super._value as _$ChangeNotifyShortTimerExpirationSettingsUserAction;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(ChangeNotifyShortTimerExpirationSettingsUserAction(
+    return _then(_$ChangeNotifyShortTimerExpirationSettingsUserAction(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -601,22 +665,22 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChangeNotifyShortTimerExpirationSettingsUserAction &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeNotifyShortTimerExpirationSettingsUserAction &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
-          ChangeNotifyShortTimerExpirationSettingsUserAction>
+  _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
+          _$ChangeNotifyShortTimerExpirationSettingsUserAction>
       get copyWith =>
-          _$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<
-                  ChangeNotifyShortTimerExpirationSettingsUserAction>(
+          __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<
+                  _$ChangeNotifyShortTimerExpirationSettingsUserAction>(
               this, _$identity);
 
   @override
@@ -629,6 +693,18 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
     required TResult Function(bool value) changeNotifyLongTimerExpiration,
   }) {
     return changeNotifyShortTimerExpiration(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function(AppTheme appTheme)? changeTheme,
+    TResult Function(TextScale textScale)? changeTextScale,
+    TResult Function(bool value)? changeNotifyShortTimerExpiration,
+    TResult Function(bool value)? changeNotifyLongTimerExpiration,
+  }) {
+    return changeNotifyShortTimerExpiration?.call(value);
   }
 
   @override
@@ -666,6 +742,20 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSettingsUserAction value)? open,
+    TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
+    TResult Function(ChangeTextScaleSettingsUserAction value)? changeTextScale,
+    TResult Function(ChangeNotifyShortTimerExpirationSettingsUserAction value)?
+        changeNotifyShortTimerExpiration,
+    TResult Function(ChangeNotifyLongTimerExpirationSettingsUserAction value)?
+        changeNotifyLongTimerExpiration,
+  }) {
+    return changeNotifyShortTimerExpiration?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSettingsUserAction value)? open,
     TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
@@ -686,49 +776,49 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
 abstract class ChangeNotifyShortTimerExpirationSettingsUserAction
     implements UserActionSettings {
   const factory ChangeNotifyShortTimerExpirationSettingsUserAction(
-          {required bool value}) =
+          {required final bool value}) =
       _$ChangeNotifyShortTimerExpirationSettingsUserAction;
 
-  bool get value => throw _privateConstructorUsedError;
+  bool get value;
   @JsonKey(ignore: true)
-  $ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
-          ChangeNotifyShortTimerExpirationSettingsUserAction>
+  _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
+          _$ChangeNotifyShortTimerExpirationSettingsUserAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
+abstract class _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
     $Res> {
-  factory $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith(
-          ChangeNotifyLongTimerExpirationSettingsUserAction value,
-          $Res Function(ChangeNotifyLongTimerExpirationSettingsUserAction)
+  factory _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith(
+          _$ChangeNotifyLongTimerExpirationSettingsUserAction value,
+          $Res Function(_$ChangeNotifyLongTimerExpirationSettingsUserAction)
               then) =
-      _$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>;
+      __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>;
   $Res call({bool value});
 }
 
 /// @nodoc
-class _$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>
+class __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>
     extends _$UserActionSettingsCopyWithImpl<$Res>
     implements
-        $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<$Res> {
-  _$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl(
-      ChangeNotifyLongTimerExpirationSettingsUserAction _value,
-      $Res Function(ChangeNotifyLongTimerExpirationSettingsUserAction) _then)
+        _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<$Res> {
+  __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl(
+      _$ChangeNotifyLongTimerExpirationSettingsUserAction _value,
+      $Res Function(_$ChangeNotifyLongTimerExpirationSettingsUserAction) _then)
       : super(
             _value,
-            (v) =>
-                _then(v as ChangeNotifyLongTimerExpirationSettingsUserAction));
+            (v) => _then(
+                v as _$ChangeNotifyLongTimerExpirationSettingsUserAction));
 
   @override
-  ChangeNotifyLongTimerExpirationSettingsUserAction get _value =>
-      super._value as ChangeNotifyLongTimerExpirationSettingsUserAction;
+  _$ChangeNotifyLongTimerExpirationSettingsUserAction get _value =>
+      super._value as _$ChangeNotifyLongTimerExpirationSettingsUserAction;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(ChangeNotifyLongTimerExpirationSettingsUserAction(
+    return _then(_$ChangeNotifyLongTimerExpirationSettingsUserAction(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -765,22 +855,22 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChangeNotifyLongTimerExpirationSettingsUserAction &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeNotifyLongTimerExpirationSettingsUserAction &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
-          ChangeNotifyLongTimerExpirationSettingsUserAction>
+  _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
+          _$ChangeNotifyLongTimerExpirationSettingsUserAction>
       get copyWith =>
-          _$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<
-                  ChangeNotifyLongTimerExpirationSettingsUserAction>(
+          __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<
+                  _$ChangeNotifyLongTimerExpirationSettingsUserAction>(
               this, _$identity);
 
   @override
@@ -793,6 +883,18 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
     required TResult Function(bool value) changeNotifyLongTimerExpiration,
   }) {
     return changeNotifyLongTimerExpiration(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function(AppTheme appTheme)? changeTheme,
+    TResult Function(TextScale textScale)? changeTextScale,
+    TResult Function(bool value)? changeNotifyShortTimerExpiration,
+    TResult Function(bool value)? changeNotifyLongTimerExpiration,
+  }) {
+    return changeNotifyLongTimerExpiration?.call(value);
   }
 
   @override
@@ -830,6 +932,20 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenSettingsUserAction value)? open,
+    TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
+    TResult Function(ChangeTextScaleSettingsUserAction value)? changeTextScale,
+    TResult Function(ChangeNotifyShortTimerExpirationSettingsUserAction value)?
+        changeNotifyShortTimerExpiration,
+    TResult Function(ChangeNotifyLongTimerExpirationSettingsUserAction value)?
+        changeNotifyLongTimerExpiration,
+  }) {
+    return changeNotifyLongTimerExpiration?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenSettingsUserAction value)? open,
     TResult Function(ChangeThemeSettingsUserAction value)? changeTheme,
@@ -850,36 +966,15 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
 abstract class ChangeNotifyLongTimerExpirationSettingsUserAction
     implements UserActionSettings {
   const factory ChangeNotifyLongTimerExpirationSettingsUserAction(
-          {required bool value}) =
+          {required final bool value}) =
       _$ChangeNotifyLongTimerExpirationSettingsUserAction;
 
-  bool get value => throw _privateConstructorUsedError;
+  bool get value;
   @JsonKey(ignore: true)
-  $ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
-          ChangeNotifyLongTimerExpirationSettingsUserAction>
+  _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
+          _$ChangeNotifyLongTimerExpirationSettingsUserAction>
       get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SystemActionSettingsTearOff {
-  const _$SystemActionSettingsTearOff();
-
-  ReadySettingsSystemAction ready(
-      {required AppTheme appTheme,
-      required TextScale textScale,
-      required bool notifyShortTimerExpiration,
-      required bool notifyLongTimerExpiration}) {
-    return ReadySettingsSystemAction(
-      appTheme: appTheme,
-      textScale: textScale,
-      notifyShortTimerExpiration: notifyShortTimerExpiration,
-      notifyLongTimerExpiration: notifyLongTimerExpiration,
-    );
-  }
-}
-
-/// @nodoc
-const $SystemActionSettings = _$SystemActionSettingsTearOff();
 
 /// @nodoc
 mixin _$SystemActionSettings {
@@ -887,11 +982,17 @@ mixin _$SystemActionSettings {
   TextScale get textScale => throw _privateConstructorUsedError;
   bool get notifyShortTimerExpiration => throw _privateConstructorUsedError;
   bool get notifyLongTimerExpiration => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AppTheme appTheme, TextScale textScale,
             bool notifyShortTimerExpiration, bool notifyLongTimerExpiration)
+        ready,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppTheme appTheme, TextScale textScale,
+            bool notifyShortTimerExpiration, bool notifyLongTimerExpiration)?
         ready,
   }) =>
       throw _privateConstructorUsedError;
@@ -906,6 +1007,11 @@ mixin _$SystemActionSettings {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ReadySettingsSystemAction value) ready,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ReadySettingsSystemAction value)? ready,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -970,11 +1076,12 @@ class _$SystemActionSettingsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $ReadySettingsSystemActionCopyWith<$Res>
+abstract class _$$ReadySettingsSystemActionCopyWith<$Res>
     implements $SystemActionSettingsCopyWith<$Res> {
-  factory $ReadySettingsSystemActionCopyWith(ReadySettingsSystemAction value,
-          $Res Function(ReadySettingsSystemAction) then) =
-      _$ReadySettingsSystemActionCopyWithImpl<$Res>;
+  factory _$$ReadySettingsSystemActionCopyWith(
+          _$ReadySettingsSystemAction value,
+          $Res Function(_$ReadySettingsSystemAction) then) =
+      __$$ReadySettingsSystemActionCopyWithImpl<$Res>;
   @override
   $Res call(
       {AppTheme appTheme,
@@ -984,16 +1091,16 @@ abstract class $ReadySettingsSystemActionCopyWith<$Res>
 }
 
 /// @nodoc
-class _$ReadySettingsSystemActionCopyWithImpl<$Res>
+class __$$ReadySettingsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionSettingsCopyWithImpl<$Res>
-    implements $ReadySettingsSystemActionCopyWith<$Res> {
-  _$ReadySettingsSystemActionCopyWithImpl(ReadySettingsSystemAction _value,
-      $Res Function(ReadySettingsSystemAction) _then)
-      : super(_value, (v) => _then(v as ReadySettingsSystemAction));
+    implements _$$ReadySettingsSystemActionCopyWith<$Res> {
+  __$$ReadySettingsSystemActionCopyWithImpl(_$ReadySettingsSystemAction _value,
+      $Res Function(_$ReadySettingsSystemAction) _then)
+      : super(_value, (v) => _then(v as _$ReadySettingsSystemAction));
 
   @override
-  ReadySettingsSystemAction get _value =>
-      super._value as ReadySettingsSystemAction;
+  _$ReadySettingsSystemAction get _value =>
+      super._value as _$ReadySettingsSystemAction;
 
   @override
   $Res call({
@@ -1002,7 +1109,7 @@ class _$ReadySettingsSystemActionCopyWithImpl<$Res>
     Object? notifyShortTimerExpiration = freezed,
     Object? notifyLongTimerExpiration = freezed,
   }) {
-    return _then(ReadySettingsSystemAction(
+    return _then(_$ReadySettingsSystemAction(
       appTheme: appTheme == freezed
           ? _value.appTheme
           : appTheme // ignore: cast_nullable_to_non_nullable
@@ -1064,38 +1171,29 @@ class _$ReadySettingsSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ReadySettingsSystemAction &&
-            (identical(other.appTheme, appTheme) ||
-                const DeepCollectionEquality()
-                    .equals(other.appTheme, appTheme)) &&
-            (identical(other.textScale, textScale) ||
-                const DeepCollectionEquality()
-                    .equals(other.textScale, textScale)) &&
-            (identical(other.notifyShortTimerExpiration,
-                    notifyShortTimerExpiration) ||
-                const DeepCollectionEquality().equals(
-                    other.notifyShortTimerExpiration,
-                    notifyShortTimerExpiration)) &&
-            (identical(other.notifyLongTimerExpiration,
-                    notifyLongTimerExpiration) ||
-                const DeepCollectionEquality().equals(
-                    other.notifyLongTimerExpiration,
-                    notifyLongTimerExpiration)));
+        (other.runtimeType == runtimeType &&
+            other is _$ReadySettingsSystemAction &&
+            const DeepCollectionEquality().equals(other.appTheme, appTheme) &&
+            const DeepCollectionEquality().equals(other.textScale, textScale) &&
+            const DeepCollectionEquality().equals(
+                other.notifyShortTimerExpiration, notifyShortTimerExpiration) &&
+            const DeepCollectionEquality().equals(
+                other.notifyLongTimerExpiration, notifyLongTimerExpiration));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(appTheme) ^
-      const DeepCollectionEquality().hash(textScale) ^
-      const DeepCollectionEquality().hash(notifyShortTimerExpiration) ^
-      const DeepCollectionEquality().hash(notifyLongTimerExpiration);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(appTheme),
+      const DeepCollectionEquality().hash(textScale),
+      const DeepCollectionEquality().hash(notifyShortTimerExpiration),
+      const DeepCollectionEquality().hash(notifyLongTimerExpiration));
 
   @JsonKey(ignore: true)
   @override
-  $ReadySettingsSystemActionCopyWith<ReadySettingsSystemAction> get copyWith =>
-      _$ReadySettingsSystemActionCopyWithImpl<ReadySettingsSystemAction>(
-          this, _$identity);
+  _$$ReadySettingsSystemActionCopyWith<_$ReadySettingsSystemAction>
+      get copyWith => __$$ReadySettingsSystemActionCopyWithImpl<
+          _$ReadySettingsSystemAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1105,6 +1203,17 @@ class _$ReadySettingsSystemAction
         ready,
   }) {
     return ready(appTheme, textScale, notifyShortTimerExpiration,
+        notifyLongTimerExpiration);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppTheme appTheme, TextScale textScale,
+            bool notifyShortTimerExpiration, bool notifyLongTimerExpiration)?
+        ready,
+  }) {
+    return ready?.call(appTheme, textScale, notifyShortTimerExpiration,
         notifyLongTimerExpiration);
   }
 
@@ -1133,6 +1242,14 @@ class _$ReadySettingsSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ReadySettingsSystemAction value)? ready,
+  }) {
+    return ready?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ReadySettingsSystemAction value)? ready,
     required TResult orElse(),
@@ -1146,21 +1263,22 @@ class _$ReadySettingsSystemAction
 
 abstract class ReadySettingsSystemAction implements SystemActionSettings {
   const factory ReadySettingsSystemAction(
-      {required AppTheme appTheme,
-      required TextScale textScale,
-      required bool notifyShortTimerExpiration,
-      required bool notifyLongTimerExpiration}) = _$ReadySettingsSystemAction;
+          {required final AppTheme appTheme,
+          required final TextScale textScale,
+          required final bool notifyShortTimerExpiration,
+          required final bool notifyLongTimerExpiration}) =
+      _$ReadySettingsSystemAction;
 
   @override
-  AppTheme get appTheme => throw _privateConstructorUsedError;
+  AppTheme get appTheme;
   @override
-  TextScale get textScale => throw _privateConstructorUsedError;
+  TextScale get textScale;
   @override
-  bool get notifyShortTimerExpiration => throw _privateConstructorUsedError;
+  bool get notifyShortTimerExpiration;
   @override
-  bool get notifyLongTimerExpiration => throw _privateConstructorUsedError;
+  bool get notifyLongTimerExpiration;
   @override
   @JsonKey(ignore: true)
-  $ReadySettingsSystemActionCopyWith<ReadySettingsSystemAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ReadySettingsSystemActionCopyWith<_$ReadySettingsSystemAction>
+      get copyWith => throw _privateConstructorUsedError;
 }

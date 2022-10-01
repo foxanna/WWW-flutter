@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tournament_info.dart';
 
@@ -10,50 +12,7 @@ part of 'tournament_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TournamentInfoHiveModelTearOff {
-  const _$TournamentInfoHiveModelTearOff();
-
-  _TournamentInfoHiveModel call(
-      {@HiveField(TournamentInfoHiveFieldsIds.id)
-          String? id,
-      @HiveField(TournamentInfoHiveFieldsIds.id2)
-          String? id2,
-      @HiveField(TournamentInfoHiveFieldsIds.title)
-          String? title,
-      @HiveField(TournamentInfoHiveFieldsIds.questionsCount)
-          String? questionsCount,
-      @HiveField(TournamentInfoHiveFieldsIds.tours)
-          String? toursCount,
-      @HiveField(TournamentInfoHiveFieldsIds.description)
-          String? description,
-      @HiveField(TournamentInfoHiveFieldsIds.url)
-          String? url,
-      @HiveField(TournamentInfoHiveFieldsIds.editors)
-          String? editors,
-      @HiveField(TournamentInfoHiveFieldsIds.createdAt)
-          String? createdAt,
-      @HiveField(TournamentInfoHiveFieldsIds.playedAt)
-          String? playedAt}) {
-    return _TournamentInfoHiveModel(
-      id: id,
-      id2: id2,
-      title: title,
-      questionsCount: questionsCount,
-      toursCount: toursCount,
-      description: description,
-      url: url,
-      editors: editors,
-      createdAt: createdAt,
-      playedAt: playedAt,
-    );
-  }
-}
-
-/// @nodoc
-const $TournamentInfoHiveModel = _$TournamentInfoHiveModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TournamentInfoHiveModel {
@@ -179,11 +138,11 @@ class _$TournamentInfoHiveModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TournamentInfoHiveModelCopyWith<$Res>
+abstract class _$$_TournamentInfoHiveModelCopyWith<$Res>
     implements $TournamentInfoHiveModelCopyWith<$Res> {
-  factory _$TournamentInfoHiveModelCopyWith(_TournamentInfoHiveModel value,
-          $Res Function(_TournamentInfoHiveModel) then) =
-      __$TournamentInfoHiveModelCopyWithImpl<$Res>;
+  factory _$$_TournamentInfoHiveModelCopyWith(_$_TournamentInfoHiveModel value,
+          $Res Function(_$_TournamentInfoHiveModel) then) =
+      __$$_TournamentInfoHiveModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {@HiveField(TournamentInfoHiveFieldsIds.id)
@@ -209,16 +168,16 @@ abstract class _$TournamentInfoHiveModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TournamentInfoHiveModelCopyWithImpl<$Res>
+class __$$_TournamentInfoHiveModelCopyWithImpl<$Res>
     extends _$TournamentInfoHiveModelCopyWithImpl<$Res>
-    implements _$TournamentInfoHiveModelCopyWith<$Res> {
-  __$TournamentInfoHiveModelCopyWithImpl(_TournamentInfoHiveModel _value,
-      $Res Function(_TournamentInfoHiveModel) _then)
-      : super(_value, (v) => _then(v as _TournamentInfoHiveModel));
+    implements _$$_TournamentInfoHiveModelCopyWith<$Res> {
+  __$$_TournamentInfoHiveModelCopyWithImpl(_$_TournamentInfoHiveModel _value,
+      $Res Function(_$_TournamentInfoHiveModel) _then)
+      : super(_value, (v) => _then(v as _$_TournamentInfoHiveModel));
 
   @override
-  _TournamentInfoHiveModel get _value =>
-      super._value as _TournamentInfoHiveModel;
+  _$_TournamentInfoHiveModel get _value =>
+      super._value as _$_TournamentInfoHiveModel;
 
   @override
   $Res call({
@@ -233,7 +192,7 @@ class __$TournamentInfoHiveModelCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? playedAt = freezed,
   }) {
-    return _then(_TournamentInfoHiveModel(
+    return _then(_$_TournamentInfoHiveModel(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -343,111 +302,100 @@ class _$_TournamentInfoHiveModel implements _TournamentInfoHiveModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TournamentInfoHiveModel &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.id2, id2) ||
-                const DeepCollectionEquality().equals(other.id2, id2)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.questionsCount, questionsCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionsCount, questionsCount)) &&
-            (identical(other.toursCount, toursCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.toursCount, toursCount)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.editors, editors) ||
-                const DeepCollectionEquality()
-                    .equals(other.editors, editors)) &&
-            (identical(other.createdAt, createdAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.createdAt, createdAt)) &&
-            (identical(other.playedAt, playedAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.playedAt, playedAt)));
+        (other.runtimeType == runtimeType &&
+            other is _$_TournamentInfoHiveModel &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.id2, id2) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality()
+                .equals(other.questionsCount, questionsCount) &&
+            const DeepCollectionEquality()
+                .equals(other.toursCount, toursCount) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.editors, editors) &&
+            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            const DeepCollectionEquality().equals(other.playedAt, playedAt));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(id2) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(questionsCount) ^
-      const DeepCollectionEquality().hash(toursCount) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(editors) ^
-      const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(playedAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(id2),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(questionsCount),
+      const DeepCollectionEquality().hash(toursCount),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(editors),
+      const DeepCollectionEquality().hash(createdAt),
+      const DeepCollectionEquality().hash(playedAt));
 
   @JsonKey(ignore: true)
   @override
-  _$TournamentInfoHiveModelCopyWith<_TournamentInfoHiveModel> get copyWith =>
-      __$TournamentInfoHiveModelCopyWithImpl<_TournamentInfoHiveModel>(
-          this, _$identity);
+  _$$_TournamentInfoHiveModelCopyWith<_$_TournamentInfoHiveModel>
+      get copyWith =>
+          __$$_TournamentInfoHiveModelCopyWithImpl<_$_TournamentInfoHiveModel>(
+              this, _$identity);
 }
 
 abstract class _TournamentInfoHiveModel implements TournamentInfoHiveModel {
   const factory _TournamentInfoHiveModel(
       {@HiveField(TournamentInfoHiveFieldsIds.id)
-          String? id,
+          final String? id,
       @HiveField(TournamentInfoHiveFieldsIds.id2)
-          String? id2,
+          final String? id2,
       @HiveField(TournamentInfoHiveFieldsIds.title)
-          String? title,
+          final String? title,
       @HiveField(TournamentInfoHiveFieldsIds.questionsCount)
-          String? questionsCount,
+          final String? questionsCount,
       @HiveField(TournamentInfoHiveFieldsIds.tours)
-          String? toursCount,
+          final String? toursCount,
       @HiveField(TournamentInfoHiveFieldsIds.description)
-          String? description,
+          final String? description,
       @HiveField(TournamentInfoHiveFieldsIds.url)
-          String? url,
+          final String? url,
       @HiveField(TournamentInfoHiveFieldsIds.editors)
-          String? editors,
+          final String? editors,
       @HiveField(TournamentInfoHiveFieldsIds.createdAt)
-          String? createdAt,
+          final String? createdAt,
       @HiveField(TournamentInfoHiveFieldsIds.playedAt)
-          String? playedAt}) = _$_TournamentInfoHiveModel;
+          final String? playedAt}) = _$_TournamentInfoHiveModel;
 
   @override
   @HiveField(TournamentInfoHiveFieldsIds.id)
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @HiveField(TournamentInfoHiveFieldsIds.id2)
-  String? get id2 => throw _privateConstructorUsedError;
+  String? get id2;
   @override
   @HiveField(TournamentInfoHiveFieldsIds.title)
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
   @HiveField(TournamentInfoHiveFieldsIds.questionsCount)
-  String? get questionsCount => throw _privateConstructorUsedError;
+  String? get questionsCount;
   @override
   @HiveField(TournamentInfoHiveFieldsIds.tours)
-  String? get toursCount => throw _privateConstructorUsedError;
+  String? get toursCount;
   @override
   @HiveField(TournamentInfoHiveFieldsIds.description)
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
   @override
   @HiveField(TournamentInfoHiveFieldsIds.url)
-  String? get url => throw _privateConstructorUsedError;
+  String? get url;
   @override
   @HiveField(TournamentInfoHiveFieldsIds.editors)
-  String? get editors => throw _privateConstructorUsedError;
+  String? get editors;
   @override
   @HiveField(TournamentInfoHiveFieldsIds.createdAt)
-  String? get createdAt => throw _privateConstructorUsedError;
+  String? get createdAt;
   @override
   @HiveField(TournamentInfoHiveFieldsIds.playedAt)
-  String? get playedAt => throw _privateConstructorUsedError;
+  String? get playedAt;
   @override
   @JsonKey(ignore: true)
-  _$TournamentInfoHiveModelCopyWith<_TournamentInfoHiveModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_TournamentInfoHiveModelCopyWith<_$_TournamentInfoHiveModel>
+      get copyWith => throw _privateConstructorUsedError;
 }

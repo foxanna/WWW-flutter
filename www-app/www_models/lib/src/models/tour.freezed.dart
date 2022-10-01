@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tour.dart';
 
@@ -10,26 +12,7 @@ part of 'tour.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TourTearOff {
-  const _$TourTearOff();
-
-  _Tour call(
-      {String? id,
-      TourInfo info = const TourInfo(),
-      List<Question> questions = const <Question>[]}) {
-    return _Tour(
-      id: id,
-      info: info,
-      questions: questions,
-    );
-  }
-}
-
-/// @nodoc
-const $Tour = _$TourTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Tour {
@@ -89,9 +72,9 @@ class _$TourCopyWithImpl<$Res> implements $TourCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TourCopyWith<$Res> implements $TourCopyWith<$Res> {
-  factory _$TourCopyWith(_Tour value, $Res Function(_Tour) then) =
-      __$TourCopyWithImpl<$Res>;
+abstract class _$$_TourCopyWith<$Res> implements $TourCopyWith<$Res> {
+  factory _$$_TourCopyWith(_$_Tour value, $Res Function(_$_Tour) then) =
+      __$$_TourCopyWithImpl<$Res>;
   @override
   $Res call({String? id, TourInfo info, List<Question> questions});
 
@@ -100,13 +83,13 @@ abstract class _$TourCopyWith<$Res> implements $TourCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res>
-    implements _$TourCopyWith<$Res> {
-  __$TourCopyWithImpl(_Tour _value, $Res Function(_Tour) _then)
-      : super(_value, (v) => _then(v as _Tour));
+class __$$_TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res>
+    implements _$$_TourCopyWith<$Res> {
+  __$$_TourCopyWithImpl(_$_Tour _value, $Res Function(_$_Tour) _then)
+      : super(_value, (v) => _then(v as _$_Tour));
 
   @override
-  _Tour get _value => super._value as _Tour;
+  _$_Tour get _value => super._value as _$_Tour;
 
   @override
   $Res call({
@@ -114,7 +97,7 @@ class __$TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res>
     Object? info = freezed,
     Object? questions = freezed,
   }) {
-    return _then(_Tour(
+    return _then(_$_Tour(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -124,7 +107,7 @@ class __$TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res>
           : info // ignore: cast_nullable_to_non_nullable
               as TourInfo,
       questions: questions == freezed
-          ? _value.questions
+          ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<Question>,
     ));
@@ -137,16 +120,21 @@ class _$_Tour implements _Tour {
   const _$_Tour(
       {this.id,
       this.info = const TourInfo(),
-      this.questions = const <Question>[]});
+      final List<Question> questions = const <Question>[]})
+      : _questions = questions;
 
   @override
   final String? id;
-  @JsonKey(defaultValue: const TourInfo())
   @override
+  @JsonKey()
   final TourInfo info;
-  @JsonKey(defaultValue: const <Question>[])
+  final List<Question> _questions;
   @override
-  final List<Question> questions;
+  @JsonKey()
+  List<Question> get questions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
 
   @override
   String toString() {
@@ -156,40 +144,40 @@ class _$_Tour implements _Tour {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Tour &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Tour &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.info, info) &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(questions);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(info),
+      const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
-  _$TourCopyWith<_Tour> get copyWith =>
-      __$TourCopyWithImpl<_Tour>(this, _$identity);
+  _$$_TourCopyWith<_$_Tour> get copyWith =>
+      __$$_TourCopyWithImpl<_$_Tour>(this, _$identity);
 }
 
 abstract class _Tour implements Tour {
-  const factory _Tour({String? id, TourInfo info, List<Question> questions}) =
-      _$_Tour;
+  const factory _Tour(
+      {final String? id,
+      final TourInfo info,
+      final List<Question> questions}) = _$_Tour;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  TourInfo get info => throw _privateConstructorUsedError;
+  TourInfo get info;
   @override
-  List<Question> get questions => throw _privateConstructorUsedError;
+  List<Question> get questions;
   @override
   @JsonKey(ignore: true)
-  _$TourCopyWith<_Tour> get copyWith => throw _privateConstructorUsedError;
+  _$$_TourCopyWith<_$_Tour> get copyWith => throw _privateConstructorUsedError;
 }

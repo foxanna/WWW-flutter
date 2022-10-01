@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'latest_tournaments_actions.dart';
 
@@ -10,27 +12,7 @@ part of 'latest_tournaments_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserActionLatestTearOff {
-  const _$UserActionLatestTearOff();
-
-  RefreshLatestUserAction refresh() {
-    return const RefreshLatestUserAction();
-  }
-
-  LoadLatestUserAction load() {
-    return const LoadLatestUserAction();
-  }
-
-  ScrolledCloseToTheEndLatestUserAction scrolledCloseToTheEnd() {
-    return const ScrolledCloseToTheEndLatestUserAction();
-  }
-}
-
-/// @nodoc
-const $UserActionLatest = _$UserActionLatestTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UserActionLatest {
@@ -39,6 +21,13 @@ mixin _$UserActionLatest {
     required TResult Function() refresh,
     required TResult Function() load,
     required TResult Function() scrolledCloseToTheEnd,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? refresh,
+    TResult Function()? load,
+    TResult Function()? scrolledCloseToTheEnd,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +43,14 @@ mixin _$UserActionLatest {
     required TResult Function(RefreshLatestUserAction value) refresh,
     required TResult Function(LoadLatestUserAction value) load,
     required TResult Function(ScrolledCloseToTheEndLatestUserAction value)
+        scrolledCloseToTheEnd,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RefreshLatestUserAction value)? refresh,
+    TResult Function(LoadLatestUserAction value)? load,
+    TResult Function(ScrolledCloseToTheEndLatestUserAction value)?
         scrolledCloseToTheEnd,
   }) =>
       throw _privateConstructorUsedError;
@@ -86,22 +83,23 @@ class _$UserActionLatestCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $RefreshLatestUserActionCopyWith<$Res> {
-  factory $RefreshLatestUserActionCopyWith(RefreshLatestUserAction value,
-          $Res Function(RefreshLatestUserAction) then) =
-      _$RefreshLatestUserActionCopyWithImpl<$Res>;
+abstract class _$$RefreshLatestUserActionCopyWith<$Res> {
+  factory _$$RefreshLatestUserActionCopyWith(_$RefreshLatestUserAction value,
+          $Res Function(_$RefreshLatestUserAction) then) =
+      __$$RefreshLatestUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RefreshLatestUserActionCopyWithImpl<$Res>
+class __$$RefreshLatestUserActionCopyWithImpl<$Res>
     extends _$UserActionLatestCopyWithImpl<$Res>
-    implements $RefreshLatestUserActionCopyWith<$Res> {
-  _$RefreshLatestUserActionCopyWithImpl(RefreshLatestUserAction _value,
-      $Res Function(RefreshLatestUserAction) _then)
-      : super(_value, (v) => _then(v as RefreshLatestUserAction));
+    implements _$$RefreshLatestUserActionCopyWith<$Res> {
+  __$$RefreshLatestUserActionCopyWithImpl(_$RefreshLatestUserAction _value,
+      $Res Function(_$RefreshLatestUserAction) _then)
+      : super(_value, (v) => _then(v as _$RefreshLatestUserAction));
 
   @override
-  RefreshLatestUserAction get _value => super._value as RefreshLatestUserAction;
+  _$RefreshLatestUserAction get _value =>
+      super._value as _$RefreshLatestUserAction;
 }
 
 /// @nodoc
@@ -119,12 +117,14 @@ class _$RefreshLatestUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionLatest.refresh'));
+    properties.add(DiagnosticsProperty('type', 'UserActionLatest.refresh'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is RefreshLatestUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshLatestUserAction);
   }
 
   @override
@@ -138,6 +138,16 @@ class _$RefreshLatestUserAction
     required TResult Function() scrolledCloseToTheEnd,
   }) {
     return refresh();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? refresh,
+    TResult Function()? load,
+    TResult Function()? scrolledCloseToTheEnd,
+  }) {
+    return refresh?.call();
   }
 
   @override
@@ -167,6 +177,17 @@ class _$RefreshLatestUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RefreshLatestUserAction value)? refresh,
+    TResult Function(LoadLatestUserAction value)? load,
+    TResult Function(ScrolledCloseToTheEndLatestUserAction value)?
+        scrolledCloseToTheEnd,
+  }) {
+    return refresh?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RefreshLatestUserAction value)? refresh,
     TResult Function(LoadLatestUserAction value)? load,
@@ -186,22 +207,22 @@ abstract class RefreshLatestUserAction implements UserActionLatest {
 }
 
 /// @nodoc
-abstract class $LoadLatestUserActionCopyWith<$Res> {
-  factory $LoadLatestUserActionCopyWith(LoadLatestUserAction value,
-          $Res Function(LoadLatestUserAction) then) =
-      _$LoadLatestUserActionCopyWithImpl<$Res>;
+abstract class _$$LoadLatestUserActionCopyWith<$Res> {
+  factory _$$LoadLatestUserActionCopyWith(_$LoadLatestUserAction value,
+          $Res Function(_$LoadLatestUserAction) then) =
+      __$$LoadLatestUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadLatestUserActionCopyWithImpl<$Res>
+class __$$LoadLatestUserActionCopyWithImpl<$Res>
     extends _$UserActionLatestCopyWithImpl<$Res>
-    implements $LoadLatestUserActionCopyWith<$Res> {
-  _$LoadLatestUserActionCopyWithImpl(
-      LoadLatestUserAction _value, $Res Function(LoadLatestUserAction) _then)
-      : super(_value, (v) => _then(v as LoadLatestUserAction));
+    implements _$$LoadLatestUserActionCopyWith<$Res> {
+  __$$LoadLatestUserActionCopyWithImpl(_$LoadLatestUserAction _value,
+      $Res Function(_$LoadLatestUserAction) _then)
+      : super(_value, (v) => _then(v as _$LoadLatestUserAction));
 
   @override
-  LoadLatestUserAction get _value => super._value as LoadLatestUserAction;
+  _$LoadLatestUserAction get _value => super._value as _$LoadLatestUserAction;
 }
 
 /// @nodoc
@@ -219,12 +240,13 @@ class _$LoadLatestUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionLatest.load'));
+    properties.add(DiagnosticsProperty('type', 'UserActionLatest.load'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadLatestUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadLatestUserAction);
   }
 
   @override
@@ -238,6 +260,16 @@ class _$LoadLatestUserAction
     required TResult Function() scrolledCloseToTheEnd,
   }) {
     return load();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? refresh,
+    TResult Function()? load,
+    TResult Function()? scrolledCloseToTheEnd,
+  }) {
+    return load?.call();
   }
 
   @override
@@ -267,6 +299,17 @@ class _$LoadLatestUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RefreshLatestUserAction value)? refresh,
+    TResult Function(LoadLatestUserAction value)? load,
+    TResult Function(ScrolledCloseToTheEndLatestUserAction value)?
+        scrolledCloseToTheEnd,
+  }) {
+    return load?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RefreshLatestUserAction value)? refresh,
     TResult Function(LoadLatestUserAction value)? load,
@@ -286,25 +329,26 @@ abstract class LoadLatestUserAction implements UserActionLatest {
 }
 
 /// @nodoc
-abstract class $ScrolledCloseToTheEndLatestUserActionCopyWith<$Res> {
-  factory $ScrolledCloseToTheEndLatestUserActionCopyWith(
-          ScrolledCloseToTheEndLatestUserAction value,
-          $Res Function(ScrolledCloseToTheEndLatestUserAction) then) =
-      _$ScrolledCloseToTheEndLatestUserActionCopyWithImpl<$Res>;
+abstract class _$$ScrolledCloseToTheEndLatestUserActionCopyWith<$Res> {
+  factory _$$ScrolledCloseToTheEndLatestUserActionCopyWith(
+          _$ScrolledCloseToTheEndLatestUserAction value,
+          $Res Function(_$ScrolledCloseToTheEndLatestUserAction) then) =
+      __$$ScrolledCloseToTheEndLatestUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ScrolledCloseToTheEndLatestUserActionCopyWithImpl<$Res>
+class __$$ScrolledCloseToTheEndLatestUserActionCopyWithImpl<$Res>
     extends _$UserActionLatestCopyWithImpl<$Res>
-    implements $ScrolledCloseToTheEndLatestUserActionCopyWith<$Res> {
-  _$ScrolledCloseToTheEndLatestUserActionCopyWithImpl(
-      ScrolledCloseToTheEndLatestUserAction _value,
-      $Res Function(ScrolledCloseToTheEndLatestUserAction) _then)
-      : super(_value, (v) => _then(v as ScrolledCloseToTheEndLatestUserAction));
+    implements _$$ScrolledCloseToTheEndLatestUserActionCopyWith<$Res> {
+  __$$ScrolledCloseToTheEndLatestUserActionCopyWithImpl(
+      _$ScrolledCloseToTheEndLatestUserAction _value,
+      $Res Function(_$ScrolledCloseToTheEndLatestUserAction) _then)
+      : super(
+            _value, (v) => _then(v as _$ScrolledCloseToTheEndLatestUserAction));
 
   @override
-  ScrolledCloseToTheEndLatestUserAction get _value =>
-      super._value as ScrolledCloseToTheEndLatestUserAction;
+  _$ScrolledCloseToTheEndLatestUserAction get _value =>
+      super._value as _$ScrolledCloseToTheEndLatestUserAction;
 }
 
 /// @nodoc
@@ -322,15 +366,15 @@ class _$ScrolledCloseToTheEndLatestUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'UserActionLatest.scrolledCloseToTheEnd'));
+    properties.add(
+        DiagnosticsProperty('type', 'UserActionLatest.scrolledCloseToTheEnd'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ScrolledCloseToTheEndLatestUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$ScrolledCloseToTheEndLatestUserAction);
   }
 
   @override
@@ -344,6 +388,16 @@ class _$ScrolledCloseToTheEndLatestUserAction
     required TResult Function() scrolledCloseToTheEnd,
   }) {
     return scrolledCloseToTheEnd();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? refresh,
+    TResult Function()? load,
+    TResult Function()? scrolledCloseToTheEnd,
+  }) {
+    return scrolledCloseToTheEnd?.call();
   }
 
   @override
@@ -373,6 +427,17 @@ class _$ScrolledCloseToTheEndLatestUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RefreshLatestUserAction value)? refresh,
+    TResult Function(LoadLatestUserAction value)? load,
+    TResult Function(ScrolledCloseToTheEndLatestUserAction value)?
+        scrolledCloseToTheEnd,
+  }) {
+    return scrolledCloseToTheEnd?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RefreshLatestUserAction value)? refresh,
     TResult Function(LoadLatestUserAction value)? load,
@@ -394,48 +459,6 @@ abstract class ScrolledCloseToTheEndLatestUserAction
 }
 
 /// @nodoc
-class _$SystemActionLatestTearOff {
-  const _$SystemActionLatestTearOff();
-
-  OpenLatestSystemAction open() {
-    return const OpenLatestSystemAction();
-  }
-
-  InitLatestSystemAction init() {
-    return const InitLatestSystemAction();
-  }
-
-  DeInitLatestSystemAction deInit() {
-    return const DeInitLatestSystemAction();
-  }
-
-  LoadingLatestSystemAction loading() {
-    return const LoadingLatestSystemAction();
-  }
-
-  RefreshingLatestSystemAction refreshing() {
-    return const RefreshingLatestSystemAction();
-  }
-
-  CompletedLatestSystemAction completed(
-      {required Iterable<Tournament> data, required int nexPage}) {
-    return CompletedLatestSystemAction(
-      data: data,
-      nexPage: nexPage,
-    );
-  }
-
-  FailedLatestSystemAction failed({required Exception exception}) {
-    return FailedLatestSystemAction(
-      exception: exception,
-    );
-  }
-}
-
-/// @nodoc
-const $SystemActionLatest = _$SystemActionLatestTearOff();
-
-/// @nodoc
 mixin _$SystemActionLatest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -446,6 +469,17 @@ mixin _$SystemActionLatest {
     required TResult Function() refreshing,
     required TResult Function(Iterable<Tournament> data, int nexPage) completed,
     required TResult Function(Exception exception) failed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -469,6 +503,17 @@ mixin _$SystemActionLatest {
     required TResult Function(RefreshingLatestSystemAction value) refreshing,
     required TResult Function(CompletedLatestSystemAction value) completed,
     required TResult Function(FailedLatestSystemAction value) failed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -503,22 +548,23 @@ class _$SystemActionLatestCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $OpenLatestSystemActionCopyWith<$Res> {
-  factory $OpenLatestSystemActionCopyWith(OpenLatestSystemAction value,
-          $Res Function(OpenLatestSystemAction) then) =
-      _$OpenLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$OpenLatestSystemActionCopyWith<$Res> {
+  factory _$$OpenLatestSystemActionCopyWith(_$OpenLatestSystemAction value,
+          $Res Function(_$OpenLatestSystemAction) then) =
+      __$$OpenLatestSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$OpenLatestSystemActionCopyWithImpl<$Res>
+class __$$OpenLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
-    implements $OpenLatestSystemActionCopyWith<$Res> {
-  _$OpenLatestSystemActionCopyWithImpl(OpenLatestSystemAction _value,
-      $Res Function(OpenLatestSystemAction) _then)
-      : super(_value, (v) => _then(v as OpenLatestSystemAction));
+    implements _$$OpenLatestSystemActionCopyWith<$Res> {
+  __$$OpenLatestSystemActionCopyWithImpl(_$OpenLatestSystemAction _value,
+      $Res Function(_$OpenLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as _$OpenLatestSystemAction));
 
   @override
-  OpenLatestSystemAction get _value => super._value as OpenLatestSystemAction;
+  _$OpenLatestSystemAction get _value =>
+      super._value as _$OpenLatestSystemAction;
 }
 
 /// @nodoc
@@ -536,12 +582,13 @@ class _$OpenLatestSystemAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SystemActionLatest.open'));
+    properties.add(DiagnosticsProperty('type', 'SystemActionLatest.open'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is OpenLatestSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OpenLatestSystemAction);
   }
 
   @override
@@ -559,6 +606,20 @@ class _$OpenLatestSystemAction
     required TResult Function(Exception exception) failed,
   }) {
     return open();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+  }) {
+    return open?.call();
   }
 
   @override
@@ -595,6 +656,20 @@ class _$OpenLatestSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+  }) {
+    return open?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenLatestSystemAction value)? open,
     TResult Function(InitLatestSystemAction value)? init,
@@ -617,22 +692,23 @@ abstract class OpenLatestSystemAction implements SystemActionLatest {
 }
 
 /// @nodoc
-abstract class $InitLatestSystemActionCopyWith<$Res> {
-  factory $InitLatestSystemActionCopyWith(InitLatestSystemAction value,
-          $Res Function(InitLatestSystemAction) then) =
-      _$InitLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitLatestSystemActionCopyWith<$Res> {
+  factory _$$InitLatestSystemActionCopyWith(_$InitLatestSystemAction value,
+          $Res Function(_$InitLatestSystemAction) then) =
+      __$$InitLatestSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitLatestSystemActionCopyWithImpl<$Res>
+class __$$InitLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
-    implements $InitLatestSystemActionCopyWith<$Res> {
-  _$InitLatestSystemActionCopyWithImpl(InitLatestSystemAction _value,
-      $Res Function(InitLatestSystemAction) _then)
-      : super(_value, (v) => _then(v as InitLatestSystemAction));
+    implements _$$InitLatestSystemActionCopyWith<$Res> {
+  __$$InitLatestSystemActionCopyWithImpl(_$InitLatestSystemAction _value,
+      $Res Function(_$InitLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as _$InitLatestSystemAction));
 
   @override
-  InitLatestSystemAction get _value => super._value as InitLatestSystemAction;
+  _$InitLatestSystemAction get _value =>
+      super._value as _$InitLatestSystemAction;
 }
 
 /// @nodoc
@@ -650,12 +726,13 @@ class _$InitLatestSystemAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SystemActionLatest.init'));
+    properties.add(DiagnosticsProperty('type', 'SystemActionLatest.init'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitLatestSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitLatestSystemAction);
   }
 
   @override
@@ -673,6 +750,20 @@ class _$InitLatestSystemAction
     required TResult Function(Exception exception) failed,
   }) {
     return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+  }) {
+    return init?.call();
   }
 
   @override
@@ -709,6 +800,20 @@ class _$InitLatestSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+  }) {
+    return init?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenLatestSystemAction value)? open,
     TResult Function(InitLatestSystemAction value)? init,
@@ -731,23 +836,23 @@ abstract class InitLatestSystemAction implements SystemActionLatest {
 }
 
 /// @nodoc
-abstract class $DeInitLatestSystemActionCopyWith<$Res> {
-  factory $DeInitLatestSystemActionCopyWith(DeInitLatestSystemAction value,
-          $Res Function(DeInitLatestSystemAction) then) =
-      _$DeInitLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$DeInitLatestSystemActionCopyWith<$Res> {
+  factory _$$DeInitLatestSystemActionCopyWith(_$DeInitLatestSystemAction value,
+          $Res Function(_$DeInitLatestSystemAction) then) =
+      __$$DeInitLatestSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeInitLatestSystemActionCopyWithImpl<$Res>
+class __$$DeInitLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
-    implements $DeInitLatestSystemActionCopyWith<$Res> {
-  _$DeInitLatestSystemActionCopyWithImpl(DeInitLatestSystemAction _value,
-      $Res Function(DeInitLatestSystemAction) _then)
-      : super(_value, (v) => _then(v as DeInitLatestSystemAction));
+    implements _$$DeInitLatestSystemActionCopyWith<$Res> {
+  __$$DeInitLatestSystemActionCopyWithImpl(_$DeInitLatestSystemAction _value,
+      $Res Function(_$DeInitLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as _$DeInitLatestSystemAction));
 
   @override
-  DeInitLatestSystemAction get _value =>
-      super._value as DeInitLatestSystemAction;
+  _$DeInitLatestSystemAction get _value =>
+      super._value as _$DeInitLatestSystemAction;
 }
 
 /// @nodoc
@@ -765,12 +870,14 @@ class _$DeInitLatestSystemAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SystemActionLatest.deInit'));
+    properties.add(DiagnosticsProperty('type', 'SystemActionLatest.deInit'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DeInitLatestSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeInitLatestSystemAction);
   }
 
   @override
@@ -788,6 +895,20 @@ class _$DeInitLatestSystemAction
     required TResult Function(Exception exception) failed,
   }) {
     return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+  }) {
+    return deInit?.call();
   }
 
   @override
@@ -824,6 +945,20 @@ class _$DeInitLatestSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+  }) {
+    return deInit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenLatestSystemAction value)? open,
     TResult Function(InitLatestSystemAction value)? init,
@@ -846,23 +981,24 @@ abstract class DeInitLatestSystemAction implements SystemActionLatest {
 }
 
 /// @nodoc
-abstract class $LoadingLatestSystemActionCopyWith<$Res> {
-  factory $LoadingLatestSystemActionCopyWith(LoadingLatestSystemAction value,
-          $Res Function(LoadingLatestSystemAction) then) =
-      _$LoadingLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$LoadingLatestSystemActionCopyWith<$Res> {
+  factory _$$LoadingLatestSystemActionCopyWith(
+          _$LoadingLatestSystemAction value,
+          $Res Function(_$LoadingLatestSystemAction) then) =
+      __$$LoadingLatestSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingLatestSystemActionCopyWithImpl<$Res>
+class __$$LoadingLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
-    implements $LoadingLatestSystemActionCopyWith<$Res> {
-  _$LoadingLatestSystemActionCopyWithImpl(LoadingLatestSystemAction _value,
-      $Res Function(LoadingLatestSystemAction) _then)
-      : super(_value, (v) => _then(v as LoadingLatestSystemAction));
+    implements _$$LoadingLatestSystemActionCopyWith<$Res> {
+  __$$LoadingLatestSystemActionCopyWithImpl(_$LoadingLatestSystemAction _value,
+      $Res Function(_$LoadingLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as _$LoadingLatestSystemAction));
 
   @override
-  LoadingLatestSystemAction get _value =>
-      super._value as LoadingLatestSystemAction;
+  _$LoadingLatestSystemAction get _value =>
+      super._value as _$LoadingLatestSystemAction;
 }
 
 /// @nodoc
@@ -880,12 +1016,14 @@ class _$LoadingLatestSystemAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SystemActionLatest.loading'));
+    properties.add(DiagnosticsProperty('type', 'SystemActionLatest.loading'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadingLatestSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingLatestSystemAction);
   }
 
   @override
@@ -903,6 +1041,20 @@ class _$LoadingLatestSystemAction
     required TResult Function(Exception exception) failed,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -939,6 +1091,20 @@ class _$LoadingLatestSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenLatestSystemAction value)? open,
     TResult Function(InitLatestSystemAction value)? init,
@@ -961,25 +1127,25 @@ abstract class LoadingLatestSystemAction implements SystemActionLatest {
 }
 
 /// @nodoc
-abstract class $RefreshingLatestSystemActionCopyWith<$Res> {
-  factory $RefreshingLatestSystemActionCopyWith(
-          RefreshingLatestSystemAction value,
-          $Res Function(RefreshingLatestSystemAction) then) =
-      _$RefreshingLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$RefreshingLatestSystemActionCopyWith<$Res> {
+  factory _$$RefreshingLatestSystemActionCopyWith(
+          _$RefreshingLatestSystemAction value,
+          $Res Function(_$RefreshingLatestSystemAction) then) =
+      __$$RefreshingLatestSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RefreshingLatestSystemActionCopyWithImpl<$Res>
+class __$$RefreshingLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
-    implements $RefreshingLatestSystemActionCopyWith<$Res> {
-  _$RefreshingLatestSystemActionCopyWithImpl(
-      RefreshingLatestSystemAction _value,
-      $Res Function(RefreshingLatestSystemAction) _then)
-      : super(_value, (v) => _then(v as RefreshingLatestSystemAction));
+    implements _$$RefreshingLatestSystemActionCopyWith<$Res> {
+  __$$RefreshingLatestSystemActionCopyWithImpl(
+      _$RefreshingLatestSystemAction _value,
+      $Res Function(_$RefreshingLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as _$RefreshingLatestSystemAction));
 
   @override
-  RefreshingLatestSystemAction get _value =>
-      super._value as RefreshingLatestSystemAction;
+  _$RefreshingLatestSystemAction get _value =>
+      super._value as _$RefreshingLatestSystemAction;
 }
 
 /// @nodoc
@@ -998,12 +1164,14 @@ class _$RefreshingLatestSystemAction
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SystemActionLatest.refreshing'));
+        .add(DiagnosticsProperty('type', 'SystemActionLatest.refreshing'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is RefreshingLatestSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshingLatestSystemAction);
   }
 
   @override
@@ -1021,6 +1189,20 @@ class _$RefreshingLatestSystemAction
     required TResult Function(Exception exception) failed,
   }) {
     return refreshing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+  }) {
+    return refreshing?.call();
   }
 
   @override
@@ -1057,6 +1239,20 @@ class _$RefreshingLatestSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+  }) {
+    return refreshing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenLatestSystemAction value)? open,
     TResult Function(InitLatestSystemAction value)? init,
@@ -1079,32 +1275,33 @@ abstract class RefreshingLatestSystemAction implements SystemActionLatest {
 }
 
 /// @nodoc
-abstract class $CompletedLatestSystemActionCopyWith<$Res> {
-  factory $CompletedLatestSystemActionCopyWith(
-          CompletedLatestSystemAction value,
-          $Res Function(CompletedLatestSystemAction) then) =
-      _$CompletedLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$CompletedLatestSystemActionCopyWith<$Res> {
+  factory _$$CompletedLatestSystemActionCopyWith(
+          _$CompletedLatestSystemAction value,
+          $Res Function(_$CompletedLatestSystemAction) then) =
+      __$$CompletedLatestSystemActionCopyWithImpl<$Res>;
   $Res call({Iterable<Tournament> data, int nexPage});
 }
 
 /// @nodoc
-class _$CompletedLatestSystemActionCopyWithImpl<$Res>
+class __$$CompletedLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
-    implements $CompletedLatestSystemActionCopyWith<$Res> {
-  _$CompletedLatestSystemActionCopyWithImpl(CompletedLatestSystemAction _value,
-      $Res Function(CompletedLatestSystemAction) _then)
-      : super(_value, (v) => _then(v as CompletedLatestSystemAction));
+    implements _$$CompletedLatestSystemActionCopyWith<$Res> {
+  __$$CompletedLatestSystemActionCopyWithImpl(
+      _$CompletedLatestSystemAction _value,
+      $Res Function(_$CompletedLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as _$CompletedLatestSystemAction));
 
   @override
-  CompletedLatestSystemAction get _value =>
-      super._value as CompletedLatestSystemAction;
+  _$CompletedLatestSystemAction get _value =>
+      super._value as _$CompletedLatestSystemAction;
 
   @override
   $Res call({
     Object? data = freezed,
     Object? nexPage = freezed,
   }) {
-    return _then(CompletedLatestSystemAction(
+    return _then(_$CompletedLatestSystemAction(
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1147,24 +1344,23 @@ class _$CompletedLatestSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CompletedLatestSystemAction &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.nexPage, nexPage) ||
-                const DeepCollectionEquality().equals(other.nexPage, nexPage)));
+        (other.runtimeType == runtimeType &&
+            other is _$CompletedLatestSystemAction &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.nexPage, nexPage));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(nexPage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(nexPage));
 
   @JsonKey(ignore: true)
   @override
-  $CompletedLatestSystemActionCopyWith<CompletedLatestSystemAction>
-      get copyWith => _$CompletedLatestSystemActionCopyWithImpl<
-          CompletedLatestSystemAction>(this, _$identity);
+  _$$CompletedLatestSystemActionCopyWith<_$CompletedLatestSystemAction>
+      get copyWith => __$$CompletedLatestSystemActionCopyWithImpl<
+          _$CompletedLatestSystemAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1178,6 +1374,20 @@ class _$CompletedLatestSystemAction
     required TResult Function(Exception exception) failed,
   }) {
     return completed(data, nexPage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+  }) {
+    return completed?.call(data, nexPage);
   }
 
   @override
@@ -1214,6 +1424,20 @@ class _$CompletedLatestSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+  }) {
+    return completed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenLatestSystemAction value)? open,
     TResult Function(InitLatestSystemAction value)? init,
@@ -1233,41 +1457,41 @@ class _$CompletedLatestSystemAction
 
 abstract class CompletedLatestSystemAction implements SystemActionLatest {
   const factory CompletedLatestSystemAction(
-      {required Iterable<Tournament> data,
-      required int nexPage}) = _$CompletedLatestSystemAction;
+      {required final Iterable<Tournament> data,
+      required final int nexPage}) = _$CompletedLatestSystemAction;
 
-  Iterable<Tournament> get data => throw _privateConstructorUsedError;
-  int get nexPage => throw _privateConstructorUsedError;
+  Iterable<Tournament> get data;
+  int get nexPage;
   @JsonKey(ignore: true)
-  $CompletedLatestSystemActionCopyWith<CompletedLatestSystemAction>
+  _$$CompletedLatestSystemActionCopyWith<_$CompletedLatestSystemAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FailedLatestSystemActionCopyWith<$Res> {
-  factory $FailedLatestSystemActionCopyWith(FailedLatestSystemAction value,
-          $Res Function(FailedLatestSystemAction) then) =
-      _$FailedLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$FailedLatestSystemActionCopyWith<$Res> {
+  factory _$$FailedLatestSystemActionCopyWith(_$FailedLatestSystemAction value,
+          $Res Function(_$FailedLatestSystemAction) then) =
+      __$$FailedLatestSystemActionCopyWithImpl<$Res>;
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class _$FailedLatestSystemActionCopyWithImpl<$Res>
+class __$$FailedLatestSystemActionCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res>
-    implements $FailedLatestSystemActionCopyWith<$Res> {
-  _$FailedLatestSystemActionCopyWithImpl(FailedLatestSystemAction _value,
-      $Res Function(FailedLatestSystemAction) _then)
-      : super(_value, (v) => _then(v as FailedLatestSystemAction));
+    implements _$$FailedLatestSystemActionCopyWith<$Res> {
+  __$$FailedLatestSystemActionCopyWithImpl(_$FailedLatestSystemAction _value,
+      $Res Function(_$FailedLatestSystemAction) _then)
+      : super(_value, (v) => _then(v as _$FailedLatestSystemAction));
 
   @override
-  FailedLatestSystemAction get _value =>
-      super._value as FailedLatestSystemAction;
+  _$FailedLatestSystemAction get _value =>
+      super._value as _$FailedLatestSystemAction;
 
   @override
   $Res call({
     Object? exception = freezed,
   }) {
-    return _then(FailedLatestSystemAction(
+    return _then(_$FailedLatestSystemAction(
       exception: exception == freezed
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -1302,21 +1526,21 @@ class _$FailedLatestSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is FailedLatestSystemAction &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+        (other.runtimeType == runtimeType &&
+            other is _$FailedLatestSystemAction &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $FailedLatestSystemActionCopyWith<FailedLatestSystemAction> get copyWith =>
-      _$FailedLatestSystemActionCopyWithImpl<FailedLatestSystemAction>(
-          this, _$identity);
+  _$$FailedLatestSystemActionCopyWith<_$FailedLatestSystemAction>
+      get copyWith =>
+          __$$FailedLatestSystemActionCopyWithImpl<_$FailedLatestSystemAction>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1330,6 +1554,20 @@ class _$FailedLatestSystemAction
     required TResult Function(Exception exception) failed,
   }) {
     return failed(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? open,
+    TResult Function()? init,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function(Iterable<Tournament> data, int nexPage)? completed,
+    TResult Function(Exception exception)? failed,
+  }) {
+    return failed?.call(exception);
   }
 
   @override
@@ -1366,6 +1604,20 @@ class _$FailedLatestSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenLatestSystemAction value)? open,
+    TResult Function(InitLatestSystemAction value)? init,
+    TResult Function(DeInitLatestSystemAction value)? deInit,
+    TResult Function(LoadingLatestSystemAction value)? loading,
+    TResult Function(RefreshingLatestSystemAction value)? refreshing,
+    TResult Function(CompletedLatestSystemAction value)? completed,
+    TResult Function(FailedLatestSystemAction value)? failed,
+  }) {
+    return failed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenLatestSystemAction value)? open,
     TResult Function(InitLatestSystemAction value)? init,
@@ -1384,11 +1636,11 @@ class _$FailedLatestSystemAction
 }
 
 abstract class FailedLatestSystemAction implements SystemActionLatest {
-  const factory FailedLatestSystemAction({required Exception exception}) =
+  const factory FailedLatestSystemAction({required final Exception exception}) =
       _$FailedLatestSystemAction;
 
-  Exception get exception => throw _privateConstructorUsedError;
+  Exception get exception;
   @JsonKey(ignore: true)
-  $FailedLatestSystemActionCopyWith<FailedLatestSystemAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FailedLatestSystemActionCopyWith<_$FailedLatestSystemAction>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tournament_info.dart';
 
@@ -10,40 +12,7 @@ part of 'tournament_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TournamentInfoTearOff {
-  const _$TournamentInfoTearOff();
-
-  _TournamentInfo call(
-      {String? id,
-      String? id2,
-      String? title,
-      String? questionsCount,
-      String? toursCount,
-      String? description,
-      String? url,
-      String? editors,
-      String? createdAt,
-      String? playedAt}) {
-    return _TournamentInfo(
-      id: id,
-      id2: id2,
-      title: title,
-      questionsCount: questionsCount,
-      toursCount: toursCount,
-      description: description,
-      url: url,
-      editors: editors,
-      createdAt: createdAt,
-      playedAt: playedAt,
-    );
-  }
-}
-
-/// @nodoc
-const $TournamentInfo = _$TournamentInfoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TournamentInfo {
@@ -149,11 +118,11 @@ class _$TournamentInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TournamentInfoCopyWith<$Res>
+abstract class _$$_TournamentInfoCopyWith<$Res>
     implements $TournamentInfoCopyWith<$Res> {
-  factory _$TournamentInfoCopyWith(
-          _TournamentInfo value, $Res Function(_TournamentInfo) then) =
-      __$TournamentInfoCopyWithImpl<$Res>;
+  factory _$$_TournamentInfoCopyWith(
+          _$_TournamentInfo value, $Res Function(_$_TournamentInfo) then) =
+      __$$_TournamentInfoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? id,
@@ -169,15 +138,15 @@ abstract class _$TournamentInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TournamentInfoCopyWithImpl<$Res>
+class __$$_TournamentInfoCopyWithImpl<$Res>
     extends _$TournamentInfoCopyWithImpl<$Res>
-    implements _$TournamentInfoCopyWith<$Res> {
-  __$TournamentInfoCopyWithImpl(
-      _TournamentInfo _value, $Res Function(_TournamentInfo) _then)
-      : super(_value, (v) => _then(v as _TournamentInfo));
+    implements _$$_TournamentInfoCopyWith<$Res> {
+  __$$_TournamentInfoCopyWithImpl(
+      _$_TournamentInfo _value, $Res Function(_$_TournamentInfo) _then)
+      : super(_value, (v) => _then(v as _$_TournamentInfo));
 
   @override
-  _TournamentInfo get _value => super._value as _TournamentInfo;
+  _$_TournamentInfo get _value => super._value as _$_TournamentInfo;
 
   @override
   $Res call({
@@ -192,7 +161,7 @@ class __$TournamentInfoCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? playedAt = freezed,
   }) {
-    return _then(_TournamentInfo(
+    return _then(_$_TournamentInfo(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -281,90 +250,78 @@ class _$_TournamentInfo implements _TournamentInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TournamentInfo &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.id2, id2) ||
-                const DeepCollectionEquality().equals(other.id2, id2)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.questionsCount, questionsCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionsCount, questionsCount)) &&
-            (identical(other.toursCount, toursCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.toursCount, toursCount)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.editors, editors) ||
-                const DeepCollectionEquality()
-                    .equals(other.editors, editors)) &&
-            (identical(other.createdAt, createdAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.createdAt, createdAt)) &&
-            (identical(other.playedAt, playedAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.playedAt, playedAt)));
+        (other.runtimeType == runtimeType &&
+            other is _$_TournamentInfo &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.id2, id2) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality()
+                .equals(other.questionsCount, questionsCount) &&
+            const DeepCollectionEquality()
+                .equals(other.toursCount, toursCount) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.editors, editors) &&
+            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            const DeepCollectionEquality().equals(other.playedAt, playedAt));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(id2) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(questionsCount) ^
-      const DeepCollectionEquality().hash(toursCount) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(editors) ^
-      const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(playedAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(id2),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(questionsCount),
+      const DeepCollectionEquality().hash(toursCount),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(editors),
+      const DeepCollectionEquality().hash(createdAt),
+      const DeepCollectionEquality().hash(playedAt));
 
   @JsonKey(ignore: true)
   @override
-  _$TournamentInfoCopyWith<_TournamentInfo> get copyWith =>
-      __$TournamentInfoCopyWithImpl<_TournamentInfo>(this, _$identity);
+  _$$_TournamentInfoCopyWith<_$_TournamentInfo> get copyWith =>
+      __$$_TournamentInfoCopyWithImpl<_$_TournamentInfo>(this, _$identity);
 }
 
 abstract class _TournamentInfo implements TournamentInfo {
   const factory _TournamentInfo(
-      {String? id,
-      String? id2,
-      String? title,
-      String? questionsCount,
-      String? toursCount,
-      String? description,
-      String? url,
-      String? editors,
-      String? createdAt,
-      String? playedAt}) = _$_TournamentInfo;
+      {final String? id,
+      final String? id2,
+      final String? title,
+      final String? questionsCount,
+      final String? toursCount,
+      final String? description,
+      final String? url,
+      final String? editors,
+      final String? createdAt,
+      final String? playedAt}) = _$_TournamentInfo;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  String? get id2 => throw _privateConstructorUsedError;
+  String? get id2;
   @override
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
-  String? get questionsCount => throw _privateConstructorUsedError;
+  String? get questionsCount;
   @override
-  String? get toursCount => throw _privateConstructorUsedError;
+  String? get toursCount;
   @override
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
   @override
-  String? get url => throw _privateConstructorUsedError;
+  String? get url;
   @override
-  String? get editors => throw _privateConstructorUsedError;
+  String? get editors;
   @override
-  String? get createdAt => throw _privateConstructorUsedError;
+  String? get createdAt;
   @override
-  String? get playedAt => throw _privateConstructorUsedError;
+  String? get playedAt;
   @override
   @JsonKey(ignore: true)
-  _$TournamentInfoCopyWith<_TournamentInfo> get copyWith =>
+  _$$_TournamentInfoCopyWith<_$_TournamentInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }

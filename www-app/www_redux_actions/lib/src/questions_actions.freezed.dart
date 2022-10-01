@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'questions_actions.dart';
 
@@ -10,53 +12,7 @@ part of 'questions_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserActionQuestionsTearOff {
-  const _$UserActionQuestionsTearOff();
-
-  OpenQuestionsUserAction open(
-      {required List<Question> questions, required int index}) {
-    return OpenQuestionsUserAction(
-      questions: questions,
-      index: index,
-    );
-  }
-
-  OpenRandomQuestionsUserAction openRandom() {
-    return const OpenRandomQuestionsUserAction();
-  }
-
-  CloseQuestionsUserAction close() {
-    return const CloseQuestionsUserAction();
-  }
-
-  ShowAnswerQuestionsUserAction showAnswer({required Question question}) {
-    return ShowAnswerQuestionsUserAction(
-      question: question,
-    );
-  }
-
-  HideAnswerQuestionsUserAction hideAnswer({required Question question}) {
-    return HideAnswerQuestionsUserAction(
-      question: question,
-    );
-  }
-
-  LoadRandomQuestionsUserAction loadRandom() {
-    return const LoadRandomQuestionsUserAction();
-  }
-
-  SelectQuestionsUserAction select({required int questionIndex}) {
-    return SelectQuestionsUserAction(
-      questionIndex: questionIndex,
-    );
-  }
-}
-
-/// @nodoc
-const $UserActionQuestions = _$UserActionQuestionsTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UserActionQuestions {
@@ -69,6 +25,17 @@ mixin _$UserActionQuestions {
     required TResult Function(Question question) hideAnswer,
     required TResult Function() loadRandom,
     required TResult Function(int questionIndex) select,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,6 +59,17 @@ mixin _$UserActionQuestions {
     required TResult Function(HideAnswerQuestionsUserAction value) hideAnswer,
     required TResult Function(LoadRandomQuestionsUserAction value) loadRandom,
     required TResult Function(SelectQuestionsUserAction value) select,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -126,32 +104,33 @@ class _$UserActionQuestionsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $OpenQuestionsUserActionCopyWith<$Res> {
-  factory $OpenQuestionsUserActionCopyWith(OpenQuestionsUserAction value,
-          $Res Function(OpenQuestionsUserAction) then) =
-      _$OpenQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$OpenQuestionsUserActionCopyWith<$Res> {
+  factory _$$OpenQuestionsUserActionCopyWith(_$OpenQuestionsUserAction value,
+          $Res Function(_$OpenQuestionsUserAction) then) =
+      __$$OpenQuestionsUserActionCopyWithImpl<$Res>;
   $Res call({List<Question> questions, int index});
 }
 
 /// @nodoc
-class _$OpenQuestionsUserActionCopyWithImpl<$Res>
+class __$$OpenQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
-    implements $OpenQuestionsUserActionCopyWith<$Res> {
-  _$OpenQuestionsUserActionCopyWithImpl(OpenQuestionsUserAction _value,
-      $Res Function(OpenQuestionsUserAction) _then)
-      : super(_value, (v) => _then(v as OpenQuestionsUserAction));
+    implements _$$OpenQuestionsUserActionCopyWith<$Res> {
+  __$$OpenQuestionsUserActionCopyWithImpl(_$OpenQuestionsUserAction _value,
+      $Res Function(_$OpenQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as _$OpenQuestionsUserAction));
 
   @override
-  OpenQuestionsUserAction get _value => super._value as OpenQuestionsUserAction;
+  _$OpenQuestionsUserAction get _value =>
+      super._value as _$OpenQuestionsUserAction;
 
   @override
   $Res call({
     Object? questions = freezed,
     Object? index = freezed,
   }) {
-    return _then(OpenQuestionsUserAction(
+    return _then(_$OpenQuestionsUserAction(
       questions: questions == freezed
-          ? _value.questions
+          ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<Question>,
       index: index == freezed
@@ -168,10 +147,16 @@ class _$OpenQuestionsUserAction
     with DiagnosticableTreeMixin
     implements OpenQuestionsUserAction {
   const _$OpenQuestionsUserAction(
-      {required this.questions, required this.index});
+      {required final List<Question> questions, required this.index})
+      : _questions = questions;
 
+  final List<Question> _questions;
   @override
-  final List<Question> questions;
+  List<Question> get questions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
+
   @override
   final int index;
 
@@ -192,24 +177,23 @@ class _$OpenQuestionsUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is OpenQuestionsUserAction &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)) &&
-            (identical(other.index, index) ||
-                const DeepCollectionEquality().equals(other.index, index)));
+        (other.runtimeType == runtimeType &&
+            other is _$OpenQuestionsUserAction &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions) &&
+            const DeepCollectionEquality().equals(other.index, index));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questions) ^
-      const DeepCollectionEquality().hash(index);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_questions),
+      const DeepCollectionEquality().hash(index));
 
   @JsonKey(ignore: true)
   @override
-  $OpenQuestionsUserActionCopyWith<OpenQuestionsUserAction> get copyWith =>
-      _$OpenQuestionsUserActionCopyWithImpl<OpenQuestionsUserAction>(
+  _$$OpenQuestionsUserActionCopyWith<_$OpenQuestionsUserAction> get copyWith =>
+      __$$OpenQuestionsUserActionCopyWithImpl<_$OpenQuestionsUserAction>(
           this, _$identity);
 
   @override
@@ -224,6 +208,20 @@ class _$OpenQuestionsUserAction
     required TResult Function(int questionIndex) select,
   }) {
     return open(questions, index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+  }) {
+    return open?.call(questions, index);
   }
 
   @override
@@ -260,6 +258,20 @@ class _$OpenQuestionsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+  }) {
+    return open?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenQuestionsUserAction value)? open,
     TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
@@ -279,36 +291,36 @@ class _$OpenQuestionsUserAction
 
 abstract class OpenQuestionsUserAction implements UserActionQuestions {
   const factory OpenQuestionsUserAction(
-      {required List<Question> questions,
-      required int index}) = _$OpenQuestionsUserAction;
+      {required final List<Question> questions,
+      required final int index}) = _$OpenQuestionsUserAction;
 
-  List<Question> get questions => throw _privateConstructorUsedError;
-  int get index => throw _privateConstructorUsedError;
+  List<Question> get questions;
+  int get index;
   @JsonKey(ignore: true)
-  $OpenQuestionsUserActionCopyWith<OpenQuestionsUserAction> get copyWith =>
+  _$$OpenQuestionsUserActionCopyWith<_$OpenQuestionsUserAction> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OpenRandomQuestionsUserActionCopyWith<$Res> {
-  factory $OpenRandomQuestionsUserActionCopyWith(
-          OpenRandomQuestionsUserAction value,
-          $Res Function(OpenRandomQuestionsUserAction) then) =
-      _$OpenRandomQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$OpenRandomQuestionsUserActionCopyWith<$Res> {
+  factory _$$OpenRandomQuestionsUserActionCopyWith(
+          _$OpenRandomQuestionsUserAction value,
+          $Res Function(_$OpenRandomQuestionsUserAction) then) =
+      __$$OpenRandomQuestionsUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$OpenRandomQuestionsUserActionCopyWithImpl<$Res>
+class __$$OpenRandomQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
-    implements $OpenRandomQuestionsUserActionCopyWith<$Res> {
-  _$OpenRandomQuestionsUserActionCopyWithImpl(
-      OpenRandomQuestionsUserAction _value,
-      $Res Function(OpenRandomQuestionsUserAction) _then)
-      : super(_value, (v) => _then(v as OpenRandomQuestionsUserAction));
+    implements _$$OpenRandomQuestionsUserActionCopyWith<$Res> {
+  __$$OpenRandomQuestionsUserActionCopyWithImpl(
+      _$OpenRandomQuestionsUserAction _value,
+      $Res Function(_$OpenRandomQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as _$OpenRandomQuestionsUserAction));
 
   @override
-  OpenRandomQuestionsUserAction get _value =>
-      super._value as OpenRandomQuestionsUserAction;
+  _$OpenRandomQuestionsUserAction get _value =>
+      super._value as _$OpenRandomQuestionsUserAction;
 }
 
 /// @nodoc
@@ -327,12 +339,14 @@ class _$OpenRandomQuestionsUserAction
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'UserActionQuestions.openRandom'));
+        .add(DiagnosticsProperty('type', 'UserActionQuestions.openRandom'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is OpenRandomQuestionsUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OpenRandomQuestionsUserAction);
   }
 
   @override
@@ -350,6 +364,20 @@ class _$OpenRandomQuestionsUserAction
     required TResult Function(int questionIndex) select,
   }) {
     return openRandom();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+  }) {
+    return openRandom?.call();
   }
 
   @override
@@ -386,6 +414,20 @@ class _$OpenRandomQuestionsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+  }) {
+    return openRandom?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenQuestionsUserAction value)? open,
     TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
@@ -409,23 +451,23 @@ abstract class OpenRandomQuestionsUserAction implements UserActionQuestions {
 }
 
 /// @nodoc
-abstract class $CloseQuestionsUserActionCopyWith<$Res> {
-  factory $CloseQuestionsUserActionCopyWith(CloseQuestionsUserAction value,
-          $Res Function(CloseQuestionsUserAction) then) =
-      _$CloseQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$CloseQuestionsUserActionCopyWith<$Res> {
+  factory _$$CloseQuestionsUserActionCopyWith(_$CloseQuestionsUserAction value,
+          $Res Function(_$CloseQuestionsUserAction) then) =
+      __$$CloseQuestionsUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CloseQuestionsUserActionCopyWithImpl<$Res>
+class __$$CloseQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
-    implements $CloseQuestionsUserActionCopyWith<$Res> {
-  _$CloseQuestionsUserActionCopyWithImpl(CloseQuestionsUserAction _value,
-      $Res Function(CloseQuestionsUserAction) _then)
-      : super(_value, (v) => _then(v as CloseQuestionsUserAction));
+    implements _$$CloseQuestionsUserActionCopyWith<$Res> {
+  __$$CloseQuestionsUserActionCopyWithImpl(_$CloseQuestionsUserAction _value,
+      $Res Function(_$CloseQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as _$CloseQuestionsUserAction));
 
   @override
-  CloseQuestionsUserAction get _value =>
-      super._value as CloseQuestionsUserAction;
+  _$CloseQuestionsUserAction get _value =>
+      super._value as _$CloseQuestionsUserAction;
 }
 
 /// @nodoc
@@ -443,12 +485,14 @@ class _$CloseQuestionsUserAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'UserActionQuestions.close'));
+    properties.add(DiagnosticsProperty('type', 'UserActionQuestions.close'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CloseQuestionsUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CloseQuestionsUserAction);
   }
 
   @override
@@ -466,6 +510,20 @@ class _$CloseQuestionsUserAction
     required TResult Function(int questionIndex) select,
   }) {
     return close();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+  }) {
+    return close?.call();
   }
 
   @override
@@ -502,6 +560,20 @@ class _$CloseQuestionsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+  }) {
+    return close?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenQuestionsUserAction value)? open,
     TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
@@ -524,34 +596,34 @@ abstract class CloseQuestionsUserAction implements UserActionQuestions {
 }
 
 /// @nodoc
-abstract class $ShowAnswerQuestionsUserActionCopyWith<$Res> {
-  factory $ShowAnswerQuestionsUserActionCopyWith(
-          ShowAnswerQuestionsUserAction value,
-          $Res Function(ShowAnswerQuestionsUserAction) then) =
-      _$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$ShowAnswerQuestionsUserActionCopyWith<$Res> {
+  factory _$$ShowAnswerQuestionsUserActionCopyWith(
+          _$ShowAnswerQuestionsUserAction value,
+          $Res Function(_$ShowAnswerQuestionsUserAction) then) =
+      __$$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>;
   $Res call({Question question});
 
   $QuestionCopyWith<$Res> get question;
 }
 
 /// @nodoc
-class _$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>
+class __$$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
-    implements $ShowAnswerQuestionsUserActionCopyWith<$Res> {
-  _$ShowAnswerQuestionsUserActionCopyWithImpl(
-      ShowAnswerQuestionsUserAction _value,
-      $Res Function(ShowAnswerQuestionsUserAction) _then)
-      : super(_value, (v) => _then(v as ShowAnswerQuestionsUserAction));
+    implements _$$ShowAnswerQuestionsUserActionCopyWith<$Res> {
+  __$$ShowAnswerQuestionsUserActionCopyWithImpl(
+      _$ShowAnswerQuestionsUserAction _value,
+      $Res Function(_$ShowAnswerQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as _$ShowAnswerQuestionsUserAction));
 
   @override
-  ShowAnswerQuestionsUserAction get _value =>
-      super._value as ShowAnswerQuestionsUserAction;
+  _$ShowAnswerQuestionsUserAction get _value =>
+      super._value as _$ShowAnswerQuestionsUserAction;
 
   @override
   $Res call({
     Object? question = freezed,
   }) {
-    return _then(ShowAnswerQuestionsUserAction(
+    return _then(_$ShowAnswerQuestionsUserAction(
       question: question == freezed
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -593,21 +665,20 @@ class _$ShowAnswerQuestionsUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ShowAnswerQuestionsUserAction &&
-            (identical(other.question, question) ||
-                const DeepCollectionEquality()
-                    .equals(other.question, question)));
+        (other.runtimeType == runtimeType &&
+            other is _$ShowAnswerQuestionsUserAction &&
+            const DeepCollectionEquality().equals(other.question, question));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(question);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(question));
 
   @JsonKey(ignore: true)
   @override
-  $ShowAnswerQuestionsUserActionCopyWith<ShowAnswerQuestionsUserAction>
-      get copyWith => _$ShowAnswerQuestionsUserActionCopyWithImpl<
-          ShowAnswerQuestionsUserAction>(this, _$identity);
+  _$$ShowAnswerQuestionsUserActionCopyWith<_$ShowAnswerQuestionsUserAction>
+      get copyWith => __$$ShowAnswerQuestionsUserActionCopyWithImpl<
+          _$ShowAnswerQuestionsUserAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -621,6 +692,20 @@ class _$ShowAnswerQuestionsUserAction
     required TResult Function(int questionIndex) select,
   }) {
     return showAnswer(question);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+  }) {
+    return showAnswer?.call(question);
   }
 
   @override
@@ -657,6 +742,20 @@ class _$ShowAnswerQuestionsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+  }) {
+    return showAnswer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenQuestionsUserAction value)? open,
     TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
@@ -675,44 +774,44 @@ class _$ShowAnswerQuestionsUserAction
 }
 
 abstract class ShowAnswerQuestionsUserAction implements UserActionQuestions {
-  const factory ShowAnswerQuestionsUserAction({required Question question}) =
-      _$ShowAnswerQuestionsUserAction;
+  const factory ShowAnswerQuestionsUserAction(
+      {required final Question question}) = _$ShowAnswerQuestionsUserAction;
 
-  Question get question => throw _privateConstructorUsedError;
+  Question get question;
   @JsonKey(ignore: true)
-  $ShowAnswerQuestionsUserActionCopyWith<ShowAnswerQuestionsUserAction>
+  _$$ShowAnswerQuestionsUserActionCopyWith<_$ShowAnswerQuestionsUserAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HideAnswerQuestionsUserActionCopyWith<$Res> {
-  factory $HideAnswerQuestionsUserActionCopyWith(
-          HideAnswerQuestionsUserAction value,
-          $Res Function(HideAnswerQuestionsUserAction) then) =
-      _$HideAnswerQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$HideAnswerQuestionsUserActionCopyWith<$Res> {
+  factory _$$HideAnswerQuestionsUserActionCopyWith(
+          _$HideAnswerQuestionsUserAction value,
+          $Res Function(_$HideAnswerQuestionsUserAction) then) =
+      __$$HideAnswerQuestionsUserActionCopyWithImpl<$Res>;
   $Res call({Question question});
 
   $QuestionCopyWith<$Res> get question;
 }
 
 /// @nodoc
-class _$HideAnswerQuestionsUserActionCopyWithImpl<$Res>
+class __$$HideAnswerQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
-    implements $HideAnswerQuestionsUserActionCopyWith<$Res> {
-  _$HideAnswerQuestionsUserActionCopyWithImpl(
-      HideAnswerQuestionsUserAction _value,
-      $Res Function(HideAnswerQuestionsUserAction) _then)
-      : super(_value, (v) => _then(v as HideAnswerQuestionsUserAction));
+    implements _$$HideAnswerQuestionsUserActionCopyWith<$Res> {
+  __$$HideAnswerQuestionsUserActionCopyWithImpl(
+      _$HideAnswerQuestionsUserAction _value,
+      $Res Function(_$HideAnswerQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as _$HideAnswerQuestionsUserAction));
 
   @override
-  HideAnswerQuestionsUserAction get _value =>
-      super._value as HideAnswerQuestionsUserAction;
+  _$HideAnswerQuestionsUserAction get _value =>
+      super._value as _$HideAnswerQuestionsUserAction;
 
   @override
   $Res call({
     Object? question = freezed,
   }) {
-    return _then(HideAnswerQuestionsUserAction(
+    return _then(_$HideAnswerQuestionsUserAction(
       question: question == freezed
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -754,21 +853,20 @@ class _$HideAnswerQuestionsUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is HideAnswerQuestionsUserAction &&
-            (identical(other.question, question) ||
-                const DeepCollectionEquality()
-                    .equals(other.question, question)));
+        (other.runtimeType == runtimeType &&
+            other is _$HideAnswerQuestionsUserAction &&
+            const DeepCollectionEquality().equals(other.question, question));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(question);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(question));
 
   @JsonKey(ignore: true)
   @override
-  $HideAnswerQuestionsUserActionCopyWith<HideAnswerQuestionsUserAction>
-      get copyWith => _$HideAnswerQuestionsUserActionCopyWithImpl<
-          HideAnswerQuestionsUserAction>(this, _$identity);
+  _$$HideAnswerQuestionsUserActionCopyWith<_$HideAnswerQuestionsUserAction>
+      get copyWith => __$$HideAnswerQuestionsUserActionCopyWithImpl<
+          _$HideAnswerQuestionsUserAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -782,6 +880,20 @@ class _$HideAnswerQuestionsUserAction
     required TResult Function(int questionIndex) select,
   }) {
     return hideAnswer(question);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+  }) {
+    return hideAnswer?.call(question);
   }
 
   @override
@@ -818,6 +930,20 @@ class _$HideAnswerQuestionsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+  }) {
+    return hideAnswer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenQuestionsUserAction value)? open,
     TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
@@ -836,35 +962,35 @@ class _$HideAnswerQuestionsUserAction
 }
 
 abstract class HideAnswerQuestionsUserAction implements UserActionQuestions {
-  const factory HideAnswerQuestionsUserAction({required Question question}) =
-      _$HideAnswerQuestionsUserAction;
+  const factory HideAnswerQuestionsUserAction(
+      {required final Question question}) = _$HideAnswerQuestionsUserAction;
 
-  Question get question => throw _privateConstructorUsedError;
+  Question get question;
   @JsonKey(ignore: true)
-  $HideAnswerQuestionsUserActionCopyWith<HideAnswerQuestionsUserAction>
+  _$$HideAnswerQuestionsUserActionCopyWith<_$HideAnswerQuestionsUserAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadRandomQuestionsUserActionCopyWith<$Res> {
-  factory $LoadRandomQuestionsUserActionCopyWith(
-          LoadRandomQuestionsUserAction value,
-          $Res Function(LoadRandomQuestionsUserAction) then) =
-      _$LoadRandomQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$LoadRandomQuestionsUserActionCopyWith<$Res> {
+  factory _$$LoadRandomQuestionsUserActionCopyWith(
+          _$LoadRandomQuestionsUserAction value,
+          $Res Function(_$LoadRandomQuestionsUserAction) then) =
+      __$$LoadRandomQuestionsUserActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadRandomQuestionsUserActionCopyWithImpl<$Res>
+class __$$LoadRandomQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
-    implements $LoadRandomQuestionsUserActionCopyWith<$Res> {
-  _$LoadRandomQuestionsUserActionCopyWithImpl(
-      LoadRandomQuestionsUserAction _value,
-      $Res Function(LoadRandomQuestionsUserAction) _then)
-      : super(_value, (v) => _then(v as LoadRandomQuestionsUserAction));
+    implements _$$LoadRandomQuestionsUserActionCopyWith<$Res> {
+  __$$LoadRandomQuestionsUserActionCopyWithImpl(
+      _$LoadRandomQuestionsUserAction _value,
+      $Res Function(_$LoadRandomQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as _$LoadRandomQuestionsUserAction));
 
   @override
-  LoadRandomQuestionsUserAction get _value =>
-      super._value as LoadRandomQuestionsUserAction;
+  _$LoadRandomQuestionsUserAction get _value =>
+      super._value as _$LoadRandomQuestionsUserAction;
 }
 
 /// @nodoc
@@ -883,12 +1009,14 @@ class _$LoadRandomQuestionsUserAction
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'UserActionQuestions.loadRandom'));
+        .add(DiagnosticsProperty('type', 'UserActionQuestions.loadRandom'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadRandomQuestionsUserAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadRandomQuestionsUserAction);
   }
 
   @override
@@ -906,6 +1034,20 @@ class _$LoadRandomQuestionsUserAction
     required TResult Function(int questionIndex) select,
   }) {
     return loadRandom();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+  }) {
+    return loadRandom?.call();
   }
 
   @override
@@ -942,6 +1084,20 @@ class _$LoadRandomQuestionsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+  }) {
+    return loadRandom?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenQuestionsUserAction value)? open,
     TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
@@ -965,30 +1121,31 @@ abstract class LoadRandomQuestionsUserAction implements UserActionQuestions {
 }
 
 /// @nodoc
-abstract class $SelectQuestionsUserActionCopyWith<$Res> {
-  factory $SelectQuestionsUserActionCopyWith(SelectQuestionsUserAction value,
-          $Res Function(SelectQuestionsUserAction) then) =
-      _$SelectQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$SelectQuestionsUserActionCopyWith<$Res> {
+  factory _$$SelectQuestionsUserActionCopyWith(
+          _$SelectQuestionsUserAction value,
+          $Res Function(_$SelectQuestionsUserAction) then) =
+      __$$SelectQuestionsUserActionCopyWithImpl<$Res>;
   $Res call({int questionIndex});
 }
 
 /// @nodoc
-class _$SelectQuestionsUserActionCopyWithImpl<$Res>
+class __$$SelectQuestionsUserActionCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res>
-    implements $SelectQuestionsUserActionCopyWith<$Res> {
-  _$SelectQuestionsUserActionCopyWithImpl(SelectQuestionsUserAction _value,
-      $Res Function(SelectQuestionsUserAction) _then)
-      : super(_value, (v) => _then(v as SelectQuestionsUserAction));
+    implements _$$SelectQuestionsUserActionCopyWith<$Res> {
+  __$$SelectQuestionsUserActionCopyWithImpl(_$SelectQuestionsUserAction _value,
+      $Res Function(_$SelectQuestionsUserAction) _then)
+      : super(_value, (v) => _then(v as _$SelectQuestionsUserAction));
 
   @override
-  SelectQuestionsUserAction get _value =>
-      super._value as SelectQuestionsUserAction;
+  _$SelectQuestionsUserAction get _value =>
+      super._value as _$SelectQuestionsUserAction;
 
   @override
   $Res call({
     Object? questionIndex = freezed,
   }) {
-    return _then(SelectQuestionsUserAction(
+    return _then(_$SelectQuestionsUserAction(
       questionIndex: questionIndex == freezed
           ? _value.questionIndex
           : questionIndex // ignore: cast_nullable_to_non_nullable
@@ -1023,21 +1180,21 @@ class _$SelectQuestionsUserAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SelectQuestionsUserAction &&
-            (identical(other.questionIndex, questionIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionIndex, questionIndex)));
+        (other.runtimeType == runtimeType &&
+            other is _$SelectQuestionsUserAction &&
+            const DeepCollectionEquality()
+                .equals(other.questionIndex, questionIndex));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questionIndex);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(questionIndex));
 
   @JsonKey(ignore: true)
   @override
-  $SelectQuestionsUserActionCopyWith<SelectQuestionsUserAction> get copyWith =>
-      _$SelectQuestionsUserActionCopyWithImpl<SelectQuestionsUserAction>(
-          this, _$identity);
+  _$$SelectQuestionsUserActionCopyWith<_$SelectQuestionsUserAction>
+      get copyWith => __$$SelectQuestionsUserActionCopyWithImpl<
+          _$SelectQuestionsUserAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1051,6 +1208,20 @@ class _$SelectQuestionsUserAction
     required TResult Function(int questionIndex) select,
   }) {
     return select(questionIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? open,
+    TResult Function()? openRandom,
+    TResult Function()? close,
+    TResult Function(Question question)? showAnswer,
+    TResult Function(Question question)? hideAnswer,
+    TResult Function()? loadRandom,
+    TResult Function(int questionIndex)? select,
+  }) {
+    return select?.call(questionIndex);
   }
 
   @override
@@ -1087,6 +1258,20 @@ class _$SelectQuestionsUserAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OpenQuestionsUserAction value)? open,
+    TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
+    TResult Function(CloseQuestionsUserAction value)? close,
+    TResult Function(ShowAnswerQuestionsUserAction value)? showAnswer,
+    TResult Function(HideAnswerQuestionsUserAction value)? hideAnswer,
+    TResult Function(LoadRandomQuestionsUserAction value)? loadRandom,
+    TResult Function(SelectQuestionsUserAction value)? select,
+  }) {
+    return select?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenQuestionsUserAction value)? open,
     TResult Function(OpenRandomQuestionsUserAction value)? openRandom,
@@ -1105,55 +1290,14 @@ class _$SelectQuestionsUserAction
 }
 
 abstract class SelectQuestionsUserAction implements UserActionQuestions {
-  const factory SelectQuestionsUserAction({required int questionIndex}) =
+  const factory SelectQuestionsUserAction({required final int questionIndex}) =
       _$SelectQuestionsUserAction;
 
-  int get questionIndex => throw _privateConstructorUsedError;
+  int get questionIndex;
   @JsonKey(ignore: true)
-  $SelectQuestionsUserActionCopyWith<SelectQuestionsUserAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SelectQuestionsUserActionCopyWith<_$SelectQuestionsUserAction>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SystemActionQuestionsTearOff {
-  const _$SystemActionQuestionsTearOff();
-
-  InitQuestionsSystemAction init(
-      {required List<Question> questions, required int index}) {
-    return InitQuestionsSystemAction(
-      questions: questions,
-      index: index,
-    );
-  }
-
-  InitRandomQuestionsSystemAction initRandom() {
-    return const InitRandomQuestionsSystemAction();
-  }
-
-  DeInitQuestionsSystemAction deInit() {
-    return const DeInitQuestionsSystemAction();
-  }
-
-  LoadingQuestionsSystemAction loading() {
-    return const LoadingQuestionsSystemAction();
-  }
-
-  FailedQuestionsSystemAction failed({required Exception exception}) {
-    return FailedQuestionsSystemAction(
-      exception: exception,
-    );
-  }
-
-  CompletedQuestionsSystemAction completed(
-      {required Iterable<Question> questions}) {
-    return CompletedQuestionsSystemAction(
-      questions: questions,
-    );
-  }
-}
-
-/// @nodoc
-const $SystemActionQuestions = _$SystemActionQuestionsTearOff();
 
 /// @nodoc
 mixin _$SystemActionQuestions {
@@ -1165,6 +1309,16 @@ mixin _$SystemActionQuestions {
     required TResult Function() loading,
     required TResult Function(Exception exception) failed,
     required TResult Function(Iterable<Question> questions) completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1186,6 +1340,16 @@ mixin _$SystemActionQuestions {
     required TResult Function(LoadingQuestionsSystemAction value) loading,
     required TResult Function(FailedQuestionsSystemAction value) failed,
     required TResult Function(CompletedQuestionsSystemAction value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1219,33 +1383,34 @@ class _$SystemActionQuestionsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitQuestionsSystemActionCopyWith<$Res> {
-  factory $InitQuestionsSystemActionCopyWith(InitQuestionsSystemAction value,
-          $Res Function(InitQuestionsSystemAction) then) =
-      _$InitQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitQuestionsSystemActionCopyWith<$Res> {
+  factory _$$InitQuestionsSystemActionCopyWith(
+          _$InitQuestionsSystemAction value,
+          $Res Function(_$InitQuestionsSystemAction) then) =
+      __$$InitQuestionsSystemActionCopyWithImpl<$Res>;
   $Res call({List<Question> questions, int index});
 }
 
 /// @nodoc
-class _$InitQuestionsSystemActionCopyWithImpl<$Res>
+class __$$InitQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
-    implements $InitQuestionsSystemActionCopyWith<$Res> {
-  _$InitQuestionsSystemActionCopyWithImpl(InitQuestionsSystemAction _value,
-      $Res Function(InitQuestionsSystemAction) _then)
-      : super(_value, (v) => _then(v as InitQuestionsSystemAction));
+    implements _$$InitQuestionsSystemActionCopyWith<$Res> {
+  __$$InitQuestionsSystemActionCopyWithImpl(_$InitQuestionsSystemAction _value,
+      $Res Function(_$InitQuestionsSystemAction) _then)
+      : super(_value, (v) => _then(v as _$InitQuestionsSystemAction));
 
   @override
-  InitQuestionsSystemAction get _value =>
-      super._value as InitQuestionsSystemAction;
+  _$InitQuestionsSystemAction get _value =>
+      super._value as _$InitQuestionsSystemAction;
 
   @override
   $Res call({
     Object? questions = freezed,
     Object? index = freezed,
   }) {
-    return _then(InitQuestionsSystemAction(
+    return _then(_$InitQuestionsSystemAction(
       questions: questions == freezed
-          ? _value.questions
+          ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<Question>,
       index: index == freezed
@@ -1262,10 +1427,16 @@ class _$InitQuestionsSystemAction
     with DiagnosticableTreeMixin
     implements InitQuestionsSystemAction {
   const _$InitQuestionsSystemAction(
-      {required this.questions, required this.index});
+      {required final List<Question> questions, required this.index})
+      : _questions = questions;
 
+  final List<Question> _questions;
   @override
-  final List<Question> questions;
+  List<Question> get questions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
+
   @override
   final int index;
 
@@ -1286,25 +1457,24 @@ class _$InitQuestionsSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InitQuestionsSystemAction &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)) &&
-            (identical(other.index, index) ||
-                const DeepCollectionEquality().equals(other.index, index)));
+        (other.runtimeType == runtimeType &&
+            other is _$InitQuestionsSystemAction &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions) &&
+            const DeepCollectionEquality().equals(other.index, index));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questions) ^
-      const DeepCollectionEquality().hash(index);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_questions),
+      const DeepCollectionEquality().hash(index));
 
   @JsonKey(ignore: true)
   @override
-  $InitQuestionsSystemActionCopyWith<InitQuestionsSystemAction> get copyWith =>
-      _$InitQuestionsSystemActionCopyWithImpl<InitQuestionsSystemAction>(
-          this, _$identity);
+  _$$InitQuestionsSystemActionCopyWith<_$InitQuestionsSystemAction>
+      get copyWith => __$$InitQuestionsSystemActionCopyWithImpl<
+          _$InitQuestionsSystemAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1317,6 +1487,19 @@ class _$InitQuestionsSystemAction
     required TResult Function(Iterable<Question> questions) completed,
   }) {
     return init(questions, index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+  }) {
+    return init?.call(questions, index);
   }
 
   @override
@@ -1351,6 +1534,19 @@ class _$InitQuestionsSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+  }) {
+    return init?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitQuestionsSystemAction value)? init,
     TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
@@ -1369,36 +1565,36 @@ class _$InitQuestionsSystemAction
 
 abstract class InitQuestionsSystemAction implements SystemActionQuestions {
   const factory InitQuestionsSystemAction(
-      {required List<Question> questions,
-      required int index}) = _$InitQuestionsSystemAction;
+      {required final List<Question> questions,
+      required final int index}) = _$InitQuestionsSystemAction;
 
-  List<Question> get questions => throw _privateConstructorUsedError;
-  int get index => throw _privateConstructorUsedError;
+  List<Question> get questions;
+  int get index;
   @JsonKey(ignore: true)
-  $InitQuestionsSystemActionCopyWith<InitQuestionsSystemAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InitQuestionsSystemActionCopyWith<_$InitQuestionsSystemAction>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InitRandomQuestionsSystemActionCopyWith<$Res> {
-  factory $InitRandomQuestionsSystemActionCopyWith(
-          InitRandomQuestionsSystemAction value,
-          $Res Function(InitRandomQuestionsSystemAction) then) =
-      _$InitRandomQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitRandomQuestionsSystemActionCopyWith<$Res> {
+  factory _$$InitRandomQuestionsSystemActionCopyWith(
+          _$InitRandomQuestionsSystemAction value,
+          $Res Function(_$InitRandomQuestionsSystemAction) then) =
+      __$$InitRandomQuestionsSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitRandomQuestionsSystemActionCopyWithImpl<$Res>
+class __$$InitRandomQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
-    implements $InitRandomQuestionsSystemActionCopyWith<$Res> {
-  _$InitRandomQuestionsSystemActionCopyWithImpl(
-      InitRandomQuestionsSystemAction _value,
-      $Res Function(InitRandomQuestionsSystemAction) _then)
-      : super(_value, (v) => _then(v as InitRandomQuestionsSystemAction));
+    implements _$$InitRandomQuestionsSystemActionCopyWith<$Res> {
+  __$$InitRandomQuestionsSystemActionCopyWithImpl(
+      _$InitRandomQuestionsSystemAction _value,
+      $Res Function(_$InitRandomQuestionsSystemAction) _then)
+      : super(_value, (v) => _then(v as _$InitRandomQuestionsSystemAction));
 
   @override
-  InitRandomQuestionsSystemAction get _value =>
-      super._value as InitRandomQuestionsSystemAction;
+  _$InitRandomQuestionsSystemAction get _value =>
+      super._value as _$InitRandomQuestionsSystemAction;
 }
 
 /// @nodoc
@@ -1417,12 +1613,14 @@ class _$InitRandomQuestionsSystemAction
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SystemActionQuestions.initRandom'));
+        .add(DiagnosticsProperty('type', 'SystemActionQuestions.initRandom'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitRandomQuestionsSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitRandomQuestionsSystemAction);
   }
 
   @override
@@ -1439,6 +1637,19 @@ class _$InitRandomQuestionsSystemAction
     required TResult Function(Iterable<Question> questions) completed,
   }) {
     return initRandom();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+  }) {
+    return initRandom?.call();
   }
 
   @override
@@ -1473,6 +1684,19 @@ class _$InitRandomQuestionsSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+  }) {
+    return initRandom?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitQuestionsSystemAction value)? init,
     TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
@@ -1496,24 +1720,25 @@ abstract class InitRandomQuestionsSystemAction
 }
 
 /// @nodoc
-abstract class $DeInitQuestionsSystemActionCopyWith<$Res> {
-  factory $DeInitQuestionsSystemActionCopyWith(
-          DeInitQuestionsSystemAction value,
-          $Res Function(DeInitQuestionsSystemAction) then) =
-      _$DeInitQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$DeInitQuestionsSystemActionCopyWith<$Res> {
+  factory _$$DeInitQuestionsSystemActionCopyWith(
+          _$DeInitQuestionsSystemAction value,
+          $Res Function(_$DeInitQuestionsSystemAction) then) =
+      __$$DeInitQuestionsSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeInitQuestionsSystemActionCopyWithImpl<$Res>
+class __$$DeInitQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
-    implements $DeInitQuestionsSystemActionCopyWith<$Res> {
-  _$DeInitQuestionsSystemActionCopyWithImpl(DeInitQuestionsSystemAction _value,
-      $Res Function(DeInitQuestionsSystemAction) _then)
-      : super(_value, (v) => _then(v as DeInitQuestionsSystemAction));
+    implements _$$DeInitQuestionsSystemActionCopyWith<$Res> {
+  __$$DeInitQuestionsSystemActionCopyWithImpl(
+      _$DeInitQuestionsSystemAction _value,
+      $Res Function(_$DeInitQuestionsSystemAction) _then)
+      : super(_value, (v) => _then(v as _$DeInitQuestionsSystemAction));
 
   @override
-  DeInitQuestionsSystemAction get _value =>
-      super._value as DeInitQuestionsSystemAction;
+  _$DeInitQuestionsSystemAction get _value =>
+      super._value as _$DeInitQuestionsSystemAction;
 }
 
 /// @nodoc
@@ -1531,13 +1756,14 @@ class _$DeInitQuestionsSystemAction
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SystemActionQuestions.deInit'));
+    properties.add(DiagnosticsProperty('type', 'SystemActionQuestions.deInit'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DeInitQuestionsSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeInitQuestionsSystemAction);
   }
 
   @override
@@ -1554,6 +1780,19 @@ class _$DeInitQuestionsSystemAction
     required TResult Function(Iterable<Question> questions) completed,
   }) {
     return deInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+  }) {
+    return deInit?.call();
   }
 
   @override
@@ -1588,6 +1827,19 @@ class _$DeInitQuestionsSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+  }) {
+    return deInit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitQuestionsSystemAction value)? init,
     TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
@@ -1609,25 +1861,25 @@ abstract class DeInitQuestionsSystemAction implements SystemActionQuestions {
 }
 
 /// @nodoc
-abstract class $LoadingQuestionsSystemActionCopyWith<$Res> {
-  factory $LoadingQuestionsSystemActionCopyWith(
-          LoadingQuestionsSystemAction value,
-          $Res Function(LoadingQuestionsSystemAction) then) =
-      _$LoadingQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$LoadingQuestionsSystemActionCopyWith<$Res> {
+  factory _$$LoadingQuestionsSystemActionCopyWith(
+          _$LoadingQuestionsSystemAction value,
+          $Res Function(_$LoadingQuestionsSystemAction) then) =
+      __$$LoadingQuestionsSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingQuestionsSystemActionCopyWithImpl<$Res>
+class __$$LoadingQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
-    implements $LoadingQuestionsSystemActionCopyWith<$Res> {
-  _$LoadingQuestionsSystemActionCopyWithImpl(
-      LoadingQuestionsSystemAction _value,
-      $Res Function(LoadingQuestionsSystemAction) _then)
-      : super(_value, (v) => _then(v as LoadingQuestionsSystemAction));
+    implements _$$LoadingQuestionsSystemActionCopyWith<$Res> {
+  __$$LoadingQuestionsSystemActionCopyWithImpl(
+      _$LoadingQuestionsSystemAction _value,
+      $Res Function(_$LoadingQuestionsSystemAction) _then)
+      : super(_value, (v) => _then(v as _$LoadingQuestionsSystemAction));
 
   @override
-  LoadingQuestionsSystemAction get _value =>
-      super._value as LoadingQuestionsSystemAction;
+  _$LoadingQuestionsSystemAction get _value =>
+      super._value as _$LoadingQuestionsSystemAction;
 }
 
 /// @nodoc
@@ -1646,12 +1898,14 @@ class _$LoadingQuestionsSystemAction
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SystemActionQuestions.loading'));
+        .add(DiagnosticsProperty('type', 'SystemActionQuestions.loading'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadingQuestionsSystemAction);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingQuestionsSystemAction);
   }
 
   @override
@@ -1668,6 +1922,19 @@ class _$LoadingQuestionsSystemAction
     required TResult Function(Iterable<Question> questions) completed,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -1702,6 +1969,19 @@ class _$LoadingQuestionsSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitQuestionsSystemAction value)? init,
     TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
@@ -1723,31 +2003,32 @@ abstract class LoadingQuestionsSystemAction implements SystemActionQuestions {
 }
 
 /// @nodoc
-abstract class $FailedQuestionsSystemActionCopyWith<$Res> {
-  factory $FailedQuestionsSystemActionCopyWith(
-          FailedQuestionsSystemAction value,
-          $Res Function(FailedQuestionsSystemAction) then) =
-      _$FailedQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$FailedQuestionsSystemActionCopyWith<$Res> {
+  factory _$$FailedQuestionsSystemActionCopyWith(
+          _$FailedQuestionsSystemAction value,
+          $Res Function(_$FailedQuestionsSystemAction) then) =
+      __$$FailedQuestionsSystemActionCopyWithImpl<$Res>;
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class _$FailedQuestionsSystemActionCopyWithImpl<$Res>
+class __$$FailedQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
-    implements $FailedQuestionsSystemActionCopyWith<$Res> {
-  _$FailedQuestionsSystemActionCopyWithImpl(FailedQuestionsSystemAction _value,
-      $Res Function(FailedQuestionsSystemAction) _then)
-      : super(_value, (v) => _then(v as FailedQuestionsSystemAction));
+    implements _$$FailedQuestionsSystemActionCopyWith<$Res> {
+  __$$FailedQuestionsSystemActionCopyWithImpl(
+      _$FailedQuestionsSystemAction _value,
+      $Res Function(_$FailedQuestionsSystemAction) _then)
+      : super(_value, (v) => _then(v as _$FailedQuestionsSystemAction));
 
   @override
-  FailedQuestionsSystemAction get _value =>
-      super._value as FailedQuestionsSystemAction;
+  _$FailedQuestionsSystemAction get _value =>
+      super._value as _$FailedQuestionsSystemAction;
 
   @override
   $Res call({
     Object? exception = freezed,
   }) {
-    return _then(FailedQuestionsSystemAction(
+    return _then(_$FailedQuestionsSystemAction(
       exception: exception == freezed
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -1782,21 +2063,20 @@ class _$FailedQuestionsSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is FailedQuestionsSystemAction &&
-            (identical(other.exception, exception) ||
-                const DeepCollectionEquality()
-                    .equals(other.exception, exception)));
+        (other.runtimeType == runtimeType &&
+            other is _$FailedQuestionsSystemAction &&
+            const DeepCollectionEquality().equals(other.exception, exception));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(exception);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
 
   @JsonKey(ignore: true)
   @override
-  $FailedQuestionsSystemActionCopyWith<FailedQuestionsSystemAction>
-      get copyWith => _$FailedQuestionsSystemActionCopyWithImpl<
-          FailedQuestionsSystemAction>(this, _$identity);
+  _$$FailedQuestionsSystemActionCopyWith<_$FailedQuestionsSystemAction>
+      get copyWith => __$$FailedQuestionsSystemActionCopyWithImpl<
+          _$FailedQuestionsSystemAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1809,6 +2089,19 @@ class _$FailedQuestionsSystemAction
     required TResult Function(Iterable<Question> questions) completed,
   }) {
     return failed(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+  }) {
+    return failed?.call(exception);
   }
 
   @override
@@ -1843,6 +2136,19 @@ class _$FailedQuestionsSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+  }) {
+    return failed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitQuestionsSystemAction value)? init,
     TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
@@ -1860,42 +2166,42 @@ class _$FailedQuestionsSystemAction
 }
 
 abstract class FailedQuestionsSystemAction implements SystemActionQuestions {
-  const factory FailedQuestionsSystemAction({required Exception exception}) =
-      _$FailedQuestionsSystemAction;
+  const factory FailedQuestionsSystemAction(
+      {required final Exception exception}) = _$FailedQuestionsSystemAction;
 
-  Exception get exception => throw _privateConstructorUsedError;
+  Exception get exception;
   @JsonKey(ignore: true)
-  $FailedQuestionsSystemActionCopyWith<FailedQuestionsSystemAction>
+  _$$FailedQuestionsSystemActionCopyWith<_$FailedQuestionsSystemAction>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CompletedQuestionsSystemActionCopyWith<$Res> {
-  factory $CompletedQuestionsSystemActionCopyWith(
-          CompletedQuestionsSystemAction value,
-          $Res Function(CompletedQuestionsSystemAction) then) =
-      _$CompletedQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$CompletedQuestionsSystemActionCopyWith<$Res> {
+  factory _$$CompletedQuestionsSystemActionCopyWith(
+          _$CompletedQuestionsSystemAction value,
+          $Res Function(_$CompletedQuestionsSystemAction) then) =
+      __$$CompletedQuestionsSystemActionCopyWithImpl<$Res>;
   $Res call({Iterable<Question> questions});
 }
 
 /// @nodoc
-class _$CompletedQuestionsSystemActionCopyWithImpl<$Res>
+class __$$CompletedQuestionsSystemActionCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res>
-    implements $CompletedQuestionsSystemActionCopyWith<$Res> {
-  _$CompletedQuestionsSystemActionCopyWithImpl(
-      CompletedQuestionsSystemAction _value,
-      $Res Function(CompletedQuestionsSystemAction) _then)
-      : super(_value, (v) => _then(v as CompletedQuestionsSystemAction));
+    implements _$$CompletedQuestionsSystemActionCopyWith<$Res> {
+  __$$CompletedQuestionsSystemActionCopyWithImpl(
+      _$CompletedQuestionsSystemAction _value,
+      $Res Function(_$CompletedQuestionsSystemAction) _then)
+      : super(_value, (v) => _then(v as _$CompletedQuestionsSystemAction));
 
   @override
-  CompletedQuestionsSystemAction get _value =>
-      super._value as CompletedQuestionsSystemAction;
+  _$CompletedQuestionsSystemAction get _value =>
+      super._value as _$CompletedQuestionsSystemAction;
 
   @override
   $Res call({
     Object? questions = freezed,
   }) {
-    return _then(CompletedQuestionsSystemAction(
+    return _then(_$CompletedQuestionsSystemAction(
       questions: questions == freezed
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -1930,21 +2236,20 @@ class _$CompletedQuestionsSystemAction
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CompletedQuestionsSystemAction &&
-            (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)));
+        (other.runtimeType == runtimeType &&
+            other is _$CompletedQuestionsSystemAction &&
+            const DeepCollectionEquality().equals(other.questions, questions));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questions);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(questions));
 
   @JsonKey(ignore: true)
   @override
-  $CompletedQuestionsSystemActionCopyWith<CompletedQuestionsSystemAction>
-      get copyWith => _$CompletedQuestionsSystemActionCopyWithImpl<
-          CompletedQuestionsSystemAction>(this, _$identity);
+  _$$CompletedQuestionsSystemActionCopyWith<_$CompletedQuestionsSystemAction>
+      get copyWith => __$$CompletedQuestionsSystemActionCopyWithImpl<
+          _$CompletedQuestionsSystemAction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1957,6 +2262,19 @@ class _$CompletedQuestionsSystemAction
     required TResult Function(Iterable<Question> questions) completed,
   }) {
     return completed(questions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Question> questions, int index)? init,
+    TResult Function()? initRandom,
+    TResult Function()? deInit,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failed,
+    TResult Function(Iterable<Question> questions)? completed,
+  }) {
+    return completed?.call(questions);
   }
 
   @override
@@ -1991,6 +2309,19 @@ class _$CompletedQuestionsSystemAction
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitQuestionsSystemAction value)? init,
+    TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
+    TResult Function(DeInitQuestionsSystemAction value)? deInit,
+    TResult Function(LoadingQuestionsSystemAction value)? loading,
+    TResult Function(FailedQuestionsSystemAction value)? failed,
+    TResult Function(CompletedQuestionsSystemAction value)? completed,
+  }) {
+    return completed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitQuestionsSystemAction value)? init,
     TResult Function(InitRandomQuestionsSystemAction value)? initRandom,
@@ -2009,11 +2340,11 @@ class _$CompletedQuestionsSystemAction
 
 abstract class CompletedQuestionsSystemAction implements SystemActionQuestions {
   const factory CompletedQuestionsSystemAction(
-          {required Iterable<Question> questions}) =
+          {required final Iterable<Question> questions}) =
       _$CompletedQuestionsSystemAction;
 
-  Iterable<Question> get questions => throw _privateConstructorUsedError;
+  Iterable<Question> get questions;
   @JsonKey(ignore: true)
-  $CompletedQuestionsSystemActionCopyWith<CompletedQuestionsSystemAction>
+  _$$CompletedQuestionsSystemActionCopyWith<_$CompletedQuestionsSystemAction>
       get copyWith => throw _privateConstructorUsedError;
 }
