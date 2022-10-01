@@ -4,8 +4,6 @@ import 'package:www_app_di/www_app_di.dart';
 import 'package:www_redux_store/www_redux_store.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-
   final diContainer = createDIContainer();
 
   runApp(WWWApp(
