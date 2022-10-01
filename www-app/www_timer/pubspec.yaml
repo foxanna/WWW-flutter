@@ -38,7 +38,3 @@ dev_dependencies:
   injectable_generator: ^1.5.4
   www_analysis:
     path: ../www_analysis/
-
-flutter:
-  assets:
-    - assets/

@@ -8,9 +8,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:www_analytics/www_analytics.dart';
 
 abstract class ISoundService {
-  Future<void> init();
-
-  void playSound();
+  Future<void> playSound();
 }
 
 @LazySingleton(as: ISoundService)
@@ -23,27 +21,9 @@ class SoundService implements ISoundService {
 
   static const _timerAssetName = 'timer.mp3';
 
-  final _audioPlugin = AudioPlayer();
-
-  late String _mp3Uri;
-
-  @override
-  Future<void> init() => _crashWrapper.executeAndReport(() async {
-        final tempDir = await getTemporaryDirectory();
-        final tempFile = File('${tempDir.path}/$_timerAssetName');
-
-        _mp3Uri = tempFile.uri.toString();
-
-        if (tempFile.existsSync()) {
-          return;
-        }
-
-        final data =
-            await rootBundle.load('packages/www_timer/assets/$_timerAssetName');
-        await tempFile.writeAsBytes(data.buffer.asUint8List(), flush: true);
-      });
+  final _audioPlayer = AudioPlayer();
 
   @override
   Future<void> playSound() => _crashWrapper
-      .executeAndReport(() => _audioPlugin.play(_mp3Uri, isLocal: true));
+      .executeAndReport(() => _audioPlayer.play(AssetSource(_timerAssetName)));
 }

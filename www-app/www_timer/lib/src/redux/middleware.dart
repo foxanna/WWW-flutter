@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:injectable/injectable.dart';
 import 'package:redux/redux.dart';
 import 'package:www_models/www_models.dart';
@@ -219,10 +221,13 @@ class _TimerSoundMiddleware implements IMiddleware<ITimerStateHolder> {
         TypedMiddleware<ITimerStateHolder, NotifyTimerSystemAction>(_onSound),
       ];
 
-  void _onSound(Store<ITimerStateHolder> store, NotifyTimerSystemAction action,
-      NextDispatcher next) {
+  void _onSound(
+    Store<ITimerStateHolder> store,
+    NotifyTimerSystemAction action,
+    NextDispatcher next,
+  ) {
     next(action);
 
-    _soundService.playSound();
+    unawaited(_soundService.playSound());
   }
 }
