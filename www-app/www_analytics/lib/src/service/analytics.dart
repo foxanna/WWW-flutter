@@ -6,10 +6,12 @@ import 'package:www_analytics/src/service/firebase.dart';
 import 'package:www_logger/www_logger.dart';
 
 abstract class IAnalyticsService {
-  RouteObserver<PageRoute<dynamic>> observer();
+  RouteObserver<ModalRoute<dynamic>> observer();
 
-  Future<void> logEvent(
-      {required String name, Map<String, dynamic>? parameters});
+  Future<void> logEvent({
+    required String name,
+    Map<String, dynamic>? parameters,
+  });
 }
 
 @LazySingleton(as: IAnalyticsService)
@@ -24,9 +26,10 @@ class AnalyticsService implements IAnalyticsService {
   final ICrashService _crashService;
 
   @override
-  RouteObserver<PageRoute<dynamic>> observer() => FirebaseAnalyticsObserver(
-      analytics: _wrapper.analytics,
-      nameExtractor: (settings) => settings.name);
+  RouteObserver<ModalRoute<dynamic>> observer() => FirebaseAnalyticsObserver(
+        analytics: _wrapper.analytics,
+        nameExtractor: (settings) => settings.name,
+      );
 
   @override
   Future<void> logEvent({

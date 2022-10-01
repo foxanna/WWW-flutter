@@ -43,7 +43,7 @@ class FirebaseWrapper implements IFirebaseWrapper {
   }
 
   @override
-  FirebaseAnalytics get analytics => FirebaseAnalytics();
+  FirebaseAnalytics get analytics => FirebaseAnalytics.instance;
 
   @override
   FirebaseCrashlytics get crashlytics => FirebaseCrashlytics.instance;
