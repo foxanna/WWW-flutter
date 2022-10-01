@@ -55,7 +55,7 @@ void main() {
   group('$TournamentDetailsProvider:: work with cache', () {
     test('Uses cached value when present', () async {
       // arrange
-      final expectedTournament = expectedTournamentDetails1;
+      const expectedTournament = expectedTournamentDetails1;
       final id = expectedTournament.id!;
 
       TestArrange.when(() => tournamentsCacheMock.contains(id))
@@ -78,7 +78,7 @@ void main() {
 
     test('Loads and caches value when absent in cache', () async {
       // arrange
-      final expectedTournament = expectedTournamentDetails1;
+      const expectedTournament = expectedTournamentDetails1;
       final id = expectedTournament.id!;
 
       TestArrange.when(() => tournamentDetailsLoaderMock.get(id))
@@ -101,7 +101,7 @@ void main() {
     test('Saves tour in cache when tournament consists of single tour',
         () async {
       // arrange
-      final expectedTournament = expectedTournamentDetails2;
+      const expectedTournament = expectedTournamentDetails2;
       final id = expectedTournament.id!;
 
       TestArrange.when(() => tournamentDetailsLoaderMock.get(id))
@@ -120,7 +120,7 @@ void main() {
   group('$TournamentDetailsProvider:: actualizes tournaments status', () {
     test('Actualizes tournaments isNew status', () async {
       // arrange
-      final apiResult = expectedTournamentDetails1;
+      const apiResult = expectedTournamentDetails1;
       final id = apiResult.id!;
       final actualizedResult =
           apiResult.copyWith(status: const TournamentStatus(isNew: true));
@@ -146,7 +146,7 @@ void main() {
 
     test('Actualizes tournaments isNew status', () async {
       // arrange
-      final apiResult = expectedTournamentDetails1;
+      const apiResult = expectedTournamentDetails1;
       final id = apiResult.id!;
       final actualizedResult = apiResult.copyWith(
           status: const TournamentStatus(isBookmarked: true));

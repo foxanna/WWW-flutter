@@ -24,7 +24,10 @@ class BackgroundRunnerService implements IBackgroundRunnerService {
   Future<R> run<R, P>(
       FutureOr<R> Function(P argument) function, P argument) async {
     final result = await _runner.run<Either<Exception, R>, List<dynamic>>(
-        _run, <dynamic>[function, argument]);
+      // ignore: inference_failure_on_function_invocation
+      _run,
+      <dynamic>[function, argument],
+    );
     return result.fold((e) => throw e, (result) => result);
   }
 }

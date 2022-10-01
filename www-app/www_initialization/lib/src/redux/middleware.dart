@@ -44,14 +44,13 @@ class InitializationMiddleware
   }
 
   void _checkState(Store<IInitializationStateHolder> store) =>
-      store.state.initializationState.forEach((state) => state.maybeMap(
+      store.state.initializationState.forEach((state) => state.mapOrNull<void>(
             inProgress: (state) {
               if (state.servicesReady && state.settingsReady) {
                 store.dispatch(const InitializationAction.completed());
                 store.dispatch(const SystemActionLatest.open());
               }
             },
-            orElse: () => null,
           ));
 }
 

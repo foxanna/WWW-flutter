@@ -21,10 +21,7 @@ class WWWStatusBarBrightness extends StatelessWidget {
           : SystemUiOverlayStyle.dark,
       child: Theme(
         data: theme.copyWith(
-          appBarTheme: theme.appBarTheme.copyWith(
-              brightness: statusBarBrightness == Brightness.light
-                  ? Brightness.dark
-                  : Brightness.light),
+          appBarTheme: theme.appBarTheme,
         ),
         child: child,
       ),

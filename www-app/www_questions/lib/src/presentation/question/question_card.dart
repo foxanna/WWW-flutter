@@ -105,7 +105,7 @@ class _QuestionCardState extends State<QuestionCard> {
   }
 
   void _onAnswerShown() =>
-      WidgetsBinding.instance!.addPostFrameCallback((d) => _scrollToAnswer());
+      WidgetsBinding.instance.addPostFrameCallback((d) => _scrollToAnswer());
 
   void _scrollToAnswer() {
     final parent = _listViewKey.currentContext?.findRenderObject();

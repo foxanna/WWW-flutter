@@ -24,8 +24,9 @@ class UrlLauncher implements IUrlLauncher {
       _launch('mailto:$to?subject=$subject');
 
   Future<void> _launch(String url) => _crashWrapper.executeAndReport(() async {
-        if (await canLaunch(url)) {
-          await launchURL(url);
+        final uri = Uri.tryParse(url);
+        if (uri != null && await canLaunchUrl(uri)) {
+          await launchUrl(uri);
         }
       });
 }

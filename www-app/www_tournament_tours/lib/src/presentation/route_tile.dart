@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:www_redux/www_redux.dart';
 import 'package:www_tournament_tours/src/presentation/data_tile.dart';
 import 'package:www_tournament_tours/src/presentation/error_tile.dart';

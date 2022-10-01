@@ -47,7 +47,7 @@ void main() {
   group('$SearchProvider:: loads the data', () {
     test('Loads the data', () async {
       // arrange
-      final expectedResult = expectedSearchTournaments1;
+      const expectedResult = expectedSearchTournaments1;
       const query = 'test';
       const sorting = Sorting.date;
       const page = 1;
@@ -73,7 +73,7 @@ void main() {
   group('$SearchProvider:: actualizes tournaments status', () {
     test('Actualizes tournaments isNew status', () async {
       // arrange
-      final apiResult = expectedSearchTournaments1;
+      const apiResult = expectedSearchTournaments1;
       final actualizedResult = apiResult
           .map((x) => x.copyWith(status: const TournamentStatus(isNew: true)))
           .toList();
@@ -104,7 +104,7 @@ void main() {
 
     test('Actualizes tournaments isBookmarked status', () async {
       // arrange
-      final apiResult = expectedSearchTournaments1;
+      const apiResult = expectedSearchTournaments1;
       final actualizedResult = apiResult
           .map((x) =>
               x.copyWith(status: const TournamentStatus(isBookmarked: true)))

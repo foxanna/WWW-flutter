@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:www_api/src/loaders/random_questions_loader.dart';
 import 'package:www_api/src/parsers/xml2json_parser.dart';

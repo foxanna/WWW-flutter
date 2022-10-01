@@ -35,7 +35,7 @@ void main() {
   group('$RandomQuestionsProvider:: work with loader', () {
     test('loads random questions', () async {
       // arrange
-      final expectedQuestions = expectedRandomQuestions1;
+      const expectedQuestions = expectedRandomQuestions1;
 
       TestArrange.when(() => randomQuestionsLoaderMock.get())
           .thenAnswer((_) => Future.value(expectedQuestions));

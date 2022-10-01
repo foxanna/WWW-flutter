@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:www_localization/www_localization.dart';
 import 'package:www_models/www_models.dart';
 import 'package:www_redux/www_redux.dart';

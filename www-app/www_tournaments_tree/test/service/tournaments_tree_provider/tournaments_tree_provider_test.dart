@@ -51,7 +51,7 @@ void main() {
   group('$TournamentsTreeProvider:: cache usage', () {
     test('Loads from loader if cache is empty', () async {
       // arrange
-      final apiResult = expectedTournamentsTree1;
+      const apiResult = expectedTournamentsTree1;
       final id = apiResult.id!;
 
       TestArrange.when(() => tournamentsTreeLoaderMock.get(id))
@@ -73,7 +73,7 @@ void main() {
 
     test('Uses cached value when present', () async {
       // arrange
-      final cachedResult = expectedTournamentsTree1;
+      const cachedResult = expectedTournamentsTree1;
       final id = cachedResult.id!;
 
       TestArrange.when(() => tournamentsTreeCacheMock.contains(id))
@@ -98,7 +98,7 @@ void main() {
   group('$TournamentsTreeProvider:: actualizes tournaments status', () {
     test('Actualizes tournaments isNew status', () async {
       // arrange
-      final apiResult = expectedTournamentsTree1;
+      const apiResult = expectedTournamentsTree1;
       final id = apiResult.id!;
       final actualizedResult = apiResult.copyWith(
           children: apiResult.children
@@ -130,7 +130,7 @@ void main() {
 
     test('Actualizes tournaments isBookmarked status', () async {
       // arrange
-      final apiResult = expectedTournamentsTree1;
+      const apiResult = expectedTournamentsTree1;
       final id = apiResult.id!;
       final actualizedResult = apiResult.copyWith(
           children: apiResult.children

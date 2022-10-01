@@ -45,7 +45,7 @@ void main() {
   group('$TourDetailsProvider:: work with cache', () {
     test('Uses cached value when present', () async {
       // arrange
-      final expectedTour = expectedTourDetails1;
+      const expectedTour = expectedTourDetails1;
       final id = expectedTour.id!;
 
       TestArrange.when(() => tourCacheMock.contains(id)).thenReturn(true);
@@ -68,7 +68,7 @@ void main() {
 
     test('Loads and caches value when absent in cache', () async {
       // arrange
-      final expectedTour = expectedTourDetails1;
+      const expectedTour = expectedTourDetails1;
       final id = expectedTour.id!;
 
       final provider = createProvider();
@@ -94,7 +94,7 @@ void main() {
 
     test('Sends in proper cachedTournamentInfoProvider when loading', () async {
       // arrange
-      final expectedTour = expectedTourDetails1;
+      const expectedTour = expectedTourDetails1;
       final id = expectedTour.id!;
 
       const parent = Tournament(id: 'id', info: TournamentInfo(id: 'id'));

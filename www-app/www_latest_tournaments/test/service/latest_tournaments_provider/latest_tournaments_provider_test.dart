@@ -44,7 +44,7 @@ void main() {
   group('$LatestTournamentsProvider:: loads the data', () {
     test('Loads the data', () async {
       // arrange
-      final expectedResult = expectedTournaments1;
+      const expectedResult = expectedTournaments1;
       const page = 1;
 
       TestArrange.when(() => loaderMock.get(page))
@@ -65,7 +65,7 @@ void main() {
   group('$LatestTournamentsProvider:: actualizes tournaments status', () {
     test('Actualizes tournaments isNew status', () async {
       // arrange
-      final apiResult = expectedTournaments1;
+      const apiResult = expectedTournaments1;
       final actualizedResult = apiResult
           .map((x) => x.copyWith(status: const TournamentStatus(isNew: true)))
           .toList();
@@ -92,7 +92,7 @@ void main() {
 
     test('Actualizes tournaments isBookmarked status', () async {
       // arrange
-      final apiResult = expectedTournaments1;
+      const apiResult = expectedTournaments1;
       final actualizedResult = apiResult
           .map((x) =>
               x.copyWith(status: const TournamentStatus(isBookmarked: true)))

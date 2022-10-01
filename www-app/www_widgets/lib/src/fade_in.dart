@@ -36,7 +36,8 @@ class _FadeInState extends State<FadeIn> {
 
     _opacity = widget.initialOpacity;
 
-    SchedulerBinding.instance!
-        .addPostFrameCallback((_) => setState(() => _opacity = 1));
+    SchedulerBinding.instance.addPostFrameCallback(
+      (_) => setState(() => _opacity = 1),
+    );
   }
 }
