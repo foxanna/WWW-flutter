@@ -17,16 +17,27 @@ class UrlLauncher implements IUrlLauncher {
   final ICrashWrapper _crashWrapper;
 
   @override
-  Future<void> launchURL(String url) => _launch(url);
+  Future<void> launchURL(String url) => _crashWrapper.executeAndReport(
+        () => _launch(Uri.parse(url)),
+      );
 
   @override
   Future<void> sendEmail(String to, String subject) =>
-      _launch('mailto:$to?subject=$subject');
+      _crashWrapper.executeAndReport(
+        () => _launch(
+          Uri(
+            scheme: 'mailto',
+            path: to,
+            query: encodeQueryParameters(<String, String>{'subject': subject}),
+          ),
+        ),
+      );
 
-  Future<void> _launch(String url) => _crashWrapper.executeAndReport(() async {
-        final uri = Uri.tryParse(url);
-        if (uri != null && await canLaunchUrl(uri)) {
-          await launchUrl(uri);
-        }
-      });
+  Future<void> _launch(Uri uri) =>
+      launchUrl(uri, mode: LaunchMode.externalApplication);
+
+  String? encodeQueryParameters(Map<String, String> params) => params.entries
+      .map((e) =>
+          '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+      .join('&');
 }
