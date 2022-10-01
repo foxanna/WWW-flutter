@@ -7,7 +7,6 @@ import 'package:www_initialization/src/redux/state_holder.dart';
 import 'package:www_local_storage/www_local_storage.dart';
 import 'package:www_redux/www_redux.dart';
 import 'package:www_redux_actions/www_redux_actions.dart';
-import 'package:www_timer/www_timer.dart';
 
 @injectable
 class InitializationMiddleware
