@@ -9,3 +9,6 @@ scripts:
 
   get:
     run: melos exec -- "flutter pub get"
+
+  test:
+    run: melos exec --dir-exists="test" -- "flutter test"
