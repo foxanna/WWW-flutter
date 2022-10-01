@@ -1,6 +1,6 @@
 name: www_app
 description: What? When? Where?
-version: 2.3.0+20300
+version: 2.3.1+20301
 publish_to: none
 
 environment:
