@@ -30,7 +30,7 @@ an application for fans of the popular show "What? Where? When?”.
 
 ## Author  👩‍💻
 
-Created with [Flutter](https://flutter.dev/) by [Anna Domashych](https://foxanna.github.io/)
+Created with [Flutter](https://flutter.dev/) by [Anna (Domashych) Leushchenko](https://foxanna.github.io/)
 
 ## License  ⚖️
 Protected by "Doom Source Licence". 
