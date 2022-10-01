@@ -73,6 +73,7 @@ class _MaterialApp extends StatelessWidget {
         localizationsDelegates: const [
           WWWLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
         ],
         supportedLocales: WWWLocalizations.supportedLocales,
