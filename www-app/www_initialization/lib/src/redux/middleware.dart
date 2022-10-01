@@ -88,6 +88,7 @@ class ServicesMiddleware implements IMiddleware<IState> {
     try {
       await _firebaseInitializer.init();
       _crashService.init();
+      _soundService.init();
       await _backgroundService.init();
       await _localStorageService.init();
       await _cacheSynchronizer.init();

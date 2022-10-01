@@ -5,6 +5,8 @@ import 'package:injectable/injectable.dart';
 import 'package:www_analytics/www_analytics.dart';
 
 abstract class ISoundService {
+  void init();
+
   Future<void> playSound();
 }
 
@@ -15,10 +17,14 @@ class SoundService implements ISoundService {
   }) : _crashWrapper = crashWrapper;
 
   final ICrashWrapper _crashWrapper;
+  late final AudioPlayer _audioPlayer;
 
   static const _timerAssetName = 'timer.mp3';
 
-  final _audioPlayer = AudioPlayer();
+  @override
+  void init() {
+    _audioPlayer = AudioPlayer();
+  }
 
   @override
   Future<void> playSound() => _crashWrapper

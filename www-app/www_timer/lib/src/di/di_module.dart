@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:www_di/www_di.dart';
