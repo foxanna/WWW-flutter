@@ -22,7 +22,7 @@ class TournamentsTreeDataPage extends StatelessWidget {
 
     return SliverPadding(
       padding: styleConfiguration.gridPadding,
-      sliver: SliverStaggeredGrid.countBuilder(
+      sliver: SliverMasonryGrid.count(
         crossAxisCount: styleConfiguration.columnsCount,
         mainAxisSpacing: styleConfiguration.gridSpacing,
         crossAxisSpacing: styleConfiguration.gridSpacing,
@@ -46,8 +46,7 @@ class TournamentsTreeDataPage extends StatelessWidget {
 
           return Container();
         },
-        itemCount: tournamentsTree.length,
-        staggeredTileBuilder: (i) => const StaggeredTile.fit(1),
+        childCount: tournamentsTree.length,
       ),
     );
   }

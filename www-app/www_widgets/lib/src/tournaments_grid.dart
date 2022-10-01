@@ -27,13 +27,13 @@ class TournamentsGrid extends StatelessWidget {
         context.styleConfig.tournamentsGridStyleConfiguration;
 
     return SliverPadding(
-      sliver: SliverStaggeredGrid.countBuilder(
+      sliver: SliverMasonryGrid.count(
         crossAxisCount: styleConfiguration.columnsCount,
         mainAxisSpacing: styleConfiguration.gridSpacing,
         crossAxisSpacing: styleConfiguration.gridSpacing,
         itemBuilder: (context, index) => (_isFooterIndex(index))
             ? footerBuilder!(context)
-            : (_isStubTournamentIndex(index)
+            : _isStubTournamentIndex(index)
                 ? const TournamentsGridStubTile()
                 : TournamentsGridTile(
                     tournamentInfo: tournaments![index].info,
@@ -41,11 +41,8 @@ class TournamentsGrid extends StatelessWidget {
                     onTap: onItemTap != null
                         ? () => onItemTap!(tournaments![index])
                         : null,
-                  )),
-        itemCount: _itemsCount(),
-        staggeredTileBuilder: (index) => (_isFooterIndex(index))
-            ? StaggeredTile.fit(styleConfiguration.columnsCount)
-            : const StaggeredTile.fit(1),
+                  ),
+        childCount: _itemsCount(),
       ),
       padding: styleConfiguration.gridPadding,
     );
