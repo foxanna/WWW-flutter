@@ -9,6 +9,7 @@ class InitializationState with _$InitializationState implements IState {
   const factory InitializationState.completed() = _CompletedInitializationState;
 
   const factory InitializationState.inProgress({
+    @Default(false) bool coreReady,
     @Default(false) bool settingsReady,
     @Default(false) bool servicesReady,
   }) = _InProgressInitializationState;

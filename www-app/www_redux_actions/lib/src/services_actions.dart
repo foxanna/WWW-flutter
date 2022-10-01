@@ -10,5 +10,9 @@ abstract class ServicesAction implements IAction {}
 class SystemActionServices
     with _$SystemActionServices
     implements ServicesAction, ISystemAction {
-  const factory SystemActionServices.ready() = ReadyServicesSystemAction;
+  const factory SystemActionServices.coreReady() =
+      CoreReadyServicesSystemAction;
+
+  const factory SystemActionServices.servicesReady() =
+      ServicesReadyServicesSystemAction;
 }

@@ -19,7 +19,8 @@ mixin _$InitializationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() completed,
-    required TResult Function(bool settingsReady, bool servicesReady)
+    required TResult Function(
+            bool coreReady, bool settingsReady, bool servicesReady)
         inProgress,
     required TResult Function() failed,
   }) =>
@@ -27,14 +28,16 @@ mixin _$InitializationState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? completed,
-    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function(bool coreReady, bool settingsReady, bool servicesReady)?
+        inProgress,
     TResult Function()? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? completed,
-    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function(bool coreReady, bool settingsReady, bool servicesReady)?
+        inProgress,
     TResult Function()? failed,
     required TResult orElse(),
   }) =>
@@ -135,7 +138,8 @@ class _$_CompletedInitializationState
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() completed,
-    required TResult Function(bool settingsReady, bool servicesReady)
+    required TResult Function(
+            bool coreReady, bool settingsReady, bool servicesReady)
         inProgress,
     required TResult Function() failed,
   }) {
@@ -146,7 +150,8 @@ class _$_CompletedInitializationState
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? completed,
-    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function(bool coreReady, bool settingsReady, bool servicesReady)?
+        inProgress,
     TResult Function()? failed,
   }) {
     return completed?.call();
@@ -156,7 +161,8 @@ class _$_CompletedInitializationState
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? completed,
-    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function(bool coreReady, bool settingsReady, bool servicesReady)?
+        inProgress,
     TResult Function()? failed,
     required TResult orElse(),
   }) {
@@ -212,7 +218,7 @@ abstract class _$$_InProgressInitializationStateCopyWith<$Res> {
           _$_InProgressInitializationState value,
           $Res Function(_$_InProgressInitializationState) then) =
       __$$_InProgressInitializationStateCopyWithImpl<$Res>;
-  $Res call({bool settingsReady, bool servicesReady});
+  $Res call({bool coreReady, bool settingsReady, bool servicesReady});
 }
 
 /// @nodoc
@@ -230,10 +236,15 @@ class __$$_InProgressInitializationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? coreReady = freezed,
     Object? settingsReady = freezed,
     Object? servicesReady = freezed,
   }) {
     return _then(_$_InProgressInitializationState(
+      coreReady: coreReady == freezed
+          ? _value.coreReady
+          : coreReady // ignore: cast_nullable_to_non_nullable
+              as bool,
       settingsReady: settingsReady == freezed
           ? _value.settingsReady
           : settingsReady // ignore: cast_nullable_to_non_nullable
@@ -252,8 +263,13 @@ class _$_InProgressInitializationState
     with DiagnosticableTreeMixin
     implements _InProgressInitializationState {
   const _$_InProgressInitializationState(
-      {this.settingsReady = false, this.servicesReady = false});
+      {this.coreReady = false,
+      this.settingsReady = false,
+      this.servicesReady = false});
 
+  @override
+  @JsonKey()
+  final bool coreReady;
   @override
   @JsonKey()
   final bool settingsReady;
@@ -263,7 +279,7 @@ class _$_InProgressInitializationState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'InitializationState.inProgress(settingsReady: $settingsReady, servicesReady: $servicesReady)';
+    return 'InitializationState.inProgress(coreReady: $coreReady, settingsReady: $settingsReady, servicesReady: $servicesReady)';
   }
 
   @override
@@ -271,6 +287,7 @@ class _$_InProgressInitializationState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'InitializationState.inProgress'))
+      ..add(DiagnosticsProperty('coreReady', coreReady))
       ..add(DiagnosticsProperty('settingsReady', settingsReady))
       ..add(DiagnosticsProperty('servicesReady', servicesReady));
   }
@@ -280,6 +297,7 @@ class _$_InProgressInitializationState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_InProgressInitializationState &&
+            const DeepCollectionEquality().equals(other.coreReady, coreReady) &&
             const DeepCollectionEquality()
                 .equals(other.settingsReady, settingsReady) &&
             const DeepCollectionEquality()
@@ -289,6 +307,7 @@ class _$_InProgressInitializationState
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(coreReady),
       const DeepCollectionEquality().hash(settingsReady),
       const DeepCollectionEquality().hash(servicesReady));
 
@@ -302,33 +321,36 @@ class _$_InProgressInitializationState
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() completed,
-    required TResult Function(bool settingsReady, bool servicesReady)
+    required TResult Function(
+            bool coreReady, bool settingsReady, bool servicesReady)
         inProgress,
     required TResult Function() failed,
   }) {
-    return inProgress(settingsReady, servicesReady);
+    return inProgress(coreReady, settingsReady, servicesReady);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? completed,
-    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function(bool coreReady, bool settingsReady, bool servicesReady)?
+        inProgress,
     TResult Function()? failed,
   }) {
-    return inProgress?.call(settingsReady, servicesReady);
+    return inProgress?.call(coreReady, settingsReady, servicesReady);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? completed,
-    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function(bool coreReady, bool settingsReady, bool servicesReady)?
+        inProgress,
     TResult Function()? failed,
     required TResult orElse(),
   }) {
     if (inProgress != null) {
-      return inProgress(settingsReady, servicesReady);
+      return inProgress(coreReady, settingsReady, servicesReady);
     }
     return orElse();
   }
@@ -370,9 +392,11 @@ class _$_InProgressInitializationState
 
 abstract class _InProgressInitializationState implements InitializationState {
   const factory _InProgressInitializationState(
-      {final bool settingsReady,
+      {final bool coreReady,
+      final bool settingsReady,
       final bool servicesReady}) = _$_InProgressInitializationState;
 
+  bool get coreReady;
   bool get settingsReady;
   bool get servicesReady;
   @JsonKey(ignore: true)
@@ -434,7 +458,8 @@ class _$_FailedInitializationState
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() completed,
-    required TResult Function(bool settingsReady, bool servicesReady)
+    required TResult Function(
+            bool coreReady, bool settingsReady, bool servicesReady)
         inProgress,
     required TResult Function() failed,
   }) {
@@ -445,7 +470,8 @@ class _$_FailedInitializationState
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? completed,
-    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function(bool coreReady, bool settingsReady, bool servicesReady)?
+        inProgress,
     TResult Function()? failed,
   }) {
     return failed?.call();
@@ -455,7 +481,8 @@ class _$_FailedInitializationState
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? completed,
-    TResult Function(bool settingsReady, bool servicesReady)? inProgress,
+    TResult Function(bool coreReady, bool settingsReady, bool servicesReady)?
+        inProgress,
     TResult Function()? failed,
     required TResult orElse(),
   }) {

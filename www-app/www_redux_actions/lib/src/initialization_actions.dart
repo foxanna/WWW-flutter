@@ -8,7 +8,13 @@ part 'initialization_actions.freezed.dart';
 class InitializationAction
     with _$InitializationAction
     implements IAction, ISystemAction {
-  const factory InitializationAction.init() = InitInitializationAction;
+  const factory InitializationAction.initCore() = InitCoreInitializationAction;
+
+  const factory InitializationAction.initServices() =
+      InitServicesInitializationAction;
+
+  const factory InitializationAction.initSettings() =
+      InitSettingsInitializationAction;
 
   const factory InitializationAction.failed({required Exception exception}) =
       FailedInitializationAction;

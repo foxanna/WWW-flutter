@@ -25,7 +25,7 @@ class SettingsMiddleware implements IMiddleware<ISettingsStateHolder> {
   late final _middleware = _createMiddleware();
 
   List<Middleware<ISettingsStateHolder>> _createMiddleware() => [
-        TypedMiddleware<ISettingsStateHolder, InitInitializationAction>(
+        TypedMiddleware<ISettingsStateHolder, InitSettingsInitializationAction>(
             _onInit),
         TypedMiddleware<ISettingsStateHolder, OpenSettingsUserAction>(_onOpen),
         TypedMiddleware<ISettingsStateHolder, ChangeThemeSettingsUserAction>(
@@ -41,7 +41,7 @@ class SettingsMiddleware implements IMiddleware<ISettingsStateHolder> {
       ];
 
   Future<void> _onInit(Store<ISettingsStateHolder> store,
-      InitInitializationAction action, NextDispatcher next) async {
+      InitSettingsInitializationAction action, NextDispatcher next) async {
     next(action);
 
     final appThemeSettingsValue =

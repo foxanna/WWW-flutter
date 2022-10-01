@@ -13,19 +13,22 @@ class InitializationReducer implements IReducer<InitializationState, IAction> {
       _reducer(state, action);
 
   static final _reducer = combineReducers<Option<InitializationState>>([
-    TypedReducer<Option<InitializationState>, InitInitializationAction>(_init),
+    TypedReducer<Option<InitializationState>, InitCoreInitializationAction>(
+        _init),
     TypedReducer<Option<InitializationState>, FailedInitializationAction>(
         _failed),
     TypedReducer<Option<InitializationState>, CompletedInitializationAction>(
         _completed),
+    TypedReducer<Option<InitializationState>, CoreReadyServicesSystemAction>(
+        _coreReady),
     TypedReducer<Option<InitializationState>, ReadySettingsSystemAction>(
         _settingsReady),
-    TypedReducer<Option<InitializationState>, ReadyServicesSystemAction>(
-        _servicesReady),
+    TypedReducer<Option<InitializationState>,
+        ServicesReadyServicesSystemAction>(_servicesReady),
   ]);
 
-  static Option<InitializationState> _init(
-          Option<InitializationState> state, InitInitializationAction action) =>
+  static Option<InitializationState> _init(Option<InitializationState> state,
+          InitCoreInitializationAction action) =>
       const Some(InitializationState.inProgress());
 
   static Option<InitializationState> _failed(Option<InitializationState> state,
@@ -37,6 +40,14 @@ class InitializationReducer implements IReducer<InitializationState, IAction> {
           CompletedInitializationAction action) =>
       const Some(InitializationState.completed());
 
+  static Option<InitializationState> _coreReady(
+          Option<InitializationState> state,
+          CoreReadyServicesSystemAction action) =>
+      state.map((state) => state.maybeMap(
+            inProgress: (state) => state.copyWith(coreReady: true),
+            orElse: () => state,
+          ));
+
   static Option<InitializationState> _settingsReady(
           Option<InitializationState> state,
           ReadySettingsSystemAction action) =>
@@ -47,7 +58,7 @@ class InitializationReducer implements IReducer<InitializationState, IAction> {
 
   static Option<InitializationState> _servicesReady(
           Option<InitializationState> state,
-          ReadyServicesSystemAction action) =>
+          ServicesReadyServicesSystemAction action) =>
       state.map((state) => state.maybeMap(
             inProgress: (state) => state.copyWith(servicesReady: true),
             orElse: () => state,

@@ -18,21 +18,27 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$InitializationAction {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
+    required TResult Function() initCore,
+    required TResult Function() initServices,
+    required TResult Function() initSettings,
     required TResult Function(Exception exception) failed,
     required TResult Function() completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
     TResult Function(Exception exception)? failed,
     TResult Function()? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
     TResult Function(Exception exception)? failed,
     TResult Function()? completed,
     required TResult orElse(),
@@ -40,21 +46,29 @@ mixin _$InitializationAction {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitInitializationAction value) init,
+    required TResult Function(InitCoreInitializationAction value) initCore,
+    required TResult Function(InitServicesInitializationAction value)
+        initServices,
+    required TResult Function(InitSettingsInitializationAction value)
+        initSettings,
     required TResult Function(FailedInitializationAction value) failed,
     required TResult Function(CompletedInitializationAction value) completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitInitializationAction value)? init,
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
     TResult Function(FailedInitializationAction value)? failed,
     TResult Function(CompletedInitializationAction value)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitInitializationAction value)? init,
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
     TResult Function(FailedInitializationAction value)? failed,
     TResult Function(CompletedInitializationAction value)? completed,
     required TResult orElse(),
@@ -80,48 +94,51 @@ class _$InitializationActionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$InitInitializationActionCopyWith<$Res> {
-  factory _$$InitInitializationActionCopyWith(_$InitInitializationAction value,
-          $Res Function(_$InitInitializationAction) then) =
-      __$$InitInitializationActionCopyWithImpl<$Res>;
+abstract class _$$InitCoreInitializationActionCopyWith<$Res> {
+  factory _$$InitCoreInitializationActionCopyWith(
+          _$InitCoreInitializationAction value,
+          $Res Function(_$InitCoreInitializationAction) then) =
+      __$$InitCoreInitializationActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitInitializationActionCopyWithImpl<$Res>
+class __$$InitCoreInitializationActionCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res>
-    implements _$$InitInitializationActionCopyWith<$Res> {
-  __$$InitInitializationActionCopyWithImpl(_$InitInitializationAction _value,
-      $Res Function(_$InitInitializationAction) _then)
-      : super(_value, (v) => _then(v as _$InitInitializationAction));
+    implements _$$InitCoreInitializationActionCopyWith<$Res> {
+  __$$InitCoreInitializationActionCopyWithImpl(
+      _$InitCoreInitializationAction _value,
+      $Res Function(_$InitCoreInitializationAction) _then)
+      : super(_value, (v) => _then(v as _$InitCoreInitializationAction));
 
   @override
-  _$InitInitializationAction get _value =>
-      super._value as _$InitInitializationAction;
+  _$InitCoreInitializationAction get _value =>
+      super._value as _$InitCoreInitializationAction;
 }
 
 /// @nodoc
 
-class _$InitInitializationAction
+class _$InitCoreInitializationAction
     with DiagnosticableTreeMixin
-    implements InitInitializationAction {
-  const _$InitInitializationAction();
+    implements InitCoreInitializationAction {
+  const _$InitCoreInitializationAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'InitializationAction.init()';
+    return 'InitializationAction.initCore()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'InitializationAction.init'));
+    properties
+        .add(DiagnosticsProperty('type', 'InitializationAction.initCore'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitInitializationAction);
+            other is _$InitCoreInitializationAction);
   }
 
   @override
@@ -130,33 +147,39 @@ class _$InitInitializationAction
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
+    required TResult Function() initCore,
+    required TResult Function() initServices,
+    required TResult Function() initSettings,
     required TResult Function(Exception exception) failed,
     required TResult Function() completed,
   }) {
-    return init();
+    return initCore();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
     TResult Function(Exception exception)? failed,
     TResult Function()? completed,
   }) {
-    return init?.call();
+    return initCore?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
     TResult Function(Exception exception)? failed,
     TResult Function()? completed,
     required TResult orElse(),
   }) {
-    if (init != null) {
-      return init();
+    if (initCore != null) {
+      return initCore();
     }
     return orElse();
   }
@@ -164,40 +187,328 @@ class _$InitInitializationAction
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitInitializationAction value) init,
+    required TResult Function(InitCoreInitializationAction value) initCore,
+    required TResult Function(InitServicesInitializationAction value)
+        initServices,
+    required TResult Function(InitSettingsInitializationAction value)
+        initSettings,
     required TResult Function(FailedInitializationAction value) failed,
     required TResult Function(CompletedInitializationAction value) completed,
   }) {
-    return init(this);
+    return initCore(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitInitializationAction value)? init,
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
     TResult Function(FailedInitializationAction value)? failed,
     TResult Function(CompletedInitializationAction value)? completed,
   }) {
-    return init?.call(this);
+    return initCore?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitInitializationAction value)? init,
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
     TResult Function(FailedInitializationAction value)? failed,
     TResult Function(CompletedInitializationAction value)? completed,
     required TResult orElse(),
   }) {
-    if (init != null) {
-      return init(this);
+    if (initCore != null) {
+      return initCore(this);
     }
     return orElse();
   }
 }
 
-abstract class InitInitializationAction implements InitializationAction {
-  const factory InitInitializationAction() = _$InitInitializationAction;
+abstract class InitCoreInitializationAction implements InitializationAction {
+  const factory InitCoreInitializationAction() = _$InitCoreInitializationAction;
+}
+
+/// @nodoc
+abstract class _$$InitServicesInitializationActionCopyWith<$Res> {
+  factory _$$InitServicesInitializationActionCopyWith(
+          _$InitServicesInitializationAction value,
+          $Res Function(_$InitServicesInitializationAction) then) =
+      __$$InitServicesInitializationActionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitServicesInitializationActionCopyWithImpl<$Res>
+    extends _$InitializationActionCopyWithImpl<$Res>
+    implements _$$InitServicesInitializationActionCopyWith<$Res> {
+  __$$InitServicesInitializationActionCopyWithImpl(
+      _$InitServicesInitializationAction _value,
+      $Res Function(_$InitServicesInitializationAction) _then)
+      : super(_value, (v) => _then(v as _$InitServicesInitializationAction));
+
+  @override
+  _$InitServicesInitializationAction get _value =>
+      super._value as _$InitServicesInitializationAction;
+}
+
+/// @nodoc
+
+class _$InitServicesInitializationAction
+    with DiagnosticableTreeMixin
+    implements InitServicesInitializationAction {
+  const _$InitServicesInitializationAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'InitializationAction.initServices()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'InitializationAction.initServices'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitServicesInitializationAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initCore,
+    required TResult Function() initServices,
+    required TResult Function() initSettings,
+    required TResult Function(Exception exception) failed,
+    required TResult Function() completed,
+  }) {
+    return initServices();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
+    TResult Function(Exception exception)? failed,
+    TResult Function()? completed,
+  }) {
+    return initServices?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
+    TResult Function(Exception exception)? failed,
+    TResult Function()? completed,
+    required TResult orElse(),
+  }) {
+    if (initServices != null) {
+      return initServices();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitCoreInitializationAction value) initCore,
+    required TResult Function(InitServicesInitializationAction value)
+        initServices,
+    required TResult Function(InitSettingsInitializationAction value)
+        initSettings,
+    required TResult Function(FailedInitializationAction value) failed,
+    required TResult Function(CompletedInitializationAction value) completed,
+  }) {
+    return initServices(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
+    TResult Function(FailedInitializationAction value)? failed,
+    TResult Function(CompletedInitializationAction value)? completed,
+  }) {
+    return initServices?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
+    TResult Function(FailedInitializationAction value)? failed,
+    TResult Function(CompletedInitializationAction value)? completed,
+    required TResult orElse(),
+  }) {
+    if (initServices != null) {
+      return initServices(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitServicesInitializationAction
+    implements InitializationAction {
+  const factory InitServicesInitializationAction() =
+      _$InitServicesInitializationAction;
+}
+
+/// @nodoc
+abstract class _$$InitSettingsInitializationActionCopyWith<$Res> {
+  factory _$$InitSettingsInitializationActionCopyWith(
+          _$InitSettingsInitializationAction value,
+          $Res Function(_$InitSettingsInitializationAction) then) =
+      __$$InitSettingsInitializationActionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitSettingsInitializationActionCopyWithImpl<$Res>
+    extends _$InitializationActionCopyWithImpl<$Res>
+    implements _$$InitSettingsInitializationActionCopyWith<$Res> {
+  __$$InitSettingsInitializationActionCopyWithImpl(
+      _$InitSettingsInitializationAction _value,
+      $Res Function(_$InitSettingsInitializationAction) _then)
+      : super(_value, (v) => _then(v as _$InitSettingsInitializationAction));
+
+  @override
+  _$InitSettingsInitializationAction get _value =>
+      super._value as _$InitSettingsInitializationAction;
+}
+
+/// @nodoc
+
+class _$InitSettingsInitializationAction
+    with DiagnosticableTreeMixin
+    implements InitSettingsInitializationAction {
+  const _$InitSettingsInitializationAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'InitializationAction.initSettings()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'InitializationAction.initSettings'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitSettingsInitializationAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initCore,
+    required TResult Function() initServices,
+    required TResult Function() initSettings,
+    required TResult Function(Exception exception) failed,
+    required TResult Function() completed,
+  }) {
+    return initSettings();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
+    TResult Function(Exception exception)? failed,
+    TResult Function()? completed,
+  }) {
+    return initSettings?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
+    TResult Function(Exception exception)? failed,
+    TResult Function()? completed,
+    required TResult orElse(),
+  }) {
+    if (initSettings != null) {
+      return initSettings();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitCoreInitializationAction value) initCore,
+    required TResult Function(InitServicesInitializationAction value)
+        initServices,
+    required TResult Function(InitSettingsInitializationAction value)
+        initSettings,
+    required TResult Function(FailedInitializationAction value) failed,
+    required TResult Function(CompletedInitializationAction value) completed,
+  }) {
+    return initSettings(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
+    TResult Function(FailedInitializationAction value)? failed,
+    TResult Function(CompletedInitializationAction value)? completed,
+  }) {
+    return initSettings?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
+    TResult Function(FailedInitializationAction value)? failed,
+    TResult Function(CompletedInitializationAction value)? completed,
+    required TResult orElse(),
+  }) {
+    if (initSettings != null) {
+      return initSettings(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitSettingsInitializationAction
+    implements InitializationAction {
+  const factory InitSettingsInitializationAction() =
+      _$InitSettingsInitializationAction;
 }
 
 /// @nodoc
@@ -279,7 +590,9 @@ class _$FailedInitializationAction
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
+    required TResult Function() initCore,
+    required TResult Function() initServices,
+    required TResult Function() initSettings,
     required TResult Function(Exception exception) failed,
     required TResult Function() completed,
   }) {
@@ -289,7 +602,9 @@ class _$FailedInitializationAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
     TResult Function(Exception exception)? failed,
     TResult Function()? completed,
   }) {
@@ -299,7 +614,9 @@ class _$FailedInitializationAction
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
     TResult Function(Exception exception)? failed,
     TResult Function()? completed,
     required TResult orElse(),
@@ -313,7 +630,11 @@ class _$FailedInitializationAction
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitInitializationAction value) init,
+    required TResult Function(InitCoreInitializationAction value) initCore,
+    required TResult Function(InitServicesInitializationAction value)
+        initServices,
+    required TResult Function(InitSettingsInitializationAction value)
+        initSettings,
     required TResult Function(FailedInitializationAction value) failed,
     required TResult Function(CompletedInitializationAction value) completed,
   }) {
@@ -323,7 +644,9 @@ class _$FailedInitializationAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitInitializationAction value)? init,
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
     TResult Function(FailedInitializationAction value)? failed,
     TResult Function(CompletedInitializationAction value)? completed,
   }) {
@@ -333,7 +656,9 @@ class _$FailedInitializationAction
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitInitializationAction value)? init,
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
     TResult Function(FailedInitializationAction value)? failed,
     TResult Function(CompletedInitializationAction value)? completed,
     required TResult orElse(),
@@ -409,7 +734,9 @@ class _$CompletedInitializationAction
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
+    required TResult Function() initCore,
+    required TResult Function() initServices,
+    required TResult Function() initSettings,
     required TResult Function(Exception exception) failed,
     required TResult Function() completed,
   }) {
@@ -419,7 +746,9 @@ class _$CompletedInitializationAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
     TResult Function(Exception exception)? failed,
     TResult Function()? completed,
   }) {
@@ -429,7 +758,9 @@ class _$CompletedInitializationAction
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
+    TResult Function()? initCore,
+    TResult Function()? initServices,
+    TResult Function()? initSettings,
     TResult Function(Exception exception)? failed,
     TResult Function()? completed,
     required TResult orElse(),
@@ -443,7 +774,11 @@ class _$CompletedInitializationAction
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitInitializationAction value) init,
+    required TResult Function(InitCoreInitializationAction value) initCore,
+    required TResult Function(InitServicesInitializationAction value)
+        initServices,
+    required TResult Function(InitSettingsInitializationAction value)
+        initSettings,
     required TResult Function(FailedInitializationAction value) failed,
     required TResult Function(CompletedInitializationAction value) completed,
   }) {
@@ -453,7 +788,9 @@ class _$CompletedInitializationAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitInitializationAction value)? init,
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
     TResult Function(FailedInitializationAction value)? failed,
     TResult Function(CompletedInitializationAction value)? completed,
   }) {
@@ -463,7 +800,9 @@ class _$CompletedInitializationAction
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitInitializationAction value)? init,
+    TResult Function(InitCoreInitializationAction value)? initCore,
+    TResult Function(InitServicesInitializationAction value)? initServices,
+    TResult Function(InitSettingsInitializationAction value)? initSettings,
     TResult Function(FailedInitializationAction value)? failed,
     TResult Function(CompletedInitializationAction value)? completed,
     required TResult orElse(),

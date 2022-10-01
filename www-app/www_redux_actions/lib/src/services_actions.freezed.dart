@@ -18,33 +18,40 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SystemActionServices {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() ready,
+    required TResult Function() coreReady,
+    required TResult Function() servicesReady,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? ready,
+    TResult Function()? coreReady,
+    TResult Function()? servicesReady,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? ready,
+    TResult Function()? coreReady,
+    TResult Function()? servicesReady,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ReadyServicesSystemAction value) ready,
+    required TResult Function(CoreReadyServicesSystemAction value) coreReady,
+    required TResult Function(ServicesReadyServicesSystemAction value)
+        servicesReady,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ReadyServicesSystemAction value)? ready,
+    TResult Function(CoreReadyServicesSystemAction value)? coreReady,
+    TResult Function(ServicesReadyServicesSystemAction value)? servicesReady,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ReadyServicesSystemAction value)? ready,
+    TResult Function(CoreReadyServicesSystemAction value)? coreReady,
+    TResult Function(ServicesReadyServicesSystemAction value)? servicesReady,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,49 +75,51 @@ class _$SystemActionServicesCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$ReadyServicesSystemActionCopyWith<$Res> {
-  factory _$$ReadyServicesSystemActionCopyWith(
-          _$ReadyServicesSystemAction value,
-          $Res Function(_$ReadyServicesSystemAction) then) =
-      __$$ReadyServicesSystemActionCopyWithImpl<$Res>;
+abstract class _$$CoreReadyServicesSystemActionCopyWith<$Res> {
+  factory _$$CoreReadyServicesSystemActionCopyWith(
+          _$CoreReadyServicesSystemAction value,
+          $Res Function(_$CoreReadyServicesSystemAction) then) =
+      __$$CoreReadyServicesSystemActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ReadyServicesSystemActionCopyWithImpl<$Res>
+class __$$CoreReadyServicesSystemActionCopyWithImpl<$Res>
     extends _$SystemActionServicesCopyWithImpl<$Res>
-    implements _$$ReadyServicesSystemActionCopyWith<$Res> {
-  __$$ReadyServicesSystemActionCopyWithImpl(_$ReadyServicesSystemAction _value,
-      $Res Function(_$ReadyServicesSystemAction) _then)
-      : super(_value, (v) => _then(v as _$ReadyServicesSystemAction));
+    implements _$$CoreReadyServicesSystemActionCopyWith<$Res> {
+  __$$CoreReadyServicesSystemActionCopyWithImpl(
+      _$CoreReadyServicesSystemAction _value,
+      $Res Function(_$CoreReadyServicesSystemAction) _then)
+      : super(_value, (v) => _then(v as _$CoreReadyServicesSystemAction));
 
   @override
-  _$ReadyServicesSystemAction get _value =>
-      super._value as _$ReadyServicesSystemAction;
+  _$CoreReadyServicesSystemAction get _value =>
+      super._value as _$CoreReadyServicesSystemAction;
 }
 
 /// @nodoc
 
-class _$ReadyServicesSystemAction
+class _$CoreReadyServicesSystemAction
     with DiagnosticableTreeMixin
-    implements ReadyServicesSystemAction {
-  const _$ReadyServicesSystemAction();
+    implements CoreReadyServicesSystemAction {
+  const _$CoreReadyServicesSystemAction();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SystemActionServices.ready()';
+    return 'SystemActionServices.coreReady()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'SystemActionServices.ready'));
+    properties
+        .add(DiagnosticsProperty('type', 'SystemActionServices.coreReady'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReadyServicesSystemAction);
+            other is _$CoreReadyServicesSystemAction);
   }
 
   @override
@@ -119,27 +128,30 @@ class _$ReadyServicesSystemAction
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() ready,
+    required TResult Function() coreReady,
+    required TResult Function() servicesReady,
   }) {
-    return ready();
+    return coreReady();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? ready,
+    TResult Function()? coreReady,
+    TResult Function()? servicesReady,
   }) {
-    return ready?.call();
+    return coreReady?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? ready,
+    TResult Function()? coreReady,
+    TResult Function()? servicesReady,
     required TResult orElse(),
   }) {
-    if (ready != null) {
-      return ready();
+    if (coreReady != null) {
+      return coreReady();
     }
     return orElse();
   }
@@ -147,32 +159,158 @@ class _$ReadyServicesSystemAction
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ReadyServicesSystemAction value) ready,
+    required TResult Function(CoreReadyServicesSystemAction value) coreReady,
+    required TResult Function(ServicesReadyServicesSystemAction value)
+        servicesReady,
   }) {
-    return ready(this);
+    return coreReady(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ReadyServicesSystemAction value)? ready,
+    TResult Function(CoreReadyServicesSystemAction value)? coreReady,
+    TResult Function(ServicesReadyServicesSystemAction value)? servicesReady,
   }) {
-    return ready?.call(this);
+    return coreReady?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ReadyServicesSystemAction value)? ready,
+    TResult Function(CoreReadyServicesSystemAction value)? coreReady,
+    TResult Function(ServicesReadyServicesSystemAction value)? servicesReady,
     required TResult orElse(),
   }) {
-    if (ready != null) {
-      return ready(this);
+    if (coreReady != null) {
+      return coreReady(this);
     }
     return orElse();
   }
 }
 
-abstract class ReadyServicesSystemAction implements SystemActionServices {
-  const factory ReadyServicesSystemAction() = _$ReadyServicesSystemAction;
+abstract class CoreReadyServicesSystemAction implements SystemActionServices {
+  const factory CoreReadyServicesSystemAction() =
+      _$CoreReadyServicesSystemAction;
+}
+
+/// @nodoc
+abstract class _$$ServicesReadyServicesSystemActionCopyWith<$Res> {
+  factory _$$ServicesReadyServicesSystemActionCopyWith(
+          _$ServicesReadyServicesSystemAction value,
+          $Res Function(_$ServicesReadyServicesSystemAction) then) =
+      __$$ServicesReadyServicesSystemActionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ServicesReadyServicesSystemActionCopyWithImpl<$Res>
+    extends _$SystemActionServicesCopyWithImpl<$Res>
+    implements _$$ServicesReadyServicesSystemActionCopyWith<$Res> {
+  __$$ServicesReadyServicesSystemActionCopyWithImpl(
+      _$ServicesReadyServicesSystemAction _value,
+      $Res Function(_$ServicesReadyServicesSystemAction) _then)
+      : super(_value, (v) => _then(v as _$ServicesReadyServicesSystemAction));
+
+  @override
+  _$ServicesReadyServicesSystemAction get _value =>
+      super._value as _$ServicesReadyServicesSystemAction;
+}
+
+/// @nodoc
+
+class _$ServicesReadyServicesSystemAction
+    with DiagnosticableTreeMixin
+    implements ServicesReadyServicesSystemAction {
+  const _$ServicesReadyServicesSystemAction();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SystemActionServices.servicesReady()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'SystemActionServices.servicesReady'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ServicesReadyServicesSystemAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() coreReady,
+    required TResult Function() servicesReady,
+  }) {
+    return servicesReady();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? coreReady,
+    TResult Function()? servicesReady,
+  }) {
+    return servicesReady?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? coreReady,
+    TResult Function()? servicesReady,
+    required TResult orElse(),
+  }) {
+    if (servicesReady != null) {
+      return servicesReady();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CoreReadyServicesSystemAction value) coreReady,
+    required TResult Function(ServicesReadyServicesSystemAction value)
+        servicesReady,
+  }) {
+    return servicesReady(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CoreReadyServicesSystemAction value)? coreReady,
+    TResult Function(ServicesReadyServicesSystemAction value)? servicesReady,
+  }) {
+    return servicesReady?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoreReadyServicesSystemAction value)? coreReady,
+    TResult Function(ServicesReadyServicesSystemAction value)? servicesReady,
+    required TResult orElse(),
+  }) {
+    if (servicesReady != null) {
+      return servicesReady(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ServicesReadyServicesSystemAction
+    implements SystemActionServices {
+  const factory ServicesReadyServicesSystemAction() =
+      _$ServicesReadyServicesSystemAction;
 }
