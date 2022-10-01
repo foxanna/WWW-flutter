@@ -94,12 +94,6 @@ class AboutRoutePage extends StatelessWidget {
                   recognizer: TapGestureRecognizer()
                     ..onTap = () => _visitWebsite(context),
                 ),
-                TextSpan(
-                  text: ' 🇺🇦',
-                  style: styleConfiguration.textStyle.copyWith(
-                    color: styleConfiguration.accentColor,
-                  ),
-                ),
               ],
             ),
           ),
