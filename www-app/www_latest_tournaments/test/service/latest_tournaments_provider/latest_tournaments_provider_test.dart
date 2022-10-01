@@ -128,7 +128,8 @@ void main() {
       await provider.get();
 
       // assert
-      TestAssert.verify(() => crashWrapperMock.executeAndReport(any()));
+      TestAssert.verify(
+          () => crashWrapperMock.executeAndReport<Iterable<Tournament>>(any()));
     });
   });
 }

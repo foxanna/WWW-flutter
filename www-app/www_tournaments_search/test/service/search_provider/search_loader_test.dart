@@ -144,7 +144,8 @@ void main() {
       await provider.get(query: '', sorting: Sorting.date, page: 0);
 
       // assert
-      TestAssert.verify(() => crashWrapperMock.executeAndReport(any()));
+      TestAssert.verify(
+          () => crashWrapperMock.executeAndReport<Iterable<Tournament>>(any()));
     });
   });
 }

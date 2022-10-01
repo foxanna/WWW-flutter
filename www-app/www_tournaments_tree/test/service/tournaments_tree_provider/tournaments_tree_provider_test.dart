@@ -68,7 +68,8 @@ void main() {
       TestAssert.verify(() => tournamentsTreeCacheMock.contains(id));
       TestAssert.verifyNever(() => tournamentsTreeCacheMock.get(id));
       TestAssert.verify(() => tournamentsTreeLoaderMock.get(id));
-      TestAssert.verify(() => crashWrapperMock.executeAndReport(any()));
+      TestAssert.verify(
+          () => crashWrapperMock.executeAndReport<TournamentsTree>(any()));
     });
 
     test('Uses cached value when present', () async {
@@ -171,7 +172,8 @@ void main() {
       await provider.get('');
 
       // assert
-      TestAssert.verify(() => crashWrapperMock.executeAndReport(any()));
+      TestAssert.verify(
+          () => crashWrapperMock.executeAndReport<TournamentsTree>(any()));
     });
   });
 }
