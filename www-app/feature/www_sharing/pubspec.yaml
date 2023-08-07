@@ -20,7 +20,7 @@ dependencies:
   www_redux:
     path: ../../utils/www_redux
   www_redux_actions:
-    path: ../../domain/www_redux_actions
+    path: ../shared/www_redux_actions
 
 dev_dependencies:
   build_runner: ^2.4.6

@@ -11,14 +11,14 @@ dependencies:
     sdk: flutter
   freezed_annotation: ^2.4.1
   www_localization:
-    path: ../../core/www_localization
+    path: ../../../core/www_localization
   www_models:
-    path: ../www_models
+    path: ../../../domain/www_models
   www_redux:
-    path: ../../utils/www_redux
+    path: ../../../utils/www_redux
 
 dev_dependencies:
   build_runner: ^2.4.6
   freezed: ^2.4.1
   www_analysis:
-    path: ../../utils/www_analysis
+    path: ../../../utils/www_analysis

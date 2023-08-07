@@ -27,9 +27,9 @@ dependencies:
   www_redux:
     path: ../../utils/www_redux
   www_redux_actions:
-    path: ../../domain/www_redux_actions
+    path: ../shared/www_redux_actions
   www_tournament_status:
-    path: ../www_tournament_status
+    path: ../shared/www_tournament_status
   www_widgets:
     path: ../../design/www_widgets
 

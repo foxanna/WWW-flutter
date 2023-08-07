@@ -52,7 +52,7 @@ dependencies:
   www_tournament_details:
     path: ../../feature/www_tournament_details
   www_tournament_status:
-    path: ../../feature/www_tournament_status
+    path: ../../feature/shared/www_tournament_status
   www_tournament_tours:
     path: ../../feature/www_tournament_tours
   www_tournaments_search:

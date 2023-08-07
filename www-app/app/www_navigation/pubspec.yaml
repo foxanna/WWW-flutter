@@ -29,7 +29,7 @@ dependencies:
   www_redux:
     path: ../../utils/www_redux
   www_redux_actions:
-    path: ../../domain/www_redux_actions
+    path: ../../feature/shared/www_redux_actions
   www_settings:
     path: ../../feature/www_settings
   www_tournament_details:

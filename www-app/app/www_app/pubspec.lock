@@ -1283,7 +1283,7 @@ packages:
   www_redux_actions:
     dependency: transitive
     description:
-      path: "../../domain/www_redux_actions"
+      path: "../../feature/shared/www_redux_actions"
       relative: true
     source: path
     version: "0.0.0"
@@ -1332,7 +1332,7 @@ packages:
   www_tournament_status:
     dependency: transitive
     description:
-      path: "../../feature/www_tournament_status"
+      path: "../../feature/shared/www_tournament_status"
       relative: true
     source: path
     version: "0.0.0"

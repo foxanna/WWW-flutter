@@ -15,7 +15,7 @@ dependencies:
   www_redux:
     path: ../../utils/www_redux
   www_redux_actions:
-    path: ../../domain/www_redux_actions
+    path: ../shared/www_redux_actions
   www_theme:
     path: ../../design/www_theme
 
