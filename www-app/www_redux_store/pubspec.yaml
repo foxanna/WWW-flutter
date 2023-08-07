@@ -52,3 +52,6 @@ dev_dependencies:
     path: ../www_analysis
   www_test_utils:
     path: ../www_test_utils
+
+dependency_overrides:
+  package_info_plus: 4.1.0   # caused by app_review: 2.1.2+1

@@ -63,3 +63,6 @@ dependencies:
 dev_dependencies:
   www_analysis:
     path: ../www_analysis/
+
+dependency_overrides:
+  package_info_plus: 4.1.0   # caused by app_review: 2.1.2+1
