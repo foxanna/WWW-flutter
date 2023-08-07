@@ -1,0 +1,4 @@
+global_options:
+  freezed:
+    runs_before:
+      - hive_generator
