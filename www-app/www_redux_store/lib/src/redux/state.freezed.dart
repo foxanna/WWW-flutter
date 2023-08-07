@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'state.dart';
 
@@ -41,7 +41,8 @@ mixin _$AppState {
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res>;
+      _$AppStateCopyWithImpl<$Res, AppState>;
+  @useResult
   $Res call(
       {Option<TimerState> timerState,
       Option<QuestionsState> questionsState,
@@ -56,68 +57,71 @@ abstract class $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
+    implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
-  final AppState _value;
   // ignore: unused_field
-  final $Res Function(AppState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timerState = freezed,
-    Object? questionsState = freezed,
-    Object? toursState = freezed,
-    Object? tournamentState = freezed,
-    Object? latestTournamentsState = freezed,
-    Object? searchState = freezed,
-    Object? settingsState = freezed,
-    Object? tournamentsTreeState = freezed,
-    Object? initializationState = freezed,
-    Object? bookmarksState = freezed,
+    Object? timerState = null,
+    Object? questionsState = null,
+    Object? toursState = null,
+    Object? tournamentState = null,
+    Object? latestTournamentsState = null,
+    Object? searchState = null,
+    Object? settingsState = null,
+    Object? tournamentsTreeState = null,
+    Object? initializationState = null,
+    Object? bookmarksState = null,
   }) {
     return _then(_value.copyWith(
-      timerState: timerState == freezed
+      timerState: null == timerState
           ? _value.timerState
           : timerState // ignore: cast_nullable_to_non_nullable
               as Option<TimerState>,
-      questionsState: questionsState == freezed
+      questionsState: null == questionsState
           ? _value.questionsState
           : questionsState // ignore: cast_nullable_to_non_nullable
               as Option<QuestionsState>,
-      toursState: toursState == freezed
+      toursState: null == toursState
           ? _value.toursState
           : toursState // ignore: cast_nullable_to_non_nullable
               as Option<ToursState>,
-      tournamentState: tournamentState == freezed
+      tournamentState: null == tournamentState
           ? _value.tournamentState
           : tournamentState // ignore: cast_nullable_to_non_nullable
               as Option<TournamentState>,
-      latestTournamentsState: latestTournamentsState == freezed
+      latestTournamentsState: null == latestTournamentsState
           ? _value.latestTournamentsState
           : latestTournamentsState // ignore: cast_nullable_to_non_nullable
               as Option<LatestTournamentsState>,
-      searchState: searchState == freezed
+      searchState: null == searchState
           ? _value.searchState
           : searchState // ignore: cast_nullable_to_non_nullable
               as Option<SearchState>,
-      settingsState: settingsState == freezed
+      settingsState: null == settingsState
           ? _value.settingsState
           : settingsState // ignore: cast_nullable_to_non_nullable
               as Option<SettingsState>,
-      tournamentsTreeState: tournamentsTreeState == freezed
+      tournamentsTreeState: null == tournamentsTreeState
           ? _value.tournamentsTreeState
           : tournamentsTreeState // ignore: cast_nullable_to_non_nullable
               as Option<TournamentsTreeState>,
-      initializationState: initializationState == freezed
+      initializationState: null == initializationState
           ? _value.initializationState
           : initializationState // ignore: cast_nullable_to_non_nullable
               as Option<InitializationState>,
-      bookmarksState: bookmarksState == freezed
+      bookmarksState: null == bookmarksState
           ? _value.bookmarksState
           : bookmarksState // ignore: cast_nullable_to_non_nullable
               as Option<BookmarksState>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -127,6 +131,7 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
           _$_AppState value, $Res Function(_$_AppState) then) =
       __$$_AppStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Option<TimerState> timerState,
       Option<QuestionsState> questionsState,
@@ -141,66 +146,65 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
+class __$$_AppStateCopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$_AppState>
     implements _$$_AppStateCopyWith<$Res> {
   __$$_AppStateCopyWithImpl(
       _$_AppState _value, $Res Function(_$_AppState) _then)
-      : super(_value, (v) => _then(v as _$_AppState));
+      : super(_value, _then);
 
-  @override
-  _$_AppState get _value => super._value as _$_AppState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timerState = freezed,
-    Object? questionsState = freezed,
-    Object? toursState = freezed,
-    Object? tournamentState = freezed,
-    Object? latestTournamentsState = freezed,
-    Object? searchState = freezed,
-    Object? settingsState = freezed,
-    Object? tournamentsTreeState = freezed,
-    Object? initializationState = freezed,
-    Object? bookmarksState = freezed,
+    Object? timerState = null,
+    Object? questionsState = null,
+    Object? toursState = null,
+    Object? tournamentState = null,
+    Object? latestTournamentsState = null,
+    Object? searchState = null,
+    Object? settingsState = null,
+    Object? tournamentsTreeState = null,
+    Object? initializationState = null,
+    Object? bookmarksState = null,
   }) {
     return _then(_$_AppState(
-      timerState: timerState == freezed
+      timerState: null == timerState
           ? _value.timerState
           : timerState // ignore: cast_nullable_to_non_nullable
               as Option<TimerState>,
-      questionsState: questionsState == freezed
+      questionsState: null == questionsState
           ? _value.questionsState
           : questionsState // ignore: cast_nullable_to_non_nullable
               as Option<QuestionsState>,
-      toursState: toursState == freezed
+      toursState: null == toursState
           ? _value.toursState
           : toursState // ignore: cast_nullable_to_non_nullable
               as Option<ToursState>,
-      tournamentState: tournamentState == freezed
+      tournamentState: null == tournamentState
           ? _value.tournamentState
           : tournamentState // ignore: cast_nullable_to_non_nullable
               as Option<TournamentState>,
-      latestTournamentsState: latestTournamentsState == freezed
+      latestTournamentsState: null == latestTournamentsState
           ? _value.latestTournamentsState
           : latestTournamentsState // ignore: cast_nullable_to_non_nullable
               as Option<LatestTournamentsState>,
-      searchState: searchState == freezed
+      searchState: null == searchState
           ? _value.searchState
           : searchState // ignore: cast_nullable_to_non_nullable
               as Option<SearchState>,
-      settingsState: settingsState == freezed
+      settingsState: null == settingsState
           ? _value.settingsState
           : settingsState // ignore: cast_nullable_to_non_nullable
               as Option<SettingsState>,
-      tournamentsTreeState: tournamentsTreeState == freezed
+      tournamentsTreeState: null == tournamentsTreeState
           ? _value.tournamentsTreeState
           : tournamentsTreeState // ignore: cast_nullable_to_non_nullable
               as Option<TournamentsTreeState>,
-      initializationState: initializationState == freezed
+      initializationState: null == initializationState
           ? _value.initializationState
           : initializationState // ignore: cast_nullable_to_non_nullable
               as Option<InitializationState>,
-      bookmarksState: bookmarksState == freezed
+      bookmarksState: null == bookmarksState
           ? _value.bookmarksState
           : bookmarksState // ignore: cast_nullable_to_non_nullable
               as Option<BookmarksState>,
@@ -272,44 +276,45 @@ class _$_AppState with DiagnosticableTreeMixin implements _AppState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppState &&
-            const DeepCollectionEquality()
-                .equals(other.timerState, timerState) &&
-            const DeepCollectionEquality()
-                .equals(other.questionsState, questionsState) &&
-            const DeepCollectionEquality()
-                .equals(other.toursState, toursState) &&
-            const DeepCollectionEquality()
-                .equals(other.tournamentState, tournamentState) &&
-            const DeepCollectionEquality()
-                .equals(other.latestTournamentsState, latestTournamentsState) &&
-            const DeepCollectionEquality()
-                .equals(other.searchState, searchState) &&
-            const DeepCollectionEquality()
-                .equals(other.settingsState, settingsState) &&
-            const DeepCollectionEquality()
-                .equals(other.tournamentsTreeState, tournamentsTreeState) &&
-            const DeepCollectionEquality()
-                .equals(other.initializationState, initializationState) &&
-            const DeepCollectionEquality()
-                .equals(other.bookmarksState, bookmarksState));
+            (identical(other.timerState, timerState) ||
+                other.timerState == timerState) &&
+            (identical(other.questionsState, questionsState) ||
+                other.questionsState == questionsState) &&
+            (identical(other.toursState, toursState) ||
+                other.toursState == toursState) &&
+            (identical(other.tournamentState, tournamentState) ||
+                other.tournamentState == tournamentState) &&
+            (identical(other.latestTournamentsState, latestTournamentsState) ||
+                other.latestTournamentsState == latestTournamentsState) &&
+            (identical(other.searchState, searchState) ||
+                other.searchState == searchState) &&
+            (identical(other.settingsState, settingsState) ||
+                other.settingsState == settingsState) &&
+            (identical(other.tournamentsTreeState, tournamentsTreeState) ||
+                other.tournamentsTreeState == tournamentsTreeState) &&
+            (identical(other.initializationState, initializationState) ||
+                other.initializationState == initializationState) &&
+            (identical(other.bookmarksState, bookmarksState) ||
+                other.bookmarksState == bookmarksState));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(timerState),
-      const DeepCollectionEquality().hash(questionsState),
-      const DeepCollectionEquality().hash(toursState),
-      const DeepCollectionEquality().hash(tournamentState),
-      const DeepCollectionEquality().hash(latestTournamentsState),
-      const DeepCollectionEquality().hash(searchState),
-      const DeepCollectionEquality().hash(settingsState),
-      const DeepCollectionEquality().hash(tournamentsTreeState),
-      const DeepCollectionEquality().hash(initializationState),
-      const DeepCollectionEquality().hash(bookmarksState));
+      timerState,
+      questionsState,
+      toursState,
+      tournamentState,
+      latestTournamentsState,
+      searchState,
+      settingsState,
+      tournamentsTreeState,
+      initializationState,
+      bookmarksState);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AppStateCopyWith<_$_AppState> get copyWith =>
       __$$_AppStateCopyWithImpl<_$_AppState>(this, _$identity);
 }
