@@ -7,7 +7,7 @@ environment:
   flutter: ^3.10.6
 
 dependencies:
-  cached_network_image: ^3.2.2
+  cached_network_image: ^3.2.3
   flutter:
     sdk: flutter
   photo_view: ^0.14.0

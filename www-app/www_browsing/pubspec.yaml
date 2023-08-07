@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   injectable: ^1.5.3
-  url_launcher: ^6.0.6
+  url_launcher: ^6.1.12
   www_analytics:
     path: ../www_analytics
   www_constants:

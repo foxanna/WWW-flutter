@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   freezed_annotation: ^2.1.0
-  html: ^0.15.0
+  html: ^0.15.4
   injectable: ^1.5.3
   json_annotation: ^4.7.0
   www_background_runner:
@@ -25,7 +25,7 @@ dependencies:
     path: ../www_models
   www_utils:
     path: ../www_utils
-  xml2json: ^5.3.5
+  xml2json: ^6.2.0
 
 dev_dependencies:
   build_runner: ^2.2.1

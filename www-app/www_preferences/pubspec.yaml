@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   injectable: ^1.5.3
-  shared_preferences: ^2.0.15
+  shared_preferences: ^2.2.0
   www_analytics:
     path: ../www_analytics
   www_di:

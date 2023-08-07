@@ -7,10 +7,10 @@ environment:
   flutter: ^3.10.6
 
 dependencies:
-  cached_network_image: ^3.2.2
+  cached_network_image: ^3.2.3
   flutter:
     sdk: flutter
-  flutter_widget_from_html_core: ^0.8.5+3
+  flutter_widget_from_html_core: ^0.10.3
   freezed_annotation: ^2.1.0
   injectable: ^1.5.3
   www_analytics:
