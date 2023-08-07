@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'services_actions.dart';
 
@@ -24,8 +24,8 @@ mixin _$SystemActionServices {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? coreReady,
-    TResult Function()? servicesReady,
+    TResult? Function()? coreReady,
+    TResult? Function()? servicesReady,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,8 +44,8 @@ mixin _$SystemActionServices {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CoreReadyServicesSystemAction value)? coreReady,
-    TResult Function(ServicesReadyServicesSystemAction value)? servicesReady,
+    TResult? Function(CoreReadyServicesSystemAction value)? coreReady,
+    TResult? Function(ServicesReadyServicesSystemAction value)? servicesReady,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,17 +61,19 @@ mixin _$SystemActionServices {
 abstract class $SystemActionServicesCopyWith<$Res> {
   factory $SystemActionServicesCopyWith(SystemActionServices value,
           $Res Function(SystemActionServices) then) =
-      _$SystemActionServicesCopyWithImpl<$Res>;
+      _$SystemActionServicesCopyWithImpl<$Res, SystemActionServices>;
 }
 
 /// @nodoc
-class _$SystemActionServicesCopyWithImpl<$Res>
+class _$SystemActionServicesCopyWithImpl<$Res,
+        $Val extends SystemActionServices>
     implements $SystemActionServicesCopyWith<$Res> {
   _$SystemActionServicesCopyWithImpl(this._value, this._then);
 
-  final SystemActionServices _value;
   // ignore: unused_field
-  final $Res Function(SystemActionServices) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -84,16 +86,13 @@ abstract class _$$CoreReadyServicesSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$CoreReadyServicesSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionServicesCopyWithImpl<$Res>
+    extends _$SystemActionServicesCopyWithImpl<$Res,
+        _$CoreReadyServicesSystemAction>
     implements _$$CoreReadyServicesSystemActionCopyWith<$Res> {
   __$$CoreReadyServicesSystemActionCopyWithImpl(
       _$CoreReadyServicesSystemAction _value,
       $Res Function(_$CoreReadyServicesSystemAction) _then)
-      : super(_value, (v) => _then(v as _$CoreReadyServicesSystemAction));
-
-  @override
-  _$CoreReadyServicesSystemAction get _value =>
-      super._value as _$CoreReadyServicesSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -137,8 +136,8 @@ class _$CoreReadyServicesSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? coreReady,
-    TResult Function()? servicesReady,
+    TResult? Function()? coreReady,
+    TResult? Function()? servicesReady,
   }) {
     return coreReady?.call();
   }
@@ -169,8 +168,8 @@ class _$CoreReadyServicesSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CoreReadyServicesSystemAction value)? coreReady,
-    TResult Function(ServicesReadyServicesSystemAction value)? servicesReady,
+    TResult? Function(CoreReadyServicesSystemAction value)? coreReady,
+    TResult? Function(ServicesReadyServicesSystemAction value)? servicesReady,
   }) {
     return coreReady?.call(this);
   }
@@ -204,16 +203,13 @@ abstract class _$$ServicesReadyServicesSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$ServicesReadyServicesSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionServicesCopyWithImpl<$Res>
+    extends _$SystemActionServicesCopyWithImpl<$Res,
+        _$ServicesReadyServicesSystemAction>
     implements _$$ServicesReadyServicesSystemActionCopyWith<$Res> {
   __$$ServicesReadyServicesSystemActionCopyWithImpl(
       _$ServicesReadyServicesSystemAction _value,
       $Res Function(_$ServicesReadyServicesSystemAction) _then)
-      : super(_value, (v) => _then(v as _$ServicesReadyServicesSystemAction));
-
-  @override
-  _$ServicesReadyServicesSystemAction get _value =>
-      super._value as _$ServicesReadyServicesSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -257,8 +253,8 @@ class _$ServicesReadyServicesSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? coreReady,
-    TResult Function()? servicesReady,
+    TResult? Function()? coreReady,
+    TResult? Function()? servicesReady,
   }) {
     return servicesReady?.call();
   }
@@ -289,8 +285,8 @@ class _$ServicesReadyServicesSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CoreReadyServicesSystemAction value)? coreReady,
-    TResult Function(ServicesReadyServicesSystemAction value)? servicesReady,
+    TResult? Function(CoreReadyServicesSystemAction value)? coreReady,
+    TResult? Function(ServicesReadyServicesSystemAction value)? servicesReady,
   }) {
     return servicesReady?.call(this);
   }

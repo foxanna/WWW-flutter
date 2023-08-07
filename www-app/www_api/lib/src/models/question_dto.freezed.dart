@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'question_dto.dart';
 
@@ -57,7 +57,8 @@ mixin _$QuestionDto {
 abstract class $QuestionDtoCopyWith<$Res> {
   factory $QuestionDtoCopyWith(
           QuestionDto value, $Res Function(QuestionDto) then) =
-      _$QuestionDtoCopyWithImpl<$Res>;
+      _$QuestionDtoCopyWithImpl<$Res, QuestionDto>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'QuestionId') String? questionId,
       @JsonKey(name: 'Question') String? question,
@@ -75,13 +76,16 @@ abstract class $QuestionDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
+class _$QuestionDtoCopyWithImpl<$Res, $Val extends QuestionDto>
+    implements $QuestionDtoCopyWith<$Res> {
   _$QuestionDtoCopyWithImpl(this._value, this._then);
 
-  final QuestionDto _value;
   // ignore: unused_field
-  final $Res Function(QuestionDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? questionId = freezed,
@@ -99,59 +103,59 @@ class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
     Object? tournamentTitle = freezed,
   }) {
     return _then(_value.copyWith(
-      questionId: questionId == freezed
+      questionId: freezed == questionId
           ? _value.questionId
           : questionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      question: question == freezed
+      question: freezed == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      answer: answer == freezed
+      answer: freezed == answer
           ? _value.answer
           : answer // ignore: cast_nullable_to_non_nullable
               as String?,
-      authors: authors == freezed
+      authors: freezed == authors
           ? _value.authors
           : authors // ignore: cast_nullable_to_non_nullable
               as String?,
-      passCriteria: passCriteria == freezed
+      passCriteria: freezed == passCriteria
           ? _value.passCriteria
           : passCriteria // ignore: cast_nullable_to_non_nullable
               as String?,
-      comments: comments == freezed
+      comments: freezed == comments
           ? _value.comments
           : comments // ignore: cast_nullable_to_non_nullable
               as String?,
-      sources: sources == freezed
+      sources: freezed == sources
           ? _value.sources
           : sources // ignore: cast_nullable_to_non_nullable
               as String?,
-      parentId: parentId == freezed
+      parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      tourId: tourId == freezed
+      tourId: freezed == tourId
           ? _value.tourId
           : tourId // ignore: cast_nullable_to_non_nullable
               as String?,
-      tournamentId: tournamentId == freezed
+      tournamentId: freezed == tournamentId
           ? _value.tournamentId
           : tournamentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      tourTitle: tourTitle == freezed
+      tourTitle: freezed == tourTitle
           ? _value.tourTitle
           : tourTitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      tournamentTitle: tournamentTitle == freezed
+      tournamentTitle: freezed == tournamentTitle
           ? _value.tournamentTitle
           : tournamentTitle // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -162,6 +166,7 @@ abstract class _$$_QuestionDtoCopyWith<$Res>
           _$_QuestionDto value, $Res Function(_$_QuestionDto) then) =
       __$$_QuestionDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'QuestionId') String? questionId,
       @JsonKey(name: 'Question') String? question,
@@ -179,15 +184,14 @@ abstract class _$$_QuestionDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
+class __$$_QuestionDtoCopyWithImpl<$Res>
+    extends _$QuestionDtoCopyWithImpl<$Res, _$_QuestionDto>
     implements _$$_QuestionDtoCopyWith<$Res> {
   __$$_QuestionDtoCopyWithImpl(
       _$_QuestionDto _value, $Res Function(_$_QuestionDto) _then)
-      : super(_value, (v) => _then(v as _$_QuestionDto));
+      : super(_value, _then);
 
-  @override
-  _$_QuestionDto get _value => super._value as _$_QuestionDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? questionId = freezed,
@@ -205,55 +209,55 @@ class __$$_QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
     Object? tournamentTitle = freezed,
   }) {
     return _then(_$_QuestionDto(
-      questionId: questionId == freezed
+      questionId: freezed == questionId
           ? _value.questionId
           : questionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      question: question == freezed
+      question: freezed == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      answer: answer == freezed
+      answer: freezed == answer
           ? _value.answer
           : answer // ignore: cast_nullable_to_non_nullable
               as String?,
-      authors: authors == freezed
+      authors: freezed == authors
           ? _value.authors
           : authors // ignore: cast_nullable_to_non_nullable
               as String?,
-      passCriteria: passCriteria == freezed
+      passCriteria: freezed == passCriteria
           ? _value.passCriteria
           : passCriteria // ignore: cast_nullable_to_non_nullable
               as String?,
-      comments: comments == freezed
+      comments: freezed == comments
           ? _value.comments
           : comments // ignore: cast_nullable_to_non_nullable
               as String?,
-      sources: sources == freezed
+      sources: freezed == sources
           ? _value.sources
           : sources // ignore: cast_nullable_to_non_nullable
               as String?,
-      parentId: parentId == freezed
+      parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      tourId: tourId == freezed
+      tourId: freezed == tourId
           ? _value.tourId
           : tourId // ignore: cast_nullable_to_non_nullable
               as String?,
-      tournamentId: tournamentId == freezed
+      tournamentId: freezed == tournamentId
           ? _value.tournamentId
           : tournamentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      tourTitle: tourTitle == freezed
+      tourTitle: freezed == tourTitle
           ? _value.tourTitle
           : tourTitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      tournamentTitle: tournamentTitle == freezed
+      tournamentTitle: freezed == tournamentTitle
           ? _value.tournamentTitle
           : tournamentTitle // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -332,45 +336,50 @@ class _$_QuestionDto implements _QuestionDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QuestionDto &&
-            const DeepCollectionEquality()
-                .equals(other.questionId, questionId) &&
-            const DeepCollectionEquality().equals(other.question, question) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.answer, answer) &&
-            const DeepCollectionEquality().equals(other.authors, authors) &&
-            const DeepCollectionEquality()
-                .equals(other.passCriteria, passCriteria) &&
-            const DeepCollectionEquality().equals(other.comments, comments) &&
-            const DeepCollectionEquality().equals(other.sources, sources) &&
-            const DeepCollectionEquality().equals(other.parentId, parentId) &&
-            const DeepCollectionEquality().equals(other.tourId, tourId) &&
-            const DeepCollectionEquality()
-                .equals(other.tournamentId, tournamentId) &&
-            const DeepCollectionEquality().equals(other.tourTitle, tourTitle) &&
-            const DeepCollectionEquality()
-                .equals(other.tournamentTitle, tournamentTitle));
+            (identical(other.questionId, questionId) ||
+                other.questionId == questionId) &&
+            (identical(other.question, question) ||
+                other.question == question) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.answer, answer) || other.answer == answer) &&
+            (identical(other.authors, authors) || other.authors == authors) &&
+            (identical(other.passCriteria, passCriteria) ||
+                other.passCriteria == passCriteria) &&
+            (identical(other.comments, comments) ||
+                other.comments == comments) &&
+            (identical(other.sources, sources) || other.sources == sources) &&
+            (identical(other.parentId, parentId) ||
+                other.parentId == parentId) &&
+            (identical(other.tourId, tourId) || other.tourId == tourId) &&
+            (identical(other.tournamentId, tournamentId) ||
+                other.tournamentId == tournamentId) &&
+            (identical(other.tourTitle, tourTitle) ||
+                other.tourTitle == tourTitle) &&
+            (identical(other.tournamentTitle, tournamentTitle) ||
+                other.tournamentTitle == tournamentTitle));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(questionId),
-      const DeepCollectionEquality().hash(question),
-      const DeepCollectionEquality().hash(number),
-      const DeepCollectionEquality().hash(answer),
-      const DeepCollectionEquality().hash(authors),
-      const DeepCollectionEquality().hash(passCriteria),
-      const DeepCollectionEquality().hash(comments),
-      const DeepCollectionEquality().hash(sources),
-      const DeepCollectionEquality().hash(parentId),
-      const DeepCollectionEquality().hash(tourId),
-      const DeepCollectionEquality().hash(tournamentId),
-      const DeepCollectionEquality().hash(tourTitle),
-      const DeepCollectionEquality().hash(tournamentTitle));
+      questionId,
+      question,
+      number,
+      answer,
+      authors,
+      passCriteria,
+      comments,
+      sources,
+      parentId,
+      tourId,
+      tournamentId,
+      tourTitle,
+      tournamentTitle);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionDtoCopyWith<_$_QuestionDto> get copyWith =>
       __$$_QuestionDtoCopyWithImpl<_$_QuestionDto>(this, _$identity);
 

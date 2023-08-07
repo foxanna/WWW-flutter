@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'state.dart';
 
@@ -26,10 +26,10 @@ mixin _$BookmarksState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Tournament> data)? data,
-    TResult Function()? loading,
-    TResult Function(Exception exception)? error,
+    TResult? Function()? initial,
+    TResult? Function(List<Tournament> data)? data,
+    TResult? Function()? loading,
+    TResult? Function(Exception exception)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$BookmarksState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialBookmarksState value)? initial,
-    TResult Function(DataBookmarksState value)? data,
-    TResult Function(LoadingBookmarksState value)? loading,
-    TResult Function(ErrorBookmarksState value)? error,
+    TResult? Function(InitialBookmarksState value)? initial,
+    TResult? Function(DataBookmarksState value)? data,
+    TResult? Function(LoadingBookmarksState value)? loading,
+    TResult? Function(ErrorBookmarksState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,18 @@ mixin _$BookmarksState {
 abstract class $BookmarksStateCopyWith<$Res> {
   factory $BookmarksStateCopyWith(
           BookmarksState value, $Res Function(BookmarksState) then) =
-      _$BookmarksStateCopyWithImpl<$Res>;
+      _$BookmarksStateCopyWithImpl<$Res, BookmarksState>;
 }
 
 /// @nodoc
-class _$BookmarksStateCopyWithImpl<$Res>
+class _$BookmarksStateCopyWithImpl<$Res, $Val extends BookmarksState>
     implements $BookmarksStateCopyWith<$Res> {
   _$BookmarksStateCopyWithImpl(this._value, this._then);
 
-  final BookmarksState _value;
   // ignore: unused_field
-  final $Res Function(BookmarksState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -94,14 +95,11 @@ abstract class _$$InitialBookmarksStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialBookmarksStateCopyWithImpl<$Res>
-    extends _$BookmarksStateCopyWithImpl<$Res>
+    extends _$BookmarksStateCopyWithImpl<$Res, _$InitialBookmarksState>
     implements _$$InitialBookmarksStateCopyWith<$Res> {
   __$$InitialBookmarksStateCopyWithImpl(_$InitialBookmarksState _value,
       $Res Function(_$InitialBookmarksState) _then)
-      : super(_value, (v) => _then(v as _$InitialBookmarksState));
-
-  @override
-  _$InitialBookmarksState get _value => super._value as _$InitialBookmarksState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -145,10 +143,10 @@ class _$InitialBookmarksState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Tournament> data)? data,
-    TResult Function()? loading,
-    TResult Function(Exception exception)? error,
+    TResult? Function()? initial,
+    TResult? Function(List<Tournament> data)? data,
+    TResult? Function()? loading,
+    TResult? Function(Exception exception)? error,
   }) {
     return initial?.call();
   }
@@ -182,10 +180,10 @@ class _$InitialBookmarksState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialBookmarksState value)? initial,
-    TResult Function(DataBookmarksState value)? data,
-    TResult Function(LoadingBookmarksState value)? loading,
-    TResult Function(ErrorBookmarksState value)? error,
+    TResult? Function(InitialBookmarksState value)? initial,
+    TResult? Function(DataBookmarksState value)? data,
+    TResult? Function(LoadingBookmarksState value)? loading,
+    TResult? Function(ErrorBookmarksState value)? error,
   }) {
     return initial?.call(this);
   }
@@ -215,26 +213,25 @@ abstract class _$$DataBookmarksStateCopyWith<$Res> {
   factory _$$DataBookmarksStateCopyWith(_$DataBookmarksState value,
           $Res Function(_$DataBookmarksState) then) =
       __$$DataBookmarksStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Tournament> data});
 }
 
 /// @nodoc
 class __$$DataBookmarksStateCopyWithImpl<$Res>
-    extends _$BookmarksStateCopyWithImpl<$Res>
+    extends _$BookmarksStateCopyWithImpl<$Res, _$DataBookmarksState>
     implements _$$DataBookmarksStateCopyWith<$Res> {
   __$$DataBookmarksStateCopyWithImpl(
       _$DataBookmarksState _value, $Res Function(_$DataBookmarksState) _then)
-      : super(_value, (v) => _then(v as _$DataBookmarksState));
+      : super(_value, _then);
 
-  @override
-  _$DataBookmarksState get _value => super._value as _$DataBookmarksState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$DataBookmarksState(
-      data: data == freezed
+      data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Tournament>,
@@ -253,6 +250,7 @@ class _$DataBookmarksState
   final List<Tournament> _data;
   @override
   List<Tournament> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -284,6 +282,7 @@ class _$DataBookmarksState
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataBookmarksStateCopyWith<_$DataBookmarksState> get copyWith =>
       __$$DataBookmarksStateCopyWithImpl<_$DataBookmarksState>(
           this, _$identity);
@@ -302,10 +301,10 @@ class _$DataBookmarksState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Tournament> data)? data,
-    TResult Function()? loading,
-    TResult Function(Exception exception)? error,
+    TResult? Function()? initial,
+    TResult? Function(List<Tournament> data)? data,
+    TResult? Function()? loading,
+    TResult? Function(Exception exception)? error,
   }) {
     return data?.call(this.data);
   }
@@ -339,10 +338,10 @@ class _$DataBookmarksState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialBookmarksState value)? initial,
-    TResult Function(DataBookmarksState value)? data,
-    TResult Function(LoadingBookmarksState value)? loading,
-    TResult Function(ErrorBookmarksState value)? error,
+    TResult? Function(InitialBookmarksState value)? initial,
+    TResult? Function(DataBookmarksState value)? data,
+    TResult? Function(LoadingBookmarksState value)? loading,
+    TResult? Function(ErrorBookmarksState value)? error,
   }) {
     return data?.call(this);
   }
@@ -382,14 +381,11 @@ abstract class _$$LoadingBookmarksStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingBookmarksStateCopyWithImpl<$Res>
-    extends _$BookmarksStateCopyWithImpl<$Res>
+    extends _$BookmarksStateCopyWithImpl<$Res, _$LoadingBookmarksState>
     implements _$$LoadingBookmarksStateCopyWith<$Res> {
   __$$LoadingBookmarksStateCopyWithImpl(_$LoadingBookmarksState _value,
       $Res Function(_$LoadingBookmarksState) _then)
-      : super(_value, (v) => _then(v as _$LoadingBookmarksState));
-
-  @override
-  _$LoadingBookmarksState get _value => super._value as _$LoadingBookmarksState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -433,10 +429,10 @@ class _$LoadingBookmarksState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Tournament> data)? data,
-    TResult Function()? loading,
-    TResult Function(Exception exception)? error,
+    TResult? Function()? initial,
+    TResult? Function(List<Tournament> data)? data,
+    TResult? Function()? loading,
+    TResult? Function(Exception exception)? error,
   }) {
     return loading?.call();
   }
@@ -470,10 +466,10 @@ class _$LoadingBookmarksState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialBookmarksState value)? initial,
-    TResult Function(DataBookmarksState value)? data,
-    TResult Function(LoadingBookmarksState value)? loading,
-    TResult Function(ErrorBookmarksState value)? error,
+    TResult? Function(InitialBookmarksState value)? initial,
+    TResult? Function(DataBookmarksState value)? data,
+    TResult? Function(LoadingBookmarksState value)? loading,
+    TResult? Function(ErrorBookmarksState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -503,26 +499,25 @@ abstract class _$$ErrorBookmarksStateCopyWith<$Res> {
   factory _$$ErrorBookmarksStateCopyWith(_$ErrorBookmarksState value,
           $Res Function(_$ErrorBookmarksState) then) =
       __$$ErrorBookmarksStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({Exception exception});
 }
 
 /// @nodoc
 class __$$ErrorBookmarksStateCopyWithImpl<$Res>
-    extends _$BookmarksStateCopyWithImpl<$Res>
+    extends _$BookmarksStateCopyWithImpl<$Res, _$ErrorBookmarksState>
     implements _$$ErrorBookmarksStateCopyWith<$Res> {
   __$$ErrorBookmarksStateCopyWithImpl(
       _$ErrorBookmarksState _value, $Res Function(_$ErrorBookmarksState) _then)
-      : super(_value, (v) => _then(v as _$ErrorBookmarksState));
+      : super(_value, _then);
 
-  @override
-  _$ErrorBookmarksState get _value => super._value as _$ErrorBookmarksState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? exception = freezed,
+    Object? exception = null,
   }) {
     return _then(_$ErrorBookmarksState(
-      exception: exception == freezed
+      exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception,
@@ -558,15 +553,16 @@ class _$ErrorBookmarksState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorBookmarksState &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
+  int get hashCode => Object.hash(runtimeType, exception);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ErrorBookmarksStateCopyWith<_$ErrorBookmarksState> get copyWith =>
       __$$ErrorBookmarksStateCopyWithImpl<_$ErrorBookmarksState>(
           this, _$identity);
@@ -585,10 +581,10 @@ class _$ErrorBookmarksState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Tournament> data)? data,
-    TResult Function()? loading,
-    TResult Function(Exception exception)? error,
+    TResult? Function()? initial,
+    TResult? Function(List<Tournament> data)? data,
+    TResult? Function()? loading,
+    TResult? Function(Exception exception)? error,
   }) {
     return error?.call(exception);
   }
@@ -622,10 +618,10 @@ class _$ErrorBookmarksState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialBookmarksState value)? initial,
-    TResult Function(DataBookmarksState value)? data,
-    TResult Function(LoadingBookmarksState value)? loading,
-    TResult Function(ErrorBookmarksState value)? error,
+    TResult? Function(InitialBookmarksState value)? initial,
+    TResult? Function(DataBookmarksState value)? data,
+    TResult? Function(LoadingBookmarksState value)? loading,
+    TResult? Function(ErrorBookmarksState value)? error,
   }) {
     return error?.call(this);
   }

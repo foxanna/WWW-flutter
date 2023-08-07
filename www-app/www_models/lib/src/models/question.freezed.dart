@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'question.dart';
 
@@ -34,7 +34,8 @@ mixin _$Question {
 /// @nodoc
 abstract class $QuestionCopyWith<$Res> {
   factory $QuestionCopyWith(Question value, $Res Function(Question) then) =
-      _$QuestionCopyWithImpl<$Res>;
+      _$QuestionCopyWithImpl<$Res, Question>;
+  @useResult
   $Res call(
       {String? id,
       String? display,
@@ -50,69 +51,73 @@ abstract class $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
+class _$QuestionCopyWithImpl<$Res, $Val extends Question>
+    implements $QuestionCopyWith<$Res> {
   _$QuestionCopyWithImpl(this._value, this._then);
 
-  final Question _value;
   // ignore: unused_field
-  final $Res Function(Question) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? display = freezed,
-    Object? question = freezed,
-    Object? answer = freezed,
-    Object? passCriteria = freezed,
-    Object? comments = freezed,
+    Object? question = null,
+    Object? answer = null,
+    Object? passCriteria = null,
+    Object? comments = null,
     Object? authors = freezed,
     Object? sources = freezed,
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      display: display == freezed
+      display: freezed == display
           ? _value.display
           : display // ignore: cast_nullable_to_non_nullable
               as String?,
-      question: question == freezed
+      question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
-      answer: answer == freezed
+      answer: null == answer
           ? _value.answer
           : answer // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
-      passCriteria: passCriteria == freezed
+      passCriteria: null == passCriteria
           ? _value.passCriteria
           : passCriteria // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
-      comments: comments == freezed
+      comments: null == comments
           ? _value.comments
           : comments // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
-      authors: authors == freezed
+      authors: freezed == authors
           ? _value.authors
           : authors // ignore: cast_nullable_to_non_nullable
               as String?,
-      sources: sources == freezed
+      sources: freezed == sources
           ? _value.sources
           : sources // ignore: cast_nullable_to_non_nullable
               as String?,
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as QuestionInfo,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $QuestionInfoCopyWith<$Res> get info {
     return $QuestionInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
+      return _then(_value.copyWith(info: value) as $Val);
     });
   }
 }
@@ -123,6 +128,7 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
           _$_Question value, $Res Function(_$_Question) then) =
       __$$_QuestionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       String? display,
@@ -139,61 +145,60 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
+class __$$_QuestionCopyWithImpl<$Res>
+    extends _$QuestionCopyWithImpl<$Res, _$_Question>
     implements _$$_QuestionCopyWith<$Res> {
   __$$_QuestionCopyWithImpl(
       _$_Question _value, $Res Function(_$_Question) _then)
-      : super(_value, (v) => _then(v as _$_Question));
+      : super(_value, _then);
 
-  @override
-  _$_Question get _value => super._value as _$_Question;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? display = freezed,
-    Object? question = freezed,
-    Object? answer = freezed,
-    Object? passCriteria = freezed,
-    Object? comments = freezed,
+    Object? question = null,
+    Object? answer = null,
+    Object? passCriteria = null,
+    Object? comments = null,
     Object? authors = freezed,
     Object? sources = freezed,
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$_Question(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      display: display == freezed
+      display: freezed == display
           ? _value.display
           : display // ignore: cast_nullable_to_non_nullable
               as String?,
-      question: question == freezed
+      question: null == question
           ? _value._question
           : question // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
-      answer: answer == freezed
+      answer: null == answer
           ? _value._answer
           : answer // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
-      passCriteria: passCriteria == freezed
+      passCriteria: null == passCriteria
           ? _value._passCriteria
           : passCriteria // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
-      comments: comments == freezed
+      comments: null == comments
           ? _value._comments
           : comments // ignore: cast_nullable_to_non_nullable
               as List<QuestionSection>,
-      authors: authors == freezed
+      authors: freezed == authors
           ? _value.authors
           : authors // ignore: cast_nullable_to_non_nullable
               as String?,
-      sources: sources == freezed
+      sources: freezed == sources
           ? _value.sources
           : sources // ignore: cast_nullable_to_non_nullable
               as String?,
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as QuestionInfo,
@@ -227,6 +232,7 @@ class _$_Question implements _Question {
   @override
   @JsonKey()
   List<QuestionSection> get question {
+    if (_question is EqualUnmodifiableListView) return _question;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_question);
   }
@@ -235,6 +241,7 @@ class _$_Question implements _Question {
   @override
   @JsonKey()
   List<QuestionSection> get answer {
+    if (_answer is EqualUnmodifiableListView) return _answer;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_answer);
   }
@@ -243,6 +250,7 @@ class _$_Question implements _Question {
   @override
   @JsonKey()
   List<QuestionSection> get passCriteria {
+    if (_passCriteria is EqualUnmodifiableListView) return _passCriteria;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_passCriteria);
   }
@@ -251,6 +259,7 @@ class _$_Question implements _Question {
   @override
   @JsonKey()
   List<QuestionSection> get comments {
+    if (_comments is EqualUnmodifiableListView) return _comments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_comments);
   }
@@ -273,33 +282,34 @@ class _$_Question implements _Question {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Question &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.display, display) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.display, display) || other.display == display) &&
             const DeepCollectionEquality().equals(other._question, _question) &&
             const DeepCollectionEquality().equals(other._answer, _answer) &&
             const DeepCollectionEquality()
                 .equals(other._passCriteria, _passCriteria) &&
             const DeepCollectionEquality().equals(other._comments, _comments) &&
-            const DeepCollectionEquality().equals(other.authors, authors) &&
-            const DeepCollectionEquality().equals(other.sources, sources) &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.authors, authors) || other.authors == authors) &&
+            (identical(other.sources, sources) || other.sources == sources) &&
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(display),
+      id,
+      display,
       const DeepCollectionEquality().hash(_question),
       const DeepCollectionEquality().hash(_answer),
       const DeepCollectionEquality().hash(_passCriteria),
       const DeepCollectionEquality().hash(_comments),
-      const DeepCollectionEquality().hash(authors),
-      const DeepCollectionEquality().hash(sources),
-      const DeepCollectionEquality().hash(info));
+      authors,
+      sources,
+      info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionCopyWith<_$_Question> get copyWith =>
       __$$_QuestionCopyWithImpl<_$_Question>(this, _$identity);
 }

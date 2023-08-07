@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'navigation_actions.dart';
 
@@ -24,8 +24,8 @@ mixin _$UserActionNavigation {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String imageUrl)? image,
-    TResult Function()? about,
+    TResult? Function(String imageUrl)? image,
+    TResult? Function()? about,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$UserActionNavigation {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ImageNavigationUserAction value)? image,
-    TResult Function(AboutNavigationUserAction value)? about,
+    TResult? Function(ImageNavigationUserAction value)? image,
+    TResult? Function(AboutNavigationUserAction value)? about,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,17 +60,19 @@ mixin _$UserActionNavigation {
 abstract class $UserActionNavigationCopyWith<$Res> {
   factory $UserActionNavigationCopyWith(UserActionNavigation value,
           $Res Function(UserActionNavigation) then) =
-      _$UserActionNavigationCopyWithImpl<$Res>;
+      _$UserActionNavigationCopyWithImpl<$Res, UserActionNavigation>;
 }
 
 /// @nodoc
-class _$UserActionNavigationCopyWithImpl<$Res>
+class _$UserActionNavigationCopyWithImpl<$Res,
+        $Val extends UserActionNavigation>
     implements $UserActionNavigationCopyWith<$Res> {
   _$UserActionNavigationCopyWithImpl(this._value, this._then);
 
-  final UserActionNavigation _value;
   // ignore: unused_field
-  final $Res Function(UserActionNavigation) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -79,27 +81,26 @@ abstract class _$$ImageNavigationUserActionCopyWith<$Res> {
           _$ImageNavigationUserAction value,
           $Res Function(_$ImageNavigationUserAction) then) =
       __$$ImageNavigationUserActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({String imageUrl});
 }
 
 /// @nodoc
 class __$$ImageNavigationUserActionCopyWithImpl<$Res>
-    extends _$UserActionNavigationCopyWithImpl<$Res>
+    extends _$UserActionNavigationCopyWithImpl<$Res,
+        _$ImageNavigationUserAction>
     implements _$$ImageNavigationUserActionCopyWith<$Res> {
   __$$ImageNavigationUserActionCopyWithImpl(_$ImageNavigationUserAction _value,
       $Res Function(_$ImageNavigationUserAction) _then)
-      : super(_value, (v) => _then(v as _$ImageNavigationUserAction));
+      : super(_value, _then);
 
-  @override
-  _$ImageNavigationUserAction get _value =>
-      super._value as _$ImageNavigationUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? imageUrl = freezed,
+    Object? imageUrl = null,
   }) {
     return _then(_$ImageNavigationUserAction(
-      imageUrl: imageUrl == freezed
+      imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
@@ -135,15 +136,16 @@ class _$ImageNavigationUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ImageNavigationUserAction &&
-            const DeepCollectionEquality().equals(other.imageUrl, imageUrl));
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(imageUrl));
+  int get hashCode => Object.hash(runtimeType, imageUrl);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ImageNavigationUserActionCopyWith<_$ImageNavigationUserAction>
       get copyWith => __$$ImageNavigationUserActionCopyWithImpl<
           _$ImageNavigationUserAction>(this, _$identity);
@@ -160,8 +162,8 @@ class _$ImageNavigationUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String imageUrl)? image,
-    TResult Function()? about,
+    TResult? Function(String imageUrl)? image,
+    TResult? Function()? about,
   }) {
     return image?.call(imageUrl);
   }
@@ -191,8 +193,8 @@ class _$ImageNavigationUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ImageNavigationUserAction value)? image,
-    TResult Function(AboutNavigationUserAction value)? about,
+    TResult? Function(ImageNavigationUserAction value)? image,
+    TResult? Function(AboutNavigationUserAction value)? about,
   }) {
     return image?.call(this);
   }
@@ -231,15 +233,12 @@ abstract class _$$AboutNavigationUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$AboutNavigationUserActionCopyWithImpl<$Res>
-    extends _$UserActionNavigationCopyWithImpl<$Res>
+    extends _$UserActionNavigationCopyWithImpl<$Res,
+        _$AboutNavigationUserAction>
     implements _$$AboutNavigationUserActionCopyWith<$Res> {
   __$$AboutNavigationUserActionCopyWithImpl(_$AboutNavigationUserAction _value,
       $Res Function(_$AboutNavigationUserAction) _then)
-      : super(_value, (v) => _then(v as _$AboutNavigationUserAction));
-
-  @override
-  _$AboutNavigationUserAction get _value =>
-      super._value as _$AboutNavigationUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -282,8 +281,8 @@ class _$AboutNavigationUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String imageUrl)? image,
-    TResult Function()? about,
+    TResult? Function(String imageUrl)? image,
+    TResult? Function()? about,
   }) {
     return about?.call();
   }
@@ -313,8 +312,8 @@ class _$AboutNavigationUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ImageNavigationUserAction value)? image,
-    TResult Function(AboutNavigationUserAction value)? about,
+    TResult? Function(ImageNavigationUserAction value)? image,
+    TResult? Function(AboutNavigationUserAction value)? about,
   }) {
     return about?.call(this);
   }
@@ -352,13 +351,13 @@ mixin _$SystemActionNavigation {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tournament,
-    TResult Function(TournamentsTreeInfo info)? tree,
-    TResult Function()? questions,
-    TResult Function()? search,
-    TResult Function()? latest,
-    TResult Function()? settings,
-    TResult Function()? bookmarks,
+    TResult? Function()? tournament,
+    TResult? Function(TournamentsTreeInfo info)? tree,
+    TResult? Function()? questions,
+    TResult? Function()? search,
+    TResult? Function()? latest,
+    TResult? Function()? settings,
+    TResult? Function()? bookmarks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -387,13 +386,13 @@ mixin _$SystemActionNavigation {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TournamentNavigationSystemAction value)? tournament,
-    TResult Function(TreeNavigationSystemAction value)? tree,
-    TResult Function(QuestionsNavigationSystemAction value)? questions,
-    TResult Function(SearchNavigationSystemAction value)? search,
-    TResult Function(LatestNavigationSystemAction value)? latest,
-    TResult Function(SettingsNavigationSystemAction value)? settings,
-    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    TResult? Function(TournamentNavigationSystemAction value)? tournament,
+    TResult? Function(TreeNavigationSystemAction value)? tree,
+    TResult? Function(QuestionsNavigationSystemAction value)? questions,
+    TResult? Function(SearchNavigationSystemAction value)? search,
+    TResult? Function(LatestNavigationSystemAction value)? latest,
+    TResult? Function(SettingsNavigationSystemAction value)? settings,
+    TResult? Function(BookmarksNavigationSystemAction value)? bookmarks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -414,17 +413,19 @@ mixin _$SystemActionNavigation {
 abstract class $SystemActionNavigationCopyWith<$Res> {
   factory $SystemActionNavigationCopyWith(SystemActionNavigation value,
           $Res Function(SystemActionNavigation) then) =
-      _$SystemActionNavigationCopyWithImpl<$Res>;
+      _$SystemActionNavigationCopyWithImpl<$Res, SystemActionNavigation>;
 }
 
 /// @nodoc
-class _$SystemActionNavigationCopyWithImpl<$Res>
+class _$SystemActionNavigationCopyWithImpl<$Res,
+        $Val extends SystemActionNavigation>
     implements $SystemActionNavigationCopyWith<$Res> {
   _$SystemActionNavigationCopyWithImpl(this._value, this._then);
 
-  final SystemActionNavigation _value;
   // ignore: unused_field
-  final $Res Function(SystemActionNavigation) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -437,16 +438,13 @@ abstract class _$$TournamentNavigationSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$TournamentNavigationSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res,
+        _$TournamentNavigationSystemAction>
     implements _$$TournamentNavigationSystemActionCopyWith<$Res> {
   __$$TournamentNavigationSystemActionCopyWithImpl(
       _$TournamentNavigationSystemAction _value,
       $Res Function(_$TournamentNavigationSystemAction) _then)
-      : super(_value, (v) => _then(v as _$TournamentNavigationSystemAction));
-
-  @override
-  _$TournamentNavigationSystemAction get _value =>
-      super._value as _$TournamentNavigationSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -495,13 +493,13 @@ class _$TournamentNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tournament,
-    TResult Function(TournamentsTreeInfo info)? tree,
-    TResult Function()? questions,
-    TResult Function()? search,
-    TResult Function()? latest,
-    TResult Function()? settings,
-    TResult Function()? bookmarks,
+    TResult? Function()? tournament,
+    TResult? Function(TournamentsTreeInfo info)? tree,
+    TResult? Function()? questions,
+    TResult? Function()? search,
+    TResult? Function()? latest,
+    TResult? Function()? settings,
+    TResult? Function()? bookmarks,
   }) {
     return tournament?.call();
   }
@@ -542,13 +540,13 @@ class _$TournamentNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TournamentNavigationSystemAction value)? tournament,
-    TResult Function(TreeNavigationSystemAction value)? tree,
-    TResult Function(QuestionsNavigationSystemAction value)? questions,
-    TResult Function(SearchNavigationSystemAction value)? search,
-    TResult Function(LatestNavigationSystemAction value)? latest,
-    TResult Function(SettingsNavigationSystemAction value)? settings,
-    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    TResult? Function(TournamentNavigationSystemAction value)? tournament,
+    TResult? Function(TreeNavigationSystemAction value)? tree,
+    TResult? Function(QuestionsNavigationSystemAction value)? questions,
+    TResult? Function(SearchNavigationSystemAction value)? search,
+    TResult? Function(LatestNavigationSystemAction value)? latest,
+    TResult? Function(SettingsNavigationSystemAction value)? settings,
+    TResult? Function(BookmarksNavigationSystemAction value)? bookmarks,
   }) {
     return tournament?.call(this);
   }
@@ -584,6 +582,7 @@ abstract class _$$TreeNavigationSystemActionCopyWith<$Res> {
           _$TreeNavigationSystemAction value,
           $Res Function(_$TreeNavigationSystemAction) then) =
       __$$TreeNavigationSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentsTreeInfo info});
 
   $TournamentsTreeInfoCopyWith<$Res> get info;
@@ -591,23 +590,21 @@ abstract class _$$TreeNavigationSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$TreeNavigationSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res,
+        _$TreeNavigationSystemAction>
     implements _$$TreeNavigationSystemActionCopyWith<$Res> {
   __$$TreeNavigationSystemActionCopyWithImpl(
       _$TreeNavigationSystemAction _value,
       $Res Function(_$TreeNavigationSystemAction) _then)
-      : super(_value, (v) => _then(v as _$TreeNavigationSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$TreeNavigationSystemAction get _value =>
-      super._value as _$TreeNavigationSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$TreeNavigationSystemAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentsTreeInfo,
@@ -615,6 +612,7 @@ class __$$TreeNavigationSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentsTreeInfoCopyWith<$Res> get info {
     return $TournamentsTreeInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -650,15 +648,15 @@ class _$TreeNavigationSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TreeNavigationSystemAction &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TreeNavigationSystemActionCopyWith<_$TreeNavigationSystemAction>
       get copyWith => __$$TreeNavigationSystemActionCopyWithImpl<
           _$TreeNavigationSystemAction>(this, _$identity);
@@ -680,13 +678,13 @@ class _$TreeNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tournament,
-    TResult Function(TournamentsTreeInfo info)? tree,
-    TResult Function()? questions,
-    TResult Function()? search,
-    TResult Function()? latest,
-    TResult Function()? settings,
-    TResult Function()? bookmarks,
+    TResult? Function()? tournament,
+    TResult? Function(TournamentsTreeInfo info)? tree,
+    TResult? Function()? questions,
+    TResult? Function()? search,
+    TResult? Function()? latest,
+    TResult? Function()? settings,
+    TResult? Function()? bookmarks,
   }) {
     return tree?.call(info);
   }
@@ -727,13 +725,13 @@ class _$TreeNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TournamentNavigationSystemAction value)? tournament,
-    TResult Function(TreeNavigationSystemAction value)? tree,
-    TResult Function(QuestionsNavigationSystemAction value)? questions,
-    TResult Function(SearchNavigationSystemAction value)? search,
-    TResult Function(LatestNavigationSystemAction value)? latest,
-    TResult Function(SettingsNavigationSystemAction value)? settings,
-    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    TResult? Function(TournamentNavigationSystemAction value)? tournament,
+    TResult? Function(TreeNavigationSystemAction value)? tree,
+    TResult? Function(QuestionsNavigationSystemAction value)? questions,
+    TResult? Function(SearchNavigationSystemAction value)? search,
+    TResult? Function(LatestNavigationSystemAction value)? latest,
+    TResult? Function(SettingsNavigationSystemAction value)? settings,
+    TResult? Function(BookmarksNavigationSystemAction value)? bookmarks,
   }) {
     return tree?.call(this);
   }
@@ -777,16 +775,13 @@ abstract class _$$QuestionsNavigationSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$QuestionsNavigationSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res,
+        _$QuestionsNavigationSystemAction>
     implements _$$QuestionsNavigationSystemActionCopyWith<$Res> {
   __$$QuestionsNavigationSystemActionCopyWithImpl(
       _$QuestionsNavigationSystemAction _value,
       $Res Function(_$QuestionsNavigationSystemAction) _then)
-      : super(_value, (v) => _then(v as _$QuestionsNavigationSystemAction));
-
-  @override
-  _$QuestionsNavigationSystemAction get _value =>
-      super._value as _$QuestionsNavigationSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -835,13 +830,13 @@ class _$QuestionsNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tournament,
-    TResult Function(TournamentsTreeInfo info)? tree,
-    TResult Function()? questions,
-    TResult Function()? search,
-    TResult Function()? latest,
-    TResult Function()? settings,
-    TResult Function()? bookmarks,
+    TResult? Function()? tournament,
+    TResult? Function(TournamentsTreeInfo info)? tree,
+    TResult? Function()? questions,
+    TResult? Function()? search,
+    TResult? Function()? latest,
+    TResult? Function()? settings,
+    TResult? Function()? bookmarks,
   }) {
     return questions?.call();
   }
@@ -882,13 +877,13 @@ class _$QuestionsNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TournamentNavigationSystemAction value)? tournament,
-    TResult Function(TreeNavigationSystemAction value)? tree,
-    TResult Function(QuestionsNavigationSystemAction value)? questions,
-    TResult Function(SearchNavigationSystemAction value)? search,
-    TResult Function(LatestNavigationSystemAction value)? latest,
-    TResult Function(SettingsNavigationSystemAction value)? settings,
-    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    TResult? Function(TournamentNavigationSystemAction value)? tournament,
+    TResult? Function(TreeNavigationSystemAction value)? tree,
+    TResult? Function(QuestionsNavigationSystemAction value)? questions,
+    TResult? Function(SearchNavigationSystemAction value)? search,
+    TResult? Function(LatestNavigationSystemAction value)? latest,
+    TResult? Function(SettingsNavigationSystemAction value)? settings,
+    TResult? Function(BookmarksNavigationSystemAction value)? bookmarks,
   }) {
     return questions?.call(this);
   }
@@ -928,16 +923,13 @@ abstract class _$$SearchNavigationSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$SearchNavigationSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res,
+        _$SearchNavigationSystemAction>
     implements _$$SearchNavigationSystemActionCopyWith<$Res> {
   __$$SearchNavigationSystemActionCopyWithImpl(
       _$SearchNavigationSystemAction _value,
       $Res Function(_$SearchNavigationSystemAction) _then)
-      : super(_value, (v) => _then(v as _$SearchNavigationSystemAction));
-
-  @override
-  _$SearchNavigationSystemAction get _value =>
-      super._value as _$SearchNavigationSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -986,13 +978,13 @@ class _$SearchNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tournament,
-    TResult Function(TournamentsTreeInfo info)? tree,
-    TResult Function()? questions,
-    TResult Function()? search,
-    TResult Function()? latest,
-    TResult Function()? settings,
-    TResult Function()? bookmarks,
+    TResult? Function()? tournament,
+    TResult? Function(TournamentsTreeInfo info)? tree,
+    TResult? Function()? questions,
+    TResult? Function()? search,
+    TResult? Function()? latest,
+    TResult? Function()? settings,
+    TResult? Function()? bookmarks,
   }) {
     return search?.call();
   }
@@ -1033,13 +1025,13 @@ class _$SearchNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TournamentNavigationSystemAction value)? tournament,
-    TResult Function(TreeNavigationSystemAction value)? tree,
-    TResult Function(QuestionsNavigationSystemAction value)? questions,
-    TResult Function(SearchNavigationSystemAction value)? search,
-    TResult Function(LatestNavigationSystemAction value)? latest,
-    TResult Function(SettingsNavigationSystemAction value)? settings,
-    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    TResult? Function(TournamentNavigationSystemAction value)? tournament,
+    TResult? Function(TreeNavigationSystemAction value)? tree,
+    TResult? Function(QuestionsNavigationSystemAction value)? questions,
+    TResult? Function(SearchNavigationSystemAction value)? search,
+    TResult? Function(LatestNavigationSystemAction value)? latest,
+    TResult? Function(SettingsNavigationSystemAction value)? settings,
+    TResult? Function(BookmarksNavigationSystemAction value)? bookmarks,
   }) {
     return search?.call(this);
   }
@@ -1077,16 +1069,13 @@ abstract class _$$LatestNavigationSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$LatestNavigationSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res,
+        _$LatestNavigationSystemAction>
     implements _$$LatestNavigationSystemActionCopyWith<$Res> {
   __$$LatestNavigationSystemActionCopyWithImpl(
       _$LatestNavigationSystemAction _value,
       $Res Function(_$LatestNavigationSystemAction) _then)
-      : super(_value, (v) => _then(v as _$LatestNavigationSystemAction));
-
-  @override
-  _$LatestNavigationSystemAction get _value =>
-      super._value as _$LatestNavigationSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1135,13 +1124,13 @@ class _$LatestNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tournament,
-    TResult Function(TournamentsTreeInfo info)? tree,
-    TResult Function()? questions,
-    TResult Function()? search,
-    TResult Function()? latest,
-    TResult Function()? settings,
-    TResult Function()? bookmarks,
+    TResult? Function()? tournament,
+    TResult? Function(TournamentsTreeInfo info)? tree,
+    TResult? Function()? questions,
+    TResult? Function()? search,
+    TResult? Function()? latest,
+    TResult? Function()? settings,
+    TResult? Function()? bookmarks,
   }) {
     return latest?.call();
   }
@@ -1182,13 +1171,13 @@ class _$LatestNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TournamentNavigationSystemAction value)? tournament,
-    TResult Function(TreeNavigationSystemAction value)? tree,
-    TResult Function(QuestionsNavigationSystemAction value)? questions,
-    TResult Function(SearchNavigationSystemAction value)? search,
-    TResult Function(LatestNavigationSystemAction value)? latest,
-    TResult Function(SettingsNavigationSystemAction value)? settings,
-    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    TResult? Function(TournamentNavigationSystemAction value)? tournament,
+    TResult? Function(TreeNavigationSystemAction value)? tree,
+    TResult? Function(QuestionsNavigationSystemAction value)? questions,
+    TResult? Function(SearchNavigationSystemAction value)? search,
+    TResult? Function(LatestNavigationSystemAction value)? latest,
+    TResult? Function(SettingsNavigationSystemAction value)? settings,
+    TResult? Function(BookmarksNavigationSystemAction value)? bookmarks,
   }) {
     return latest?.call(this);
   }
@@ -1226,16 +1215,13 @@ abstract class _$$SettingsNavigationSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$SettingsNavigationSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res,
+        _$SettingsNavigationSystemAction>
     implements _$$SettingsNavigationSystemActionCopyWith<$Res> {
   __$$SettingsNavigationSystemActionCopyWithImpl(
       _$SettingsNavigationSystemAction _value,
       $Res Function(_$SettingsNavigationSystemAction) _then)
-      : super(_value, (v) => _then(v as _$SettingsNavigationSystemAction));
-
-  @override
-  _$SettingsNavigationSystemAction get _value =>
-      super._value as _$SettingsNavigationSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1284,13 +1270,13 @@ class _$SettingsNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tournament,
-    TResult Function(TournamentsTreeInfo info)? tree,
-    TResult Function()? questions,
-    TResult Function()? search,
-    TResult Function()? latest,
-    TResult Function()? settings,
-    TResult Function()? bookmarks,
+    TResult? Function()? tournament,
+    TResult? Function(TournamentsTreeInfo info)? tree,
+    TResult? Function()? questions,
+    TResult? Function()? search,
+    TResult? Function()? latest,
+    TResult? Function()? settings,
+    TResult? Function()? bookmarks,
   }) {
     return settings?.call();
   }
@@ -1331,13 +1317,13 @@ class _$SettingsNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TournamentNavigationSystemAction value)? tournament,
-    TResult Function(TreeNavigationSystemAction value)? tree,
-    TResult Function(QuestionsNavigationSystemAction value)? questions,
-    TResult Function(SearchNavigationSystemAction value)? search,
-    TResult Function(LatestNavigationSystemAction value)? latest,
-    TResult Function(SettingsNavigationSystemAction value)? settings,
-    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    TResult? Function(TournamentNavigationSystemAction value)? tournament,
+    TResult? Function(TreeNavigationSystemAction value)? tree,
+    TResult? Function(QuestionsNavigationSystemAction value)? questions,
+    TResult? Function(SearchNavigationSystemAction value)? search,
+    TResult? Function(LatestNavigationSystemAction value)? latest,
+    TResult? Function(SettingsNavigationSystemAction value)? settings,
+    TResult? Function(BookmarksNavigationSystemAction value)? bookmarks,
   }) {
     return settings?.call(this);
   }
@@ -1377,16 +1363,13 @@ abstract class _$$BookmarksNavigationSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$BookmarksNavigationSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionNavigationCopyWithImpl<$Res>
+    extends _$SystemActionNavigationCopyWithImpl<$Res,
+        _$BookmarksNavigationSystemAction>
     implements _$$BookmarksNavigationSystemActionCopyWith<$Res> {
   __$$BookmarksNavigationSystemActionCopyWithImpl(
       _$BookmarksNavigationSystemAction _value,
       $Res Function(_$BookmarksNavigationSystemAction) _then)
-      : super(_value, (v) => _then(v as _$BookmarksNavigationSystemAction));
-
-  @override
-  _$BookmarksNavigationSystemAction get _value =>
-      super._value as _$BookmarksNavigationSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1435,13 +1418,13 @@ class _$BookmarksNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tournament,
-    TResult Function(TournamentsTreeInfo info)? tree,
-    TResult Function()? questions,
-    TResult Function()? search,
-    TResult Function()? latest,
-    TResult Function()? settings,
-    TResult Function()? bookmarks,
+    TResult? Function()? tournament,
+    TResult? Function(TournamentsTreeInfo info)? tree,
+    TResult? Function()? questions,
+    TResult? Function()? search,
+    TResult? Function()? latest,
+    TResult? Function()? settings,
+    TResult? Function()? bookmarks,
   }) {
     return bookmarks?.call();
   }
@@ -1482,13 +1465,13 @@ class _$BookmarksNavigationSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TournamentNavigationSystemAction value)? tournament,
-    TResult Function(TreeNavigationSystemAction value)? tree,
-    TResult Function(QuestionsNavigationSystemAction value)? questions,
-    TResult Function(SearchNavigationSystemAction value)? search,
-    TResult Function(LatestNavigationSystemAction value)? latest,
-    TResult Function(SettingsNavigationSystemAction value)? settings,
-    TResult Function(BookmarksNavigationSystemAction value)? bookmarks,
+    TResult? Function(TournamentNavigationSystemAction value)? tournament,
+    TResult? Function(TreeNavigationSystemAction value)? tree,
+    TResult? Function(QuestionsNavigationSystemAction value)? questions,
+    TResult? Function(SearchNavigationSystemAction value)? search,
+    TResult? Function(LatestNavigationSystemAction value)? latest,
+    TResult? Function(SettingsNavigationSystemAction value)? settings,
+    TResult? Function(BookmarksNavigationSystemAction value)? bookmarks,
   }) {
     return bookmarks?.call(this);
   }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tournament_actions.dart';
 
@@ -28,11 +28,11 @@ mixin _$UserActionTournament {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? open,
-    TResult Function()? close,
-    TResult Function(TournamentInfo info)? load,
-    TResult Function()? addToBookmarks,
-    TResult Function()? removeFromBookmarks,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? open,
+    TResult? Function()? close,
+    TResult? Function(TournamentInfo info)? load,
+    TResult? Function()? addToBookmarks,
+    TResult? Function()? removeFromBookmarks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,11 +58,11 @@ mixin _$UserActionTournament {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OpenTournamentUserAction value)? open,
-    TResult Function(CloseTournamentUserAction value)? close,
-    TResult Function(LoadTournamentUserAction value)? load,
-    TResult Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
-    TResult Function(RemoveFromBookmarksTournamentUserAction value)?
+    TResult? Function(OpenTournamentUserAction value)? open,
+    TResult? Function(CloseTournamentUserAction value)? close,
+    TResult? Function(LoadTournamentUserAction value)? load,
+    TResult? Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
+    TResult? Function(RemoveFromBookmarksTournamentUserAction value)?
         removeFromBookmarks,
   }) =>
       throw _privateConstructorUsedError;
@@ -83,17 +83,19 @@ mixin _$UserActionTournament {
 abstract class $UserActionTournamentCopyWith<$Res> {
   factory $UserActionTournamentCopyWith(UserActionTournament value,
           $Res Function(UserActionTournament) then) =
-      _$UserActionTournamentCopyWithImpl<$Res>;
+      _$UserActionTournamentCopyWithImpl<$Res, UserActionTournament>;
 }
 
 /// @nodoc
-class _$UserActionTournamentCopyWithImpl<$Res>
+class _$UserActionTournamentCopyWithImpl<$Res,
+        $Val extends UserActionTournament>
     implements $UserActionTournamentCopyWith<$Res> {
   _$UserActionTournamentCopyWithImpl(this._value, this._then);
 
-  final UserActionTournament _value;
   // ignore: unused_field
-  final $Res Function(UserActionTournament) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -101,6 +103,7 @@ abstract class _$$OpenTournamentUserActionCopyWith<$Res> {
   factory _$$OpenTournamentUserActionCopyWith(_$OpenTournamentUserAction value,
           $Res Function(_$OpenTournamentUserAction) then) =
       __$$OpenTournamentUserActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentInfo info, TournamentStatus status});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -109,27 +112,24 @@ abstract class _$$OpenTournamentUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$OpenTournamentUserActionCopyWithImpl<$Res>
-    extends _$UserActionTournamentCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res, _$OpenTournamentUserAction>
     implements _$$OpenTournamentUserActionCopyWith<$Res> {
   __$$OpenTournamentUserActionCopyWithImpl(_$OpenTournamentUserAction _value,
       $Res Function(_$OpenTournamentUserAction) _then)
-      : super(_value, (v) => _then(v as _$OpenTournamentUserAction));
+      : super(_value, _then);
 
-  @override
-  _$OpenTournamentUserAction get _value =>
-      super._value as _$OpenTournamentUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? status = freezed,
+    Object? info = null,
+    Object? status = null,
   }) {
     return _then(_$OpenTournamentUserAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TournamentStatus,
@@ -137,6 +137,7 @@ class __$$OpenTournamentUserActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -144,6 +145,7 @@ class __$$OpenTournamentUserActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentStatusCopyWith<$Res> get status {
     return $TournamentStatusCopyWith<$Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value));
@@ -182,18 +184,16 @@ class _$OpenTournamentUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OpenTournamentUserAction &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, info, status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$OpenTournamentUserActionCopyWith<_$OpenTournamentUserAction>
       get copyWith =>
           __$$OpenTournamentUserActionCopyWithImpl<_$OpenTournamentUserAction>(
@@ -215,11 +215,11 @@ class _$OpenTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? open,
-    TResult Function()? close,
-    TResult Function(TournamentInfo info)? load,
-    TResult Function()? addToBookmarks,
-    TResult Function()? removeFromBookmarks,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? open,
+    TResult? Function()? close,
+    TResult? Function(TournamentInfo info)? load,
+    TResult? Function()? addToBookmarks,
+    TResult? Function()? removeFromBookmarks,
   }) {
     return open?.call(info, status);
   }
@@ -257,11 +257,11 @@ class _$OpenTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OpenTournamentUserAction value)? open,
-    TResult Function(CloseTournamentUserAction value)? close,
-    TResult Function(LoadTournamentUserAction value)? load,
-    TResult Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
-    TResult Function(RemoveFromBookmarksTournamentUserAction value)?
+    TResult? Function(OpenTournamentUserAction value)? open,
+    TResult? Function(CloseTournamentUserAction value)? close,
+    TResult? Function(LoadTournamentUserAction value)? load,
+    TResult? Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
+    TResult? Function(RemoveFromBookmarksTournamentUserAction value)?
         removeFromBookmarks,
   }) {
     return open?.call(this);
@@ -307,15 +307,12 @@ abstract class _$$CloseTournamentUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$CloseTournamentUserActionCopyWithImpl<$Res>
-    extends _$UserActionTournamentCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res,
+        _$CloseTournamentUserAction>
     implements _$$CloseTournamentUserActionCopyWith<$Res> {
   __$$CloseTournamentUserActionCopyWithImpl(_$CloseTournamentUserAction _value,
       $Res Function(_$CloseTournamentUserAction) _then)
-      : super(_value, (v) => _then(v as _$CloseTournamentUserAction));
-
-  @override
-  _$CloseTournamentUserAction get _value =>
-      super._value as _$CloseTournamentUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -362,11 +359,11 @@ class _$CloseTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? open,
-    TResult Function()? close,
-    TResult Function(TournamentInfo info)? load,
-    TResult Function()? addToBookmarks,
-    TResult Function()? removeFromBookmarks,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? open,
+    TResult? Function()? close,
+    TResult? Function(TournamentInfo info)? load,
+    TResult? Function()? addToBookmarks,
+    TResult? Function()? removeFromBookmarks,
   }) {
     return close?.call();
   }
@@ -404,11 +401,11 @@ class _$CloseTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OpenTournamentUserAction value)? open,
-    TResult Function(CloseTournamentUserAction value)? close,
-    TResult Function(LoadTournamentUserAction value)? load,
-    TResult Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
-    TResult Function(RemoveFromBookmarksTournamentUserAction value)?
+    TResult? Function(OpenTournamentUserAction value)? open,
+    TResult? Function(CloseTournamentUserAction value)? close,
+    TResult? Function(LoadTournamentUserAction value)? load,
+    TResult? Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
+    TResult? Function(RemoveFromBookmarksTournamentUserAction value)?
         removeFromBookmarks,
   }) {
     return close?.call(this);
@@ -441,6 +438,7 @@ abstract class _$$LoadTournamentUserActionCopyWith<$Res> {
   factory _$$LoadTournamentUserActionCopyWith(_$LoadTournamentUserAction value,
           $Res Function(_$LoadTournamentUserAction) then) =
       __$$LoadTournamentUserActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -448,22 +446,19 @@ abstract class _$$LoadTournamentUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadTournamentUserActionCopyWithImpl<$Res>
-    extends _$UserActionTournamentCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res, _$LoadTournamentUserAction>
     implements _$$LoadTournamentUserActionCopyWith<$Res> {
   __$$LoadTournamentUserActionCopyWithImpl(_$LoadTournamentUserAction _value,
       $Res Function(_$LoadTournamentUserAction) _then)
-      : super(_value, (v) => _then(v as _$LoadTournamentUserAction));
+      : super(_value, _then);
 
-  @override
-  _$LoadTournamentUserAction get _value =>
-      super._value as _$LoadTournamentUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$LoadTournamentUserAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
@@ -471,6 +466,7 @@ class __$$LoadTournamentUserActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -506,15 +502,15 @@ class _$LoadTournamentUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadTournamentUserAction &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadTournamentUserActionCopyWith<_$LoadTournamentUserAction>
       get copyWith =>
           __$$LoadTournamentUserActionCopyWithImpl<_$LoadTournamentUserAction>(
@@ -536,11 +532,11 @@ class _$LoadTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? open,
-    TResult Function()? close,
-    TResult Function(TournamentInfo info)? load,
-    TResult Function()? addToBookmarks,
-    TResult Function()? removeFromBookmarks,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? open,
+    TResult? Function()? close,
+    TResult? Function(TournamentInfo info)? load,
+    TResult? Function()? addToBookmarks,
+    TResult? Function()? removeFromBookmarks,
   }) {
     return load?.call(info);
   }
@@ -578,11 +574,11 @@ class _$LoadTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OpenTournamentUserAction value)? open,
-    TResult Function(CloseTournamentUserAction value)? close,
-    TResult Function(LoadTournamentUserAction value)? load,
-    TResult Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
-    TResult Function(RemoveFromBookmarksTournamentUserAction value)?
+    TResult? Function(OpenTournamentUserAction value)? open,
+    TResult? Function(CloseTournamentUserAction value)? close,
+    TResult? Function(LoadTournamentUserAction value)? load,
+    TResult? Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
+    TResult? Function(RemoveFromBookmarksTournamentUserAction value)?
         removeFromBookmarks,
   }) {
     return load?.call(this);
@@ -626,16 +622,13 @@ abstract class _$$AddToBookmarksTournamentUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$AddToBookmarksTournamentUserActionCopyWithImpl<$Res>
-    extends _$UserActionTournamentCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res,
+        _$AddToBookmarksTournamentUserAction>
     implements _$$AddToBookmarksTournamentUserActionCopyWith<$Res> {
   __$$AddToBookmarksTournamentUserActionCopyWithImpl(
       _$AddToBookmarksTournamentUserAction _value,
       $Res Function(_$AddToBookmarksTournamentUserAction) _then)
-      : super(_value, (v) => _then(v as _$AddToBookmarksTournamentUserAction));
-
-  @override
-  _$AddToBookmarksTournamentUserAction get _value =>
-      super._value as _$AddToBookmarksTournamentUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -683,11 +676,11 @@ class _$AddToBookmarksTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? open,
-    TResult Function()? close,
-    TResult Function(TournamentInfo info)? load,
-    TResult Function()? addToBookmarks,
-    TResult Function()? removeFromBookmarks,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? open,
+    TResult? Function()? close,
+    TResult? Function(TournamentInfo info)? load,
+    TResult? Function()? addToBookmarks,
+    TResult? Function()? removeFromBookmarks,
   }) {
     return addToBookmarks?.call();
   }
@@ -725,11 +718,11 @@ class _$AddToBookmarksTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OpenTournamentUserAction value)? open,
-    TResult Function(CloseTournamentUserAction value)? close,
-    TResult Function(LoadTournamentUserAction value)? load,
-    TResult Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
-    TResult Function(RemoveFromBookmarksTournamentUserAction value)?
+    TResult? Function(OpenTournamentUserAction value)? open,
+    TResult? Function(CloseTournamentUserAction value)? close,
+    TResult? Function(LoadTournamentUserAction value)? load,
+    TResult? Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
+    TResult? Function(RemoveFromBookmarksTournamentUserAction value)?
         removeFromBookmarks,
   }) {
     return addToBookmarks?.call(this);
@@ -769,17 +762,13 @@ abstract class _$$RemoveFromBookmarksTournamentUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$RemoveFromBookmarksTournamentUserActionCopyWithImpl<$Res>
-    extends _$UserActionTournamentCopyWithImpl<$Res>
+    extends _$UserActionTournamentCopyWithImpl<$Res,
+        _$RemoveFromBookmarksTournamentUserAction>
     implements _$$RemoveFromBookmarksTournamentUserActionCopyWith<$Res> {
   __$$RemoveFromBookmarksTournamentUserActionCopyWithImpl(
       _$RemoveFromBookmarksTournamentUserAction _value,
       $Res Function(_$RemoveFromBookmarksTournamentUserAction) _then)
-      : super(_value,
-            (v) => _then(v as _$RemoveFromBookmarksTournamentUserAction));
-
-  @override
-  _$RemoveFromBookmarksTournamentUserAction get _value =>
-      super._value as _$RemoveFromBookmarksTournamentUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -827,11 +816,11 @@ class _$RemoveFromBookmarksTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? open,
-    TResult Function()? close,
-    TResult Function(TournamentInfo info)? load,
-    TResult Function()? addToBookmarks,
-    TResult Function()? removeFromBookmarks,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? open,
+    TResult? Function()? close,
+    TResult? Function(TournamentInfo info)? load,
+    TResult? Function()? addToBookmarks,
+    TResult? Function()? removeFromBookmarks,
   }) {
     return removeFromBookmarks?.call();
   }
@@ -869,11 +858,11 @@ class _$RemoveFromBookmarksTournamentUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OpenTournamentUserAction value)? open,
-    TResult Function(CloseTournamentUserAction value)? close,
-    TResult Function(LoadTournamentUserAction value)? load,
-    TResult Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
-    TResult Function(RemoveFromBookmarksTournamentUserAction value)?
+    TResult? Function(OpenTournamentUserAction value)? open,
+    TResult? Function(CloseTournamentUserAction value)? close,
+    TResult? Function(LoadTournamentUserAction value)? load,
+    TResult? Function(AddToBookmarksTournamentUserAction value)? addToBookmarks,
+    TResult? Function(RemoveFromBookmarksTournamentUserAction value)?
         removeFromBookmarks,
   }) {
     return removeFromBookmarks?.call(this);
@@ -922,15 +911,15 @@ mixin _$SystemActionTournament {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? init,
-    TResult Function()? deInit,
-    TResult Function(TournamentInfo info)? loading,
-    TResult Function(TournamentInfo info, Exception exception)? failed,
-    TResult Function(Tournament tournament)? completed,
-    TResult Function(TournamentInfo info)? markAsRead,
-    TResult Function(TournamentInfo info, TournamentStatus status)?
+    TResult? Function(TournamentInfo info, TournamentStatus status)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TournamentInfo info)? loading,
+    TResult? Function(TournamentInfo info, Exception exception)? failed,
+    TResult? Function(Tournament tournament)? completed,
+    TResult? Function(TournamentInfo info)? markAsRead,
+    TResult? Function(TournamentInfo info, TournamentStatus status)?
         statusChanged,
-    TResult Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
+    TResult? Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -964,14 +953,14 @@ mixin _$SystemActionTournament {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTournamentSystemAction value)? init,
-    TResult Function(DeInitTournamentSystemAction value)? deInit,
-    TResult Function(LoadingTournamentSystemAction value)? loading,
-    TResult Function(FailedTournamentSystemAction value)? failed,
-    TResult Function(CompletedTournamentSystemAction value)? completed,
-    TResult Function(MarkAsReadTournamentSystemAction value)? markAsRead,
-    TResult Function(StatusChangedTournamentSystemAction value)? statusChanged,
-    TResult Function(AllToursCompletedTournamentSystemAction value)?
+    TResult? Function(InitTournamentSystemAction value)? init,
+    TResult? Function(DeInitTournamentSystemAction value)? deInit,
+    TResult? Function(LoadingTournamentSystemAction value)? loading,
+    TResult? Function(FailedTournamentSystemAction value)? failed,
+    TResult? Function(CompletedTournamentSystemAction value)? completed,
+    TResult? Function(MarkAsReadTournamentSystemAction value)? markAsRead,
+    TResult? Function(StatusChangedTournamentSystemAction value)? statusChanged,
+    TResult? Function(AllToursCompletedTournamentSystemAction value)?
         allToursCompleted,
   }) =>
       throw _privateConstructorUsedError;
@@ -995,17 +984,19 @@ mixin _$SystemActionTournament {
 abstract class $SystemActionTournamentCopyWith<$Res> {
   factory $SystemActionTournamentCopyWith(SystemActionTournament value,
           $Res Function(SystemActionTournament) then) =
-      _$SystemActionTournamentCopyWithImpl<$Res>;
+      _$SystemActionTournamentCopyWithImpl<$Res, SystemActionTournament>;
 }
 
 /// @nodoc
-class _$SystemActionTournamentCopyWithImpl<$Res>
+class _$SystemActionTournamentCopyWithImpl<$Res,
+        $Val extends SystemActionTournament>
     implements $SystemActionTournamentCopyWith<$Res> {
   _$SystemActionTournamentCopyWithImpl(this._value, this._then);
 
-  final SystemActionTournament _value;
   // ignore: unused_field
-  final $Res Function(SystemActionTournament) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -1014,6 +1005,7 @@ abstract class _$$InitTournamentSystemActionCopyWith<$Res> {
           _$InitTournamentSystemAction value,
           $Res Function(_$InitTournamentSystemAction) then) =
       __$$InitTournamentSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentInfo info, TournamentStatus status});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -1022,28 +1014,26 @@ abstract class _$$InitTournamentSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitTournamentSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res,
+        _$InitTournamentSystemAction>
     implements _$$InitTournamentSystemActionCopyWith<$Res> {
   __$$InitTournamentSystemActionCopyWithImpl(
       _$InitTournamentSystemAction _value,
       $Res Function(_$InitTournamentSystemAction) _then)
-      : super(_value, (v) => _then(v as _$InitTournamentSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$InitTournamentSystemAction get _value =>
-      super._value as _$InitTournamentSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? status = freezed,
+    Object? info = null,
+    Object? status = null,
   }) {
     return _then(_$InitTournamentSystemAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TournamentStatus,
@@ -1051,6 +1041,7 @@ class __$$InitTournamentSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -1058,6 +1049,7 @@ class __$$InitTournamentSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentStatusCopyWith<$Res> get status {
     return $TournamentStatusCopyWith<$Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value));
@@ -1097,18 +1089,16 @@ class _$InitTournamentSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitTournamentSystemAction &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, info, status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InitTournamentSystemActionCopyWith<_$InitTournamentSystemAction>
       get copyWith => __$$InitTournamentSystemActionCopyWithImpl<
           _$InitTournamentSystemAction>(this, _$identity);
@@ -1134,15 +1124,15 @@ class _$InitTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? init,
-    TResult Function()? deInit,
-    TResult Function(TournamentInfo info)? loading,
-    TResult Function(TournamentInfo info, Exception exception)? failed,
-    TResult Function(Tournament tournament)? completed,
-    TResult Function(TournamentInfo info)? markAsRead,
-    TResult Function(TournamentInfo info, TournamentStatus status)?
+    TResult? Function(TournamentInfo info, TournamentStatus status)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TournamentInfo info)? loading,
+    TResult? Function(TournamentInfo info, Exception exception)? failed,
+    TResult? Function(Tournament tournament)? completed,
+    TResult? Function(TournamentInfo info)? markAsRead,
+    TResult? Function(TournamentInfo info, TournamentStatus status)?
         statusChanged,
-    TResult Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
+    TResult? Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
   }) {
     return init?.call(info, status);
   }
@@ -1188,14 +1178,14 @@ class _$InitTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTournamentSystemAction value)? init,
-    TResult Function(DeInitTournamentSystemAction value)? deInit,
-    TResult Function(LoadingTournamentSystemAction value)? loading,
-    TResult Function(FailedTournamentSystemAction value)? failed,
-    TResult Function(CompletedTournamentSystemAction value)? completed,
-    TResult Function(MarkAsReadTournamentSystemAction value)? markAsRead,
-    TResult Function(StatusChangedTournamentSystemAction value)? statusChanged,
-    TResult Function(AllToursCompletedTournamentSystemAction value)?
+    TResult? Function(InitTournamentSystemAction value)? init,
+    TResult? Function(DeInitTournamentSystemAction value)? deInit,
+    TResult? Function(LoadingTournamentSystemAction value)? loading,
+    TResult? Function(FailedTournamentSystemAction value)? failed,
+    TResult? Function(CompletedTournamentSystemAction value)? completed,
+    TResult? Function(MarkAsReadTournamentSystemAction value)? markAsRead,
+    TResult? Function(StatusChangedTournamentSystemAction value)? statusChanged,
+    TResult? Function(AllToursCompletedTournamentSystemAction value)?
         allToursCompleted,
   }) {
     return init?.call(this);
@@ -1244,16 +1234,13 @@ abstract class _$$DeInitTournamentSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$DeInitTournamentSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res,
+        _$DeInitTournamentSystemAction>
     implements _$$DeInitTournamentSystemActionCopyWith<$Res> {
   __$$DeInitTournamentSystemActionCopyWithImpl(
       _$DeInitTournamentSystemAction _value,
       $Res Function(_$DeInitTournamentSystemAction) _then)
-      : super(_value, (v) => _then(v as _$DeInitTournamentSystemAction));
-
-  @override
-  _$DeInitTournamentSystemAction get _value =>
-      super._value as _$DeInitTournamentSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1306,15 +1293,15 @@ class _$DeInitTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? init,
-    TResult Function()? deInit,
-    TResult Function(TournamentInfo info)? loading,
-    TResult Function(TournamentInfo info, Exception exception)? failed,
-    TResult Function(Tournament tournament)? completed,
-    TResult Function(TournamentInfo info)? markAsRead,
-    TResult Function(TournamentInfo info, TournamentStatus status)?
+    TResult? Function(TournamentInfo info, TournamentStatus status)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TournamentInfo info)? loading,
+    TResult? Function(TournamentInfo info, Exception exception)? failed,
+    TResult? Function(Tournament tournament)? completed,
+    TResult? Function(TournamentInfo info)? markAsRead,
+    TResult? Function(TournamentInfo info, TournamentStatus status)?
         statusChanged,
-    TResult Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
+    TResult? Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
   }) {
     return deInit?.call();
   }
@@ -1360,14 +1347,14 @@ class _$DeInitTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTournamentSystemAction value)? init,
-    TResult Function(DeInitTournamentSystemAction value)? deInit,
-    TResult Function(LoadingTournamentSystemAction value)? loading,
-    TResult Function(FailedTournamentSystemAction value)? failed,
-    TResult Function(CompletedTournamentSystemAction value)? completed,
-    TResult Function(MarkAsReadTournamentSystemAction value)? markAsRead,
-    TResult Function(StatusChangedTournamentSystemAction value)? statusChanged,
-    TResult Function(AllToursCompletedTournamentSystemAction value)?
+    TResult? Function(InitTournamentSystemAction value)? init,
+    TResult? Function(DeInitTournamentSystemAction value)? deInit,
+    TResult? Function(LoadingTournamentSystemAction value)? loading,
+    TResult? Function(FailedTournamentSystemAction value)? failed,
+    TResult? Function(CompletedTournamentSystemAction value)? completed,
+    TResult? Function(MarkAsReadTournamentSystemAction value)? markAsRead,
+    TResult? Function(StatusChangedTournamentSystemAction value)? statusChanged,
+    TResult? Function(AllToursCompletedTournamentSystemAction value)?
         allToursCompleted,
   }) {
     return deInit?.call(this);
@@ -1404,6 +1391,7 @@ abstract class _$$LoadingTournamentSystemActionCopyWith<$Res> {
           _$LoadingTournamentSystemAction value,
           $Res Function(_$LoadingTournamentSystemAction) then) =
       __$$LoadingTournamentSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -1411,23 +1399,21 @@ abstract class _$$LoadingTournamentSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingTournamentSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res,
+        _$LoadingTournamentSystemAction>
     implements _$$LoadingTournamentSystemActionCopyWith<$Res> {
   __$$LoadingTournamentSystemActionCopyWithImpl(
       _$LoadingTournamentSystemAction _value,
       $Res Function(_$LoadingTournamentSystemAction) _then)
-      : super(_value, (v) => _then(v as _$LoadingTournamentSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$LoadingTournamentSystemAction get _value =>
-      super._value as _$LoadingTournamentSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$LoadingTournamentSystemAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
@@ -1435,6 +1421,7 @@ class __$$LoadingTournamentSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -1470,15 +1457,15 @@ class _$LoadingTournamentSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadingTournamentSystemAction &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadingTournamentSystemActionCopyWith<_$LoadingTournamentSystemAction>
       get copyWith => __$$LoadingTournamentSystemActionCopyWithImpl<
           _$LoadingTournamentSystemAction>(this, _$identity);
@@ -1504,15 +1491,15 @@ class _$LoadingTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? init,
-    TResult Function()? deInit,
-    TResult Function(TournamentInfo info)? loading,
-    TResult Function(TournamentInfo info, Exception exception)? failed,
-    TResult Function(Tournament tournament)? completed,
-    TResult Function(TournamentInfo info)? markAsRead,
-    TResult Function(TournamentInfo info, TournamentStatus status)?
+    TResult? Function(TournamentInfo info, TournamentStatus status)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TournamentInfo info)? loading,
+    TResult? Function(TournamentInfo info, Exception exception)? failed,
+    TResult? Function(Tournament tournament)? completed,
+    TResult? Function(TournamentInfo info)? markAsRead,
+    TResult? Function(TournamentInfo info, TournamentStatus status)?
         statusChanged,
-    TResult Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
+    TResult? Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
   }) {
     return loading?.call(info);
   }
@@ -1558,14 +1545,14 @@ class _$LoadingTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTournamentSystemAction value)? init,
-    TResult Function(DeInitTournamentSystemAction value)? deInit,
-    TResult Function(LoadingTournamentSystemAction value)? loading,
-    TResult Function(FailedTournamentSystemAction value)? failed,
-    TResult Function(CompletedTournamentSystemAction value)? completed,
-    TResult Function(MarkAsReadTournamentSystemAction value)? markAsRead,
-    TResult Function(StatusChangedTournamentSystemAction value)? statusChanged,
-    TResult Function(AllToursCompletedTournamentSystemAction value)?
+    TResult? Function(InitTournamentSystemAction value)? init,
+    TResult? Function(DeInitTournamentSystemAction value)? deInit,
+    TResult? Function(LoadingTournamentSystemAction value)? loading,
+    TResult? Function(FailedTournamentSystemAction value)? failed,
+    TResult? Function(CompletedTournamentSystemAction value)? completed,
+    TResult? Function(MarkAsReadTournamentSystemAction value)? markAsRead,
+    TResult? Function(StatusChangedTournamentSystemAction value)? statusChanged,
+    TResult? Function(AllToursCompletedTournamentSystemAction value)?
         allToursCompleted,
   }) {
     return loading?.call(this);
@@ -1608,6 +1595,7 @@ abstract class _$$FailedTournamentSystemActionCopyWith<$Res> {
           _$FailedTournamentSystemAction value,
           $Res Function(_$FailedTournamentSystemAction) then) =
       __$$FailedTournamentSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentInfo info, Exception exception});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -1615,28 +1603,26 @@ abstract class _$$FailedTournamentSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailedTournamentSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res,
+        _$FailedTournamentSystemAction>
     implements _$$FailedTournamentSystemActionCopyWith<$Res> {
   __$$FailedTournamentSystemActionCopyWithImpl(
       _$FailedTournamentSystemAction _value,
       $Res Function(_$FailedTournamentSystemAction) _then)
-      : super(_value, (v) => _then(v as _$FailedTournamentSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$FailedTournamentSystemAction get _value =>
-      super._value as _$FailedTournamentSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? exception = freezed,
+    Object? info = null,
+    Object? exception = null,
   }) {
     return _then(_$FailedTournamentSystemAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      exception: exception == freezed
+      exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception,
@@ -1644,6 +1630,7 @@ class __$$FailedTournamentSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -1683,18 +1670,17 @@ class _$FailedTournamentSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailedTournamentSystemAction &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(exception));
+  int get hashCode => Object.hash(runtimeType, info, exception);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$FailedTournamentSystemActionCopyWith<_$FailedTournamentSystemAction>
       get copyWith => __$$FailedTournamentSystemActionCopyWithImpl<
           _$FailedTournamentSystemAction>(this, _$identity);
@@ -1720,15 +1706,15 @@ class _$FailedTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? init,
-    TResult Function()? deInit,
-    TResult Function(TournamentInfo info)? loading,
-    TResult Function(TournamentInfo info, Exception exception)? failed,
-    TResult Function(Tournament tournament)? completed,
-    TResult Function(TournamentInfo info)? markAsRead,
-    TResult Function(TournamentInfo info, TournamentStatus status)?
+    TResult? Function(TournamentInfo info, TournamentStatus status)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TournamentInfo info)? loading,
+    TResult? Function(TournamentInfo info, Exception exception)? failed,
+    TResult? Function(Tournament tournament)? completed,
+    TResult? Function(TournamentInfo info)? markAsRead,
+    TResult? Function(TournamentInfo info, TournamentStatus status)?
         statusChanged,
-    TResult Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
+    TResult? Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
   }) {
     return failed?.call(info, exception);
   }
@@ -1774,14 +1760,14 @@ class _$FailedTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTournamentSystemAction value)? init,
-    TResult Function(DeInitTournamentSystemAction value)? deInit,
-    TResult Function(LoadingTournamentSystemAction value)? loading,
-    TResult Function(FailedTournamentSystemAction value)? failed,
-    TResult Function(CompletedTournamentSystemAction value)? completed,
-    TResult Function(MarkAsReadTournamentSystemAction value)? markAsRead,
-    TResult Function(StatusChangedTournamentSystemAction value)? statusChanged,
-    TResult Function(AllToursCompletedTournamentSystemAction value)?
+    TResult? Function(InitTournamentSystemAction value)? init,
+    TResult? Function(DeInitTournamentSystemAction value)? deInit,
+    TResult? Function(LoadingTournamentSystemAction value)? loading,
+    TResult? Function(FailedTournamentSystemAction value)? failed,
+    TResult? Function(CompletedTournamentSystemAction value)? completed,
+    TResult? Function(MarkAsReadTournamentSystemAction value)? markAsRead,
+    TResult? Function(StatusChangedTournamentSystemAction value)? statusChanged,
+    TResult? Function(AllToursCompletedTournamentSystemAction value)?
         allToursCompleted,
   }) {
     return failed?.call(this);
@@ -1826,6 +1812,7 @@ abstract class _$$CompletedTournamentSystemActionCopyWith<$Res> {
           _$CompletedTournamentSystemAction value,
           $Res Function(_$CompletedTournamentSystemAction) then) =
       __$$CompletedTournamentSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({Tournament tournament});
 
   $TournamentCopyWith<$Res> get tournament;
@@ -1833,23 +1820,21 @@ abstract class _$$CompletedTournamentSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$CompletedTournamentSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res,
+        _$CompletedTournamentSystemAction>
     implements _$$CompletedTournamentSystemActionCopyWith<$Res> {
   __$$CompletedTournamentSystemActionCopyWithImpl(
       _$CompletedTournamentSystemAction _value,
       $Res Function(_$CompletedTournamentSystemAction) _then)
-      : super(_value, (v) => _then(v as _$CompletedTournamentSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$CompletedTournamentSystemAction get _value =>
-      super._value as _$CompletedTournamentSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tournament = freezed,
+    Object? tournament = null,
   }) {
     return _then(_$CompletedTournamentSystemAction(
-      tournament: tournament == freezed
+      tournament: null == tournament
           ? _value.tournament
           : tournament // ignore: cast_nullable_to_non_nullable
               as Tournament,
@@ -1857,6 +1842,7 @@ class __$$CompletedTournamentSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentCopyWith<$Res> get tournament {
     return $TournamentCopyWith<$Res>(_value.tournament, (value) {
       return _then(_value.copyWith(tournament: value));
@@ -1892,16 +1878,16 @@ class _$CompletedTournamentSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CompletedTournamentSystemAction &&
-            const DeepCollectionEquality()
-                .equals(other.tournament, tournament));
+            (identical(other.tournament, tournament) ||
+                other.tournament == tournament));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(tournament));
+  int get hashCode => Object.hash(runtimeType, tournament);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$CompletedTournamentSystemActionCopyWith<_$CompletedTournamentSystemAction>
       get copyWith => __$$CompletedTournamentSystemActionCopyWithImpl<
           _$CompletedTournamentSystemAction>(this, _$identity);
@@ -1927,15 +1913,15 @@ class _$CompletedTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? init,
-    TResult Function()? deInit,
-    TResult Function(TournamentInfo info)? loading,
-    TResult Function(TournamentInfo info, Exception exception)? failed,
-    TResult Function(Tournament tournament)? completed,
-    TResult Function(TournamentInfo info)? markAsRead,
-    TResult Function(TournamentInfo info, TournamentStatus status)?
+    TResult? Function(TournamentInfo info, TournamentStatus status)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TournamentInfo info)? loading,
+    TResult? Function(TournamentInfo info, Exception exception)? failed,
+    TResult? Function(Tournament tournament)? completed,
+    TResult? Function(TournamentInfo info)? markAsRead,
+    TResult? Function(TournamentInfo info, TournamentStatus status)?
         statusChanged,
-    TResult Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
+    TResult? Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
   }) {
     return completed?.call(tournament);
   }
@@ -1981,14 +1967,14 @@ class _$CompletedTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTournamentSystemAction value)? init,
-    TResult Function(DeInitTournamentSystemAction value)? deInit,
-    TResult Function(LoadingTournamentSystemAction value)? loading,
-    TResult Function(FailedTournamentSystemAction value)? failed,
-    TResult Function(CompletedTournamentSystemAction value)? completed,
-    TResult Function(MarkAsReadTournamentSystemAction value)? markAsRead,
-    TResult Function(StatusChangedTournamentSystemAction value)? statusChanged,
-    TResult Function(AllToursCompletedTournamentSystemAction value)?
+    TResult? Function(InitTournamentSystemAction value)? init,
+    TResult? Function(DeInitTournamentSystemAction value)? deInit,
+    TResult? Function(LoadingTournamentSystemAction value)? loading,
+    TResult? Function(FailedTournamentSystemAction value)? failed,
+    TResult? Function(CompletedTournamentSystemAction value)? completed,
+    TResult? Function(MarkAsReadTournamentSystemAction value)? markAsRead,
+    TResult? Function(StatusChangedTournamentSystemAction value)? statusChanged,
+    TResult? Function(AllToursCompletedTournamentSystemAction value)?
         allToursCompleted,
   }) {
     return completed?.call(this);
@@ -2033,6 +2019,7 @@ abstract class _$$MarkAsReadTournamentSystemActionCopyWith<$Res> {
           _$MarkAsReadTournamentSystemAction value,
           $Res Function(_$MarkAsReadTournamentSystemAction) then) =
       __$$MarkAsReadTournamentSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -2040,23 +2027,21 @@ abstract class _$$MarkAsReadTournamentSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$MarkAsReadTournamentSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res,
+        _$MarkAsReadTournamentSystemAction>
     implements _$$MarkAsReadTournamentSystemActionCopyWith<$Res> {
   __$$MarkAsReadTournamentSystemActionCopyWithImpl(
       _$MarkAsReadTournamentSystemAction _value,
       $Res Function(_$MarkAsReadTournamentSystemAction) _then)
-      : super(_value, (v) => _then(v as _$MarkAsReadTournamentSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$MarkAsReadTournamentSystemAction get _value =>
-      super._value as _$MarkAsReadTournamentSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$MarkAsReadTournamentSystemAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
@@ -2064,6 +2049,7 @@ class __$$MarkAsReadTournamentSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -2099,15 +2085,15 @@ class _$MarkAsReadTournamentSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MarkAsReadTournamentSystemAction &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$MarkAsReadTournamentSystemActionCopyWith<
           _$MarkAsReadTournamentSystemAction>
       get copyWith => __$$MarkAsReadTournamentSystemActionCopyWithImpl<
@@ -2134,15 +2120,15 @@ class _$MarkAsReadTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? init,
-    TResult Function()? deInit,
-    TResult Function(TournamentInfo info)? loading,
-    TResult Function(TournamentInfo info, Exception exception)? failed,
-    TResult Function(Tournament tournament)? completed,
-    TResult Function(TournamentInfo info)? markAsRead,
-    TResult Function(TournamentInfo info, TournamentStatus status)?
+    TResult? Function(TournamentInfo info, TournamentStatus status)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TournamentInfo info)? loading,
+    TResult? Function(TournamentInfo info, Exception exception)? failed,
+    TResult? Function(Tournament tournament)? completed,
+    TResult? Function(TournamentInfo info)? markAsRead,
+    TResult? Function(TournamentInfo info, TournamentStatus status)?
         statusChanged,
-    TResult Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
+    TResult? Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
   }) {
     return markAsRead?.call(info);
   }
@@ -2188,14 +2174,14 @@ class _$MarkAsReadTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTournamentSystemAction value)? init,
-    TResult Function(DeInitTournamentSystemAction value)? deInit,
-    TResult Function(LoadingTournamentSystemAction value)? loading,
-    TResult Function(FailedTournamentSystemAction value)? failed,
-    TResult Function(CompletedTournamentSystemAction value)? completed,
-    TResult Function(MarkAsReadTournamentSystemAction value)? markAsRead,
-    TResult Function(StatusChangedTournamentSystemAction value)? statusChanged,
-    TResult Function(AllToursCompletedTournamentSystemAction value)?
+    TResult? Function(InitTournamentSystemAction value)? init,
+    TResult? Function(DeInitTournamentSystemAction value)? deInit,
+    TResult? Function(LoadingTournamentSystemAction value)? loading,
+    TResult? Function(FailedTournamentSystemAction value)? failed,
+    TResult? Function(CompletedTournamentSystemAction value)? completed,
+    TResult? Function(MarkAsReadTournamentSystemAction value)? markAsRead,
+    TResult? Function(StatusChangedTournamentSystemAction value)? statusChanged,
+    TResult? Function(AllToursCompletedTournamentSystemAction value)?
         allToursCompleted,
   }) {
     return markAsRead?.call(this);
@@ -2241,6 +2227,7 @@ abstract class _$$StatusChangedTournamentSystemActionCopyWith<$Res> {
           _$StatusChangedTournamentSystemAction value,
           $Res Function(_$StatusChangedTournamentSystemAction) then) =
       __$$StatusChangedTournamentSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentInfo info, TournamentStatus status});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -2249,28 +2236,26 @@ abstract class _$$StatusChangedTournamentSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$StatusChangedTournamentSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res,
+        _$StatusChangedTournamentSystemAction>
     implements _$$StatusChangedTournamentSystemActionCopyWith<$Res> {
   __$$StatusChangedTournamentSystemActionCopyWithImpl(
       _$StatusChangedTournamentSystemAction _value,
       $Res Function(_$StatusChangedTournamentSystemAction) _then)
-      : super(_value, (v) => _then(v as _$StatusChangedTournamentSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$StatusChangedTournamentSystemAction get _value =>
-      super._value as _$StatusChangedTournamentSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? status = freezed,
+    Object? info = null,
+    Object? status = null,
   }) {
     return _then(_$StatusChangedTournamentSystemAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TournamentStatus,
@@ -2278,6 +2263,7 @@ class __$$StatusChangedTournamentSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -2285,6 +2271,7 @@ class __$$StatusChangedTournamentSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentStatusCopyWith<$Res> get status {
     return $TournamentStatusCopyWith<$Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value));
@@ -2324,18 +2311,16 @@ class _$StatusChangedTournamentSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StatusChangedTournamentSystemAction &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, info, status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$StatusChangedTournamentSystemActionCopyWith<
           _$StatusChangedTournamentSystemAction>
       get copyWith => __$$StatusChangedTournamentSystemActionCopyWithImpl<
@@ -2362,15 +2347,15 @@ class _$StatusChangedTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? init,
-    TResult Function()? deInit,
-    TResult Function(TournamentInfo info)? loading,
-    TResult Function(TournamentInfo info, Exception exception)? failed,
-    TResult Function(Tournament tournament)? completed,
-    TResult Function(TournamentInfo info)? markAsRead,
-    TResult Function(TournamentInfo info, TournamentStatus status)?
+    TResult? Function(TournamentInfo info, TournamentStatus status)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TournamentInfo info)? loading,
+    TResult? Function(TournamentInfo info, Exception exception)? failed,
+    TResult? Function(Tournament tournament)? completed,
+    TResult? Function(TournamentInfo info)? markAsRead,
+    TResult? Function(TournamentInfo info, TournamentStatus status)?
         statusChanged,
-    TResult Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
+    TResult? Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
   }) {
     return statusChanged?.call(info, status);
   }
@@ -2416,14 +2401,14 @@ class _$StatusChangedTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTournamentSystemAction value)? init,
-    TResult Function(DeInitTournamentSystemAction value)? deInit,
-    TResult Function(LoadingTournamentSystemAction value)? loading,
-    TResult Function(FailedTournamentSystemAction value)? failed,
-    TResult Function(CompletedTournamentSystemAction value)? completed,
-    TResult Function(MarkAsReadTournamentSystemAction value)? markAsRead,
-    TResult Function(StatusChangedTournamentSystemAction value)? statusChanged,
-    TResult Function(AllToursCompletedTournamentSystemAction value)?
+    TResult? Function(InitTournamentSystemAction value)? init,
+    TResult? Function(DeInitTournamentSystemAction value)? deInit,
+    TResult? Function(LoadingTournamentSystemAction value)? loading,
+    TResult? Function(FailedTournamentSystemAction value)? failed,
+    TResult? Function(CompletedTournamentSystemAction value)? completed,
+    TResult? Function(MarkAsReadTournamentSystemAction value)? markAsRead,
+    TResult? Function(StatusChangedTournamentSystemAction value)? statusChanged,
+    TResult? Function(AllToursCompletedTournamentSystemAction value)?
         allToursCompleted,
   }) {
     return statusChanged?.call(this);
@@ -2471,6 +2456,7 @@ abstract class _$$AllToursCompletedTournamentSystemActionCopyWith<$Res> {
           _$AllToursCompletedTournamentSystemAction value,
           $Res Function(_$AllToursCompletedTournamentSystemAction) then) =
       __$$AllToursCompletedTournamentSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentInfo info, List<Tour> tours});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -2478,29 +2464,26 @@ abstract class _$$AllToursCompletedTournamentSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$AllToursCompletedTournamentSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTournamentCopyWithImpl<$Res>
+    extends _$SystemActionTournamentCopyWithImpl<$Res,
+        _$AllToursCompletedTournamentSystemAction>
     implements _$$AllToursCompletedTournamentSystemActionCopyWith<$Res> {
   __$$AllToursCompletedTournamentSystemActionCopyWithImpl(
       _$AllToursCompletedTournamentSystemAction _value,
       $Res Function(_$AllToursCompletedTournamentSystemAction) _then)
-      : super(_value,
-            (v) => _then(v as _$AllToursCompletedTournamentSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$AllToursCompletedTournamentSystemAction get _value =>
-      super._value as _$AllToursCompletedTournamentSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? tours = freezed,
+    Object? info = null,
+    Object? tours = null,
   }) {
     return _then(_$AllToursCompletedTournamentSystemAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      tours: tours == freezed
+      tours: null == tours
           ? _value._tours
           : tours // ignore: cast_nullable_to_non_nullable
               as List<Tour>,
@@ -2508,6 +2491,7 @@ class __$$AllToursCompletedTournamentSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -2529,6 +2513,7 @@ class _$AllToursCompletedTournamentSystemAction
   final List<Tour> _tours;
   @override
   List<Tour> get tours {
+    if (_tours is EqualUnmodifiableListView) return _tours;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tours);
   }
@@ -2553,18 +2538,17 @@ class _$AllToursCompletedTournamentSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AllToursCompletedTournamentSystemAction &&
-            const DeepCollectionEquality().equals(other.info, info) &&
+            (identical(other.info, info) || other.info == info) &&
             const DeepCollectionEquality().equals(other._tours, _tours));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(_tours));
+      runtimeType, info, const DeepCollectionEquality().hash(_tours));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$AllToursCompletedTournamentSystemActionCopyWith<
           _$AllToursCompletedTournamentSystemAction>
       get copyWith => __$$AllToursCompletedTournamentSystemActionCopyWithImpl<
@@ -2591,15 +2575,15 @@ class _$AllToursCompletedTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? init,
-    TResult Function()? deInit,
-    TResult Function(TournamentInfo info)? loading,
-    TResult Function(TournamentInfo info, Exception exception)? failed,
-    TResult Function(Tournament tournament)? completed,
-    TResult Function(TournamentInfo info)? markAsRead,
-    TResult Function(TournamentInfo info, TournamentStatus status)?
+    TResult? Function(TournamentInfo info, TournamentStatus status)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TournamentInfo info)? loading,
+    TResult? Function(TournamentInfo info, Exception exception)? failed,
+    TResult? Function(Tournament tournament)? completed,
+    TResult? Function(TournamentInfo info)? markAsRead,
+    TResult? Function(TournamentInfo info, TournamentStatus status)?
         statusChanged,
-    TResult Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
+    TResult? Function(TournamentInfo info, List<Tour> tours)? allToursCompleted,
   }) {
     return allToursCompleted?.call(info, tours);
   }
@@ -2645,14 +2629,14 @@ class _$AllToursCompletedTournamentSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTournamentSystemAction value)? init,
-    TResult Function(DeInitTournamentSystemAction value)? deInit,
-    TResult Function(LoadingTournamentSystemAction value)? loading,
-    TResult Function(FailedTournamentSystemAction value)? failed,
-    TResult Function(CompletedTournamentSystemAction value)? completed,
-    TResult Function(MarkAsReadTournamentSystemAction value)? markAsRead,
-    TResult Function(StatusChangedTournamentSystemAction value)? statusChanged,
-    TResult Function(AllToursCompletedTournamentSystemAction value)?
+    TResult? Function(InitTournamentSystemAction value)? init,
+    TResult? Function(DeInitTournamentSystemAction value)? deInit,
+    TResult? Function(LoadingTournamentSystemAction value)? loading,
+    TResult? Function(FailedTournamentSystemAction value)? failed,
+    TResult? Function(CompletedTournamentSystemAction value)? completed,
+    TResult? Function(MarkAsReadTournamentSystemAction value)? markAsRead,
+    TResult? Function(StatusChangedTournamentSystemAction value)? statusChanged,
+    TResult? Function(AllToursCompletedTournamentSystemAction value)?
         allToursCompleted,
   }) {
     return allToursCompleted?.call(this);

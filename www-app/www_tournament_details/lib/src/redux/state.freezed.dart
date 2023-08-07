@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'state.dart';
 
@@ -34,12 +34,12 @@ mixin _$TournamentState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
-    TResult Function(TournamentInfo info, TournamentStatus status,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult? Function(TournamentInfo info, TournamentStatus status,
             Tournament tournament, bool toursLoaded)?
         data,
-    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
-    TResult Function(
+    TResult? Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult? Function(
             TournamentInfo info, TournamentStatus status, Exception exception)?
         error,
   }) =>
@@ -67,10 +67,10 @@ mixin _$TournamentState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialTournamentState value)? initial,
-    TResult Function(DataTournamentState value)? data,
-    TResult Function(LoadingTournamentState value)? loading,
-    TResult Function(ErrorTournamentState value)? error,
+    TResult? Function(InitialTournamentState value)? initial,
+    TResult? Function(DataTournamentState value)? data,
+    TResult? Function(LoadingTournamentState value)? loading,
+    TResult? Function(ErrorTournamentState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,7 +92,8 @@ mixin _$TournamentState {
 abstract class $TournamentStateCopyWith<$Res> {
   factory $TournamentStateCopyWith(
           TournamentState value, $Res Function(TournamentState) then) =
-      _$TournamentStateCopyWithImpl<$Res>;
+      _$TournamentStateCopyWithImpl<$Res, TournamentState>;
+  @useResult
   $Res call({TournamentInfo info, TournamentStatus status});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -100,42 +101,46 @@ abstract class $TournamentStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TournamentStateCopyWithImpl<$Res>
+class _$TournamentStateCopyWithImpl<$Res, $Val extends TournamentState>
     implements $TournamentStateCopyWith<$Res> {
   _$TournamentStateCopyWithImpl(this._value, this._then);
 
-  final TournamentState _value;
   // ignore: unused_field
-  final $Res Function(TournamentState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? status = freezed,
+    Object? info = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TournamentStatus,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
+      return _then(_value.copyWith(info: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentStatusCopyWith<$Res> get status {
     return $TournamentStatusCopyWith<$Res>(_value.status, (value) {
-      return _then(_value.copyWith(status: value));
+      return _then(_value.copyWith(status: value) as $Val);
     });
   }
 }
@@ -147,6 +152,7 @@ abstract class _$$InitialTournamentStateCopyWith<$Res>
           $Res Function(_$InitialTournamentState) then) =
       __$$InitialTournamentStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({TournamentInfo info, TournamentStatus status});
 
   @override
@@ -157,27 +163,24 @@ abstract class _$$InitialTournamentStateCopyWith<$Res>
 
 /// @nodoc
 class __$$InitialTournamentStateCopyWithImpl<$Res>
-    extends _$TournamentStateCopyWithImpl<$Res>
+    extends _$TournamentStateCopyWithImpl<$Res, _$InitialTournamentState>
     implements _$$InitialTournamentStateCopyWith<$Res> {
   __$$InitialTournamentStateCopyWithImpl(_$InitialTournamentState _value,
       $Res Function(_$InitialTournamentState) _then)
-      : super(_value, (v) => _then(v as _$InitialTournamentState));
+      : super(_value, _then);
 
-  @override
-  _$InitialTournamentState get _value =>
-      super._value as _$InitialTournamentState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? status = freezed,
+    Object? info = null,
+    Object? status = null,
   }) {
     return _then(_$InitialTournamentState(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TournamentStatus,
@@ -216,18 +219,16 @@ class _$InitialTournamentState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitialTournamentState &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, info, status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InitialTournamentStateCopyWith<_$InitialTournamentState> get copyWith =>
       __$$InitialTournamentStateCopyWithImpl<_$InitialTournamentState>(
           this, _$identity);
@@ -252,12 +253,12 @@ class _$InitialTournamentState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
-    TResult Function(TournamentInfo info, TournamentStatus status,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult? Function(TournamentInfo info, TournamentStatus status,
             Tournament tournament, bool toursLoaded)?
         data,
-    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
-    TResult Function(
+    TResult? Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult? Function(
             TournamentInfo info, TournamentStatus status, Exception exception)?
         error,
   }) {
@@ -297,10 +298,10 @@ class _$InitialTournamentState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialTournamentState value)? initial,
-    TResult Function(DataTournamentState value)? data,
-    TResult Function(LoadingTournamentState value)? loading,
-    TResult Function(ErrorTournamentState value)? error,
+    TResult? Function(InitialTournamentState value)? initial,
+    TResult? Function(DataTournamentState value)? data,
+    TResult? Function(LoadingTournamentState value)? loading,
+    TResult? Function(ErrorTournamentState value)? error,
   }) {
     return initial?.call(this);
   }
@@ -343,6 +344,7 @@ abstract class _$$DataTournamentStateCopyWith<$Res>
           $Res Function(_$DataTournamentState) then) =
       __$$DataTournamentStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {TournamentInfo info,
       TournamentStatus status,
@@ -358,36 +360,34 @@ abstract class _$$DataTournamentStateCopyWith<$Res>
 
 /// @nodoc
 class __$$DataTournamentStateCopyWithImpl<$Res>
-    extends _$TournamentStateCopyWithImpl<$Res>
+    extends _$TournamentStateCopyWithImpl<$Res, _$DataTournamentState>
     implements _$$DataTournamentStateCopyWith<$Res> {
   __$$DataTournamentStateCopyWithImpl(
       _$DataTournamentState _value, $Res Function(_$DataTournamentState) _then)
-      : super(_value, (v) => _then(v as _$DataTournamentState));
+      : super(_value, _then);
 
-  @override
-  _$DataTournamentState get _value => super._value as _$DataTournamentState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? status = freezed,
-    Object? tournament = freezed,
-    Object? toursLoaded = freezed,
+    Object? info = null,
+    Object? status = null,
+    Object? tournament = null,
+    Object? toursLoaded = null,
   }) {
     return _then(_$DataTournamentState(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TournamentStatus,
-      tournament: tournament == freezed
+      tournament: null == tournament
           ? _value.tournament
           : tournament // ignore: cast_nullable_to_non_nullable
               as Tournament,
-      toursLoaded: toursLoaded == freezed
+      toursLoaded: null == toursLoaded
           ? _value.toursLoaded
           : toursLoaded // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -395,6 +395,7 @@ class __$$DataTournamentStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentCopyWith<$Res> get tournament {
     return $TournamentCopyWith<$Res>(_value.tournament, (value) {
       return _then(_value.copyWith(tournament: value));
@@ -443,24 +444,21 @@ class _$DataTournamentState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataTournamentState &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.tournament, tournament) &&
-            const DeepCollectionEquality()
-                .equals(other.toursLoaded, toursLoaded));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.tournament, tournament) ||
+                other.tournament == tournament) &&
+            (identical(other.toursLoaded, toursLoaded) ||
+                other.toursLoaded == toursLoaded));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(tournament),
-      const DeepCollectionEquality().hash(toursLoaded));
+  int get hashCode =>
+      Object.hash(runtimeType, info, status, tournament, toursLoaded);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataTournamentStateCopyWith<_$DataTournamentState> get copyWith =>
       __$$DataTournamentStateCopyWithImpl<_$DataTournamentState>(
           this, _$identity);
@@ -485,12 +483,12 @@ class _$DataTournamentState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
-    TResult Function(TournamentInfo info, TournamentStatus status,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult? Function(TournamentInfo info, TournamentStatus status,
             Tournament tournament, bool toursLoaded)?
         data,
-    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
-    TResult Function(
+    TResult? Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult? Function(
             TournamentInfo info, TournamentStatus status, Exception exception)?
         error,
   }) {
@@ -530,10 +528,10 @@ class _$DataTournamentState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialTournamentState value)? initial,
-    TResult Function(DataTournamentState value)? data,
-    TResult Function(LoadingTournamentState value)? loading,
-    TResult Function(ErrorTournamentState value)? error,
+    TResult? Function(InitialTournamentState value)? initial,
+    TResult? Function(DataTournamentState value)? data,
+    TResult? Function(LoadingTournamentState value)? loading,
+    TResult? Function(ErrorTournamentState value)? error,
   }) {
     return data?.call(this);
   }
@@ -580,6 +578,7 @@ abstract class _$$LoadingTournamentStateCopyWith<$Res>
           $Res Function(_$LoadingTournamentState) then) =
       __$$LoadingTournamentStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({TournamentInfo info, TournamentStatus status});
 
   @override
@@ -590,27 +589,24 @@ abstract class _$$LoadingTournamentStateCopyWith<$Res>
 
 /// @nodoc
 class __$$LoadingTournamentStateCopyWithImpl<$Res>
-    extends _$TournamentStateCopyWithImpl<$Res>
+    extends _$TournamentStateCopyWithImpl<$Res, _$LoadingTournamentState>
     implements _$$LoadingTournamentStateCopyWith<$Res> {
   __$$LoadingTournamentStateCopyWithImpl(_$LoadingTournamentState _value,
       $Res Function(_$LoadingTournamentState) _then)
-      : super(_value, (v) => _then(v as _$LoadingTournamentState));
+      : super(_value, _then);
 
-  @override
-  _$LoadingTournamentState get _value =>
-      super._value as _$LoadingTournamentState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? status = freezed,
+    Object? info = null,
+    Object? status = null,
   }) {
     return _then(_$LoadingTournamentState(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TournamentStatus,
@@ -649,18 +645,16 @@ class _$LoadingTournamentState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadingTournamentState &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, info, status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadingTournamentStateCopyWith<_$LoadingTournamentState> get copyWith =>
       __$$LoadingTournamentStateCopyWithImpl<_$LoadingTournamentState>(
           this, _$identity);
@@ -685,12 +679,12 @@ class _$LoadingTournamentState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
-    TResult Function(TournamentInfo info, TournamentStatus status,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult? Function(TournamentInfo info, TournamentStatus status,
             Tournament tournament, bool toursLoaded)?
         data,
-    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
-    TResult Function(
+    TResult? Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult? Function(
             TournamentInfo info, TournamentStatus status, Exception exception)?
         error,
   }) {
@@ -730,10 +724,10 @@ class _$LoadingTournamentState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialTournamentState value)? initial,
-    TResult Function(DataTournamentState value)? data,
-    TResult Function(LoadingTournamentState value)? loading,
-    TResult Function(ErrorTournamentState value)? error,
+    TResult? Function(InitialTournamentState value)? initial,
+    TResult? Function(DataTournamentState value)? data,
+    TResult? Function(LoadingTournamentState value)? loading,
+    TResult? Function(ErrorTournamentState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -776,6 +770,7 @@ abstract class _$$ErrorTournamentStateCopyWith<$Res>
           $Res Function(_$ErrorTournamentState) then) =
       __$$ErrorTournamentStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {TournamentInfo info, TournamentStatus status, Exception exception});
 
@@ -787,31 +782,29 @@ abstract class _$$ErrorTournamentStateCopyWith<$Res>
 
 /// @nodoc
 class __$$ErrorTournamentStateCopyWithImpl<$Res>
-    extends _$TournamentStateCopyWithImpl<$Res>
+    extends _$TournamentStateCopyWithImpl<$Res, _$ErrorTournamentState>
     implements _$$ErrorTournamentStateCopyWith<$Res> {
   __$$ErrorTournamentStateCopyWithImpl(_$ErrorTournamentState _value,
       $Res Function(_$ErrorTournamentState) _then)
-      : super(_value, (v) => _then(v as _$ErrorTournamentState));
+      : super(_value, _then);
 
-  @override
-  _$ErrorTournamentState get _value => super._value as _$ErrorTournamentState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? status = freezed,
-    Object? exception = freezed,
+    Object? info = null,
+    Object? status = null,
+    Object? exception = null,
   }) {
     return _then(_$ErrorTournamentState(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TournamentStatus,
-      exception: exception == freezed
+      exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception,
@@ -854,20 +847,18 @@ class _$ErrorTournamentState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorTournamentState &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(exception));
+  int get hashCode => Object.hash(runtimeType, info, status, exception);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ErrorTournamentStateCopyWith<_$ErrorTournamentState> get copyWith =>
       __$$ErrorTournamentStateCopyWithImpl<_$ErrorTournamentState>(
           this, _$identity);
@@ -892,12 +883,12 @@ class _$ErrorTournamentState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TournamentInfo info, TournamentStatus status)? initial,
-    TResult Function(TournamentInfo info, TournamentStatus status,
+    TResult? Function(TournamentInfo info, TournamentStatus status)? initial,
+    TResult? Function(TournamentInfo info, TournamentStatus status,
             Tournament tournament, bool toursLoaded)?
         data,
-    TResult Function(TournamentInfo info, TournamentStatus status)? loading,
-    TResult Function(
+    TResult? Function(TournamentInfo info, TournamentStatus status)? loading,
+    TResult? Function(
             TournamentInfo info, TournamentStatus status, Exception exception)?
         error,
   }) {
@@ -937,10 +928,10 @@ class _$ErrorTournamentState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialTournamentState value)? initial,
-    TResult Function(DataTournamentState value)? data,
-    TResult Function(LoadingTournamentState value)? loading,
-    TResult Function(ErrorTournamentState value)? error,
+    TResult? Function(InitialTournamentState value)? initial,
+    TResult? Function(DataTournamentState value)? data,
+    TResult? Function(LoadingTournamentState value)? loading,
+    TResult? Function(ErrorTournamentState value)? error,
   }) {
     return error?.call(this);
   }

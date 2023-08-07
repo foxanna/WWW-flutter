@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'random_questions.dart';
 
@@ -27,29 +27,32 @@ mixin _$RandomQuestions {
 abstract class $RandomQuestionsCopyWith<$Res> {
   factory $RandomQuestionsCopyWith(
           RandomQuestions value, $Res Function(RandomQuestions) then) =
-      _$RandomQuestionsCopyWithImpl<$Res>;
+      _$RandomQuestionsCopyWithImpl<$Res, RandomQuestions>;
+  @useResult
   $Res call({List<Question> questions});
 }
 
 /// @nodoc
-class _$RandomQuestionsCopyWithImpl<$Res>
+class _$RandomQuestionsCopyWithImpl<$Res, $Val extends RandomQuestions>
     implements $RandomQuestionsCopyWith<$Res> {
   _$RandomQuestionsCopyWithImpl(this._value, this._then);
 
-  final RandomQuestions _value;
   // ignore: unused_field
-  final $Res Function(RandomQuestions) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questions = freezed,
+    Object? questions = null,
   }) {
     return _then(_value.copyWith(
-      questions: questions == freezed
+      questions: null == questions
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<Question>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -60,26 +63,25 @@ abstract class _$$_RandomQuestionsCopyWith<$Res>
           _$_RandomQuestions value, $Res Function(_$_RandomQuestions) then) =
       __$$_RandomQuestionsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<Question> questions});
 }
 
 /// @nodoc
 class __$$_RandomQuestionsCopyWithImpl<$Res>
-    extends _$RandomQuestionsCopyWithImpl<$Res>
+    extends _$RandomQuestionsCopyWithImpl<$Res, _$_RandomQuestions>
     implements _$$_RandomQuestionsCopyWith<$Res> {
   __$$_RandomQuestionsCopyWithImpl(
       _$_RandomQuestions _value, $Res Function(_$_RandomQuestions) _then)
-      : super(_value, (v) => _then(v as _$_RandomQuestions));
+      : super(_value, _then);
 
-  @override
-  _$_RandomQuestions get _value => super._value as _$_RandomQuestions;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questions = freezed,
+    Object? questions = null,
   }) {
     return _then(_$_RandomQuestions(
-      questions: questions == freezed
+      questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<Question>,
@@ -98,6 +100,7 @@ class _$_RandomQuestions implements _RandomQuestions {
   @override
   @JsonKey()
   List<Question> get questions {
+    if (_questions is EqualUnmodifiableListView) return _questions;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_questions);
   }
@@ -122,6 +125,7 @@ class _$_RandomQuestions implements _RandomQuestions {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RandomQuestionsCopyWith<_$_RandomQuestions> get copyWith =>
       __$$_RandomQuestionsCopyWithImpl<_$_RandomQuestions>(this, _$identity);
 }

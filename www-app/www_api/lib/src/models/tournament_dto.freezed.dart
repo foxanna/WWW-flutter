@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tournament_dto.dart';
 
@@ -52,7 +52,8 @@ mixin _$TournamentDto {
 abstract class $TournamentDtoCopyWith<$Res> {
   factory $TournamentDtoCopyWith(
           TournamentDto value, $Res Function(TournamentDto) then) =
-      _$TournamentDtoCopyWithImpl<$Res>;
+      _$TournamentDtoCopyWithImpl<$Res, TournamentDto>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'Id') String? id,
       @JsonKey(name: 'TextId') String? textId,
@@ -67,14 +68,16 @@ abstract class $TournamentDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TournamentDtoCopyWithImpl<$Res>
+class _$TournamentDtoCopyWithImpl<$Res, $Val extends TournamentDto>
     implements $TournamentDtoCopyWith<$Res> {
   _$TournamentDtoCopyWithImpl(this._value, this._then);
 
-  final TournamentDto _value;
   // ignore: unused_field
-  final $Res Function(TournamentDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -89,47 +92,47 @@ class _$TournamentDtoCopyWithImpl<$Res>
     Object? tours = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      textId: textId == freezed
+      textId: freezed == textId
           ? _value.textId
           : textId // ignore: cast_nullable_to_non_nullable
               as String?,
-      parentId: parentId == freezed
+      parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionsCount: questionsCount == freezed
+      questionsCount: freezed == questionsCount
           ? _value.questionsCount
           : questionsCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      editors: editors == freezed
+      editors: freezed == editors
           ? _value.editors
           : editors // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      playedAt: playedAt == freezed
+      playedAt: freezed == playedAt
           ? _value.playedAt
           : playedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      tours: tours == freezed
+      tours: freezed == tours
           ? _value.tours
           : tours // ignore: cast_nullable_to_non_nullable
               as List<TourDto>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -140,6 +143,7 @@ abstract class _$$_TournamentDtoCopyWith<$Res>
           _$_TournamentDto value, $Res Function(_$_TournamentDto) then) =
       __$$_TournamentDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'Id') String? id,
       @JsonKey(name: 'TextId') String? textId,
@@ -155,15 +159,13 @@ abstract class _$$_TournamentDtoCopyWith<$Res>
 
 /// @nodoc
 class __$$_TournamentDtoCopyWithImpl<$Res>
-    extends _$TournamentDtoCopyWithImpl<$Res>
+    extends _$TournamentDtoCopyWithImpl<$Res, _$_TournamentDto>
     implements _$$_TournamentDtoCopyWith<$Res> {
   __$$_TournamentDtoCopyWithImpl(
       _$_TournamentDto _value, $Res Function(_$_TournamentDto) _then)
-      : super(_value, (v) => _then(v as _$_TournamentDto));
+      : super(_value, _then);
 
-  @override
-  _$_TournamentDto get _value => super._value as _$_TournamentDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -178,43 +180,43 @@ class __$$_TournamentDtoCopyWithImpl<$Res>
     Object? tours = freezed,
   }) {
     return _then(_$_TournamentDto(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      textId: textId == freezed
+      textId: freezed == textId
           ? _value.textId
           : textId // ignore: cast_nullable_to_non_nullable
               as String?,
-      parentId: parentId == freezed
+      parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionsCount: questionsCount == freezed
+      questionsCount: freezed == questionsCount
           ? _value.questionsCount
           : questionsCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      editors: editors == freezed
+      editors: freezed == editors
           ? _value.editors
           : editors // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      playedAt: playedAt == freezed
+      playedAt: freezed == playedAt
           ? _value.playedAt
           : playedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      tours: tours == freezed
+      tours: freezed == tours
           ? _value._tours
           : tours // ignore: cast_nullable_to_non_nullable
               as List<TourDto>?,
@@ -275,6 +277,7 @@ class _$_TournamentDto implements _TournamentDto {
   List<TourDto>? get tours {
     final value = _tours;
     if (value == null) return null;
+    if (_tours is EqualUnmodifiableListView) return _tours;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -289,17 +292,20 @@ class _$_TournamentDto implements _TournamentDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TournamentDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.textId, textId) &&
-            const DeepCollectionEquality().equals(other.parentId, parentId) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality()
-                .equals(other.questionsCount, questionsCount) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.editors, editors) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.playedAt, playedAt) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.textId, textId) || other.textId == textId) &&
+            (identical(other.parentId, parentId) ||
+                other.parentId == parentId) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.questionsCount, questionsCount) ||
+                other.questionsCount == questionsCount) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.editors, editors) || other.editors == editors) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.playedAt, playedAt) ||
+                other.playedAt == playedAt) &&
             const DeepCollectionEquality().equals(other._tours, _tours));
   }
 
@@ -307,19 +313,20 @@ class _$_TournamentDto implements _TournamentDto {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(textId),
-      const DeepCollectionEquality().hash(parentId),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(questionsCount),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(editors),
-      const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(playedAt),
+      id,
+      textId,
+      parentId,
+      title,
+      questionsCount,
+      description,
+      editors,
+      createdAt,
+      playedAt,
       const DeepCollectionEquality().hash(_tours));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TournamentDtoCopyWith<_$_TournamentDto> get copyWith =>
       __$$_TournamentDtoCopyWithImpl<_$_TournamentDto>(this, _$identity);
 
@@ -333,27 +340,18 @@ class _$_TournamentDto implements _TournamentDto {
 
 abstract class _TournamentDto implements TournamentDto {
   const factory _TournamentDto(
-      {@JsonKey(name: 'Id')
-          final String? id,
-      @JsonKey(name: 'TextId')
-          final String? textId,
-      @JsonKey(name: 'ParentId')
-          final String? parentId,
-      @JsonKey(name: 'Title')
-          final String? title,
-      @JsonKey(name: 'QuestionsNum')
-          final String? questionsCount,
-      @JsonKey(name: 'Info')
-          final String? description,
-      @JsonKey(name: 'Editors')
-          final String? editors,
-      @JsonKey(name: 'CreatedAt')
-          final String? createdAt,
-      @JsonKey(name: 'PlayedAt')
-          final String? playedAt,
+      {@JsonKey(name: 'Id') final String? id,
+      @JsonKey(name: 'TextId') final String? textId,
+      @JsonKey(name: 'ParentId') final String? parentId,
+      @JsonKey(name: 'Title') final String? title,
+      @JsonKey(name: 'QuestionsNum') final String? questionsCount,
+      @JsonKey(name: 'Info') final String? description,
+      @JsonKey(name: 'Editors') final String? editors,
+      @JsonKey(name: 'CreatedAt') final String? createdAt,
+      @JsonKey(name: 'PlayedAt') final String? playedAt,
       @JsonKey(name: 'tour')
       @ToursListConverter()
-          final List<TourDto>? tours}) = _$_TournamentDto;
+      final List<TourDto>? tours}) = _$_TournamentDto;
 
   factory _TournamentDto.fromJson(Map<String, dynamic> json) =
       _$_TournamentDto.fromJson;

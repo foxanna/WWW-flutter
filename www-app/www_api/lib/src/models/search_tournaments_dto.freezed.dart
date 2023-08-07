@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'search_tournaments_dto.dart';
 
@@ -33,29 +33,33 @@ mixin _$SearchTournamentsDto {
 abstract class $SearchTournamentsDtoCopyWith<$Res> {
   factory $SearchTournamentsDtoCopyWith(SearchTournamentsDto value,
           $Res Function(SearchTournamentsDto) then) =
-      _$SearchTournamentsDtoCopyWithImpl<$Res>;
+      _$SearchTournamentsDtoCopyWithImpl<$Res, SearchTournamentsDto>;
+  @useResult
   $Res call({@JsonKey(name: 'search') List<TournamentDto>? tournaments});
 }
 
 /// @nodoc
-class _$SearchTournamentsDtoCopyWithImpl<$Res>
+class _$SearchTournamentsDtoCopyWithImpl<$Res,
+        $Val extends SearchTournamentsDto>
     implements $SearchTournamentsDtoCopyWith<$Res> {
   _$SearchTournamentsDtoCopyWithImpl(this._value, this._then);
 
-  final SearchTournamentsDto _value;
   // ignore: unused_field
-  final $Res Function(SearchTournamentsDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? tournaments = freezed,
   }) {
     return _then(_value.copyWith(
-      tournaments: tournaments == freezed
+      tournaments: freezed == tournaments
           ? _value.tournaments
           : tournaments // ignore: cast_nullable_to_non_nullable
               as List<TournamentDto>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -66,26 +70,25 @@ abstract class _$$_SearchTournamentsDtoCopyWith<$Res>
           $Res Function(_$_SearchTournamentsDto) then) =
       __$$_SearchTournamentsDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@JsonKey(name: 'search') List<TournamentDto>? tournaments});
 }
 
 /// @nodoc
 class __$$_SearchTournamentsDtoCopyWithImpl<$Res>
-    extends _$SearchTournamentsDtoCopyWithImpl<$Res>
+    extends _$SearchTournamentsDtoCopyWithImpl<$Res, _$_SearchTournamentsDto>
     implements _$$_SearchTournamentsDtoCopyWith<$Res> {
   __$$_SearchTournamentsDtoCopyWithImpl(_$_SearchTournamentsDto _value,
       $Res Function(_$_SearchTournamentsDto) _then)
-      : super(_value, (v) => _then(v as _$_SearchTournamentsDto));
+      : super(_value, _then);
 
-  @override
-  _$_SearchTournamentsDto get _value => super._value as _$_SearchTournamentsDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? tournaments = freezed,
   }) {
     return _then(_$_SearchTournamentsDto(
-      tournaments: tournaments == freezed
+      tournaments: freezed == tournaments
           ? _value._tournaments
           : tournaments // ignore: cast_nullable_to_non_nullable
               as List<TournamentDto>?,
@@ -109,6 +112,7 @@ class _$_SearchTournamentsDto implements _SearchTournamentsDto {
   List<TournamentDto>? get tournaments {
     final value = _tournaments;
     if (value == null) return null;
+    if (_tournaments is EqualUnmodifiableListView) return _tournaments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -134,6 +138,7 @@ class _$_SearchTournamentsDto implements _SearchTournamentsDto {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SearchTournamentsDtoCopyWith<_$_SearchTournamentsDto> get copyWith =>
       __$$_SearchTournamentsDtoCopyWithImpl<_$_SearchTournamentsDto>(
           this, _$identity);

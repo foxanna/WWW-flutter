@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tournaments_tree.dart';
 
@@ -29,47 +29,51 @@ mixin _$TournamentsTree {
 abstract class $TournamentsTreeCopyWith<$Res> {
   factory $TournamentsTreeCopyWith(
           TournamentsTree value, $Res Function(TournamentsTree) then) =
-      _$TournamentsTreeCopyWithImpl<$Res>;
+      _$TournamentsTreeCopyWithImpl<$Res, TournamentsTree>;
+  @useResult
   $Res call({String? id, List<dynamic> children, TournamentsTreeInfo info});
 
   $TournamentsTreeInfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class _$TournamentsTreeCopyWithImpl<$Res>
+class _$TournamentsTreeCopyWithImpl<$Res, $Val extends TournamentsTree>
     implements $TournamentsTreeCopyWith<$Res> {
   _$TournamentsTreeCopyWithImpl(this._value, this._then);
 
-  final TournamentsTree _value;
   // ignore: unused_field
-  final $Res Function(TournamentsTree) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? children = freezed,
-    Object? info = freezed,
+    Object? children = null,
+    Object? info = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      children: children == freezed
+      children: null == children
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentsTreeInfo,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentsTreeInfoCopyWith<$Res> get info {
     return $TournamentsTreeInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
+      return _then(_value.copyWith(info: value) as $Val);
     });
   }
 }
@@ -81,6 +85,7 @@ abstract class _$$_TournamentsTreeCopyWith<$Res>
           _$_TournamentsTree value, $Res Function(_$_TournamentsTree) then) =
       __$$_TournamentsTreeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String? id, List<dynamic> children, TournamentsTreeInfo info});
 
   @override
@@ -89,31 +94,29 @@ abstract class _$$_TournamentsTreeCopyWith<$Res>
 
 /// @nodoc
 class __$$_TournamentsTreeCopyWithImpl<$Res>
-    extends _$TournamentsTreeCopyWithImpl<$Res>
+    extends _$TournamentsTreeCopyWithImpl<$Res, _$_TournamentsTree>
     implements _$$_TournamentsTreeCopyWith<$Res> {
   __$$_TournamentsTreeCopyWithImpl(
       _$_TournamentsTree _value, $Res Function(_$_TournamentsTree) _then)
-      : super(_value, (v) => _then(v as _$_TournamentsTree));
+      : super(_value, _then);
 
-  @override
-  _$_TournamentsTree get _value => super._value as _$_TournamentsTree;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? children = freezed,
-    Object? info = freezed,
+    Object? children = null,
+    Object? info = null,
   }) {
     return _then(_$_TournamentsTree(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      children: children == freezed
+      children: null == children
           ? _value._children
           : children // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentsTreeInfo,
@@ -136,6 +139,7 @@ class _$_TournamentsTree implements _TournamentsTree {
   @override
   @JsonKey()
   List<dynamic> get children {
+    if (_children is EqualUnmodifiableListView) return _children;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_children);
   }
@@ -154,20 +158,18 @@ class _$_TournamentsTree implements _TournamentsTree {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TournamentsTree &&
-            const DeepCollectionEquality().equals(other.id, id) &&
+            (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._children, _children) &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(_children),
-      const DeepCollectionEquality().hash(info));
+      runtimeType, id, const DeepCollectionEquality().hash(_children), info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TournamentsTreeCopyWith<_$_TournamentsTree> get copyWith =>
       __$$_TournamentsTreeCopyWithImpl<_$_TournamentsTree>(this, _$identity);
 }

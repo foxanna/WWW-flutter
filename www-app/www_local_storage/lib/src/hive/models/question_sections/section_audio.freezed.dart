@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'section_audio.dart';
 
@@ -28,29 +28,33 @@ mixin _$AudioSectionHiveModel {
 abstract class $AudioSectionHiveModelCopyWith<$Res> {
   factory $AudioSectionHiveModelCopyWith(AudioSectionHiveModel value,
           $Res Function(AudioSectionHiveModel) then) =
-      _$AudioSectionHiveModelCopyWithImpl<$Res>;
+      _$AudioSectionHiveModelCopyWithImpl<$Res, AudioSectionHiveModel>;
+  @useResult
   $Res call({@HiveField(AudioSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
-class _$AudioSectionHiveModelCopyWithImpl<$Res>
+class _$AudioSectionHiveModelCopyWithImpl<$Res,
+        $Val extends AudioSectionHiveModel>
     implements $AudioSectionHiveModelCopyWith<$Res> {
   _$AudioSectionHiveModelCopyWithImpl(this._value, this._then);
 
-  final AudioSectionHiveModel _value;
   // ignore: unused_field
-  final $Res Function(AudioSectionHiveModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -61,27 +65,25 @@ abstract class _$$_AudioSectionHiveModelCopyWith<$Res>
           $Res Function(_$_AudioSectionHiveModel) then) =
       __$$_AudioSectionHiveModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@HiveField(AudioSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
 class __$$_AudioSectionHiveModelCopyWithImpl<$Res>
-    extends _$AudioSectionHiveModelCopyWithImpl<$Res>
+    extends _$AudioSectionHiveModelCopyWithImpl<$Res, _$_AudioSectionHiveModel>
     implements _$$_AudioSectionHiveModelCopyWith<$Res> {
   __$$_AudioSectionHiveModelCopyWithImpl(_$_AudioSectionHiveModel _value,
       $Res Function(_$_AudioSectionHiveModel) _then)
-      : super(_value, (v) => _then(v as _$_AudioSectionHiveModel));
+      : super(_value, _then);
 
-  @override
-  _$_AudioSectionHiveModel get _value =>
-      super._value as _$_AudioSectionHiveModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$_AudioSectionHiveModel(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
@@ -110,15 +112,15 @@ class _$_AudioSectionHiveModel implements _AudioSectionHiveModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AudioSectionHiveModel &&
-            const DeepCollectionEquality().equals(other.value, value));
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AudioSectionHiveModelCopyWith<_$_AudioSectionHiveModel> get copyWith =>
       __$$_AudioSectionHiveModelCopyWithImpl<_$_AudioSectionHiveModel>(
           this, _$identity);
@@ -127,7 +129,7 @@ class _$_AudioSectionHiveModel implements _AudioSectionHiveModel {
 abstract class _AudioSectionHiveModel implements AudioSectionHiveModel {
   const factory _AudioSectionHiveModel(
       {@HiveField(AudioSectionHiveFieldsIds.value)
-          required final String value}) = _$_AudioSectionHiveModel;
+      required final String value}) = _$_AudioSectionHiveModel;
 
   @override
   @HiveField(AudioSectionHiveFieldsIds.value)

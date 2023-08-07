@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tours_actions.dart';
 
@@ -24,7 +24,7 @@ mixin _$UserActionTours {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TourInfo info)? load,
+    TResult? Function(TourInfo info)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$UserActionTours {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadToursUserAction value)? load,
+    TResult? Function(LoadToursUserAction value)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,37 +59,41 @@ mixin _$UserActionTours {
 abstract class $UserActionToursCopyWith<$Res> {
   factory $UserActionToursCopyWith(
           UserActionTours value, $Res Function(UserActionTours) then) =
-      _$UserActionToursCopyWithImpl<$Res>;
+      _$UserActionToursCopyWithImpl<$Res, UserActionTours>;
+  @useResult
   $Res call({TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class _$UserActionToursCopyWithImpl<$Res>
+class _$UserActionToursCopyWithImpl<$Res, $Val extends UserActionTours>
     implements $UserActionToursCopyWith<$Res> {
   _$UserActionToursCopyWithImpl(this._value, this._then);
 
-  final UserActionTours _value;
   // ignore: unused_field
-  final $Res Function(UserActionTours) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_value.copyWith(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TourInfo,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TourInfoCopyWith<$Res> get info {
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
+      return _then(_value.copyWith(info: value) as $Val);
     });
   }
 }
@@ -101,6 +105,7 @@ abstract class _$$LoadToursUserActionCopyWith<$Res>
           $Res Function(_$LoadToursUserAction) then) =
       __$$LoadToursUserActionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({TourInfo info});
 
   @override
@@ -109,21 +114,19 @@ abstract class _$$LoadToursUserActionCopyWith<$Res>
 
 /// @nodoc
 class __$$LoadToursUserActionCopyWithImpl<$Res>
-    extends _$UserActionToursCopyWithImpl<$Res>
+    extends _$UserActionToursCopyWithImpl<$Res, _$LoadToursUserAction>
     implements _$$LoadToursUserActionCopyWith<$Res> {
   __$$LoadToursUserActionCopyWithImpl(
       _$LoadToursUserAction _value, $Res Function(_$LoadToursUserAction) _then)
-      : super(_value, (v) => _then(v as _$LoadToursUserAction));
+      : super(_value, _then);
 
-  @override
-  _$LoadToursUserAction get _value => super._value as _$LoadToursUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$LoadToursUserAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TourInfo,
@@ -159,15 +162,15 @@ class _$LoadToursUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadToursUserAction &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadToursUserActionCopyWith<_$LoadToursUserAction> get copyWith =>
       __$$LoadToursUserActionCopyWithImpl<_$LoadToursUserAction>(
           this, _$identity);
@@ -183,7 +186,7 @@ class _$LoadToursUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TourInfo info)? load,
+    TResult? Function(TourInfo info)? load,
   }) {
     return load?.call(info);
   }
@@ -211,7 +214,7 @@ class _$LoadToursUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadToursUserAction value)? load,
+    TResult? Function(LoadToursUserAction value)? load,
   }) {
     return load?.call(this);
   }
@@ -254,11 +257,11 @@ mixin _$SystemActionTours {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<TourInfo> tours)? init,
-    TResult Function()? deInit,
-    TResult Function(TourInfo info)? loading,
-    TResult Function(TourInfo info, Exception exception)? failed,
-    TResult Function(Tour tour)? completed,
+    TResult? Function(List<TourInfo> tours)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TourInfo info)? loading,
+    TResult? Function(TourInfo info, Exception exception)? failed,
+    TResult? Function(Tour tour)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -282,11 +285,11 @@ mixin _$SystemActionTours {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitToursSystemAction value)? init,
-    TResult Function(DeInitToursSystemAction value)? deInit,
-    TResult Function(LoadingToursSystemAction value)? loading,
-    TResult Function(FailedToursSystemAction value)? failed,
-    TResult Function(CompletedToursSystemAction value)? completed,
+    TResult? Function(InitToursSystemAction value)? init,
+    TResult? Function(DeInitToursSystemAction value)? deInit,
+    TResult? Function(LoadingToursSystemAction value)? loading,
+    TResult? Function(FailedToursSystemAction value)? failed,
+    TResult? Function(CompletedToursSystemAction value)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -305,17 +308,18 @@ mixin _$SystemActionTours {
 abstract class $SystemActionToursCopyWith<$Res> {
   factory $SystemActionToursCopyWith(
           SystemActionTours value, $Res Function(SystemActionTours) then) =
-      _$SystemActionToursCopyWithImpl<$Res>;
+      _$SystemActionToursCopyWithImpl<$Res, SystemActionTours>;
 }
 
 /// @nodoc
-class _$SystemActionToursCopyWithImpl<$Res>
+class _$SystemActionToursCopyWithImpl<$Res, $Val extends SystemActionTours>
     implements $SystemActionToursCopyWith<$Res> {
   _$SystemActionToursCopyWithImpl(this._value, this._then);
 
-  final SystemActionTours _value;
   // ignore: unused_field
-  final $Res Function(SystemActionTours) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -323,26 +327,25 @@ abstract class _$$InitToursSystemActionCopyWith<$Res> {
   factory _$$InitToursSystemActionCopyWith(_$InitToursSystemAction value,
           $Res Function(_$InitToursSystemAction) then) =
       __$$InitToursSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<TourInfo> tours});
 }
 
 /// @nodoc
 class __$$InitToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res, _$InitToursSystemAction>
     implements _$$InitToursSystemActionCopyWith<$Res> {
   __$$InitToursSystemActionCopyWithImpl(_$InitToursSystemAction _value,
       $Res Function(_$InitToursSystemAction) _then)
-      : super(_value, (v) => _then(v as _$InitToursSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$InitToursSystemAction get _value => super._value as _$InitToursSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tours = freezed,
+    Object? tours = null,
   }) {
     return _then(_$InitToursSystemAction(
-      tours: tours == freezed
+      tours: null == tours
           ? _value._tours
           : tours // ignore: cast_nullable_to_non_nullable
               as List<TourInfo>,
@@ -361,6 +364,7 @@ class _$InitToursSystemAction
   final List<TourInfo> _tours;
   @override
   List<TourInfo> get tours {
+    if (_tours is EqualUnmodifiableListView) return _tours;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tours);
   }
@@ -392,6 +396,7 @@ class _$InitToursSystemAction
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InitToursSystemActionCopyWith<_$InitToursSystemAction> get copyWith =>
       __$$InitToursSystemActionCopyWithImpl<_$InitToursSystemAction>(
           this, _$identity);
@@ -411,11 +416,11 @@ class _$InitToursSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<TourInfo> tours)? init,
-    TResult Function()? deInit,
-    TResult Function(TourInfo info)? loading,
-    TResult Function(TourInfo info, Exception exception)? failed,
-    TResult Function(Tour tour)? completed,
+    TResult? Function(List<TourInfo> tours)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TourInfo info)? loading,
+    TResult? Function(TourInfo info, Exception exception)? failed,
+    TResult? Function(Tour tour)? completed,
   }) {
     return init?.call(tours);
   }
@@ -451,11 +456,11 @@ class _$InitToursSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitToursSystemAction value)? init,
-    TResult Function(DeInitToursSystemAction value)? deInit,
-    TResult Function(LoadingToursSystemAction value)? loading,
-    TResult Function(FailedToursSystemAction value)? failed,
-    TResult Function(CompletedToursSystemAction value)? completed,
+    TResult? Function(InitToursSystemAction value)? init,
+    TResult? Function(DeInitToursSystemAction value)? deInit,
+    TResult? Function(LoadingToursSystemAction value)? loading,
+    TResult? Function(FailedToursSystemAction value)? failed,
+    TResult? Function(CompletedToursSystemAction value)? completed,
   }) {
     return init?.call(this);
   }
@@ -496,15 +501,11 @@ abstract class _$$DeInitToursSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$DeInitToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res, _$DeInitToursSystemAction>
     implements _$$DeInitToursSystemActionCopyWith<$Res> {
   __$$DeInitToursSystemActionCopyWithImpl(_$DeInitToursSystemAction _value,
       $Res Function(_$DeInitToursSystemAction) _then)
-      : super(_value, (v) => _then(v as _$DeInitToursSystemAction));
-
-  @override
-  _$DeInitToursSystemAction get _value =>
-      super._value as _$DeInitToursSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -550,11 +551,11 @@ class _$DeInitToursSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<TourInfo> tours)? init,
-    TResult Function()? deInit,
-    TResult Function(TourInfo info)? loading,
-    TResult Function(TourInfo info, Exception exception)? failed,
-    TResult Function(Tour tour)? completed,
+    TResult? Function(List<TourInfo> tours)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TourInfo info)? loading,
+    TResult? Function(TourInfo info, Exception exception)? failed,
+    TResult? Function(Tour tour)? completed,
   }) {
     return deInit?.call();
   }
@@ -590,11 +591,11 @@ class _$DeInitToursSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitToursSystemAction value)? init,
-    TResult Function(DeInitToursSystemAction value)? deInit,
-    TResult Function(LoadingToursSystemAction value)? loading,
-    TResult Function(FailedToursSystemAction value)? failed,
-    TResult Function(CompletedToursSystemAction value)? completed,
+    TResult? Function(InitToursSystemAction value)? init,
+    TResult? Function(DeInitToursSystemAction value)? deInit,
+    TResult? Function(LoadingToursSystemAction value)? loading,
+    TResult? Function(FailedToursSystemAction value)? failed,
+    TResult? Function(CompletedToursSystemAction value)? completed,
   }) {
     return deInit?.call(this);
   }
@@ -625,6 +626,7 @@ abstract class _$$LoadingToursSystemActionCopyWith<$Res> {
   factory _$$LoadingToursSystemActionCopyWith(_$LoadingToursSystemAction value,
           $Res Function(_$LoadingToursSystemAction) then) =
       __$$LoadingToursSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
@@ -632,22 +634,19 @@ abstract class _$$LoadingToursSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res, _$LoadingToursSystemAction>
     implements _$$LoadingToursSystemActionCopyWith<$Res> {
   __$$LoadingToursSystemActionCopyWithImpl(_$LoadingToursSystemAction _value,
       $Res Function(_$LoadingToursSystemAction) _then)
-      : super(_value, (v) => _then(v as _$LoadingToursSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$LoadingToursSystemAction get _value =>
-      super._value as _$LoadingToursSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$LoadingToursSystemAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TourInfo,
@@ -655,6 +654,7 @@ class __$$LoadingToursSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TourInfoCopyWith<$Res> get info {
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -690,15 +690,15 @@ class _$LoadingToursSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadingToursSystemAction &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadingToursSystemActionCopyWith<_$LoadingToursSystemAction>
       get copyWith =>
           __$$LoadingToursSystemActionCopyWithImpl<_$LoadingToursSystemAction>(
@@ -719,11 +719,11 @@ class _$LoadingToursSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<TourInfo> tours)? init,
-    TResult Function()? deInit,
-    TResult Function(TourInfo info)? loading,
-    TResult Function(TourInfo info, Exception exception)? failed,
-    TResult Function(Tour tour)? completed,
+    TResult? Function(List<TourInfo> tours)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TourInfo info)? loading,
+    TResult? Function(TourInfo info, Exception exception)? failed,
+    TResult? Function(Tour tour)? completed,
   }) {
     return loading?.call(info);
   }
@@ -759,11 +759,11 @@ class _$LoadingToursSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitToursSystemAction value)? init,
-    TResult Function(DeInitToursSystemAction value)? deInit,
-    TResult Function(LoadingToursSystemAction value)? loading,
-    TResult Function(FailedToursSystemAction value)? failed,
-    TResult Function(CompletedToursSystemAction value)? completed,
+    TResult? Function(InitToursSystemAction value)? init,
+    TResult? Function(DeInitToursSystemAction value)? deInit,
+    TResult? Function(LoadingToursSystemAction value)? loading,
+    TResult? Function(FailedToursSystemAction value)? failed,
+    TResult? Function(CompletedToursSystemAction value)? completed,
   }) {
     return loading?.call(this);
   }
@@ -800,6 +800,7 @@ abstract class _$$FailedToursSystemActionCopyWith<$Res> {
   factory _$$FailedToursSystemActionCopyWith(_$FailedToursSystemAction value,
           $Res Function(_$FailedToursSystemAction) then) =
       __$$FailedToursSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TourInfo info, Exception exception});
 
   $TourInfoCopyWith<$Res> get info;
@@ -807,27 +808,24 @@ abstract class _$$FailedToursSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailedToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res, _$FailedToursSystemAction>
     implements _$$FailedToursSystemActionCopyWith<$Res> {
   __$$FailedToursSystemActionCopyWithImpl(_$FailedToursSystemAction _value,
       $Res Function(_$FailedToursSystemAction) _then)
-      : super(_value, (v) => _then(v as _$FailedToursSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$FailedToursSystemAction get _value =>
-      super._value as _$FailedToursSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? exception = freezed,
+    Object? info = null,
+    Object? exception = null,
   }) {
     return _then(_$FailedToursSystemAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TourInfo,
-      exception: exception == freezed
+      exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception,
@@ -835,6 +833,7 @@ class __$$FailedToursSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TourInfoCopyWith<$Res> get info {
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -874,18 +873,17 @@ class _$FailedToursSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailedToursSystemAction &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(exception));
+  int get hashCode => Object.hash(runtimeType, info, exception);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$FailedToursSystemActionCopyWith<_$FailedToursSystemAction> get copyWith =>
       __$$FailedToursSystemActionCopyWithImpl<_$FailedToursSystemAction>(
           this, _$identity);
@@ -905,11 +903,11 @@ class _$FailedToursSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<TourInfo> tours)? init,
-    TResult Function()? deInit,
-    TResult Function(TourInfo info)? loading,
-    TResult Function(TourInfo info, Exception exception)? failed,
-    TResult Function(Tour tour)? completed,
+    TResult? Function(List<TourInfo> tours)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TourInfo info)? loading,
+    TResult? Function(TourInfo info, Exception exception)? failed,
+    TResult? Function(Tour tour)? completed,
   }) {
     return failed?.call(info, exception);
   }
@@ -945,11 +943,11 @@ class _$FailedToursSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitToursSystemAction value)? init,
-    TResult Function(DeInitToursSystemAction value)? deInit,
-    TResult Function(LoadingToursSystemAction value)? loading,
-    TResult Function(FailedToursSystemAction value)? failed,
-    TResult Function(CompletedToursSystemAction value)? completed,
+    TResult? Function(InitToursSystemAction value)? init,
+    TResult? Function(DeInitToursSystemAction value)? deInit,
+    TResult? Function(LoadingToursSystemAction value)? loading,
+    TResult? Function(FailedToursSystemAction value)? failed,
+    TResult? Function(CompletedToursSystemAction value)? completed,
   }) {
     return failed?.call(this);
   }
@@ -989,6 +987,7 @@ abstract class _$$CompletedToursSystemActionCopyWith<$Res> {
           _$CompletedToursSystemAction value,
           $Res Function(_$CompletedToursSystemAction) then) =
       __$$CompletedToursSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({Tour tour});
 
   $TourCopyWith<$Res> get tour;
@@ -996,23 +995,20 @@ abstract class _$$CompletedToursSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$CompletedToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res, _$CompletedToursSystemAction>
     implements _$$CompletedToursSystemActionCopyWith<$Res> {
   __$$CompletedToursSystemActionCopyWithImpl(
       _$CompletedToursSystemAction _value,
       $Res Function(_$CompletedToursSystemAction) _then)
-      : super(_value, (v) => _then(v as _$CompletedToursSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$CompletedToursSystemAction get _value =>
-      super._value as _$CompletedToursSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tour = freezed,
+    Object? tour = null,
   }) {
     return _then(_$CompletedToursSystemAction(
-      tour: tour == freezed
+      tour: null == tour
           ? _value.tour
           : tour // ignore: cast_nullable_to_non_nullable
               as Tour,
@@ -1020,6 +1016,7 @@ class __$$CompletedToursSystemActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TourCopyWith<$Res> get tour {
     return $TourCopyWith<$Res>(_value.tour, (value) {
       return _then(_value.copyWith(tour: value));
@@ -1055,15 +1052,15 @@ class _$CompletedToursSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CompletedToursSystemAction &&
-            const DeepCollectionEquality().equals(other.tour, tour));
+            (identical(other.tour, tour) || other.tour == tour));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(tour));
+  int get hashCode => Object.hash(runtimeType, tour);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$CompletedToursSystemActionCopyWith<_$CompletedToursSystemAction>
       get copyWith => __$$CompletedToursSystemActionCopyWithImpl<
           _$CompletedToursSystemAction>(this, _$identity);
@@ -1083,11 +1080,11 @@ class _$CompletedToursSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<TourInfo> tours)? init,
-    TResult Function()? deInit,
-    TResult Function(TourInfo info)? loading,
-    TResult Function(TourInfo info, Exception exception)? failed,
-    TResult Function(Tour tour)? completed,
+    TResult? Function(List<TourInfo> tours)? init,
+    TResult? Function()? deInit,
+    TResult? Function(TourInfo info)? loading,
+    TResult? Function(TourInfo info, Exception exception)? failed,
+    TResult? Function(Tour tour)? completed,
   }) {
     return completed?.call(tour);
   }
@@ -1123,11 +1120,11 @@ class _$CompletedToursSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitToursSystemAction value)? init,
-    TResult Function(DeInitToursSystemAction value)? deInit,
-    TResult Function(LoadingToursSystemAction value)? loading,
-    TResult Function(FailedToursSystemAction value)? failed,
-    TResult Function(CompletedToursSystemAction value)? completed,
+    TResult? Function(InitToursSystemAction value)? init,
+    TResult? Function(DeInitToursSystemAction value)? deInit,
+    TResult? Function(LoadingToursSystemAction value)? loading,
+    TResult? Function(FailedToursSystemAction value)? failed,
+    TResult? Function(CompletedToursSystemAction value)? completed,
   }) {
     return completed?.call(this);
   }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'section_speaker_note.dart';
 
@@ -27,29 +27,32 @@ mixin _$SpeakerNoteSection {
 abstract class $SpeakerNoteSectionCopyWith<$Res> {
   factory $SpeakerNoteSectionCopyWith(
           SpeakerNoteSection value, $Res Function(SpeakerNoteSection) then) =
-      _$SpeakerNoteSectionCopyWithImpl<$Res>;
+      _$SpeakerNoteSectionCopyWithImpl<$Res, SpeakerNoteSection>;
+  @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class _$SpeakerNoteSectionCopyWithImpl<$Res>
+class _$SpeakerNoteSectionCopyWithImpl<$Res, $Val extends SpeakerNoteSection>
     implements $SpeakerNoteSectionCopyWith<$Res> {
   _$SpeakerNoteSectionCopyWithImpl(this._value, this._then);
 
-  final SpeakerNoteSection _value;
   // ignore: unused_field
-  final $Res Function(SpeakerNoteSection) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -60,26 +63,25 @@ abstract class _$$_SpeakerNoteSectionCopyWith<$Res>
           $Res Function(_$_SpeakerNoteSection) then) =
       __$$_SpeakerNoteSectionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String value});
 }
 
 /// @nodoc
 class __$$_SpeakerNoteSectionCopyWithImpl<$Res>
-    extends _$SpeakerNoteSectionCopyWithImpl<$Res>
+    extends _$SpeakerNoteSectionCopyWithImpl<$Res, _$_SpeakerNoteSection>
     implements _$$_SpeakerNoteSectionCopyWith<$Res> {
   __$$_SpeakerNoteSectionCopyWithImpl(
       _$_SpeakerNoteSection _value, $Res Function(_$_SpeakerNoteSection) _then)
-      : super(_value, (v) => _then(v as _$_SpeakerNoteSection));
+      : super(_value, _then);
 
-  @override
-  _$_SpeakerNoteSection get _value => super._value as _$_SpeakerNoteSection;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$_SpeakerNoteSection(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
@@ -105,15 +107,15 @@ class _$_SpeakerNoteSection implements _SpeakerNoteSection {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SpeakerNoteSection &&
-            const DeepCollectionEquality().equals(other.value, value));
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SpeakerNoteSectionCopyWith<_$_SpeakerNoteSection> get copyWith =>
       __$$_SpeakerNoteSectionCopyWithImpl<_$_SpeakerNoteSection>(
           this, _$identity);

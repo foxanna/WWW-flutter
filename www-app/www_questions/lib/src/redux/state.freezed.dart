@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'state.dart';
 
@@ -34,15 +34,15 @@ mixin _$QuestionsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+    TResult? Function()? initial,
+    TResult? Function()? loadingFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex)?
         loadingWithData,
-    TResult Function(Exception exception)? errorFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(Exception exception)? errorFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             Exception exception)?
         errorWithData,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             bool canLoadMore)?
         data,
   }) =>
@@ -78,12 +78,12 @@ mixin _$QuestionsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialQuestionsState value)? initial,
-    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
-    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
-    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
-    TResult Function(DataQuestionsState value)? data,
+    TResult? Function(InitialQuestionsState value)? initial,
+    TResult? Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult? Function(DataQuestionsState value)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,17 +103,18 @@ mixin _$QuestionsState {
 abstract class $QuestionsStateCopyWith<$Res> {
   factory $QuestionsStateCopyWith(
           QuestionsState value, $Res Function(QuestionsState) then) =
-      _$QuestionsStateCopyWithImpl<$Res>;
+      _$QuestionsStateCopyWithImpl<$Res, QuestionsState>;
 }
 
 /// @nodoc
-class _$QuestionsStateCopyWithImpl<$Res>
+class _$QuestionsStateCopyWithImpl<$Res, $Val extends QuestionsState>
     implements $QuestionsStateCopyWith<$Res> {
   _$QuestionsStateCopyWithImpl(this._value, this._then);
 
-  final QuestionsState _value;
   // ignore: unused_field
-  final $Res Function(QuestionsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -125,14 +126,11 @@ abstract class _$$InitialQuestionsStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res, _$InitialQuestionsState>
     implements _$$InitialQuestionsStateCopyWith<$Res> {
   __$$InitialQuestionsStateCopyWithImpl(_$InitialQuestionsState _value,
       $Res Function(_$InitialQuestionsState) _then)
-      : super(_value, (v) => _then(v as _$InitialQuestionsState));
-
-  @override
-  _$InitialQuestionsState get _value => super._value as _$InitialQuestionsState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -176,15 +174,15 @@ class _$InitialQuestionsState implements InitialQuestionsState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+    TResult? Function()? initial,
+    TResult? Function()? loadingFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex)?
         loadingWithData,
-    TResult Function(Exception exception)? errorFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(Exception exception)? errorFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             Exception exception)?
         errorWithData,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             bool canLoadMore)?
         data,
   }) {
@@ -232,12 +230,12 @@ class _$InitialQuestionsState implements InitialQuestionsState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialQuestionsState value)? initial,
-    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
-    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
-    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
-    TResult Function(DataQuestionsState value)? data,
+    TResult? Function(InitialQuestionsState value)? initial,
+    TResult? Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult? Function(DataQuestionsState value)? data,
   }) {
     return initial?.call(this);
   }
@@ -274,16 +272,12 @@ abstract class _$$LoadingFirstPageQuestionsStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res, _$LoadingFirstPageQuestionsState>
     implements _$$LoadingFirstPageQuestionsStateCopyWith<$Res> {
   __$$LoadingFirstPageQuestionsStateCopyWithImpl(
       _$LoadingFirstPageQuestionsState _value,
       $Res Function(_$LoadingFirstPageQuestionsState) _then)
-      : super(_value, (v) => _then(v as _$LoadingFirstPageQuestionsState));
-
-  @override
-  _$LoadingFirstPageQuestionsState get _value =>
-      super._value as _$LoadingFirstPageQuestionsState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -329,15 +323,15 @@ class _$LoadingFirstPageQuestionsState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+    TResult? Function()? initial,
+    TResult? Function()? loadingFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex)?
         loadingWithData,
-    TResult Function(Exception exception)? errorFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(Exception exception)? errorFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             Exception exception)?
         errorWithData,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             bool canLoadMore)?
         data,
   }) {
@@ -385,12 +379,12 @@ class _$LoadingFirstPageQuestionsState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialQuestionsState value)? initial,
-    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
-    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
-    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
-    TResult Function(DataQuestionsState value)? data,
+    TResult? Function(InitialQuestionsState value)? initial,
+    TResult? Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult? Function(DataQuestionsState value)? data,
   }) {
     return loadingFirstPage?.call(this);
   }
@@ -424,33 +418,31 @@ abstract class _$$LoadingWithDataQuestionsStateCopyWith<$Res> {
           _$LoadingWithDataQuestionsState value,
           $Res Function(_$LoadingWithDataQuestionsState) then) =
       __$$LoadingWithDataQuestionsStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<QuestionState> questions, int currentQuestionIndex});
 }
 
 /// @nodoc
 class __$$LoadingWithDataQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res, _$LoadingWithDataQuestionsState>
     implements _$$LoadingWithDataQuestionsStateCopyWith<$Res> {
   __$$LoadingWithDataQuestionsStateCopyWithImpl(
       _$LoadingWithDataQuestionsState _value,
       $Res Function(_$LoadingWithDataQuestionsState) _then)
-      : super(_value, (v) => _then(v as _$LoadingWithDataQuestionsState));
+      : super(_value, _then);
 
-  @override
-  _$LoadingWithDataQuestionsState get _value =>
-      super._value as _$LoadingWithDataQuestionsState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questions = freezed,
-    Object? currentQuestionIndex = freezed,
+    Object? questions = null,
+    Object? currentQuestionIndex = null,
   }) {
     return _then(_$LoadingWithDataQuestionsState(
-      questions: questions == freezed
+      questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionState>,
-      currentQuestionIndex: currentQuestionIndex == freezed
+      currentQuestionIndex: null == currentQuestionIndex
           ? _value.currentQuestionIndex
           : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
               as int,
@@ -469,6 +461,7 @@ class _$LoadingWithDataQuestionsState implements LoadingWithDataQuestionsState {
   final List<QuestionState> _questions;
   @override
   List<QuestionState> get questions {
+    if (_questions is EqualUnmodifiableListView) return _questions;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_questions);
   }
@@ -488,18 +481,17 @@ class _$LoadingWithDataQuestionsState implements LoadingWithDataQuestionsState {
             other is _$LoadingWithDataQuestionsState &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions) &&
-            const DeepCollectionEquality()
-                .equals(other.currentQuestionIndex, currentQuestionIndex));
+            (identical(other.currentQuestionIndex, currentQuestionIndex) ||
+                other.currentQuestionIndex == currentQuestionIndex));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_questions),
-      const DeepCollectionEquality().hash(currentQuestionIndex));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_questions), currentQuestionIndex);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadingWithDataQuestionsStateCopyWith<_$LoadingWithDataQuestionsState>
       get copyWith => __$$LoadingWithDataQuestionsStateCopyWithImpl<
           _$LoadingWithDataQuestionsState>(this, _$identity);
@@ -526,15 +518,15 @@ class _$LoadingWithDataQuestionsState implements LoadingWithDataQuestionsState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+    TResult? Function()? initial,
+    TResult? Function()? loadingFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex)?
         loadingWithData,
-    TResult Function(Exception exception)? errorFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(Exception exception)? errorFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             Exception exception)?
         errorWithData,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             bool canLoadMore)?
         data,
   }) {
@@ -582,12 +574,12 @@ class _$LoadingWithDataQuestionsState implements LoadingWithDataQuestionsState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialQuestionsState value)? initial,
-    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
-    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
-    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
-    TResult Function(DataQuestionsState value)? data,
+    TResult? Function(InitialQuestionsState value)? initial,
+    TResult? Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult? Function(DataQuestionsState value)? data,
   }) {
     return loadingWithData?.call(this);
   }
@@ -629,28 +621,26 @@ abstract class _$$ErrorFirstPageQuestionsStateCopyWith<$Res> {
           _$ErrorFirstPageQuestionsState value,
           $Res Function(_$ErrorFirstPageQuestionsState) then) =
       __$$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({Exception exception});
 }
 
 /// @nodoc
 class __$$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res, _$ErrorFirstPageQuestionsState>
     implements _$$ErrorFirstPageQuestionsStateCopyWith<$Res> {
   __$$ErrorFirstPageQuestionsStateCopyWithImpl(
       _$ErrorFirstPageQuestionsState _value,
       $Res Function(_$ErrorFirstPageQuestionsState) _then)
-      : super(_value, (v) => _then(v as _$ErrorFirstPageQuestionsState));
+      : super(_value, _then);
 
-  @override
-  _$ErrorFirstPageQuestionsState get _value =>
-      super._value as _$ErrorFirstPageQuestionsState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? exception = freezed,
+    Object? exception = null,
   }) {
     return _then(_$ErrorFirstPageQuestionsState(
-      exception: exception == freezed
+      exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception,
@@ -676,15 +666,16 @@ class _$ErrorFirstPageQuestionsState implements ErrorFirstPageQuestionsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorFirstPageQuestionsState &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
+  int get hashCode => Object.hash(runtimeType, exception);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ErrorFirstPageQuestionsStateCopyWith<_$ErrorFirstPageQuestionsState>
       get copyWith => __$$ErrorFirstPageQuestionsStateCopyWithImpl<
           _$ErrorFirstPageQuestionsState>(this, _$identity);
@@ -711,15 +702,15 @@ class _$ErrorFirstPageQuestionsState implements ErrorFirstPageQuestionsState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+    TResult? Function()? initial,
+    TResult? Function()? loadingFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex)?
         loadingWithData,
-    TResult Function(Exception exception)? errorFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(Exception exception)? errorFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             Exception exception)?
         errorWithData,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             bool canLoadMore)?
         data,
   }) {
@@ -767,12 +758,12 @@ class _$ErrorFirstPageQuestionsState implements ErrorFirstPageQuestionsState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialQuestionsState value)? initial,
-    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
-    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
-    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
-    TResult Function(DataQuestionsState value)? data,
+    TResult? Function(InitialQuestionsState value)? initial,
+    TResult? Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult? Function(DataQuestionsState value)? data,
   }) {
     return errorFirstPage?.call(this);
   }
@@ -811,6 +802,7 @@ abstract class _$$ErrorWithDataQuestionsStateCopyWith<$Res> {
           _$ErrorWithDataQuestionsState value,
           $Res Function(_$ErrorWithDataQuestionsState) then) =
       __$$ErrorWithDataQuestionsStateCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {List<QuestionState> questions,
       int currentQuestionIndex,
@@ -819,33 +811,30 @@ abstract class _$$ErrorWithDataQuestionsStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res, _$ErrorWithDataQuestionsState>
     implements _$$ErrorWithDataQuestionsStateCopyWith<$Res> {
   __$$ErrorWithDataQuestionsStateCopyWithImpl(
       _$ErrorWithDataQuestionsState _value,
       $Res Function(_$ErrorWithDataQuestionsState) _then)
-      : super(_value, (v) => _then(v as _$ErrorWithDataQuestionsState));
+      : super(_value, _then);
 
-  @override
-  _$ErrorWithDataQuestionsState get _value =>
-      super._value as _$ErrorWithDataQuestionsState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questions = freezed,
-    Object? currentQuestionIndex = freezed,
-    Object? exception = freezed,
+    Object? questions = null,
+    Object? currentQuestionIndex = null,
+    Object? exception = null,
   }) {
     return _then(_$ErrorWithDataQuestionsState(
-      questions: questions == freezed
+      questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionState>,
-      currentQuestionIndex: currentQuestionIndex == freezed
+      currentQuestionIndex: null == currentQuestionIndex
           ? _value.currentQuestionIndex
           : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      exception: exception == freezed
+      exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception,
@@ -865,6 +854,7 @@ class _$ErrorWithDataQuestionsState implements ErrorWithDataQuestionsState {
   final List<QuestionState> _questions;
   @override
   List<QuestionState> get questions {
+    if (_questions is EqualUnmodifiableListView) return _questions;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_questions);
   }
@@ -886,20 +876,22 @@ class _$ErrorWithDataQuestionsState implements ErrorWithDataQuestionsState {
             other is _$ErrorWithDataQuestionsState &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions) &&
-            const DeepCollectionEquality()
-                .equals(other.currentQuestionIndex, currentQuestionIndex) &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            (identical(other.currentQuestionIndex, currentQuestionIndex) ||
+                other.currentQuestionIndex == currentQuestionIndex) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_questions),
-      const DeepCollectionEquality().hash(currentQuestionIndex),
-      const DeepCollectionEquality().hash(exception));
+      currentQuestionIndex,
+      exception);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ErrorWithDataQuestionsStateCopyWith<_$ErrorWithDataQuestionsState>
       get copyWith => __$$ErrorWithDataQuestionsStateCopyWithImpl<
           _$ErrorWithDataQuestionsState>(this, _$identity);
@@ -926,15 +918,15 @@ class _$ErrorWithDataQuestionsState implements ErrorWithDataQuestionsState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+    TResult? Function()? initial,
+    TResult? Function()? loadingFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex)?
         loadingWithData,
-    TResult Function(Exception exception)? errorFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(Exception exception)? errorFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             Exception exception)?
         errorWithData,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             bool canLoadMore)?
         data,
   }) {
@@ -982,12 +974,12 @@ class _$ErrorWithDataQuestionsState implements ErrorWithDataQuestionsState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialQuestionsState value)? initial,
-    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
-    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
-    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
-    TResult Function(DataQuestionsState value)? data,
+    TResult? Function(InitialQuestionsState value)? initial,
+    TResult? Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult? Function(DataQuestionsState value)? data,
   }) {
     return errorWithData?.call(this);
   }
@@ -1029,6 +1021,7 @@ abstract class _$$DataQuestionsStateCopyWith<$Res> {
   factory _$$DataQuestionsStateCopyWith(_$DataQuestionsState value,
           $Res Function(_$DataQuestionsState) then) =
       __$$DataQuestionsStateCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {List<QuestionState> questions,
       int currentQuestionIndex,
@@ -1037,31 +1030,29 @@ abstract class _$$DataQuestionsStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$DataQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res, _$DataQuestionsState>
     implements _$$DataQuestionsStateCopyWith<$Res> {
   __$$DataQuestionsStateCopyWithImpl(
       _$DataQuestionsState _value, $Res Function(_$DataQuestionsState) _then)
-      : super(_value, (v) => _then(v as _$DataQuestionsState));
+      : super(_value, _then);
 
-  @override
-  _$DataQuestionsState get _value => super._value as _$DataQuestionsState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questions = freezed,
-    Object? currentQuestionIndex = freezed,
-    Object? canLoadMore = freezed,
+    Object? questions = null,
+    Object? currentQuestionIndex = null,
+    Object? canLoadMore = null,
   }) {
     return _then(_$DataQuestionsState(
-      questions: questions == freezed
+      questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionState>,
-      currentQuestionIndex: currentQuestionIndex == freezed
+      currentQuestionIndex: null == currentQuestionIndex
           ? _value.currentQuestionIndex
           : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      canLoadMore: canLoadMore == freezed
+      canLoadMore: null == canLoadMore
           ? _value.canLoadMore
           : canLoadMore // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1081,6 +1072,7 @@ class _$DataQuestionsState implements DataQuestionsState {
   final List<QuestionState> _questions;
   @override
   List<QuestionState> get questions {
+    if (_questions is EqualUnmodifiableListView) return _questions;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_questions);
   }
@@ -1103,21 +1095,22 @@ class _$DataQuestionsState implements DataQuestionsState {
             other is _$DataQuestionsState &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions) &&
-            const DeepCollectionEquality()
-                .equals(other.currentQuestionIndex, currentQuestionIndex) &&
-            const DeepCollectionEquality()
-                .equals(other.canLoadMore, canLoadMore));
+            (identical(other.currentQuestionIndex, currentQuestionIndex) ||
+                other.currentQuestionIndex == currentQuestionIndex) &&
+            (identical(other.canLoadMore, canLoadMore) ||
+                other.canLoadMore == canLoadMore));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_questions),
-      const DeepCollectionEquality().hash(currentQuestionIndex),
-      const DeepCollectionEquality().hash(canLoadMore));
+      currentQuestionIndex,
+      canLoadMore);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataQuestionsStateCopyWith<_$DataQuestionsState> get copyWith =>
       __$$DataQuestionsStateCopyWithImpl<_$DataQuestionsState>(
           this, _$identity);
@@ -1144,15 +1137,15 @@ class _$DataQuestionsState implements DataQuestionsState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadingFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex)?
+    TResult? Function()? initial,
+    TResult? Function()? loadingFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex)?
         loadingWithData,
-    TResult Function(Exception exception)? errorFirstPage,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(Exception exception)? errorFirstPage,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             Exception exception)?
         errorWithData,
-    TResult Function(List<QuestionState> questions, int currentQuestionIndex,
+    TResult? Function(List<QuestionState> questions, int currentQuestionIndex,
             bool canLoadMore)?
         data,
   }) {
@@ -1200,12 +1193,12 @@ class _$DataQuestionsState implements DataQuestionsState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialQuestionsState value)? initial,
-    TResult Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataQuestionsState value)? loadingWithData,
-    TResult Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
-    TResult Function(ErrorWithDataQuestionsState value)? errorWithData,
-    TResult Function(DataQuestionsState value)? data,
+    TResult? Function(InitialQuestionsState value)? initial,
+    TResult? Function(LoadingFirstPageQuestionsState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataQuestionsState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageQuestionsState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataQuestionsState value)? errorWithData,
+    TResult? Function(DataQuestionsState value)? data,
   }) {
     return data?.call(this);
   }
@@ -1256,42 +1249,46 @@ mixin _$QuestionState {
 abstract class $QuestionStateCopyWith<$Res> {
   factory $QuestionStateCopyWith(
           QuestionState value, $Res Function(QuestionState) then) =
-      _$QuestionStateCopyWithImpl<$Res>;
+      _$QuestionStateCopyWithImpl<$Res, QuestionState>;
+  @useResult
   $Res call({Question question, bool showAnswer});
 
   $QuestionCopyWith<$Res> get question;
 }
 
 /// @nodoc
-class _$QuestionStateCopyWithImpl<$Res>
+class _$QuestionStateCopyWithImpl<$Res, $Val extends QuestionState>
     implements $QuestionStateCopyWith<$Res> {
   _$QuestionStateCopyWithImpl(this._value, this._then);
 
-  final QuestionState _value;
   // ignore: unused_field
-  final $Res Function(QuestionState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? question = freezed,
-    Object? showAnswer = freezed,
+    Object? question = null,
+    Object? showAnswer = null,
   }) {
     return _then(_value.copyWith(
-      question: question == freezed
+      question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
               as Question,
-      showAnswer: showAnswer == freezed
+      showAnswer: null == showAnswer
           ? _value.showAnswer
           : showAnswer // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $QuestionCopyWith<$Res> get question {
     return $QuestionCopyWith<$Res>(_value.question, (value) {
-      return _then(_value.copyWith(question: value));
+      return _then(_value.copyWith(question: value) as $Val);
     });
   }
 }
@@ -1303,6 +1300,7 @@ abstract class _$$_QuestionStateCopyWith<$Res>
           _$_QuestionState value, $Res Function(_$_QuestionState) then) =
       __$$_QuestionStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Question question, bool showAnswer});
 
   @override
@@ -1311,26 +1309,24 @@ abstract class _$$_QuestionStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_QuestionStateCopyWithImpl<$Res>
-    extends _$QuestionStateCopyWithImpl<$Res>
+    extends _$QuestionStateCopyWithImpl<$Res, _$_QuestionState>
     implements _$$_QuestionStateCopyWith<$Res> {
   __$$_QuestionStateCopyWithImpl(
       _$_QuestionState _value, $Res Function(_$_QuestionState) _then)
-      : super(_value, (v) => _then(v as _$_QuestionState));
+      : super(_value, _then);
 
-  @override
-  _$_QuestionState get _value => super._value as _$_QuestionState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? question = freezed,
-    Object? showAnswer = freezed,
+    Object? question = null,
+    Object? showAnswer = null,
   }) {
     return _then(_$_QuestionState(
-      question: question == freezed
+      question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
               as Question,
-      showAnswer: showAnswer == freezed
+      showAnswer: null == showAnswer
           ? _value.showAnswer
           : showAnswer // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1359,19 +1355,18 @@ class _$_QuestionState implements _QuestionState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QuestionState &&
-            const DeepCollectionEquality().equals(other.question, question) &&
-            const DeepCollectionEquality()
-                .equals(other.showAnswer, showAnswer));
+            (identical(other.question, question) ||
+                other.question == question) &&
+            (identical(other.showAnswer, showAnswer) ||
+                other.showAnswer == showAnswer));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(question),
-      const DeepCollectionEquality().hash(showAnswer));
+  int get hashCode => Object.hash(runtimeType, question, showAnswer);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionStateCopyWith<_$_QuestionState> get copyWith =>
       __$$_QuestionStateCopyWithImpl<_$_QuestionState>(this, _$identity);
 }

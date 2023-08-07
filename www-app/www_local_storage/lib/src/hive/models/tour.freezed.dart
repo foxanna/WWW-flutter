@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tour.dart';
 
@@ -32,27 +32,28 @@ mixin _$TourHiveModel {
 abstract class $TourHiveModelCopyWith<$Res> {
   factory $TourHiveModelCopyWith(
           TourHiveModel value, $Res Function(TourHiveModel) then) =
-      _$TourHiveModelCopyWithImpl<$Res>;
+      _$TourHiveModelCopyWithImpl<$Res, TourHiveModel>;
+  @useResult
   $Res call(
-      {@HiveField(TourHiveFieldsIds.id)
-          String? id,
-      @HiveField(TourHiveFieldsIds.info)
-          TourInfoHiveModel? info,
+      {@HiveField(TourHiveFieldsIds.id) String? id,
+      @HiveField(TourHiveFieldsIds.info) TourInfoHiveModel? info,
       @HiveField(TourHiveFieldsIds.questions)
-          List<QuestionHiveModel>? questions});
+      List<QuestionHiveModel>? questions});
 
   $TourInfoHiveModelCopyWith<$Res>? get info;
 }
 
 /// @nodoc
-class _$TourHiveModelCopyWithImpl<$Res>
+class _$TourHiveModelCopyWithImpl<$Res, $Val extends TourHiveModel>
     implements $TourHiveModelCopyWith<$Res> {
   _$TourHiveModelCopyWithImpl(this._value, this._then);
 
-  final TourHiveModel _value;
   // ignore: unused_field
-  final $Res Function(TourHiveModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -60,29 +61,30 @@ class _$TourHiveModelCopyWithImpl<$Res>
     Object? questions = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      info: info == freezed
+      info: freezed == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TourInfoHiveModel?,
-      questions: questions == freezed
+      questions: freezed == questions
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionHiveModel>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TourInfoHiveModelCopyWith<$Res>? get info {
     if (_value.info == null) {
       return null;
     }
 
     return $TourInfoHiveModelCopyWith<$Res>(_value.info!, (value) {
-      return _then(_value.copyWith(info: value));
+      return _then(_value.copyWith(info: value) as $Val);
     });
   }
 }
@@ -94,13 +96,12 @@ abstract class _$$_TourHiveModelCopyWith<$Res>
           _$_TourHiveModel value, $Res Function(_$_TourHiveModel) then) =
       __$$_TourHiveModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
-      {@HiveField(TourHiveFieldsIds.id)
-          String? id,
-      @HiveField(TourHiveFieldsIds.info)
-          TourInfoHiveModel? info,
+      {@HiveField(TourHiveFieldsIds.id) String? id,
+      @HiveField(TourHiveFieldsIds.info) TourInfoHiveModel? info,
       @HiveField(TourHiveFieldsIds.questions)
-          List<QuestionHiveModel>? questions});
+      List<QuestionHiveModel>? questions});
 
   @override
   $TourInfoHiveModelCopyWith<$Res>? get info;
@@ -108,15 +109,13 @@ abstract class _$$_TourHiveModelCopyWith<$Res>
 
 /// @nodoc
 class __$$_TourHiveModelCopyWithImpl<$Res>
-    extends _$TourHiveModelCopyWithImpl<$Res>
+    extends _$TourHiveModelCopyWithImpl<$Res, _$_TourHiveModel>
     implements _$$_TourHiveModelCopyWith<$Res> {
   __$$_TourHiveModelCopyWithImpl(
       _$_TourHiveModel _value, $Res Function(_$_TourHiveModel) _then)
-      : super(_value, (v) => _then(v as _$_TourHiveModel));
+      : super(_value, _then);
 
-  @override
-  _$_TourHiveModel get _value => super._value as _$_TourHiveModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -124,15 +123,15 @@ class __$$_TourHiveModelCopyWithImpl<$Res>
     Object? questions = freezed,
   }) {
     return _then(_$_TourHiveModel(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      info: info == freezed
+      info: freezed == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TourInfoHiveModel?,
-      questions: questions == freezed
+      questions: freezed == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionHiveModel>?,
@@ -145,12 +144,10 @@ class __$$_TourHiveModelCopyWithImpl<$Res>
 @HiveType(typeId: HiveTypesIds.hiveTourTypeId)
 class _$_TourHiveModel implements _TourHiveModel {
   const _$_TourHiveModel(
-      {@HiveField(TourHiveFieldsIds.id)
-          this.id,
-      @HiveField(TourHiveFieldsIds.info)
-          this.info,
+      {@HiveField(TourHiveFieldsIds.id) this.id,
+      @HiveField(TourHiveFieldsIds.info) this.info,
       @HiveField(TourHiveFieldsIds.questions)
-          final List<QuestionHiveModel>? questions})
+      final List<QuestionHiveModel>? questions})
       : _questions = questions;
 
   @override
@@ -165,6 +162,7 @@ class _$_TourHiveModel implements _TourHiveModel {
   List<QuestionHiveModel>? get questions {
     final value = _questions;
     if (value == null) return null;
+    if (_questions is EqualUnmodifiableListView) return _questions;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -179,33 +177,29 @@ class _$_TourHiveModel implements _TourHiveModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TourHiveModel &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.info, info) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.info, info) || other.info == info) &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(_questions));
+      runtimeType, id, info, const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TourHiveModelCopyWith<_$_TourHiveModel> get copyWith =>
       __$$_TourHiveModelCopyWithImpl<_$_TourHiveModel>(this, _$identity);
 }
 
 abstract class _TourHiveModel implements TourHiveModel {
   const factory _TourHiveModel(
-      {@HiveField(TourHiveFieldsIds.id)
-          final String? id,
-      @HiveField(TourHiveFieldsIds.info)
-          final TourInfoHiveModel? info,
+      {@HiveField(TourHiveFieldsIds.id) final String? id,
+      @HiveField(TourHiveFieldsIds.info) final TourInfoHiveModel? info,
       @HiveField(TourHiveFieldsIds.questions)
-          final List<QuestionHiveModel>? questions}) = _$_TourHiveModel;
+      final List<QuestionHiveModel>? questions}) = _$_TourHiveModel;
 
   @override
   @HiveField(TourHiveFieldsIds.id)

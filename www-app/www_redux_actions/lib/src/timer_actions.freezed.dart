@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'timer_actions.dart';
 
@@ -28,12 +28,12 @@ mixin _$UserActionTimer {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? deInit,
-    TResult Function()? start,
-    TResult Function()? stop,
-    TResult Function()? reset,
-    TResult Function(TimerType type)? changeType,
+    TResult? Function()? init,
+    TResult? Function()? deInit,
+    TResult? Function()? start,
+    TResult? Function()? stop,
+    TResult? Function()? reset,
+    TResult? Function(TimerType type)? changeType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,12 +59,12 @@ mixin _$UserActionTimer {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTimerUserAction value)? init,
-    TResult Function(DeInitTimerUserAction value)? deInit,
-    TResult Function(StartTimerUserAction value)? start,
-    TResult Function(StopTimerUserAction value)? stop,
-    TResult Function(ResetTimerUserAction value)? reset,
-    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    TResult? Function(InitTimerUserAction value)? init,
+    TResult? Function(DeInitTimerUserAction value)? deInit,
+    TResult? Function(StartTimerUserAction value)? start,
+    TResult? Function(StopTimerUserAction value)? stop,
+    TResult? Function(ResetTimerUserAction value)? reset,
+    TResult? Function(ChangeTypeTimerUserAction value)? changeType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,17 +84,18 @@ mixin _$UserActionTimer {
 abstract class $UserActionTimerCopyWith<$Res> {
   factory $UserActionTimerCopyWith(
           UserActionTimer value, $Res Function(UserActionTimer) then) =
-      _$UserActionTimerCopyWithImpl<$Res>;
+      _$UserActionTimerCopyWithImpl<$Res, UserActionTimer>;
 }
 
 /// @nodoc
-class _$UserActionTimerCopyWithImpl<$Res>
+class _$UserActionTimerCopyWithImpl<$Res, $Val extends UserActionTimer>
     implements $UserActionTimerCopyWith<$Res> {
   _$UserActionTimerCopyWithImpl(this._value, this._then);
 
-  final UserActionTimer _value;
   // ignore: unused_field
-  final $Res Function(UserActionTimer) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -106,14 +107,11 @@ abstract class _$$InitTimerUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$InitTimerUserAction>
     implements _$$InitTimerUserActionCopyWith<$Res> {
   __$$InitTimerUserActionCopyWithImpl(
       _$InitTimerUserAction _value, $Res Function(_$InitTimerUserAction) _then)
-      : super(_value, (v) => _then(v as _$InitTimerUserAction));
-
-  @override
-  _$InitTimerUserAction get _value => super._value as _$InitTimerUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -159,12 +157,12 @@ class _$InitTimerUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? deInit,
-    TResult Function()? start,
-    TResult Function()? stop,
-    TResult Function()? reset,
-    TResult Function(TimerType type)? changeType,
+    TResult? Function()? init,
+    TResult? Function()? deInit,
+    TResult? Function()? start,
+    TResult? Function()? stop,
+    TResult? Function()? reset,
+    TResult? Function(TimerType type)? changeType,
   }) {
     return init?.call();
   }
@@ -202,12 +200,12 @@ class _$InitTimerUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTimerUserAction value)? init,
-    TResult Function(DeInitTimerUserAction value)? deInit,
-    TResult Function(StartTimerUserAction value)? start,
-    TResult Function(StopTimerUserAction value)? stop,
-    TResult Function(ResetTimerUserAction value)? reset,
-    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    TResult? Function(InitTimerUserAction value)? init,
+    TResult? Function(DeInitTimerUserAction value)? deInit,
+    TResult? Function(StartTimerUserAction value)? start,
+    TResult? Function(StopTimerUserAction value)? stop,
+    TResult? Function(ResetTimerUserAction value)? reset,
+    TResult? Function(ChangeTypeTimerUserAction value)? changeType,
   }) {
     return init?.call(this);
   }
@@ -243,14 +241,11 @@ abstract class _$$DeInitTimerUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$DeInitTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$DeInitTimerUserAction>
     implements _$$DeInitTimerUserActionCopyWith<$Res> {
   __$$DeInitTimerUserActionCopyWithImpl(_$DeInitTimerUserAction _value,
       $Res Function(_$DeInitTimerUserAction) _then)
-      : super(_value, (v) => _then(v as _$DeInitTimerUserAction));
-
-  @override
-  _$DeInitTimerUserAction get _value => super._value as _$DeInitTimerUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -296,12 +291,12 @@ class _$DeInitTimerUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? deInit,
-    TResult Function()? start,
-    TResult Function()? stop,
-    TResult Function()? reset,
-    TResult Function(TimerType type)? changeType,
+    TResult? Function()? init,
+    TResult? Function()? deInit,
+    TResult? Function()? start,
+    TResult? Function()? stop,
+    TResult? Function()? reset,
+    TResult? Function(TimerType type)? changeType,
   }) {
     return deInit?.call();
   }
@@ -339,12 +334,12 @@ class _$DeInitTimerUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTimerUserAction value)? init,
-    TResult Function(DeInitTimerUserAction value)? deInit,
-    TResult Function(StartTimerUserAction value)? start,
-    TResult Function(StopTimerUserAction value)? stop,
-    TResult Function(ResetTimerUserAction value)? reset,
-    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    TResult? Function(InitTimerUserAction value)? init,
+    TResult? Function(DeInitTimerUserAction value)? deInit,
+    TResult? Function(StartTimerUserAction value)? start,
+    TResult? Function(StopTimerUserAction value)? stop,
+    TResult? Function(ResetTimerUserAction value)? reset,
+    TResult? Function(ChangeTypeTimerUserAction value)? changeType,
   }) {
     return deInit?.call(this);
   }
@@ -380,14 +375,11 @@ abstract class _$$StartTimerUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$StartTimerUserAction>
     implements _$$StartTimerUserActionCopyWith<$Res> {
   __$$StartTimerUserActionCopyWithImpl(_$StartTimerUserAction _value,
       $Res Function(_$StartTimerUserAction) _then)
-      : super(_value, (v) => _then(v as _$StartTimerUserAction));
-
-  @override
-  _$StartTimerUserAction get _value => super._value as _$StartTimerUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -433,12 +425,12 @@ class _$StartTimerUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? deInit,
-    TResult Function()? start,
-    TResult Function()? stop,
-    TResult Function()? reset,
-    TResult Function(TimerType type)? changeType,
+    TResult? Function()? init,
+    TResult? Function()? deInit,
+    TResult? Function()? start,
+    TResult? Function()? stop,
+    TResult? Function()? reset,
+    TResult? Function(TimerType type)? changeType,
   }) {
     return start?.call();
   }
@@ -476,12 +468,12 @@ class _$StartTimerUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTimerUserAction value)? init,
-    TResult Function(DeInitTimerUserAction value)? deInit,
-    TResult Function(StartTimerUserAction value)? start,
-    TResult Function(StopTimerUserAction value)? stop,
-    TResult Function(ResetTimerUserAction value)? reset,
-    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    TResult? Function(InitTimerUserAction value)? init,
+    TResult? Function(DeInitTimerUserAction value)? deInit,
+    TResult? Function(StartTimerUserAction value)? start,
+    TResult? Function(StopTimerUserAction value)? stop,
+    TResult? Function(ResetTimerUserAction value)? reset,
+    TResult? Function(ChangeTypeTimerUserAction value)? changeType,
   }) {
     return start?.call(this);
   }
@@ -517,14 +509,11 @@ abstract class _$$StopTimerUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$StopTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$StopTimerUserAction>
     implements _$$StopTimerUserActionCopyWith<$Res> {
   __$$StopTimerUserActionCopyWithImpl(
       _$StopTimerUserAction _value, $Res Function(_$StopTimerUserAction) _then)
-      : super(_value, (v) => _then(v as _$StopTimerUserAction));
-
-  @override
-  _$StopTimerUserAction get _value => super._value as _$StopTimerUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -570,12 +559,12 @@ class _$StopTimerUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? deInit,
-    TResult Function()? start,
-    TResult Function()? stop,
-    TResult Function()? reset,
-    TResult Function(TimerType type)? changeType,
+    TResult? Function()? init,
+    TResult? Function()? deInit,
+    TResult? Function()? start,
+    TResult? Function()? stop,
+    TResult? Function()? reset,
+    TResult? Function(TimerType type)? changeType,
   }) {
     return stop?.call();
   }
@@ -613,12 +602,12 @@ class _$StopTimerUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTimerUserAction value)? init,
-    TResult Function(DeInitTimerUserAction value)? deInit,
-    TResult Function(StartTimerUserAction value)? start,
-    TResult Function(StopTimerUserAction value)? stop,
-    TResult Function(ResetTimerUserAction value)? reset,
-    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    TResult? Function(InitTimerUserAction value)? init,
+    TResult? Function(DeInitTimerUserAction value)? deInit,
+    TResult? Function(StartTimerUserAction value)? start,
+    TResult? Function(StopTimerUserAction value)? stop,
+    TResult? Function(ResetTimerUserAction value)? reset,
+    TResult? Function(ChangeTypeTimerUserAction value)? changeType,
   }) {
     return stop?.call(this);
   }
@@ -654,14 +643,11 @@ abstract class _$$ResetTimerUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$ResetTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$ResetTimerUserAction>
     implements _$$ResetTimerUserActionCopyWith<$Res> {
   __$$ResetTimerUserActionCopyWithImpl(_$ResetTimerUserAction _value,
       $Res Function(_$ResetTimerUserAction) _then)
-      : super(_value, (v) => _then(v as _$ResetTimerUserAction));
-
-  @override
-  _$ResetTimerUserAction get _value => super._value as _$ResetTimerUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -707,12 +693,12 @@ class _$ResetTimerUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? deInit,
-    TResult Function()? start,
-    TResult Function()? stop,
-    TResult Function()? reset,
-    TResult Function(TimerType type)? changeType,
+    TResult? Function()? init,
+    TResult? Function()? deInit,
+    TResult? Function()? start,
+    TResult? Function()? stop,
+    TResult? Function()? reset,
+    TResult? Function(TimerType type)? changeType,
   }) {
     return reset?.call();
   }
@@ -750,12 +736,12 @@ class _$ResetTimerUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTimerUserAction value)? init,
-    TResult Function(DeInitTimerUserAction value)? deInit,
-    TResult Function(StartTimerUserAction value)? start,
-    TResult Function(StopTimerUserAction value)? stop,
-    TResult Function(ResetTimerUserAction value)? reset,
-    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    TResult? Function(InitTimerUserAction value)? init,
+    TResult? Function(DeInitTimerUserAction value)? deInit,
+    TResult? Function(StartTimerUserAction value)? start,
+    TResult? Function(StopTimerUserAction value)? stop,
+    TResult? Function(ResetTimerUserAction value)? reset,
+    TResult? Function(ChangeTypeTimerUserAction value)? changeType,
   }) {
     return reset?.call(this);
   }
@@ -788,27 +774,25 @@ abstract class _$$ChangeTypeTimerUserActionCopyWith<$Res> {
           _$ChangeTypeTimerUserAction value,
           $Res Function(_$ChangeTypeTimerUserAction) then) =
       __$$ChangeTypeTimerUserActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TimerType type});
 }
 
 /// @nodoc
 class __$$ChangeTypeTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$ChangeTypeTimerUserAction>
     implements _$$ChangeTypeTimerUserActionCopyWith<$Res> {
   __$$ChangeTypeTimerUserActionCopyWithImpl(_$ChangeTypeTimerUserAction _value,
       $Res Function(_$ChangeTypeTimerUserAction) _then)
-      : super(_value, (v) => _then(v as _$ChangeTypeTimerUserAction));
+      : super(_value, _then);
 
-  @override
-  _$ChangeTypeTimerUserAction get _value =>
-      super._value as _$ChangeTypeTimerUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
+    Object? type = null,
   }) {
     return _then(_$ChangeTypeTimerUserAction(
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as TimerType,
@@ -844,15 +828,15 @@ class _$ChangeTypeTimerUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangeTypeTimerUserAction &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
+  int get hashCode => Object.hash(runtimeType, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ChangeTypeTimerUserActionCopyWith<_$ChangeTypeTimerUserAction>
       get copyWith => __$$ChangeTypeTimerUserActionCopyWithImpl<
           _$ChangeTypeTimerUserAction>(this, _$identity);
@@ -873,12 +857,12 @@ class _$ChangeTypeTimerUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? deInit,
-    TResult Function()? start,
-    TResult Function()? stop,
-    TResult Function()? reset,
-    TResult Function(TimerType type)? changeType,
+    TResult? Function()? init,
+    TResult? Function()? deInit,
+    TResult? Function()? start,
+    TResult? Function()? stop,
+    TResult? Function()? reset,
+    TResult? Function(TimerType type)? changeType,
   }) {
     return changeType?.call(type);
   }
@@ -916,12 +900,12 @@ class _$ChangeTypeTimerUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitTimerUserAction value)? init,
-    TResult Function(DeInitTimerUserAction value)? deInit,
-    TResult Function(StartTimerUserAction value)? start,
-    TResult Function(StopTimerUserAction value)? stop,
-    TResult Function(ResetTimerUserAction value)? reset,
-    TResult Function(ChangeTypeTimerUserAction value)? changeType,
+    TResult? Function(InitTimerUserAction value)? init,
+    TResult? Function(DeInitTimerUserAction value)? deInit,
+    TResult? Function(StartTimerUserAction value)? start,
+    TResult? Function(StopTimerUserAction value)? stop,
+    TResult? Function(ResetTimerUserAction value)? reset,
+    TResult? Function(ChangeTypeTimerUserAction value)? changeType,
   }) {
     return changeType?.call(this);
   }
@@ -965,9 +949,9 @@ mixin _$SystemActionTimer {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notify,
-    TResult Function(int newValue)? updateTime,
-    TResult Function(bool newValue)? isRunning,
+    TResult? Function()? notify,
+    TResult? Function(int newValue)? updateTime,
+    TResult? Function(bool newValue)? isRunning,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -987,9 +971,9 @@ mixin _$SystemActionTimer {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotifyTimerSystemAction value)? notify,
-    TResult Function(UpdateTimeTimerSystemAction value)? updateTime,
-    TResult Function(UpdateIsRunningTimerSystemAction value)? isRunning,
+    TResult? Function(NotifyTimerSystemAction value)? notify,
+    TResult? Function(UpdateTimeTimerSystemAction value)? updateTime,
+    TResult? Function(UpdateIsRunningTimerSystemAction value)? isRunning,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1006,17 +990,18 @@ mixin _$SystemActionTimer {
 abstract class $SystemActionTimerCopyWith<$Res> {
   factory $SystemActionTimerCopyWith(
           SystemActionTimer value, $Res Function(SystemActionTimer) then) =
-      _$SystemActionTimerCopyWithImpl<$Res>;
+      _$SystemActionTimerCopyWithImpl<$Res, SystemActionTimer>;
 }
 
 /// @nodoc
-class _$SystemActionTimerCopyWithImpl<$Res>
+class _$SystemActionTimerCopyWithImpl<$Res, $Val extends SystemActionTimer>
     implements $SystemActionTimerCopyWith<$Res> {
   _$SystemActionTimerCopyWithImpl(this._value, this._then);
 
-  final SystemActionTimer _value;
   // ignore: unused_field
-  final $Res Function(SystemActionTimer) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -1028,15 +1013,11 @@ abstract class _$$NotifyTimerSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$NotifyTimerSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTimerCopyWithImpl<$Res>
+    extends _$SystemActionTimerCopyWithImpl<$Res, _$NotifyTimerSystemAction>
     implements _$$NotifyTimerSystemActionCopyWith<$Res> {
   __$$NotifyTimerSystemActionCopyWithImpl(_$NotifyTimerSystemAction _value,
       $Res Function(_$NotifyTimerSystemAction) _then)
-      : super(_value, (v) => _then(v as _$NotifyTimerSystemAction));
-
-  @override
-  _$NotifyTimerSystemAction get _value =>
-      super._value as _$NotifyTimerSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1080,9 +1061,9 @@ class _$NotifyTimerSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notify,
-    TResult Function(int newValue)? updateTime,
-    TResult Function(bool newValue)? isRunning,
+    TResult? Function()? notify,
+    TResult? Function(int newValue)? updateTime,
+    TResult? Function(bool newValue)? isRunning,
   }) {
     return notify?.call();
   }
@@ -1114,9 +1095,9 @@ class _$NotifyTimerSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotifyTimerSystemAction value)? notify,
-    TResult Function(UpdateTimeTimerSystemAction value)? updateTime,
-    TResult Function(UpdateIsRunningTimerSystemAction value)? isRunning,
+    TResult? Function(NotifyTimerSystemAction value)? notify,
+    TResult? Function(UpdateTimeTimerSystemAction value)? updateTime,
+    TResult? Function(UpdateIsRunningTimerSystemAction value)? isRunning,
   }) {
     return notify?.call(this);
   }
@@ -1146,28 +1127,26 @@ abstract class _$$UpdateTimeTimerSystemActionCopyWith<$Res> {
           _$UpdateTimeTimerSystemAction value,
           $Res Function(_$UpdateTimeTimerSystemAction) then) =
       __$$UpdateTimeTimerSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({int newValue});
 }
 
 /// @nodoc
 class __$$UpdateTimeTimerSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTimerCopyWithImpl<$Res>
+    extends _$SystemActionTimerCopyWithImpl<$Res, _$UpdateTimeTimerSystemAction>
     implements _$$UpdateTimeTimerSystemActionCopyWith<$Res> {
   __$$UpdateTimeTimerSystemActionCopyWithImpl(
       _$UpdateTimeTimerSystemAction _value,
       $Res Function(_$UpdateTimeTimerSystemAction) _then)
-      : super(_value, (v) => _then(v as _$UpdateTimeTimerSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$UpdateTimeTimerSystemAction get _value =>
-      super._value as _$UpdateTimeTimerSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? newValue = null,
   }) {
     return _then(_$UpdateTimeTimerSystemAction(
-      newValue: newValue == freezed
+      newValue: null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1203,15 +1182,16 @@ class _$UpdateTimeTimerSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateTimeTimerSystemAction &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(runtimeType, newValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$UpdateTimeTimerSystemActionCopyWith<_$UpdateTimeTimerSystemAction>
       get copyWith => __$$UpdateTimeTimerSystemActionCopyWithImpl<
           _$UpdateTimeTimerSystemAction>(this, _$identity);
@@ -1229,9 +1209,9 @@ class _$UpdateTimeTimerSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notify,
-    TResult Function(int newValue)? updateTime,
-    TResult Function(bool newValue)? isRunning,
+    TResult? Function()? notify,
+    TResult? Function(int newValue)? updateTime,
+    TResult? Function(bool newValue)? isRunning,
   }) {
     return updateTime?.call(newValue);
   }
@@ -1263,9 +1243,9 @@ class _$UpdateTimeTimerSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotifyTimerSystemAction value)? notify,
-    TResult Function(UpdateTimeTimerSystemAction value)? updateTime,
-    TResult Function(UpdateIsRunningTimerSystemAction value)? isRunning,
+    TResult? Function(NotifyTimerSystemAction value)? notify,
+    TResult? Function(UpdateTimeTimerSystemAction value)? updateTime,
+    TResult? Function(UpdateIsRunningTimerSystemAction value)? isRunning,
   }) {
     return updateTime?.call(this);
   }
@@ -1301,28 +1281,27 @@ abstract class _$$UpdateIsRunningTimerSystemActionCopyWith<$Res> {
           _$UpdateIsRunningTimerSystemAction value,
           $Res Function(_$UpdateIsRunningTimerSystemAction) then) =
       __$$UpdateIsRunningTimerSystemActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool newValue});
 }
 
 /// @nodoc
 class __$$UpdateIsRunningTimerSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTimerCopyWithImpl<$Res>
+    extends _$SystemActionTimerCopyWithImpl<$Res,
+        _$UpdateIsRunningTimerSystemAction>
     implements _$$UpdateIsRunningTimerSystemActionCopyWith<$Res> {
   __$$UpdateIsRunningTimerSystemActionCopyWithImpl(
       _$UpdateIsRunningTimerSystemAction _value,
       $Res Function(_$UpdateIsRunningTimerSystemAction) _then)
-      : super(_value, (v) => _then(v as _$UpdateIsRunningTimerSystemAction));
+      : super(_value, _then);
 
-  @override
-  _$UpdateIsRunningTimerSystemAction get _value =>
-      super._value as _$UpdateIsRunningTimerSystemAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? newValue = null,
   }) {
     return _then(_$UpdateIsRunningTimerSystemAction(
-      newValue: newValue == freezed
+      newValue: null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1358,15 +1337,16 @@ class _$UpdateIsRunningTimerSystemAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateIsRunningTimerSystemAction &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(runtimeType, newValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$UpdateIsRunningTimerSystemActionCopyWith<
           _$UpdateIsRunningTimerSystemAction>
       get copyWith => __$$UpdateIsRunningTimerSystemActionCopyWithImpl<
@@ -1385,9 +1365,9 @@ class _$UpdateIsRunningTimerSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notify,
-    TResult Function(int newValue)? updateTime,
-    TResult Function(bool newValue)? isRunning,
+    TResult? Function()? notify,
+    TResult? Function(int newValue)? updateTime,
+    TResult? Function(bool newValue)? isRunning,
   }) {
     return isRunning?.call(newValue);
   }
@@ -1419,9 +1399,9 @@ class _$UpdateIsRunningTimerSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotifyTimerSystemAction value)? notify,
-    TResult Function(UpdateTimeTimerSystemAction value)? updateTime,
-    TResult Function(UpdateIsRunningTimerSystemAction value)? isRunning,
+    TResult? Function(NotifyTimerSystemAction value)? notify,
+    TResult? Function(UpdateTimeTimerSystemAction value)? updateTime,
+    TResult? Function(UpdateIsRunningTimerSystemAction value)? isRunning,
   }) {
     return isRunning?.call(this);
   }

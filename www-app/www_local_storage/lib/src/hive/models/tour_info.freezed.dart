@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tour_info.dart';
 
@@ -45,39 +45,34 @@ mixin _$TourInfoHiveModel {
 abstract class $TourInfoHiveModelCopyWith<$Res> {
   factory $TourInfoHiveModelCopyWith(
           TourInfoHiveModel value, $Res Function(TourInfoHiveModel) then) =
-      _$TourInfoHiveModelCopyWithImpl<$Res>;
+      _$TourInfoHiveModelCopyWithImpl<$Res, TourInfoHiveModel>;
+  @useResult
   $Res call(
-      {@HiveField(TourInfoHiveFieldsIds.id)
-          String? id,
-      @HiveField(TourInfoHiveFieldsIds.title)
-          String? title,
-      @HiveField(TourInfoHiveFieldsIds.questionsCount)
-          String? questionsCount,
-      @HiveField(TourInfoHiveFieldsIds.description)
-          String? description,
-      @HiveField(TourInfoHiveFieldsIds.url)
-          String? url,
-      @HiveField(TourInfoHiveFieldsIds.editors)
-          String? editors,
-      @HiveField(TourInfoHiveFieldsIds.createdAt)
-          String? createdAt,
-      @HiveField(TourInfoHiveFieldsIds.playedAt)
-          String? playedAt,
+      {@HiveField(TourInfoHiveFieldsIds.id) String? id,
+      @HiveField(TourInfoHiveFieldsIds.title) String? title,
+      @HiveField(TourInfoHiveFieldsIds.questionsCount) String? questionsCount,
+      @HiveField(TourInfoHiveFieldsIds.description) String? description,
+      @HiveField(TourInfoHiveFieldsIds.url) String? url,
+      @HiveField(TourInfoHiveFieldsIds.editors) String? editors,
+      @HiveField(TourInfoHiveFieldsIds.createdAt) String? createdAt,
+      @HiveField(TourInfoHiveFieldsIds.playedAt) String? playedAt,
       @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
-          TournamentInfoHiveModel? tournamentInfo});
+      TournamentInfoHiveModel? tournamentInfo});
 
   $TournamentInfoHiveModelCopyWith<$Res>? get tournamentInfo;
 }
 
 /// @nodoc
-class _$TourInfoHiveModelCopyWithImpl<$Res>
+class _$TourInfoHiveModelCopyWithImpl<$Res, $Val extends TourInfoHiveModel>
     implements $TourInfoHiveModelCopyWith<$Res> {
   _$TourInfoHiveModelCopyWithImpl(this._value, this._then);
 
-  final TourInfoHiveModel _value;
   // ignore: unused_field
-  final $Res Function(TourInfoHiveModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -91,46 +86,47 @@ class _$TourInfoHiveModelCopyWithImpl<$Res>
     Object? tournamentInfo = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionsCount: questionsCount == freezed
+      questionsCount: freezed == questionsCount
           ? _value.questionsCount
           : questionsCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      editors: editors == freezed
+      editors: freezed == editors
           ? _value.editors
           : editors // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      playedAt: playedAt == freezed
+      playedAt: freezed == playedAt
           ? _value.playedAt
           : playedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      tournamentInfo: tournamentInfo == freezed
+      tournamentInfo: freezed == tournamentInfo
           ? _value.tournamentInfo
           : tournamentInfo // ignore: cast_nullable_to_non_nullable
               as TournamentInfoHiveModel?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoHiveModelCopyWith<$Res>? get tournamentInfo {
     if (_value.tournamentInfo == null) {
       return null;
@@ -138,7 +134,7 @@ class _$TourInfoHiveModelCopyWithImpl<$Res>
 
     return $TournamentInfoHiveModelCopyWith<$Res>(_value.tournamentInfo!,
         (value) {
-      return _then(_value.copyWith(tournamentInfo: value));
+      return _then(_value.copyWith(tournamentInfo: value) as $Val);
     });
   }
 }
@@ -150,25 +146,18 @@ abstract class _$$_TourInfoHiveModelCopyWith<$Res>
           $Res Function(_$_TourInfoHiveModel) then) =
       __$$_TourInfoHiveModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
-      {@HiveField(TourInfoHiveFieldsIds.id)
-          String? id,
-      @HiveField(TourInfoHiveFieldsIds.title)
-          String? title,
-      @HiveField(TourInfoHiveFieldsIds.questionsCount)
-          String? questionsCount,
-      @HiveField(TourInfoHiveFieldsIds.description)
-          String? description,
-      @HiveField(TourInfoHiveFieldsIds.url)
-          String? url,
-      @HiveField(TourInfoHiveFieldsIds.editors)
-          String? editors,
-      @HiveField(TourInfoHiveFieldsIds.createdAt)
-          String? createdAt,
-      @HiveField(TourInfoHiveFieldsIds.playedAt)
-          String? playedAt,
+      {@HiveField(TourInfoHiveFieldsIds.id) String? id,
+      @HiveField(TourInfoHiveFieldsIds.title) String? title,
+      @HiveField(TourInfoHiveFieldsIds.questionsCount) String? questionsCount,
+      @HiveField(TourInfoHiveFieldsIds.description) String? description,
+      @HiveField(TourInfoHiveFieldsIds.url) String? url,
+      @HiveField(TourInfoHiveFieldsIds.editors) String? editors,
+      @HiveField(TourInfoHiveFieldsIds.createdAt) String? createdAt,
+      @HiveField(TourInfoHiveFieldsIds.playedAt) String? playedAt,
       @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
-          TournamentInfoHiveModel? tournamentInfo});
+      TournamentInfoHiveModel? tournamentInfo});
 
   @override
   $TournamentInfoHiveModelCopyWith<$Res>? get tournamentInfo;
@@ -176,15 +165,13 @@ abstract class _$$_TourInfoHiveModelCopyWith<$Res>
 
 /// @nodoc
 class __$$_TourInfoHiveModelCopyWithImpl<$Res>
-    extends _$TourInfoHiveModelCopyWithImpl<$Res>
+    extends _$TourInfoHiveModelCopyWithImpl<$Res, _$_TourInfoHiveModel>
     implements _$$_TourInfoHiveModelCopyWith<$Res> {
   __$$_TourInfoHiveModelCopyWithImpl(
       _$_TourInfoHiveModel _value, $Res Function(_$_TourInfoHiveModel) _then)
-      : super(_value, (v) => _then(v as _$_TourInfoHiveModel));
+      : super(_value, _then);
 
-  @override
-  _$_TourInfoHiveModel get _value => super._value as _$_TourInfoHiveModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -198,39 +185,39 @@ class __$$_TourInfoHiveModelCopyWithImpl<$Res>
     Object? tournamentInfo = freezed,
   }) {
     return _then(_$_TourInfoHiveModel(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionsCount: questionsCount == freezed
+      questionsCount: freezed == questionsCount
           ? _value.questionsCount
           : questionsCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      editors: editors == freezed
+      editors: freezed == editors
           ? _value.editors
           : editors // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      playedAt: playedAt == freezed
+      playedAt: freezed == playedAt
           ? _value.playedAt
           : playedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      tournamentInfo: tournamentInfo == freezed
+      tournamentInfo: freezed == tournamentInfo
           ? _value.tournamentInfo
           : tournamentInfo // ignore: cast_nullable_to_non_nullable
               as TournamentInfoHiveModel?,
@@ -291,35 +278,29 @@ class _$_TourInfoHiveModel implements _TourInfoHiveModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TourInfoHiveModel &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality()
-                .equals(other.questionsCount, questionsCount) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.editors, editors) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.playedAt, playedAt) &&
-            const DeepCollectionEquality()
-                .equals(other.tournamentInfo, tournamentInfo));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.questionsCount, questionsCount) ||
+                other.questionsCount == questionsCount) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.editors, editors) || other.editors == editors) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.playedAt, playedAt) ||
+                other.playedAt == playedAt) &&
+            (identical(other.tournamentInfo, tournamentInfo) ||
+                other.tournamentInfo == tournamentInfo));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(questionsCount),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(editors),
-      const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(playedAt),
-      const DeepCollectionEquality().hash(tournamentInfo));
+  int get hashCode => Object.hash(runtimeType, id, title, questionsCount,
+      description, url, editors, createdAt, playedAt, tournamentInfo);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TourInfoHiveModelCopyWith<_$_TourInfoHiveModel> get copyWith =>
       __$$_TourInfoHiveModelCopyWithImpl<_$_TourInfoHiveModel>(
           this, _$identity);
@@ -327,25 +308,17 @@ class _$_TourInfoHiveModel implements _TourInfoHiveModel {
 
 abstract class _TourInfoHiveModel implements TourInfoHiveModel {
   const factory _TourInfoHiveModel(
-          {@HiveField(TourInfoHiveFieldsIds.id)
-              final String? id,
-          @HiveField(TourInfoHiveFieldsIds.title)
-              final String? title,
-          @HiveField(TourInfoHiveFieldsIds.questionsCount)
-              final String? questionsCount,
-          @HiveField(TourInfoHiveFieldsIds.description)
-              final String? description,
-          @HiveField(TourInfoHiveFieldsIds.url)
-              final String? url,
-          @HiveField(TourInfoHiveFieldsIds.editors)
-              final String? editors,
-          @HiveField(TourInfoHiveFieldsIds.createdAt)
-              final String? createdAt,
-          @HiveField(TourInfoHiveFieldsIds.playedAt)
-              final String? playedAt,
-          @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
-              final TournamentInfoHiveModel? tournamentInfo}) =
-      _$_TourInfoHiveModel;
+      {@HiveField(TourInfoHiveFieldsIds.id) final String? id,
+      @HiveField(TourInfoHiveFieldsIds.title) final String? title,
+      @HiveField(TourInfoHiveFieldsIds.questionsCount)
+      final String? questionsCount,
+      @HiveField(TourInfoHiveFieldsIds.description) final String? description,
+      @HiveField(TourInfoHiveFieldsIds.url) final String? url,
+      @HiveField(TourInfoHiveFieldsIds.editors) final String? editors,
+      @HiveField(TourInfoHiveFieldsIds.createdAt) final String? createdAt,
+      @HiveField(TourInfoHiveFieldsIds.playedAt) final String? playedAt,
+      @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
+      final TournamentInfoHiveModel? tournamentInfo}) = _$_TourInfoHiveModel;
 
   @override
   @HiveField(TourInfoHiveFieldsIds.id)

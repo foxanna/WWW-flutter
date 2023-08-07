@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tour_dto.dart';
 
@@ -52,41 +52,35 @@ mixin _$TourDto {
 /// @nodoc
 abstract class $TourDtoCopyWith<$Res> {
   factory $TourDtoCopyWith(TourDto value, $Res Function(TourDto) then) =
-      _$TourDtoCopyWithImpl<$Res>;
+      _$TourDtoCopyWithImpl<$Res, TourDto>;
+  @useResult
   $Res call(
-      {@JsonKey(name: 'Id')
-          String? id,
-      @JsonKey(name: 'ParentId')
-          String? parentId,
-      @JsonKey(name: 'Title')
-          String? title,
-      @JsonKey(name: 'Number')
-          String? number,
-      @JsonKey(name: 'QuestionsNum')
-          String? questionsCount,
-      @JsonKey(name: 'tournamentTitle')
-          String? tournamentTitle,
-      @JsonKey(name: 'Info')
-          String? description,
-      @JsonKey(name: 'Editors')
-          String? editors,
-      @JsonKey(name: 'CreatedAt')
-          String? createdAt,
-      @JsonKey(name: 'PlayedAt')
-          String? playedAt,
+      {@JsonKey(name: 'Id') String? id,
+      @JsonKey(name: 'ParentId') String? parentId,
+      @JsonKey(name: 'Title') String? title,
+      @JsonKey(name: 'Number') String? number,
+      @JsonKey(name: 'QuestionsNum') String? questionsCount,
+      @JsonKey(name: 'tournamentTitle') String? tournamentTitle,
+      @JsonKey(name: 'Info') String? description,
+      @JsonKey(name: 'Editors') String? editors,
+      @JsonKey(name: 'CreatedAt') String? createdAt,
+      @JsonKey(name: 'PlayedAt') String? playedAt,
       @JsonKey(name: 'question')
       @QuestionsListConverter()
-          List<QuestionDto>? questions});
+      List<QuestionDto>? questions});
 }
 
 /// @nodoc
-class _$TourDtoCopyWithImpl<$Res> implements $TourDtoCopyWith<$Res> {
+class _$TourDtoCopyWithImpl<$Res, $Val extends TourDto>
+    implements $TourDtoCopyWith<$Res> {
   _$TourDtoCopyWithImpl(this._value, this._then);
 
-  final TourDto _value;
   // ignore: unused_field
-  final $Res Function(TourDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -102,51 +96,51 @@ class _$TourDtoCopyWithImpl<$Res> implements $TourDtoCopyWith<$Res> {
     Object? questions = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      parentId: parentId == freezed
+      parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionsCount: questionsCount == freezed
+      questionsCount: freezed == questionsCount
           ? _value.questionsCount
           : questionsCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      tournamentTitle: tournamentTitle == freezed
+      tournamentTitle: freezed == tournamentTitle
           ? _value.tournamentTitle
           : tournamentTitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      editors: editors == freezed
+      editors: freezed == editors
           ? _value.editors
           : editors // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      playedAt: playedAt == freezed
+      playedAt: freezed == playedAt
           ? _value.playedAt
           : playedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      questions: questions == freezed
+      questions: freezed == questions
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionDto>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -156,41 +150,31 @@ abstract class _$$_TourDtoCopyWith<$Res> implements $TourDtoCopyWith<$Res> {
           _$_TourDto value, $Res Function(_$_TourDto) then) =
       __$$_TourDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
-      {@JsonKey(name: 'Id')
-          String? id,
-      @JsonKey(name: 'ParentId')
-          String? parentId,
-      @JsonKey(name: 'Title')
-          String? title,
-      @JsonKey(name: 'Number')
-          String? number,
-      @JsonKey(name: 'QuestionsNum')
-          String? questionsCount,
-      @JsonKey(name: 'tournamentTitle')
-          String? tournamentTitle,
-      @JsonKey(name: 'Info')
-          String? description,
-      @JsonKey(name: 'Editors')
-          String? editors,
-      @JsonKey(name: 'CreatedAt')
-          String? createdAt,
-      @JsonKey(name: 'PlayedAt')
-          String? playedAt,
+      {@JsonKey(name: 'Id') String? id,
+      @JsonKey(name: 'ParentId') String? parentId,
+      @JsonKey(name: 'Title') String? title,
+      @JsonKey(name: 'Number') String? number,
+      @JsonKey(name: 'QuestionsNum') String? questionsCount,
+      @JsonKey(name: 'tournamentTitle') String? tournamentTitle,
+      @JsonKey(name: 'Info') String? description,
+      @JsonKey(name: 'Editors') String? editors,
+      @JsonKey(name: 'CreatedAt') String? createdAt,
+      @JsonKey(name: 'PlayedAt') String? playedAt,
       @JsonKey(name: 'question')
       @QuestionsListConverter()
-          List<QuestionDto>? questions});
+      List<QuestionDto>? questions});
 }
 
 /// @nodoc
-class __$$_TourDtoCopyWithImpl<$Res> extends _$TourDtoCopyWithImpl<$Res>
+class __$$_TourDtoCopyWithImpl<$Res>
+    extends _$TourDtoCopyWithImpl<$Res, _$_TourDto>
     implements _$$_TourDtoCopyWith<$Res> {
   __$$_TourDtoCopyWithImpl(_$_TourDto _value, $Res Function(_$_TourDto) _then)
-      : super(_value, (v) => _then(v as _$_TourDto));
+      : super(_value, _then);
 
-  @override
-  _$_TourDto get _value => super._value as _$_TourDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -206,47 +190,47 @@ class __$$_TourDtoCopyWithImpl<$Res> extends _$TourDtoCopyWithImpl<$Res>
     Object? questions = freezed,
   }) {
     return _then(_$_TourDto(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      parentId: parentId == freezed
+      parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionsCount: questionsCount == freezed
+      questionsCount: freezed == questionsCount
           ? _value.questionsCount
           : questionsCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      tournamentTitle: tournamentTitle == freezed
+      tournamentTitle: freezed == tournamentTitle
           ? _value.tournamentTitle
           : tournamentTitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      editors: editors == freezed
+      editors: freezed == editors
           ? _value.editors
           : editors // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      playedAt: playedAt == freezed
+      playedAt: freezed == playedAt
           ? _value.playedAt
           : playedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      questions: questions == freezed
+      questions: freezed == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<QuestionDto>?,
@@ -258,29 +242,19 @@ class __$$_TourDtoCopyWithImpl<$Res> extends _$TourDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_TourDto implements _TourDto {
   const _$_TourDto(
-      {@JsonKey(name: 'Id')
-          this.id,
-      @JsonKey(name: 'ParentId')
-          this.parentId,
-      @JsonKey(name: 'Title')
-          this.title,
-      @JsonKey(name: 'Number')
-          this.number,
-      @JsonKey(name: 'QuestionsNum')
-          this.questionsCount,
-      @JsonKey(name: 'tournamentTitle')
-          this.tournamentTitle,
-      @JsonKey(name: 'Info')
-          this.description,
-      @JsonKey(name: 'Editors')
-          this.editors,
-      @JsonKey(name: 'CreatedAt')
-          this.createdAt,
-      @JsonKey(name: 'PlayedAt')
-          this.playedAt,
+      {@JsonKey(name: 'Id') this.id,
+      @JsonKey(name: 'ParentId') this.parentId,
+      @JsonKey(name: 'Title') this.title,
+      @JsonKey(name: 'Number') this.number,
+      @JsonKey(name: 'QuestionsNum') this.questionsCount,
+      @JsonKey(name: 'tournamentTitle') this.tournamentTitle,
+      @JsonKey(name: 'Info') this.description,
+      @JsonKey(name: 'Editors') this.editors,
+      @JsonKey(name: 'CreatedAt') this.createdAt,
+      @JsonKey(name: 'PlayedAt') this.playedAt,
       @JsonKey(name: 'question')
       @QuestionsListConverter()
-          final List<QuestionDto>? questions})
+      final List<QuestionDto>? questions})
       : _questions = questions;
 
   factory _$_TourDto.fromJson(Map<String, dynamic> json) =>
@@ -323,6 +297,7 @@ class _$_TourDto implements _TourDto {
   List<QuestionDto>? get questions {
     final value = _questions;
     if (value == null) return null;
+    if (_questions is EqualUnmodifiableListView) return _questions;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -337,19 +312,22 @@ class _$_TourDto implements _TourDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TourDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.parentId, parentId) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality()
-                .equals(other.questionsCount, questionsCount) &&
-            const DeepCollectionEquality()
-                .equals(other.tournamentTitle, tournamentTitle) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.editors, editors) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.playedAt, playedAt) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.parentId, parentId) ||
+                other.parentId == parentId) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.questionsCount, questionsCount) ||
+                other.questionsCount == questionsCount) &&
+            (identical(other.tournamentTitle, tournamentTitle) ||
+                other.tournamentTitle == tournamentTitle) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.editors, editors) || other.editors == editors) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.playedAt, playedAt) ||
+                other.playedAt == playedAt) &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions));
   }
@@ -358,20 +336,21 @@ class _$_TourDto implements _TourDto {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(parentId),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(number),
-      const DeepCollectionEquality().hash(questionsCount),
-      const DeepCollectionEquality().hash(tournamentTitle),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(editors),
-      const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(playedAt),
+      id,
+      parentId,
+      title,
+      number,
+      questionsCount,
+      tournamentTitle,
+      description,
+      editors,
+      createdAt,
+      playedAt,
       const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TourDtoCopyWith<_$_TourDto> get copyWith =>
       __$$_TourDtoCopyWithImpl<_$_TourDto>(this, _$identity);
 
@@ -385,29 +364,19 @@ class _$_TourDto implements _TourDto {
 
 abstract class _TourDto implements TourDto {
   const factory _TourDto(
-      {@JsonKey(name: 'Id')
-          final String? id,
-      @JsonKey(name: 'ParentId')
-          final String? parentId,
-      @JsonKey(name: 'Title')
-          final String? title,
-      @JsonKey(name: 'Number')
-          final String? number,
-      @JsonKey(name: 'QuestionsNum')
-          final String? questionsCount,
-      @JsonKey(name: 'tournamentTitle')
-          final String? tournamentTitle,
-      @JsonKey(name: 'Info')
-          final String? description,
-      @JsonKey(name: 'Editors')
-          final String? editors,
-      @JsonKey(name: 'CreatedAt')
-          final String? createdAt,
-      @JsonKey(name: 'PlayedAt')
-          final String? playedAt,
+      {@JsonKey(name: 'Id') final String? id,
+      @JsonKey(name: 'ParentId') final String? parentId,
+      @JsonKey(name: 'Title') final String? title,
+      @JsonKey(name: 'Number') final String? number,
+      @JsonKey(name: 'QuestionsNum') final String? questionsCount,
+      @JsonKey(name: 'tournamentTitle') final String? tournamentTitle,
+      @JsonKey(name: 'Info') final String? description,
+      @JsonKey(name: 'Editors') final String? editors,
+      @JsonKey(name: 'CreatedAt') final String? createdAt,
+      @JsonKey(name: 'PlayedAt') final String? playedAt,
       @JsonKey(name: 'question')
       @QuestionsListConverter()
-          final List<QuestionDto>? questions}) = _$_TourDto;
+      final List<QuestionDto>? questions}) = _$_TourDto;
 
   factory _TourDto.fromJson(Map<String, dynamic> json) = _$_TourDto.fromJson;
 

@@ -8,4 +8,4 @@ class WWWDIModuleTournamentDetails extends WWWDIModule {
 }
 
 @injectableInit
-void _init(GetIt getIt) => $initGetIt(getIt);
+void _init(GetIt getIt) => getIt.init();

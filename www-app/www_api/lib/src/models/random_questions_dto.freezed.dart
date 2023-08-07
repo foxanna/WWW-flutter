@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'random_questions_dto.dart';
 
@@ -34,32 +34,35 @@ mixin _$RandomQuestionsDto {
 abstract class $RandomQuestionsDtoCopyWith<$Res> {
   factory $RandomQuestionsDtoCopyWith(
           RandomQuestionsDto value, $Res Function(RandomQuestionsDto) then) =
-      _$RandomQuestionsDtoCopyWithImpl<$Res>;
+      _$RandomQuestionsDtoCopyWithImpl<$Res, RandomQuestionsDto>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'question')
       @QuestionsListConverter()
-          List<QuestionDto>? search});
+      List<QuestionDto>? search});
 }
 
 /// @nodoc
-class _$RandomQuestionsDtoCopyWithImpl<$Res>
+class _$RandomQuestionsDtoCopyWithImpl<$Res, $Val extends RandomQuestionsDto>
     implements $RandomQuestionsDtoCopyWith<$Res> {
   _$RandomQuestionsDtoCopyWithImpl(this._value, this._then);
 
-  final RandomQuestionsDto _value;
   // ignore: unused_field
-  final $Res Function(RandomQuestionsDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? search = freezed,
   }) {
     return _then(_value.copyWith(
-      search: search == freezed
+      search: freezed == search
           ? _value.search
           : search // ignore: cast_nullable_to_non_nullable
               as List<QuestionDto>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -70,29 +73,28 @@ abstract class _$$_RandomQuestionsDtoCopyWith<$Res>
           $Res Function(_$_RandomQuestionsDto) then) =
       __$$_RandomQuestionsDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'question')
       @QuestionsListConverter()
-          List<QuestionDto>? search});
+      List<QuestionDto>? search});
 }
 
 /// @nodoc
 class __$$_RandomQuestionsDtoCopyWithImpl<$Res>
-    extends _$RandomQuestionsDtoCopyWithImpl<$Res>
+    extends _$RandomQuestionsDtoCopyWithImpl<$Res, _$_RandomQuestionsDto>
     implements _$$_RandomQuestionsDtoCopyWith<$Res> {
   __$$_RandomQuestionsDtoCopyWithImpl(
       _$_RandomQuestionsDto _value, $Res Function(_$_RandomQuestionsDto) _then)
-      : super(_value, (v) => _then(v as _$_RandomQuestionsDto));
+      : super(_value, _then);
 
-  @override
-  _$_RandomQuestionsDto get _value => super._value as _$_RandomQuestionsDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? search = freezed,
   }) {
     return _then(_$_RandomQuestionsDto(
-      search: search == freezed
+      search: freezed == search
           ? _value._search
           : search // ignore: cast_nullable_to_non_nullable
               as List<QuestionDto>?,
@@ -106,7 +108,7 @@ class _$_RandomQuestionsDto implements _RandomQuestionsDto {
   const _$_RandomQuestionsDto(
       {@JsonKey(name: 'question')
       @QuestionsListConverter()
-          final List<QuestionDto>? search})
+      final List<QuestionDto>? search})
       : _search = search;
 
   factory _$_RandomQuestionsDto.fromJson(Map<String, dynamic> json) =>
@@ -119,6 +121,7 @@ class _$_RandomQuestionsDto implements _RandomQuestionsDto {
   List<QuestionDto>? get search {
     final value = _search;
     if (value == null) return null;
+    if (_search is EqualUnmodifiableListView) return _search;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -143,6 +146,7 @@ class _$_RandomQuestionsDto implements _RandomQuestionsDto {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RandomQuestionsDtoCopyWith<_$_RandomQuestionsDto> get copyWith =>
       __$$_RandomQuestionsDtoCopyWithImpl<_$_RandomQuestionsDto>(
           this, _$identity);
@@ -159,7 +163,7 @@ abstract class _RandomQuestionsDto implements RandomQuestionsDto {
   const factory _RandomQuestionsDto(
       {@JsonKey(name: 'question')
       @QuestionsListConverter()
-          final List<QuestionDto>? search}) = _$_RandomQuestionsDto;
+      final List<QuestionDto>? search}) = _$_RandomQuestionsDto;
 
   factory _RandomQuestionsDto.fromJson(Map<String, dynamic> json) =
       _$_RandomQuestionsDto.fromJson;

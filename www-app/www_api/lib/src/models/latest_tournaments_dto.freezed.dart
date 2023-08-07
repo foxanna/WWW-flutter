@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'latest_tournaments_dto.dart';
 
@@ -33,29 +33,33 @@ mixin _$LatestTournamentsDto {
 abstract class $LatestTournamentsDtoCopyWith<$Res> {
   factory $LatestTournamentsDtoCopyWith(LatestTournamentsDto value,
           $Res Function(LatestTournamentsDto) then) =
-      _$LatestTournamentsDtoCopyWithImpl<$Res>;
+      _$LatestTournamentsDtoCopyWithImpl<$Res, LatestTournamentsDto>;
+  @useResult
   $Res call({@JsonKey(name: 'latest') List<TournamentDto>? tournaments});
 }
 
 /// @nodoc
-class _$LatestTournamentsDtoCopyWithImpl<$Res>
+class _$LatestTournamentsDtoCopyWithImpl<$Res,
+        $Val extends LatestTournamentsDto>
     implements $LatestTournamentsDtoCopyWith<$Res> {
   _$LatestTournamentsDtoCopyWithImpl(this._value, this._then);
 
-  final LatestTournamentsDto _value;
   // ignore: unused_field
-  final $Res Function(LatestTournamentsDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? tournaments = freezed,
   }) {
     return _then(_value.copyWith(
-      tournaments: tournaments == freezed
+      tournaments: freezed == tournaments
           ? _value.tournaments
           : tournaments // ignore: cast_nullable_to_non_nullable
               as List<TournamentDto>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -66,26 +70,25 @@ abstract class _$$_LatestTournamentsDtoCopyWith<$Res>
           $Res Function(_$_LatestTournamentsDto) then) =
       __$$_LatestTournamentsDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@JsonKey(name: 'latest') List<TournamentDto>? tournaments});
 }
 
 /// @nodoc
 class __$$_LatestTournamentsDtoCopyWithImpl<$Res>
-    extends _$LatestTournamentsDtoCopyWithImpl<$Res>
+    extends _$LatestTournamentsDtoCopyWithImpl<$Res, _$_LatestTournamentsDto>
     implements _$$_LatestTournamentsDtoCopyWith<$Res> {
   __$$_LatestTournamentsDtoCopyWithImpl(_$_LatestTournamentsDto _value,
       $Res Function(_$_LatestTournamentsDto) _then)
-      : super(_value, (v) => _then(v as _$_LatestTournamentsDto));
+      : super(_value, _then);
 
-  @override
-  _$_LatestTournamentsDto get _value => super._value as _$_LatestTournamentsDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? tournaments = freezed,
   }) {
     return _then(_$_LatestTournamentsDto(
-      tournaments: tournaments == freezed
+      tournaments: freezed == tournaments
           ? _value._tournaments
           : tournaments // ignore: cast_nullable_to_non_nullable
               as List<TournamentDto>?,
@@ -109,6 +112,7 @@ class _$_LatestTournamentsDto implements _LatestTournamentsDto {
   List<TournamentDto>? get tournaments {
     final value = _tournaments;
     if (value == null) return null;
+    if (_tournaments is EqualUnmodifiableListView) return _tournaments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -134,6 +138,7 @@ class _$_LatestTournamentsDto implements _LatestTournamentsDto {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LatestTournamentsDtoCopyWith<_$_LatestTournamentsDto> get copyWith =>
       __$$_LatestTournamentsDtoCopyWithImpl<_$_LatestTournamentsDto>(
           this, _$identity);

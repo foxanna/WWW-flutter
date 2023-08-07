@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tournament_info.dart';
 
@@ -36,7 +36,8 @@ mixin _$TournamentInfo {
 abstract class $TournamentInfoCopyWith<$Res> {
   factory $TournamentInfoCopyWith(
           TournamentInfo value, $Res Function(TournamentInfo) then) =
-      _$TournamentInfoCopyWithImpl<$Res>;
+      _$TournamentInfoCopyWithImpl<$Res, TournamentInfo>;
+  @useResult
   $Res call(
       {String? id,
       String? id2,
@@ -51,14 +52,16 @@ abstract class $TournamentInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TournamentInfoCopyWithImpl<$Res>
+class _$TournamentInfoCopyWithImpl<$Res, $Val extends TournamentInfo>
     implements $TournamentInfoCopyWith<$Res> {
   _$TournamentInfoCopyWithImpl(this._value, this._then);
 
-  final TournamentInfo _value;
   // ignore: unused_field
-  final $Res Function(TournamentInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -73,47 +76,47 @@ class _$TournamentInfoCopyWithImpl<$Res>
     Object? playedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      id2: id2 == freezed
+      id2: freezed == id2
           ? _value.id2
           : id2 // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionsCount: questionsCount == freezed
+      questionsCount: freezed == questionsCount
           ? _value.questionsCount
           : questionsCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      toursCount: toursCount == freezed
+      toursCount: freezed == toursCount
           ? _value.toursCount
           : toursCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      editors: editors == freezed
+      editors: freezed == editors
           ? _value.editors
           : editors // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      playedAt: playedAt == freezed
+      playedAt: freezed == playedAt
           ? _value.playedAt
           : playedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -124,6 +127,7 @@ abstract class _$$_TournamentInfoCopyWith<$Res>
           _$_TournamentInfo value, $Res Function(_$_TournamentInfo) then) =
       __$$_TournamentInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       String? id2,
@@ -139,15 +143,13 @@ abstract class _$$_TournamentInfoCopyWith<$Res>
 
 /// @nodoc
 class __$$_TournamentInfoCopyWithImpl<$Res>
-    extends _$TournamentInfoCopyWithImpl<$Res>
+    extends _$TournamentInfoCopyWithImpl<$Res, _$_TournamentInfo>
     implements _$$_TournamentInfoCopyWith<$Res> {
   __$$_TournamentInfoCopyWithImpl(
       _$_TournamentInfo _value, $Res Function(_$_TournamentInfo) _then)
-      : super(_value, (v) => _then(v as _$_TournamentInfo));
+      : super(_value, _then);
 
-  @override
-  _$_TournamentInfo get _value => super._value as _$_TournamentInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -162,43 +164,43 @@ class __$$_TournamentInfoCopyWithImpl<$Res>
     Object? playedAt = freezed,
   }) {
     return _then(_$_TournamentInfo(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      id2: id2 == freezed
+      id2: freezed == id2
           ? _value.id2
           : id2 // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionsCount: questionsCount == freezed
+      questionsCount: freezed == questionsCount
           ? _value.questionsCount
           : questionsCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      toursCount: toursCount == freezed
+      toursCount: freezed == toursCount
           ? _value.toursCount
           : toursCount // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      editors: editors == freezed
+      editors: freezed == editors
           ? _value.editors
           : editors // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      playedAt: playedAt == freezed
+      playedAt: freezed == playedAt
           ? _value.playedAt
           : playedAt // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -252,37 +254,30 @@ class _$_TournamentInfo implements _TournamentInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TournamentInfo &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.id2, id2) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality()
-                .equals(other.questionsCount, questionsCount) &&
-            const DeepCollectionEquality()
-                .equals(other.toursCount, toursCount) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.editors, editors) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.playedAt, playedAt));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.id2, id2) || other.id2 == id2) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.questionsCount, questionsCount) ||
+                other.questionsCount == questionsCount) &&
+            (identical(other.toursCount, toursCount) ||
+                other.toursCount == toursCount) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.editors, editors) || other.editors == editors) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.playedAt, playedAt) ||
+                other.playedAt == playedAt));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(id2),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(questionsCount),
-      const DeepCollectionEquality().hash(toursCount),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(editors),
-      const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(playedAt));
+  int get hashCode => Object.hash(runtimeType, id, id2, title, questionsCount,
+      toursCount, description, url, editors, createdAt, playedAt);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TournamentInfoCopyWith<_$_TournamentInfo> get copyWith =>
       __$$_TournamentInfoCopyWithImpl<_$_TournamentInfo>(this, _$identity);
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'search_parameters.dart';
 
@@ -29,39 +29,42 @@ mixin _$SearchParameters {
 abstract class $SearchParametersCopyWith<$Res> {
   factory $SearchParametersCopyWith(
           SearchParameters value, $Res Function(SearchParameters) then) =
-      _$SearchParametersCopyWithImpl<$Res>;
+      _$SearchParametersCopyWithImpl<$Res, SearchParameters>;
+  @useResult
   $Res call({String query, Sorting sorting, int nextPage});
 }
 
 /// @nodoc
-class _$SearchParametersCopyWithImpl<$Res>
+class _$SearchParametersCopyWithImpl<$Res, $Val extends SearchParameters>
     implements $SearchParametersCopyWith<$Res> {
   _$SearchParametersCopyWithImpl(this._value, this._then);
 
-  final SearchParameters _value;
   // ignore: unused_field
-  final $Res Function(SearchParameters) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
-    Object? sorting = freezed,
-    Object? nextPage = freezed,
+    Object? query = null,
+    Object? sorting = null,
+    Object? nextPage = null,
   }) {
     return _then(_value.copyWith(
-      query: query == freezed
+      query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
-      sorting: sorting == freezed
+      sorting: null == sorting
           ? _value.sorting
           : sorting // ignore: cast_nullable_to_non_nullable
               as Sorting,
-      nextPage: nextPage == freezed
+      nextPage: null == nextPage
           ? _value.nextPage
           : nextPage // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -72,36 +75,35 @@ abstract class _$$_SearchParametersCopyWith<$Res>
           _$_SearchParameters value, $Res Function(_$_SearchParameters) then) =
       __$$_SearchParametersCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String query, Sorting sorting, int nextPage});
 }
 
 /// @nodoc
 class __$$_SearchParametersCopyWithImpl<$Res>
-    extends _$SearchParametersCopyWithImpl<$Res>
+    extends _$SearchParametersCopyWithImpl<$Res, _$_SearchParameters>
     implements _$$_SearchParametersCopyWith<$Res> {
   __$$_SearchParametersCopyWithImpl(
       _$_SearchParameters _value, $Res Function(_$_SearchParameters) _then)
-      : super(_value, (v) => _then(v as _$_SearchParameters));
+      : super(_value, _then);
 
-  @override
-  _$_SearchParameters get _value => super._value as _$_SearchParameters;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
-    Object? sorting = freezed,
-    Object? nextPage = freezed,
+    Object? query = null,
+    Object? sorting = null,
+    Object? nextPage = null,
   }) {
     return _then(_$_SearchParameters(
-      query: query == freezed
+      query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
-      sorting: sorting == freezed
+      sorting: null == sorting
           ? _value.sorting
           : sorting // ignore: cast_nullable_to_non_nullable
               as Sorting,
-      nextPage: nextPage == freezed
+      nextPage: null == nextPage
           ? _value.nextPage
           : nextPage // ignore: cast_nullable_to_non_nullable
               as int,
@@ -135,20 +137,18 @@ class _$_SearchParameters implements _SearchParameters {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SearchParameters &&
-            const DeepCollectionEquality().equals(other.query, query) &&
-            const DeepCollectionEquality().equals(other.sorting, sorting) &&
-            const DeepCollectionEquality().equals(other.nextPage, nextPage));
+            (identical(other.query, query) || other.query == query) &&
+            (identical(other.sorting, sorting) || other.sorting == sorting) &&
+            (identical(other.nextPage, nextPage) ||
+                other.nextPage == nextPage));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(query),
-      const DeepCollectionEquality().hash(sorting),
-      const DeepCollectionEquality().hash(nextPage));
+  int get hashCode => Object.hash(runtimeType, query, sorting, nextPage);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SearchParametersCopyWith<_$_SearchParameters> get copyWith =>
       __$$_SearchParametersCopyWithImpl<_$_SearchParameters>(this, _$identity);
 }

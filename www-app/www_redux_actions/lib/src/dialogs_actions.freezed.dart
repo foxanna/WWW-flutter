@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'dialogs_actions.dart';
 
@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UserActionDialog {
+  Object get info => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TourInfo info) tourInfo,
@@ -24,8 +25,8 @@ mixin _$UserActionDialog {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TourInfo info)? tourInfo,
-    TResult Function(TournamentInfo info)? tournamentInfo,
+    TResult? Function(TourInfo info)? tourInfo,
+    TResult? Function(TournamentInfo info)? tournamentInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,8 +45,8 @@ mixin _$UserActionDialog {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TourInfoDialogUserAction value)? tourInfo,
-    TResult Function(TournamentInfoDialogUserAction value)? tournamentInfo,
+    TResult? Function(TourInfoDialogUserAction value)? tourInfo,
+    TResult? Function(TournamentInfoDialogUserAction value)? tournamentInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,17 +62,18 @@ mixin _$UserActionDialog {
 abstract class $UserActionDialogCopyWith<$Res> {
   factory $UserActionDialogCopyWith(
           UserActionDialog value, $Res Function(UserActionDialog) then) =
-      _$UserActionDialogCopyWithImpl<$Res>;
+      _$UserActionDialogCopyWithImpl<$Res, UserActionDialog>;
 }
 
 /// @nodoc
-class _$UserActionDialogCopyWithImpl<$Res>
+class _$UserActionDialogCopyWithImpl<$Res, $Val extends UserActionDialog>
     implements $UserActionDialogCopyWith<$Res> {
   _$UserActionDialogCopyWithImpl(this._value, this._then);
 
-  final UserActionDialog _value;
   // ignore: unused_field
-  final $Res Function(UserActionDialog) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -79,6 +81,7 @@ abstract class _$$TourInfoDialogUserActionCopyWith<$Res> {
   factory _$$TourInfoDialogUserActionCopyWith(_$TourInfoDialogUserAction value,
           $Res Function(_$TourInfoDialogUserAction) then) =
       __$$TourInfoDialogUserActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
@@ -86,22 +89,19 @@ abstract class _$$TourInfoDialogUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$TourInfoDialogUserActionCopyWithImpl<$Res>
-    extends _$UserActionDialogCopyWithImpl<$Res>
+    extends _$UserActionDialogCopyWithImpl<$Res, _$TourInfoDialogUserAction>
     implements _$$TourInfoDialogUserActionCopyWith<$Res> {
   __$$TourInfoDialogUserActionCopyWithImpl(_$TourInfoDialogUserAction _value,
       $Res Function(_$TourInfoDialogUserAction) _then)
-      : super(_value, (v) => _then(v as _$TourInfoDialogUserAction));
+      : super(_value, _then);
 
-  @override
-  _$TourInfoDialogUserAction get _value =>
-      super._value as _$TourInfoDialogUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$TourInfoDialogUserAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TourInfo,
@@ -109,6 +109,7 @@ class __$$TourInfoDialogUserActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TourInfoCopyWith<$Res> get info {
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -144,15 +145,15 @@ class _$TourInfoDialogUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TourInfoDialogUserAction &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TourInfoDialogUserActionCopyWith<_$TourInfoDialogUserAction>
       get copyWith =>
           __$$TourInfoDialogUserActionCopyWithImpl<_$TourInfoDialogUserAction>(
@@ -170,8 +171,8 @@ class _$TourInfoDialogUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TourInfo info)? tourInfo,
-    TResult Function(TournamentInfo info)? tournamentInfo,
+    TResult? Function(TourInfo info)? tourInfo,
+    TResult? Function(TournamentInfo info)? tournamentInfo,
   }) {
     return tourInfo?.call(info);
   }
@@ -202,8 +203,8 @@ class _$TourInfoDialogUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TourInfoDialogUserAction value)? tourInfo,
-    TResult Function(TournamentInfoDialogUserAction value)? tournamentInfo,
+    TResult? Function(TourInfoDialogUserAction value)? tourInfo,
+    TResult? Function(TournamentInfoDialogUserAction value)? tournamentInfo,
   }) {
     return tourInfo?.call(this);
   }
@@ -226,6 +227,7 @@ abstract class TourInfoDialogUserAction implements UserActionDialog {
   const factory TourInfoDialogUserAction({required final TourInfo info}) =
       _$TourInfoDialogUserAction;
 
+  @override
   TourInfo get info;
   @JsonKey(ignore: true)
   _$$TourInfoDialogUserActionCopyWith<_$TourInfoDialogUserAction>
@@ -238,6 +240,7 @@ abstract class _$$TournamentInfoDialogUserActionCopyWith<$Res> {
           _$TournamentInfoDialogUserAction value,
           $Res Function(_$TournamentInfoDialogUserAction) then) =
       __$$TournamentInfoDialogUserActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -245,23 +248,21 @@ abstract class _$$TournamentInfoDialogUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$TournamentInfoDialogUserActionCopyWithImpl<$Res>
-    extends _$UserActionDialogCopyWithImpl<$Res>
+    extends _$UserActionDialogCopyWithImpl<$Res,
+        _$TournamentInfoDialogUserAction>
     implements _$$TournamentInfoDialogUserActionCopyWith<$Res> {
   __$$TournamentInfoDialogUserActionCopyWithImpl(
       _$TournamentInfoDialogUserAction _value,
       $Res Function(_$TournamentInfoDialogUserAction) _then)
-      : super(_value, (v) => _then(v as _$TournamentInfoDialogUserAction));
+      : super(_value, _then);
 
-  @override
-  _$TournamentInfoDialogUserAction get _value =>
-      super._value as _$TournamentInfoDialogUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$TournamentInfoDialogUserAction(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
@@ -269,6 +270,7 @@ class __$$TournamentInfoDialogUserActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -304,15 +306,15 @@ class _$TournamentInfoDialogUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TournamentInfoDialogUserAction &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TournamentInfoDialogUserActionCopyWith<_$TournamentInfoDialogUserAction>
       get copyWith => __$$TournamentInfoDialogUserActionCopyWithImpl<
           _$TournamentInfoDialogUserAction>(this, _$identity);
@@ -329,8 +331,8 @@ class _$TournamentInfoDialogUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(TourInfo info)? tourInfo,
-    TResult Function(TournamentInfo info)? tournamentInfo,
+    TResult? Function(TourInfo info)? tourInfo,
+    TResult? Function(TournamentInfo info)? tournamentInfo,
   }) {
     return tournamentInfo?.call(info);
   }
@@ -361,8 +363,8 @@ class _$TournamentInfoDialogUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TourInfoDialogUserAction value)? tourInfo,
-    TResult Function(TournamentInfoDialogUserAction value)? tournamentInfo,
+    TResult? Function(TourInfoDialogUserAction value)? tourInfo,
+    TResult? Function(TournamentInfoDialogUserAction value)? tournamentInfo,
   }) {
     return tournamentInfo?.call(this);
   }
@@ -385,6 +387,7 @@ abstract class TournamentInfoDialogUserAction implements UserActionDialog {
   const factory TournamentInfoDialogUserAction(
       {required final TournamentInfo info}) = _$TournamentInfoDialogUserAction;
 
+  @override
   TournamentInfo get info;
   @JsonKey(ignore: true)
   _$$TournamentInfoDialogUserActionCopyWith<_$TournamentInfoDialogUserAction>
@@ -400,7 +403,7 @@ mixin _$SystemActionDialog {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? rating,
+    TResult? Function()? rating,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -416,7 +419,7 @@ mixin _$SystemActionDialog {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RatingDialogSystemAction value)? rating,
+    TResult? Function(RatingDialogSystemAction value)? rating,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -431,17 +434,18 @@ mixin _$SystemActionDialog {
 abstract class $SystemActionDialogCopyWith<$Res> {
   factory $SystemActionDialogCopyWith(
           SystemActionDialog value, $Res Function(SystemActionDialog) then) =
-      _$SystemActionDialogCopyWithImpl<$Res>;
+      _$SystemActionDialogCopyWithImpl<$Res, SystemActionDialog>;
 }
 
 /// @nodoc
-class _$SystemActionDialogCopyWithImpl<$Res>
+class _$SystemActionDialogCopyWithImpl<$Res, $Val extends SystemActionDialog>
     implements $SystemActionDialogCopyWith<$Res> {
   _$SystemActionDialogCopyWithImpl(this._value, this._then);
 
-  final SystemActionDialog _value;
   // ignore: unused_field
-  final $Res Function(SystemActionDialog) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -453,15 +457,11 @@ abstract class _$$RatingDialogSystemActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$RatingDialogSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionDialogCopyWithImpl<$Res>
+    extends _$SystemActionDialogCopyWithImpl<$Res, _$RatingDialogSystemAction>
     implements _$$RatingDialogSystemActionCopyWith<$Res> {
   __$$RatingDialogSystemActionCopyWithImpl(_$RatingDialogSystemAction _value,
       $Res Function(_$RatingDialogSystemAction) _then)
-      : super(_value, (v) => _then(v as _$RatingDialogSystemAction));
-
-  @override
-  _$RatingDialogSystemAction get _value =>
-      super._value as _$RatingDialogSystemAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -503,7 +503,7 @@ class _$RatingDialogSystemAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? rating,
+    TResult? Function()? rating,
   }) {
     return rating?.call();
   }
@@ -531,7 +531,7 @@ class _$RatingDialogSystemAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RatingDialogSystemAction value)? rating,
+    TResult? Function(RatingDialogSystemAction value)? rating,
   }) {
     return rating?.call(this);
   }

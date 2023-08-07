@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'question_info.dart';
 
@@ -30,51 +30,56 @@ mixin _$QuestionInfo {
 abstract class $QuestionInfoCopyWith<$Res> {
   factory $QuestionInfoCopyWith(
           QuestionInfo value, $Res Function(QuestionInfo) then) =
-      _$QuestionInfoCopyWithImpl<$Res>;
+      _$QuestionInfoCopyWithImpl<$Res, QuestionInfo>;
+  @useResult
   $Res call({String? id, String? number, String? url, TourInfo tourInfo});
 
   $TourInfoCopyWith<$Res> get tourInfo;
 }
 
 /// @nodoc
-class _$QuestionInfoCopyWithImpl<$Res> implements $QuestionInfoCopyWith<$Res> {
+class _$QuestionInfoCopyWithImpl<$Res, $Val extends QuestionInfo>
+    implements $QuestionInfoCopyWith<$Res> {
   _$QuestionInfoCopyWithImpl(this._value, this._then);
 
-  final QuestionInfo _value;
   // ignore: unused_field
-  final $Res Function(QuestionInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? number = freezed,
     Object? url = freezed,
-    Object? tourInfo = freezed,
+    Object? tourInfo = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      tourInfo: tourInfo == freezed
+      tourInfo: null == tourInfo
           ? _value.tourInfo
           : tourInfo // ignore: cast_nullable_to_non_nullable
               as TourInfo,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TourInfoCopyWith<$Res> get tourInfo {
     return $TourInfoCopyWith<$Res>(_value.tourInfo, (value) {
-      return _then(_value.copyWith(tourInfo: value));
+      return _then(_value.copyWith(tourInfo: value) as $Val);
     });
   }
 }
@@ -86,6 +91,7 @@ abstract class _$$_QuestionInfoCopyWith<$Res>
           _$_QuestionInfo value, $Res Function(_$_QuestionInfo) then) =
       __$$_QuestionInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String? id, String? number, String? url, TourInfo tourInfo});
 
   @override
@@ -94,36 +100,34 @@ abstract class _$$_QuestionInfoCopyWith<$Res>
 
 /// @nodoc
 class __$$_QuestionInfoCopyWithImpl<$Res>
-    extends _$QuestionInfoCopyWithImpl<$Res>
+    extends _$QuestionInfoCopyWithImpl<$Res, _$_QuestionInfo>
     implements _$$_QuestionInfoCopyWith<$Res> {
   __$$_QuestionInfoCopyWithImpl(
       _$_QuestionInfo _value, $Res Function(_$_QuestionInfo) _then)
-      : super(_value, (v) => _then(v as _$_QuestionInfo));
+      : super(_value, _then);
 
-  @override
-  _$_QuestionInfo get _value => super._value as _$_QuestionInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? number = freezed,
     Object? url = freezed,
-    Object? tourInfo = freezed,
+    Object? tourInfo = null,
   }) {
     return _then(_$_QuestionInfo(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      tourInfo: tourInfo == freezed
+      tourInfo: null == tourInfo
           ? _value.tourInfo
           : tourInfo // ignore: cast_nullable_to_non_nullable
               as TourInfo,
@@ -157,22 +161,19 @@ class _$_QuestionInfo implements _QuestionInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QuestionInfo &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.tourInfo, tourInfo));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.tourInfo, tourInfo) ||
+                other.tourInfo == tourInfo));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(number),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(tourInfo));
+  int get hashCode => Object.hash(runtimeType, id, number, url, tourInfo);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionInfoCopyWith<_$_QuestionInfo> get copyWith =>
       __$$_QuestionInfoCopyWithImpl<_$_QuestionInfo>(this, _$identity);
 }

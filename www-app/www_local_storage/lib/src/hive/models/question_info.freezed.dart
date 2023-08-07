@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'question_info.dart';
 
@@ -34,29 +34,30 @@ mixin _$QuestionInfoHiveModel {
 abstract class $QuestionInfoHiveModelCopyWith<$Res> {
   factory $QuestionInfoHiveModelCopyWith(QuestionInfoHiveModel value,
           $Res Function(QuestionInfoHiveModel) then) =
-      _$QuestionInfoHiveModelCopyWithImpl<$Res>;
+      _$QuestionInfoHiveModelCopyWithImpl<$Res, QuestionInfoHiveModel>;
+  @useResult
   $Res call(
-      {@HiveField(QuestionInfoHiveFieldsIds.id)
-          String? id,
-      @HiveField(QuestionInfoHiveFieldsIds.number)
-          String? number,
-      @HiveField(QuestionInfoHiveFieldsIds.url)
-          String? url,
+      {@HiveField(QuestionInfoHiveFieldsIds.id) String? id,
+      @HiveField(QuestionInfoHiveFieldsIds.number) String? number,
+      @HiveField(QuestionInfoHiveFieldsIds.url) String? url,
       @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
-          TourInfoHiveModel? tourInfo});
+      TourInfoHiveModel? tourInfo});
 
   $TourInfoHiveModelCopyWith<$Res>? get tourInfo;
 }
 
 /// @nodoc
-class _$QuestionInfoHiveModelCopyWithImpl<$Res>
+class _$QuestionInfoHiveModelCopyWithImpl<$Res,
+        $Val extends QuestionInfoHiveModel>
     implements $QuestionInfoHiveModelCopyWith<$Res> {
   _$QuestionInfoHiveModelCopyWithImpl(this._value, this._then);
 
-  final QuestionInfoHiveModel _value;
   // ignore: unused_field
-  final $Res Function(QuestionInfoHiveModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -65,33 +66,34 @@ class _$QuestionInfoHiveModelCopyWithImpl<$Res>
     Object? tourInfo = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      tourInfo: tourInfo == freezed
+      tourInfo: freezed == tourInfo
           ? _value.tourInfo
           : tourInfo // ignore: cast_nullable_to_non_nullable
               as TourInfoHiveModel?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TourInfoHiveModelCopyWith<$Res>? get tourInfo {
     if (_value.tourInfo == null) {
       return null;
     }
 
     return $TourInfoHiveModelCopyWith<$Res>(_value.tourInfo!, (value) {
-      return _then(_value.copyWith(tourInfo: value));
+      return _then(_value.copyWith(tourInfo: value) as $Val);
     });
   }
 }
@@ -103,15 +105,13 @@ abstract class _$$_QuestionInfoHiveModelCopyWith<$Res>
           $Res Function(_$_QuestionInfoHiveModel) then) =
       __$$_QuestionInfoHiveModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
-      {@HiveField(QuestionInfoHiveFieldsIds.id)
-          String? id,
-      @HiveField(QuestionInfoHiveFieldsIds.number)
-          String? number,
-      @HiveField(QuestionInfoHiveFieldsIds.url)
-          String? url,
+      {@HiveField(QuestionInfoHiveFieldsIds.id) String? id,
+      @HiveField(QuestionInfoHiveFieldsIds.number) String? number,
+      @HiveField(QuestionInfoHiveFieldsIds.url) String? url,
       @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
-          TourInfoHiveModel? tourInfo});
+      TourInfoHiveModel? tourInfo});
 
   @override
   $TourInfoHiveModelCopyWith<$Res>? get tourInfo;
@@ -119,16 +119,13 @@ abstract class _$$_QuestionInfoHiveModelCopyWith<$Res>
 
 /// @nodoc
 class __$$_QuestionInfoHiveModelCopyWithImpl<$Res>
-    extends _$QuestionInfoHiveModelCopyWithImpl<$Res>
+    extends _$QuestionInfoHiveModelCopyWithImpl<$Res, _$_QuestionInfoHiveModel>
     implements _$$_QuestionInfoHiveModelCopyWith<$Res> {
   __$$_QuestionInfoHiveModelCopyWithImpl(_$_QuestionInfoHiveModel _value,
       $Res Function(_$_QuestionInfoHiveModel) _then)
-      : super(_value, (v) => _then(v as _$_QuestionInfoHiveModel));
+      : super(_value, _then);
 
-  @override
-  _$_QuestionInfoHiveModel get _value =>
-      super._value as _$_QuestionInfoHiveModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -137,19 +134,19 @@ class __$$_QuestionInfoHiveModelCopyWithImpl<$Res>
     Object? tourInfo = freezed,
   }) {
     return _then(_$_QuestionInfoHiveModel(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      tourInfo: tourInfo == freezed
+      tourInfo: freezed == tourInfo
           ? _value.tourInfo
           : tourInfo // ignore: cast_nullable_to_non_nullable
               as TourInfoHiveModel?,
@@ -190,22 +187,19 @@ class _$_QuestionInfoHiveModel implements _QuestionInfoHiveModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QuestionInfoHiveModel &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.tourInfo, tourInfo));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.tourInfo, tourInfo) ||
+                other.tourInfo == tourInfo));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(number),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(tourInfo));
+  int get hashCode => Object.hash(runtimeType, id, number, url, tourInfo);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionInfoHiveModelCopyWith<_$_QuestionInfoHiveModel> get copyWith =>
       __$$_QuestionInfoHiveModelCopyWithImpl<_$_QuestionInfoHiveModel>(
           this, _$identity);
@@ -213,14 +207,11 @@ class _$_QuestionInfoHiveModel implements _QuestionInfoHiveModel {
 
 abstract class _QuestionInfoHiveModel implements QuestionInfoHiveModel {
   const factory _QuestionInfoHiveModel(
-      {@HiveField(QuestionInfoHiveFieldsIds.id)
-          final String? id,
-      @HiveField(QuestionInfoHiveFieldsIds.number)
-          final String? number,
-      @HiveField(QuestionInfoHiveFieldsIds.url)
-          final String? url,
+      {@HiveField(QuestionInfoHiveFieldsIds.id) final String? id,
+      @HiveField(QuestionInfoHiveFieldsIds.number) final String? number,
+      @HiveField(QuestionInfoHiveFieldsIds.url) final String? url,
       @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
-          final TourInfoHiveModel? tourInfo}) = _$_QuestionInfoHiveModel;
+      final TourInfoHiveModel? tourInfo}) = _$_QuestionInfoHiveModel;
 
   @override
   @HiveField(QuestionInfoHiveFieldsIds.id)

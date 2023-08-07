@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rating_actions.dart';
 
@@ -24,8 +24,8 @@ mixin _$UserActionRating {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int rating)? rate,
-    TResult Function()? neverAsk,
+    TResult? Function(int rating)? rate,
+    TResult? Function()? neverAsk,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$UserActionRating {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RateRatingUserAction value)? rate,
-    TResult Function(NeverAskRatingUserAction value)? neverAsk,
+    TResult? Function(RateRatingUserAction value)? rate,
+    TResult? Function(NeverAskRatingUserAction value)? neverAsk,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,17 +60,18 @@ mixin _$UserActionRating {
 abstract class $UserActionRatingCopyWith<$Res> {
   factory $UserActionRatingCopyWith(
           UserActionRating value, $Res Function(UserActionRating) then) =
-      _$UserActionRatingCopyWithImpl<$Res>;
+      _$UserActionRatingCopyWithImpl<$Res, UserActionRating>;
 }
 
 /// @nodoc
-class _$UserActionRatingCopyWithImpl<$Res>
+class _$UserActionRatingCopyWithImpl<$Res, $Val extends UserActionRating>
     implements $UserActionRatingCopyWith<$Res> {
   _$UserActionRatingCopyWithImpl(this._value, this._then);
 
-  final UserActionRating _value;
   // ignore: unused_field
-  final $Res Function(UserActionRating) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -78,26 +79,25 @@ abstract class _$$RateRatingUserActionCopyWith<$Res> {
   factory _$$RateRatingUserActionCopyWith(_$RateRatingUserAction value,
           $Res Function(_$RateRatingUserAction) then) =
       __$$RateRatingUserActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({int rating});
 }
 
 /// @nodoc
 class __$$RateRatingUserActionCopyWithImpl<$Res>
-    extends _$UserActionRatingCopyWithImpl<$Res>
+    extends _$UserActionRatingCopyWithImpl<$Res, _$RateRatingUserAction>
     implements _$$RateRatingUserActionCopyWith<$Res> {
   __$$RateRatingUserActionCopyWithImpl(_$RateRatingUserAction _value,
       $Res Function(_$RateRatingUserAction) _then)
-      : super(_value, (v) => _then(v as _$RateRatingUserAction));
+      : super(_value, _then);
 
-  @override
-  _$RateRatingUserAction get _value => super._value as _$RateRatingUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rating = freezed,
+    Object? rating = null,
   }) {
     return _then(_$RateRatingUserAction(
-      rating: rating == freezed
+      rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as int,
@@ -133,15 +133,15 @@ class _$RateRatingUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RateRatingUserAction &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            (identical(other.rating, rating) || other.rating == rating));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(rating));
+  int get hashCode => Object.hash(runtimeType, rating);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RateRatingUserActionCopyWith<_$RateRatingUserAction> get copyWith =>
       __$$RateRatingUserActionCopyWithImpl<_$RateRatingUserAction>(
           this, _$identity);
@@ -158,8 +158,8 @@ class _$RateRatingUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int rating)? rate,
-    TResult Function()? neverAsk,
+    TResult? Function(int rating)? rate,
+    TResult? Function()? neverAsk,
   }) {
     return rate?.call(rating);
   }
@@ -189,8 +189,8 @@ class _$RateRatingUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RateRatingUserAction value)? rate,
-    TResult Function(NeverAskRatingUserAction value)? neverAsk,
+    TResult? Function(RateRatingUserAction value)? rate,
+    TResult? Function(NeverAskRatingUserAction value)? neverAsk,
   }) {
     return rate?.call(this);
   }
@@ -228,15 +228,11 @@ abstract class _$$NeverAskRatingUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$NeverAskRatingUserActionCopyWithImpl<$Res>
-    extends _$UserActionRatingCopyWithImpl<$Res>
+    extends _$UserActionRatingCopyWithImpl<$Res, _$NeverAskRatingUserAction>
     implements _$$NeverAskRatingUserActionCopyWith<$Res> {
   __$$NeverAskRatingUserActionCopyWithImpl(_$NeverAskRatingUserAction _value,
       $Res Function(_$NeverAskRatingUserAction) _then)
-      : super(_value, (v) => _then(v as _$NeverAskRatingUserAction));
-
-  @override
-  _$NeverAskRatingUserAction get _value =>
-      super._value as _$NeverAskRatingUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -279,8 +275,8 @@ class _$NeverAskRatingUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int rating)? rate,
-    TResult Function()? neverAsk,
+    TResult? Function(int rating)? rate,
+    TResult? Function()? neverAsk,
   }) {
     return neverAsk?.call();
   }
@@ -310,8 +306,8 @@ class _$NeverAskRatingUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RateRatingUserAction value)? rate,
-    TResult Function(NeverAskRatingUserAction value)? neverAsk,
+    TResult? Function(RateRatingUserAction value)? rate,
+    TResult? Function(NeverAskRatingUserAction value)? neverAsk,
   }) {
     return neverAsk?.call(this);
   }

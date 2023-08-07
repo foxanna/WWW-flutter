@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tournament_status.dart';
 
@@ -28,34 +28,37 @@ mixin _$TournamentStatus {
 abstract class $TournamentStatusCopyWith<$Res> {
   factory $TournamentStatusCopyWith(
           TournamentStatus value, $Res Function(TournamentStatus) then) =
-      _$TournamentStatusCopyWithImpl<$Res>;
+      _$TournamentStatusCopyWithImpl<$Res, TournamentStatus>;
+  @useResult
   $Res call({bool isNew, bool isBookmarked});
 }
 
 /// @nodoc
-class _$TournamentStatusCopyWithImpl<$Res>
+class _$TournamentStatusCopyWithImpl<$Res, $Val extends TournamentStatus>
     implements $TournamentStatusCopyWith<$Res> {
   _$TournamentStatusCopyWithImpl(this._value, this._then);
 
-  final TournamentStatus _value;
   // ignore: unused_field
-  final $Res Function(TournamentStatus) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isNew = freezed,
-    Object? isBookmarked = freezed,
+    Object? isNew = null,
+    Object? isBookmarked = null,
   }) {
     return _then(_value.copyWith(
-      isNew: isNew == freezed
+      isNew: null == isNew
           ? _value.isNew
           : isNew // ignore: cast_nullable_to_non_nullable
               as bool,
-      isBookmarked: isBookmarked == freezed
+      isBookmarked: null == isBookmarked
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -66,31 +69,30 @@ abstract class _$$_TournamentStatusCopyWith<$Res>
           _$_TournamentStatus value, $Res Function(_$_TournamentStatus) then) =
       __$$_TournamentStatusCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool isNew, bool isBookmarked});
 }
 
 /// @nodoc
 class __$$_TournamentStatusCopyWithImpl<$Res>
-    extends _$TournamentStatusCopyWithImpl<$Res>
+    extends _$TournamentStatusCopyWithImpl<$Res, _$_TournamentStatus>
     implements _$$_TournamentStatusCopyWith<$Res> {
   __$$_TournamentStatusCopyWithImpl(
       _$_TournamentStatus _value, $Res Function(_$_TournamentStatus) _then)
-      : super(_value, (v) => _then(v as _$_TournamentStatus));
+      : super(_value, _then);
 
-  @override
-  _$_TournamentStatus get _value => super._value as _$_TournamentStatus;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isNew = freezed,
-    Object? isBookmarked = freezed,
+    Object? isNew = null,
+    Object? isBookmarked = null,
   }) {
     return _then(_$_TournamentStatus(
-      isNew: isNew == freezed
+      isNew: null == isNew
           ? _value.isNew
           : isNew // ignore: cast_nullable_to_non_nullable
               as bool,
-      isBookmarked: isBookmarked == freezed
+      isBookmarked: null == isBookmarked
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -120,19 +122,17 @@ class _$_TournamentStatus implements _TournamentStatus {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TournamentStatus &&
-            const DeepCollectionEquality().equals(other.isNew, isNew) &&
-            const DeepCollectionEquality()
-                .equals(other.isBookmarked, isBookmarked));
+            (identical(other.isNew, isNew) || other.isNew == isNew) &&
+            (identical(other.isBookmarked, isBookmarked) ||
+                other.isBookmarked == isBookmarked));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(isNew),
-      const DeepCollectionEquality().hash(isBookmarked));
+  int get hashCode => Object.hash(runtimeType, isNew, isBookmarked);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TournamentStatusCopyWith<_$_TournamentStatus> get copyWith =>
       __$$_TournamentStatusCopyWithImpl<_$_TournamentStatus>(this, _$identity);
 }

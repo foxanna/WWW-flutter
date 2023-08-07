@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'developer_actions.dart';
 
@@ -24,8 +24,8 @@ mixin _$UserActionDeveloper {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Translations translations)? email,
-    TResult Function()? visitWebsite,
+    TResult? Function(Translations translations)? email,
+    TResult? Function()? visitWebsite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,8 +44,8 @@ mixin _$UserActionDeveloper {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmailDeveloperUserAction value)? email,
-    TResult Function(VisitWebsiteDeveloperUserAction value)? visitWebsite,
+    TResult? Function(EmailDeveloperUserAction value)? email,
+    TResult? Function(VisitWebsiteDeveloperUserAction value)? visitWebsite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,17 +61,18 @@ mixin _$UserActionDeveloper {
 abstract class $UserActionDeveloperCopyWith<$Res> {
   factory $UserActionDeveloperCopyWith(
           UserActionDeveloper value, $Res Function(UserActionDeveloper) then) =
-      _$UserActionDeveloperCopyWithImpl<$Res>;
+      _$UserActionDeveloperCopyWithImpl<$Res, UserActionDeveloper>;
 }
 
 /// @nodoc
-class _$UserActionDeveloperCopyWithImpl<$Res>
+class _$UserActionDeveloperCopyWithImpl<$Res, $Val extends UserActionDeveloper>
     implements $UserActionDeveloperCopyWith<$Res> {
   _$UserActionDeveloperCopyWithImpl(this._value, this._then);
 
-  final UserActionDeveloper _value;
   // ignore: unused_field
-  final $Res Function(UserActionDeveloper) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -79,27 +80,25 @@ abstract class _$$EmailDeveloperUserActionCopyWith<$Res> {
   factory _$$EmailDeveloperUserActionCopyWith(_$EmailDeveloperUserAction value,
           $Res Function(_$EmailDeveloperUserAction) then) =
       __$$EmailDeveloperUserActionCopyWithImpl<$Res>;
+  @useResult
   $Res call({Translations translations});
 }
 
 /// @nodoc
 class __$$EmailDeveloperUserActionCopyWithImpl<$Res>
-    extends _$UserActionDeveloperCopyWithImpl<$Res>
+    extends _$UserActionDeveloperCopyWithImpl<$Res, _$EmailDeveloperUserAction>
     implements _$$EmailDeveloperUserActionCopyWith<$Res> {
   __$$EmailDeveloperUserActionCopyWithImpl(_$EmailDeveloperUserAction _value,
       $Res Function(_$EmailDeveloperUserAction) _then)
-      : super(_value, (v) => _then(v as _$EmailDeveloperUserAction));
+      : super(_value, _then);
 
-  @override
-  _$EmailDeveloperUserAction get _value =>
-      super._value as _$EmailDeveloperUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? translations = freezed,
+    Object? translations = null,
   }) {
     return _then(_$EmailDeveloperUserAction(
-      translations: translations == freezed
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
               as Translations,
@@ -135,16 +134,16 @@ class _$EmailDeveloperUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmailDeveloperUserAction &&
-            const DeepCollectionEquality()
-                .equals(other.translations, translations));
+            (identical(other.translations, translations) ||
+                other.translations == translations));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(translations));
+  int get hashCode => Object.hash(runtimeType, translations);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$EmailDeveloperUserActionCopyWith<_$EmailDeveloperUserAction>
       get copyWith =>
           __$$EmailDeveloperUserActionCopyWithImpl<_$EmailDeveloperUserAction>(
@@ -162,8 +161,8 @@ class _$EmailDeveloperUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Translations translations)? email,
-    TResult Function()? visitWebsite,
+    TResult? Function(Translations translations)? email,
+    TResult? Function()? visitWebsite,
   }) {
     return email?.call(translations);
   }
@@ -194,8 +193,8 @@ class _$EmailDeveloperUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmailDeveloperUserAction value)? email,
-    TResult Function(VisitWebsiteDeveloperUserAction value)? visitWebsite,
+    TResult? Function(EmailDeveloperUserAction value)? email,
+    TResult? Function(VisitWebsiteDeveloperUserAction value)? visitWebsite,
   }) {
     return email?.call(this);
   }
@@ -234,16 +233,13 @@ abstract class _$$VisitWebsiteDeveloperUserActionCopyWith<$Res> {
 
 /// @nodoc
 class __$$VisitWebsiteDeveloperUserActionCopyWithImpl<$Res>
-    extends _$UserActionDeveloperCopyWithImpl<$Res>
+    extends _$UserActionDeveloperCopyWithImpl<$Res,
+        _$VisitWebsiteDeveloperUserAction>
     implements _$$VisitWebsiteDeveloperUserActionCopyWith<$Res> {
   __$$VisitWebsiteDeveloperUserActionCopyWithImpl(
       _$VisitWebsiteDeveloperUserAction _value,
       $Res Function(_$VisitWebsiteDeveloperUserAction) _then)
-      : super(_value, (v) => _then(v as _$VisitWebsiteDeveloperUserAction));
-
-  @override
-  _$VisitWebsiteDeveloperUserAction get _value =>
-      super._value as _$VisitWebsiteDeveloperUserAction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -287,8 +283,8 @@ class _$VisitWebsiteDeveloperUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Translations translations)? email,
-    TResult Function()? visitWebsite,
+    TResult? Function(Translations translations)? email,
+    TResult? Function()? visitWebsite,
   }) {
     return visitWebsite?.call();
   }
@@ -319,8 +315,8 @@ class _$VisitWebsiteDeveloperUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmailDeveloperUserAction value)? email,
-    TResult Function(VisitWebsiteDeveloperUserAction value)? visitWebsite,
+    TResult? Function(EmailDeveloperUserAction value)? email,
+    TResult? Function(VisitWebsiteDeveloperUserAction value)? visitWebsite,
   }) {
     return visitWebsite?.call(this);
   }

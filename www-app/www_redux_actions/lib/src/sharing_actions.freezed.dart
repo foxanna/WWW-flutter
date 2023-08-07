@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'sharing_actions.dart';
 
@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UserActionSharing {
   Translations get translations => throw _privateConstructorUsedError;
+  Object get info => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -29,11 +30,11 @@ mixin _$UserActionSharing {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             Translations translations, QuestionInfo info, String? questionText)?
         question,
-    TResult Function(Translations translations, TourInfo info)? tour,
-    TResult Function(Translations translations, TournamentInfo info)?
+    TResult? Function(Translations translations, TourInfo info)? tour,
+    TResult? Function(Translations translations, TournamentInfo info)?
         tournament,
   }) =>
       throw _privateConstructorUsedError;
@@ -57,9 +58,9 @@ mixin _$UserActionSharing {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QuestionSharingUserAction value)? question,
-    TResult Function(TourSharingUserAction value)? tour,
-    TResult Function(TournamentSharingUserAction value)? tournament,
+    TResult? Function(QuestionSharingUserAction value)? question,
+    TResult? Function(TourSharingUserAction value)? tour,
+    TResult? Function(TournamentSharingUserAction value)? tournament,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,29 +81,32 @@ mixin _$UserActionSharing {
 abstract class $UserActionSharingCopyWith<$Res> {
   factory $UserActionSharingCopyWith(
           UserActionSharing value, $Res Function(UserActionSharing) then) =
-      _$UserActionSharingCopyWithImpl<$Res>;
+      _$UserActionSharingCopyWithImpl<$Res, UserActionSharing>;
+  @useResult
   $Res call({Translations translations});
 }
 
 /// @nodoc
-class _$UserActionSharingCopyWithImpl<$Res>
+class _$UserActionSharingCopyWithImpl<$Res, $Val extends UserActionSharing>
     implements $UserActionSharingCopyWith<$Res> {
   _$UserActionSharingCopyWithImpl(this._value, this._then);
 
-  final UserActionSharing _value;
   // ignore: unused_field
-  final $Res Function(UserActionSharing) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? translations = freezed,
+    Object? translations = null,
   }) {
     return _then(_value.copyWith(
-      translations: translations == freezed
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
               as Translations,
-    ));
+    ) as $Val);
   }
 }
 
@@ -114,6 +118,7 @@ abstract class _$$QuestionSharingUserActionCopyWith<$Res>
           $Res Function(_$QuestionSharingUserAction) then) =
       __$$QuestionSharingUserActionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Translations translations, QuestionInfo info, String? questionText});
 
@@ -122,32 +127,29 @@ abstract class _$$QuestionSharingUserActionCopyWith<$Res>
 
 /// @nodoc
 class __$$QuestionSharingUserActionCopyWithImpl<$Res>
-    extends _$UserActionSharingCopyWithImpl<$Res>
+    extends _$UserActionSharingCopyWithImpl<$Res, _$QuestionSharingUserAction>
     implements _$$QuestionSharingUserActionCopyWith<$Res> {
   __$$QuestionSharingUserActionCopyWithImpl(_$QuestionSharingUserAction _value,
       $Res Function(_$QuestionSharingUserAction) _then)
-      : super(_value, (v) => _then(v as _$QuestionSharingUserAction));
+      : super(_value, _then);
 
-  @override
-  _$QuestionSharingUserAction get _value =>
-      super._value as _$QuestionSharingUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? translations = freezed,
-    Object? info = freezed,
+    Object? translations = null,
+    Object? info = null,
     Object? questionText = freezed,
   }) {
     return _then(_$QuestionSharingUserAction(
-      translations: translations == freezed
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
               as Translations,
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as QuestionInfo,
-      questionText: questionText == freezed
+      questionText: freezed == questionText
           ? _value.questionText
           : questionText // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -155,6 +157,7 @@ class __$$QuestionSharingUserActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $QuestionInfoCopyWith<$Res> get info {
     return $QuestionInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -197,22 +200,20 @@ class _$QuestionSharingUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QuestionSharingUserAction &&
-            const DeepCollectionEquality()
-                .equals(other.translations, translations) &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality()
-                .equals(other.questionText, questionText));
+            (identical(other.translations, translations) ||
+                other.translations == translations) &&
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.questionText, questionText) ||
+                other.questionText == questionText));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(translations),
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(questionText));
+  int get hashCode =>
+      Object.hash(runtimeType, translations, info, questionText);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QuestionSharingUserActionCopyWith<_$QuestionSharingUserAction>
       get copyWith => __$$QuestionSharingUserActionCopyWithImpl<
           _$QuestionSharingUserAction>(this, _$identity);
@@ -233,11 +234,11 @@ class _$QuestionSharingUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             Translations translations, QuestionInfo info, String? questionText)?
         question,
-    TResult Function(Translations translations, TourInfo info)? tour,
-    TResult Function(Translations translations, TournamentInfo info)?
+    TResult? Function(Translations translations, TourInfo info)? tour,
+    TResult? Function(Translations translations, TournamentInfo info)?
         tournament,
   }) {
     return question?.call(translations, info, questionText);
@@ -273,9 +274,9 @@ class _$QuestionSharingUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QuestionSharingUserAction value)? question,
-    TResult Function(TourSharingUserAction value)? tour,
-    TResult Function(TournamentSharingUserAction value)? tournament,
+    TResult? Function(QuestionSharingUserAction value)? question,
+    TResult? Function(TourSharingUserAction value)? tour,
+    TResult? Function(TournamentSharingUserAction value)? tournament,
   }) {
     return question?.call(this);
   }
@@ -303,6 +304,7 @@ abstract class QuestionSharingUserAction implements UserActionSharing {
 
   @override
   Translations get translations;
+  @override
   QuestionInfo get info;
   String? get questionText;
   @override
@@ -318,6 +320,7 @@ abstract class _$$TourSharingUserActionCopyWith<$Res>
           $Res Function(_$TourSharingUserAction) then) =
       __$$TourSharingUserActionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Translations translations, TourInfo info});
 
   $TourInfoCopyWith<$Res> get info;
@@ -325,26 +328,24 @@ abstract class _$$TourSharingUserActionCopyWith<$Res>
 
 /// @nodoc
 class __$$TourSharingUserActionCopyWithImpl<$Res>
-    extends _$UserActionSharingCopyWithImpl<$Res>
+    extends _$UserActionSharingCopyWithImpl<$Res, _$TourSharingUserAction>
     implements _$$TourSharingUserActionCopyWith<$Res> {
   __$$TourSharingUserActionCopyWithImpl(_$TourSharingUserAction _value,
       $Res Function(_$TourSharingUserAction) _then)
-      : super(_value, (v) => _then(v as _$TourSharingUserAction));
+      : super(_value, _then);
 
-  @override
-  _$TourSharingUserAction get _value => super._value as _$TourSharingUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? translations = freezed,
-    Object? info = freezed,
+    Object? translations = null,
+    Object? info = null,
   }) {
     return _then(_$TourSharingUserAction(
-      translations: translations == freezed
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
               as Translations,
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TourInfo,
@@ -352,6 +353,7 @@ class __$$TourSharingUserActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TourInfoCopyWith<$Res> get info {
     return $TourInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -391,19 +393,17 @@ class _$TourSharingUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TourSharingUserAction &&
-            const DeepCollectionEquality()
-                .equals(other.translations, translations) &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.translations, translations) ||
+                other.translations == translations) &&
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(translations),
-      const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, translations, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TourSharingUserActionCopyWith<_$TourSharingUserAction> get copyWith =>
       __$$TourSharingUserActionCopyWithImpl<_$TourSharingUserAction>(
           this, _$identity);
@@ -424,11 +424,11 @@ class _$TourSharingUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             Translations translations, QuestionInfo info, String? questionText)?
         question,
-    TResult Function(Translations translations, TourInfo info)? tour,
-    TResult Function(Translations translations, TournamentInfo info)?
+    TResult? Function(Translations translations, TourInfo info)? tour,
+    TResult? Function(Translations translations, TournamentInfo info)?
         tournament,
   }) {
     return tour?.call(translations, info);
@@ -464,9 +464,9 @@ class _$TourSharingUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QuestionSharingUserAction value)? question,
-    TResult Function(TourSharingUserAction value)? tour,
-    TResult Function(TournamentSharingUserAction value)? tournament,
+    TResult? Function(QuestionSharingUserAction value)? question,
+    TResult? Function(TourSharingUserAction value)? tour,
+    TResult? Function(TournamentSharingUserAction value)? tournament,
   }) {
     return tour?.call(this);
   }
@@ -493,6 +493,7 @@ abstract class TourSharingUserAction implements UserActionSharing {
 
   @override
   Translations get translations;
+  @override
   TourInfo get info;
   @override
   @JsonKey(ignore: true)
@@ -508,6 +509,7 @@ abstract class _$$TournamentSharingUserActionCopyWith<$Res>
           $Res Function(_$TournamentSharingUserAction) then) =
       __$$TournamentSharingUserActionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Translations translations, TournamentInfo info});
 
   $TournamentInfoCopyWith<$Res> get info;
@@ -515,28 +517,25 @@ abstract class _$$TournamentSharingUserActionCopyWith<$Res>
 
 /// @nodoc
 class __$$TournamentSharingUserActionCopyWithImpl<$Res>
-    extends _$UserActionSharingCopyWithImpl<$Res>
+    extends _$UserActionSharingCopyWithImpl<$Res, _$TournamentSharingUserAction>
     implements _$$TournamentSharingUserActionCopyWith<$Res> {
   __$$TournamentSharingUserActionCopyWithImpl(
       _$TournamentSharingUserAction _value,
       $Res Function(_$TournamentSharingUserAction) _then)
-      : super(_value, (v) => _then(v as _$TournamentSharingUserAction));
+      : super(_value, _then);
 
-  @override
-  _$TournamentSharingUserAction get _value =>
-      super._value as _$TournamentSharingUserAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? translations = freezed,
-    Object? info = freezed,
+    Object? translations = null,
+    Object? info = null,
   }) {
     return _then(_$TournamentSharingUserAction(
-      translations: translations == freezed
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
               as Translations,
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as TournamentInfo,
@@ -544,6 +543,7 @@ class __$$TournamentSharingUserActionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TournamentInfoCopyWith<$Res> get info {
     return $TournamentInfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -583,19 +583,17 @@ class _$TournamentSharingUserAction
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TournamentSharingUserAction &&
-            const DeepCollectionEquality()
-                .equals(other.translations, translations) &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.translations, translations) ||
+                other.translations == translations) &&
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(translations),
-      const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, translations, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TournamentSharingUserActionCopyWith<_$TournamentSharingUserAction>
       get copyWith => __$$TournamentSharingUserActionCopyWithImpl<
           _$TournamentSharingUserAction>(this, _$identity);
@@ -616,11 +614,11 @@ class _$TournamentSharingUserAction
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             Translations translations, QuestionInfo info, String? questionText)?
         question,
-    TResult Function(Translations translations, TourInfo info)? tour,
-    TResult Function(Translations translations, TournamentInfo info)?
+    TResult? Function(Translations translations, TourInfo info)? tour,
+    TResult? Function(Translations translations, TournamentInfo info)?
         tournament,
   }) {
     return tournament?.call(translations, info);
@@ -656,9 +654,9 @@ class _$TournamentSharingUserAction
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QuestionSharingUserAction value)? question,
-    TResult Function(TourSharingUserAction value)? tour,
-    TResult Function(TournamentSharingUserAction value)? tournament,
+    TResult? Function(QuestionSharingUserAction value)? question,
+    TResult? Function(TourSharingUserAction value)? tour,
+    TResult? Function(TournamentSharingUserAction value)? tournament,
   }) {
     return tournament?.call(this);
   }
@@ -685,6 +683,7 @@ abstract class TournamentSharingUserAction implements UserActionSharing {
 
   @override
   Translations get translations;
+  @override
   TournamentInfo get info;
   @override
   @JsonKey(ignore: true)

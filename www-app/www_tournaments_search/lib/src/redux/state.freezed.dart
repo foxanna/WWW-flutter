@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'state.dart';
 
@@ -36,16 +36,16 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(SearchParameters parameters)? initial,
-    TResult Function(SearchParameters parameters)? loadingFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data)?
+    TResult? Function(SearchParameters parameters)? initial,
+    TResult? Function(SearchParameters parameters)? loadingFirstPage,
+    TResult? Function(SearchParameters parameters, List<Tournament> data)?
         loadingWithData,
-    TResult Function(SearchParameters parameters, Exception exception)?
+    TResult? Function(SearchParameters parameters, Exception exception)?
         errorFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             Exception exception)?
         errorWithData,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             bool canLoadMore)?
         data,
   }) =>
@@ -80,12 +80,12 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialSearchState value)? initial,
-    TResult Function(LoadingFirstPageSearchState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataSearchState value)? loadingWithData,
-    TResult Function(ErrorFirstPageSearchState value)? errorFirstPage,
-    TResult Function(ErrorWithDataSearchState value)? errorWithData,
-    TResult Function(DataSearchState value)? data,
+    TResult? Function(InitialSearchState value)? initial,
+    TResult? Function(LoadingFirstPageSearchState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataSearchState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageSearchState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataSearchState value)? errorWithData,
+    TResult? Function(DataSearchState value)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -109,36 +109,41 @@ mixin _$SearchState {
 abstract class $SearchStateCopyWith<$Res> {
   factory $SearchStateCopyWith(
           SearchState value, $Res Function(SearchState) then) =
-      _$SearchStateCopyWithImpl<$Res>;
+      _$SearchStateCopyWithImpl<$Res, SearchState>;
+  @useResult
   $Res call({SearchParameters parameters});
 
   $SearchParametersCopyWith<$Res> get parameters;
 }
 
 /// @nodoc
-class _$SearchStateCopyWithImpl<$Res> implements $SearchStateCopyWith<$Res> {
+class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
+    implements $SearchStateCopyWith<$Res> {
   _$SearchStateCopyWithImpl(this._value, this._then);
 
-  final SearchState _value;
   // ignore: unused_field
-  final $Res Function(SearchState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parameters = freezed,
+    Object? parameters = null,
   }) {
     return _then(_value.copyWith(
-      parameters: parameters == freezed
+      parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as SearchParameters,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SearchParametersCopyWith<$Res> get parameters {
     return $SearchParametersCopyWith<$Res>(_value.parameters, (value) {
-      return _then(_value.copyWith(parameters: value));
+      return _then(_value.copyWith(parameters: value) as $Val);
     });
   }
 }
@@ -150,6 +155,7 @@ abstract class _$$InitialSearchStateCopyWith<$Res>
           $Res Function(_$InitialSearchState) then) =
       __$$InitialSearchStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({SearchParameters parameters});
 
   @override
@@ -158,21 +164,19 @@ abstract class _$$InitialSearchStateCopyWith<$Res>
 
 /// @nodoc
 class __$$InitialSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$InitialSearchState>
     implements _$$InitialSearchStateCopyWith<$Res> {
   __$$InitialSearchStateCopyWithImpl(
       _$InitialSearchState _value, $Res Function(_$InitialSearchState) _then)
-      : super(_value, (v) => _then(v as _$InitialSearchState));
+      : super(_value, _then);
 
-  @override
-  _$InitialSearchState get _value => super._value as _$InitialSearchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parameters = freezed,
+    Object? parameters = null,
   }) {
     return _then(_$InitialSearchState(
-      parameters: parameters == freezed
+      parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as SearchParameters,
@@ -208,16 +212,16 @@ class _$InitialSearchState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitialSearchState &&
-            const DeepCollectionEquality()
-                .equals(other.parameters, parameters));
+            (identical(other.parameters, parameters) ||
+                other.parameters == parameters));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(parameters));
+  int get hashCode => Object.hash(runtimeType, parameters);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InitialSearchStateCopyWith<_$InitialSearchState> get copyWith =>
       __$$InitialSearchStateCopyWithImpl<_$InitialSearchState>(
           this, _$identity);
@@ -245,16 +249,16 @@ class _$InitialSearchState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(SearchParameters parameters)? initial,
-    TResult Function(SearchParameters parameters)? loadingFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data)?
+    TResult? Function(SearchParameters parameters)? initial,
+    TResult? Function(SearchParameters parameters)? loadingFirstPage,
+    TResult? Function(SearchParameters parameters, List<Tournament> data)?
         loadingWithData,
-    TResult Function(SearchParameters parameters, Exception exception)?
+    TResult? Function(SearchParameters parameters, Exception exception)?
         errorFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             Exception exception)?
         errorWithData,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             bool canLoadMore)?
         data,
   }) {
@@ -301,12 +305,12 @@ class _$InitialSearchState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialSearchState value)? initial,
-    TResult Function(LoadingFirstPageSearchState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataSearchState value)? loadingWithData,
-    TResult Function(ErrorFirstPageSearchState value)? errorFirstPage,
-    TResult Function(ErrorWithDataSearchState value)? errorWithData,
-    TResult Function(DataSearchState value)? data,
+    TResult? Function(InitialSearchState value)? initial,
+    TResult? Function(LoadingFirstPageSearchState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataSearchState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageSearchState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataSearchState value)? errorWithData,
+    TResult? Function(DataSearchState value)? data,
   }) {
     return initial?.call(this);
   }
@@ -349,6 +353,7 @@ abstract class _$$LoadingFirstPageSearchStateCopyWith<$Res>
           $Res Function(_$LoadingFirstPageSearchState) then) =
       __$$LoadingFirstPageSearchStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({SearchParameters parameters});
 
   @override
@@ -357,23 +362,20 @@ abstract class _$$LoadingFirstPageSearchStateCopyWith<$Res>
 
 /// @nodoc
 class __$$LoadingFirstPageSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$LoadingFirstPageSearchState>
     implements _$$LoadingFirstPageSearchStateCopyWith<$Res> {
   __$$LoadingFirstPageSearchStateCopyWithImpl(
       _$LoadingFirstPageSearchState _value,
       $Res Function(_$LoadingFirstPageSearchState) _then)
-      : super(_value, (v) => _then(v as _$LoadingFirstPageSearchState));
+      : super(_value, _then);
 
-  @override
-  _$LoadingFirstPageSearchState get _value =>
-      super._value as _$LoadingFirstPageSearchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parameters = freezed,
+    Object? parameters = null,
   }) {
     return _then(_$LoadingFirstPageSearchState(
-      parameters: parameters == freezed
+      parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as SearchParameters,
@@ -409,16 +411,16 @@ class _$LoadingFirstPageSearchState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadingFirstPageSearchState &&
-            const DeepCollectionEquality()
-                .equals(other.parameters, parameters));
+            (identical(other.parameters, parameters) ||
+                other.parameters == parameters));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(parameters));
+  int get hashCode => Object.hash(runtimeType, parameters);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadingFirstPageSearchStateCopyWith<_$LoadingFirstPageSearchState>
       get copyWith => __$$LoadingFirstPageSearchStateCopyWithImpl<
           _$LoadingFirstPageSearchState>(this, _$identity);
@@ -446,16 +448,16 @@ class _$LoadingFirstPageSearchState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(SearchParameters parameters)? initial,
-    TResult Function(SearchParameters parameters)? loadingFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data)?
+    TResult? Function(SearchParameters parameters)? initial,
+    TResult? Function(SearchParameters parameters)? loadingFirstPage,
+    TResult? Function(SearchParameters parameters, List<Tournament> data)?
         loadingWithData,
-    TResult Function(SearchParameters parameters, Exception exception)?
+    TResult? Function(SearchParameters parameters, Exception exception)?
         errorFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             Exception exception)?
         errorWithData,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             bool canLoadMore)?
         data,
   }) {
@@ -502,12 +504,12 @@ class _$LoadingFirstPageSearchState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialSearchState value)? initial,
-    TResult Function(LoadingFirstPageSearchState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataSearchState value)? loadingWithData,
-    TResult Function(ErrorFirstPageSearchState value)? errorFirstPage,
-    TResult Function(ErrorWithDataSearchState value)? errorWithData,
-    TResult Function(DataSearchState value)? data,
+    TResult? Function(InitialSearchState value)? initial,
+    TResult? Function(LoadingFirstPageSearchState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataSearchState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageSearchState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataSearchState value)? errorWithData,
+    TResult? Function(DataSearchState value)? data,
   }) {
     return loadingFirstPage?.call(this);
   }
@@ -551,6 +553,7 @@ abstract class _$$LoadingWithDataSearchStateCopyWith<$Res>
           $Res Function(_$LoadingWithDataSearchState) then) =
       __$$LoadingWithDataSearchStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({SearchParameters parameters, List<Tournament> data});
 
   @override
@@ -559,28 +562,25 @@ abstract class _$$LoadingWithDataSearchStateCopyWith<$Res>
 
 /// @nodoc
 class __$$LoadingWithDataSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$LoadingWithDataSearchState>
     implements _$$LoadingWithDataSearchStateCopyWith<$Res> {
   __$$LoadingWithDataSearchStateCopyWithImpl(
       _$LoadingWithDataSearchState _value,
       $Res Function(_$LoadingWithDataSearchState) _then)
-      : super(_value, (v) => _then(v as _$LoadingWithDataSearchState));
+      : super(_value, _then);
 
-  @override
-  _$LoadingWithDataSearchState get _value =>
-      super._value as _$LoadingWithDataSearchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parameters = freezed,
-    Object? data = freezed,
+    Object? parameters = null,
+    Object? data = null,
   }) {
     return _then(_$LoadingWithDataSearchState(
-      parameters: parameters == freezed
+      parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as SearchParameters,
-      data: data == freezed
+      data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Tournament>,
@@ -602,6 +602,7 @@ class _$LoadingWithDataSearchState
   final List<Tournament> _data;
   @override
   List<Tournament> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -625,19 +626,18 @@ class _$LoadingWithDataSearchState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadingWithDataSearchState &&
-            const DeepCollectionEquality()
-                .equals(other.parameters, parameters) &&
+            (identical(other.parameters, parameters) ||
+                other.parameters == parameters) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(parameters),
-      const DeepCollectionEquality().hash(_data));
+      runtimeType, parameters, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadingWithDataSearchStateCopyWith<_$LoadingWithDataSearchState>
       get copyWith => __$$LoadingWithDataSearchStateCopyWithImpl<
           _$LoadingWithDataSearchState>(this, _$identity);
@@ -665,16 +665,16 @@ class _$LoadingWithDataSearchState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(SearchParameters parameters)? initial,
-    TResult Function(SearchParameters parameters)? loadingFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data)?
+    TResult? Function(SearchParameters parameters)? initial,
+    TResult? Function(SearchParameters parameters)? loadingFirstPage,
+    TResult? Function(SearchParameters parameters, List<Tournament> data)?
         loadingWithData,
-    TResult Function(SearchParameters parameters, Exception exception)?
+    TResult? Function(SearchParameters parameters, Exception exception)?
         errorFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             Exception exception)?
         errorWithData,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             bool canLoadMore)?
         data,
   }) {
@@ -721,12 +721,12 @@ class _$LoadingWithDataSearchState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialSearchState value)? initial,
-    TResult Function(LoadingFirstPageSearchState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataSearchState value)? loadingWithData,
-    TResult Function(ErrorFirstPageSearchState value)? errorFirstPage,
-    TResult Function(ErrorWithDataSearchState value)? errorWithData,
-    TResult Function(DataSearchState value)? data,
+    TResult? Function(InitialSearchState value)? initial,
+    TResult? Function(LoadingFirstPageSearchState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataSearchState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageSearchState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataSearchState value)? errorWithData,
+    TResult? Function(DataSearchState value)? data,
   }) {
     return loadingWithData?.call(this);
   }
@@ -771,6 +771,7 @@ abstract class _$$ErrorFirstPageSearchStateCopyWith<$Res>
           $Res Function(_$ErrorFirstPageSearchState) then) =
       __$$ErrorFirstPageSearchStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({SearchParameters parameters, Exception exception});
 
   @override
@@ -779,27 +780,24 @@ abstract class _$$ErrorFirstPageSearchStateCopyWith<$Res>
 
 /// @nodoc
 class __$$ErrorFirstPageSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$ErrorFirstPageSearchState>
     implements _$$ErrorFirstPageSearchStateCopyWith<$Res> {
   __$$ErrorFirstPageSearchStateCopyWithImpl(_$ErrorFirstPageSearchState _value,
       $Res Function(_$ErrorFirstPageSearchState) _then)
-      : super(_value, (v) => _then(v as _$ErrorFirstPageSearchState));
+      : super(_value, _then);
 
-  @override
-  _$ErrorFirstPageSearchState get _value =>
-      super._value as _$ErrorFirstPageSearchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parameters = freezed,
-    Object? exception = freezed,
+    Object? parameters = null,
+    Object? exception = null,
   }) {
     return _then(_$ErrorFirstPageSearchState(
-      parameters: parameters == freezed
+      parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as SearchParameters,
-      exception: exception == freezed
+      exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception,
@@ -839,19 +837,18 @@ class _$ErrorFirstPageSearchState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorFirstPageSearchState &&
-            const DeepCollectionEquality()
-                .equals(other.parameters, parameters) &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            (identical(other.parameters, parameters) ||
+                other.parameters == parameters) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(parameters),
-      const DeepCollectionEquality().hash(exception));
+  int get hashCode => Object.hash(runtimeType, parameters, exception);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ErrorFirstPageSearchStateCopyWith<_$ErrorFirstPageSearchState>
       get copyWith => __$$ErrorFirstPageSearchStateCopyWithImpl<
           _$ErrorFirstPageSearchState>(this, _$identity);
@@ -879,16 +876,16 @@ class _$ErrorFirstPageSearchState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(SearchParameters parameters)? initial,
-    TResult Function(SearchParameters parameters)? loadingFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data)?
+    TResult? Function(SearchParameters parameters)? initial,
+    TResult? Function(SearchParameters parameters)? loadingFirstPage,
+    TResult? Function(SearchParameters parameters, List<Tournament> data)?
         loadingWithData,
-    TResult Function(SearchParameters parameters, Exception exception)?
+    TResult? Function(SearchParameters parameters, Exception exception)?
         errorFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             Exception exception)?
         errorWithData,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             bool canLoadMore)?
         data,
   }) {
@@ -935,12 +932,12 @@ class _$ErrorFirstPageSearchState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialSearchState value)? initial,
-    TResult Function(LoadingFirstPageSearchState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataSearchState value)? loadingWithData,
-    TResult Function(ErrorFirstPageSearchState value)? errorFirstPage,
-    TResult Function(ErrorWithDataSearchState value)? errorWithData,
-    TResult Function(DataSearchState value)? data,
+    TResult? Function(InitialSearchState value)? initial,
+    TResult? Function(LoadingFirstPageSearchState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataSearchState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageSearchState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataSearchState value)? errorWithData,
+    TResult? Function(DataSearchState value)? data,
   }) {
     return errorFirstPage?.call(this);
   }
@@ -984,6 +981,7 @@ abstract class _$$ErrorWithDataSearchStateCopyWith<$Res>
           $Res Function(_$ErrorWithDataSearchState) then) =
       __$$ErrorWithDataSearchStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {SearchParameters parameters,
       List<Tournament> data,
@@ -995,32 +993,29 @@ abstract class _$$ErrorWithDataSearchStateCopyWith<$Res>
 
 /// @nodoc
 class __$$ErrorWithDataSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$ErrorWithDataSearchState>
     implements _$$ErrorWithDataSearchStateCopyWith<$Res> {
   __$$ErrorWithDataSearchStateCopyWithImpl(_$ErrorWithDataSearchState _value,
       $Res Function(_$ErrorWithDataSearchState) _then)
-      : super(_value, (v) => _then(v as _$ErrorWithDataSearchState));
+      : super(_value, _then);
 
-  @override
-  _$ErrorWithDataSearchState get _value =>
-      super._value as _$ErrorWithDataSearchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parameters = freezed,
-    Object? data = freezed,
-    Object? exception = freezed,
+    Object? parameters = null,
+    Object? data = null,
+    Object? exception = null,
   }) {
     return _then(_$ErrorWithDataSearchState(
-      parameters: parameters == freezed
+      parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as SearchParameters,
-      data: data == freezed
+      data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Tournament>,
-      exception: exception == freezed
+      exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception,
@@ -1044,6 +1039,7 @@ class _$ErrorWithDataSearchState
   final List<Tournament> _data;
   @override
   List<Tournament> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -1071,21 +1067,20 @@ class _$ErrorWithDataSearchState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorWithDataSearchState &&
-            const DeepCollectionEquality()
-                .equals(other.parameters, parameters) &&
+            (identical(other.parameters, parameters) ||
+                other.parameters == parameters) &&
             const DeepCollectionEquality().equals(other._data, _data) &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(parameters),
-      const DeepCollectionEquality().hash(_data),
-      const DeepCollectionEquality().hash(exception));
+  int get hashCode => Object.hash(runtimeType, parameters,
+      const DeepCollectionEquality().hash(_data), exception);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ErrorWithDataSearchStateCopyWith<_$ErrorWithDataSearchState>
       get copyWith =>
           __$$ErrorWithDataSearchStateCopyWithImpl<_$ErrorWithDataSearchState>(
@@ -1114,16 +1109,16 @@ class _$ErrorWithDataSearchState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(SearchParameters parameters)? initial,
-    TResult Function(SearchParameters parameters)? loadingFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data)?
+    TResult? Function(SearchParameters parameters)? initial,
+    TResult? Function(SearchParameters parameters)? loadingFirstPage,
+    TResult? Function(SearchParameters parameters, List<Tournament> data)?
         loadingWithData,
-    TResult Function(SearchParameters parameters, Exception exception)?
+    TResult? Function(SearchParameters parameters, Exception exception)?
         errorFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             Exception exception)?
         errorWithData,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             bool canLoadMore)?
         data,
   }) {
@@ -1170,12 +1165,12 @@ class _$ErrorWithDataSearchState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialSearchState value)? initial,
-    TResult Function(LoadingFirstPageSearchState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataSearchState value)? loadingWithData,
-    TResult Function(ErrorFirstPageSearchState value)? errorFirstPage,
-    TResult Function(ErrorWithDataSearchState value)? errorWithData,
-    TResult Function(DataSearchState value)? data,
+    TResult? Function(InitialSearchState value)? initial,
+    TResult? Function(LoadingFirstPageSearchState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataSearchState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageSearchState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataSearchState value)? errorWithData,
+    TResult? Function(DataSearchState value)? data,
   }) {
     return errorWithData?.call(this);
   }
@@ -1221,6 +1216,7 @@ abstract class _$$DataSearchStateCopyWith<$Res>
           _$DataSearchState value, $Res Function(_$DataSearchState) then) =
       __$$DataSearchStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {SearchParameters parameters, List<Tournament> data, bool canLoadMore});
 
@@ -1230,31 +1226,29 @@ abstract class _$$DataSearchStateCopyWith<$Res>
 
 /// @nodoc
 class __$$DataSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$DataSearchState>
     implements _$$DataSearchStateCopyWith<$Res> {
   __$$DataSearchStateCopyWithImpl(
       _$DataSearchState _value, $Res Function(_$DataSearchState) _then)
-      : super(_value, (v) => _then(v as _$DataSearchState));
+      : super(_value, _then);
 
-  @override
-  _$DataSearchState get _value => super._value as _$DataSearchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parameters = freezed,
-    Object? data = freezed,
-    Object? canLoadMore = freezed,
+    Object? parameters = null,
+    Object? data = null,
+    Object? canLoadMore = null,
   }) {
     return _then(_$DataSearchState(
-      parameters: parameters == freezed
+      parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as SearchParameters,
-      data: data == freezed
+      data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Tournament>,
-      canLoadMore: canLoadMore == freezed
+      canLoadMore: null == canLoadMore
           ? _value.canLoadMore
           : canLoadMore // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1278,6 +1272,7 @@ class _$DataSearchState
   final List<Tournament> _data;
   @override
   List<Tournament> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -1305,22 +1300,20 @@ class _$DataSearchState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataSearchState &&
-            const DeepCollectionEquality()
-                .equals(other.parameters, parameters) &&
+            (identical(other.parameters, parameters) ||
+                other.parameters == parameters) &&
             const DeepCollectionEquality().equals(other._data, _data) &&
-            const DeepCollectionEquality()
-                .equals(other.canLoadMore, canLoadMore));
+            (identical(other.canLoadMore, canLoadMore) ||
+                other.canLoadMore == canLoadMore));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(parameters),
-      const DeepCollectionEquality().hash(_data),
-      const DeepCollectionEquality().hash(canLoadMore));
+  int get hashCode => Object.hash(runtimeType, parameters,
+      const DeepCollectionEquality().hash(_data), canLoadMore);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataSearchStateCopyWith<_$DataSearchState> get copyWith =>
       __$$DataSearchStateCopyWithImpl<_$DataSearchState>(this, _$identity);
 
@@ -1347,16 +1340,16 @@ class _$DataSearchState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(SearchParameters parameters)? initial,
-    TResult Function(SearchParameters parameters)? loadingFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data)?
+    TResult? Function(SearchParameters parameters)? initial,
+    TResult? Function(SearchParameters parameters)? loadingFirstPage,
+    TResult? Function(SearchParameters parameters, List<Tournament> data)?
         loadingWithData,
-    TResult Function(SearchParameters parameters, Exception exception)?
+    TResult? Function(SearchParameters parameters, Exception exception)?
         errorFirstPage,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             Exception exception)?
         errorWithData,
-    TResult Function(SearchParameters parameters, List<Tournament> data,
+    TResult? Function(SearchParameters parameters, List<Tournament> data,
             bool canLoadMore)?
         data,
   }) {
@@ -1403,12 +1396,12 @@ class _$DataSearchState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialSearchState value)? initial,
-    TResult Function(LoadingFirstPageSearchState value)? loadingFirstPage,
-    TResult Function(LoadingWithDataSearchState value)? loadingWithData,
-    TResult Function(ErrorFirstPageSearchState value)? errorFirstPage,
-    TResult Function(ErrorWithDataSearchState value)? errorWithData,
-    TResult Function(DataSearchState value)? data,
+    TResult? Function(InitialSearchState value)? initial,
+    TResult? Function(LoadingFirstPageSearchState value)? loadingFirstPage,
+    TResult? Function(LoadingWithDataSearchState value)? loadingWithData,
+    TResult? Function(ErrorFirstPageSearchState value)? errorFirstPage,
+    TResult? Function(ErrorWithDataSearchState value)? errorWithData,
+    TResult? Function(DataSearchState value)? data,
   }) {
     return data?.call(this);
   }

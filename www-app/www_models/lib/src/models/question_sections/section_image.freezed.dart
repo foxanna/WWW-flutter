@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'section_image.dart';
 
@@ -27,28 +27,32 @@ mixin _$ImageSection {
 abstract class $ImageSectionCopyWith<$Res> {
   factory $ImageSectionCopyWith(
           ImageSection value, $Res Function(ImageSection) then) =
-      _$ImageSectionCopyWithImpl<$Res>;
+      _$ImageSectionCopyWithImpl<$Res, ImageSection>;
+  @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class _$ImageSectionCopyWithImpl<$Res> implements $ImageSectionCopyWith<$Res> {
+class _$ImageSectionCopyWithImpl<$Res, $Val extends ImageSection>
+    implements $ImageSectionCopyWith<$Res> {
   _$ImageSectionCopyWithImpl(this._value, this._then);
 
-  final ImageSection _value;
   // ignore: unused_field
-  final $Res Function(ImageSection) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -59,26 +63,25 @@ abstract class _$$_ImageSectionCopyWith<$Res>
           _$_ImageSection value, $Res Function(_$_ImageSection) then) =
       __$$_ImageSectionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String value});
 }
 
 /// @nodoc
 class __$$_ImageSectionCopyWithImpl<$Res>
-    extends _$ImageSectionCopyWithImpl<$Res>
+    extends _$ImageSectionCopyWithImpl<$Res, _$_ImageSection>
     implements _$$_ImageSectionCopyWith<$Res> {
   __$$_ImageSectionCopyWithImpl(
       _$_ImageSection _value, $Res Function(_$_ImageSection) _then)
-      : super(_value, (v) => _then(v as _$_ImageSection));
+      : super(_value, _then);
 
-  @override
-  _$_ImageSection get _value => super._value as _$_ImageSection;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$_ImageSection(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
@@ -104,15 +107,15 @@ class _$_ImageSection implements _ImageSection {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ImageSection &&
-            const DeepCollectionEquality().equals(other.value, value));
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ImageSectionCopyWith<_$_ImageSection> get copyWith =>
       __$$_ImageSectionCopyWithImpl<_$_ImageSection>(this, _$identity);
 }

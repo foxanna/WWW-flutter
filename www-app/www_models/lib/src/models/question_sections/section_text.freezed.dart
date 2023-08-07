@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'section_text.dart';
 
@@ -27,28 +27,32 @@ mixin _$TextSection {
 abstract class $TextSectionCopyWith<$Res> {
   factory $TextSectionCopyWith(
           TextSection value, $Res Function(TextSection) then) =
-      _$TextSectionCopyWithImpl<$Res>;
+      _$TextSectionCopyWithImpl<$Res, TextSection>;
+  @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class _$TextSectionCopyWithImpl<$Res> implements $TextSectionCopyWith<$Res> {
+class _$TextSectionCopyWithImpl<$Res, $Val extends TextSection>
+    implements $TextSectionCopyWith<$Res> {
   _$TextSectionCopyWithImpl(this._value, this._then);
 
-  final TextSection _value;
   // ignore: unused_field
-  final $Res Function(TextSection) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -59,25 +63,25 @@ abstract class _$$_TextSectionCopyWith<$Res>
           _$_TextSection value, $Res Function(_$_TextSection) then) =
       __$$_TextSectionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$_TextSectionCopyWithImpl<$Res> extends _$TextSectionCopyWithImpl<$Res>
+class __$$_TextSectionCopyWithImpl<$Res>
+    extends _$TextSectionCopyWithImpl<$Res, _$_TextSection>
     implements _$$_TextSectionCopyWith<$Res> {
   __$$_TextSectionCopyWithImpl(
       _$_TextSection _value, $Res Function(_$_TextSection) _then)
-      : super(_value, (v) => _then(v as _$_TextSection));
+      : super(_value, _then);
 
-  @override
-  _$_TextSection get _value => super._value as _$_TextSection;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$_TextSection(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
@@ -103,15 +107,15 @@ class _$_TextSection implements _TextSection {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TextSection &&
-            const DeepCollectionEquality().equals(other.value, value));
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TextSectionCopyWith<_$_TextSection> get copyWith =>
       __$$_TextSectionCopyWithImpl<_$_TextSection>(this, _$identity);
 }
