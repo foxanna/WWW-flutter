@@ -34,7 +34,7 @@ class UrlLauncher implements IUrlLauncher {
       );
 
   Future<void> _launch(Uri uri) =>
-      launchUrl(uri, mode: LaunchMode.externalApplication);
+      launch(uri.toString());
 
   String? encodeQueryParameters(Map<String, String> params) => params.entries
       .map((e) =>
