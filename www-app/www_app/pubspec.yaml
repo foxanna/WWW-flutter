@@ -26,3 +26,4 @@ flutter:
 
 dependency_overrides:
   package_info_plus: 4.1.0
+  platform: 3.1.0
