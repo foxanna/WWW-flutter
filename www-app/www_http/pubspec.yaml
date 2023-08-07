@@ -10,7 +10,7 @@ dependencies:
   dio: ^4.0.6
   flutter:
     sdk: flutter
-  injectable: ^1.5.3
+  injectable: ^2.1.1
   www_constants:
     path: ../www_constants/
   www_di:
@@ -21,7 +21,7 @@ dependencies:
     path: ../www_utils
 
 dev_dependencies:
-  build_runner: ^2.2.1
-  injectable_generator: ^1.5.4
+  build_runner: ^2.4.6
+  injectable_generator: ^2.1.5
   www_analysis:
     path: ../www_analysis/

@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  injectable: ^1.5.3
+  injectable: ^2.1.1
   shared_preferences: ^2.2.0
   www_analytics:
     path: ../www_analytics
@@ -17,7 +17,7 @@ dependencies:
     path: ../www_di/
 
 dev_dependencies:
-  build_runner: ^2.2.1
-  injectable_generator: ^1.5.4
+  build_runner: ^2.4.6
+  injectable_generator: ^2.1.5
   www_analysis:
     path: ../www_analysis/
