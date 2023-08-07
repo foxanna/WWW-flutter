@@ -7,6 +7,6 @@ environment:
   flutter: ^3.10.6
 
 dependencies:
-  extra_pedantic: 1.2.0
+  extra_pedantic: ^4.0.0
   flutter:
     sdk: flutter
