@@ -1,0 +1,7 @@
+name: www
+
+environment:
+  sdk: ^3.0.6
+
+dev_dependencies:
+  melos: ^3.1.1
