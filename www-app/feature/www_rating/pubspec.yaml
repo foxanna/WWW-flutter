@@ -1,0 +1,38 @@
+name: www_rating
+description: A rate-the-app feature
+publish_to: none
+
+environment:
+  sdk: ^3.0.6
+  flutter: ^3.10.6
+
+dependencies:
+  app_review: ^2.1.2+1
+  flutter:
+    sdk: flutter
+  flutter_rating_bar: ^4.0.1
+  flutter_svg: ^2.0.7
+  injectable: ^2.1.1
+  www_analytics:
+    path: ../../utils/www_analytics
+  www_di:
+    path: ../../utils/www_di
+  www_dialogs:
+    path: ../../utils/www_dialogs
+  www_localization:
+    path: ../../core/www_localization
+  www_preferences:
+    path: ../../utils/www_preferences
+  www_redux:
+    path: ../../utils/www_redux
+  www_redux_actions:
+    path: ../../domain/www_redux_actions
+  www_theme:
+    path: ../../design/www_theme
+
+dev_dependencies:
+  build_runner: ^2.4.6
+  injectable_generator: ^2.1.5
+  www_analysis:
+    path: ../../utils/www_analysis
+

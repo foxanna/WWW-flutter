@@ -1,0 +1,19 @@
+name: www_models
+description: www_* models
+publish_to: none
+
+environment:
+  sdk: ^3.0.6
+  flutter: ^3.10.6
+
+dependencies:
+  dartx: ^1.2.0
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^2.4.1
+
+dev_dependencies:
+  build_runner: ^2.4.6
+  freezed: ^2.4.1
+  www_analysis:
+    path: ../../utils/www_analysis

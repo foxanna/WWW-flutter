@@ -1,0 +1,24 @@
+name: www_about
+description: About the app feature
+publish_to: none
+
+environment:
+  sdk: ^3.0.6
+  flutter: ^3.10.6
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.7
+  www_localization:
+    path: ../../core/www_localization
+  www_redux:
+    path: ../../utils/www_redux
+  www_redux_actions:
+    path: ../../domain/www_redux_actions
+  www_theme:
+    path: ../../design/www_theme
+
+dev_dependencies:
+  www_analysis:
+    path: ../../utils/www_analysis

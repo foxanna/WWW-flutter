@@ -1,0 +1,19 @@
+name: www_image_details
+description: Zoomed-in image page
+publish_to: none
+
+environment:
+  sdk: ^3.0.6
+  flutter: ^3.10.6
+
+dependencies:
+  cached_network_image: ^3.2.3
+  flutter:
+    sdk: flutter
+  photo_view: ^0.14.0
+  www_theme:
+    path: ../../design/www_theme
+
+dev_dependencies:
+  www_analysis:
+    path: ../../utils/www_analysis

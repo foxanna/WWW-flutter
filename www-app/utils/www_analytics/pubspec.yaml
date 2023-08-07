@@ -1,0 +1,25 @@
+name: www_analytics
+description: Analytics and Crashlytics for www_* packages
+publish_to: none
+
+environment:
+  sdk: ^3.0.6
+  flutter: ^3.10.6
+
+dependencies:
+  firebase_analytics: ^10.4.4
+  firebase_core: ^2.15.0
+  firebase_crashlytics: ^3.3.4
+  flutter:
+    sdk: flutter
+  injectable: ^2.1.1
+  www_di:
+    path: ../www_di
+  www_logger:
+    path: ../www_logger/
+
+dev_dependencies:
+  build_runner: ^2.4.6
+  injectable_generator: ^2.1.5
+  www_analysis:
+    path: ../www_analysis

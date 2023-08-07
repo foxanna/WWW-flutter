@@ -75,5 +75,5 @@ Podfile
 run
 flutter_export_environment.sh
 .flutter-plugins-dependencies
-!/www_app/pubspec.lock
+!/app/www_app/pubspec.lock
 !/pubspec.lock
