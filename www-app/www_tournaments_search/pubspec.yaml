@@ -3,8 +3,8 @@ description: Tournaments search feature
 publish_to: none
 
 environment:
-  sdk: '>=2.18.0 <3.0.0'
-  flutter: '>=3.3.3'
+  sdk: ^3.0.6
+  flutter: ^3.10.6
 
 dependencies:
   flutter:
