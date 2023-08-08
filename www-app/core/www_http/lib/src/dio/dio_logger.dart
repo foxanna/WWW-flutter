@@ -31,7 +31,7 @@ class DioLogger extends Interceptor {
   }
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     log(err.toString());
 
     super.onError(err, handler);

@@ -20,7 +20,7 @@ class HttpClient implements IHttpClient {
       final response =
           await _dio.get<String>(uri.toString(), cancelToken: cancelToken);
       return response.data ?? '';
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw NetworkException(message: e.toString());
     } on Exception {
       rethrow;

@@ -11,10 +11,10 @@ abstract class DioConfigInjectableModule {
   String get baseUrl => WWWConstants.databaseUrl;
 
   @Named(DioConfigParameters.connectTimeout)
-  int get connectTimeout => 30000;
+  Duration get connectTimeout => Duration(seconds: 30);
 
   @Named(DioConfigParameters.receiveTimeout)
-  int get receiveTimeout => 60000;
+  Duration get receiveTimeout => Duration(seconds: 60);
 
   @Named(DioConfigParameters.logHttpCommunication)
   bool get logHttpCommunication => true;

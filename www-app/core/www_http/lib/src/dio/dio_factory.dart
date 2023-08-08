@@ -1,5 +1,7 @@
-import 'package:dio/adapter.dart';
+import 'dart:io';
+
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:injectable/injectable.dart';
 import 'package:www_http/src/dio/dio_config/dio_config_parameters.dart';
 import 'package:www_http/src/dio/dio_logger.dart';
@@ -9,10 +11,10 @@ class DioFactory {
   const DioFactory({
     required DioLogger logger,
     @Named(DioConfigParameters.baseUrl) required String baseUrl,
-    @Named(DioConfigParameters.connectTimeout) required int connectTimeout,
-    @Named(DioConfigParameters.receiveTimeout) required int receiveTimeout,
+    @Named(DioConfigParameters.connectTimeout) required Duration connectTimeout,
+    @Named(DioConfigParameters.receiveTimeout) required Duration receiveTimeout,
     @Named(DioConfigParameters.logHttpCommunication)
-        required bool logHttpCommunication,
+    required bool logHttpCommunication,
   })  : _logger = logger,
         _baseUrl = baseUrl,
         _connectTimeout = connectTimeout,
@@ -22,8 +24,8 @@ class DioFactory {
   final DioLogger _logger;
 
   final String _baseUrl;
-  final int _connectTimeout;
-  final int _receiveTimeout;
+  final Duration _connectTimeout;
+  final Duration _receiveTimeout;
   final bool _logHttpCommunication;
 
   Dio create() {
@@ -33,13 +35,21 @@ class DioFactory {
         connectTimeout: _connectTimeout,
         receiveTimeout: _receiveTimeout,
       ),
-    );
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-        (client) => client..badCertificateCallback = (cert, host, port) => true;
+    )..httpClientAdapter = _createAdapter();
 
     if (_logHttpCommunication) {
       dio.interceptors.add(_logger);
     }
+
     return dio;
+  }
+
+  HttpClientAdapter _createAdapter() {
+    final adapter = HttpClientAdapter();
+    if (adapter is IOHttpClientAdapter) {
+      adapter.createHttpClient = () =>
+          HttpClient()..badCertificateCallback = (cert, host, port) => true;
+    }
+    return adapter;
   }
 }
