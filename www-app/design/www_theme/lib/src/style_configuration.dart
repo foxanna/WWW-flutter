@@ -75,10 +75,10 @@ class AboutStyleConfiguration {
       appBarElevation: 0.0,
       contentPadding: const EdgeInsets.all(40.0),
       accentColor: accentColor,
-      titleStyle: theme.textTheme.headline5!.copyWith(
+      titleStyle: theme.textTheme.headlineSmall!.copyWith(
         color: accentColor,
       ),
-      textStyle: theme.textTheme.caption!,
+      textStyle: theme.textTheme.bodySmall!,
     );
   }
 
@@ -120,8 +120,8 @@ class TournamentDetailsStyleConfiguration {
             .toColor());
 
     return TournamentDetailsStyleConfiguration._(
-      tournamentTitleTextStyle: theme.textTheme.headline5!,
-      tourTitleTextStyle: theme.textTheme.headline6!
+      tournamentTitleTextStyle: theme.textTheme.headlineSmall!,
+      tourTitleTextStyle: theme.textTheme.titleLarge!
           .copyWith(color: theme.colorScheme.onPrimary),
       actionBarBackgroundColor: theme.cardColor,
       actionBarIconTheme: theme.iconTheme,
@@ -153,7 +153,7 @@ class TournamentDetailsStyleConfiguration {
         return color;
       },
       questionsCardSize: const Size(150, 200),
-      questionTextStyle: theme.textTheme.subtitle1!,
+      questionTextStyle: theme.textTheme.titleMedium!,
       stubToursCount: 3,
       stubQuestionsCount: 12,
       toursListPadding: EdgeInsets.only(
@@ -215,8 +215,8 @@ class TournamentsGridStyleConfiguration {
     final padding = MediaQuery.of(context).padding;
 
     return TournamentsGridStyleConfiguration._(
-      gridTileTitleTextStyle: theme.textTheme.subtitle1!,
-      gridTileSecondLineTextStyle: theme.textTheme.caption!,
+      gridTileTitleTextStyle: theme.textTheme.titleMedium!,
+      gridTileSecondLineTextStyle: theme.textTheme.bodySmall!,
       tileContentPadding: Dimensions.defaultPadding * 2,
       gridSpacing: Dimensions.defaultSpacing * 2,
       columnsCount: 2,
@@ -269,7 +269,7 @@ class LatestTournamentsStyleConfiguration {
       appBarBottomHeight: kToolbarHeight,
       appBarIconTheme: theme.primaryIconTheme,
       stubTournamentsCount: 20,
-      bookmarksInvitationTextStyle: theme.textTheme.caption!.copyWith(
+      bookmarksInvitationTextStyle: theme.textTheme.bodySmall!.copyWith(
         color: theme.primaryIconTheme.color!.withOpacity(0.54),
         fontStyle: FontStyle.italic,
       ),
@@ -342,20 +342,20 @@ class QuestionStyleConfiguration {
   factory QuestionStyleConfiguration({required BuildContext context}) {
     final theme = Theme.of(context);
 
-    final questionTextStyle = theme.textTheme.headline5!.copyWith(
-      fontSize: theme.textTheme.headline6!.fontSize! - 2,
+    final questionTextStyle = theme.textTheme.headlineSmall!.copyWith(
+      fontSize: theme.textTheme.titleLarge!.fontSize! - 2,
     );
 
     final questionTextSectionsThemeData = QuestionTextSectionsThemeData(
       textStyle: questionTextStyle,
       speakerNotesTextStyle: questionTextStyle.copyWith(
         fontStyle: FontStyle.italic,
-        color: theme.textTheme.caption!.color,
+        color: theme.textTheme.bodySmall!.color,
       ),
       giveAwayTextStyle: questionTextStyle.copyWith(
         fontWeight: FontWeight.w500,
       ),
-      unsupportedSectionTextStyle: theme.textTheme.caption!.copyWith(
+      unsupportedSectionTextStyle: theme.textTheme.bodySmall!.copyWith(
         fontStyle: FontStyle.italic,
       ),
       sectionsSpacing: 16.0,
@@ -368,13 +368,13 @@ class QuestionStyleConfiguration {
       appBarIconTheme: theme.iconTheme,
       bottomAppBarIconTheme: theme.primaryIconTheme,
       bottomAppBarNotchMargin: 8.0,
-      bottomAppBarTextStyle: theme.primaryTextTheme.headline6!,
+      bottomAppBarTextStyle: theme.primaryTextTheme.titleLarge!,
       questionCardMargin: const EdgeInsets.all(12.0),
       questionCardPadding: const EdgeInsets.symmetric(
         vertical: 32,
         horizontal: 24,
       ),
-      questionCardTitleTextStyle: theme.textTheme.headline5!
+      questionCardTitleTextStyle: theme.textTheme.headlineSmall!
           .copyWith(color: theme.colorScheme.secondary),
       questionCardDividerColor: theme.colorScheme.secondary,
       questionCardDividerHeight: 64.0,
@@ -392,15 +392,15 @@ class QuestionStyleConfiguration {
           questionTextSectionsThemeData.copyWith(
         imageHeight: questionTextSectionsThemeData.imageHeight / 2,
         sectionsSpacing: questionTextSectionsThemeData.sectionsSpacing / 2,
-        textStyle: theme.textTheme.bodyText2,
+        textStyle: theme.textTheme.bodyMedium,
         speakerNotesTextStyle:
             questionTextSectionsThemeData.speakerNotesTextStyle.copyWith(
-          fontSize: theme.textTheme.bodyText2!.fontSize,
+          fontSize: theme.textTheme.bodyMedium!.fontSize,
         ),
       ),
       stubQuestionsCount: 24,
       cardsViewPortFraction: 0.85,
-      errorColor: theme.textTheme.bodyText2!.color!,
+      errorColor: theme.textTheme.bodyMedium!.color!,
     );
   }
 
@@ -508,8 +508,8 @@ class SearchStyleConfiguration {
       appBarIconTheme: theme.iconTheme,
       appBarBackground: theme.canvasColor,
       appBarElevation: 4.0,
-      searchFieldTextStyle: theme.textTheme.headline6!,
-      noResultsTextStyle: theme.textTheme.subtitle1!,
+      searchFieldTextStyle: theme.textTheme.titleLarge!,
+      noResultsTextStyle: theme.textTheme.titleMedium!,
       stubTournamentsCount: 20,
       errorColor: theme.iconTheme.color!,
     );

@@ -60,10 +60,10 @@ class QuestionTextSectionsTheme extends InheritedWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return QuestionTextSectionsThemeData(
-      textStyle: textTheme.bodyText2!,
-      giveAwayTextStyle: textTheme.bodyText2!,
-      speakerNotesTextStyle: textTheme.caption!,
-      unsupportedSectionTextStyle: textTheme.caption!.copyWith(
+      textStyle: textTheme.bodyMedium!,
+      giveAwayTextStyle: textTheme.bodyMedium!,
+      speakerNotesTextStyle: textTheme.bodySmall!,
+      unsupportedSectionTextStyle: textTheme.bodySmall!.copyWith(
         fontStyle: FontStyle.italic,
       ),
       sectionsSpacing: 16.0,

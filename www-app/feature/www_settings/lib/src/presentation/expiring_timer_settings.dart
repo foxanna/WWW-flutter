@@ -53,7 +53,7 @@ class _ExpiringTimerGeneralSettings extends StatelessWidget {
             child: Text(
               context.translations.settingsTimerNotifications,
               textAlign: TextAlign.end,
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           const SizedBox(width: Dimensions.defaultSpacing * 2),

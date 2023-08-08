@@ -20,7 +20,7 @@ class TournamentDetailsErrorPage extends StatelessWidget {
         child: ErrorMessage(
           exception: exception,
           retryFunction: () => _loadTournament(context),
-          color: Theme.of(context).primaryTextTheme.bodyText2!.color,
+          color: Theme.of(context).primaryTextTheme.bodyMedium!.color,
         ),
       );
 

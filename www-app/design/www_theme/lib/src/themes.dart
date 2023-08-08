@@ -56,10 +56,12 @@ class Themes {
   static ThemeData _customize(ThemeData base) {
     final typography = Typography.material2018();
     final theme = ThemeData.localize(
-        base, typography.geometryThemeFor(ScriptCategory.englishLike));
+      base,
+      typography.geometryThemeFor(ScriptCategory.englishLike),
+    );
     final textTheme = theme.textTheme.copyWith(
-      caption: theme.textTheme.caption!.copyWith(
-        fontSize: theme.textTheme.bodyText2!.fontSize,
+      bodySmall: theme.textTheme.bodySmall!.copyWith(
+        fontSize: theme.textTheme.bodyMedium!.fontSize,
       ),
     );
 
@@ -92,12 +94,11 @@ class Themes {
         elevation: 4.0,
         shape: const CircularNotchedRectangle(),
       ),
-      bottomAppBarColor: theme.primaryColor,
       dialogTheme: DialogTheme(
-        titleTextStyle: textTheme.headline6!.copyWith(
+        titleTextStyle: textTheme.titleLarge!.copyWith(
           color: theme.colorScheme.secondary,
         ),
-        contentTextStyle: textTheme.caption,
+        contentTextStyle: textTheme.bodySmall,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(Dimensions.mediumComponentsCornerRadiusValue),
@@ -107,8 +108,9 @@ class Themes {
       dividerTheme: const DividerThemeData(
         thickness: 1.0,
       ),
-      toggleableActiveColor: theme.colorScheme.secondary,
-      appBarTheme: AppBarTheme(backgroundColor: theme.primaryColor),
+      appBarTheme: AppBarTheme(
+        backgroundColor: theme.primaryColor,
+      ),
     );
   }
 }

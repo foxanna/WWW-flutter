@@ -10,7 +10,7 @@ class UnexpectedStateWidget extends StatelessWidget {
         child: Center(
           child: Text(context.translations.errorMessageGeneric,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.caption),
+              style: Theme.of(context).textTheme.bodySmall),
         ),
       );
 }

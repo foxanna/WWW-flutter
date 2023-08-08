@@ -14,7 +14,7 @@ class EmptyBookmarks extends StatelessWidget {
             child: Text(
               context.translations.bookmarksEmptyMessage,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     color: context
                         .styleConfig.bookmarksStyleConfiguration.errorColor,
                   ),

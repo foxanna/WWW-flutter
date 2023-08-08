@@ -22,7 +22,7 @@ class TextScaleSettings extends StatelessWidget {
               child: Text(
                 context.translations.settingsFontSize,
                 textAlign: TextAlign.right,
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
           ),
@@ -55,7 +55,7 @@ class _TextScalePickerState extends State<_TextScalePicker> {
         children: <Widget>[
           Text(
             'A',
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyMedium,
             textScaleFactor: TextScale.values.first.toDouble(),
           ),
           ConstrainedBox(
@@ -72,7 +72,7 @@ class _TextScalePickerState extends State<_TextScalePicker> {
           ),
           Text(
             'A',
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyMedium,
             textScaleFactor: TextScale.values.last.toDouble(),
           ),
         ],

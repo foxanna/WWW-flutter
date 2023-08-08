@@ -25,7 +25,7 @@ class RatingDialog extends StatelessWidget {
             children: <Widget>[
               Text(
                 context.translations.ratingDialogTitle,
-                style: Theme.of(context).textTheme.caption,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
               const SizedBox(
                 height: Dimensions.defaultSpacing * 4,

@@ -21,7 +21,7 @@ class ThemeSetting extends StatelessWidget {
               child: Text(
                 context.translations.settingsAppTheme,
                 textAlign: TextAlign.right,
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
           ),
@@ -70,7 +70,7 @@ class _ThemeDropdownButton extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   appThemeTranslations[theme]!,
-                  style: themeData.textTheme.bodyText2,
+                  style: themeData.textTheme.bodyMedium,
                 ),
               ),
             ),
