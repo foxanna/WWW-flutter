@@ -35,11 +35,14 @@ class SplashScreen extends StatelessWidget {
                           child: SvgPicture.asset(
                             'assets/owl.svg',
                             height: 200.0,
-                            color: context
-                                .styleConfig
-                                .latestTournamentsStyleConfiguration
-                                .appBarIconTheme
-                                .color,
+                            colorFilter: ColorFilter.mode(
+                              context
+                                  .styleConfig
+                                  .latestTournamentsStyleConfiguration
+                                  .appBarIconTheme
+                                  .color!,
+                              BlendMode.srcIn,
+                            ),
                           ),
                         ),
                       ),

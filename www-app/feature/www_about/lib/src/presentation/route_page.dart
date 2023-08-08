@@ -58,7 +58,10 @@ class AboutRoutePage extends StatelessWidget {
             child: SvgPicture.asset(
               'assets/owl.svg',
               fit: BoxFit.fitHeight,
-              color: styleConfiguration.accentColor,
+              colorFilter: ColorFilter.mode(
+                styleConfiguration.accentColor,
+                BlendMode.srcIn,
+              ),
             ),
           ),
         ),

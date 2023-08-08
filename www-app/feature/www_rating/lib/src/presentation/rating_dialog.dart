@@ -16,7 +16,10 @@ class RatingDialog extends StatelessWidget {
         title: SvgPicture.asset(
           'assets/owl.svg',
           height: 100,
-          color: Theme.of(context).colorScheme.secondary,
+          colorFilter: ColorFilter.mode(
+            Theme.of(context).colorScheme.secondary,
+            BlendMode.srcIn,
+          ),
         ),
         content: Padding(
           padding: Dimensions.dialogContentPadding,

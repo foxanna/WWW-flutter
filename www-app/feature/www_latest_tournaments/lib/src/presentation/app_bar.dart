@@ -23,7 +23,10 @@ class LatestTournamentsAppBar extends StatelessWidget {
           child: SvgPicture.asset(
             'assets/owl.svg',
             height: styleConfiguration.appBarLogoHeight,
-            color: styleConfiguration.appBarIconTheme.color,
+            colorFilter: ColorFilter.mode(
+              styleConfiguration.appBarIconTheme.color!,
+              BlendMode.srcIn,
+            ),
           ),
         ),
         centerTitle: false,
