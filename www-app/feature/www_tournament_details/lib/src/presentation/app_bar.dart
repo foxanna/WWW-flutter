@@ -90,7 +90,7 @@ class _TournamentDetailsAppBar extends StatelessWidget {
       actions: const [TournamentDetailsAppBarMoreButton()],
       bottom: PreferredSize(
         preferredSize: Size.fromHeight(appBarBottomHeight),
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           child: Padding(
             padding: styleConfiguration.tournamentTitlePadding,

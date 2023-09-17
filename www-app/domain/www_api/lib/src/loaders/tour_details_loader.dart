@@ -30,7 +30,7 @@ class TourDetailsLoader implements ITourDetailsLoader {
   Future<Tour> get(String id,
       {TournamentInfo? Function(String? parentId)?
           cachedTournamentInfoProvider}) async {
-    final data = await _httpClient.get(Uri(path: '/tour/${id}/xml'));
+    final data = await _httpClient.get(Uri(path: '/tour/$id/xml'));
     final dto = await _backgroundService
         .run<TourDto, List<dynamic>>(_parseTourDto, <dynamic>[data, _parser]);
     final cachedTournamentInfo =

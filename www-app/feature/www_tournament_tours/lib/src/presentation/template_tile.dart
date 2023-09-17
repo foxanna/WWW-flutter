@@ -87,7 +87,7 @@ class TourDetailsTemplateTile extends StatelessWidget {
           SizedBox(
             height: styleConfiguration.tourContentPadding.top,
           ),
-          Container(
+          SizedBox(
             height: styleConfiguration.questionsCardSize.height,
             child: (questionBuilder != null)
                 ? ListView.separated(

@@ -32,7 +32,7 @@ class CrashService implements ICrashService {
       _log(error, stackTrace);
 
   Future<void> _log(dynamic exception, StackTrace? stackTrace) async {
-    log('💥 logging crashlytics object "${exception}"');
+    log('💥 logging crashlytics object "$exception"');
 
     try {
       await _wrapper.crashlytics.recordError(exception, stackTrace);

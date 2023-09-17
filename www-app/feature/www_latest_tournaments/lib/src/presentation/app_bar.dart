@@ -37,9 +37,9 @@ class LatestTournamentsAppBar extends StatelessWidget {
         ),
         child: IconTheme.merge(
           data: styleConfiguration.appBarIconTheme,
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
+            children: [
               LatestTournamentsAppBarBookmarksButton(),
               LatestTournamentsAppBarRandomButton(),
               LatestTournamentsAppBarMoreButton()

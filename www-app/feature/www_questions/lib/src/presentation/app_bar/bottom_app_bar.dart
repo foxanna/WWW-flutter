@@ -14,9 +14,9 @@ class QuestionsBottomAppBar extends StatelessWidget {
       notchMargin: styleConfiguration.bottomAppBarNotchMargin,
       child: IconTheme(
         data: styleConfiguration.bottomAppBarIconTheme,
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             QuestionsBottomAppBarTimerText(),
             QuestionsBottomAppBarMoreButton(),
           ],
