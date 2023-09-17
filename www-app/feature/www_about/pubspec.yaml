@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.7
+  www_constants:
+    path: ../../core/www_constants
   www_localization:
     path: ../../core/www_localization
   www_redux:

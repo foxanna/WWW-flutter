@@ -5,6 +5,7 @@ import 'package:www_localization/www_localization.dart';
 import 'package:www_redux/www_redux.dart';
 import 'package:www_redux_actions/www_redux_actions.dart';
 import 'package:www_theme/www_theme.dart';
+import 'package:www_constants/www_constants.dart';
 
 class AboutRoutePage extends StatelessWidget {
   const AboutRoutePage({Key? key}) : super(key: key);
@@ -29,8 +30,10 @@ class AboutRoutePage extends StatelessWidget {
   }
 
   Widget _buildBody(
-          BuildContext context, AboutStyleConfiguration styleConfiguration) =>
-      Padding(
+    BuildContext context,
+    AboutStyleConfiguration styleConfiguration,
+  ) =>
+      SingleChildScrollView(
         padding: EdgeInsets.only(
           left: styleConfiguration.contentPadding.left,
           right: styleConfiguration.contentPadding.right,
@@ -38,9 +41,7 @@ class AboutRoutePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(
-              child: _buildImageSection(styleConfiguration),
-            ),
+            _buildImageSection(styleConfiguration),
             _buildBottomSection(context, styleConfiguration),
           ],
         ),
@@ -68,7 +69,9 @@ class AboutRoutePage extends StatelessWidget {
       );
 
   Widget _buildBottomSection(
-          BuildContext context, AboutStyleConfiguration styleConfiguration) =>
+    BuildContext context,
+    AboutStyleConfiguration styleConfiguration,
+  ) =>
       Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
@@ -77,6 +80,24 @@ class AboutRoutePage extends StatelessWidget {
             context.translations.appNameFull,
             textAlign: TextAlign.center,
             style: styleConfiguration.titleStyle,
+          ),
+          SizedBox(height: styleConfiguration.contentPadding.top / 2),
+          RichText(
+            textAlign: TextAlign.center,
+            textScaleFactor: MediaQuery.of(context).textScaleFactor,
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: context.translations.privacyPolicy,
+                  style: styleConfiguration.textStyle.copyWith(
+                    color: styleConfiguration.accentColor,
+                    decoration: TextDecoration.underline,
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => _reviewPrivacyPolicy(context),
+                ),
+              ],
+            ),
           ),
           SizedBox(height: styleConfiguration.contentPadding.top),
           RichText(
@@ -140,4 +161,8 @@ class AboutRoutePage extends StatelessWidget {
 
   void _visitWebsite(BuildContext context) =>
       context.dispatch(const UserActionDeveloper.visitWebsite());
+
+  void _reviewPrivacyPolicy(BuildContext context) => context.dispatch(
+        const UserActionBrowse.uri(uri: WWWConstants.privacyPolicyLink),
+      );
 }
