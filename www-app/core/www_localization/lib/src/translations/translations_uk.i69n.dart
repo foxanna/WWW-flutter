@@ -59,6 +59,7 @@ class Translations_uk extends Translations {
   String get menuTournamentsSearch => "Пошук турнірів";
   String get menuTournamentsTree => "Дерево турнірів";
   String get noAudioSupport => "Аудіо файли не підтримуються";
+  String get privacyPolicy => "Політика Конфіденційності";
   String get ratingDialogTitle => "Оцініть додаток";
   String get ratingDialogLaterButton => "пізніше";
   String get ratingDialogNeverButton => "більше не питати";
@@ -143,6 +144,8 @@ class Translations_uk extends Translations {
         return menuTournamentsTree;
       case 'noAudioSupport':
         return noAudioSupport;
+      case 'privacyPolicy':
+        return privacyPolicy;
       case 'ratingDialogTitle':
         return ratingDialogTitle;
       case 'ratingDialogLaterButton':

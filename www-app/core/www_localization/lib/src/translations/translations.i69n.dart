@@ -58,6 +58,7 @@ class Translations implements i69n.I69nMessageBundle {
   String get menuTournamentsSearch => "Tournaments search";
   String get menuTournamentsTree => "Tournaments tree";
   String get noAudioSupport => "Audio files are not supported";
+  String get privacyPolicy => "Privacy Policy";
   String get ratingDialogTitle => "Rate the application";
   String get ratingDialogLaterButton => "later";
   String get ratingDialogNeverButton => "don't ask again";
@@ -142,6 +143,8 @@ class Translations implements i69n.I69nMessageBundle {
         return menuTournamentsTree;
       case 'noAudioSupport':
         return noAudioSupport;
+      case 'privacyPolicy':
+        return privacyPolicy;
       case 'ratingDialogTitle':
         return ratingDialogTitle;
       case 'ratingDialogLaterButton':
