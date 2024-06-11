@@ -12,7 +12,7 @@ part of 'tours_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionTours {
@@ -99,11 +99,11 @@ class _$UserActionToursCopyWithImpl<$Res, $Val extends UserActionTours>
 }
 
 /// @nodoc
-abstract class _$$LoadToursUserActionCopyWith<$Res>
+abstract class _$$LoadToursUserActionImplCopyWith<$Res>
     implements $UserActionToursCopyWith<$Res> {
-  factory _$$LoadToursUserActionCopyWith(_$LoadToursUserAction value,
-          $Res Function(_$LoadToursUserAction) then) =
-      __$$LoadToursUserActionCopyWithImpl<$Res>;
+  factory _$$LoadToursUserActionImplCopyWith(_$LoadToursUserActionImpl value,
+          $Res Function(_$LoadToursUserActionImpl) then) =
+      __$$LoadToursUserActionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({TourInfo info});
@@ -113,11 +113,11 @@ abstract class _$$LoadToursUserActionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LoadToursUserActionCopyWithImpl<$Res>
-    extends _$UserActionToursCopyWithImpl<$Res, _$LoadToursUserAction>
-    implements _$$LoadToursUserActionCopyWith<$Res> {
-  __$$LoadToursUserActionCopyWithImpl(
-      _$LoadToursUserAction _value, $Res Function(_$LoadToursUserAction) _then)
+class __$$LoadToursUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionToursCopyWithImpl<$Res, _$LoadToursUserActionImpl>
+    implements _$$LoadToursUserActionImplCopyWith<$Res> {
+  __$$LoadToursUserActionImplCopyWithImpl(_$LoadToursUserActionImpl _value,
+      $Res Function(_$LoadToursUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +125,7 @@ class __$$LoadToursUserActionCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$LoadToursUserAction(
+    return _then(_$LoadToursUserActionImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -136,10 +136,10 @@ class __$$LoadToursUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadToursUserAction
+class _$LoadToursUserActionImpl
     with DiagnosticableTreeMixin
     implements LoadToursUserAction {
-  const _$LoadToursUserAction({required this.info});
+  const _$LoadToursUserActionImpl({required this.info});
 
   @override
   final TourInfo info;
@@ -158,10 +158,10 @@ class _$LoadToursUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadToursUserAction &&
+            other is _$LoadToursUserActionImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -171,8 +171,8 @@ class _$LoadToursUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadToursUserActionCopyWith<_$LoadToursUserAction> get copyWith =>
-      __$$LoadToursUserActionCopyWithImpl<_$LoadToursUserAction>(
+  _$$LoadToursUserActionImplCopyWith<_$LoadToursUserActionImpl> get copyWith =>
+      __$$LoadToursUserActionImplCopyWithImpl<_$LoadToursUserActionImpl>(
           this, _$identity);
 
   @override
@@ -234,13 +234,13 @@ class _$LoadToursUserAction
 
 abstract class LoadToursUserAction implements UserActionTours {
   const factory LoadToursUserAction({required final TourInfo info}) =
-      _$LoadToursUserAction;
+      _$LoadToursUserActionImpl;
 
   @override
   TourInfo get info;
   @override
   @JsonKey(ignore: true)
-  _$$LoadToursUserActionCopyWith<_$LoadToursUserAction> get copyWith =>
+  _$$LoadToursUserActionImplCopyWith<_$LoadToursUserActionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -323,20 +323,21 @@ class _$SystemActionToursCopyWithImpl<$Res, $Val extends SystemActionTours>
 }
 
 /// @nodoc
-abstract class _$$InitToursSystemActionCopyWith<$Res> {
-  factory _$$InitToursSystemActionCopyWith(_$InitToursSystemAction value,
-          $Res Function(_$InitToursSystemAction) then) =
-      __$$InitToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitToursSystemActionImplCopyWith<$Res> {
+  factory _$$InitToursSystemActionImplCopyWith(
+          _$InitToursSystemActionImpl value,
+          $Res Function(_$InitToursSystemActionImpl) then) =
+      __$$InitToursSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<TourInfo> tours});
 }
 
 /// @nodoc
-class __$$InitToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res, _$InitToursSystemAction>
-    implements _$$InitToursSystemActionCopyWith<$Res> {
-  __$$InitToursSystemActionCopyWithImpl(_$InitToursSystemAction _value,
-      $Res Function(_$InitToursSystemAction) _then)
+class __$$InitToursSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res, _$InitToursSystemActionImpl>
+    implements _$$InitToursSystemActionImplCopyWith<$Res> {
+  __$$InitToursSystemActionImplCopyWithImpl(_$InitToursSystemActionImpl _value,
+      $Res Function(_$InitToursSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -344,7 +345,7 @@ class __$$InitToursSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? tours = null,
   }) {
-    return _then(_$InitToursSystemAction(
+    return _then(_$InitToursSystemActionImpl(
       tours: null == tours
           ? _value._tours
           : tours // ignore: cast_nullable_to_non_nullable
@@ -355,10 +356,10 @@ class __$$InitToursSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitToursSystemAction
+class _$InitToursSystemActionImpl
     with DiagnosticableTreeMixin
     implements InitToursSystemAction {
-  const _$InitToursSystemAction({required final List<TourInfo> tours})
+  const _$InitToursSystemActionImpl({required final List<TourInfo> tours})
       : _tours = tours;
 
   final List<TourInfo> _tours;
@@ -383,10 +384,10 @@ class _$InitToursSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitToursSystemAction &&
+            other is _$InitToursSystemActionImpl &&
             const DeepCollectionEquality().equals(other._tours, _tours));
   }
 
@@ -397,9 +398,9 @@ class _$InitToursSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitToursSystemActionCopyWith<_$InitToursSystemAction> get copyWith =>
-      __$$InitToursSystemActionCopyWithImpl<_$InitToursSystemAction>(
-          this, _$identity);
+  _$$InitToursSystemActionImplCopyWith<_$InitToursSystemActionImpl>
+      get copyWith => __$$InitToursSystemActionImplCopyWithImpl<
+          _$InitToursSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -484,36 +485,38 @@ class _$InitToursSystemAction
 
 abstract class InitToursSystemAction implements SystemActionTours {
   const factory InitToursSystemAction({required final List<TourInfo> tours}) =
-      _$InitToursSystemAction;
+      _$InitToursSystemActionImpl;
 
   List<TourInfo> get tours;
   @JsonKey(ignore: true)
-  _$$InitToursSystemActionCopyWith<_$InitToursSystemAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InitToursSystemActionImplCopyWith<_$InitToursSystemActionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeInitToursSystemActionCopyWith<$Res> {
-  factory _$$DeInitToursSystemActionCopyWith(_$DeInitToursSystemAction value,
-          $Res Function(_$DeInitToursSystemAction) then) =
-      __$$DeInitToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$DeInitToursSystemActionImplCopyWith<$Res> {
+  factory _$$DeInitToursSystemActionImplCopyWith(
+          _$DeInitToursSystemActionImpl value,
+          $Res Function(_$DeInitToursSystemActionImpl) then) =
+      __$$DeInitToursSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DeInitToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res, _$DeInitToursSystemAction>
-    implements _$$DeInitToursSystemActionCopyWith<$Res> {
-  __$$DeInitToursSystemActionCopyWithImpl(_$DeInitToursSystemAction _value,
-      $Res Function(_$DeInitToursSystemAction) _then)
+class __$$DeInitToursSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res, _$DeInitToursSystemActionImpl>
+    implements _$$DeInitToursSystemActionImplCopyWith<$Res> {
+  __$$DeInitToursSystemActionImplCopyWithImpl(
+      _$DeInitToursSystemActionImpl _value,
+      $Res Function(_$DeInitToursSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DeInitToursSystemAction
+class _$DeInitToursSystemActionImpl
     with DiagnosticableTreeMixin
     implements DeInitToursSystemAction {
-  const _$DeInitToursSystemAction();
+  const _$DeInitToursSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -527,10 +530,10 @@ class _$DeInitToursSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeInitToursSystemAction);
+            other is _$DeInitToursSystemActionImpl);
   }
 
   @override
@@ -618,14 +621,15 @@ class _$DeInitToursSystemAction
 }
 
 abstract class DeInitToursSystemAction implements SystemActionTours {
-  const factory DeInitToursSystemAction() = _$DeInitToursSystemAction;
+  const factory DeInitToursSystemAction() = _$DeInitToursSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingToursSystemActionCopyWith<$Res> {
-  factory _$$LoadingToursSystemActionCopyWith(_$LoadingToursSystemAction value,
-          $Res Function(_$LoadingToursSystemAction) then) =
-      __$$LoadingToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$LoadingToursSystemActionImplCopyWith<$Res> {
+  factory _$$LoadingToursSystemActionImplCopyWith(
+          _$LoadingToursSystemActionImpl value,
+          $Res Function(_$LoadingToursSystemActionImpl) then) =
+      __$$LoadingToursSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TourInfo info});
 
@@ -633,11 +637,13 @@ abstract class _$$LoadingToursSystemActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LoadingToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res, _$LoadingToursSystemAction>
-    implements _$$LoadingToursSystemActionCopyWith<$Res> {
-  __$$LoadingToursSystemActionCopyWithImpl(_$LoadingToursSystemAction _value,
-      $Res Function(_$LoadingToursSystemAction) _then)
+class __$$LoadingToursSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res,
+        _$LoadingToursSystemActionImpl>
+    implements _$$LoadingToursSystemActionImplCopyWith<$Res> {
+  __$$LoadingToursSystemActionImplCopyWithImpl(
+      _$LoadingToursSystemActionImpl _value,
+      $Res Function(_$LoadingToursSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -645,7 +651,7 @@ class __$$LoadingToursSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$LoadingToursSystemAction(
+    return _then(_$LoadingToursSystemActionImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -664,10 +670,10 @@ class __$$LoadingToursSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingToursSystemAction
+class _$LoadingToursSystemActionImpl
     with DiagnosticableTreeMixin
     implements LoadingToursSystemAction {
-  const _$LoadingToursSystemAction({required this.info});
+  const _$LoadingToursSystemActionImpl({required this.info});
 
   @override
   final TourInfo info;
@@ -686,10 +692,10 @@ class _$LoadingToursSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingToursSystemAction &&
+            other is _$LoadingToursSystemActionImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -699,10 +705,9 @@ class _$LoadingToursSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingToursSystemActionCopyWith<_$LoadingToursSystemAction>
-      get copyWith =>
-          __$$LoadingToursSystemActionCopyWithImpl<_$LoadingToursSystemAction>(
-              this, _$identity);
+  _$$LoadingToursSystemActionImplCopyWith<_$LoadingToursSystemActionImpl>
+      get copyWith => __$$LoadingToursSystemActionImplCopyWithImpl<
+          _$LoadingToursSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -787,19 +792,20 @@ class _$LoadingToursSystemAction
 
 abstract class LoadingToursSystemAction implements SystemActionTours {
   const factory LoadingToursSystemAction({required final TourInfo info}) =
-      _$LoadingToursSystemAction;
+      _$LoadingToursSystemActionImpl;
 
   TourInfo get info;
   @JsonKey(ignore: true)
-  _$$LoadingToursSystemActionCopyWith<_$LoadingToursSystemAction>
+  _$$LoadingToursSystemActionImplCopyWith<_$LoadingToursSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FailedToursSystemActionCopyWith<$Res> {
-  factory _$$FailedToursSystemActionCopyWith(_$FailedToursSystemAction value,
-          $Res Function(_$FailedToursSystemAction) then) =
-      __$$FailedToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$FailedToursSystemActionImplCopyWith<$Res> {
+  factory _$$FailedToursSystemActionImplCopyWith(
+          _$FailedToursSystemActionImpl value,
+          $Res Function(_$FailedToursSystemActionImpl) then) =
+      __$$FailedToursSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TourInfo info, Exception exception});
 
@@ -807,11 +813,12 @@ abstract class _$$FailedToursSystemActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FailedToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res, _$FailedToursSystemAction>
-    implements _$$FailedToursSystemActionCopyWith<$Res> {
-  __$$FailedToursSystemActionCopyWithImpl(_$FailedToursSystemAction _value,
-      $Res Function(_$FailedToursSystemAction) _then)
+class __$$FailedToursSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res, _$FailedToursSystemActionImpl>
+    implements _$$FailedToursSystemActionImplCopyWith<$Res> {
+  __$$FailedToursSystemActionImplCopyWithImpl(
+      _$FailedToursSystemActionImpl _value,
+      $Res Function(_$FailedToursSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -820,7 +827,7 @@ class __$$FailedToursSystemActionCopyWithImpl<$Res>
     Object? info = null,
     Object? exception = null,
   }) {
-    return _then(_$FailedToursSystemAction(
+    return _then(_$FailedToursSystemActionImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -843,10 +850,10 @@ class __$$FailedToursSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FailedToursSystemAction
+class _$FailedToursSystemActionImpl
     with DiagnosticableTreeMixin
     implements FailedToursSystemAction {
-  const _$FailedToursSystemAction(
+  const _$FailedToursSystemActionImpl(
       {required this.info, required this.exception});
 
   @override
@@ -869,10 +876,10 @@ class _$FailedToursSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailedToursSystemAction &&
+            other is _$FailedToursSystemActionImpl &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
@@ -884,9 +891,9 @@ class _$FailedToursSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FailedToursSystemActionCopyWith<_$FailedToursSystemAction> get copyWith =>
-      __$$FailedToursSystemActionCopyWithImpl<_$FailedToursSystemAction>(
-          this, _$identity);
+  _$$FailedToursSystemActionImplCopyWith<_$FailedToursSystemActionImpl>
+      get copyWith => __$$FailedToursSystemActionImplCopyWithImpl<
+          _$FailedToursSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -972,21 +979,21 @@ class _$FailedToursSystemAction
 abstract class FailedToursSystemAction implements SystemActionTours {
   const factory FailedToursSystemAction(
       {required final TourInfo info,
-      required final Exception exception}) = _$FailedToursSystemAction;
+      required final Exception exception}) = _$FailedToursSystemActionImpl;
 
   TourInfo get info;
   Exception get exception;
   @JsonKey(ignore: true)
-  _$$FailedToursSystemActionCopyWith<_$FailedToursSystemAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FailedToursSystemActionImplCopyWith<_$FailedToursSystemActionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CompletedToursSystemActionCopyWith<$Res> {
-  factory _$$CompletedToursSystemActionCopyWith(
-          _$CompletedToursSystemAction value,
-          $Res Function(_$CompletedToursSystemAction) then) =
-      __$$CompletedToursSystemActionCopyWithImpl<$Res>;
+abstract class _$$CompletedToursSystemActionImplCopyWith<$Res> {
+  factory _$$CompletedToursSystemActionImplCopyWith(
+          _$CompletedToursSystemActionImpl value,
+          $Res Function(_$CompletedToursSystemActionImpl) then) =
+      __$$CompletedToursSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Tour tour});
 
@@ -994,12 +1001,13 @@ abstract class _$$CompletedToursSystemActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CompletedToursSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionToursCopyWithImpl<$Res, _$CompletedToursSystemAction>
-    implements _$$CompletedToursSystemActionCopyWith<$Res> {
-  __$$CompletedToursSystemActionCopyWithImpl(
-      _$CompletedToursSystemAction _value,
-      $Res Function(_$CompletedToursSystemAction) _then)
+class __$$CompletedToursSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionToursCopyWithImpl<$Res,
+        _$CompletedToursSystemActionImpl>
+    implements _$$CompletedToursSystemActionImplCopyWith<$Res> {
+  __$$CompletedToursSystemActionImplCopyWithImpl(
+      _$CompletedToursSystemActionImpl _value,
+      $Res Function(_$CompletedToursSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1007,7 +1015,7 @@ class __$$CompletedToursSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? tour = null,
   }) {
-    return _then(_$CompletedToursSystemAction(
+    return _then(_$CompletedToursSystemActionImpl(
       tour: null == tour
           ? _value.tour
           : tour // ignore: cast_nullable_to_non_nullable
@@ -1026,10 +1034,10 @@ class __$$CompletedToursSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CompletedToursSystemAction
+class _$CompletedToursSystemActionImpl
     with DiagnosticableTreeMixin
     implements CompletedToursSystemAction {
-  const _$CompletedToursSystemAction({required this.tour});
+  const _$CompletedToursSystemActionImpl({required this.tour});
 
   @override
   final Tour tour;
@@ -1048,10 +1056,10 @@ class _$CompletedToursSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CompletedToursSystemAction &&
+            other is _$CompletedToursSystemActionImpl &&
             (identical(other.tour, tour) || other.tour == tour));
   }
 
@@ -1061,9 +1069,9 @@ class _$CompletedToursSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CompletedToursSystemActionCopyWith<_$CompletedToursSystemAction>
-      get copyWith => __$$CompletedToursSystemActionCopyWithImpl<
-          _$CompletedToursSystemAction>(this, _$identity);
+  _$$CompletedToursSystemActionImplCopyWith<_$CompletedToursSystemActionImpl>
+      get copyWith => __$$CompletedToursSystemActionImplCopyWithImpl<
+          _$CompletedToursSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1148,10 +1156,10 @@ class _$CompletedToursSystemAction
 
 abstract class CompletedToursSystemAction implements SystemActionTours {
   const factory CompletedToursSystemAction({required final Tour tour}) =
-      _$CompletedToursSystemAction;
+      _$CompletedToursSystemActionImpl;
 
   Tour get tour;
   @JsonKey(ignore: true)
-  _$$CompletedToursSystemActionCopyWith<_$CompletedToursSystemAction>
+  _$$CompletedToursSystemActionImplCopyWith<_$CompletedToursSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

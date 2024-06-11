@@ -12,7 +12,7 @@ part of 'questions_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionQuestions {
@@ -105,20 +105,23 @@ class _$UserActionQuestionsCopyWithImpl<$Res, $Val extends UserActionQuestions>
 }
 
 /// @nodoc
-abstract class _$$OpenQuestionsUserActionCopyWith<$Res> {
-  factory _$$OpenQuestionsUserActionCopyWith(_$OpenQuestionsUserAction value,
-          $Res Function(_$OpenQuestionsUserAction) then) =
-      __$$OpenQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$OpenQuestionsUserActionImplCopyWith<$Res> {
+  factory _$$OpenQuestionsUserActionImplCopyWith(
+          _$OpenQuestionsUserActionImpl value,
+          $Res Function(_$OpenQuestionsUserActionImpl) then) =
+      __$$OpenQuestionsUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Question> questions, int index});
 }
 
 /// @nodoc
-class __$$OpenQuestionsUserActionCopyWithImpl<$Res>
-    extends _$UserActionQuestionsCopyWithImpl<$Res, _$OpenQuestionsUserAction>
-    implements _$$OpenQuestionsUserActionCopyWith<$Res> {
-  __$$OpenQuestionsUserActionCopyWithImpl(_$OpenQuestionsUserAction _value,
-      $Res Function(_$OpenQuestionsUserAction) _then)
+class __$$OpenQuestionsUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionQuestionsCopyWithImpl<$Res,
+        _$OpenQuestionsUserActionImpl>
+    implements _$$OpenQuestionsUserActionImplCopyWith<$Res> {
+  __$$OpenQuestionsUserActionImplCopyWithImpl(
+      _$OpenQuestionsUserActionImpl _value,
+      $Res Function(_$OpenQuestionsUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -127,7 +130,7 @@ class __$$OpenQuestionsUserActionCopyWithImpl<$Res>
     Object? questions = null,
     Object? index = null,
   }) {
-    return _then(_$OpenQuestionsUserAction(
+    return _then(_$OpenQuestionsUserActionImpl(
       questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -142,10 +145,10 @@ class __$$OpenQuestionsUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OpenQuestionsUserAction
+class _$OpenQuestionsUserActionImpl
     with DiagnosticableTreeMixin
     implements OpenQuestionsUserAction {
-  const _$OpenQuestionsUserAction(
+  const _$OpenQuestionsUserActionImpl(
       {required final List<Question> questions, required this.index})
       : _questions = questions;
 
@@ -175,10 +178,10 @@ class _$OpenQuestionsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OpenQuestionsUserAction &&
+            other is _$OpenQuestionsUserActionImpl &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions) &&
             (identical(other.index, index) || other.index == index));
@@ -191,9 +194,9 @@ class _$OpenQuestionsUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OpenQuestionsUserActionCopyWith<_$OpenQuestionsUserAction> get copyWith =>
-      __$$OpenQuestionsUserActionCopyWithImpl<_$OpenQuestionsUserAction>(
-          this, _$identity);
+  _$$OpenQuestionsUserActionImplCopyWith<_$OpenQuestionsUserActionImpl>
+      get copyWith => __$$OpenQuestionsUserActionImplCopyWithImpl<
+          _$OpenQuestionsUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -291,40 +294,40 @@ class _$OpenQuestionsUserAction
 abstract class OpenQuestionsUserAction implements UserActionQuestions {
   const factory OpenQuestionsUserAction(
       {required final List<Question> questions,
-      required final int index}) = _$OpenQuestionsUserAction;
+      required final int index}) = _$OpenQuestionsUserActionImpl;
 
   List<Question> get questions;
   int get index;
   @JsonKey(ignore: true)
-  _$$OpenQuestionsUserActionCopyWith<_$OpenQuestionsUserAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$OpenQuestionsUserActionImplCopyWith<_$OpenQuestionsUserActionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$OpenRandomQuestionsUserActionCopyWith<$Res> {
-  factory _$$OpenRandomQuestionsUserActionCopyWith(
-          _$OpenRandomQuestionsUserAction value,
-          $Res Function(_$OpenRandomQuestionsUserAction) then) =
-      __$$OpenRandomQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$OpenRandomQuestionsUserActionImplCopyWith<$Res> {
+  factory _$$OpenRandomQuestionsUserActionImplCopyWith(
+          _$OpenRandomQuestionsUserActionImpl value,
+          $Res Function(_$OpenRandomQuestionsUserActionImpl) then) =
+      __$$OpenRandomQuestionsUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OpenRandomQuestionsUserActionCopyWithImpl<$Res>
+class __$$OpenRandomQuestionsUserActionImplCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res,
-        _$OpenRandomQuestionsUserAction>
-    implements _$$OpenRandomQuestionsUserActionCopyWith<$Res> {
-  __$$OpenRandomQuestionsUserActionCopyWithImpl(
-      _$OpenRandomQuestionsUserAction _value,
-      $Res Function(_$OpenRandomQuestionsUserAction) _then)
+        _$OpenRandomQuestionsUserActionImpl>
+    implements _$$OpenRandomQuestionsUserActionImplCopyWith<$Res> {
+  __$$OpenRandomQuestionsUserActionImplCopyWithImpl(
+      _$OpenRandomQuestionsUserActionImpl _value,
+      $Res Function(_$OpenRandomQuestionsUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$OpenRandomQuestionsUserAction
+class _$OpenRandomQuestionsUserActionImpl
     with DiagnosticableTreeMixin
     implements OpenRandomQuestionsUserAction {
-  const _$OpenRandomQuestionsUserAction();
+  const _$OpenRandomQuestionsUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -339,10 +342,10 @@ class _$OpenRandomQuestionsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OpenRandomQuestionsUserAction);
+            other is _$OpenRandomQuestionsUserActionImpl);
   }
 
   @override
@@ -443,31 +446,34 @@ class _$OpenRandomQuestionsUserAction
 
 abstract class OpenRandomQuestionsUserAction implements UserActionQuestions {
   const factory OpenRandomQuestionsUserAction() =
-      _$OpenRandomQuestionsUserAction;
+      _$OpenRandomQuestionsUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$CloseQuestionsUserActionCopyWith<$Res> {
-  factory _$$CloseQuestionsUserActionCopyWith(_$CloseQuestionsUserAction value,
-          $Res Function(_$CloseQuestionsUserAction) then) =
-      __$$CloseQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$CloseQuestionsUserActionImplCopyWith<$Res> {
+  factory _$$CloseQuestionsUserActionImplCopyWith(
+          _$CloseQuestionsUserActionImpl value,
+          $Res Function(_$CloseQuestionsUserActionImpl) then) =
+      __$$CloseQuestionsUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CloseQuestionsUserActionCopyWithImpl<$Res>
-    extends _$UserActionQuestionsCopyWithImpl<$Res, _$CloseQuestionsUserAction>
-    implements _$$CloseQuestionsUserActionCopyWith<$Res> {
-  __$$CloseQuestionsUserActionCopyWithImpl(_$CloseQuestionsUserAction _value,
-      $Res Function(_$CloseQuestionsUserAction) _then)
+class __$$CloseQuestionsUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionQuestionsCopyWithImpl<$Res,
+        _$CloseQuestionsUserActionImpl>
+    implements _$$CloseQuestionsUserActionImplCopyWith<$Res> {
+  __$$CloseQuestionsUserActionImplCopyWithImpl(
+      _$CloseQuestionsUserActionImpl _value,
+      $Res Function(_$CloseQuestionsUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CloseQuestionsUserAction
+class _$CloseQuestionsUserActionImpl
     with DiagnosticableTreeMixin
     implements CloseQuestionsUserAction {
-  const _$CloseQuestionsUserAction();
+  const _$CloseQuestionsUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -481,10 +487,10 @@ class _$CloseQuestionsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CloseQuestionsUserAction);
+            other is _$CloseQuestionsUserActionImpl);
   }
 
   @override
@@ -584,15 +590,15 @@ class _$CloseQuestionsUserAction
 }
 
 abstract class CloseQuestionsUserAction implements UserActionQuestions {
-  const factory CloseQuestionsUserAction() = _$CloseQuestionsUserAction;
+  const factory CloseQuestionsUserAction() = _$CloseQuestionsUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$ShowAnswerQuestionsUserActionCopyWith<$Res> {
-  factory _$$ShowAnswerQuestionsUserActionCopyWith(
-          _$ShowAnswerQuestionsUserAction value,
-          $Res Function(_$ShowAnswerQuestionsUserAction) then) =
-      __$$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$ShowAnswerQuestionsUserActionImplCopyWith<$Res> {
+  factory _$$ShowAnswerQuestionsUserActionImplCopyWith(
+          _$ShowAnswerQuestionsUserActionImpl value,
+          $Res Function(_$ShowAnswerQuestionsUserActionImpl) then) =
+      __$$ShowAnswerQuestionsUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Question question});
 
@@ -600,13 +606,13 @@ abstract class _$$ShowAnswerQuestionsUserActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>
+class __$$ShowAnswerQuestionsUserActionImplCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res,
-        _$ShowAnswerQuestionsUserAction>
-    implements _$$ShowAnswerQuestionsUserActionCopyWith<$Res> {
-  __$$ShowAnswerQuestionsUserActionCopyWithImpl(
-      _$ShowAnswerQuestionsUserAction _value,
-      $Res Function(_$ShowAnswerQuestionsUserAction) _then)
+        _$ShowAnswerQuestionsUserActionImpl>
+    implements _$$ShowAnswerQuestionsUserActionImplCopyWith<$Res> {
+  __$$ShowAnswerQuestionsUserActionImplCopyWithImpl(
+      _$ShowAnswerQuestionsUserActionImpl _value,
+      $Res Function(_$ShowAnswerQuestionsUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -614,7 +620,7 @@ class __$$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>
   $Res call({
     Object? question = null,
   }) {
-    return _then(_$ShowAnswerQuestionsUserAction(
+    return _then(_$ShowAnswerQuestionsUserActionImpl(
       question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -633,10 +639,10 @@ class __$$ShowAnswerQuestionsUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ShowAnswerQuestionsUserAction
+class _$ShowAnswerQuestionsUserActionImpl
     with DiagnosticableTreeMixin
     implements ShowAnswerQuestionsUserAction {
-  const _$ShowAnswerQuestionsUserAction({required this.question});
+  const _$ShowAnswerQuestionsUserActionImpl({required this.question});
 
   @override
   final Question question;
@@ -655,10 +661,10 @@ class _$ShowAnswerQuestionsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ShowAnswerQuestionsUserAction &&
+            other is _$ShowAnswerQuestionsUserActionImpl &&
             (identical(other.question, question) ||
                 other.question == question));
   }
@@ -669,9 +675,10 @@ class _$ShowAnswerQuestionsUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ShowAnswerQuestionsUserActionCopyWith<_$ShowAnswerQuestionsUserAction>
-      get copyWith => __$$ShowAnswerQuestionsUserActionCopyWithImpl<
-          _$ShowAnswerQuestionsUserAction>(this, _$identity);
+  _$$ShowAnswerQuestionsUserActionImplCopyWith<
+          _$ShowAnswerQuestionsUserActionImpl>
+      get copyWith => __$$ShowAnswerQuestionsUserActionImplCopyWithImpl<
+          _$ShowAnswerQuestionsUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -768,20 +775,21 @@ class _$ShowAnswerQuestionsUserAction
 
 abstract class ShowAnswerQuestionsUserAction implements UserActionQuestions {
   const factory ShowAnswerQuestionsUserAction(
-      {required final Question question}) = _$ShowAnswerQuestionsUserAction;
+      {required final Question question}) = _$ShowAnswerQuestionsUserActionImpl;
 
   Question get question;
   @JsonKey(ignore: true)
-  _$$ShowAnswerQuestionsUserActionCopyWith<_$ShowAnswerQuestionsUserAction>
+  _$$ShowAnswerQuestionsUserActionImplCopyWith<
+          _$ShowAnswerQuestionsUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HideAnswerQuestionsUserActionCopyWith<$Res> {
-  factory _$$HideAnswerQuestionsUserActionCopyWith(
-          _$HideAnswerQuestionsUserAction value,
-          $Res Function(_$HideAnswerQuestionsUserAction) then) =
-      __$$HideAnswerQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$HideAnswerQuestionsUserActionImplCopyWith<$Res> {
+  factory _$$HideAnswerQuestionsUserActionImplCopyWith(
+          _$HideAnswerQuestionsUserActionImpl value,
+          $Res Function(_$HideAnswerQuestionsUserActionImpl) then) =
+      __$$HideAnswerQuestionsUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Question question});
 
@@ -789,13 +797,13 @@ abstract class _$$HideAnswerQuestionsUserActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$HideAnswerQuestionsUserActionCopyWithImpl<$Res>
+class __$$HideAnswerQuestionsUserActionImplCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res,
-        _$HideAnswerQuestionsUserAction>
-    implements _$$HideAnswerQuestionsUserActionCopyWith<$Res> {
-  __$$HideAnswerQuestionsUserActionCopyWithImpl(
-      _$HideAnswerQuestionsUserAction _value,
-      $Res Function(_$HideAnswerQuestionsUserAction) _then)
+        _$HideAnswerQuestionsUserActionImpl>
+    implements _$$HideAnswerQuestionsUserActionImplCopyWith<$Res> {
+  __$$HideAnswerQuestionsUserActionImplCopyWithImpl(
+      _$HideAnswerQuestionsUserActionImpl _value,
+      $Res Function(_$HideAnswerQuestionsUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -803,7 +811,7 @@ class __$$HideAnswerQuestionsUserActionCopyWithImpl<$Res>
   $Res call({
     Object? question = null,
   }) {
-    return _then(_$HideAnswerQuestionsUserAction(
+    return _then(_$HideAnswerQuestionsUserActionImpl(
       question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -822,10 +830,10 @@ class __$$HideAnswerQuestionsUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HideAnswerQuestionsUserAction
+class _$HideAnswerQuestionsUserActionImpl
     with DiagnosticableTreeMixin
     implements HideAnswerQuestionsUserAction {
-  const _$HideAnswerQuestionsUserAction({required this.question});
+  const _$HideAnswerQuestionsUserActionImpl({required this.question});
 
   @override
   final Question question;
@@ -844,10 +852,10 @@ class _$HideAnswerQuestionsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HideAnswerQuestionsUserAction &&
+            other is _$HideAnswerQuestionsUserActionImpl &&
             (identical(other.question, question) ||
                 other.question == question));
   }
@@ -858,9 +866,10 @@ class _$HideAnswerQuestionsUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HideAnswerQuestionsUserActionCopyWith<_$HideAnswerQuestionsUserAction>
-      get copyWith => __$$HideAnswerQuestionsUserActionCopyWithImpl<
-          _$HideAnswerQuestionsUserAction>(this, _$identity);
+  _$$HideAnswerQuestionsUserActionImplCopyWith<
+          _$HideAnswerQuestionsUserActionImpl>
+      get copyWith => __$$HideAnswerQuestionsUserActionImplCopyWithImpl<
+          _$HideAnswerQuestionsUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -957,39 +966,40 @@ class _$HideAnswerQuestionsUserAction
 
 abstract class HideAnswerQuestionsUserAction implements UserActionQuestions {
   const factory HideAnswerQuestionsUserAction(
-      {required final Question question}) = _$HideAnswerQuestionsUserAction;
+      {required final Question question}) = _$HideAnswerQuestionsUserActionImpl;
 
   Question get question;
   @JsonKey(ignore: true)
-  _$$HideAnswerQuestionsUserActionCopyWith<_$HideAnswerQuestionsUserAction>
+  _$$HideAnswerQuestionsUserActionImplCopyWith<
+          _$HideAnswerQuestionsUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadRandomQuestionsUserActionCopyWith<$Res> {
-  factory _$$LoadRandomQuestionsUserActionCopyWith(
-          _$LoadRandomQuestionsUserAction value,
-          $Res Function(_$LoadRandomQuestionsUserAction) then) =
-      __$$LoadRandomQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$LoadRandomQuestionsUserActionImplCopyWith<$Res> {
+  factory _$$LoadRandomQuestionsUserActionImplCopyWith(
+          _$LoadRandomQuestionsUserActionImpl value,
+          $Res Function(_$LoadRandomQuestionsUserActionImpl) then) =
+      __$$LoadRandomQuestionsUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadRandomQuestionsUserActionCopyWithImpl<$Res>
+class __$$LoadRandomQuestionsUserActionImplCopyWithImpl<$Res>
     extends _$UserActionQuestionsCopyWithImpl<$Res,
-        _$LoadRandomQuestionsUserAction>
-    implements _$$LoadRandomQuestionsUserActionCopyWith<$Res> {
-  __$$LoadRandomQuestionsUserActionCopyWithImpl(
-      _$LoadRandomQuestionsUserAction _value,
-      $Res Function(_$LoadRandomQuestionsUserAction) _then)
+        _$LoadRandomQuestionsUserActionImpl>
+    implements _$$LoadRandomQuestionsUserActionImplCopyWith<$Res> {
+  __$$LoadRandomQuestionsUserActionImplCopyWithImpl(
+      _$LoadRandomQuestionsUserActionImpl _value,
+      $Res Function(_$LoadRandomQuestionsUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadRandomQuestionsUserAction
+class _$LoadRandomQuestionsUserActionImpl
     with DiagnosticableTreeMixin
     implements LoadRandomQuestionsUserAction {
-  const _$LoadRandomQuestionsUserAction();
+  const _$LoadRandomQuestionsUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1004,10 +1014,10 @@ class _$LoadRandomQuestionsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadRandomQuestionsUserAction);
+            other is _$LoadRandomQuestionsUserActionImpl);
   }
 
   @override
@@ -1108,25 +1118,27 @@ class _$LoadRandomQuestionsUserAction
 
 abstract class LoadRandomQuestionsUserAction implements UserActionQuestions {
   const factory LoadRandomQuestionsUserAction() =
-      _$LoadRandomQuestionsUserAction;
+      _$LoadRandomQuestionsUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$SelectQuestionsUserActionCopyWith<$Res> {
-  factory _$$SelectQuestionsUserActionCopyWith(
-          _$SelectQuestionsUserAction value,
-          $Res Function(_$SelectQuestionsUserAction) then) =
-      __$$SelectQuestionsUserActionCopyWithImpl<$Res>;
+abstract class _$$SelectQuestionsUserActionImplCopyWith<$Res> {
+  factory _$$SelectQuestionsUserActionImplCopyWith(
+          _$SelectQuestionsUserActionImpl value,
+          $Res Function(_$SelectQuestionsUserActionImpl) then) =
+      __$$SelectQuestionsUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int questionIndex});
 }
 
 /// @nodoc
-class __$$SelectQuestionsUserActionCopyWithImpl<$Res>
-    extends _$UserActionQuestionsCopyWithImpl<$Res, _$SelectQuestionsUserAction>
-    implements _$$SelectQuestionsUserActionCopyWith<$Res> {
-  __$$SelectQuestionsUserActionCopyWithImpl(_$SelectQuestionsUserAction _value,
-      $Res Function(_$SelectQuestionsUserAction) _then)
+class __$$SelectQuestionsUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionQuestionsCopyWithImpl<$Res,
+        _$SelectQuestionsUserActionImpl>
+    implements _$$SelectQuestionsUserActionImplCopyWith<$Res> {
+  __$$SelectQuestionsUserActionImplCopyWithImpl(
+      _$SelectQuestionsUserActionImpl _value,
+      $Res Function(_$SelectQuestionsUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1134,7 +1146,7 @@ class __$$SelectQuestionsUserActionCopyWithImpl<$Res>
   $Res call({
     Object? questionIndex = null,
   }) {
-    return _then(_$SelectQuestionsUserAction(
+    return _then(_$SelectQuestionsUserActionImpl(
       questionIndex: null == questionIndex
           ? _value.questionIndex
           : questionIndex // ignore: cast_nullable_to_non_nullable
@@ -1145,10 +1157,10 @@ class __$$SelectQuestionsUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectQuestionsUserAction
+class _$SelectQuestionsUserActionImpl
     with DiagnosticableTreeMixin
     implements SelectQuestionsUserAction {
-  const _$SelectQuestionsUserAction({required this.questionIndex});
+  const _$SelectQuestionsUserActionImpl({required this.questionIndex});
 
   @override
   final int questionIndex;
@@ -1167,10 +1179,10 @@ class _$SelectQuestionsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectQuestionsUserAction &&
+            other is _$SelectQuestionsUserActionImpl &&
             (identical(other.questionIndex, questionIndex) ||
                 other.questionIndex == questionIndex));
   }
@@ -1181,9 +1193,9 @@ class _$SelectQuestionsUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectQuestionsUserActionCopyWith<_$SelectQuestionsUserAction>
-      get copyWith => __$$SelectQuestionsUserActionCopyWithImpl<
-          _$SelectQuestionsUserAction>(this, _$identity);
+  _$$SelectQuestionsUserActionImplCopyWith<_$SelectQuestionsUserActionImpl>
+      get copyWith => __$$SelectQuestionsUserActionImplCopyWithImpl<
+          _$SelectQuestionsUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1280,11 +1292,11 @@ class _$SelectQuestionsUserAction
 
 abstract class SelectQuestionsUserAction implements UserActionQuestions {
   const factory SelectQuestionsUserAction({required final int questionIndex}) =
-      _$SelectQuestionsUserAction;
+      _$SelectQuestionsUserActionImpl;
 
   int get questionIndex;
   @JsonKey(ignore: true)
-  _$$SelectQuestionsUserActionCopyWith<_$SelectQuestionsUserAction>
+  _$$SelectQuestionsUserActionImplCopyWith<_$SelectQuestionsUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1374,22 +1386,23 @@ class _$SystemActionQuestionsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$InitQuestionsSystemActionCopyWith<$Res> {
-  factory _$$InitQuestionsSystemActionCopyWith(
-          _$InitQuestionsSystemAction value,
-          $Res Function(_$InitQuestionsSystemAction) then) =
-      __$$InitQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitQuestionsSystemActionImplCopyWith<$Res> {
+  factory _$$InitQuestionsSystemActionImplCopyWith(
+          _$InitQuestionsSystemActionImpl value,
+          $Res Function(_$InitQuestionsSystemActionImpl) then) =
+      __$$InitQuestionsSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Question> questions, int index});
 }
 
 /// @nodoc
-class __$$InitQuestionsSystemActionCopyWithImpl<$Res>
+class __$$InitQuestionsSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res,
-        _$InitQuestionsSystemAction>
-    implements _$$InitQuestionsSystemActionCopyWith<$Res> {
-  __$$InitQuestionsSystemActionCopyWithImpl(_$InitQuestionsSystemAction _value,
-      $Res Function(_$InitQuestionsSystemAction) _then)
+        _$InitQuestionsSystemActionImpl>
+    implements _$$InitQuestionsSystemActionImplCopyWith<$Res> {
+  __$$InitQuestionsSystemActionImplCopyWithImpl(
+      _$InitQuestionsSystemActionImpl _value,
+      $Res Function(_$InitQuestionsSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1398,7 +1411,7 @@ class __$$InitQuestionsSystemActionCopyWithImpl<$Res>
     Object? questions = null,
     Object? index = null,
   }) {
-    return _then(_$InitQuestionsSystemAction(
+    return _then(_$InitQuestionsSystemActionImpl(
       questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -1413,10 +1426,10 @@ class __$$InitQuestionsSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitQuestionsSystemAction
+class _$InitQuestionsSystemActionImpl
     with DiagnosticableTreeMixin
     implements InitQuestionsSystemAction {
-  const _$InitQuestionsSystemAction(
+  const _$InitQuestionsSystemActionImpl(
       {required final List<Question> questions, required this.index})
       : _questions = questions;
 
@@ -1446,10 +1459,10 @@ class _$InitQuestionsSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitQuestionsSystemAction &&
+            other is _$InitQuestionsSystemActionImpl &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions) &&
             (identical(other.index, index) || other.index == index));
@@ -1462,9 +1475,9 @@ class _$InitQuestionsSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitQuestionsSystemActionCopyWith<_$InitQuestionsSystemAction>
-      get copyWith => __$$InitQuestionsSystemActionCopyWithImpl<
-          _$InitQuestionsSystemAction>(this, _$identity);
+  _$$InitQuestionsSystemActionImplCopyWith<_$InitQuestionsSystemActionImpl>
+      get copyWith => __$$InitQuestionsSystemActionImplCopyWithImpl<
+          _$InitQuestionsSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1556,40 +1569,40 @@ class _$InitQuestionsSystemAction
 abstract class InitQuestionsSystemAction implements SystemActionQuestions {
   const factory InitQuestionsSystemAction(
       {required final List<Question> questions,
-      required final int index}) = _$InitQuestionsSystemAction;
+      required final int index}) = _$InitQuestionsSystemActionImpl;
 
   List<Question> get questions;
   int get index;
   @JsonKey(ignore: true)
-  _$$InitQuestionsSystemActionCopyWith<_$InitQuestionsSystemAction>
+  _$$InitQuestionsSystemActionImplCopyWith<_$InitQuestionsSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InitRandomQuestionsSystemActionCopyWith<$Res> {
-  factory _$$InitRandomQuestionsSystemActionCopyWith(
-          _$InitRandomQuestionsSystemAction value,
-          $Res Function(_$InitRandomQuestionsSystemAction) then) =
-      __$$InitRandomQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitRandomQuestionsSystemActionImplCopyWith<$Res> {
+  factory _$$InitRandomQuestionsSystemActionImplCopyWith(
+          _$InitRandomQuestionsSystemActionImpl value,
+          $Res Function(_$InitRandomQuestionsSystemActionImpl) then) =
+      __$$InitRandomQuestionsSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitRandomQuestionsSystemActionCopyWithImpl<$Res>
+class __$$InitRandomQuestionsSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res,
-        _$InitRandomQuestionsSystemAction>
-    implements _$$InitRandomQuestionsSystemActionCopyWith<$Res> {
-  __$$InitRandomQuestionsSystemActionCopyWithImpl(
-      _$InitRandomQuestionsSystemAction _value,
-      $Res Function(_$InitRandomQuestionsSystemAction) _then)
+        _$InitRandomQuestionsSystemActionImpl>
+    implements _$$InitRandomQuestionsSystemActionImplCopyWith<$Res> {
+  __$$InitRandomQuestionsSystemActionImplCopyWithImpl(
+      _$InitRandomQuestionsSystemActionImpl _value,
+      $Res Function(_$InitRandomQuestionsSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitRandomQuestionsSystemAction
+class _$InitRandomQuestionsSystemActionImpl
     with DiagnosticableTreeMixin
     implements InitRandomQuestionsSystemAction {
-  const _$InitRandomQuestionsSystemAction();
+  const _$InitRandomQuestionsSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1604,10 +1617,10 @@ class _$InitRandomQuestionsSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitRandomQuestionsSystemAction);
+            other is _$InitRandomQuestionsSystemActionImpl);
   }
 
   @override
@@ -1703,34 +1716,34 @@ class _$InitRandomQuestionsSystemAction
 abstract class InitRandomQuestionsSystemAction
     implements SystemActionQuestions {
   const factory InitRandomQuestionsSystemAction() =
-      _$InitRandomQuestionsSystemAction;
+      _$InitRandomQuestionsSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$DeInitQuestionsSystemActionCopyWith<$Res> {
-  factory _$$DeInitQuestionsSystemActionCopyWith(
-          _$DeInitQuestionsSystemAction value,
-          $Res Function(_$DeInitQuestionsSystemAction) then) =
-      __$$DeInitQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$DeInitQuestionsSystemActionImplCopyWith<$Res> {
+  factory _$$DeInitQuestionsSystemActionImplCopyWith(
+          _$DeInitQuestionsSystemActionImpl value,
+          $Res Function(_$DeInitQuestionsSystemActionImpl) then) =
+      __$$DeInitQuestionsSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DeInitQuestionsSystemActionCopyWithImpl<$Res>
+class __$$DeInitQuestionsSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res,
-        _$DeInitQuestionsSystemAction>
-    implements _$$DeInitQuestionsSystemActionCopyWith<$Res> {
-  __$$DeInitQuestionsSystemActionCopyWithImpl(
-      _$DeInitQuestionsSystemAction _value,
-      $Res Function(_$DeInitQuestionsSystemAction) _then)
+        _$DeInitQuestionsSystemActionImpl>
+    implements _$$DeInitQuestionsSystemActionImplCopyWith<$Res> {
+  __$$DeInitQuestionsSystemActionImplCopyWithImpl(
+      _$DeInitQuestionsSystemActionImpl _value,
+      $Res Function(_$DeInitQuestionsSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DeInitQuestionsSystemAction
+class _$DeInitQuestionsSystemActionImpl
     with DiagnosticableTreeMixin
     implements DeInitQuestionsSystemAction {
-  const _$DeInitQuestionsSystemAction();
+  const _$DeInitQuestionsSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1744,10 +1757,10 @@ class _$DeInitQuestionsSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeInitQuestionsSystemAction);
+            other is _$DeInitQuestionsSystemActionImpl);
   }
 
   @override
@@ -1841,34 +1854,35 @@ class _$DeInitQuestionsSystemAction
 }
 
 abstract class DeInitQuestionsSystemAction implements SystemActionQuestions {
-  const factory DeInitQuestionsSystemAction() = _$DeInitQuestionsSystemAction;
+  const factory DeInitQuestionsSystemAction() =
+      _$DeInitQuestionsSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingQuestionsSystemActionCopyWith<$Res> {
-  factory _$$LoadingQuestionsSystemActionCopyWith(
-          _$LoadingQuestionsSystemAction value,
-          $Res Function(_$LoadingQuestionsSystemAction) then) =
-      __$$LoadingQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$LoadingQuestionsSystemActionImplCopyWith<$Res> {
+  factory _$$LoadingQuestionsSystemActionImplCopyWith(
+          _$LoadingQuestionsSystemActionImpl value,
+          $Res Function(_$LoadingQuestionsSystemActionImpl) then) =
+      __$$LoadingQuestionsSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingQuestionsSystemActionCopyWithImpl<$Res>
+class __$$LoadingQuestionsSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res,
-        _$LoadingQuestionsSystemAction>
-    implements _$$LoadingQuestionsSystemActionCopyWith<$Res> {
-  __$$LoadingQuestionsSystemActionCopyWithImpl(
-      _$LoadingQuestionsSystemAction _value,
-      $Res Function(_$LoadingQuestionsSystemAction) _then)
+        _$LoadingQuestionsSystemActionImpl>
+    implements _$$LoadingQuestionsSystemActionImplCopyWith<$Res> {
+  __$$LoadingQuestionsSystemActionImplCopyWithImpl(
+      _$LoadingQuestionsSystemActionImpl _value,
+      $Res Function(_$LoadingQuestionsSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingQuestionsSystemAction
+class _$LoadingQuestionsSystemActionImpl
     with DiagnosticableTreeMixin
     implements LoadingQuestionsSystemAction {
-  const _$LoadingQuestionsSystemAction();
+  const _$LoadingQuestionsSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1883,10 +1897,10 @@ class _$LoadingQuestionsSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingQuestionsSystemAction);
+            other is _$LoadingQuestionsSystemActionImpl);
   }
 
   @override
@@ -1980,27 +1994,28 @@ class _$LoadingQuestionsSystemAction
 }
 
 abstract class LoadingQuestionsSystemAction implements SystemActionQuestions {
-  const factory LoadingQuestionsSystemAction() = _$LoadingQuestionsSystemAction;
+  const factory LoadingQuestionsSystemAction() =
+      _$LoadingQuestionsSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$FailedQuestionsSystemActionCopyWith<$Res> {
-  factory _$$FailedQuestionsSystemActionCopyWith(
-          _$FailedQuestionsSystemAction value,
-          $Res Function(_$FailedQuestionsSystemAction) then) =
-      __$$FailedQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$FailedQuestionsSystemActionImplCopyWith<$Res> {
+  factory _$$FailedQuestionsSystemActionImplCopyWith(
+          _$FailedQuestionsSystemActionImpl value,
+          $Res Function(_$FailedQuestionsSystemActionImpl) then) =
+      __$$FailedQuestionsSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class __$$FailedQuestionsSystemActionCopyWithImpl<$Res>
+class __$$FailedQuestionsSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res,
-        _$FailedQuestionsSystemAction>
-    implements _$$FailedQuestionsSystemActionCopyWith<$Res> {
-  __$$FailedQuestionsSystemActionCopyWithImpl(
-      _$FailedQuestionsSystemAction _value,
-      $Res Function(_$FailedQuestionsSystemAction) _then)
+        _$FailedQuestionsSystemActionImpl>
+    implements _$$FailedQuestionsSystemActionImplCopyWith<$Res> {
+  __$$FailedQuestionsSystemActionImplCopyWithImpl(
+      _$FailedQuestionsSystemActionImpl _value,
+      $Res Function(_$FailedQuestionsSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2008,7 +2023,7 @@ class __$$FailedQuestionsSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? exception = null,
   }) {
-    return _then(_$FailedQuestionsSystemAction(
+    return _then(_$FailedQuestionsSystemActionImpl(
       exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -2019,10 +2034,10 @@ class __$$FailedQuestionsSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FailedQuestionsSystemAction
+class _$FailedQuestionsSystemActionImpl
     with DiagnosticableTreeMixin
     implements FailedQuestionsSystemAction {
-  const _$FailedQuestionsSystemAction({required this.exception});
+  const _$FailedQuestionsSystemActionImpl({required this.exception});
 
   @override
   final Exception exception;
@@ -2041,10 +2056,10 @@ class _$FailedQuestionsSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailedQuestionsSystemAction &&
+            other is _$FailedQuestionsSystemActionImpl &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
   }
@@ -2055,9 +2070,9 @@ class _$FailedQuestionsSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FailedQuestionsSystemActionCopyWith<_$FailedQuestionsSystemAction>
-      get copyWith => __$$FailedQuestionsSystemActionCopyWithImpl<
-          _$FailedQuestionsSystemAction>(this, _$identity);
+  _$$FailedQuestionsSystemActionImplCopyWith<_$FailedQuestionsSystemActionImpl>
+      get copyWith => __$$FailedQuestionsSystemActionImplCopyWithImpl<
+          _$FailedQuestionsSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2148,32 +2163,32 @@ class _$FailedQuestionsSystemAction
 
 abstract class FailedQuestionsSystemAction implements SystemActionQuestions {
   const factory FailedQuestionsSystemAction(
-      {required final Exception exception}) = _$FailedQuestionsSystemAction;
+      {required final Exception exception}) = _$FailedQuestionsSystemActionImpl;
 
   Exception get exception;
   @JsonKey(ignore: true)
-  _$$FailedQuestionsSystemActionCopyWith<_$FailedQuestionsSystemAction>
+  _$$FailedQuestionsSystemActionImplCopyWith<_$FailedQuestionsSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CompletedQuestionsSystemActionCopyWith<$Res> {
-  factory _$$CompletedQuestionsSystemActionCopyWith(
-          _$CompletedQuestionsSystemAction value,
-          $Res Function(_$CompletedQuestionsSystemAction) then) =
-      __$$CompletedQuestionsSystemActionCopyWithImpl<$Res>;
+abstract class _$$CompletedQuestionsSystemActionImplCopyWith<$Res> {
+  factory _$$CompletedQuestionsSystemActionImplCopyWith(
+          _$CompletedQuestionsSystemActionImpl value,
+          $Res Function(_$CompletedQuestionsSystemActionImpl) then) =
+      __$$CompletedQuestionsSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Iterable<Question> questions});
 }
 
 /// @nodoc
-class __$$CompletedQuestionsSystemActionCopyWithImpl<$Res>
+class __$$CompletedQuestionsSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionQuestionsCopyWithImpl<$Res,
-        _$CompletedQuestionsSystemAction>
-    implements _$$CompletedQuestionsSystemActionCopyWith<$Res> {
-  __$$CompletedQuestionsSystemActionCopyWithImpl(
-      _$CompletedQuestionsSystemAction _value,
-      $Res Function(_$CompletedQuestionsSystemAction) _then)
+        _$CompletedQuestionsSystemActionImpl>
+    implements _$$CompletedQuestionsSystemActionImplCopyWith<$Res> {
+  __$$CompletedQuestionsSystemActionImplCopyWithImpl(
+      _$CompletedQuestionsSystemActionImpl _value,
+      $Res Function(_$CompletedQuestionsSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2181,7 +2196,7 @@ class __$$CompletedQuestionsSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? questions = null,
   }) {
-    return _then(_$CompletedQuestionsSystemAction(
+    return _then(_$CompletedQuestionsSystemActionImpl(
       questions: null == questions
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -2192,10 +2207,10 @@ class __$$CompletedQuestionsSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CompletedQuestionsSystemAction
+class _$CompletedQuestionsSystemActionImpl
     with DiagnosticableTreeMixin
     implements CompletedQuestionsSystemAction {
-  const _$CompletedQuestionsSystemAction({required this.questions});
+  const _$CompletedQuestionsSystemActionImpl({required this.questions});
 
   @override
   final Iterable<Question> questions;
@@ -2214,10 +2229,10 @@ class _$CompletedQuestionsSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CompletedQuestionsSystemAction &&
+            other is _$CompletedQuestionsSystemActionImpl &&
             const DeepCollectionEquality().equals(other.questions, questions));
   }
 
@@ -2228,9 +2243,10 @@ class _$CompletedQuestionsSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CompletedQuestionsSystemActionCopyWith<_$CompletedQuestionsSystemAction>
-      get copyWith => __$$CompletedQuestionsSystemActionCopyWithImpl<
-          _$CompletedQuestionsSystemAction>(this, _$identity);
+  _$$CompletedQuestionsSystemActionImplCopyWith<
+          _$CompletedQuestionsSystemActionImpl>
+      get copyWith => __$$CompletedQuestionsSystemActionImplCopyWithImpl<
+          _$CompletedQuestionsSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2322,10 +2338,11 @@ class _$CompletedQuestionsSystemAction
 abstract class CompletedQuestionsSystemAction implements SystemActionQuestions {
   const factory CompletedQuestionsSystemAction(
           {required final Iterable<Question> questions}) =
-      _$CompletedQuestionsSystemAction;
+      _$CompletedQuestionsSystemActionImpl;
 
   Iterable<Question> get questions;
   @JsonKey(ignore: true)
-  _$$CompletedQuestionsSystemActionCopyWith<_$CompletedQuestionsSystemAction>
+  _$$CompletedQuestionsSystemActionImplCopyWith<
+          _$CompletedQuestionsSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

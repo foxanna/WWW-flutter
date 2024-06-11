@@ -12,7 +12,7 @@ part of 'browse_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionBrowse {
@@ -93,27 +93,29 @@ class _$UserActionBrowseCopyWithImpl<$Res, $Val extends UserActionBrowse>
 }
 
 /// @nodoc
-abstract class _$$DatabaseBrowseUserActionCopyWith<$Res> {
-  factory _$$DatabaseBrowseUserActionCopyWith(_$DatabaseBrowseUserAction value,
-          $Res Function(_$DatabaseBrowseUserAction) then) =
-      __$$DatabaseBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$DatabaseBrowseUserActionImplCopyWith<$Res> {
+  factory _$$DatabaseBrowseUserActionImplCopyWith(
+          _$DatabaseBrowseUserActionImpl value,
+          $Res Function(_$DatabaseBrowseUserActionImpl) then) =
+      __$$DatabaseBrowseUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DatabaseBrowseUserActionCopyWithImpl<$Res>
-    extends _$UserActionBrowseCopyWithImpl<$Res, _$DatabaseBrowseUserAction>
-    implements _$$DatabaseBrowseUserActionCopyWith<$Res> {
-  __$$DatabaseBrowseUserActionCopyWithImpl(_$DatabaseBrowseUserAction _value,
-      $Res Function(_$DatabaseBrowseUserAction) _then)
+class __$$DatabaseBrowseUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionBrowseCopyWithImpl<$Res, _$DatabaseBrowseUserActionImpl>
+    implements _$$DatabaseBrowseUserActionImplCopyWith<$Res> {
+  __$$DatabaseBrowseUserActionImplCopyWithImpl(
+      _$DatabaseBrowseUserActionImpl _value,
+      $Res Function(_$DatabaseBrowseUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DatabaseBrowseUserAction
+class _$DatabaseBrowseUserActionImpl
     with DiagnosticableTreeMixin
     implements DatabaseBrowseUserAction {
-  const _$DatabaseBrowseUserAction();
+  const _$DatabaseBrowseUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -127,10 +129,10 @@ class _$DatabaseBrowseUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DatabaseBrowseUserAction);
+            other is _$DatabaseBrowseUserActionImpl);
   }
 
   @override
@@ -218,14 +220,15 @@ class _$DatabaseBrowseUserAction
 }
 
 abstract class DatabaseBrowseUserAction implements UserActionBrowse {
-  const factory DatabaseBrowseUserAction() = _$DatabaseBrowseUserAction;
+  const factory DatabaseBrowseUserAction() = _$DatabaseBrowseUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$QuestionBrowseUserActionCopyWith<$Res> {
-  factory _$$QuestionBrowseUserActionCopyWith(_$QuestionBrowseUserAction value,
-          $Res Function(_$QuestionBrowseUserAction) then) =
-      __$$QuestionBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$QuestionBrowseUserActionImplCopyWith<$Res> {
+  factory _$$QuestionBrowseUserActionImplCopyWith(
+          _$QuestionBrowseUserActionImpl value,
+          $Res Function(_$QuestionBrowseUserActionImpl) then) =
+      __$$QuestionBrowseUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({QuestionInfo info});
 
@@ -233,11 +236,12 @@ abstract class _$$QuestionBrowseUserActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$QuestionBrowseUserActionCopyWithImpl<$Res>
-    extends _$UserActionBrowseCopyWithImpl<$Res, _$QuestionBrowseUserAction>
-    implements _$$QuestionBrowseUserActionCopyWith<$Res> {
-  __$$QuestionBrowseUserActionCopyWithImpl(_$QuestionBrowseUserAction _value,
-      $Res Function(_$QuestionBrowseUserAction) _then)
+class __$$QuestionBrowseUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionBrowseCopyWithImpl<$Res, _$QuestionBrowseUserActionImpl>
+    implements _$$QuestionBrowseUserActionImplCopyWith<$Res> {
+  __$$QuestionBrowseUserActionImplCopyWithImpl(
+      _$QuestionBrowseUserActionImpl _value,
+      $Res Function(_$QuestionBrowseUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -245,7 +249,7 @@ class __$$QuestionBrowseUserActionCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$QuestionBrowseUserAction(
+    return _then(_$QuestionBrowseUserActionImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -264,10 +268,10 @@ class __$$QuestionBrowseUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$QuestionBrowseUserAction
+class _$QuestionBrowseUserActionImpl
     with DiagnosticableTreeMixin
     implements QuestionBrowseUserAction {
-  const _$QuestionBrowseUserAction({required this.info});
+  const _$QuestionBrowseUserActionImpl({required this.info});
 
   @override
   final QuestionInfo info;
@@ -286,10 +290,10 @@ class _$QuestionBrowseUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QuestionBrowseUserAction &&
+            other is _$QuestionBrowseUserActionImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -299,10 +303,9 @@ class _$QuestionBrowseUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$QuestionBrowseUserActionCopyWith<_$QuestionBrowseUserAction>
-      get copyWith =>
-          __$$QuestionBrowseUserActionCopyWithImpl<_$QuestionBrowseUserAction>(
-              this, _$identity);
+  _$$QuestionBrowseUserActionImplCopyWith<_$QuestionBrowseUserActionImpl>
+      get copyWith => __$$QuestionBrowseUserActionImplCopyWithImpl<
+          _$QuestionBrowseUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -387,19 +390,19 @@ class _$QuestionBrowseUserAction
 
 abstract class QuestionBrowseUserAction implements UserActionBrowse {
   const factory QuestionBrowseUserAction({required final QuestionInfo info}) =
-      _$QuestionBrowseUserAction;
+      _$QuestionBrowseUserActionImpl;
 
   QuestionInfo get info;
   @JsonKey(ignore: true)
-  _$$QuestionBrowseUserActionCopyWith<_$QuestionBrowseUserAction>
+  _$$QuestionBrowseUserActionImplCopyWith<_$QuestionBrowseUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TourBrowseUserActionCopyWith<$Res> {
-  factory _$$TourBrowseUserActionCopyWith(_$TourBrowseUserAction value,
-          $Res Function(_$TourBrowseUserAction) then) =
-      __$$TourBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$TourBrowseUserActionImplCopyWith<$Res> {
+  factory _$$TourBrowseUserActionImplCopyWith(_$TourBrowseUserActionImpl value,
+          $Res Function(_$TourBrowseUserActionImpl) then) =
+      __$$TourBrowseUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TourInfo info});
 
@@ -407,11 +410,11 @@ abstract class _$$TourBrowseUserActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TourBrowseUserActionCopyWithImpl<$Res>
-    extends _$UserActionBrowseCopyWithImpl<$Res, _$TourBrowseUserAction>
-    implements _$$TourBrowseUserActionCopyWith<$Res> {
-  __$$TourBrowseUserActionCopyWithImpl(_$TourBrowseUserAction _value,
-      $Res Function(_$TourBrowseUserAction) _then)
+class __$$TourBrowseUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionBrowseCopyWithImpl<$Res, _$TourBrowseUserActionImpl>
+    implements _$$TourBrowseUserActionImplCopyWith<$Res> {
+  __$$TourBrowseUserActionImplCopyWithImpl(_$TourBrowseUserActionImpl _value,
+      $Res Function(_$TourBrowseUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -419,7 +422,7 @@ class __$$TourBrowseUserActionCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$TourBrowseUserAction(
+    return _then(_$TourBrowseUserActionImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -438,10 +441,10 @@ class __$$TourBrowseUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TourBrowseUserAction
+class _$TourBrowseUserActionImpl
     with DiagnosticableTreeMixin
     implements TourBrowseUserAction {
-  const _$TourBrowseUserAction({required this.info});
+  const _$TourBrowseUserActionImpl({required this.info});
 
   @override
   final TourInfo info;
@@ -460,10 +463,10 @@ class _$TourBrowseUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TourBrowseUserAction &&
+            other is _$TourBrowseUserActionImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -473,9 +476,10 @@ class _$TourBrowseUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TourBrowseUserActionCopyWith<_$TourBrowseUserAction> get copyWith =>
-      __$$TourBrowseUserActionCopyWithImpl<_$TourBrowseUserAction>(
-          this, _$identity);
+  _$$TourBrowseUserActionImplCopyWith<_$TourBrowseUserActionImpl>
+      get copyWith =>
+          __$$TourBrowseUserActionImplCopyWithImpl<_$TourBrowseUserActionImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -560,20 +564,20 @@ class _$TourBrowseUserAction
 
 abstract class TourBrowseUserAction implements UserActionBrowse {
   const factory TourBrowseUserAction({required final TourInfo info}) =
-      _$TourBrowseUserAction;
+      _$TourBrowseUserActionImpl;
 
   TourInfo get info;
   @JsonKey(ignore: true)
-  _$$TourBrowseUserActionCopyWith<_$TourBrowseUserAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TourBrowseUserActionImplCopyWith<_$TourBrowseUserActionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TournamentBrowseUserActionCopyWith<$Res> {
-  factory _$$TournamentBrowseUserActionCopyWith(
-          _$TournamentBrowseUserAction value,
-          $Res Function(_$TournamentBrowseUserAction) then) =
-      __$$TournamentBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$TournamentBrowseUserActionImplCopyWith<$Res> {
+  factory _$$TournamentBrowseUserActionImplCopyWith(
+          _$TournamentBrowseUserActionImpl value,
+          $Res Function(_$TournamentBrowseUserActionImpl) then) =
+      __$$TournamentBrowseUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TournamentInfo info});
 
@@ -581,12 +585,13 @@ abstract class _$$TournamentBrowseUserActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TournamentBrowseUserActionCopyWithImpl<$Res>
-    extends _$UserActionBrowseCopyWithImpl<$Res, _$TournamentBrowseUserAction>
-    implements _$$TournamentBrowseUserActionCopyWith<$Res> {
-  __$$TournamentBrowseUserActionCopyWithImpl(
-      _$TournamentBrowseUserAction _value,
-      $Res Function(_$TournamentBrowseUserAction) _then)
+class __$$TournamentBrowseUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionBrowseCopyWithImpl<$Res,
+        _$TournamentBrowseUserActionImpl>
+    implements _$$TournamentBrowseUserActionImplCopyWith<$Res> {
+  __$$TournamentBrowseUserActionImplCopyWithImpl(
+      _$TournamentBrowseUserActionImpl _value,
+      $Res Function(_$TournamentBrowseUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -594,7 +599,7 @@ class __$$TournamentBrowseUserActionCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$TournamentBrowseUserAction(
+    return _then(_$TournamentBrowseUserActionImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -613,10 +618,10 @@ class __$$TournamentBrowseUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TournamentBrowseUserAction
+class _$TournamentBrowseUserActionImpl
     with DiagnosticableTreeMixin
     implements TournamentBrowseUserAction {
-  const _$TournamentBrowseUserAction({required this.info});
+  const _$TournamentBrowseUserActionImpl({required this.info});
 
   @override
   final TournamentInfo info;
@@ -635,10 +640,10 @@ class _$TournamentBrowseUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TournamentBrowseUserAction &&
+            other is _$TournamentBrowseUserActionImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -648,9 +653,9 @@ class _$TournamentBrowseUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TournamentBrowseUserActionCopyWith<_$TournamentBrowseUserAction>
-      get copyWith => __$$TournamentBrowseUserActionCopyWithImpl<
-          _$TournamentBrowseUserAction>(this, _$identity);
+  _$$TournamentBrowseUserActionImplCopyWith<_$TournamentBrowseUserActionImpl>
+      get copyWith => __$$TournamentBrowseUserActionImplCopyWithImpl<
+          _$TournamentBrowseUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -735,29 +740,29 @@ class _$TournamentBrowseUserAction
 
 abstract class TournamentBrowseUserAction implements UserActionBrowse {
   const factory TournamentBrowseUserAction(
-      {required final TournamentInfo info}) = _$TournamentBrowseUserAction;
+      {required final TournamentInfo info}) = _$TournamentBrowseUserActionImpl;
 
   TournamentInfo get info;
   @JsonKey(ignore: true)
-  _$$TournamentBrowseUserActionCopyWith<_$TournamentBrowseUserAction>
+  _$$TournamentBrowseUserActionImplCopyWith<_$TournamentBrowseUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UriBrowseUserActionCopyWith<$Res> {
-  factory _$$UriBrowseUserActionCopyWith(_$UriBrowseUserAction value,
-          $Res Function(_$UriBrowseUserAction) then) =
-      __$$UriBrowseUserActionCopyWithImpl<$Res>;
+abstract class _$$UriBrowseUserActionImplCopyWith<$Res> {
+  factory _$$UriBrowseUserActionImplCopyWith(_$UriBrowseUserActionImpl value,
+          $Res Function(_$UriBrowseUserActionImpl) then) =
+      __$$UriBrowseUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String uri});
 }
 
 /// @nodoc
-class __$$UriBrowseUserActionCopyWithImpl<$Res>
-    extends _$UserActionBrowseCopyWithImpl<$Res, _$UriBrowseUserAction>
-    implements _$$UriBrowseUserActionCopyWith<$Res> {
-  __$$UriBrowseUserActionCopyWithImpl(
-      _$UriBrowseUserAction _value, $Res Function(_$UriBrowseUserAction) _then)
+class __$$UriBrowseUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionBrowseCopyWithImpl<$Res, _$UriBrowseUserActionImpl>
+    implements _$$UriBrowseUserActionImplCopyWith<$Res> {
+  __$$UriBrowseUserActionImplCopyWithImpl(_$UriBrowseUserActionImpl _value,
+      $Res Function(_$UriBrowseUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -765,7 +770,7 @@ class __$$UriBrowseUserActionCopyWithImpl<$Res>
   $Res call({
     Object? uri = null,
   }) {
-    return _then(_$UriBrowseUserAction(
+    return _then(_$UriBrowseUserActionImpl(
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -776,10 +781,10 @@ class __$$UriBrowseUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UriBrowseUserAction
+class _$UriBrowseUserActionImpl
     with DiagnosticableTreeMixin
     implements UriBrowseUserAction {
-  const _$UriBrowseUserAction({required this.uri});
+  const _$UriBrowseUserActionImpl({required this.uri});
 
   @override
   final String uri;
@@ -798,10 +803,10 @@ class _$UriBrowseUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UriBrowseUserAction &&
+            other is _$UriBrowseUserActionImpl &&
             (identical(other.uri, uri) || other.uri == uri));
   }
 
@@ -811,8 +816,8 @@ class _$UriBrowseUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UriBrowseUserActionCopyWith<_$UriBrowseUserAction> get copyWith =>
-      __$$UriBrowseUserActionCopyWithImpl<_$UriBrowseUserAction>(
+  _$$UriBrowseUserActionImplCopyWith<_$UriBrowseUserActionImpl> get copyWith =>
+      __$$UriBrowseUserActionImplCopyWithImpl<_$UriBrowseUserActionImpl>(
           this, _$identity);
 
   @override
@@ -898,10 +903,10 @@ class _$UriBrowseUserAction
 
 abstract class UriBrowseUserAction implements UserActionBrowse {
   const factory UriBrowseUserAction({required final String uri}) =
-      _$UriBrowseUserAction;
+      _$UriBrowseUserActionImpl;
 
   String get uri;
   @JsonKey(ignore: true)
-  _$$UriBrowseUserActionCopyWith<_$UriBrowseUserAction> get copyWith =>
+  _$$UriBrowseUserActionImplCopyWith<_$UriBrowseUserActionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

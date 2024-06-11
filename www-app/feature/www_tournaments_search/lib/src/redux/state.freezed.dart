@@ -12,7 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SearchState {
@@ -149,11 +149,11 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
 }
 
 /// @nodoc
-abstract class _$$InitialSearchStateCopyWith<$Res>
+abstract class _$$InitialSearchStateImplCopyWith<$Res>
     implements $SearchStateCopyWith<$Res> {
-  factory _$$InitialSearchStateCopyWith(_$InitialSearchState value,
-          $Res Function(_$InitialSearchState) then) =
-      __$$InitialSearchStateCopyWithImpl<$Res>;
+  factory _$$InitialSearchStateImplCopyWith(_$InitialSearchStateImpl value,
+          $Res Function(_$InitialSearchStateImpl) then) =
+      __$$InitialSearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({SearchParameters parameters});
@@ -163,11 +163,11 @@ abstract class _$$InitialSearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InitialSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$InitialSearchState>
-    implements _$$InitialSearchStateCopyWith<$Res> {
-  __$$InitialSearchStateCopyWithImpl(
-      _$InitialSearchState _value, $Res Function(_$InitialSearchState) _then)
+class __$$InitialSearchStateImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$InitialSearchStateImpl>
+    implements _$$InitialSearchStateImplCopyWith<$Res> {
+  __$$InitialSearchStateImplCopyWithImpl(_$InitialSearchStateImpl _value,
+      $Res Function(_$InitialSearchStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -175,7 +175,7 @@ class __$$InitialSearchStateCopyWithImpl<$Res>
   $Res call({
     Object? parameters = null,
   }) {
-    return _then(_$InitialSearchState(
+    return _then(_$InitialSearchStateImpl(
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -186,10 +186,10 @@ class __$$InitialSearchStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialSearchState
+class _$InitialSearchStateImpl
     with DiagnosticableTreeMixin
     implements InitialSearchState {
-  const _$InitialSearchState({required this.parameters});
+  const _$InitialSearchStateImpl({required this.parameters});
 
   @override
   final SearchParameters parameters;
@@ -208,10 +208,10 @@ class _$InitialSearchState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitialSearchState &&
+            other is _$InitialSearchStateImpl &&
             (identical(other.parameters, parameters) ||
                 other.parameters == parameters));
   }
@@ -222,8 +222,8 @@ class _$InitialSearchState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitialSearchStateCopyWith<_$InitialSearchState> get copyWith =>
-      __$$InitialSearchStateCopyWithImpl<_$InitialSearchState>(
+  _$$InitialSearchStateImplCopyWith<_$InitialSearchStateImpl> get copyWith =>
+      __$$InitialSearchStateImplCopyWithImpl<_$InitialSearchStateImpl>(
           this, _$identity);
 
   @override
@@ -335,23 +335,23 @@ class _$InitialSearchState
 
 abstract class InitialSearchState implements SearchState {
   const factory InitialSearchState(
-      {required final SearchParameters parameters}) = _$InitialSearchState;
+      {required final SearchParameters parameters}) = _$InitialSearchStateImpl;
 
   @override
   SearchParameters get parameters;
   @override
   @JsonKey(ignore: true)
-  _$$InitialSearchStateCopyWith<_$InitialSearchState> get copyWith =>
+  _$$InitialSearchStateImplCopyWith<_$InitialSearchStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadingFirstPageSearchStateCopyWith<$Res>
+abstract class _$$LoadingFirstPageSearchStateImplCopyWith<$Res>
     implements $SearchStateCopyWith<$Res> {
-  factory _$$LoadingFirstPageSearchStateCopyWith(
-          _$LoadingFirstPageSearchState value,
-          $Res Function(_$LoadingFirstPageSearchState) then) =
-      __$$LoadingFirstPageSearchStateCopyWithImpl<$Res>;
+  factory _$$LoadingFirstPageSearchStateImplCopyWith(
+          _$LoadingFirstPageSearchStateImpl value,
+          $Res Function(_$LoadingFirstPageSearchStateImpl) then) =
+      __$$LoadingFirstPageSearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({SearchParameters parameters});
@@ -361,12 +361,12 @@ abstract class _$$LoadingFirstPageSearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LoadingFirstPageSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$LoadingFirstPageSearchState>
-    implements _$$LoadingFirstPageSearchStateCopyWith<$Res> {
-  __$$LoadingFirstPageSearchStateCopyWithImpl(
-      _$LoadingFirstPageSearchState _value,
-      $Res Function(_$LoadingFirstPageSearchState) _then)
+class __$$LoadingFirstPageSearchStateImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$LoadingFirstPageSearchStateImpl>
+    implements _$$LoadingFirstPageSearchStateImplCopyWith<$Res> {
+  __$$LoadingFirstPageSearchStateImplCopyWithImpl(
+      _$LoadingFirstPageSearchStateImpl _value,
+      $Res Function(_$LoadingFirstPageSearchStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -374,7 +374,7 @@ class __$$LoadingFirstPageSearchStateCopyWithImpl<$Res>
   $Res call({
     Object? parameters = null,
   }) {
-    return _then(_$LoadingFirstPageSearchState(
+    return _then(_$LoadingFirstPageSearchStateImpl(
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -385,10 +385,10 @@ class __$$LoadingFirstPageSearchStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingFirstPageSearchState
+class _$LoadingFirstPageSearchStateImpl
     with DiagnosticableTreeMixin
     implements LoadingFirstPageSearchState {
-  const _$LoadingFirstPageSearchState({required this.parameters});
+  const _$LoadingFirstPageSearchStateImpl({required this.parameters});
 
   @override
   final SearchParameters parameters;
@@ -407,10 +407,10 @@ class _$LoadingFirstPageSearchState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingFirstPageSearchState &&
+            other is _$LoadingFirstPageSearchStateImpl &&
             (identical(other.parameters, parameters) ||
                 other.parameters == parameters));
   }
@@ -421,9 +421,9 @@ class _$LoadingFirstPageSearchState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingFirstPageSearchStateCopyWith<_$LoadingFirstPageSearchState>
-      get copyWith => __$$LoadingFirstPageSearchStateCopyWithImpl<
-          _$LoadingFirstPageSearchState>(this, _$identity);
+  _$$LoadingFirstPageSearchStateImplCopyWith<_$LoadingFirstPageSearchStateImpl>
+      get copyWith => __$$LoadingFirstPageSearchStateImplCopyWithImpl<
+          _$LoadingFirstPageSearchStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -535,23 +535,23 @@ class _$LoadingFirstPageSearchState
 abstract class LoadingFirstPageSearchState implements SearchState {
   const factory LoadingFirstPageSearchState(
           {required final SearchParameters parameters}) =
-      _$LoadingFirstPageSearchState;
+      _$LoadingFirstPageSearchStateImpl;
 
   @override
   SearchParameters get parameters;
   @override
   @JsonKey(ignore: true)
-  _$$LoadingFirstPageSearchStateCopyWith<_$LoadingFirstPageSearchState>
+  _$$LoadingFirstPageSearchStateImplCopyWith<_$LoadingFirstPageSearchStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadingWithDataSearchStateCopyWith<$Res>
+abstract class _$$LoadingWithDataSearchStateImplCopyWith<$Res>
     implements $SearchStateCopyWith<$Res> {
-  factory _$$LoadingWithDataSearchStateCopyWith(
-          _$LoadingWithDataSearchState value,
-          $Res Function(_$LoadingWithDataSearchState) then) =
-      __$$LoadingWithDataSearchStateCopyWithImpl<$Res>;
+  factory _$$LoadingWithDataSearchStateImplCopyWith(
+          _$LoadingWithDataSearchStateImpl value,
+          $Res Function(_$LoadingWithDataSearchStateImpl) then) =
+      __$$LoadingWithDataSearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({SearchParameters parameters, List<Tournament> data});
@@ -561,12 +561,12 @@ abstract class _$$LoadingWithDataSearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LoadingWithDataSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$LoadingWithDataSearchState>
-    implements _$$LoadingWithDataSearchStateCopyWith<$Res> {
-  __$$LoadingWithDataSearchStateCopyWithImpl(
-      _$LoadingWithDataSearchState _value,
-      $Res Function(_$LoadingWithDataSearchState) _then)
+class __$$LoadingWithDataSearchStateImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$LoadingWithDataSearchStateImpl>
+    implements _$$LoadingWithDataSearchStateImplCopyWith<$Res> {
+  __$$LoadingWithDataSearchStateImplCopyWithImpl(
+      _$LoadingWithDataSearchStateImpl _value,
+      $Res Function(_$LoadingWithDataSearchStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -575,7 +575,7 @@ class __$$LoadingWithDataSearchStateCopyWithImpl<$Res>
     Object? parameters = null,
     Object? data = null,
   }) {
-    return _then(_$LoadingWithDataSearchState(
+    return _then(_$LoadingWithDataSearchStateImpl(
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -590,10 +590,10 @@ class __$$LoadingWithDataSearchStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingWithDataSearchState
+class _$LoadingWithDataSearchStateImpl
     with DiagnosticableTreeMixin
     implements LoadingWithDataSearchState {
-  const _$LoadingWithDataSearchState(
+  const _$LoadingWithDataSearchStateImpl(
       {required this.parameters, required final List<Tournament> data})
       : _data = data;
 
@@ -622,10 +622,10 @@ class _$LoadingWithDataSearchState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingWithDataSearchState &&
+            other is _$LoadingWithDataSearchStateImpl &&
             (identical(other.parameters, parameters) ||
                 other.parameters == parameters) &&
             const DeepCollectionEquality().equals(other._data, _data));
@@ -638,9 +638,9 @@ class _$LoadingWithDataSearchState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingWithDataSearchStateCopyWith<_$LoadingWithDataSearchState>
-      get copyWith => __$$LoadingWithDataSearchStateCopyWithImpl<
-          _$LoadingWithDataSearchState>(this, _$identity);
+  _$$LoadingWithDataSearchStateImplCopyWith<_$LoadingWithDataSearchStateImpl>
+      get copyWith => __$$LoadingWithDataSearchStateImplCopyWithImpl<
+          _$LoadingWithDataSearchStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -752,24 +752,24 @@ class _$LoadingWithDataSearchState
 abstract class LoadingWithDataSearchState implements SearchState {
   const factory LoadingWithDataSearchState(
       {required final SearchParameters parameters,
-      required final List<Tournament> data}) = _$LoadingWithDataSearchState;
+      required final List<Tournament> data}) = _$LoadingWithDataSearchStateImpl;
 
   @override
   SearchParameters get parameters;
   List<Tournament> get data;
   @override
   @JsonKey(ignore: true)
-  _$$LoadingWithDataSearchStateCopyWith<_$LoadingWithDataSearchState>
+  _$$LoadingWithDataSearchStateImplCopyWith<_$LoadingWithDataSearchStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorFirstPageSearchStateCopyWith<$Res>
+abstract class _$$ErrorFirstPageSearchStateImplCopyWith<$Res>
     implements $SearchStateCopyWith<$Res> {
-  factory _$$ErrorFirstPageSearchStateCopyWith(
-          _$ErrorFirstPageSearchState value,
-          $Res Function(_$ErrorFirstPageSearchState) then) =
-      __$$ErrorFirstPageSearchStateCopyWithImpl<$Res>;
+  factory _$$ErrorFirstPageSearchStateImplCopyWith(
+          _$ErrorFirstPageSearchStateImpl value,
+          $Res Function(_$ErrorFirstPageSearchStateImpl) then) =
+      __$$ErrorFirstPageSearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({SearchParameters parameters, Exception exception});
@@ -779,11 +779,12 @@ abstract class _$$ErrorFirstPageSearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ErrorFirstPageSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$ErrorFirstPageSearchState>
-    implements _$$ErrorFirstPageSearchStateCopyWith<$Res> {
-  __$$ErrorFirstPageSearchStateCopyWithImpl(_$ErrorFirstPageSearchState _value,
-      $Res Function(_$ErrorFirstPageSearchState) _then)
+class __$$ErrorFirstPageSearchStateImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$ErrorFirstPageSearchStateImpl>
+    implements _$$ErrorFirstPageSearchStateImplCopyWith<$Res> {
+  __$$ErrorFirstPageSearchStateImplCopyWithImpl(
+      _$ErrorFirstPageSearchStateImpl _value,
+      $Res Function(_$ErrorFirstPageSearchStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -792,7 +793,7 @@ class __$$ErrorFirstPageSearchStateCopyWithImpl<$Res>
     Object? parameters = null,
     Object? exception = null,
   }) {
-    return _then(_$ErrorFirstPageSearchState(
+    return _then(_$ErrorFirstPageSearchStateImpl(
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -807,10 +808,10 @@ class __$$ErrorFirstPageSearchStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorFirstPageSearchState
+class _$ErrorFirstPageSearchStateImpl
     with DiagnosticableTreeMixin
     implements ErrorFirstPageSearchState {
-  const _$ErrorFirstPageSearchState(
+  const _$ErrorFirstPageSearchStateImpl(
       {required this.parameters, required this.exception});
 
   @override
@@ -833,10 +834,10 @@ class _$ErrorFirstPageSearchState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorFirstPageSearchState &&
+            other is _$ErrorFirstPageSearchStateImpl &&
             (identical(other.parameters, parameters) ||
                 other.parameters == parameters) &&
             (identical(other.exception, exception) ||
@@ -849,9 +850,9 @@ class _$ErrorFirstPageSearchState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorFirstPageSearchStateCopyWith<_$ErrorFirstPageSearchState>
-      get copyWith => __$$ErrorFirstPageSearchStateCopyWithImpl<
-          _$ErrorFirstPageSearchState>(this, _$identity);
+  _$$ErrorFirstPageSearchStateImplCopyWith<_$ErrorFirstPageSearchStateImpl>
+      get copyWith => __$$ErrorFirstPageSearchStateImplCopyWithImpl<
+          _$ErrorFirstPageSearchStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -963,23 +964,24 @@ class _$ErrorFirstPageSearchState
 abstract class ErrorFirstPageSearchState implements SearchState {
   const factory ErrorFirstPageSearchState(
       {required final SearchParameters parameters,
-      required final Exception exception}) = _$ErrorFirstPageSearchState;
+      required final Exception exception}) = _$ErrorFirstPageSearchStateImpl;
 
   @override
   SearchParameters get parameters;
   Exception get exception;
   @override
   @JsonKey(ignore: true)
-  _$$ErrorFirstPageSearchStateCopyWith<_$ErrorFirstPageSearchState>
+  _$$ErrorFirstPageSearchStateImplCopyWith<_$ErrorFirstPageSearchStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorWithDataSearchStateCopyWith<$Res>
+abstract class _$$ErrorWithDataSearchStateImplCopyWith<$Res>
     implements $SearchStateCopyWith<$Res> {
-  factory _$$ErrorWithDataSearchStateCopyWith(_$ErrorWithDataSearchState value,
-          $Res Function(_$ErrorWithDataSearchState) then) =
-      __$$ErrorWithDataSearchStateCopyWithImpl<$Res>;
+  factory _$$ErrorWithDataSearchStateImplCopyWith(
+          _$ErrorWithDataSearchStateImpl value,
+          $Res Function(_$ErrorWithDataSearchStateImpl) then) =
+      __$$ErrorWithDataSearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -992,11 +994,12 @@ abstract class _$$ErrorWithDataSearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ErrorWithDataSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$ErrorWithDataSearchState>
-    implements _$$ErrorWithDataSearchStateCopyWith<$Res> {
-  __$$ErrorWithDataSearchStateCopyWithImpl(_$ErrorWithDataSearchState _value,
-      $Res Function(_$ErrorWithDataSearchState) _then)
+class __$$ErrorWithDataSearchStateImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$ErrorWithDataSearchStateImpl>
+    implements _$$ErrorWithDataSearchStateImplCopyWith<$Res> {
+  __$$ErrorWithDataSearchStateImplCopyWithImpl(
+      _$ErrorWithDataSearchStateImpl _value,
+      $Res Function(_$ErrorWithDataSearchStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1006,7 +1009,7 @@ class __$$ErrorWithDataSearchStateCopyWithImpl<$Res>
     Object? data = null,
     Object? exception = null,
   }) {
-    return _then(_$ErrorWithDataSearchState(
+    return _then(_$ErrorWithDataSearchStateImpl(
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -1025,10 +1028,10 @@ class __$$ErrorWithDataSearchStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorWithDataSearchState
+class _$ErrorWithDataSearchStateImpl
     with DiagnosticableTreeMixin
     implements ErrorWithDataSearchState {
-  const _$ErrorWithDataSearchState(
+  const _$ErrorWithDataSearchStateImpl(
       {required this.parameters,
       required final List<Tournament> data,
       required this.exception})
@@ -1063,10 +1066,10 @@ class _$ErrorWithDataSearchState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorWithDataSearchState &&
+            other is _$ErrorWithDataSearchStateImpl &&
             (identical(other.parameters, parameters) ||
                 other.parameters == parameters) &&
             const DeepCollectionEquality().equals(other._data, _data) &&
@@ -1081,10 +1084,9 @@ class _$ErrorWithDataSearchState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorWithDataSearchStateCopyWith<_$ErrorWithDataSearchState>
-      get copyWith =>
-          __$$ErrorWithDataSearchStateCopyWithImpl<_$ErrorWithDataSearchState>(
-              this, _$identity);
+  _$$ErrorWithDataSearchStateImplCopyWith<_$ErrorWithDataSearchStateImpl>
+      get copyWith => __$$ErrorWithDataSearchStateImplCopyWithImpl<
+          _$ErrorWithDataSearchStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1197,7 +1199,7 @@ abstract class ErrorWithDataSearchState implements SearchState {
   const factory ErrorWithDataSearchState(
       {required final SearchParameters parameters,
       required final List<Tournament> data,
-      required final Exception exception}) = _$ErrorWithDataSearchState;
+      required final Exception exception}) = _$ErrorWithDataSearchStateImpl;
 
   @override
   SearchParameters get parameters;
@@ -1205,16 +1207,16 @@ abstract class ErrorWithDataSearchState implements SearchState {
   Exception get exception;
   @override
   @JsonKey(ignore: true)
-  _$$ErrorWithDataSearchStateCopyWith<_$ErrorWithDataSearchState>
+  _$$ErrorWithDataSearchStateImplCopyWith<_$ErrorWithDataSearchStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DataSearchStateCopyWith<$Res>
+abstract class _$$DataSearchStateImplCopyWith<$Res>
     implements $SearchStateCopyWith<$Res> {
-  factory _$$DataSearchStateCopyWith(
-          _$DataSearchState value, $Res Function(_$DataSearchState) then) =
-      __$$DataSearchStateCopyWithImpl<$Res>;
+  factory _$$DataSearchStateImplCopyWith(_$DataSearchStateImpl value,
+          $Res Function(_$DataSearchStateImpl) then) =
+      __$$DataSearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1225,11 +1227,11 @@ abstract class _$$DataSearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DataSearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$DataSearchState>
-    implements _$$DataSearchStateCopyWith<$Res> {
-  __$$DataSearchStateCopyWithImpl(
-      _$DataSearchState _value, $Res Function(_$DataSearchState) _then)
+class __$$DataSearchStateImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$DataSearchStateImpl>
+    implements _$$DataSearchStateImplCopyWith<$Res> {
+  __$$DataSearchStateImplCopyWithImpl(
+      _$DataSearchStateImpl _value, $Res Function(_$DataSearchStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1239,7 +1241,7 @@ class __$$DataSearchStateCopyWithImpl<$Res>
     Object? data = null,
     Object? canLoadMore = null,
   }) {
-    return _then(_$DataSearchState(
+    return _then(_$DataSearchStateImpl(
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -1258,10 +1260,10 @@ class __$$DataSearchStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataSearchState
+class _$DataSearchStateImpl
     with DiagnosticableTreeMixin
     implements DataSearchState {
-  const _$DataSearchState(
+  const _$DataSearchStateImpl(
       {required this.parameters,
       required final List<Tournament> data,
       required this.canLoadMore})
@@ -1296,10 +1298,10 @@ class _$DataSearchState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DataSearchState &&
+            other is _$DataSearchStateImpl &&
             (identical(other.parameters, parameters) ||
                 other.parameters == parameters) &&
             const DeepCollectionEquality().equals(other._data, _data) &&
@@ -1314,8 +1316,9 @@ class _$DataSearchState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DataSearchStateCopyWith<_$DataSearchState> get copyWith =>
-      __$$DataSearchStateCopyWithImpl<_$DataSearchState>(this, _$identity);
+  _$$DataSearchStateImplCopyWith<_$DataSearchStateImpl> get copyWith =>
+      __$$DataSearchStateImplCopyWithImpl<_$DataSearchStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1428,7 +1431,7 @@ abstract class DataSearchState implements SearchState {
   const factory DataSearchState(
       {required final SearchParameters parameters,
       required final List<Tournament> data,
-      required final bool canLoadMore}) = _$DataSearchState;
+      required final bool canLoadMore}) = _$DataSearchStateImpl;
 
   @override
   SearchParameters get parameters;
@@ -1436,6 +1439,6 @@ abstract class DataSearchState implements SearchState {
   bool get canLoadMore;
   @override
   @JsonKey(ignore: true)
-  _$$DataSearchStateCopyWith<_$DataSearchState> get copyWith =>
+  _$$DataSearchStateImplCopyWith<_$DataSearchStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

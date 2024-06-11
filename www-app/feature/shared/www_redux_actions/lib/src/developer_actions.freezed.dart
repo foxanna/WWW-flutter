@@ -12,7 +12,7 @@ part of 'developer_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionDeveloper {
@@ -76,20 +76,23 @@ class _$UserActionDeveloperCopyWithImpl<$Res, $Val extends UserActionDeveloper>
 }
 
 /// @nodoc
-abstract class _$$EmailDeveloperUserActionCopyWith<$Res> {
-  factory _$$EmailDeveloperUserActionCopyWith(_$EmailDeveloperUserAction value,
-          $Res Function(_$EmailDeveloperUserAction) then) =
-      __$$EmailDeveloperUserActionCopyWithImpl<$Res>;
+abstract class _$$EmailDeveloperUserActionImplCopyWith<$Res> {
+  factory _$$EmailDeveloperUserActionImplCopyWith(
+          _$EmailDeveloperUserActionImpl value,
+          $Res Function(_$EmailDeveloperUserActionImpl) then) =
+      __$$EmailDeveloperUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Translations translations});
 }
 
 /// @nodoc
-class __$$EmailDeveloperUserActionCopyWithImpl<$Res>
-    extends _$UserActionDeveloperCopyWithImpl<$Res, _$EmailDeveloperUserAction>
-    implements _$$EmailDeveloperUserActionCopyWith<$Res> {
-  __$$EmailDeveloperUserActionCopyWithImpl(_$EmailDeveloperUserAction _value,
-      $Res Function(_$EmailDeveloperUserAction) _then)
+class __$$EmailDeveloperUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionDeveloperCopyWithImpl<$Res,
+        _$EmailDeveloperUserActionImpl>
+    implements _$$EmailDeveloperUserActionImplCopyWith<$Res> {
+  __$$EmailDeveloperUserActionImplCopyWithImpl(
+      _$EmailDeveloperUserActionImpl _value,
+      $Res Function(_$EmailDeveloperUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +100,7 @@ class __$$EmailDeveloperUserActionCopyWithImpl<$Res>
   $Res call({
     Object? translations = null,
   }) {
-    return _then(_$EmailDeveloperUserAction(
+    return _then(_$EmailDeveloperUserActionImpl(
       translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
@@ -108,10 +111,10 @@ class __$$EmailDeveloperUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmailDeveloperUserAction
+class _$EmailDeveloperUserActionImpl
     with DiagnosticableTreeMixin
     implements EmailDeveloperUserAction {
-  const _$EmailDeveloperUserAction({required this.translations});
+  const _$EmailDeveloperUserActionImpl({required this.translations});
 
   @override
   final Translations translations;
@@ -130,10 +133,10 @@ class _$EmailDeveloperUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EmailDeveloperUserAction &&
+            other is _$EmailDeveloperUserActionImpl &&
             (identical(other.translations, translations) ||
                 other.translations == translations));
   }
@@ -144,10 +147,9 @@ class _$EmailDeveloperUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EmailDeveloperUserActionCopyWith<_$EmailDeveloperUserAction>
-      get copyWith =>
-          __$$EmailDeveloperUserActionCopyWithImpl<_$EmailDeveloperUserAction>(
-              this, _$identity);
+  _$$EmailDeveloperUserActionImplCopyWith<_$EmailDeveloperUserActionImpl>
+      get copyWith => __$$EmailDeveloperUserActionImplCopyWithImpl<
+          _$EmailDeveloperUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -215,39 +217,40 @@ class _$EmailDeveloperUserAction
 
 abstract class EmailDeveloperUserAction implements UserActionDeveloper {
   const factory EmailDeveloperUserAction(
-      {required final Translations translations}) = _$EmailDeveloperUserAction;
+          {required final Translations translations}) =
+      _$EmailDeveloperUserActionImpl;
 
   Translations get translations;
   @JsonKey(ignore: true)
-  _$$EmailDeveloperUserActionCopyWith<_$EmailDeveloperUserAction>
+  _$$EmailDeveloperUserActionImplCopyWith<_$EmailDeveloperUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$VisitWebsiteDeveloperUserActionCopyWith<$Res> {
-  factory _$$VisitWebsiteDeveloperUserActionCopyWith(
-          _$VisitWebsiteDeveloperUserAction value,
-          $Res Function(_$VisitWebsiteDeveloperUserAction) then) =
-      __$$VisitWebsiteDeveloperUserActionCopyWithImpl<$Res>;
+abstract class _$$VisitWebsiteDeveloperUserActionImplCopyWith<$Res> {
+  factory _$$VisitWebsiteDeveloperUserActionImplCopyWith(
+          _$VisitWebsiteDeveloperUserActionImpl value,
+          $Res Function(_$VisitWebsiteDeveloperUserActionImpl) then) =
+      __$$VisitWebsiteDeveloperUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$VisitWebsiteDeveloperUserActionCopyWithImpl<$Res>
+class __$$VisitWebsiteDeveloperUserActionImplCopyWithImpl<$Res>
     extends _$UserActionDeveloperCopyWithImpl<$Res,
-        _$VisitWebsiteDeveloperUserAction>
-    implements _$$VisitWebsiteDeveloperUserActionCopyWith<$Res> {
-  __$$VisitWebsiteDeveloperUserActionCopyWithImpl(
-      _$VisitWebsiteDeveloperUserAction _value,
-      $Res Function(_$VisitWebsiteDeveloperUserAction) _then)
+        _$VisitWebsiteDeveloperUserActionImpl>
+    implements _$$VisitWebsiteDeveloperUserActionImplCopyWith<$Res> {
+  __$$VisitWebsiteDeveloperUserActionImplCopyWithImpl(
+      _$VisitWebsiteDeveloperUserActionImpl _value,
+      $Res Function(_$VisitWebsiteDeveloperUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$VisitWebsiteDeveloperUserAction
+class _$VisitWebsiteDeveloperUserActionImpl
     with DiagnosticableTreeMixin
     implements VisitWebsiteDeveloperUserAction {
-  const _$VisitWebsiteDeveloperUserAction();
+  const _$VisitWebsiteDeveloperUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -262,10 +265,10 @@ class _$VisitWebsiteDeveloperUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$VisitWebsiteDeveloperUserAction);
+            other is _$VisitWebsiteDeveloperUserActionImpl);
   }
 
   @override
@@ -337,5 +340,5 @@ class _$VisitWebsiteDeveloperUserAction
 
 abstract class VisitWebsiteDeveloperUserAction implements UserActionDeveloper {
   const factory VisitWebsiteDeveloperUserAction() =
-      _$VisitWebsiteDeveloperUserAction;
+      _$VisitWebsiteDeveloperUserActionImpl;
 }

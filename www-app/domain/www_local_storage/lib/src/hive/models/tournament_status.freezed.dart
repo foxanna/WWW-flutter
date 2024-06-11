@@ -12,7 +12,7 @@ part of 'tournament_status.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TournamentStatusHiveModel {
@@ -69,12 +69,12 @@ class _$TournamentStatusHiveModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_TournamentStatusHiveModelCopyWith<$Res>
+abstract class _$$TournamentStatusHiveModelImplCopyWith<$Res>
     implements $TournamentStatusHiveModelCopyWith<$Res> {
-  factory _$$_TournamentStatusHiveModelCopyWith(
-          _$_TournamentStatusHiveModel value,
-          $Res Function(_$_TournamentStatusHiveModel) then) =
-      __$$_TournamentStatusHiveModelCopyWithImpl<$Res>;
+  factory _$$TournamentStatusHiveModelImplCopyWith(
+          _$TournamentStatusHiveModelImpl value,
+          $Res Function(_$TournamentStatusHiveModelImpl) then) =
+      __$$TournamentStatusHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -84,13 +84,13 @@ abstract class _$$_TournamentStatusHiveModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TournamentStatusHiveModelCopyWithImpl<$Res>
+class __$$TournamentStatusHiveModelImplCopyWithImpl<$Res>
     extends _$TournamentStatusHiveModelCopyWithImpl<$Res,
-        _$_TournamentStatusHiveModel>
-    implements _$$_TournamentStatusHiveModelCopyWith<$Res> {
-  __$$_TournamentStatusHiveModelCopyWithImpl(
-      _$_TournamentStatusHiveModel _value,
-      $Res Function(_$_TournamentStatusHiveModel) _then)
+        _$TournamentStatusHiveModelImpl>
+    implements _$$TournamentStatusHiveModelImplCopyWith<$Res> {
+  __$$TournamentStatusHiveModelImplCopyWithImpl(
+      _$TournamentStatusHiveModelImpl _value,
+      $Res Function(_$TournamentStatusHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_TournamentStatusHiveModelCopyWithImpl<$Res>
     Object? isNew = freezed,
     Object? isBookmarked = freezed,
   }) {
-    return _then(_$_TournamentStatusHiveModel(
+    return _then(_$TournamentStatusHiveModelImpl(
       isNew: freezed == isNew
           ? _value.isNew
           : isNew // ignore: cast_nullable_to_non_nullable
@@ -115,8 +115,8 @@ class __$$_TournamentStatusHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveTournamentStatusTypeId)
-class _$_TournamentStatusHiveModel implements _TournamentStatusHiveModel {
-  const _$_TournamentStatusHiveModel(
+class _$TournamentStatusHiveModelImpl implements _TournamentStatusHiveModel {
+  const _$TournamentStatusHiveModelImpl(
       {@HiveField(TournamentStatusInfoHiveFieldsIds.isNew) this.isNew,
       @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
       this.isBookmarked});
@@ -134,10 +134,10 @@ class _$_TournamentStatusHiveModel implements _TournamentStatusHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TournamentStatusHiveModel &&
+            other is _$TournamentStatusHiveModelImpl &&
             (identical(other.isNew, isNew) || other.isNew == isNew) &&
             (identical(other.isBookmarked, isBookmarked) ||
                 other.isBookmarked == isBookmarked));
@@ -149,16 +149,16 @@ class _$_TournamentStatusHiveModel implements _TournamentStatusHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TournamentStatusHiveModelCopyWith<_$_TournamentStatusHiveModel>
-      get copyWith => __$$_TournamentStatusHiveModelCopyWithImpl<
-          _$_TournamentStatusHiveModel>(this, _$identity);
+  _$$TournamentStatusHiveModelImplCopyWith<_$TournamentStatusHiveModelImpl>
+      get copyWith => __$$TournamentStatusHiveModelImplCopyWithImpl<
+          _$TournamentStatusHiveModelImpl>(this, _$identity);
 }
 
 abstract class _TournamentStatusHiveModel implements TournamentStatusHiveModel {
   const factory _TournamentStatusHiveModel(
       {@HiveField(TournamentStatusInfoHiveFieldsIds.isNew) final bool? isNew,
       @HiveField(TournamentStatusInfoHiveFieldsIds.isBookmarked)
-      final bool? isBookmarked}) = _$_TournamentStatusHiveModel;
+      final bool? isBookmarked}) = _$TournamentStatusHiveModelImpl;
 
   @override
   @HiveField(TournamentStatusInfoHiveFieldsIds.isNew)
@@ -168,6 +168,6 @@ abstract class _TournamentStatusHiveModel implements TournamentStatusHiveModel {
   bool? get isBookmarked;
   @override
   @JsonKey(ignore: true)
-  _$$_TournamentStatusHiveModelCopyWith<_$_TournamentStatusHiveModel>
+  _$$TournamentStatusHiveModelImplCopyWith<_$TournamentStatusHiveModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

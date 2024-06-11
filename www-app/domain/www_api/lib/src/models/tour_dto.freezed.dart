@@ -12,7 +12,7 @@ part of 'tour_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TourDto _$TourDtoFromJson(Map<String, dynamic> json) {
   return _TourDto.fromJson(json);
@@ -145,10 +145,10 @@ class _$TourDtoCopyWithImpl<$Res, $Val extends TourDto>
 }
 
 /// @nodoc
-abstract class _$$_TourDtoCopyWith<$Res> implements $TourDtoCopyWith<$Res> {
-  factory _$$_TourDtoCopyWith(
-          _$_TourDto value, $Res Function(_$_TourDto) then) =
-      __$$_TourDtoCopyWithImpl<$Res>;
+abstract class _$$TourDtoImplCopyWith<$Res> implements $TourDtoCopyWith<$Res> {
+  factory _$$TourDtoImplCopyWith(
+          _$TourDtoImpl value, $Res Function(_$TourDtoImpl) then) =
+      __$$TourDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -168,10 +168,11 @@ abstract class _$$_TourDtoCopyWith<$Res> implements $TourDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TourDtoCopyWithImpl<$Res>
-    extends _$TourDtoCopyWithImpl<$Res, _$_TourDto>
-    implements _$$_TourDtoCopyWith<$Res> {
-  __$$_TourDtoCopyWithImpl(_$_TourDto _value, $Res Function(_$_TourDto) _then)
+class __$$TourDtoImplCopyWithImpl<$Res>
+    extends _$TourDtoCopyWithImpl<$Res, _$TourDtoImpl>
+    implements _$$TourDtoImplCopyWith<$Res> {
+  __$$TourDtoImplCopyWithImpl(
+      _$TourDtoImpl _value, $Res Function(_$TourDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -189,7 +190,7 @@ class __$$_TourDtoCopyWithImpl<$Res>
     Object? playedAt = freezed,
     Object? questions = freezed,
   }) {
-    return _then(_$_TourDto(
+    return _then(_$TourDtoImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -240,8 +241,8 @@ class __$$_TourDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TourDto implements _TourDto {
-  const _$_TourDto(
+class _$TourDtoImpl implements _TourDto {
+  const _$TourDtoImpl(
       {@JsonKey(name: 'Id') this.id,
       @JsonKey(name: 'ParentId') this.parentId,
       @JsonKey(name: 'Title') this.title,
@@ -257,8 +258,8 @@ class _$_TourDto implements _TourDto {
       final List<QuestionDto>? questions})
       : _questions = questions;
 
-  factory _$_TourDto.fromJson(Map<String, dynamic> json) =>
-      _$$_TourDtoFromJson(json);
+  factory _$TourDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TourDtoImplFromJson(json);
 
   @override
   @JsonKey(name: 'Id')
@@ -308,10 +309,10 @@ class _$_TourDto implements _TourDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TourDto &&
+            other is _$TourDtoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.parentId, parentId) ||
                 other.parentId == parentId) &&
@@ -351,12 +352,12 @@ class _$_TourDto implements _TourDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TourDtoCopyWith<_$_TourDto> get copyWith =>
-      __$$_TourDtoCopyWithImpl<_$_TourDto>(this, _$identity);
+  _$$TourDtoImplCopyWith<_$TourDtoImpl> get copyWith =>
+      __$$TourDtoImplCopyWithImpl<_$TourDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TourDtoToJson(
+    return _$$TourDtoImplToJson(
       this,
     );
   }
@@ -376,9 +377,9 @@ abstract class _TourDto implements TourDto {
       @JsonKey(name: 'PlayedAt') final String? playedAt,
       @JsonKey(name: 'question')
       @QuestionsListConverter()
-      final List<QuestionDto>? questions}) = _$_TourDto;
+      final List<QuestionDto>? questions}) = _$TourDtoImpl;
 
-  factory _TourDto.fromJson(Map<String, dynamic> json) = _$_TourDto.fromJson;
+  factory _TourDto.fromJson(Map<String, dynamic> json) = _$TourDtoImpl.fromJson;
 
   @override
   @JsonKey(name: 'Id')
@@ -416,6 +417,6 @@ abstract class _TourDto implements TourDto {
   List<QuestionDto>? get questions;
   @override
   @JsonKey(ignore: true)
-  _$$_TourDtoCopyWith<_$_TourDto> get copyWith =>
+  _$$TourDtoImplCopyWith<_$TourDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

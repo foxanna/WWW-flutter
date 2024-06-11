@@ -12,7 +12,7 @@ part of 'sharing_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionSharing {
@@ -111,12 +111,12 @@ class _$UserActionSharingCopyWithImpl<$Res, $Val extends UserActionSharing>
 }
 
 /// @nodoc
-abstract class _$$QuestionSharingUserActionCopyWith<$Res>
+abstract class _$$QuestionSharingUserActionImplCopyWith<$Res>
     implements $UserActionSharingCopyWith<$Res> {
-  factory _$$QuestionSharingUserActionCopyWith(
-          _$QuestionSharingUserAction value,
-          $Res Function(_$QuestionSharingUserAction) then) =
-      __$$QuestionSharingUserActionCopyWithImpl<$Res>;
+  factory _$$QuestionSharingUserActionImplCopyWith(
+          _$QuestionSharingUserActionImpl value,
+          $Res Function(_$QuestionSharingUserActionImpl) then) =
+      __$$QuestionSharingUserActionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -126,11 +126,13 @@ abstract class _$$QuestionSharingUserActionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$QuestionSharingUserActionCopyWithImpl<$Res>
-    extends _$UserActionSharingCopyWithImpl<$Res, _$QuestionSharingUserAction>
-    implements _$$QuestionSharingUserActionCopyWith<$Res> {
-  __$$QuestionSharingUserActionCopyWithImpl(_$QuestionSharingUserAction _value,
-      $Res Function(_$QuestionSharingUserAction) _then)
+class __$$QuestionSharingUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionSharingCopyWithImpl<$Res,
+        _$QuestionSharingUserActionImpl>
+    implements _$$QuestionSharingUserActionImplCopyWith<$Res> {
+  __$$QuestionSharingUserActionImplCopyWithImpl(
+      _$QuestionSharingUserActionImpl _value,
+      $Res Function(_$QuestionSharingUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -140,7 +142,7 @@ class __$$QuestionSharingUserActionCopyWithImpl<$Res>
     Object? info = null,
     Object? questionText = freezed,
   }) {
-    return _then(_$QuestionSharingUserAction(
+    return _then(_$QuestionSharingUserActionImpl(
       translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
@@ -167,10 +169,10 @@ class __$$QuestionSharingUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$QuestionSharingUserAction
+class _$QuestionSharingUserActionImpl
     with DiagnosticableTreeMixin
     implements QuestionSharingUserAction {
-  const _$QuestionSharingUserAction(
+  const _$QuestionSharingUserActionImpl(
       {required this.translations, required this.info, this.questionText});
 
   @override
@@ -196,10 +198,10 @@ class _$QuestionSharingUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QuestionSharingUserAction &&
+            other is _$QuestionSharingUserActionImpl &&
             (identical(other.translations, translations) ||
                 other.translations == translations) &&
             (identical(other.info, info) || other.info == info) &&
@@ -214,9 +216,9 @@ class _$QuestionSharingUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$QuestionSharingUserActionCopyWith<_$QuestionSharingUserAction>
-      get copyWith => __$$QuestionSharingUserActionCopyWithImpl<
-          _$QuestionSharingUserAction>(this, _$identity);
+  _$$QuestionSharingUserActionImplCopyWith<_$QuestionSharingUserActionImpl>
+      get copyWith => __$$QuestionSharingUserActionImplCopyWithImpl<
+          _$QuestionSharingUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -300,7 +302,7 @@ abstract class QuestionSharingUserAction implements UserActionSharing {
   const factory QuestionSharingUserAction(
       {required final Translations translations,
       required final QuestionInfo info,
-      final String? questionText}) = _$QuestionSharingUserAction;
+      final String? questionText}) = _$QuestionSharingUserActionImpl;
 
   @override
   Translations get translations;
@@ -309,16 +311,17 @@ abstract class QuestionSharingUserAction implements UserActionSharing {
   String? get questionText;
   @override
   @JsonKey(ignore: true)
-  _$$QuestionSharingUserActionCopyWith<_$QuestionSharingUserAction>
+  _$$QuestionSharingUserActionImplCopyWith<_$QuestionSharingUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TourSharingUserActionCopyWith<$Res>
+abstract class _$$TourSharingUserActionImplCopyWith<$Res>
     implements $UserActionSharingCopyWith<$Res> {
-  factory _$$TourSharingUserActionCopyWith(_$TourSharingUserAction value,
-          $Res Function(_$TourSharingUserAction) then) =
-      __$$TourSharingUserActionCopyWithImpl<$Res>;
+  factory _$$TourSharingUserActionImplCopyWith(
+          _$TourSharingUserActionImpl value,
+          $Res Function(_$TourSharingUserActionImpl) then) =
+      __$$TourSharingUserActionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Translations translations, TourInfo info});
@@ -327,11 +330,11 @@ abstract class _$$TourSharingUserActionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TourSharingUserActionCopyWithImpl<$Res>
-    extends _$UserActionSharingCopyWithImpl<$Res, _$TourSharingUserAction>
-    implements _$$TourSharingUserActionCopyWith<$Res> {
-  __$$TourSharingUserActionCopyWithImpl(_$TourSharingUserAction _value,
-      $Res Function(_$TourSharingUserAction) _then)
+class __$$TourSharingUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionSharingCopyWithImpl<$Res, _$TourSharingUserActionImpl>
+    implements _$$TourSharingUserActionImplCopyWith<$Res> {
+  __$$TourSharingUserActionImplCopyWithImpl(_$TourSharingUserActionImpl _value,
+      $Res Function(_$TourSharingUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -340,7 +343,7 @@ class __$$TourSharingUserActionCopyWithImpl<$Res>
     Object? translations = null,
     Object? info = null,
   }) {
-    return _then(_$TourSharingUserAction(
+    return _then(_$TourSharingUserActionImpl(
       translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
@@ -363,10 +366,10 @@ class __$$TourSharingUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TourSharingUserAction
+class _$TourSharingUserActionImpl
     with DiagnosticableTreeMixin
     implements TourSharingUserAction {
-  const _$TourSharingUserAction(
+  const _$TourSharingUserActionImpl(
       {required this.translations, required this.info});
 
   @override
@@ -389,10 +392,10 @@ class _$TourSharingUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TourSharingUserAction &&
+            other is _$TourSharingUserActionImpl &&
             (identical(other.translations, translations) ||
                 other.translations == translations) &&
             (identical(other.info, info) || other.info == info));
@@ -404,9 +407,9 @@ class _$TourSharingUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TourSharingUserActionCopyWith<_$TourSharingUserAction> get copyWith =>
-      __$$TourSharingUserActionCopyWithImpl<_$TourSharingUserAction>(
-          this, _$identity);
+  _$$TourSharingUserActionImplCopyWith<_$TourSharingUserActionImpl>
+      get copyWith => __$$TourSharingUserActionImplCopyWithImpl<
+          _$TourSharingUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -489,7 +492,7 @@ class _$TourSharingUserAction
 abstract class TourSharingUserAction implements UserActionSharing {
   const factory TourSharingUserAction(
       {required final Translations translations,
-      required final TourInfo info}) = _$TourSharingUserAction;
+      required final TourInfo info}) = _$TourSharingUserActionImpl;
 
   @override
   Translations get translations;
@@ -497,17 +500,17 @@ abstract class TourSharingUserAction implements UserActionSharing {
   TourInfo get info;
   @override
   @JsonKey(ignore: true)
-  _$$TourSharingUserActionCopyWith<_$TourSharingUserAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TourSharingUserActionImplCopyWith<_$TourSharingUserActionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TournamentSharingUserActionCopyWith<$Res>
+abstract class _$$TournamentSharingUserActionImplCopyWith<$Res>
     implements $UserActionSharingCopyWith<$Res> {
-  factory _$$TournamentSharingUserActionCopyWith(
-          _$TournamentSharingUserAction value,
-          $Res Function(_$TournamentSharingUserAction) then) =
-      __$$TournamentSharingUserActionCopyWithImpl<$Res>;
+  factory _$$TournamentSharingUserActionImplCopyWith(
+          _$TournamentSharingUserActionImpl value,
+          $Res Function(_$TournamentSharingUserActionImpl) then) =
+      __$$TournamentSharingUserActionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Translations translations, TournamentInfo info});
@@ -516,12 +519,13 @@ abstract class _$$TournamentSharingUserActionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TournamentSharingUserActionCopyWithImpl<$Res>
-    extends _$UserActionSharingCopyWithImpl<$Res, _$TournamentSharingUserAction>
-    implements _$$TournamentSharingUserActionCopyWith<$Res> {
-  __$$TournamentSharingUserActionCopyWithImpl(
-      _$TournamentSharingUserAction _value,
-      $Res Function(_$TournamentSharingUserAction) _then)
+class __$$TournamentSharingUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionSharingCopyWithImpl<$Res,
+        _$TournamentSharingUserActionImpl>
+    implements _$$TournamentSharingUserActionImplCopyWith<$Res> {
+  __$$TournamentSharingUserActionImplCopyWithImpl(
+      _$TournamentSharingUserActionImpl _value,
+      $Res Function(_$TournamentSharingUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -530,7 +534,7 @@ class __$$TournamentSharingUserActionCopyWithImpl<$Res>
     Object? translations = null,
     Object? info = null,
   }) {
-    return _then(_$TournamentSharingUserAction(
+    return _then(_$TournamentSharingUserActionImpl(
       translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
@@ -553,10 +557,10 @@ class __$$TournamentSharingUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TournamentSharingUserAction
+class _$TournamentSharingUserActionImpl
     with DiagnosticableTreeMixin
     implements TournamentSharingUserAction {
-  const _$TournamentSharingUserAction(
+  const _$TournamentSharingUserActionImpl(
       {required this.translations, required this.info});
 
   @override
@@ -579,10 +583,10 @@ class _$TournamentSharingUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TournamentSharingUserAction &&
+            other is _$TournamentSharingUserActionImpl &&
             (identical(other.translations, translations) ||
                 other.translations == translations) &&
             (identical(other.info, info) || other.info == info));
@@ -594,9 +598,9 @@ class _$TournamentSharingUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TournamentSharingUserActionCopyWith<_$TournamentSharingUserAction>
-      get copyWith => __$$TournamentSharingUserActionCopyWithImpl<
-          _$TournamentSharingUserAction>(this, _$identity);
+  _$$TournamentSharingUserActionImplCopyWith<_$TournamentSharingUserActionImpl>
+      get copyWith => __$$TournamentSharingUserActionImplCopyWithImpl<
+          _$TournamentSharingUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -679,7 +683,7 @@ class _$TournamentSharingUserAction
 abstract class TournamentSharingUserAction implements UserActionSharing {
   const factory TournamentSharingUserAction(
       {required final Translations translations,
-      required final TournamentInfo info}) = _$TournamentSharingUserAction;
+      required final TournamentInfo info}) = _$TournamentSharingUserActionImpl;
 
   @override
   Translations get translations;
@@ -687,6 +691,6 @@ abstract class TournamentSharingUserAction implements UserActionSharing {
   TournamentInfo get info;
   @override
   @JsonKey(ignore: true)
-  _$$TournamentSharingUserActionCopyWith<_$TournamentSharingUserAction>
+  _$$TournamentSharingUserActionImplCopyWith<_$TournamentSharingUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

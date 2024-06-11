@@ -12,7 +12,7 @@ part of 'question.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$QuestionHiveModel {
@@ -145,11 +145,11 @@ class _$QuestionHiveModelCopyWithImpl<$Res, $Val extends QuestionHiveModel>
 }
 
 /// @nodoc
-abstract class _$$_QuestionHiveModelCopyWith<$Res>
+abstract class _$$QuestionHiveModelImplCopyWith<$Res>
     implements $QuestionHiveModelCopyWith<$Res> {
-  factory _$$_QuestionHiveModelCopyWith(_$_QuestionHiveModel value,
-          $Res Function(_$_QuestionHiveModel) then) =
-      __$$_QuestionHiveModelCopyWithImpl<$Res>;
+  factory _$$QuestionHiveModelImplCopyWith(_$QuestionHiveModelImpl value,
+          $Res Function(_$QuestionHiveModelImpl) then) =
+      __$$QuestionHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -172,11 +172,11 @@ abstract class _$$_QuestionHiveModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QuestionHiveModelCopyWithImpl<$Res>
-    extends _$QuestionHiveModelCopyWithImpl<$Res, _$_QuestionHiveModel>
-    implements _$$_QuestionHiveModelCopyWith<$Res> {
-  __$$_QuestionHiveModelCopyWithImpl(
-      _$_QuestionHiveModel _value, $Res Function(_$_QuestionHiveModel) _then)
+class __$$QuestionHiveModelImplCopyWithImpl<$Res>
+    extends _$QuestionHiveModelCopyWithImpl<$Res, _$QuestionHiveModelImpl>
+    implements _$$QuestionHiveModelImplCopyWith<$Res> {
+  __$$QuestionHiveModelImplCopyWithImpl(_$QuestionHiveModelImpl _value,
+      $Res Function(_$QuestionHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -192,7 +192,7 @@ class __$$_QuestionHiveModelCopyWithImpl<$Res>
     Object? sources = freezed,
     Object? info = freezed,
   }) {
-    return _then(_$_QuestionHiveModel(
+    return _then(_$QuestionHiveModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -236,8 +236,8 @@ class __$$_QuestionHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveQuestionTypeId)
-class _$_QuestionHiveModel implements _QuestionHiveModel {
-  const _$_QuestionHiveModel(
+class _$QuestionHiveModelImpl implements _QuestionHiveModel {
+  const _$QuestionHiveModelImpl(
       {@HiveField(QuestionHiveFieldsIds.id) this.id,
       @HiveField(QuestionHiveFieldsIds.display) this.display,
       @HiveField(QuestionHiveFieldsIds.question)
@@ -322,10 +322,10 @@ class _$_QuestionHiveModel implements _QuestionHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuestionHiveModel &&
+            other is _$QuestionHiveModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.display, display) || other.display == display) &&
             const DeepCollectionEquality().equals(other._question, _question) &&
@@ -354,8 +354,8 @@ class _$_QuestionHiveModel implements _QuestionHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuestionHiveModelCopyWith<_$_QuestionHiveModel> get copyWith =>
-      __$$_QuestionHiveModelCopyWithImpl<_$_QuestionHiveModel>(
+  _$$QuestionHiveModelImplCopyWith<_$QuestionHiveModelImpl> get copyWith =>
+      __$$QuestionHiveModelImplCopyWithImpl<_$QuestionHiveModelImpl>(
           this, _$identity);
 }
 
@@ -374,7 +374,7 @@ abstract class _QuestionHiveModel implements QuestionHiveModel {
       @HiveField(QuestionHiveFieldsIds.authors) final String? authors,
       @HiveField(QuestionHiveFieldsIds.sources) final String? sources,
       @HiveField(QuestionHiveFieldsIds.info)
-      final QuestionInfoHiveModel? info}) = _$_QuestionHiveModel;
+      final QuestionInfoHiveModel? info}) = _$QuestionHiveModelImpl;
 
   @override
   @HiveField(QuestionHiveFieldsIds.id)
@@ -405,6 +405,6 @@ abstract class _QuestionHiveModel implements QuestionHiveModel {
   QuestionInfoHiveModel? get info;
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionHiveModelCopyWith<_$_QuestionHiveModel> get copyWith =>
+  _$$QuestionHiveModelImplCopyWith<_$QuestionHiveModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

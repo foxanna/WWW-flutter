@@ -4,8 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_lambdas
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: type=lint
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
@@ -18,7 +17,7 @@ import 'package:www_http/src/dio/dio_logger.dart' as _i5;
 import 'package:www_http/src/service/http_client.dart' as _i4;
 
 extension GetItInjectableX on _i1.GetIt {
-  // initializes the registration of main-scope dependencies inside of GetIt
+// initializes the registration of main-scope dependencies inside of GetIt
   _i1.GetIt init({
     String? environment,
     _i2.EnvironmentFilter? environmentFilter,
@@ -30,27 +29,27 @@ extension GetItInjectableX on _i1.GetIt {
     );
     final dioConfigInjectableModule = _$DioConfigInjectableModule();
     gh.lazySingleton<_i3.Dio>(() => dioConfigInjectableModule.dio);
-    gh.factory<Duration>(
-      () => dioConfigInjectableModule.connectTimeout,
-      instanceName: 'connectTimeout',
+    gh.factory<bool>(
+      () => dioConfigInjectableModule.logHttpCommunication,
+      instanceName: 'logHttpCommunication',
     );
     gh.factory<Duration>(
       () => dioConfigInjectableModule.receiveTimeout,
       instanceName: 'receiveTimeout',
     );
-    gh.lazySingleton<_i4.IHttpClient>(() => _i4.HttpClient(dio: gh<_i3.Dio>()));
     gh.factory<String>(
       () => dioConfigInjectableModule.baseUrl,
       instanceName: 'baseUrl',
     );
-    gh.factory<bool>(
-      () => dioConfigInjectableModule.logHttpCommunication,
-      instanceName: 'logHttpCommunication',
+    gh.factory<Duration>(
+      () => dioConfigInjectableModule.connectTimeout,
+      instanceName: 'connectTimeout',
     );
     gh.factory<bool>(
       () => dioConfigInjectableModule.logHttpResponseContent,
       instanceName: 'logHttpResponseContent',
     );
+    gh.lazySingleton<_i4.IHttpClient>(() => _i4.HttpClient(dio: gh<_i3.Dio>()));
     gh.factory<_i5.DioLogger>(() => _i5.DioLogger(
         logHttpResponseContent:
             gh<bool>(instanceName: 'logHttpResponseContent')));

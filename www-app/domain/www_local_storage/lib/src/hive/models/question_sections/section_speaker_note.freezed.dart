@@ -12,7 +12,7 @@ part of 'section_speaker_note.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SpeakerNoteSectionHiveModel {
@@ -61,25 +61,25 @@ class _$SpeakerNoteSectionHiveModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SpeakerNoteSectionHiveModelCopyWith<$Res>
+abstract class _$$SpeakerNoteSectionHiveModelImplCopyWith<$Res>
     implements $SpeakerNoteSectionHiveModelCopyWith<$Res> {
-  factory _$$_SpeakerNoteSectionHiveModelCopyWith(
-          _$_SpeakerNoteSectionHiveModel value,
-          $Res Function(_$_SpeakerNoteSectionHiveModel) then) =
-      __$$_SpeakerNoteSectionHiveModelCopyWithImpl<$Res>;
+  factory _$$SpeakerNoteSectionHiveModelImplCopyWith(
+          _$SpeakerNoteSectionHiveModelImpl value,
+          $Res Function(_$SpeakerNoteSectionHiveModelImpl) then) =
+      __$$SpeakerNoteSectionHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@HiveField(SpeakerNoteSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
-class __$$_SpeakerNoteSectionHiveModelCopyWithImpl<$Res>
+class __$$SpeakerNoteSectionHiveModelImplCopyWithImpl<$Res>
     extends _$SpeakerNoteSectionHiveModelCopyWithImpl<$Res,
-        _$_SpeakerNoteSectionHiveModel>
-    implements _$$_SpeakerNoteSectionHiveModelCopyWith<$Res> {
-  __$$_SpeakerNoteSectionHiveModelCopyWithImpl(
-      _$_SpeakerNoteSectionHiveModel _value,
-      $Res Function(_$_SpeakerNoteSectionHiveModel) _then)
+        _$SpeakerNoteSectionHiveModelImpl>
+    implements _$$SpeakerNoteSectionHiveModelImplCopyWith<$Res> {
+  __$$SpeakerNoteSectionHiveModelImplCopyWithImpl(
+      _$SpeakerNoteSectionHiveModelImpl _value,
+      $Res Function(_$SpeakerNoteSectionHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_SpeakerNoteSectionHiveModelCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$_SpeakerNoteSectionHiveModel(
+    return _then(_$SpeakerNoteSectionHiveModelImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -99,8 +99,9 @@ class __$$_SpeakerNoteSectionHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveSpeakerNoteSectionTypeId)
-class _$_SpeakerNoteSectionHiveModel implements _SpeakerNoteSectionHiveModel {
-  const _$_SpeakerNoteSectionHiveModel(
+class _$SpeakerNoteSectionHiveModelImpl
+    implements _SpeakerNoteSectionHiveModel {
+  const _$SpeakerNoteSectionHiveModelImpl(
       {@HiveField(SpeakerNoteSectionHiveFieldsIds.value) required this.value});
 
   @override
@@ -113,10 +114,10 @@ class _$_SpeakerNoteSectionHiveModel implements _SpeakerNoteSectionHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SpeakerNoteSectionHiveModel &&
+            other is _$SpeakerNoteSectionHiveModelImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -126,22 +127,22 @@ class _$_SpeakerNoteSectionHiveModel implements _SpeakerNoteSectionHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SpeakerNoteSectionHiveModelCopyWith<_$_SpeakerNoteSectionHiveModel>
-      get copyWith => __$$_SpeakerNoteSectionHiveModelCopyWithImpl<
-          _$_SpeakerNoteSectionHiveModel>(this, _$identity);
+  _$$SpeakerNoteSectionHiveModelImplCopyWith<_$SpeakerNoteSectionHiveModelImpl>
+      get copyWith => __$$SpeakerNoteSectionHiveModelImplCopyWithImpl<
+          _$SpeakerNoteSectionHiveModelImpl>(this, _$identity);
 }
 
 abstract class _SpeakerNoteSectionHiveModel
     implements SpeakerNoteSectionHiveModel {
   const factory _SpeakerNoteSectionHiveModel(
       {@HiveField(SpeakerNoteSectionHiveFieldsIds.value)
-      required final String value}) = _$_SpeakerNoteSectionHiveModel;
+      required final String value}) = _$SpeakerNoteSectionHiveModelImpl;
 
   @override
   @HiveField(SpeakerNoteSectionHiveFieldsIds.value)
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$_SpeakerNoteSectionHiveModelCopyWith<_$_SpeakerNoteSectionHiveModel>
+  _$$SpeakerNoteSectionHiveModelImplCopyWith<_$SpeakerNoteSectionHiveModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

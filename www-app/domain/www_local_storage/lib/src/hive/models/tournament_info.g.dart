@@ -6,18 +6,18 @@ part of 'tournament_info.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TournamentInfoHiveModelAdapter
-    extends TypeAdapter<_$_TournamentInfoHiveModel> {
+class TournamentInfoHiveModelImplAdapter
+    extends TypeAdapter<_$TournamentInfoHiveModelImpl> {
   @override
   final int typeId = 1;
 
   @override
-  _$_TournamentInfoHiveModel read(BinaryReader reader) {
+  _$TournamentInfoHiveModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_TournamentInfoHiveModel(
+    return _$TournamentInfoHiveModelImpl(
       id: fields[0] as String?,
       id2: fields[1] as String?,
       title: fields[2] as String?,
@@ -32,7 +32,7 @@ class TournamentInfoHiveModelAdapter
   }
 
   @override
-  void write(BinaryWriter writer, _$_TournamentInfoHiveModel obj) {
+  void write(BinaryWriter writer, _$TournamentInfoHiveModelImpl obj) {
     writer
       ..writeByte(10)
       ..writeByte(0)
@@ -63,7 +63,7 @@ class TournamentInfoHiveModelAdapter
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TournamentInfoHiveModelAdapter &&
+      other is TournamentInfoHiveModelImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

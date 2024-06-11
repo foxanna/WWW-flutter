@@ -12,7 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LatestTournamentsState {
@@ -122,30 +122,30 @@ class _$LatestTournamentsStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$InitialLatestTournamentsStateCopyWith<$Res> {
-  factory _$$InitialLatestTournamentsStateCopyWith(
-          _$InitialLatestTournamentsState value,
-          $Res Function(_$InitialLatestTournamentsState) then) =
-      __$$InitialLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$InitialLatestTournamentsStateImplCopyWith<$Res> {
+  factory _$$InitialLatestTournamentsStateImplCopyWith(
+          _$InitialLatestTournamentsStateImpl value,
+          $Res Function(_$InitialLatestTournamentsStateImpl) then) =
+      __$$InitialLatestTournamentsStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialLatestTournamentsStateCopyWithImpl<$Res>
+class __$$InitialLatestTournamentsStateImplCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res,
-        _$InitialLatestTournamentsState>
-    implements _$$InitialLatestTournamentsStateCopyWith<$Res> {
-  __$$InitialLatestTournamentsStateCopyWithImpl(
-      _$InitialLatestTournamentsState _value,
-      $Res Function(_$InitialLatestTournamentsState) _then)
+        _$InitialLatestTournamentsStateImpl>
+    implements _$$InitialLatestTournamentsStateImplCopyWith<$Res> {
+  __$$InitialLatestTournamentsStateImplCopyWithImpl(
+      _$InitialLatestTournamentsStateImpl _value,
+      $Res Function(_$InitialLatestTournamentsStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitialLatestTournamentsState
+class _$InitialLatestTournamentsStateImpl
     with DiagnosticableTreeMixin
     implements InitialLatestTournamentsState {
-  const _$InitialLatestTournamentsState();
+  const _$InitialLatestTournamentsStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -160,10 +160,10 @@ class _$InitialLatestTournamentsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitialLatestTournamentsState);
+            other is _$InitialLatestTournamentsStateImpl);
   }
 
   @override
@@ -280,34 +280,34 @@ class _$InitialLatestTournamentsState
 
 abstract class InitialLatestTournamentsState implements LatestTournamentsState {
   const factory InitialLatestTournamentsState() =
-      _$InitialLatestTournamentsState;
+      _$InitialLatestTournamentsStateImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingFirstPageLatestTournamentsStateCopyWith<$Res> {
-  factory _$$LoadingFirstPageLatestTournamentsStateCopyWith(
-          _$LoadingFirstPageLatestTournamentsState value,
-          $Res Function(_$LoadingFirstPageLatestTournamentsState) then) =
-      __$$LoadingFirstPageLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$LoadingFirstPageLatestTournamentsStateImplCopyWith<$Res> {
+  factory _$$LoadingFirstPageLatestTournamentsStateImplCopyWith(
+          _$LoadingFirstPageLatestTournamentsStateImpl value,
+          $Res Function(_$LoadingFirstPageLatestTournamentsStateImpl) then) =
+      __$$LoadingFirstPageLatestTournamentsStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingFirstPageLatestTournamentsStateCopyWithImpl<$Res>
+class __$$LoadingFirstPageLatestTournamentsStateImplCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res,
-        _$LoadingFirstPageLatestTournamentsState>
-    implements _$$LoadingFirstPageLatestTournamentsStateCopyWith<$Res> {
-  __$$LoadingFirstPageLatestTournamentsStateCopyWithImpl(
-      _$LoadingFirstPageLatestTournamentsState _value,
-      $Res Function(_$LoadingFirstPageLatestTournamentsState) _then)
+        _$LoadingFirstPageLatestTournamentsStateImpl>
+    implements _$$LoadingFirstPageLatestTournamentsStateImplCopyWith<$Res> {
+  __$$LoadingFirstPageLatestTournamentsStateImplCopyWithImpl(
+      _$LoadingFirstPageLatestTournamentsStateImpl _value,
+      $Res Function(_$LoadingFirstPageLatestTournamentsStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingFirstPageLatestTournamentsState
+class _$LoadingFirstPageLatestTournamentsStateImpl
     with DiagnosticableTreeMixin
     implements LoadingFirstPageLatestTournamentsState {
-  const _$LoadingFirstPageLatestTournamentsState();
+  const _$LoadingFirstPageLatestTournamentsStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -322,10 +322,10 @@ class _$LoadingFirstPageLatestTournamentsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingFirstPageLatestTournamentsState);
+            other is _$LoadingFirstPageLatestTournamentsStateImpl);
   }
 
   @override
@@ -443,27 +443,27 @@ class _$LoadingFirstPageLatestTournamentsState
 abstract class LoadingFirstPageLatestTournamentsState
     implements LatestTournamentsState {
   const factory LoadingFirstPageLatestTournamentsState() =
-      _$LoadingFirstPageLatestTournamentsState;
+      _$LoadingFirstPageLatestTournamentsStateImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingWithDataLatestTournamentsStateCopyWith<$Res> {
-  factory _$$LoadingWithDataLatestTournamentsStateCopyWith(
-          _$LoadingWithDataLatestTournamentsState value,
-          $Res Function(_$LoadingWithDataLatestTournamentsState) then) =
-      __$$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$LoadingWithDataLatestTournamentsStateImplCopyWith<$Res> {
+  factory _$$LoadingWithDataLatestTournamentsStateImplCopyWith(
+          _$LoadingWithDataLatestTournamentsStateImpl value,
+          $Res Function(_$LoadingWithDataLatestTournamentsStateImpl) then) =
+      __$$LoadingWithDataLatestTournamentsStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Tournament> data, int nextPage});
 }
 
 /// @nodoc
-class __$$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>
+class __$$LoadingWithDataLatestTournamentsStateImplCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res,
-        _$LoadingWithDataLatestTournamentsState>
-    implements _$$LoadingWithDataLatestTournamentsStateCopyWith<$Res> {
-  __$$LoadingWithDataLatestTournamentsStateCopyWithImpl(
-      _$LoadingWithDataLatestTournamentsState _value,
-      $Res Function(_$LoadingWithDataLatestTournamentsState) _then)
+        _$LoadingWithDataLatestTournamentsStateImpl>
+    implements _$$LoadingWithDataLatestTournamentsStateImplCopyWith<$Res> {
+  __$$LoadingWithDataLatestTournamentsStateImplCopyWithImpl(
+      _$LoadingWithDataLatestTournamentsStateImpl _value,
+      $Res Function(_$LoadingWithDataLatestTournamentsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -472,7 +472,7 @@ class __$$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>
     Object? data = null,
     Object? nextPage = null,
   }) {
-    return _then(_$LoadingWithDataLatestTournamentsState(
+    return _then(_$LoadingWithDataLatestTournamentsStateImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -487,10 +487,10 @@ class __$$LoadingWithDataLatestTournamentsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingWithDataLatestTournamentsState
+class _$LoadingWithDataLatestTournamentsStateImpl
     with DiagnosticableTreeMixin
     implements LoadingWithDataLatestTournamentsState {
-  const _$LoadingWithDataLatestTournamentsState(
+  const _$LoadingWithDataLatestTournamentsStateImpl(
       {required final List<Tournament> data, required this.nextPage})
       : _data = data;
 
@@ -521,10 +521,10 @@ class _$LoadingWithDataLatestTournamentsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingWithDataLatestTournamentsState &&
+            other is _$LoadingWithDataLatestTournamentsStateImpl &&
             const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.nextPage, nextPage) ||
                 other.nextPage == nextPage));
@@ -537,10 +537,10 @@ class _$LoadingWithDataLatestTournamentsState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingWithDataLatestTournamentsStateCopyWith<
-          _$LoadingWithDataLatestTournamentsState>
-      get copyWith => __$$LoadingWithDataLatestTournamentsStateCopyWithImpl<
-          _$LoadingWithDataLatestTournamentsState>(this, _$identity);
+  _$$LoadingWithDataLatestTournamentsStateImplCopyWith<
+          _$LoadingWithDataLatestTournamentsStateImpl>
+      get copyWith => __$$LoadingWithDataLatestTournamentsStateImplCopyWithImpl<
+          _$LoadingWithDataLatestTournamentsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -654,35 +654,35 @@ class _$LoadingWithDataLatestTournamentsState
 abstract class LoadingWithDataLatestTournamentsState
     implements LatestTournamentsState {
   const factory LoadingWithDataLatestTournamentsState(
-      {required final List<Tournament> data,
-      required final int nextPage}) = _$LoadingWithDataLatestTournamentsState;
+          {required final List<Tournament> data, required final int nextPage}) =
+      _$LoadingWithDataLatestTournamentsStateImpl;
 
   List<Tournament> get data;
   int get nextPage;
   @JsonKey(ignore: true)
-  _$$LoadingWithDataLatestTournamentsStateCopyWith<
-          _$LoadingWithDataLatestTournamentsState>
+  _$$LoadingWithDataLatestTournamentsStateImplCopyWith<
+          _$LoadingWithDataLatestTournamentsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorFirstPageLatestTournamentsStateCopyWith<$Res> {
-  factory _$$ErrorFirstPageLatestTournamentsStateCopyWith(
-          _$ErrorFirstPageLatestTournamentsState value,
-          $Res Function(_$ErrorFirstPageLatestTournamentsState) then) =
-      __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$ErrorFirstPageLatestTournamentsStateImplCopyWith<$Res> {
+  factory _$$ErrorFirstPageLatestTournamentsStateImplCopyWith(
+          _$ErrorFirstPageLatestTournamentsStateImpl value,
+          $Res Function(_$ErrorFirstPageLatestTournamentsStateImpl) then) =
+      __$$ErrorFirstPageLatestTournamentsStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>
+class __$$ErrorFirstPageLatestTournamentsStateImplCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res,
-        _$ErrorFirstPageLatestTournamentsState>
-    implements _$$ErrorFirstPageLatestTournamentsStateCopyWith<$Res> {
-  __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl(
-      _$ErrorFirstPageLatestTournamentsState _value,
-      $Res Function(_$ErrorFirstPageLatestTournamentsState) _then)
+        _$ErrorFirstPageLatestTournamentsStateImpl>
+    implements _$$ErrorFirstPageLatestTournamentsStateImplCopyWith<$Res> {
+  __$$ErrorFirstPageLatestTournamentsStateImplCopyWithImpl(
+      _$ErrorFirstPageLatestTournamentsStateImpl _value,
+      $Res Function(_$ErrorFirstPageLatestTournamentsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -690,7 +690,7 @@ class __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>
   $Res call({
     Object? exception = null,
   }) {
-    return _then(_$ErrorFirstPageLatestTournamentsState(
+    return _then(_$ErrorFirstPageLatestTournamentsStateImpl(
       exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -701,10 +701,10 @@ class __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorFirstPageLatestTournamentsState
+class _$ErrorFirstPageLatestTournamentsStateImpl
     with DiagnosticableTreeMixin
     implements ErrorFirstPageLatestTournamentsState {
-  const _$ErrorFirstPageLatestTournamentsState({required this.exception});
+  const _$ErrorFirstPageLatestTournamentsStateImpl({required this.exception});
 
   @override
   final Exception exception;
@@ -724,10 +724,10 @@ class _$ErrorFirstPageLatestTournamentsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorFirstPageLatestTournamentsState &&
+            other is _$ErrorFirstPageLatestTournamentsStateImpl &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
   }
@@ -738,10 +738,10 @@ class _$ErrorFirstPageLatestTournamentsState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorFirstPageLatestTournamentsStateCopyWith<
-          _$ErrorFirstPageLatestTournamentsState>
-      get copyWith => __$$ErrorFirstPageLatestTournamentsStateCopyWithImpl<
-          _$ErrorFirstPageLatestTournamentsState>(this, _$identity);
+  _$$ErrorFirstPageLatestTournamentsStateImplCopyWith<
+          _$ErrorFirstPageLatestTournamentsStateImpl>
+      get copyWith => __$$ErrorFirstPageLatestTournamentsStateImplCopyWithImpl<
+          _$ErrorFirstPageLatestTournamentsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -856,33 +856,33 @@ abstract class ErrorFirstPageLatestTournamentsState
     implements LatestTournamentsState {
   const factory ErrorFirstPageLatestTournamentsState(
           {required final Exception exception}) =
-      _$ErrorFirstPageLatestTournamentsState;
+      _$ErrorFirstPageLatestTournamentsStateImpl;
 
   Exception get exception;
   @JsonKey(ignore: true)
-  _$$ErrorFirstPageLatestTournamentsStateCopyWith<
-          _$ErrorFirstPageLatestTournamentsState>
+  _$$ErrorFirstPageLatestTournamentsStateImplCopyWith<
+          _$ErrorFirstPageLatestTournamentsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorWithDataLatestTournamentsStateCopyWith<$Res> {
-  factory _$$ErrorWithDataLatestTournamentsStateCopyWith(
-          _$ErrorWithDataLatestTournamentsState value,
-          $Res Function(_$ErrorWithDataLatestTournamentsState) then) =
-      __$$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$ErrorWithDataLatestTournamentsStateImplCopyWith<$Res> {
+  factory _$$ErrorWithDataLatestTournamentsStateImplCopyWith(
+          _$ErrorWithDataLatestTournamentsStateImpl value,
+          $Res Function(_$ErrorWithDataLatestTournamentsStateImpl) then) =
+      __$$ErrorWithDataLatestTournamentsStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Tournament> data, Exception exception, int nextPage});
 }
 
 /// @nodoc
-class __$$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>
+class __$$ErrorWithDataLatestTournamentsStateImplCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res,
-        _$ErrorWithDataLatestTournamentsState>
-    implements _$$ErrorWithDataLatestTournamentsStateCopyWith<$Res> {
-  __$$ErrorWithDataLatestTournamentsStateCopyWithImpl(
-      _$ErrorWithDataLatestTournamentsState _value,
-      $Res Function(_$ErrorWithDataLatestTournamentsState) _then)
+        _$ErrorWithDataLatestTournamentsStateImpl>
+    implements _$$ErrorWithDataLatestTournamentsStateImplCopyWith<$Res> {
+  __$$ErrorWithDataLatestTournamentsStateImplCopyWithImpl(
+      _$ErrorWithDataLatestTournamentsStateImpl _value,
+      $Res Function(_$ErrorWithDataLatestTournamentsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -892,7 +892,7 @@ class __$$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>
     Object? exception = null,
     Object? nextPage = null,
   }) {
-    return _then(_$ErrorWithDataLatestTournamentsState(
+    return _then(_$ErrorWithDataLatestTournamentsStateImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -911,10 +911,10 @@ class __$$ErrorWithDataLatestTournamentsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorWithDataLatestTournamentsState
+class _$ErrorWithDataLatestTournamentsStateImpl
     with DiagnosticableTreeMixin
     implements ErrorWithDataLatestTournamentsState {
-  const _$ErrorWithDataLatestTournamentsState(
+  const _$ErrorWithDataLatestTournamentsStateImpl(
       {required final List<Tournament> data,
       required this.exception,
       required this.nextPage})
@@ -949,10 +949,10 @@ class _$ErrorWithDataLatestTournamentsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorWithDataLatestTournamentsState &&
+            other is _$ErrorWithDataLatestTournamentsStateImpl &&
             const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.exception, exception) ||
                 other.exception == exception) &&
@@ -967,10 +967,10 @@ class _$ErrorWithDataLatestTournamentsState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorWithDataLatestTournamentsStateCopyWith<
-          _$ErrorWithDataLatestTournamentsState>
-      get copyWith => __$$ErrorWithDataLatestTournamentsStateCopyWithImpl<
-          _$ErrorWithDataLatestTournamentsState>(this, _$identity);
+  _$$ErrorWithDataLatestTournamentsStateImplCopyWith<
+          _$ErrorWithDataLatestTournamentsStateImpl>
+      get copyWith => __$$ErrorWithDataLatestTournamentsStateImplCopyWithImpl<
+          _$ErrorWithDataLatestTournamentsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1086,35 +1086,35 @@ abstract class ErrorWithDataLatestTournamentsState
   const factory ErrorWithDataLatestTournamentsState(
       {required final List<Tournament> data,
       required final Exception exception,
-      required final int nextPage}) = _$ErrorWithDataLatestTournamentsState;
+      required final int nextPage}) = _$ErrorWithDataLatestTournamentsStateImpl;
 
   List<Tournament> get data;
   Exception get exception;
   int get nextPage;
   @JsonKey(ignore: true)
-  _$$ErrorWithDataLatestTournamentsStateCopyWith<
-          _$ErrorWithDataLatestTournamentsState>
+  _$$ErrorWithDataLatestTournamentsStateImplCopyWith<
+          _$ErrorWithDataLatestTournamentsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RefreshingLatestTournamentsStateCopyWith<$Res> {
-  factory _$$RefreshingLatestTournamentsStateCopyWith(
-          _$RefreshingLatestTournamentsState value,
-          $Res Function(_$RefreshingLatestTournamentsState) then) =
-      __$$RefreshingLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$RefreshingLatestTournamentsStateImplCopyWith<$Res> {
+  factory _$$RefreshingLatestTournamentsStateImplCopyWith(
+          _$RefreshingLatestTournamentsStateImpl value,
+          $Res Function(_$RefreshingLatestTournamentsStateImpl) then) =
+      __$$RefreshingLatestTournamentsStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Tournament> data});
 }
 
 /// @nodoc
-class __$$RefreshingLatestTournamentsStateCopyWithImpl<$Res>
+class __$$RefreshingLatestTournamentsStateImplCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res,
-        _$RefreshingLatestTournamentsState>
-    implements _$$RefreshingLatestTournamentsStateCopyWith<$Res> {
-  __$$RefreshingLatestTournamentsStateCopyWithImpl(
-      _$RefreshingLatestTournamentsState _value,
-      $Res Function(_$RefreshingLatestTournamentsState) _then)
+        _$RefreshingLatestTournamentsStateImpl>
+    implements _$$RefreshingLatestTournamentsStateImplCopyWith<$Res> {
+  __$$RefreshingLatestTournamentsStateImplCopyWithImpl(
+      _$RefreshingLatestTournamentsStateImpl _value,
+      $Res Function(_$RefreshingLatestTournamentsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1122,7 +1122,7 @@ class __$$RefreshingLatestTournamentsStateCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$RefreshingLatestTournamentsState(
+    return _then(_$RefreshingLatestTournamentsStateImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1133,10 +1133,10 @@ class __$$RefreshingLatestTournamentsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RefreshingLatestTournamentsState
+class _$RefreshingLatestTournamentsStateImpl
     with DiagnosticableTreeMixin
     implements RefreshingLatestTournamentsState {
-  const _$RefreshingLatestTournamentsState(
+  const _$RefreshingLatestTournamentsStateImpl(
       {required final List<Tournament> data})
       : _data = data;
 
@@ -1162,10 +1162,10 @@ class _$RefreshingLatestTournamentsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RefreshingLatestTournamentsState &&
+            other is _$RefreshingLatestTournamentsStateImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -1176,10 +1176,10 @@ class _$RefreshingLatestTournamentsState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RefreshingLatestTournamentsStateCopyWith<
-          _$RefreshingLatestTournamentsState>
-      get copyWith => __$$RefreshingLatestTournamentsStateCopyWithImpl<
-          _$RefreshingLatestTournamentsState>(this, _$identity);
+  _$$RefreshingLatestTournamentsStateImplCopyWith<
+          _$RefreshingLatestTournamentsStateImpl>
+      get copyWith => __$$RefreshingLatestTournamentsStateImplCopyWithImpl<
+          _$RefreshingLatestTournamentsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1294,33 +1294,33 @@ abstract class RefreshingLatestTournamentsState
     implements LatestTournamentsState {
   const factory RefreshingLatestTournamentsState(
           {required final List<Tournament> data}) =
-      _$RefreshingLatestTournamentsState;
+      _$RefreshingLatestTournamentsStateImpl;
 
   List<Tournament> get data;
   @JsonKey(ignore: true)
-  _$$RefreshingLatestTournamentsStateCopyWith<
-          _$RefreshingLatestTournamentsState>
+  _$$RefreshingLatestTournamentsStateImplCopyWith<
+          _$RefreshingLatestTournamentsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DataLatestTournamentsStateCopyWith<$Res> {
-  factory _$$DataLatestTournamentsStateCopyWith(
-          _$DataLatestTournamentsState value,
-          $Res Function(_$DataLatestTournamentsState) then) =
-      __$$DataLatestTournamentsStateCopyWithImpl<$Res>;
+abstract class _$$DataLatestTournamentsStateImplCopyWith<$Res> {
+  factory _$$DataLatestTournamentsStateImplCopyWith(
+          _$DataLatestTournamentsStateImpl value,
+          $Res Function(_$DataLatestTournamentsStateImpl) then) =
+      __$$DataLatestTournamentsStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int nextPage, List<Tournament> data});
 }
 
 /// @nodoc
-class __$$DataLatestTournamentsStateCopyWithImpl<$Res>
+class __$$DataLatestTournamentsStateImplCopyWithImpl<$Res>
     extends _$LatestTournamentsStateCopyWithImpl<$Res,
-        _$DataLatestTournamentsState>
-    implements _$$DataLatestTournamentsStateCopyWith<$Res> {
-  __$$DataLatestTournamentsStateCopyWithImpl(
-      _$DataLatestTournamentsState _value,
-      $Res Function(_$DataLatestTournamentsState) _then)
+        _$DataLatestTournamentsStateImpl>
+    implements _$$DataLatestTournamentsStateImplCopyWith<$Res> {
+  __$$DataLatestTournamentsStateImplCopyWithImpl(
+      _$DataLatestTournamentsStateImpl _value,
+      $Res Function(_$DataLatestTournamentsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1329,7 +1329,7 @@ class __$$DataLatestTournamentsStateCopyWithImpl<$Res>
     Object? nextPage = null,
     Object? data = null,
   }) {
-    return _then(_$DataLatestTournamentsState(
+    return _then(_$DataLatestTournamentsStateImpl(
       nextPage: null == nextPage
           ? _value.nextPage
           : nextPage // ignore: cast_nullable_to_non_nullable
@@ -1344,10 +1344,10 @@ class __$$DataLatestTournamentsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataLatestTournamentsState
+class _$DataLatestTournamentsStateImpl
     with DiagnosticableTreeMixin
     implements DataLatestTournamentsState {
-  const _$DataLatestTournamentsState(
+  const _$DataLatestTournamentsStateImpl(
       {required this.nextPage, required final List<Tournament> data})
       : _data = data;
 
@@ -1376,10 +1376,10 @@ class _$DataLatestTournamentsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DataLatestTournamentsState &&
+            other is _$DataLatestTournamentsStateImpl &&
             (identical(other.nextPage, nextPage) ||
                 other.nextPage == nextPage) &&
             const DeepCollectionEquality().equals(other._data, _data));
@@ -1392,9 +1392,9 @@ class _$DataLatestTournamentsState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DataLatestTournamentsStateCopyWith<_$DataLatestTournamentsState>
-      get copyWith => __$$DataLatestTournamentsStateCopyWithImpl<
-          _$DataLatestTournamentsState>(this, _$identity);
+  _$$DataLatestTournamentsStateImplCopyWith<_$DataLatestTournamentsStateImpl>
+      get copyWith => __$$DataLatestTournamentsStateImplCopyWithImpl<
+          _$DataLatestTournamentsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1508,11 +1508,11 @@ class _$DataLatestTournamentsState
 abstract class DataLatestTournamentsState implements LatestTournamentsState {
   const factory DataLatestTournamentsState(
       {required final int nextPage,
-      required final List<Tournament> data}) = _$DataLatestTournamentsState;
+      required final List<Tournament> data}) = _$DataLatestTournamentsStateImpl;
 
   int get nextPage;
   List<Tournament> get data;
   @JsonKey(ignore: true)
-  _$$DataLatestTournamentsStateCopyWith<_$DataLatestTournamentsState>
+  _$$DataLatestTournamentsStateImplCopyWith<_$DataLatestTournamentsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

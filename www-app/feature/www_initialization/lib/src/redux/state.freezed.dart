@@ -12,7 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$InitializationState {
@@ -85,30 +85,30 @@ class _$InitializationStateCopyWithImpl<$Res, $Val extends InitializationState>
 }
 
 /// @nodoc
-abstract class _$$_CompletedInitializationStateCopyWith<$Res> {
-  factory _$$_CompletedInitializationStateCopyWith(
-          _$_CompletedInitializationState value,
-          $Res Function(_$_CompletedInitializationState) then) =
-      __$$_CompletedInitializationStateCopyWithImpl<$Res>;
+abstract class _$$CompletedInitializationStateImplCopyWith<$Res> {
+  factory _$$CompletedInitializationStateImplCopyWith(
+          _$CompletedInitializationStateImpl value,
+          $Res Function(_$CompletedInitializationStateImpl) then) =
+      __$$CompletedInitializationStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CompletedInitializationStateCopyWithImpl<$Res>
+class __$$CompletedInitializationStateImplCopyWithImpl<$Res>
     extends _$InitializationStateCopyWithImpl<$Res,
-        _$_CompletedInitializationState>
-    implements _$$_CompletedInitializationStateCopyWith<$Res> {
-  __$$_CompletedInitializationStateCopyWithImpl(
-      _$_CompletedInitializationState _value,
-      $Res Function(_$_CompletedInitializationState) _then)
+        _$CompletedInitializationStateImpl>
+    implements _$$CompletedInitializationStateImplCopyWith<$Res> {
+  __$$CompletedInitializationStateImplCopyWithImpl(
+      _$CompletedInitializationStateImpl _value,
+      $Res Function(_$CompletedInitializationStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CompletedInitializationState
+class _$CompletedInitializationStateImpl
     with DiagnosticableTreeMixin
     implements _CompletedInitializationState {
-  const _$_CompletedInitializationState();
+  const _$CompletedInitializationStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -123,10 +123,10 @@ class _$_CompletedInitializationState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CompletedInitializationState);
+            other is _$CompletedInitializationStateImpl);
   }
 
   @override
@@ -207,27 +207,27 @@ class _$_CompletedInitializationState
 
 abstract class _CompletedInitializationState implements InitializationState {
   const factory _CompletedInitializationState() =
-      _$_CompletedInitializationState;
+      _$CompletedInitializationStateImpl;
 }
 
 /// @nodoc
-abstract class _$$_InProgressInitializationStateCopyWith<$Res> {
-  factory _$$_InProgressInitializationStateCopyWith(
-          _$_InProgressInitializationState value,
-          $Res Function(_$_InProgressInitializationState) then) =
-      __$$_InProgressInitializationStateCopyWithImpl<$Res>;
+abstract class _$$InProgressInitializationStateImplCopyWith<$Res> {
+  factory _$$InProgressInitializationStateImplCopyWith(
+          _$InProgressInitializationStateImpl value,
+          $Res Function(_$InProgressInitializationStateImpl) then) =
+      __$$InProgressInitializationStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool coreReady, bool settingsReady, bool servicesReady});
 }
 
 /// @nodoc
-class __$$_InProgressInitializationStateCopyWithImpl<$Res>
+class __$$InProgressInitializationStateImplCopyWithImpl<$Res>
     extends _$InitializationStateCopyWithImpl<$Res,
-        _$_InProgressInitializationState>
-    implements _$$_InProgressInitializationStateCopyWith<$Res> {
-  __$$_InProgressInitializationStateCopyWithImpl(
-      _$_InProgressInitializationState _value,
-      $Res Function(_$_InProgressInitializationState) _then)
+        _$InProgressInitializationStateImpl>
+    implements _$$InProgressInitializationStateImplCopyWith<$Res> {
+  __$$InProgressInitializationStateImplCopyWithImpl(
+      _$InProgressInitializationStateImpl _value,
+      $Res Function(_$InProgressInitializationStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -237,7 +237,7 @@ class __$$_InProgressInitializationStateCopyWithImpl<$Res>
     Object? settingsReady = null,
     Object? servicesReady = null,
   }) {
-    return _then(_$_InProgressInitializationState(
+    return _then(_$InProgressInitializationStateImpl(
       coreReady: null == coreReady
           ? _value.coreReady
           : coreReady // ignore: cast_nullable_to_non_nullable
@@ -256,10 +256,10 @@ class __$$_InProgressInitializationStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_InProgressInitializationState
+class _$InProgressInitializationStateImpl
     with DiagnosticableTreeMixin
     implements _InProgressInitializationState {
-  const _$_InProgressInitializationState(
+  const _$InProgressInitializationStateImpl(
       {this.coreReady = false,
       this.settingsReady = false,
       this.servicesReady = false});
@@ -290,10 +290,10 @@ class _$_InProgressInitializationState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_InProgressInitializationState &&
+            other is _$InProgressInitializationStateImpl &&
             (identical(other.coreReady, coreReady) ||
                 other.coreReady == coreReady) &&
             (identical(other.settingsReady, settingsReady) ||
@@ -309,9 +309,10 @@ class _$_InProgressInitializationState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InProgressInitializationStateCopyWith<_$_InProgressInitializationState>
-      get copyWith => __$$_InProgressInitializationStateCopyWithImpl<
-          _$_InProgressInitializationState>(this, _$identity);
+  _$$InProgressInitializationStateImplCopyWith<
+          _$InProgressInitializationStateImpl>
+      get copyWith => __$$InProgressInitializationStateImplCopyWithImpl<
+          _$InProgressInitializationStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -390,41 +391,42 @@ abstract class _InProgressInitializationState implements InitializationState {
   const factory _InProgressInitializationState(
       {final bool coreReady,
       final bool settingsReady,
-      final bool servicesReady}) = _$_InProgressInitializationState;
+      final bool servicesReady}) = _$InProgressInitializationStateImpl;
 
   bool get coreReady;
   bool get settingsReady;
   bool get servicesReady;
   @JsonKey(ignore: true)
-  _$$_InProgressInitializationStateCopyWith<_$_InProgressInitializationState>
+  _$$InProgressInitializationStateImplCopyWith<
+          _$InProgressInitializationStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_FailedInitializationStateCopyWith<$Res> {
-  factory _$$_FailedInitializationStateCopyWith(
-          _$_FailedInitializationState value,
-          $Res Function(_$_FailedInitializationState) then) =
-      __$$_FailedInitializationStateCopyWithImpl<$Res>;
+abstract class _$$FailedInitializationStateImplCopyWith<$Res> {
+  factory _$$FailedInitializationStateImplCopyWith(
+          _$FailedInitializationStateImpl value,
+          $Res Function(_$FailedInitializationStateImpl) then) =
+      __$$FailedInitializationStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_FailedInitializationStateCopyWithImpl<$Res>
+class __$$FailedInitializationStateImplCopyWithImpl<$Res>
     extends _$InitializationStateCopyWithImpl<$Res,
-        _$_FailedInitializationState>
-    implements _$$_FailedInitializationStateCopyWith<$Res> {
-  __$$_FailedInitializationStateCopyWithImpl(
-      _$_FailedInitializationState _value,
-      $Res Function(_$_FailedInitializationState) _then)
+        _$FailedInitializationStateImpl>
+    implements _$$FailedInitializationStateImplCopyWith<$Res> {
+  __$$FailedInitializationStateImplCopyWithImpl(
+      _$FailedInitializationStateImpl _value,
+      $Res Function(_$FailedInitializationStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_FailedInitializationState
+class _$FailedInitializationStateImpl
     with DiagnosticableTreeMixin
     implements _FailedInitializationState {
-  const _$_FailedInitializationState();
+  const _$FailedInitializationStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -438,10 +440,10 @@ class _$_FailedInitializationState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FailedInitializationState);
+            other is _$FailedInitializationStateImpl);
   }
 
   @override
@@ -521,5 +523,5 @@ class _$_FailedInitializationState
 }
 
 abstract class _FailedInitializationState implements InitializationState {
-  const factory _FailedInitializationState() = _$_FailedInitializationState;
+  const factory _FailedInitializationState() = _$FailedInitializationStateImpl;
 }

@@ -12,7 +12,7 @@ part of 'tournament.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TournamentHiveModel {
@@ -119,11 +119,11 @@ class _$TournamentHiveModelCopyWithImpl<$Res, $Val extends TournamentHiveModel>
 }
 
 /// @nodoc
-abstract class _$$_TournamentHiveModelCopyWith<$Res>
+abstract class _$$TournamentHiveModelImplCopyWith<$Res>
     implements $TournamentHiveModelCopyWith<$Res> {
-  factory _$$_TournamentHiveModelCopyWith(_$_TournamentHiveModel value,
-          $Res Function(_$_TournamentHiveModel) then) =
-      __$$_TournamentHiveModelCopyWithImpl<$Res>;
+  factory _$$TournamentHiveModelImplCopyWith(_$TournamentHiveModelImpl value,
+          $Res Function(_$TournamentHiveModelImpl) then) =
+      __$$TournamentHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -141,11 +141,11 @@ abstract class _$$_TournamentHiveModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TournamentHiveModelCopyWithImpl<$Res>
-    extends _$TournamentHiveModelCopyWithImpl<$Res, _$_TournamentHiveModel>
-    implements _$$_TournamentHiveModelCopyWith<$Res> {
-  __$$_TournamentHiveModelCopyWithImpl(_$_TournamentHiveModel _value,
-      $Res Function(_$_TournamentHiveModel) _then)
+class __$$TournamentHiveModelImplCopyWithImpl<$Res>
+    extends _$TournamentHiveModelCopyWithImpl<$Res, _$TournamentHiveModelImpl>
+    implements _$$TournamentHiveModelImplCopyWith<$Res> {
+  __$$TournamentHiveModelImplCopyWithImpl(_$TournamentHiveModelImpl _value,
+      $Res Function(_$TournamentHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -157,7 +157,7 @@ class __$$_TournamentHiveModelCopyWithImpl<$Res>
     Object? status = freezed,
     Object? tours = freezed,
   }) {
-    return _then(_$_TournamentHiveModel(
+    return _then(_$TournamentHiveModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -185,8 +185,8 @@ class __$$_TournamentHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveTournamentTypeId)
-class _$_TournamentHiveModel implements _TournamentHiveModel {
-  const _$_TournamentHiveModel(
+class _$TournamentHiveModelImpl implements _TournamentHiveModel {
+  const _$TournamentHiveModelImpl(
       {@HiveField(TournamentHiveFieldsIds.id) this.id,
       @HiveField(TournamentHiveFieldsIds.id2) this.id2,
       @HiveField(TournamentHiveFieldsIds.info) this.info,
@@ -224,10 +224,10 @@ class _$_TournamentHiveModel implements _TournamentHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TournamentHiveModel &&
+            other is _$TournamentHiveModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.id2, id2) || other.id2 == id2) &&
             (identical(other.info, info) || other.info == info) &&
@@ -242,8 +242,8 @@ class _$_TournamentHiveModel implements _TournamentHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TournamentHiveModelCopyWith<_$_TournamentHiveModel> get copyWith =>
-      __$$_TournamentHiveModelCopyWithImpl<_$_TournamentHiveModel>(
+  _$$TournamentHiveModelImplCopyWith<_$TournamentHiveModelImpl> get copyWith =>
+      __$$TournamentHiveModelImplCopyWithImpl<_$TournamentHiveModelImpl>(
           this, _$identity);
 }
 
@@ -256,7 +256,7 @@ abstract class _TournamentHiveModel implements TournamentHiveModel {
       @HiveField(TournamentHiveFieldsIds.status)
       final TournamentStatusHiveModel? status,
       @HiveField(TournamentHiveFieldsIds.tours)
-      final List<TourHiveModel>? tours}) = _$_TournamentHiveModel;
+      final List<TourHiveModel>? tours}) = _$TournamentHiveModelImpl;
 
   @override
   @HiveField(TournamentHiveFieldsIds.id)
@@ -275,6 +275,6 @@ abstract class _TournamentHiveModel implements TournamentHiveModel {
   List<TourHiveModel>? get tours;
   @override
   @JsonKey(ignore: true)
-  _$$_TournamentHiveModelCopyWith<_$_TournamentHiveModel> get copyWith =>
+  _$$TournamentHiveModelImplCopyWith<_$TournamentHiveModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

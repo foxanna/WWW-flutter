@@ -12,7 +12,7 @@ part of 'services_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SystemActionServices {
@@ -77,30 +77,30 @@ class _$SystemActionServicesCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$CoreReadyServicesSystemActionCopyWith<$Res> {
-  factory _$$CoreReadyServicesSystemActionCopyWith(
-          _$CoreReadyServicesSystemAction value,
-          $Res Function(_$CoreReadyServicesSystemAction) then) =
-      __$$CoreReadyServicesSystemActionCopyWithImpl<$Res>;
+abstract class _$$CoreReadyServicesSystemActionImplCopyWith<$Res> {
+  factory _$$CoreReadyServicesSystemActionImplCopyWith(
+          _$CoreReadyServicesSystemActionImpl value,
+          $Res Function(_$CoreReadyServicesSystemActionImpl) then) =
+      __$$CoreReadyServicesSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CoreReadyServicesSystemActionCopyWithImpl<$Res>
+class __$$CoreReadyServicesSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionServicesCopyWithImpl<$Res,
-        _$CoreReadyServicesSystemAction>
-    implements _$$CoreReadyServicesSystemActionCopyWith<$Res> {
-  __$$CoreReadyServicesSystemActionCopyWithImpl(
-      _$CoreReadyServicesSystemAction _value,
-      $Res Function(_$CoreReadyServicesSystemAction) _then)
+        _$CoreReadyServicesSystemActionImpl>
+    implements _$$CoreReadyServicesSystemActionImplCopyWith<$Res> {
+  __$$CoreReadyServicesSystemActionImplCopyWithImpl(
+      _$CoreReadyServicesSystemActionImpl _value,
+      $Res Function(_$CoreReadyServicesSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CoreReadyServicesSystemAction
+class _$CoreReadyServicesSystemActionImpl
     with DiagnosticableTreeMixin
     implements CoreReadyServicesSystemAction {
-  const _$CoreReadyServicesSystemAction();
+  const _$CoreReadyServicesSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -115,10 +115,10 @@ class _$CoreReadyServicesSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CoreReadyServicesSystemAction);
+            other is _$CoreReadyServicesSystemActionImpl);
   }
 
   @override
@@ -190,34 +190,34 @@ class _$CoreReadyServicesSystemAction
 
 abstract class CoreReadyServicesSystemAction implements SystemActionServices {
   const factory CoreReadyServicesSystemAction() =
-      _$CoreReadyServicesSystemAction;
+      _$CoreReadyServicesSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$ServicesReadyServicesSystemActionCopyWith<$Res> {
-  factory _$$ServicesReadyServicesSystemActionCopyWith(
-          _$ServicesReadyServicesSystemAction value,
-          $Res Function(_$ServicesReadyServicesSystemAction) then) =
-      __$$ServicesReadyServicesSystemActionCopyWithImpl<$Res>;
+abstract class _$$ServicesReadyServicesSystemActionImplCopyWith<$Res> {
+  factory _$$ServicesReadyServicesSystemActionImplCopyWith(
+          _$ServicesReadyServicesSystemActionImpl value,
+          $Res Function(_$ServicesReadyServicesSystemActionImpl) then) =
+      __$$ServicesReadyServicesSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ServicesReadyServicesSystemActionCopyWithImpl<$Res>
+class __$$ServicesReadyServicesSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionServicesCopyWithImpl<$Res,
-        _$ServicesReadyServicesSystemAction>
-    implements _$$ServicesReadyServicesSystemActionCopyWith<$Res> {
-  __$$ServicesReadyServicesSystemActionCopyWithImpl(
-      _$ServicesReadyServicesSystemAction _value,
-      $Res Function(_$ServicesReadyServicesSystemAction) _then)
+        _$ServicesReadyServicesSystemActionImpl>
+    implements _$$ServicesReadyServicesSystemActionImplCopyWith<$Res> {
+  __$$ServicesReadyServicesSystemActionImplCopyWithImpl(
+      _$ServicesReadyServicesSystemActionImpl _value,
+      $Res Function(_$ServicesReadyServicesSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ServicesReadyServicesSystemAction
+class _$ServicesReadyServicesSystemActionImpl
     with DiagnosticableTreeMixin
     implements ServicesReadyServicesSystemAction {
-  const _$ServicesReadyServicesSystemAction();
+  const _$ServicesReadyServicesSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -232,10 +232,10 @@ class _$ServicesReadyServicesSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ServicesReadyServicesSystemAction);
+            other is _$ServicesReadyServicesSystemActionImpl);
   }
 
   @override
@@ -308,5 +308,5 @@ class _$ServicesReadyServicesSystemAction
 abstract class ServicesReadyServicesSystemAction
     implements SystemActionServices {
   const factory ServicesReadyServicesSystemAction() =
-      _$ServicesReadyServicesSystemAction;
+      _$ServicesReadyServicesSystemActionImpl;
 }

@@ -12,7 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$QuestionsState {
@@ -118,25 +118,26 @@ class _$QuestionsStateCopyWithImpl<$Res, $Val extends QuestionsState>
 }
 
 /// @nodoc
-abstract class _$$InitialQuestionsStateCopyWith<$Res> {
-  factory _$$InitialQuestionsStateCopyWith(_$InitialQuestionsState value,
-          $Res Function(_$InitialQuestionsState) then) =
-      __$$InitialQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$InitialQuestionsStateImplCopyWith<$Res> {
+  factory _$$InitialQuestionsStateImplCopyWith(
+          _$InitialQuestionsStateImpl value,
+          $Res Function(_$InitialQuestionsStateImpl) then) =
+      __$$InitialQuestionsStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res, _$InitialQuestionsState>
-    implements _$$InitialQuestionsStateCopyWith<$Res> {
-  __$$InitialQuestionsStateCopyWithImpl(_$InitialQuestionsState _value,
-      $Res Function(_$InitialQuestionsState) _then)
+class __$$InitialQuestionsStateImplCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res, _$InitialQuestionsStateImpl>
+    implements _$$InitialQuestionsStateImplCopyWith<$Res> {
+  __$$InitialQuestionsStateImplCopyWithImpl(_$InitialQuestionsStateImpl _value,
+      $Res Function(_$InitialQuestionsStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitialQuestionsState implements InitialQuestionsState {
-  const _$InitialQuestionsState();
+class _$InitialQuestionsStateImpl implements InitialQuestionsState {
+  const _$InitialQuestionsStateImpl();
 
   @override
   String toString() {
@@ -144,9 +145,10 @@ class _$InitialQuestionsState implements InitialQuestionsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialQuestionsState);
+        (other.runtimeType == runtimeType &&
+            other is _$InitialQuestionsStateImpl);
   }
 
   @override
@@ -259,32 +261,33 @@ class _$InitialQuestionsState implements InitialQuestionsState {
 }
 
 abstract class InitialQuestionsState implements QuestionsState {
-  const factory InitialQuestionsState() = _$InitialQuestionsState;
+  const factory InitialQuestionsState() = _$InitialQuestionsStateImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingFirstPageQuestionsStateCopyWith<$Res> {
-  factory _$$LoadingFirstPageQuestionsStateCopyWith(
-          _$LoadingFirstPageQuestionsState value,
-          $Res Function(_$LoadingFirstPageQuestionsState) then) =
-      __$$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$LoadingFirstPageQuestionsStateImplCopyWith<$Res> {
+  factory _$$LoadingFirstPageQuestionsStateImplCopyWith(
+          _$LoadingFirstPageQuestionsStateImpl value,
+          $Res Function(_$LoadingFirstPageQuestionsStateImpl) then) =
+      __$$LoadingFirstPageQuestionsStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingFirstPageQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res, _$LoadingFirstPageQuestionsState>
-    implements _$$LoadingFirstPageQuestionsStateCopyWith<$Res> {
-  __$$LoadingFirstPageQuestionsStateCopyWithImpl(
-      _$LoadingFirstPageQuestionsState _value,
-      $Res Function(_$LoadingFirstPageQuestionsState) _then)
+class __$$LoadingFirstPageQuestionsStateImplCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res,
+        _$LoadingFirstPageQuestionsStateImpl>
+    implements _$$LoadingFirstPageQuestionsStateImplCopyWith<$Res> {
+  __$$LoadingFirstPageQuestionsStateImplCopyWithImpl(
+      _$LoadingFirstPageQuestionsStateImpl _value,
+      $Res Function(_$LoadingFirstPageQuestionsStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingFirstPageQuestionsState
+class _$LoadingFirstPageQuestionsStateImpl
     implements LoadingFirstPageQuestionsState {
-  const _$LoadingFirstPageQuestionsState();
+  const _$LoadingFirstPageQuestionsStateImpl();
 
   @override
   String toString() {
@@ -292,10 +295,10 @@ class _$LoadingFirstPageQuestionsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingFirstPageQuestionsState);
+            other is _$LoadingFirstPageQuestionsStateImpl);
   }
 
   @override
@@ -409,26 +412,27 @@ class _$LoadingFirstPageQuestionsState
 
 abstract class LoadingFirstPageQuestionsState implements QuestionsState {
   const factory LoadingFirstPageQuestionsState() =
-      _$LoadingFirstPageQuestionsState;
+      _$LoadingFirstPageQuestionsStateImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingWithDataQuestionsStateCopyWith<$Res> {
-  factory _$$LoadingWithDataQuestionsStateCopyWith(
-          _$LoadingWithDataQuestionsState value,
-          $Res Function(_$LoadingWithDataQuestionsState) then) =
-      __$$LoadingWithDataQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$LoadingWithDataQuestionsStateImplCopyWith<$Res> {
+  factory _$$LoadingWithDataQuestionsStateImplCopyWith(
+          _$LoadingWithDataQuestionsStateImpl value,
+          $Res Function(_$LoadingWithDataQuestionsStateImpl) then) =
+      __$$LoadingWithDataQuestionsStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<QuestionState> questions, int currentQuestionIndex});
 }
 
 /// @nodoc
-class __$$LoadingWithDataQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res, _$LoadingWithDataQuestionsState>
-    implements _$$LoadingWithDataQuestionsStateCopyWith<$Res> {
-  __$$LoadingWithDataQuestionsStateCopyWithImpl(
-      _$LoadingWithDataQuestionsState _value,
-      $Res Function(_$LoadingWithDataQuestionsState) _then)
+class __$$LoadingWithDataQuestionsStateImplCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res,
+        _$LoadingWithDataQuestionsStateImpl>
+    implements _$$LoadingWithDataQuestionsStateImplCopyWith<$Res> {
+  __$$LoadingWithDataQuestionsStateImplCopyWithImpl(
+      _$LoadingWithDataQuestionsStateImpl _value,
+      $Res Function(_$LoadingWithDataQuestionsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -437,7 +441,7 @@ class __$$LoadingWithDataQuestionsStateCopyWithImpl<$Res>
     Object? questions = null,
     Object? currentQuestionIndex = null,
   }) {
-    return _then(_$LoadingWithDataQuestionsState(
+    return _then(_$LoadingWithDataQuestionsStateImpl(
       questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -452,8 +456,9 @@ class __$$LoadingWithDataQuestionsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingWithDataQuestionsState implements LoadingWithDataQuestionsState {
-  const _$LoadingWithDataQuestionsState(
+class _$LoadingWithDataQuestionsStateImpl
+    implements LoadingWithDataQuestionsState {
+  const _$LoadingWithDataQuestionsStateImpl(
       {required final List<QuestionState> questions,
       required this.currentQuestionIndex})
       : _questions = questions;
@@ -475,10 +480,10 @@ class _$LoadingWithDataQuestionsState implements LoadingWithDataQuestionsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingWithDataQuestionsState &&
+            other is _$LoadingWithDataQuestionsStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions) &&
             (identical(other.currentQuestionIndex, currentQuestionIndex) ||
@@ -492,9 +497,10 @@ class _$LoadingWithDataQuestionsState implements LoadingWithDataQuestionsState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingWithDataQuestionsStateCopyWith<_$LoadingWithDataQuestionsState>
-      get copyWith => __$$LoadingWithDataQuestionsStateCopyWithImpl<
-          _$LoadingWithDataQuestionsState>(this, _$identity);
+  _$$LoadingWithDataQuestionsStateImplCopyWith<
+          _$LoadingWithDataQuestionsStateImpl>
+      get copyWith => __$$LoadingWithDataQuestionsStateImplCopyWithImpl<
+          _$LoadingWithDataQuestionsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -606,32 +612,34 @@ abstract class LoadingWithDataQuestionsState implements QuestionsState {
   const factory LoadingWithDataQuestionsState(
           {required final List<QuestionState> questions,
           required final int currentQuestionIndex}) =
-      _$LoadingWithDataQuestionsState;
+      _$LoadingWithDataQuestionsStateImpl;
 
   List<QuestionState> get questions;
   int get currentQuestionIndex;
   @JsonKey(ignore: true)
-  _$$LoadingWithDataQuestionsStateCopyWith<_$LoadingWithDataQuestionsState>
+  _$$LoadingWithDataQuestionsStateImplCopyWith<
+          _$LoadingWithDataQuestionsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorFirstPageQuestionsStateCopyWith<$Res> {
-  factory _$$ErrorFirstPageQuestionsStateCopyWith(
-          _$ErrorFirstPageQuestionsState value,
-          $Res Function(_$ErrorFirstPageQuestionsState) then) =
-      __$$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$ErrorFirstPageQuestionsStateImplCopyWith<$Res> {
+  factory _$$ErrorFirstPageQuestionsStateImplCopyWith(
+          _$ErrorFirstPageQuestionsStateImpl value,
+          $Res Function(_$ErrorFirstPageQuestionsStateImpl) then) =
+      __$$ErrorFirstPageQuestionsStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class __$$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res, _$ErrorFirstPageQuestionsState>
-    implements _$$ErrorFirstPageQuestionsStateCopyWith<$Res> {
-  __$$ErrorFirstPageQuestionsStateCopyWithImpl(
-      _$ErrorFirstPageQuestionsState _value,
-      $Res Function(_$ErrorFirstPageQuestionsState) _then)
+class __$$ErrorFirstPageQuestionsStateImplCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res,
+        _$ErrorFirstPageQuestionsStateImpl>
+    implements _$$ErrorFirstPageQuestionsStateImplCopyWith<$Res> {
+  __$$ErrorFirstPageQuestionsStateImplCopyWithImpl(
+      _$ErrorFirstPageQuestionsStateImpl _value,
+      $Res Function(_$ErrorFirstPageQuestionsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -639,7 +647,7 @@ class __$$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>
   $Res call({
     Object? exception = null,
   }) {
-    return _then(_$ErrorFirstPageQuestionsState(
+    return _then(_$ErrorFirstPageQuestionsStateImpl(
       exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -650,8 +658,9 @@ class __$$ErrorFirstPageQuestionsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorFirstPageQuestionsState implements ErrorFirstPageQuestionsState {
-  const _$ErrorFirstPageQuestionsState({required this.exception});
+class _$ErrorFirstPageQuestionsStateImpl
+    implements ErrorFirstPageQuestionsState {
+  const _$ErrorFirstPageQuestionsStateImpl({required this.exception});
 
   @override
   final Exception exception;
@@ -662,10 +671,10 @@ class _$ErrorFirstPageQuestionsState implements ErrorFirstPageQuestionsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorFirstPageQuestionsState &&
+            other is _$ErrorFirstPageQuestionsStateImpl &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
   }
@@ -676,9 +685,10 @@ class _$ErrorFirstPageQuestionsState implements ErrorFirstPageQuestionsState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorFirstPageQuestionsStateCopyWith<_$ErrorFirstPageQuestionsState>
-      get copyWith => __$$ErrorFirstPageQuestionsStateCopyWithImpl<
-          _$ErrorFirstPageQuestionsState>(this, _$identity);
+  _$$ErrorFirstPageQuestionsStateImplCopyWith<
+          _$ErrorFirstPageQuestionsStateImpl>
+      get copyWith => __$$ErrorFirstPageQuestionsStateImplCopyWithImpl<
+          _$ErrorFirstPageQuestionsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -788,20 +798,22 @@ class _$ErrorFirstPageQuestionsState implements ErrorFirstPageQuestionsState {
 
 abstract class ErrorFirstPageQuestionsState implements QuestionsState {
   const factory ErrorFirstPageQuestionsState(
-      {required final Exception exception}) = _$ErrorFirstPageQuestionsState;
+          {required final Exception exception}) =
+      _$ErrorFirstPageQuestionsStateImpl;
 
   Exception get exception;
   @JsonKey(ignore: true)
-  _$$ErrorFirstPageQuestionsStateCopyWith<_$ErrorFirstPageQuestionsState>
+  _$$ErrorFirstPageQuestionsStateImplCopyWith<
+          _$ErrorFirstPageQuestionsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorWithDataQuestionsStateCopyWith<$Res> {
-  factory _$$ErrorWithDataQuestionsStateCopyWith(
-          _$ErrorWithDataQuestionsState value,
-          $Res Function(_$ErrorWithDataQuestionsState) then) =
-      __$$ErrorWithDataQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$ErrorWithDataQuestionsStateImplCopyWith<$Res> {
+  factory _$$ErrorWithDataQuestionsStateImplCopyWith(
+          _$ErrorWithDataQuestionsStateImpl value,
+          $Res Function(_$ErrorWithDataQuestionsStateImpl) then) =
+      __$$ErrorWithDataQuestionsStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {List<QuestionState> questions,
@@ -810,12 +822,13 @@ abstract class _$$ErrorWithDataQuestionsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res, _$ErrorWithDataQuestionsState>
-    implements _$$ErrorWithDataQuestionsStateCopyWith<$Res> {
-  __$$ErrorWithDataQuestionsStateCopyWithImpl(
-      _$ErrorWithDataQuestionsState _value,
-      $Res Function(_$ErrorWithDataQuestionsState) _then)
+class __$$ErrorWithDataQuestionsStateImplCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res,
+        _$ErrorWithDataQuestionsStateImpl>
+    implements _$$ErrorWithDataQuestionsStateImplCopyWith<$Res> {
+  __$$ErrorWithDataQuestionsStateImplCopyWithImpl(
+      _$ErrorWithDataQuestionsStateImpl _value,
+      $Res Function(_$ErrorWithDataQuestionsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -825,7 +838,7 @@ class __$$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
     Object? currentQuestionIndex = null,
     Object? exception = null,
   }) {
-    return _then(_$ErrorWithDataQuestionsState(
+    return _then(_$ErrorWithDataQuestionsStateImpl(
       questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -844,8 +857,8 @@ class __$$ErrorWithDataQuestionsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorWithDataQuestionsState implements ErrorWithDataQuestionsState {
-  const _$ErrorWithDataQuestionsState(
+class _$ErrorWithDataQuestionsStateImpl implements ErrorWithDataQuestionsState {
+  const _$ErrorWithDataQuestionsStateImpl(
       {required final List<QuestionState> questions,
       required this.currentQuestionIndex,
       required this.exception})
@@ -870,10 +883,10 @@ class _$ErrorWithDataQuestionsState implements ErrorWithDataQuestionsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorWithDataQuestionsState &&
+            other is _$ErrorWithDataQuestionsStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions) &&
             (identical(other.currentQuestionIndex, currentQuestionIndex) ||
@@ -892,9 +905,9 @@ class _$ErrorWithDataQuestionsState implements ErrorWithDataQuestionsState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorWithDataQuestionsStateCopyWith<_$ErrorWithDataQuestionsState>
-      get copyWith => __$$ErrorWithDataQuestionsStateCopyWithImpl<
-          _$ErrorWithDataQuestionsState>(this, _$identity);
+  _$$ErrorWithDataQuestionsStateImplCopyWith<_$ErrorWithDataQuestionsStateImpl>
+      get copyWith => __$$ErrorWithDataQuestionsStateImplCopyWithImpl<
+          _$ErrorWithDataQuestionsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1006,21 +1019,21 @@ abstract class ErrorWithDataQuestionsState implements QuestionsState {
   const factory ErrorWithDataQuestionsState(
       {required final List<QuestionState> questions,
       required final int currentQuestionIndex,
-      required final Exception exception}) = _$ErrorWithDataQuestionsState;
+      required final Exception exception}) = _$ErrorWithDataQuestionsStateImpl;
 
   List<QuestionState> get questions;
   int get currentQuestionIndex;
   Exception get exception;
   @JsonKey(ignore: true)
-  _$$ErrorWithDataQuestionsStateCopyWith<_$ErrorWithDataQuestionsState>
+  _$$ErrorWithDataQuestionsStateImplCopyWith<_$ErrorWithDataQuestionsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DataQuestionsStateCopyWith<$Res> {
-  factory _$$DataQuestionsStateCopyWith(_$DataQuestionsState value,
-          $Res Function(_$DataQuestionsState) then) =
-      __$$DataQuestionsStateCopyWithImpl<$Res>;
+abstract class _$$DataQuestionsStateImplCopyWith<$Res> {
+  factory _$$DataQuestionsStateImplCopyWith(_$DataQuestionsStateImpl value,
+          $Res Function(_$DataQuestionsStateImpl) then) =
+      __$$DataQuestionsStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {List<QuestionState> questions,
@@ -1029,11 +1042,11 @@ abstract class _$$DataQuestionsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$DataQuestionsStateCopyWithImpl<$Res>
-    extends _$QuestionsStateCopyWithImpl<$Res, _$DataQuestionsState>
-    implements _$$DataQuestionsStateCopyWith<$Res> {
-  __$$DataQuestionsStateCopyWithImpl(
-      _$DataQuestionsState _value, $Res Function(_$DataQuestionsState) _then)
+class __$$DataQuestionsStateImplCopyWithImpl<$Res>
+    extends _$QuestionsStateCopyWithImpl<$Res, _$DataQuestionsStateImpl>
+    implements _$$DataQuestionsStateImplCopyWith<$Res> {
+  __$$DataQuestionsStateImplCopyWithImpl(_$DataQuestionsStateImpl _value,
+      $Res Function(_$DataQuestionsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1043,7 +1056,7 @@ class __$$DataQuestionsStateCopyWithImpl<$Res>
     Object? currentQuestionIndex = null,
     Object? canLoadMore = null,
   }) {
-    return _then(_$DataQuestionsState(
+    return _then(_$DataQuestionsStateImpl(
       questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -1062,8 +1075,8 @@ class __$$DataQuestionsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataQuestionsState implements DataQuestionsState {
-  const _$DataQuestionsState(
+class _$DataQuestionsStateImpl implements DataQuestionsState {
+  const _$DataQuestionsStateImpl(
       {required final List<QuestionState> questions,
       required this.currentQuestionIndex,
       this.canLoadMore = false})
@@ -1089,10 +1102,10 @@ class _$DataQuestionsState implements DataQuestionsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DataQuestionsState &&
+            other is _$DataQuestionsStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions) &&
             (identical(other.currentQuestionIndex, currentQuestionIndex) ||
@@ -1111,8 +1124,8 @@ class _$DataQuestionsState implements DataQuestionsState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DataQuestionsStateCopyWith<_$DataQuestionsState> get copyWith =>
-      __$$DataQuestionsStateCopyWithImpl<_$DataQuestionsState>(
+  _$$DataQuestionsStateImplCopyWith<_$DataQuestionsStateImpl> get copyWith =>
+      __$$DataQuestionsStateImplCopyWithImpl<_$DataQuestionsStateImpl>(
           this, _$identity);
 
   @override
@@ -1225,13 +1238,13 @@ abstract class DataQuestionsState implements QuestionsState {
   const factory DataQuestionsState(
       {required final List<QuestionState> questions,
       required final int currentQuestionIndex,
-      final bool canLoadMore}) = _$DataQuestionsState;
+      final bool canLoadMore}) = _$DataQuestionsStateImpl;
 
   List<QuestionState> get questions;
   int get currentQuestionIndex;
   bool get canLoadMore;
   @JsonKey(ignore: true)
-  _$$DataQuestionsStateCopyWith<_$DataQuestionsState> get copyWith =>
+  _$$DataQuestionsStateImplCopyWith<_$DataQuestionsStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1294,11 +1307,11 @@ class _$QuestionStateCopyWithImpl<$Res, $Val extends QuestionState>
 }
 
 /// @nodoc
-abstract class _$$_QuestionStateCopyWith<$Res>
+abstract class _$$QuestionStateImplCopyWith<$Res>
     implements $QuestionStateCopyWith<$Res> {
-  factory _$$_QuestionStateCopyWith(
-          _$_QuestionState value, $Res Function(_$_QuestionState) then) =
-      __$$_QuestionStateCopyWithImpl<$Res>;
+  factory _$$QuestionStateImplCopyWith(
+          _$QuestionStateImpl value, $Res Function(_$QuestionStateImpl) then) =
+      __$$QuestionStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Question question, bool showAnswer});
@@ -1308,11 +1321,11 @@ abstract class _$$_QuestionStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QuestionStateCopyWithImpl<$Res>
-    extends _$QuestionStateCopyWithImpl<$Res, _$_QuestionState>
-    implements _$$_QuestionStateCopyWith<$Res> {
-  __$$_QuestionStateCopyWithImpl(
-      _$_QuestionState _value, $Res Function(_$_QuestionState) _then)
+class __$$QuestionStateImplCopyWithImpl<$Res>
+    extends _$QuestionStateCopyWithImpl<$Res, _$QuestionStateImpl>
+    implements _$$QuestionStateImplCopyWith<$Res> {
+  __$$QuestionStateImplCopyWithImpl(
+      _$QuestionStateImpl _value, $Res Function(_$QuestionStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1321,7 +1334,7 @@ class __$$_QuestionStateCopyWithImpl<$Res>
     Object? question = null,
     Object? showAnswer = null,
   }) {
-    return _then(_$_QuestionState(
+    return _then(_$QuestionStateImpl(
       question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -1336,8 +1349,8 @@ class __$$_QuestionStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_QuestionState implements _QuestionState {
-  const _$_QuestionState({required this.question, this.showAnswer = false});
+class _$QuestionStateImpl implements _QuestionState {
+  const _$QuestionStateImpl({required this.question, this.showAnswer = false});
 
   @override
   final Question question;
@@ -1351,10 +1364,10 @@ class _$_QuestionState implements _QuestionState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuestionState &&
+            other is _$QuestionStateImpl &&
             (identical(other.question, question) ||
                 other.question == question) &&
             (identical(other.showAnswer, showAnswer) ||
@@ -1367,14 +1380,14 @@ class _$_QuestionState implements _QuestionState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuestionStateCopyWith<_$_QuestionState> get copyWith =>
-      __$$_QuestionStateCopyWithImpl<_$_QuestionState>(this, _$identity);
+  _$$QuestionStateImplCopyWith<_$QuestionStateImpl> get copyWith =>
+      __$$QuestionStateImplCopyWithImpl<_$QuestionStateImpl>(this, _$identity);
 }
 
 abstract class _QuestionState implements QuestionState {
   const factory _QuestionState(
       {required final Question question,
-      final bool showAnswer}) = _$_QuestionState;
+      final bool showAnswer}) = _$QuestionStateImpl;
 
   @override
   Question get question;
@@ -1382,6 +1395,6 @@ abstract class _QuestionState implements QuestionState {
   bool get showAnswer;
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionStateCopyWith<_$_QuestionState> get copyWith =>
+  _$$QuestionStateImplCopyWith<_$QuestionStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

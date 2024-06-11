@@ -12,7 +12,7 @@ part of 'rating_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionRating {
@@ -75,20 +75,20 @@ class _$UserActionRatingCopyWithImpl<$Res, $Val extends UserActionRating>
 }
 
 /// @nodoc
-abstract class _$$RateRatingUserActionCopyWith<$Res> {
-  factory _$$RateRatingUserActionCopyWith(_$RateRatingUserAction value,
-          $Res Function(_$RateRatingUserAction) then) =
-      __$$RateRatingUserActionCopyWithImpl<$Res>;
+abstract class _$$RateRatingUserActionImplCopyWith<$Res> {
+  factory _$$RateRatingUserActionImplCopyWith(_$RateRatingUserActionImpl value,
+          $Res Function(_$RateRatingUserActionImpl) then) =
+      __$$RateRatingUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int rating});
 }
 
 /// @nodoc
-class __$$RateRatingUserActionCopyWithImpl<$Res>
-    extends _$UserActionRatingCopyWithImpl<$Res, _$RateRatingUserAction>
-    implements _$$RateRatingUserActionCopyWith<$Res> {
-  __$$RateRatingUserActionCopyWithImpl(_$RateRatingUserAction _value,
-      $Res Function(_$RateRatingUserAction) _then)
+class __$$RateRatingUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionRatingCopyWithImpl<$Res, _$RateRatingUserActionImpl>
+    implements _$$RateRatingUserActionImplCopyWith<$Res> {
+  __$$RateRatingUserActionImplCopyWithImpl(_$RateRatingUserActionImpl _value,
+      $Res Function(_$RateRatingUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,7 +96,7 @@ class __$$RateRatingUserActionCopyWithImpl<$Res>
   $Res call({
     Object? rating = null,
   }) {
-    return _then(_$RateRatingUserAction(
+    return _then(_$RateRatingUserActionImpl(
       rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
@@ -107,10 +107,10 @@ class __$$RateRatingUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RateRatingUserAction
+class _$RateRatingUserActionImpl
     with DiagnosticableTreeMixin
     implements RateRatingUserAction {
-  const _$RateRatingUserAction({required this.rating});
+  const _$RateRatingUserActionImpl({required this.rating});
 
   @override
   final int rating;
@@ -129,10 +129,10 @@ class _$RateRatingUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RateRatingUserAction &&
+            other is _$RateRatingUserActionImpl &&
             (identical(other.rating, rating) || other.rating == rating));
   }
 
@@ -142,9 +142,10 @@ class _$RateRatingUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RateRatingUserActionCopyWith<_$RateRatingUserAction> get copyWith =>
-      __$$RateRatingUserActionCopyWithImpl<_$RateRatingUserAction>(
-          this, _$identity);
+  _$$RateRatingUserActionImplCopyWith<_$RateRatingUserActionImpl>
+      get copyWith =>
+          __$$RateRatingUserActionImplCopyWithImpl<_$RateRatingUserActionImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -211,36 +212,38 @@ class _$RateRatingUserAction
 
 abstract class RateRatingUserAction implements UserActionRating {
   const factory RateRatingUserAction({required final int rating}) =
-      _$RateRatingUserAction;
+      _$RateRatingUserActionImpl;
 
   int get rating;
   @JsonKey(ignore: true)
-  _$$RateRatingUserActionCopyWith<_$RateRatingUserAction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RateRatingUserActionImplCopyWith<_$RateRatingUserActionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$NeverAskRatingUserActionCopyWith<$Res> {
-  factory _$$NeverAskRatingUserActionCopyWith(_$NeverAskRatingUserAction value,
-          $Res Function(_$NeverAskRatingUserAction) then) =
-      __$$NeverAskRatingUserActionCopyWithImpl<$Res>;
+abstract class _$$NeverAskRatingUserActionImplCopyWith<$Res> {
+  factory _$$NeverAskRatingUserActionImplCopyWith(
+          _$NeverAskRatingUserActionImpl value,
+          $Res Function(_$NeverAskRatingUserActionImpl) then) =
+      __$$NeverAskRatingUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NeverAskRatingUserActionCopyWithImpl<$Res>
-    extends _$UserActionRatingCopyWithImpl<$Res, _$NeverAskRatingUserAction>
-    implements _$$NeverAskRatingUserActionCopyWith<$Res> {
-  __$$NeverAskRatingUserActionCopyWithImpl(_$NeverAskRatingUserAction _value,
-      $Res Function(_$NeverAskRatingUserAction) _then)
+class __$$NeverAskRatingUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionRatingCopyWithImpl<$Res, _$NeverAskRatingUserActionImpl>
+    implements _$$NeverAskRatingUserActionImplCopyWith<$Res> {
+  __$$NeverAskRatingUserActionImplCopyWithImpl(
+      _$NeverAskRatingUserActionImpl _value,
+      $Res Function(_$NeverAskRatingUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$NeverAskRatingUserAction
+class _$NeverAskRatingUserActionImpl
     with DiagnosticableTreeMixin
     implements NeverAskRatingUserAction {
-  const _$NeverAskRatingUserAction();
+  const _$NeverAskRatingUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -254,10 +257,10 @@ class _$NeverAskRatingUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NeverAskRatingUserAction);
+            other is _$NeverAskRatingUserActionImpl);
   }
 
   @override
@@ -327,5 +330,5 @@ class _$NeverAskRatingUserAction
 }
 
 abstract class NeverAskRatingUserAction implements UserActionRating {
-  const factory NeverAskRatingUserAction() = _$NeverAskRatingUserAction;
+  const factory NeverAskRatingUserAction() = _$NeverAskRatingUserActionImpl;
 }

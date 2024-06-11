@@ -12,7 +12,7 @@ part of 'section_audio.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AudioSectionHiveModel {
@@ -59,22 +59,24 @@ class _$AudioSectionHiveModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AudioSectionHiveModelCopyWith<$Res>
+abstract class _$$AudioSectionHiveModelImplCopyWith<$Res>
     implements $AudioSectionHiveModelCopyWith<$Res> {
-  factory _$$_AudioSectionHiveModelCopyWith(_$_AudioSectionHiveModel value,
-          $Res Function(_$_AudioSectionHiveModel) then) =
-      __$$_AudioSectionHiveModelCopyWithImpl<$Res>;
+  factory _$$AudioSectionHiveModelImplCopyWith(
+          _$AudioSectionHiveModelImpl value,
+          $Res Function(_$AudioSectionHiveModelImpl) then) =
+      __$$AudioSectionHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@HiveField(AudioSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
-class __$$_AudioSectionHiveModelCopyWithImpl<$Res>
-    extends _$AudioSectionHiveModelCopyWithImpl<$Res, _$_AudioSectionHiveModel>
-    implements _$$_AudioSectionHiveModelCopyWith<$Res> {
-  __$$_AudioSectionHiveModelCopyWithImpl(_$_AudioSectionHiveModel _value,
-      $Res Function(_$_AudioSectionHiveModel) _then)
+class __$$AudioSectionHiveModelImplCopyWithImpl<$Res>
+    extends _$AudioSectionHiveModelCopyWithImpl<$Res,
+        _$AudioSectionHiveModelImpl>
+    implements _$$AudioSectionHiveModelImplCopyWith<$Res> {
+  __$$AudioSectionHiveModelImplCopyWithImpl(_$AudioSectionHiveModelImpl _value,
+      $Res Function(_$AudioSectionHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -82,7 +84,7 @@ class __$$_AudioSectionHiveModelCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$_AudioSectionHiveModel(
+    return _then(_$AudioSectionHiveModelImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -94,8 +96,8 @@ class __$$_AudioSectionHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveAudioSectionTypeId)
-class _$_AudioSectionHiveModel implements _AudioSectionHiveModel {
-  const _$_AudioSectionHiveModel(
+class _$AudioSectionHiveModelImpl implements _AudioSectionHiveModel {
+  const _$AudioSectionHiveModelImpl(
       {@HiveField(AudioSectionHiveFieldsIds.value) required this.value});
 
   @override
@@ -108,10 +110,10 @@ class _$_AudioSectionHiveModel implements _AudioSectionHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AudioSectionHiveModel &&
+            other is _$AudioSectionHiveModelImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -121,21 +123,21 @@ class _$_AudioSectionHiveModel implements _AudioSectionHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AudioSectionHiveModelCopyWith<_$_AudioSectionHiveModel> get copyWith =>
-      __$$_AudioSectionHiveModelCopyWithImpl<_$_AudioSectionHiveModel>(
-          this, _$identity);
+  _$$AudioSectionHiveModelImplCopyWith<_$AudioSectionHiveModelImpl>
+      get copyWith => __$$AudioSectionHiveModelImplCopyWithImpl<
+          _$AudioSectionHiveModelImpl>(this, _$identity);
 }
 
 abstract class _AudioSectionHiveModel implements AudioSectionHiveModel {
   const factory _AudioSectionHiveModel(
       {@HiveField(AudioSectionHiveFieldsIds.value)
-      required final String value}) = _$_AudioSectionHiveModel;
+      required final String value}) = _$AudioSectionHiveModelImpl;
 
   @override
   @HiveField(AudioSectionHiveFieldsIds.value)
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$_AudioSectionHiveModelCopyWith<_$_AudioSectionHiveModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AudioSectionHiveModelImplCopyWith<_$AudioSectionHiveModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

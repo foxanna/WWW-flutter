@@ -6,17 +6,18 @@ part of 'tour_info.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TourInfoHiveModelAdapter extends TypeAdapter<_$_TourInfoHiveModel> {
+class TourInfoHiveModelImplAdapter
+    extends TypeAdapter<_$TourInfoHiveModelImpl> {
   @override
   final int typeId = 4;
 
   @override
-  _$_TourInfoHiveModel read(BinaryReader reader) {
+  _$TourInfoHiveModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_TourInfoHiveModel(
+    return _$TourInfoHiveModelImpl(
       id: fields[0] as String?,
       title: fields[1] as String?,
       questionsCount: fields[2] as String?,
@@ -30,7 +31,7 @@ class TourInfoHiveModelAdapter extends TypeAdapter<_$_TourInfoHiveModel> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_TourInfoHiveModel obj) {
+  void write(BinaryWriter writer, _$TourInfoHiveModelImpl obj) {
     writer
       ..writeByte(9)
       ..writeByte(0)
@@ -59,7 +60,7 @@ class TourInfoHiveModelAdapter extends TypeAdapter<_$_TourInfoHiveModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TourInfoHiveModelAdapter &&
+      other is TourInfoHiveModelImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

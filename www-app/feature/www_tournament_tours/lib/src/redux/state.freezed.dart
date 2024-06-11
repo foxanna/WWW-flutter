@@ -12,7 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ToursState {
@@ -57,22 +57,22 @@ class _$ToursStateCopyWithImpl<$Res, $Val extends ToursState>
 }
 
 /// @nodoc
-abstract class _$$_ToursStateCopyWith<$Res>
+abstract class _$$ToursStateImplCopyWith<$Res>
     implements $ToursStateCopyWith<$Res> {
-  factory _$$_ToursStateCopyWith(
-          _$_ToursState value, $Res Function(_$_ToursState) then) =
-      __$$_ToursStateCopyWithImpl<$Res>;
+  factory _$$ToursStateImplCopyWith(
+          _$ToursStateImpl value, $Res Function(_$ToursStateImpl) then) =
+      __$$ToursStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<TourState> tours});
 }
 
 /// @nodoc
-class __$$_ToursStateCopyWithImpl<$Res>
-    extends _$ToursStateCopyWithImpl<$Res, _$_ToursState>
-    implements _$$_ToursStateCopyWith<$Res> {
-  __$$_ToursStateCopyWithImpl(
-      _$_ToursState _value, $Res Function(_$_ToursState) _then)
+class __$$ToursStateImplCopyWithImpl<$Res>
+    extends _$ToursStateCopyWithImpl<$Res, _$ToursStateImpl>
+    implements _$$ToursStateImplCopyWith<$Res> {
+  __$$ToursStateImplCopyWithImpl(
+      _$ToursStateImpl _value, $Res Function(_$ToursStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_ToursStateCopyWithImpl<$Res>
   $Res call({
     Object? tours = null,
   }) {
-    return _then(_$_ToursState(
+    return _then(_$ToursStateImpl(
       tours: null == tours
           ? _value._tours
           : tours // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ class __$$_ToursStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ToursState with DiagnosticableTreeMixin implements _ToursState {
-  const _$_ToursState({final List<TourState> tours = const <TourState>[]})
+class _$ToursStateImpl with DiagnosticableTreeMixin implements _ToursState {
+  const _$ToursStateImpl({final List<TourState> tours = const <TourState>[]})
       : _tours = tours;
 
   final List<TourState> _tours;
@@ -118,10 +118,10 @@ class _$_ToursState with DiagnosticableTreeMixin implements _ToursState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ToursState &&
+            other is _$ToursStateImpl &&
             const DeepCollectionEquality().equals(other._tours, _tours));
   }
 
@@ -132,18 +132,18 @@ class _$_ToursState with DiagnosticableTreeMixin implements _ToursState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ToursStateCopyWith<_$_ToursState> get copyWith =>
-      __$$_ToursStateCopyWithImpl<_$_ToursState>(this, _$identity);
+  _$$ToursStateImplCopyWith<_$ToursStateImpl> get copyWith =>
+      __$$ToursStateImplCopyWithImpl<_$ToursStateImpl>(this, _$identity);
 }
 
 abstract class _ToursState implements ToursState {
-  const factory _ToursState({final List<TourState> tours}) = _$_ToursState;
+  const factory _ToursState({final List<TourState> tours}) = _$ToursStateImpl;
 
   @override
   List<TourState> get tours;
   @override
   @JsonKey(ignore: true)
-  _$$_ToursStateCopyWith<_$_ToursState> get copyWith =>
+  _$$ToursStateImplCopyWith<_$ToursStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -249,11 +249,11 @@ class _$TourStateCopyWithImpl<$Res, $Val extends TourState>
 }
 
 /// @nodoc
-abstract class _$$InitialTourStateCopyWith<$Res>
+abstract class _$$InitialTourStateImplCopyWith<$Res>
     implements $TourStateCopyWith<$Res> {
-  factory _$$InitialTourStateCopyWith(
-          _$InitialTourState value, $Res Function(_$InitialTourState) then) =
-      __$$InitialTourStateCopyWithImpl<$Res>;
+  factory _$$InitialTourStateImplCopyWith(_$InitialTourStateImpl value,
+          $Res Function(_$InitialTourStateImpl) then) =
+      __$$InitialTourStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({TourInfo info});
@@ -263,11 +263,11 @@ abstract class _$$InitialTourStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InitialTourStateCopyWithImpl<$Res>
-    extends _$TourStateCopyWithImpl<$Res, _$InitialTourState>
-    implements _$$InitialTourStateCopyWith<$Res> {
-  __$$InitialTourStateCopyWithImpl(
-      _$InitialTourState _value, $Res Function(_$InitialTourState) _then)
+class __$$InitialTourStateImplCopyWithImpl<$Res>
+    extends _$TourStateCopyWithImpl<$Res, _$InitialTourStateImpl>
+    implements _$$InitialTourStateImplCopyWith<$Res> {
+  __$$InitialTourStateImplCopyWithImpl(_$InitialTourStateImpl _value,
+      $Res Function(_$InitialTourStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -275,7 +275,7 @@ class __$$InitialTourStateCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$InitialTourState(
+    return _then(_$InitialTourStateImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -286,10 +286,10 @@ class __$$InitialTourStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialTourState
+class _$InitialTourStateImpl
     with DiagnosticableTreeMixin
     implements InitialTourState {
-  const _$InitialTourState({required this.info});
+  const _$InitialTourStateImpl({required this.info});
 
   @override
   final TourInfo info;
@@ -308,10 +308,10 @@ class _$InitialTourState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitialTourState &&
+            other is _$InitialTourStateImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -321,8 +321,9 @@ class _$InitialTourState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitialTourStateCopyWith<_$InitialTourState> get copyWith =>
-      __$$InitialTourStateCopyWithImpl<_$InitialTourState>(this, _$identity);
+  _$$InitialTourStateImplCopyWith<_$InitialTourStateImpl> get copyWith =>
+      __$$InitialTourStateImplCopyWithImpl<_$InitialTourStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -401,22 +402,22 @@ class _$InitialTourState
 
 abstract class InitialTourState implements TourState {
   const factory InitialTourState({required final TourInfo info}) =
-      _$InitialTourState;
+      _$InitialTourStateImpl;
 
   @override
   TourInfo get info;
   @override
   @JsonKey(ignore: true)
-  _$$InitialTourStateCopyWith<_$InitialTourState> get copyWith =>
+  _$$InitialTourStateImplCopyWith<_$InitialTourStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DataTourStateCopyWith<$Res>
+abstract class _$$DataTourStateImplCopyWith<$Res>
     implements $TourStateCopyWith<$Res> {
-  factory _$$DataTourStateCopyWith(
-          _$DataTourState value, $Res Function(_$DataTourState) then) =
-      __$$DataTourStateCopyWithImpl<$Res>;
+  factory _$$DataTourStateImplCopyWith(
+          _$DataTourStateImpl value, $Res Function(_$DataTourStateImpl) then) =
+      __$$DataTourStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({TourInfo info, Tour tour});
@@ -427,11 +428,11 @@ abstract class _$$DataTourStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DataTourStateCopyWithImpl<$Res>
-    extends _$TourStateCopyWithImpl<$Res, _$DataTourState>
-    implements _$$DataTourStateCopyWith<$Res> {
-  __$$DataTourStateCopyWithImpl(
-      _$DataTourState _value, $Res Function(_$DataTourState) _then)
+class __$$DataTourStateImplCopyWithImpl<$Res>
+    extends _$TourStateCopyWithImpl<$Res, _$DataTourStateImpl>
+    implements _$$DataTourStateImplCopyWith<$Res> {
+  __$$DataTourStateImplCopyWithImpl(
+      _$DataTourStateImpl _value, $Res Function(_$DataTourStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -440,7 +441,7 @@ class __$$DataTourStateCopyWithImpl<$Res>
     Object? info = null,
     Object? tour = null,
   }) {
-    return _then(_$DataTourState(
+    return _then(_$DataTourStateImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -463,8 +464,10 @@ class __$$DataTourStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataTourState with DiagnosticableTreeMixin implements DataTourState {
-  const _$DataTourState({required this.info, required this.tour});
+class _$DataTourStateImpl
+    with DiagnosticableTreeMixin
+    implements DataTourState {
+  const _$DataTourStateImpl({required this.info, required this.tour});
 
   @override
   final TourInfo info;
@@ -486,10 +489,10 @@ class _$DataTourState with DiagnosticableTreeMixin implements DataTourState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DataTourState &&
+            other is _$DataTourStateImpl &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.tour, tour) || other.tour == tour));
   }
@@ -500,8 +503,8 @@ class _$DataTourState with DiagnosticableTreeMixin implements DataTourState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DataTourStateCopyWith<_$DataTourState> get copyWith =>
-      __$$DataTourStateCopyWithImpl<_$DataTourState>(this, _$identity);
+  _$$DataTourStateImplCopyWith<_$DataTourStateImpl> get copyWith =>
+      __$$DataTourStateImplCopyWithImpl<_$DataTourStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -581,23 +584,23 @@ class _$DataTourState with DiagnosticableTreeMixin implements DataTourState {
 abstract class DataTourState implements TourState {
   const factory DataTourState(
       {required final TourInfo info,
-      required final Tour tour}) = _$DataTourState;
+      required final Tour tour}) = _$DataTourStateImpl;
 
   @override
   TourInfo get info;
   Tour get tour;
   @override
   @JsonKey(ignore: true)
-  _$$DataTourStateCopyWith<_$DataTourState> get copyWith =>
+  _$$DataTourStateImplCopyWith<_$DataTourStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadingTourStateCopyWith<$Res>
+abstract class _$$LoadingTourStateImplCopyWith<$Res>
     implements $TourStateCopyWith<$Res> {
-  factory _$$LoadingTourStateCopyWith(
-          _$LoadingTourState value, $Res Function(_$LoadingTourState) then) =
-      __$$LoadingTourStateCopyWithImpl<$Res>;
+  factory _$$LoadingTourStateImplCopyWith(_$LoadingTourStateImpl value,
+          $Res Function(_$LoadingTourStateImpl) then) =
+      __$$LoadingTourStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({TourInfo info});
@@ -607,11 +610,11 @@ abstract class _$$LoadingTourStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LoadingTourStateCopyWithImpl<$Res>
-    extends _$TourStateCopyWithImpl<$Res, _$LoadingTourState>
-    implements _$$LoadingTourStateCopyWith<$Res> {
-  __$$LoadingTourStateCopyWithImpl(
-      _$LoadingTourState _value, $Res Function(_$LoadingTourState) _then)
+class __$$LoadingTourStateImplCopyWithImpl<$Res>
+    extends _$TourStateCopyWithImpl<$Res, _$LoadingTourStateImpl>
+    implements _$$LoadingTourStateImplCopyWith<$Res> {
+  __$$LoadingTourStateImplCopyWithImpl(_$LoadingTourStateImpl _value,
+      $Res Function(_$LoadingTourStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -619,7 +622,7 @@ class __$$LoadingTourStateCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$LoadingTourState(
+    return _then(_$LoadingTourStateImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -630,10 +633,10 @@ class __$$LoadingTourStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingTourState
+class _$LoadingTourStateImpl
     with DiagnosticableTreeMixin
     implements LoadingTourState {
-  const _$LoadingTourState({required this.info});
+  const _$LoadingTourStateImpl({required this.info});
 
   @override
   final TourInfo info;
@@ -652,10 +655,10 @@ class _$LoadingTourState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingTourState &&
+            other is _$LoadingTourStateImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -665,8 +668,9 @@ class _$LoadingTourState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingTourStateCopyWith<_$LoadingTourState> get copyWith =>
-      __$$LoadingTourStateCopyWithImpl<_$LoadingTourState>(this, _$identity);
+  _$$LoadingTourStateImplCopyWith<_$LoadingTourStateImpl> get copyWith =>
+      __$$LoadingTourStateImplCopyWithImpl<_$LoadingTourStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -745,22 +749,22 @@ class _$LoadingTourState
 
 abstract class LoadingTourState implements TourState {
   const factory LoadingTourState({required final TourInfo info}) =
-      _$LoadingTourState;
+      _$LoadingTourStateImpl;
 
   @override
   TourInfo get info;
   @override
   @JsonKey(ignore: true)
-  _$$LoadingTourStateCopyWith<_$LoadingTourState> get copyWith =>
+  _$$LoadingTourStateImplCopyWith<_$LoadingTourStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorTourStateCopyWith<$Res>
+abstract class _$$ErrorTourStateImplCopyWith<$Res>
     implements $TourStateCopyWith<$Res> {
-  factory _$$ErrorTourStateCopyWith(
-          _$ErrorTourState value, $Res Function(_$ErrorTourState) then) =
-      __$$ErrorTourStateCopyWithImpl<$Res>;
+  factory _$$ErrorTourStateImplCopyWith(_$ErrorTourStateImpl value,
+          $Res Function(_$ErrorTourStateImpl) then) =
+      __$$ErrorTourStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({TourInfo info, Exception exception});
@@ -770,11 +774,11 @@ abstract class _$$ErrorTourStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ErrorTourStateCopyWithImpl<$Res>
-    extends _$TourStateCopyWithImpl<$Res, _$ErrorTourState>
-    implements _$$ErrorTourStateCopyWith<$Res> {
-  __$$ErrorTourStateCopyWithImpl(
-      _$ErrorTourState _value, $Res Function(_$ErrorTourState) _then)
+class __$$ErrorTourStateImplCopyWithImpl<$Res>
+    extends _$TourStateCopyWithImpl<$Res, _$ErrorTourStateImpl>
+    implements _$$ErrorTourStateImplCopyWith<$Res> {
+  __$$ErrorTourStateImplCopyWithImpl(
+      _$ErrorTourStateImpl _value, $Res Function(_$ErrorTourStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -783,7 +787,7 @@ class __$$ErrorTourStateCopyWithImpl<$Res>
     Object? info = null,
     Object? exception = null,
   }) {
-    return _then(_$ErrorTourState(
+    return _then(_$ErrorTourStateImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -798,8 +802,10 @@ class __$$ErrorTourStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorTourState with DiagnosticableTreeMixin implements ErrorTourState {
-  const _$ErrorTourState({required this.info, required this.exception});
+class _$ErrorTourStateImpl
+    with DiagnosticableTreeMixin
+    implements ErrorTourState {
+  const _$ErrorTourStateImpl({required this.info, required this.exception});
 
   @override
   final TourInfo info;
@@ -821,10 +827,10 @@ class _$ErrorTourState with DiagnosticableTreeMixin implements ErrorTourState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorTourState &&
+            other is _$ErrorTourStateImpl &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
@@ -836,8 +842,9 @@ class _$ErrorTourState with DiagnosticableTreeMixin implements ErrorTourState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorTourStateCopyWith<_$ErrorTourState> get copyWith =>
-      __$$ErrorTourStateCopyWithImpl<_$ErrorTourState>(this, _$identity);
+  _$$ErrorTourStateImplCopyWith<_$ErrorTourStateImpl> get copyWith =>
+      __$$ErrorTourStateImplCopyWithImpl<_$ErrorTourStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -917,13 +924,13 @@ class _$ErrorTourState with DiagnosticableTreeMixin implements ErrorTourState {
 abstract class ErrorTourState implements TourState {
   const factory ErrorTourState(
       {required final TourInfo info,
-      required final Exception exception}) = _$ErrorTourState;
+      required final Exception exception}) = _$ErrorTourStateImpl;
 
   @override
   TourInfo get info;
   Exception get exception;
   @override
   @JsonKey(ignore: true)
-  _$$ErrorTourStateCopyWith<_$ErrorTourState> get copyWith =>
+  _$$ErrorTourStateImplCopyWith<_$ErrorTourStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

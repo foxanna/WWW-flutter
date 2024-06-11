@@ -12,7 +12,7 @@ part of 'tournament.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Tournament {
@@ -105,11 +105,11 @@ class _$TournamentCopyWithImpl<$Res, $Val extends Tournament>
 }
 
 /// @nodoc
-abstract class _$$_TournamentCopyWith<$Res>
+abstract class _$$TournamentImplCopyWith<$Res>
     implements $TournamentCopyWith<$Res> {
-  factory _$$_TournamentCopyWith(
-          _$_Tournament value, $Res Function(_$_Tournament) then) =
-      __$$_TournamentCopyWithImpl<$Res>;
+  factory _$$TournamentImplCopyWith(
+          _$TournamentImpl value, $Res Function(_$TournamentImpl) then) =
+      __$$TournamentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -126,11 +126,11 @@ abstract class _$$_TournamentCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TournamentCopyWithImpl<$Res>
-    extends _$TournamentCopyWithImpl<$Res, _$_Tournament>
-    implements _$$_TournamentCopyWith<$Res> {
-  __$$_TournamentCopyWithImpl(
-      _$_Tournament _value, $Res Function(_$_Tournament) _then)
+class __$$TournamentImplCopyWithImpl<$Res>
+    extends _$TournamentCopyWithImpl<$Res, _$TournamentImpl>
+    implements _$$TournamentImplCopyWith<$Res> {
+  __$$TournamentImplCopyWithImpl(
+      _$TournamentImpl _value, $Res Function(_$TournamentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -142,7 +142,7 @@ class __$$_TournamentCopyWithImpl<$Res>
     Object? status = null,
     Object? tours = null,
   }) {
-    return _then(_$_Tournament(
+    return _then(_$TournamentImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -169,8 +169,8 @@ class __$$_TournamentCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Tournament implements _Tournament {
-  const _$_Tournament(
+class _$TournamentImpl implements _Tournament {
+  const _$TournamentImpl(
       {this.id,
       this.id2,
       this.info = const TournamentInfo(),
@@ -203,10 +203,10 @@ class _$_Tournament implements _Tournament {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Tournament &&
+            other is _$TournamentImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.id2, id2) || other.id2 == id2) &&
             (identical(other.info, info) || other.info == info) &&
@@ -221,8 +221,8 @@ class _$_Tournament implements _Tournament {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TournamentCopyWith<_$_Tournament> get copyWith =>
-      __$$_TournamentCopyWithImpl<_$_Tournament>(this, _$identity);
+  _$$TournamentImplCopyWith<_$TournamentImpl> get copyWith =>
+      __$$TournamentImplCopyWithImpl<_$TournamentImpl>(this, _$identity);
 }
 
 abstract class _Tournament implements Tournament {
@@ -231,7 +231,7 @@ abstract class _Tournament implements Tournament {
       final String? id2,
       final TournamentInfo info,
       final TournamentStatus status,
-      final List<Tour> tours}) = _$_Tournament;
+      final List<Tour> tours}) = _$TournamentImpl;
 
   @override
   String? get id;
@@ -245,6 +245,6 @@ abstract class _Tournament implements Tournament {
   List<Tour> get tours;
   @override
   @JsonKey(ignore: true)
-  _$$_TournamentCopyWith<_$_Tournament> get copyWith =>
+  _$$TournamentImplCopyWith<_$TournamentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

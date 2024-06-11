@@ -6,8 +6,8 @@ part of 'tournament_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TournamentDto _$$_TournamentDtoFromJson(Map<String, dynamic> json) =>
-    _$_TournamentDto(
+_$TournamentDtoImpl _$$TournamentDtoImplFromJson(Map<String, dynamic> json) =>
+    _$TournamentDtoImpl(
       id: json['Id'] as String?,
       textId: json['TextId'] as String?,
       parentId: json['ParentId'] as String?,
@@ -20,7 +20,7 @@ _$_TournamentDto _$$_TournamentDtoFromJson(Map<String, dynamic> json) =>
       tours: const ToursListConverter().fromJson(json['tour']),
     );
 
-Map<String, dynamic> _$$_TournamentDtoToJson(_$_TournamentDto instance) {
+Map<String, dynamic> _$$TournamentDtoImplToJson(_$TournamentDtoImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

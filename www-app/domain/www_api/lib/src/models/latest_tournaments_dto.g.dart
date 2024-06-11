@@ -6,16 +6,16 @@ part of 'latest_tournaments_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_LatestTournamentsDto _$$_LatestTournamentsDtoFromJson(
+_$LatestTournamentsDtoImpl _$$LatestTournamentsDtoImplFromJson(
         Map<String, dynamic> json) =>
-    _$_LatestTournamentsDto(
+    _$LatestTournamentsDtoImpl(
       tournaments: (json['latest'] as List<dynamic>?)
           ?.map((e) => TournamentDto.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_LatestTournamentsDtoToJson(
-    _$_LatestTournamentsDto instance) {
+Map<String, dynamic> _$$LatestTournamentsDtoImplToJson(
+    _$LatestTournamentsDtoImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

@@ -6,25 +6,25 @@ part of 'tournament_status.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TournamentStatusHiveModelAdapter
-    extends TypeAdapter<_$_TournamentStatusHiveModel> {
+class TournamentStatusHiveModelImplAdapter
+    extends TypeAdapter<_$TournamentStatusHiveModelImpl> {
   @override
   final int typeId = 2;
 
   @override
-  _$_TournamentStatusHiveModel read(BinaryReader reader) {
+  _$TournamentStatusHiveModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_TournamentStatusHiveModel(
+    return _$TournamentStatusHiveModelImpl(
       isNew: fields[0] as bool?,
       isBookmarked: fields[1] as bool?,
     );
   }
 
   @override
-  void write(BinaryWriter writer, _$_TournamentStatusHiveModel obj) {
+  void write(BinaryWriter writer, _$TournamentStatusHiveModelImpl obj) {
     writer
       ..writeByte(2)
       ..writeByte(0)
@@ -39,7 +39,7 @@ class TournamentStatusHiveModelAdapter
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TournamentStatusHiveModelAdapter &&
+      other is TournamentStatusHiveModelImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

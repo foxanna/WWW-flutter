@@ -12,7 +12,7 @@ part of 'tournaments_tree_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TournamentsTreeInfo {
@@ -69,22 +69,22 @@ class _$TournamentsTreeInfoCopyWithImpl<$Res, $Val extends TournamentsTreeInfo>
 }
 
 /// @nodoc
-abstract class _$$_TournamentsTreeInfoCopyWith<$Res>
+abstract class _$$TournamentsTreeInfoImplCopyWith<$Res>
     implements $TournamentsTreeInfoCopyWith<$Res> {
-  factory _$$_TournamentsTreeInfoCopyWith(_$_TournamentsTreeInfo value,
-          $Res Function(_$_TournamentsTreeInfo) then) =
-      __$$_TournamentsTreeInfoCopyWithImpl<$Res>;
+  factory _$$TournamentsTreeInfoImplCopyWith(_$TournamentsTreeInfoImpl value,
+          $Res Function(_$TournamentsTreeInfoImpl) then) =
+      __$$TournamentsTreeInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? id, String? title, String? childrenCount});
 }
 
 /// @nodoc
-class __$$_TournamentsTreeInfoCopyWithImpl<$Res>
-    extends _$TournamentsTreeInfoCopyWithImpl<$Res, _$_TournamentsTreeInfo>
-    implements _$$_TournamentsTreeInfoCopyWith<$Res> {
-  __$$_TournamentsTreeInfoCopyWithImpl(_$_TournamentsTreeInfo _value,
-      $Res Function(_$_TournamentsTreeInfo) _then)
+class __$$TournamentsTreeInfoImplCopyWithImpl<$Res>
+    extends _$TournamentsTreeInfoCopyWithImpl<$Res, _$TournamentsTreeInfoImpl>
+    implements _$$TournamentsTreeInfoImplCopyWith<$Res> {
+  __$$TournamentsTreeInfoImplCopyWithImpl(_$TournamentsTreeInfoImpl _value,
+      $Res Function(_$TournamentsTreeInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +94,7 @@ class __$$_TournamentsTreeInfoCopyWithImpl<$Res>
     Object? title = freezed,
     Object? childrenCount = freezed,
   }) {
-    return _then(_$_TournamentsTreeInfo(
+    return _then(_$TournamentsTreeInfoImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -113,8 +113,8 @@ class __$$_TournamentsTreeInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TournamentsTreeInfo implements _TournamentsTreeInfo {
-  const _$_TournamentsTreeInfo({this.id, this.title, this.childrenCount});
+class _$TournamentsTreeInfoImpl implements _TournamentsTreeInfo {
+  const _$TournamentsTreeInfoImpl({this.id, this.title, this.childrenCount});
 
   @override
   final String? id;
@@ -129,10 +129,10 @@ class _$_TournamentsTreeInfo implements _TournamentsTreeInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TournamentsTreeInfo &&
+            other is _$TournamentsTreeInfoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.childrenCount, childrenCount) ||
@@ -145,8 +145,8 @@ class _$_TournamentsTreeInfo implements _TournamentsTreeInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TournamentsTreeInfoCopyWith<_$_TournamentsTreeInfo> get copyWith =>
-      __$$_TournamentsTreeInfoCopyWithImpl<_$_TournamentsTreeInfo>(
+  _$$TournamentsTreeInfoImplCopyWith<_$TournamentsTreeInfoImpl> get copyWith =>
+      __$$TournamentsTreeInfoImplCopyWithImpl<_$TournamentsTreeInfoImpl>(
           this, _$identity);
 }
 
@@ -154,7 +154,7 @@ abstract class _TournamentsTreeInfo implements TournamentsTreeInfo {
   const factory _TournamentsTreeInfo(
       {final String? id,
       final String? title,
-      final String? childrenCount}) = _$_TournamentsTreeInfo;
+      final String? childrenCount}) = _$TournamentsTreeInfoImpl;
 
   @override
   String? get id;
@@ -164,6 +164,6 @@ abstract class _TournamentsTreeInfo implements TournamentsTreeInfo {
   String? get childrenCount;
   @override
   @JsonKey(ignore: true)
-  _$$_TournamentsTreeInfoCopyWith<_$_TournamentsTreeInfo> get copyWith =>
+  _$$TournamentsTreeInfoImplCopyWith<_$TournamentsTreeInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'tour.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Tour {
@@ -77,9 +77,10 @@ class _$TourCopyWithImpl<$Res, $Val extends Tour>
 }
 
 /// @nodoc
-abstract class _$$_TourCopyWith<$Res> implements $TourCopyWith<$Res> {
-  factory _$$_TourCopyWith(_$_Tour value, $Res Function(_$_Tour) then) =
-      __$$_TourCopyWithImpl<$Res>;
+abstract class _$$TourImplCopyWith<$Res> implements $TourCopyWith<$Res> {
+  factory _$$TourImplCopyWith(
+          _$TourImpl value, $Res Function(_$TourImpl) then) =
+      __$$TourImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? id, TourInfo info, List<Question> questions});
@@ -89,9 +90,10 @@ abstract class _$$_TourCopyWith<$Res> implements $TourCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res, _$_Tour>
-    implements _$$_TourCopyWith<$Res> {
-  __$$_TourCopyWithImpl(_$_Tour _value, $Res Function(_$_Tour) _then)
+class __$$TourImplCopyWithImpl<$Res>
+    extends _$TourCopyWithImpl<$Res, _$TourImpl>
+    implements _$$TourImplCopyWith<$Res> {
+  __$$TourImplCopyWithImpl(_$TourImpl _value, $Res Function(_$TourImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +103,7 @@ class __$$_TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res, _$_Tour>
     Object? info = null,
     Object? questions = null,
   }) {
-    return _then(_$_Tour(
+    return _then(_$TourImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -120,8 +122,8 @@ class __$$_TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res, _$_Tour>
 
 /// @nodoc
 
-class _$_Tour implements _Tour {
-  const _$_Tour(
+class _$TourImpl implements _Tour {
+  const _$TourImpl(
       {this.id,
       this.info = const TourInfo(),
       final List<Question> questions = const <Question>[]})
@@ -147,10 +149,10 @@ class _$_Tour implements _Tour {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Tour &&
+            other is _$TourImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.info, info) || other.info == info) &&
             const DeepCollectionEquality()
@@ -164,15 +166,15 @@ class _$_Tour implements _Tour {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TourCopyWith<_$_Tour> get copyWith =>
-      __$$_TourCopyWithImpl<_$_Tour>(this, _$identity);
+  _$$TourImplCopyWith<_$TourImpl> get copyWith =>
+      __$$TourImplCopyWithImpl<_$TourImpl>(this, _$identity);
 }
 
 abstract class _Tour implements Tour {
   const factory _Tour(
       {final String? id,
       final TourInfo info,
-      final List<Question> questions}) = _$_Tour;
+      final List<Question> questions}) = _$TourImpl;
 
   @override
   String? get id;
@@ -182,5 +184,6 @@ abstract class _Tour implements Tour {
   List<Question> get questions;
   @override
   @JsonKey(ignore: true)
-  _$$_TourCopyWith<_$_Tour> get copyWith => throw _privateConstructorUsedError;
+  _$$TourImplCopyWith<_$TourImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

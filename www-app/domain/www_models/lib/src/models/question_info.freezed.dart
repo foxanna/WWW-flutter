@@ -12,7 +12,7 @@ part of 'question_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$QuestionInfo {
@@ -85,11 +85,11 @@ class _$QuestionInfoCopyWithImpl<$Res, $Val extends QuestionInfo>
 }
 
 /// @nodoc
-abstract class _$$_QuestionInfoCopyWith<$Res>
+abstract class _$$QuestionInfoImplCopyWith<$Res>
     implements $QuestionInfoCopyWith<$Res> {
-  factory _$$_QuestionInfoCopyWith(
-          _$_QuestionInfo value, $Res Function(_$_QuestionInfo) then) =
-      __$$_QuestionInfoCopyWithImpl<$Res>;
+  factory _$$QuestionInfoImplCopyWith(
+          _$QuestionInfoImpl value, $Res Function(_$QuestionInfoImpl) then) =
+      __$$QuestionInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? id, String? number, String? url, TourInfo tourInfo});
@@ -99,11 +99,11 @@ abstract class _$$_QuestionInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QuestionInfoCopyWithImpl<$Res>
-    extends _$QuestionInfoCopyWithImpl<$Res, _$_QuestionInfo>
-    implements _$$_QuestionInfoCopyWith<$Res> {
-  __$$_QuestionInfoCopyWithImpl(
-      _$_QuestionInfo _value, $Res Function(_$_QuestionInfo) _then)
+class __$$QuestionInfoImplCopyWithImpl<$Res>
+    extends _$QuestionInfoCopyWithImpl<$Res, _$QuestionInfoImpl>
+    implements _$$QuestionInfoImplCopyWith<$Res> {
+  __$$QuestionInfoImplCopyWithImpl(
+      _$QuestionInfoImpl _value, $Res Function(_$QuestionInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -114,7 +114,7 @@ class __$$_QuestionInfoCopyWithImpl<$Res>
     Object? url = freezed,
     Object? tourInfo = null,
   }) {
-    return _then(_$_QuestionInfo(
+    return _then(_$QuestionInfoImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -137,8 +137,8 @@ class __$$_QuestionInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_QuestionInfo implements _QuestionInfo {
-  const _$_QuestionInfo(
+class _$QuestionInfoImpl implements _QuestionInfo {
+  const _$QuestionInfoImpl(
       {this.id, this.number, this.url, this.tourInfo = const TourInfo()});
 
   @override
@@ -157,10 +157,10 @@ class _$_QuestionInfo implements _QuestionInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuestionInfo &&
+            other is _$QuestionInfoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.number, number) || other.number == number) &&
             (identical(other.url, url) || other.url == url) &&
@@ -174,8 +174,8 @@ class _$_QuestionInfo implements _QuestionInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuestionInfoCopyWith<_$_QuestionInfo> get copyWith =>
-      __$$_QuestionInfoCopyWithImpl<_$_QuestionInfo>(this, _$identity);
+  _$$QuestionInfoImplCopyWith<_$QuestionInfoImpl> get copyWith =>
+      __$$QuestionInfoImplCopyWithImpl<_$QuestionInfoImpl>(this, _$identity);
 }
 
 abstract class _QuestionInfo implements QuestionInfo {
@@ -183,7 +183,7 @@ abstract class _QuestionInfo implements QuestionInfo {
       {final String? id,
       final String? number,
       final String? url,
-      final TourInfo tourInfo}) = _$_QuestionInfo;
+      final TourInfo tourInfo}) = _$QuestionInfoImpl;
 
   @override
   String? get id;
@@ -195,6 +195,6 @@ abstract class _QuestionInfo implements QuestionInfo {
   TourInfo get tourInfo;
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionInfoCopyWith<_$_QuestionInfo> get copyWith =>
+  _$$QuestionInfoImplCopyWith<_$QuestionInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

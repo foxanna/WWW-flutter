@@ -12,7 +12,7 @@ part of 'question_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$QuestionInfoHiveModel {
@@ -99,11 +99,12 @@ class _$QuestionInfoHiveModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_QuestionInfoHiveModelCopyWith<$Res>
+abstract class _$$QuestionInfoHiveModelImplCopyWith<$Res>
     implements $QuestionInfoHiveModelCopyWith<$Res> {
-  factory _$$_QuestionInfoHiveModelCopyWith(_$_QuestionInfoHiveModel value,
-          $Res Function(_$_QuestionInfoHiveModel) then) =
-      __$$_QuestionInfoHiveModelCopyWithImpl<$Res>;
+  factory _$$QuestionInfoHiveModelImplCopyWith(
+          _$QuestionInfoHiveModelImpl value,
+          $Res Function(_$QuestionInfoHiveModelImpl) then) =
+      __$$QuestionInfoHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -118,11 +119,12 @@ abstract class _$$_QuestionInfoHiveModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QuestionInfoHiveModelCopyWithImpl<$Res>
-    extends _$QuestionInfoHiveModelCopyWithImpl<$Res, _$_QuestionInfoHiveModel>
-    implements _$$_QuestionInfoHiveModelCopyWith<$Res> {
-  __$$_QuestionInfoHiveModelCopyWithImpl(_$_QuestionInfoHiveModel _value,
-      $Res Function(_$_QuestionInfoHiveModel) _then)
+class __$$QuestionInfoHiveModelImplCopyWithImpl<$Res>
+    extends _$QuestionInfoHiveModelCopyWithImpl<$Res,
+        _$QuestionInfoHiveModelImpl>
+    implements _$$QuestionInfoHiveModelImplCopyWith<$Res> {
+  __$$QuestionInfoHiveModelImplCopyWithImpl(_$QuestionInfoHiveModelImpl _value,
+      $Res Function(_$QuestionInfoHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -133,7 +135,7 @@ class __$$_QuestionInfoHiveModelCopyWithImpl<$Res>
     Object? url = freezed,
     Object? tourInfo = freezed,
   }) {
-    return _then(_$_QuestionInfoHiveModel(
+    return _then(_$QuestionInfoHiveModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -157,8 +159,8 @@ class __$$_QuestionInfoHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveQuestionInfoTypeId)
-class _$_QuestionInfoHiveModel implements _QuestionInfoHiveModel {
-  const _$_QuestionInfoHiveModel(
+class _$QuestionInfoHiveModelImpl implements _QuestionInfoHiveModel {
+  const _$QuestionInfoHiveModelImpl(
       {@HiveField(QuestionInfoHiveFieldsIds.id) this.id,
       @HiveField(QuestionInfoHiveFieldsIds.number) this.number,
       @HiveField(QuestionInfoHiveFieldsIds.url) this.url,
@@ -183,10 +185,10 @@ class _$_QuestionInfoHiveModel implements _QuestionInfoHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuestionInfoHiveModel &&
+            other is _$QuestionInfoHiveModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.number, number) || other.number == number) &&
             (identical(other.url, url) || other.url == url) &&
@@ -200,9 +202,9 @@ class _$_QuestionInfoHiveModel implements _QuestionInfoHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuestionInfoHiveModelCopyWith<_$_QuestionInfoHiveModel> get copyWith =>
-      __$$_QuestionInfoHiveModelCopyWithImpl<_$_QuestionInfoHiveModel>(
-          this, _$identity);
+  _$$QuestionInfoHiveModelImplCopyWith<_$QuestionInfoHiveModelImpl>
+      get copyWith => __$$QuestionInfoHiveModelImplCopyWithImpl<
+          _$QuestionInfoHiveModelImpl>(this, _$identity);
 }
 
 abstract class _QuestionInfoHiveModel implements QuestionInfoHiveModel {
@@ -211,7 +213,7 @@ abstract class _QuestionInfoHiveModel implements QuestionInfoHiveModel {
       @HiveField(QuestionInfoHiveFieldsIds.number) final String? number,
       @HiveField(QuestionInfoHiveFieldsIds.url) final String? url,
       @HiveField(QuestionInfoHiveFieldsIds.tourInfo)
-      final TourInfoHiveModel? tourInfo}) = _$_QuestionInfoHiveModel;
+      final TourInfoHiveModel? tourInfo}) = _$QuestionInfoHiveModelImpl;
 
   @override
   @HiveField(QuestionInfoHiveFieldsIds.id)
@@ -227,6 +229,6 @@ abstract class _QuestionInfoHiveModel implements QuestionInfoHiveModel {
   TourInfoHiveModel? get tourInfo;
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionInfoHiveModelCopyWith<_$_QuestionInfoHiveModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$QuestionInfoHiveModelImplCopyWith<_$QuestionInfoHiveModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

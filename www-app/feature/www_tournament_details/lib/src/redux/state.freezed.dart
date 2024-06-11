@@ -12,7 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TournamentState {
@@ -146,11 +146,12 @@ class _$TournamentStateCopyWithImpl<$Res, $Val extends TournamentState>
 }
 
 /// @nodoc
-abstract class _$$InitialTournamentStateCopyWith<$Res>
+abstract class _$$InitialTournamentStateImplCopyWith<$Res>
     implements $TournamentStateCopyWith<$Res> {
-  factory _$$InitialTournamentStateCopyWith(_$InitialTournamentState value,
-          $Res Function(_$InitialTournamentState) then) =
-      __$$InitialTournamentStateCopyWithImpl<$Res>;
+  factory _$$InitialTournamentStateImplCopyWith(
+          _$InitialTournamentStateImpl value,
+          $Res Function(_$InitialTournamentStateImpl) then) =
+      __$$InitialTournamentStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({TournamentInfo info, TournamentStatus status});
@@ -162,11 +163,12 @@ abstract class _$$InitialTournamentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InitialTournamentStateCopyWithImpl<$Res>
-    extends _$TournamentStateCopyWithImpl<$Res, _$InitialTournamentState>
-    implements _$$InitialTournamentStateCopyWith<$Res> {
-  __$$InitialTournamentStateCopyWithImpl(_$InitialTournamentState _value,
-      $Res Function(_$InitialTournamentState) _then)
+class __$$InitialTournamentStateImplCopyWithImpl<$Res>
+    extends _$TournamentStateCopyWithImpl<$Res, _$InitialTournamentStateImpl>
+    implements _$$InitialTournamentStateImplCopyWith<$Res> {
+  __$$InitialTournamentStateImplCopyWithImpl(
+      _$InitialTournamentStateImpl _value,
+      $Res Function(_$InitialTournamentStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -175,7 +177,7 @@ class __$$InitialTournamentStateCopyWithImpl<$Res>
     Object? info = null,
     Object? status = null,
   }) {
-    return _then(_$InitialTournamentState(
+    return _then(_$InitialTournamentStateImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -190,10 +192,11 @@ class __$$InitialTournamentStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialTournamentState
+class _$InitialTournamentStateImpl
     with DiagnosticableTreeMixin
     implements InitialTournamentState {
-  const _$InitialTournamentState({required this.info, required this.status});
+  const _$InitialTournamentStateImpl(
+      {required this.info, required this.status});
 
   @override
   final TournamentInfo info;
@@ -215,10 +218,10 @@ class _$InitialTournamentState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitialTournamentState &&
+            other is _$InitialTournamentStateImpl &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.status, status) || other.status == status));
   }
@@ -229,9 +232,9 @@ class _$InitialTournamentState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitialTournamentStateCopyWith<_$InitialTournamentState> get copyWith =>
-      __$$InitialTournamentStateCopyWithImpl<_$InitialTournamentState>(
-          this, _$identity);
+  _$$InitialTournamentStateImplCopyWith<_$InitialTournamentStateImpl>
+      get copyWith => __$$InitialTournamentStateImplCopyWithImpl<
+          _$InitialTournamentStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -325,7 +328,7 @@ class _$InitialTournamentState
 abstract class InitialTournamentState implements TournamentState {
   const factory InitialTournamentState(
       {required final TournamentInfo info,
-      required final TournamentStatus status}) = _$InitialTournamentState;
+      required final TournamentStatus status}) = _$InitialTournamentStateImpl;
 
   @override
   TournamentInfo get info;
@@ -333,16 +336,16 @@ abstract class InitialTournamentState implements TournamentState {
   TournamentStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$InitialTournamentStateCopyWith<_$InitialTournamentState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InitialTournamentStateImplCopyWith<_$InitialTournamentStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DataTournamentStateCopyWith<$Res>
+abstract class _$$DataTournamentStateImplCopyWith<$Res>
     implements $TournamentStateCopyWith<$Res> {
-  factory _$$DataTournamentStateCopyWith(_$DataTournamentState value,
-          $Res Function(_$DataTournamentState) then) =
-      __$$DataTournamentStateCopyWithImpl<$Res>;
+  factory _$$DataTournamentStateImplCopyWith(_$DataTournamentStateImpl value,
+          $Res Function(_$DataTournamentStateImpl) then) =
+      __$$DataTournamentStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -359,11 +362,11 @@ abstract class _$$DataTournamentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DataTournamentStateCopyWithImpl<$Res>
-    extends _$TournamentStateCopyWithImpl<$Res, _$DataTournamentState>
-    implements _$$DataTournamentStateCopyWith<$Res> {
-  __$$DataTournamentStateCopyWithImpl(
-      _$DataTournamentState _value, $Res Function(_$DataTournamentState) _then)
+class __$$DataTournamentStateImplCopyWithImpl<$Res>
+    extends _$TournamentStateCopyWithImpl<$Res, _$DataTournamentStateImpl>
+    implements _$$DataTournamentStateImplCopyWith<$Res> {
+  __$$DataTournamentStateImplCopyWithImpl(_$DataTournamentStateImpl _value,
+      $Res Function(_$DataTournamentStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -374,7 +377,7 @@ class __$$DataTournamentStateCopyWithImpl<$Res>
     Object? tournament = null,
     Object? toursLoaded = null,
   }) {
-    return _then(_$DataTournamentState(
+    return _then(_$DataTournamentStateImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -405,10 +408,10 @@ class __$$DataTournamentStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataTournamentState
+class _$DataTournamentStateImpl
     with DiagnosticableTreeMixin
     implements DataTournamentState {
-  const _$DataTournamentState(
+  const _$DataTournamentStateImpl(
       {required this.info,
       required this.status,
       required this.tournament,
@@ -440,10 +443,10 @@ class _$DataTournamentState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DataTournamentState &&
+            other is _$DataTournamentStateImpl &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.tournament, tournament) ||
@@ -459,8 +462,8 @@ class _$DataTournamentState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DataTournamentStateCopyWith<_$DataTournamentState> get copyWith =>
-      __$$DataTournamentStateCopyWithImpl<_$DataTournamentState>(
+  _$$DataTournamentStateImplCopyWith<_$DataTournamentStateImpl> get copyWith =>
+      __$$DataTournamentStateImplCopyWithImpl<_$DataTournamentStateImpl>(
           this, _$identity);
 
   @override
@@ -557,7 +560,7 @@ abstract class DataTournamentState implements TournamentState {
       {required final TournamentInfo info,
       required final TournamentStatus status,
       required final Tournament tournament,
-      required final bool toursLoaded}) = _$DataTournamentState;
+      required final bool toursLoaded}) = _$DataTournamentStateImpl;
 
   @override
   TournamentInfo get info;
@@ -567,16 +570,17 @@ abstract class DataTournamentState implements TournamentState {
   bool get toursLoaded;
   @override
   @JsonKey(ignore: true)
-  _$$DataTournamentStateCopyWith<_$DataTournamentState> get copyWith =>
+  _$$DataTournamentStateImplCopyWith<_$DataTournamentStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadingTournamentStateCopyWith<$Res>
+abstract class _$$LoadingTournamentStateImplCopyWith<$Res>
     implements $TournamentStateCopyWith<$Res> {
-  factory _$$LoadingTournamentStateCopyWith(_$LoadingTournamentState value,
-          $Res Function(_$LoadingTournamentState) then) =
-      __$$LoadingTournamentStateCopyWithImpl<$Res>;
+  factory _$$LoadingTournamentStateImplCopyWith(
+          _$LoadingTournamentStateImpl value,
+          $Res Function(_$LoadingTournamentStateImpl) then) =
+      __$$LoadingTournamentStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({TournamentInfo info, TournamentStatus status});
@@ -588,11 +592,12 @@ abstract class _$$LoadingTournamentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LoadingTournamentStateCopyWithImpl<$Res>
-    extends _$TournamentStateCopyWithImpl<$Res, _$LoadingTournamentState>
-    implements _$$LoadingTournamentStateCopyWith<$Res> {
-  __$$LoadingTournamentStateCopyWithImpl(_$LoadingTournamentState _value,
-      $Res Function(_$LoadingTournamentState) _then)
+class __$$LoadingTournamentStateImplCopyWithImpl<$Res>
+    extends _$TournamentStateCopyWithImpl<$Res, _$LoadingTournamentStateImpl>
+    implements _$$LoadingTournamentStateImplCopyWith<$Res> {
+  __$$LoadingTournamentStateImplCopyWithImpl(
+      _$LoadingTournamentStateImpl _value,
+      $Res Function(_$LoadingTournamentStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -601,7 +606,7 @@ class __$$LoadingTournamentStateCopyWithImpl<$Res>
     Object? info = null,
     Object? status = null,
   }) {
-    return _then(_$LoadingTournamentState(
+    return _then(_$LoadingTournamentStateImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -616,10 +621,11 @@ class __$$LoadingTournamentStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingTournamentState
+class _$LoadingTournamentStateImpl
     with DiagnosticableTreeMixin
     implements LoadingTournamentState {
-  const _$LoadingTournamentState({required this.info, required this.status});
+  const _$LoadingTournamentStateImpl(
+      {required this.info, required this.status});
 
   @override
   final TournamentInfo info;
@@ -641,10 +647,10 @@ class _$LoadingTournamentState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingTournamentState &&
+            other is _$LoadingTournamentStateImpl &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.status, status) || other.status == status));
   }
@@ -655,9 +661,9 @@ class _$LoadingTournamentState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingTournamentStateCopyWith<_$LoadingTournamentState> get copyWith =>
-      __$$LoadingTournamentStateCopyWithImpl<_$LoadingTournamentState>(
-          this, _$identity);
+  _$$LoadingTournamentStateImplCopyWith<_$LoadingTournamentStateImpl>
+      get copyWith => __$$LoadingTournamentStateImplCopyWithImpl<
+          _$LoadingTournamentStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -751,7 +757,7 @@ class _$LoadingTournamentState
 abstract class LoadingTournamentState implements TournamentState {
   const factory LoadingTournamentState(
       {required final TournamentInfo info,
-      required final TournamentStatus status}) = _$LoadingTournamentState;
+      required final TournamentStatus status}) = _$LoadingTournamentStateImpl;
 
   @override
   TournamentInfo get info;
@@ -759,16 +765,16 @@ abstract class LoadingTournamentState implements TournamentState {
   TournamentStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$LoadingTournamentStateCopyWith<_$LoadingTournamentState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoadingTournamentStateImplCopyWith<_$LoadingTournamentStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorTournamentStateCopyWith<$Res>
+abstract class _$$ErrorTournamentStateImplCopyWith<$Res>
     implements $TournamentStateCopyWith<$Res> {
-  factory _$$ErrorTournamentStateCopyWith(_$ErrorTournamentState value,
-          $Res Function(_$ErrorTournamentState) then) =
-      __$$ErrorTournamentStateCopyWithImpl<$Res>;
+  factory _$$ErrorTournamentStateImplCopyWith(_$ErrorTournamentStateImpl value,
+          $Res Function(_$ErrorTournamentStateImpl) then) =
+      __$$ErrorTournamentStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -781,11 +787,11 @@ abstract class _$$ErrorTournamentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ErrorTournamentStateCopyWithImpl<$Res>
-    extends _$TournamentStateCopyWithImpl<$Res, _$ErrorTournamentState>
-    implements _$$ErrorTournamentStateCopyWith<$Res> {
-  __$$ErrorTournamentStateCopyWithImpl(_$ErrorTournamentState _value,
-      $Res Function(_$ErrorTournamentState) _then)
+class __$$ErrorTournamentStateImplCopyWithImpl<$Res>
+    extends _$TournamentStateCopyWithImpl<$Res, _$ErrorTournamentStateImpl>
+    implements _$$ErrorTournamentStateImplCopyWith<$Res> {
+  __$$ErrorTournamentStateImplCopyWithImpl(_$ErrorTournamentStateImpl _value,
+      $Res Function(_$ErrorTournamentStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -795,7 +801,7 @@ class __$$ErrorTournamentStateCopyWithImpl<$Res>
     Object? status = null,
     Object? exception = null,
   }) {
-    return _then(_$ErrorTournamentState(
+    return _then(_$ErrorTournamentStateImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -814,10 +820,10 @@ class __$$ErrorTournamentStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorTournamentState
+class _$ErrorTournamentStateImpl
     with DiagnosticableTreeMixin
     implements ErrorTournamentState {
-  const _$ErrorTournamentState(
+  const _$ErrorTournamentStateImpl(
       {required this.info, required this.status, required this.exception});
 
   @override
@@ -843,10 +849,10 @@ class _$ErrorTournamentState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorTournamentState &&
+            other is _$ErrorTournamentStateImpl &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.exception, exception) ||
@@ -859,9 +865,10 @@ class _$ErrorTournamentState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorTournamentStateCopyWith<_$ErrorTournamentState> get copyWith =>
-      __$$ErrorTournamentStateCopyWithImpl<_$ErrorTournamentState>(
-          this, _$identity);
+  _$$ErrorTournamentStateImplCopyWith<_$ErrorTournamentStateImpl>
+      get copyWith =>
+          __$$ErrorTournamentStateImplCopyWithImpl<_$ErrorTournamentStateImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -956,7 +963,7 @@ abstract class ErrorTournamentState implements TournamentState {
   const factory ErrorTournamentState(
       {required final TournamentInfo info,
       required final TournamentStatus status,
-      required final Exception exception}) = _$ErrorTournamentState;
+      required final Exception exception}) = _$ErrorTournamentStateImpl;
 
   @override
   TournamentInfo get info;
@@ -965,6 +972,6 @@ abstract class ErrorTournamentState implements TournamentState {
   Exception get exception;
   @override
   @JsonKey(ignore: true)
-  _$$ErrorTournamentStateCopyWith<_$ErrorTournamentState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ErrorTournamentStateImplCopyWith<_$ErrorTournamentStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

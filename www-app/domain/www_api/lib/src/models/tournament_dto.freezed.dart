@@ -12,7 +12,7 @@ part of 'tournament_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TournamentDto _$TournamentDtoFromJson(Map<String, dynamic> json) {
   return _TournamentDto.fromJson(json);
@@ -137,11 +137,11 @@ class _$TournamentDtoCopyWithImpl<$Res, $Val extends TournamentDto>
 }
 
 /// @nodoc
-abstract class _$$_TournamentDtoCopyWith<$Res>
+abstract class _$$TournamentDtoImplCopyWith<$Res>
     implements $TournamentDtoCopyWith<$Res> {
-  factory _$$_TournamentDtoCopyWith(
-          _$_TournamentDto value, $Res Function(_$_TournamentDto) then) =
-      __$$_TournamentDtoCopyWithImpl<$Res>;
+  factory _$$TournamentDtoImplCopyWith(
+          _$TournamentDtoImpl value, $Res Function(_$TournamentDtoImpl) then) =
+      __$$TournamentDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -158,11 +158,11 @@ abstract class _$$_TournamentDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TournamentDtoCopyWithImpl<$Res>
-    extends _$TournamentDtoCopyWithImpl<$Res, _$_TournamentDto>
-    implements _$$_TournamentDtoCopyWith<$Res> {
-  __$$_TournamentDtoCopyWithImpl(
-      _$_TournamentDto _value, $Res Function(_$_TournamentDto) _then)
+class __$$TournamentDtoImplCopyWithImpl<$Res>
+    extends _$TournamentDtoCopyWithImpl<$Res, _$TournamentDtoImpl>
+    implements _$$TournamentDtoImplCopyWith<$Res> {
+  __$$TournamentDtoImplCopyWithImpl(
+      _$TournamentDtoImpl _value, $Res Function(_$TournamentDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -179,7 +179,7 @@ class __$$_TournamentDtoCopyWithImpl<$Res>
     Object? playedAt = freezed,
     Object? tours = freezed,
   }) {
-    return _then(_$_TournamentDto(
+    return _then(_$TournamentDtoImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -226,8 +226,8 @@ class __$$_TournamentDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TournamentDto implements _TournamentDto {
-  const _$_TournamentDto(
+class _$TournamentDtoImpl implements _TournamentDto {
+  const _$TournamentDtoImpl(
       {@JsonKey(name: 'Id') this.id,
       @JsonKey(name: 'TextId') this.textId,
       @JsonKey(name: 'ParentId') this.parentId,
@@ -240,8 +240,8 @@ class _$_TournamentDto implements _TournamentDto {
       @JsonKey(name: 'tour') @ToursListConverter() final List<TourDto>? tours})
       : _tours = tours;
 
-  factory _$_TournamentDto.fromJson(Map<String, dynamic> json) =>
-      _$$_TournamentDtoFromJson(json);
+  factory _$TournamentDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TournamentDtoImplFromJson(json);
 
   @override
   @JsonKey(name: 'Id')
@@ -288,10 +288,10 @@ class _$_TournamentDto implements _TournamentDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TournamentDto &&
+            other is _$TournamentDtoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.textId, textId) || other.textId == textId) &&
             (identical(other.parentId, parentId) ||
@@ -327,12 +327,12 @@ class _$_TournamentDto implements _TournamentDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TournamentDtoCopyWith<_$_TournamentDto> get copyWith =>
-      __$$_TournamentDtoCopyWithImpl<_$_TournamentDto>(this, _$identity);
+  _$$TournamentDtoImplCopyWith<_$TournamentDtoImpl> get copyWith =>
+      __$$TournamentDtoImplCopyWithImpl<_$TournamentDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TournamentDtoToJson(
+    return _$$TournamentDtoImplToJson(
       this,
     );
   }
@@ -351,10 +351,10 @@ abstract class _TournamentDto implements TournamentDto {
       @JsonKey(name: 'PlayedAt') final String? playedAt,
       @JsonKey(name: 'tour')
       @ToursListConverter()
-      final List<TourDto>? tours}) = _$_TournamentDto;
+      final List<TourDto>? tours}) = _$TournamentDtoImpl;
 
   factory _TournamentDto.fromJson(Map<String, dynamic> json) =
-      _$_TournamentDto.fromJson;
+      _$TournamentDtoImpl.fromJson;
 
   @override
   @JsonKey(name: 'Id')
@@ -389,6 +389,6 @@ abstract class _TournamentDto implements TournamentDto {
   List<TourDto>? get tours;
   @override
   @JsonKey(ignore: true)
-  _$$_TournamentDtoCopyWith<_$_TournamentDto> get copyWith =>
+  _$$TournamentDtoImplCopyWith<_$TournamentDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

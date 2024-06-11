@@ -12,7 +12,7 @@ part of 'dialogs_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionDialog {
@@ -77,10 +77,11 @@ class _$UserActionDialogCopyWithImpl<$Res, $Val extends UserActionDialog>
 }
 
 /// @nodoc
-abstract class _$$TourInfoDialogUserActionCopyWith<$Res> {
-  factory _$$TourInfoDialogUserActionCopyWith(_$TourInfoDialogUserAction value,
-          $Res Function(_$TourInfoDialogUserAction) then) =
-      __$$TourInfoDialogUserActionCopyWithImpl<$Res>;
+abstract class _$$TourInfoDialogUserActionImplCopyWith<$Res> {
+  factory _$$TourInfoDialogUserActionImplCopyWith(
+          _$TourInfoDialogUserActionImpl value,
+          $Res Function(_$TourInfoDialogUserActionImpl) then) =
+      __$$TourInfoDialogUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TourInfo info});
 
@@ -88,11 +89,12 @@ abstract class _$$TourInfoDialogUserActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TourInfoDialogUserActionCopyWithImpl<$Res>
-    extends _$UserActionDialogCopyWithImpl<$Res, _$TourInfoDialogUserAction>
-    implements _$$TourInfoDialogUserActionCopyWith<$Res> {
-  __$$TourInfoDialogUserActionCopyWithImpl(_$TourInfoDialogUserAction _value,
-      $Res Function(_$TourInfoDialogUserAction) _then)
+class __$$TourInfoDialogUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionDialogCopyWithImpl<$Res, _$TourInfoDialogUserActionImpl>
+    implements _$$TourInfoDialogUserActionImplCopyWith<$Res> {
+  __$$TourInfoDialogUserActionImplCopyWithImpl(
+      _$TourInfoDialogUserActionImpl _value,
+      $Res Function(_$TourInfoDialogUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +102,7 @@ class __$$TourInfoDialogUserActionCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$TourInfoDialogUserAction(
+    return _then(_$TourInfoDialogUserActionImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -119,10 +121,10 @@ class __$$TourInfoDialogUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TourInfoDialogUserAction
+class _$TourInfoDialogUserActionImpl
     with DiagnosticableTreeMixin
     implements TourInfoDialogUserAction {
-  const _$TourInfoDialogUserAction({required this.info});
+  const _$TourInfoDialogUserActionImpl({required this.info});
 
   @override
   final TourInfo info;
@@ -141,10 +143,10 @@ class _$TourInfoDialogUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TourInfoDialogUserAction &&
+            other is _$TourInfoDialogUserActionImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -154,10 +156,9 @@ class _$TourInfoDialogUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TourInfoDialogUserActionCopyWith<_$TourInfoDialogUserAction>
-      get copyWith =>
-          __$$TourInfoDialogUserActionCopyWithImpl<_$TourInfoDialogUserAction>(
-              this, _$identity);
+  _$$TourInfoDialogUserActionImplCopyWith<_$TourInfoDialogUserActionImpl>
+      get copyWith => __$$TourInfoDialogUserActionImplCopyWithImpl<
+          _$TourInfoDialogUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -225,21 +226,21 @@ class _$TourInfoDialogUserAction
 
 abstract class TourInfoDialogUserAction implements UserActionDialog {
   const factory TourInfoDialogUserAction({required final TourInfo info}) =
-      _$TourInfoDialogUserAction;
+      _$TourInfoDialogUserActionImpl;
 
   @override
   TourInfo get info;
   @JsonKey(ignore: true)
-  _$$TourInfoDialogUserActionCopyWith<_$TourInfoDialogUserAction>
+  _$$TourInfoDialogUserActionImplCopyWith<_$TourInfoDialogUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TournamentInfoDialogUserActionCopyWith<$Res> {
-  factory _$$TournamentInfoDialogUserActionCopyWith(
-          _$TournamentInfoDialogUserAction value,
-          $Res Function(_$TournamentInfoDialogUserAction) then) =
-      __$$TournamentInfoDialogUserActionCopyWithImpl<$Res>;
+abstract class _$$TournamentInfoDialogUserActionImplCopyWith<$Res> {
+  factory _$$TournamentInfoDialogUserActionImplCopyWith(
+          _$TournamentInfoDialogUserActionImpl value,
+          $Res Function(_$TournamentInfoDialogUserActionImpl) then) =
+      __$$TournamentInfoDialogUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TournamentInfo info});
 
@@ -247,13 +248,13 @@ abstract class _$$TournamentInfoDialogUserActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TournamentInfoDialogUserActionCopyWithImpl<$Res>
+class __$$TournamentInfoDialogUserActionImplCopyWithImpl<$Res>
     extends _$UserActionDialogCopyWithImpl<$Res,
-        _$TournamentInfoDialogUserAction>
-    implements _$$TournamentInfoDialogUserActionCopyWith<$Res> {
-  __$$TournamentInfoDialogUserActionCopyWithImpl(
-      _$TournamentInfoDialogUserAction _value,
-      $Res Function(_$TournamentInfoDialogUserAction) _then)
+        _$TournamentInfoDialogUserActionImpl>
+    implements _$$TournamentInfoDialogUserActionImplCopyWith<$Res> {
+  __$$TournamentInfoDialogUserActionImplCopyWithImpl(
+      _$TournamentInfoDialogUserActionImpl _value,
+      $Res Function(_$TournamentInfoDialogUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,7 +262,7 @@ class __$$TournamentInfoDialogUserActionCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$TournamentInfoDialogUserAction(
+    return _then(_$TournamentInfoDialogUserActionImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -280,10 +281,10 @@ class __$$TournamentInfoDialogUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TournamentInfoDialogUserAction
+class _$TournamentInfoDialogUserActionImpl
     with DiagnosticableTreeMixin
     implements TournamentInfoDialogUserAction {
-  const _$TournamentInfoDialogUserAction({required this.info});
+  const _$TournamentInfoDialogUserActionImpl({required this.info});
 
   @override
   final TournamentInfo info;
@@ -302,10 +303,10 @@ class _$TournamentInfoDialogUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TournamentInfoDialogUserAction &&
+            other is _$TournamentInfoDialogUserActionImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -315,9 +316,10 @@ class _$TournamentInfoDialogUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TournamentInfoDialogUserActionCopyWith<_$TournamentInfoDialogUserAction>
-      get copyWith => __$$TournamentInfoDialogUserActionCopyWithImpl<
-          _$TournamentInfoDialogUserAction>(this, _$identity);
+  _$$TournamentInfoDialogUserActionImplCopyWith<
+          _$TournamentInfoDialogUserActionImpl>
+      get copyWith => __$$TournamentInfoDialogUserActionImplCopyWithImpl<
+          _$TournamentInfoDialogUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -385,12 +387,14 @@ class _$TournamentInfoDialogUserAction
 
 abstract class TournamentInfoDialogUserAction implements UserActionDialog {
   const factory TournamentInfoDialogUserAction(
-      {required final TournamentInfo info}) = _$TournamentInfoDialogUserAction;
+          {required final TournamentInfo info}) =
+      _$TournamentInfoDialogUserActionImpl;
 
   @override
   TournamentInfo get info;
   @JsonKey(ignore: true)
-  _$$TournamentInfoDialogUserActionCopyWith<_$TournamentInfoDialogUserAction>
+  _$$TournamentInfoDialogUserActionImplCopyWith<
+          _$TournamentInfoDialogUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -449,27 +453,30 @@ class _$SystemActionDialogCopyWithImpl<$Res, $Val extends SystemActionDialog>
 }
 
 /// @nodoc
-abstract class _$$RatingDialogSystemActionCopyWith<$Res> {
-  factory _$$RatingDialogSystemActionCopyWith(_$RatingDialogSystemAction value,
-          $Res Function(_$RatingDialogSystemAction) then) =
-      __$$RatingDialogSystemActionCopyWithImpl<$Res>;
+abstract class _$$RatingDialogSystemActionImplCopyWith<$Res> {
+  factory _$$RatingDialogSystemActionImplCopyWith(
+          _$RatingDialogSystemActionImpl value,
+          $Res Function(_$RatingDialogSystemActionImpl) then) =
+      __$$RatingDialogSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RatingDialogSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionDialogCopyWithImpl<$Res, _$RatingDialogSystemAction>
-    implements _$$RatingDialogSystemActionCopyWith<$Res> {
-  __$$RatingDialogSystemActionCopyWithImpl(_$RatingDialogSystemAction _value,
-      $Res Function(_$RatingDialogSystemAction) _then)
+class __$$RatingDialogSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionDialogCopyWithImpl<$Res,
+        _$RatingDialogSystemActionImpl>
+    implements _$$RatingDialogSystemActionImplCopyWith<$Res> {
+  __$$RatingDialogSystemActionImplCopyWithImpl(
+      _$RatingDialogSystemActionImpl _value,
+      $Res Function(_$RatingDialogSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RatingDialogSystemAction
+class _$RatingDialogSystemActionImpl
     with DiagnosticableTreeMixin
     implements RatingDialogSystemAction {
-  const _$RatingDialogSystemAction();
+  const _$RatingDialogSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -483,10 +490,10 @@ class _$RatingDialogSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RatingDialogSystemAction);
+            other is _$RatingDialogSystemActionImpl);
   }
 
   @override
@@ -550,5 +557,5 @@ class _$RatingDialogSystemAction
 }
 
 abstract class RatingDialogSystemAction implements SystemActionDialog {
-  const factory RatingDialogSystemAction() = _$RatingDialogSystemAction;
+  const factory RatingDialogSystemAction() = _$RatingDialogSystemActionImpl;
 }

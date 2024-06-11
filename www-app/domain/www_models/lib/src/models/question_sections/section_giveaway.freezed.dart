@@ -12,7 +12,7 @@ part of 'section_giveaway.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GiveAwaySection {
@@ -57,22 +57,22 @@ class _$GiveAwaySectionCopyWithImpl<$Res, $Val extends GiveAwaySection>
 }
 
 /// @nodoc
-abstract class _$$_GiveAwaySectionCopyWith<$Res>
+abstract class _$$GiveAwaySectionImplCopyWith<$Res>
     implements $GiveAwaySectionCopyWith<$Res> {
-  factory _$$_GiveAwaySectionCopyWith(
-          _$_GiveAwaySection value, $Res Function(_$_GiveAwaySection) then) =
-      __$$_GiveAwaySectionCopyWithImpl<$Res>;
+  factory _$$GiveAwaySectionImplCopyWith(_$GiveAwaySectionImpl value,
+          $Res Function(_$GiveAwaySectionImpl) then) =
+      __$$GiveAwaySectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$_GiveAwaySectionCopyWithImpl<$Res>
-    extends _$GiveAwaySectionCopyWithImpl<$Res, _$_GiveAwaySection>
-    implements _$$_GiveAwaySectionCopyWith<$Res> {
-  __$$_GiveAwaySectionCopyWithImpl(
-      _$_GiveAwaySection _value, $Res Function(_$_GiveAwaySection) _then)
+class __$$GiveAwaySectionImplCopyWithImpl<$Res>
+    extends _$GiveAwaySectionCopyWithImpl<$Res, _$GiveAwaySectionImpl>
+    implements _$$GiveAwaySectionImplCopyWith<$Res> {
+  __$$GiveAwaySectionImplCopyWithImpl(
+      _$GiveAwaySectionImpl _value, $Res Function(_$GiveAwaySectionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_GiveAwaySectionCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$_GiveAwaySection(
+    return _then(_$GiveAwaySectionImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ class __$$_GiveAwaySectionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GiveAwaySection implements _GiveAwaySection {
-  const _$_GiveAwaySection({required this.value});
+class _$GiveAwaySectionImpl implements _GiveAwaySection {
+  const _$GiveAwaySectionImpl({required this.value});
 
   @override
   final String value;
@@ -103,10 +103,10 @@ class _$_GiveAwaySection implements _GiveAwaySection {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GiveAwaySection &&
+            other is _$GiveAwaySectionImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -116,18 +116,19 @@ class _$_GiveAwaySection implements _GiveAwaySection {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GiveAwaySectionCopyWith<_$_GiveAwaySection> get copyWith =>
-      __$$_GiveAwaySectionCopyWithImpl<_$_GiveAwaySection>(this, _$identity);
+  _$$GiveAwaySectionImplCopyWith<_$GiveAwaySectionImpl> get copyWith =>
+      __$$GiveAwaySectionImplCopyWithImpl<_$GiveAwaySectionImpl>(
+          this, _$identity);
 }
 
 abstract class _GiveAwaySection implements GiveAwaySection {
   const factory _GiveAwaySection({required final String value}) =
-      _$_GiveAwaySection;
+      _$GiveAwaySectionImpl;
 
   @override
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$_GiveAwaySectionCopyWith<_$_GiveAwaySection> get copyWith =>
+  _$$GiveAwaySectionImplCopyWith<_$GiveAwaySectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

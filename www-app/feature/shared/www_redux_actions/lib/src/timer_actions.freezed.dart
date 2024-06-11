@@ -12,7 +12,7 @@ part of 'timer_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionTimer {
@@ -99,27 +99,27 @@ class _$UserActionTimerCopyWithImpl<$Res, $Val extends UserActionTimer>
 }
 
 /// @nodoc
-abstract class _$$InitTimerUserActionCopyWith<$Res> {
-  factory _$$InitTimerUserActionCopyWith(_$InitTimerUserAction value,
-          $Res Function(_$InitTimerUserAction) then) =
-      __$$InitTimerUserActionCopyWithImpl<$Res>;
+abstract class _$$InitTimerUserActionImplCopyWith<$Res> {
+  factory _$$InitTimerUserActionImplCopyWith(_$InitTimerUserActionImpl value,
+          $Res Function(_$InitTimerUserActionImpl) then) =
+      __$$InitTimerUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res, _$InitTimerUserAction>
-    implements _$$InitTimerUserActionCopyWith<$Res> {
-  __$$InitTimerUserActionCopyWithImpl(
-      _$InitTimerUserAction _value, $Res Function(_$InitTimerUserAction) _then)
+class __$$InitTimerUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$InitTimerUserActionImpl>
+    implements _$$InitTimerUserActionImplCopyWith<$Res> {
+  __$$InitTimerUserActionImplCopyWithImpl(_$InitTimerUserActionImpl _value,
+      $Res Function(_$InitTimerUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitTimerUserAction
+class _$InitTimerUserActionImpl
     with DiagnosticableTreeMixin
     implements InitTimerUserAction {
-  const _$InitTimerUserAction();
+  const _$InitTimerUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -133,9 +133,10 @@ class _$InitTimerUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitTimerUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$InitTimerUserActionImpl);
   }
 
   @override
@@ -229,31 +230,32 @@ class _$InitTimerUserAction
 }
 
 abstract class InitTimerUserAction implements UserActionTimer {
-  const factory InitTimerUserAction() = _$InitTimerUserAction;
+  const factory InitTimerUserAction() = _$InitTimerUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$DeInitTimerUserActionCopyWith<$Res> {
-  factory _$$DeInitTimerUserActionCopyWith(_$DeInitTimerUserAction value,
-          $Res Function(_$DeInitTimerUserAction) then) =
-      __$$DeInitTimerUserActionCopyWithImpl<$Res>;
+abstract class _$$DeInitTimerUserActionImplCopyWith<$Res> {
+  factory _$$DeInitTimerUserActionImplCopyWith(
+          _$DeInitTimerUserActionImpl value,
+          $Res Function(_$DeInitTimerUserActionImpl) then) =
+      __$$DeInitTimerUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DeInitTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res, _$DeInitTimerUserAction>
-    implements _$$DeInitTimerUserActionCopyWith<$Res> {
-  __$$DeInitTimerUserActionCopyWithImpl(_$DeInitTimerUserAction _value,
-      $Res Function(_$DeInitTimerUserAction) _then)
+class __$$DeInitTimerUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$DeInitTimerUserActionImpl>
+    implements _$$DeInitTimerUserActionImplCopyWith<$Res> {
+  __$$DeInitTimerUserActionImplCopyWithImpl(_$DeInitTimerUserActionImpl _value,
+      $Res Function(_$DeInitTimerUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DeInitTimerUserAction
+class _$DeInitTimerUserActionImpl
     with DiagnosticableTreeMixin
     implements DeInitTimerUserAction {
-  const _$DeInitTimerUserAction();
+  const _$DeInitTimerUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -267,9 +269,10 @@ class _$DeInitTimerUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$DeInitTimerUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$DeInitTimerUserActionImpl);
   }
 
   @override
@@ -363,31 +366,31 @@ class _$DeInitTimerUserAction
 }
 
 abstract class DeInitTimerUserAction implements UserActionTimer {
-  const factory DeInitTimerUserAction() = _$DeInitTimerUserAction;
+  const factory DeInitTimerUserAction() = _$DeInitTimerUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$StartTimerUserActionCopyWith<$Res> {
-  factory _$$StartTimerUserActionCopyWith(_$StartTimerUserAction value,
-          $Res Function(_$StartTimerUserAction) then) =
-      __$$StartTimerUserActionCopyWithImpl<$Res>;
+abstract class _$$StartTimerUserActionImplCopyWith<$Res> {
+  factory _$$StartTimerUserActionImplCopyWith(_$StartTimerUserActionImpl value,
+          $Res Function(_$StartTimerUserActionImpl) then) =
+      __$$StartTimerUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res, _$StartTimerUserAction>
-    implements _$$StartTimerUserActionCopyWith<$Res> {
-  __$$StartTimerUserActionCopyWithImpl(_$StartTimerUserAction _value,
-      $Res Function(_$StartTimerUserAction) _then)
+class __$$StartTimerUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$StartTimerUserActionImpl>
+    implements _$$StartTimerUserActionImplCopyWith<$Res> {
+  __$$StartTimerUserActionImplCopyWithImpl(_$StartTimerUserActionImpl _value,
+      $Res Function(_$StartTimerUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$StartTimerUserAction
+class _$StartTimerUserActionImpl
     with DiagnosticableTreeMixin
     implements StartTimerUserAction {
-  const _$StartTimerUserAction();
+  const _$StartTimerUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -401,9 +404,10 @@ class _$StartTimerUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartTimerUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$StartTimerUserActionImpl);
   }
 
   @override
@@ -497,31 +501,31 @@ class _$StartTimerUserAction
 }
 
 abstract class StartTimerUserAction implements UserActionTimer {
-  const factory StartTimerUserAction() = _$StartTimerUserAction;
+  const factory StartTimerUserAction() = _$StartTimerUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$StopTimerUserActionCopyWith<$Res> {
-  factory _$$StopTimerUserActionCopyWith(_$StopTimerUserAction value,
-          $Res Function(_$StopTimerUserAction) then) =
-      __$$StopTimerUserActionCopyWithImpl<$Res>;
+abstract class _$$StopTimerUserActionImplCopyWith<$Res> {
+  factory _$$StopTimerUserActionImplCopyWith(_$StopTimerUserActionImpl value,
+          $Res Function(_$StopTimerUserActionImpl) then) =
+      __$$StopTimerUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StopTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res, _$StopTimerUserAction>
-    implements _$$StopTimerUserActionCopyWith<$Res> {
-  __$$StopTimerUserActionCopyWithImpl(
-      _$StopTimerUserAction _value, $Res Function(_$StopTimerUserAction) _then)
+class __$$StopTimerUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$StopTimerUserActionImpl>
+    implements _$$StopTimerUserActionImplCopyWith<$Res> {
+  __$$StopTimerUserActionImplCopyWithImpl(_$StopTimerUserActionImpl _value,
+      $Res Function(_$StopTimerUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$StopTimerUserAction
+class _$StopTimerUserActionImpl
     with DiagnosticableTreeMixin
     implements StopTimerUserAction {
-  const _$StopTimerUserAction();
+  const _$StopTimerUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -535,9 +539,10 @@ class _$StopTimerUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StopTimerUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$StopTimerUserActionImpl);
   }
 
   @override
@@ -631,31 +636,31 @@ class _$StopTimerUserAction
 }
 
 abstract class StopTimerUserAction implements UserActionTimer {
-  const factory StopTimerUserAction() = _$StopTimerUserAction;
+  const factory StopTimerUserAction() = _$StopTimerUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$ResetTimerUserActionCopyWith<$Res> {
-  factory _$$ResetTimerUserActionCopyWith(_$ResetTimerUserAction value,
-          $Res Function(_$ResetTimerUserAction) then) =
-      __$$ResetTimerUserActionCopyWithImpl<$Res>;
+abstract class _$$ResetTimerUserActionImplCopyWith<$Res> {
+  factory _$$ResetTimerUserActionImplCopyWith(_$ResetTimerUserActionImpl value,
+          $Res Function(_$ResetTimerUserActionImpl) then) =
+      __$$ResetTimerUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ResetTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res, _$ResetTimerUserAction>
-    implements _$$ResetTimerUserActionCopyWith<$Res> {
-  __$$ResetTimerUserActionCopyWithImpl(_$ResetTimerUserAction _value,
-      $Res Function(_$ResetTimerUserAction) _then)
+class __$$ResetTimerUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$ResetTimerUserActionImpl>
+    implements _$$ResetTimerUserActionImplCopyWith<$Res> {
+  __$$ResetTimerUserActionImplCopyWithImpl(_$ResetTimerUserActionImpl _value,
+      $Res Function(_$ResetTimerUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ResetTimerUserAction
+class _$ResetTimerUserActionImpl
     with DiagnosticableTreeMixin
     implements ResetTimerUserAction {
-  const _$ResetTimerUserAction();
+  const _$ResetTimerUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -669,9 +674,10 @@ class _$ResetTimerUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ResetTimerUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$ResetTimerUserActionImpl);
   }
 
   @override
@@ -765,25 +771,26 @@ class _$ResetTimerUserAction
 }
 
 abstract class ResetTimerUserAction implements UserActionTimer {
-  const factory ResetTimerUserAction() = _$ResetTimerUserAction;
+  const factory ResetTimerUserAction() = _$ResetTimerUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$ChangeTypeTimerUserActionCopyWith<$Res> {
-  factory _$$ChangeTypeTimerUserActionCopyWith(
-          _$ChangeTypeTimerUserAction value,
-          $Res Function(_$ChangeTypeTimerUserAction) then) =
-      __$$ChangeTypeTimerUserActionCopyWithImpl<$Res>;
+abstract class _$$ChangeTypeTimerUserActionImplCopyWith<$Res> {
+  factory _$$ChangeTypeTimerUserActionImplCopyWith(
+          _$ChangeTypeTimerUserActionImpl value,
+          $Res Function(_$ChangeTypeTimerUserActionImpl) then) =
+      __$$ChangeTypeTimerUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TimerType type});
 }
 
 /// @nodoc
-class __$$ChangeTypeTimerUserActionCopyWithImpl<$Res>
-    extends _$UserActionTimerCopyWithImpl<$Res, _$ChangeTypeTimerUserAction>
-    implements _$$ChangeTypeTimerUserActionCopyWith<$Res> {
-  __$$ChangeTypeTimerUserActionCopyWithImpl(_$ChangeTypeTimerUserAction _value,
-      $Res Function(_$ChangeTypeTimerUserAction) _then)
+class __$$ChangeTypeTimerUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionTimerCopyWithImpl<$Res, _$ChangeTypeTimerUserActionImpl>
+    implements _$$ChangeTypeTimerUserActionImplCopyWith<$Res> {
+  __$$ChangeTypeTimerUserActionImplCopyWithImpl(
+      _$ChangeTypeTimerUserActionImpl _value,
+      $Res Function(_$ChangeTypeTimerUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -791,7 +798,7 @@ class __$$ChangeTypeTimerUserActionCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
   }) {
-    return _then(_$ChangeTypeTimerUserAction(
+    return _then(_$ChangeTypeTimerUserActionImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -802,10 +809,10 @@ class __$$ChangeTypeTimerUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeTypeTimerUserAction
+class _$ChangeTypeTimerUserActionImpl
     with DiagnosticableTreeMixin
     implements ChangeTypeTimerUserAction {
-  const _$ChangeTypeTimerUserAction({required this.type});
+  const _$ChangeTypeTimerUserActionImpl({required this.type});
 
   @override
   final TimerType type;
@@ -824,10 +831,10 @@ class _$ChangeTypeTimerUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeTypeTimerUserAction &&
+            other is _$ChangeTypeTimerUserActionImpl &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -837,9 +844,9 @@ class _$ChangeTypeTimerUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeTypeTimerUserActionCopyWith<_$ChangeTypeTimerUserAction>
-      get copyWith => __$$ChangeTypeTimerUserActionCopyWithImpl<
-          _$ChangeTypeTimerUserAction>(this, _$identity);
+  _$$ChangeTypeTimerUserActionImplCopyWith<_$ChangeTypeTimerUserActionImpl>
+      get copyWith => __$$ChangeTypeTimerUserActionImplCopyWithImpl<
+          _$ChangeTypeTimerUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -930,11 +937,11 @@ class _$ChangeTypeTimerUserAction
 
 abstract class ChangeTypeTimerUserAction implements UserActionTimer {
   const factory ChangeTypeTimerUserAction({required final TimerType type}) =
-      _$ChangeTypeTimerUserAction;
+      _$ChangeTypeTimerUserActionImpl;
 
   TimerType get type;
   @JsonKey(ignore: true)
-  _$$ChangeTypeTimerUserActionCopyWith<_$ChangeTypeTimerUserAction>
+  _$$ChangeTypeTimerUserActionImplCopyWith<_$ChangeTypeTimerUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1005,27 +1012,29 @@ class _$SystemActionTimerCopyWithImpl<$Res, $Val extends SystemActionTimer>
 }
 
 /// @nodoc
-abstract class _$$NotifyTimerSystemActionCopyWith<$Res> {
-  factory _$$NotifyTimerSystemActionCopyWith(_$NotifyTimerSystemAction value,
-          $Res Function(_$NotifyTimerSystemAction) then) =
-      __$$NotifyTimerSystemActionCopyWithImpl<$Res>;
+abstract class _$$NotifyTimerSystemActionImplCopyWith<$Res> {
+  factory _$$NotifyTimerSystemActionImplCopyWith(
+          _$NotifyTimerSystemActionImpl value,
+          $Res Function(_$NotifyTimerSystemActionImpl) then) =
+      __$$NotifyTimerSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NotifyTimerSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTimerCopyWithImpl<$Res, _$NotifyTimerSystemAction>
-    implements _$$NotifyTimerSystemActionCopyWith<$Res> {
-  __$$NotifyTimerSystemActionCopyWithImpl(_$NotifyTimerSystemAction _value,
-      $Res Function(_$NotifyTimerSystemAction) _then)
+class __$$NotifyTimerSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionTimerCopyWithImpl<$Res, _$NotifyTimerSystemActionImpl>
+    implements _$$NotifyTimerSystemActionImplCopyWith<$Res> {
+  __$$NotifyTimerSystemActionImplCopyWithImpl(
+      _$NotifyTimerSystemActionImpl _value,
+      $Res Function(_$NotifyTimerSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$NotifyTimerSystemAction
+class _$NotifyTimerSystemActionImpl
     with DiagnosticableTreeMixin
     implements NotifyTimerSystemAction {
-  const _$NotifyTimerSystemAction();
+  const _$NotifyTimerSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1039,10 +1048,10 @@ class _$NotifyTimerSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotifyTimerSystemAction);
+            other is _$NotifyTimerSystemActionImpl);
   }
 
   @override
@@ -1118,26 +1127,27 @@ class _$NotifyTimerSystemAction
 }
 
 abstract class NotifyTimerSystemAction implements SystemActionTimer {
-  const factory NotifyTimerSystemAction() = _$NotifyTimerSystemAction;
+  const factory NotifyTimerSystemAction() = _$NotifyTimerSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$UpdateTimeTimerSystemActionCopyWith<$Res> {
-  factory _$$UpdateTimeTimerSystemActionCopyWith(
-          _$UpdateTimeTimerSystemAction value,
-          $Res Function(_$UpdateTimeTimerSystemAction) then) =
-      __$$UpdateTimeTimerSystemActionCopyWithImpl<$Res>;
+abstract class _$$UpdateTimeTimerSystemActionImplCopyWith<$Res> {
+  factory _$$UpdateTimeTimerSystemActionImplCopyWith(
+          _$UpdateTimeTimerSystemActionImpl value,
+          $Res Function(_$UpdateTimeTimerSystemActionImpl) then) =
+      __$$UpdateTimeTimerSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int newValue});
 }
 
 /// @nodoc
-class __$$UpdateTimeTimerSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionTimerCopyWithImpl<$Res, _$UpdateTimeTimerSystemAction>
-    implements _$$UpdateTimeTimerSystemActionCopyWith<$Res> {
-  __$$UpdateTimeTimerSystemActionCopyWithImpl(
-      _$UpdateTimeTimerSystemAction _value,
-      $Res Function(_$UpdateTimeTimerSystemAction) _then)
+class __$$UpdateTimeTimerSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionTimerCopyWithImpl<$Res,
+        _$UpdateTimeTimerSystemActionImpl>
+    implements _$$UpdateTimeTimerSystemActionImplCopyWith<$Res> {
+  __$$UpdateTimeTimerSystemActionImplCopyWithImpl(
+      _$UpdateTimeTimerSystemActionImpl _value,
+      $Res Function(_$UpdateTimeTimerSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1145,7 +1155,7 @@ class __$$UpdateTimeTimerSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? newValue = null,
   }) {
-    return _then(_$UpdateTimeTimerSystemAction(
+    return _then(_$UpdateTimeTimerSystemActionImpl(
       newValue: null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
@@ -1156,10 +1166,10 @@ class __$$UpdateTimeTimerSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateTimeTimerSystemAction
+class _$UpdateTimeTimerSystemActionImpl
     with DiagnosticableTreeMixin
     implements UpdateTimeTimerSystemAction {
-  const _$UpdateTimeTimerSystemAction({required this.newValue});
+  const _$UpdateTimeTimerSystemActionImpl({required this.newValue});
 
   @override
   final int newValue;
@@ -1178,10 +1188,10 @@ class _$UpdateTimeTimerSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateTimeTimerSystemAction &&
+            other is _$UpdateTimeTimerSystemActionImpl &&
             (identical(other.newValue, newValue) ||
                 other.newValue == newValue));
   }
@@ -1192,9 +1202,9 @@ class _$UpdateTimeTimerSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateTimeTimerSystemActionCopyWith<_$UpdateTimeTimerSystemAction>
-      get copyWith => __$$UpdateTimeTimerSystemActionCopyWithImpl<
-          _$UpdateTimeTimerSystemAction>(this, _$identity);
+  _$$UpdateTimeTimerSystemActionImplCopyWith<_$UpdateTimeTimerSystemActionImpl>
+      get copyWith => __$$UpdateTimeTimerSystemActionImplCopyWithImpl<
+          _$UpdateTimeTimerSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1267,32 +1277,32 @@ class _$UpdateTimeTimerSystemAction
 
 abstract class UpdateTimeTimerSystemAction implements SystemActionTimer {
   const factory UpdateTimeTimerSystemAction({required final int newValue}) =
-      _$UpdateTimeTimerSystemAction;
+      _$UpdateTimeTimerSystemActionImpl;
 
   int get newValue;
   @JsonKey(ignore: true)
-  _$$UpdateTimeTimerSystemActionCopyWith<_$UpdateTimeTimerSystemAction>
+  _$$UpdateTimeTimerSystemActionImplCopyWith<_$UpdateTimeTimerSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateIsRunningTimerSystemActionCopyWith<$Res> {
-  factory _$$UpdateIsRunningTimerSystemActionCopyWith(
-          _$UpdateIsRunningTimerSystemAction value,
-          $Res Function(_$UpdateIsRunningTimerSystemAction) then) =
-      __$$UpdateIsRunningTimerSystemActionCopyWithImpl<$Res>;
+abstract class _$$UpdateIsRunningTimerSystemActionImplCopyWith<$Res> {
+  factory _$$UpdateIsRunningTimerSystemActionImplCopyWith(
+          _$UpdateIsRunningTimerSystemActionImpl value,
+          $Res Function(_$UpdateIsRunningTimerSystemActionImpl) then) =
+      __$$UpdateIsRunningTimerSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool newValue});
 }
 
 /// @nodoc
-class __$$UpdateIsRunningTimerSystemActionCopyWithImpl<$Res>
+class __$$UpdateIsRunningTimerSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionTimerCopyWithImpl<$Res,
-        _$UpdateIsRunningTimerSystemAction>
-    implements _$$UpdateIsRunningTimerSystemActionCopyWith<$Res> {
-  __$$UpdateIsRunningTimerSystemActionCopyWithImpl(
-      _$UpdateIsRunningTimerSystemAction _value,
-      $Res Function(_$UpdateIsRunningTimerSystemAction) _then)
+        _$UpdateIsRunningTimerSystemActionImpl>
+    implements _$$UpdateIsRunningTimerSystemActionImplCopyWith<$Res> {
+  __$$UpdateIsRunningTimerSystemActionImplCopyWithImpl(
+      _$UpdateIsRunningTimerSystemActionImpl _value,
+      $Res Function(_$UpdateIsRunningTimerSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1300,7 +1310,7 @@ class __$$UpdateIsRunningTimerSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? newValue = null,
   }) {
-    return _then(_$UpdateIsRunningTimerSystemAction(
+    return _then(_$UpdateIsRunningTimerSystemActionImpl(
       newValue: null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
@@ -1311,10 +1321,10 @@ class __$$UpdateIsRunningTimerSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateIsRunningTimerSystemAction
+class _$UpdateIsRunningTimerSystemActionImpl
     with DiagnosticableTreeMixin
     implements UpdateIsRunningTimerSystemAction {
-  const _$UpdateIsRunningTimerSystemAction({required this.newValue});
+  const _$UpdateIsRunningTimerSystemActionImpl({required this.newValue});
 
   @override
   final bool newValue;
@@ -1333,10 +1343,10 @@ class _$UpdateIsRunningTimerSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateIsRunningTimerSystemAction &&
+            other is _$UpdateIsRunningTimerSystemActionImpl &&
             (identical(other.newValue, newValue) ||
                 other.newValue == newValue));
   }
@@ -1347,10 +1357,10 @@ class _$UpdateIsRunningTimerSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateIsRunningTimerSystemActionCopyWith<
-          _$UpdateIsRunningTimerSystemAction>
-      get copyWith => __$$UpdateIsRunningTimerSystemActionCopyWithImpl<
-          _$UpdateIsRunningTimerSystemAction>(this, _$identity);
+  _$$UpdateIsRunningTimerSystemActionImplCopyWith<
+          _$UpdateIsRunningTimerSystemActionImpl>
+      get copyWith => __$$UpdateIsRunningTimerSystemActionImplCopyWithImpl<
+          _$UpdateIsRunningTimerSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1423,11 +1433,11 @@ class _$UpdateIsRunningTimerSystemAction
 
 abstract class UpdateIsRunningTimerSystemAction implements SystemActionTimer {
   const factory UpdateIsRunningTimerSystemAction(
-      {required final bool newValue}) = _$UpdateIsRunningTimerSystemAction;
+      {required final bool newValue}) = _$UpdateIsRunningTimerSystemActionImpl;
 
   bool get newValue;
   @JsonKey(ignore: true)
-  _$$UpdateIsRunningTimerSystemActionCopyWith<
-          _$UpdateIsRunningTimerSystemAction>
+  _$$UpdateIsRunningTimerSystemActionImplCopyWith<
+          _$UpdateIsRunningTimerSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

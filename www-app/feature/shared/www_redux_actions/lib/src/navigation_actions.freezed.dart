@@ -12,7 +12,7 @@ part of 'navigation_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionNavigation {
@@ -76,22 +76,23 @@ class _$UserActionNavigationCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ImageNavigationUserActionCopyWith<$Res> {
-  factory _$$ImageNavigationUserActionCopyWith(
-          _$ImageNavigationUserAction value,
-          $Res Function(_$ImageNavigationUserAction) then) =
-      __$$ImageNavigationUserActionCopyWithImpl<$Res>;
+abstract class _$$ImageNavigationUserActionImplCopyWith<$Res> {
+  factory _$$ImageNavigationUserActionImplCopyWith(
+          _$ImageNavigationUserActionImpl value,
+          $Res Function(_$ImageNavigationUserActionImpl) then) =
+      __$$ImageNavigationUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String imageUrl});
 }
 
 /// @nodoc
-class __$$ImageNavigationUserActionCopyWithImpl<$Res>
+class __$$ImageNavigationUserActionImplCopyWithImpl<$Res>
     extends _$UserActionNavigationCopyWithImpl<$Res,
-        _$ImageNavigationUserAction>
-    implements _$$ImageNavigationUserActionCopyWith<$Res> {
-  __$$ImageNavigationUserActionCopyWithImpl(_$ImageNavigationUserAction _value,
-      $Res Function(_$ImageNavigationUserAction) _then)
+        _$ImageNavigationUserActionImpl>
+    implements _$$ImageNavigationUserActionImplCopyWith<$Res> {
+  __$$ImageNavigationUserActionImplCopyWithImpl(
+      _$ImageNavigationUserActionImpl _value,
+      $Res Function(_$ImageNavigationUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +100,7 @@ class __$$ImageNavigationUserActionCopyWithImpl<$Res>
   $Res call({
     Object? imageUrl = null,
   }) {
-    return _then(_$ImageNavigationUserAction(
+    return _then(_$ImageNavigationUserActionImpl(
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -110,10 +111,10 @@ class __$$ImageNavigationUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ImageNavigationUserAction
+class _$ImageNavigationUserActionImpl
     with DiagnosticableTreeMixin
     implements ImageNavigationUserAction {
-  const _$ImageNavigationUserAction({required this.imageUrl});
+  const _$ImageNavigationUserActionImpl({required this.imageUrl});
 
   @override
   final String imageUrl;
@@ -132,10 +133,10 @@ class _$ImageNavigationUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ImageNavigationUserAction &&
+            other is _$ImageNavigationUserActionImpl &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl));
   }
@@ -146,9 +147,9 @@ class _$ImageNavigationUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ImageNavigationUserActionCopyWith<_$ImageNavigationUserAction>
-      get copyWith => __$$ImageNavigationUserActionCopyWithImpl<
-          _$ImageNavigationUserAction>(this, _$identity);
+  _$$ImageNavigationUserActionImplCopyWith<_$ImageNavigationUserActionImpl>
+      get copyWith => __$$ImageNavigationUserActionImplCopyWithImpl<
+          _$ImageNavigationUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -215,38 +216,39 @@ class _$ImageNavigationUserAction
 
 abstract class ImageNavigationUserAction implements UserActionNavigation {
   const factory ImageNavigationUserAction({required final String imageUrl}) =
-      _$ImageNavigationUserAction;
+      _$ImageNavigationUserActionImpl;
 
   String get imageUrl;
   @JsonKey(ignore: true)
-  _$$ImageNavigationUserActionCopyWith<_$ImageNavigationUserAction>
+  _$$ImageNavigationUserActionImplCopyWith<_$ImageNavigationUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AboutNavigationUserActionCopyWith<$Res> {
-  factory _$$AboutNavigationUserActionCopyWith(
-          _$AboutNavigationUserAction value,
-          $Res Function(_$AboutNavigationUserAction) then) =
-      __$$AboutNavigationUserActionCopyWithImpl<$Res>;
+abstract class _$$AboutNavigationUserActionImplCopyWith<$Res> {
+  factory _$$AboutNavigationUserActionImplCopyWith(
+          _$AboutNavigationUserActionImpl value,
+          $Res Function(_$AboutNavigationUserActionImpl) then) =
+      __$$AboutNavigationUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AboutNavigationUserActionCopyWithImpl<$Res>
+class __$$AboutNavigationUserActionImplCopyWithImpl<$Res>
     extends _$UserActionNavigationCopyWithImpl<$Res,
-        _$AboutNavigationUserAction>
-    implements _$$AboutNavigationUserActionCopyWith<$Res> {
-  __$$AboutNavigationUserActionCopyWithImpl(_$AboutNavigationUserAction _value,
-      $Res Function(_$AboutNavigationUserAction) _then)
+        _$AboutNavigationUserActionImpl>
+    implements _$$AboutNavigationUserActionImplCopyWith<$Res> {
+  __$$AboutNavigationUserActionImplCopyWithImpl(
+      _$AboutNavigationUserActionImpl _value,
+      $Res Function(_$AboutNavigationUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AboutNavigationUserAction
+class _$AboutNavigationUserActionImpl
     with DiagnosticableTreeMixin
     implements AboutNavigationUserAction {
-  const _$AboutNavigationUserAction();
+  const _$AboutNavigationUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -260,10 +262,10 @@ class _$AboutNavigationUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AboutNavigationUserAction);
+            other is _$AboutNavigationUserActionImpl);
   }
 
   @override
@@ -333,7 +335,7 @@ class _$AboutNavigationUserAction
 }
 
 abstract class AboutNavigationUserAction implements UserActionNavigation {
-  const factory AboutNavigationUserAction() = _$AboutNavigationUserAction;
+  const factory AboutNavigationUserAction() = _$AboutNavigationUserActionImpl;
 }
 
 /// @nodoc
@@ -429,30 +431,30 @@ class _$SystemActionNavigationCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$TournamentNavigationSystemActionCopyWith<$Res> {
-  factory _$$TournamentNavigationSystemActionCopyWith(
-          _$TournamentNavigationSystemAction value,
-          $Res Function(_$TournamentNavigationSystemAction) then) =
-      __$$TournamentNavigationSystemActionCopyWithImpl<$Res>;
+abstract class _$$TournamentNavigationSystemActionImplCopyWith<$Res> {
+  factory _$$TournamentNavigationSystemActionImplCopyWith(
+          _$TournamentNavigationSystemActionImpl value,
+          $Res Function(_$TournamentNavigationSystemActionImpl) then) =
+      __$$TournamentNavigationSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TournamentNavigationSystemActionCopyWithImpl<$Res>
+class __$$TournamentNavigationSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res,
-        _$TournamentNavigationSystemAction>
-    implements _$$TournamentNavigationSystemActionCopyWith<$Res> {
-  __$$TournamentNavigationSystemActionCopyWithImpl(
-      _$TournamentNavigationSystemAction _value,
-      $Res Function(_$TournamentNavigationSystemAction) _then)
+        _$TournamentNavigationSystemActionImpl>
+    implements _$$TournamentNavigationSystemActionImplCopyWith<$Res> {
+  __$$TournamentNavigationSystemActionImplCopyWithImpl(
+      _$TournamentNavigationSystemActionImpl _value,
+      $Res Function(_$TournamentNavigationSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$TournamentNavigationSystemAction
+class _$TournamentNavigationSystemActionImpl
     with DiagnosticableTreeMixin
     implements TournamentNavigationSystemAction {
-  const _$TournamentNavigationSystemAction();
+  const _$TournamentNavigationSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -467,10 +469,10 @@ class _$TournamentNavigationSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TournamentNavigationSystemAction);
+            other is _$TournamentNavigationSystemActionImpl);
   }
 
   @override
@@ -573,15 +575,15 @@ class _$TournamentNavigationSystemAction
 abstract class TournamentNavigationSystemAction
     implements SystemActionNavigation {
   const factory TournamentNavigationSystemAction() =
-      _$TournamentNavigationSystemAction;
+      _$TournamentNavigationSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$TreeNavigationSystemActionCopyWith<$Res> {
-  factory _$$TreeNavigationSystemActionCopyWith(
-          _$TreeNavigationSystemAction value,
-          $Res Function(_$TreeNavigationSystemAction) then) =
-      __$$TreeNavigationSystemActionCopyWithImpl<$Res>;
+abstract class _$$TreeNavigationSystemActionImplCopyWith<$Res> {
+  factory _$$TreeNavigationSystemActionImplCopyWith(
+          _$TreeNavigationSystemActionImpl value,
+          $Res Function(_$TreeNavigationSystemActionImpl) then) =
+      __$$TreeNavigationSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TournamentsTreeInfo info});
 
@@ -589,13 +591,13 @@ abstract class _$$TreeNavigationSystemActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TreeNavigationSystemActionCopyWithImpl<$Res>
+class __$$TreeNavigationSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res,
-        _$TreeNavigationSystemAction>
-    implements _$$TreeNavigationSystemActionCopyWith<$Res> {
-  __$$TreeNavigationSystemActionCopyWithImpl(
-      _$TreeNavigationSystemAction _value,
-      $Res Function(_$TreeNavigationSystemAction) _then)
+        _$TreeNavigationSystemActionImpl>
+    implements _$$TreeNavigationSystemActionImplCopyWith<$Res> {
+  __$$TreeNavigationSystemActionImplCopyWithImpl(
+      _$TreeNavigationSystemActionImpl _value,
+      $Res Function(_$TreeNavigationSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -603,7 +605,7 @@ class __$$TreeNavigationSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? info = null,
   }) {
-    return _then(_$TreeNavigationSystemAction(
+    return _then(_$TreeNavigationSystemActionImpl(
       info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -622,10 +624,10 @@ class __$$TreeNavigationSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TreeNavigationSystemAction
+class _$TreeNavigationSystemActionImpl
     with DiagnosticableTreeMixin
     implements TreeNavigationSystemAction {
-  const _$TreeNavigationSystemAction({required this.info});
+  const _$TreeNavigationSystemActionImpl({required this.info});
 
   @override
   final TournamentsTreeInfo info;
@@ -644,10 +646,10 @@ class _$TreeNavigationSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TreeNavigationSystemAction &&
+            other is _$TreeNavigationSystemActionImpl &&
             (identical(other.info, info) || other.info == info));
   }
 
@@ -657,9 +659,9 @@ class _$TreeNavigationSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TreeNavigationSystemActionCopyWith<_$TreeNavigationSystemAction>
-      get copyWith => __$$TreeNavigationSystemActionCopyWithImpl<
-          _$TreeNavigationSystemAction>(this, _$identity);
+  _$$TreeNavigationSystemActionImplCopyWith<_$TreeNavigationSystemActionImpl>
+      get copyWith => __$$TreeNavigationSystemActionImplCopyWithImpl<
+          _$TreeNavigationSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -757,39 +759,40 @@ class _$TreeNavigationSystemAction
 
 abstract class TreeNavigationSystemAction implements SystemActionNavigation {
   const factory TreeNavigationSystemAction(
-      {required final TournamentsTreeInfo info}) = _$TreeNavigationSystemAction;
+          {required final TournamentsTreeInfo info}) =
+      _$TreeNavigationSystemActionImpl;
 
   TournamentsTreeInfo get info;
   @JsonKey(ignore: true)
-  _$$TreeNavigationSystemActionCopyWith<_$TreeNavigationSystemAction>
+  _$$TreeNavigationSystemActionImplCopyWith<_$TreeNavigationSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$QuestionsNavigationSystemActionCopyWith<$Res> {
-  factory _$$QuestionsNavigationSystemActionCopyWith(
-          _$QuestionsNavigationSystemAction value,
-          $Res Function(_$QuestionsNavigationSystemAction) then) =
-      __$$QuestionsNavigationSystemActionCopyWithImpl<$Res>;
+abstract class _$$QuestionsNavigationSystemActionImplCopyWith<$Res> {
+  factory _$$QuestionsNavigationSystemActionImplCopyWith(
+          _$QuestionsNavigationSystemActionImpl value,
+          $Res Function(_$QuestionsNavigationSystemActionImpl) then) =
+      __$$QuestionsNavigationSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$QuestionsNavigationSystemActionCopyWithImpl<$Res>
+class __$$QuestionsNavigationSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res,
-        _$QuestionsNavigationSystemAction>
-    implements _$$QuestionsNavigationSystemActionCopyWith<$Res> {
-  __$$QuestionsNavigationSystemActionCopyWithImpl(
-      _$QuestionsNavigationSystemAction _value,
-      $Res Function(_$QuestionsNavigationSystemAction) _then)
+        _$QuestionsNavigationSystemActionImpl>
+    implements _$$QuestionsNavigationSystemActionImplCopyWith<$Res> {
+  __$$QuestionsNavigationSystemActionImplCopyWithImpl(
+      _$QuestionsNavigationSystemActionImpl _value,
+      $Res Function(_$QuestionsNavigationSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$QuestionsNavigationSystemAction
+class _$QuestionsNavigationSystemActionImpl
     with DiagnosticableTreeMixin
     implements QuestionsNavigationSystemAction {
-  const _$QuestionsNavigationSystemAction();
+  const _$QuestionsNavigationSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -804,10 +807,10 @@ class _$QuestionsNavigationSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QuestionsNavigationSystemAction);
+            other is _$QuestionsNavigationSystemActionImpl);
   }
 
   @override
@@ -910,34 +913,34 @@ class _$QuestionsNavigationSystemAction
 abstract class QuestionsNavigationSystemAction
     implements SystemActionNavigation {
   const factory QuestionsNavigationSystemAction() =
-      _$QuestionsNavigationSystemAction;
+      _$QuestionsNavigationSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$SearchNavigationSystemActionCopyWith<$Res> {
-  factory _$$SearchNavigationSystemActionCopyWith(
-          _$SearchNavigationSystemAction value,
-          $Res Function(_$SearchNavigationSystemAction) then) =
-      __$$SearchNavigationSystemActionCopyWithImpl<$Res>;
+abstract class _$$SearchNavigationSystemActionImplCopyWith<$Res> {
+  factory _$$SearchNavigationSystemActionImplCopyWith(
+          _$SearchNavigationSystemActionImpl value,
+          $Res Function(_$SearchNavigationSystemActionImpl) then) =
+      __$$SearchNavigationSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SearchNavigationSystemActionCopyWithImpl<$Res>
+class __$$SearchNavigationSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res,
-        _$SearchNavigationSystemAction>
-    implements _$$SearchNavigationSystemActionCopyWith<$Res> {
-  __$$SearchNavigationSystemActionCopyWithImpl(
-      _$SearchNavigationSystemAction _value,
-      $Res Function(_$SearchNavigationSystemAction) _then)
+        _$SearchNavigationSystemActionImpl>
+    implements _$$SearchNavigationSystemActionImplCopyWith<$Res> {
+  __$$SearchNavigationSystemActionImplCopyWithImpl(
+      _$SearchNavigationSystemActionImpl _value,
+      $Res Function(_$SearchNavigationSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SearchNavigationSystemAction
+class _$SearchNavigationSystemActionImpl
     with DiagnosticableTreeMixin
     implements SearchNavigationSystemAction {
-  const _$SearchNavigationSystemAction();
+  const _$SearchNavigationSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -952,10 +955,10 @@ class _$SearchNavigationSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchNavigationSystemAction);
+            other is _$SearchNavigationSystemActionImpl);
   }
 
   @override
@@ -1056,34 +1059,35 @@ class _$SearchNavigationSystemAction
 }
 
 abstract class SearchNavigationSystemAction implements SystemActionNavigation {
-  const factory SearchNavigationSystemAction() = _$SearchNavigationSystemAction;
+  const factory SearchNavigationSystemAction() =
+      _$SearchNavigationSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$LatestNavigationSystemActionCopyWith<$Res> {
-  factory _$$LatestNavigationSystemActionCopyWith(
-          _$LatestNavigationSystemAction value,
-          $Res Function(_$LatestNavigationSystemAction) then) =
-      __$$LatestNavigationSystemActionCopyWithImpl<$Res>;
+abstract class _$$LatestNavigationSystemActionImplCopyWith<$Res> {
+  factory _$$LatestNavigationSystemActionImplCopyWith(
+          _$LatestNavigationSystemActionImpl value,
+          $Res Function(_$LatestNavigationSystemActionImpl) then) =
+      __$$LatestNavigationSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LatestNavigationSystemActionCopyWithImpl<$Res>
+class __$$LatestNavigationSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res,
-        _$LatestNavigationSystemAction>
-    implements _$$LatestNavigationSystemActionCopyWith<$Res> {
-  __$$LatestNavigationSystemActionCopyWithImpl(
-      _$LatestNavigationSystemAction _value,
-      $Res Function(_$LatestNavigationSystemAction) _then)
+        _$LatestNavigationSystemActionImpl>
+    implements _$$LatestNavigationSystemActionImplCopyWith<$Res> {
+  __$$LatestNavigationSystemActionImplCopyWithImpl(
+      _$LatestNavigationSystemActionImpl _value,
+      $Res Function(_$LatestNavigationSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LatestNavigationSystemAction
+class _$LatestNavigationSystemActionImpl
     with DiagnosticableTreeMixin
     implements LatestNavigationSystemAction {
-  const _$LatestNavigationSystemAction();
+  const _$LatestNavigationSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1098,10 +1102,10 @@ class _$LatestNavigationSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LatestNavigationSystemAction);
+            other is _$LatestNavigationSystemActionImpl);
   }
 
   @override
@@ -1202,34 +1206,35 @@ class _$LatestNavigationSystemAction
 }
 
 abstract class LatestNavigationSystemAction implements SystemActionNavigation {
-  const factory LatestNavigationSystemAction() = _$LatestNavigationSystemAction;
+  const factory LatestNavigationSystemAction() =
+      _$LatestNavigationSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$SettingsNavigationSystemActionCopyWith<$Res> {
-  factory _$$SettingsNavigationSystemActionCopyWith(
-          _$SettingsNavigationSystemAction value,
-          $Res Function(_$SettingsNavigationSystemAction) then) =
-      __$$SettingsNavigationSystemActionCopyWithImpl<$Res>;
+abstract class _$$SettingsNavigationSystemActionImplCopyWith<$Res> {
+  factory _$$SettingsNavigationSystemActionImplCopyWith(
+          _$SettingsNavigationSystemActionImpl value,
+          $Res Function(_$SettingsNavigationSystemActionImpl) then) =
+      __$$SettingsNavigationSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SettingsNavigationSystemActionCopyWithImpl<$Res>
+class __$$SettingsNavigationSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res,
-        _$SettingsNavigationSystemAction>
-    implements _$$SettingsNavigationSystemActionCopyWith<$Res> {
-  __$$SettingsNavigationSystemActionCopyWithImpl(
-      _$SettingsNavigationSystemAction _value,
-      $Res Function(_$SettingsNavigationSystemAction) _then)
+        _$SettingsNavigationSystemActionImpl>
+    implements _$$SettingsNavigationSystemActionImplCopyWith<$Res> {
+  __$$SettingsNavigationSystemActionImplCopyWithImpl(
+      _$SettingsNavigationSystemActionImpl _value,
+      $Res Function(_$SettingsNavigationSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SettingsNavigationSystemAction
+class _$SettingsNavigationSystemActionImpl
     with DiagnosticableTreeMixin
     implements SettingsNavigationSystemAction {
-  const _$SettingsNavigationSystemAction();
+  const _$SettingsNavigationSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1244,10 +1249,10 @@ class _$SettingsNavigationSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SettingsNavigationSystemAction);
+            other is _$SettingsNavigationSystemActionImpl);
   }
 
   @override
@@ -1350,34 +1355,34 @@ class _$SettingsNavigationSystemAction
 abstract class SettingsNavigationSystemAction
     implements SystemActionNavigation {
   const factory SettingsNavigationSystemAction() =
-      _$SettingsNavigationSystemAction;
+      _$SettingsNavigationSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$BookmarksNavigationSystemActionCopyWith<$Res> {
-  factory _$$BookmarksNavigationSystemActionCopyWith(
-          _$BookmarksNavigationSystemAction value,
-          $Res Function(_$BookmarksNavigationSystemAction) then) =
-      __$$BookmarksNavigationSystemActionCopyWithImpl<$Res>;
+abstract class _$$BookmarksNavigationSystemActionImplCopyWith<$Res> {
+  factory _$$BookmarksNavigationSystemActionImplCopyWith(
+          _$BookmarksNavigationSystemActionImpl value,
+          $Res Function(_$BookmarksNavigationSystemActionImpl) then) =
+      __$$BookmarksNavigationSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BookmarksNavigationSystemActionCopyWithImpl<$Res>
+class __$$BookmarksNavigationSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionNavigationCopyWithImpl<$Res,
-        _$BookmarksNavigationSystemAction>
-    implements _$$BookmarksNavigationSystemActionCopyWith<$Res> {
-  __$$BookmarksNavigationSystemActionCopyWithImpl(
-      _$BookmarksNavigationSystemAction _value,
-      $Res Function(_$BookmarksNavigationSystemAction) _then)
+        _$BookmarksNavigationSystemActionImpl>
+    implements _$$BookmarksNavigationSystemActionImplCopyWith<$Res> {
+  __$$BookmarksNavigationSystemActionImplCopyWithImpl(
+      _$BookmarksNavigationSystemActionImpl _value,
+      $Res Function(_$BookmarksNavigationSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$BookmarksNavigationSystemAction
+class _$BookmarksNavigationSystemActionImpl
     with DiagnosticableTreeMixin
     implements BookmarksNavigationSystemAction {
-  const _$BookmarksNavigationSystemAction();
+  const _$BookmarksNavigationSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1392,10 +1397,10 @@ class _$BookmarksNavigationSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BookmarksNavigationSystemAction);
+            other is _$BookmarksNavigationSystemActionImpl);
   }
 
   @override
@@ -1498,5 +1503,5 @@ class _$BookmarksNavigationSystemAction
 abstract class BookmarksNavigationSystemAction
     implements SystemActionNavigation {
   const factory BookmarksNavigationSystemAction() =
-      _$BookmarksNavigationSystemAction;
+      _$BookmarksNavigationSystemActionImpl;
 }

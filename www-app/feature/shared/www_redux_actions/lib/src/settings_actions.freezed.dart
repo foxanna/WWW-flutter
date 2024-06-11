@@ -12,7 +12,7 @@ part of 'settings_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionSettings {
@@ -102,27 +102,29 @@ class _$UserActionSettingsCopyWithImpl<$Res, $Val extends UserActionSettings>
 }
 
 /// @nodoc
-abstract class _$$OpenSettingsUserActionCopyWith<$Res> {
-  factory _$$OpenSettingsUserActionCopyWith(_$OpenSettingsUserAction value,
-          $Res Function(_$OpenSettingsUserAction) then) =
-      __$$OpenSettingsUserActionCopyWithImpl<$Res>;
+abstract class _$$OpenSettingsUserActionImplCopyWith<$Res> {
+  factory _$$OpenSettingsUserActionImplCopyWith(
+          _$OpenSettingsUserActionImpl value,
+          $Res Function(_$OpenSettingsUserActionImpl) then) =
+      __$$OpenSettingsUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OpenSettingsUserActionCopyWithImpl<$Res>
-    extends _$UserActionSettingsCopyWithImpl<$Res, _$OpenSettingsUserAction>
-    implements _$$OpenSettingsUserActionCopyWith<$Res> {
-  __$$OpenSettingsUserActionCopyWithImpl(_$OpenSettingsUserAction _value,
-      $Res Function(_$OpenSettingsUserAction) _then)
+class __$$OpenSettingsUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionSettingsCopyWithImpl<$Res, _$OpenSettingsUserActionImpl>
+    implements _$$OpenSettingsUserActionImplCopyWith<$Res> {
+  __$$OpenSettingsUserActionImplCopyWithImpl(
+      _$OpenSettingsUserActionImpl _value,
+      $Res Function(_$OpenSettingsUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$OpenSettingsUserAction
+class _$OpenSettingsUserActionImpl
     with DiagnosticableTreeMixin
     implements OpenSettingsUserAction {
-  const _$OpenSettingsUserAction();
+  const _$OpenSettingsUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -136,9 +138,10 @@ class _$OpenSettingsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OpenSettingsUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$OpenSettingsUserActionImpl);
   }
 
   @override
@@ -235,27 +238,27 @@ class _$OpenSettingsUserAction
 }
 
 abstract class OpenSettingsUserAction implements UserActionSettings {
-  const factory OpenSettingsUserAction() = _$OpenSettingsUserAction;
+  const factory OpenSettingsUserAction() = _$OpenSettingsUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$ChangeThemeSettingsUserActionCopyWith<$Res> {
-  factory _$$ChangeThemeSettingsUserActionCopyWith(
-          _$ChangeThemeSettingsUserAction value,
-          $Res Function(_$ChangeThemeSettingsUserAction) then) =
-      __$$ChangeThemeSettingsUserActionCopyWithImpl<$Res>;
+abstract class _$$ChangeThemeSettingsUserActionImplCopyWith<$Res> {
+  factory _$$ChangeThemeSettingsUserActionImplCopyWith(
+          _$ChangeThemeSettingsUserActionImpl value,
+          $Res Function(_$ChangeThemeSettingsUserActionImpl) then) =
+      __$$ChangeThemeSettingsUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AppTheme appTheme});
 }
 
 /// @nodoc
-class __$$ChangeThemeSettingsUserActionCopyWithImpl<$Res>
+class __$$ChangeThemeSettingsUserActionImplCopyWithImpl<$Res>
     extends _$UserActionSettingsCopyWithImpl<$Res,
-        _$ChangeThemeSettingsUserAction>
-    implements _$$ChangeThemeSettingsUserActionCopyWith<$Res> {
-  __$$ChangeThemeSettingsUserActionCopyWithImpl(
-      _$ChangeThemeSettingsUserAction _value,
-      $Res Function(_$ChangeThemeSettingsUserAction) _then)
+        _$ChangeThemeSettingsUserActionImpl>
+    implements _$$ChangeThemeSettingsUserActionImplCopyWith<$Res> {
+  __$$ChangeThemeSettingsUserActionImplCopyWithImpl(
+      _$ChangeThemeSettingsUserActionImpl _value,
+      $Res Function(_$ChangeThemeSettingsUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -263,7 +266,7 @@ class __$$ChangeThemeSettingsUserActionCopyWithImpl<$Res>
   $Res call({
     Object? appTheme = null,
   }) {
-    return _then(_$ChangeThemeSettingsUserAction(
+    return _then(_$ChangeThemeSettingsUserActionImpl(
       appTheme: null == appTheme
           ? _value.appTheme
           : appTheme // ignore: cast_nullable_to_non_nullable
@@ -274,10 +277,10 @@ class __$$ChangeThemeSettingsUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeThemeSettingsUserAction
+class _$ChangeThemeSettingsUserActionImpl
     with DiagnosticableTreeMixin
     implements ChangeThemeSettingsUserAction {
-  const _$ChangeThemeSettingsUserAction({required this.appTheme});
+  const _$ChangeThemeSettingsUserActionImpl({required this.appTheme});
 
   @override
   final AppTheme appTheme;
@@ -296,10 +299,10 @@ class _$ChangeThemeSettingsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeThemeSettingsUserAction &&
+            other is _$ChangeThemeSettingsUserActionImpl &&
             (identical(other.appTheme, appTheme) ||
                 other.appTheme == appTheme));
   }
@@ -310,9 +313,10 @@ class _$ChangeThemeSettingsUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeThemeSettingsUserActionCopyWith<_$ChangeThemeSettingsUserAction>
-      get copyWith => __$$ChangeThemeSettingsUserActionCopyWithImpl<
-          _$ChangeThemeSettingsUserAction>(this, _$identity);
+  _$$ChangeThemeSettingsUserActionImplCopyWith<
+          _$ChangeThemeSettingsUserActionImpl>
+      get copyWith => __$$ChangeThemeSettingsUserActionImplCopyWithImpl<
+          _$ChangeThemeSettingsUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -406,32 +410,33 @@ class _$ChangeThemeSettingsUserAction
 
 abstract class ChangeThemeSettingsUserAction implements UserActionSettings {
   const factory ChangeThemeSettingsUserAction(
-      {required final AppTheme appTheme}) = _$ChangeThemeSettingsUserAction;
+      {required final AppTheme appTheme}) = _$ChangeThemeSettingsUserActionImpl;
 
   AppTheme get appTheme;
   @JsonKey(ignore: true)
-  _$$ChangeThemeSettingsUserActionCopyWith<_$ChangeThemeSettingsUserAction>
+  _$$ChangeThemeSettingsUserActionImplCopyWith<
+          _$ChangeThemeSettingsUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeTextScaleSettingsUserActionCopyWith<$Res> {
-  factory _$$ChangeTextScaleSettingsUserActionCopyWith(
-          _$ChangeTextScaleSettingsUserAction value,
-          $Res Function(_$ChangeTextScaleSettingsUserAction) then) =
-      __$$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>;
+abstract class _$$ChangeTextScaleSettingsUserActionImplCopyWith<$Res> {
+  factory _$$ChangeTextScaleSettingsUserActionImplCopyWith(
+          _$ChangeTextScaleSettingsUserActionImpl value,
+          $Res Function(_$ChangeTextScaleSettingsUserActionImpl) then) =
+      __$$ChangeTextScaleSettingsUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TextScale textScale});
 }
 
 /// @nodoc
-class __$$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>
+class __$$ChangeTextScaleSettingsUserActionImplCopyWithImpl<$Res>
     extends _$UserActionSettingsCopyWithImpl<$Res,
-        _$ChangeTextScaleSettingsUserAction>
-    implements _$$ChangeTextScaleSettingsUserActionCopyWith<$Res> {
-  __$$ChangeTextScaleSettingsUserActionCopyWithImpl(
-      _$ChangeTextScaleSettingsUserAction _value,
-      $Res Function(_$ChangeTextScaleSettingsUserAction) _then)
+        _$ChangeTextScaleSettingsUserActionImpl>
+    implements _$$ChangeTextScaleSettingsUserActionImplCopyWith<$Res> {
+  __$$ChangeTextScaleSettingsUserActionImplCopyWithImpl(
+      _$ChangeTextScaleSettingsUserActionImpl _value,
+      $Res Function(_$ChangeTextScaleSettingsUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -439,7 +444,7 @@ class __$$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>
   $Res call({
     Object? textScale = null,
   }) {
-    return _then(_$ChangeTextScaleSettingsUserAction(
+    return _then(_$ChangeTextScaleSettingsUserActionImpl(
       textScale: null == textScale
           ? _value.textScale
           : textScale // ignore: cast_nullable_to_non_nullable
@@ -450,10 +455,10 @@ class __$$ChangeTextScaleSettingsUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeTextScaleSettingsUserAction
+class _$ChangeTextScaleSettingsUserActionImpl
     with DiagnosticableTreeMixin
     implements ChangeTextScaleSettingsUserAction {
-  const _$ChangeTextScaleSettingsUserAction({required this.textScale});
+  const _$ChangeTextScaleSettingsUserActionImpl({required this.textScale});
 
   @override
   final TextScale textScale;
@@ -472,10 +477,10 @@ class _$ChangeTextScaleSettingsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeTextScaleSettingsUserAction &&
+            other is _$ChangeTextScaleSettingsUserActionImpl &&
             (identical(other.textScale, textScale) ||
                 other.textScale == textScale));
   }
@@ -486,10 +491,10 @@ class _$ChangeTextScaleSettingsUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeTextScaleSettingsUserActionCopyWith<
-          _$ChangeTextScaleSettingsUserAction>
-      get copyWith => __$$ChangeTextScaleSettingsUserActionCopyWithImpl<
-          _$ChangeTextScaleSettingsUserAction>(this, _$identity);
+  _$$ChangeTextScaleSettingsUserActionImplCopyWith<
+          _$ChangeTextScaleSettingsUserActionImpl>
+      get copyWith => __$$ChangeTextScaleSettingsUserActionImplCopyWithImpl<
+          _$ChangeTextScaleSettingsUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -584,36 +589,41 @@ class _$ChangeTextScaleSettingsUserAction
 abstract class ChangeTextScaleSettingsUserAction implements UserActionSettings {
   const factory ChangeTextScaleSettingsUserAction(
           {required final TextScale textScale}) =
-      _$ChangeTextScaleSettingsUserAction;
+      _$ChangeTextScaleSettingsUserActionImpl;
 
   TextScale get textScale;
   @JsonKey(ignore: true)
-  _$$ChangeTextScaleSettingsUserActionCopyWith<
-          _$ChangeTextScaleSettingsUserAction>
+  _$$ChangeTextScaleSettingsUserActionImplCopyWith<
+          _$ChangeTextScaleSettingsUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
+abstract class _$$ChangeNotifyShortTimerExpirationSettingsUserActionImplCopyWith<
     $Res> {
-  factory _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith(
-          _$ChangeNotifyShortTimerExpirationSettingsUserAction value,
-          $Res Function(_$ChangeNotifyShortTimerExpirationSettingsUserAction)
+  factory _$$ChangeNotifyShortTimerExpirationSettingsUserActionImplCopyWith(
+          _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl value,
+          $Res Function(
+                  _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl)
               then) =
-      __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>;
+      __$$ChangeNotifyShortTimerExpirationSettingsUserActionImplCopyWithImpl<
+          $Res>;
   @useResult
   $Res call({bool value});
 }
 
 /// @nodoc
-class __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>
+class __$$ChangeNotifyShortTimerExpirationSettingsUserActionImplCopyWithImpl<
+        $Res>
     extends _$UserActionSettingsCopyWithImpl<$Res,
-        _$ChangeNotifyShortTimerExpirationSettingsUserAction>
+        _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl>
     implements
-        _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<$Res> {
-  __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl(
-      _$ChangeNotifyShortTimerExpirationSettingsUserAction _value,
-      $Res Function(_$ChangeNotifyShortTimerExpirationSettingsUserAction) _then)
+        _$$ChangeNotifyShortTimerExpirationSettingsUserActionImplCopyWith<
+            $Res> {
+  __$$ChangeNotifyShortTimerExpirationSettingsUserActionImplCopyWithImpl(
+      _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl _value,
+      $Res Function(_$ChangeNotifyShortTimerExpirationSettingsUserActionImpl)
+          _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -621,7 +631,7 @@ class __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ChangeNotifyShortTimerExpirationSettingsUserAction(
+    return _then(_$ChangeNotifyShortTimerExpirationSettingsUserActionImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -632,10 +642,10 @@ class __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeNotifyShortTimerExpirationSettingsUserAction
+class _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl
     with DiagnosticableTreeMixin
     implements ChangeNotifyShortTimerExpirationSettingsUserAction {
-  const _$ChangeNotifyShortTimerExpirationSettingsUserAction(
+  const _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl(
       {required this.value});
 
   @override
@@ -656,10 +666,10 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeNotifyShortTimerExpirationSettingsUserAction &&
+            other is _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -669,11 +679,11 @@ class _$ChangeNotifyShortTimerExpirationSettingsUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
-          _$ChangeNotifyShortTimerExpirationSettingsUserAction>
+  _$$ChangeNotifyShortTimerExpirationSettingsUserActionImplCopyWith<
+          _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl>
       get copyWith =>
-          __$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWithImpl<
-                  _$ChangeNotifyShortTimerExpirationSettingsUserAction>(
+          __$$ChangeNotifyShortTimerExpirationSettingsUserActionImplCopyWithImpl<
+                  _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl>(
               this, _$identity);
 
   @override
@@ -770,36 +780,39 @@ abstract class ChangeNotifyShortTimerExpirationSettingsUserAction
     implements UserActionSettings {
   const factory ChangeNotifyShortTimerExpirationSettingsUserAction(
           {required final bool value}) =
-      _$ChangeNotifyShortTimerExpirationSettingsUserAction;
+      _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl;
 
   bool get value;
   @JsonKey(ignore: true)
-  _$$ChangeNotifyShortTimerExpirationSettingsUserActionCopyWith<
-          _$ChangeNotifyShortTimerExpirationSettingsUserAction>
+  _$$ChangeNotifyShortTimerExpirationSettingsUserActionImplCopyWith<
+          _$ChangeNotifyShortTimerExpirationSettingsUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
+abstract class _$$ChangeNotifyLongTimerExpirationSettingsUserActionImplCopyWith<
     $Res> {
-  factory _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith(
-          _$ChangeNotifyLongTimerExpirationSettingsUserAction value,
-          $Res Function(_$ChangeNotifyLongTimerExpirationSettingsUserAction)
+  factory _$$ChangeNotifyLongTimerExpirationSettingsUserActionImplCopyWith(
+          _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl value,
+          $Res Function(_$ChangeNotifyLongTimerExpirationSettingsUserActionImpl)
               then) =
-      __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>;
+      __$$ChangeNotifyLongTimerExpirationSettingsUserActionImplCopyWithImpl<
+          $Res>;
   @useResult
   $Res call({bool value});
 }
 
 /// @nodoc
-class __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>
+class __$$ChangeNotifyLongTimerExpirationSettingsUserActionImplCopyWithImpl<
+        $Res>
     extends _$UserActionSettingsCopyWithImpl<$Res,
-        _$ChangeNotifyLongTimerExpirationSettingsUserAction>
+        _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl>
     implements
-        _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<$Res> {
-  __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl(
-      _$ChangeNotifyLongTimerExpirationSettingsUserAction _value,
-      $Res Function(_$ChangeNotifyLongTimerExpirationSettingsUserAction) _then)
+        _$$ChangeNotifyLongTimerExpirationSettingsUserActionImplCopyWith<$Res> {
+  __$$ChangeNotifyLongTimerExpirationSettingsUserActionImplCopyWithImpl(
+      _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl _value,
+      $Res Function(_$ChangeNotifyLongTimerExpirationSettingsUserActionImpl)
+          _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -807,7 +820,7 @@ class __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ChangeNotifyLongTimerExpirationSettingsUserAction(
+    return _then(_$ChangeNotifyLongTimerExpirationSettingsUserActionImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -818,10 +831,10 @@ class __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeNotifyLongTimerExpirationSettingsUserAction
+class _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl
     with DiagnosticableTreeMixin
     implements ChangeNotifyLongTimerExpirationSettingsUserAction {
-  const _$ChangeNotifyLongTimerExpirationSettingsUserAction(
+  const _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl(
       {required this.value});
 
   @override
@@ -842,10 +855,10 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeNotifyLongTimerExpirationSettingsUserAction &&
+            other is _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -855,11 +868,11 @@ class _$ChangeNotifyLongTimerExpirationSettingsUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
-          _$ChangeNotifyLongTimerExpirationSettingsUserAction>
+  _$$ChangeNotifyLongTimerExpirationSettingsUserActionImplCopyWith<
+          _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl>
       get copyWith =>
-          __$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWithImpl<
-                  _$ChangeNotifyLongTimerExpirationSettingsUserAction>(
+          __$$ChangeNotifyLongTimerExpirationSettingsUserActionImplCopyWithImpl<
+                  _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl>(
               this, _$identity);
 
   @override
@@ -956,12 +969,12 @@ abstract class ChangeNotifyLongTimerExpirationSettingsUserAction
     implements UserActionSettings {
   const factory ChangeNotifyLongTimerExpirationSettingsUserAction(
           {required final bool value}) =
-      _$ChangeNotifyLongTimerExpirationSettingsUserAction;
+      _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl;
 
   bool get value;
   @JsonKey(ignore: true)
-  _$$ChangeNotifyLongTimerExpirationSettingsUserActionCopyWith<
-          _$ChangeNotifyLongTimerExpirationSettingsUserAction>
+  _$$ChangeNotifyLongTimerExpirationSettingsUserActionImplCopyWith<
+          _$ChangeNotifyLongTimerExpirationSettingsUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1069,12 +1082,12 @@ class _$SystemActionSettingsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ReadySettingsSystemActionCopyWith<$Res>
+abstract class _$$ReadySettingsSystemActionImplCopyWith<$Res>
     implements $SystemActionSettingsCopyWith<$Res> {
-  factory _$$ReadySettingsSystemActionCopyWith(
-          _$ReadySettingsSystemAction value,
-          $Res Function(_$ReadySettingsSystemAction) then) =
-      __$$ReadySettingsSystemActionCopyWithImpl<$Res>;
+  factory _$$ReadySettingsSystemActionImplCopyWith(
+          _$ReadySettingsSystemActionImpl value,
+          $Res Function(_$ReadySettingsSystemActionImpl) then) =
+      __$$ReadySettingsSystemActionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1085,12 +1098,13 @@ abstract class _$$ReadySettingsSystemActionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReadySettingsSystemActionCopyWithImpl<$Res>
+class __$$ReadySettingsSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionSettingsCopyWithImpl<$Res,
-        _$ReadySettingsSystemAction>
-    implements _$$ReadySettingsSystemActionCopyWith<$Res> {
-  __$$ReadySettingsSystemActionCopyWithImpl(_$ReadySettingsSystemAction _value,
-      $Res Function(_$ReadySettingsSystemAction) _then)
+        _$ReadySettingsSystemActionImpl>
+    implements _$$ReadySettingsSystemActionImplCopyWith<$Res> {
+  __$$ReadySettingsSystemActionImplCopyWithImpl(
+      _$ReadySettingsSystemActionImpl _value,
+      $Res Function(_$ReadySettingsSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1101,7 +1115,7 @@ class __$$ReadySettingsSystemActionCopyWithImpl<$Res>
     Object? notifyShortTimerExpiration = null,
     Object? notifyLongTimerExpiration = null,
   }) {
-    return _then(_$ReadySettingsSystemAction(
+    return _then(_$ReadySettingsSystemActionImpl(
       appTheme: null == appTheme
           ? _value.appTheme
           : appTheme // ignore: cast_nullable_to_non_nullable
@@ -1124,10 +1138,10 @@ class __$$ReadySettingsSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReadySettingsSystemAction
+class _$ReadySettingsSystemActionImpl
     with DiagnosticableTreeMixin
     implements ReadySettingsSystemAction {
-  const _$ReadySettingsSystemAction(
+  const _$ReadySettingsSystemActionImpl(
       {required this.appTheme,
       required this.textScale,
       required this.notifyShortTimerExpiration,
@@ -1161,10 +1175,10 @@ class _$ReadySettingsSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReadySettingsSystemAction &&
+            other is _$ReadySettingsSystemActionImpl &&
             (identical(other.appTheme, appTheme) ||
                 other.appTheme == appTheme) &&
             (identical(other.textScale, textScale) ||
@@ -1185,9 +1199,9 @@ class _$ReadySettingsSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReadySettingsSystemActionCopyWith<_$ReadySettingsSystemAction>
-      get copyWith => __$$ReadySettingsSystemActionCopyWithImpl<
-          _$ReadySettingsSystemAction>(this, _$identity);
+  _$$ReadySettingsSystemActionImplCopyWith<_$ReadySettingsSystemActionImpl>
+      get copyWith => __$$ReadySettingsSystemActionImplCopyWithImpl<
+          _$ReadySettingsSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1261,7 +1275,7 @@ abstract class ReadySettingsSystemAction implements SystemActionSettings {
           required final TextScale textScale,
           required final bool notifyShortTimerExpiration,
           required final bool notifyLongTimerExpiration}) =
-      _$ReadySettingsSystemAction;
+      _$ReadySettingsSystemActionImpl;
 
   @override
   AppTheme get appTheme;
@@ -1273,6 +1287,6 @@ abstract class ReadySettingsSystemAction implements SystemActionSettings {
   bool get notifyLongTimerExpiration;
   @override
   @JsonKey(ignore: true)
-  _$$ReadySettingsSystemActionCopyWith<_$ReadySettingsSystemAction>
+  _$$ReadySettingsSystemActionImplCopyWith<_$ReadySettingsSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

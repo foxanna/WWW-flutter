@@ -12,7 +12,7 @@ part of 'section_giveaway.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GiveAwaySectionHiveModel {
@@ -59,24 +59,25 @@ class _$GiveAwaySectionHiveModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GiveAwaySectionHiveModelCopyWith<$Res>
+abstract class _$$GiveAwaySectionHiveModelImplCopyWith<$Res>
     implements $GiveAwaySectionHiveModelCopyWith<$Res> {
-  factory _$$_GiveAwaySectionHiveModelCopyWith(
-          _$_GiveAwaySectionHiveModel value,
-          $Res Function(_$_GiveAwaySectionHiveModel) then) =
-      __$$_GiveAwaySectionHiveModelCopyWithImpl<$Res>;
+  factory _$$GiveAwaySectionHiveModelImplCopyWith(
+          _$GiveAwaySectionHiveModelImpl value,
+          $Res Function(_$GiveAwaySectionHiveModelImpl) then) =
+      __$$GiveAwaySectionHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@HiveField(GiveAwaySectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
-class __$$_GiveAwaySectionHiveModelCopyWithImpl<$Res>
+class __$$GiveAwaySectionHiveModelImplCopyWithImpl<$Res>
     extends _$GiveAwaySectionHiveModelCopyWithImpl<$Res,
-        _$_GiveAwaySectionHiveModel>
-    implements _$$_GiveAwaySectionHiveModelCopyWith<$Res> {
-  __$$_GiveAwaySectionHiveModelCopyWithImpl(_$_GiveAwaySectionHiveModel _value,
-      $Res Function(_$_GiveAwaySectionHiveModel) _then)
+        _$GiveAwaySectionHiveModelImpl>
+    implements _$$GiveAwaySectionHiveModelImplCopyWith<$Res> {
+  __$$GiveAwaySectionHiveModelImplCopyWithImpl(
+      _$GiveAwaySectionHiveModelImpl _value,
+      $Res Function(_$GiveAwaySectionHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -84,7 +85,7 @@ class __$$_GiveAwaySectionHiveModelCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$_GiveAwaySectionHiveModel(
+    return _then(_$GiveAwaySectionHiveModelImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -96,8 +97,8 @@ class __$$_GiveAwaySectionHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveGiveAwaySectionTypeId)
-class _$_GiveAwaySectionHiveModel implements _GiveAwaySectionHiveModel {
-  const _$_GiveAwaySectionHiveModel(
+class _$GiveAwaySectionHiveModelImpl implements _GiveAwaySectionHiveModel {
+  const _$GiveAwaySectionHiveModelImpl(
       {@HiveField(GiveAwaySectionHiveFieldsIds.value) required this.value});
 
   @override
@@ -110,10 +111,10 @@ class _$_GiveAwaySectionHiveModel implements _GiveAwaySectionHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GiveAwaySectionHiveModel &&
+            other is _$GiveAwaySectionHiveModelImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -123,21 +124,21 @@ class _$_GiveAwaySectionHiveModel implements _GiveAwaySectionHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GiveAwaySectionHiveModelCopyWith<_$_GiveAwaySectionHiveModel>
-      get copyWith => __$$_GiveAwaySectionHiveModelCopyWithImpl<
-          _$_GiveAwaySectionHiveModel>(this, _$identity);
+  _$$GiveAwaySectionHiveModelImplCopyWith<_$GiveAwaySectionHiveModelImpl>
+      get copyWith => __$$GiveAwaySectionHiveModelImplCopyWithImpl<
+          _$GiveAwaySectionHiveModelImpl>(this, _$identity);
 }
 
 abstract class _GiveAwaySectionHiveModel implements GiveAwaySectionHiveModel {
   const factory _GiveAwaySectionHiveModel(
       {@HiveField(GiveAwaySectionHiveFieldsIds.value)
-      required final String value}) = _$_GiveAwaySectionHiveModel;
+      required final String value}) = _$GiveAwaySectionHiveModelImpl;
 
   @override
   @HiveField(GiveAwaySectionHiveFieldsIds.value)
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$_GiveAwaySectionHiveModelCopyWith<_$_GiveAwaySectionHiveModel>
+  _$$GiveAwaySectionHiveModelImplCopyWith<_$GiveAwaySectionHiveModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

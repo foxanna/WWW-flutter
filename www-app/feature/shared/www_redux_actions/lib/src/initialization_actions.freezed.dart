@@ -12,7 +12,7 @@ part of 'initialization_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$InitializationAction {
@@ -96,30 +96,30 @@ class _$InitializationActionCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$InitCoreInitializationActionCopyWith<$Res> {
-  factory _$$InitCoreInitializationActionCopyWith(
-          _$InitCoreInitializationAction value,
-          $Res Function(_$InitCoreInitializationAction) then) =
-      __$$InitCoreInitializationActionCopyWithImpl<$Res>;
+abstract class _$$InitCoreInitializationActionImplCopyWith<$Res> {
+  factory _$$InitCoreInitializationActionImplCopyWith(
+          _$InitCoreInitializationActionImpl value,
+          $Res Function(_$InitCoreInitializationActionImpl) then) =
+      __$$InitCoreInitializationActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitCoreInitializationActionCopyWithImpl<$Res>
+class __$$InitCoreInitializationActionImplCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res,
-        _$InitCoreInitializationAction>
-    implements _$$InitCoreInitializationActionCopyWith<$Res> {
-  __$$InitCoreInitializationActionCopyWithImpl(
-      _$InitCoreInitializationAction _value,
-      $Res Function(_$InitCoreInitializationAction) _then)
+        _$InitCoreInitializationActionImpl>
+    implements _$$InitCoreInitializationActionImplCopyWith<$Res> {
+  __$$InitCoreInitializationActionImplCopyWithImpl(
+      _$InitCoreInitializationActionImpl _value,
+      $Res Function(_$InitCoreInitializationActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitCoreInitializationAction
+class _$InitCoreInitializationActionImpl
     with DiagnosticableTreeMixin
     implements InitCoreInitializationAction {
-  const _$InitCoreInitializationAction();
+  const _$InitCoreInitializationActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -134,10 +134,10 @@ class _$InitCoreInitializationAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitCoreInitializationAction);
+            other is _$InitCoreInitializationActionImpl);
   }
 
   @override
@@ -227,34 +227,35 @@ class _$InitCoreInitializationAction
 }
 
 abstract class InitCoreInitializationAction implements InitializationAction {
-  const factory InitCoreInitializationAction() = _$InitCoreInitializationAction;
+  const factory InitCoreInitializationAction() =
+      _$InitCoreInitializationActionImpl;
 }
 
 /// @nodoc
-abstract class _$$InitServicesInitializationActionCopyWith<$Res> {
-  factory _$$InitServicesInitializationActionCopyWith(
-          _$InitServicesInitializationAction value,
-          $Res Function(_$InitServicesInitializationAction) then) =
-      __$$InitServicesInitializationActionCopyWithImpl<$Res>;
+abstract class _$$InitServicesInitializationActionImplCopyWith<$Res> {
+  factory _$$InitServicesInitializationActionImplCopyWith(
+          _$InitServicesInitializationActionImpl value,
+          $Res Function(_$InitServicesInitializationActionImpl) then) =
+      __$$InitServicesInitializationActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitServicesInitializationActionCopyWithImpl<$Res>
+class __$$InitServicesInitializationActionImplCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res,
-        _$InitServicesInitializationAction>
-    implements _$$InitServicesInitializationActionCopyWith<$Res> {
-  __$$InitServicesInitializationActionCopyWithImpl(
-      _$InitServicesInitializationAction _value,
-      $Res Function(_$InitServicesInitializationAction) _then)
+        _$InitServicesInitializationActionImpl>
+    implements _$$InitServicesInitializationActionImplCopyWith<$Res> {
+  __$$InitServicesInitializationActionImplCopyWithImpl(
+      _$InitServicesInitializationActionImpl _value,
+      $Res Function(_$InitServicesInitializationActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitServicesInitializationAction
+class _$InitServicesInitializationActionImpl
     with DiagnosticableTreeMixin
     implements InitServicesInitializationAction {
-  const _$InitServicesInitializationAction();
+  const _$InitServicesInitializationActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -269,10 +270,10 @@ class _$InitServicesInitializationAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitServicesInitializationAction);
+            other is _$InitServicesInitializationActionImpl);
   }
 
   @override
@@ -364,34 +365,34 @@ class _$InitServicesInitializationAction
 abstract class InitServicesInitializationAction
     implements InitializationAction {
   const factory InitServicesInitializationAction() =
-      _$InitServicesInitializationAction;
+      _$InitServicesInitializationActionImpl;
 }
 
 /// @nodoc
-abstract class _$$InitSettingsInitializationActionCopyWith<$Res> {
-  factory _$$InitSettingsInitializationActionCopyWith(
-          _$InitSettingsInitializationAction value,
-          $Res Function(_$InitSettingsInitializationAction) then) =
-      __$$InitSettingsInitializationActionCopyWithImpl<$Res>;
+abstract class _$$InitSettingsInitializationActionImplCopyWith<$Res> {
+  factory _$$InitSettingsInitializationActionImplCopyWith(
+          _$InitSettingsInitializationActionImpl value,
+          $Res Function(_$InitSettingsInitializationActionImpl) then) =
+      __$$InitSettingsInitializationActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitSettingsInitializationActionCopyWithImpl<$Res>
+class __$$InitSettingsInitializationActionImplCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res,
-        _$InitSettingsInitializationAction>
-    implements _$$InitSettingsInitializationActionCopyWith<$Res> {
-  __$$InitSettingsInitializationActionCopyWithImpl(
-      _$InitSettingsInitializationAction _value,
-      $Res Function(_$InitSettingsInitializationAction) _then)
+        _$InitSettingsInitializationActionImpl>
+    implements _$$InitSettingsInitializationActionImplCopyWith<$Res> {
+  __$$InitSettingsInitializationActionImplCopyWithImpl(
+      _$InitSettingsInitializationActionImpl _value,
+      $Res Function(_$InitSettingsInitializationActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitSettingsInitializationAction
+class _$InitSettingsInitializationActionImpl
     with DiagnosticableTreeMixin
     implements InitSettingsInitializationAction {
-  const _$InitSettingsInitializationAction();
+  const _$InitSettingsInitializationActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -406,10 +407,10 @@ class _$InitSettingsInitializationAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitSettingsInitializationAction);
+            other is _$InitSettingsInitializationActionImpl);
   }
 
   @override
@@ -501,27 +502,27 @@ class _$InitSettingsInitializationAction
 abstract class InitSettingsInitializationAction
     implements InitializationAction {
   const factory InitSettingsInitializationAction() =
-      _$InitSettingsInitializationAction;
+      _$InitSettingsInitializationActionImpl;
 }
 
 /// @nodoc
-abstract class _$$FailedInitializationActionCopyWith<$Res> {
-  factory _$$FailedInitializationActionCopyWith(
-          _$FailedInitializationAction value,
-          $Res Function(_$FailedInitializationAction) then) =
-      __$$FailedInitializationActionCopyWithImpl<$Res>;
+abstract class _$$FailedInitializationActionImplCopyWith<$Res> {
+  factory _$$FailedInitializationActionImplCopyWith(
+          _$FailedInitializationActionImpl value,
+          $Res Function(_$FailedInitializationActionImpl) then) =
+      __$$FailedInitializationActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class __$$FailedInitializationActionCopyWithImpl<$Res>
+class __$$FailedInitializationActionImplCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res,
-        _$FailedInitializationAction>
-    implements _$$FailedInitializationActionCopyWith<$Res> {
-  __$$FailedInitializationActionCopyWithImpl(
-      _$FailedInitializationAction _value,
-      $Res Function(_$FailedInitializationAction) _then)
+        _$FailedInitializationActionImpl>
+    implements _$$FailedInitializationActionImplCopyWith<$Res> {
+  __$$FailedInitializationActionImplCopyWithImpl(
+      _$FailedInitializationActionImpl _value,
+      $Res Function(_$FailedInitializationActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -529,7 +530,7 @@ class __$$FailedInitializationActionCopyWithImpl<$Res>
   $Res call({
     Object? exception = null,
   }) {
-    return _then(_$FailedInitializationAction(
+    return _then(_$FailedInitializationActionImpl(
       exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -540,10 +541,10 @@ class __$$FailedInitializationActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FailedInitializationAction
+class _$FailedInitializationActionImpl
     with DiagnosticableTreeMixin
     implements FailedInitializationAction {
-  const _$FailedInitializationAction({required this.exception});
+  const _$FailedInitializationActionImpl({required this.exception});
 
   @override
   final Exception exception;
@@ -562,10 +563,10 @@ class _$FailedInitializationAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailedInitializationAction &&
+            other is _$FailedInitializationActionImpl &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
   }
@@ -576,9 +577,9 @@ class _$FailedInitializationAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FailedInitializationActionCopyWith<_$FailedInitializationAction>
-      get copyWith => __$$FailedInitializationActionCopyWithImpl<
-          _$FailedInitializationAction>(this, _$identity);
+  _$$FailedInitializationActionImplCopyWith<_$FailedInitializationActionImpl>
+      get copyWith => __$$FailedInitializationActionImplCopyWithImpl<
+          _$FailedInitializationActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -665,39 +666,39 @@ class _$FailedInitializationAction
 
 abstract class FailedInitializationAction implements InitializationAction {
   const factory FailedInitializationAction(
-      {required final Exception exception}) = _$FailedInitializationAction;
+      {required final Exception exception}) = _$FailedInitializationActionImpl;
 
   Exception get exception;
   @JsonKey(ignore: true)
-  _$$FailedInitializationActionCopyWith<_$FailedInitializationAction>
+  _$$FailedInitializationActionImplCopyWith<_$FailedInitializationActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CompletedInitializationActionCopyWith<$Res> {
-  factory _$$CompletedInitializationActionCopyWith(
-          _$CompletedInitializationAction value,
-          $Res Function(_$CompletedInitializationAction) then) =
-      __$$CompletedInitializationActionCopyWithImpl<$Res>;
+abstract class _$$CompletedInitializationActionImplCopyWith<$Res> {
+  factory _$$CompletedInitializationActionImplCopyWith(
+          _$CompletedInitializationActionImpl value,
+          $Res Function(_$CompletedInitializationActionImpl) then) =
+      __$$CompletedInitializationActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CompletedInitializationActionCopyWithImpl<$Res>
+class __$$CompletedInitializationActionImplCopyWithImpl<$Res>
     extends _$InitializationActionCopyWithImpl<$Res,
-        _$CompletedInitializationAction>
-    implements _$$CompletedInitializationActionCopyWith<$Res> {
-  __$$CompletedInitializationActionCopyWithImpl(
-      _$CompletedInitializationAction _value,
-      $Res Function(_$CompletedInitializationAction) _then)
+        _$CompletedInitializationActionImpl>
+    implements _$$CompletedInitializationActionImplCopyWith<$Res> {
+  __$$CompletedInitializationActionImplCopyWithImpl(
+      _$CompletedInitializationActionImpl _value,
+      $Res Function(_$CompletedInitializationActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CompletedInitializationAction
+class _$CompletedInitializationActionImpl
     with DiagnosticableTreeMixin
     implements CompletedInitializationAction {
-  const _$CompletedInitializationAction();
+  const _$CompletedInitializationActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -712,10 +713,10 @@ class _$CompletedInitializationAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CompletedInitializationAction);
+            other is _$CompletedInitializationActionImpl);
   }
 
   @override
@@ -806,5 +807,5 @@ class _$CompletedInitializationAction
 
 abstract class CompletedInitializationAction implements InitializationAction {
   const factory CompletedInitializationAction() =
-      _$CompletedInitializationAction;
+      _$CompletedInitializationActionImpl;
 }

@@ -12,7 +12,7 @@ part of 'latest_tournaments_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionLatest {
@@ -84,27 +84,29 @@ class _$UserActionLatestCopyWithImpl<$Res, $Val extends UserActionLatest>
 }
 
 /// @nodoc
-abstract class _$$RefreshLatestUserActionCopyWith<$Res> {
-  factory _$$RefreshLatestUserActionCopyWith(_$RefreshLatestUserAction value,
-          $Res Function(_$RefreshLatestUserAction) then) =
-      __$$RefreshLatestUserActionCopyWithImpl<$Res>;
+abstract class _$$RefreshLatestUserActionImplCopyWith<$Res> {
+  factory _$$RefreshLatestUserActionImplCopyWith(
+          _$RefreshLatestUserActionImpl value,
+          $Res Function(_$RefreshLatestUserActionImpl) then) =
+      __$$RefreshLatestUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RefreshLatestUserActionCopyWithImpl<$Res>
-    extends _$UserActionLatestCopyWithImpl<$Res, _$RefreshLatestUserAction>
-    implements _$$RefreshLatestUserActionCopyWith<$Res> {
-  __$$RefreshLatestUserActionCopyWithImpl(_$RefreshLatestUserAction _value,
-      $Res Function(_$RefreshLatestUserAction) _then)
+class __$$RefreshLatestUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionLatestCopyWithImpl<$Res, _$RefreshLatestUserActionImpl>
+    implements _$$RefreshLatestUserActionImplCopyWith<$Res> {
+  __$$RefreshLatestUserActionImplCopyWithImpl(
+      _$RefreshLatestUserActionImpl _value,
+      $Res Function(_$RefreshLatestUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RefreshLatestUserAction
+class _$RefreshLatestUserActionImpl
     with DiagnosticableTreeMixin
     implements RefreshLatestUserAction {
-  const _$RefreshLatestUserAction();
+  const _$RefreshLatestUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -118,10 +120,10 @@ class _$RefreshLatestUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RefreshLatestUserAction);
+            other is _$RefreshLatestUserActionImpl);
   }
 
   @override
@@ -200,31 +202,31 @@ class _$RefreshLatestUserAction
 }
 
 abstract class RefreshLatestUserAction implements UserActionLatest {
-  const factory RefreshLatestUserAction() = _$RefreshLatestUserAction;
+  const factory RefreshLatestUserAction() = _$RefreshLatestUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadLatestUserActionCopyWith<$Res> {
-  factory _$$LoadLatestUserActionCopyWith(_$LoadLatestUserAction value,
-          $Res Function(_$LoadLatestUserAction) then) =
-      __$$LoadLatestUserActionCopyWithImpl<$Res>;
+abstract class _$$LoadLatestUserActionImplCopyWith<$Res> {
+  factory _$$LoadLatestUserActionImplCopyWith(_$LoadLatestUserActionImpl value,
+          $Res Function(_$LoadLatestUserActionImpl) then) =
+      __$$LoadLatestUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadLatestUserActionCopyWithImpl<$Res>
-    extends _$UserActionLatestCopyWithImpl<$Res, _$LoadLatestUserAction>
-    implements _$$LoadLatestUserActionCopyWith<$Res> {
-  __$$LoadLatestUserActionCopyWithImpl(_$LoadLatestUserAction _value,
-      $Res Function(_$LoadLatestUserAction) _then)
+class __$$LoadLatestUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionLatestCopyWithImpl<$Res, _$LoadLatestUserActionImpl>
+    implements _$$LoadLatestUserActionImplCopyWith<$Res> {
+  __$$LoadLatestUserActionImplCopyWithImpl(_$LoadLatestUserActionImpl _value,
+      $Res Function(_$LoadLatestUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadLatestUserAction
+class _$LoadLatestUserActionImpl
     with DiagnosticableTreeMixin
     implements LoadLatestUserAction {
-  const _$LoadLatestUserAction();
+  const _$LoadLatestUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -238,9 +240,10 @@ class _$LoadLatestUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadLatestUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadLatestUserActionImpl);
   }
 
   @override
@@ -319,34 +322,34 @@ class _$LoadLatestUserAction
 }
 
 abstract class LoadLatestUserAction implements UserActionLatest {
-  const factory LoadLatestUserAction() = _$LoadLatestUserAction;
+  const factory LoadLatestUserAction() = _$LoadLatestUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$ScrolledCloseToTheEndLatestUserActionCopyWith<$Res> {
-  factory _$$ScrolledCloseToTheEndLatestUserActionCopyWith(
-          _$ScrolledCloseToTheEndLatestUserAction value,
-          $Res Function(_$ScrolledCloseToTheEndLatestUserAction) then) =
-      __$$ScrolledCloseToTheEndLatestUserActionCopyWithImpl<$Res>;
+abstract class _$$ScrolledCloseToTheEndLatestUserActionImplCopyWith<$Res> {
+  factory _$$ScrolledCloseToTheEndLatestUserActionImplCopyWith(
+          _$ScrolledCloseToTheEndLatestUserActionImpl value,
+          $Res Function(_$ScrolledCloseToTheEndLatestUserActionImpl) then) =
+      __$$ScrolledCloseToTheEndLatestUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ScrolledCloseToTheEndLatestUserActionCopyWithImpl<$Res>
+class __$$ScrolledCloseToTheEndLatestUserActionImplCopyWithImpl<$Res>
     extends _$UserActionLatestCopyWithImpl<$Res,
-        _$ScrolledCloseToTheEndLatestUserAction>
-    implements _$$ScrolledCloseToTheEndLatestUserActionCopyWith<$Res> {
-  __$$ScrolledCloseToTheEndLatestUserActionCopyWithImpl(
-      _$ScrolledCloseToTheEndLatestUserAction _value,
-      $Res Function(_$ScrolledCloseToTheEndLatestUserAction) _then)
+        _$ScrolledCloseToTheEndLatestUserActionImpl>
+    implements _$$ScrolledCloseToTheEndLatestUserActionImplCopyWith<$Res> {
+  __$$ScrolledCloseToTheEndLatestUserActionImplCopyWithImpl(
+      _$ScrolledCloseToTheEndLatestUserActionImpl _value,
+      $Res Function(_$ScrolledCloseToTheEndLatestUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ScrolledCloseToTheEndLatestUserAction
+class _$ScrolledCloseToTheEndLatestUserActionImpl
     with DiagnosticableTreeMixin
     implements ScrolledCloseToTheEndLatestUserAction {
-  const _$ScrolledCloseToTheEndLatestUserAction();
+  const _$ScrolledCloseToTheEndLatestUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -361,10 +364,10 @@ class _$ScrolledCloseToTheEndLatestUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScrolledCloseToTheEndLatestUserAction);
+            other is _$ScrolledCloseToTheEndLatestUserActionImpl);
   }
 
   @override
@@ -445,7 +448,7 @@ class _$ScrolledCloseToTheEndLatestUserAction
 abstract class ScrolledCloseToTheEndLatestUserAction
     implements UserActionLatest {
   const factory ScrolledCloseToTheEndLatestUserAction() =
-      _$ScrolledCloseToTheEndLatestUserAction;
+      _$ScrolledCloseToTheEndLatestUserActionImpl;
 }
 
 /// @nodoc
@@ -539,27 +542,29 @@ class _$SystemActionLatestCopyWithImpl<$Res, $Val extends SystemActionLatest>
 }
 
 /// @nodoc
-abstract class _$$OpenLatestSystemActionCopyWith<$Res> {
-  factory _$$OpenLatestSystemActionCopyWith(_$OpenLatestSystemAction value,
-          $Res Function(_$OpenLatestSystemAction) then) =
-      __$$OpenLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$OpenLatestSystemActionImplCopyWith<$Res> {
+  factory _$$OpenLatestSystemActionImplCopyWith(
+          _$OpenLatestSystemActionImpl value,
+          $Res Function(_$OpenLatestSystemActionImpl) then) =
+      __$$OpenLatestSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OpenLatestSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionLatestCopyWithImpl<$Res, _$OpenLatestSystemAction>
-    implements _$$OpenLatestSystemActionCopyWith<$Res> {
-  __$$OpenLatestSystemActionCopyWithImpl(_$OpenLatestSystemAction _value,
-      $Res Function(_$OpenLatestSystemAction) _then)
+class __$$OpenLatestSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res, _$OpenLatestSystemActionImpl>
+    implements _$$OpenLatestSystemActionImplCopyWith<$Res> {
+  __$$OpenLatestSystemActionImplCopyWithImpl(
+      _$OpenLatestSystemActionImpl _value,
+      $Res Function(_$OpenLatestSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$OpenLatestSystemAction
+class _$OpenLatestSystemActionImpl
     with DiagnosticableTreeMixin
     implements OpenLatestSystemAction {
-  const _$OpenLatestSystemAction();
+  const _$OpenLatestSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -573,9 +578,10 @@ class _$OpenLatestSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OpenLatestSystemAction);
+        (other.runtimeType == runtimeType &&
+            other is _$OpenLatestSystemActionImpl);
   }
 
   @override
@@ -675,31 +681,33 @@ class _$OpenLatestSystemAction
 }
 
 abstract class OpenLatestSystemAction implements SystemActionLatest {
-  const factory OpenLatestSystemAction() = _$OpenLatestSystemAction;
+  const factory OpenLatestSystemAction() = _$OpenLatestSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$InitLatestSystemActionCopyWith<$Res> {
-  factory _$$InitLatestSystemActionCopyWith(_$InitLatestSystemAction value,
-          $Res Function(_$InitLatestSystemAction) then) =
-      __$$InitLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitLatestSystemActionImplCopyWith<$Res> {
+  factory _$$InitLatestSystemActionImplCopyWith(
+          _$InitLatestSystemActionImpl value,
+          $Res Function(_$InitLatestSystemActionImpl) then) =
+      __$$InitLatestSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitLatestSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionLatestCopyWithImpl<$Res, _$InitLatestSystemAction>
-    implements _$$InitLatestSystemActionCopyWith<$Res> {
-  __$$InitLatestSystemActionCopyWithImpl(_$InitLatestSystemAction _value,
-      $Res Function(_$InitLatestSystemAction) _then)
+class __$$InitLatestSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res, _$InitLatestSystemActionImpl>
+    implements _$$InitLatestSystemActionImplCopyWith<$Res> {
+  __$$InitLatestSystemActionImplCopyWithImpl(
+      _$InitLatestSystemActionImpl _value,
+      $Res Function(_$InitLatestSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitLatestSystemAction
+class _$InitLatestSystemActionImpl
     with DiagnosticableTreeMixin
     implements InitLatestSystemAction {
-  const _$InitLatestSystemAction();
+  const _$InitLatestSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -713,9 +721,10 @@ class _$InitLatestSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitLatestSystemAction);
+        (other.runtimeType == runtimeType &&
+            other is _$InitLatestSystemActionImpl);
   }
 
   @override
@@ -815,31 +824,34 @@ class _$InitLatestSystemAction
 }
 
 abstract class InitLatestSystemAction implements SystemActionLatest {
-  const factory InitLatestSystemAction() = _$InitLatestSystemAction;
+  const factory InitLatestSystemAction() = _$InitLatestSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$DeInitLatestSystemActionCopyWith<$Res> {
-  factory _$$DeInitLatestSystemActionCopyWith(_$DeInitLatestSystemAction value,
-          $Res Function(_$DeInitLatestSystemAction) then) =
-      __$$DeInitLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$DeInitLatestSystemActionImplCopyWith<$Res> {
+  factory _$$DeInitLatestSystemActionImplCopyWith(
+          _$DeInitLatestSystemActionImpl value,
+          $Res Function(_$DeInitLatestSystemActionImpl) then) =
+      __$$DeInitLatestSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DeInitLatestSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionLatestCopyWithImpl<$Res, _$DeInitLatestSystemAction>
-    implements _$$DeInitLatestSystemActionCopyWith<$Res> {
-  __$$DeInitLatestSystemActionCopyWithImpl(_$DeInitLatestSystemAction _value,
-      $Res Function(_$DeInitLatestSystemAction) _then)
+class __$$DeInitLatestSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res,
+        _$DeInitLatestSystemActionImpl>
+    implements _$$DeInitLatestSystemActionImplCopyWith<$Res> {
+  __$$DeInitLatestSystemActionImplCopyWithImpl(
+      _$DeInitLatestSystemActionImpl _value,
+      $Res Function(_$DeInitLatestSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DeInitLatestSystemAction
+class _$DeInitLatestSystemActionImpl
     with DiagnosticableTreeMixin
     implements DeInitLatestSystemAction {
-  const _$DeInitLatestSystemAction();
+  const _$DeInitLatestSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -853,10 +865,10 @@ class _$DeInitLatestSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeInitLatestSystemAction);
+            other is _$DeInitLatestSystemActionImpl);
   }
 
   @override
@@ -956,32 +968,34 @@ class _$DeInitLatestSystemAction
 }
 
 abstract class DeInitLatestSystemAction implements SystemActionLatest {
-  const factory DeInitLatestSystemAction() = _$DeInitLatestSystemAction;
+  const factory DeInitLatestSystemAction() = _$DeInitLatestSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingLatestSystemActionCopyWith<$Res> {
-  factory _$$LoadingLatestSystemActionCopyWith(
-          _$LoadingLatestSystemAction value,
-          $Res Function(_$LoadingLatestSystemAction) then) =
-      __$$LoadingLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$LoadingLatestSystemActionImplCopyWith<$Res> {
+  factory _$$LoadingLatestSystemActionImplCopyWith(
+          _$LoadingLatestSystemActionImpl value,
+          $Res Function(_$LoadingLatestSystemActionImpl) then) =
+      __$$LoadingLatestSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingLatestSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionLatestCopyWithImpl<$Res, _$LoadingLatestSystemAction>
-    implements _$$LoadingLatestSystemActionCopyWith<$Res> {
-  __$$LoadingLatestSystemActionCopyWithImpl(_$LoadingLatestSystemAction _value,
-      $Res Function(_$LoadingLatestSystemAction) _then)
+class __$$LoadingLatestSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res,
+        _$LoadingLatestSystemActionImpl>
+    implements _$$LoadingLatestSystemActionImplCopyWith<$Res> {
+  __$$LoadingLatestSystemActionImplCopyWithImpl(
+      _$LoadingLatestSystemActionImpl _value,
+      $Res Function(_$LoadingLatestSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingLatestSystemAction
+class _$LoadingLatestSystemActionImpl
     with DiagnosticableTreeMixin
     implements LoadingLatestSystemAction {
-  const _$LoadingLatestSystemAction();
+  const _$LoadingLatestSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -995,10 +1009,10 @@ class _$LoadingLatestSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingLatestSystemAction);
+            other is _$LoadingLatestSystemActionImpl);
   }
 
   @override
@@ -1098,34 +1112,34 @@ class _$LoadingLatestSystemAction
 }
 
 abstract class LoadingLatestSystemAction implements SystemActionLatest {
-  const factory LoadingLatestSystemAction() = _$LoadingLatestSystemAction;
+  const factory LoadingLatestSystemAction() = _$LoadingLatestSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$RefreshingLatestSystemActionCopyWith<$Res> {
-  factory _$$RefreshingLatestSystemActionCopyWith(
-          _$RefreshingLatestSystemAction value,
-          $Res Function(_$RefreshingLatestSystemAction) then) =
-      __$$RefreshingLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$RefreshingLatestSystemActionImplCopyWith<$Res> {
+  factory _$$RefreshingLatestSystemActionImplCopyWith(
+          _$RefreshingLatestSystemActionImpl value,
+          $Res Function(_$RefreshingLatestSystemActionImpl) then) =
+      __$$RefreshingLatestSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RefreshingLatestSystemActionCopyWithImpl<$Res>
+class __$$RefreshingLatestSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res,
-        _$RefreshingLatestSystemAction>
-    implements _$$RefreshingLatestSystemActionCopyWith<$Res> {
-  __$$RefreshingLatestSystemActionCopyWithImpl(
-      _$RefreshingLatestSystemAction _value,
-      $Res Function(_$RefreshingLatestSystemAction) _then)
+        _$RefreshingLatestSystemActionImpl>
+    implements _$$RefreshingLatestSystemActionImplCopyWith<$Res> {
+  __$$RefreshingLatestSystemActionImplCopyWithImpl(
+      _$RefreshingLatestSystemActionImpl _value,
+      $Res Function(_$RefreshingLatestSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RefreshingLatestSystemAction
+class _$RefreshingLatestSystemActionImpl
     with DiagnosticableTreeMixin
     implements RefreshingLatestSystemAction {
-  const _$RefreshingLatestSystemAction();
+  const _$RefreshingLatestSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1140,10 +1154,10 @@ class _$RefreshingLatestSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RefreshingLatestSystemAction);
+            other is _$RefreshingLatestSystemActionImpl);
   }
 
   @override
@@ -1243,27 +1257,28 @@ class _$RefreshingLatestSystemAction
 }
 
 abstract class RefreshingLatestSystemAction implements SystemActionLatest {
-  const factory RefreshingLatestSystemAction() = _$RefreshingLatestSystemAction;
+  const factory RefreshingLatestSystemAction() =
+      _$RefreshingLatestSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$CompletedLatestSystemActionCopyWith<$Res> {
-  factory _$$CompletedLatestSystemActionCopyWith(
-          _$CompletedLatestSystemAction value,
-          $Res Function(_$CompletedLatestSystemAction) then) =
-      __$$CompletedLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$CompletedLatestSystemActionImplCopyWith<$Res> {
+  factory _$$CompletedLatestSystemActionImplCopyWith(
+          _$CompletedLatestSystemActionImpl value,
+          $Res Function(_$CompletedLatestSystemActionImpl) then) =
+      __$$CompletedLatestSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Iterable<Tournament> data, int nexPage});
 }
 
 /// @nodoc
-class __$$CompletedLatestSystemActionCopyWithImpl<$Res>
+class __$$CompletedLatestSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionLatestCopyWithImpl<$Res,
-        _$CompletedLatestSystemAction>
-    implements _$$CompletedLatestSystemActionCopyWith<$Res> {
-  __$$CompletedLatestSystemActionCopyWithImpl(
-      _$CompletedLatestSystemAction _value,
-      $Res Function(_$CompletedLatestSystemAction) _then)
+        _$CompletedLatestSystemActionImpl>
+    implements _$$CompletedLatestSystemActionImplCopyWith<$Res> {
+  __$$CompletedLatestSystemActionImplCopyWithImpl(
+      _$CompletedLatestSystemActionImpl _value,
+      $Res Function(_$CompletedLatestSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1272,7 +1287,7 @@ class __$$CompletedLatestSystemActionCopyWithImpl<$Res>
     Object? data = null,
     Object? nexPage = null,
   }) {
-    return _then(_$CompletedLatestSystemAction(
+    return _then(_$CompletedLatestSystemActionImpl(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1287,10 +1302,10 @@ class __$$CompletedLatestSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CompletedLatestSystemAction
+class _$CompletedLatestSystemActionImpl
     with DiagnosticableTreeMixin
     implements CompletedLatestSystemAction {
-  const _$CompletedLatestSystemAction(
+  const _$CompletedLatestSystemActionImpl(
       {required this.data, required this.nexPage});
 
   @override
@@ -1313,10 +1328,10 @@ class _$CompletedLatestSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CompletedLatestSystemAction &&
+            other is _$CompletedLatestSystemActionImpl &&
             const DeepCollectionEquality().equals(other.data, data) &&
             (identical(other.nexPage, nexPage) || other.nexPage == nexPage));
   }
@@ -1328,9 +1343,9 @@ class _$CompletedLatestSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CompletedLatestSystemActionCopyWith<_$CompletedLatestSystemAction>
-      get copyWith => __$$CompletedLatestSystemActionCopyWithImpl<
-          _$CompletedLatestSystemAction>(this, _$identity);
+  _$$CompletedLatestSystemActionImplCopyWith<_$CompletedLatestSystemActionImpl>
+      get copyWith => __$$CompletedLatestSystemActionImplCopyWithImpl<
+          _$CompletedLatestSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1428,30 +1443,33 @@ class _$CompletedLatestSystemAction
 abstract class CompletedLatestSystemAction implements SystemActionLatest {
   const factory CompletedLatestSystemAction(
       {required final Iterable<Tournament> data,
-      required final int nexPage}) = _$CompletedLatestSystemAction;
+      required final int nexPage}) = _$CompletedLatestSystemActionImpl;
 
   Iterable<Tournament> get data;
   int get nexPage;
   @JsonKey(ignore: true)
-  _$$CompletedLatestSystemActionCopyWith<_$CompletedLatestSystemAction>
+  _$$CompletedLatestSystemActionImplCopyWith<_$CompletedLatestSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FailedLatestSystemActionCopyWith<$Res> {
-  factory _$$FailedLatestSystemActionCopyWith(_$FailedLatestSystemAction value,
-          $Res Function(_$FailedLatestSystemAction) then) =
-      __$$FailedLatestSystemActionCopyWithImpl<$Res>;
+abstract class _$$FailedLatestSystemActionImplCopyWith<$Res> {
+  factory _$$FailedLatestSystemActionImplCopyWith(
+          _$FailedLatestSystemActionImpl value,
+          $Res Function(_$FailedLatestSystemActionImpl) then) =
+      __$$FailedLatestSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class __$$FailedLatestSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionLatestCopyWithImpl<$Res, _$FailedLatestSystemAction>
-    implements _$$FailedLatestSystemActionCopyWith<$Res> {
-  __$$FailedLatestSystemActionCopyWithImpl(_$FailedLatestSystemAction _value,
-      $Res Function(_$FailedLatestSystemAction) _then)
+class __$$FailedLatestSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionLatestCopyWithImpl<$Res,
+        _$FailedLatestSystemActionImpl>
+    implements _$$FailedLatestSystemActionImplCopyWith<$Res> {
+  __$$FailedLatestSystemActionImplCopyWithImpl(
+      _$FailedLatestSystemActionImpl _value,
+      $Res Function(_$FailedLatestSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1459,7 +1477,7 @@ class __$$FailedLatestSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? exception = null,
   }) {
-    return _then(_$FailedLatestSystemAction(
+    return _then(_$FailedLatestSystemActionImpl(
       exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -1470,10 +1488,10 @@ class __$$FailedLatestSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FailedLatestSystemAction
+class _$FailedLatestSystemActionImpl
     with DiagnosticableTreeMixin
     implements FailedLatestSystemAction {
-  const _$FailedLatestSystemAction({required this.exception});
+  const _$FailedLatestSystemActionImpl({required this.exception});
 
   @override
   final Exception exception;
@@ -1492,10 +1510,10 @@ class _$FailedLatestSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailedLatestSystemAction &&
+            other is _$FailedLatestSystemActionImpl &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
   }
@@ -1506,10 +1524,9 @@ class _$FailedLatestSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FailedLatestSystemActionCopyWith<_$FailedLatestSystemAction>
-      get copyWith =>
-          __$$FailedLatestSystemActionCopyWithImpl<_$FailedLatestSystemAction>(
-              this, _$identity);
+  _$$FailedLatestSystemActionImplCopyWith<_$FailedLatestSystemActionImpl>
+      get copyWith => __$$FailedLatestSystemActionImplCopyWithImpl<
+          _$FailedLatestSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1606,10 +1623,10 @@ class _$FailedLatestSystemAction
 
 abstract class FailedLatestSystemAction implements SystemActionLatest {
   const factory FailedLatestSystemAction({required final Exception exception}) =
-      _$FailedLatestSystemAction;
+      _$FailedLatestSystemActionImpl;
 
   Exception get exception;
   @JsonKey(ignore: true)
-  _$$FailedLatestSystemActionCopyWith<_$FailedLatestSystemAction>
+  _$$FailedLatestSystemActionImplCopyWith<_$FailedLatestSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

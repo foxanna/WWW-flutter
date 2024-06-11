@@ -12,7 +12,7 @@ part of 'tour_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TourInfo {
@@ -123,10 +123,11 @@ class _$TourInfoCopyWithImpl<$Res, $Val extends TourInfo>
 }
 
 /// @nodoc
-abstract class _$$_TourInfoCopyWith<$Res> implements $TourInfoCopyWith<$Res> {
-  factory _$$_TourInfoCopyWith(
-          _$_TourInfo value, $Res Function(_$_TourInfo) then) =
-      __$$_TourInfoCopyWithImpl<$Res>;
+abstract class _$$TourInfoImplCopyWith<$Res>
+    implements $TourInfoCopyWith<$Res> {
+  factory _$$TourInfoImplCopyWith(
+          _$TourInfoImpl value, $Res Function(_$TourInfoImpl) then) =
+      __$$TourInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -145,11 +146,11 @@ abstract class _$$_TourInfoCopyWith<$Res> implements $TourInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TourInfoCopyWithImpl<$Res>
-    extends _$TourInfoCopyWithImpl<$Res, _$_TourInfo>
-    implements _$$_TourInfoCopyWith<$Res> {
-  __$$_TourInfoCopyWithImpl(
-      _$_TourInfo _value, $Res Function(_$_TourInfo) _then)
+class __$$TourInfoImplCopyWithImpl<$Res>
+    extends _$TourInfoCopyWithImpl<$Res, _$TourInfoImpl>
+    implements _$$TourInfoImplCopyWith<$Res> {
+  __$$TourInfoImplCopyWithImpl(
+      _$TourInfoImpl _value, $Res Function(_$TourInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -165,7 +166,7 @@ class __$$_TourInfoCopyWithImpl<$Res>
     Object? playedAt = freezed,
     Object? tournamentInfo = null,
   }) {
-    return _then(_$_TourInfo(
+    return _then(_$TourInfoImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -208,8 +209,8 @@ class __$$_TourInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TourInfo implements _TourInfo {
-  const _$_TourInfo(
+class _$TourInfoImpl implements _TourInfo {
+  const _$TourInfoImpl(
       {this.id,
       this.title,
       this.questionsCount,
@@ -246,10 +247,10 @@ class _$_TourInfo implements _TourInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TourInfo &&
+            other is _$TourInfoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.questionsCount, questionsCount) ||
@@ -273,8 +274,8 @@ class _$_TourInfo implements _TourInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TourInfoCopyWith<_$_TourInfo> get copyWith =>
-      __$$_TourInfoCopyWithImpl<_$_TourInfo>(this, _$identity);
+  _$$TourInfoImplCopyWith<_$TourInfoImpl> get copyWith =>
+      __$$TourInfoImplCopyWithImpl<_$TourInfoImpl>(this, _$identity);
 }
 
 abstract class _TourInfo implements TourInfo {
@@ -287,7 +288,7 @@ abstract class _TourInfo implements TourInfo {
       final String? editors,
       final String? createdAt,
       final String? playedAt,
-      final TournamentInfo tournamentInfo}) = _$_TourInfo;
+      final TournamentInfo tournamentInfo}) = _$TourInfoImpl;
 
   @override
   String? get id;
@@ -309,6 +310,6 @@ abstract class _TourInfo implements TourInfo {
   TournamentInfo get tournamentInfo;
   @override
   @JsonKey(ignore: true)
-  _$$_TourInfoCopyWith<_$_TourInfo> get copyWith =>
+  _$$TourInfoImplCopyWith<_$TourInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

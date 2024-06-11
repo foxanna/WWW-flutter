@@ -12,7 +12,7 @@ part of 'section_image.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ImageSectionHiveModel {
@@ -59,22 +59,24 @@ class _$ImageSectionHiveModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ImageSectionHiveModelCopyWith<$Res>
+abstract class _$$ImageSectionHiveModelImplCopyWith<$Res>
     implements $ImageSectionHiveModelCopyWith<$Res> {
-  factory _$$_ImageSectionHiveModelCopyWith(_$_ImageSectionHiveModel value,
-          $Res Function(_$_ImageSectionHiveModel) then) =
-      __$$_ImageSectionHiveModelCopyWithImpl<$Res>;
+  factory _$$ImageSectionHiveModelImplCopyWith(
+          _$ImageSectionHiveModelImpl value,
+          $Res Function(_$ImageSectionHiveModelImpl) then) =
+      __$$ImageSectionHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@HiveField(ImageSectionHiveFieldsIds.value) String value});
 }
 
 /// @nodoc
-class __$$_ImageSectionHiveModelCopyWithImpl<$Res>
-    extends _$ImageSectionHiveModelCopyWithImpl<$Res, _$_ImageSectionHiveModel>
-    implements _$$_ImageSectionHiveModelCopyWith<$Res> {
-  __$$_ImageSectionHiveModelCopyWithImpl(_$_ImageSectionHiveModel _value,
-      $Res Function(_$_ImageSectionHiveModel) _then)
+class __$$ImageSectionHiveModelImplCopyWithImpl<$Res>
+    extends _$ImageSectionHiveModelCopyWithImpl<$Res,
+        _$ImageSectionHiveModelImpl>
+    implements _$$ImageSectionHiveModelImplCopyWith<$Res> {
+  __$$ImageSectionHiveModelImplCopyWithImpl(_$ImageSectionHiveModelImpl _value,
+      $Res Function(_$ImageSectionHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -82,7 +84,7 @@ class __$$_ImageSectionHiveModelCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$_ImageSectionHiveModel(
+    return _then(_$ImageSectionHiveModelImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -94,8 +96,8 @@ class __$$_ImageSectionHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveImageSectionTypeId)
-class _$_ImageSectionHiveModel implements _ImageSectionHiveModel {
-  const _$_ImageSectionHiveModel(
+class _$ImageSectionHiveModelImpl implements _ImageSectionHiveModel {
+  const _$ImageSectionHiveModelImpl(
       {@HiveField(ImageSectionHiveFieldsIds.value) required this.value});
 
   @override
@@ -108,10 +110,10 @@ class _$_ImageSectionHiveModel implements _ImageSectionHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ImageSectionHiveModel &&
+            other is _$ImageSectionHiveModelImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -121,21 +123,21 @@ class _$_ImageSectionHiveModel implements _ImageSectionHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ImageSectionHiveModelCopyWith<_$_ImageSectionHiveModel> get copyWith =>
-      __$$_ImageSectionHiveModelCopyWithImpl<_$_ImageSectionHiveModel>(
-          this, _$identity);
+  _$$ImageSectionHiveModelImplCopyWith<_$ImageSectionHiveModelImpl>
+      get copyWith => __$$ImageSectionHiveModelImplCopyWithImpl<
+          _$ImageSectionHiveModelImpl>(this, _$identity);
 }
 
 abstract class _ImageSectionHiveModel implements ImageSectionHiveModel {
   const factory _ImageSectionHiveModel(
       {@HiveField(ImageSectionHiveFieldsIds.value)
-      required final String value}) = _$_ImageSectionHiveModel;
+      required final String value}) = _$ImageSectionHiveModelImpl;
 
   @override
   @HiveField(ImageSectionHiveFieldsIds.value)
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$_ImageSectionHiveModelCopyWith<_$_ImageSectionHiveModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ImageSectionHiveModelImplCopyWith<_$ImageSectionHiveModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

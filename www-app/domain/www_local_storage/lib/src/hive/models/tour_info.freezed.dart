@@ -12,7 +12,7 @@ part of 'tour_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TourInfoHiveModel {
@@ -140,11 +140,11 @@ class _$TourInfoHiveModelCopyWithImpl<$Res, $Val extends TourInfoHiveModel>
 }
 
 /// @nodoc
-abstract class _$$_TourInfoHiveModelCopyWith<$Res>
+abstract class _$$TourInfoHiveModelImplCopyWith<$Res>
     implements $TourInfoHiveModelCopyWith<$Res> {
-  factory _$$_TourInfoHiveModelCopyWith(_$_TourInfoHiveModel value,
-          $Res Function(_$_TourInfoHiveModel) then) =
-      __$$_TourInfoHiveModelCopyWithImpl<$Res>;
+  factory _$$TourInfoHiveModelImplCopyWith(_$TourInfoHiveModelImpl value,
+          $Res Function(_$TourInfoHiveModelImpl) then) =
+      __$$TourInfoHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -164,11 +164,11 @@ abstract class _$$_TourInfoHiveModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TourInfoHiveModelCopyWithImpl<$Res>
-    extends _$TourInfoHiveModelCopyWithImpl<$Res, _$_TourInfoHiveModel>
-    implements _$$_TourInfoHiveModelCopyWith<$Res> {
-  __$$_TourInfoHiveModelCopyWithImpl(
-      _$_TourInfoHiveModel _value, $Res Function(_$_TourInfoHiveModel) _then)
+class __$$TourInfoHiveModelImplCopyWithImpl<$Res>
+    extends _$TourInfoHiveModelCopyWithImpl<$Res, _$TourInfoHiveModelImpl>
+    implements _$$TourInfoHiveModelImplCopyWith<$Res> {
+  __$$TourInfoHiveModelImplCopyWithImpl(_$TourInfoHiveModelImpl _value,
+      $Res Function(_$TourInfoHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -184,7 +184,7 @@ class __$$_TourInfoHiveModelCopyWithImpl<$Res>
     Object? playedAt = freezed,
     Object? tournamentInfo = freezed,
   }) {
-    return _then(_$_TourInfoHiveModel(
+    return _then(_$TourInfoHiveModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -228,8 +228,8 @@ class __$$_TourInfoHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveTourInfoTypeId)
-class _$_TourInfoHiveModel implements _TourInfoHiveModel {
-  const _$_TourInfoHiveModel(
+class _$TourInfoHiveModelImpl implements _TourInfoHiveModel {
+  const _$TourInfoHiveModelImpl(
       {@HiveField(TourInfoHiveFieldsIds.id) this.id,
       @HiveField(TourInfoHiveFieldsIds.title) this.title,
       @HiveField(TourInfoHiveFieldsIds.questionsCount) this.questionsCount,
@@ -274,10 +274,10 @@ class _$_TourInfoHiveModel implements _TourInfoHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TourInfoHiveModel &&
+            other is _$TourInfoHiveModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.questionsCount, questionsCount) ||
@@ -301,8 +301,8 @@ class _$_TourInfoHiveModel implements _TourInfoHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TourInfoHiveModelCopyWith<_$_TourInfoHiveModel> get copyWith =>
-      __$$_TourInfoHiveModelCopyWithImpl<_$_TourInfoHiveModel>(
+  _$$TourInfoHiveModelImplCopyWith<_$TourInfoHiveModelImpl> get copyWith =>
+      __$$TourInfoHiveModelImplCopyWithImpl<_$TourInfoHiveModelImpl>(
           this, _$identity);
 }
 
@@ -318,7 +318,7 @@ abstract class _TourInfoHiveModel implements TourInfoHiveModel {
       @HiveField(TourInfoHiveFieldsIds.createdAt) final String? createdAt,
       @HiveField(TourInfoHiveFieldsIds.playedAt) final String? playedAt,
       @HiveField(TourInfoHiveFieldsIds.tournamentInfo)
-      final TournamentInfoHiveModel? tournamentInfo}) = _$_TourInfoHiveModel;
+      final TournamentInfoHiveModel? tournamentInfo}) = _$TourInfoHiveModelImpl;
 
   @override
   @HiveField(TourInfoHiveFieldsIds.id)
@@ -349,6 +349,6 @@ abstract class _TourInfoHiveModel implements TourInfoHiveModel {
   TournamentInfoHiveModel? get tournamentInfo;
   @override
   @JsonKey(ignore: true)
-  _$$_TourInfoHiveModelCopyWith<_$_TourInfoHiveModel> get copyWith =>
+  _$$TourInfoHiveModelImplCopyWith<_$TourInfoHiveModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

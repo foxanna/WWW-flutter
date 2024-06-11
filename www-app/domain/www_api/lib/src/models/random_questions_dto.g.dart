@@ -6,14 +6,14 @@ part of 'random_questions_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RandomQuestionsDto _$$_RandomQuestionsDtoFromJson(
+_$RandomQuestionsDtoImpl _$$RandomQuestionsDtoImplFromJson(
         Map<String, dynamic> json) =>
-    _$_RandomQuestionsDto(
+    _$RandomQuestionsDtoImpl(
       search: const QuestionsListConverter().fromJson(json['question']),
     );
 
-Map<String, dynamic> _$$_RandomQuestionsDtoToJson(
-    _$_RandomQuestionsDto instance) {
+Map<String, dynamic> _$$RandomQuestionsDtoImplToJson(
+    _$RandomQuestionsDtoImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

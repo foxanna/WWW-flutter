@@ -12,7 +12,7 @@ part of 'question_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 QuestionDto _$QuestionDtoFromJson(Map<String, dynamic> json) {
   return _QuestionDto.fromJson(json);
@@ -160,11 +160,11 @@ class _$QuestionDtoCopyWithImpl<$Res, $Val extends QuestionDto>
 }
 
 /// @nodoc
-abstract class _$$_QuestionDtoCopyWith<$Res>
+abstract class _$$QuestionDtoImplCopyWith<$Res>
     implements $QuestionDtoCopyWith<$Res> {
-  factory _$$_QuestionDtoCopyWith(
-          _$_QuestionDto value, $Res Function(_$_QuestionDto) then) =
-      __$$_QuestionDtoCopyWithImpl<$Res>;
+  factory _$$QuestionDtoImplCopyWith(
+          _$QuestionDtoImpl value, $Res Function(_$QuestionDtoImpl) then) =
+      __$$QuestionDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -184,11 +184,11 @@ abstract class _$$_QuestionDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QuestionDtoCopyWithImpl<$Res>
-    extends _$QuestionDtoCopyWithImpl<$Res, _$_QuestionDto>
-    implements _$$_QuestionDtoCopyWith<$Res> {
-  __$$_QuestionDtoCopyWithImpl(
-      _$_QuestionDto _value, $Res Function(_$_QuestionDto) _then)
+class __$$QuestionDtoImplCopyWithImpl<$Res>
+    extends _$QuestionDtoCopyWithImpl<$Res, _$QuestionDtoImpl>
+    implements _$$QuestionDtoImplCopyWith<$Res> {
+  __$$QuestionDtoImplCopyWithImpl(
+      _$QuestionDtoImpl _value, $Res Function(_$QuestionDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -208,7 +208,7 @@ class __$$_QuestionDtoCopyWithImpl<$Res>
     Object? tourTitle = freezed,
     Object? tournamentTitle = freezed,
   }) {
-    return _then(_$_QuestionDto(
+    return _then(_$QuestionDtoImpl(
       questionId: freezed == questionId
           ? _value.questionId
           : questionId // ignore: cast_nullable_to_non_nullable
@@ -267,8 +267,8 @@ class __$$_QuestionDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_QuestionDto implements _QuestionDto {
-  const _$_QuestionDto(
+class _$QuestionDtoImpl implements _QuestionDto {
+  const _$QuestionDtoImpl(
       {@JsonKey(name: 'QuestionId') this.questionId,
       @JsonKey(name: 'Question') this.question,
       @JsonKey(name: 'Number') this.number,
@@ -283,8 +283,8 @@ class _$_QuestionDto implements _QuestionDto {
       @JsonKey(name: 'tourTitle') this.tourTitle,
       @JsonKey(name: 'tournamentTitle') this.tournamentTitle});
 
-  factory _$_QuestionDto.fromJson(Map<String, dynamic> json) =>
-      _$$_QuestionDtoFromJson(json);
+  factory _$QuestionDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QuestionDtoImplFromJson(json);
 
   @override
   @JsonKey(name: 'QuestionId')
@@ -332,10 +332,10 @@ class _$_QuestionDto implements _QuestionDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuestionDto &&
+            other is _$QuestionDtoImpl &&
             (identical(other.questionId, questionId) ||
                 other.questionId == questionId) &&
             (identical(other.question, question) ||
@@ -380,12 +380,12 @@ class _$_QuestionDto implements _QuestionDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuestionDtoCopyWith<_$_QuestionDto> get copyWith =>
-      __$$_QuestionDtoCopyWithImpl<_$_QuestionDto>(this, _$identity);
+  _$$QuestionDtoImplCopyWith<_$QuestionDtoImpl> get copyWith =>
+      __$$QuestionDtoImplCopyWithImpl<_$QuestionDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_QuestionDtoToJson(
+    return _$$QuestionDtoImplToJson(
       this,
     );
   }
@@ -406,10 +406,10 @@ abstract class _QuestionDto implements QuestionDto {
           @JsonKey(name: 'tournamentId') final String? tournamentId,
           @JsonKey(name: 'tourTitle') final String? tourTitle,
           @JsonKey(name: 'tournamentTitle') final String? tournamentTitle}) =
-      _$_QuestionDto;
+      _$QuestionDtoImpl;
 
   factory _QuestionDto.fromJson(Map<String, dynamic> json) =
-      _$_QuestionDto.fromJson;
+      _$QuestionDtoImpl.fromJson;
 
   @override
   @JsonKey(name: 'QuestionId')
@@ -452,6 +452,6 @@ abstract class _QuestionDto implements QuestionDto {
   String? get tournamentTitle;
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionDtoCopyWith<_$_QuestionDto> get copyWith =>
+  _$$QuestionDtoImplCopyWith<_$QuestionDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

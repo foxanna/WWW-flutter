@@ -6,23 +6,24 @@ part of 'section_text.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TextSectionHiveModelAdapter extends TypeAdapter<_$_TextSectionHiveModel> {
+class TextSectionHiveModelImplAdapter
+    extends TypeAdapter<_$TextSectionHiveModelImpl> {
   @override
   final int typeId = 11;
 
   @override
-  _$_TextSectionHiveModel read(BinaryReader reader) {
+  _$TextSectionHiveModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_TextSectionHiveModel(
+    return _$TextSectionHiveModelImpl(
       value: fields[0] as String,
     );
   }
 
   @override
-  void write(BinaryWriter writer, _$_TextSectionHiveModel obj) {
+  void write(BinaryWriter writer, _$TextSectionHiveModelImpl obj) {
     writer
       ..writeByte(1)
       ..writeByte(0)
@@ -35,7 +36,7 @@ class TextSectionHiveModelAdapter extends TypeAdapter<_$_TextSectionHiveModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TextSectionHiveModelAdapter &&
+      other is TextSectionHiveModelImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

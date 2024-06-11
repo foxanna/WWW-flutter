@@ -12,7 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BookmarksState {
@@ -87,27 +87,28 @@ class _$BookmarksStateCopyWithImpl<$Res, $Val extends BookmarksState>
 }
 
 /// @nodoc
-abstract class _$$InitialBookmarksStateCopyWith<$Res> {
-  factory _$$InitialBookmarksStateCopyWith(_$InitialBookmarksState value,
-          $Res Function(_$InitialBookmarksState) then) =
-      __$$InitialBookmarksStateCopyWithImpl<$Res>;
+abstract class _$$InitialBookmarksStateImplCopyWith<$Res> {
+  factory _$$InitialBookmarksStateImplCopyWith(
+          _$InitialBookmarksStateImpl value,
+          $Res Function(_$InitialBookmarksStateImpl) then) =
+      __$$InitialBookmarksStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialBookmarksStateCopyWithImpl<$Res>
-    extends _$BookmarksStateCopyWithImpl<$Res, _$InitialBookmarksState>
-    implements _$$InitialBookmarksStateCopyWith<$Res> {
-  __$$InitialBookmarksStateCopyWithImpl(_$InitialBookmarksState _value,
-      $Res Function(_$InitialBookmarksState) _then)
+class __$$InitialBookmarksStateImplCopyWithImpl<$Res>
+    extends _$BookmarksStateCopyWithImpl<$Res, _$InitialBookmarksStateImpl>
+    implements _$$InitialBookmarksStateImplCopyWith<$Res> {
+  __$$InitialBookmarksStateImplCopyWithImpl(_$InitialBookmarksStateImpl _value,
+      $Res Function(_$InitialBookmarksStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitialBookmarksState
+class _$InitialBookmarksStateImpl
     with DiagnosticableTreeMixin
     implements InitialBookmarksState {
-  const _$InitialBookmarksState();
+  const _$InitialBookmarksStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -121,9 +122,10 @@ class _$InitialBookmarksState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialBookmarksState);
+        (other.runtimeType == runtimeType &&
+            other is _$InitialBookmarksStateImpl);
   }
 
   @override
@@ -205,24 +207,24 @@ class _$InitialBookmarksState
 }
 
 abstract class InitialBookmarksState implements BookmarksState {
-  const factory InitialBookmarksState() = _$InitialBookmarksState;
+  const factory InitialBookmarksState() = _$InitialBookmarksStateImpl;
 }
 
 /// @nodoc
-abstract class _$$DataBookmarksStateCopyWith<$Res> {
-  factory _$$DataBookmarksStateCopyWith(_$DataBookmarksState value,
-          $Res Function(_$DataBookmarksState) then) =
-      __$$DataBookmarksStateCopyWithImpl<$Res>;
+abstract class _$$DataBookmarksStateImplCopyWith<$Res> {
+  factory _$$DataBookmarksStateImplCopyWith(_$DataBookmarksStateImpl value,
+          $Res Function(_$DataBookmarksStateImpl) then) =
+      __$$DataBookmarksStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Tournament> data});
 }
 
 /// @nodoc
-class __$$DataBookmarksStateCopyWithImpl<$Res>
-    extends _$BookmarksStateCopyWithImpl<$Res, _$DataBookmarksState>
-    implements _$$DataBookmarksStateCopyWith<$Res> {
-  __$$DataBookmarksStateCopyWithImpl(
-      _$DataBookmarksState _value, $Res Function(_$DataBookmarksState) _then)
+class __$$DataBookmarksStateImplCopyWithImpl<$Res>
+    extends _$BookmarksStateCopyWithImpl<$Res, _$DataBookmarksStateImpl>
+    implements _$$DataBookmarksStateImplCopyWith<$Res> {
+  __$$DataBookmarksStateImplCopyWithImpl(_$DataBookmarksStateImpl _value,
+      $Res Function(_$DataBookmarksStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -230,7 +232,7 @@ class __$$DataBookmarksStateCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$DataBookmarksState(
+    return _then(_$DataBookmarksStateImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -241,10 +243,10 @@ class __$$DataBookmarksStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataBookmarksState
+class _$DataBookmarksStateImpl
     with DiagnosticableTreeMixin
     implements DataBookmarksState {
-  const _$DataBookmarksState({required final List<Tournament> data})
+  const _$DataBookmarksStateImpl({required final List<Tournament> data})
       : _data = data;
 
   final List<Tournament> _data;
@@ -269,10 +271,10 @@ class _$DataBookmarksState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DataBookmarksState &&
+            other is _$DataBookmarksStateImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -283,8 +285,8 @@ class _$DataBookmarksState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DataBookmarksStateCopyWith<_$DataBookmarksState> get copyWith =>
-      __$$DataBookmarksStateCopyWithImpl<_$DataBookmarksState>(
+  _$$DataBookmarksStateImplCopyWith<_$DataBookmarksStateImpl> get copyWith =>
+      __$$DataBookmarksStateImplCopyWithImpl<_$DataBookmarksStateImpl>(
           this, _$identity);
 
   @override
@@ -364,36 +366,37 @@ class _$DataBookmarksState
 
 abstract class DataBookmarksState implements BookmarksState {
   const factory DataBookmarksState({required final List<Tournament> data}) =
-      _$DataBookmarksState;
+      _$DataBookmarksStateImpl;
 
   List<Tournament> get data;
   @JsonKey(ignore: true)
-  _$$DataBookmarksStateCopyWith<_$DataBookmarksState> get copyWith =>
+  _$$DataBookmarksStateImplCopyWith<_$DataBookmarksStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadingBookmarksStateCopyWith<$Res> {
-  factory _$$LoadingBookmarksStateCopyWith(_$LoadingBookmarksState value,
-          $Res Function(_$LoadingBookmarksState) then) =
-      __$$LoadingBookmarksStateCopyWithImpl<$Res>;
+abstract class _$$LoadingBookmarksStateImplCopyWith<$Res> {
+  factory _$$LoadingBookmarksStateImplCopyWith(
+          _$LoadingBookmarksStateImpl value,
+          $Res Function(_$LoadingBookmarksStateImpl) then) =
+      __$$LoadingBookmarksStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingBookmarksStateCopyWithImpl<$Res>
-    extends _$BookmarksStateCopyWithImpl<$Res, _$LoadingBookmarksState>
-    implements _$$LoadingBookmarksStateCopyWith<$Res> {
-  __$$LoadingBookmarksStateCopyWithImpl(_$LoadingBookmarksState _value,
-      $Res Function(_$LoadingBookmarksState) _then)
+class __$$LoadingBookmarksStateImplCopyWithImpl<$Res>
+    extends _$BookmarksStateCopyWithImpl<$Res, _$LoadingBookmarksStateImpl>
+    implements _$$LoadingBookmarksStateImplCopyWith<$Res> {
+  __$$LoadingBookmarksStateImplCopyWithImpl(_$LoadingBookmarksStateImpl _value,
+      $Res Function(_$LoadingBookmarksStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingBookmarksState
+class _$LoadingBookmarksStateImpl
     with DiagnosticableTreeMixin
     implements LoadingBookmarksState {
-  const _$LoadingBookmarksState();
+  const _$LoadingBookmarksStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -407,9 +410,10 @@ class _$LoadingBookmarksState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingBookmarksState);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingBookmarksStateImpl);
   }
 
   @override
@@ -491,24 +495,24 @@ class _$LoadingBookmarksState
 }
 
 abstract class LoadingBookmarksState implements BookmarksState {
-  const factory LoadingBookmarksState() = _$LoadingBookmarksState;
+  const factory LoadingBookmarksState() = _$LoadingBookmarksStateImpl;
 }
 
 /// @nodoc
-abstract class _$$ErrorBookmarksStateCopyWith<$Res> {
-  factory _$$ErrorBookmarksStateCopyWith(_$ErrorBookmarksState value,
-          $Res Function(_$ErrorBookmarksState) then) =
-      __$$ErrorBookmarksStateCopyWithImpl<$Res>;
+abstract class _$$ErrorBookmarksStateImplCopyWith<$Res> {
+  factory _$$ErrorBookmarksStateImplCopyWith(_$ErrorBookmarksStateImpl value,
+          $Res Function(_$ErrorBookmarksStateImpl) then) =
+      __$$ErrorBookmarksStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Exception exception});
 }
 
 /// @nodoc
-class __$$ErrorBookmarksStateCopyWithImpl<$Res>
-    extends _$BookmarksStateCopyWithImpl<$Res, _$ErrorBookmarksState>
-    implements _$$ErrorBookmarksStateCopyWith<$Res> {
-  __$$ErrorBookmarksStateCopyWithImpl(
-      _$ErrorBookmarksState _value, $Res Function(_$ErrorBookmarksState) _then)
+class __$$ErrorBookmarksStateImplCopyWithImpl<$Res>
+    extends _$BookmarksStateCopyWithImpl<$Res, _$ErrorBookmarksStateImpl>
+    implements _$$ErrorBookmarksStateImplCopyWith<$Res> {
+  __$$ErrorBookmarksStateImplCopyWithImpl(_$ErrorBookmarksStateImpl _value,
+      $Res Function(_$ErrorBookmarksStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -516,7 +520,7 @@ class __$$ErrorBookmarksStateCopyWithImpl<$Res>
   $Res call({
     Object? exception = null,
   }) {
-    return _then(_$ErrorBookmarksState(
+    return _then(_$ErrorBookmarksStateImpl(
       exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -527,10 +531,10 @@ class __$$ErrorBookmarksStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorBookmarksState
+class _$ErrorBookmarksStateImpl
     with DiagnosticableTreeMixin
     implements ErrorBookmarksState {
-  const _$ErrorBookmarksState({required this.exception});
+  const _$ErrorBookmarksStateImpl({required this.exception});
 
   @override
   final Exception exception;
@@ -549,10 +553,10 @@ class _$ErrorBookmarksState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorBookmarksState &&
+            other is _$ErrorBookmarksStateImpl &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
   }
@@ -563,8 +567,8 @@ class _$ErrorBookmarksState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorBookmarksStateCopyWith<_$ErrorBookmarksState> get copyWith =>
-      __$$ErrorBookmarksStateCopyWithImpl<_$ErrorBookmarksState>(
+  _$$ErrorBookmarksStateImplCopyWith<_$ErrorBookmarksStateImpl> get copyWith =>
+      __$$ErrorBookmarksStateImplCopyWithImpl<_$ErrorBookmarksStateImpl>(
           this, _$identity);
 
   @override
@@ -644,10 +648,10 @@ class _$ErrorBookmarksState
 
 abstract class ErrorBookmarksState implements BookmarksState {
   const factory ErrorBookmarksState({required final Exception exception}) =
-      _$ErrorBookmarksState;
+      _$ErrorBookmarksStateImpl;
 
   Exception get exception;
   @JsonKey(ignore: true)
-  _$$ErrorBookmarksStateCopyWith<_$ErrorBookmarksState> get copyWith =>
+  _$$ErrorBookmarksStateImplCopyWith<_$ErrorBookmarksStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'section_image.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ImageSection {
@@ -57,22 +57,22 @@ class _$ImageSectionCopyWithImpl<$Res, $Val extends ImageSection>
 }
 
 /// @nodoc
-abstract class _$$_ImageSectionCopyWith<$Res>
+abstract class _$$ImageSectionImplCopyWith<$Res>
     implements $ImageSectionCopyWith<$Res> {
-  factory _$$_ImageSectionCopyWith(
-          _$_ImageSection value, $Res Function(_$_ImageSection) then) =
-      __$$_ImageSectionCopyWithImpl<$Res>;
+  factory _$$ImageSectionImplCopyWith(
+          _$ImageSectionImpl value, $Res Function(_$ImageSectionImpl) then) =
+      __$$ImageSectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$_ImageSectionCopyWithImpl<$Res>
-    extends _$ImageSectionCopyWithImpl<$Res, _$_ImageSection>
-    implements _$$_ImageSectionCopyWith<$Res> {
-  __$$_ImageSectionCopyWithImpl(
-      _$_ImageSection _value, $Res Function(_$_ImageSection) _then)
+class __$$ImageSectionImplCopyWithImpl<$Res>
+    extends _$ImageSectionCopyWithImpl<$Res, _$ImageSectionImpl>
+    implements _$$ImageSectionImplCopyWith<$Res> {
+  __$$ImageSectionImplCopyWithImpl(
+      _$ImageSectionImpl _value, $Res Function(_$ImageSectionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_ImageSectionCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$_ImageSection(
+    return _then(_$ImageSectionImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ class __$$_ImageSectionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ImageSection implements _ImageSection {
-  const _$_ImageSection({required this.value});
+class _$ImageSectionImpl implements _ImageSection {
+  const _$ImageSectionImpl({required this.value});
 
   @override
   final String value;
@@ -103,10 +103,10 @@ class _$_ImageSection implements _ImageSection {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ImageSection &&
+            other is _$ImageSectionImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -116,17 +116,18 @@ class _$_ImageSection implements _ImageSection {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ImageSectionCopyWith<_$_ImageSection> get copyWith =>
-      __$$_ImageSectionCopyWithImpl<_$_ImageSection>(this, _$identity);
+  _$$ImageSectionImplCopyWith<_$ImageSectionImpl> get copyWith =>
+      __$$ImageSectionImplCopyWithImpl<_$ImageSectionImpl>(this, _$identity);
 }
 
 abstract class _ImageSection implements ImageSection {
-  const factory _ImageSection({required final String value}) = _$_ImageSection;
+  const factory _ImageSection({required final String value}) =
+      _$ImageSectionImpl;
 
   @override
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$_ImageSectionCopyWith<_$_ImageSection> get copyWith =>
+  _$$ImageSectionImplCopyWith<_$ImageSectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

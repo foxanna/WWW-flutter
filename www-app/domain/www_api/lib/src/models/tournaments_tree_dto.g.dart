@@ -6,17 +6,17 @@ part of 'tournaments_tree_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TournamentsTreeDto _$$_TournamentsTreeDtoFromJson(
+_$TournamentsTreeDtoImpl _$$TournamentsTreeDtoImplFromJson(
         Map<String, dynamic> json) =>
-    _$_TournamentsTreeDto(
+    _$TournamentsTreeDtoImpl(
       id: json['Id'] as String?,
       title: json['Title'] as String?,
       childrenCount: json['ChildrenNum'] as String?,
       children: const TournamentsTreeConverter().fromJson(json['tour']),
     );
 
-Map<String, dynamic> _$$_TournamentsTreeDtoToJson(
-    _$_TournamentsTreeDto instance) {
+Map<String, dynamic> _$$TournamentsTreeDtoImplToJson(
+    _$TournamentsTreeDtoImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

@@ -12,7 +12,7 @@ part of 'tournament_status.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TournamentStatus {
@@ -63,22 +63,22 @@ class _$TournamentStatusCopyWithImpl<$Res, $Val extends TournamentStatus>
 }
 
 /// @nodoc
-abstract class _$$_TournamentStatusCopyWith<$Res>
+abstract class _$$TournamentStatusImplCopyWith<$Res>
     implements $TournamentStatusCopyWith<$Res> {
-  factory _$$_TournamentStatusCopyWith(
-          _$_TournamentStatus value, $Res Function(_$_TournamentStatus) then) =
-      __$$_TournamentStatusCopyWithImpl<$Res>;
+  factory _$$TournamentStatusImplCopyWith(_$TournamentStatusImpl value,
+          $Res Function(_$TournamentStatusImpl) then) =
+      __$$TournamentStatusImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool isNew, bool isBookmarked});
 }
 
 /// @nodoc
-class __$$_TournamentStatusCopyWithImpl<$Res>
-    extends _$TournamentStatusCopyWithImpl<$Res, _$_TournamentStatus>
-    implements _$$_TournamentStatusCopyWith<$Res> {
-  __$$_TournamentStatusCopyWithImpl(
-      _$_TournamentStatus _value, $Res Function(_$_TournamentStatus) _then)
+class __$$TournamentStatusImplCopyWithImpl<$Res>
+    extends _$TournamentStatusCopyWithImpl<$Res, _$TournamentStatusImpl>
+    implements _$$TournamentStatusImplCopyWith<$Res> {
+  __$$TournamentStatusImplCopyWithImpl(_$TournamentStatusImpl _value,
+      $Res Function(_$TournamentStatusImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_TournamentStatusCopyWithImpl<$Res>
     Object? isNew = null,
     Object? isBookmarked = null,
   }) {
-    return _then(_$_TournamentStatus(
+    return _then(_$TournamentStatusImpl(
       isNew: null == isNew
           ? _value.isNew
           : isNew // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_TournamentStatusCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TournamentStatus implements _TournamentStatus {
-  const _$_TournamentStatus({this.isNew = false, this.isBookmarked = false});
+class _$TournamentStatusImpl implements _TournamentStatus {
+  const _$TournamentStatusImpl({this.isNew = false, this.isBookmarked = false});
 
   @override
   @JsonKey()
@@ -118,10 +118,10 @@ class _$_TournamentStatus implements _TournamentStatus {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TournamentStatus &&
+            other is _$TournamentStatusImpl &&
             (identical(other.isNew, isNew) || other.isNew == isNew) &&
             (identical(other.isBookmarked, isBookmarked) ||
                 other.isBookmarked == isBookmarked));
@@ -133,13 +133,14 @@ class _$_TournamentStatus implements _TournamentStatus {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TournamentStatusCopyWith<_$_TournamentStatus> get copyWith =>
-      __$$_TournamentStatusCopyWithImpl<_$_TournamentStatus>(this, _$identity);
+  _$$TournamentStatusImplCopyWith<_$TournamentStatusImpl> get copyWith =>
+      __$$TournamentStatusImplCopyWithImpl<_$TournamentStatusImpl>(
+          this, _$identity);
 }
 
 abstract class _TournamentStatus implements TournamentStatus {
   const factory _TournamentStatus({final bool isNew, final bool isBookmarked}) =
-      _$_TournamentStatus;
+      _$TournamentStatusImpl;
 
   @override
   bool get isNew;
@@ -147,6 +148,6 @@ abstract class _TournamentStatus implements TournamentStatus {
   bool get isBookmarked;
   @override
   @JsonKey(ignore: true)
-  _$$_TournamentStatusCopyWith<_$_TournamentStatus> get copyWith =>
+  _$$TournamentStatusImplCopyWith<_$TournamentStatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

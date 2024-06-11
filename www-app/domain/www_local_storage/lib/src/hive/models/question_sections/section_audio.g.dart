@@ -6,24 +6,24 @@ part of 'section_audio.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class AudioSectionHiveModelAdapter
-    extends TypeAdapter<_$_AudioSectionHiveModel> {
+class AudioSectionHiveModelImplAdapter
+    extends TypeAdapter<_$AudioSectionHiveModelImpl> {
   @override
   final int typeId = 7;
 
   @override
-  _$_AudioSectionHiveModel read(BinaryReader reader) {
+  _$AudioSectionHiveModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_AudioSectionHiveModel(
+    return _$AudioSectionHiveModelImpl(
       value: fields[0] as String,
     );
   }
 
   @override
-  void write(BinaryWriter writer, _$_AudioSectionHiveModel obj) {
+  void write(BinaryWriter writer, _$AudioSectionHiveModelImpl obj) {
     writer
       ..writeByte(1)
       ..writeByte(0)
@@ -36,7 +36,7 @@ class AudioSectionHiveModelAdapter
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is AudioSectionHiveModelAdapter &&
+      other is AudioSectionHiveModelImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

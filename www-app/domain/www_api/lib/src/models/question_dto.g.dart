@@ -6,8 +6,8 @@ part of 'question_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_QuestionDto _$$_QuestionDtoFromJson(Map<String, dynamic> json) =>
-    _$_QuestionDto(
+_$QuestionDtoImpl _$$QuestionDtoImplFromJson(Map<String, dynamic> json) =>
+    _$QuestionDtoImpl(
       questionId: json['QuestionId'] as String?,
       question: json['Question'] as String?,
       number: json['Number'] as String?,
@@ -23,7 +23,7 @@ _$_QuestionDto _$$_QuestionDtoFromJson(Map<String, dynamic> json) =>
       tournamentTitle: json['tournamentTitle'] as String?,
     );
 
-Map<String, dynamic> _$$_QuestionDtoToJson(_$_QuestionDto instance) {
+Map<String, dynamic> _$$QuestionDtoImplToJson(_$QuestionDtoImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

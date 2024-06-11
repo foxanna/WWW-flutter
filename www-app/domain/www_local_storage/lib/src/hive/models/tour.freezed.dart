@@ -12,7 +12,7 @@ part of 'tour.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TourHiveModel {
@@ -90,11 +90,11 @@ class _$TourHiveModelCopyWithImpl<$Res, $Val extends TourHiveModel>
 }
 
 /// @nodoc
-abstract class _$$_TourHiveModelCopyWith<$Res>
+abstract class _$$TourHiveModelImplCopyWith<$Res>
     implements $TourHiveModelCopyWith<$Res> {
-  factory _$$_TourHiveModelCopyWith(
-          _$_TourHiveModel value, $Res Function(_$_TourHiveModel) then) =
-      __$$_TourHiveModelCopyWithImpl<$Res>;
+  factory _$$TourHiveModelImplCopyWith(
+          _$TourHiveModelImpl value, $Res Function(_$TourHiveModelImpl) then) =
+      __$$TourHiveModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -108,11 +108,11 @@ abstract class _$$_TourHiveModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TourHiveModelCopyWithImpl<$Res>
-    extends _$TourHiveModelCopyWithImpl<$Res, _$_TourHiveModel>
-    implements _$$_TourHiveModelCopyWith<$Res> {
-  __$$_TourHiveModelCopyWithImpl(
-      _$_TourHiveModel _value, $Res Function(_$_TourHiveModel) _then)
+class __$$TourHiveModelImplCopyWithImpl<$Res>
+    extends _$TourHiveModelCopyWithImpl<$Res, _$TourHiveModelImpl>
+    implements _$$TourHiveModelImplCopyWith<$Res> {
+  __$$TourHiveModelImplCopyWithImpl(
+      _$TourHiveModelImpl _value, $Res Function(_$TourHiveModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -122,7 +122,7 @@ class __$$_TourHiveModelCopyWithImpl<$Res>
     Object? info = freezed,
     Object? questions = freezed,
   }) {
-    return _then(_$_TourHiveModel(
+    return _then(_$TourHiveModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -142,8 +142,8 @@ class __$$_TourHiveModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: HiveTypesIds.hiveTourTypeId)
-class _$_TourHiveModel implements _TourHiveModel {
-  const _$_TourHiveModel(
+class _$TourHiveModelImpl implements _TourHiveModel {
+  const _$TourHiveModelImpl(
       {@HiveField(TourHiveFieldsIds.id) this.id,
       @HiveField(TourHiveFieldsIds.info) this.info,
       @HiveField(TourHiveFieldsIds.questions)
@@ -173,10 +173,10 @@ class _$_TourHiveModel implements _TourHiveModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TourHiveModel &&
+            other is _$TourHiveModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.info, info) || other.info == info) &&
             const DeepCollectionEquality()
@@ -190,8 +190,8 @@ class _$_TourHiveModel implements _TourHiveModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TourHiveModelCopyWith<_$_TourHiveModel> get copyWith =>
-      __$$_TourHiveModelCopyWithImpl<_$_TourHiveModel>(this, _$identity);
+  _$$TourHiveModelImplCopyWith<_$TourHiveModelImpl> get copyWith =>
+      __$$TourHiveModelImplCopyWithImpl<_$TourHiveModelImpl>(this, _$identity);
 }
 
 abstract class _TourHiveModel implements TourHiveModel {
@@ -199,7 +199,7 @@ abstract class _TourHiveModel implements TourHiveModel {
       {@HiveField(TourHiveFieldsIds.id) final String? id,
       @HiveField(TourHiveFieldsIds.info) final TourInfoHiveModel? info,
       @HiveField(TourHiveFieldsIds.questions)
-      final List<QuestionHiveModel>? questions}) = _$_TourHiveModel;
+      final List<QuestionHiveModel>? questions}) = _$TourHiveModelImpl;
 
   @override
   @HiveField(TourHiveFieldsIds.id)
@@ -212,6 +212,6 @@ abstract class _TourHiveModel implements TourHiveModel {
   List<QuestionHiveModel>? get questions;
   @override
   @JsonKey(ignore: true)
-  _$$_TourHiveModelCopyWith<_$_TourHiveModel> get copyWith =>
+  _$$TourHiveModelImplCopyWith<_$TourHiveModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

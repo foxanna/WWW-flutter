@@ -12,7 +12,7 @@ part of 'question.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Question {
@@ -123,10 +123,11 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
 }
 
 /// @nodoc
-abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
-  factory _$$_QuestionCopyWith(
-          _$_Question value, $Res Function(_$_Question) then) =
-      __$$_QuestionCopyWithImpl<$Res>;
+abstract class _$$QuestionImplCopyWith<$Res>
+    implements $QuestionCopyWith<$Res> {
+  factory _$$QuestionImplCopyWith(
+          _$QuestionImpl value, $Res Function(_$QuestionImpl) then) =
+      __$$QuestionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -145,11 +146,11 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_QuestionCopyWithImpl<$Res>
-    extends _$QuestionCopyWithImpl<$Res, _$_Question>
-    implements _$$_QuestionCopyWith<$Res> {
-  __$$_QuestionCopyWithImpl(
-      _$_Question _value, $Res Function(_$_Question) _then)
+class __$$QuestionImplCopyWithImpl<$Res>
+    extends _$QuestionCopyWithImpl<$Res, _$QuestionImpl>
+    implements _$$QuestionImplCopyWith<$Res> {
+  __$$QuestionImplCopyWithImpl(
+      _$QuestionImpl _value, $Res Function(_$QuestionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -165,7 +166,7 @@ class __$$_QuestionCopyWithImpl<$Res>
     Object? sources = freezed,
     Object? info = null,
   }) {
-    return _then(_$_Question(
+    return _then(_$QuestionImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -208,8 +209,8 @@ class __$$_QuestionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Question implements _Question {
-  const _$_Question(
+class _$QuestionImpl implements _Question {
+  const _$QuestionImpl(
       {this.id,
       this.display,
       final List<QuestionSection> question = const <QuestionSection>[],
@@ -278,10 +279,10 @@ class _$_Question implements _Question {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Question &&
+            other is _$QuestionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.display, display) || other.display == display) &&
             const DeepCollectionEquality().equals(other._question, _question) &&
@@ -310,8 +311,8 @@ class _$_Question implements _Question {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuestionCopyWith<_$_Question> get copyWith =>
-      __$$_QuestionCopyWithImpl<_$_Question>(this, _$identity);
+  _$$QuestionImplCopyWith<_$QuestionImpl> get copyWith =>
+      __$$QuestionImplCopyWithImpl<_$QuestionImpl>(this, _$identity);
 }
 
 abstract class _Question implements Question {
@@ -324,7 +325,7 @@ abstract class _Question implements Question {
       final List<QuestionSection> comments,
       final String? authors,
       final String? sources,
-      final QuestionInfo info}) = _$_Question;
+      final QuestionInfo info}) = _$QuestionImpl;
 
   @override
   String? get id;
@@ -346,6 +347,6 @@ abstract class _Question implements Question {
   QuestionInfo get info;
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionCopyWith<_$_Question> get copyWith =>
+  _$$QuestionImplCopyWith<_$QuestionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

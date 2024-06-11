@@ -6,18 +6,18 @@ part of 'question_info.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class QuestionInfoHiveModelAdapter
-    extends TypeAdapter<_$_QuestionInfoHiveModel> {
+class QuestionInfoHiveModelImplAdapter
+    extends TypeAdapter<_$QuestionInfoHiveModelImpl> {
   @override
   final int typeId = 6;
 
   @override
-  _$_QuestionInfoHiveModel read(BinaryReader reader) {
+  _$QuestionInfoHiveModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_QuestionInfoHiveModel(
+    return _$QuestionInfoHiveModelImpl(
       id: fields[0] as String?,
       number: fields[1] as String?,
       url: fields[2] as String?,
@@ -26,7 +26,7 @@ class QuestionInfoHiveModelAdapter
   }
 
   @override
-  void write(BinaryWriter writer, _$_QuestionInfoHiveModel obj) {
+  void write(BinaryWriter writer, _$QuestionInfoHiveModelImpl obj) {
     writer
       ..writeByte(4)
       ..writeByte(0)
@@ -45,7 +45,7 @@ class QuestionInfoHiveModelAdapter
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is QuestionInfoHiveModelAdapter &&
+      other is QuestionInfoHiveModelImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

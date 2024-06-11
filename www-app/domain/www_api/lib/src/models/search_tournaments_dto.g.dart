@@ -6,16 +6,16 @@ part of 'search_tournaments_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SearchTournamentsDto _$$_SearchTournamentsDtoFromJson(
+_$SearchTournamentsDtoImpl _$$SearchTournamentsDtoImplFromJson(
         Map<String, dynamic> json) =>
-    _$_SearchTournamentsDto(
+    _$SearchTournamentsDtoImpl(
       tournaments: (json['search'] as List<dynamic>?)
           ?.map((e) => TournamentDto.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_SearchTournamentsDtoToJson(
-    _$_SearchTournamentsDto instance) {
+Map<String, dynamic> _$$SearchTournamentsDtoImplToJson(
+    _$SearchTournamentsDtoImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

@@ -12,7 +12,7 @@ part of 'section_speaker_note.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SpeakerNoteSection {
@@ -57,22 +57,22 @@ class _$SpeakerNoteSectionCopyWithImpl<$Res, $Val extends SpeakerNoteSection>
 }
 
 /// @nodoc
-abstract class _$$_SpeakerNoteSectionCopyWith<$Res>
+abstract class _$$SpeakerNoteSectionImplCopyWith<$Res>
     implements $SpeakerNoteSectionCopyWith<$Res> {
-  factory _$$_SpeakerNoteSectionCopyWith(_$_SpeakerNoteSection value,
-          $Res Function(_$_SpeakerNoteSection) then) =
-      __$$_SpeakerNoteSectionCopyWithImpl<$Res>;
+  factory _$$SpeakerNoteSectionImplCopyWith(_$SpeakerNoteSectionImpl value,
+          $Res Function(_$SpeakerNoteSectionImpl) then) =
+      __$$SpeakerNoteSectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$_SpeakerNoteSectionCopyWithImpl<$Res>
-    extends _$SpeakerNoteSectionCopyWithImpl<$Res, _$_SpeakerNoteSection>
-    implements _$$_SpeakerNoteSectionCopyWith<$Res> {
-  __$$_SpeakerNoteSectionCopyWithImpl(
-      _$_SpeakerNoteSection _value, $Res Function(_$_SpeakerNoteSection) _then)
+class __$$SpeakerNoteSectionImplCopyWithImpl<$Res>
+    extends _$SpeakerNoteSectionCopyWithImpl<$Res, _$SpeakerNoteSectionImpl>
+    implements _$$SpeakerNoteSectionImplCopyWith<$Res> {
+  __$$SpeakerNoteSectionImplCopyWithImpl(_$SpeakerNoteSectionImpl _value,
+      $Res Function(_$SpeakerNoteSectionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_SpeakerNoteSectionCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$_SpeakerNoteSection(
+    return _then(_$SpeakerNoteSectionImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ class __$$_SpeakerNoteSectionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SpeakerNoteSection implements _SpeakerNoteSection {
-  const _$_SpeakerNoteSection({required this.value});
+class _$SpeakerNoteSectionImpl implements _SpeakerNoteSection {
+  const _$SpeakerNoteSectionImpl({required this.value});
 
   @override
   final String value;
@@ -103,10 +103,10 @@ class _$_SpeakerNoteSection implements _SpeakerNoteSection {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SpeakerNoteSection &&
+            other is _$SpeakerNoteSectionImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -116,19 +116,19 @@ class _$_SpeakerNoteSection implements _SpeakerNoteSection {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SpeakerNoteSectionCopyWith<_$_SpeakerNoteSection> get copyWith =>
-      __$$_SpeakerNoteSectionCopyWithImpl<_$_SpeakerNoteSection>(
+  _$$SpeakerNoteSectionImplCopyWith<_$SpeakerNoteSectionImpl> get copyWith =>
+      __$$SpeakerNoteSectionImplCopyWithImpl<_$SpeakerNoteSectionImpl>(
           this, _$identity);
 }
 
 abstract class _SpeakerNoteSection implements SpeakerNoteSection {
   const factory _SpeakerNoteSection({required final String value}) =
-      _$_SpeakerNoteSection;
+      _$SpeakerNoteSectionImpl;
 
   @override
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$_SpeakerNoteSectionCopyWith<_$_SpeakerNoteSection> get copyWith =>
+  _$$SpeakerNoteSectionImplCopyWith<_$SpeakerNoteSectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

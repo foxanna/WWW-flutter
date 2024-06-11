@@ -12,7 +12,7 @@ part of 'random_questions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$RandomQuestions {
@@ -57,22 +57,22 @@ class _$RandomQuestionsCopyWithImpl<$Res, $Val extends RandomQuestions>
 }
 
 /// @nodoc
-abstract class _$$_RandomQuestionsCopyWith<$Res>
+abstract class _$$RandomQuestionsImplCopyWith<$Res>
     implements $RandomQuestionsCopyWith<$Res> {
-  factory _$$_RandomQuestionsCopyWith(
-          _$_RandomQuestions value, $Res Function(_$_RandomQuestions) then) =
-      __$$_RandomQuestionsCopyWithImpl<$Res>;
+  factory _$$RandomQuestionsImplCopyWith(_$RandomQuestionsImpl value,
+          $Res Function(_$RandomQuestionsImpl) then) =
+      __$$RandomQuestionsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Question> questions});
 }
 
 /// @nodoc
-class __$$_RandomQuestionsCopyWithImpl<$Res>
-    extends _$RandomQuestionsCopyWithImpl<$Res, _$_RandomQuestions>
-    implements _$$_RandomQuestionsCopyWith<$Res> {
-  __$$_RandomQuestionsCopyWithImpl(
-      _$_RandomQuestions _value, $Res Function(_$_RandomQuestions) _then)
+class __$$RandomQuestionsImplCopyWithImpl<$Res>
+    extends _$RandomQuestionsCopyWithImpl<$Res, _$RandomQuestionsImpl>
+    implements _$$RandomQuestionsImplCopyWith<$Res> {
+  __$$RandomQuestionsImplCopyWithImpl(
+      _$RandomQuestionsImpl _value, $Res Function(_$RandomQuestionsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_RandomQuestionsCopyWithImpl<$Res>
   $Res call({
     Object? questions = null,
   }) {
-    return _then(_$_RandomQuestions(
+    return _then(_$RandomQuestionsImpl(
       questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ class __$$_RandomQuestionsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RandomQuestions implements _RandomQuestions {
-  const _$_RandomQuestions(
+class _$RandomQuestionsImpl implements _RandomQuestions {
+  const _$RandomQuestionsImpl(
       {final List<Question> questions = const <Question>[]})
       : _questions = questions;
 
@@ -111,10 +111,10 @@ class _$_RandomQuestions implements _RandomQuestions {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RandomQuestions &&
+            other is _$RandomQuestionsImpl &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions));
   }
@@ -126,18 +126,19 @@ class _$_RandomQuestions implements _RandomQuestions {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RandomQuestionsCopyWith<_$_RandomQuestions> get copyWith =>
-      __$$_RandomQuestionsCopyWithImpl<_$_RandomQuestions>(this, _$identity);
+  _$$RandomQuestionsImplCopyWith<_$RandomQuestionsImpl> get copyWith =>
+      __$$RandomQuestionsImplCopyWithImpl<_$RandomQuestionsImpl>(
+          this, _$identity);
 }
 
 abstract class _RandomQuestions implements RandomQuestions {
   const factory _RandomQuestions({final List<Question> questions}) =
-      _$_RandomQuestions;
+      _$RandomQuestionsImpl;
 
   @override
   List<Question> get questions;
   @override
   @JsonKey(ignore: true)
-  _$$_RandomQuestionsCopyWith<_$_RandomQuestions> get copyWith =>
+  _$$RandomQuestionsImplCopyWith<_$RandomQuestionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

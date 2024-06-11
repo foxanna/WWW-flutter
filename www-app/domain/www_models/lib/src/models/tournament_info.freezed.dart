@@ -12,7 +12,7 @@ part of 'tournament_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TournamentInfo {
@@ -121,11 +121,11 @@ class _$TournamentInfoCopyWithImpl<$Res, $Val extends TournamentInfo>
 }
 
 /// @nodoc
-abstract class _$$_TournamentInfoCopyWith<$Res>
+abstract class _$$TournamentInfoImplCopyWith<$Res>
     implements $TournamentInfoCopyWith<$Res> {
-  factory _$$_TournamentInfoCopyWith(
-          _$_TournamentInfo value, $Res Function(_$_TournamentInfo) then) =
-      __$$_TournamentInfoCopyWithImpl<$Res>;
+  factory _$$TournamentInfoImplCopyWith(_$TournamentInfoImpl value,
+          $Res Function(_$TournamentInfoImpl) then) =
+      __$$TournamentInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -142,11 +142,11 @@ abstract class _$$_TournamentInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TournamentInfoCopyWithImpl<$Res>
-    extends _$TournamentInfoCopyWithImpl<$Res, _$_TournamentInfo>
-    implements _$$_TournamentInfoCopyWith<$Res> {
-  __$$_TournamentInfoCopyWithImpl(
-      _$_TournamentInfo _value, $Res Function(_$_TournamentInfo) _then)
+class __$$TournamentInfoImplCopyWithImpl<$Res>
+    extends _$TournamentInfoCopyWithImpl<$Res, _$TournamentInfoImpl>
+    implements _$$TournamentInfoImplCopyWith<$Res> {
+  __$$TournamentInfoImplCopyWithImpl(
+      _$TournamentInfoImpl _value, $Res Function(_$TournamentInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -163,7 +163,7 @@ class __$$_TournamentInfoCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? playedAt = freezed,
   }) {
-    return _then(_$_TournamentInfo(
+    return _then(_$TournamentInfoImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -210,8 +210,8 @@ class __$$_TournamentInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TournamentInfo implements _TournamentInfo {
-  const _$_TournamentInfo(
+class _$TournamentInfoImpl implements _TournamentInfo {
+  const _$TournamentInfoImpl(
       {this.id,
       this.id2,
       this.title,
@@ -250,10 +250,10 @@ class _$_TournamentInfo implements _TournamentInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TournamentInfo &&
+            other is _$TournamentInfoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.id2, id2) || other.id2 == id2) &&
             (identical(other.title, title) || other.title == title) &&
@@ -278,8 +278,9 @@ class _$_TournamentInfo implements _TournamentInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TournamentInfoCopyWith<_$_TournamentInfo> get copyWith =>
-      __$$_TournamentInfoCopyWithImpl<_$_TournamentInfo>(this, _$identity);
+  _$$TournamentInfoImplCopyWith<_$TournamentInfoImpl> get copyWith =>
+      __$$TournamentInfoImplCopyWithImpl<_$TournamentInfoImpl>(
+          this, _$identity);
 }
 
 abstract class _TournamentInfo implements TournamentInfo {
@@ -293,7 +294,7 @@ abstract class _TournamentInfo implements TournamentInfo {
       final String? url,
       final String? editors,
       final String? createdAt,
-      final String? playedAt}) = _$_TournamentInfo;
+      final String? playedAt}) = _$TournamentInfoImpl;
 
   @override
   String? get id;
@@ -317,6 +318,6 @@ abstract class _TournamentInfo implements TournamentInfo {
   String? get playedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_TournamentInfoCopyWith<_$_TournamentInfo> get copyWith =>
+  _$$TournamentInfoImplCopyWith<_$TournamentInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

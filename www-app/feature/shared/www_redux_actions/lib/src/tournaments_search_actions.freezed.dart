@@ -12,7 +12,7 @@ part of 'tournaments_search_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserActionSearch {
@@ -94,27 +94,27 @@ class _$UserActionSearchCopyWithImpl<$Res, $Val extends UserActionSearch>
 }
 
 /// @nodoc
-abstract class _$$OpenSearchUserActionCopyWith<$Res> {
-  factory _$$OpenSearchUserActionCopyWith(_$OpenSearchUserAction value,
-          $Res Function(_$OpenSearchUserAction) then) =
-      __$$OpenSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$OpenSearchUserActionImplCopyWith<$Res> {
+  factory _$$OpenSearchUserActionImplCopyWith(_$OpenSearchUserActionImpl value,
+          $Res Function(_$OpenSearchUserActionImpl) then) =
+      __$$OpenSearchUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OpenSearchUserActionCopyWithImpl<$Res>
-    extends _$UserActionSearchCopyWithImpl<$Res, _$OpenSearchUserAction>
-    implements _$$OpenSearchUserActionCopyWith<$Res> {
-  __$$OpenSearchUserActionCopyWithImpl(_$OpenSearchUserAction _value,
-      $Res Function(_$OpenSearchUserAction) _then)
+class __$$OpenSearchUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res, _$OpenSearchUserActionImpl>
+    implements _$$OpenSearchUserActionImplCopyWith<$Res> {
+  __$$OpenSearchUserActionImplCopyWithImpl(_$OpenSearchUserActionImpl _value,
+      $Res Function(_$OpenSearchUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$OpenSearchUserAction
+class _$OpenSearchUserActionImpl
     with DiagnosticableTreeMixin
     implements OpenSearchUserAction {
-  const _$OpenSearchUserAction();
+  const _$OpenSearchUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -128,9 +128,10 @@ class _$OpenSearchUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OpenSearchUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$OpenSearchUserActionImpl);
   }
 
   @override
@@ -219,31 +220,33 @@ class _$OpenSearchUserAction
 }
 
 abstract class OpenSearchUserAction implements UserActionSearch {
-  const factory OpenSearchUserAction() = _$OpenSearchUserAction;
+  const factory OpenSearchUserAction() = _$OpenSearchUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$ExecuteSearchUserActionCopyWith<$Res> {
-  factory _$$ExecuteSearchUserActionCopyWith(_$ExecuteSearchUserAction value,
-          $Res Function(_$ExecuteSearchUserAction) then) =
-      __$$ExecuteSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$ExecuteSearchUserActionImplCopyWith<$Res> {
+  factory _$$ExecuteSearchUserActionImplCopyWith(
+          _$ExecuteSearchUserActionImpl value,
+          $Res Function(_$ExecuteSearchUserActionImpl) then) =
+      __$$ExecuteSearchUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ExecuteSearchUserActionCopyWithImpl<$Res>
-    extends _$UserActionSearchCopyWithImpl<$Res, _$ExecuteSearchUserAction>
-    implements _$$ExecuteSearchUserActionCopyWith<$Res> {
-  __$$ExecuteSearchUserActionCopyWithImpl(_$ExecuteSearchUserAction _value,
-      $Res Function(_$ExecuteSearchUserAction) _then)
+class __$$ExecuteSearchUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res, _$ExecuteSearchUserActionImpl>
+    implements _$$ExecuteSearchUserActionImplCopyWith<$Res> {
+  __$$ExecuteSearchUserActionImplCopyWithImpl(
+      _$ExecuteSearchUserActionImpl _value,
+      $Res Function(_$ExecuteSearchUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ExecuteSearchUserAction
+class _$ExecuteSearchUserActionImpl
     with DiagnosticableTreeMixin
     implements ExecuteSearchUserAction {
-  const _$ExecuteSearchUserAction();
+  const _$ExecuteSearchUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -257,10 +260,10 @@ class _$ExecuteSearchUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExecuteSearchUserAction);
+            other is _$ExecuteSearchUserActionImpl);
   }
 
   @override
@@ -349,31 +352,32 @@ class _$ExecuteSearchUserAction
 }
 
 abstract class ExecuteSearchUserAction implements UserActionSearch {
-  const factory ExecuteSearchUserAction() = _$ExecuteSearchUserAction;
+  const factory ExecuteSearchUserAction() = _$ExecuteSearchUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$CloseSearchUserActionCopyWith<$Res> {
-  factory _$$CloseSearchUserActionCopyWith(_$CloseSearchUserAction value,
-          $Res Function(_$CloseSearchUserAction) then) =
-      __$$CloseSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$CloseSearchUserActionImplCopyWith<$Res> {
+  factory _$$CloseSearchUserActionImplCopyWith(
+          _$CloseSearchUserActionImpl value,
+          $Res Function(_$CloseSearchUserActionImpl) then) =
+      __$$CloseSearchUserActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CloseSearchUserActionCopyWithImpl<$Res>
-    extends _$UserActionSearchCopyWithImpl<$Res, _$CloseSearchUserAction>
-    implements _$$CloseSearchUserActionCopyWith<$Res> {
-  __$$CloseSearchUserActionCopyWithImpl(_$CloseSearchUserAction _value,
-      $Res Function(_$CloseSearchUserAction) _then)
+class __$$CloseSearchUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res, _$CloseSearchUserActionImpl>
+    implements _$$CloseSearchUserActionImplCopyWith<$Res> {
+  __$$CloseSearchUserActionImplCopyWithImpl(_$CloseSearchUserActionImpl _value,
+      $Res Function(_$CloseSearchUserActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CloseSearchUserAction
+class _$CloseSearchUserActionImpl
     with DiagnosticableTreeMixin
     implements CloseSearchUserAction {
-  const _$CloseSearchUserAction();
+  const _$CloseSearchUserActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -387,9 +391,10 @@ class _$CloseSearchUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CloseSearchUserAction);
+        (other.runtimeType == runtimeType &&
+            other is _$CloseSearchUserActionImpl);
   }
 
   @override
@@ -478,26 +483,27 @@ class _$CloseSearchUserAction
 }
 
 abstract class CloseSearchUserAction implements UserActionSearch {
-  const factory CloseSearchUserAction() = _$CloseSearchUserAction;
+  const factory CloseSearchUserAction() = _$CloseSearchUserActionImpl;
 }
 
 /// @nodoc
-abstract class _$$UpdateTextSearchUserActionCopyWith<$Res> {
-  factory _$$UpdateTextSearchUserActionCopyWith(
-          _$UpdateTextSearchUserAction value,
-          $Res Function(_$UpdateTextSearchUserAction) then) =
-      __$$UpdateTextSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$UpdateTextSearchUserActionImplCopyWith<$Res> {
+  factory _$$UpdateTextSearchUserActionImplCopyWith(
+          _$UpdateTextSearchUserActionImpl value,
+          $Res Function(_$UpdateTextSearchUserActionImpl) then) =
+      __$$UpdateTextSearchUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String query});
 }
 
 /// @nodoc
-class __$$UpdateTextSearchUserActionCopyWithImpl<$Res>
-    extends _$UserActionSearchCopyWithImpl<$Res, _$UpdateTextSearchUserAction>
-    implements _$$UpdateTextSearchUserActionCopyWith<$Res> {
-  __$$UpdateTextSearchUserActionCopyWithImpl(
-      _$UpdateTextSearchUserAction _value,
-      $Res Function(_$UpdateTextSearchUserAction) _then)
+class __$$UpdateTextSearchUserActionImplCopyWithImpl<$Res>
+    extends _$UserActionSearchCopyWithImpl<$Res,
+        _$UpdateTextSearchUserActionImpl>
+    implements _$$UpdateTextSearchUserActionImplCopyWith<$Res> {
+  __$$UpdateTextSearchUserActionImplCopyWithImpl(
+      _$UpdateTextSearchUserActionImpl _value,
+      $Res Function(_$UpdateTextSearchUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -505,7 +511,7 @@ class __$$UpdateTextSearchUserActionCopyWithImpl<$Res>
   $Res call({
     Object? query = null,
   }) {
-    return _then(_$UpdateTextSearchUserAction(
+    return _then(_$UpdateTextSearchUserActionImpl(
       query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -516,10 +522,10 @@ class __$$UpdateTextSearchUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateTextSearchUserAction
+class _$UpdateTextSearchUserActionImpl
     with DiagnosticableTreeMixin
     implements UpdateTextSearchUserAction {
-  const _$UpdateTextSearchUserAction({required this.query});
+  const _$UpdateTextSearchUserActionImpl({required this.query});
 
   @override
   final String query;
@@ -538,10 +544,10 @@ class _$UpdateTextSearchUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateTextSearchUserAction &&
+            other is _$UpdateTextSearchUserActionImpl &&
             (identical(other.query, query) || other.query == query));
   }
 
@@ -551,9 +557,9 @@ class _$UpdateTextSearchUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateTextSearchUserActionCopyWith<_$UpdateTextSearchUserAction>
-      get copyWith => __$$UpdateTextSearchUserActionCopyWithImpl<
-          _$UpdateTextSearchUserAction>(this, _$identity);
+  _$$UpdateTextSearchUserActionImplCopyWith<_$UpdateTextSearchUserActionImpl>
+      get copyWith => __$$UpdateTextSearchUserActionImplCopyWithImpl<
+          _$UpdateTextSearchUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -639,32 +645,32 @@ class _$UpdateTextSearchUserAction
 
 abstract class UpdateTextSearchUserAction implements UserActionSearch {
   const factory UpdateTextSearchUserAction({required final String query}) =
-      _$UpdateTextSearchUserAction;
+      _$UpdateTextSearchUserActionImpl;
 
   String get query;
   @JsonKey(ignore: true)
-  _$$UpdateTextSearchUserActionCopyWith<_$UpdateTextSearchUserAction>
+  _$$UpdateTextSearchUserActionImplCopyWith<_$UpdateTextSearchUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateSortingSearchUserActionCopyWith<$Res> {
-  factory _$$UpdateSortingSearchUserActionCopyWith(
-          _$UpdateSortingSearchUserAction value,
-          $Res Function(_$UpdateSortingSearchUserAction) then) =
-      __$$UpdateSortingSearchUserActionCopyWithImpl<$Res>;
+abstract class _$$UpdateSortingSearchUserActionImplCopyWith<$Res> {
+  factory _$$UpdateSortingSearchUserActionImplCopyWith(
+          _$UpdateSortingSearchUserActionImpl value,
+          $Res Function(_$UpdateSortingSearchUserActionImpl) then) =
+      __$$UpdateSortingSearchUserActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Sorting sorting});
 }
 
 /// @nodoc
-class __$$UpdateSortingSearchUserActionCopyWithImpl<$Res>
+class __$$UpdateSortingSearchUserActionImplCopyWithImpl<$Res>
     extends _$UserActionSearchCopyWithImpl<$Res,
-        _$UpdateSortingSearchUserAction>
-    implements _$$UpdateSortingSearchUserActionCopyWith<$Res> {
-  __$$UpdateSortingSearchUserActionCopyWithImpl(
-      _$UpdateSortingSearchUserAction _value,
-      $Res Function(_$UpdateSortingSearchUserAction) _then)
+        _$UpdateSortingSearchUserActionImpl>
+    implements _$$UpdateSortingSearchUserActionImplCopyWith<$Res> {
+  __$$UpdateSortingSearchUserActionImplCopyWithImpl(
+      _$UpdateSortingSearchUserActionImpl _value,
+      $Res Function(_$UpdateSortingSearchUserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -672,7 +678,7 @@ class __$$UpdateSortingSearchUserActionCopyWithImpl<$Res>
   $Res call({
     Object? sorting = null,
   }) {
-    return _then(_$UpdateSortingSearchUserAction(
+    return _then(_$UpdateSortingSearchUserActionImpl(
       sorting: null == sorting
           ? _value.sorting
           : sorting // ignore: cast_nullable_to_non_nullable
@@ -683,10 +689,10 @@ class __$$UpdateSortingSearchUserActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateSortingSearchUserAction
+class _$UpdateSortingSearchUserActionImpl
     with DiagnosticableTreeMixin
     implements UpdateSortingSearchUserAction {
-  const _$UpdateSortingSearchUserAction({required this.sorting});
+  const _$UpdateSortingSearchUserActionImpl({required this.sorting});
 
   @override
   final Sorting sorting;
@@ -705,10 +711,10 @@ class _$UpdateSortingSearchUserAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateSortingSearchUserAction &&
+            other is _$UpdateSortingSearchUserActionImpl &&
             (identical(other.sorting, sorting) || other.sorting == sorting));
   }
 
@@ -718,9 +724,10 @@ class _$UpdateSortingSearchUserAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateSortingSearchUserActionCopyWith<_$UpdateSortingSearchUserAction>
-      get copyWith => __$$UpdateSortingSearchUserActionCopyWithImpl<
-          _$UpdateSortingSearchUserAction>(this, _$identity);
+  _$$UpdateSortingSearchUserActionImplCopyWith<
+          _$UpdateSortingSearchUserActionImpl>
+      get copyWith => __$$UpdateSortingSearchUserActionImplCopyWithImpl<
+          _$UpdateSortingSearchUserActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -806,11 +813,12 @@ class _$UpdateSortingSearchUserAction
 
 abstract class UpdateSortingSearchUserAction implements UserActionSearch {
   const factory UpdateSortingSearchUserAction(
-      {required final Sorting sorting}) = _$UpdateSortingSearchUserAction;
+      {required final Sorting sorting}) = _$UpdateSortingSearchUserActionImpl;
 
   Sorting get sorting;
   @JsonKey(ignore: true)
-  _$$UpdateSortingSearchUserActionCopyWith<_$UpdateSortingSearchUserAction>
+  _$$UpdateSortingSearchUserActionImplCopyWith<
+          _$UpdateSortingSearchUserActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -907,27 +915,29 @@ class _$SystemActionSearchCopyWithImpl<$Res, $Val extends SystemActionSearch>
 }
 
 /// @nodoc
-abstract class _$$InitSearchSystemActionCopyWith<$Res> {
-  factory _$$InitSearchSystemActionCopyWith(_$InitSearchSystemAction value,
-          $Res Function(_$InitSearchSystemAction) then) =
-      __$$InitSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$InitSearchSystemActionImplCopyWith<$Res> {
+  factory _$$InitSearchSystemActionImplCopyWith(
+          _$InitSearchSystemActionImpl value,
+          $Res Function(_$InitSearchSystemActionImpl) then) =
+      __$$InitSearchSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitSearchSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionSearchCopyWithImpl<$Res, _$InitSearchSystemAction>
-    implements _$$InitSearchSystemActionCopyWith<$Res> {
-  __$$InitSearchSystemActionCopyWithImpl(_$InitSearchSystemAction _value,
-      $Res Function(_$InitSearchSystemAction) _then)
+class __$$InitSearchSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res, _$InitSearchSystemActionImpl>
+    implements _$$InitSearchSystemActionImplCopyWith<$Res> {
+  __$$InitSearchSystemActionImplCopyWithImpl(
+      _$InitSearchSystemActionImpl _value,
+      $Res Function(_$InitSearchSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitSearchSystemAction
+class _$InitSearchSystemActionImpl
     with DiagnosticableTreeMixin
     implements InitSearchSystemAction {
-  const _$InitSearchSystemAction();
+  const _$InitSearchSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -941,9 +951,10 @@ class _$InitSearchSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitSearchSystemAction);
+        (other.runtimeType == runtimeType &&
+            other is _$InitSearchSystemActionImpl);
   }
 
   @override
@@ -1045,31 +1056,34 @@ class _$InitSearchSystemAction
 }
 
 abstract class InitSearchSystemAction implements SystemActionSearch {
-  const factory InitSearchSystemAction() = _$InitSearchSystemAction;
+  const factory InitSearchSystemAction() = _$InitSearchSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$DeInitSearchSystemActionCopyWith<$Res> {
-  factory _$$DeInitSearchSystemActionCopyWith(_$DeInitSearchSystemAction value,
-          $Res Function(_$DeInitSearchSystemAction) then) =
-      __$$DeInitSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$DeInitSearchSystemActionImplCopyWith<$Res> {
+  factory _$$DeInitSearchSystemActionImplCopyWith(
+          _$DeInitSearchSystemActionImpl value,
+          $Res Function(_$DeInitSearchSystemActionImpl) then) =
+      __$$DeInitSearchSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DeInitSearchSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionSearchCopyWithImpl<$Res, _$DeInitSearchSystemAction>
-    implements _$$DeInitSearchSystemActionCopyWith<$Res> {
-  __$$DeInitSearchSystemActionCopyWithImpl(_$DeInitSearchSystemAction _value,
-      $Res Function(_$DeInitSearchSystemAction) _then)
+class __$$DeInitSearchSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res,
+        _$DeInitSearchSystemActionImpl>
+    implements _$$DeInitSearchSystemActionImplCopyWith<$Res> {
+  __$$DeInitSearchSystemActionImplCopyWithImpl(
+      _$DeInitSearchSystemActionImpl _value,
+      $Res Function(_$DeInitSearchSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DeInitSearchSystemAction
+class _$DeInitSearchSystemActionImpl
     with DiagnosticableTreeMixin
     implements DeInitSearchSystemAction {
-  const _$DeInitSearchSystemAction();
+  const _$DeInitSearchSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1083,10 +1097,10 @@ class _$DeInitSearchSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeInitSearchSystemAction);
+            other is _$DeInitSearchSystemActionImpl);
   }
 
   @override
@@ -1188,34 +1202,34 @@ class _$DeInitSearchSystemAction
 }
 
 abstract class DeInitSearchSystemAction implements SystemActionSearch {
-  const factory DeInitSearchSystemAction() = _$DeInitSearchSystemAction;
+  const factory DeInitSearchSystemAction() = _$DeInitSearchSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$ClearResultsSearchSystemActionCopyWith<$Res> {
-  factory _$$ClearResultsSearchSystemActionCopyWith(
-          _$ClearResultsSearchSystemAction value,
-          $Res Function(_$ClearResultsSearchSystemAction) then) =
-      __$$ClearResultsSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$ClearResultsSearchSystemActionImplCopyWith<$Res> {
+  factory _$$ClearResultsSearchSystemActionImplCopyWith(
+          _$ClearResultsSearchSystemActionImpl value,
+          $Res Function(_$ClearResultsSearchSystemActionImpl) then) =
+      __$$ClearResultsSearchSystemActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ClearResultsSearchSystemActionCopyWithImpl<$Res>
+class __$$ClearResultsSearchSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res,
-        _$ClearResultsSearchSystemAction>
-    implements _$$ClearResultsSearchSystemActionCopyWith<$Res> {
-  __$$ClearResultsSearchSystemActionCopyWithImpl(
-      _$ClearResultsSearchSystemAction _value,
-      $Res Function(_$ClearResultsSearchSystemAction) _then)
+        _$ClearResultsSearchSystemActionImpl>
+    implements _$$ClearResultsSearchSystemActionImplCopyWith<$Res> {
+  __$$ClearResultsSearchSystemActionImplCopyWithImpl(
+      _$ClearResultsSearchSystemActionImpl _value,
+      $Res Function(_$ClearResultsSearchSystemActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ClearResultsSearchSystemAction
+class _$ClearResultsSearchSystemActionImpl
     with DiagnosticableTreeMixin
     implements ClearResultsSearchSystemAction {
-  const _$ClearResultsSearchSystemAction();
+  const _$ClearResultsSearchSystemActionImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1230,10 +1244,10 @@ class _$ClearResultsSearchSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClearResultsSearchSystemAction);
+            other is _$ClearResultsSearchSystemActionImpl);
   }
 
   @override
@@ -1336,15 +1350,15 @@ class _$ClearResultsSearchSystemAction
 
 abstract class ClearResultsSearchSystemAction implements SystemActionSearch {
   const factory ClearResultsSearchSystemAction() =
-      _$ClearResultsSearchSystemAction;
+      _$ClearResultsSearchSystemActionImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingSearchSystemActionCopyWith<$Res> {
-  factory _$$LoadingSearchSystemActionCopyWith(
-          _$LoadingSearchSystemAction value,
-          $Res Function(_$LoadingSearchSystemAction) then) =
-      __$$LoadingSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$LoadingSearchSystemActionImplCopyWith<$Res> {
+  factory _$$LoadingSearchSystemActionImplCopyWith(
+          _$LoadingSearchSystemActionImpl value,
+          $Res Function(_$LoadingSearchSystemActionImpl) then) =
+      __$$LoadingSearchSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SearchParameters parameters});
 
@@ -1352,11 +1366,13 @@ abstract class _$$LoadingSearchSystemActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LoadingSearchSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionSearchCopyWithImpl<$Res, _$LoadingSearchSystemAction>
-    implements _$$LoadingSearchSystemActionCopyWith<$Res> {
-  __$$LoadingSearchSystemActionCopyWithImpl(_$LoadingSearchSystemAction _value,
-      $Res Function(_$LoadingSearchSystemAction) _then)
+class __$$LoadingSearchSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res,
+        _$LoadingSearchSystemActionImpl>
+    implements _$$LoadingSearchSystemActionImplCopyWith<$Res> {
+  __$$LoadingSearchSystemActionImplCopyWithImpl(
+      _$LoadingSearchSystemActionImpl _value,
+      $Res Function(_$LoadingSearchSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1364,7 +1380,7 @@ class __$$LoadingSearchSystemActionCopyWithImpl<$Res>
   $Res call({
     Object? parameters = null,
   }) {
-    return _then(_$LoadingSearchSystemAction(
+    return _then(_$LoadingSearchSystemActionImpl(
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -1383,10 +1399,10 @@ class __$$LoadingSearchSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingSearchSystemAction
+class _$LoadingSearchSystemActionImpl
     with DiagnosticableTreeMixin
     implements LoadingSearchSystemAction {
-  const _$LoadingSearchSystemAction({required this.parameters});
+  const _$LoadingSearchSystemActionImpl({required this.parameters});
 
   @override
   final SearchParameters parameters;
@@ -1405,10 +1421,10 @@ class _$LoadingSearchSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingSearchSystemAction &&
+            other is _$LoadingSearchSystemActionImpl &&
             (identical(other.parameters, parameters) ||
                 other.parameters == parameters));
   }
@@ -1419,9 +1435,9 @@ class _$LoadingSearchSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingSearchSystemActionCopyWith<_$LoadingSearchSystemAction>
-      get copyWith => __$$LoadingSearchSystemActionCopyWithImpl<
-          _$LoadingSearchSystemAction>(this, _$identity);
+  _$$LoadingSearchSystemActionImplCopyWith<_$LoadingSearchSystemActionImpl>
+      get copyWith => __$$LoadingSearchSystemActionImplCopyWithImpl<
+          _$LoadingSearchSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1521,19 +1537,20 @@ class _$LoadingSearchSystemAction
 abstract class LoadingSearchSystemAction implements SystemActionSearch {
   const factory LoadingSearchSystemAction(
           {required final SearchParameters parameters}) =
-      _$LoadingSearchSystemAction;
+      _$LoadingSearchSystemActionImpl;
 
   SearchParameters get parameters;
   @JsonKey(ignore: true)
-  _$$LoadingSearchSystemActionCopyWith<_$LoadingSearchSystemAction>
+  _$$LoadingSearchSystemActionImplCopyWith<_$LoadingSearchSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FailedSearchSystemActionCopyWith<$Res> {
-  factory _$$FailedSearchSystemActionCopyWith(_$FailedSearchSystemAction value,
-          $Res Function(_$FailedSearchSystemAction) then) =
-      __$$FailedSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$FailedSearchSystemActionImplCopyWith<$Res> {
+  factory _$$FailedSearchSystemActionImplCopyWith(
+          _$FailedSearchSystemActionImpl value,
+          $Res Function(_$FailedSearchSystemActionImpl) then) =
+      __$$FailedSearchSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SearchParameters parameters, Exception exception});
 
@@ -1541,11 +1558,13 @@ abstract class _$$FailedSearchSystemActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FailedSearchSystemActionCopyWithImpl<$Res>
-    extends _$SystemActionSearchCopyWithImpl<$Res, _$FailedSearchSystemAction>
-    implements _$$FailedSearchSystemActionCopyWith<$Res> {
-  __$$FailedSearchSystemActionCopyWithImpl(_$FailedSearchSystemAction _value,
-      $Res Function(_$FailedSearchSystemAction) _then)
+class __$$FailedSearchSystemActionImplCopyWithImpl<$Res>
+    extends _$SystemActionSearchCopyWithImpl<$Res,
+        _$FailedSearchSystemActionImpl>
+    implements _$$FailedSearchSystemActionImplCopyWith<$Res> {
+  __$$FailedSearchSystemActionImplCopyWithImpl(
+      _$FailedSearchSystemActionImpl _value,
+      $Res Function(_$FailedSearchSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1554,7 +1573,7 @@ class __$$FailedSearchSystemActionCopyWithImpl<$Res>
     Object? parameters = null,
     Object? exception = null,
   }) {
-    return _then(_$FailedSearchSystemAction(
+    return _then(_$FailedSearchSystemActionImpl(
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -1577,10 +1596,10 @@ class __$$FailedSearchSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FailedSearchSystemAction
+class _$FailedSearchSystemActionImpl
     with DiagnosticableTreeMixin
     implements FailedSearchSystemAction {
-  const _$FailedSearchSystemAction(
+  const _$FailedSearchSystemActionImpl(
       {required this.parameters, required this.exception});
 
   @override
@@ -1603,10 +1622,10 @@ class _$FailedSearchSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailedSearchSystemAction &&
+            other is _$FailedSearchSystemActionImpl &&
             (identical(other.parameters, parameters) ||
                 other.parameters == parameters) &&
             (identical(other.exception, exception) ||
@@ -1619,10 +1638,9 @@ class _$FailedSearchSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FailedSearchSystemActionCopyWith<_$FailedSearchSystemAction>
-      get copyWith =>
-          __$$FailedSearchSystemActionCopyWithImpl<_$FailedSearchSystemAction>(
-              this, _$identity);
+  _$$FailedSearchSystemActionImplCopyWith<_$FailedSearchSystemActionImpl>
+      get copyWith => __$$FailedSearchSystemActionImplCopyWithImpl<
+          _$FailedSearchSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1722,21 +1740,21 @@ class _$FailedSearchSystemAction
 abstract class FailedSearchSystemAction implements SystemActionSearch {
   const factory FailedSearchSystemAction(
       {required final SearchParameters parameters,
-      required final Exception exception}) = _$FailedSearchSystemAction;
+      required final Exception exception}) = _$FailedSearchSystemActionImpl;
 
   SearchParameters get parameters;
   Exception get exception;
   @JsonKey(ignore: true)
-  _$$FailedSearchSystemActionCopyWith<_$FailedSearchSystemAction>
+  _$$FailedSearchSystemActionImplCopyWith<_$FailedSearchSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CompletedSearchSystemActionCopyWith<$Res> {
-  factory _$$CompletedSearchSystemActionCopyWith(
-          _$CompletedSearchSystemAction value,
-          $Res Function(_$CompletedSearchSystemAction) then) =
-      __$$CompletedSearchSystemActionCopyWithImpl<$Res>;
+abstract class _$$CompletedSearchSystemActionImplCopyWith<$Res> {
+  factory _$$CompletedSearchSystemActionImplCopyWith(
+          _$CompletedSearchSystemActionImpl value,
+          $Res Function(_$CompletedSearchSystemActionImpl) then) =
+      __$$CompletedSearchSystemActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {SearchParameters parameters,
@@ -1748,13 +1766,13 @@ abstract class _$$CompletedSearchSystemActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CompletedSearchSystemActionCopyWithImpl<$Res>
+class __$$CompletedSearchSystemActionImplCopyWithImpl<$Res>
     extends _$SystemActionSearchCopyWithImpl<$Res,
-        _$CompletedSearchSystemAction>
-    implements _$$CompletedSearchSystemActionCopyWith<$Res> {
-  __$$CompletedSearchSystemActionCopyWithImpl(
-      _$CompletedSearchSystemAction _value,
-      $Res Function(_$CompletedSearchSystemAction) _then)
+        _$CompletedSearchSystemActionImpl>
+    implements _$$CompletedSearchSystemActionImplCopyWith<$Res> {
+  __$$CompletedSearchSystemActionImplCopyWithImpl(
+      _$CompletedSearchSystemActionImpl _value,
+      $Res Function(_$CompletedSearchSystemActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1765,7 +1783,7 @@ class __$$CompletedSearchSystemActionCopyWithImpl<$Res>
     Object? nextPage = null,
     Object? canLoadMore = null,
   }) {
-    return _then(_$CompletedSearchSystemAction(
+    return _then(_$CompletedSearchSystemActionImpl(
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -1796,10 +1814,10 @@ class __$$CompletedSearchSystemActionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CompletedSearchSystemAction
+class _$CompletedSearchSystemActionImpl
     with DiagnosticableTreeMixin
     implements CompletedSearchSystemAction {
-  const _$CompletedSearchSystemAction(
+  const _$CompletedSearchSystemActionImpl(
       {required this.parameters,
       required this.data,
       required this.nextPage,
@@ -1831,10 +1849,10 @@ class _$CompletedSearchSystemAction
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CompletedSearchSystemAction &&
+            other is _$CompletedSearchSystemActionImpl &&
             (identical(other.parameters, parameters) ||
                 other.parameters == parameters) &&
             const DeepCollectionEquality().equals(other.data, data) &&
@@ -1851,9 +1869,9 @@ class _$CompletedSearchSystemAction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CompletedSearchSystemActionCopyWith<_$CompletedSearchSystemAction>
-      get copyWith => __$$CompletedSearchSystemActionCopyWithImpl<
-          _$CompletedSearchSystemAction>(this, _$identity);
+  _$$CompletedSearchSystemActionImplCopyWith<_$CompletedSearchSystemActionImpl>
+      get copyWith => __$$CompletedSearchSystemActionImplCopyWithImpl<
+          _$CompletedSearchSystemActionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1955,13 +1973,13 @@ abstract class CompletedSearchSystemAction implements SystemActionSearch {
       {required final SearchParameters parameters,
       required final Iterable<Tournament> data,
       required final int nextPage,
-      required final bool canLoadMore}) = _$CompletedSearchSystemAction;
+      required final bool canLoadMore}) = _$CompletedSearchSystemActionImpl;
 
   SearchParameters get parameters;
   Iterable<Tournament> get data;
   int get nextPage;
   bool get canLoadMore;
   @JsonKey(ignore: true)
-  _$$CompletedSearchSystemActionCopyWith<_$CompletedSearchSystemAction>
+  _$$CompletedSearchSystemActionImplCopyWith<_$CompletedSearchSystemActionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

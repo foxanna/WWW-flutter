@@ -12,7 +12,7 @@ part of 'section_text.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TextSection {
@@ -57,22 +57,22 @@ class _$TextSectionCopyWithImpl<$Res, $Val extends TextSection>
 }
 
 /// @nodoc
-abstract class _$$_TextSectionCopyWith<$Res>
+abstract class _$$TextSectionImplCopyWith<$Res>
     implements $TextSectionCopyWith<$Res> {
-  factory _$$_TextSectionCopyWith(
-          _$_TextSection value, $Res Function(_$_TextSection) then) =
-      __$$_TextSectionCopyWithImpl<$Res>;
+  factory _$$TextSectionImplCopyWith(
+          _$TextSectionImpl value, $Res Function(_$TextSectionImpl) then) =
+      __$$TextSectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$_TextSectionCopyWithImpl<$Res>
-    extends _$TextSectionCopyWithImpl<$Res, _$_TextSection>
-    implements _$$_TextSectionCopyWith<$Res> {
-  __$$_TextSectionCopyWithImpl(
-      _$_TextSection _value, $Res Function(_$_TextSection) _then)
+class __$$TextSectionImplCopyWithImpl<$Res>
+    extends _$TextSectionCopyWithImpl<$Res, _$TextSectionImpl>
+    implements _$$TextSectionImplCopyWith<$Res> {
+  __$$TextSectionImplCopyWithImpl(
+      _$TextSectionImpl _value, $Res Function(_$TextSectionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_TextSectionCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$_TextSection(
+    return _then(_$TextSectionImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ class __$$_TextSectionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TextSection implements _TextSection {
-  const _$_TextSection({required this.value});
+class _$TextSectionImpl implements _TextSection {
+  const _$TextSectionImpl({required this.value});
 
   @override
   final String value;
@@ -103,10 +103,10 @@ class _$_TextSection implements _TextSection {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TextSection &&
+            other is _$TextSectionImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -116,17 +116,17 @@ class _$_TextSection implements _TextSection {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TextSectionCopyWith<_$_TextSection> get copyWith =>
-      __$$_TextSectionCopyWithImpl<_$_TextSection>(this, _$identity);
+  _$$TextSectionImplCopyWith<_$TextSectionImpl> get copyWith =>
+      __$$TextSectionImplCopyWithImpl<_$TextSectionImpl>(this, _$identity);
 }
 
 abstract class _TextSection implements TextSection {
-  const factory _TextSection({required final String value}) = _$_TextSection;
+  const factory _TextSection({required final String value}) = _$TextSectionImpl;
 
   @override
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$_TextSectionCopyWith<_$_TextSection> get copyWith =>
+  _$$TextSectionImplCopyWith<_$TextSectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
