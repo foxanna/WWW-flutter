@@ -3,8 +3,8 @@ description: A rate-the-app feature
 publish_to: none
 
 environment:
-  sdk: ^3.0.6
-  flutter: ^3.10.6
+  sdk: ^3.4.1
+  flutter: ^3.22.1
 
 dependencies:
   app_review: ^2.1.2+1

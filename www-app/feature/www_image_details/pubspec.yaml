@@ -3,8 +3,8 @@ description: Zoomed-in image page
 publish_to: none
 
 environment:
-  sdk: ^3.0.6
-  flutter: ^3.10.6
+  sdk: ^3.4.1
+  flutter: ^3.22.1
 
 dependencies:
   cached_network_image: ^3.2.3
