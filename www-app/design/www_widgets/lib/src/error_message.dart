@@ -46,7 +46,7 @@ class ErrorMessage extends StatelessWidget {
                     color: color,
                   ),
                   tooltip: context.translations.tooltipRetry,
-                  onPressed: () => _retryFunction?.call(),
+                  onPressed: () => _retryFunction(),
                 )
             ],
           ),
