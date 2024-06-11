@@ -13,16 +13,16 @@ import 'package:www_local_storage/src/hive/models/tournament_info.dart';
 import 'package:www_local_storage/src/hive/models/tournament_status.dart';
 
 void hiveRegisterAdapters() {
-  Hive.registerAdapter(TournamentHiveModelAdapter());
-  Hive.registerAdapter(TournamentInfoHiveModelAdapter());
-  Hive.registerAdapter(TournamentStatusHiveModelAdapter());
-  Hive.registerAdapter(TourHiveModelAdapter());
-  Hive.registerAdapter(TourInfoHiveModelAdapter());
-  Hive.registerAdapter(QuestionHiveModelAdapter());
-  Hive.registerAdapter(QuestionInfoHiveModelAdapter());
-  Hive.registerAdapter(AudioSectionHiveModelAdapter());
-  Hive.registerAdapter(GiveAwaySectionHiveModelAdapter());
-  Hive.registerAdapter(ImageSectionHiveModelAdapter());
-  Hive.registerAdapter(SpeakerNoteSectionHiveModelAdapter());
-  Hive.registerAdapter(TextSectionHiveModelAdapter());
+  Hive.registerAdapter(TournamentHiveModelImplAdapter());
+  Hive.registerAdapter(TournamentInfoHiveModelImplAdapter());
+  Hive.registerAdapter(TournamentStatusHiveModelImplAdapter());
+  Hive.registerAdapter(TourHiveModelImplAdapter());
+  Hive.registerAdapter(TourInfoHiveModelImplAdapter());
+  Hive.registerAdapter(QuestionHiveModelImplAdapter());
+  Hive.registerAdapter(QuestionInfoHiveModelImplAdapter());
+  Hive.registerAdapter(AudioSectionHiveModelImplAdapter());
+  Hive.registerAdapter(GiveAwaySectionHiveModelImplAdapter());
+  Hive.registerAdapter(ImageSectionHiveModelImplAdapter());
+  Hive.registerAdapter(SpeakerNoteSectionHiveModelImplAdapter());
+  Hive.registerAdapter(TextSectionHiveModelImplAdapter());
 }
