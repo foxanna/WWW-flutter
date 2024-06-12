@@ -3,8 +3,10 @@ description: Application constants
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   flutter:
@@ -12,4 +14,4 @@ dependencies:
 
 dev_dependencies:
   www_analysis:
-    path: ../../utils/www_analysis
+

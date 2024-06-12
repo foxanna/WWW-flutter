@@ -3,26 +3,23 @@ description: An in-memory cache for all www_* packages
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
   injectable: 2.4.2
   www_analytics:
-    path: ../../utils/www_analytics
   www_di:
-    path: ../../utils/www_di/
   www_local_storage:
-    path: ../www_local_storage
   www_models:
-    path: ../www_models
   www_utils:
-    path: ../../utils/www_utils
 
 dev_dependencies:
   build_runner: 2.4.11
   injectable_generator: 2.6.1
   www_analysis:
-    path: ../../utils/www_analysis
+    

@@ -3,8 +3,10 @@ description: Share content feature
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   flutter:
@@ -12,18 +14,13 @@ dependencies:
   injectable: 2.4.2
   share: ^2.0.4
   www_analytics:
-    path: ../../utils/www_analytics
   www_constants:
-    path: ../../core/www_constants
   www_di:
-    path: ../../utils/www_di
   www_redux:
-    path: ../../utils/www_redux
   www_redux_actions:
-    path: ../shared/www_redux_actions
 
 dev_dependencies:
   build_runner: 2.4.11
   injectable_generator: 2.6.1
   www_analysis:
-    path: ../../utils/www_analysis
+    

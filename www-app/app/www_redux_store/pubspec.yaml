@@ -3,8 +3,10 @@ description: WWW app Redux store
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   flutter:
@@ -12,46 +14,25 @@ dependencies:
   freezed_annotation: 2.4.1
   injectable: 2.4.2
   www_bookmarks:
-    path: ../../feature/www_bookmarks
   www_browsing:
-    path: ../../feature/www_browsing
   www_di:
-    path: ../../utils/www_di
   www_initialization:
-    path: ../../feature/www_initialization
   www_latest_tournaments:
-    path: ../../feature/www_latest_tournaments
   www_navigation:
-    path: ../www_navigation
   www_questions:
-    path: ../../feature/www_questions
   www_rating:
-    path: ../../feature/www_rating
   www_redux:
-    path: ../../utils/www_redux
   www_settings:
-    path: ../../feature/www_settings
   www_sharing:
-    path: ../../feature/www_sharing
   www_timer:
-    path: ../../feature/www_timer
   www_tournament_details:
-    path: ../../feature/www_tournament_details
   www_tournament_tours:
-    path: ../../feature/www_tournament_tours
   www_tournaments_search:
-    path: ../../feature/www_tournaments_search
   www_tournaments_tree:
-    path: ../../feature/www_tournaments_tree
-
+    
 dev_dependencies:
   build_runner: 2.4.11
   freezed: 2.5.2
   injectable_generator: 2.6.1
   www_analysis:
-    path: ../../utils/www_analysis
   www_test_utils:
-    path: ../../utils/www_test_utils
-
-dependency_overrides:
-  package_info_plus: 4.1.0   # caused by app_review: 2.1.2+1

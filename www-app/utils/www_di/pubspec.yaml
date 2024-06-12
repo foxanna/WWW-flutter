@@ -3,8 +3,10 @@ description: Dependency inversion mechanism for www_* packages
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   flutter:
@@ -12,10 +14,10 @@ dependencies:
   get_it: 7.7.0
   injectable: 2.4.2
   www_logger:
-    path: ../www_logger/
+
 
 dev_dependencies:
   build_runner: 2.4.11
   injectable_generator: 2.6.1
   www_analysis:
-    path: ../www_analysis
+    

@@ -1,7 +1,53 @@
 name: www
 
 environment:
-  sdk: ^3.0.6
+  sdk: ^3.5.0-180.3.beta
 
 dev_dependencies:
   melos: ^3.1.1
+
+dependency_overrides:
+  package_info_plus: 4.1.0   # caused by app_review: 2.1.2+1
+
+workspace:
+  - app/www_app
+  - app/www_app_di
+  - app/www_navigation
+  - app/www_redux_store
+  - core/www_constants
+  - core/www_http
+  - core/www_localization
+  - design/www_custom_icons
+  - design/www_theme
+  - design/www_widgets
+  - domain/www_local_storage
+  - domain/www_models
+  - domain/www_api
+  - domain/www_cache
+  - feature/shared/www_redux_actions
+  - feature/shared/www_tournament_status
+  - feature/www_about
+  - feature/www_bookmarks
+  - feature/www_browsing
+  - feature/www_image_details
+  - feature/www_initialization
+  - feature/www_latest_tournaments
+  - feature/www_questions
+  - feature/www_rating
+  - feature/www_settings
+  - feature/www_sharing
+  - feature/www_timer
+  - feature/www_tournament_details
+  - feature/www_tournament_tours
+  - feature/www_tournaments_search
+  - feature/www_tournaments_tree
+  - utils/www_analysis
+  - utils/www_analytics
+  - utils/www_background_runner
+  - utils/www_di
+  - utils/www_dialogs
+  - utils/www_logger
+  - utils/www_preferences
+  - utils/www_redux
+  - utils/www_test_utils
+  - utils/www_utils

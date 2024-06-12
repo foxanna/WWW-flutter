@@ -3,8 +3,10 @@ description: Timer feature
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   audioplayers: ^5.0.0
@@ -15,26 +17,17 @@ dependencies:
   path_provider: ^2.0.15
   vibration: ^1.8.1
   www_analytics:
-    path: ../../utils/www_analytics
   www_di:
-    path: ../../utils/www_di
   www_models:
-    path: ../../domain/www_models
   www_redux:
-    path: ../../utils/www_redux
   www_redux_actions:
-    path: ../shared/www_redux_actions
   www_settings:
-    path: ../www_settings
   www_theme:
-    path: ../../design/www_theme
   www_utils:
-    path: ../../utils/www_utils
   www_widgets:
-    path: ../../design/www_widgets
 
 dev_dependencies:
   build_runner: 2.4.11
   injectable_generator: 2.6.1
   www_analysis:
-    path: ../../utils/www_analysis
+    

@@ -3,8 +3,10 @@ description: Misc utils for testing
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   flutter:
@@ -13,8 +15,7 @@ dependencies:
     sdk: flutter
   mocktail: ^1.0.0
   www_analytics:
-    path: ../www_analytics
 
 dev_dependencies:
   www_analysis:
-    path: ../www_analysis
+    

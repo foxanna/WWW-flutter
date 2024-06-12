@@ -3,24 +3,21 @@ description: About the app feature
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.7
   www_constants:
-    path: ../../core/www_constants
   www_localization:
-    path: ../../core/www_localization
   www_redux:
-    path: ../../utils/www_redux
   www_redux_actions:
-    path: ../shared/www_redux_actions
   www_theme:
-    path: ../../design/www_theme
 
 dev_dependencies:
   www_analysis:
-    path: ../../utils/www_analysis
+    

@@ -3,8 +3,10 @@ description: Background runner
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   dartz: ^0.10.1
@@ -13,10 +15,9 @@ dependencies:
   injectable: 2.4.2
   isolate: ^2.1.1 #discontinued
   www_di:
-    path: ../www_di
 
 dev_dependencies:
   build_runner: 2.4.11
   injectable_generator: 2.6.1
   www_analysis:
-    path: ../www_analysis
+    

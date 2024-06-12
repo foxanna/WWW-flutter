@@ -3,8 +3,10 @@ description: https://db.chgk.info/ API
 publish_to: none
 
 environment:
-  sdk: ^3.4.1
+  sdk: ^3.5.0-180.3.beta
   flutter: ^3.22.1
+
+resolution: workspace
 
 dependencies:
   flutter:
@@ -14,17 +16,12 @@ dependencies:
   injectable: 2.4.2
   json_annotation: 4.9.0
   www_background_runner:
-    path: ../../utils/www_background_runner
   www_constants:
-    path: ../../core/www_constants/
   www_di:
-    path: ../../utils/www_di/
   www_http:
-    path: ../../core/www_http
   www_models:
-    path: ../www_models
   www_utils:
-    path: ../../utils/www_utils
+    
   xml2json: ^6.2.3
 
 dev_dependencies:
@@ -35,6 +32,5 @@ dev_dependencies:
   injectable_generator: 2.6.1
   json_serializable: 6.8.0
   www_analysis:
-    path: ../../utils/www_analysis
   www_test_utils:
-    path: ../../utils/www_test_utils
+    
